@@ -1,0 +1,55 @@
+#+TITLE: Weak Digest Algorithms --- GnuPG.org
+
+* Weak Digest Algorithms
+
+   or, what does the warning "digest algorithm X is deprecated" mean?
+
+
+
+* What to do
+
+     - If you see this warning when creating a new signature or a new
+       key, you are using an option to force GPG to use a certain digest
+       (hash) algorithm. Please check your gpg.conf file and remove
+       options mentioning the MD5 algorithm.
+     - If you see this warning when verifying a signature, the creator of
+       this signature used the MD5 algorithm. Depending on your security
+       needs you may or may not want to trust this signature. See below
+       for details.
+     - If you see this warning when selecting or validating a key, that
+       key or one of the key signatures are made using MD5. Depending on
+       your security needs you may or may not want to consider this key
+       valid. See below for details.
+
+
+* Problems with digest algorithms
+
+   As of now, the only digest algorithm used by GnuPG which has severe
+   weaknesses is the MD5 algorithm. In particular it is easy to create
+   two files yielding the same digest value. The result is that a
+   signature on one text may be valid for a second text as well. The
+   creator of the signature can use this for certain attacks.
+   (Technically this is called a collision attack.)
+
+   It is currently not possible to create an arbitrary text matching a
+   given digest (and thus a signature). However, researchers are working
+   on methods to achieve this (known as a pre-image attack). We can't say
+   how long it will take them to come up with such an attack. Thus it is
+   better to entirely avoid the MD5 algorithm and don't put any value in
+   signatures based on MD5.
+
+   Although the SHA-1 algorithm shows signs of weaknesses as well, it is
+   still very hard and time consuming to create collisions. Mounting a
+   pre-image attack is still far out of reach. Thus for the standard use
+   of GnuPG, the signature based on SHA-1 are still fine. To be prepared
+   for future developments, GnuPG is moving forward and some defaults
+   have been changed to prefer SHA-256 over SHA-1. If in a few years the
+   installed code base of modern GnuPG versions is large enough we are
+   prepared to deprecate SHA-1 then.
+
+
+
+
+#   Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#   Written by Werner Koch (2006-03-22 11:55:44).

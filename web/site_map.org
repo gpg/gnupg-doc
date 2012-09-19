@@ -1,0 +1,5 @@
+
+* Site Map
+
+This site map is automagically generated at each site rebuild.
+

@@ -1,1 +1,49 @@
-#+STARTUP: showall
+* The GNU Privacy Guard
+
+GnuPG is the [[http://www.gnu.org/][GNU project]]'s complete and free implementation of the
+OpenPGP standard as defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]]. GnuPG allows to encrypt and
+sign your data and communication, features a versatile key management
+system as well as access modules for all kinds of public key
+directories. GnuPG, also known as /GPG/, is a command line tool with
+features for easy integration with other applications. A wealth of
+[[related_software/frontends.html][frontend applications]] and [[related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
+also provides support for S/MIME.
+
+GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
+be freely used, modified and distributed under the terms of the [[http://www.gnu.org/copyleft/gpl.html][GNU
+General Public License]] .
+
+GnuPG comes in two flavours: [[download][1.4.12]] is the well known and portable
+standalone version, whereas [[download][2.0.19]] is the enhanced and somewhat harder
+to build version.
+
+Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG. It is nicely
+integrated into an installer and features several frontends as well as
+English and German manuals.
+
+Project [[http://gpgtools.org][GPGTools]] provides a Mac OS X version of GnuPG. It is nicely
+integrated into an installer and features all required tools.
+
+Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
+
+
+** Latest news
+
+The following frames report the latest news from GnuPG. A list with
+all the [[news.en.html][news of the current year]] is also available.
+
+For those of you who like reading world's news with an RSS reader,
+GnuPG's latest news are also available as
+[[http://feedvalidator.org/check.cgi?url=http://www.gnupg.org/news.en.rss][RSS
+2.0 compliant]] feed. Just point or paste the [[news.en.rss][RSS file]] into your
+aggregator.
+
+
+*** GnuPG 2.0.19 released (2012-03-27 11:22:13)
+
+We are pleased to announce the availability of GnuPG 2.0.19. ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html][more]]
+
+#Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#Written by Werner Koch (2007-02-01).

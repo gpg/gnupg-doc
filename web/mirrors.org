@@ -1,0 +1,86 @@
+* WWW Mirrors
+
+The primary HTTP site [[http://www.gnupg.org/][GnuPG.org]] is mirrored at several sites. Please
+choose the nearest mirror to you. If you are seeking for sources and
+binaries, please consult the [[download/mirrors.en.html][FTP mirror page]] under the [[download][Download]]
+section.
+
+** Africa
+
+** The Americas
+
+Canada
+
+[[http://www.gnupg.ca/][GnuPG.ca]] (2/day)
+[[http://www.gnupg.ca/][http://www.gnupg.ca/]]
+
+[[http://www.raffsoftware.com/][RaffSoftware]] (1/day)
+[[http://gnupg.raffsoftware.com/][http://gnupg.raffsoftware.com/]]
+
+[[http://www.parentinginformed.com/][www.parentinginformed.com]] (2/day)
+[[http://gnupg.parentinginformed.com/][http://gnupg.parentinginformed.com/]]
+
+
+** Australia
+
+
+** Asia
+
+Korea
+
+[[http://www.snu.ac.kr/][SNU]] (weekly)
+[[http://musicone.snu.ac.kr/webmirror/gnupg/][http://musicone.snu.ac.kr/webmirror/gnupg/]]
+
+
+** Europe
+
+UK
+
+[[http://mirror.tje.me.uk/][mirror.tje.me.uk]] (4/day)
+[[ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org][ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org]]
+[[http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/][http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/]]
+
+Austria
+
+[[http://gd.tuwien.ac.at/][TU Wien]]
+[[http://gd.tuwien.ac.at/www.gnupg.org/][http://gd.tuwien.ac.at/www.gnupg.org/]]
+
+Czechia
+
+[[http://www.gnupg.cz/][GnuPG.cz]]
+[[http://www.gnupg.cz/][http://www.gnupg.cz/]]
+
+Denmark
+
+[[http://www.gnupg.dk/][GnuPG.dk]]
+[[http://www.gnupg.dk/][http://www.gnupg.dk/]]
+
+France
+
+[[http://mirror.cict.fr/][CICT Mirror (Universite Paul Sabatier)
+TOULOUSE]] (1/day)
+[[http://gnupg.cict.fr/][http://gnupg.cict.fr/]]
+
+Hungary
+
+[[http://www.crysys.hu/][CrySyS Lab., BUTE]] (daily)
+[[http://gnupg.mirrors.crysys.hu/][http://gnupg.mirrors.crysys.hu/]]
+
+Portugal
+
+[[http://5coluna.com][5ª Coluna]] (2/day)
+[[http://mirror.gnupg.pt/][http://mirror.gnupg.pt/]]
+
+Sweden
+
+[[http://archive.sunet.se/][Sunet]]
+[[http://gnupg.archive.sunet.se/][http://gnupg.archive.sunet.se/]]
+
+United Kingdom
+
+[[http://www.mirrorservice.org/][UK Mirror Service]]
+[[http://www.mirrorservice.org/sites/www.gnupg.org/][http://www.mirrorservice.org/sites/www.gnupg.org/]]
+
+#Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#Written by Werner Koch (2004-02-18 22:51).

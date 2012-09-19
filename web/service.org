@@ -1,0 +1,85 @@
+* Support
+
+As part of the GNU project, GnuPG is community developed, and everyone
+is welcome to contribute under certain conditions. Some companies are
+offering paid services to meet specific needs. This page contain links
+to companies that wishes to announce their interest in working with
+GnuPG and related software.
+
+The information on this page comes from companies who asked to be
+listed; we do not include any information we know to be false, but we
+cannot check out any of the information; we are transmitting it to you
+as it was given to us and do not promise it is correct. Also, this is
+not an endorsement of the people listed here. We have no opinions and
+usually no information about the abilities of any specific person. We
+provide this list to enable you to contact service providers.
+
+
+  - [[http://g10code.com][g10 Code GmbH]], Düsseldorf, Germany :: Offers customized
+       development, porting to new platforms, help with integrating
+       GnuPG into your own projects, code audits, and more. g10 Code
+       is owned and run by GnuPG's principal author.
+  - [[http://josefsson.org/][Simon Josefsson Datakonsult]], Stockholm, Sweden :: Offers
+       integration of OpenPGP technology in TLS, Kerberos, e-mail, and
+       SASL. Does customized development, porting to new platforms,
+       and more. Simon Josefsson Datakonsult is owned and run by the
+       principal author of Shishi and GNU SASL, and the maintainer of
+       [[http://www.gnu.org/software/gnutls/][GnuTLS]] .
+  - [[http://www.intevation.net][Intevation GmbH]], Osnabrück, Germany :: Offers management of
+       development or deployment projects based on or including GnuPG
+       and related tools. Sample references are project "Ägypten"
+       which developed a S/MIME solution and "Gpg4win" which developed
+       a easy-to-use Windows Installer für E-Mail encryption
+       tools. Intevation takes over project and quality management. We
+       usually team up with g10 Code who perform all developments.
+       Intevation offers this type of management for any type of Free
+       Software application and has a long record of doing so.
+  - [[http://www.iktech.net][IKTech]], Vienna, Austria :: Offers independent consultancy and
+       systems integration services for PGP-based PKIs &
+       architectures, OpenPGP, GnuPG and integration with X.509v3
+       PKIs. IKTech also provides legal expertise and expert witness
+       testimony regarding the legal implications of PGP deployments
+       and use in the context of European Union electronic signature
+       legislation.
+  - [[https://www.encryptioncorp.com][EncryptionCorp]], Toronto, Canada :: EncryptionCorp located in
+       Ontario, Canada is both Toronto and Peterborough's leading-edge
+       encryption consulting firms. We train and consult for companies
+       as well as their employees on much more than just how to use
+       encryption. Our small yet powerful organization is able to
+       train staff on the safest and fastest ways to handle an
+       organization's data, without cross contamination. We teach
+       everything from the simplest methods of password management to
+       quantum encryption. We do all this in little more than 3 hours
+       (including 4 breaks) with our non-invasive easy to understand
+       media.
+  - [[http://lsupport.net][Linux Support LLC]], Kiev, Ukraine :: Linux Support LLC provides
+       consulting services using GnuPG and related tools, integrated
+       security for individuals, soho and enterprise in Ukraine.
+  - [[https://5coluna.com/][5ª Coluna]], Portugal :: Offers GNU/Linux support and consulting for
+       helpdesk/ticketing software, discussion lists, backup and
+       small and medium sized companies, including GnuPG services like
+       disaster recovery using GnuPG and the OpenPGP card, as well as
+       general GnuPG implementations on Microsoft Windows and
+       Linux-based systems.
+
+Before we will list your name on this page, we ask that you agree
+informally to the following terms:
+
+  1. You will not restrict (except by copyleft) the use or
+     distribution of any software, documentation, or other technical
+     information you supply anyone in the course of modifying,
+     extending, or supporting free software. This includes any
+     information specifically designed to ameliorate the use of free
+     software.
+
+  2. You will not take advantage of contact made through this page to
+     advertise an unrelated business (e.g., sales of proprietary
+     information). You may spontaneously mention your availability for
+     general consulting, but you should not promote a specific
+     unrelated business unless the client asks.
+
+To have your information added to this list, please send a mail to the
+webmaster. The information is listed in the order we receive requests.
+We might eventually divide the list up by geographic location or type
+of service.
+

@@ -1,0 +1,34 @@
+#+TITLE: GPGME FAQ --- GnuPG.org
+
+* GPGME FAQ
+
+   GnuPG Made Easy (GPGME) is a library designed to make access to GnuPG
+   easier for applications. It provides a High-Level Crypto API for
+   encryption, decryption, signing, signature verification and key
+   management.
+
+
+
+* Frequently Asked Questions
+
+** Why does the function =gpgme_data_seek= not work?
+
+   You probably did not compile the program with largefile support. GPGME
+   is compiled with largefile support by default, so off_t is a 64-bit
+   data type. Because =gpgme_data_seek= uses =off_t= as a parameter type, you
+   have to compile your program with largefile support as well, so that
+   the data types used by GPGME and by your program match.
+
+   Note that you have to compile your program with largefile support even
+   if you do not use =gpgme_data_seek=, because file descriptors are
+   exchanged between the program and GPGME.
+
+   The GPGME documentation contains much more information on the subject.
+   See section 2.3 Largefile support of the GPGME Reference Manual.
+
+
+
+
+#   Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#   Written by Werner Koch (2006-04-27 12:50:00).

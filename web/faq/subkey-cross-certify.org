@@ -1,0 +1,81 @@
+#+TITLE: Signing Subkey Cross-Certification --- GnuPG.org
+
+* Signing Subkey Cross-Certification
+
+   or, what does the warning "signing subkey is not cross-certified"
+   mean?
+
+* Short Answer:
+
+     - If you receive this warning when verifying a signature from
+       someone else, please point them to this page. The signature that
+       you verified has not been tampered with, but might not have been
+       issued by the person who sent it to you.
+     - If you have been pointed to this page by someone who received a
+       warning when verifying one of your signatures, your key does not
+       contain a subkey cross-certification. You can easily add this
+       cross-certification using GnuPG 1.4.3 or later. To do this, simply
+       run
+        : gpg --edit-key (yourkey)
+       and then enter “cross-certify”.  You’ll need to type your
+       passphrase, and GnuPG will add the necessary
+       cross-certification. Once this is done, you should distribute
+       your key however you like (send it to a keyserver, post on a
+       web page, etc). If you have already done this and people are
+       still receiving the warning, make sure they have updated their
+       copy of your key from the keyserver or web page.
+
+
+* Full Explanation:
+
+   An OpenPGP key is made up of several keys: a primary key, which is
+   used to digitally sign things, and optionally, subkeys that can be
+   used to sign or encrypt things. To prove that the subkeys "belong" to
+   the key and were not inserted by an attacker, they are digitally
+   signed by the primary key.
+
+   Most users use their primary key for signing, and a subkey for
+   encryption, and this is the default key style in both GnuPG and PGP.
+   Some, generally more advanced users use two subkeys: one for
+   encryption, and another one for signing. This allows the user more
+   flexibility in managing their keys, as the primary key can then be
+   kept off of their computer altogether.
+
+   There is a subtle weakness in the OpenPGP design for signing subkeys.
+   Recall that subkeys are signed by the primary key to show they belong
+   to the primary key. However, the signing subkey does not sign the
+   primary to show that it is owned by the primary. This allows an
+   attacker to take a signing subkey and attach it to their own key.
+
+   This does not mean that an attacker can issue signatures pretending to
+   be someone else: the attacker cannot issue any signatures from that
+   subkey, as all they have is the public half. The only thing this
+   allows an attacker to do is to take an existing signature issued by a
+   signing subkey, and claim that it was issued by the attacker's own
+   key. The end result is that the signature can be verified by both the
+   actual signer's key and the attacker's key. In practice, this can be
+   detected by asking the attacker to issue a new signature for you on
+   data that you supply (a "challenge"). The attacker, as they cannot
+   issue signatures from the key, will not be able to do so.
+
+   The OpenPGP Working Group has defined a fix so this problem is stopped
+   immediately, before the attacker can even try and claim a signature as
+   their own.
+
+   Subkey cross-certification (sometimes called "back signing") involves
+   the subkey issuing a signature on the primary key, just like the
+   primary key signature on the subkey. Since only the true owner of the
+   subkey can issue such a signature, the attacker's key cannot be
+   cross-certified.
+
+   GnuPG has code for adding this cross-certification to signing subkeys
+   that were issued before this change to the OpenPGP design. Just run
+   "gpg --edit-key (yourkey)" and then enter "cross-certify". You'll need
+   to type your passphrase, and GnuPG will add the cross-certification.
+
+
+
+
+#   Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#   Written by Werner Koch (2006-03-22 11:55:44).

@@ -1,0 +1,25 @@
+
+* Why not IDEA
+
+   IDEA is a patented algorithm and therefore the use of IDEA in
+   countries where this patent is valid can not be allowed due to
+   restrictions in the GNU General Public License. Those restrictions are
+   there to help protecting the freedom of software.
+
+   For more information on the nonsense of software patents and the
+   general problem with this, please see [[www.noepatents.org]].
+
+   If you still want to use IDEA and you are legally allowed to do so,
+   you can download the [[ftp://ftp.gnupg.dk/contrib-dk/idea.c.gz][idea.c.gz]] file and its [[ftp://ftp.gnupg.dk/contrib-dk/idea.c.gz.sig][signature]] , read
+   the instructions at the top of the file, compile it and use it as a
+   plugin for GnuPG. But please do us all a favor and use it only for
+   decrypting. CAST5 and AES are good and patent unencumbered algorithms
+   which don't bear any interoperability problems.
+
+   Windows user might be interested in the [[ftp://ftp.gnupg.dk/contrib-dk/ideadll.zip][precompiled DLL]] and its
+   [[ftp://ftp.gnupg.dk/contrib-dk/ideadll.zip.sig][signature]].
+
+
+#   Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#
+#   Written by Werner Koch (2002-07-15 22:10).
