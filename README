@@ -1,0 +1,6 @@
+This is a separated branch for the gnupg.org website.
+
+The old website was tracked in a CVS repository but we
+want to start the new website form scratch using only the texts data
+from the generated HTML files.
+
