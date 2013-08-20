@@ -1,0 +1,71 @@
+#+STARTUP: showall
+#+SETUPFILE: "../setup.inc"
+
+* Integrity Check
+
+  In order to check that the version of GnuPG which you are going to
+  install is an original and unmodified one, you can do it in one of
+  the following ways.
+
+** Using gpg
+
+  If you already have a trusted version of GnuPG installed, you can
+  simply check the supplied signature. For example to check the
+  signature of the file =gnupg-{{{gnupg_ver}}}.tar.bz2= you would use
+  this command:
+
+#+begin_example
+  gpg --verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig
+#+end_example
+
+  This checks whether the signature file matches the source file. You
+  should see a message indicating that the signature is good and made
+  by that [[../signature_key.org][signing key]]. Make sure that you have the right key, either
+  by checking the fingerprint of that key with other sources or by
+  checking that the key has been signed by a trustworthy other key.
+
+  *Never use a GnuPG version you just downloaded to check the
+  integrity of the source* - use an existing GnuPG installation.
+
+** Using sha1sum
+
+   If you are not able to use an old version of GnuPG, you have to
+   verify the SHA1 checksum. Assuming you downloaded the file
+   =gnupg-{{{gnupg_ver}}}.tar.bz2=, you would run the =sha1sum=
+   command like this:
+
+#+begin_example
+   sha1sum gnupg-{{{gnupg_ver}}}.tar.bz2
+#+end_example
+
+   and check that the output matches the SHA-1 checksum reported on
+   this site. An example of a =sha1sum= output is:
+
+#+begin_example
+   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
+#+end_example
+
+   To be sure that this page has not been tampered, you may want to
+   compare the list below with the one included in the announcement
+   mail posted to several mailing list.
+
+** SHA-1 Sum Summary
+
+   For your convenience, all SHA1 sums available for software that can
+   be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
+
+#+begin_example
+   {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
+   {{{gnupg1_patch_sha1}}}  gnupg-{{{gnupg1_patch_ver}}}.diff.bz2
+   {{{gnupg1_sha1_gz}}}  gnupg-{{{gnupg1_ver}}}.tar.gz
+   {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
+   {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
+   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
+   {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{libassuan_sha1}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
+   {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
+   {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
+   {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
+   {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
+#+end_example
+

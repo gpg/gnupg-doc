@@ -1,0 +1,101 @@
+# Version information
+
+#
+# Primary FTP server base directory
+#
+#+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
+
+
+#
+# GnuPG-2
+#
+#+macro: gnupg_ver     2.0.21
+#+macro: gnupg_branch  STABLE-BRANCH-2-0
+#+macro: gnupg_size    4200k
+#+macro: gnupg_sha1    5ba8cce72eb4fd1a3ac1a282d25d7c7b90d3bf26
+
+#
+# GnuPG-1
+#
+#+macro: gnupg1_ver      1.4.14
+#+macro: gnupg1_branch   STABLE-BRANCH-1-4
+#+macro: gnupg1_size     3601k
+#+macro: gnupg1_size_gz  4967k
+#+macro: gnupg1_sha1     6202181ba2871fb3448c751a573b4ae0c4770806
+#+macro: gnupg1_sha1_gz  607691dd42a24f39fd74dded20375c4c0bc47d2c
+#
+#+macro: gnupg1_patch_ver   1.4.13-1.4.14
+#+macro: gnupg1_patch_size  14k
+#+macro: gnupg1_patch_sha1  e7623a6b8b6de00d3788246d3e51fde1ce7b5897
+#
+#+macro: gnupg1_w32cli_ver  1.4.14
+#+macro: gnupg1_w32cli_size 1567k
+#+macro: gnupg1_w32cli_sha1 ac9e89240ce37810febf59e28db655d1271b2fea
+
+
+#
+# GPA
+#
+#+macro: gpa_ver  0.9.4
+#+macro: gpa_size 714k
+
+
+#
+# PINENTRY
+#
+#+macro: pinentry_ver  0.8.2
+#+macro: pinentry_size 418k
+#+macro: pinentry_sha1 eeee9e80ea02f63bdac1cb03eb1785ab2cd57f90
+
+
+#
+# GPGME
+#
+#+macro: gpgme_ver    1.4.3
+#+macro: gpgme_branch master
+#+macro: gpgme_size   950k
+#+macro: gpgme_sha1   ffdb5e4ce85220501515af8ead86fd499525ef9a
+
+
+#
+# LIBGCRYPT
+#
+#+macro: libgcrypt_ver  1.5.3
+#+macro: libgcrypt_size 1473k
+#+macro: libgcrypt_sha1 2c6553cc17f2a1616d512d6870fe95edf6b0e26e
+
+
+#
+# LIBKSBA
+#
+#+macro: libksba_ver  1.3.0
+#+macro: libksba_size 610k
+#+macro: libksba_sha1 241afcb2dfbf3f3fc27891a53a33f12d9084d772
+
+
+#
+# DirMngr
+#
+#+macro: dirmngr_ver  1.1.0
+#+macro: dirmngr_size 543k"
+#+macro: dirmngr_sha1 a7a7d1432db9edad2783ea1bce761a8106464165
+
+
+#
+# LIBGPG-ERROR
+#
+#+macro: libgpg_error_ver  1.12
+#+macro: libgpg_error_size 478k
+#+macro: libgpg_error_sha1 259f359cd1440b21840c3a78e852afd549c709b8
+
+
+#
+# LIBASSUAN
+#
+#+macro: libassuan_ver  2.1.1
+#+macro: libassuan_size 526k
+#+macro: libassuan_sha1 8bd3826de30651eb8f9b8673e2edff77cd70aca1
+
+
+
+# --- end of swdb.mac ---
