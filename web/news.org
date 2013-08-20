@@ -1,18 +1,30 @@
 #+STARTUP: showall
+
 * All News
 
-On this page you'll find all the news in reverse chronological order. of
+On this page you'll find all the news of previous years in reverse
+chronological order.  News for the current year are found at the [[index][main
+page]].
 
-** GnuPG 2.0.19 released (2012-03-27 11:22:13)
+
+** GnuPG 1.4.13 released  (2012-12-20 21:51:56)
+
+Wir freuen uns, Ihnen die Verfügbarkeit von GnuPG 1.4.13 bekannt
+zu geben.
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q4/000319.html][{more}]]
+
+
+** GnuPG 2.0.19 released  (2012-03-27 11:22:13)
 
 We are pleased to announce the availability of GnuPG 2.0.19. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html][{more}]]
 
-** GnuPG 1.4.12 released (2012-01-30 17:39:22)
+** GnuPG 1.4.12 released  (2012-01-30 17:39:22)
 
 We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.12 ...
+release: Version 1.4.12.  ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000313.html][{more}]]
+
 
 ** STEED project announced (2011-10-17 20:15:22)
 
@@ -47,7 +59,7 @@ release: Version 1.4.11 ...
 While trying to import a server certificate for a CDN service, a segv
 bug was found in GnuPG's GPGSM tool. It is likely that this bug is
 exploitable by sending a special crafted signed message and having a
-user verify the signature. A simple patch is available...
+user verify the signature. A simple patch is available ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2010q3/000302.html][{more}]]
 
 ** GnuPG 2.0.16 released (2010-07-19 10:44:59)
@@ -61,22 +73,10 @@ We are pleased to announce the availability of GnuPG 2.0.15. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2010q1/000299.html][{more}]]
 
 
-
-
-
-
-
-
 ** GnuPG 2.0.14 released (2009-12-21 19:03:26)
 
 We are pleased to announce the availability of GnuPG 2.0.14. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q4/000296.html][{more}]]
-
-
-
-
-
-
 
 
 ** Libgcrypt 1.4.5 released (2009-12-11 17:51:12)
@@ -87,25 +87,10 @@ series. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q4/000295.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.13 released (2009-09-04 19:12:01)
 
 We are pleased to announce the availability of GnuPG 2.0.13. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q3/000294.html][{more}]]
-
-
-
-
-
-
-
-
 
 ** GnuPG 1.4.10 released (2009-09-02 19:27:55)
 
@@ -114,37 +99,16 @@ release: Version 1.4.10 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q3/000291.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.12 released (2009-06-17 13:19:26)
 
 We are pleased to announce the availability of GnuPG 2.0.12. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q2/000288.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.11 released (2009-03-03 13:02:51)
 
 We are pleased to announce the availability of GnuPG 2.0.11 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q1/000287.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Libgcrypt 1.4.4 released (2009-01-22 20:08:24)
@@ -155,24 +119,10 @@ series. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q1/000285.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.10 released (2009-01-12 10:59:05)
 
 We are pleased to announce the availability of GnuPG 2.0.10 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q1/000284.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Signing key updated! (2009-01-09 12:58:02)
@@ -182,25 +132,11 @@ prolonged for another year. Please update the key ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2009q1/000282.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG's 10th birthday! (2007-12-20 12:10:30)
 
 It has been a decade since the very first version of the GNU Privacy
 Guard was released ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q4/000268.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 2.0.8 released (2007-12-20 12:09:30)
@@ -209,26 +145,11 @@ We are pleased to announce the availability of GnuPG 2.0.8 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q4/000267.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.4.8 released (2007-12-20 12:09:03)
 
 We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.8 ...
+release: Version 1.4.8. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q4/000266.html][{more}]]
-
-
-
-
-
-
-
-
 
 ** Libgcrypt 1.4.0 released (2007-12-10 20:10:34)
 
@@ -238,25 +159,11 @@ series. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q4/000263.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** New OpenPGP standard (2007-11-02 17:54:26)
 
 The new OpenPGP standard has been published. It was assigned RFC number
 4880. ...
 [[http://lists.gnupg.org/pipermail/gnupg-users/2007-November/031994.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 2.0.7 released (2007-09-10 19:18)
@@ -265,37 +172,16 @@ We are pleased to announce the availability of GnuPG 2.0.7 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q3/000259.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.6 released (2007-08-16 17:48)
 
 We are pleased to announce the availability of GnuPG 2.0.6 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q3/000258.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.5 released (2007-07-06 12:46)
 
 We are pleased to announce the availability of GnuPG 2.0.5 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q3/000255.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Manual pages online (2007-05-11 11:45:30)
@@ -305,24 +191,10 @@ Check out the navigation bar or go directly to the
 [[http://www.gnupg.org/documentation/manuals.html][overview page]] .
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0.4 released (2007-05-09 13:02)
 
 We are pleased to announce the availability of GnuPG 2.0.4 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q2/000254.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 2.0.3 released (2007-03-08 16:55:25)
@@ -331,26 +203,12 @@ We are pleased to announce the availability of GnuPG 2.0.3 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q1/000252.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Multiple Messages Problem in GnuPG and GPGME (2007-03-06 09:31:21)
 
 A common usage problem of gpg has been identified. Instead of requiring
 a fix for all these applications, GnuPG and GPGME have been changed to
 provide the necessary protection. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2007q1/000251.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Important security update for GnuPG(2006-12-06 17:18:35)
@@ -362,24 +220,10 @@ a patch to 2.0.1 has been released. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000246.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Announcing the winner of the logo contest (2006-12-02 19:37:04)
 
 And the winner is: Thomas Wittek ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000244.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 2.0.1 released (2006-11-29 15:14:13)
@@ -388,37 +232,16 @@ We are pleased to announce the availability of GnuPG 2.0.1 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000242.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Dirmngr 1.0.0 released (2006-11-29 15:14:13)
 
 We are pleased to announce the availability of Dirmngr 1.0.0 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000243.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 2.0 released (2006-11-13 12:43:16)
 
 We are pleased to announce the availability of GnuPG 2.0.0 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000239.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.9.92 released (2006-10-11 13:43:29)
@@ -428,25 +251,11 @@ last steps towards a 2.0 release. ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000236.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG Logo contest (2006-09-19 14:43:08)
 
 After 8 years the time has come to modernize the GnuPG Logo and to work
 on a new layout of the website ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000235.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Gpg4win 1.0.6 released (2006-08-29 09:52:50)
@@ -456,25 +265,11 @@ We are pleased to announce the availibility of Gpg4win, version 1.0.6
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000232.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Libgcrypt 1.2.3 released (2006-08-29 09:49:39)
 
 We are pleased to announce the availability of Libgcrypt 1.2.3. Since
 this is a bugfix release, it does not include any new features...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000231.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.4.5 released (2006-08-01 17:42:11)
@@ -484,13 +279,6 @@ release: Version 1.4.5 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000229.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.4.4 released (2006-06-25 15:57:40)
 
 We are pleased to announce the availability of a new stable GnuPG
@@ -498,25 +286,11 @@ release: Version 1.4.4 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q2/000226.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Gpg4win 1.0.1 released (2006-04-26 13:29:58)
 
 We are pleased to announce the availibility of Gpg4win, version 1.0.1
 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q2/000224.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Gpg4win released (2006-04-03 14:28:36)
@@ -527,26 +301,11 @@ pleased to announce the first stable release of Gpg4win, version
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q2/000223.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.4.3 released (2006-04-03 14:28:36)
 
 We are pleased to announce the availability of a new stable GnuPG
 release: Version 1.4.3 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q2/000222.html][{more}]]
-
-
-
-
-
-
-
-
 
 ** GnuPG does not detect injection of unsigned data (2006-03-09 20:02:28)
 
@@ -560,13 +319,6 @@ version 1.4.2.2!
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000216.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** False positive signature verification in GnuPG (2006-02-15 12:43:54)
 
 The Gentoo project identified a security related bug in GnuPG. When
@@ -578,40 +330,17 @@ the exit code of the process is used to decide whether a detached
 signature is valid.
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000211.html][{more}]]
 
-
-
-
-
-
-
-
-
 ** GnuPG 1.9.20 (S/MIME and gpg-agent) released (2005-12-20 12:56:31)
 
 We are pleased to announce the availability of GnuPG 1.9.20 - the branch
 of GnuPG featuring the S/MIME...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q4/000209.html][{more}]]
 
-
-
-
-
-
-
-
-
 ** Libgcrypt 1.2.2 released (2005-10-05 15:34:42)
 
 We are pleased to announce the availability of Libgcrypt 1.2.2. Since
 this is a bugfix release, it does not include any new features...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q4/000205.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.9.19 (S/MIME and gpg-agent) released (2005-09-12 15:29:20)
@@ -621,39 +350,16 @@ of GnuPG featuring the S/MIME...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000204.html][{more}]]
 
 
-
-
-
-
-
-
-
-** GnuPG Explorer Extension (GPGee) version 1.2.1 released (2005-09-08
-14:41:58)
+** GnuPG Explorer Extension (GPGee) version 1.2.1 released (2005-09-08 14:41:58)
 
 Version 1.2.1 of GPGee has now been released and is available at...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000203.html][{more}]]
 
 
-
-
-
-
-
-
-
-** GnuPG Explorer Extension (GPGee) version 1.2.0 released (2005-09-06
-16:09:57)
+** GnuPG Explorer Extension (GPGee) version 1.2.0 released (2005-09-06 16:09:57)
 
 Version 1.2.0 of GPGee has been released - head to the homepage at...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000202.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GPGee version 1.1.2 - Important Security Update (2005-07-30 00:29:18)
@@ -663,13 +369,6 @@ identified security issue...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000201.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.4.2 released (2005-07-27 09:53:27)
 
 We are pleased to announce the availability of a new stable GnuPG
@@ -677,25 +376,11 @@ release: Version 1.4.2 ...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000200.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GPGee (GnuPG Explorer Extension) version 1.1.1 (2005-07-18 04:58:16)
 
 I have released version 1.1.1 of GPGee. This is a minor update to 1.1 to
 answer a couple user...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q3/000199.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Second release candidate for GnuPG 1.4.2 available (2005-06-21 16:44:35
@@ -706,13 +391,6 @@ for the forthcoming 1.4.2 version of gnupg...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000198.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.9.17 (S/MIME and gpg-agent) released (2005-06-20 21:58:24 CET)
 
 We are pleased to announce the availability of GnuPG 1.9.17; the
@@ -720,26 +398,11 @@ development branch of GnuPG featuring the S/MIME protocol...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000196.html][{more}]]
 
 
-
-
-
-
-
-
-
-** First release candidate for GnuPG 1.4.2 available (2005-05-31 14:27:33
-CET)
+** First release candidate for GnuPG 1.4.2 available (2005-05-31 14:27:33 CET)
 
 We are pleased to announce the availability of a release candidate for
 the forthcoming 1.4.2 version of gnupg...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000195.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.9.16 (S/MIME) released (2005-04-21 17:23:56 CET)
@@ -749,25 +412,11 @@ development branch of GnuPG featuring the S/MIME protocol...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000194.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.4.1 News (2005-03-15 17:53:36 CET)
 
 We are pleased to announce the availability of a new stable GnuPG
 release: Version 1.4.1...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000192.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Smartcard daemon and gpg's S/MIME cousin gpgsm (2005-02-23 12:43:27 CET)
@@ -777,25 +426,11 @@ all ancient...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q2/000177.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Attack against OpenPGP encryption (2005-02-11 02:00:17 CET)
 
 Last night, Serge Mister and Robert Zuccherato published a paper
 reporting on an attack against OpenPGP symmetric encryption...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Libgcrypt 1.2.1 released (2005-01-09 15:03:22 CET)
@@ -805,20 +440,11 @@ this is a bugfix release, it does not include any new features...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000189.html][{more}]]
 
 
-
-
 ** GnuPG 1.2.7 released (2004-12-28 11:54:32 CET)
 
 As promised in the announcement of GnuPG 1.4.0, we are now pleased to
 announce the availability GnuPG 1.2.7...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000188.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** Updated GnuPG 1.4.0 Windows binary (2004-12-16 22:17:10 CET)
@@ -829,25 +455,11 @@ version...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000187.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG stable 1.4 released (2004-12-16 18:24:48 CET)
 
 We are pleased to announce the availability of the new stable GnuPG
 series. This first release is version 1.4.0...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000186.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.3.93 released (2004-12-14 11:06:45 CET)
@@ -858,13 +470,6 @@ candidate...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000185.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** sha1sum for MS Windows released (2004-12-09 17:16:22 CET)
 
 In the light of the recently found weaknesses in the MD5 hash function
@@ -873,25 +478,11 @@ Instead SHA-1 checksums will be given...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000184.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** News available as in RSS 2.0 format (2004-11-25 22:49:58 CET)
 
 As of today, the latest ten news from GnuPG's are available as RSS 2.0
 compliant feed. Just point or paste the [[news.en.rss][RSS file]] into
 your aggregator.
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.3.92 released (development) (2004-10-28 14:30:58 CEST)
@@ -902,25 +493,11 @@ become the new stable release of...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000183.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GPGME 1.0.1 released (2004-10-22 21:27:47 CEST)
 
 We are pleased to announce version 1.0.1 of GnuPG Made Easy, a library
 designed to make access to GnuPG easier for...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000181.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.3.91 released (development) (2004-10-16 14:46:21 CEST)
@@ -931,25 +508,11 @@ become the new stable release of...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000180.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** Building GnuPG for Win32 using MinGW (2004-10-12)
 
 A new link to Carlo Luciano Bianco's page has been added under the
-[[download/index.en.html][download section]] . The detailed document is
+[[download/index][download section]] . The detailed document is
 dedicated to Windows users and explains how to build GnuPG using MinGW.
-
-
-
-
-
-
-
 
 
 ** GnuPG Subkeys MiniHOWTO (2004-10-11)
@@ -961,25 +524,11 @@ the office is compromised...
 [[documentation/howtos.en.html#GnuPG-Subkeys][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.90 released (development) (2004-10-02 15:47:23 CEST)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch to create what will...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q4/000179.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GPGME 1.0.0 released (2004-09-30 18:07:54 CEST)
@@ -989,25 +538,11 @@ designed to make access to GnuPG easier for...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000178.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.2.6 released (2004-08-26 12:07:34 CEST)
 
 We are pleased to announce the availability of a new stable GnuPG
 release: Version 1.2.6. The GNU Privacy Guard (GnuPG) is...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000176.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.5 build instruction update (2004-07-27)
@@ -1017,25 +552,11 @@ little annoying bug will disturb...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000173.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.2.5 released (2004-07-27)
 
 We are pleased to announce the availability of a new stable GnuPG
 release: Version 1.2.5. The GNU Privacy Guard (GnuPG) is...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000171.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.5 second release candidate (2004-06-16)
@@ -1045,26 +566,12 @@ candidate for GnuPG 1.2.5...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q2/000169.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.6 released (development) (2004-05-22 18:07:54 CEST)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch to create what will eventually
 become GnuPG 1.4. It will change with greater frequency...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q2/000168.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** First U.S. mirror available (2004-05-06)
@@ -1077,25 +584,11 @@ the U.S. Department of Commerce about
 that more mirrors will follow.
 
 
-
-
-
-
-
-
-
 ** Libgcrypt 1.2.0 released (2004-04-16)
 
 We are pleased to announce the availability of Libgcrypt 1.2.0, which is
 the first stable release of this general purpose crypto library...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q2/000167.html][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.5 first release candidate (2004-03-29)
@@ -1105,22 +598,11 @@ candidate for GnuPG 1.2.5...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q1/000166.html][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.5 released (development) (2004-02-26)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch to create what will...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2004q1/000165.html][{more}]]
-
-
-
-
 
 
 ** GnuPG 1.2.4 released (2003-12-24)
@@ -1130,25 +612,11 @@ release: Version 1.2.4. The GNU Privacy Guard (GnuPG) is...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.4 released (development) (2003-11-27)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch to create what will...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.3 patch to remove ElGamal signing keys (2003-11-27)
@@ -1158,25 +626,11 @@ create signatures using the ElGamal sign+encrypt...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG's ElGamal signing keys compromised (2003-11-27)
 
 A severe problem with ElGamal sign+encrypt keys has been found. This
 leads to a full compromise of the private key. Fortunately...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** Libgcrypt 1.1.44 released (2003-11-01)
@@ -1186,24 +640,10 @@ purpose cryptography library based on...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** RISC OS port (2003-10-28)
 
 The [[download][Download section]] now includes a link to Stefan
 Bellon's page who ported GnuPG to the RISC OS platform.
-
-
-
-
-
-
-
 
 
 ** GPA 0.7.0 released (2003-10-22)
@@ -1213,25 +653,11 @@ frontend for the GNU Privacy Guard...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.3 released (development) (2003-10-10)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** HTTP access to FTP server dismissed (2003-09-22)
@@ -1242,26 +668,12 @@ server. All the files are thus only available from
 [[ftp://ftp.gnupg.org/]] via FTP.
 
 
-
-
-
-
-
-
-
 ** A Practical Introduction to GPG in Windows (2003-08-22)
 
 The documentation section now contains a
 [[documentation/guides.en.html#GPG-Win][new guide]] from Brendan Kidwell
 which will hopefully help out Windows users who couldn't get the thing
 to work.
-
-
-
-
-
-
-
 
 
 ** GnuPG one-two-three released (2003-08-22)
@@ -1271,25 +683,11 @@ release: Version 1.2.3...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q3/][{more}]]
 
 
-
-
-
-
-
-
-
 ** Libgcrypt 1.1.42 released (2003-07-31)
 
 We are pleased to announce version 1.1.42 of Libgcrypt, a general
 purpose cryptography library...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q3/][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.3 second release candidate (2003-07-30)
@@ -1299,13 +697,6 @@ candidate for GnuPG 1.2.3...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q3/][{more}]]
 
 
-
-
-
-
-
-
-
 ** OpenPGP Smartcards (2003-07-07)
 
 The new OpenPGP smartcards for GnuPG will be shown the first time at the
@@ -1313,26 +704,11 @@ The new OpenPGP smartcards for GnuPG will be shown the first time at the
 largest GNU/Linux exhibition (booth G24).
 
 
-
-
-
-
-
-
-
 ** GnuPG Keysigning Party HOWTO (2003-06-16)
 
 Documentation section can now count a new entry among its HOWTOs. It is
 a valuable source of information for understanding and organizing a
-[[documentation/howtos.en.html#GnuPG-Keysigning-Party][GnuPG keysigning
-party]] .
-
-
-
-
-
-
-
+[[documentation/howtos.en.html#GnuPG-Keysigning-Party][GnuPG keysigning party]] .
 
 
 ** GnuPG 1.3.2 released (2003-05-27)
@@ -1343,25 +719,11 @@ release...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q2/][{more}]]
 
 
-
-
-
-
-
-
-
 ** Key validity bug in GnuPG 1.2.1 and earlier (2003-05-04)
 
 As part of the development of GnuPG 1.2.2, a bug was discovered in the
 key validation code. This bug causes keys with more than one user ID...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q2/][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.2 released (2003-05-03)
@@ -1371,13 +733,6 @@ release: Version 1.2.2...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q2/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG.org/(it) 1.0 (2003-04-23)
 
 Version 1.0 of this site's Italian translation has been released. - È
@@ -1385,24 +740,10 @@ stata rilasciata la versione 1.0 della traduzione italiana di questo
 sito.
 
 
-
-
-
-
-
-
-
 ** New revision of GPH French translation (2003-04-17)
 
 Thanks to Jean-francois for the new French revision of
 [[documentation/guides.en.html#gph][The GNU Privacy Handbook]] .
-
-
-
-
-
-
-
 
 
 ** The No-War banner (2003-04-08)
@@ -1413,24 +754,10 @@ invite you to read more on our mailing-list.
 [[http://lists.gnupg.org/pipermail/gpgweb-devel/2003q1/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG.org/(es) 0.9 (2003-02-19)
 
 Ha visto la luz la versión 0.9 de la traducción al castellano de este
 sitio. - Version 0.9 of this site spanish translation has been released.
-
-
-
-
-
-
-
 
 
 ** GPA 0.6.1 released (2003-02-03)
@@ -1439,31 +766,18 @@ We are pleased to announce the release of GPA 0.6.1
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q1/][{more}]]
 
 
-
-
-
-
-
-
-
 ** Libgcrypt 1.1.12 released (2003-01-20)
 
 I am pleased to announce a new Beta version of Libgcrypt, GNU's
 implementation of basic crypto functions. Libgcrypt is a general...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2003q1/][{more}]]
 
+
 ** GPA 0.6.0 released (2002-12-24)
 
 We are pleased to announce the release of GPA 0.6.0. GPA is a graphical
 frontend for the GNU Privacy Guard...
 [[gpa-dev/2002-December/index][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG signature key update and X-Request-PGP (2002-12-23)
@@ -1473,25 +787,11 @@ have extended the lifetime of this key for another...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GPGME 0.4.0 released (2002-12-23)
 
 We are pleased to announce version 0.4.0 of GnuPG Made Easy, a library
 designed to make access to GnuPG easier for...
 [[gpa-dev/2002-December/index][{more}]]
-
-
-
-
-
-
-
 
 
 ** Libgcrypt 1.1.11 released (2002-12-22)
@@ -1502,24 +802,11 @@ from GnuPG and...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** gnupg.org 1.1 released (2002-12-15)
 
 New site look has gained several positive critical comments since
 revision 1.0 was out, but many bugs were also reported. This revision
 tries to fix the most part of them.
-
-
-
-
-
-
 
 
 
@@ -1530,25 +817,11 @@ some problems. This has been fixed and a new version...
 [[gpa-dev/2002-December/index][{more}]]
 
 
-
-
-
-
-
-
-
 ** newpg 0.9.4 released (2002-12-04)
 
 I have just released newpg 0.9.4. NewPG is the S/MIME variant of GnuPG
 which does also include the gpg-agent, useful even for...
 [[gpa-dev/2002-December/index][{more}]]
-
-
-
-
-
-
-
 
 
 ** cryptplug 0.3.14 released (2002-12-04)
@@ -1558,25 +831,11 @@ cryptplug is required for GnuPG and S/MIME support under KDE...
 [[gpa-dev/2002-December/index][{more}]]
 
 
-
-
-
-
-
-
-
 ** gpgme 0.3.14 released (2002-12-04)
 
 We have released gpgme 0.3.14. This version fixes a segv and a race
 condition with locales. gpgmeplug is not anymore included...
 [[gpa-dev/2002-December/index][{more}]]
-
-
-
-
-
-
-
 
 
 ** New look-and-feel site released to the public (2002-12-01)
@@ -1586,25 +845,11 @@ first revision of the new site look-and-feel was released today. Site is
 available in english only for now.
 
 
-
-
-
-
-
-
-
 ** OpenCDK 0.3.3 (2002-11-25)
 
 This is the first public announcement for OpenCDK. It is a library to
 provide some basic parts of the OpenPGP Message Format...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** Pyme -- Python OO interface to GPGME (2002-11-20)
@@ -1614,37 +859,16 @@ bindings for GPGME....
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.1 released (development) (2002-11-12)
 
 The latest release from the development branch of GnuPG is ready for
 public consumption. This is a branch to create what will...
 
 
-
-
-
-
-
-
-
 ** GPGRemail v0.1 initial announcement (2002-11-06)
 
 GPGRemail is a minimalistic mailinglist software, meant for small,
 private, mailinglists that require strong cryptography via...
-
-
-
-
-
-
-
 
 
 ** RPMs (2002-10-28)
@@ -1654,25 +878,11 @@ I've uploaded src and mdk 9.0 packages. The latter...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.2.1 Windows update released (2002-10-26)
 
 Due to a bug in the recent mingw32/cpd toolkit the latest GnuPG binary
 for Windows did not work on Windows NT. I have build...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.1 has been released (2002-10-25)
@@ -1682,25 +892,11 @@ of changes]] and then go to the [[download/index.en.html][download
 instructions]] .
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.3.0 released (development) (2002-10-18)
 
 The first release from the new development branch of GnuPG is ready for
 public consumption. This is a branch to create what...
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.2.0 released (2002-09-21)
@@ -1709,23 +905,9 @@ Far too many enhancements to be listed here, please see the
 [[http://lists.gnupg.org/pipermail/gnupg-announce/2002q3/000252.html][announcement mail]] .
 
 
-
-
-
-
-
-
-
 ** New site (2002-06-20)
 
 Developmenent of the site new look and feel has started.
-
-
-
-
-
-
-
 
 
 ** ftp.gnupg.org HTTP access (2002-05-08)
@@ -1734,25 +916,10 @@ Developmenent of the site new look and feel has started.
 HTTP.
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.0.7 released (2002-04-29)
 
 Far too many enhancements to be listed here, please see the
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2002q2/000251.html][announcement
-mail]] .
-
-
-
-
-
-
-
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2002q2/000251.html][announcement mail]] .
 
 
 ** GPA 0.4.3 released (2002-01-14)
@@ -1760,46 +927,19 @@ mail]] .
 [[related_software/gpa/index.en.html][GPA]] 0.4.3 has been released.
 
 
-
-
-
 ** GPA pages (2001-11-15)
 
-[[related_software/gpa/index.en.html][GPA pages]] reflect latest
-released version (gpa-0.4.2) now.
-
-
-
-
-
-
-
+[[related_software/gpa/index.en.html][GPA pages]] reflect latest released version (gpa-0.4.2) now.
 
 
 ** GnuPG 1.0.6 released (2001-05-29)
 
-See the [[download/release_notes.en.html#news-2001-05-29][release note]]
-.
-
-
-
-
-
-
-
+See the [[download/release_notes.en.html#news-2001-05-29][release note]].
 
 
 ** GnuPG 1.0.5 for W32 released (2001-05-02)
 
 Released GnuPG 1.0.5 binary for W32.
-
-
-
-
-
-
-
-
 
 ** GnuPG 1.0.5 released (2001-04-29)
 
@@ -1813,26 +953,10 @@ Released GnuPG 1.0.5 binary for W32.
 -  The usual fixes and other enhancements.
 
 
-
-
-
-
-
-
-
-
-
 ** New CVS access instructions (2001-04-18)
 
 Changed the instructions for CVS access and add a list of available
 modules.
-
-
-
-
-
-
-
 
 
 ** GnuPG Tools (2001-04-03)
@@ -1840,23 +964,9 @@ modules.
 Add a new webpage about GnuPG tools.
 
 
-
-
-
-
-
-
-
 ** News about gnupg.de (2001-03-28)
 
 News flash about [[http://www.gnupg.de][www.gnupg.de]] .
-
-
-
-
-
-
-
 
 
 ** Link to Phil Zimmermann (2001-03-24)
@@ -1864,18 +974,9 @@ News flash about [[http://www.gnupg.de][www.gnupg.de]] .
 Add a link to [[http://web.mit.edu/~prz][Phil Zimmermann]] 's homepage.
 
 
-
-
-
-
-
-
-
 ** New page about GPGME (2001-02-22)
 
 Add a page about [[related_software/gpgme/index.en.html][GPGME]] .
-
-
 
 
 ** Patch for GnuPG 1.0.4 released (2000-11-30)
@@ -1884,36 +985,15 @@ Fixed a serious bug which could lead to false positives when checking
 detached signatures.
 
 
-
-
-
-
-
-
-
 ** New web design (2000-10-26)
 
 New design of these web pages.
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.0.4 W32 released (2000-10-23)
 
 Pre-compiled version of [[download/index.en.html][GnuPG 1.0.4]] for
 Windows released.
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.0.4 (2000-10-17)
@@ -1925,39 +1005,16 @@ Windows released.
 -  Rijndael (AES) is now supported.
 
 
-
-
-
-
-
-
-
-
-
 ** German GPH (2000-10-06)
 
 Put the [[documentation/guides.en.html#gph][German version]] of the GPH
 online.
 
 
-
-
-
-
-
-
-
 ** Secure Telephony (2000-09-27)
 
 Add a link about secure telephony and a pointer to a Japanese
 translation of RFC2440.
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.0.3 released (2000-09-20)
@@ -1968,25 +1025,9 @@ translation of RFC2440.
 -  The usual fixes and other enhancements.
 
 
-
-
-
-
-
-
-
-
-
 ** FAQ (2000-09-06)
 
 Add a [[documentation/faqs.en.html][FAQ]] .
-
-
-
-
-
-
-
 
 
 ** Site improvements (2000-08-28)
@@ -1995,23 +1036,9 @@ Add a short menu to the top of the docs page. Add a note about the PGP
 ARR problem.
 
 
-
-
-
-
-
-
-
 ** Links to GPH (2000-08-08)
 
 Put links to the GPH into the doc webpage.
-
-
-
-
-
-
-
 
 
 ** Italian web site (2000-08-02)
@@ -2019,23 +1046,9 @@ Put links to the GPH into the doc webpage.
 Italian translation of the web pages.
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.0.2 released (2000-07-12)
 
 A lot of fixes and enhancements.
-
-
-
-
-
-
-
 
 
 ** Pages about PGA (2000-06-29)
@@ -2043,23 +1056,9 @@ A lot of fixes and enhancements.
 Add some pages about the [[related_software/gpa/][GPA]].
 
 
-
-
-
-
-
-
-
 ** Two new supported OSes (2000-03-20)
 
 Add 2 OSes to the list of supported systems.
-
-
-
-
-
-
-
 
 
 ** CVS access (2000-03-15)
@@ -2068,23 +1067,9 @@ Add 2 OSes to the list of supported systems.
 the CVS tree of GnuPG and related projects.
 
 
-
-
-
-
-
-
-
 ** GnuPG 1.0.1 released (1999-12-16)
 
 Bug fixes and small enhancements.
-
-
-
-
-
-
-
 
 
 ** GnuPG 1.0.0 released (1999-09-07)
@@ -2092,35 +1077,14 @@ Bug fixes and small enhancements.
 Released the first production version.
 
 
-
-
-
-
-
-
-
 ** GnuPG 0.9.11 released (1999-09-03)
 
 Some more fixes and cleanups.
 
 
-
-
-
-
-
-
-
 ** GnuPG 0.9.10 released (1999-08-04)
 
 Minor bug fixes.
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.9.9 released (1999-07-23)
@@ -2185,30 +1149,12 @@ Bug fixes.
 -  Fixed some bugs.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.4.5 released (1998-12-08)
 
 -  Brazilian translation.
 -  Improved key import.
 -  Loadable random gathering stuff.
 -  Files are now locked during updates.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.4.4 released (1998-11-20)
@@ -2219,30 +1165,12 @@ Bug fixes.
 -  New feature to support signed patch files.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.4.3 released (1998-11-08)
 
 -  Russian translation.
 -  Now lists all matching names.
 -  Experimental support for keyrings store in GDBM files.
 -  Many bug fixes.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.4.1 released (1998-10-07)
@@ -2252,28 +1180,10 @@ Bug fixes.
 -  PGP 5 passphrase are now working.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.4.0 released (1998-09-18)
 
 -  Fixed a serious Bug in 0.3.5.
 -  Added 3DES.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.3.5 released (1998-09-14)
@@ -2284,43 +1194,17 @@ Bug fixes.
 -  Blowfish weak key detection mechanism.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.3.4 released (1998-08-11)
 
 Relased revision 0.3.4.
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.3.3 released (1998-08-08)
 
 -  Alternate user IDs.
 -  A menu to sign, add, remove user ids and other tasks.
--  [[http://www.counterpane.com/twofish.html][Twofish]] as a new
-   experimental cipher algorithm.
+-  [[http://www.counterpane.com/twofish.html][Twofish]] as a new experimental cipher algorithm.
 -  Ability to run as a coprocess; this is nice for frontends.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.3.2 released (1998-07-09)
@@ -2328,26 +1212,10 @@ Relased revision 0.3.4.
 Bug fixes.
 
 
-
-
-
-
-
-
-
 ** GnuPG 0.3.1 released (1998-07-06)
 
 -  Bug fixes.
 -  More in compliance with OpenPGP.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.3.0 released (1998-06-25)
@@ -2358,14 +1226,6 @@ Bug fixes.
 -  Key generation defaults to DSA/ElGamal keys, so that new keys are
    interoperable with pgp5.
 -  Support for dynamic loading of new algorithms.
-
-
-
-
-
-
-
-
 
 
 
@@ -2381,30 +1241,12 @@ Bug fixes.
 -  Some new features for better integration into MUAs.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.2.18 released (1998-05-15)
 
 -  Add key generation for DSA and v4 signatures.
 -  Fixed a small bug in the key generation.
 -  New option =--compress-algo 1= to allow the creation of compressed
    messages which are readable by PGP.
-
-
-
-
-
-
-
-
-
 
 
 ** GnuPG 0.2.17 released (1998-05-04)
@@ -2416,14 +1258,6 @@ Bug fixes.
 
 
 
-
-
-
-
-
-
-
-
 ** GnuPG 0.2.16 released (1998-04-28)
 
 -  Experimental support for TIGER/192.
@@ -2431,31 +1265,11 @@ Bug fixes.
    mode.
 
 
-
-
-
-
-
-
-
-
-
 ** GnuPG 0.2.15 released (1998-04-09)
 
 -  Fixed a bug with the old checksum calculation for secret keys.
 -  CAST5 works (using PGP's strange CFB mode).
 
-
-
-
-
-
-
-
 ** GnuPG 0.0.0 released (1997-12-20)
 
 First release.
-
-
-
-

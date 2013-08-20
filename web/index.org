@@ -1,4 +1,8 @@
+#+STARTUP: showall
+#+SETUPFILE: "setup.inc"
+
 * The GNU Privacy Guard
+
 
 GnuPG is the [[http://www.gnu.org/][GNU project]]'s complete and free implementation of the
 OpenPGP standard as defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]]. GnuPG allows to encrypt and
@@ -13,9 +17,9 @@ GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning 
 be freely used, modified and distributed under the terms of the [[http://www.gnu.org/copyleft/gpl.html][GNU
 General Public License]] .
 
-GnuPG comes in two flavours: [[download][1.4.12]] is the well known and portable
-standalone version, whereas [[download][2.0.19]] is the enhanced and somewhat harder
-to build version.
+GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the well known and
+portable standalone version, whereas [[download][{{{gnupg_ver}}}]] is the enhanced
+and somewhat harder to build version.
 
 Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG. It is nicely
 integrated into an installer and features several frontends as well as
@@ -27,23 +31,124 @@ integrated into an installer and features all required tools.
 Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
 
 
-** Latest news
+* Latest news
 
-The following frames report the latest news from GnuPG. A list with
-all the [[news.en.html][news of the current year]] is also available.
+The following frames report the latest news from GnuPG.  A list with
+all [[news.org][news of previous years]] is also available.
 
-For those of you who like reading world's news with an RSS reader,
-GnuPG's latest news are also available as
-[[http://feedvalidator.org/check.cgi?url=http://www.gnupg.org/news.en.rss][RSS
-2.0 compliant]] feed. Just point or paste the [[news.en.rss][RSS file]] into your
-aggregator.
+For those of you who like reading world’s news with an RSS reader,
+GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
+point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
-*** GnuPG 2.0.19 released (2012-03-27 11:22:13)
+** GnuPG 2.0.21 released (2013-08-19)
+
+We are pleased to announce the availability of GnuPG 2.0.21. ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000332.html][{more}]]
+
+
+** Security update for GnuPG (2013-07-25)                         :important:
+
+We are pleased to announce the availability of a new stable GnuPG
+release: Version 1.4.14 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html][{more}]]
+
+
+** Security update for Libgcrypt (2013-07-25)                     :important:
+
+We are pleased to announce the availability of a new stable Libgcrypt
+release: Version 1.5.3 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html][{more}]]
+
+
+** GnuPG 2.0.20 released (2013-05-10 18:59:01)
+
+We are pleased to announce the availability of GnuPG 2.0.20. ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q2/000328.html][{more}]]
+
+
+** GnuPG 1.4.13 released  (2012-12-20 21:51:56)
+
+We are pleased to announce the availability of a new stable GnuPG
+release: Version 1.4.13 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q4/000319.html][{more}]]
+
+
+** GnuPG 2.0.19 released (2012-03-27 11:22:13)
 
 We are pleased to announce the availability of GnuPG 2.0.19. ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html][more]]
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html][{more}]]
 
-#Copyright (C) 2002-2004 Free Software Foundation, Inc.
+** GnuPG 1.4.12 released (2012-01-30 17:39:22)
+
+We are pleased to announce the availability of a new stable GnuPG
+release: Version 1.4.12 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000313.html][{more}]]
+
+
+
+# Copyright (C) 2002-2004 Free Software Foundation, Inc.
 #
-#Written by Werner Koch (2007-02-01).
+# Written by Werner Koch (2007-02-01).
+# www.d.shuttle.de/isil/gnupg:  1998, 1999, then switched to FSF copyright.
+
+
+
+* COMMENT
+This is the publishing info used for the GnuPG pages
+#+begin_src emacs-lisp
+(progn
+ (require 'gpgweb "../tools/gpgweb.el")
+ (setq org-export-html-toplevel-hlevel 1)
+ (setq org-export-html-coding-system 'utf-8)
+
+ (aput 'org-publish-project-alist "gpgweb-org"
+ '(:base-directory "."
+   :base-extension "org"
+   :language "en"
+   :html-extension "html"
+   :publishing-directory "../stage"
+   :publishing-function gpgweb-org-to-html
+   :body-only t
+   :section-numbers nil
+   :tags nil
+   :table-of-contents nil
+   :auto-sitemap t
+   :sitemap-title "GnuPG - Sitemap"
+   :style-include-default nil
+   :timestamp-file t
+   :style "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"
+   :html-preamble "<div id=\"header\">&nbsp;</div>
+<div id=\"leftColumn\">
+  <div id=\"navigation\">
+  <ul>
+    <li><a href=\"index.html\"   @MENU-ACTIVE@>home</a></li>
+    <li><a href=\"sitemap.html\" @MENU-ACTIVE@>sitemap</a></li>
+    <li><a href=\"contact.html\" @MENU-ACTIVE@>contact</a></li>
+  </ul>
+  </div>
+</div>
+<div id=\"mainText\">"
+   :html-postamble "</div>
+<div id=\"cpyright\">
+  These web pages are Copyright 1998--2013 The GnuPG Project and
+  licensed under a
+  <a rel=\"license\"
+     href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
+   >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
+   <a href=\"copying.html\">copying<a/> for details.
+</div>"))
+
+
+ (aput 'org-publish-project-alist "gpgweb-other"
+ '(:base-directory "."
+   :base-extension "jpg\\|png\\|css"
+   :recursive t
+   :publishing-directory "../stage"
+   :publishing-function org-publish-attachment
+   :completion-function gpgweb-upload))
+
+ (aput 'org-publish-project-alist "gpgweb"
+ '(:components ("gpgweb-org" "gpgweb-other"))))
+
+#+end_src
