@@ -34,7 +34,7 @@
                under the GNU General Public License.
    -  [[http://www.tech-faq.com/gnupg-shell.shtml][GnuPG Shell]] :: GnuPG Shell is a cross-platform graphical
                      frontend for GnuPG.
-   -  [[gpa/index.en.html][GPA]] :: Aims to be the standard GnuPG graphical frontend. [[gpa/index.en.html][GPA]] is
+   -  [[file:gpa/index.org][GPA]] :: Aims to be the standard GnuPG graphical frontend. [[gpa/index.en.html][GPA]] is
              hosted on this site.
    -  [[http://devel-home.kde.org/~kgpg/][KGpg]] :: Is a KDE frontend for GnuPG.
    -  [[http://seahorse.sf.net/][Seahorse]] :: Is a GNOME frontend for GnuPG.

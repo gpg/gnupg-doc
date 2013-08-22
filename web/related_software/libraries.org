@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+SETUPFILE: "../share/share/setup.inc"
+#+SETUPFILE: "../share/setup.inc"
 
 * Libraries
 

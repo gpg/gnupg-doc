@@ -1,3 +1,5 @@
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
 
 * Legal Issues
 
@@ -11,7 +13,3 @@ Note that in January 2000, the US Department of Commerce relaxed the
 rules about [[http://www.crypto.com/exports/][exporting]] cryptography, in particular for free software
 projects.
 
-
-#Copyright (C) 2002-2004 Free Software Foundation, Inc.
-#
-# Written by Werner Koch (2002-11-09 13:03).

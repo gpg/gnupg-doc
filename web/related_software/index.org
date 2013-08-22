@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+SETUPFILE: "../share/share/setup.inc"
+#+SETUPFILE: "../share/setup.inc"
 
 * Related software
 
@@ -18,13 +18,13 @@
   requirement (a good checkpoint is the [[http://directory.fsf.org/][ FSF/UNESCO Free Software
   Directory]]) please let us know by contacting the [[mailto:webmaster@gnupg.org][webmaster]] .
 
-  -  [[frontends.org][Frontends]] :: This category collects together all the software for
+  -  [[file:frontends.org][Frontends]] :: This category collects together all the software for
                   various platforms which relays on GnuPG command line
                   and provides some sort of easy-to-use user
                   interface.
-  -  [[tools.org][Tools]] :: Under this link you'll find tools mostly used to manage
+  -  [[file:tools.org][Tools]] :: Under this link you'll find tools mostly used to manage
               GnuPG keys.
-  -  [[libraries.org][Libraries]] :: This page hosts projects which aim is to build an
+  -  [[file:libraries.org][Libraries]] :: This page hosts projects which aim is to build an
                   abstraction layer for who wants to painlessly add
                   GnuPG capabilities to their software.
 

@@ -1,3 +1,6 @@
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
 * Support
 
 As part of the GNU project, GnuPG is community developed, and everyone

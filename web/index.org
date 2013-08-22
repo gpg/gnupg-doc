@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+SETUPFILE: "setup.inc"
+#+SETUPFILE: "share/setup.inc"
 
 * The GNU Privacy Guard
 

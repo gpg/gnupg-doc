@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+SETUPFILE: "../setup.inc"
+#+SETUPFILE: "../share/setup.inc"
 #+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][integrity]].
 
 

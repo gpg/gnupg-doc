@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+SETUPFILE: "../setup.inc"
+#+SETUPFILE: "../share/setup.inc"
 #+macro: announce  [[http://lists.gnupg.org/pipermail/gnupg-announce/$1.html][Announcement]]
 
 * Release Notes
