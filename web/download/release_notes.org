@@ -1,0 +1,562 @@
+#+STARTUP: showall
+#+SETUPFILE: "../setup.inc"
+#+macro: announce  [[http://lists.gnupg.org/pipermail/gnupg-announce/$1.html][Announcement]]
+
+* Release Notes
+
+  Please read the NEWS file for a more complete list. {{{gnupg_ver}}
+  is the stable and modern version of GnuPG. (Version {{{gnupg1_ver}}}
+  is from the old GnuPG-1 series, which is still maintained and useful
+  on some platforms: It is smaller than versions from the GnuPG-2
+  series, easier to build and also better portable to ancient
+  platforms. In contrast to GnuPG-2 it comes with no support for
+  S/MIME, Secure Shell, or other tools useful for desktop
+  environments.
+
+** GnuPG-2
+
+*** GnuPG 2.0.21 (2013-08-19)
+
+    {{{announce(2013q3/000332)}}}
+
+*** GnuPG 2.0.20 (2013-05-10)
+
+    {{{announce(2013q2/000328)}}}
+
+*** GnuPG 2.0.19 (2012-03-27)
+
+    {{{announce(2012q1/000314)}}}
+
+*** GnuPG 2.0.18 (2011-08-04)
+
+    {{{announce(2011q3/000312)}}}
+
+*** GnuPG 2.0.17 (2011-01-13)
+
+    {{{announce(2011q1/000305)}}}
+
+*** GnuPG 2.0.16 (2010-07-19)
+
+    {{{announce(2010q3/000301)}}}
+
+
+*** GnuPG 2.0.15 (2010-03-09)
+
+    {{{announce(2010q1/000299)}}}
+
+
+*** GnuPG 2.0.14 (2009-12-21)
+
+
+    {{{announce(2009q4/000296)}}}
+
+
+*** GnuPG 2.0.13 (2009-09-04)
+
+
+    {{{announce(2009q3/000294)}}}
+
+
+*** GnuPG 2.0.12 (2009-06-17)
+
+
+    {{{announce(2009q2/000288)}}}
+
+
+*** GnuPG 2.0.11 (2009-03-03)
+
+
+    {{{announce(2009q1/000287)}}}
+
+
+*** GnuPG 2.0.10 (2009-01-12)
+
+
+    {{{announce(2009q1/000284)}}}
+
+*** GnuPG 2.0.8 (2007-12-20)
+
+
+    {{{announce(2007q4/000267)}}}
+
+
+*** GnuPG 2.0.7 (2007-09-10 19:18)
+
+
+    {{{announce(2007q3/000259)}}}
+
+
+*** GnuPG 2.0.6 (2007-08-16 17:48)
+
+
+    {{{announce(2007q3/000258)}}}
+
+
+*** GnuPG 2.0.5 (2007-07-06 12:46)
+
+
+    {{{announce(2007q3/000255)}}}
+
+
+*** GnuPG 2.0.4 (2007-05-09 13:02)
+
+
+    {{{announce(2007q2/000254)}}}
+
+*** GnuPG 2.0.3 (2007-03-08)
+
+
+    {{{announce(2007q1/000252)}}}
+
+
+*** GnuPG 2.0.1 (2006-11-29)
+
+
+    {{{announce(2006q4/000242)}}}
+
+
+*** GnuPG 2.0 (2006-11-13)
+
+
+    {{{announce(2006q4/000239)}}}
+
+
+*** GnuPG 1.9.92 (2006-10-11)
+
+    One of the last steps towards a 2.0 release.
+
+    {{{announce(2006q4/000236)}}}
+
+*** GnuPG 1.9.20 (2005-12-20)
+
+    The development branch of GnuPG featuring the S/MIME and the
+    gpg-agent.
+
+    {{{announce(2005q4/000209)}}}
+
+
+*** GnuPG 1.9.19 (2005-09-12)
+
+    The development branch of GnuPG featuring the S/MIME and the
+    gpg-agent.
+
+    {{{announce(2005q3/000204)}}}
+
+
+*** GnuPG 1.9.17 (S/MIME and gpg-agent) (2005-06-20)
+
+    The development branch of GnuPG featuring the S/MIME and the
+    gpg-agent.
+
+    {{{announce(2005q2/000196)}}}
+
+*** GnuPG 1.9.16 (S/MIME) (2005-04-21)
+
+    The development branch of GnuPG featuring the S/MIME and the
+    gpg-agent.
+
+    {{{announce(2005q2/000194)}}}
+
+
+** GnuPG-1
+
+*** GnuPG 1.4.14 (2013-07-25)                                     :important:
+
+    {{{announce(2013q3/000329)}}}
+
+
+*** GnuPG 1.4.13 (2012-12-20)
+
+    {{{announce(2012q4/000319)}}}
+
+*** GnuPG 1.4.12 (2012-01-30)
+
+    {{{announce(2012q1/000313)}}}
+
+
+*** GnuPG 1.4.11 (2010-10-18)
+
+    {{{announce(2010q4/000303)}}}
+
+
+*** GnuPG 1.4.10 (2009-09-02)
+
+    {{{announce(2009q3/000291)}}}
+
+
+*** GnuPG 1.4.8 (2007-12-20)
+
+    {{{announce(2007q4/000266)}}}
+
+
+*** GnuPG 1.4.5 (2006-08-01)
+
+    {{{announce(2006q3/000229)}}}
+
+*** GnuPG 1.4.4 (2006-06-25)
+
+    {{{announce(2006q2/000226)}}}
+
+*** GnuPG 1.4.3 (2006-04-03)
+
+    {{{announce(2006q2/000222)}}}
+
+*** GnuPG 1.4.2 (2005-07-27)
+
+    {{{announce(2005q3/000200)}}}
+
+
+*** GnuPG 1.2.7 (2004-12-28)
+
+    This is an update of the old stable branch..
+
+    {{{announce(2004q4/000188)}}}
+
+*** GnuPG stable 1.4.0 (2004-12-16)
+
+    This is the first relese of the new stable branch of GnuPG.
+
+    {{{announce(2004q4/000186)}}}
+
+
+*** GnuPG 1.3.93 (2004-12-14)
+
+   The latest and hopefully last release candidate for GnuPG 1.4 is
+   ready for public consumption.
+
+    {{{announce(2004q4/000185)}}}
+
+*** GnuPG 1.3.92 (2004-10-28)
+
+    This is from the development branch.
+
+    {{{announce(2004q4/000183)}}}
+
+
+*** GnuPG 1.3.91 (2004-10-16)
+
+    This is from the development branch.
+
+    {{{announce(2004q4/000180)}}}
+
+
+*** GnuPG 1.3.90  (2004-10-02)
+
+    This is from the development branch.
+
+
+*** GnuPG 1.2.6 (2004-08-26)
+
+    {{{announce(2004q3/000176)}}}
+
+*** GnuPG 1.2.5 (2004-07-27)
+
+    {{{announce(2004q3/000171)}}}
+
+*** GnuPG 1.3.6 (2004-05-22)
+
+    This is from the development branch.
+
+    {{{announce(2004q2/000168)}}}
+
+
+*** GnuPG 1.3.5 (2004-02-26)
+
+    This is from the development branch.
+
+    {{{announce(2004q1/000165)}}}
+
+*** GnuPG 1.2.4 (2003-12-24)
+
+    {{{announce(2003q4)}}}
+
+
+*** GnuPG 1.3.4 (2003-11-27)
+
+    This is from the development branch.
+
+    {{{announce(2003q4)}}}
+
+
+*** GnuPG 1.3.3 (2003-10-10)
+
+    This is from the development branch.
+
+    {{{announce(2003q4/)}}}
+
+*** GnuPG 1.2.3 (2003-08-22)
+
+    {{{announce(2003q3/][[more]]]
+
+*** GnuPG 1.3.2 (2003-05-27)
+
+    This is from the development branch.
+
+    {{{announce(2003q2/)}}}
+
+*** GnuPG 1.2.2 (2003-05-03)
+
+    {{{announce(2003q2/)}}}
+
+
+*** GnuPG 1.3.1 (2002-11-12)
+
+    This is from the development branch.
+
+
+*** GnuPG 1.2.1 for Windows  (2002-10-26)
+
+    This is an update of Windows binary release
+
+    {{{announce(2002q4/)}}}
+
+*** GnuPG 1.2.1  (2002-10-25)
+
+
+*** GnuPG 1.3.0 (2002-10-18)
+
+    This is the first release of a new development branch.
+
+    {{{announce(2002q4/)}}}
+
+*** GnuPG 1.2.0 (2002-09-21)
+
+    This is a new stable branch.
+
+    {{{announce(2002q3/000252)}}}
+
+
+*** GnuPG 1.0.7 (2002-04-29)
+
+    {{{announce(2002q2/000251)}}}
+
+
+*** GnuPG 1.0.6 (2001-05-29)
+
+
+*** GnuPG 1.0.5 for Windows (2001-05-02)
+
+    This is a binary release for Windows.
+
+*** GnuPG 1.0.5 (2001-04-29)
+
+    - The semantics of --verify have changed.
+    - Corrected hash calculation for input data larger than 512M.
+    - Large File Support is now working.
+    - A bunch of new options and commands.
+    - Keyserver support for the W32 version.
+    - Better handling of key expiration and subkeys.
+    - Estonian and Turkish translation.
+    - The usual fixes and other enhancements.
+
+*** Patch for GnuPG 1.0.4 (2000-11-30)
+
+    Fixed a serious bug which could lead to false positives when checking
+    detached signatures.
+
+
+*** GnuPG 1.0.4 for Windows (2000-10-23)
+
+
+*** GnuPG 1.0.3 (2000-09-20)
+
+   -  RSA support.
+   -  Supports the new MDC encryption packet.
+   -  Default options changed for better compatibility with PGP 7.
+   -  The usual fixes and other enhancements.
+
+*** GnuPG 1.0.2 (2000-07-12)
+
+    A lot of fixes and enhancements.
+
+*** GnuPG 1.0.1 (1999-12-16)
+
+    Bug fixes and small enhancements.
+
+*** GnuPG 1.0.0 (1999-09-07)
+
+    Released the first production version.
+
+*** GnuPG 0.9.11 (1999-09-03)
+
+    Some more fixes and cleanups.
+
+*** GnuPG 0.9.10 (1999-08-04)
+
+    Minor bug fixes.
+
+*** GnuPG 0.9.9 (1999-07-23)
+
+    -  Yet another chunk of options.
+    -  More bug fixes.
+
+*** GnuPG 0.9.8 (1999-06-26)
+
+    -  A couple of new options.
+    -  Yet another workaround for PGP2.
+    -  Other bug fixes.
+
+*** GnuPG 0.9.7 (1999-05-23)
+
+    -  Workarounds for a couple of PGP2 bugs.
+    -  Other bug fixes.
+
+
+*** GnuPG 0.9.6 (1999-05-06)
+
+    -  Bug fixes.
+    -  Subkey and signature revocations.
+
+*** GnuPG 0.9.5 (1999-03-20)
+
+    -  Bug fixes.
+    -  --recv-keys command
+
+*** GnuPG 0.9.4 (1999-03-08)
+
+    Bug fixes.
+
+*** GnuPG 0.9.3 (1999-02-19)
+
+   -  Bug fixes.
+   -  Some new options.
+
+*** GnuPG 0.9.2 (1999-01-20)
+
+    -  Bug fixes.
+    -  HKP keyserver support.
+
+*** GnuPG 0.9.1 (1999-01-01)
+
+    - Fixed some serious bugs.
+    - Some internal redesign.
+    - Polish language support.
+    - Setup a anonymous rsync server.
+
+*** GnuPG 0.9.0 (1998-12-23)
+
+    - Option to dash-escape "From" in clear text messages.
+    - Better support for unices without /dev/random.
+    - Fixed some bugs.
+
+*** GnuPG 0.4.5 (1998-12-08)
+
+    -  Brazilian translation.
+    -  Improved key import.
+    -  Loadable random gathering stuff.
+    -  Files are now locked during updates.
+
+*** GnuPG 0.4.4 (1998-11-20)
+
+    -  Spanish translation.
+    -  Fixed the way expiration dates are stored.
+    -  Key validation is now much faster and some more bugs fixed.
+    -  New feature to support signed patch files.
+
+*** GnuPG 0.4.3 (1998-11-08)
+
+    -  Russian translation.
+    -  Now lists all matching names.
+    -  Experimental support for keyrings store in GDBM files.
+    -  Many bug fixes.
+
+*** GnuPG 0.4.1 (1998-10-07)
+
+    -  Fixed a couple of bugs and add some more features.
+    -  Checked OpenPGP compliance.
+    -  PGP 5 passphrase are now working.
+
+*** GnuPG 0.4.0 (1998-09-18)
+
+    -  Fixed a serious Bug in 0.3.5.
+    -  Added 3DES.
+
+*** GnuPG 0.3.5 (1998-09-14)
+
+    -  Do not use this version!
+    -  Anonymous enciphered messages.
+    -  Building in another directory now work better.
+    -  Blowfish weak key detection mechanism.
+
+*** GnuPG 0.3.4 (1998-08-11)
+
+    Relased revision 0.3.4.
+
+*** GnuPG 0.3.3 (1998-08-08)
+
+    -  Alternate user IDs.
+    -  A menu to sign, add, remove user ids and other tasks.
+    -  [[http://www.counterpane.com/twofish.html][Twofish]] as a new
+       experimental cipher algorithm.
+    -  Ability to run as a coprocess; this is nice for frontends.
+
+*** GnuPG 0.3.2 (1998-07-09)
+
+    Bug fixes.
+
+*** GnuPG 0.3.1 (1998-07-06)
+
+    -  Bug fixes.
+    -  More in compliance with OpenPGP.
+
+*** GnuPG 0.3.0 (1998-06-25)
+
+    -  Major enhancements.
+    -  More complete v4 key support: Preferences and expiration time is set
+       into the self signature.
+    -  Key generation defaults to DSA/ElGamal keys, so that new keys are
+       interoperable with pgp5.
+    -  Support for dynamic loading of new algorithms.
+
+*** GnuPG 0.2.19 (1998-05-29)
+
+    -  Tiger has now the OpenPGP assigned number 6. Because the OID has
+       changed, old signatures using this algorithm can't be verified.
+    -  GnuPG now encrypts the compressed packed and not any longer in the
+       reverse order; anyway it can decrypt both versions.
+    -  =--add-key= works and you are now able to generate subkeys.
+    -  It is now possible to generate ElGamal keys in v4 packets to create
+       valid OpenPGP keys.
+    -  Some new features for better integration into MUAs.
+
+*** GnuPG 0.2.18 (1998-05-15)
+
+    -  Add key generation for DSA and v4 signatures.
+    -  Fixed a small bug in the key generation.
+    -  New option =--compress-algo 1= to allow the creation of compressed
+       messages which are readable by PGP.
+
+*** GnuPG 0.2.17 (1998-05-04)
+
+    -  More stuff for OpenPGP: Blowfish is now type 20, comment packets
+       moved to a private type, packet type 3 now prepends conventional
+       encryption packets.
+    -  Fixed a passphrase bug and some others.
+
+
+*** GnuPG 0.2.16 (1998-04-28)
+
+    -  Experimental support for TIGER/192.
+    -  Standard cipher is now Blowfish with 128 bit key in OpenPGP's
+       CFB mode.
+
+*** GnuPG 0.2.15 (1998-04-09)
+
+    -  Fixed a bug with the old checksum calculation for secret keys.
+    -  CAST5 works (using PGP's strange CFB mode).
+
+*** GnuPG 0.0.0 (1997-12-20)
+
+    First release.
+
+
+** Related Software
+
+*** GnuPG Explorer Extension (GPGee) 1.2.1  (2005-09-08)
+
+    {{{announce(2005q3/000203)}}}
+
+*** GnuPG Explorer Extension (GPGee) 1.2.0  (2005-09-06)
+
+    {{{announce(2005q3/000202)}}}
+

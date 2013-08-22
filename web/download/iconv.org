@@ -1,0 +1,42 @@
+#+STARTUP: showall
+#+SETUPFILE: "../setup.inc"
+
+* Installing iconv.dll
+
+  To support different languages and character sets, Microsoft Windows
+  versions of GnuPG make use of a DLL called “iconv.dll”. This DLL has
+  been written by the GNU project too and is used by several
+  applications ported from GNU/Linux to MS Windows systems.  If this
+  library has not yet been installed on your system, an error message
+  might have you taken to this page.  Please follow the instructions
+  below to install this library.
+
+  GnuPG has a fallback mechanism to work even without this DLL.
+  However, some texts may not show up correclty and when creating a
+  new key it might not be encoded correctly. Thus, unless you are
+  using the Latin-1 or UTF-8 character set, you should definitley
+  install the DLL before you create a new key or add a new user ID to
+  a key.
+
+  The DLL is available as a ZIP file at the address
+  [[ftp://ftp.gnupg.org/gcrypt/binary/libiconv-1.9.1.dll.zip][ftp://ftp.gnupg.org/gcrypt/binary/libiconv-1.9.1.dll.zip]].  You
+  should also get the [[ftp://ftp.gnupg.org/gcrypt/binary/libiconv-1.9.1.dll.zip.sig][corresponding ".sig" file]] and [[integrity_check.org][verify the
+  integrity]].  This DLL has been built from the source package
+  libiconv-1.9.1.tar.gz available at the same FTP sites.  We
+  distribute it separately for convenience and because GnuPG only
+  requires this DLL and not the other files from the binary
+  package. For copying conditions see the included file “COPYING.LIB”.
+
+  If you used the [[http://www.gpg4win.org][Gpgwin]] package to install GnuPG, you should never
+  see this message because this DLL will get installed.  However, it
+  might happen that such a DLL has been installed on your system by
+  another application and later be deinstalled. To rectify this,
+  simply re-install Gpg4win and your are done.
+
+  Note that starting with GnuPG version 2.0.21, this external DLL is
+  not anymore required.
+
+  To install this DLL, unzip it and copy the file “iconv.dll” to a
+  directory where you usually keep DLLs. If you don’t know such a
+  directory, it is safe to copy it into the same directory as the
+  "gpg.exe" file is stored.

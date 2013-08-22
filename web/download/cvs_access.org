@@ -1,0 +1,80 @@
+#+STARTUP: showall
+#+SETUPFILE: "../setup.inc"
+
+* GIT Access
+
+  The GnuPG development is tracked using the GIT disributed revision
+  control system.  A Public read-only GIT repository for GnuPG and
+  related projects is available.
+
+  This service is provided to help you in hunting bugs and not to
+  deliver stable snapshots; it may happen that it even does not
+  compile, so please don't complain.  GIT may put a high load on a
+  server, so please don't poll for new pushes too often. Instead, we
+  suggest you to subscribe to the [[http://lists.gnupg.org/mailman/listinfo/gnupg-commits/][commits mailing list]] .
+
+  There is a Web interface at [[http://git.gnupg.org/]] which can be used
+  to browse the GIT repository.
+
+  All repositories have been migrated to GIT from the old Subversion
+  (SVN) code management tool. The standard way you checkout from an
+  anonymous GIT is to clone the entire repository:
+
+#+BEGIN_EXAMPLE
+  git clone git://git.gnupg.org/gnupg.git
+#+END_EXAMPLE
+
+  You must run =scripts/autogen.sh= before doing the =./configure
+  --enable-maintainer-mode=, as this creates some needed files which
+  are not stored in the repository. =autogen.sh= should check that you
+  have all required tools installed. Please read the GIT manual pages
+  before doing so. The =master= revision is the development branch;
+  the stable 2.0 version (currently version {{{gnupg_ver}}}) is known
+  as =STABLE-BRANCH-2-0=; the stable 1.4 version of GnuPG
+  ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
+
+  Bug reports should go to the developers mailing list. See the page
+  on [[../documentation/mailing-lists.org][mailing lists]] .
+
+
+** Other Hosted Projects
+
+   The GnuPG GIT server also hosts some other projects in GIT
+   repositories; use the commands below to access them.
+
+   -  GPGME :: GnuPG Made Easy
+#+begin_example
+      git clone git://git.gnupg.org/gpgme.git
+#+end_example
+
+   -  Libgcrypt :: The GNU Crypto Library
+#+begin_example
+   git clone git://git.gnupg.org/libgcrypt.git
+#+end_example
+
+   -  GEAM :: GEAM Encrypts All Mail.
+#+begin_example
+   git clone git://git.gnupg.org/geam.git
+#+end_example
+
+** Old CVS Controlled Projects
+
+   There are also some CVS hosted projects; the normal way to access
+   them, is by doing a
+#+BEGIN_EXAMPLE
+   cvs -d :pserver:anoncvs@cvs.gnupg.org:/cvs/PROJECTNAME login
+#+END_EXAMPLE
+
+   with the password `anoncvs' and then checkout the sources using the
+   command given in the list below.
+
+   -  GPH :: The GNU Privacy Handbook
+#+BEGIN_EXAMPLE
+   cvs -z3 -d :pserver:anoncvs@cvs.gnupg.org:/cvs/gph co gph
+#+END_EXAMPLE
+
+   - www.gnupg.org ::  The old webpages
+#+BEGIN_EXAMPLE
+   cvs -z3 -d :pserver:anoncvs@cvs.gnupg.org:/cvs/gpgweb co gnupg-www
+#+END_EXAMPLE
+

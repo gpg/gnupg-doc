@@ -1,0 +1,58 @@
+#+STARTUP: showall
+#+SETUPFILE: "../setup.inc"
+
+* Supported Systems
+
+  NB: The information in this page is heavily outdated.  GnuPG works
+  very well on almost all 32 and 64 bit platforms.
+
+  GnuPG works fine on *GNU/Linux* with x86, alpha, mips, sparc64, m68k
+  or PowerPC CPUs. (x86 is the primary development system, the other
+  CPUs are only checked from time to time.)
+
+  It compiles okay on *GNU/Hurd* but because Mach has no random
+  device, it should not be used for real work. Work is underway to add
+  an random device.
+
+  *FreeBSD* with x86 CPU works fine.
+
+  There are pre-compiled packages for *OpenBSD* on: alpha amd64 arm
+  hppa i386 m68k m88k powerpc sparc sparc64 vax. We're certain it
+  works fine in i386, and suppose that on the others too.
+
+  *NetBSD* works fine (x86 CPU?).
+
+  *Windows* 95/98/NT/2000/ME/XP with x86 CPU works fine (you need a
+  special setup to build it).
+
+  64 bit versions of *Windows* are NOT supported. The source may build
+  but there is no guarantee that the resulting binaries do what you
+  expect them to do. We plan to work on it, iff there are enough
+  requests for it.
+
+  *[[http://www.symbolictools.de/public/pocketconsole/][PocketConsole]]* - a Windows NT-like console for the Pocket PC - is
+  supported.
+
+  *MacOS X* is also supported; please see [[http://macgpg.sf.net][macgpg.sf.net]] for detailed
+  information.
+
+  A port of GnuPG to *VMS* is available at
+  [[http://antinode.info/dec/sw/gnupg.html][http://antinode.info/dec/sw/gnupg.html]].
+
+** Other OSes
+
+   GnuPG compiles and runs on many more systems, but due to the lack
+   of a well tested entropy source, it /should be used with some
+   caution/. We have positive reports on these systems:
+
+   -  *AIX* v4.3
+   -  *BSDI* v4.0.1 with i386
+   -  *HPUX* v9.x, v10.x and v11.0 with HPPA CPU
+   -  *IRIX* v6.3 with MIPS R10000 CPU
+   -  *MP-RAS* v3.02
+   -  *OSF1* V4.0 with Alpha CPU
+   -  *OS/2* version 2
+   -  *SCO* UnixWare/7.1.0
+   -  *SunOS*, *Solaris* on Sparc and x86
+   -  *USL Unixware* v1.1.2
+
