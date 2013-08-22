@@ -1,0 +1,43 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+* GPA - Icons
+
+  Here it is described in detail what is the meaning of the icons that
+  you can find in GPA.
+
+** Sign
+
+   [[file:icons/sign.png]] With your secret key (always shown in yellow) you
+   can sign files or public keys. To check your signature people need
+   your public key (and of course they should trust it).
+
+** Encrypt
+
+   [[file:icons/encrypt.png]] With someone's public key you can encrypt a file.
+   Only the corresponding secret key can decrypt the file.
+
+** Decrypt
+
+   [[file:icons/decrypt.png]] With your secret key you can decrypt any document
+   that was encrypted for you (using your public key).
+
+** Keyring
+
+   [[file:icons/keyring.png]] In your public keyring you hold public keys of
+   people you want to send encrypted documents. The keyring also
+   supports you to judge the trust in other keys which ultimately
+   leads to trust identification for signatures you encounter in
+   files, emails and other documents.
+
+** Ownertrust
+
+   [[file:icons/dont_trust.png]]  [[file:icons/trust_fully.png]]
+   [[file:icons/trust_marginally.png]]  [[file:icons/trust_unknown.png]]
+
+   This value describes your opinion about the other ones ability to
+   correctly sign other keys. Your personal trust in the owner of a
+   public key varies from full trust (thumb up) over marginal trust
+   (thumb horizontal) to no trust (thumb down). If you have no opinion
+   about the person, you can leave the ownertrust unknown.
+

@@ -1,0 +1,24 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+
+* GPA - Screenshots
+
+  This page shows you a collection of screenshots of GPA, the Gnu
+  Privacy Assistant.
+
+** Main Window
+
+   Files are managed for de/encryption. Access to all keyring
+   management functionalities are available via the menu. The most
+   usual commands are available via the toolbar.
+
+   [[file:screenshots/main_window.png]]
+
+** Public keyring dialog
+
+   The personal collection of public keys (keyring) can be browsed and
+   managed.
+
+   [[file:screenshots/public_keyring_dialog.png]]
+
