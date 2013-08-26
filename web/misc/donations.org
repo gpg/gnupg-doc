@@ -1,0 +1,12 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donations
+
+  Maintaining and improving GnuPG is costly. For more than 10 years
+  now, g10^code, a German company owned and headed by GnuPG's
+  principal author Werner Koch, is bearing the majority of these
+  costs. To help them carry on this work, they need your support.
+
+  Please consider to visit the [[http://g10code.com/gnupg-donation.html][GnuPG donation page]] over at the
+  g10^code GmbH site.

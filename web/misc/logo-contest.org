@@ -1,0 +1,80 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* New Logo Contest
+
+  Below you find the announcement of the logo contest we held in
+  autumn 2006. The final logo has meanwhile be selected and is in
+  actual use. For a list of submissions (some are really great) and
+  sponsors, please point your browser to [[http://logo-contest.gnupg.org/][logo-contest.gnupg.org]].
+
+  After 8 years the time has come to modernize the GnuPG Logo and to work
+  on a new layout of the website.
+
+  We appreciate Thomas Löffelholz's Gnus-guarding-the-door logo which has
+  served us for a long time. However, GnuPG has moved forward and is not
+  anymore a plain OpenPGP application but features other protocols as well
+  (S/MIME and partly Secure Shell). Further, the current logo is too
+  detailed to be used as an icon or to be printed on a t-shirt. Thus we
+  want to have a new modern logo.
+
+  To get to such a logo we try something new: We ask you to donate to the
+  logo contest and then offer the collected funds to the winner of that
+  contest.
+
+  Here are the rules for the contest:
+
+  -  Submissions should be send by mail to logo-contest at gnupg dot org.
+     Sending just an URL is recommended. At least one PNG scaled to 300
+     pixel height or width is required. Sending a design concept is
+     appreciated.
+  -  The design should convey the message of freedom and privacy. It must
+     not exploit or offend anyone's sex, race or religion, be obscene or
+     propagate violence.
+  -  The logo shall be available in a free format (bitmap or vector) and
+     eventually made available in source form, modifiable using Free
+     Software (xcf, fig, etc.). The submitter's name and snail mail
+     address is required for exchanging legal papers.
+  -  The winning submitter must agree to assign the copyright to the FSF
+     and attach no other restrictions to the use of the logo. All
+     submitters must declare that they do not infringe the rights of
+     another party and that publishing their logos for the purpose of this
+     contest is acceptable.
+  -  The contest ran until October 31, 2006. A jury will then select the
+     winning submission. The winner will receive 50% of the collected
+     funds. The three top rated submitters are eligible for a gnupg dot
+     org mail alias.
+  -  All contributors to GnuPG who signed a copyright assignment with the
+     FSF, actually provided code or translations and do not participate in
+     the contest make up the jury to decide on the new logo. The file
+     AUTHORS in the GnuPG 1.4.5 tarball has a list of these folks. Simple
+     majority is used to decide.
+
+  Collecting and spending the donations:
+
+  -  The donations are collected for the purpose of creating a logo and a
+     new website layout.
+  -  The winner of the logo contest will receive 50% of the collected
+     funds. The leftover funds will be used for a follow-up contest to
+     redesign and re-implement the website.
+  -  A list of sponsors will be published after the final logo has been
+     selected.
+  -  In case that for unforeseeable reasons a winner could not be
+     determined or we cannot spend the collected funds, they will be
+     donated to the Free Software Foundation Europe.
+  -  The funds are collected through Paypal online payment. For legal
+     reasons and ease of setup they will be collected by g10 Code GmbH, a
+     company headed by GnuPG's principal author Werner Koch. Note, that
+     the tax office will likely require to transfer a 16% VAT, thus the
+     collected funds need to be reduced by this amount. g10 Code will do a
+     weekly report on the received funds as well as a final report after
+     selection of the winner.
+
+  (The donation form has been removed).
+
+  Funds collected as of 2006-12-01: 215 Euro\\
+   Submissions received: 31\\
+   Remaining funds: 107 Euro
+
+  The submissions are published since November 1, 2006 at
+  [[http://logo-contest.gnupg.org/][logo-contest.gnupg.org]].

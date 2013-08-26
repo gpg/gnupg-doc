@@ -1,0 +1,64 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Links About Cryptography
+
+  Nowadays, privacy is becoming a primary concern for everyone. Here
+  it is a non-comprehensive list of [[#sites][sites]] and projects (both [[#sw-prj][software]]
+  and [[#hw-prj][hardware]]) about cryptography.
+
+** Sites About Cryptography
+#  <<sites>>
+
+-  [[http://www.counterpane.com/biblio/][Counterpane]] :: Index of papers about cryptography.
+-  [[http://www.jyu.fi/~paasivir/crypt/][Crypto Chamber]] :: The /Crypto Chamber/.
+-  [[http://www.cs.berkeley.edu/~daw/people/crypto.html][Crypto Researchers]] :: List of crypto researchers with online web
+   pages.
+-  [[http://www.cryptography.com/resources/papers/][Cryptography.com]] :: Index of papers about cryptography.
+-  [[http://www.cryptosoft.com/html/secpub.htm][Cryptosoft.com]] :: Index of papers about cryptography.
+-  [[http://www.eff.org/Privacy/Crypto_export/ITAR_FOIA/][EFF's Privacy Documents]] :: EFF "Privacy - Crypto - ITAR Export -
+     FOIA-Obtained Documents" Archive
+-  [[http://www.proper.com/lookit/hash-futures-panel-notes.html][Notes from the Hash Futures Panel]] :: The Second NIST Hash Workshop
+     was a day and a half of presentations and discussion of a wide
+     range of topics relating to cryptographic hash functions.
+-  [[http://planeta.terra.com.br/informatica/paulobarreto][Paulo Barreto]] :: Paulo Barreto has some informations about EC algorithms.
+-  [[http://www.cs.auckland.ac.nz/~pgut001/links.html][Peter Gutmann (mirror)]] :: Peter Gutmann's excellent link collection
+     (very large!).
+-  [[http://web.mit.edu/~prz/][Phil Zimmermann]] :: Phil Zimmermann is the original creator of
+     Pretty Good Privacy (PGP) on which the the OpenPGP standard is
+     heavily based.
+-  [[http://www.usenix.org/publications/library/proceedings/sec98/full_papers/gutmann/gutmann.pdf][Software Generation of Practically Strong Random Numbers]] :: Peter
+     Gutmann's paper, presented at the [[http://www.usenix.org/publications/library/proceedings/sec98/][1998 Usenix Security Symposium]],
+     provides a design for a reasonably OS-independant random data
+     accumulator and generator and an analysis of its performance.
+-  [[http://www.cryptnet.net/fdp/crypto/strong_distro.html][Strong Distribution HOWTO]] :: This HOWTO by V. Alex Brennen's is a
+     very readable paper on how to distribute Free Software; it even
+     includes a chapter on how to do this anonymously.
+-  [[http://www.schneier.com/paper-pki-ft.txt][Ten Risks of PKI]] :: What You're not Being Told about Public Key
+     Infrastructure By Carl Ellison and Bruce Schneier.
+-  [[http://www.cs.technion.ac.il/~biham/Reports/Tiger/][Tiger]] :: Tiger is a new hash algorithm.
+-  [[http://reports-archive.adm.cs.cmu.edu/anon/1998/abstracts/98-155.html][Usability of Security: A Case Study]] :: A study of PGP 5.0's
+     usability, which found that it was not sufficiently usable to
+     provide effective security for most users.
+
+** Crypto-Based Software Projects
+#  <<sw-prj>>
+
+-  [[http://www.bifroest.demon.co.uk/ctc/][CTC]] :: CTC is another free encryption tool.
+-  [[http://gnutls.org][GNUTLS]] :: A somewhat related project to GnuPG is GNUTLS which is is
+             a GPLed TLS/SSL implementation under development.
+-  [[http://www.net.lut.ac.uk/psst/][psst]] :: It is a project to create a free ssh/sshd
+           replacement. Niels Möller has meanwhile released the
+           software under the name LSH.
+-  [[http://www.franken.de/crypt/scez.html][SCEZ]] :: SCEZ is a project to access Smartcards under GNU/Linux.
+-  [[http://www1.informatik.uni-erlangen.de/secfone/][secfone]] :: Project on secure telephoning.
+
+
+** Crypto-Based Hardware Projects
+#  <<hw-prj>>
+
+-  [[http://www.ibutton.com/][iButton]] :: A pretty neat device.
+-  [[http://willware.net:8080/hw-rng.html][Will Ware]] :: A cheap random source would be a nice thing. Will Ware
+                describes such a devices and has links to other
+                sources. It could be a nice idea to combine that with
+                a DCF77 receiver (atomic clock).

@@ -1,0 +1,59 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Thanks
+
+  The GNU Privacy Guard has been created by the GnuPG team:
+
+  Matthew Skala, Michael Roth, Niklas Hernaeus, Rémi Guyomarch,
+  Werner Koch.
+
+  Official translators are:
+
+  Janusz A. Urbanowicz, Marco d'Itri, Thiago Jung Bauermann, Urko
+  Lusa, Walter Koch.
+
+  Mike Ashley has worked on the GNU Privacy Handbook.
+
+  The following people helped greatly by suggesting improvements, testing,
+  fixing bugs, providing resources and doing other important tasks:
+
+  Allan Clark, Anand Kumria, Ariel T Glenn, Bodo Moeller, Brenno de
+  Winter, Brian Moore, Brian Warner, Bryan Fullerton, Caskey L. Dickson,
+  Cees van de Griend, Charles Levert, Christian Recktenwald, Christian von
+  Roques, Christopher Oliver, Daniel Eisenbud, Daniel Koenig, David
+  Ellement, Detlef Lannert, Dirk Lattermann, Ed Boraas, Enzo
+  Michelangeli, Ernst Molitor, Fabio Coatti, Felix von Leitner, Florian
+  Pose, Frank Heckenbach, Frank Stajano, Gaël Quéri, Geoff Keating,
+  Gerlinde Klaes, Greg Louis, Greg Troxel, Gregory Steuck, Harald
+  Denker, Hendrik Buschkamp, Holger Schurig, Hugh Daniel, Ian McKellar,
+  J Horacio MG, James Troup, Janusz A. Urbanowicz, Jean-loup Gailly,
+  Jens Bachem, Joachim Backes, John A. Martin, Johnny Teveßen, Jun
+  Kuriyama, Jörg Schilling, Karl Fogel, Karsten Thygesen, Katsuhiro
+  Kondou, Kazu Yamamoto, Lars Kellogg-Stedman, Marco d'Itri, Mark
+  Elbrecht, Mark Adler, Markus Friedl, Martin Schulte, Martin Hamilton,
+  Martin Kahlert, Matthew Skala, Max Valianskiy, Michael Fischer v.
+  Mollard, Michael Roth, Michael Sobolev, N J Doye, NIIBE Yutaka,
+  Nicolas Graner, Niklas Hernaeus, Nimrod Zimerman, Oliver Haakert,
+  Oskari Jääskeläinen, Paul D. Smith, Peter Gutmann, Philippe Laliberte,
+  QingLong, Ralph Gillen, Rat, Reinhard Wobst, Reuben Sumner, Roland
+  Rosenfeld, Ross Golder, Rémi Guyomarch, SL Baur, Serge Munhoven,
+  Stefan Karrmann, Stefan Keller, Steffen Ullrich, Steffen Zahn, Steven
+  Bakker, Susanne Schultz, Thiago Jung Bauermann, Thomas Roessler,
+  Thomas Mikkelsen, Tom Spindler, Tom Zerucha, Tomas Fasth, Ulf Möller,
+  Urko Lusa, Walter Koch, Wim Vandeputte.
+
+  This software has been made possible by the previous work of:
+
+  Chris Wedgwood, Jean-loup Gailly, Jon Callas, Mark Adler, Martin
+  Hellmann Paul Kendall, Peter Gutmann, Philip A. Nelson, Philip R.
+  Zimmermann, Taher Elgamal, Torbjorn Granlund, Whitfield Diffie.
+
+  Not to forget some (unknown) NSA mathematicians and all the folks who
+  have worked hard to create complete and free operating systems.
+
+  The site has been made possible thanks to:
+
+  Cristian Rigamonti, David Barkatz, Deneb, Jean-François Paris,
+  Lorenzo Cappelletti, Michael Nahrath, Noel D. Torres Taño,
+  Pauliuc George, Werner Koch.
