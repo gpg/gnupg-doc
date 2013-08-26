@@ -1,0 +1,25 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Documentation Sources
+
+  - [[file:howtos.org][HOWTOs]] :: Includes links to some HOWTOs available in several
+              languages to get out the best from GnuPG.
+  - [[file:manuals.org][Manuals]] :: A list of online available manuals which are also
+               provided with the software.
+  - [[file:guides.org][User Guides]] :: Draft versions of the user manual are available,
+                   and there is also documentation covering
+                   interoperation with PGP 2.x. In addition we have a
+                   [[file:manpage.org][man page online]] and John Michael Ashley's /The GNU
+                   Privacy Handbook/ (GPH).
+  - [[file:faqs.org][FAQs]] :: Online version of the FAQs is now available. Please
+            consult these FAQs before you ask on one of the mailing
+            lists or report a bug.
+  - [[file:mailing-lists.org][Mailing lists]] :: Describes the purposes of each mailing list
+                     hosted on this server and gives instruction on
+                     how to subscribe. Links to other GnuPG-related
+                     discussion groups are also available.
+  - [[file:bts.org][BTS]] :: Before you report a bug, please consult the list of bugs.
+
+  You may also notice that OpenPGP is a proposed Internet standard,
+  described by RFC4880 (found at [[http://www.rfc-editor.org/][RFC Editor]]).

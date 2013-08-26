@@ -1,0 +1,11 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Web sites
+
+This page shows a list of web sites which are somehow related to GnuPG.
+
+-  [[http://pgp.iijlab.net/][Japanese PGP page]] :: A site in Japanese dedicated to PGP.
+-  [[http://pt.gnupg.org.][Portuguese GnuPG site]] :: A site in Portuguese dedicated to GnuPG.
+-  [[http://pgpru.com/][Russian OpenPGP site]] :: A site in Russian with a forum dedicated to
+     OpenPGP.

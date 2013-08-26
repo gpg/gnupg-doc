@@ -1,0 +1,111 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+
+* HOWTOs
+
+  There are several HOWTOs available.
+
+** GnuPG MiniHOWTO
+
+   You may get the best overview about the GnuPG system by reading the
+   mini HOWTO available in several formats:
+
+-  as on-line browsable HTML files (
+   [[../howtos/ca/GPGMiniHowto.html][ca]] ·
+   [[../howtos/de/index.html][de]] ·
+   [[http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.html][en]] ·
+   [[http://www.dewinter.com/gnupg_howto/spanish/index.html][es]] ·
+   [[../howtos/fr/index.html][fr]] ·
+   [[../howtos/it/GPGMiniHowto.html][it]] ·
+   [[../howtos/tr/GPGMinikNasil.html][tr]] ·
+   [[../howtos/vn/index.html][vn]] .
+   [[../howtos/zh/index.html][zh]] )
+-  as one big HTML file (
+   [[../howtos/ca/GPGMiniHowto_big.html][ca]] ·
+   [[../howtos/it/GPGMiniHowto_big.html][it]] )
+-  as PDF (
+   [[../howtos/ca/GPGMiniHowto.pdf][ca]] ·
+   [[../howtos/de/GPGMiniHowto.pdf][de]] ·
+   [[../howtos/it/GPGMiniHowto.pdf][it]] ·
+   [[../howtos/vn/GPGMiniHowto.pdf][vn]] )
+-  in postscript format (
+   [[../howtos/ca/GPGMiniHowto.ps][ca]] ·
+   [[http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.ps][en]] ·
+   [[../howtos/de/GPGMiniHowto.ps][de]] )
+-  as DVI file ( [[../howtos/ca/GPGMiniHowto.dvi][ca]] )
+-  in RTF format ( [[../howtos/ca/GPGMiniHowto.rtf][ca]] )
+-  as plain text (
+   [[../howtos/ca/GPGMiniHowto.txt][ca]] ·
+   [[http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.txt][en]] ·
+   [[../howtos/it/GPGMiniHowto.txt][it]] )
+-  as SGML (
+   [[../howtos/ca/GPGMiniHowto.sgml][ca]] ·
+   [[../howtos/de/GPGMiniHowto.sgml][de]] ·
+   [[http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.sgml][en]] ·
+   [[../howtos/it/GPGMiniHowto.sgml][it]] ·
+   [[../howtos/tr/GPGMinikNasil.sgml.gz][tr]] )
+-  as gzipped tarball of them all ( [[../howtos/ca/GPGMiniHowto.tar.gz][ca]] )
+
+
+** GnuPG SmartcardHOWTO
+
+   GnuPG supports the use of smartcards.  This HOWTO explains how to
+   install and work with these cards.
+
+   - as on-line browsable HTML files ( [[../howtos/card-howto/en/smartcard-howto.html][en]] )
+   - as one big HTML file ( [[../howtos/card-howto/en/smartcard-howto-single.html][en]] )
+   - as plain text ( [[../howtos/card-howto/en/smartcard-howto.txt][en]] )
+
+   This smartcard howto is also available in the [[file:~/s/gnupg-web/web/download/cvs_access.org][source repository]].
+
+** PGP5-GnuPG HOWTO
+
+   If you have problems exchanging messages with a PGP 5.x system, you
+   should have a look at this [[http://technocage.com/~caskey/gnupg/pgp2gnupg.html][PGP5-GnuPG HOWTO]] available in English
+   only.  Note that PGP 5 is heavily out of date and should not be
+   used.
+
+** GnuPG Keysigning Party HOWTO
+
+   Once you get familiar with GnuPG's mechanisms, you surely wouldn't
+   miss one of its funnest (and useful) aspects: to meet your Internet
+   buddies and get your key signed by as many of them as possible.
+
+   But having to check tens or even hundreds of keys at a meeting may
+   become quite frustrating. Here it is where this HOWTO by V. Alex
+   Brennen comes in handy. It is a guide to understanding and
+   organizing a PGP keysigning party. Keysigning parties help build
+   and strengthen the web of trust which serves to make the use of
+   GnuPG more secure.
+
+   This HOWTO is available:
+
+   -  as an on-line browsable set of HTML files (
+   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.de.html][de]] ·
+   [[http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html][en]] ·
+   [[../howtos/es/gpg-party.html][es]] ·
+   [[../howtos/it/keysigning_party.html][it]] ·
+   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.html.ru][ru]] ·
+   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.si.html][si]] ·
+   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.zh-TW.html.big5][zh-TW.big5]] ·
+   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.zh-TW.html.euc-tw][zh-TW.euc-tw]] )
+
+** Mutt-GnuPG HOWTO
+
+   Firstly, because everyone should be using encryption and signatures
+   in their email. Secondly, because there are absolutely no reason
+   for you not to be using PGP-compatible software. Thirdly, because
+   documentation is mostly geared toward someone who is already
+   familiar with PGP.  Fourtly, because we like to promote both GnuPG
+   and Mutt as free software project, for use in everyday
+   communications. Lastly, because Justin R.  Miller likes writing
+   tutorials.
+
+   For all these reasons, you can find below a link to Justin's HOWTO
+   on how to send and receive cryptographically signed and/or
+   encrypted email with GnuPG and the [[http://www.mutt.org/][Mutt mail reader]].
+
+   This HOWTO is available:
+
+   -  as plain text ( [[http://codesorcery.net/old/mutt/][en]] )

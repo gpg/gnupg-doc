@@ -1,0 +1,74 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Mailing lists
+
+  The contents of all messages sent to these mailing lists are assumed
+  to be in the public domain.  Archives of these mailing lists are
+  also available; please click on the mailing list name below.
+
+  Please check the [[file:faqs.org][FAQ]] before you ask on one of the lists.  If you
+  want to search these mailing lists (as well as other archives)
+  please use the service provided at [[http://marc.theaimsgroup.com/]].
+
+  - [[http://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce@gnupg.org]] :: It is used to announce new releases
+      and for other important messages.
+  - [[http://lists.gnupg.org/pipermail/gnupg-users/][gnupg-users@gnupg.org]] :: It is used as a general discussion and
+      help forum.
+  - [[http://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel@gnupg.org]] :: It is used for development and bug
+      tracking.
+  - [[http://lists.gnupg.org/pipermail/gnupg-i18n/][gnupg-i18n@gnupg.org]] :: It is used for discussion of translations
+      and related things.
+  - [[http://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc@gnupg.org]] :: is used for the development of
+      the [[guides.org::gph][GNU Privacy Handbook]].
+  - [[http://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel@gnupg.org]] :: It is used to discuss the development
+      of the GNU crypto library which will be used by a future GnuPG
+      version and is also used by a couple of other projects.
+  - [[http://lists.gnupg.org/pipermail/gpa-dev/][gpa-dev@gnupg.org]] :: It is used to discuss the development of the
+      GNU Privacy Assistant (a graphical frontend for GnuPG).
+  - [[http://lists.gnupg.org/pipermail/gnupg-br/][gnupg-br@gnupg.org]] :: Help and discussion among Portuguese
+      (Brazil) speaking users of GnuPG.
+  - [[http://lists.gnupg.org/pipermail/gnupg-de/][gnupg-de@gnupg.org]] :: Help and discussion among German speaking
+      users of GnuPG.
+  - [[http://lists.gnupg.org/pipermail/gnupg-pt/][gnupg-pt@gnupg.org]] :: Help
+    and discussion among Portuguese speaking users of GnuPG.
+  - [[http://lists.gnupg.org/pipermail/gnupg-es/][gnupg-es@gnupg.org]] :: Help and discussion among Spanish speaking
+       users of GnuPG.
+  - [[http://lists.gnupg.org/pipermail/gnupg-ru/][gnupg-ru@gnupg.org]] :: Help and discussion among Russian speaking
+       users of GnuPG.
+
+  There are also a few mailing lists which receive log information for
+  CVS commits; you will find them under the [[http://lists.gnupg.org/mailman/listinfo/][mailing list manager]].
+
+** How to subscribe
+
+   You can subscribe to these lists [[http://lists.gnupg.org/][via web]] or by sending an e-mail:
+
+#+begin_example
+   To: /<mailing\_list>/-request@gnupg.org
+   Subject: subscribe
+#+end_example
+
+   where /<mailing\_list>/ is the mailing list name as described above.
+
+   Posting to these mailing lists is only allowed for subscribers;
+   postings from non-subcribers are held for approval but there is no
+   guarantee that the moderator can approve them in time; they may
+   even be dropped.
+
+   Some kinds of postings will not be accepted: e.g. large ones, mails
+   without the list name in the =To:= or =CC:= header and HTML mails.
+   All mail clients have an option to send plain text only messages;
+   try this if you don't get a response.
+
+   Please write to the mailing lists in English only.
+
+** Other discussion groups
+
+   There are also several country-specific mailing-lists to subscribe
+   to.  It is important to note that these mailing-lists are not
+   hosted on GnuPG's servers, but are of great help for all of those
+   who feel more confortable when speaking their own native language.
+
+   -  [[http://www.egroups.co.jp/group/gnupgnewsjapan/][GnuPG News Japan]] :: Discussion group for Japanese users.
+   -  [[http://itlists.org/mailman/listinfo/gnupg-it/][gnupg-it]] :: Mailing dedicated to GnuPG users who speak Italian.

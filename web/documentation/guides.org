@@ -1,0 +1,91 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* User guides
+
+  This page collects documents available as user guides for GnuPG.
+
+** The GNU Privacy Handbook
+#  <<gph>>
+
+   Thanks to the DocBook system, [[mailto:jashley@acm.org][John Michael Ashley]]’s /The GNU
+   Privacy Handbook/ (GPH for short) is available in several formats:
+
+   - as on-line browsable [[../../gph/en/manual.html][HTML]] file (
+     [[../../gph/de/manual/index.html][de]] ·
+     [[../../gph/en/manual.html][en]] ·
+     [[../../gph/es/manual.html][es]] ·
+     [[../../gph/fr/manual.html][fr]] ·
+     [[../../gph/it/index.html][it]] ·
+     [[http://www.inar.ru/~zwon/gph/index.xhtml][ru]] )
+   - as [[../../gph/en/manual.pdf][PDF]] (
+     [[../../gph/de/manual.pdf][de]] ·
+     [[../../gph/en/manual.pdf][en]] ·
+     [[../../gph/es/manual.pdf][es]] ·
+     [[../../gph/fr/manual.pdf][fr]] ·
+     [[../../gph/it/manual.pdf][it]] )
+   - in postscript format ( [[../../gph/de/manual.ps.gz][de]] )
+   - as [[../../gph/en/gph.tar.gz][SGML]] gzipped tarball (
+     [[../../gph/en/gph.tar.gz][en]] ·
+     [[../../gph/es/gph.tar.gz][es]] ·
+     [[../../gph/es/gph.tar.gz][fr]] ·
+     [[../../gph/it/gph.tar.gz][it]] ·
+     [[http://www.inar.ru/~zwon/gph.tar.gz][ru]] )
+
+   GPH is also available in the [[file:~/s/gnupg-web/web/download/cvs_access.org][source repository]].
+
+   There is also a [[http://geocities.yahoo.com.br/sdiasneto/gnupg/gnupg-manual-ptbr.html][brazilian portuguese version of GPH]].
+
+** Replacing PGP 2.x with GnuPG
+
+   This document demonstrates some of GnuPG's features by showing how
+   GnuPG can be used to communicate with PGP 2.x users.
+
+   Because it has been written in DocBook, the document is available
+   in the following formats:
+
+   - as on-line browsable [[../../gph/en/pgp2x.html][HTML]] file (
+     [[../../gph/en/pgp2x.html][en]] ·
+     [[../../gph/es/pgp2x.html][es]] )
+   - as [[../../gph/en/pgp2x.pdf][PDF]] (
+     [[../../gph/en/pgp2x.pdf][en]] ·
+     [[../../gph/es/pgp2x.pdf][es]] )
+   - as [[../../gph/en/pgp2x.sgml][SGML]] (
+     [[../../gph/en/pgp2x.sgml][en]] ·
+     [[../../gph/es/pgp2x.sgml][es]] )
+
+** A Practical Introduction to GPG in Windows
+
+   This guide, written by Brendan Kidwell, shows you how to use the
+   free public key cryptography system GnuPG from a Windows user
+   perspective. It started life as an outline for a talk Brendan was
+   going to give in his Cryptology class, but it quickly grew into a
+   document that stands on its own.
+
+   The document is available in several formats which can be read
+   on-line or downloaded from [[http://www.glump.net/content/gpg_intro/][Brendan’s page]].
+
+   Let us hope that this guide will help out Windows users who are
+   dying to effectively install and use GnuPG on their systems. So
+   that, nobody will never ever say that "/after reading the whole of
+   www.gnupg.org I still couldn't get the thing to work/" ;-)
+
+** Man page
+
+   The online [[file:manpage.org][man page]], available in English, is likely a little bit
+   outdated.
+
+
+** Other documents
+
+   At [[http://kldp.org/~yong/misc/gnupg/][kldp.org]] you can find some Korean language information on GnuPG.
+   [[http://hp.vector.co.jp/authors/VA019487/][Japanese language documentation]] is also available.
+
+   Julien Francoz, alias CoCoZ, wrote a guide for French users
+   entitled [[http://francoz.net/doc/gpg/gpg.html][Utilisation de GnuPG]] , which covers the basic usage of
+   GnuPG. The document is also available in [[http://francoz.net/doc/gpg/gpg-latest.sgml][SGML format]] .
+
+   Mario Pascucci wrote an guide for Italian users entitled
+   [[http://www.ismprofessional.net/pascucci/index.php/2007/04/crittografia-riservatezza-e-sicurezza/][GnuPG: Crittografia, Privacy e Open Source]]. It covers the use of
+   GnuPG on the GNU/Linux command line as well as its use on Windows
+   along with WinPT.
