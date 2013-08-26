@@ -17,6 +17,7 @@
   primary server only.
 
 ** GnuPG 2.0
+#  <<gnupg>>
 
    GnuPG 2.0 is the new modularized version of GnuPG supporting
    OpenPGP and S/MIME
@@ -33,6 +34,7 @@
 
 
 ** GnuPG 1.4
+#  <<gnupg1>>
 
    | GnuPG {{{gnupg1_ver}}} source compressed using /bzip2/     | {{{gnupg1_size}}}       | S | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2][FTP]] |
    | Signature for previous file                                |                         |   | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig][FTP]] |
@@ -78,6 +80,7 @@
 
 
 ** Gnu Privacy Assistant
+#  <<gpa>>
 
    [[../related_software/gpa/index.org][GPA]] is still work in progress, so don't expect that everything
    works and be careful when using production quality secret keys.
@@ -89,6 +92,7 @@
 
 
 ** GnuPG Made Easy
+#  <<gpgme>>
 
    [[../related_software/libraries.en.html#lib-GPGME][GPGME]] (GnuPG Made Easy) is a C language library that allows to add
    support for cryptography to a program. It is designed to make
@@ -109,6 +113,7 @@
 
 
 ** Libgcrypt
+#  <<libgcrypt>>
 
    [[../related_software/libraries.en.html#lib-libgcrypt][Libgcrypt]] is GNU's basic cryptographic library.
 
@@ -124,6 +129,7 @@
 
 
 ** Libksba
+#  <<libksba>>
 
    [[../related_software/libraries.en.html#lib-libksba][Libksba]] is a CMS and X.509 access library.
 
@@ -139,6 +145,7 @@
 
 
 ** DirMngr
+#  <<dirmngr>>
 
    DirMngr is a daemon to handle CRL and certificate requests for
    GnuPG 2.0. It might also be installed as a system daemon for CRL
@@ -156,6 +163,7 @@
 
 
 ** Libgpg-error
+#  <<libgpg-error>>
 
    [[../related_software/libraries.en.html#lib-libgpg-error][Libgpg-error]] is a small library with error codes and descriptions
    shared by most GnuPG related software.
@@ -172,6 +180,7 @@
 
 
 ** Libassuan
+#  <<libassuan>>
 
    [[../related_software/libraries.en.html#lib-libassuan][Libassuan]] is the IPC library used by some GnuPG related software.
 
@@ -187,6 +196,7 @@
 
 
 ** Entropy Gathering Daemon
+#  <<egd>>
 
   The latest version of the [[../related_software/libraries.en.html#lib-EGD][Entropy Gathering Daemon]] is available at
   the usual GnuPG sites:
