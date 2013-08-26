@@ -8,14 +8,14 @@
   If you feel wanting to improve this list, please, fill in a [[#gpgweb][Problem
    Report]] form.
 
-   -  [[http://www.lothar.com/tech/crypto/][EGD]] :: Unices without a /dev/random should [[../download/index.en.html#EGD][download]] and install
+   -  [[http://www.lothar.com/tech/crypto/][EGD]] :: Unices without a /dev/random should [[file:~/s/gnupg-web/web/download/index.org::egd][download]] and install
              this Entropy Gathering Daemon.
    -  [[http://github.com/smartrevolution/gnupg-for-java][gnupg-for-java]] :: This is a Java binding for GPGME library.
    -  [[http://www.gnu.org/software/gnutls/][GNUTLS]] :: A somewhat related project to GnuPG is GNUTLS which is
                 is a GPLed TLS/SSL implementation.
-   -  [[gpgme/index.en.html][GPGME]] :: GnuPG Made Easy is a library designed to make access to
+   -  [[file:gpgme/index.org][GPGME]] :: GnuPG Made Easy is a library designed to make access to
                GnuPG easier for applications.
-   -  [[libassuan/index.en.html][libassuan]] :: Libassuan is the IPC library used by some GnuPG
+   -  [[file:libassuan/index.org][libassuan]] :: Libassuan is the IPC library used by some GnuPG
                    related software.
    -  [[http://directory.fsf.org/wiki/Libgcrypt][libgcrypt]] :: Libgcrypt is a general purpose cryptographic
                    library based on the code from GnuPG. It provides
@@ -23,8 +23,8 @@
                    symmetric ciphers, hash algorithms, MACs, public
                    key algorithms, large integer functions, random
                    numbers and a lot of supporting functions.
-   -  [[libgpg-error/index.en.html][libgpg-error]] :: Libgpg-error is helper library used by a couple
+   -  [[file:libgpg-error/index.org][libgpg-error]] :: Libgpg-error is helper library used by a couple
                       of other projects to provide a common set of
                       error codes and descriptions.
-   -  [[libksba/index.en.html][libksba]] :: Libksba provides an easy API to create and parse
+   -  [[file:libksba/index.org][libksba]] :: Libksba provides an easy API to create and parse
                  X.509 and CMS related objects.

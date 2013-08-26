@@ -1,0 +1,11 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+* pinentry
+
+  /pinentry/ is a small collection of dialog programs that allow GnuPG
+  to read passphrases and PIN numbers in a secure manner. There are
+  versions for the common GTK and Qt toolkits as well as for the text
+  terminal (Curses).
+
+  See the [[file:~/s/gnupg-web/web/download/index.org::pinentry][download]] section for the latest tarball.
