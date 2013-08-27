@@ -1,3 +1,5 @@
 oldsite/
 stage/
 /web/sitemap.org
+.*.orgx
+/web/theindex.inc

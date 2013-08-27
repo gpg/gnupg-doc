@@ -2,6 +2,7 @@
 #+SETUPFILE: "../share/setup.inc"
 
 * Integrity Check
+#+index: integrity check
 
   In order to check that the version of GnuPG which you are going to
   install is an original and unmodified one, you can do it in one of

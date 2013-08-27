@@ -1,0 +1,6 @@
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
+* Index
+
+#+INCLUDE: "theindex.inc"

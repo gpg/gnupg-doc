@@ -2,7 +2,8 @@
 #+SETUPFILE: "share/setup.inc"
 
 * The GNU Privacy Guard
-
+#+index: GnuPG
+#+index: GPG
 
 GnuPG is the [[http://www.gnu.org/][GNU project]]'s complete and free implementation of the
 OpenPGP standard as defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]]. GnuPG allows to encrypt and
@@ -32,6 +33,7 @@ Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functi
 
 
 * Latest news
+#+index: News
 
 The following frames report the latest news from GnuPG.  A list with
 all [[news.org][news of previous years]] is also available.
@@ -114,6 +116,7 @@ This is the publishing info used for the GnuPG pages
    :section-numbers nil
    :tags nil
    :table-of-contents nil
+   :makeindex t
    :auto-sitemap t
    :sitemap-title "GnuPG - Sitemap"
    :style-include-default nil
