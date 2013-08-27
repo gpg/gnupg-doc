@@ -1,0 +1,851 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Development
+
+[[file:index.org][Home]] | [[file:tech.org][Technology]] | [[file:who.org][Who]] | [[file:time.org][Schedule]] | Development |
+[[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
+
+
+** Infrastructure
+
+-  CVS:
+   See below for detailed instructions.
+-  Bug-Tracking:
+
+   [[http://intevation.de/roundup/aegypten/][Ägypten Issue Tracker]]
+    (previously we used an
+   [[http://intevation.de/rt/webrt?q_queue=aegypten][RT-based issues
+   tracker for Ägypten]]. Please report new bugs only into the new
+   Roundup-based one.)
+
+   [[http://bugs.kde.org/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=kmail&component=encryption&component=general&component=IMAP&component=kmailcvt&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_severity=critical&bug_severity=grave&bug_severity=major&bug_severity=crash&bug_severity=normal&bug_severity=minor&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=][KMail:
+   Open Bugs]] (report KMail related bugs here)
+
+-  Ägypten Mailing Lists:
+
+   Technical coordination is discussed at:
+   [[http://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]]
+    This is also the list for the project Gnu Privacy Assistance (GPA)
+   and the tool Gnu Privacy Assistant (gpa).
+
+   Commits to Ägypten CVS:
+   [[http://lists.gnupg.org/mailman/listinfo/aegypten-commits][aegypten-commits]]
+
+-  Other Mailing Lists:
+
+   KMail development:
+   [[http://mail.kde.org/mailman/listinfo/kmail][kmail]]
+    There you won't find a link to the archive, it is here:
+   [[http://lists.kde.org/?l=kmail][kmail mailing list archive]]
+
+   GnuPG development:
+   [[http://lists.gnupg.org/mailman/listinfo/gnupg-devel][gnupg-devel]]
+
+** How to test an Ägypten-enabled KMail or Mutt?
+
+Please also note that the development is in flux and CVS instructions
+might not be entirely up-to-date. Please report any problem to our
+mailing list.
+
+If you apply tar-balls or CVS, take care to use consistent prefixes for
+your system. Use "make ; su -c 'make install'" instead of "make install"
+if the prefixes points to a place you have no write-access for.
+
+If you only interested in KMail and OpenPGP you might want to read the
+KMail Howto: [[http://kmail.kde.org/kmail-pgpmime-howto.html][Using OpenPGP and PGP/MIME with KMail]].
+
+*You should create and use a test user first* if you apply any version
+that are not marked as stable releases in order to keep your private
+mail and configuration safe.
+
+*** Prerequisits for installing
+
+These tools are required for the Ägypten features. They should already
+be installed on your system or be readily available as binary package
+for simple installation. Install them before you start any building of
+other Ägypten packages.
+
+-  [[http://www.gnupg.org][GnuPG]] >= 1.2.2
+
+*** Building Ägypten for KDE 3.1 and Mutt 1.5
+
+You need at least KDE 3.1.0 plus corresponding devel-packages installed.
+The packages described below are in fact the official KDE 3.1 tar-balls.
+
+You need the following tar-balls (this combination is confirmed to
+compile, but watch out for newer versions):
+
+*Note:* The KDE 3.1 series requires GpgME 0.3 generation. GpgME >= 0.4.0
+will not form a working Ägypten in conjunction with KDE 3.1. However,
+KDE 3.2 will require the GpgME 0.4 generation.
+
+*Security issue:* It is very important to apply the patch for kdenetwork
+as listed below. This patch has been rejected by the KDE team as not
+security relevant, but in fact not applying it, you have to stay with
+the old crypto-backend which is unmaintained reguarding security fixes.
+ Also, if you upgrade from KDE 3.1.x to KDE 3.1.5 you should apply the
+patch. If you don't you should not update the crypto-backend since the
+updated one will not work without the patch applied.
+ The patch is in CVS KDE\_3\_1\_BRANCH already, so once there is a KDE
+3.1.6 all is OK again.
+
+For KMail:
+
+[[ftp://ftp.trolltech.com/qt/source/qt-x11-free-3.1.2.tar.bz2][qt-x11-free-3.1.2.tar.bz2]]
+(14MB)
+
+[[ftp://ftp.kde.org/pub/kde/stable/3.1.5/src/arts-1.1.5.tar.bz2][arts-1.1.5.tar.bz2]]
+(1MB)
+
+[[ftp://ftp.kde.org/pub/kde/stable/3.1.5/src/kdelibs-3.1.5.tar.bz2][kdelibs-3.1.5.tar.bz2]]
+(11MB)
+
+[[ftp://ftp.kde.org/pub/kde/stable/3.1.5/src/kdebase-3.1.5.tar.bz2][kdebase-3.1.5.tar.bz2]]
+(16MB)
+
+[[ftp://ftp.kde.org/pub/kde/stable/3.1.5/src/kdenetwork-3.1.5.tar.bz2][kdenetwork-3.1.5.tar.bz2]]
+(5MB)
+
+[[ftp://ftp.kde.org/pub/kde/stable/3.1.5/src/kdepim-3.1.5.tar.bz2][kdepim-3.1.5.tar.bz2]]
+(3.3MB)
+  
+ For Mutt:
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/mutts-1.5.0-gpgme-030408.tar.gz][mutts-1.5.0-gpgme-030408.tar.gz]]
+(1.4MB)
+  
+ For any Ägypten-enabled mail user agent:
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/libgpg-error/libgpg-error-0.6.tar.gz][libgpg-error-0.6.tar.gz]]
+(400KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/libgcrypt/libgcrypt-1.1.91.tar.gz][libgcrypt-1.1.91.tar.gz]]
+(900KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/libksba/libksba-0.9.1.tar.gz][libksba-0.9.1.tar.gz]]
+(500KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/opensc-0.7.0wk1.tar.gz][opensc-0.7.0wk1.tar.gz]]
+(700KB, optional for smartcard support)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/libassuan/libassuan-0.6.2.tar.gz][libassuan-0.6.2.tar.gz]]
+(300KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-1.9.3.tar.gz][gnupg-1.9.3.tar.gz]]
+(1.2MB)
+
+[[ftp://ftp.gnupg.org/gcrypt/gpgme/gpgme-0.3.16.tar.gz][gpgme-0.3.16.tar.gz]]
+(700KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/cryptplug/cryptplug-0.3.16.tar.gz][cryptplug-0.3.16.tar.gz]]
+(250KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/alpha/dirmngr/dirmngr-0.5.1.tar.gz][dirmngr-0.5.1.tar.gz]]
+(200KB)
+
+[[ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-0.7.0.tar.gz][pinentry-0.7.0.tar.gz]]
+(300KB)
+
+The build process looks like this:
+
+1. *[KMail]*
+    cd /local-vol1/aegypten/compile
+    tar xvjf ../source/qt-x11-free-3.1.2.tar.bz2
+    cd qt-x11-free-3.1.2
+    export QTDIR=$PWD
+    ./configure -prefix /usr/local/aegypten -thread
+    make install
+2. *[KMail]*
+    export QTDIR=/usr/local/aegypten
+    export KDEDIR=/usr/local/aegypten
+    export LD\_LIBRARY\_PATH=$KDEDIR/lib:$QTDIR/lib
+    export PATH=$KDEDIR/bin:$PATH
+    (be sure to execute this later always before running parts of the
+   aegypten installation)
+3. *[KMail]*
+    untar, configure with e.g. --prefix=/usr/local/aegypten, make and
+   install:
+    arts-1.1.5
+    kdelibs-3.1.5
+    kdebase-3.1.5
+    kdenetwork-3.1.5 (before compiling, apply
+   [[https://intevation.de/roundup/aegypten/file5/bug_18_fix.patch][this
+   patch]] in directory kdenetwork: patch -p0 < bug\_18\_fix.patch)
+    kdepim-3.1.5
+4. *[Any MUA]*
+    untar, configure with e.g. --prefix=/usr/local/aegypten, make and
+   install:
+    libgpg-error-0.6
+    libassuan-0.6.2
+    libgcrypt-1.1.91
+    libksba-0.9.1
+    opensc-0.7.0wk1 (optional for smartcard support)
+    gnupg-1.9.3 (does not interfere with any gnupg < 1.9.0)
+    gpgme-0.3.16
+    cryptplug-0.3.16
+    dirmngr-0.5.1
+    pinentry-0.7.0
+5. *[Mutt]*
+    export PATH=/usr/local/aegypten/bin:$PATH
+    (be sure to execute this later always before running parts of the
+   aegypten installation)
+    untar, configure with e.g. --prefix=/usr/local/aegypten, make and
+   install:
+    mutts-1.5.0-gpgme-030408 (you might have to change some file
+   ownership manually for installing)
+
+*** Building Ägypten for KDE 3.2
+
+It should be possible to use Ägypten1 with KDE 3.2 by just following the
+rules as for KDE 3.1 and simple exchanging the KDE pachages accordingly.
+Reports on success/failure/hints are welcome.
+
+Please see the [[../aegypten2/index.html][Ägypten2 project page]] on how
+to gain the new and extended features of the Ägypten2 project which
+bases its work on KDE 3.2.
+
+*** Prerequisits for using OpenPGP or S/MIME
+
+1. Specify pinentry program (use pinentry-gtk, pinentry-qt or
+   pinentry-curses):
+
+   In file ~/.gnupg/gpg-agent.conf add:
+
+   no-grab
+    pinentry-program /some/where/bin/pinentry-qt
+    default-cache-ttl 600
+
+2. Make sure gpg-agent is started before KMail and GnuPG:
+
+   This can be done manually in the same shell as you start KMail from:
+    eval "$(gpg-agent --daemon)"
+
+   The usual way to run the agent is from the `~/.xsession' file:
+    eval `gpg-agent --daemon`
+
+   If you don't use an X server, you can also put this into your regular
+   startup file `~/.profile' or `.bash\_profile'.
+
+   However, you should take that you don't have multiple instances of
+   gpg-agent running.
+
+3. Configure KMail:
+   In the Cryptography section, add the Plug-In
+   /some/where/lib/cryptplug/gpgme-smime.so for S/MIME and/or
+   /some/where/lib/cryptplug/gpgme-openpgp.so for OpenPGP. Activate your
+   preferred one.
+
+*** Using S/MIME
+
+Follow these steps (you may skip the key generation if you just want to
+verify signed messages or send encrypted ones) to perform the first
+S/MIME activities (please note again that development is in flux and
+things may change; this list is also incomplete: let us know where you
+need more hints):
+
+1. Configure GpgSM:
+   In file ~/.gnupg/gpgsm.conf add:
+    agent-program /some/where/bin/gpg-agent # not needed if in search
+   path
+    dirmngr-program /some/where/bin/dirmngr # not needed if in search
+   path
+    #disable-crl-checks # uncomment if you think it is appropriate
+    #disable-policy-checks # uncomment if you think it is appropriate
+2. Create a smime certificate request (don't use this one for any real
+   security purpose!)
+    Note: [[#howto_import_external_certs][Below]] is a HowTo on
+   importing other external created certificates.
+   cat <<\EOF > ~/tmp/script.assuan
+    INPUT FD=4
+    OUTPUT FD=5 --armor
+    GENKEY
+    BYE
+    EOF
+    cat <<\EOF > ~/tmp/parms.txt
+    key-type: rsa
+    key-length: 1024
+    key-usage: sign, encrypt
+    name-dn: C=de,O=MyOrg,OU=Testlab,CN=Joe Tester
+    name-email: joe@nowher.org
+    EOF
+    gpgsm --server <~/tmp/script.assuan 4<~/tmp/parms.txt
+   5>~/tmp/out.pem
+3. You can now sign this key by a certificate authority (CA).
+
+   Either you send the certificate request to an official CA or you can
+   set up your own CA with OpenSSL for this (the following is an excerpt
+   of the [[http://www.post1.com/home/ngps/m2/howto.ca.html][HOWTO:
+   Creating your own CA with OpenSSL by Pheng Siong Ng]] ):
+
+   #[install OpenSSL]
+    mkdir ~/CA
+    cd ~/CA
+    locate CA.pl # copy the file to .
+    locate openssl.cnf # copy the file to .
+    ./CA.pl -newca # answer the questions
+
+   Now you have a working CA and can sign certificate requests. Since
+   OpenSSL can't handle email in the correct way, you have to add the
+   line
+    subjectAltName=email:copy,email:joe@nowher.org
+    to the file ~/CA/openssl.cnf. Then execute
+    export SSLEAY\_CONFIG="-config $HOME/CA/openssl.cnf"
+
+   Finally execute the certification process:
+    cp ~/tmp/out.pem newreq.pem
+    ./CA.pl -sign # enter password of CA and confirm certification
+
+4. Import the signed certificate:
+   gpgsm --import ~/CA/demoCA/cacert.pem # to have the cert of the CA
+    gpgsm --import ~/CA/newcert.pem
+
+Now send yourself a s/mime signed email. If it does not work, contact us
+on gpa-dev.
+
+*** Using OpenPGP
+
+1. Create your OpenPGP key-pair
+   Please make yourself familiar with GnuPG if you don't know how to do
+   this. Probably gpg is already installed on your system.
+2. Configure KMail: Specify your OpenPGP identity.
+3. Add to your ~/.gnupg/gpg.conf:
+   use-agent
+
+Now you should be able to perform signature verification, decryption,
+encryption, signing based on OpenPGP.
+
+*** Using Smartcards
+
+The Ägypten project uses
+
+-  TeleSec NetKey Card
+-  Towitoko ChipDrive micro USB (preferred) and V24
+
+These devices are confirmed to work. Others may as well (please report).
+
+**** Configuring OpenSC
+
+You must install an opensc.conf file in {prefix}/etc; an example is
+included in opensc-0.6.1-wk-20020415/etc/. We are using the pcsc
+framework.
+
+**** Configuring Smartcard reader
+
+What's to be done is very dependent on your system.
+
+USB: read [[http://www.linux-usb.org/][http://www.linux-usb.org/]] on
+how to get your USB drive connected.
+
+This example shows what was done on a Debian GNU/Linux Woody, Kernel
+2.4.18 - the above link should be your prime source on learning how to
+enable your USB device!):
+
+#+BEGIN_EXAMPLE
+    mknod ttyUSB0 c 188 0 # if device does not already exist
+    mount -t usbdevfs none /proc/bus/usb # if this does not already exist
+    apt-get install libtowitoko2
+    modprobe usb-uhci # to switch on usb, if not already done
+    modprobe pl2303 # for the Towitoko Chipcard reader
+    apt-get install usbview # use this tool to check for devices
+    /etc/init.d/pcscd restart # might be necessary after connecting the device
+#+END_EXAMPLE
+
+V24: Just install libtowitoko2 and configure the proper serial port.
+
+**** Preparing a pkcs15 card
+
+*Note:* It may happen that you make the card unusable - it is also
+likely that this happens due to bugs or instrallation problems. We have
+been lucky so far in that we have only one file on one card which is not
+deletable anymore.
+
+1. Create a new test certificate and a key using OpenSSL (see above).
+2. Insert the Netkey card and fire up opensc-explorer. Do this at the
+   opensc-explorer command line (we assume that it is a fresh card with
+   a 6 byte NullPIN):
+
+   #+BEGIN_EXAMPLE
+       change CHV0 00:00:00:00:00:00  "admin0"
+       get 2F00 saved-2F00
+       del 2F00
+       quit
+   #+END_EXAMPLE
+
+   We need to delete the GDO file because the record length used is too
+   short for our application. Note the new SO (Security Officer)
+   password ("admin0") somewhere.
+
+3. Initialize the card:
+
+   pkcs15-init -C
+
+   You are asked for 2 PINs and PUKs; use at least 6 characaters. The
+   PUKs are not yet used, the SO password serves for this.
+
+4. Write a certificate to the card:
+   pkcs15-init -X /somewhere/my\_cert.pem
+5. Write a secret key to the card
+
+   pkcs15-init -S /somewhere/my\_private\_key.pem
+
+   You are asked for the PEM password which is used to protect the ket
+   in the PEM file and for CHV2, where you enter the password/PIN set in
+   step 2.
+
+   Note, you will see an error message - don't care about this.
+
+6. Check that everything is fine:
+
+   $ pkcs15-tool --list-pins
+
+   After some garbage you should get:
+
+   #+BEGIN_EXAMPLE
+       Card has 2 PIN code(s).
+
+       PIN [Authentication PIN]
+               Com. Flags: 0x13
+               Auth ID   : 01
+               Flags     : [0x03], case-sensitive, local
+               Length    : 6..16
+               Pad char  : 0x00
+               Reference : 128
+               Type      : 2
+               Path      : 3F005015
+
+       PIN [Non-repudiation PIN]
+               Com. Flags: 0x13
+               Auth ID   : 02
+               Flags     : [0x03], case-sensitive, local
+               Length    : 6..16
+               Pad char  : 0x00
+               Reference : 129
+               Type      : 2
+               Path      : 3F005015
+   #+END_EXAMPLE
+
+   pkcs15-tool -c
+
+   #+BEGIN_EXAMPLE
+       Card has 1 certificate(s).
+
+       X.509 Certificate [Authentication Certificate]
+                Flags    : 0
+                Authority: no
+                Path     : 3F0050159001
+                ID       : 45
+   #+END_EXAMPLE
+
+   pkcs15-tool -k
+
+   #+BEGIN_EXAMPLE
+       Card has 1 private key(s).
+
+       Private RSA Key [Authentication Key]
+               Com. Flags  : 0
+               Usage       : [0x4], sign
+               Access Flags: [0x1D], sensitive, alwaysSensitive, neverExtract,local
+               ModLength   : 1024
+               Key ref     : 0
+               Native      : no
+               Path        : 3F0050155001
+               Auth ID     : 01
+               ID          : 45
+   #+END_EXAMPLE
+
+You may want to erase the PKCS15 structure in case of (very likely)
+problems; you can use this script:
+
+#+BEGIN_EXAMPLE
+    opensc-explorer <<EOF
+    cd 5015
+    del 9001
+    del 5002
+    del 5001
+    del 4404
+    del 4402
+    del 4401
+    del 5032
+    del 5031
+    del 0011
+    del 0001
+    cd ..
+    del 5015
+    EOF
+#+END_EXAMPLE
+
+If you want to play with the PIN files created under the 5015 DF, you
+should now that you have to use CHV128 and CHV129 with the
+opensc-explorer commands "ver" and "change".
+
+**** Using a pkcs15 prepared card
+
+1. Specify scdaemon program:
+   In file ~/.gnupg/gpg-agent.conf add:
+    scdaemon-program /some/where/bin/scdaemon
+2. Register the card with gpgsm:
+   gpgsm --learn-card
+3. Now you can use this card e.g. to create a signature:
+
+   gpgsm -sbvu 'user\_id\_of\_new\_cert' plain >plain.sig
+
+   (if you did not had a secret key before, the card's user id is now
+   the default)
+
+   The PIN entry dialog should pop up and ask you for the Smartcard
+   Authentication PIN. (It is what you entered as CHV0 if you created
+   the pkcs15 bar-bones yourself).
+
+   There will also be a popup window to ask you to insert the card if
+   you did remove it from the reader or you are using a different one.
+
+*** HowTo import externally generated keys and certificates into GpgSM
+
+(written by Matthias Welwarsky)
+
+Let's assume you have an S/MIME certificate, probably a personal
+freemail certificate from Thawte or some other Certification Authority.
+Thawte offers X509 S/MIME certificates via a web interface, you cannot
+have gpgsm generate the Certificate Request and thus the private key,
+your browser will do that. So the problem is, after the certificate got
+issued, you have in inside you browser while you need it in GPGSM.
+
+"Where's the problem?" you might say. "I can always export my
+certificate as a PKCS#12 certificate bundle and import it into GPGSM."
+
+That's true, but it's a bit more difficult. While GPGSM has an import
+feature for PKCS#12 encoded secret keys, it is limited:
+
+1. GPGSM cannot import the complete PKCS#12 bundle, ONLY the secret key
+ 2. The Key must not be encrypted.
+
+You need to import the secret key, the certificate, and the issuers
+certificate. Unfortunately, there seems to be no GPGSM-Only solution,
+but you can get along with a little help from OpenSSL :-)
+
+Here's a step-by-step HOWTO that I used to get my Thawte certificate
+into GPGSM:
+
+1. Export the Certificate from your browser.
+
+You probably have Mozilla, konqueror currently lacks support for
+generating certificate requests. The browser will ask you to specifiy an
+Export Password, be sure to remember it for the rest of the procedure,
+and store the certificate into a file "certbundle.p12".
+
+2. Use OpenSSL to extract the key from the bundle.
+
+GPGSM currently seems to be unable to handle the complete bundle in one
+go. You need to extract the pieces yourself. This can be done with the
+following OpenSSL calls:
+
+First, you must convert the bundle from PKCS#12 into PEM format:
+
+bash$ openssl pkcs12 -in certbundle.p12 -out certbundle.pem -nodes
+
+OpenSSL will ask you for the Export Password, that's the password you
+used in your Browser to export the password.
+
+Then, extract the key from the bundle and export it, again in PKCS#12
+format
+
+bash$ openssl pkcs12 -in certbundle.pem -export -out certkey.p12
+-nocerts \ -nodes
+
+Again, OpenSSL will ask you for an Export Password, just use the same as
+in the previous step. Now you have your secret key ready for import into
+GPGSM:
+
+bash$ gpgsm --call-protect-tool --p12-import --store certkey.p12
+
+3. Import the Issuers certificate and your own certificate
+
+Now that you have imported your secret key successfully, you need to
+import the issuers certificate, too. To obtain this certificate, you may
+have to browse to the issuers website and download it, but Thawte for
+example stores their certificate in the bundle you get when you request
+the certificate. You can then extract it from the file certbundle.pem
+you generated in the first step, simply with a text viewer. My preferred
+way is to display the file in vi, then mark the issuer certificate with
+the mouse and copy it into a shell, where before I typed in:
+
+bash$ gpgsm --import
+
+This will import the issuers certificate. Once you have successfully
+completed this step, do the same with your own certificate.
+
+If GPGSM did not spit out any error messages, you have now successfully
+imported your freemail certificate and use your favourite,
+Aegypten-enabled mailer to send and receive S/MIME messages with your
+own certificates.
+
+You can check with "gpgsm --list-secret-keys". If your freemail
+certificate shows up, you're ready to go.
+
+** Discussion
+
+The following links intend to collect discussions around technological
+decisions and plannings the Ägypten project is or will be involved in
+one way or another.
+
+*** KMail integration
+
+The integeration of gpg-based S/MIME and OpenPGP support as part of the
+Ägypten project involves a tough time line as well as a framework to
+support other (non-KDE) MUAs.
+
+It is intended to bring these two aspects in line with the KDE
+development plans as good as possible. Essentially this means to reduce
+those parts that will live only a short time to suffice the Ägypten
+needs and that will be abandoned/substituted later on once the KDE
+framework is further developed.
+
+Some KDE activities in the same or related fields as Ägypten:
+
+-  [[http://lists.kde.org/?l=kmail&m=100456988004152&w=2][Ideas for
+   KMime design]] (in the kmail list archive)
+-  work is also going on on a
+   [[http://lists.kde.org/?l=kmail&m=100454574428861&w=2][kssl based
+   S/MIME "plugin"]] (in the kmail list archive)
+
+*** Mutt integration
+
+A special tar-ball of an Ägypten-enabled Mutt is available from the
+ftp.gnupg.org site (see description above).
+
+Apart from Ägypten, there is another
+[[http://elmy.myip.org/mutt/smime.html][Mutt patch for S/MIME]]
+available. This one is based on OpenSSL.
+
+*** LDAP enabled KAddressbook
+
+The LDAP functionality will allow the user to search for information by
+typing (part of) a name in a textfield, the application will then query
+the LDAP server and show the user a list of matches. The user can then
+choose to add individual addresses to her local addressbook.
+
+The addressbook application "KAddressbook" has been chosen to be
+enhanced with LDAP functionality because it uses the most modern and
+actively developed addressbook backend in KDE -- libkabc. The
+development of the alternative libkab has officially been discontinued.
+
+*** How to deal with certificates and LDAP
+
+**** Background
+
+An LDAP server can in principle have an smime-certificate attached to an
+entry for a person. This entry usually also has the email address as
+attribute. Important is that we can have several matching email
+addresses for one person string or email address. To identify one
+certificate we can use the fingerprint.
+
+In principle the certificate should have the information that make it
+possible to find the distribution point for the CRLs of the CA. Thus in
+theory one would not have to speficy the DNS and port number of the ldap
+server for the CLRs. So one would be fine once having a valid cert and
+the trust path certs. In practice we might try ldap servers we have
+tried for the certs too if in search for the CLR of a specific cert.
+
+**** Kaddressbook's relation to Kmail
+
+One design idea is that kaddressbook should not directly deal with
+certificates, because it would then depend on gpgme for most of its
+actions. Thus KAddressbook is only interested in the persons and their
+email address attribute when quering an ldap server.
+
+It just gives the email address and optional additional hints to KMail.
+KMail then has to decide if it wants to use crypto and what crypto. If
+KMail goes for s/mime encryption it has to care to find a certificate
+for this email address. Now KMail (maybe in cooperation with the
+certmanager) will call the crypto backend to search for a suitable
+certificate. The cryptobackend will search external ldap-servers when
+told so by KMail.
+
+**** Why we need the fingerprint to be saved as hint in KAddressbook
+
+From the background section it is clear that KMail might be presented
+with a number of certificates for a single email address. This selection
+would have to be done each time by the user, if we do not remember the
+fingerprint of the prefered certificate. The right place to save this
+hint is the KAddressbook as far as I can see it.
+
+**** Drawback: Two lists of ldap Servers to query
+
+There is a drawback that KAddressbook and dirmngr (which is the part of
+the crypt backend actually asking the ldap servers) both have their list
+of ldap servers to ask. Currently we think this is unavoidable if we
+don't want to make things even more complicated. Theoretically we could
+sync the KDE and crypto-backend preferences somehow, but this would
+indeed make things more complicated.
+
+All in all it seems that we need an GUI interface to the dirmngr list
+separated from the KDE/KAddressbook ldap server configuration GUI.
+
+**** Conclusion for implementation
+
+We need a way for KMail or the certmanager to give hint data to
+KAddressbook that KAddressbook can give back. Especially this hint data
+should include "use smime" and "use the cert with this fingerprint:
+xxx".
+
+KMail or the certmanager has to the right search functions of gpgme if
+it does not find a suitable certificate.
+
+We need a configuration GUI to modify the dirmngr configuration for the
+ldap servers to be searched for the certs.
+
+*** Smartcards
+
+**** Brief Intro
+
+ICC or Smartcards are tiny (in todays terms) regular computers with an
+OS using an EEPROM instead of a harddisk, with just one serial I/O, a
+simple standardized command set and ACL protected files. Filenames are
+16 bit values, you have diretories (called DFs) of up to 4 levels and
+regular files (EFs) which may come in a transparent form, record
+structured or circular structured. There are select read and write file
+commands, commands to verify PINs, where the PIN is stored in a file on
+the CARD with an ACL set to NO-READ. The cards required for Ägypten need
+also have cryptograpic operations like encrypt, generate MAC, sign and
+verify.
+
+The chip is usually based on the 8051 but enhanced with a crypto
+accelarator. If you detach the chip from the plastic card, you will
+notice that the actual chip is on the backside of the golden contacts,
+The contacts are used to supply the card with the power volatge, the
+clock and the serial data.
+
+**** SCdaemon
+
+Reasons why SCdaemon:
+
+-  It is a module which can be used by independent applications, e.g.
+   programs that only like to see whether smart card is inserted or just
+   need to access the non-secret information.
+-  Bugs in this one don't progagate to gpg-agent. Strong encapsulation
+   due to the process barrier.
+-  There is no need to link X.509 code into gpg-agent. Only needed in
+   the SCdaemon -> less dependencies. This is the only module which
+   needs to be aware of the SC backend OpenSC. More stability of the
+   system; a crash here does not affect gpg-agent and gpg-agent can
+   restart the scdaemon.
+-  Easier maintenance and development.
+
+**** User Interface for Smartcards
+
+Some thoughts on the UI requirements for cards:
+
+Preparation of cards (intitalization of the card's filesystem) should be
+done by an external utility because we might need to display a lot of
+error messages etc. A command line tool is more suitable for this.
+
+Note that average users don't need this because they can purchase
+suitable initialized cards. If there will be a need for a more user
+friendly interface, someone else might setup such a project.
+
+For storing the key on a card, a bootable OS is the desired solution.
+But we should be able to do it within our environment after displaying
+suitable warnings. To do this we need a checkbox (defaults to false) in
+the key generation dialog. Everyting else is done by utilizing the
+pinentry.
+
+The most common interaction with SC happens after a user plugs in a
+card. The SCdaemon might detect this but therefore it must have been
+started already. So the better way is to tell gpgsm to look for a card -
+KDE may provide a notifications service to start this program whenever
+the state of a card readwer changes, but this not within the scope of
+the Ägypten project.
+
+In most cases gpg-agent/SCdaemon will notice that the card has already
+been used and therefore the access to the card is transparent. However,
+for new and unknown cards we need to ask the user what to do. To
+separate this from the UI, we like to also use the pinentry. After a
+user plugs in a card she won't be too surprised to see a pop up window,
+asking some questions about the card ("Hey, this is a new card - what do
+you want me to do with it?"). The user might answer, he does not know in
+which case the dialog disapears but will pop up every time the card is
+plugged in again. The other possible answer is "yes, I want to use a
+secret key from this card" after which gpg-agent asks for the PIN to
+verify that she is a legitimate user and registers the card in her
+secret-key database on the disk.
+
+If the use of a secret key is any time later needed, gpg-agent will look
+through its secret key DB and use the key stored on the disk or (if
+there is a flag that the key is on a SC) ask the user to insert the
+appropriate card.
+
+So the changes to the UI are really minimal by only requiring one
+checkbox.
+
+There is still the question open on howto un-regsiter a key from the DB
+after it has expired or is not anymore accessible.
+
+**** Smartcard access modules
+
+The Ägypten project will use [[http://www.opensc.org/][OpenSC]] to
+incorporate Smartcards. [[http://www.linuxnet.com/middle.html][PCSC Lite
+of the MUSCLE project]] will be used to establish principle
+functionality. Afterwards, PCSC lite will be replaced by a new
+implementation. The primary reason is that the current license of PCSC
+is not compliant with the Ägypten project goals for licenses (GPL). A
+further advantage of OpenSC is the working pkcs-15 code and the clear
+origin of the code.
+
+An alternative for OpenSC was
+[[http://www.franken.de/crypt/scez.html][SCEZ]], but here also the
+license (old BSD with advertisement clause in current tar-balls) made us
+prefer the LGPL licensed OpenSC. However, SCEZ the current development
+version is now dual licensed under the new BSD and LGPL .
+
+Links:
+
+[[http://www.ioc.ee/atsc/faq.html][A Frequently Asked Questions list
+(FAQ) for alt.technology.smartcards]] (outdated but still useful)
+ [[http://www.opensc.org/][OpenSC - SmartCard library with support for
+PKCS#15 compatible cards]] (License: LGPL)
+ [[http://www.franken.de/crypt/scez.html][SCEZ - Smart Card Library]]
+(License: old BSD)
+ [[http://www.linuxnet.com/middle.html][MUSCLE: Latest Stable PC/SC]]
+ [[http://smartsign.sourceforge.net/][Smartsign]] (GPL)
+ [[http://www.libchipcard.de/][Libchipcard]] (LGPL)
+
+[[http://www.accu.org/bookreviews/public/reviews/s/s000027.htm][Smart
+Card Handbook by W Rankl & W Effing (Book Review)]] This book s also
+available in German by Hanser
+([[http://www.hanser.de/weitere_infos/1999/3-446-21115-2.htm][Handbuch
+der Chipkarten, 3. Auflage, ISBN 3-44621115-2]]).
+
+** Other related projects and interesting stuff
+
+[[http://www.cs.auckland.ac.nz/~pgut001/pubs/x509guide.txt][X.509 Style
+Guide]] by Peter Gutmann
+
+[[http://www.getronicsgov.com/hot/sfl_home.htm][S/MIME Freeware Library
+(SFL)]] (Free Software status not clear, partly GPL)
+
+[[http://www.post1.com/home/ngps/m2/howto.smime.html][HOWTO: Programming
+S/MIME in Python with M2Crypto]]
+
+[[http://csrc.nist.gov/pki/testing/x509paths.html][X.509 Path Validation
+Test Suite]] Conformance tests for relying parties that validate X.509
+certification paths at the National Institute of Standards and
+Technology.
+
+[[%20http://www.direct-to-linux.com/TUTORIALS/LinuxTutorialLDAP.html][Linux
+LDAP Tutorial: Deploying OpenLDAP - Directory Installation and
+configuration (V1.2 / 2.0)]]
+
+[[http://www.web2ldap.de/][WWW gateway to LDAP server]]
+
+[[http://www.openssl.org][OpenSSL]] Contains a Free Software CA
+implementation.
+
+[[http://www.pyca.de/][pyCA - X.509 CA]] Software for running a
+X.509/PKIX certificate authority (uses OpenSSL)
+
+[[http://gpkcs11.sourceforge.net/][gpkcs11]] cryptographic token access
+for Unix
+
+[[http://cryp.to/librfc822/][RFC822 Address Parser Library]]
+

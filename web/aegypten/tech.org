@@ -1,0 +1,189 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Technology
+
+[[file:index.org][Home]] | Technology | [[file:who.org][Who]] | [[file:time.org][Schedule]] | [[file:development.org][Development]] |
+[[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
+
+
+This page provides an overview. The CVS repository contains [[http://cvs.gnupg.org/cgi-bin/viewcvs.cgi/aegypten-specs/?cvsroot=Project+Aegypten][technical
+details]].  Note that some of parts of this page have not been
+translated from German.
+
+ [[file:images/module-overview.png]]
+
+ [[file:images/module-legend-1.png]] Strong connection: with two-way
+ communication accomplished by direct linking or KDE plug-in methods
+
+ [[file:images/module-legend-2.png]] Client/Server communication: Client (A)
+ requests a service from Service provider (B). This is either
+ accomplished by using Unix Domain sockets, shared memory or hardware
+ connection.
+
+ [[file:images/module-legend-kde.png]] KDE-dependent module
+                                                                                                                                                                                                                     |
+
+** Plug-In Container/Plug-Ins                                            :de:
+
+Die Plug-Ins für S/MIME und OpenPGP umfassen jeweils eine vereinfachte
+API zur Durchführung der gewünschten Krypto-Funktionen. Für die Aufrufe
+der Basis-API (mit GpgME bereitgestellt) werden die in den Plug-Ins
+gehaltenen Konfigurationseinstellungen berücksichtigt (z.B. sende
+komplette Zertifikatskette: ja/nein). Das jeweilige Mail-Programm stellt
+alle Benutzerdialoge für diese Einstellungen zur Verfügung und
+läd/speichert sie aus den für das jeweilige Mail-Programm spezifischen
+Konfigurationsdateien.
+
+Der Plug-In Container stellt die API der Plug-Ins innerhalb des
+Mail-Programms zur Verfügung. Er ist spezifische für jedes Programm und
+umfasst die Benutzerdialoge für Konfiguration.
+
+** GpgSM
+
+This module is responsible for encryption and key-management. It has
+been designed and implemented according to GnuPG and offers among other
+features a database for certificates. The format of this database can
+also be used by GnuPG, so all public keys can be saved in a single file.
+
+Private keys are not handled by GpgSM; it delegates the operations of
+signing and decryption to the GpgAgent. When decrypting, this delegation
+only concerns the decryption of the Session-Key; the symmetric
+decryption however is done here. The module is capable of encrypting
+data streams of arbitrary length. It offers a command line interface
+widely corresponding to the interface of GnuPG.
+
+GpgSM is also responsible for the generation of keys and related
+messages. The key generation itself will be delegated as usual to the
+GpgAgent, enabling it to save the private key directly in it's PSE.
+
+Apart from the mandatory algorithms, AES will be also implemented.
+Because it is not yet mentioned in the specification, it's use will be
+made available by a certain option in the configuration.
+
+** GpgAgent
+
+This module takes over multiple tasks:
+
+-  It takes over all cryptographic operations requiering a private key.
+-  It manages both the Soft-PSEs and the Token PSE.
+-  It saves the fingerprint of the root certificate.
+-  It delegates operations to a krypto token, using the standards
+   PKCS11, PKCS12 and PKCS15.
+-  Optionally, it is capable of assuring the integrity of the system
+   (i.e. it's modules and certain keys). To assure this, it uses a MAC,
+   whose key is derived from a PIN.
+-  It offers functionality for both import and export of the private
+   keys.
+-  It generates new key-pairs.
+
+For querying the PIN, the GpgAgent uses the PIN Entry-module. Special
+measures to protect the sensitive information are implemented here (e.g.
+to protect information from being swapped to the harddrive).
+
+The design of this modules interface enables the module to be completely
+implemented on a seperate hardware module.
+
+** DirMngr
+
+This module controls all directory accesses and performs search
+operations. To accomplish this, it also uses OpenLDAP directly.
+Certificate Revocation Lists (CRLs) are kept in a local cache by this
+module and their validity is directly checked here. It is linked against
+the hereby required libraries.
+
+** PIN Entry
+
+This is a very simple module, it only opens a modal dialog and asks for
+the PIN. Using a special protocol, it cooperates directly with the
+GpgAgent. This functionality is not built into the GpgAgent directly to
+avoid linking against the complex GUI code. Furthermore, the module can
+be adopted to existing graphical user interfaces easily.
+
+Within the project the PIN Entry will be implemented as a qt-, gtk- and
+text-version. Possibly an even simpler version using the basic grapical
+user interface (X11) will be added in the future This would simplify
+code-validation.
+
+** Funktionsweise und Datenfluß                                          :de:
+
+*** Schlüsselerzeugung
+
+Neue Schlüssel werden über das Konfigurationsmodul von KMail erzeugt,
+welches hierzu GpgSM mit der Schlüsselerzeugung beauftragt. GpgSM gibt
+dies an GpgAgent weiter, der die sicherheitskritischen Operationen
+durchführt und den privaten Schlüssel in der PSE abstellt. Über einen
+weiteren Dialog kann eine Zertifizierungsanfrage erstellt sowie weitere
+Schlüsselverwaltungsfunktionen durchgeführt werden.
+
+*** Signieren
+
+Die zu signierende Nachricht (bzw. das MIME-Objekt) wird zusammen mit
+der Identifikation des zur aktuellen Rolle gehörenden Zertifikats an
+GpgSM gegeben, welches die Signatur berechnet. Da zur Erzeugung der
+Signatur der private Schlüssel notwendig ist, wird die grundlegende
+Signaturoperation nicht direkt von GpgSM durchgeführt sondern an
+GpgAgent delegiert. Hierbei werden allerdings lediglich die absolut
+notwendigen Parameter sowie der Hash der Nachricht weitergegeben
+(optional kann auch der Hash von GpgAgent berechnet werden und die
+Nachricht durch einen speziellen Viewer angezeigt werden; dies ist aber
+nicht sinnvoll, solange GpgAgent nicht auf externer Hardware ausgeführt
+wird).
+
+GpgAgent wird in seiner PSE nach dem privaten Key suchen, eine PIN von
+dem PIN-Entry Modul erfragen und dann die Signatur erzeugen. Der PKCS-1
+Wert wird dann an GpgSM weitergegeben der dann die signierte Nachricht
+aufbaut.
+
+Nach Rückgabe an das MUA-Plug-in wird dieses entscheiden, ob die
+Nachricht verschlüsselt werde soll und dies entsprechend dem oben
+geschilderten Verfahren durchführen. Soll es nicht verschlüsselt werden,
+so wird die signierte Nachricht direkt versendet, wobei je nach
+Konfiguration Zertifikate mitgesendet werden.
+
+*** Signaturprüfung
+
+Der MUA-Plug-in zerteilt die Nachricht in ihre Bestandteile und gibt den
+Plaintext sowie die Signatur zur Überprüfung an GpgSM weiter. Enthält
+die Nachricht auch ein Zertifikat, so wird dieses vorher an GpgSM
+gegeben, so daß es über das Zertifikat verfügen kann; ist kein
+Zertifikat vorhanden, so wird GpgSM den DirMngr beauftragen die
+entsprechenden Zertifikate zu besorgen. Hierzu wird der DirMngr auf das
+LDAP-Service-Modul zurückgreifen. Nach erfolgreicher Signaturprüfung
+wird GpgSM sich wiederum an den DirMngr wenden, um festzustellen, ob
+eines der verwendeten Zertifikate in einer CRL vorkommt; sollte dies der
+Fall sein, so wird dieser Status direkt im zu GpgSM gehörenden
+Zertifikatspeicher vermerkt, um so weitere Signatur-Verifikationen
+direkt scheitern zu lassen.
+
+Der Signatur-Status sowie alle verfügbaren Metainformationen werden an
+das MUA-Plug-in zurückgegeben, welches den Status der Signatur
+entsprechend anzeigt.
+
+*** Verschlüsselung
+
+Das MUA Plug-in stellt anhand der Adressaten eine Liste von Zertifikaten
+zusammen. Hierbei bedient es sich sowohl der internen Datenbank von
+GpgSM als auch des DirMngr. Jedes ermittelte Zertifikat wird durch das
+PKI Modul gegen die CRLs getestet und nur die gültigen Zertifikate
+werden angezeigt. Dies erspart eine spätere Prüfung in GpgSM und eine
+damit verbundene Rückweisung.
+
+Es wird dafür gesorgt, dass alle notwendigen Zertifikate in der durch
+GpgSM gepflegten Datenbank vorhanden sind. Die zu verschlüsselnde
+Nachricht (bzw. das Attachment) wird zusammen mit den internen
+Identifikationsnummern (fingerprints) der Zertifikate an GpgSM
+weitergegeben, welches dann die Verschlüsselung vornimmt und das
+verschlüsselte Objekt zurückgibt. Das neue Objekt wird nun wieder in
+einen MIME Kontext eingebunden und versendet.
+
+*** Entschlüsselung
+
+Ist eine empfangene Nachricht verschlüsselt, so wird diese an GpgSM
+weitergeleitet, die dann GpgAgent beauftragt den Session-Key zu
+entschlüsseln. GpgAgent bedient sich hierzu entweder den eigenen
+Funktionen und der Soft-PSE oder delegiert die Aufgabe an eine
+Smartcard.
+
+ (C) Intevation, Verbatim copying and distribution of this entire page
+is permitted in any medium, provided this notice is preserved.

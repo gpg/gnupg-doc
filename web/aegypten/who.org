@@ -1,0 +1,55 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Who
+
+[[file:index.org][Home]] | [[file:tech.org][Technology]] | Who | [[file:time.org][Schedule]] | [[file:development.org][Development]] |
+[[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
+
+#+html: <div align="right">
+   *Contractor*:\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\nbsp\\
+#+html: <a href="http://www.bsi.de"><img
+#+html:  src="images/bsilogo.png"
+#+html:  alt="Bundesamt für Sicherheit in der Informationstechnik"></a>
+#+html: </div>
+
+#+html: <div align="left">
+#+html: <a href="http://intevation.net"><img
+#+html:  src="images/intevation-logo-100ppi.png"
+#+html:  alt="Intevation GmbH"></a>
+   Intevation GmbH, located in Osnabrück, Germany is a high level free
+   software consulting company. Beyond the technological implications
+   it empowers its clients to utilise the advantages of free software
+   culture and usable IT-solutions. Intevation is main sponsor of the
+   FreeGIS project and supports the FSF Europe.
+#+html: </div><br/><br/>
+
+
+#+html: <div align="left">
+#+html: <a href="http://www.g10code.com"><img
+#+html:  src="images/g10code-logo.png"
+#+html:  alt="g10 Code GmbH"></a>
+   g10 Code GmbH is a software consulting company dedicated to the
+   development of security solutions using Free Software. g10 Code
+   takes responsibility for further development of GnuPG and consults
+   for the GNU project on cryptographic questions.
+#+html: </div><br/><br/>
+
+
+#+html: <div align="left">
+#+html: <a href="http://www.klaralvdalens-datakonsult.se/"><img
+#+html:  src="images/kdab-logo.png"
+#+html:  alt="Klarälvdalens Datakonsult AB"></a>
+   Klarälvdalens Datakonsult AB is a small international software
+   company with headquarters in Hagfors, Sweden. Its employees work in
+   Sweden, Germany, and Denmark. The company specializes in
+   platform-independent software solutions and names DaimlerChrysler,
+   IBM, and Intel among its customers. In 2001, Klarälvdalens
+   Datakonsult AB has launched a series of applications and libraries
+   mainly targeted at developers. Courses and mentoring are also part
+   of the company's offerings.
+#+html: </div><br/><br/>
+
+
+ (C) Intevation, Verbatim copying and distribution of this entire page
+is permitted in any medium, provided this notice is preserved.

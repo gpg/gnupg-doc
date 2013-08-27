@@ -1,0 +1,217 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten2: Improving Free Software Sphinx-Clients
+
+  Ägypten2 is a successor project of Ägypten1, but with its own technical
+  aims, primarily addressing a better GUI and some more functionality such
+  as OCSP. The Ägypten2 project has the same structural and organisational
+  frame as Ägypten1, started December 1st 2003 and finished in
+  November 2004.
+
+  Please read the [[file:~/s/gnupg-web/web/aegypten/index.org][Ägypten1 Web-Pages]] to learn about the project that
+  initially estabslished the Sphinx (S/MIME) awareness of the MUAs
+  KMail and Mutt.
+
+** Aims
+
+   The rough list of aims and their status (as of 13-January-2005) of
+   the Ägypten2 project are:
+
+   - Certificate Manager/Dirmngr
+
+     - GUI for PSE management (done)
+     - GUI for importating centrally created keys (done)
+     - Manual installation of CRLs (done)
+     - Check validity of all certifiactes (done)
+     - Visual distinction of certificate validity and usage (done)
+     - OCSP support (done)
+     - serial signatures based on the MIME structures (done)
+     - GUI for configuring LDAP servers (done)
+
+   - KMail
+
+     - Better support for handling keys with different key usages (done)
+     - GUI for specifying set and sequence of DN elements to show in
+       KMail (done)
+     - Detection of encrypted messages even if not correctly suffixed
+       ".p7m" (done)
+     - Consistent and correct handling of drafts (done)
+
+   - Support of DINSIG Smartcards (DIN V66291-1:2000-04) (done)
+   - Extend Mutt to support S/MIME based on Ägypten crypto-backend
+     (done)
+   - Interoperability with other Sphinx-Applications (established)
+   - KDE GUI for watching GnuPG log (done)
+   - Complete German translation (almost done)
+   - Merge Ägypten developments into main development branches,
+     especially the KDE parts (done)
+   - Incorporate full functionality into Debian (in progress, only
+     GpgSM missing)
+   - Finish work in summer 2004 (well November was not too bad,
+     considering that the official Sphinx Interoperability Test
+     performed by Atos Origin took place in the last week of October).
+
+** Module Overview
+
+   #+caption: [module diagram]
+   [[file:module-overview.png]]
+
+
+** Users
+
+   Basically Ägypten2 is ready for use. The technology passed
+   interoperability tests with a number of leading other Sphinx
+   products (in fact most of them being proprietary Outlook
+   plugins). Of course, there could still be some remaining bugs.
+
+   If your are interested in the OpenPGP part, there is a HOWTO
+   provided by kde.org: [[http://kmail.kde.org/kmail-pgpmime-howto.html][Using OpenPGP and PGP/MIME with KMail >= 1.7]]
+   Most of the described stuff is also required for S/MIME.
+
+   Since the release of KDE 3.3 (and therewith KMail 1.7), all KDE
+   elements of Ägypten2 are available with the standard KDE 3.3 (or
+   newer) packages.
+
+   However, the various packages of Ägypten2 did not yet made it into
+   the usual GNU/Linux distributions.
+
+   Please report us if you find a distibution where Ägypten2
+   (especially the S/MIME part) works on your distribution out of the
+   box or at least most parts are available as packages.
+
+*** Debian Sarge
+
+    Ägypten-2 funtionality is fully integrated in Debian 'Sarge' 3.1.
+
+#+begin_example
+ apt-get install gnupg libgpg-error0 libgcrypt11 libgpgme11
+ apt-get install dirmngr
+ apt-get install pinentry-curses pinentry-gtk pinentry-qt
+ apt-get install gnupg2
+#+end_example
+
+    In case you want to compiler newer versions than the Sarge ones
+    you might need some developer packages of which some are available
+    as packages:
+
+    apt-get install libgpg-error-dev libgcrypt11-dev libassuan-dev
+    libgpgme11-dev
+
+    KDE >= 3.3 is also available in Sarge:
+
+    apt-get install kmail kleopatra # the minimum you should install
+    apt-get install kaddressbook # to use contact specific crypto
+    preferences apt-get install kontact # to have various PIM
+    components integrated
+
+** Developers
+
+*** Issue Tracker
+
+    Roundup [[http://intevation.de/roundup/aegypten/][Ägypten Issue Tracker]]
+
+    (previously we used an [[http://intevation.de/rt/webrt?q_queue=aegypten][RT-based issues tracker for Ägypten]]. Please
+     report new bugs only into the new Roundup-based one.)
+
+*** Subversion
+
+    First make sure you installed
+
+    -  [[http://www.gnupg.org][GnuPG]] >= 1.2.5
+    -  [[http://www.gnupg.org/related_software/libgpg-error/][libgpg-error]]
+       >= 1.0.0
+    -  [[http://directory.fsf.org/security/libgcrypt.html][libgcrypt]] >=
+       1.2.0
+    -  [[http://www.gnupg.org/(en)/related_software/gpgme/index.html][GpgME]]
+       >= 1.0.0
+    -  [[http://www.kde.org][KDE]] >= 3.3.0
+
+    The full procedure is (you may apply short-cuts for some modules
+    e.g.  via tar-balls. Note also that after installing libraries you
+    may have to issue ldconfig to have the newly installed libraries
+    be found by subsequent configure routines. Note finally that you
+    should read README.SVN if you find one):
+
+    1. Build libassuan
+
+       #+BEGIN_EXAMPLE
+               svn co svn://cvs.gnupg.org/libassuan/trunk libassuan
+               cd libassuan
+               ./autogen.sh
+               ./configure --prefix=/some/where --enable-maintainer-mode
+               make install
+
+       #+END_EXAMPLE
+
+       Alternatively you may use the latest tarball from
+       [[ftp://ftp.gnupg.org/gcrypt/alpha/libassuan/][ftp.gnupg.org/gcrypt/alpha/libassuan/]] and do the usual
+       =./configure && make install=.
+
+    2. Build libksba
+
+       #+BEGIN_EXAMPLE
+               svn co svn://cvs.gnupg.org/libksba/trunk libksba
+               cd libksba
+               ./autogen.sh
+               ./configure --prefix=/some/where --enable-maintainer-mode
+               make install
+
+       #+END_EXAMPLE
+
+       Alternatively you may use the latest tarball from
+       [[ftp://ftp.gnupg.org/gcrypt/alpha/libksba/][ftp.gnupg.org/gcrypt/alpha/libksba/]]
+       and do the usual =./configure && make install=.
+
+    3. Build GnuPG 1.9 (make sure you build with thread support, or else
+       some operations may hang)
+
+       #+BEGIN_EXAMPLE
+               svn co svn://cvs.gnupg.org/gnupg/trunk gnupg
+               cd gnupg
+               ./autogen.sh
+               ./configure --prefix=/some/where --enable-maintainer-mode
+               make install
+
+       #+END_EXAMPLE
+
+       Alternatively you may use the latest tarball from
+       [[ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/][ftp.gnupg.org/gcrypt/alpha/gnupg/]]
+       (take the latest =gnupg-1.9.x=) and do the usual
+       =./configure && make install=.
+
+    4. Build DirMngr
+
+       #+BEGIN_EXAMPLE
+               svn co svn://cvs.gnupg.org/dirmngr/trunk dirmngr
+               cd dirmngr
+               ./autogen.sh
+               ./configure --prefix=/some/where --enable-maintainer-mode
+               make install
+
+       #+END_EXAMPLE
+
+       Alternatively you may use the latest tarball from
+       [[ftp://ftp.gnupg.org/gcrypt/alpha/dirmngr/][ftp.gnupg.org/gcrypt/alpha/dirmngr/]]
+       and do the usual =./configure && make install=.
+
+    5. Build pinentry module
+
+       #+BEGIN_EXAMPLE
+               svn co svn://cvs.gnupg.org/pinentry/trunk pinentry
+               cd pinentry
+               ./autogen.sh
+               ./configure --prefix=/some/where --enable-maintainer-mode
+               make install
+
+       #+END_EXAMPLE
+
+       Alternatively you may use the latest tarball from
+       [[ftp://ftp.gnupg.org/gcrypt/pinentry/][ftp.gnupg.org/gcrypt/pinentry/]]
+       and do the usual =./configure && make install=.
+
+
+ Page last modified: $Date: 2006-08-01 15:45:27 $
+
+ (C) Intevation, Verbatim copying and distribution of this entire page
+ is permitted in any medium, provided this notice is preserved.

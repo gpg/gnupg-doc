@@ -1,0 +1,54 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Glossary
+
+[[file:index.org][Home]] | [[file:tech.org][Technology]] | [[file:who.org][Who]] | [[file:time.org][Schedule]] | [[file:development.org][Development]] |
+[[file:pr.org][Public Relations]] | Glossary
+
+
+This page explains the most important terms and acronyms in order to
+help understanding the Ägypten project. Please inform us about further
+words/acronyms not clear in their meaning.
+
+** New terms of Ägypten project
+
+-  Assuan :: Advanced Security System Unit Architecture Network. Assuan
+   is a framework for module communication within the Ägypten project
+-  Imhotep :: Imhotep was meant to be a dialog agent for Ägypten. It can
+   run dialogs on a variety of platforms (e.g. terminal or X). The
+   dialogs are described by Qt Designer XML files.
+    The Imhotep concept has been postponed and will not be implemented
+   within the Ägypten project. It has turned out to be more practicable
+   to implement most dialogs right inside the mail-software. All dialogs
+   around the PIN entry are covered by the special module 'pinentry'.
+
+** General terms
+
+-  MIME :: Multipurpose Internet Mail Extensions. An IETF standard that
+   allows for mails containing non-ASCII text and non-textual data among
+   other things. MIME is specified in several RFCs, most notably
+   [[http://ietf.org/rfc/rfc2045.txt][2045]] ff.
+-  MUA :: Mail User Agent. The mail program used by a user to read,
+   compose and send mail
+-  OpenPGP :: [[http://www.gnupg.org/rfc2440.html][OpenPGP]] A protocol
+   for using PGP (Pretty Good Privacy) or compatible software such as
+   GPG for encrypted email on the internet. It also supports other
+   applications of cryptography in email, such signed mails.
+-  PKIX :: Public Key Infrastructure (X.509) (IETF Working Group)
+-  S/MIME :: Secure/MIME provides a method to send and receive secure
+   MIME messages
+-  [[http://www.bsi.de/aufgaben/projekte/sphinx/index.htm][Sphinx]] :: A
+   test-project for "End-to-end Security for the Exchange of Documents"
+   initiated by the 'Koordinierungs- und Beratungsstelle der
+   Bundesregierung' (procurement department of the ministry of interior)
+   in conjunction with the 'Bundesamt für Sicherheit in der
+   Informationstechnik' (German information security agency)
+-  X.509 :: [[http://www.iks-jena.de/mitarb/lutz/certification/mc/cert.htm#1.1.][X.509]]
+   is an ITU standard defining a framework for authentication services.
+   For the internet, X.509 is defined by RFC
+   [[http://ietf.org/rfc/rfc2510.txt][2510]]f.
+
+
+(C) Intevation, Verbatim copying and distribution of this entire page
+is permitted in any medium, provided this notice is preserved.

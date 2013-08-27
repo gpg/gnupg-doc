@@ -1,0 +1,138 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten (Free Software Sphinx-Clients)
+
+*Please note the successor: [[../aegypten2/index.html][Project Ägypten2]]:* Improving Free Software
+Sphinx Clients
+
+Home | [[file:tech.org][Technology]] | [[file:who.org][Who]] | [[file:time.org][Schedule]] | [[file:development.org][Development]] |
+[[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
+
+#+BEGIN_QUOTE
+  The Sphinx project launched by German authorities aims to improve
+  secure email exchange. The projects technological base is the protocol
+  'TeleTrust e.V. MailTrusT Version 2'. This includes the standards
+  S/MIME, X.509v3 and others.
+
+  Proprietary products are already on the way, but with the project
+  *Ägypten* there is now also a Free Software solution going to be
+  realized for popular mail user agents (sphinx-enabling *KMail* and
+  *Mutt* are essential goals).
+
+  The Free Software companies Intevation, g10 Code and Klarälvdalens
+  Datakonsult AB are contracted by the German 'Bundesamt für Sicherheit
+  in der Informationstechnik (BSI)' to incorporate the Sphinx protocols
+  into Free Software MUAs. Background is to ensure availability of
+  alternatives to proprietary desktops.
+#+END_QUOTE
+
+** Aims and Results
+
+Within this project it is an explicit goal to produce sustainable
+improvements for the free software desktop and no quickly assembled
+code. The outcome of Ägypten consists of modular contributions to
+existing projects (there will be no single Ägypten package). These work
+together as an integrated solution for the users.
+
+Rough list of aims and results:
+
+-  Plug-In for KMail and Mutt (established)
+-  LDAP support for Certificate Revocation Lists, CRLs (established)
+-  incorporation of sphinx protocols in gpg framework (established)
+-  X.509, PKCS10, PKCS11, PKCS12 and PKCS15 support (established)
+-  parallel support of OpenPGP for KMail (established)
+-  LDAP support for KMail address book (established)
+-  All finished by summer 2002, alpha-version for CeBIT 2002, Hannover
+   (official completion was on 27-November-2002)
+
+Detailed list of results:
+
+-  All improvements and new modules are integrated into the
+   corresponding main developments (CVS HEAD) if not noted otherwise.
+-  *KMail*: All modifications to KMail (adding PGP/MIME and S/MIME
+   support) are officially available since KDE 3.1 release.
+-  *Mutt*: A modified version based on 1.5.0 is available as a special
+   package. Changes for a more flexible approach for different
+   crypto-backends has been integrated into Mutt CVS HEAD. Eventually,
+   the Ägypten patch may go into the CVS HEAD as well.
+-  *KAddressbook*: LDAP support is added and available since KDE 3.1.
+-  *KGpgCertmanager*: A new KDE application to manage the certificates
+   through a GUI. Available since KDE 3.1.
+-  *NewPG*: A new module that covers GpgSM (S/MIME encryption and
+   key-management) and SCDaemon (for Smartcard access). This module will
+   eventually be merged with GnuPG.
+-  *Pinentry*: A new module that contains various interfaces (qt, gtk,
+   curses, terminal) to enter a PIN/passphrase.
+-  *DirMngr*: A new module that handles the Certificate Revocation Lists
+   (CRLs).
+-  *GpgME*: Extended to handle GnuPG (OpenPGP) and GpgSM (S/MIME)
+   concurrently. Also a comprehensive documentation was written to
+   support sphinx-enabling further MUAs.
+-  *GnuPG*: Extended with GpgAgent that stores passphrases like
+   ssh-agent does (available since GnuPG 1.2.0 release).
+-  *cryptplug*: This new module is an optional interface layer between
+   GpgME and a MUA. It is used for KMail, Mutt is directly coupled with
+   GpgME.
+
+** Links
+
+   - *[[file:~/s/gnupg-web/web/aegypten2/index.org][Ägypten2 Project]]*
+   - [[http://kmail.kde.org/][KMail]]
+   - [[http://www.mutt.org/][Mutt]]
+   - [[http://www.gnupg.org/][GnuPG]]
+   - [[http://www.bsi.de/aufgaben/projekte/sphinx/index.htm][Sphinx]]
+
+   - [[http://www.intevation.net][Intevation]]
+   - [[http://www.g10code.de][g10 Code]]
+   - [[http://www.klaralvdalens-datakonsult.se/][Klarälvdalens Datakonsult]]
+   - [[http://www.bsi.de][Bundesamt für Sicherheit in der Informationstechnik]]
+
+** News
+
+   - 27-Aug-2013: Removed French and German pages as part of the
+     migration of www.gnupg.org to a new system.
+   - 31-Mar-2004: Linked Ägypten2 Project
+   - 29-Jan-2003: Finally KDE 3.1 is out. Ägypten features are
+     intergrated.  Debian woody packages available.
+   - 23-Feb-2004: Updated developer infos, including KDE 3.2.
+   - 22-Aug-2002: Updated set of tarballs.
+   - 07-Oct-2002: Again new tarballs.
+   - 01-Aug-2002: Milestone 5 (external test) finished.
+   - 04-Jun-2002: French web pages updated.
+   - 15-May-2002: Updated set of tarballs including Sphinx-enabled
+     Mutt.
+   - 02-Apr-2002: Updated set of tarballs.
+   - 21-Mar-2002: Technology description updated.
+   - 13-20-Mar-2002: Ägypten in action at CeBIT Hall 11, Pav.D, Booth
+     10-12.
+   - 26-Feb-2002: First set of tarballs prepared.
+   - 31-Jan-2002: French web-pages contributed.
+   - 04-Jan-2002: Right before christmas: first Sphinx en- and
+     decryption via KMail works
+   - 27-Nov-2001: First functionalities implemented, see development
+     page
+   - 15-Nov-2001: New web-page: Glossary
+   - 26-Oct-2001: Web-pages: new: Public Relations, updated:
+     Technology
+   - 24-Oct-2001: Development: cvs and issue-tracker
+   - 11-Oct-2001: new web pages on technology, who is involved,
+     project schedule
+   - 1-Oct-2001: project start, initial webpage
+
+** Contact
+
+   You can reach the project team on several mailing lists:
+
+   - [[http://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]] (technical coordination)
+   - [[http://mail.kde.org/mailman/listinfo/kmail][kmail]] (KMail)
+   - [[http://lists.gnupg.org/mailman/listinfo/gnupg-devel/][gnupg-devel]] (GnuPG development)
+
+   Project coordination:
+
+   - [[mailto:bernhard@intevation.de][=<bernhard@intevation.de>=]]
+   - [[mailto:jan@intevation.de][=<jan@intevation.de>=]]
+
+
+ (C) Intevation, Verbatim copying and distribution of this entire page
+is permitted in any medium, provided this notice is preserved.

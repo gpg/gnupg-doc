@@ -1,0 +1,172 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Public Relations
+
+[[file:index.org][Home]] | [[file:tech.org][Technology]] | [[file:who.org][Who]] | [[file:time.org][Schedule]] | [[file:development.org][Development]] |
+Public Relations | [[file:glossary.org][Glossary]]
+
+
+** February 2003
+
+Personal:
+
+-  [[http://www2.cns.mpg.de/linuxworkshop2003/programm/][2.  Linux-Workshop der Max-Planck-Institute]] 27-28th February 2003,
+   Leipzig, Germany Talk (in German) "Projekt Ägypten" by Bernhard
+   Reiter.
+
+** September 2002
+
+Personal:
+
+-  [[http://www.opensaar.de][OpenSaar]], 4-5-Sep-2002, Saarbrücken,
+   Germany
+    Talk (in German) "IT Sicherheit und Freie Software" by Werner Koch.
+
+** Juni 2002
+
+Personal:
+
+-  [[http://www.linuxtag.org][LinuxTag]], 6-9-Jun-2002, Karlsruhe,
+   Germany
+    Talk (in German):
+   "[[http://www.linuxtag.org/2002/deutsch/showitem.php3?item=387&tid=abckmigdhg〈=de][Projekt
+   Ägypten - Sichere E-Mails mit KMail und mutt über das
+   Sphinx-Protokoll]]" by Karl-Heinz Zimmer.
+    Talk (in German) "Freie Software-Projekte sind anders! am Beispiel
+   Ägypten..." by Bernhard Reiter.
+    Furthermore, Ägypten was presented in cooperation with KDE
+   developers at the BSI booth.
+-  [[http://www.cordis.lu/ist/ka4/tesss/concert_meeting.htm][Free/Open
+   Source Software Projects Concertation Meeting]] (organized by
+   European Commission, IST), 24-Jun-2002, Brussels, Belgium
+    Talk:
+   "[[http://www.intevation.de/~jan/presentations/Free_Software_Projects_are_different/ec_24_jun_2002_brussels/ec_24_jun_2002_brussels.slides.html][Free
+   Software-Projects are different! Example Ägypten...]]" by Jan-Oliver
+   Wagner.
+
+** May 2002
+
+Digital:
+
+-  Description of Ägypten added to the
+   [[http://www.knopper.net/knoppix/][Knoppix]] (german) CD V3.0
+   (16-May-2002).
+
+** April 2002
+
+Paper:
+
+-  Linux Magazin, Heft 5, page 9: Otto Schily besucht CeBIT (german)
+
+Personal:
+
+-  4-Apr-2002, Brno, Czech, Crypto workshop: The modular system used in
+   Ägypten (Werner Koch)
+-  5-Apr-2002, Prague, Czech, [[http://www.europen.cz/][Europen
+   seminar]]: Talk on GnuPG/Ägypten/Freie Software followed by a panel
+   discussion (Werner Koch)
+
+** March 2002
+
+Paper:
+
+-  c't 2002, Heft 7, page 43: Innenminister für Open Source (german)
+
+Personal:
+
+-  [[http://www.cebit.de/homepage_e][CeBIT 2002]], Hannover, Germany,
+   13-20-Mar-2002:
+    Presentation at the BSI booth (Hall 11, Pavillon D, booth 10-12).
+-  [[http://www.guug.de/veranstaltungen/ffg2002/][GUUG
+   Frühjahrsgespräch]], Bochum, Germany, 27-Feb-1-Mar-2002:
+    Presentation
+   [[http://www.guug.de/veranstaltungen/ffg2002/vortraege.html#aegypten][Project
+   Ägypten]] by Werner Koch Friday, March 1st 14:00-14:45.
+    The presentation was in German.
+
+Digital:
+
+-  da Code, 21-Mar-2002:
+   [[http://linuxfr.org/section/S%E9curit%E9/7617,0,1,0,0.php3][Sphinx]]
+   (french)
+-  Description of Ägypten added to the CD
+   [[http://www.bsi.de/sicd/index.htm][Ins Internet - mit Sicherheit]]
+   (german) of the BSI.
+
+** February 2002
+
+Personal:
+
+-  [[http://www.nordu.org/NordU2002/][NordU2002]] - Helsinki, Finland,
+   20-24-Feb-2002:
+    Presentation
+   [[http://www.nordu.org/NordU2002/tutorials/tutorials/Cleopatra.htm][Cleopatra
+   and her new guard]] by Werner Koch on
+   [[http://www.nordu.org/NordU2002/conf_prog_over.htm#friday][Friday,
+   February 22nd 2002 at 13:00 in Session 2]].
+
+** January 2002
+
+Digital:
+
+-  BMWi, 24-Jan-2002:
+   [[http://www.sicherheit-im-internet.de/themes/themes.phtml?ttid=2&tsid=162&tdid=1536&page=0][E-Mail-Verschlüsselung
+   auf S/MIME-Basis mit Freier Software]] (german)
+-  Slashdot, 22-Jan-2002: Sphinx-enabled KMail and Project Ägypten
+   mentioned in the comments on
+   [[http://slashdot.org/article.pl?sid=02/01/22/0632225][German
+   Government Introduces Digital Signatures]].
+
+** November 2001
+
+Personal:
+
+-  [[http://www.linux-kongress.de/][Linux Kongress 2001]],
+   28-30-Nov-2001:
+    BOF-Session with Werner Koch 29-Nov-2001, 17:00: Cleopatra and her
+   New Guard
+
+Paper:
+
+-  iX 2001, 12/2001, page 38: Ägypten ruft (german)
+
+** October 2001
+
+Digital:
+
+-  Linux Weekly News, 11-Oct-2001:
+   [[http://lwn.net/2001/1011/a/german-smime.php3][ANN: Sphinx (S/MIME,
+   X.509) project for MUAs (KMail, mutt)]]
+-  Pro-Linux, 9-Oct-2001:
+   [[http://www.pro-linux.de/news/2001/3555.html][Bundesregierung und
+   OpenSource]] (german)
+-  LinuxSecurity Brasil, 9-Oct-2001:
+   [[http://www.linuxsecurity.com.br/article.php?sid=4158][Release do
+   projeto Aegypten]] (portuguese)
+-  golem.de, 8-Oct-2001: [[http://www.golem.de/0110/16210.html][BSI
+   lässt sichere E-Mail-Clients als Open Source entwickeln]] (german)
+-  Linux.de, 7-Oct-2001:
+   [[http://www.linux.de/news/index.php3?day=7&month=10&year=2001][BSI
+   fördert Freie Software]] (german)
+-  Heise Newsticker, 7-Oct-2001:
+   [[http://www.heise.de/newsticker/data/odi-07.10.01-000/][Sichere Mail
+   als Open-Source-Projekt]] (german)
+-  Slashdot, 5-Oct-2001:
+   [[http://slashdot.org/articles/01/10/05/200240.shtml][German Gov't,
+   Free Software, and Secure E-mail]]
+-  Newsforge, 5-Oct-2001:
+   [[http://www.newsforge.com/article.pl?sid=01/10/05/1611215&mode=thread][German
+   government email contract could lead to agencies switching to Free
+   Software]]
+-  LinuxToday, 5-Oct-2001:
+   [[http://linuxtoday.com/news_story.php3?ltsn=2001-10-05-012-20-PS][NewsForge:
+   German government email contract could lead to agencies switching to
+   Free Software]]
+-  BMWi, 5-Oct-2001:
+   [[http://www.sicherheit-im-internet.de/news/news.phtml?nnid=1164][Projekt
+   Ägypten: freie Software für SPHINX]] (german)
+
+Paper:
+
+-  c't 2001, Heft 22, page 49: Sichere E-Mail (german)

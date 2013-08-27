@@ -1,0 +1,40 @@
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Project Ägypten: Schedule
+
+[[file:index.org][Home]] | [[file:tech.org][Technology]] | [[file:who.org][Who]] | Schedule | [[file:development.org][Development]] |
+[[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
+
+
+The project is in the cleanup and maintenance phase. Upcoming bugs will
+be investigated.
+
+** Completed
+
+Milestone 6, (27-November-2002, planned was end of August): Project
+accepted.
+
+Milestone 5 (1-August-2002): External test finished.
+
+Milestones 4.1 and 4.2 (29-April-2002): Smartcard connection, PKCS-15,
+KMail address book is connected, Presentation at CeBIT
+(13-20-March-2002), Integration in mutt.
+
+Milestone 3 (19-February-2002): LDAP connection for CRL retrieval
+finished, creation and management for keys are integrated in KMail user
+interface. OpenPGP in KMail works analogous to S/MIME.
+
+Planning of milestones revised (14-January-2002).
+
+Milestone 2 (21-December-2001, planned was 26-November): Encryption,
+decryption, signing and signature checking works for KMail
+
+Milestone 1 (29-October-2001): Implementation design and interface
+definitions ready to start implementation work
+
+
+
+
+(C) Intevation, Verbatim copying and distribution of this entire page
+is permitted in any medium, provided this notice is preserved.
