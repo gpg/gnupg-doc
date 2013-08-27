@@ -98,7 +98,7 @@ release: Version 1.4.12 ...
 This is the publishing info used for the GnuPG pages
 #+begin_src emacs-lisp
 (progn
- (require 'gpgweb "../tools/gpgweb.el")
+ (require 'gpgweb "~/s/gnupg-web/web/share/gpgweb.el")
  (setq org-export-html-toplevel-hlevel 1)
  (setq org-export-html-coding-system 'utf-8)
 
@@ -107,6 +107,7 @@ This is the publishing info used for the GnuPG pages
    :base-extension "org"
    :language "en"
    :html-extension "html"
+   :recursive t
    :publishing-directory "../stage"
    :publishing-function gpgweb-org-to-html
    :body-only t

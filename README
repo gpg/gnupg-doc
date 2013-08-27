@@ -1,6 +1,43 @@
+README for the website branch.                           -*- org -*-
+
 This is a separated branch for the gnupg.org website.
 
 The old website was tracked in a CVS repository but we want to start
 the new website form scratch using only the texts from the generated
 HTML files.
 
+** Directory structure
+
+   - web/ :: Source files for the web.  This also include imagages
+             etc.
+   - web/share :: Logos, CSS, macros and elisp for building.
+   - tools/ :: Tools used to build the web site.
+   - stage/ :: staging directory for the site.
+
+** Aliases
+
+www.gnupg.org uses boa to serve the pages, here are the aliases we
+use:
+
+#+BEGIN_EXAMPLE
+# The manuals are maintained outside of the web pages;
+# thus we use an alias to copy them in.
+Alias /documentation/manuals /var/www/shared/manuals
+Alias /gph /var/www/shared/gph
+
+# The FAQ is located in the manuals directory but linked to the faq directory
+Alias /faq/GnuPG-FAQ.html  /var/www/shared/manuals/GnuPG-FAQ.html
+
+
+# Redirect a couple of well-known URLs
+Redirect /gpa.html      http://www.gnupg.org/related_software/gpa/
+Redirect /gpgme.html    http://www.gnupg.org/related_software/gpgme/
+Redirect /docs.html     http://www.gnupg.org/documentation/
+Redirect /download.html http://www.gnupg.org/download/
+Redirect /faq.html      http://www.gnupg.org/documentation/faqs.html
+
+# We use redirect to make language switching work.
+Redirect /why-not-idea.html  http://www.gnupg.org/faq/why-not-idea.html
+
+Redirect /howtos/ch/  http://www.gnupg.org/howtos/zh/
+#+END_EXAMPLE
