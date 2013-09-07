@@ -1,7 +1,8 @@
+#+TITLE: GnuPG - Miscellaneous
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Misc
+* Miscellaneous
 
   Any respectful site features a misc section.  We are not an exception:
 

@@ -1,3 +1,7 @@
+#+TITLE: GnuPG - Signature Key
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
 * Signature Key
 
 To guarantee that GnuPG versions you download has not been hacked by

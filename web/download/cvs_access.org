@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - GIT Access
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 

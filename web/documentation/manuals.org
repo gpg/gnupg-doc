@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Manuals
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 

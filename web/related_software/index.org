@@ -1,7 +1,8 @@
+#+TITLE: GnuPG - Related Software
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Related software
+* Related Software
 
   Over the years, GnuPG has widly gained in popularity to become the
   standard /de-facto/ as free software for private communication and

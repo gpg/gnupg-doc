@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Project Ägypten - Technology
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 

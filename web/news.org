@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - All News
 #+STARTUP: showall
 
 * All News

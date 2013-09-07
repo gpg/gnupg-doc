@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Project Ägypten - Schedule
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 

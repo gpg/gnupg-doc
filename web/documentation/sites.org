@@ -1,7 +1,8 @@
+#+TITLE: GnuPG - Other web sites
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Web sites
+* Other web sites
 
 This page shows a list of web sites which are somehow related to GnuPG.
 

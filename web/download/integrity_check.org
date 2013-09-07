@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Integrity Check
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 

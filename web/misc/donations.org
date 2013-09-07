@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Donations
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
