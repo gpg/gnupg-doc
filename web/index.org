@@ -90,70 +90,43 @@ release: Version 1.4.12 ...
 
 
 
-# Copyright (C) 2002-2004 Free Software Foundation, Inc.
-#
-# Written by Werner Koch (2007-02-01).
-# www.d.shuttle.de/isil/gnupg:  1998, 1999, then switched to FSF copyright.
-
-
-
 * COMMENT
 This is the publishing info used for the GnuPG pages
 #+begin_src emacs-lisp
-(progn
- (require 'gpgweb "~/s/gnupg-web/web/share/gpgweb.el")
- (setq org-export-html-toplevel-hlevel 1)
- (setq org-export-html-coding-system 'utf-8)
+  (progn
+   (setq gpgweb-root-dir (file-name-directory (buffer-file-name)))
+   (require 'gpgweb (concat gpgweb-root-dir "share/gpgweb.el"))
+   (setq org-export-html-toplevel-hlevel 1)
+   (setq org-export-html-coding-system 'utf-8)
 
- (aput 'org-publish-project-alist "gpgweb-org"
- '(:base-directory "."
-   :base-extension "org"
-   :language "en"
-   :html-extension "html"
-   :recursive t
-   :publishing-directory "../stage"
-   :publishing-function gpgweb-org-to-html
-   :body-only t
-   :section-numbers nil
-   :tags nil
-   :table-of-contents nil
-   :makeindex t
-   :auto-sitemap t
-   :sitemap-title "GnuPG - Sitemap"
-   :style-include-default nil
-   :timestamp-file t
-   :style "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"
-   :html-preamble "<div id=\"header\">&nbsp;</div>
-<div id=\"leftColumn\">
-  <div id=\"navigation\">
-  <ul>
-    <li><a href=\"index.html\"   @MENU-ACTIVE@>home</a></li>
-    <li><a href=\"sitemap.html\" @MENU-ACTIVE@>sitemap</a></li>
-    <li><a href=\"contact.html\" @MENU-ACTIVE@>contact</a></li>
-  </ul>
-  </div>
-</div>
-<div id=\"mainText\">"
-   :html-postamble "</div>
-<div id=\"cpyright\">
-  These web pages are Copyright 1998--2013 The GnuPG Project and
-  licensed under a
-  <a rel=\"license\"
-     href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
-   >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
-   <a href=\"copying.html\">copying<a/> for details.
-</div>"))
+   (aput 'org-publish-project-alist "gpgweb-org"
+   '(:base-directory "."
+     :base-extension "org"
+     :language "en"
+     :html-extension "html"
+     :recursive t
+     :publishing-directory "../stage"
+     :publishing-function gpgweb-org-to-html
+     :body-only t
+     :section-numbers nil
+     :tags nil
+     :table-of-contents nil
+     :makeindex t
+     :auto-sitemap t
+     :sitemap-title "GnuPG - Sitemap"
+     :style-include-default nil
+     :timestamp-file t
+     :style "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"))
 
+   (aput 'org-publish-project-alist "gpgweb-other"
+   '(:base-directory "."
+     :base-extension "jpg\\|png\\|css"
+     :recursive t
+     :publishing-directory "../stage"
+     :publishing-function org-publish-attachment
+     :completion-function gpgweb-upload))
 
- (aput 'org-publish-project-alist "gpgweb-other"
- '(:base-directory "."
-   :base-extension "jpg\\|png\\|css"
-   :recursive t
-   :publishing-directory "../stage"
-   :publishing-function org-publish-attachment
-   :completion-function gpgweb-upload))
-
- (aput 'org-publish-project-alist "gpgweb"
- '(:components ("gpgweb-org" "gpgweb-other"))))
+   (aput 'org-publish-project-alist "gpgweb"
+   '(:components ("gpgweb-org" "gpgweb-other"))))
 
 #+end_src

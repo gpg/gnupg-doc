@@ -1,0 +1,50 @@
+#+TITLE: GnuPG - Copying
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
+* Copying
+#+index: Copying
+
+  Except when noted otherwise, these web pages are copyrighted by /The
+  GnuPG Project/.  Given that there such a legal entity does not
+  exists, that name should be considered a placeholder for the list of
+  the actual authors:
+
+#+begin_verse
+  \copy 1998--2013  Werner Koch
+  \copy 2001--2013  David Shaw
+  \copy 2001--2004  Lorenzo Cappelletti
+  \copy FIXME
+#+end_verse
+
+   You can redistribute these pages and/or modify them under the terms
+   of the
+
+   [[http://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0 Unported License]]
+
+   or alternatively under the terms of the
+
+   [[http://www.gnu.org/licenses/][GNU General Public License]] as published by the Free Software
+   Foundation; either version 3 of the License, or (at your option)
+   any later version.
+
+   If you wish to allow the use of your version of theses pages only
+   under the terms of one of these licenses, indicate your decision by
+   deleting the respective above paragraph.
+
+** Remarks
+
+   For many years we maintained translation of these pages to French,
+   German, Italian, and Spanish.  A big thank you to the translators:
+   Jean-Francois Paris, Walter Koch, Cristian Rigamonti, and Noel
+   David Torres Taño.  Because we didn’t always managed to keep those
+   translation up to date, we decided in 2013 to abandon them.  In
+   case translations are again demanded by users and sufficient
+   resources are available, the tentative plan is to setup individual
+   sites per language with language or country specific information.
+
+   Former version of these web pages have been marked as copyrighted
+   by the /Free Software Foundation/.  However, a formal act to
+   transfer the copyright to them has never been conducted. Thus in
+   2013 these notices have been replaced by a reference to the list of
+   individual copyright holders.
