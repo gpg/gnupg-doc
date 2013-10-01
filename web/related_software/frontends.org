@@ -318,4 +318,3 @@
               encrypting/signing messages and signing presence of the
               user. It is multilingual and runs on GNU/Linux, Mac OS X
               and Windows.
-

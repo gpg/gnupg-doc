@@ -35,4 +35,3 @@ any frontends.
 -  Integrated support for HKP keyservers (wwwkeys.pgp.net).
 -  Clears signed patch files which can still be processed by patch.
 -  and many more things....
-

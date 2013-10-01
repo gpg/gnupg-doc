@@ -21,4 +21,3 @@
    managed.
 
    [[file:screenshots/public_keyring_dialog.png]]
-

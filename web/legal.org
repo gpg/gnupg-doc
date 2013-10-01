@@ -13,4 +13,3 @@ Bert-Jaap Koops' [[http://rechten.uvt.nl/koops/cryptolaw/index.htm][Crypto Law S
 Note that in January 2000, the US Department of Commerce relaxed the
 rules about [[http://www.crypto.com/exports/][exporting]] cryptography, in particular for free software
 projects.
-

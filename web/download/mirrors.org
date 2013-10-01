@@ -127,4 +127,3 @@ web site mirrors, please consult the [[../mirrors.en.html][WWW mirror page]] .
       [[ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt]] \\
       [[http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt]] \\
       [[rsync://rsync.mirrorservice.org/ftp.gnupg.org/gcrypt/]]
-

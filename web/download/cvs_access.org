@@ -78,4 +78,3 @@
 #+BEGIN_EXAMPLE
    cvs -z3 -d :pserver:anoncvs@cvs.gnupg.org:/cvs/gpgweb co gnupg-www
 #+END_EXAMPLE
-

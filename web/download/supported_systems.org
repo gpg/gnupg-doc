@@ -56,4 +56,3 @@
    -  *SCO* UnixWare/7.1.0
    -  *SunOS*, *Solaris* on Sparc and x86
    -  *USL Unixware* v1.1.2
-

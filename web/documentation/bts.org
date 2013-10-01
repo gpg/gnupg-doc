@@ -25,4 +25,3 @@
    If you want to interact directly with us for questions, mistakes,
    change requests, advices, and compliments, you can write an e-mail
    to [[mailto:webmaster@gnupg.org][webmaster@gnupg.org]] .
-

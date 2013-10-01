@@ -560,4 +560,3 @@
 *** GnuPG Explorer Extension (GPGee) 1.2.0  (2005-09-06)
 
     {{{announce(2005q3/000202)}}}
-

@@ -18,4 +18,3 @@ Report]] form.
    -  [[http://www.pgpdump.net/][PGPdump Web interface]] :: Can be used to analyze OpenPGP data
         formats.
    -  [[file:pinentry/index.org][pinentry]] :: Secure PinEntry Dialog.
-

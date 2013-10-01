@@ -70,4 +70,3 @@
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
 #+end_example
-

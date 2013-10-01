@@ -40,4 +40,3 @@
    public key varies from full trust (thumb up) over marginal trust
    (thumb horizontal) to no trust (thumb down). If you have no opinion
    about the person, you can leave the ownertrust unknown.
-

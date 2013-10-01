@@ -426,4 +426,3 @@ file of GnuPG distributions.
     =CxwV
     -----END PGP PUBLIC KEY BLOCK-----
 #+END_EXAMPLE
-
