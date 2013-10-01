@@ -17,23 +17,60 @@
 <meta name=\"author\" content=\"Werner Koch\"/>
 <meta name=\"description\" content=\"\"/>
 <meta name=\"keywords\" content=\"\"/>
-<link rel=\"stylesheet\" href=\"share/site.css\" type=\"text/css\" />
+<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>
 <div id=\"header\">&nbsp;</div>
 <div id=\"leftColumn\">
-  <div id=\"navigation\">
+  <nav>
   <ul>
-    <li><a href=\"index.html\"                 >Home</a></li>
-    <li><a href=\"download/index.html\"        >Download</a></li>
-    <li><a href=\"documentation/index.html\"   >Documentation</a></li>
-    <li><a href=\"related_software/index.html\">Related software</a></li>
-    <li><a href=\"misc/index.html\"            >Miscellaneous</a></li>
-    <li><a href=\"sitemap.html\"               >Sitemap</a></li>
+    <li><a href=\"/index.html\"                 >Home</a></li>
+      <ul>
+        <li><a href=\"/features.html\" >Features</a></li>
+        <li><a href=\"/news.html\"     >News</a></li>
+        <li><a href=\"/service.html\"  >Service</a></li>
+        <li><a href=\"/legal.html\"    >Legal</a></li>
+      </ul>
+    <li><a href=\"/download/index.html\"        >Download</a></li>
+      <ul>
+        <li><a href=\"/download/integrity_check.html\"
+                                                >Integrity&nbsp;Check</a></li>
+        <li><a href=\"/download/supported_systems.html\"
+                                                >Supported&nbsp;Systems</a></li>
+        <li><a href=\"/download/release_notes.html\"
+                                                >Release&nbsp;Notes</a></li>
+        <li><a href=\"/download/mirrors.html\"   >Mirrors</a></li>
+        <li><a href=\"/download/cvs_access.html\" >GIT</a></li>
+      </ul>
+    <li><a href=\"/documentation/index.html\"   >Documentation</a></li>
+      <ul>
+        <li><a href=\"/documentation/howtos.html\"       >HOWTOs</a></li>
+        <li><a href=\"/documentation/manuals.html\"      >Manuals</a></li>
+        <li><a href=\"/documentation/guides.html\"       >Guides</a></li>
+        <li><a href=\"/documentation/faqs.html\"         >FAQs</a></li>
+        <li><a href=\"/documentation/mailing-lists.html\"
+                                                 >Mailing&nbsp;Lists</a></li>
+        <li><a href=\"/documentation/sites.html\"    >Sites</a></li>
+        <li><a href=\"/documentation/bts.html\"      >Bug&nbsp;Tracker</a></li>
+      </ul>
+    <li><a href=\"/related_software/index.html\">Related software</a></li>
+      <ul>
+        <li><a href=\"/related_software/frontends.html\" >Frontends</a></li>
+        <li><a href=\"/related_software/tools.html\"     >Tools</a></li>
+        <li><a href=\"/related_software/libraries.html\" >Libraries</a></li>
+      </ul>
+    <li><a href=\"/misc/index.html\"            >Miscellaneous</a></li>
+      <ul>
+        <li><a href=\"/misc/links.html\"         >Links</a></li>
+        <li><a href=\"/misc/logo-contest.html\"  >Logo&nbsp;Contest</a></li>
+        <li><a href=\"/misc/thanks.html\"        >Thanks</a></li>
+        <li><a href=\"/misc/donations.html\"     >Donations</a></li>
+      </ul>
+    <li><a href=\"/sitemap.html\"               >Sitemap</a></li>
   </ul>
-  </div>
+  </nav>
 </div>
-<div id=\"mainText\">
+<main>
 "))
 
 (defun gpgweb-insert-footer ()
@@ -48,8 +85,8 @@
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"copying.html\">copying<a/> for details.
-</div>
-</div>
+    </div>
+</main>
 </body>
 </html>
 "))

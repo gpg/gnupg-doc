@@ -149,7 +149,7 @@ div.entry-qotd
 
 
 #header {
-    background: url(file:///home/wk/s/gnupg-web/stage/share/logo-gnupg-light-purple-bg.png) center no-repeat;
+    background: url(/share/logo-gnupg-light-purple-bg.png) center no-repeat;
     height: 120px;
     padding: 0px;
 }
@@ -169,23 +169,29 @@ div.entry-qotd
     width: 18%;
 }
 
-#navigation li {
+nav ul {
     list-style: none;
+    font-size: 100%;
     font-family: verdana,arial,helvetica;
+    margin-bottom: 1em;
 }
 
-#navigation img {
+nav ul ul {
+    font-size: 70%;
+}
+
+nav img {
     border-width: 0;
 }
 
-#mainText {
+main {
     float: left;
     margin-left: 5%;
     margin-right: 5%;
     width: 72%;
 }
 
-#mainText ul {
+main ul {
     list-style: square;
     padding-left: 0;
     margin-left: 1em;
@@ -208,7 +214,7 @@ div.entry-qotd
 
 #cpyright {
     font-style: italic;
-    font-size: 0.4em;
+    font-size: 0.6em;
 }
 
 #smallnote {

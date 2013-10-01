@@ -36,6 +36,3 @@ any frontends.
 -  Clears signed patch files which can still be processed by patch.
 -  and many more things....
 
-#@Copyright (C) 2002-2004 Free Software Foundation, Inc.
-#
-# Written by Werner Koch (2002-07-16 21:00).

@@ -12,10 +12,14 @@
 
 #+begin_verse
   \copy 1998--2013  Werner Koch
-  \copy 2001--2013  David Shaw
-  \copy 2001--2004  Lorenzo Cappelletti
-  \copy FIXME
+  \copy 2000--2002  Nils Ellmenreich
+  \copy 2001--2002  Mike Ashley
+  \copy 2002--2005  Lorenzo Cappelletti
+  \copy 2006--2006  David Shaw
 #+end_verse
+# The Aegypten pages are under a different licese - there authors are
+#  \copy 2001--2004  Bernhard Reiter
+#  \copy 2001--2005  Jan-Oliver Wagner
 
    You can redistribute these pages and/or modify them under the terms
    of the
