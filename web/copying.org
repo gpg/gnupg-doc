@@ -6,9 +6,9 @@
 #+index: Copying
 
   Except when noted otherwise, these web pages are copyrighted by /The
-  GnuPG Project/.  Given that there such a legal entity does not
-  exists, that name should be considered a placeholder for the list of
-  the actual authors:
+  GnuPG Project/.  Given that such a legal entity does not exist, that
+  name should be considered a placeholder for the list of the actual
+  authors:
 
 #+begin_verse
   \copy 1998--2013  Werner Koch
@@ -17,7 +17,7 @@
   \copy 2002--2005  Lorenzo Cappelletti
   \copy 2006--2006  David Shaw
 #+end_verse
-# The Aegypten pages are under a different licese - there authors are
+# The Aegypten pages are under a different license - there authors are
 #  \copy 2001--2004  Bernhard Reiter
 #  \copy 2001--2005  Jan-Oliver Wagner
 

@@ -10,7 +10,7 @@
 
   Please check the [[file:faqs.org][FAQ]] before you ask on one of the lists.  If you
   want to search these mailing lists (as well as other archives)
-  please use the service provided at [[http://marc.theaimsgroup.com/]].
+  please use the service provided at [[http://marc.info/]].
 
   - [[http://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce@gnupg.org]] :: It is used to announce new releases
       and for other important messages.
