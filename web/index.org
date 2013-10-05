@@ -44,6 +44,19 @@ GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3D
 point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** Security update for GnuPG (2013-10-05)                         :important:
+
+We are pleased to announce the availability of a new stable GnuPG
+release: Version 2.0.22 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000333.html][{more}]]
+
+** Security update for GnuPG (2013-10-05)                         :important:
+
+We are pleased to announce the availability of a new stable GnuPG
+release: Version 1.4.15 ...
+[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000334.html][{more}]]
+
+
 ** GnuPG 2.0.21 released (2013-08-19)
 
 We are pleased to announce the availability of GnuPG 2.0.21. ...
