@@ -2,7 +2,41 @@
 
 (require 'org-exp)
 
-(defun gpgweb-insert-header ()
+(defun gpgweb-setup-project ()
+  (progn
+   (aput 'org-publish-project-alist "gpgweb-org"
+   '(:base-directory "~/s/gnupg-doc/web"
+     :base-extension "org"
+     :language "en"
+     :html-extension "html"
+     :recursive t
+     :publishing-directory "../stage"
+     :publishing-function gpgweb-org-to-html
+     :body-only t
+     :section-numbers nil
+     :tags nil
+     :with-toc nil
+     :makeindex t
+     :auto-sitemap t
+     :sitemap-title "GnuPG - Sitemap"
+     :style-include-default nil
+     :timestamp-file t
+     :html-head "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"
+     :html-head-include-scripts nil))
+
+   (aput 'org-publish-project-alist "gpgweb-other"
+   '(:base-directory "."
+     :base-extension "jpg\\|png\\|css"
+     :recursive t
+     :publishing-directory "../stage"
+     :publishing-function org-publish-attachment
+     :completion-function gpgweb-upload))
+
+   (aput 'org-publish-project-alist "gpgweb"
+   '(:components ("gpgweb-org" "gpgweb-other")))))
+
+
+(defun gpgweb-insert-header (title)
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -96,33 +130,39 @@
 ;;
 ;; - Substitute @FNAME@ by the actual file name.
 ;; - Substitute @MENU-ACTIVE@ by an empty string.
-(defun gpgweb-postprocess-html ()
-  (let ((fname (file-name-nondirectory (buffer-file-name)))
-        (generated-at (org-today)))
-    (gpgweb-insert-header)
-    (gpgweb-insert-footer)
-    (when (string-match "\\.\\([a-z][a-z]\\.\\)?html$" fname)
-          (setq fname (substring fname 0 (match-beginning 0))))
-    (goto-char (point-min))
-    (while (search-forward "href=\"@FNAME@" nil t)
-      (replace-match (concat "href=\"" ) t nil))
-    (goto-char (point-min))
-    (while (search-forward "@MENU-ACTIVE@" nil t)
-      (replace-match "" t nil))))
+(defun gpgweb-postprocess-html (plist orgfile htmlfile)
+  (let* ((visitingp (find-buffer-visiting htmlfile))
+	 (work-buffer (or visitingp (find-file-noselect htmlfile))))
+    (prog1 (with-current-buffer work-buffer
+             (let ((fname (file-name-nondirectory htmlfile))
+                   (title (org-publish-find-title orgfile))
+                   (generated-at (org-today)))
+               (message "post processing %s (%s)" htmlfile orgfile)
+               (gpgweb-insert-header title)
+               (gpgweb-insert-footer)
+               (when (string-match "\\.\\([a-z][a-z]\\.\\)?html$" fname)
+                 (setq fname (substring fname 0 (match-beginning 0))))
+               (goto-char (point-min))
+               (while (search-forward "href=\"@FNAME@" nil t)
+                 (replace-match (concat "href=\"" ) t nil))
+               (goto-char (point-min))
+               (while (search-forward "@MENU-ACTIVE@" nil t)
+                 (replace-match "" t nil)))
+             (basic-save-buffer))
+      (unless visitingp (kill-buffer work-buffer)))))
+
 
 (defun gpgweb-org-to-html (plist filename pub-dir)
-  (add-hook 'org-export-html-final-hook
-            'gpgweb-postprocess-html)
-  (org-publish-org-to-html plist filename pub-dir)
-  (remove-hook 'org-export-html-final-hook
-               'gpgweb-postprocess-html))
+  (gpgweb-postprocess-html plist filename
+                           (org-html-publish-to-html plist filename pub-dir)))
 
 (defun gpgweb-upload ()
   (let ((stagedir (plist-get project-plist :publishing-directory)))
     (message "gpgweb  rootdir '%s'" gpgweb-root-dir)
     (message "gpgweb stagedir '%s'" stagedir)
     (shell-command
-     (concat "rsync -rlt --exclude \"*~\" " stagedir "/ "
+     (concat "cd " gpgweb-root-dir " && cd " stagedir
+             "&& rsync -rlt --exclude \"*~\" ./ "
              "werner@trithemius.gnupg.org:"
              "/var/www/www/w3.gnupg.org/htdocs/"))))
 

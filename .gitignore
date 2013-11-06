@@ -3,3 +3,6 @@ stage/
 /web/sitemap.org
 .*.orgx
 /web/theindex.inc
+/web/faq/gnupg-faq.pdf
+/web/faq/gnupg-faq.tex
+/web/faq/gnupg-faq.txt

@@ -111,35 +111,5 @@ This is the publishing info used for the GnuPG pages
    (require 'gpgweb (concat gpgweb-root-dir "share/gpgweb.el"))
    (setq org-export-html-toplevel-hlevel 1)
    (setq org-export-html-coding-system 'utf-8)
-
-   (aput 'org-publish-project-alist "gpgweb-org"
-   '(:base-directory "."
-     :base-extension "org"
-     :language "en"
-     :html-extension "html"
-     :recursive t
-     :publishing-directory "../stage"
-     :publishing-function gpgweb-org-to-html
-     :body-only t
-     :section-numbers nil
-     :tags nil
-     :table-of-contents nil
-     :makeindex t
-     :auto-sitemap t
-     :sitemap-title "GnuPG - Sitemap"
-     :style-include-default nil
-     :timestamp-file t
-     :style "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"))
-
-   (aput 'org-publish-project-alist "gpgweb-other"
-   '(:base-directory "."
-     :base-extension "jpg\\|png\\|css"
-     :recursive t
-     :publishing-directory "../stage"
-     :publishing-function org-publish-attachment
-     :completion-function gpgweb-upload))
-
-   (aput 'org-publish-project-alist "gpgweb"
-   '(:components ("gpgweb-org" "gpgweb-other"))))
-
+   (gpgweb-setup-project))
 #+end_src

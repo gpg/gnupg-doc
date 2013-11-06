@@ -6,6 +6,6 @@
 
   The GnuPG FAQ is available in 3 formats:
 
-  -  [[http://www.gnupg.org/faq/GnuPG-FAQ.html][HTML]]
+  -  [[../faq/gnupg-faq.html][HTML]]
   -  [[ftp://ftp.gnupg.org/gcrypt/gnupg/GnuPG-FAQ.txt][Text]]
-  -  [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dblob_plain%3Bf%3Ddoc/faq.org][Org-mode]]
+  -  [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-doc.git%3Ba%3Dblob_plain%3Bf%3Dweb/faq/gnupg-faq.org][Org-mode]]
