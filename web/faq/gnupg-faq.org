@@ -1,0 +1,2129 @@
+# gpgfaq.org                                          -*- coding: utf-8; -*-
+#+TITLE:     GnuPG Frequently Asked Questions
+#+EMAIL:     gnupg-doc@gnupg.org
+#+AUTHOR:    Robert J. Hansen et al.
+#+LANGUAGE:  en
+#+LINK: gnupgweb http://www.gnupg.org/
+#+LINK: roundup  https://bugs.g10code.com/gnupg/issue
+#+OPTIONS:   H:3 num:2 toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t TeX:t LaTeX:t skip:nil d:nil tags:not-in-toc
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.gnupg.org/share/site.css" />
+#+STARTUP:   overview indent
+
+* Foreword
+  :PROPERTIES:
+  :CUSTOM_ID: foreword
+  :END:
+
+Welcome to the GnuPG Frequently Asked Questions (FAQ)!  Before we
+begin, there’s just a few things that need to be addressed. It’s
+regrettable these things have to be included, but society has become
+very litigious.
+
+
+** Trademark notice
+   :PROPERTIES:
+   :CUSTOM_ID: trademarks
+   :END:
+
+- PGP is a trademark of Symantec Corporation.
+- Windows is a trademark of the Microsoft Corporation.
+- Macintosh, OS X and Mac OS X are all trademarks of the Apple
+  Corporation.
+- Linux is a trademark of Linus Torvalds.
+- Solaris is a trademark of Oracle Corporation.
+- Some cryptographic algorithms mentioned in this FAQ may be
+  trademarked.
+
+The use of these, or any other, marks is solely for identification
+purposes.
+
+
+** Licensing
+   :PROPERTIES:
+   :CUSTOM_ID: documentation_license
+   :END:
+
+This document is © 2012, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
+A.M. Kuchling <[[mailto:amk@amk.ca?subject=The%20GnuPG%20FAQ][amk@amk.ca]]>. You are free to make use of this document
+in accordance with the [[http://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
+license]], with the exception of Randall Munroe’s XKCD comic, which is
+released under terms of the [[http://creativecommons.org/licenses/by-nc/2.5/][Creative Commons Attribution-NonCommercial
+2.5]] license; alternately, you may make use of it under terms of the
+GNU General Public License (version 3 or, at your discretion, any
+later version), again excepting Mr. Munroe’s works.
+
+** Disclaimer of liability
+   :PROPERTIES:
+   :CUSTOM_ID: liability
+   :END:
+
+Although the contents of this document are believed to be correct, the
+author(s) cannot promise it is error-free and cannot assume liability
+for any errors.
+
+# We want the TOC to appear after the foreword.
+#+TOC: headlines 2
+
+* Welcome
+  :PROPERTIES:
+  :CUSTOM_ID: welcome
+  :END:
+
+Welcome to the *unofficial* GnuPG FAQ.
+
+*As of this writing, this FAQ is both inaccurate and incomplete. It is
+a work in progress. Do not rely on the answers found herein.*
+
+
+** What conventions are used in this FAQ?
+   :PROPERTIES:
+   :CUSTOM_ID: conventions
+   :END:
+
+As is par for the course with everything involving computers, there
+are an awful lot of acronyms in this FAQ. For most of them, holding
+the mouse pointer over the acronym will reveal a tooltip containing
+the full expansion of the acronym. Hovering over the letters FAQ, for
+instance, will reveal the words “Frequently Asked Questions.” These
+acronyms are presented in a small-caps font in order to make them
+easier to recognize when reading.
+
+
+** Who maintains this FAQ?
+   :PROPERTIES:
+   :CUSTOM_ID: maintainer
+   :END:
+
+[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Robert J. Hansen]]. Please feel free to contact me should there be an
+error in this FAQ, whether typographical, grammatical, or factual.
+
+When writing, the editorial “we” refers to the general consensus of
+the GnuPG community. This consensus is hammered out on the GnuPG-Users
+mailing list. All members of the GnuPG community are invited to
+participate.  Individual people within the community may give their
+own editorial comments: these will be set off by square brackets,
+italicized, and initialed by their author.  The different editors are:
+
+- wk: Werner Koch <[[mailto:wk@gnupg.org?subject%3DThe%20GnuPG%20FAQ][wk@gnupg.org]]>
+- rjh: Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]>
+
+/[Do we have any other editors we need to add? — rjh]/
+
+
+** Is this the official GnuPG FAQ?
+   :PROPERTIES:
+   :CUSTOM_ID: is_it_official
+   :END:
+
+Not yet.
+
+
+** When was this FAQ last checked for accuracy?
+   :PROPERTIES:
+   :CUSTOM_ID: last_checked
+   :END:
+
+October 2012.
+
+
+* General questions
+  :PROPERTIES:
+  :CUSTOM_ID: general
+  :END:
+
+Since no company controls GnuPG, there’s really no single vendor for
+GnuPG.  Instead, there’s a robust community surrounding GnuPG which
+has produced versions of it for several different operating systems.
+But first, let’s cover the basics.
+
+
+** What’s GnuPG?
+   :PROPERTIES:
+   :CUSTOM_ID: whats_gnupg
+   :END:
+
+GnuPG is cryptographic software that helps people ensure the
+confidentiality, integrity and assurance of their data.  Let’s try
+that again: GnuPG is…
+
+- /Cryptographic./ The word “cryptography” is derived from two Greek
+  words, κρυπτός (pronounced “kryptos,” meaning “hidden”) and γράφω
+  (pronounced “graphein,” meaning “writing”). Cryptography is the
+  mathematical study of codes and ciphers.
+- /Software./ This one should already be obvious.
+- /Confidentiality./ No one except authorized parties should be able
+  to read your data.
+- /Integrity./ It shouldn’t be possible to tamper with a message
+  unnoticeably.
+- /Assurance./ An assurance is not a guarantee. There are no
+  guarantees in life, and software is no different. An assurance just
+  means there is good reason to be confident of something — here, it
+  means that when GnuPG is correctly used, people may be confident the
+  data is confidential and/or possesses integrity.
+
+GnuPG may be used by itself as a command-line application (i.e., to be
+run at a Terminal prompt or a Windows command prompt), or integrated
+into popular email clients. It’s also used by some instant messaging
+clients, such as Psi.
+
+
+** How do I pronounce GnuPG?
+   :PROPERTIES:
+   :CUSTOM_ID: pronunciation
+   :END:
+
+“guh-NEW-pee-gee.”
+
+
+** Is it compatible with Symantec’s PGP?
+   :PROPERTIES:
+   :CUSTOM_ID: compatible
+   :END:
+
+Largely, yes.  It can be made to interoperate with anything from PGP
+5.0 and onwards, and has excellent interoperability with the most
+recent releases.
+
+
+** Which operating systems does it run on?
+   :PROPERTIES:
+   :CUSTOM_ID: oses
+   :END:
+
+Too many to list! It’s known to run on Microsoft Windows, Mac OS X,
+the various free Unixes, AIX, Solaris, HPUX, OpenVMS, and more. People
+are even working on porting it to smartphones such as Android.
+
+
+** How much does it cost?
+   :PROPERTIES:
+   :CUSTOM_ID: free_as_in_beer
+   :END:
+
+There is no fixed price.  Many sites on the internet offer legal
+downloads of it for free.
+
+
+** From where can I download it…
+   :PROPERTIES:
+   :CUSTOM_ID: get_gnupg
+   :END:
+
+Lots of different places, but no one site hosts binaries for all
+operating systems.
+
+
+*** … for Microsoft Windows?
+    :PROPERTIES:
+    :CUSTOM_ID: get_gnupg_win32
+    :END:
+
+A convenient Windows installer is available from [[http://www.gpg4win.org][GPG4WIN]].
+
+
+*** … for Mac OS X?
+    :PROPERTIES:
+    :CUSTOM_ID: get_gnupg_osx
+    :END:
+
+The [[http://www.gpgtools.org][GPGtools project]] has everything needed to get started.
+
+
+*** … for Linux?
+    :PROPERTIES:
+    :CUSTOM_ID: get_gnupg_linux
+    :END:
+
+The bad news is there is no single, consistent way to install GnuPG on
+Linux systems.  The good news is that it’s usually installed by
+default, so nothing needs to be downloaded!
+
+
+**** … for Debian GNU/Linux?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_debian
+     :END:
+
+GnuPG is installed by default with Debian GNU/Linux.  If for some
+reason it is not, use the APT package manager to install the package
+“gnupg2”.
+
+
+**** … for OpenSUSE?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_opensuse
+     :END:
+
+A recent version of GnuPG is part of the default OpenSUSE
+installation.
+
+
+**** … for Fedora?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_fedora
+     :END:
+
+See the [[#get_gnupg_centos][instructions for CentOS]].  Typically, though, Fedora ships with
+a much more recent version of GnuPG, and as such you shouldn’t need to
+install anything.
+
+
+**** … for CentOS or RHEL?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_centos
+     :END:
+
+An older (but still secure!) version of GnuPG is part of every CentOS
+installation.  To get the latest version, use the YUM package manager
+to install the package “gnupg2”.
+
+
+**** … for Ubuntu?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_ubuntu
+     :END:
+
+See the instructions for [[#get_gnupg_debian][Debian GNU/Linux]].
+
+
+**** … for Slackware?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_slack
+     :END:
+
+Install the =gnupg= package for GnuPG 1.4, or the =gnupg2= package for
+GnuPG 2.0.
+
+
+**** … for Gentoo?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_gentoo
+     :END:
+
+To install GnuPG on Gentoo, run the following command as root:
+
+=emerge gnupg=
+
+The Gentoo documentation includes a [[http://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
+
+
+*** … for FreeBSD?
+    :PROPERTIES:
+    :CUSTOM_ID: get_gnupg_freebsd
+    :END:
+
+GnuPG is included in the ports collection.  To install it, run the
+following commands as root:
+
+#+begin_example
+cd /usr/ports/security/gnupg
+make install clean
+#+end_example
+
+Alternatively, you can install GnuPG using a package manager:
+
+#+begin_example
+sudo pkg_add -r gnupg
+#+end_example
+
+
+** Is there source code available for it?
+   :PROPERTIES:
+   :CUSTOM_ID: source_code
+   :END:
+
+Yes!  The person, business or group that provided you with the GnuPG
+binary is required to give you the source code upon your request.
+
+
+** What’s Free Software, and why does it matter?
+   :PROPERTIES:
+   :CUSTOM_ID: gpl
+   :END:
+
+The word “free” should evoke ideas of liberty, not price.  An awful
+lot of the software industry does not respect your freedoms: your
+freedom to use the software for any purpose, your freedom to study and
+learn from how it works, your freedom to share it with others who
+might benefit from it, and more.  Free Software is the antithesis of
+this: Free Software is meant to respect your rights.  You may use the
+software for any purpose: you may inspect and modify the source code:
+you may share the software and/or your modifications with others.
+
+
+** How can I donate money to the GnuPG project?
+   :PROPERTIES:
+   :CUSTOM_ID: donate
+   :END:
+
+The best way is to visit the [[http://g10code.com/gnupg-donation.html][g10 Code donation page]].
+
+
+** How can I help with GnuPG development?
+   :PROPERTIES:
+   :CUSTOM_ID: develop
+   :END:
+
+Development discussion takes place on the gnupg-devel mailing list.
+Go to the [[http://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]] for links to subscribe and to the
+list's archives.
+
+The [[https://bugs.gnupg.org/gnupg/][GnuPG project's bug tracker]] is also publicly available.
+
+
+
+* Where can I get more information?
+  :PROPERTIES:
+  :CUSTOM_ID: more_info
+  :END:
+
+The good news is the internet is a treasure trove of information.  The
+bad news is that the internet is a festering sewer of misinformation,
+conspiracy theories, and half-informed speculations all masquerading
+as informed commentary.
+
+The following mailing lists and web pages are generally known for
+having a strong signal-to-noise ratio.  Despite this, we strongly urge
+skepticism.
+
+
+** How can I spot the charlatans?
+   :PROPERTIES:
+   :CUSTOM_ID: fraudsters
+   :END:
+
+First, beware of all absolutes.  Almost every question in either the
+fields of computer security or cryptography can honestly be answered
+with, “it depends.”  Real experts will avoid giving blanket yes-or-no
+questions except to the simplest and most routine of questions.  They
+will instead hem and haw and explain the several different factors
+that must be weighed.  Hucksters will promise you absolute truth.
+
+Second, the experts really don’t care whether you take their advice.
+Hucksters often want to be seen as authorities, and if you fail to
+take their advice they may harangue you about how you’re taking
+chances with your data, how you’re acting irresponsibly, and so on.
+
+Third, experts genuinely don’t want you to trust them.  An expert will
+instead point to the published literature (usually in a dead-tree
+edition with the imprimatur of a reputable publishing house) and tell
+you what the reference books say.  They want you to trust the
+reference books, not them.  Hucksters will go on about their extensive
+personal experience or refer to papers that have only ever been
+self-published on websites.
+
+Fourth, experts try not to scare people.  The world is a scary enough
+place without it being made moreso.  Hucksters will try to scare you,
+in order to keep you listening to them and dependent on them for
+information on how to be ‘safe.’
+
+Fifth, experts will quickly admit when they are wrong and give credit
+to the person bringing the error to their attention.  Hucksters tend
+to take challenges as personal affronts.
+
+
+** What are some useful mailing lists?
+   :PROPERTIES:
+   :CUSTOM_ID: mailing_lists
+   :END:
+
+The good news is, there are many!
+
+
+*** The GnuPG-Users mailing list
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-users_list
+    :END:
+
+
+- Subscribing :: visit the [[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
+- Unsubscribing :: see above
+- List moderator :: <[[mailto:gnupg-users-owner@gnupg.org?subject%3DThe%20GnuPG-Users%20list][gnupg-users-owner@gnupg.org]]>
+- Supports PGP/MIME? :: No
+- Languages supported :: English
+
+GnuPG-Users is home to the largest community of GnuPG users on the
+net. The list is very lightly moderated and somewhat freewheeling, but
+overall it has an excellent signal-to-noise ratio. The level of
+technical discussion is sometimes a little daunting for the newcomer,
+but on the whole it’s a wonderful resource.
+
+
+
+*** The Enigmail mailing list
+    :PROPERTIES:
+    :CUSTOM_ID: enigmail_list
+    :END:
+
+
+- Subscribing :: Visit the [[https://admin.hostpoint.ch/mailman/listinfo/enigmail-users_enigmail.net][Enigmail mailing list page]]
+- Unsubscribing :: See above
+- List moderator(s) ::
+  - John Clizbe <[[mailto:john@enigmail.net?subject=The%20Enigmail%20list][john@enigmail.net]]>
+  - Olav Seyfarth <[[mailto:olav@enigmail.net?subject=The%20Enigmail%20list][olav@enigmail.net]]>
+  - Patrick Brunschwig <[[mailto:patrick@enigmail.net?subject=The%20Enigmail%20list][patrick@enigmail.net]]>
+  - Ludwig Hügelschäfer <[[mailto:ludwig@enigmail.net?subject=The%20Enigmail%20list][ludwig@enigmail.net]]>
+  - Daniele Raffo <[[mailto:daniele@enigmail.net?subject=The%20Enigmail%20list][daniele@enigmail.net]]>
+  - Robert J. Hansen <[[mailto:rob@enigmail.net?subject=The%20Enigmail%20list][rob@enigmail.net]]>
+- Supports PGP/MIME :: Yes
+- Languages supported :: English, Deutsch, Schwyzerdütsch, Español
+
+Enigmail integrates GnuPG with [[http://www.getthunderbird.com][Mozilla Thunderbird]] and/or [[http://www.seamonkey-project.org/][Mozilla
+Seamonkey]]. It’s one of the most popular ways to use GnuPG, and the
+mailing list provides a friendly place to learn how it works and get
+started using it.
+
+The list is lightly moderated.
+
+
+*** PGP-Basics
+    :PROPERTIES:
+    :CUSTOM_ID: pgp-basics_list
+    :END:
+
+
+- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGP-Basics][PGP-Basics webpage]]
+- Unsubscribing :: see above
+- List moderator :: Mike Daigle <[[mailto:mdaigle@gswot.org?subject=The%20PGP-Basics%20list][mdaigle@gswot.org]]>
+- Supports PGP/MIME :: No
+- Languages supported :: English
+
+PGP-Basics was established over a decade ago specifically to provide a
+place where newcomers to GnuPG and PGP could learn about
+communications security. The list is low-volume, lightly-moderated,
+and remarkably friendly to new users.
+
+
+*** PGPNET
+    :PROPERTIES:
+    :CUSTOM_ID: pgpnet_list
+    :END:
+
+
+- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGPNET][PGPNET page]]
+- Unsubscribing :: see above
+- List moderator(s) :: Unknown
+- Supports PGP/MIME? :: No
+- Languages supported :: Unknown
+
+PGPNET exists to provide people with the opportunity to practice
+sending and receiving encrypted, signed, and encrypted-and-signed
+traffic in a group environment.
+
+
+
+** What are some useful webpages?
+   :PROPERTIES:
+   :CUSTOM_ID: webpages
+   :END:
+
+As a general rule, the huckster quotient of webpages at-large is
+fairly high.  That said, there are some web resources we recommend.
+They can be broken up into homepages for specific GnuPG-related
+projects, and sites of general interest.
+
+
+*** Where can I find the homepage for…
+    :PROPERTIES:
+    :CUSTOM_ID: homepages
+    :END:
+
+Many of the projects associated with GnuPG maintain their own
+websites.  If you have problems with an associated project, please
+check their website first: they might be able to give you faster and
+better help than the GnuPG community can.
+
+
+**** … GnuPG?
+     :PROPERTIES:
+     :CUSTOM_ID: gnupg_homepage
+     :END:
+
+GnuPG’s homepage can be found at [[http://www.gnupg.org][http://www.gnupg.org]].
+
+
+**** … Enigmail?
+     :PROPERTIES:
+     :CUSTOM_ID: enigmail_homepage
+     :END:
+
+Enigmail, a plugin for Mozilla Thunderbird that adds strong GnuPG
+support, can be found at [[http://enigmail.net][http://enigmail.net]].
+
+
+**** … GPGTools?
+     :PROPERTIES:
+     :CUSTOM_ID: gpgtools_homepage
+     :END:
+
+Mac OS X users may wish to visit the GPGTools project at
+[[http://www.gpgtools.org][http://www.gpgtools.org]].
+
+
+**** … GPG4WIN?
+     :PROPERTIES:
+     :CUSTOM_ID: gpg4win_homepage
+     :END:
+
+GPG4WIN, the Windows port of GnuPG, maintains a homepage at
+[[http://www.gpg4win.org][http://www.gpg4win.org]].
+
+
+*** Where can I find webpages covering…
+    :PROPERTIES:
+    :CUSTOM_ID: pages_about
+    :END:
+
+Although the GnuPG community generally finds these websites to be
+useful, your mileage may significantly vary.  There are wide
+differences of opinion about some of them.  They’re worth visiting and
+worth reading, but make sure to read skeptically.
+
+
+**** … an easy introduction to cryptography?
+     :PROPERTIES:
+     :CUSTOM_ID: pages_about_introduction_to_crypto
+     :END:
+
+There is no such thing as an easy introduction to cryptography.
+However, PGP Corporation has a well-regarded [[http://www.cs.unibo.it/babaoglu/courses/security/resources/documents/intro-to-crypto.pdf][/Introduction to
+Cryptography/]].
+
+
+**** … the deeper mathematics of cryptography?
+     :PROPERTIES:
+     :CUSTOM_ID: pages_about_cryptographic_mathematics
+     :END:
+
+The maintainer of this list also keeps a gentle(-ish) [[http://keyservers.org/~rjh/cryptofaq.xhtml][introduction to
+the mathematics and computer science of cryptography]].
+
+
+**** … best practices for using GnuPG?
+     :PROPERTIES:
+     :CUSTOM_ID: pages_about_best_practices
+     :END:
+
+At present, there are no reputable web pages detailing GnuPG best
+practices.
+
+
+**** … the politics of cryptography?
+     :PROPERTIES:
+     :CUSTOM_ID: pages_about_politics
+     :END:
+
+The inclusion of a site on this list is not an endorsement of that
+site’s political leanings.
+
+Probably the best-known organization is the [[http://www.eff.org][Electronic Frontier
+Foundation]], which has been at the vanguard of electronic civil
+liberties for over twenty years.
+
+The [[http://www.fsf.org][Free Software Foundation]] is also deeply involved in these matters,
+although in a different way than the EFF.
+
+
+* What email clients support GnuPG on…
+  :PROPERTIES:
+  :CUSTOM_ID: email_clients
+  :END:
+
+Many email clients offer strong GnuPG integration.
+
+
+** … Microsoft Windows?
+   :PROPERTIES:
+   :CUSTOM_ID: email_clients_win32
+   :END:
+
+
+- Thunderbird
+  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  With the Enigmail plugin, Thunderbird becomes one of the most
+  popular GnuPG-aware email clients.  it’s under active development
+  and is compatible with the latest Thunderbird releases, with a
+  friendly and welcoming user community.
+
+- Kontact
+  - Plugin? :: No (natively supported)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  Kontact is KDE’s integrated personal information manager of KDE.  It runs anywhere that KDE does, and even on some mobile devices as Kontact Touch.
+
+
+
+** … Mac OS X?
+   :PROPERTIES:
+   :CUSTOM_ID: email_clients_osx
+   :END:
+
+- Thunderbird
+  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  With the Enigmail plugin, Thunderbird becomes one of the most
+  popular GnuPG-aware email clients.  it’s under active development
+  and is compatible with the latest Thunderbird releases, with a
+  friendly and welcoming user community.
+
+- Gnus
+  - Plugin? :: Yes, via [[http://www.emacswiki.org/emacs/EasyPG][EasyPG]]
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+
+- Mutt
+  - Plugin? :: No (natively supported)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  Make sure to put ~set crypt_use_gpgme~ in your =~/.muttrc= file.
+
+- Apple Mail
+  - Plugin? :: Yes, via [[http://www.gpgtools.org][GPGtools]]
+  - Supports GnuPG versions :: 2.0
+  - Supports PGP/MIME :: No
+  - Actively developed :: Yes
+  PGP/MIME support in Apple Mail+GPGtools is not absent, just
+  temporarily broken.
+
+
+** … Linux or FreeBSD?
+   :PROPERTIES:
+   :CUSTOM_ID: email_clients_linux
+   :END:
+
+- Thunderbird
+  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  With the Enigmail plugin, Thunderbird becomes one of the most
+  popular GnuPG-aware email clients.  it’s under active development
+  and is compatible with the latest Thunderbird releases, with a
+  friendly and welcoming user community.
+
+- Gnus
+  - Plugin? :: Yes, via [[http://www.emacswiki.org/emacs/EasyPG][EasyPG]]
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+
+- Mutt
+  - Plugin? :: No (natively supported)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  Make sure to put ~set crypt_use_gpgme~ in your =~/.muttrc= file.
+
+- Kontact
+  - Plugin? :: No (natively supported)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  Kontact is KDE’s integrated personal information manager of KDE.  It
+  runs anywhere that KDE does, and even on some mobile devices as
+  Kontact Touch.
+
+- Evolution
+  - Plugin? :: No (natively supported)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+
+
+* Is GnuPG available as a ‘portable app’?
+  :PROPERTIES:
+  :CUSTOM_ID: portable_app
+  :END:
+
+For Windows users, check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps.com]].
+
+
+* What do all these strange words mean?
+  :PROPERTIES:
+  :CUSTOM_ID: glossary
+  :END:
+
+Cryptography tends to use a whole lot of specialized language and
+jargon.  In this section some of it will be deciphered.
+
+
+** What’s ‘public-key cryptography’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_asymc
+   :END:
+
+
+In the 1970s new ideas came to the forefront of the cryptanalytic
+world.  One of the most important was the development of asymmetric
+cryptography (also often called “public-key cryptography”).
+
+Asymmetric cryptography is built around problems that are very hard in
+one direction, and very easy in another.  Consider the number 2,701.
+If you were to be asked for its prime factors, you would find it a
+daunting challenge.  If you were to be given the numbers 37 and 73,
+though, it wouldn’t take but a minute to discover the answer was
+2,701.  Multiplying two numbers to yield a third number is easy:
+finding those two numbers, given the third, is hard.
+
+Asymmetric cryptography uses these asymmetric problems as the
+building-blocks of cryptography.  It’s easy to create an encrypted
+message which neither you nor anyone else save the intended recipient
+can decrypt.  To continue the metaphor, you and everyone else get to
+wrestle with the hard problem (“factor 2,701”).  The intended
+recipient knows a secret piece of information which makes the problem
+easy (“factor 2,701, given that one of the factors is 73”).
+
+This manages to overcome the major flaw with symmetric cryptography.
+Your public key can be shared with the entire world, even your
+enemies, and your communications will still be secure.  Compare this
+to symmetric cryptography, where as soon as the key became public
+knowledge the entire system was broken.
+
+
+
+** What’s ‘symmetric cryptography’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_symc
+   :END:
+
+
+One of the earliest ciphers was the shift cipher, which was allegedly
+used by Julius Caesar in his campaign against the Gauls.  He took his
+plaintext and shifted each letter three positions up in the alphabet,
+wrapping around once he reached the end (so that ‘Z’ would become
+‘C’).  His correspondents would reverse the process: by moving each
+letter in the encrypted text down three letters the original message
+would be recovered.  Knowing how to encrypt the text also gave the
+knowledge of how to decrypt the text: the process wasn’t identical
+(one shifted up, the other shifted down), but knowing one process the
+other one could trivially be discovered.
+
+This trait, that of encryption and decryption being two sides of the
+same coin, is the defining trait of symmetric cryptography.
+Modern-day symmetric ciphers are much more complex than Caesar’s
+scheme, but they still work in fundamentally the same way.  Knowledge
+of how to encrypt reveals knowledge of how to decrypt, and vice-versa.
+The symmetry between those two operations leads to the name “symmetric
+cryptography”.
+
+Symmetric cryptography is fast, well-studied, and safe.  It has one
+critical drawback, though: you have to have a secure communications
+channel by which you can share the key with someone.  If you already
+have a secure communications channel, though, do you really need
+cryptography?
+
+
+
+** What’s a ‘key’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_key
+   :END:
+
+
+The word ‘key’ is unfortunately ambiguous.  It can either refer to the
+mathematical structures that allow encryption, decryption, signing and
+verification to occur, or to the rather large blobs of data that
+contain those mathematical structures as well as information about the
+person associated with it, additional subkeys, and so forth.
+
+With respect to the large blobs of data, it is preferable to call them
+‘certificates’, so that the word ‘key’ may be unambiguously recognized
+as meaning just the mathematical structures.  Unfortunately, this is a
+custom that seems to be honored mostly in the breach.
+
+
+
+** What’s a ‘certificate’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_certificate
+   :END:
+
+
+A certificate is a large data structure that contains one or more
+[[#define_keys][keys]], and optionally information that identifies the user, designated
+revokers, who has vouched for this certificate, and so on.
+
+
+
+** What’s a ‘keyserver’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_keyserver
+   :END:
+
+A keyserver is a service that publishes public-key certificates and
+makes them searchable.  You can upload your certificate to a keyserver
+so that other users can find it.  There are distributed networks of
+keyservers that share keys, so you only need to upload your key once
+to that network.
+
+One widely-used keyserver network is [[http://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
+for “Synchronising Key Server”.  You can use this network by supplying
+the =--keyserver pool.sks-keyservers.net= option.
+
+
+
+** What’s RSA?
+   :PROPERTIES:
+   :CUSTOM_ID: define_rsa
+   :END:
+
+
+RSA is the world’s premier [[#define_asymc][asymmetric cryptographic algorithm]], and is
+built on the difficulty of factoring extremely large composites.
+GnuPG supports RSA with [[#define_key][key]] sizes of between 1024 and 4096 bits.
+
+
+
+** What’s DSA?
+   :PROPERTIES:
+   :CUSTOM_ID: define_dsa
+   :END:
+
+
+The United States’ National Institute for Standards and Technology
+([[http://www.nist.gov][NIST]]) established the Digital Signature Algorithm (DSA) as a
+government standard for digital signatures.  Originally, it supported
+key lengths between 512 and 1024 bits.  Recently, NIST has declared
+512-bit keys obsolete: now, DSA is available in 1024, 2048 and
+3072-bit lengths.
+
+DSA belongs to the Elgamal family of algorithms, and is very
+well-regarded.
+
+
+
+** What’s Elgamal?
+   :PROPERTIES:
+   :CUSTOM_ID: define_elgamal
+   :END:
+
+
+Elgamal may refer to either a family of cryptographic algorithms built
+around the difficulty of computing discrete logarithms in a finite
+field, or one particular [[#define_asymc][asymmetric encryption algorithm]] based on that
+problem.  The former is normally referred to as “the Elgamal family,”
+and the latter is normally referred to as simply “Elgamal.”
+
+GnuPG supports the Elgamal asymmetric encryption algorithm in [[#define_key][key]]
+lengths ranging from 1024 to 4096 bits.
+
+There is also an Elgamal signature algorithm, which GnuPG no longer
+supports.
+
+
+
+** What’s AES?
+   :PROPERTIES:
+   :CUSTOM_ID: define_aes
+   :END:
+
+
+Leading up to the year 2000, it was obvious that the old Data
+Encryption Standard (DES) was on its last legs and needed to be
+replaced.  3DES was available as a stopgap measure, but there was a
+lot of pressure to make a new encryption standard that made use of the
+last few decades of cryptologic research.
+
+The United States National Institute of Standards and Technology
+([[http://www.nist.gov][NIST]]) held an open competition to select the new encryption standard.
+In the summer of 2000, a cipher named Rijndael (pronounced
+“RAIN-doll”) was selected as the new Advanced Encryption Standard, or
+AES.
+
+AES is a thoroughly modern cipher design and may be used with
+confidence.
+
+
+
+** What are Twofish and Blowfish?
+   :PROPERTIES:
+   :CUSTOM_ID: define_fish
+   :END:
+
+
+Blowfish and Twofish are well-regarded symmetric ciphers.  Blowfish
+should not be used to encrypt files larger than 4Gb in size, but
+Twofish has no such restrictions.  These algorithms are modern, and
+may be used with confidence.
+
+
+
+** What’s 3DES?
+   :PROPERTIES:
+   :CUSTOM_ID: define_3des
+   :END:
+
+
+In the 1970s, IBM developed a new symmetric cipher called the Data
+Encryption Standard (DES).  They overdesigned it horribly: even after
+three decades, the only way to break DES is by brute force.
+Unfortunately, standard DES has a small enough keyspace to be
+susceptible to brute-forcing.
+
+A new variant of DES was needed.  3DES, which is made of three DES
+algorithms running together with three independent keys, was the
+result.  3DES is ungainly, ugly, slow, and has all the aesthetics of a
+Soviet workers’ housing bloc.  It has also withstood three decades of
+cryptanalysis and is still going strong.
+
+Due to its 1970s-era 64-bit block size, it should not be used to
+encrypt more than about 4Gb of data.  Beyond that, though, it is solid
+as a rock, and very few GnuPG users will ever notice a problem with
+it.  Provided you’re not encrypting more than 4Gb of data you may use
+3DES with confidence.
+
+
+
+** What’s Camellia?
+   :PROPERTIES:
+   :CUSTOM_ID: define_camellia
+   :END:
+
+
+During roughly the same time period that [[http://www.nist.gov][NIST]] was running the Advanced
+Encryption Standard trials, Japan’s [[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union's
+[[http://www.cryptonessie.org/][NESSIE]] were running their own similar trials.  Camellia is the cipher
+that won the NESSIE and CRYPTREC trials, much in the same way that
+Rijndael won the United States’ AES trials.
+
+Camellia is a thoroughly modern cipher design and may be used with
+confidence.
+
+
+
+** What are SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 and SHA-3?
+   :PROPERTIES:
+   :CUSTOM_ID: define_sha
+   :END:
+
+
+The Secure Hash Algorithms are cryptographic hash functions originally
+devised by the United States’ National Security Agency.  The
+algorithms have been made publicly available and have been subjected
+to an astonishing amount of peer review.
+
+- *SHA* and/or *SHA-0*: the original Secure Hash Algorithm, generating
+  160-bit outputs.  Flaws were discovered in it almost immediately.
+  SHA-0 never gained much traction in the cryptologic community, and
+  it is not present in GnuPG.
+- *SHA-1*: This is SHA-0 with the flaws fixed, and not much else in
+  the way of changes.  It still generates 160-bit outputs.  SHA-1 has
+  not aged well.  Although it is still believed to be safe, it would
+  be advisable to use another, different hash function if possible.
+- *SHA-224*: This is a massively-overhauled SHA-1 which generates
+  224-bit outputs.  It is believed to be safe, with no warnings about
+  its usage.
+- *SHA-256*: This is a massively-overhauled SHA-1 which generates
+  256-bit outputs.  It is believed to be safe, with no warnings about
+  its usage.
+- *SHA-384*: This is a massively-overhauled SHA-1 which generates
+  384-bit outputs.  It is believed to be safe, with no warnings about
+  its usage.
+- *SHA-512*: This is a massively-overhauled SHA-1 which generates
+  512-bit outputs.  It is believed to be safe, with no warnings about
+  its usage.
+- *SHA-3*: SHA-3 is a completely new hash algorithm that makes a clean
+  break with the previous SHAs.  It is believed to be safe, with no
+  warnings about its usage.  At present, GnuPG does not support SHA-3.
+  Support for SHA-3 is forthcoming: expect it soon.
+
+
+
+** What’s MD5?
+   :PROPERTIES:
+   :CUSTOM_ID: define_md5
+   :END:
+
+
+MD5 is a 128-bit cryptographic hash function invented by Ron Rivest
+(the ‘R’ of ‘RSA’) in the early 1990s.  For many years it was one of
+the standard algorithms of the field, but it has not aged well and is
+widely considered to be completely obsolete.
+
+You don’t need to worry about MD5, though: although GnuPG can read
+MD5-based signatures, it will only generate MD5-based signatures if
+you jump through a lot of hoops.  This is for your own safety, to
+prevent people from accidentally generating MD5-based signatures.
+
+
+
+** What are CAST, CAST5, and CAST5-128?
+   :PROPERTIES:
+   :CUSTOM_ID: define_cast
+   :END:
+
+
+Carlisle Adams and Stafford Tavares (the “CA” and the “ST” in “CAST”)
+developed the CAST algorithm in 1996.  It was later approved for
+Canadian government use.
+
+CAST has many names: CAST, CAST5, CAST5-128 and CAST-128 all refer to
+the same algorithm.
+
+Internally, CAST is distinctly similar to Blowfish, another
+well-respected algorithm.  Like 3DES, its 64-bit block size means it
+should not be used to encrypt files larger than 4Gb in size.  With
+that said, though, CAST is a modern cipher and may be used with
+confidence.
+
+
+
+** What are ZLIB, ZIP and BZIP?
+   :PROPERTIES:
+   :CUSTOM_ID: define_compress
+   :END:
+
+
+ZLIB, ZIP and BZIP refer to different kinds of compression algorithms.
+GnuPG will use one of these three algorithms to compress your data
+before encrypting it, unless GnuPG can see the data is already
+compressed.
+
+
+
+** What’s a ‘revocation certificate’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_rev_cert
+   :END:
+
+
+A revocation certificate is a [[#define_key][certificate]] that possesses the
+information necessary to mark another certificate as unusable.  This
+is called ‘revoking’ the certificate.
+
+Recommended procedure is to generate a revocation certificate
+immediately after generating a new GnuPG key.  If the key is lost
+(say, if you have no backups of the key and you lose the smart card or
+laptop containing the key), you'll no longer be able to generate a
+revocation certificate.  Consult [[#generate_revocation_certificate][the FAQ instructions]] on how to do
+this.
+
+
+
+** What’s a ‘designated revoker’?
+   :PROPERTIES:
+   :CUSTOM_ID: define_desig_revkr
+   :END:
+
+
+A designated revoker is a person, identified by a certificate, that
+has the authority to revoke another certificate held by a different
+person.  For instance, if you were using GnuPG in a corporate
+environment the IT staff might be listed as a designated revoker for
+your certificate, so that when you left the company the IT staff could
+revoke your certificate.
+
+
+
+** What does ‘validity’ mean?
+   :PROPERTIES:
+   :CUSTOM_ID: define_validity
+   :END:
+
+
+Although a certificate makes certain assertions about identity, these
+assertions cannot be blindly trusted.  (Consider, for instance,
+whether you should trust a certificate that claims to belong to
+=obama@whitehouse.gov=.)
+
+If you trust the certificate’s assertions, you are said to have
+‘validated’ the certificate.  Validation can be done by fiat or as the
+result of a process.  For instance, you validate your own certificate
+by fiat: “this certificate says it belongs to me, and I trust it.”
+Validating other certificates, though, should probably have a little
+more rigor involved.  How much rigor will depend entirely on your own
+particular needs and the threats you face.
+
+
+
+
+** What does ‘trust’ mean?
+   :PROPERTIES:
+   :CUSTOM_ID: define_trust
+   :END:
+
+
+‘Trust’ refers to how thoroughly a certificate has been [[#define_validity][validated]].
+The terms are used somewhat interchangeably.
+
+
+
+** What does ‘ownertrust’ mean?
+   :PROPERTIES:
+   :CUSTOM_ID: define_ownertrust
+   :END:
+
+
+If a certificate has been [[#define_validity][validated]], and if you trust the person
+owning that certificate to do proper validation of certificates, you
+can tell GnuPG “I am willing to trust this person’s validations as if
+they were my own.”
+
+/[For instance, I have fully validated John Hawley’s certificate.  I
+further believe, based on my knowing John, that he will be as careful
+about validating a certificate as I would be.  So if John validates
+your certificate, then if I pull your certificate down from the
+keyserver it will show up as a fully validated certificate. — rjh]/
+
+
+
+* How do I start using GnuPG?
+  :PROPERTIES:
+  :CUSTOM_ID: starting_out
+  :END:
+
+The very first thing is to join the [[#gnupg-users_list][GnuPG-Users mailing list]].  You’ll
+find it to be a welcoming community that’s friendly to newcomers and
+is eager to help out.
+
+
+
+** Does GnuPG need to be ‘tuned’ before use?
+   :PROPERTIES:
+   :CUSTOM_ID: tuning
+   :END:
+
+No.  GnuPG has sensible defaults right out of the box.  You don’t need
+to tune GnuPG before you can use it.
+
+
+
+** How large should my key be?
+   :PROPERTIES:
+   :CUSTOM_ID: new_key_size
+   :END:
+
+The overwhelming majority of users will be well-served by generating
+2048-bit RSA keys.  This is the default behavior for GnuPG.
+
+
+** What algorithm should I use?
+   :PROPERTIES:
+   :CUSTOM_ID: new_key_algo
+   :END:
+
+The overwhelming majority of users will be well-served by generating
+2048-bit RSA keys.  This is the default behavior for GnuPG.
+
+
+** Why does it take so long to generate a certificate?
+   :PROPERTIES:
+   :CUSTOM_ID: new_key_generate_time
+   :END:
+
+The short answer is, “your computer is doing a lot of work.”  But
+don’t worry: although generating new certificates can take a while,
+actually using them once they’re made is quite fast.
+
+
+** What should I do after making my certificate?
+   :PROPERTIES:
+   :CUSTOM_ID: new_key_after_generation
+   :END:
+
+Generate a revocation certificate, and store it in a safe place.
+Alternately, you may wish to appoint [[#define_desig_revkr][a designated revoker]].
+
+
+*** How do I appoint a designated revoker?
+    :PROPERTIES:
+    :CUSTOM_ID: appoint_revoker
+    :END:
+
+A designated revoker is someone whom you trust to revoke your
+certificates on your behalf.  This person may revoke your certificates
+without needing a revocation certificate.  For instance, you may wish
+to appoint your lawyer as your designated revoker so that, in the
+event of your untimely death, your lawyer may revoke your
+certificates.
+
+To add a revoker, use the following command line:
+
+=gpg --edit-key= /[your key ID here]/ =addrevoker=
+
+When prompted, enter the key ID of the person whom you wish to appoint
+as a revoker.  The revoker’s key must be fully validated.
+
+
+
+*** How do I generate a revocation certificate?
+    :PROPERTIES:
+    :CUSTOM_ID: generate_revocation_certificate
+    :END:
+
+
+A [[#define_rev_cert][revocation certificate]] marks another certificate as unusable.
+
+To generate a revocation certificate for your key, do:
+
+=gpg --armor --output revoke.asc --gen-revoke= /[your key ID]/
+
+Copy =revoke.asc= to a safe place.
+
+
+*** How do I send my certificate to the keyserver network?
+    :PROPERTIES:
+    :CUSTOM_ID: send_to_keyservers
+    :END:
+
+
+=gpg --keyserver pool.sks-keyservers.net --send-key= /[your certificate ID]/
+
+You should only upload your own certificates to the keyservers, or
+obtain the certificate holder's permission before doing so.  In some
+circles it's considered rude to upload someone else's certificate; not
+everyone wants to publish their key publicly.
+
+
+
+** Where does GnuPG look for configuration options?
+   :PROPERTIES:
+   :CUSTOM_ID: location_gpg_conf_file
+   :END:
+
+
+GnuPG looks at a file called =gpg.conf= to determine various runtime
+parameters.  On UNIX systems this file can be found in =~/.gnupg=.  On
+Windows systems it’s a bit more difficult to predict, but try:
+
+- Windows XP :: FIXME
+- Windows Vista :: FIXME
+- Windows 7 :: FIXME
+- Windows 8 :: FIXME
+
+
+** What options should I put in my configuration file?
+   :PROPERTIES:
+   :CUSTOM_ID: new_user_gpg_conf
+   :END:
+
+The good news is, you really shouldn’t need to.  That said, the
+following is Rob Hansen’s =gpg.conf= file.  The italicized text
+describes what each piece does: the monospaced text is the actual
+content of the file.
+
+/Ensure that all parameters are set for strict OpenPGP conformance.
+Later entries will override this, but setting ‘openpgp’ provides a
+really good baseline to start from./
+
+=openpgp=
+
+/Make GnuPG a little quieter: don’t warn about insecure memory, don’t
+print a greeting message, don’t put comments in GnuPG’s output./
+
+=no-greeting=\\
+=no-secmem-warning=\\
+=no-emit-version=\\
+=no-comments=
+
+/Since keyservers.org sits in my closet, I want GnuPG to always check it instead of going out on the network to ask another keyserver halfway around the globe.  Most users don’t have a keyserver in their closet, and will want to substitute pool.sks-keyservers.net here./
+
+=keyserver keyservers.org=
+
+/Whenever I sign a document, use certificate 0xD6B98E10/
+
+=local-user 0xD6B98E10=
+
+/Whenever I encrypt a document, also include certificate 0xD6B98E10 as
+a recipient.  This allows me to decrypt the messages I send./
+
+=encrypt-to 0xD6B98E10=
+
+/In email, a line beginning with the word ‘From’ can be misinterpreted
+by the computer as the start of a new email message.  Thus, whenever
+GnuPG sees a line starting with ‘From’, it will slightly mangle the
+line to prevent this bug from occurring./
+
+=escape-from-lines=
+
+/Use SHA256 instead of SHA-1 for certificate signatures./
+
+=cert-digest-algo SHA256=
+
+/Prefer these digest algorithms, in this order/
+
+=personal-digest-preferences SHA256 SHA512 SHA384 SHA224 RIPEMD160=
+
+/Prefer these ciphers, in this order/
+
+=personal-cipher-preferences TWOFISH CAMELLIA256 AES 3DES=
+
+
+
+** Is there any particular keyserver I should use?
+   :PROPERTIES:
+   :CUSTOM_ID: new_user_default_keyserver
+   :END:
+
+
+Many people have had excellent luck with =pool.sks-keyservers.net=.
+
+
+
+** What’s the difference between an ‘option’ and a ‘command’?
+   :PROPERTIES:
+   :CUSTOM_ID: diff_option_commands
+   :END:
+
+Commands tell GnuPG what to do: options tell GnuPG how to do it.  For
+instance, =encrypt= is a command, and =armor= is an option that tells
+GnuPG to ensure the output contains only printable characters.
+
+
+** What are the most commonly used options?
+   :PROPERTIES:
+   :CUSTOM_ID: common_options
+   :END:
+
+Produce more output explaining what GnuPG is doing:
+
+=-v=, =--verbose=
+
+Some of the most commonly used options are:
+
+Make no changes; this is useful for testing a command line that will
+modify keys or generate output:
+
+=-n=, =--dry-run=
+
+Send output to the named file:
+
+=-o= /FILE/, =--output= /FILE/
+
+Create ASCII-armored output that can be safely e-mailed, instead of
+binary output:
+
+=-a=, =--armor=
+
+When encrypting a message, you will usually supply at least one
+recipient ID with the recipient option.  This option can be supplied
+multiple times to encrypt a message to multiple recipients:
+
+=-r= /KEYID/, =--recipient= /KEYID=/   /specify a recipient ID/
+
+
+** What are the most commonly used commands?
+   :PROPERTIES:
+   :CUSTOM_ID: common_commands
+   :END:
+
+GnuPG's primary functions are to encrypt and decrypt messages, and to
+sign and verify them.  It's possible to sign without encrypting or
+encrypt without signing.
+
+Signing a file's content is done with the =-s= or =--sign= commands.
+A variation is =-b= or =--detach-sign=, which produces a separate
+signature without including the file's content; this is useful for
+signing a software archive or other large file.  The key to use for
+the signature can be specified with the =local-user= setting in your
+gpg.conf file, or with the =-u=, =--local-user= options.
+
+Encrypting a file's content is done with the =-e= or =--encrypt=
+commands.  Recipients are specified with the =-r= or =--recipient=
+options.
+
+GnuPG's default action is to decrypt and verify its input file,
+writing the contents to standard output or to the filename specified
+by the =-o= or =--output= options.  The =--verify= command will only
+verify the signature without writing the file's contents anywhere.
+
+These commands are the most commonly used. GnuPG has many more
+commands, largely for managing your keyring containing your private
+keys and the certificates of others.
+
+
+** How do I use another person’s certificate?
+   :PROPERTIES:
+   :CUSTOM_ID: using_certificates
+   :END:
+
+In order to send an encrypted message or verify a signature, you must
+obtain the certificate for the sender/signer's public key.
+
+Occasionally you might obtain the certificate physically, by meeting
+the certificate holder face-to-face and exchanging the certificate on
+some storage medium such as a USB stick, memory card, or portable
+disk.  Or you might download a copy of the certificate from the
+holder's web site.
+
+Once obtained in one of these ways, you can add the certificate to
+your collection of public keys by doing:
+
+=gpg --import certificate.txt=
+
+More commonly, you'll download a correspondent's certificate from a
+keyserver.
+
+
+
+*** How do I search the keyserver for someone’s certificate?
+    :PROPERTIES:
+    :CUSTOM_ID: searching_keyservers
+    :END:
+
+
+There is also a network of public keyservers, accessible under the
+collective hostname =pool.sks-keyservers.net=. GnuPG users can upload
+their certificates to the keyservers, and other users can then search
+for and download them.
+
+=gpg --keyserver pool.sks-keyservers.net --search= /[email address, name, key ID, etc.]/
+
+GnuPG will list matching certificates and prompt you to select which
+ones you wish to download and add to your keyring.
+
+People will obtain new signatures for their certificates from time to
+time.  =gpg --refresh-keys= will recheck all of the certificates on
+your public key and download any new signatures for those keys.
+
+
+
+*** How do I retrieve a certificate if I already know its fingerprint?
+    :PROPERTIES:
+    :CUSTOM_ID: retrieving_by_fingerprint
+    :END:
+
+
+=gpg --keyserver pool.sks-keyservers.net --recv-key= /[fingerprint]/
+
+
+
+*** Why do I need to validate certificates?
+    :PROPERTIES:
+    :CUSTOM_ID: why_validate
+    :END:
+
+
+If you were to receive a letter in the mail that claimed to be from
+the President of the United States, would you believe it?  Probably
+not, because anyone can put together official-looking letterhead:
+you’d insist on doing some kind of checking to make sure that no one
+was fooling with you.
+
+The same applies to email.  A certificate can claim to be from anyone.
+You have to make sure that the certificate really belongs to whom it
+claims it belongs to.  That process of making sure is called
+‘validation’.
+
+
+
+*** How do I validate certificates?
+    :PROPERTIES:
+    :CUSTOM_ID: how_to_validate
+    :END:
+
+
+*This advice is controversial.*
+
+It’s controversial for a simple reason: every Tom, Dick and Harry has
+their own idea about the “right way” to validate certificates.  Some
+of these people are well-informed and some of them are just plain
+unhinged.  In the end, you are responsible for making your own
+decisions.  That said, the following is generally agreed upon as being
+a reasonable procedure:
+
+1. Meet the certificate holder face-to-face.
+2. Ask to see two forms of government-issued identification.
+3. Upon verifying the person really is who they claim to be, ask this
+   person to provide their certificate’s fingerprint, their email
+   address, and where you can obtain a copy of their certificate.
+   (Example: “My fingerprint is =4541 BB01 8EA4 8F99 19CA 3701 2380
+   6BE5 D6B9 8E10=, and you can find it on
+   =pool.sks-keyservers.net=.”)
+4. On your own computer, retrieve the person’s certificate from the
+   specified location.  Check to make sure the email address they gave
+   you is one that’s also listed on the certificate.  Check to make
+   sure the fingerprint of the certificate you’ve downloaded matches
+   the fingerprint the person gave you.
+5. =gpg --edit-key= /[their certificate ID]/ =sign=
+6. Once signed, =gpg --armor --output signed_cert.asc --export=
+   /[their certificate ID]/
+7. Send the file =signed_cert.asc= to the address they gave you
+
+By following this process you first ensure that you’re speaking to the
+right person.  By comparing the fingerprints of the certificate you
+have against the fingerprint they specified, you’re ensuring that you
+have the right certificate.  Checking to make sure the email address
+they gave you is also listed on the certificate is one more check to
+make sure.  Once that’s done, presto, Bob’s your uncle: there’s
+nothing left to do except sign it and return the newly-signed
+certificate to the other person.
+
+
+** Why can’t I read emails I’ve sent, and how do I fix it?
+   :PROPERTIES:
+   :CUSTOM_ID: encrypt_to_self
+   :END:
+
+
+You encrypted a message to Alice, which means that it requires Alice’s
+private key to read it.  Only Alice has her private key.  That’s why
+you can’t read encrypted traffic you generated: only Alice can read
+it.
+
+To get around this, add yourself as a recipient (=--recipient = /[your
+certificate ID]/).
+
+
+
+** How do I encrypt a file for multiple recipients?
+   :PROPERTIES:
+   :CUSTOM_ID: multiple_recipients
+   :END:
+
+
+Use multiple =--recipient= options.  Remember, options come before
+commands!
+
+
+
+
+** How do I sign a file with multiple certificates?
+   :PROPERTIES:
+   :CUSTOM_ID: multiple_signers
+   :END:
+
+
+Use multiple =--local-user= options.  Remember, options come before
+commands!
+
+
+
+** How do I combine encryption with signing?
+   :PROPERTIES:
+   :CUSTOM_ID: encrypt_and_sign
+   :END:
+
+
+=gpg --armor --recipient= /[first recipient’s key ID]/ =--local-user= /[your key ID]/ =--sign --encrypt= /[filename]/
+
+
+
+** How do I force GnuPG to make printable-text output?
+   :PROPERTIES:
+   :CUSTOM_ID: ascii_armor
+   :END:
+
+Normally, computers use eight-bit binary code.  This often presents
+trouble for email, which often requires that only printable
+(seven-bit) characters may be used.  By using the =--armor= flag,
+GnuPG will generate output containing only printable characters.
+
+
+** How do I create an ‘inline signature’?
+   :PROPERTIES:
+   :CUSTOM_ID: generate_inline_signature
+   :END:
+
+An inline signature wraps a textual header and footer around the text
+to be signed, leaving the text readable without running GnuPG.  This
+doesn't conceal the text at all and therefore provides no secrecy, but
+if someone edits the text GnuPG will report that the signature is bad.
+
+To generate an inline signature, run
+
+=gpg --armor --output signed_file.asc --local-user= /[your key ID]/ =--clearsign message_file.txt=
+
+To verify the resulting file, simply invoke GnuPG with the filename of
+the signed file:
+
+=gpg signed_file.asc=
+
+
+
+
+** How can I use GnuPG in an automated environment?
+   :PROPERTIES:
+   :CUSTOM_ID: automated_use
+   :END:
+
+You should use the =--batch= option.  Don't bother to use a passphrase
+because there's usually no way to store it more securely than on the
+secret keyring itself.
+
+The suggested way to create keys for an automated environment is as
+follows.  First, on a secure machine:
+
+1. If you want to do automatic signing, create a signing subkey for
+   your key.  Use the interactive key editing menu by issuing the
+   command:
+
+   =gpg --edit-key= /keyID/
+
+   Enter "addkey" and select the DSA key type.
+
+2. Make sure that you use a passphrase; this is required by the
+   current implementation to let you export the secret key.
+
+3. Run:
+
+   =gpg --export-secret-subkeys --no-comment= /newsubkeyID/ => secring.auto=
+
+4. Copy =secring.auto= and the public keyring to a test directory.
+
+5. Change to the test directory.
+
+6. Run the command:
+
+=gpg --homedir . --edit= /newsubkeyID/
+
+   Use the sub-command =passwd= to remove the passphrase from the
+   subkeys. You may also want to remove all unused subkeys by doing
+   =key N= and then =delkey= for each subkey.
+
+7. Copy =secring.auto= to the target box somehow.
+
+   On the target machine, install =secring.auto= as the secret keyring
+   and begin writing scripts that invoke GnuPG.
+
+   It's a good idea to install an intrusion detection system so that
+   you will get notice of a successful intrusion.  If that happens,
+   you can revoke all the subkeys installed on that machine and
+   install new subkeys once the machine is secured again.
+
+
+** I’m a programmer and I need a GnuPG library.  Is there one?
+   :PROPERTIES:
+   :CUSTOM_ID: yes_gpgme
+   :END:
+
+
+Check out [[http://www.gnupg.org/related_software/gpgme/][GPGME (GnuPG Made Easy)]].
+
+
+
+** I’m a programmer and I need a way to call GnuPG internals directly.  Is there a library for this?
+   :PROPERTIES:
+   :CUSTOM_ID: keep_dreaming
+   :END:
+
+No, nor will there be.
+
+
+* What common problems come up?
+  :PROPERTIES:
+  :CUSTOM_ID: common_problems
+  :END:
+
+
+** Why is GnuPG warning me this certificate might not belong to whom I think it does?
+   :PROPERTIES:
+   :CUSTOM_ID: you_need_to_validate
+   :END:
+
+
+If you received an email claiming to be from a Nigerian oil tycoon,
+would you believe it?  Or would you insist on doing some kind of
+verification first, in order to make sure that you’re not being
+scammed or swindled?
+
+The same principle applies here.  If you’re using a certificate that
+claims to belong to Alice, but there’s no evidence it actually belongs
+to Alice, GnuPG will warn you that you’re using an untrusted
+certificate.
+
+You probably want to validate the certificate; see [[#how_to_validate][this FAQ's
+instructions]].
+
+
+
+** Why is GnuPG warning me about using insecure memory?
+   :PROPERTIES:
+   :CUSTOM_ID: insecure_memory
+   :END:
+
+
+GnuPG tries to lock memory so that no other process can see it and so
+that the memory will not be written to swap.  If for some reason it’s
+not able to do this (for instance, certain platforms don’t support
+this kind of memory locking), GnuPG will warn you that it’s using
+insecure memory.
+
+While it’s almost always better to use secure memory, it’s not
+necessarily a bad thing to use insecure memory.  If you own the
+machine and you’re confident it’s not harboring malware, then this
+warning can probably be ignored.
+
+
+
+** Why is GnuPG changing my message?
+   :PROPERTIES:
+   :CUSTOM_ID: escaped_dashes
+   :END:
+
+GnuPG uses special lines to denote the beginning of a message, the
+beginning of a signature, and so forth.  These lines start with
+“=----- BEGIN=…”.  If your text contains a line beginning with a dash,
+that line will be slightly mangled in order to prevent GnuPG from
+misinterpreting your data as one of its special lines.
+
+
+* What are some common best practices?
+  :PROPERTIES:
+  :CUSTOM_ID: best_practices
+  :END:
+
+It’s very hard to give advice on this subject, because everyone will
+have their own opinion.  That said, here are some good guidelines:
+
+- *Join the community.* Join [[gnupg-users_list][GnuPG-Users]] and get involved in the
+  discussions.  The conversation is wide-ranging and you’ll encounter
+  a great variety of thoughts and opinions.  Reading GnuPG-Users is
+  one of the best ways to educate yourself.
+- *Practice.* If you don’t practice these skills before they become
+  necessary, you won’t be able to use these skills effectively.
+- *Generate a revocation certificate and keep it safe.*
+- *Use a strong passphrase.*
+- *Keep your computer free of malware.*
+- *Validate certificates correctly.*
+
+
+
+** How can I choose a strong passphrase?
+   :PROPERTIES:
+   :CUSTOM_ID: strong_passphrase
+   :END:
+
+If someone manages to obtain your secret key, the only thing
+protecting the key will be your passphrase.  A passphrase should be 1)
+difficult to guess for someone who knows you, and 2) difficult to
+brute-force by trying every possible combination of characters.
+
+To meet requirement 1), the passphrase shouldn't be based on
+publicly-available information about you: your birthday, your spouse's
+name, your school's motto, a line of text from a book, etc.  To meet
+requirement 2), the passphrase should be long: commercially available
+hardware can try 2.8 billion passwords in a day, which is sufficient
+to crack a 10-letter all-lowercase password.
+
+One simple approach that produces easy-to-remember passphrases is to
+generate four to six random words, as illustrated by the XKCD cartoon
+[[http://xkcd.com/936/][“Correct, horse!  Battery staple!”]].
+
+
+
+** How can I keep my revocation certificate safe?
+   :PROPERTIES:
+   :CUSTOM_ID: keep_rev_cert_safe
+   :END:
+
+Good places include safe deposit boxes, kept on file with your lawyer,
+placed in a fireproof safe, and so forth.  It should be treated as an
+important document that needs to be kept safe.
+
+
+** How can I keep my computer safe from malware?
+   :PROPERTIES:
+   :CUSTOM_ID: malware
+   :END:
+
+
+Although there is no guaranteed way of keeping your system free of
+malware, you can reduce your risk quite a lot by following some basic
+rules.
+
+1.  Keep your system up-to-date.  Always apply the latest patches.
+2.  Stop using old versions of Internet Explorer.  If possible, use
+    [[http://www.getfirefox.com][Mozilla Firefox]] or [[http://download-chromium.appspot.com/][Chromium]].
+3.  Don’t open email attachments unless they are expected and come
+    from someone you know.
+4.  Don’t click on email links unless they are expected and come from
+    someone you know.
+5.  Be suspicious of requests for personal information, especially if
+    it’s more detail than is strictly necessary to solve a problem.
+
+
+** Should I use encrypted disk software like TrueCrypt, BitLocker or FileVault?
+   :PROPERTIES:
+   :CUSTOM_ID: disk_encryption
+   :END:
+
+You can if you want, but it won’t make your private key any more
+secure.  Your private key is already encrypted: your passphrase is the
+key used to decrypt your private key.
+
+
+
+* Advanced topics
+  :PROPERTIES:
+  :CUSTOM_ID: advanced_topics
+  :END:
+
+
+These topics are ‘advanced’ in the sense that you really don’t need to
+understand them in order to safely and correctly use GnuPG.  That
+said, if you have a more technical question about GnuPG, you may find
+some of the answers in this section.
+
+
+
+** Why does GnuPG use RSA-2048 by default?
+   :PROPERTIES:
+   :CUSTOM_ID: default_rsa2048
+   :END:
+
+The United States National Institute of Standards and Technology
+([[http://www.nist.gov][NIST]]) believes that 2048-bit [[#define_asymc][asymmetric cryptography]] will be secure
+until at least the year 2030.  Larger keys are unlikely to extend this
+duration very much.  Further, large keys come with their own problems:
+they cannot be moved to smartcards, mobile devices have trouble with
+them, and so on.
+
+GnuPG uses RSA by default instead of DSA not because of any problems
+with DSA, but just because RSA has a larger installed user base and is
+better supported by other OpenPGP-compatible products.
+
+
+
+** Do other high-security applications use RSA-2048?
+   :PROPERTIES:
+   :CUSTOM_ID: rsa2048_in_the_real_world
+   :END:
+
+
+2048-bit RSA is commonly used to secure SSL root signing certificates.
+It’s also used to sign operating system patches, Authenticode
+signatures, Java applets and more.  RSA-2048 is believed to be safe
+against attack until at least the year 2030, so use it with
+confidence.
+
+
+
+** Why doesn’t GnuPG default to using RSA-4096?
+   :PROPERTIES:
+   :CUSTOM_ID: no_default_of_rsa4096
+   :END:
+
+
+Because it gives us almost nothing, while costing us quite a lot.
+
+Breaking an RSA-10 key requires you to try each prime number between
+two and one hundred.  There are twenty-five of these, meaning RSA-10
+is equivalent to about a 5-bit symmetric cipher.  Breaking an RSA-20
+key requires you to try each prime number between two and one
+thousand: there are 168 of them, meaning RSA-20 is equivalent to about
+an 8-bit cipher.  Doubling the keylength (from RSA-10 to RSA-20)
+didn't give us the benefit that we naively expected.  Each additional
+bit gives correspondingly less in the way of additional security, and
+we quickly reach a point of diminishing returns.
+
+That point of diminishing returns happens around RSA-2048.  Once you
+move past RSA-2048, you’re really not gaining very much.  At the same
+time, moving past RSA-2048 means you lose the ability to migrate your
+certificate to a smartcard, or to effectively use it on some mobile
+devices, or to interoperate with other OpenPGP applications that don’t
+handle large keys gracefully.
+
+If you really want a 4096-bit RSA key there’s nothing stopping you:
+but we sincerely believe the overwhelming majority of users will be
+well-served with RSA-2048.
+
+
+
+** Why do people advise against using RSA-4096?
+   :PROPERTIES:
+   :CUSTOM_ID: please_use_ecc
+   :END:
+
+
+Almost always when people use 4096-bit RSA they’re doing so because
+they believe RSA-4096 to be much stronger than it is.  The United
+States’ National Institute of Standards and Technology ([[http://www.nist.gov][NIST]]) states
+that RSA-2048 gives roughly 112 bits of security and RSA-3072 gives
+roughly 128.  There is no formal recommendation on where RSA-4096
+lies, but the general consensus is that it would come in somewhere
+around 140 bits — 28 bits of improvement over RSA-2048.  This is an
+improvement so marginal that it’s really not worth mentioning.
+
+If you need more security than RSA-2048 offers, the way to go would be
+to switch to elliptical curve cryptography — not to continue using
+RSA.
+
+
+
+** Why does GnuPG support RSA-4096 if it’s such a bad idea?
+   :PROPERTIES:
+   :CUSTOM_ID: not_a_bad_idea_just_unnecessary
+   :END:
+
+
+RSA-4096 is not a bad idea: it’s just, generally speaking,
+unnecessary.  You gain very little in the way of additional resistance
+to brute-forcing and cryptanalysis.
+
+
+
+** Can any of the ciphers in GnuPG be brute-forced?
+   :PROPERTIES:
+   :CUSTOM_ID: brute_force
+   :END:
+
+
+No.
+
+The laws of physics require that a certain amount of heat be used in
+computation.  This is a consequence of the Second Law of
+Thermodynamics, and may not be violated under our current
+understanding of the laws of physics.
+
+Further, physics requires that a certain amount of time be used in
+computation.  This is a consequence of the Heisenberg Uncertainty
+Principle, and may not be violated under our current understanding of
+the laws of physics.
+
+Using these two principles (the [[http://en.wikipedia.org/wiki/Landauer_bound][Landauer bound]] and the
+[[http://en.wikipedia.org/wiki/Margolus%E2%80%93Levitin_theorem][Margolus–Levitin limit]]), we can determine quite accurately how much
+heat would be released by a computer that brute-forced a 128-bit
+cipher.  The results are profoundly silly: it’s enough to boil the
+oceans and leave the planet as a charred, smoking ruin.
+
+This is not to say that GnuPG cannot be successfully attacked.  It is
+only to say that none of the ciphers in GnuPG are susceptible to
+brute-forcing.
+
+
+
+** Has GnuPG ever been successfully attacked?
+   :PROPERTIES:
+   :CUSTOM_ID: successful_attacks
+   :END:
+
+
+This depends entirely on what is meant by “successful attack.”
+
+If you mean, “has GnuPG traffic ever been successfully
+cryptanalyzed?”, the answer is a flat ‘no’.  We are unaware of any
+credible reports of any of the ciphers used in GnuPG having ever been
+successfully cryptanalyzed.
+
+If you mean, “have people figured out ways to obtain the plaintext
+anyway?”, the answer is an emphatic ‘yes.’ In [[http://news.cnet.com/8301-10784_3-9741357-7.html][a 2007 Drug Enforcement
+Administration case]], a keylogger was installed on a suspect's
+computer.
+
+GnuPG protects your traffic against cryptanalysis, but it is not magic
+fairy dust that can be sprinkled over your data to make it safe
+against all threats.
+
+
+
+** Should I use PGP/MIME for my emails?
+   :PROPERTIES:
+   :CUSTOM_ID: use_pgpmime
+   :END:
+
+Probably not.
+
+# This is controversial.  rjh: we should discuss on how we can extend
+# this answer -wk
+
+PGP/MIME is the official, standardized way of using GnuPG with
+electronic mail.  PGP/MIME packages the data up as encrypted
+attachments.  This is the problem with it: attachments often get
+mangled, stripped, or otherwise tampered with.  For instance, sending
+PGP/MIME traffic to the [[#pgp-basics_list][PGP-Basics mailing list]] will result in your
+email being completely blank.  PGP-Basics is set up to drop all
+attachments from messages posted to the list, and that means your
+PGP/MIME attachments get dropped.
+
+For many years GNU Mailman would repackage attachments in ways that
+would break the PGP/MIME standard and result in unreadable traffic.
+These GNU Mailman installations still exist in the wild.  For a long
+time both [[#gnupg-users_list][GnuPG-Users]] and [[#enigmail_list][Enigmail]] ran these buggy versions of GNU
+Mailman.
+
+Since PGP/MIME can't reliably be sent to the three largest GnuPG
+mailing lists, it’s hard to claim that PGP/MIME is ready for
+widespread usage.  For now, it’s best to use inline traffic unless you
+can be certain that PGP/MIME messages will not be mangled in transit.
+
+
+
+** What are the best algorithms in GnuPG?
+   :PROPERTIES:
+   :CUSTOM_ID: no_best_algo
+   :END:
+
+
+MD5 and SHA-1 should be avoided if possible.  Beyond that, there is no
+“best algorithm” or “best algorithms” in GnuPG.  It’s sort of like
+asking whether Godzilla or King Kong is better at terrorizing urban
+cities: there is no clear-cut winner.
+
+This is not to say you shouldn’t have preferences, though.  It is only
+to say that GnuPG’s algorithms are so well-designed for what they do
+that there is no single “best”.  There’s just a lot of personal,
+subjective choice.  For instance:
+
+- /[I studied Twofish pretty intensively in graduate school, so I tend
+  to prefer it. — rjh]/
+
+
+
+** Why is my DSA key limited to 3072 bits?
+   :PROPERTIES:
+   :CUSTOM_ID: no_dsa4096
+   :END:
+
+
+The United States’ National Institute of Standards and Technology
+([[http://www.nist.gov][NIST]]) is responsible for the DSA specification.  NIST has not
+published a 4096-bit DSA variant, and thus GnuPG doesn’t offer it.
+
+
+
+** Why does my DSA-1024 key use a different digest algorithm than my DSA-2048 or DSA-3072 key?
+   :PROPERTIES:
+   :CUSTOM_ID: hash_widths_in_dsa
+   :END:
+
+
+The DSA algorithm has gone through several revisions.
+
+GnuPG’s original implementation of DSA supported 1024-bit keys that
+used either SHA-1 or RIPEMD-160 as hashes.
+
+When the United States’ National Institute of Standards and Technology
+([[http://www.nist.gov][NIST]]) revised the specification to support 2048- and 3072-bit keys,
+they also required longer hashes be used.  DSA-2048 required a 224-bit
+hash (SHA-224, or a longer hash cut down to 224 bits), and DSA-3072
+required a 256-bit hash (SHA-256, or a longer hash cut down to 256
+bits).  They also now allowed for stronger hashes to be used for
+DSA-1024: if they were more than 160 bits, they would simply be cut
+down.
+
+So, depending on how you have GnuPG configured, GnuPG might be forced
+to use SHA-1 and/or RIPEMD-160 with DSA-1024; GnuPG might be able to
+use any of the longer SHAs with DSA-1024; GnuPG might use SHA-224,
+-256, -384 or -512 for DSA-2048; GnuPG might use SHA-256, SHA-384 or
+SHA-512 for DSA-3072.
+
+
+* COMMENT HTML style specifications
+
+#+begin_src emacs-lisp
+  (defun org-faq-make-target ()
+    "Make hard target for current headline."
+    (interactive)
+    (if (not (org-on-heading-p))
+        (error "Not on a headline"))
+    (let ((h (org-trim (org-get-heading 'no-tags))))
+      (if (string-match "[ \t]*\\?\\'" h)
+          (setq h (replace-match "" t t h)))
+      (while (string-match "[ \t]+" h)
+        (setq h (replace-match "-" t t h)))
+      (setq h (downcase h))
+      (org-entry-put nil "CUSTOM_ID" h)))
+#+end_src
+
+
+# Local Variables:
+# End:
