@@ -1,4 +1,4 @@
-README for the website branch.                           -*- org -*-
+README for the gnupg-doc repository                         -*- org -*-
 
 This is a separated branch for the gnupg.org website.
 
@@ -8,15 +8,17 @@ HTML files.
 
 ** Directory structure
 
-   - web/ :: Source files for the web.  This also include imagages
-             etc.
+   - web/      :: Source files for the web.  This also include images
+                  etc.
    - web/share :: Logos, CSS, macros and elisp for building.
-   - tools/ :: Tools used to build the web site.
-   - stage/ :: staging directory for the site.
+   - misc      :: Otehr websites etc.
+   - build-aux :: Build helpe rscripts
+   - tools/    :: Tools used to build the web site.
+   - stage/    :: staging directory for the site.
 
 ** Aliases
 
-www.gnupg.org uses boa to serve the pages, here are the aliases we
+www.gnupg.org uses Boa to serve the pages, here are the aliases we
 use:
 
 #+BEGIN_EXAMPLE
