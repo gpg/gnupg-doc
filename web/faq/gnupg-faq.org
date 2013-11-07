@@ -51,6 +51,8 @@ released under terms of the [[http://creativecommons.org/licenses/by-nc/2.5/][Cr
 2.5]] license; alternately, you may make use of it under terms of the
 GNU General Public License (version 3 or, at your discretion, any
 later version), again excepting Mr. Munroe’s works.
+#+HTML:<!--disable-copyright-footer-->
+
 
 ** Disclaimer of liability
    :PROPERTIES:

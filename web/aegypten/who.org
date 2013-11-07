@@ -54,3 +54,4 @@
 
  (C) Intevation, Verbatim copying and distribution of this entire page
 is permitted in any medium, provided this notice is preserved.
+#+HTML:<!--disable-copyright-footer-->

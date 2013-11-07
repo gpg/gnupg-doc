@@ -1,6 +1,9 @@
 ;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
 (require 'org-exp)
+;; cl-macs is required by ox-html.el but for whatever reasons not
+;; autoloaded.
+(load-library "cl-macs")
 
 (defun gpgweb-setup-project ()
   (progn
@@ -19,6 +22,8 @@
      :makeindex t
      :auto-sitemap t
      :sitemap-title "GnuPG - Sitemap"
+     :sitemap-sort-folders "last"
+     :sitemap-file-entry-format "%t  @@html:<span id=\"smallnote\">@@(%d)@@html:</span>@@"
      :style-include-default nil
      :timestamp-file t
      :html-head "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"
@@ -34,6 +39,8 @@
 
    (aput 'org-publish-project-alist "gpgweb"
    '(:components ("gpgweb-org" "gpgweb-other")))))
+
+
 
 
 (defun gpgweb-insert-header (title)
@@ -108,8 +115,10 @@
 "))
 
 (defun gpgweb-insert-footer ()
-  (goto-char (point-max))
-  (insert "<div id=\"cpyright\">
+  (goto-char (point-min))
+  (unless (search-forward "<!--disable-copyright-footer-->" nil t)
+    (goto-char (point-max))
+    (insert "<div id=\"cpyright\">
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
             src=\"share/cc-by-sa-3.0_80x15.png\"/></a><br/>
@@ -119,7 +128,9 @@
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"copying.html\">copying<a/> for details.
-    </div>
+</div>"))
+  (goto-char (point-max))
+  (insert "
 </main>
 </body>
 </html>
@@ -137,7 +148,6 @@
              (let ((fname (file-name-nondirectory htmlfile))
                    (title (org-publish-find-title orgfile))
                    (generated-at (org-today)))
-               (message "post processing %s (%s)" htmlfile orgfile)
                (gpgweb-insert-header title)
                (gpgweb-insert-footer)
                (when (string-match "\\.\\([a-z][a-z]\\.\\)?html$" fname)
@@ -147,14 +157,20 @@
                  (replace-match (concat "href=\"" ) t nil))
                (goto-char (point-min))
                (while (search-forward "@MENU-ACTIVE@" nil t)
-                 (replace-match "" t nil)))
-             (basic-save-buffer))
-      (unless visitingp (kill-buffer work-buffer)))))
+                 (replace-match "" t nil))
+               (when (string-equal fname "sitemap")
+                 (goto-char (point-min))
+                 (while (re-search-forward
+                         "^.*<li>.*>\\(GnuPG - \\).*<span.*$" nil t)
+                   (replace-match "" t nil nil 1)))
+               (basic-save-buffer))
+      (unless visitingp (kill-buffer work-buffer))))))
 
 
 (defun gpgweb-org-to-html (plist filename pub-dir)
   (gpgweb-postprocess-html plist filename
                            (org-html-publish-to-html plist filename pub-dir)))
+
 
 (defun gpgweb-upload ()
   (let ((stagedir (plist-get project-plist :publishing-directory)))
@@ -168,3 +184,29 @@
 
 
 (provide 'gpgweb)
+
+;; commit 6f5180bd9fc230a31913cbdb9a4dd48cc247adc2
+;; Author: Rick Frankel <rick@rickster.com>
+;; Date:   Wed Oct 2 18:26:27 2013 -0400
+;;
+;;     Fix escaping of links in html export.
+;;
+;;     * lisp/ox-html.el (org-html-link): Unescape org-escaped links an
+;;       re-escape for html (browser).
+;;
+;;
+;; diff --git a/lisp/ox-html.el b/lisp/ox-html.el
+;; index 66862bc..0600204 100644
+;; --- a/lisp/ox-html.el
+;; +++ b/lisp/ox-html.el
+;; @@ -2624,7 +2624,9 @@ INFO is a plist holding contextual information.  See
+;;          (path
+;;           (cond
+;;            ((member type '("http" "https" "ftp" "mailto"))
+;; -           (concat type ":" raw-path))
+;; +           (org-link-escape
+;; +            (org-link-unescape
+;; +             (concat type ":" raw-path)) org-link-escape-chars-browser))
+;;            ((string= type "file")
+;;             ;; Treat links to ".org" files as ".html", if needed.
+;;             (setq raw-path

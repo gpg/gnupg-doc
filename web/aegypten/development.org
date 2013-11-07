@@ -849,3 +849,5 @@ X.509/PKIX certificate authority (uses OpenSSL)
 for Unix
 
 [[http://cryp.to/librfc822/][RFC822 Address Parser Library]]
+
+#+HTML:<!--disable-copyright-footer-->

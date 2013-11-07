@@ -171,3 +171,5 @@ Digital:
 Paper:
 
 -  c't 2001, Heft 22, page 49: Sichere E-Mail (german)
+
+#+HTML:<!--disable-copyright-footer-->
