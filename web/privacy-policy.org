@@ -1,0 +1,25 @@
+#+TITLE: GnuPG - Privacy Policy
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+
+* Privacy Policy
+#+index: privacy policy
+#+index: analytics
+#+index: Piwik
+
+** Analytics
+
+This website uses Piwik, a Free Software web analytics system, to
+monitor traffic on our Web sites. Piwik records the general
+geographical vicinity of visitors as well as their browser and
+operating system, and records their navigation within the sites. This
+helps us gauge the impact of our materials and improve our work.
+
+Our Piwik system preserves privacy by anonymizing visitors’ IP
+addresses. This means that we will not store any personally
+identifiable information about you, even though your visit produces a
+record that our site was visited by someone.
+
+Piwik also respects the “[[http://donottrack.us/][Do Not Track]]” preference offered by some
+browsers, so if you have this option set, Piwik will ignore your visit
+entirely. Details of how Piwik protects privacy are on [[http://piwik.org/privacy/][their website]].

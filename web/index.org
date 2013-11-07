@@ -5,6 +5,8 @@
 * The GNU Privacy Guard
 #+index: GnuPG
 #+index: GPG
+#+index: Gpg4win
+#+index: GPGTools
 
 GnuPG is the [[http://www.gnu.org/][GNU project]]'s complete and free implementation of the
 OpenPGP standard as defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]]. GnuPG allows to encrypt and
