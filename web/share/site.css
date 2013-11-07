@@ -51,6 +51,7 @@ h3:first-letter {
    Links
  */
 
+
 a:link {
   color: #784c6c;
   font-weight: bold;
@@ -72,6 +73,7 @@ a:visited {
 a.img:hover {
   background-color: #f0f0fc;
 }
+
 
 /*
    Raise attention
@@ -98,7 +100,7 @@ div.urgent {
    Other elements as commonly used by org-mode
  */
 p {
-    margin-top: 1%;
+  margin-top: 1%;
 }
 
 
@@ -169,6 +171,10 @@ div.entry-qotd
     width: 18%;
 }
 
+
+/*
+   Navigation
+ */
 nav ul {
     list-style: none;
     font-size: 100%;
@@ -180,9 +186,31 @@ nav ul ul {
     font-size: 70%;
 }
 
+nav * li a {
+    color: #784c6c;
+}
+
+
+nav * li a:after {
+    content: " \21d0";
+    /* FIXME: Hide the arrow using the background color.  We should use
+       width or something similar to get it aligned.  */
+    color: #f0f0fc;
+}
+
+nav * li a.selected:after {
+    content: " \21d0";
+    color: #784c6c;
+}
+
 nav img {
     border-width: 0;
 }
+
+
+/*
+   Other stuff
+ */
 
 main {
     float: left;
@@ -195,6 +223,21 @@ main ul {
     list-style: square;
     padding-left: 0;
     margin-left: 1em;
+}
+
+
+div.outline-text-2 {
+  padding-top: 5px;
+  padding-right: 3px;
+  border-top: 2px solid #5c6064;
+  border-right: 2px solid #784c6c;
+}
+
+div.outline-text-3 {
+  padding-top: 3px;
+  padding-right: 3px;
+  border-top: 1px solid #5c6064;
+  border-right: 1px solid #784c6c;
 }
 
 

@@ -136,29 +136,35 @@
 </html>
 "))
 
-
-;; Our publishing tweaks:
-;;
-;; - Substitute @FNAME@ by the actual file name.
-;; - Substitute @MENU-ACTIVE@ by an empty string.
+;;; Post-process the generated HTML file:
+;;;
+;;; - Insert header and footer
+;;; - Insert "class=selected" into the active menu entry
+;;; - Fixup sitemap.
 (defun gpgweb-postprocess-html (plist orgfile htmlfile)
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
+                   (fname-2 (replace-regexp-in-string
+                             ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile))
-                   (generated-at (org-today)))
+                   (generated-at (org-today))
+                   (tmppnt))
+               ;; Insert the header and mark the active menu
                (gpgweb-insert-header title)
+               (setq tmppnt (point))
+               (goto-char (point-min))
+               (while (re-search-forward
+                       (concat "href=\"" (regexp-quote fname-2) "\"")
+                       tmppnt t)
+                 (replace-match "\\& class=\"selected\"" t))
+
+               ; Insert the footer
                (gpgweb-insert-footer)
-               (when (string-match "\\.\\([a-z][a-z]\\.\\)?html$" fname)
-                 (setq fname (substring fname 0 (match-beginning 0))))
-               (goto-char (point-min))
-               (while (search-forward "href=\"@FNAME@" nil t)
-                 (replace-match (concat "href=\"" ) t nil))
-               (goto-char (point-min))
-               (while (search-forward "@MENU-ACTIVE@" nil t)
-                 (replace-match "" t nil))
-               (when (string-equal fname "sitemap")
+
+               ; Fixup the sitemap
+               (when (string-equal fname "sitemap.html")
                  (goto-char (point-min))
                  (while (re-search-forward
                          "^.*<li>.*>\\(GnuPG - \\).*<span.*$" nil t)
@@ -166,7 +172,9 @@
                (basic-save-buffer))
       (unless visitingp (kill-buffer work-buffer))))))
 
-
+;;;
+;;; The publishing function used by the HTML exporter
+;;;
 (defun gpgweb-org-to-html (plist filename pub-dir)
   (gpgweb-postprocess-html plist filename
                            (org-html-publish-to-html plist filename pub-dir)))
