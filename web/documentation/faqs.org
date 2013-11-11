@@ -11,4 +11,6 @@
   -  [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-doc.git%3Ba%3Dblob_plain%3Bf%3Dweb/faq/gnupg-faq.org][Org-mode]]
 
 
+  (If you are looking for the old and outdated FAQ, please go to [[http://www-old.gnupg.org/faq/GnuPG-FAQ.html][here]].)
+
 # eof

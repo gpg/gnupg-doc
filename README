@@ -43,3 +43,13 @@ Redirect /why-not-idea.html  http://www.gnupg.org/faq/why-not-idea.html
 
 Redirect /howtos/ch/  http://www.gnupg.org/howtos/zh/
 #+END_EXAMPLE
+
+** Symlinks
+
+For compatibility with the old webseite it is best to run this script
+in the htdocs directory:
+
+for d in $(find . -type d); \\
+   do (cd $d && for f in $(ls *.html | grep -v '*.??.html'); \\
+       do ln -s $f ${f%.html}.en.html; ln -s $f ${f%.html}.de.html ; \\
+   done ); done

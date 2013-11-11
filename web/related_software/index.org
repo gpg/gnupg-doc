@@ -28,3 +28,4 @@
   -  [[file:libraries.org][Libraries]] :: This page hosts projects which aim is to build an
                   abstraction layer for who wants to painlessly add
                   GnuPG capabilities to their software.
+  -  [[file:swlist.org][All]] :: Direct access to all descriptions.

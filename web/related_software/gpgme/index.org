@@ -23,4 +23,4 @@
   should consider to use GPGME.  It is even planned to create a set of
   standard widgets for common key selection tasks.
 
-  See [[file:~/s/gnupg-web/web/download/index.org::gpgme][download]] section to download the latest tarball.
+  See [[http://www.gnupg.org/download/index.org#gpgme][download]] section to download the latest tarball.

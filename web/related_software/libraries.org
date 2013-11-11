@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Libraries
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+OPTIONS:  ^:{}
 
 * Libraries
 
@@ -9,13 +10,9 @@
   If you feel wanting to improve this list, please, fill in a [[#gpgweb][Problem
    Report]] form.
 
-   -  [[http://www.lothar.com/tech/crypto/][EGD]] :: Unices without a /dev/random should [[file:~/s/gnupg-web/web/download/index.org::egd][download]] and install
-             this Entropy Gathering Daemon.
-   -  [[http://github.com/smartrevolution/gnupg-for-java][gnupg-for-java]] :: This is a Java binding for GPGME library.
-   -  [[http://www.gnu.org/software/gnutls/][GNUTLS]] :: A somewhat related project to GnuPG is GNUTLS which is
-                is a GPLed TLS/SSL implementation.
-   -  [[file:gpgme/index.org][GPGME]] :: GnuPG Made Easy is a library designed to make access to
-               GnuPG easier for applications.
+   -  [[file:swlist.org::#egd][EGD]] :: Entropy Gathering Daemon
+   -  [[file:swlist.org::#gpgme][GPGME]] :: GnuPG Made Easy
+   -  [[file:swlist.org::#gnupg-for-java][gnupg-for-java]] :: Java binding for GPGME
    -  [[file:libassuan/index.org][libassuan]] :: Libassuan is the IPC library used by some GnuPG
                    related software.
    -  [[http://directory.fsf.org/wiki/Libgcrypt][libgcrypt]] :: Libgcrypt is a general purpose cryptographic
@@ -29,3 +26,5 @@
                       error codes and descriptions.
    -  [[file:libksba/index.org][libksba]] :: Libksba provides an easy API to create and parse
                  X.509 and CMS related objects.
+
+# eof

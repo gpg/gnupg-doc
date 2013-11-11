@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Tools
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+OPTIONS:  ^:{}
 
 * Tools
 
@@ -9,12 +10,10 @@
   If you feel wanting to improve this list, please, fill in a [[#gpgweb][Problem
 Report]] form.
 
-   -  [[http://enigform.mozdev.org][enigform]] :: Mozilla Firefox extension for HTTP+OpenPGP support
-                  (see mod\_auth\_openpgp).
-   -  [[ftp://ftp.gnupg.org/gcrypt/contrib/keylookup-2.1.tar.gz][Keylookup]] :: Is a tool to fetch keys from keyservers.
-   -  [[http://macgpg.sourceforge.net/][MacGPG]] :: Project for Mac-related GnuPG tools.
-   -  [[http://freshmeat.net/projects/maopenpgp][mod\_auth\_openpgp]] :: Apache module for HTTP+OpenPGP support
-        (see Enigform).
-   -  [[http://www.pgpdump.net/][PGPdump Web interface]] :: Can be used to analyze OpenPGP data
+   -  [[file:swlist.org::#enigform][enigform]] :: Mozilla Firefox extension for HTTP+OpenPGP support.
+   -  [[file:swlist.org::#keylookup][Keylookup]] :: Is a tool to fetch keys from keyservers.
+   -  [[file:swlist.org::#macgpg][MacGPG]] :: Mac-related GnuPG tools
+   -  [[file:swlist.org::#mod-auth-openpgp][mod_auth_openpgp]] :: Apache module for HTTP+OpenPGP support
+   -  [[file:swlist.org::#pgpdump-web][PGPdump Web interface]] :: Can be used to analyze OpenPGP data
         formats.
-   -  [[file:pinentry/index.org][pinentry]] :: Secure PinEntry Dialog.
+   -  [[file:swlist.org::#pinentry][Pinentry]] :: Secure PinEntry Dialog.

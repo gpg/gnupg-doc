@@ -46,6 +46,16 @@ GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3D
 point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** New website infrastructure (2013-11-12)
+
+After more than a decade we switched from the legacy WML based website
+system to a new [[http://org-mode.org][org-mode]] based one.  The old WML code was not anymore
+maintainable and building the website took way to long.  The new
+system uses plain text files and will make it way easier to keep
+information up to date.  Unfortunately the translations are gone for
+now --- most of them have not been updated for many years anyway.
+
+
 ** Security update for GnuPG (2013-10-05)                         :important:
 
 We are pleased to announce the availability of a new stable GnuPG

@@ -99,6 +99,7 @@
         <li><a href=\"/related_software/frontends.html\" >Frontends</a></li>
         <li><a href=\"/related_software/tools.html\"     >Tools</a></li>
         <li><a href=\"/related_software/libraries.html\" >Libraries</a></li>
+        <li><a href=\"/related_software/swlist.html\"    >All</a></li>
       </ul>
     <li><a href=\"/misc/index.html\"            >Miscellaneous</a></li>
       <ul>
@@ -107,6 +108,7 @@
         <li><a href=\"/misc/thanks.html\"        >Thanks</a></li>
         <li><a href=\"/misc/donations.html\"     >Donations</a></li>
       </ul>
+    <li><a href=\"http://blog.gnupg.org/\"      >Blog</a></li>
     <li><a href=\"/privacy-policy.html\"        >Privacy Policy</a></li>
     <li><a href=\"/sitemap.html\"               >Sitemap</a></li>
   </ul>
@@ -124,7 +126,7 @@
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
             src=\"share/cc-by-sa-3.0_80x15.png\"/></a><br/>
     These web pages are
-    Copyright 1998--2013 The GnuPG Project<a href=\"copying.html\">¹</a>
+    Copyright 1998--2013 The GnuPG Project<a href=\"/copying.html\">¹</a>
     and licensed under a
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
@@ -142,7 +144,7 @@
     var u=((\"https:\" == document.location.protocol) ? \"https\" : \"http\")
             + \"://alberti.gnupg.org/piwik/\";
     _paq.push([\"setTrackerUrl\", u+\"piwik.php\"]);
-    _paq.push([\"setSiteId\", \"6\"]);
+    _paq.push([\"setSiteId\", \"1\"]);
     var d=document,
         g=d.createElement(\"script\"),
         s=d.getElementsByTagName(\"script\")[0];
@@ -209,7 +211,7 @@
      (concat "cd " gpgweb-root-dir " && cd " stagedir
              "&& rsync -rlt --exclude \"*~\" ./ "
              "werner@trithemius.gnupg.org:"
-             "/var/www/www/w3.gnupg.org/htdocs/"))))
+             "/var/www/www/www.gnupg.org/htdocs/"))))
 
 
 (provide 'gpgweb)
