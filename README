@@ -12,7 +12,7 @@ HTML files.
                   etc.
    - web/share :: Logos, CSS, macros and elisp for building.
    - misc      :: Otehr websites etc.
-   - build-aux :: Build helpe rscripts
+   - build-aux :: Build helper rscripts
    - tools/    :: Tools used to build the web site.
    - stage/    :: staging directory for the site.
 
