@@ -46,6 +46,12 @@ GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3D
 point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** Blog: Friends tell friends they love GnuPG (2013-11-13)
+
+Using GnuPG for email encryption takes two to tango. That's why
+we're asking users to share their stories using #iloveGPG ...
+[[http://blog.gnupg.org/][{more}]]
+
 ** New website infrastructure (2013-11-12)
 
 After more than a decade we switched from the legacy WML based website
@@ -55,6 +61,10 @@ system uses plain text files and will make it way easier to keep
 information up to date.  Unfortunately the translations are gone for
 now --- most of them have not been updated for many years anyway.
 
+** Blog: Securing the future of GPG (2013-11-05)
+
+We have a plan for securing the long term stability of GnuPG development by giving more to our users, and asking more from them in return ...
+[[http://blog.gnupg.org/][{more}]]
 
 ** Security update for GnuPG (2013-10-05)                         :important:
 
