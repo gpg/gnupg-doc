@@ -70,8 +70,6 @@
 
 ** Network related
 
-   - [[file:swlist.org::#freenigma][freenigma]]
-   - [[file:swlist.org::#freenigma-service][freenigma service]]
    - [[file:swlist.org::#privaria][Privaria]]
 
 ** Frontends for scripting

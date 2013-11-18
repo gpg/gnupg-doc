@@ -91,24 +91,6 @@ it merges intuitive use with powerful features. The result is an
 application that's not only fast and secure, but also perfect for
 novices and power-users alike.
 
-** [[http://www.freenigma.org/][freenigma]] [Unix] MUA,SRV
-   :PROPERTIES:
-   :CUSTOM_ID: freenigma
-   :END:
-
-Is a server based solution for centralized and transparent encryption
-and signatures.  It comes with a web admin interface and may either be
-used as a drop in MTA replacement or as an additional MTA.
-
-** freenigma service [Any] SRV
-   :PROPERTIES:
-   :CUSTOM_ID: freenigma-service
-   :END:
-
-freenigma service was an OpenPGP web service for easy key
-management. It allowed encryption without taking care of keys. A
-documented API was available as well as several tools to access the
-web service.  The service has meanwhile been shutdown.
 
 ** [[http://gabber.sourceforge.net/][Gabber]] [Unix] CHAT
    :PROPERTIES:
