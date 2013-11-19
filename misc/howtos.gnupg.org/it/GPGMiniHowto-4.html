@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Cifrare e decifrare</TITLE>
+ <LINK HREF="GPGMiniHowto-5.html" REL=next>
+ <LINK HREF="GPGMiniHowto-3.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-5.html">Avanti</A>
+<A HREF="GPGMiniHowto-3.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc4">Indice</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-encrypt"></A> <A NAME="s4">4.</A> <A HREF="GPGMiniHowto.html#toc4">Cifrare e decifrare</A></H2>
+
+<P>Dopo aver installato e configurato il programma nel modo voluto, &egrave; possibile
+iniziare a cifrare e decifrare.</P>
+<P>Si pu&ograve; usare il programma con pi&ugrave; di una chiave privata, selezionando per
+ogni operazione quale deve essere quella attiva, con l'opzione <CODE>-u UID</CODE> o
+l'opzione <CODE> --local-user UID</CODE>. In questo modo la chiave privata
+predefinita sar&agrave; sostituita da quella indicata.</P>
+<P>Per modificare invece il destinatario, si pu&ograve; usare l'opzione <CODE>-r</CODE>
+o l'opzione <CODE>--recipient</CODE>.</P>
+
+<H2><A NAME="ss4.1">4.1</A> <A HREF="GPGMiniHowto.html#toc4.1">Cifrare</A>
+</H2>
+
+
+<P>Il comando per cifrare &egrave;
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -e destinatario [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+o
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --encrypt destinatario [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Per evitare il rischio che qualcun altro si spacci per noi, &egrave; consigliabile
+firmare qualsiasi cosa si voglia cifrare; si veda la sezione
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">Firmare e verificare le firme</A>.</P>
+
+<H2><A NAME="ss4.2">4.2</A> <A HREF="GPGMiniHowto.html#toc4.2">Decifrare</A>
+</H2>
+
+<P>Il comando per decifrare &egrave;:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-d] [dati] 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+o
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--decrypt] [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Anche in questo caso, l'output predefinito &egrave; lo <CODE>stdout</CODE>, ma &egrave;
+possibile redirigere l'output a un file con l'opzione <CODE>-o</CODE>.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-5.html">Avanti</A>
+<A HREF="GPGMiniHowto-3.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc4">Indice</A>
+</BODY>
+</HTML>

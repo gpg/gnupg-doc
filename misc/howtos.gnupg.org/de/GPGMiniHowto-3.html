@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto : Umgang mit Schl&uuml;sseln</TITLE>
+ <LINK HREF="GPGMiniHowto-4.html" REL=next>
+ <LINK HREF="GPGMiniHowto-2.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-4.html">Weiter</A>
+<A HREF="GPGMiniHowto-2.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc3">Inhalt</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-schluessel"></A> <A NAME="s3">3. Umgang mit Schl&uuml;sseln</A></H2>
+
+<P>
+<H2><A NAME="ss3.1">3.1 Erzeugen</A>
+</H2>
+
+<P>
+<P>Mit 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+wird ein neues Schl&uuml;sselpaar erzeugt. Als Erstes wird man nach dem zu
+verwendenden Algorithmen gefragt. Genaueres zu den Algorithmen steht
+in der 
+<A HREF="http://www.hertreg.ac.uk/ss/pgpfaq.html">PGP DH vs. RSA FAQ</A> oder in 
+<A HREF="GPGMiniHowto-6.html#BSchneier">Applied Cryptography</A>. 
+Man kann (und sollte) einfach den default Wert (DSA/ ElGamal) nehmen.
+<P>
+<P>Bei der Schl&uuml;ssell&auml;nge mu&szlig; man zwischen Sicherheit und
+Rechenzeit abw&auml;gen. Je l&auml;nger ein Schl&uuml;ssel, desto
+sicherer ist er, desto l&auml;nger dauern aber auch Operationen mit
+ihm. Bei der Rechenzeit mu&szlig; man aber ber&uuml;cksichtigen, da&szlig;
+der Schl&uuml;ssel m&ouml;glicherweise auch noch in einigen Jahren
+benutzt werden soll, wenn die durchschnittliche Rechenleistung stark
+angewachsen sein wird. GnuPG fragt ab einer
+Schl&uuml;ssell&auml;nge von mehr als 1536 Bits, ob ein so
+gro&szlig;er Schl&uuml;ssel wirklich n&ouml;tig sei, andere Leute
+empfehlen mindestens 2048 Bits. F&uuml;r DSA ist 1024 Bits Standard.
+<P>
+<P>Dann wird nach Namen, Kommentar und Email Adresse gefragt. Anhand
+dieser Angaben wird der Schl&uuml;ssel identifiziert. Man kann die
+Angaben aber sp&auml;ter noch &auml;ndern beziehungsweise
+erg&auml;nzen. Siehe 
+<A HREF="#GPG-Minihowto-Sverwalten">Schl&uuml;sselbund verwalten</A> Man sollte eine l&auml;nger g&uuml;ltige Email
+Adresse w&auml;hlen, da die komplette Benutzerkennung unterschrieben
+wird. Wird dann etwas ge&auml;ndert, gelten die Unterschriften unter die
+ge&auml;nderten Angaben nicht mehr.
+<P>
+<P>Als letztes wird nach dem Passwort (beziehungsweise Passsatz (in der
+deutschen &Uuml;bersetzung: Mantra) denn es k&ouml;nnen Leerzeichen vorkommen)
+gefragt, mit dem der private Schl&uuml;ssel gesichert werden
+soll. <EM>Verwenden sie ein gutes Mantra</EM>. Ein gutes Mantra
+ist
+<UL>
+<LI>nicht zu kurz,</LI>
+<LI>enth&auml;lt Sonderzeichen,</LI>
+<LI>ist kein Name und</LI>
+<LI>nicht mit Kenntnis des Benutzers leicht zu erraten (wie
+Telefonnummer, Bankleitzahl, Name und Anzahl der Kinder, ...)</LI>
+</UL>
+
+Man kann durch willk&uuml;rlich eingestreute GRo&szlig;/KlEinSchReibung und
+Leerzeichen weitere Sicherheit erhalten.
+Au&szlig;erdem mu&szlig; man es sich merken k&ouml;nnen, da der geheime Schl&uuml;ssel ohne
+Mantra wertlos ist. Es kann in diesem Zusammenhang ein guter Gedanke
+sein, gleich ein R&uuml;ckrufzertifikat zu erstellen. Siehe 
+<A HREF="#GPG-Minihowto-Swiderrufen">Widerrufen</A>.
+<P>
+<H2><A NAME="ss3.2">3.2 Exportieren</A>
+</H2>
+
+<P>
+<P>Mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [UID]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+wird der Schl&uuml;ssel mit der User ID UID exportiert. Wird keine UID
+angegeben, so wird der ganze Schl&uuml;sselbund exportiert. Voreingestellt
+ist Ausgabe auf <CODE>stdout</CODE>, man kann aber mit der Option <CODE>-o
+[Datei]</CODE> in eine Datei ausgeben. Es empfiehlt sich noch, mit der
+Option <CODE>-a</CODE> (<CODE>--armor</CODE>) zu arbeiten, da ich andernfalls 
+Probleme hatte. Mit dieser Option werden die Schl&uuml;ssel nicht im
+Bin&auml;rformat ausgegeben, sondern als ASCII (7 Bit) Dateien.
+<P>
+<P>Den exportierten Schl&uuml;ssel kann man dann in der
+Welt verbreiten, wahlweise auf der Homepage, via
+finger, &uuml;ber Keyserver, ... . 
+<P>
+<P>
+<H2><A NAME="ss3.3">3.3 Importieren</A>
+</H2>
+
+<P>
+<P>Wenn man von irgendwoher einen &ouml;ffentlichen Schl&uuml;ssel bekommen hat,
+sollte man ihn in sein Schl&uuml;sselbund aufnehmen. Das wird mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+erreicht. Wenn man den Dateinamen wegl&auml;sst, wird von
+<CODE>stdin</CODE> gelesen.
+<P>
+<H2><A NAME="GPG-Minihowto-Swiderrufen"></A> <A NAME="ss3.4">3.4 Widerrufen</A>
+</H2>
+
+<P>
+<P>Es gibt verschiedene Gr&uuml;nde, einen alten Schl&uuml;ssel zu
+widerrufen: Er k&ouml;nnte in fremde H&auml;nde geraten sein, die UID
+stimmt nicht mehr oder er ist einfach zu klein geworden. In all diesen
+F&auml;llen ist der Befehl der Wahl
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Damit wird ein Schl&uuml;sselwiderruf-Zertifikat
+erzeugt. <EM>Daf&uuml;r braucht man den privaten
+Schl&uuml;ssel</EM>, denn sonst k&ouml;nnten solche Zertifikate auch
+von Fremden erzeugt werden. Das hat aber einen Nachteil: Ein
+Schl&uuml;ssel, dessen Mantra ich nicht wei&szlig;, ist offensichtlich
+nutzlos. Aber weil ich das Mantra nicht wei&szlig;, kann ich ihn nicht
+widerrufen. Deshalb ist es geschickt, sich gleich bei der Erzeugung
+des Schl&uuml;ssels ein Widerruf-Zertifikat zu erzeugen. Das sollte
+dann aber sicher verwahrt werden, am besten auf Diskette und auf
+Papier, damit es nicht in falsche H&auml;nde ger&auml;t. 
+<P>
+<H2><A NAME="GPG-Minihowto-Sverwalten"></A> <A NAME="ss3.5">3.5 Schl&uuml;sselbund verwalten</A>
+</H2>
+
+<P>
+<P>Der Schl&uuml;sselbund ist eine Datei, in der alle Schl&uuml;ssel mit
+den dazugeh&ouml;rigen Informationen (bis auf die Ownertrust Werte, was das
+ist steht in 
+<A HREF="#GPG-Minihowto-Ssignieren">Schl&uuml;ssel signieren</A>) gespeichert werden. Mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+k&ouml;nnen alle Schl&uuml;ssel des &ouml;ffentlichen Schl&uuml;sselbundes angezeigt
+werden. Mit
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+werden zus&auml;tzlich noch die Signaturen angezeigt (siehe 
+<A HREF="#GPG-Minihowto-Ssignieren">Schl&uuml;ssel signieren</A>). Mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+werden die Schl&uuml;ssel mit ihren &quot;Fingerabdr&uuml;cken&quot;
+aufgelistet. Das sind (verh&auml;ltnism&auml;&szlig;ig) kurze Zahlenfolgen, an denen
+sich der Schl&uuml;ssel identifizieren l&auml;&szlig;t. Das kann praktisch sein, um
+sich &uuml;ber Telefon zu vergewissern, da&szlig; ein &ouml;ffentlicher Schl&uuml;ssel vom
+Gespr&auml;chspartner stammt. Fingerabdr&uuml;cke im Abspann von Email oder
+Usenet Artikeln zu verschicken ist &uuml;brigens nicht sinnvoll.
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+listet die Schl&uuml;ssel des privaten Schl&uuml;sselbundes auf. Unterschriften
+und Fingerabdr&uuml;cke von privaten Schl&uuml;sseln haben keinen
+Informationswert.
+<P>
+<P>Mit dem Befehl 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key UID bzw. gpg --delete-secret-key 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+kann man Schl&uuml;ssel aus dem entsprechenden Schl&uuml;sselbund
+l&ouml;schen.
+<P>
+<P>Der letzte wichtige Befehl f&uuml;r den Umgang mit Schl&uuml;sseln
+lautet
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+
+In dem dann folgenden Men&uuml; kann man unter anderem das Mantra
+und das Verfallsdatum &auml;ndern, Fingerabdr&uuml;cke anzeigen lassen
+und Schl&uuml;ssel signieren, womit wir beim n&auml;chsten Abschnitt
+w&auml;ren. 
+<P>
+<P>
+<H2><A NAME="GPG-Minihowto-Ssignieren"></A> <A NAME="ss3.6">3.6 Schl&uuml;ssel signieren</A>
+</H2>
+
+<P>
+<P>Wie in der Einleitung erw&auml;hnt, ist die Echtheit eines
+&ouml;ffentlichen Schl&uuml;ssels die Achillesferse des
+Systems. Deshalb gibt es die M&ouml;glichkeit, Schl&uuml;ssel zu
+unterschreiben. Damit best&auml;tigt der Unterzeichnende, da&szlig; der in der
+User ID angegeben User tats&auml;chlich der Besitzer des Schl&uuml;ssels ist.
+<P>
+<P>Nachdem man mit <CODE>gpg --edit-key UID</CODE> den zu unterzeichnenden 
+Schl&uuml;ssel ausgew&auml;hlt hat, kann man ihn mit dem Kommando <CODE>sign</CODE>
+unterschreiben. 
+<P>
+<P><EM>Unterschreiben Sie nur Schl&uuml;ssel von deren Echtheit sie sich &uuml;berzeugt
+haben.</EM> Das kann geschehen, in dem man entweder den Schl&uuml;ssel pers&ouml;nlich
+bekommen hat (zum Beispiel auf einer Keysigning Party), oder man &uuml;ber Telefon
+den Fingerprint vergleicht. Man sollte keinen Schl&uuml;ssel nur deshalb
+unterschreiben, weil man den anderen Unterschriften vertraut.
+<P>
+<P>Anhand der Unterschriften und des &quot;ownertrusts&quot;
+ermittelt GnuPG die G&uuml;ltigkeit des Schl&uuml;ssels. Der Ownertrust ist ein
+Wert mit dem der Benutzer festlegt, in welchem Ma&szlig;e er dem
+Schl&uuml;sselinhaber zutraut, andere Schl&uuml;ssel verl&auml;&szlig;lich zu
+unterzeichnen. Die m&ouml;glichen Abstufungen sind &quot;gar
+nicht&quot;, &quot;wei&szlig; nicht&quot;, &quot;teilweise&quot;
+und &quot;vollst&auml;ndig&quot;. Wenn der Benutzer also einem anderem
+nicht traut, kann er GnuPG &uuml;ber diesen Mechanismus anweisen, dessen
+Unterschrift zu ignorieren. Der Ownertrust wird nicht im Schl&uuml;sselbund
+gespeichert, sondern in einer separaten Datei.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-4.html">Weiter</A>
+<A HREF="GPGMiniHowto-2.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc3">Inhalt</A>
+</BODY>
+</HTML>

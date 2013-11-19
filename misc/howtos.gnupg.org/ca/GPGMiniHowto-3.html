@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): Ús i gestió de les claus</TITLE>
+ <LINK HREF="GPGMiniHowto-4.html" REL=next>
+ <LINK HREF="GPGMiniHowto-2.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-4.html">Next</A>
+<A HREF="GPGMiniHowto-2.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="GPGMinihowto-Claus"></A> <A NAME="s3">3.</A> <A HREF="GPGMiniHowto.html#toc3">Ús i gestió de les claus</A></H2>
+
+<H2><A NAME="ss3.1">3.1</A> <A HREF="GPGMiniHowto.html#toc3.1">Generant una clau</A>
+</H2>
+
+<P>Amb l'ordre</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --gen-key
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+ </P>
+<P>podeu general un nou parell de claus (el parell es composa de clau
+pública i clau privada). La primera pregunta és quin algoritme
+s'emprarà. Podeu llegir més a propòsit dels algoritmes a
+<A HREF="http://www.hertreg.ac.uk/ss/pgpfaq.html">PGP DH vs. RSA FAQ</A>
+o a 
+<A HREF="GPGMiniHowto-8.html#BSchneier">Applied Cryptography</A>.  L'algoritme
+recomanat per GnuPG és DSA/ElGamal, ja que no està patentat.</P>
+
+<P>La següent pregunta és la longitud de la clau. Aquesta decisió
+depèn molt de cada usuari. Heu d'escollir entre la seguretat i el
+temps de càlcul. Si una clau és més llarga, el risc de trencar el
+missatge si és interceptat decreix. Però amb claus més llarges el
+temps de càlcul també augmenta. Si el temps de càlcul és un problema,
+heu de tenir en compte que voleu emprar la clau durant algun temps.
+Tothom sap que el rendiment aritmètic augmenta molt ràpidament, ja que
+els nous processadors són cada vegada més ràpids. Tingueu això en
+compte. La llargada mínima requerida per GnuPG és de 768 bits, encara
+que molta gent opina que hauria de ser de 2048 (que és el màxim de
+GnuPG en aquest moment). Per a DSA, 1024 és una llargada fixa. Si la
+seguretat té prioritat envers el temps de càlcul, hauríeu d'escollir
+la mida de clau més llarga disponible.</P>
+
+
+<P> El sistema demana a continuació que introduïu el nom, un comentari
+i l'adreça de correu electrònic. La clau es clacula en base a aquestes
+dades. Podeu canviar aquesta informació més tard (vegeu
+<A HREF="#GPGMinihowto-Administracio">Administració de claus</A>.
+La direcció de correu electrònic que escolliu hauria de ser vàlida, ja
+que serà emprada per signar l'identificador d'usuari. Si aquesta
+direcció es modifica d'alguna manera, la signatura no es
+correspondria.</P>
+
+<P> Finalment heu d'introduir una contrasenya. Noteu la diferència
+entre els termes anglesos per la paraula &laquo;contrasenya&raquo;: el
+terme &quot;password&quot; denota una &quot;paraula de pas&quot;,
+mentre que el terme &quot;passphase&quot; denota una &quot;frase de
+pas&quot;. Per tant, aquesta contrasenya s'ha de composar de més
+d'una paraula. Per a que una contrasenya sigui efectiva (segura),
+haurà de contenir els elements següents:
+<UL>
+<LI>ha de ser llarga;</LI>
+<LI>ha de combinar majúscules, minúscules i nombres;</LI>
+<LI>ha de contenir caràcters especials (no alfanumèrics);</LI>
+<LI>ha de ser difícil d'endevinar (no ha de ser, doncs, noms, dates
+de naixement, números de telèfon, de targeta de crèdit o de compte
+corrent, noms i nombre de fills, ...). </LI>
+</UL>
+</P>
+
+<P>En general, per tal d'aconseguir una contrasenya forta és
+aconsellable intercal·lar maJúsCUlEs amb mInÚScuLEs, nombres, i
+d'altres caràcters no alfanumèrics. En escollir les paraules i les
+frases s'han d'evitar les paraules massa òbvies, dates significatives,
+i no heu d'emprar mai cites de llibres o frases cèlebres. Dit això,
+heu d'assegurar-vos que la contrasenya que escolliu sigui
+suficientment difícil perquè no pugui ser vulnerada amb un &laquo;atac
+de força bruta&raquo;, ni tan sols per un &laquo;atac de
+diccionari&raquo;, però suficientment fàcil perquè NO LA OBLIDEU. Si
+oblidéssiu la vostra contrasenya, la clau quedaria totalment
+inutilitzada, i tota la informació que s'hagi xifrat amb aquesta clau
+no podria ser desxifrada. Per tal d'evitar aquesta possibilitat es
+recomana crear certificats de revocació junt amb les claus (vegeu
+<A HREF="#GPGMinihowto-Revocant">Revocació</A>).</P>
+
+<P> Una vegada que s'han introduït totes les dades necessàries, el
+sistema comença a generar les claus. Aquest procés triga un temps que
+depèn de la llargada de les claus. Durant aquest procés, el programa
+recull dades aleatòries que emprarà per generar les claus; una manera
+d'ajudar a fer més aleatori aquest procés és cambiar a una consola
+virtual diferent i emprar el teclat mentre el procés està en marxa. La
+clau que genereu sempre serà diferent. Si genereu una clau ara i una
+altra d'aquí 5 minuts amb exactament la mateixa informació, obtindreu
+dues claus diferents. Aquesta és la raó per la qual no heu d'oblidar
+mai la vostra contrasenya.</P>
+
+
+<H2><A NAME="ss3.2">3.2</A> <A HREF="GPGMiniHowto.html#toc3.2">Exportant claus</A>
+</H2>
+
+<P>L'ordre per exportar una clau d'un usuari
+és la següent:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --export [UID]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Si no es designa cap identificador d'usuari (UID) s'exportaran totes
+les claus presents. El resultat s'envia per defecta a <CODE>stdout</CODE>,
+però amb l'opció <CODE>-o</CODE> podem especificar que s'envïi a un fitxer. Es
+recomana emprar l'opció <CODE>-a</CODE> per tal de que el resultat sigui un
+fitxer de ASCII de 7 bits en comptes d'un fitxer binari.</P>
+
+
+<P> Si exporteu les vostra clau pública, la podeu facilitar a les
+persones amb les que voleu comunicar-vos de forma segura. La clau es
+pot exportar publicant-la a la vostra plana <EM>web</EM>, emprant
+<EM>finger</EM>, <EM>ftp</EM>, enviant-la a un servidor de claus públiques com
+per exemple http://www.pca.dfn.de/dfnpca/pgpkserv/, o qualsevol altre
+mètode.</P>
+
+
+<H2><A NAME="ss3.3">3.3</A> <A HREF="GPGMiniHowto.html#toc3.3">Important les claus</A>
+</H2>
+
+<P>En rebre la clau pública d'algú (o vàries claus públiques), les heu
+d'afegir a la vostra base de dades de claus per tal de poder-les
+utilitzar. Per importar-les a la base de dades, heu d'executar l'ordre
+següent:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --import [nom del fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P> Si s'omet el nom del fitxer, les dades es llegiran de <CODE>stdin</CODE>.
+El fitxer pot contenir una sola clau o més d'una, que pertanyin a una
+o més persones.</P>
+
+<H2><A NAME="GPGMinihowto-Revocant"></A> <A NAME="ss3.4">3.4</A> <A HREF="GPGMiniHowto.html#toc3.4">Revocant una clau</A>
+</H2>
+
+<P>Hi ha diverses raons per les quals podeu voler revocar una clau
+existent.  Per exemple, que la clau privada hagi estat robada, hagi
+canviat el UID (identificador d'usuari), que ja no sigui prou llarga,
+etc. En tots aquests casos, el comandament per revocar la clau és:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --gen-revoke
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P>Això crea un <B>certificat de revocació</B>. Per poder-ho fer,
+necessiteu la clau privada, sinó qualsevol podria crear un certificat
+i revocar una clau que no fos seva. Això té un desavantatge, si hem
+oblidat la contrasenya, la clau no serveix de res, i tampoc es pot
+generar un certificat de revocació. Per aquesta raó, és aconsellable
+generar un certificat de revocació en crear el parell de claus. Si ho
+feu, però, guardeu-lo en un lloc segur perquè ningú no pugui
+emprar-lo i revocar la clau.</P>
+
+
+<H2><A NAME="GPGMinihowto-Administracio"></A> <A NAME="ss3.5">3.5</A> <A HREF="GPGMiniHowto.html#toc3.5">Administració de les claus</A>
+</H2>
+
+<P>En el sistema GnuPG hi ha un fitxer que actua com una mena de base
+de dades. En aquest fitxer es desen totes les dades relacionades amb
+les claus, inclosos els valors que fan referència al grau de confiança
+(<EM>Ownertrust</EM>); per a més informació sobre el grau de confiança
+llegiu 
+<A HREF="#GPGMinihowto-Signant">Signant les claus</A>).</P>
+<P>Amb l'ordre
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --list-keys
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>es mostraran totes les claus presents. Per veure també totes les
+signatures escriviu:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --list-sigs
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+ </P>
+<P>(vegeu 
+<A HREF="#GPGMinihowto-Signant">Signant les claus</A> per a
+més informació).</P>
+<P>Per veure les empremtes digitals (<EM>fingerprints</EM>) escriviu:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --fingerprint
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Les &quot;empremtes digitals&quot; serveixen per confirmar la
+identitat d'una persona. Aquesta ordre ens mostra una llista
+alfanumèrica (relacionada amb la clau) que podem compravar, per
+exemple, per telèfon.</P>
+<P>Per veure el llistat de claus privades escriviu:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --list-secret-keys
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Nota: el llistat d'empremtes digitals i de signatures de les claus
+privades no té cap utilitat directa més de la de donar-nos aquesta
+informació.</P>
+
+<P>Per tal d'esborrar una clau pública executeu l'ordre:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --delete-key UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Per eliminar una clau privada escriviu:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --delete-secret-key
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+ </P>
+
+<P>Hi ha encara un altre comandament important que té relació amb la
+gestió de les claus:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --edit-key UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Emprant aquesta ordre podeu editar (entre d'altres coses) la data
+d'expiració, afegir una empremta digital i signar la vostra clau. Per
+realitzar aquestes operacions necessiteu la contrasenya. En executar
+aquesta ordre veureu una linia de comandaments.</P>
+
+<H2><A NAME="GPGMinihowto-Signant"></A> <A NAME="ss3.6">3.6</A> <A HREF="GPGMiniHowto.html#toc3.6">Signant les claus</A>
+</H2>
+
+<P>Com s'ha comentat anteriorment, hi ha un taló d'Aquil·les al
+sistema: l'autentificació de les claus públiques. Si teniu una clau
+pública errònia, ja us podeu oblidar dels valor del xifratge. Per tal
+d'evitar aquests riscos existeix la possibilitat de signar les claus.
+Quan tenim la certesa que una clau és vàlida i que pertany a qui diu
+que pertany, podem signar-la digitalment, de manera que la nostra
+signatura donarà fe (als que confien en la nostra signatura) que
+aquella clau pública correspon a aquell ID d'usuari.</P>
+
+<P> Si executeu l'ordre:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --edit-key UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>per la clau que voleu signar, podreu signar-la amb la subordre:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+Command> sign
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P><B>Només heu de signar una clau quan estigueu ABSOLUTAMENT SEGURS
+que la clau és autèntica!!!</B> En realitat, només es pot estar segur
+quan la clau ha estat rebuda en mà, o, per exemple, si s'ha rebut per
+correu i a continuació s'ha comprovar l'empremta digital de la clau
+per algun altre mitjà (per exemple, per telèfon). No heu de signar mai
+cap clau basant-vos en una suposició.</P>
+
+<P>Basant-se en les signatures disponibles en una clau i en el
+&laquo;grau de confiança&raquo;, <CODE>GnuPG</CODE> determina la validesa de
+les claus. El grau de confiança (<EM>Ownertrust</EM>) és un valor que el
+propietari d'una clau empra per determinar el nivell de confiança per
+una clau concreta. Aquests valors són:</P>
+<P>
+<UL>
+<LI>1 = Don't know (No ho sé)</LI>
+<LI>2 = I do NOT trust (No hi confio)</LI>
+<LI>3 = I trust marginally (Hi confio poc) </LI>
+<LI>4 = I trust fully (Hi confio plenament)</LI>
+</UL>
+</P>
+<P>Si l'usuari no es refia d'una signatura, ho pot indicar i refusar la
+confiança en la mateixa. La informació sobre la confiança no es desa
+en el mateix fitxer que el de les claus, sinó que en un altre
+diferent.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-4.html">Next</A>
+<A HREF="GPGMiniHowto-2.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc3">Contents</A>
+</BODY>
+</HTML>

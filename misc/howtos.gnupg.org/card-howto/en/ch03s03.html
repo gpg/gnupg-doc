@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.3. Initialising the card</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="ch03.html" title="Chapter 3. Administrating the Card" />
+    <link rel="prev" href="ch03s02.html" title="3.2. Managing PINs" />
+    <link rel="next" href="ch04.html" title="Chapter 4. Daily usage" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">3.3. Initialising the card</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td>
+          <th width="60%" align="center">Chapter 3. Administrating the Card</th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="section" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="id2521792"></a>3.3. Initialising the card</h2>
+          </div>
+        </div>
+      </div>
+      <p>To follow the instructions in this chapter make sure that the card reader works and the card can be accessed (<a href="ch03.html" title="Chapter 3. Administrating the Card">Chapter 3, <i>Administrating the Card</i></a>, command <strong class="userinput"><code>gpg --card-status</code></strong>).</p>
+      <p>To initialise a card enter <strong class="userinput"><code>gpg --card-edit</code></strong>.  Basic information about the card is shown.  The output is the same as <strong class="userinput"><code>gpg --card-status</code></strong>.  The difference is that the output is now followed by a command prompt.</p>
+      <p>To get a list of all commands available enter <strong class="userinput"><code>help</code></strong>.</p>
+      <div class="informalexample">
+        <pre class="screen">
+Command&gt; help
+quit       quit this menu
+admin      show admin commands
+help       show this help
+list       list all available data
+fetch      fetch the key specified in the card URL
+passwd     menu to change or unblock the PIN
+            </pre>
+      </div>
+      <p>These commands are not very useful because data stored on the card cannot be changed.</p>
+      <p>For a list of useful commands enter <strong class="userinput"><code>admin</code></strong> and then <strong class="userinput"><code>help</code></strong>.</p>
+      <div class="informalexample">
+        <pre class="screen">
+Command&gt; admin
+Admin commands are allowed
+Command&gt; help
+quit       quit this menu
+admin      show admin commands
+help       show this help
+list       list all available data
+name       change card holder's name
+url        change URL to retrieve key
+fetch      fetch the key specified in the card URL
+login      change the login name
+lang       change the language preferences
+sex        change card holder's sex
+cafpr      change a CA fingerprint
+forcesig   toggle the signature force PIN flag
+generate   generate new keys
+passwd     menu to change or unblock the PIN
+            </pre>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2521895"></a>3.3.1. Personalising the card</h3>
+            </div>
+          </div>
+        </div>
+        <p>Save the name of the card owner on the card.  Technically this is not required but it will prove useful if more than one card is around.</p>
+        <p>Enter <strong class="userinput"><code>name</code></strong> and follow the prompts.  You are seperately asked for sur- and given name.  After entering the data you are asked for the AdminPIN.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p class="remark">
+            <i>
+              <span class="remark">The name is stored in an ISO format.  This format distinguishes between the different name parts and is also used for machine readable passports.</span>
+            </i>
+          </p>
+          <p>In general the AdminPin is cached through a session.  So if you do not remove the card you will not be asked again to enter it. As always there are exceptions to this rule.</p>
+        </div>
+        <p>If you like you can also enter the language you prefer (<strong class="userinput"><code>lang</code></strong>) and the sex (<strong class="userinput"><code>sex</code></strong>). gpg does not use this information so you might want to omit it.</p>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2521952"></a>3.3.2. Generating keys</h3>
+            </div>
+          </div>
+        </div>
+        <p>To generate a key on the card enter <strong class="userinput"><code>generate</code></strong>. You will be asked if you would like to make an off-card copy of the encryption key.  It is useful to say yes here.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p>Without a backup you will not be able to access any data you encrypted with the card if it gets lost or damaged.</p>
+        </div>
+        <div class="informalexample">
+          <pre class="screen">
+Command&gt; generate
+Make off-card backup of encryption key? (Y/n)
+                </pre>
+        </div>
+        <p>If a key exists on the card a security question has to be answered to avoid accidental overwriting.</p>
+        <div class="informalexample">
+          <pre class="screen">
+gpg: NOTE: keys are already stored on the card!
+Replace existing keys? (y/N) 
+                </pre>
+        </div>
+        <p>The whole process of key generation looks like this.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p>You might be asked for the PINs at different times.</p>
+        </div>
+        <div class="informalexample">
+          <pre class="screen">
+Command&gt; generate
+Make off-card backup of encryption key? (Y/n) Y
+gpg: 3 Admin PIN attempts remaining before card is permanently locked
+Admin PIN
+PIN
+Please specify how long the key should be valid.
+         0 = key does not expire
+         &lt;n&gt;  = key expires in n days
+         &lt;n&gt;w = key expires in n weeks
+         &lt;n&gt;m = key expires in n months
+         &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+You need a user ID to identify your key; the software constructs the user ID
+from the Real Name, Comment and Email Address in this form:
+"Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;"
+
+Real name: Archibald Goodwin
+Email address: archi@foobar.example
+Comment: tester
+You selected this USER-ID:
+    "Archibald Goodwin (tester) &lt;archi@foobar.example&gt;"
+    
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+gpg: generating new key
+gpg: please wait while key is being generated ...
+gpg: key generation completed (45 seconds)
+gpg: signatures created so far: 0
+gpg: signatures created so far: 0
+You need a Passphrase to protect your secret key.
+
++++++
+..+++++
+gpg: NOTE: backup of card key saved to `/home/archi/.gnupg/sk_26D728A8F09033F1.gpg'
+gpg: signatures created so far: 2
+gpg: signatures created so far: 2
+gpg: generating new key
+gpg: please wait while key is being generated ...
+gpg: key generation completed (25 seconds)
+gpg: signatures created so far: 4
+gpg: signatures created so far: 4
+gpg: key FF19F200 marked as ultimately trusted
+public and secret key created and signed.
+gpg: checking the trustdb
+gpg: 3 marginal(s) needed, 1 complete(s) needed, classic trust model
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+pub   1024R/FF19F200 2005-03-05
+Key fingerprint = 884B 9142 F645 1A72 4B92  EB94 DF80 CCEF FF19 F200
+uid                  Archibald Goodwin (The Tester) &lt;archi@foobar.example&gt;
+sub   1024R/F09033F1 2005-03-05
+sub   1024R/3239D981 2005-03-05
+                </pre>
+        </div>
+        <p>Six signing operations are done during the creation of the public and secret key (one self-signature to bind the name to the key and two key-binding signatures for each key). Future versions of gpg might just need three signing operations.</p>
+        <div class="informalexample">
+          <pre class="screen">
+Command&gt; list
+
+Application ID ...: D2760001240101010001000000490000
+Version ..........: 1.1
+Manufacturer .....: PPC Card Systems
+Serial number ....: 00000049
+Name of cardholder: Archibald Goodwin
+Language prefs ...: de
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Signature PIN ....: not forced
+Max. PIN lengths .: 254 254 254
+PIN retry counter : 3 3 3
+Signature counter : 6
+Signature key ....: 884B 9142 F645 1A72 4B92  EB94 DF80 CCEF FF19 F200
+      created ....: Sat Mar  5 19:56:42 2005 CET
+Encryption key....: 31C1 2190 FCF1 A684 5AF9  D719 26D7 28A8 F090 33F1
+      created ....: Sat Mar  5 19:56:43 2005 CET
+Authentication key: 811F C45F 911A C15A F6DC  5BD6 58BA B8D1 3239 D981
+      created ....: Sat Mar  5 19:57:19 2005 CET
+General key info..:
+pub  1024R/FF19F200 2005-03-05 Archibald Goodwin (The Tester) &lt;archi@foobar.example&gt;
+                </pre>
+        </div>
+      </div>
+      <p>The card is now ready for use.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <h3 class="title">Note</h3>
+        <p>Please save the backup key, transfer it to a different medium and store it in a safe place.</p>
+        <p>It is important that you delete the copy of the key from the hard disk, too.  The best choices here are tools like <strong class="userinput"><code>shred</code></strong> from the GNU coreutils package or <strong class="userinput"><code>wipe</code></strong> to make sure that the original content gets overwritten.</p>
+        <p>A key can also be stored as a printout.  Normally you do not need it, but in case your card breaks and the backup copy is not available you still have the chance to re-enter the key.  <strong class="userinput"><code>gpg --enarmor</code></strong> may be used to convert the backup key into a printable format.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="ch03.html">Up</a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">3.2. Managing PINs </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> Chapter 4. Daily usage</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

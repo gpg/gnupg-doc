@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.2. Required Hardware</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="ch02.html" title="Chapter 2. Installation for GNU/Linux" />
+    <link rel="prev" href="ch02.html" title="Chapter 2. Installation for GNU/Linux" />
+    <link rel="next" href="ch02s03.html" title="2.3. Installation of Card Reader" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">2.2. Required Hardware</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td>
+          <th width="60%" align="center">Chapter 2. Installation for GNU/Linux</th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch02s03.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="section" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="id2519084"></a>2.2. Required Hardware</h2>
+          </div>
+        </div>
+      </div>
+      <p>First you need an OpenPGP compatible smart card which can, for example, be obtained by <a href="https://www.fsfe.org/join_us/" target="_top">becoming a fellow</a> of the <a href="http://www.fsfeurope.org" target="_top">Free Software Foundation Europe</a>.</p>
+      <p>Card readers (NOT those used for flash memory cards) can be obtained from computer stores (e.g. <a href="http://www.kernelconcepts.de/products/security-en.shtml" target="_top">http://www.kernelconcepts.de/products/security-en.shtml</a>).</p>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2519120"></a>2.2.1. A List of tested Readers</h3>
+            </div>
+          </div>
+        </div>
+        <p>Please note that the USB device class for USB readers is 11 (or 0x0B in hex).</p>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519131"></a>SCM Microsystems SCR335</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="scr335-small.jpg" />
+          </span>
+          <p>This is a small USB reader (CCID; 65*45*8mm)
+                supported by GnuPG directly as well as by pcsclite.
+                This very device is actually the first reader
+                supported by GnuPG and the reason for the internal
+                CCID driver as no CCID driver was available at that
+                time.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519159"></a>SCM Microsystems SPR532</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="spr532-small.jpg" />
+          </span>
+          <p>This is a USB (CCID)/serial reader with a
+                numerical keypad and three extra buttons.  The pinpad
+                may be used to securely enter the PIN without using
+                the attached computer (since GnuPG 2.0.1).  Only USB
+                has been tested.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519185"></a>Towitoko Chipdrive micro</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="chipdrive-small.jpg" />
+          </span>
+          <p>This reader comes in two types: serial and USB.  Both readers are very similar and of the same size (65*45*8mm).  As far as we know these readers are no longer manufactured have been replaced by the SCR335 from SCM Microsystems.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519210"></a>Omnikey Cardman 3121 (and 2020)</h4>
+              </div>
+            </div>
+          </div>
+          <p>This USB card reader supports CCID and PC/SC.  The older Omnikey Cardman 2020 is no longer produced.  The newer reader has not been tested, but Omnikey says that the two readers are compatible.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519224"></a>Omnikey Cardman 3111 (and 2010)</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="cm2010-small.jpg" />
+          </span>
+          <p>This serial card reader supports PC/SC.  The
+                older Omnikey Cardman 2010 (photo) is out of
+                production.  The serial version of this reader has not
+                yet been tested.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519249"></a>Omnikey Cardman 5121</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="cm5121-small.jpg" />
+          </span>
+          <p>This USB card reader is supported by PC/SC as well as
+                by GnuPG's internal driver.  This is actual a dual reader with
+                a second device to access RFID tokens; this is
+                supported by the forthcoming librfid..</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519274"></a>Cherry XX44 USB keyboard</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="cherry-XX44-small.jpg" />
+          </span>
+          <p>This is an USB keyboard with integrated CCID
+                card reader.  It is supported by PC/SC as well as be
+                GnuPG's internal driver.  The mueric keyblock may be
+                used to securely enter the PIN without using the
+                attached computer (since GnuPG 2.0.3).</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519301"></a>Kobil KAAN Advanced</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="kaanadv-small.jpg" />
+          </span>
+          <p>This USB card reader is supported by PC/SC as
+                well as by GnuPG's internal driver.  The pinpad may be
+                used to securely enter the PIN without using the
+                attached computer (since GnuPG 2.0.1).</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519326"></a>Omnikey CardMan 4040</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="cm4040-small.jpg" />
+          </span>
+          <p>This is a CardBus (PCMICA) reader to be used
+                with Laptops.  The SVN version of GnuPG supports this
+                reader trough its internal driver.  There is no free
+                PC/SC support.  A recent Linux version (2.6.15.3) is
+                required.  Very handy and useful devices so you can
+                expect any problems to be solved fast.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519353"></a>Athena ASE drive IIIe</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="athena_asedrive-small.jpg" />
+          </span>
+          <p>
+                  This is a compact reader with USB or serial
+                  interface.  It works fine with PC/SC (pcscd,
+                  libasedrive-usb or libasedrive-serial Debian
+                  packages). 
+                </p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519383"></a>Omnikey Cardman 6121</h4>
+              </div>
+            </div>
+          </div>
+          <span class="inlinemediaobject">
+            <img src="cm6121-small.jpg" />
+          </span>
+          <p>
+                  This is a CCID reader for ID-000 sized cards.  It
+                  works fine with GnuPG's internal driver and should
+                  also work with PC/SC.
+
+                  If you want to cut a full sized card down to ID-000
+                  format, take care to remove all burr and round the
+                  edges a bit.  This is in particular important so
+                  that you are able to remove the card using the tiny
+                  blue lever.
+                </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="ch02.html">Up</a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch02s03.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">Chapter 2. Installation for GNU/Linux </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> 2.3. Installation of Card Reader</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

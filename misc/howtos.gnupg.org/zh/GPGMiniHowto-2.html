@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+ <META HTTP-EQUIV="Content-Type" CONTENT="TEXT/HTML; CHARSET=gb2312">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Installation </TITLE>
+ <LINK HREF="GPGMiniHowto-3.html" REL=next>
+ <LINK HREF="GPGMiniHowto-1.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-3.html">下页</A>
+<A HREF="GPGMiniHowto-1.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc2">目录</A>
+<HR>
+<H2><A NAME="s2">2. 安装</A></H2>
+
+<P>
+<H2><A NAME="ss2.1">2.1 GnuPG的源程序</A>
+</H2>
+
+<P>
+<P>
+正式的下载站点是：
+<A HREF="http://www.gnupg.org/download.html">GnuPG主页</A>。 
+在那儿你可以找到镜象站点的链接。
+
+<P>
+由于法律限制的缘故，从美国的服务器下载ＧｎｕＰＧ是不被允许的。美国对加解密软件的出口有限制。这是为什么ＰＧＰ总是有国际和美国两个版本的原因。国际版的源程序是以印刷成书的方式出口的。书到了欧洲（挪威奥斯陆）再被扫描进计算机。更多这方面的信息可以在
+<A HREF="http://www.pgpi.com">国际PGP主页</A>找到。ＰＧＰ的国际版可以自由进入美国，只要它不又被出口出去。
+<P>
+<P>
+如果你的机器上有已经安装上的ＧｎｕＰＧ或ＰＧＰ，你应该检查该执行文件的签名（见
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">签名</A>).
+<P>
+<H2><A NAME="ss2.2">2.2 设置</A>
+</H2>
+
+<P>
+你可以用如下方式得到ＧｎｕＰＧ：Ｄｅｂｉａｎ软件包，ＲＰＭ（Ｒｅｄｈａｔ软件包管理程序）软件包，或源程序。这些软件包将在ｌｉｎｕｘ系统上安装执行文件及所需的工具。若你想在别的系统上使用ＧｎｕＰＧ，则需要自己编译源程序。如果你把在别的系统上的安装方法公之于众，公众将感激不尽。
+<P>
+<P>
+由于该程序的主要部分是在Ｌｉｎｕｘ（ｘ８６）操作系统上进行的，将它移植到别的操作系统上应该不会太难。已知的支持ＧｎｕＰＧ的操作系统的名单可以在
+<A HREF="http://www.gnupg.org">GnuPG主页</A>找到。下列设置方法适用于大多数系统，它用于从一个源程序打包来安装 GnuPG:
+<P>
+<P>
+<P>先用以下命令打开该打包：
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>然后，ｃｄ到包含源程序的目录。然后敲入
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>做这件事时，应该没有任何特殊的事情发生。如果敲入
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+你可以看到编译时的所有可选项。如果出现与国际化（GET text）有关的问题，你可以用
+<CODE>--with-included-gettext</CODE>这个选项包含一个与源程序同在一个打包中的版本，或用<CODE>--disable-NLS</CODE>选项来将其关掉。
+<P>
+<H2><A NAME="ss2.3">2.3 编译</A>
+</H2>
+
+<P>
+<P>这之后可以敲入下列来编译：
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+这一步应该不会出任何问题。如果出了问题，请按照顺序采取如下步骤：首先，试试能否自己解决问题（当然要参考可以弄到的各种档案资料）。然后，确定这个问题是否是一个已知的软件错误——ｂｕｇ（请检查 http://www.gnupg.org 处的ＢＵＧＳ文件）。
+之后，可以问你认识的人。
+如果还不能解决问题，你可以将你的问题寄到ＧｎｕＰＧ邮件名单（见
+<A HREF="GPGMiniHowto-6.html#GPG-Minihowto-Informationsources">信息来源</A>). 
+如果问题与路径有关，你应试试先<CODE>make clean</CODE>, 
+然后再次运行 <CODE>configure</CODE> 和编译。如果还不行，就可以暴跳如雷了。
+<P>
+<H2><A NAME="ss2.4">2.4 安装</A>
+</H2>
+
+<P>
+<P>现在敲入:
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+
+来真正将可执行程序和手册页拷贝到安装目录中。如果你在设置（<CODE>./configure</CODE>）时没有更改安装目录，那么隐含的安装目录将是<CODE>/usr/local/share/gnupg/</CODE>。你可以在文件<CODE>options.skel</CODE>中找到这个目录。如果你把这个文件拷贝成<CODE>~/.gnupg/options</CODE>文件并对其中的选项做出适当的改变，那么这个文件将被用作标准。当建立<CODE>~/.gnupg/</CODE>目录时，上述文件的拷贝将自动进行。在该文件中，所有选项均有良好的说明资料，在此解释它们意义不大。
+<P>
+<P>
+你可以以设置有效用户身份为超级用户（suid root）的方式来运行GnuPG，这样程序运行时就有超级用户的所有权限。这样做，你就去除了一种危险，即程序的一部分被存储于内存之外而可能被别人读到。由我来帮助分析这样做的风险是不现实的。但是，以suid root的方式来执行这个程序，你应该警惕特洛伊木马的危险，因为一个以超级用户权限运行的特洛伊木马有能力破坏整个系统。如果因为这个原因（或任何其他原因）你选择不以超级用户权限来运行GnuPG，你可以在
+<CODE>~/gnupg/options</CODE>
+文件中设置
+<CODE>no-secmem-warning</CODE>
+来关掉相应的警告信息。
+<P>
+<P>
+<HR>
+<A HREF="GPGMiniHowto-3.html">下页</A>
+<A HREF="GPGMiniHowto-1.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc2">目录</A>
+</BODY>
+</HTML>

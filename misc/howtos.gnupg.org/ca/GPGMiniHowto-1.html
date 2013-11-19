@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): Conceptes bàsics</TITLE>
+ <LINK HREF="GPGMiniHowto-2.html" REL=next>
+
+ <LINK HREF="GPGMiniHowto.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-2.html">Next</A>
+Previous
+<A HREF="GPGMiniHowto.html#toc1">Contents</A>
+<HR>
+<H2><A NAME="GPGMinihowto-ConceptesBasics"></A> <A NAME="s1">1.</A> <A HREF="GPGMiniHowto.html#toc1">Conceptes bàsics</A></H2>
+
+
+
+
+
+
+
+
+
+
+<H2><A NAME="ss1.1">1.1</A> <A HREF="GPGMiniHowto.html#toc1.1">Xifratge de clau pública</A>
+</H2>
+
+<P>Per poder entendre millor el sistema de xifratge emprat pels
+sistemes de claus asimètriques (de claus públiques i privades), és
+necessari entendre la diferència amb els sistemes de claus simètriques
+(claus secretes).</P>
+
+<P>Els sistemes de xifratge de <EM>clau simètrica</EM> són aquells en els
+que la clau que s'empra per xifrar les dades és la mateixa que
+s'utilitza per desxifrar-los. En el cas del correu electrònic, el
+remitent xifra el missatge amb una <EM>clau secreta</EM>, perquè el
+destinatari el pugui desxifrar, necessita obtenir prèviament aquesta
+mateixa clau de manera &laquo;segura&raquo;, o sigui, de manera que
+terceres persones no tinguin l'oportunitat d'obtenir aquesta clau. Si
+no es té certesa que l'intercanvi de claus ha estat segur, la validesa
+del sistema és nul·la.</P>
+
+<P>Els sistemes de xifratge amb <EM>claus asimètriques</EM>, en canvi,
+empren dues claus diferents per al xifratge i el desxifratge de les
+dades. El el cas anterior del correu electrònic, el remitent empraria
+la <EM>clau pública</EM> del destinatari per xifrar el missatge, i el
+destinatari desxifraria el missatge amb la seva pròpia <EM>clau
+privada</EM>. Així doncs, la <EM>clau privada</EM> no ha de ser accessible per
+a <B>ningú</B> que no en sigui el propietari, mentre que la <EM>clau
+pública</EM>, pot ser entregada a qualsevol persona. En un sistema de
+xifratge ben implementat, la <EM>clau privada</EM> no es pot obtenir a
+partir de la <EM>clau pública</EM>.</P>
+
+<P>El punt crucial de tot aquest sistema és que la <EM>clau privada</EM>
+ha de mantenir-se en secret i només el seu propietari hi ha de tenir
+accés. NO ENVIEU AQUESTA CLAU A TRAVÉS D'INTERNET. De la mateixa
+manera és molt perillós utilitzar GnuPG a través de <CODE>telnet</CODE>
+(considereu la possibilitat de no emprar mai telnet degut als riscos
+de seguretat importants que presenta).</P>
+
+<H2><A NAME="ss1.2">1.2</A> <A HREF="GPGMiniHowto.html#toc1.2">Signatures digitals</A>
+</H2>
+
+<P>El concepte de <B>signatura digital</B> es basa en la verificació de
+l'autoria d'un missatge. Això vol dir que el destinatari d'un missatge
+pot comprovar que el «suposat» remitent és qui diu que és. Per fer-ho,
+el remitent, una vegada ha escrit el missatge, el signa emprant la
+seva pròpia clau privada. El destinatari, una vegada ha rebut el
+missatge, comprovarà l'autenticitat d'aquest, és a dir, el verificarà
+emprant la clau pública del remitent.</P>
+
+<P>Aquest mètode és d'especial utilitat per a reduir els riscos de
+seguretat en els nostres sistemes (ens podrien enviar un suposat pegat
+per a un programa, i ser en realitat un virus o un troià); també
+podrien enviar-nos informació o dades, com provinents d'una font
+lícita o fiable. En ambdós casos, no seria gaire difícil falsificar la
+direcció i el nom del remitent, però sí impossible falsificar-ne la
+signatura digital.</P>
+
+<P>Com ja hem comentat, la verificació d'un missatge signat
+digitalment es duu a terme mitjançant l'ús de la <EM>clau pública</EM> del
+remitent <B>sobre el text</B> del propi missatge. D'aquesta manera no
+només podem verificat la identitat de l'autor, sinó que també podem
+comprovar la integritat del missatge, ja que la signatura digital ha estat
+generada amb el <B>text</B> i la <B>clau privada</B>. Així doncs, una
+alteració o modificació del text «a posteriori», o qualsevol
+manipulació del missatge (especialment si fem ús de les
+especificacions MIME/PGP), donaria com a resultat un error en la
+verificació.</P>
+
+<H2><A NAME="ss1.3">1.3</A> <A HREF="GPGMiniHowto.html#toc1.3">Anells de confiança </A>
+</H2>
+
+<P>Un punt feble dels algoritmes de clau
+asimètrica és la transmissió de les claus públiques. Un intrús podria
+posar en circulació una clau pública amb un identificador d'usuari
+fals. Si es xifren missatges amb aquesta clau, l'intrús podria
+desxifrar i llegir els missatges. Si llavors l'intrús el xifrés amb la
+clau pública autèntica de l'usuari i li passés, aquest atac no seria
+perceptible.</P>
+
+<P>La solució de <CODE>PGP</CODE> (i per tant la solució de <CODE>GnuPG</CODE>) és la
+signatura de les claus. La clau pública d'un usuari pot estar
+<B>signada</B> per altres usuaris. L'objectiu d'aquestes signatures és
+que l'usuari que signa reconeix que l'UID (identificador d'usuari) de
+la clau signada pertany a l'usuari a qui diu que pertany. A partir
+d'aquí és responsabilitat de l'usuari de <CODE>GnuPG</CODE> decidir fins a
+quin punt es refia de la signatura. Una clau es pot consiferar fiable
+que es confia en el remitent i se sap amb seguretat que la clau
+signant pertany a aquella persona. Només quan es pot confiar plenament
+en la clau del signant, es pot confiar en la clau a la que signa (i en
+les signatures generades amb aquesta clau). Per tenir la seguretat que
+la clau és correcta, s'ha de comparar amb la seva <B>empremta
+digital</B> mitjançant un mitjà de canal fiable. Per exemple, podríem
+buscar el seu telèfon a la guia i trucar-lo, demanant-li que ens
+digues l'empremta digital a viva veu per tal de poder-li donar
+confiança absoluta.</P>
+
+
+<H2><A NAME="ss1.4">1.4</A> <A HREF="GPGMiniHowto.html#toc1.4">Límits de seguretat</A>
+</H2>
+
+<P>Si el que es vol és mantenir la confidencialitat de les dades
+que es posseixen, no n'hi ha prou amb determinar quin algoritme de
+xifratge cal emprar; és necessari també pensar amb la seguretat general
+del sistema. En principi, <CODE>PGP</CODE> està considerat com suficientment
+segur, i fins aquest moment, no se sap de cap cas en el que una clau
+PGP hagi estat trencada. Això no vol dir que tot el que s'ha xifrat
+sigui segur. Per exemple, si la NSA (l'Agència de Seguretat Nacional
+dels EUA) hagués aconseguit trencar una clau PGP d'alguna manera,
+probablement no ho farien públic. Però, encara que les claus de PGP
+fossin absolutament impossibles de trencar, hi ha d'altres tipus
+d'atacs que poden ser utilitzats per trencar-ne la seguretat. A
+principis de febrer de 1999, es va descobrir un troià que cercava
+claus privades de PGP en el disc dur i els transferia mitjançant FTP.
+Si s'hagués escollit una contrasenya feble, un atacant podria haver
+obtingut fàcilment les claus privades.</P>
+
+<P>Una altra possibilitat tècnica (encara que més difícil) és la d'un
+troià que recollís tot el que s'escriu pel teclat i ho transmetés a
+l'atacant. També és possible, encara que difícil, passar el contingut
+d'una pantalla a una altra. En aquest cas, no caldria fer cap anàlisi
+de les dades xifrades, ja que es tindria accés a les dades abans de
+xifrar.</P>
+
+<P>Per tot això, és necessari una planificació de la seguretat que
+estigui ben prevista i que en minimitzi els perills.</P>
+
+<P>La idea no és crear una atmosfera de paranoia entre la gent, sinó
+deixar clar que per tenir un sistema segur no n'hi ha prou amb
+instal·lar un programa criptogràfic, ja que, si bé és un pas cap a un
+sistema més segur, no és la solució completa. Troians com els que
+aparegueren el març del 1999 amb el virus Melissa van demostrar que
+moltes empreses no estan preparades pel que fa a la seguretat.</P>
+
+
+<HR>
+<A HREF="GPGMiniHowto-2.html">Next</A>
+Previous
+<A HREF="GPGMiniHowto.html#toc1">Contents</A>
+</BODY>
+</HTML>

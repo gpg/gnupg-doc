@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-9" />
+ <TITLE>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe): Şifreleme ve şifre çözümleme</TITLE>
+ <LINK HREF="GPGMinikNasil-5.html" REL=next>
+ <LINK HREF="GPGMinikNasil-3.html" REL=previous>
+ <LINK HREF="GPGMinikNasil.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMinikNasil-5.html">Sonraki</A>
+<A HREF="GPGMinikNasil-3.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc4">Içerik</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-encrypt"></A> <A NAME="s4">4.</A> <A HREF="GPGMinikNasil.html#toc4">Şifreleme ve şifre çözümleme</A></H2>
+
+<P>Herşeyi yükledikten sonra ve istediğiniz gibi yapılandırdıktan sonra, şifrelemeye ve
+şifre çözmeye başlayabiliriz. </P>
+
+<P>Şifrelerken veya şifre çözerken birden fazla gizli anahtar kullanımda olabilir. Eğer bu
+olursa aktif olan anahtarı seçmeniz gerekebilir. Bu <CODE>-u UID</CODE> seçeneğini kullanarak
+ya da <CODE> --local-user UID</CODE> seçeneğini kullanarak yapılabilir. 
+Bu istenilen anahtarın öntanımlı anahtar yerine kullanılmasını sağlar.</P>
+
+<P>Eğer alıcıyı değiştirmek istiyorsanız bu <CODE>-r</CODE> seçeneği veya <CODE>--recipient</CODE> 
+seçeneği ile yapılabilir. </P>
+
+<H2><A NAME="ss4.1">4.1</A> <A HREF="GPGMinikNasil.html#toc4.1">Şifreleme</A>
+</H2>
+
+
+<P>Şifreleme için kullanılan komutlar
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -e Recipient [Veri]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+veya
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --encrypt Recipient [Veri]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+komutlarıdır. Başka birisinin siz olduğunu iddia etmesi riskinden 
+sakınmak için gönderdiğiniz tüm şifreli şeyleri imzalamalısınız,
+<A HREF="GPGMinikNasil-5.html#GPG-Minihowto-signatures">imzalar</A> bölümüne bakın.</P>
+
+<H2><A NAME="ss4.2">4.2</A> <A HREF="GPGMinikNasil.html#toc4.2">Şifre çözümleme</A>
+</H2>
+
+<P>Şifre çözümleme için kullanılan komutlar
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-d] [Veri] 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+veya
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--decrypt] [Veri]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+komutlarıdır. Çıktı <CODE>stdout</CODE>'a aktarılır fakat <CODE>-o</CODE> seçeneğini
+kullanarak sonucun dosyaya aktarılmasını sağlayabilirsiniz.</P>
+
+
+<HR>
+<A HREF="GPGMinikNasil-5.html">Sonraki</A>
+<A HREF="GPGMinikNasil-3.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc4">Içerik</A>
+</BODY>
+</HTML>

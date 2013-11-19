@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Installazione</TITLE>
+ <LINK HREF="GPGMiniHowto-3.html" REL=next>
+ <LINK HREF="GPGMiniHowto-1.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-3.html">Avanti</A>
+<A HREF="GPGMiniHowto-1.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc2">Indice</A>
+<HR>
+<H2><A NAME="s2">2.</A> <A HREF="GPGMiniHowto.html#toc2">Installazione</A></H2>
+
+
+<H2><A NAME="ss2.1">2.1</A> <A HREF="GPGMiniHowto.html#toc2.1">Sorgenti di GnuPG</A>
+</H2>
+
+
+<P>Il sito ufficiale da cui scaricare &egrave; la
+<A HREF="http://www.gnupg.org/download.html">homepage di GnuPG</A>. 
+A questo indirizzo si troveranno anche link a siti mirror.</P>
+<P>A causa di restrizioni legali &egrave; vietato scaricare GnuPG da server che si trovano
+negli USA: gli USA pongono restrizioni all'esportazione di software
+crittografico. &Egrave; il motivo per cui PGP &egrave; disponibile in una versione
+internazionale e una nazionale (per gli USA). Per scrivere la versione
+internazionale, il codice sorgente &egrave; stato esportato sotto forma di libro
+stampato ed &egrave; stato scansito in Europa (Oslo); maggiori informazioni in
+proposito possono essere trovate sulla 
+<A HREF="http://www.pgpi.com">homepage di PGP International</A>.
+La versione internazionale di PGP pu&ograve; essere importata liberamente negli Stati
+Uniti, a patto che non venga ri-esportata.</P>
+
+<P>Se si ha gi&agrave; una versione di GnuPG o PGP, &egrave; consigliabile verificare il file di
+firma (si veda la sezione 
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">Firmare e verificare le firme</A>).</P>
+
+<H2><A NAME="ss2.2">2.2</A> <A HREF="GPGMiniHowto.html#toc2.2">Configurazione </A>
+</H2>
+
+<P>&Egrave; possibile procurarsi GnuPG sotto forma di pacchetto Debian, di pacchetto RPM 
+(Redhat Package Manager) o di codice sorgente. GnuPG &egrave; incluso nelle ultime 
+distribuzioni RedHat.
+Per controllare se lo si ha gi&agrave; sul proprio sistema si usi:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+rpm -q gnupg
+</PRE>
+</CODE></BLOCKQUOTE>
+  </P>
+<P>I pacchetti binari sono installati usando gli strumenti caratteristici delle
+varie piattaforme Linux. Per installare GnuPG su altre piattaforme occorre 
+compilarlo da s&eacute;. Chiunque renda disponibile al pubblico un metodo di
+installazione per una nuova piattaforma far&agrave; cosa gradita.</P>
+
+<P>Visto che lo sviluppo principale viene fatto su piattaforma Linux (x86), non
+dovrebbe essere difficile portare GnuPG su altri sistemi. La lista dei sistemi
+operativi che attualmente supportano GnuPG si pu&ograve; trovare sulla
+<A HREF="http://www.gnupg.org">homepage di GnuPG</A>. 
+La procedura descritta di seguito &egrave; abbastanza indipendente dalla piattaforma e pu&ograve;
+essere usata per installare GnuPG partendo dal file tar dei sorgenti.</P>
+
+
+<P>Si decomprima il file tar con i comandi:
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Dopodich&eacute; si entri nella directory che contiene il codice sorgente e si scriva:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+  </P>
+<P>Non dovrebbe succedere nulla di speciale. Con</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>&egrave; possibile vedere le impostazioni disponibili per la compilazione. Se ci sono
+problemi di internazionalizzazione, &egrave; possibile usare le librerie gettext
+incluse nel sorgente, usando l'opzione <CODE>--with-included-gettext</CODE>, o
+disabilitarle usando l'opzione <CODE>--disable-NLS</CODE>.</P>
+
+<H2><A NAME="ss2.3">2.3</A> <A HREF="GPGMiniHowto.html#toc2.3">Compilazione </A>
+</H2>
+
+
+<P>A questo punto, &egrave; possibile compilare il programma con il comando
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+Se dovessero verificarsi problemi, &egrave; consigliabile nell'ordine: cercare di
+risolvere il problema facendo uso della documentazione disponibile,
+controllare che il problema non sia dovuto a un bug (controllando il file
+BUGS su http://www.gnupg.org), chiedere a qualche conoscente e solo a questo
+punto chiedere sulla mailing list di GnuPG (si veda la sezione
+<A HREF="GPGMiniHowto-7.html#GPG-Minihowto-Informationsources">Fonti di informazioni</A>). Se
+il problema riguarda i percorsi sul sistema, occorre eseguire <CODE>make clean</CODE>,
+quindi eseguire di nuovo <CODE>configure</CODE> e riprovare a compilare.
+Se ancora non funziona, siete autorizzati a farvi prendere dal panico!</P>
+
+<H2><A NAME="ss2.4">2.4</A> <A HREF="GPGMiniHowto.html#toc2.4">Installazione</A>
+</H2>
+
+
+<P>Si esegua:
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+
+per copiare il programma e le pagine di manuale nella directory di
+installazione, che, a meno di modifiche apportate al ./configure, sar&agrave;
+<CODE>usr/local/share/gnupg/</CODE>. Si pu&ograve; trovare questa directory anche nel
+file <CODE>options.skel</CODE>, che pu&ograve; essere modificato e copiato come
+<CODE>~/.gnupg/options</CODE>, in modo che le modifiche apportate siano usate
+come standard. Questa copia viene eseguita automaticamente durante la
+creazione di <CODE>~/.gnupg/</CODE>. Le opzioni possibili sono tutte ben
+documentate e non &egrave; necessario spiegarle qui nel dettaglio.</P>
+
+<P>&Egrave; possibile eseguire GnuPG suid root, in modo che il programma giri con
+tutti i diritti dell'utente root e non scriva dati in locazioni
+di memoria teoricamente accessibili da altri. Non si pu&ograve; giudicare a priori
+quanto questo sia rischioso, d'altra parte si tenga anche conto che
+eseguire il programma suid root rende pi&ugrave; pericolosi gli effetti di un
+eventuale cavallo di Troia (un cavallo di Troia che gira come utente root
+pu&ograve; danneggiare un intero sistema). Se si sceglie, per questo motivo o per
+altri, di non eseguire GnuPG suid root, &egrave; possibile disabilitare il relativo
+messaggio di avvertimento impostando <CODE>no-secmem-warning</CODE> in 
+<CODE>~/.gnupg/options</CODE>.</P>
+
+
+<HR>
+<A HREF="GPGMiniHowto-3.html">Avanti</A>
+<A HREF="GPGMiniHowto-1.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc2">Indice</A>
+</BODY>
+</HTML>

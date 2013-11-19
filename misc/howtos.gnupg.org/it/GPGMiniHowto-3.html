@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Uso delle chiavi</TITLE>
+ <LINK HREF="GPGMiniHowto-4.html" REL=next>
+ <LINK HREF="GPGMiniHowto-2.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-4.html">Avanti</A>
+<A HREF="GPGMiniHowto-2.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc3">Indice</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Key"></A> <A NAME="s3">3.</A> <A HREF="GPGMiniHowto.html#toc3">Uso delle chiavi</A></H2>
+
+
+<H2><A NAME="ss3.1">3.1</A> <A HREF="GPGMiniHowto.html#toc3.1">Creare una chiave</A>
+</H2>
+
+
+<P>Con 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+verr&agrave; creata una nuova coppia di chiavi (una pubblica e una privata).
+Il primo problema &egrave; quale algoritmo usare: maggiori informazioni sugli
+algoritmi si trovano nella 
+<A HREF="http://www.scramdisk.clara.net/pgpfaqfs.html">PGP DH vs. RSA FAQ</A> o in 
+<A HREF="GPGMiniHowto-7.html#BSchneier">Applied Cryptography</A>.
+La scelta predefinita (e la pi&ugrave; usata) &egrave; quella di usare l'algoritmo 
+DSA/ElGamal, che non &egrave; brevettato.</P>
+
+<P>Il secondo problema &egrave; la lunghezza della chiave. In questo caso la scelta
+dipende dalle preferenze dell'utente tra sicurezza e tempo di calcolo: se
+una chiave &egrave; lunga, diminuisce il rischio di decifrare abusivamente un messaggio 
+intercettato, ma aumenta il tempo di calcolo per cifrare e decifrare.
+Se si &egrave; preoccupati per il tempo di calcolo, ma si ha intenzione di usare la
+chiave per un periodo di tempo abbastanza lungo, si tenga conto dell'aumento di
+prestazioni dei processori, che diventano sempre pi&ugrave; veloci.
+La lunghezza minima per una chiave GnuPG &egrave; di 768 bit; la lunghezza standard
+per le chiavi DSA &egrave; di 1024 bit, anche se molti raccomandano di usare chiavi 
+da 2048 bit (che al momento &egrave; anche la lunghezza massima supportata da
+GnuPG). Se la sicurezza &egrave; il fattore di gran lunga pi&ugrave; importante, &egrave;
+consigliabile scegliere la massima lunghezza di chiave disponibile.</P>
+
+<P>Successivamente, il sistema chieder&agrave; di inserire nomi, commenti e indirizzi
+e-mail, che verranno usati per la costruzione della chiave; questi potranno
+essere modificati in parte anche successivamente, si veda la sezione
+<A HREF="#GPG-Minihowto-KPAdministration">Amministrazione delle chiavi</A>.</P>
+
+<P>Infine, occorre scegliere una password (di solito si usa il termine
+"passphrase", frase segreta, visto che sono ammessi gli spazi), che andr&agrave;
+immessa ogni volta che si useranno funzionalit&agrave; che richiedono la chiave
+privata.  Una buona passphrase ha le seguenti caratteristiche:
+<UL>
+<LI>&egrave; lunga</LI>
+<LI>contiene caratteri speciali (non alfanumerici)</LI>
+<LI>&egrave; una "parola" speciale (non un nome)</LI>
+<LI>&egrave; molto difficile da indovinare (quindi niente nomi, date di nascita,
+numeri di telefono o di carta di credito, nomi di bambini, ecc.)</LI>
+</UL>
+
+Si pu&ograve; migliorare la sicurezza anche usando Le MAiusCOLe aLTernATe allE
+mInusCOLe. Nello scegliere la passphrase, assicurarsi di NON DIMENTICARLA:
+se succedesse, non sarebbe pi&ugrave; possibile usare la propria
+chiave privata, ad esempio per leggere i messaggi ricevuti.
+&Egrave; cosa saggia anche generare un certificato che contiene queste informazioni
+(e conservarlo con cura in un luogo sicuro). Si veda la sezione
+<A HREF="#GPG-Minihowto-Revoke">Revocare una chiave</A>.</P>
+
+<P>Dopo aver immesso tutti i dati, il sistema inizer&agrave; a generare le chiavi.
+Questa operazione richieder&agrave; un po' di tempo, durante il quale il sistema
+deve raccogliere molti dati casuali. Si pu&ograve; aiutare a generare dati casuali
+ad esempio lavorando su un'altra finestra. Ogni chiave generata &egrave; diversa
+dalle altre: se si genera una chiave e dopo cinque minuti se ne genera
+un'altra fornendo gli stessi dati (nome, email, passphrase, ecc.), si otterr&agrave;
+una chiave diversa. Ecco perch&egrave; &egrave; importante non dimenticarsi la passphrase.</P>
+
+
+<H2><A NAME="ss3.2">3.2</A> <A HREF="GPGMiniHowto.html#toc3.2">Esportare le chiavi</A>
+</H2>
+
+
+<P>Il comando per esportare la chiave di un utente &egrave;:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [UID]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Se non si indica un UID (User ID), verranno esportate tutte le chiavi
+presenti nel portachiavi. L'output predefinito &egrave; lo <CODE>stdout</CODE>, ma &egrave;
+possibile dirigere l'output su un file usando l'opzione <CODE>-o</CODE>.
+In molti casi &egrave; consigliabile usare l'opzione <CODE>-a</CODE> per scrivere la
+chiave in un file ASCII a 7 bit, invece che in un file binario.</P>
+
+<P>Per allargare il proprio orizzonte e permettere ad altri di inviare
+messaggi in modo sicuro, occorre esportare la propria chiave pubblica e
+pubblicarla sulla propria home page, o tramite finger, oppure caricarla su
+un key server come http://www.pca.dfn.de/dfnpca/pgpkserv/, o ancora usando
+altri metodi.</P>
+
+<H2><A NAME="ss3.3">3.3</A> <A HREF="GPGMiniHowto.html#toc3.3">Importare le chiavi</A>
+</H2>
+
+
+<P>Quando si riceve la chiave pubblica di qualcuno, prima di usarla occorre
+importarla nel proprio portachiavi (si pu&ograve; farlo anche per pi&ugrave; di una chiave
+alla volta). Il comando &egrave; il seguente:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [nomefile]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+se si omette il nome del file, i dati verranno letti dallo <CODE>stdin</CODE>.</P>
+
+<H2><A NAME="GPG-Minihowto-Revoke"></A> <A NAME="ss3.4">3.4</A> <A HREF="GPGMiniHowto.html#toc3.4">Revocare una chiave</A>
+</H2>
+
+<P>Ci sono vari motivi per voler revocare una chiave esistente, ad esempio se
+la chiave privata &egrave; stata smarrita o &egrave; caduta nelle mani sbagliate, oppure se
+non si vuole pi&ugrave; usare lo stesso UID, oppure se la lunghezza della chiave non &egrave;
+pi&ugrave; sufficiente, ecc.
+In tutti questi casi, il comando per revocare la chiave &egrave;:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke
+</PRE>
+</CODE></BLOCKQUOTE>
+
+che genera un certificato di revoca.
+<EM>Per poter fare questo occorre la chiave privata</EM>, altrimenti
+chiunque potrebbe revocare la chiave. Questo ha uno svantaggio: se si
+dimentica la passphrase, la chiave diventa inutilizzabile e non &egrave; neanche
+possibile revocarla! Per evitare questo inconveniente, &egrave; buona norma creare
+un certificato di revoca non appena si genera la chiave; esso andr&agrave;
+conservato in un luogo sicuro (pu&ograve; essere salvato su disco, su carta, ecc.),
+badando che non cada nelle mani sbagliate, altrimenti qualcun altro potrebbe
+revocare la chiave rendendola inutilizzabile.</P>
+
+<H2><A NAME="GPG-Minihowto-KPAdministration"></A> <A NAME="ss3.5">3.5</A> <A HREF="GPGMiniHowto.html#toc3.5">Amministrazione delle chiavi</A>
+</H2>
+
+
+<P>Il sistema GnuPG comprende dei file che servono per immagazzinare tutte le
+informazioni che accompagnano le chiavi (tutte tranne i valori di fiducia nel
+proprietario della chiave: per maggiori informazioni in proposito si veda la 
+sezione 
+<A HREF="#GPG-Minihowto-KSigning">Firmare le chiavi</A>).
+Con
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+verranno mostrate tutte le chiavi esistenti. Per vedere anche le firme, si
+usi:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+(si veda la sezione 
+<A HREF="#GPG-Minihowto-KSigning">Firmare le chiavi</A> per maggiori informazioni). 
+Per vedere le impronte digitali si usi:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Vedere le impronte digitali (&quot;Fingerprint&quot;) serve ad assicurarsi
+che la chiave appartenga davvero alla persona che sostiene di esserne il
+proprietario (ad esempio al telefono). L'output di questo comando &egrave; una
+breve lista di numeri.</P>
+<P>Per vedere la lista delle chiavi private si usi:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+Si noti che non ha alcuna utilit&agrave; vedere firme o impronte digitali di chiavi
+private.</P>
+<P>Per cancellare una chiave pubblica si usi:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key UID 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Per cancellare una chiave privata si usi:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --delete-secret-key 
+</PRE>
+</CODE></BLOCKQUOTE>
+ </P>
+<P>C'&egrave; un altro comando importante per la gestione delle chiavi:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Usando questo comando &egrave; possibile modificare (tra le altre cose) la data di
+scadenza di una chiave, aggiungere UID o firmare una chiave (ovviamente per
+questo &egrave; necessaria la propria passphrase). Dopo aver eseguito il comando
+--edit-key si otterr&agrave; un prompt interattivo da cui digitare i comandi
+successivi.</P>
+
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.6">3.6</A> <A HREF="GPGMiniHowto.html#toc3.6">Firmare le chiavi</A>
+</H2>
+
+
+<P>Come accennato nell'introduzione, il principale tallone d'Achille del
+sistema &egrave; l'autenticit&agrave; delle chiavi pubbliche: se si usa una chiave
+pubblica contraffatta si pu&ograve; dire addio alla crittografia sicura.
+Per evitare questo rischio, c'&egrave; la possibilit&agrave; di firmare le chiavi, ossia
+di porre la propria firma digitale sulla chiave, certificandone la validit&agrave;.
+In pratica, la firma certifica che lo user ID menzionato nella chiave 
+corrisponde alla persona che possiede la chiave. Una volta che si &egrave;
+certi di questo, si pu&ograve; usare la chiave in tutta sicurezza.</P>
+
+<P>Per firmare una chiave, si usi il comando <CODE>gpg --edit-key UID</CODE> e
+successivamente il comando <CODE>sign</CODE>.</P>
+
+<P><EM>Bisogna firmare una chiave solo quando si &egrave; ASSOLUTAMENTE CERTI della
+sua autenticit&agrave;!!!</EM>
+Questa condizione pu&ograve; verificarsi quando si &egrave; ricevuta la chiave direttamente 
+da una persona (ad esempio durante un "key signing party", un raduno per la
+firma delle chiavi) o quando la si &egrave; ricevuta per altri mezzi e se ne &egrave;
+controllata l'autenticit&agrave; col metodo dell'impronta digitale (ad esempio al
+telefono). Non si dovrebbe mai firmare una chiave a priori.</P>
+
+<P>GnuPG calcola la validit&agrave; delle chiavi basandosi sulle firme disponibili e
+sui valori di fiducia nel proprietario (&quot;ownertrust&quot;).
+La fiducia nel proprietario di una chiave rappresenta la fiducia che si ripone 
+nella capacit&agrave; del proprietario di firmare correttamente altre chiavi. 
+I valori possibili sono:
+<UL>
+<LI> 1 = Indefinito</LI>
+<LI> 2 = Nessuna fiducia</LI>
+<LI> 3 = Fiducia marginale</LI>
+<LI> 4 = Fiducia completa</LI>
+</UL>
+
+Cos&igrave;, se non si ha fiducia nel proprietario di una chiave, le eventuali
+firme apposte da quest'ultimo su un'altra chiave veranno ignorate durante
+il calcolo del valore di validit&agrave; della chiave.
+Le informazioni sulla fiducia non sono immagazzinate negli stessi file che
+contengono le chiavi, ma in un file separato.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-4.html">Avanti</A>
+<A HREF="GPGMiniHowto-2.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc3">Indice</A>
+</BODY>
+</HTML>

@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-9" />
+ <TITLE>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe): Anahtarları Kullanma</TITLE>
+ <LINK HREF="GPGMinikNasil-4.html" REL=next>
+ <LINK HREF="GPGMinikNasil-2.html" REL=previous>
+ <LINK HREF="GPGMinikNasil.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMinikNasil-4.html">Sonraki</A>
+<A HREF="GPGMinikNasil-2.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc3">Içerik</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Key"></A> <A NAME="s3">3.</A> <A HREF="GPGMinikNasil.html#toc3">Anahtarları Kullanma</A></H2>
+
+
+<H2><A NAME="ss3.1">3.1</A> <A HREF="GPGMinikNasil.html#toc3.1">Anahtar yaratmak</A>
+</H2>
+
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+ komutu ile yeni bir anahtar çifti 
+oluşturulur (anahtar çifti: gizli ve genel anahtar). İlk soru hangi algoritmanın
+kullanılacağıdır. Algoritmalar hakkında daha fazla bilgiyi 
+<A HREF="http://www.scramdisk.clara.net/pgpfaq.html">PGP DH vs. RSA SSS</A> 
+konumundan öğrenebilirsiniz veya 
+<A HREF="GPGMinikNasil-7.html#BSchneier">Gizleme Uygulaması</A> bölümüne bakın.</P>
+
+<P>Sonraki soru anahtar uzunluğudur. Bu kullanıcıya bağlı bir şeydir. Güvenlik ve
+hesaplama süresi arasında tercih yapmalısınız. Eğer anahtar daha uzunsa ileti ele 
+geçirildiğinde kırılma riski daha azdır. Fakat büyük bir anahtar ile hesaplama
+süresi de artar. Eğer hesaplama zamanı sizin için bir ölçü ise anahtarı daha sonraları da
+kullanacağınızı dikkate alın. Aritmetik performansın çok hızlı arttığını biliyoruz,
+yeni islemciler ile daha da hızlanıyorlar. O yüzden bunu aklınızda bulundurun. GnuPG için 
+en kısa anahtar uzunluğu 768 bittir. Ancak kimi insanlar en azından 2048 bitlik bir anahtar
+uzunluğu seçmenizi tavsiye ederler (Bu GnuPG için simdilik en büyük uzunluktur).
+DSA için 1024 standart boyuttur. Güvenlik sizin için en önemli ve perfomans daha az önemli
+ise mümkün olan en uzun anahtarı seçmeniz en iyisidir. </P>
+
+<P>Sistem daha sonra isminizi, açıklamanızı ve e-posta adresiniz girmenizi ister. Buradaki
+girdilere göre kod hesaplanır. Bu ayarları daha sonra değiştirebilirsiniz. 
+<A HREF="#GPG-Minihowto-KPAdministration">Anahta çiftleri yönetimi</A> bölümüne bakın.</P>
+
+<P>Son olarak parola (aslında parola metni demek daha uygundur, çünkü boşlukta
+kullanabilirsiniz) girmelisiniz. Bu parola gizli anahtarınıza ait olan işlevleri
+kullanmanız için gerekmektedir. İyi bir parola metni aşagıdaki öğeleri
+içermelidir:
+<UL>
+<LI>uzun olmalıdır,</LI>
+<LI>özel (sayı ya da rakam olmayan) karakterler olmalıdır,</LI>
+<LI>özel bir şey olmalıdır (isim, doğum günü değil),</LI>
+<LI>tahmin edilmesi çok güç olmalıdır (yani isimler, doğum tarihleri, telefon 
+numaraları, kredi kartı/vatandaşlık numarası, çocuklarınızın adı ve sayısı gibi
+şeyler OLMAMALIDIR.)</LI>
+</UL>
+</P>
+<P>Parolanızda bazen BüYÜk haRf KuLLanıp BaZEN kUllANmayaRak da daha güvenli olmasını 
+sağlayabilirsiniz. Parola oluşturduktan sonra onu UNUTMAYIN. Eğer unutursanız iletileri 
+okunamaz yaparsınız ve gizli anahtarınızın kullanılırlığı kaybolur. 
+Bu bilgiyi içeren bir sertifika oluşturmak bazen iyi olabilir (tabi ki parola metninize
+kimsenin ulaşmamasını sağlamalısınız). 
+<A HREF="#GPG-Minihowto-Revoke">Feshetme</A> 
+bölünüme bakın.</P>
+
+<P>Her şey girildikten sonra sistem anahtarları oluşturmaya başlar. 
+Bu biraz zaman alabilir. Bu süre içinde rastgele veri toplanması gerekir. Farklı 
+ekranlarda çalışarak bu rastgele veriyi değiştirebilir ve anahtarın oluşmasına 
+yardımcı olabilirsiniz. 
+Buradan da anlayabileceginiz gibi anahtar her zaman farklı olacaktır. Eğer şimdi
+bir anahtar oluşturur ve aynı bilgilerle 5 dakika sonra başka bir anahtar oluşturursanız
+farklı anahtarlar elde etmiş olursunuz. Parolanınızı unutmamanızın gereği işte budur.</P>
+
+<H2><A NAME="ss3.2">3.2</A> <A HREF="GPGMinikNasil.html#toc3.2">Anahtarların Dışarıya Aktarımı</A>
+</H2>
+
+<P>Kullanıcı için anahtarı dışa aktarım komutu aşağıdaki gibidir:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [UID]
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Eğer UID girilmez ise tüm mevcut anahtarlar dışarıya aktarılır. Öntanımlı olarak
+çıktı <CODE>stdout</CODE>'a atılır. <CODE>-o</CODE> seçeneği ile bu bir dosyaya 
+gönderilebilir. <CODE>-a</CODE> komutu ile anahtarın ikili dosya yerine 7 bitlik bir ASCII
+dosyasına yazılması tavsiye edilir.</P>
+<P>Genel anahtarları dışa aktararak güvenlik alanınızı genişletebilirsiniz. Diğer 
+insanlar sizinle güvenli iletişim kurabilirler. Bu, genel anahtarınızı kişisel 
+sayfanızda yayımlayarak, http://www.pca.dfn.de/dfnpca/pgpkserv/ gibi bir anahtar 
+sunucusuna koyarak ve aklınaza gelen başka yollarla mümkün olabilir.</P>
+
+<H2><A NAME="ss3.3">3.3</A> <A HREF="GPGMinikNasil.html#toc3.3">Anahtarların İçe Aktarımı</A>
+</H2>
+
+<P>Birisinin genel anahtarını (veya birden fazla genel anahtarı) aldığınızda bunu
+kullanabilmeniz için anahtar veritabanına eklemeniz gerekir. Veritabanına
+anahtarı aktarabilmek için aşağıdaki komutu kullanabilirsiniz:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [DosyaAdı]
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Eğer dosya adı boş bırakılırsa veri <CODE>stdin</CODE>'den okunacaktır.</P>
+
+<H2><A NAME="GPG-Minihowto-Revoke"></A> <A NAME="ss3.4">3.4</A> <A HREF="GPGMinikNasil.html#toc3.4">Anahtarı Feshetmek</A>
+</H2>
+
+<P>Birçok nedenden dolayı mevcut bir anahtarı feshetmek isteyebilirsiniz. Mesela,
+gizli anahtarınız çalınmış veya yanlış kişilerin eline geçmiş olabilir, UID'iniz
+değişmiş olabilir, anahtar uzunluğu artık yeterince büyük değildir vb.
+Tüm bu durumlarda, anahtarı feshetmek için komut aşağıdaki gibidir:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Bu bir fesih sertifikası oluşturur.</P>
+<P><EM>Bunu yapabilmeniz için gizli anahtarınızın olması gereklidir</EM>, aksi
+halde herkes anahtarınız için fesih sertifikası oluşturabilir. Bunun bir tek
+olumsuz yönü vardır. Parola metninizi unuttuğunuz zaman anahtar kullanışsız hale
+gelir, fakat onu fesih de edemezsiniz! Bunun üstesinden gelmek için anahtar çiftinizi
+oluşturduğunuzda fesih sertifikasını da aynı zamanda oluşturmaktır. Ancak eğer bunu
+yaparsanız onu güvenli bir yerde saklayın!
+Bu bir diskte ya da kağıt üzerinde olabilir.
+Bu sertifikanın yanlış ellere ulaşmayacağından emin olun!!!
+Eğer ulaşırsa birileri sizin fesih sertifikanızı kullanarak anahtarlarınızı kullanışsız
+hale getirebilir. </P>
+
+<H2><A NAME="GPG-Minihowto-KPAdministration"></A> <A NAME="ss3.5">3.5</A> <A HREF="GPGMinikNasil.html#toc3.5">Anahtar yönetimi</A>
+</H2>
+
+<P>GnuPG sistemi veritabanı gibi davranan bir dosya ile gelir. Bu dosyada anahtar ile
+bilgileri hakkında her şey vardır. (Sahip güvencesi değerlerine kadar her şey: daha
+fazla bilgi için 
+<A HREF="#GPG-Minihowto-KSigning">Anahtar imzalama</A> bölümüne
+bakın.) </P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+komutu ile mevcut olan bütün anahtarlar görüntülenebilir. İmzaları da 
+görmek için:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+komutunu kullanın (daha ileri bilgi için 
+<A HREF="#GPG-Minihowto-KSigning">Anahtar imzalama</A> bölümüne bakabilirsiniz.)</P>
+<P>Parmakizlerini yazdırmak için:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+komutunu kullanın. &quot;Parmakizlerini&quot; birisinin gerçekten iddia ettiği
+kişi olup olmadığını doğrulamak için kullanabilirsiniz (mesela telefon ile). Bu komut
+genel anahtara kıyasla çok daha kısa bir numara listesi görüntüler.</P>
+<P>Gizli anahtarları yazdırmak için:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+komutunu kullanın. Unutmayın ki gizli anahtarların parmakizlerinin ve imzaların hiçbir 
+kullanımı yoktur.</P>
+
+
+<P>Genel anahtarı silmek için:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key UID 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Gizli anahtarı silmek için:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --delete-secret-key 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+komutlarını kullanabilirsiniz.</P>
+
+<P>Anahtarlarla çalışırken önemli bir seçenek daha vardır. 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Bu komutu kullanarak (başka bir çok şeyin yanında) son kullanım tarihini düzenleyebilir, 
+parmakizi ekleyebilir ve anahtar imzalayabilirsiniz. Belirtmesi çok mantıklı olmasa bile
+bu işlemi yapmanız için parola metninize ihtiyacınız vardır. Parolanızı girdiğinizde
+komut satırını göreceksiniz.</P>
+
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.6">3.6</A> <A HREF="GPGMinikNasil.html#toc3.6">Anahtar imzalama</A>
+</H2>
+
+<P>Girişte de belirtildiği gibi sistemde ana bir sorun vardır. Bu genel anahtarların
+doğrulanmasıdır. Eğer yanlış bir genel anahtarı kullanıyorsanız şifrelemenizin 
+değerini yok etmiş olursunuz. Bu gibi riskleri aşmak için anahtarı imzalamak 
+gibi bir olanak vardır. Bu durumda anahtarınıza imzanızı atarsınız, böylelikle
+anahtarın kesinlikle güvenilir olduğunu belirtmiş olursunuz. Bu anahtarda belirtilen
+kullanıcı kimliğini gerçekten anahtarın sahibi olan kişi olduğunu bildirir. Bu
+doğrulama ile şifrelemeye başlayabilirsiniz.</P>
+
+
+<P><CODE>gpg --edit-key UID</CODE> komutunu kullanarak imzalayacağınız anahtara
+<CODE>sign</CODE> komutuyla imzanızı atabilirisiniz.</P>
+<P><EM>Bir anahtarı doğrulanmış şekilde imzalamak için doğruluğundan KESİNLİKLE EMİN olup ancak
+ondan sonra imzalayınız!!!</EM>. 
+Eğer anahtarı kendiniz aldıysanız (mesela bir anahtar imzalama buluşmasında) veya anahtarı
+başka bir yolla parmak izi mekanizması kontrol ettiyseniz (örneğin telefon ile) anahtarı
+imzalayabilirsiniz. Anahtarı tahminlere dayalı olarak imzalamamalısınız.</P>
+
+
+<P>Mevcut imzalara ve &quot;sahip güvenine&quot; bakarak GnuPG bir anahtarın geçerliliğine
+karar verir. Sahip güveni bir anahtarın sahibinin belli bir anahtar için belirlediği
+güven değeridir. Değerler aşağıdaki gibidir:
+<UL>
+<LI> 1 = Bilmiyorum</LI>
+<LI> 2 = Güvenmiyorum</LI>
+<LI> 3 = Tam olarak güvenmiyorum</LI>
+<LI> 4 = Tamamen güveniyorum</LI>
+</UL>
+</P>
+<P>Eğer kullanıcı imzaya güvenmiyorsa bunu söyleyebilir ve imzayı umursamayabilir. Güvenme
+bilgisi anahtarların olduğu dosyada saklanmaz, ayrı bir dosyadadır.</P>
+
+<HR>
+<A HREF="GPGMinikNasil-4.html">Sonraki</A>
+<A HREF="GPGMinikNasil-2.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc3">Içerik</A>
+</BODY>
+</HTML>

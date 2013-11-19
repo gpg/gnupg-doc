@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Français): Chiffrement et déchiffrement</TITLE>
+ <LINK HREF="GPGMiniHowto-5.html" REL=next>
+ <LINK HREF="GPGMiniHowto-3.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-5.html">Page suivante</A>
+<A HREF="GPGMiniHowto-3.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc4">Table des matières</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-encrypt"></A> <A NAME="s4">4. Chiffrement et déchiffrement</A></H2>
+L'opération de chiffrement produit un message en caractères codés sur 8 bits, ce qui peut poser quelques
+problèmes pour l'envoyer par email ou pour l'afficher. L'option <CODE>--armor</CODE> ou <CODE>-a</CODE> 
+permet de produire un message en caractères codés sur 7 bits.
+<P>
+Par défaut, les opérations de chiffrement et de déchiffrement affichent leurs résultats sur la sortie standard. L'option
+<CODE>--output</CODE> ou <CODE>-o</CODE> permet d'écrire le résultat de ces opérations dans un fichier plutôt que sur 
+la sortie standard. 
+
+<H2><A NAME="ss4.1">4.1 Comment chiffrer un message ?</A>
+</H2>
+
+<P>
+<P><P>Pour chiffrer un message, vous devez disposez de la clef publique du
+destinataire du message. Ce dernier utilisera ensuite sa clef privée
+pour déchiffrer votre message. Vous devez donc préciser le
+destinataire du message, ou plus précisement la clef publique à
+utiliser, lors d'un chiffrement :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --encrypt destinataire [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+ou
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -e destinataire [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<CODE>destinataire</CODE> représente ici toute information permettant de distinguer sans
+ambiguïté une clef publique parmi toutes les clefs publiques de votre trousseau. Cette information
+peut-être, par exemple, le nom ou l'adresse email associé à la clef publique que vous voulez
+utiliser. Vous pouvez même ne fournir qu'une partie du nom ou de l'adresse email si cette partie
+suffit à distinguer une clef publique sans ambiguïté.
+<P>
+Pour éviter que quiconque puisse usurper votre identité, il est conseillé de 
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">signer</A> tout
+message que vous chiffrez.
+<P>
+<H2><A NAME="ss4.2">4.2 Comment déchiffrer un message ?</A>
+</H2>
+
+<P>Comme le déchiffrement utilise votre clef privée et que vous n'en
+n'avez qu'une en règle générale, il n'est pas nécessaire de la préciser :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--decrypt] [message] 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+ou
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-d] [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Si vous possédez plusieurs clefs privées, vous devez précisez la clef privée à
+utiliser pour le déchiffrement avec l'option <CODE>--local-user info-clef</CODE> ou
+<CODE>-u info-clef</CODE>. <CODE>info-clef</CODE> est toute information permettant de distinguer sans
+ambiguïté une clef privée parmi toutes vos clefs privées.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-5.html">Page suivante</A>
+<A HREF="GPGMiniHowto-3.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc4">Table des matières</A>
+</BODY>
+</HTML>

@@ -1,0 +1,951 @@
+{\rtf1\ansi
+{\fonttbl
+{\f0\fswiss Helvetica;}
+{\f1\fmodern Courier;}
+{\f2\froman Times;}
+{\f3\froman Symbol;}
+}
+{\info{\comment Translated from SGML to RTF w/ Linuxdoc-SGML}}
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{1 Konzepte}}
+{}#{\footnote TOC_0}
+
+${\footnote Konzepte}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Konzepte}
+
+{}#{\footnote GPG_Minihowto_Konzepte}
+{}K{\footnote GPG_Minihowto_Konzepte}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.1 Public Key Verschl[uuml  ]sselung}}
+{}#{\footnote TOC_1}
+{}K{\footnote Public Key Verschl[uuml  ]sselung}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Klassische Methoden zur Verschl[uuml  ]sselung benutzen nur einen 
+Schl[uuml  ]ssel. Der Sender verschl[uuml  ]sselt seine Nachricht mit diesem 
+Schl[uuml  ]ssel, und der Empf[auml  ]nger entschl[uuml  ]sselt ihn mit demselben 
+wieder. Damit das funktioniert, mu[szlig ] der Empf[auml  ]nger vorher den Schl[uuml  ]ssel 
+bekommen haben, und zwar auf einem sicheren Kommunikationskanal, da 
+sonst Unbefugte in Kenntnis des Schl[uuml  ]ssels gelangen k[ouml  ]nnten. Also 
+braucht man einen sicheren Kommunikationskanal, aber wenn man den hat, 
+braucht man auch nicht mehr zu verschl[uuml  ]sseln.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Public Key Verfahren (auch: asymmetrischen Verfahren) beseitigen 
+dieses Problem, indem zwei Schl[uuml  ]ssel erzeugt werden: Der 
+[ouml  ]ffentliche, der [uuml  ]ber beliebige Kommunikationskan[auml  ]le 
+verschickt werden kann und der private, den nur der Besitzer 
+kennt. Idealerweise ist der private Schl[uuml  ]ssel nicht mit dem 
+[ouml  ]ffentlichen rekonstruierbar. Der Sender verschl[uuml  ]sselt die 
+Nachricht mit dem [ouml  ]ffentlichen Schl[uuml  ]ssel des 
+Empf[auml  ]ngers. Entschl[uuml  ]sselt wird die Nachricht dann mit dem 
+privaten Schl[uuml  ]ssel des Empf[auml  ]ngers. Nach diesem Schema kann 
+man demnach effektiv verschl[uuml  ]sseln, ohne [uuml  ]ber einen sicheren 
+Kommunikationskanal zu verf[uuml  ]gen. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Ein ganz wichtiger Punkt ist aber die Geheimhaltung des privaten 
+Schl[uuml  ]ssels. Er darf auf keinen Fall in fremde H[auml  ]nde geraten, 
+auch nicht [uuml  ]ber das Netz verbreitet werden. GnuPG via 
+{\f1 telnet} zu benutzen, ist zum Beispiel eine ziemlich schlechte 
+Idee. (Eigentlich sollte man {\f1 telnet} sowieso durch 
+{\f1 ssh} ersetzen) 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.2 Digitale Unterschriften}}
+{}#{\footnote TOC_2}
+{}K{\footnote Digitale Unterschriften}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Digitale Unterschriften sollen die Authenzit[auml  ]t einer Nachricht 
+beweisen. W[uuml  ]rden Nachrichten von offizieller Seite signiert, 
+w[auml  ]re es deutlich schwerer, mit gef[auml  ]lschten Nachrichten 
+Unruhe oder Schaden anzurichten (aktuelles Beispiel: Ein trojanische 
+Pferd, verschickt als Patch eines bekannten Webbrowsers).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Ein digitale Signatur wird mit Hilfe des privaten Schl[uuml  ]ssels aus dem 
+Text erzeugt. Diese kann dann vom Empf[auml  ]nger mit dem [ouml  ]ffentlichen 
+Schl[uuml  ]ssel des Senders [uuml  ]berpr[uuml  ]ft werden. Dabei wird nicht nur der 
+Absender (nur der kennt den privaten Schl[uuml  ]ssel) [uuml  ]berpr[uuml  ]ft, sondern 
+auch, ob der Text unver[auml  ]ndert angekommen ist.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.3 Web of trust}}
+{}#{\footnote TOC_3}
+{}K{\footnote Web of trust}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Eine Schwachstelle der Public Key Algorithmen ist die Verbreitung der 
+[ouml  ]ffentlichen Schl[uuml  ]ssel. Ein Benutzer k[ouml  ]nnte einen 
+[ouml  ]ffentlichen Schl[uuml  ]ssel mit falscher User ID in Umlauf 
+bringen. Wenn dann mit diesem Schl[uuml  ]ssel Nachrichten kodiert 
+werden, kann der Eindringling die Nachrichten dekodieren und 
+lesen. Wenn er sie dann noch mit einem echten [ouml  ]ffentlichen 
+Schl[uuml  ]ssel kodiert an den eigentlichen Empf[auml  ]nger 
+weiterleitet, f[auml  ]llt dieser Angriff nicht einmal auf.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Die von PGP (und damit auch von GnuPG) gew[auml  ]hlte L[ouml  ]sung 
+besteht im Unterschreiben von Schl[uuml  ]sseln. Ein [ouml  ]ffentlicher 
+Schl[uuml  ]ssel kann von anderen Leuten unterschrieben werden. Diese 
+Unterschrift best[auml  ]tigt, da[szlig ] der Schl[uuml  ]ssel zu der in 
+der UID angegebenen Person geh[ouml  ]rt. Der Benutzer kann festlegen, 
+welchen Unterschriften er wie weit traut. Vertrauen ist dabei zwar 
+reflexiv, aber nicht symmetrisch und transitiv. Ein Schl[uuml  ]ssel 
+gilt als vertrauensw[uuml  ]rdig, wenn er von Leuten unterzeichnet wurde, 
+denen man vertraut. Wenn man Schl[uuml  ]ssel unterzeichnet, sollte man 
+sich sicher sein, da[szlig ] man die Identit[auml  ]t desjenigen, dessen 
+Schl[uuml  ]ssel man unterschreibt, genau kennt. Eine M[ouml  ]glichkeit 
+ist es, den Schl[uuml  ]ssel pers[ouml  ]nlich bekommen zu haben, eine 
+andere, den Fingerprint [uuml  ]ber zuverl[auml  ]ssige Kan[auml  ]le zu 
+vergleichen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.4 Grenzen der Sicherheit}}
+{}#{\footnote TOC_4}
+{}K{\footnote Grenzen der Sicherheit}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Wenn man Daten vertraulich halten will, sollte man sich nicht nur 
+Gedanken [uuml  ]ber die Sicherheit des Verschl[uuml  ]sselungsalgorithmus machen, 
+sondern [uuml  ]ber die Systemsicherheit allgemein. Die in GnuPG verwendeten 
+Algorithmen gelten gemeinhin als nicht zu knacken. Daraus zu 
+schlie[szlig ]en, da[szlig ] alle verschl[uuml  ]sselten Daten sicher seien, ist naiv. Es 
+gibt auch noch andere Formen von Angriffen. Anfang Februar 1999 
+tauchte zum Beispiel ein Word Trojaner auf, der private PGP 
+Schl[uuml  ]sselbunde auf der Festplatte suchte und via ftp verschickte 
+(Meldung im Heise Newsticker vom 03.02.99). Ein privates Schl[uuml  ]sselbund 
+l[auml  ][szlig ]t sich, insbesondere bei schlechtem Passwort, deutlich leichter 
+knacken als eine einzelne Datei.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Denkbar sind auch Trojaner, die Tastatureingaben weiterleiten.  Falls 
+man die Nachrichten entschl[uuml  ]sselt auf dem Rechner lagert, k[ouml  ]nnen sie 
+nat[uuml  ]rlich auch gelesen werden. Aufwendiger, aber technisch m[ouml  ]glich ist 
+es, die Abstrahlung des Monitors zu messen und sichtbar zu machen, so 
+da[szlig ] der Bildschirminhalt mitgelesen werden kann. Dann n[uuml  ]tzt es auch 
+nichts, eine verschl[uuml  ]sselte Datei nur zum Lesen zu entschl[uuml  ]sseln. Zum 
+Thema [quot  ][Uuml  ]berwachung[quot  ] gibt es den interessanten Artikel 
+[quot  ]Abh[ouml  ]r-Dschungel[quot  ] aus der c't 5/98, Seite 82 und [quot  ]In 
+die R[ouml  ]hre geguckt[quot  ] c't 24/98, Seite 90. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Die obigen M[ouml  ]glichkeiten sollen keine Paranoia hervorrufen, sondern 
+nur darauf hinweisen, da[szlig ] Verschl[uuml  ]sselung von Daten nur ein Baustein 
+eines Sicherheitskonzeptes sein kann. Um so erstaunlicher, da[szlig ] es 
+immer wieder Versuche gibt, Verschl[uuml  ]sselung von Daten zu be- 
+beziehungsweise zu verhindern. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{2 Installation }}
+{}#{\footnote TOC_5}
+
+${\footnote Installation}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Installation}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.1 Bezugsquellen }}
+{}#{\footnote TOC_6}
+{}K{\footnote Bezugsquellen }
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Die offizielle Bezugsquelle ist die  
+\url{GnuPG Homepage}. Dort gibt es 
+auch eine Liste der Mirrors. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Aus rechtlichen Gr[uuml  ]nden darf GnuPG nicht aus Servern in den USA 
+geladen werden, da Kryptographie in den USA als R[uuml  ]stungsgut gilt. Aus 
+diesem Grund gibt es [uuml  ]brigens PGP immer in nationalen und 
+internationalen Versionen, wobei bei letzteren der Sourcecode in 
+Buchform exportiert wird und er in Oslo wieder eingescant 
+wird. Genaueres dazu auf der 
+\url{Internationalen PGP  Homepage}. Nichtsdestotrotz darf GnuPG in die USA eingef[uuml  ]hrt und 
+benutzt werden, es darf dort auch auf ftp-Servern abgelegt werden. Es 
+mu[szlig ] dabei nur garantiert werden, da[szlig ] GnuPG nicht reexportiert wird.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Falls man schon eine lauff[auml  ]hige GnuPG oder PGP Version 
+hat, sollte man die Signatur des Archivs [uuml  ]berpr[uuml  ]fen (siehe {\uldb Signaturen}{\v GPG-Minihowto-signaturen}).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.2 Konfigurieren }}
+{}#{\footnote TOC_7}
+{}K{\footnote Konfigurieren }
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+GnuPG wird als Debian Package, als RedHat rpm oder als Sourcecode 
+vertrieben. In den ersten beiden F[auml  ]llen nimmt man die entsprechenden 
+Werkzeuge zum installieren (ich kenne nur rpm), alles weitere bezieht 
+sich auf den Sourcecode. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Da die Entwicklung unter Linux (x86) stattfindet, ist die 
+[Uuml  ]bersetzung dort meist gar kein Problem. Eine aktuelle Liste der 
+offiziell unterst[uuml  ]tzten Betriebssysteme steht auch auf der \url{GnuPG Homepage}. Das folgende 
+Vorgehen gilt aber betriebssystemunabh[auml  ]ngig.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Nachdem das Archiv mit  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 tar xvzf gnupg-?.?.?.tar.gz}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+entpackt ist, tippt man  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 ./configure}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}   
+Dabei sollte nichts verbl[uuml  ]ffendes passieren. Mit  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 ./configure --help}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+kann man sich, falls n[ouml  ]tig, die m[ouml  ]glichen Konfigurationsparameter 
+ansehen. Falls es Probleme mit der der Internationalisierung 
+(gettext) geben sollte, kann man mit {\f1 --with-included-gettext} 
+eine mitgelieferte Version benutzen oder sie mit {\f1 --disable-NLS} 
+abschalten.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.3 Kompilieren }}
+{}#{\footnote TOC_8}
+{}K{\footnote Kompilieren }
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Danach sollte  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 make}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+problemlos laufen. Falls es dabei wider Erwarten Probleme gibt, sollte 
+man (in dieser Reihenfolge): Selbst probieren (nat[uuml  ]rlich mit Lesen der 
+Dokumentation), jemanden in der N[auml  ]he fragen, der sich auskennt und 
+schlie[szlig ]lich auf der Mailingliste (siehe {\uldb Informationsquellen}{\v GPG-Minihowto-Informationsquellen}) um 
+Rat fragen. Falls es sich nur um falsche Pfade handelt, sollte man mit 
+{\f1 make clean} (oder rabiater) das Verzeichnis 
+s[auml  ]ubern, neu konfigurieren und es dann noch einmal versuchen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.4 Einrichten }}
+{}#{\footnote TOC_9}
+{}K{\footnote Einrichten }
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 make install}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+werden die Programme und die Manpage in die daf[uuml  ]r vorgesehenen 
+Verzeichnisse kopiert. In {\f1 usr/local/share/gnupg/} (oder in dem 
+bei ./configure angegebenen Verzeichnis) liegt die Datei 
+{\f1 options.skel}. Wenn man diese nach {\f1 [tilde ]/.gnupg/options} 
+kopiert, werden die entsprechenden Einstellungen als Standard 
+benutzt. Das Kopieren sollte eigentlich beim Anlegen von {\f1 [tilde ]/.gnupg/} 
+automatisch passieren. Jeder m[ouml  ]gliche Eintrag ist gut dokumentiert, deshalb 
+werden sie hier nicht beschrieben.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Man kann GnuPG als suid root laufen lassen (das hei[szlig ]t: das Programm 
+l[auml  ]uft mit allen Rechten des Superusers), damit die 
+M[ouml  ]glichkeit ausgeschlossen wird, da[szlig ] Teile des Programmes 
+ausgelagert werden und dann gelesen werden k[ouml  ]nnen. Wie real diese 
+Gefahr ist, kann ich nicht beurteilen, allerdings ist auch mit suid 
+root Vorsicht geboten, da ein trojanisches Pferd mit suid root 
+beliebigen Schaden anrichten kann. Man kann die Warnmeldung, die 
+ausgegeben wird, falls GnuPG nicht suid root l[auml  ]uft, mit   
+{\f1 no-secmem-warning} in {\f1 [tilde ]/gnupg/options} abschalten.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{3 Umgang mit Schl[uuml  ]sseln}}
+{}#{\footnote TOC_10}
+
+${\footnote Umgang_mit_Schl_uuml___sseln}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Umgang mit Schl[uuml  ]sseln}
+
+{}#{\footnote GPG_Minihowto_schluessel}
+{}K{\footnote GPG_Minihowto_schluessel}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.1 Erzeugen}}
+{}#{\footnote TOC_11}
+{}K{\footnote Erzeugen}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --gen-key}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+wird ein neues Schl[uuml  ]sselpaar erzeugt. Als Erstes wird man nach dem zu 
+verwendenden Algorithmen gefragt. Genaueres zu den Algorithmen steht 
+in der \url{PGP DH vs. RSA FAQ} oder in {\uldb Applied Cryptography}{\v BSchneier}.  
+Man kann (und sollte) einfach den default Wert (DSA/ ElGamal) nehmen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Bei der Schl[uuml  ]ssell[auml  ]nge mu[szlig ] man zwischen Sicherheit und 
+Rechenzeit abw[auml  ]gen. Je l[auml  ]nger ein Schl[uuml  ]ssel, desto 
+sicherer ist er, desto l[auml  ]nger dauern aber auch Operationen mit 
+ihm. Bei der Rechenzeit mu[szlig ] man aber ber[uuml  ]cksichtigen, da[szlig ] 
+der Schl[uuml  ]ssel m[ouml  ]glicherweise auch noch in einigen Jahren 
+benutzt werden soll, wenn die durchschnittliche Rechenleistung stark 
+angewachsen sein wird. GnuPG fragt ab einer 
+Schl[uuml  ]ssell[auml  ]nge von mehr als 1536 Bits, ob ein so 
+gro[szlig ]er Schl[uuml  ]ssel wirklich n[ouml  ]tig sei, andere Leute 
+empfehlen mindestens 2048 Bits. F[uuml  ]r DSA ist 1024 Bits Standard.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Dann wird nach Namen, Kommentar und Email Adresse gefragt. Anhand 
+dieser Angaben wird der Schl[uuml  ]ssel identifiziert. Man kann die 
+Angaben aber sp[auml  ]ter noch [auml  ]ndern beziehungsweise 
+erg[auml  ]nzen. Siehe {\uldb Schl[uuml  ]sselbund verwalten}{\v GPG-Minihowto-Sverwalten} Man sollte eine l[auml  ]nger g[uuml  ]ltige Email 
+Adresse w[auml  ]hlen, da die komplette Benutzerkennung unterschrieben 
+wird. Wird dann etwas ge[auml  ]ndert, gelten die Unterschriften unter die 
+ge[auml  ]nderten Angaben nicht mehr.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Als letztes wird nach dem Passwort (beziehungsweise Passsatz (in der 
+deutschen [Uuml  ]bersetzung: Mantra) denn es k[ouml  ]nnen Leerzeichen vorkommen) 
+gefragt, mit dem der private Schl[uuml  ]ssel gesichert werden 
+soll. {\i Verwenden sie ein gutes Mantra}. Ein gutes Mantra 
+ist 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} nicht zu kurz,
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} enth[auml  ]lt Sonderzeichen,
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} ist kein Name und
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} nicht mit Kenntnis des Benutzers leicht zu erraten (wie 
+Telefonnummer, Bankleitzahl, Name und Anzahl der Kinder, ...)
+ 
+Man kann durch willk[uuml  ]rlich eingestreute GRo[szlig ]/KlEinSchReibung und 
+Leerzeichen weitere Sicherheit erhalten. 
+Au[szlig ]erdem mu[szlig ] man es sich merken k[ouml  ]nnen, da der geheime Schl[uuml  ]ssel ohne 
+Mantra wertlos ist. Es kann in diesem Zusammenhang ein guter Gedanke 
+sein, gleich ein R[uuml  ]ckrufzertifikat zu erstellen. Siehe {\uldb Widerrufen}{\v GPG-Minihowto-Swiderrufen}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.2 Exportieren}}
+{}#{\footnote TOC_12}
+{}K{\footnote Exportieren}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --export [UID]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+wird der Schl[uuml  ]ssel mit der User ID UID exportiert. Wird keine UID 
+angegeben, so wird der ganze Schl[uuml  ]sselbund exportiert. Voreingestellt 
+ist Ausgabe auf {\f1 stdout}, man kann aber mit der Option {\f1 -o 
+[Datei]} in eine Datei ausgeben. Es empfiehlt sich noch, mit der 
+Option {\f1 -a} ({\f1 --armor}) zu arbeiten, da ich andernfalls  
+Probleme hatte. Mit dieser Option werden die Schl[uuml  ]ssel nicht im 
+Bin[auml  ]rformat ausgegeben, sondern als ASCII (7 Bit) Dateien.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Den exportierten Schl[uuml  ]ssel kann man dann in der 
+Welt verbreiten, wahlweise auf der Homepage, via 
+finger, [uuml  ]ber Keyserver, ... . 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.3 Importieren}}
+{}#{\footnote TOC_13}
+{}K{\footnote Importieren}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Wenn man von irgendwoher einen [ouml  ]ffentlichen Schl[uuml  ]ssel bekommen hat, 
+sollte man ihn in sein Schl[uuml  ]sselbund aufnehmen. Das wird mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --import [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+erreicht. Wenn man den Dateinamen wegl[auml  ]sst, wird von 
+{\f1 stdin} gelesen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.4 Widerrufen}}
+{}#{\footnote TOC_14}
+{}K{\footnote Widerrufen}
+
+{}#{\footnote GPG_Minihowto_Swiderrufen}
+{}K{\footnote GPG_Minihowto_Swiderrufen}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Es gibt verschiedene Gr[uuml  ]nde, einen alten Schl[uuml  ]ssel zu 
+widerrufen: Er k[ouml  ]nnte in fremde H[auml  ]nde geraten sein, die UID 
+stimmt nicht mehr oder er ist einfach zu klein geworden. In all diesen 
+F[auml  ]llen ist der Befehl der Wahl 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --gen-revoke}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+Damit wird ein Schl[uuml  ]sselwiderruf-Zertifikat 
+erzeugt. {\i Daf[uuml  ]r braucht man den privaten 
+Schl[uuml  ]ssel}, denn sonst k[ouml  ]nnten solche Zertifikate auch 
+von Fremden erzeugt werden. Das hat aber einen Nachteil: Ein 
+Schl[uuml  ]ssel, dessen Mantra ich nicht wei[szlig ], ist offensichtlich 
+nutzlos. Aber weil ich das Mantra nicht wei[szlig ], kann ich ihn nicht 
+widerrufen. Deshalb ist es geschickt, sich gleich bei der Erzeugung 
+des Schl[uuml  ]ssels ein Widerruf-Zertifikat zu erzeugen. Das sollte 
+dann aber sicher verwahrt werden, am besten auf Diskette und auf 
+Papier, damit es nicht in falsche H[auml  ]nde ger[auml  ]t. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.5 Schl[uuml  ]sselbund verwalten}}
+{}#{\footnote TOC_15}
+{}K{\footnote Schl[uuml  ]sselbund verwalten}
+
+{}#{\footnote GPG_Minihowto_Sverwalten}
+{}K{\footnote GPG_Minihowto_Sverwalten}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Der Schl[uuml  ]sselbund ist eine Datei, in der alle Schl[uuml  ]ssel mit 
+den dazugeh[ouml  ]rigen Informationen (bis auf die Ownertrust Werte, was das 
+ist steht in {\uldb Schl[uuml  ]ssel signieren}{\v GPG-Minihowto-Ssignieren}) gespeichert werden. Mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --list-keys}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+k[ouml  ]nnen alle Schl[uuml  ]ssel des [ouml  ]ffentlichen Schl[uuml  ]sselbundes angezeigt 
+werden. Mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1  gpg --list-sigs }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+werden zus[auml  ]tzlich noch die Signaturen angezeigt (siehe {\uldb Schl[uuml  ]ssel signieren}{\v GPG-Minihowto-Ssignieren}). Mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --fingerprint }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+werden die Schl[uuml  ]ssel mit ihren [quot  ]Fingerabdr[uuml  ]cken[quot  ] 
+aufgelistet. Das sind (verh[auml  ]ltnism[auml  ][szlig ]ig) kurze Zahlenfolgen, an denen 
+sich der Schl[uuml  ]ssel identifizieren l[auml  ][szlig ]t. Das kann praktisch sein, um 
+sich [uuml  ]ber Telefon zu vergewissern, da[szlig ] ein [ouml  ]ffentlicher Schl[uuml  ]ssel vom 
+Gespr[auml  ]chspartner stammt. Fingerabdr[uuml  ]cke im Abspann von Email oder 
+Usenet Artikeln zu verschicken ist [uuml  ]brigens nicht sinnvoll. 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --list-secret-keys}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+listet die Schl[uuml  ]ssel des privaten Schl[uuml  ]sselbundes auf. Unterschriften 
+und Fingerabdr[uuml  ]cke von privaten Schl[uuml  ]sseln haben keinen 
+Informationswert.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit dem Befehl  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --delete-key UID bzw. gpg --delete-secret-key }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+kann man Schl[uuml  ]ssel aus dem entsprechenden Schl[uuml  ]sselbund 
+l[ouml  ]schen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Der letzte wichtige Befehl f[uuml  ]r den Umgang mit Schl[uuml  ]sseln 
+lautet 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --edit-key UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+In dem dann folgenden Men[uuml  ] kann man unter anderem das Mantra 
+und das Verfallsdatum [auml  ]ndern, Fingerabdr[uuml  ]cke anzeigen lassen 
+und Schl[uuml  ]ssel signieren, womit wir beim n[auml  ]chsten Abschnitt 
+w[auml  ]ren. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.6 Schl[uuml  ]ssel signieren}}
+{}#{\footnote TOC_16}
+{}K{\footnote Schl[uuml  ]ssel signieren}
+
+{}#{\footnote GPG_Minihowto_Ssignieren}
+{}K{\footnote GPG_Minihowto_Ssignieren}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Wie in der Einleitung erw[auml  ]hnt, ist die Echtheit eines 
+[ouml  ]ffentlichen Schl[uuml  ]ssels die Achillesferse des 
+Systems. Deshalb gibt es die M[ouml  ]glichkeit, Schl[uuml  ]ssel zu 
+unterschreiben. Damit best[auml  ]tigt der Unterzeichnende, da[szlig ] der in der 
+User ID angegeben User tats[auml  ]chlich der Besitzer des Schl[uuml  ]ssels ist.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Nachdem man mit {\f1 gpg --edit-key UID} den zu unterzeichnenden  
+Schl[uuml  ]ssel ausgew[auml  ]hlt hat, kann man ihn mit dem Kommando {\f1 sign} 
+unterschreiben. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\i Unterschreiben Sie nur Schl[uuml  ]ssel von deren Echtheit sie sich [uuml  ]berzeugt 
+haben.} Das kann geschehen, in dem man entweder den Schl[uuml  ]ssel pers[ouml  ]nlich 
+bekommen hat (zum Beispiel auf einer Keysigning Party), oder man [uuml  ]ber Telefon 
+den Fingerprint vergleicht. Man sollte keinen Schl[uuml  ]ssel nur deshalb 
+unterschreiben, weil man den anderen Unterschriften vertraut.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Anhand der Unterschriften und des [quot  ]ownertrusts[quot  ] 
+ermittelt GnuPG die G[uuml  ]ltigkeit des Schl[uuml  ]ssels. Der Ownertrust ist ein 
+Wert mit dem der Benutzer festlegt, in welchem Ma[szlig ]e er dem 
+Schl[uuml  ]sselinhaber zutraut, andere Schl[uuml  ]ssel verl[auml  ][szlig ]lich zu 
+unterzeichnen. Die m[ouml  ]glichen Abstufungen sind [quot  ]gar 
+nicht[quot  ], [quot  ]wei[szlig ] nicht[quot  ], [quot  ]teilweise[quot  ] 
+und [quot  ]vollst[auml  ]ndig[quot  ]. Wenn der Benutzer also einem anderem 
+nicht traut, kann er GnuPG [uuml  ]ber diesen Mechanismus anweisen, dessen 
+Unterschrift zu ignorieren. Der Ownertrust wird nicht im Schl[uuml  ]sselbund 
+gespeichert, sondern in einer separaten Datei.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{4 Verschl[uuml  ]sseln und entschl[uuml  ]sseln}}
+{}#{\footnote TOC_17}
+
+${\footnote Verschl_uuml___sseln_und_entschl_uuml___sseln}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Verschl[uuml  ]sseln und entschl[uuml  ]sseln}
+
+{}#{\footnote GPG_Minihowto_verschl}
+{}K{\footnote GPG_Minihowto_verschl}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Falls man mehrere private Schl[uuml  ]ssel hat, kann man mit der Option 
+{\f1 -u UID} oder{\f1  --local-user UID} einen (oder mehrere)  
+Schl[uuml  ]ssel nach seiner UID ausw[auml  ]hlen. Diese Auswahl ersetzt den im 
+Konfigurationsfile mit dem Befehl {\f1 default-key KeyID} einen 
+Schl[uuml  ]ssel standardm[auml  ][szlig ]ig ausgew[auml  ]hlten Schl[uuml  ]ssel.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit {\f1 -r UID} oder{\f1  --recipient UID} kann man den 
+Empf[auml  ]nger in der Kommandozeile ausw[auml  ]hlen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{4.1 Verschl[uuml  ]sseln}}
+{}#{\footnote TOC_18}
+{}K{\footnote Verschl[uuml  ]sseln}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Das Kommando zum Verschl[uuml  ]sseln lautet 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg -e Empf[auml  ]nger [Datei] }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+oder 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --encrypt Empf[auml  ]nger [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+Es ist sinnvoll, die Dateien auch zu signieren, genaueres siehe {\uldb Signaturen}{\v GPG-Minihowto-signaturen}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{4.2 Entschl[uuml  ]sseln}}
+{}#{\footnote TOC_19}
+{}K{\footnote Entschl[uuml  ]sseln}
+
+Das Kommando zum Entschl[uuml  ]sseln lautet 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg [-d] [Datei] }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+oder 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg [--decrypt] [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Auch hier gilt: Voreingestellt ist Ausgabe auf {\f1 stdout}, man 
+kann aber mit der Option {\f1 -o [Datei]} in eine Datei ausgeben.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{5 Signieren und Signaturen pr[uuml  ]fen}}
+{}#{\footnote TOC_20}
+
+${\footnote Signieren_und_Signaturen_pr_uuml___fen}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Signieren und Signaturen pr[uuml  ]fen}
+
+{}#{\footnote GPG_Minihowto_signaturen}
+{}K{\footnote GPG_Minihowto_signaturen}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Mit dem Befehl  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg -s (oder --sign) [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+unterschreibt man eine Datei mit seinem privaten Schl[uuml  ]ssel. Sie 
+wird dabei gleichzeitig komprimiert, ist dann also nicht mehr ohne 
+weiteres lesbar. Mit  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg --clearsign [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+bel[auml  ]sst man die Datei lesbar, mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg -b (oder --detach-sign) [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+erzeugt man eine Unterschrift in einer separaten Datei. Letzteres ist 
+insbesondere zum signieren von Bin[auml  ]rdateien wie Archiven zu 
+empfehlen. Auch bei diesen Befehlen kann die Option {\f1 --armor} 
+n[uuml  ]tzlich sein.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+[Uuml  ]blicherweise wird sowohl signiert als auch verschl[uuml  ]sselt, 
+der Befehl lautet dann vollst[auml  ]ndig 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg [-u Sender] [-r Empf[auml  ]nger] [--armor] --sign --encrypt [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Die Optionen {\f1 -u} ({\f1 --local-user}) und {\f1 -r}  
+({\f1 --recipient}) funktionieren wie oben erl[auml  ]utert.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Wenn eine verschl[uuml  ]sselte Datei signiert ist, so wird beim 
+Entschl[uuml  ]sseln die Signatur mitgepr[uuml  ]ft. Die 
+Signatur einer unverschl[uuml  ]sselten Datei pr[uuml  ]ft man mit 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 gpg [--verify] [Datei]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+immer nat[uuml  ]rlich vorausgesetzt, da[szlig ] man im Besitz des 
+entsprechenden [ouml  ]ffentlichen Schl[uuml  ]ssels ist.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{6 Informationsquellen}}
+{}#{\footnote TOC_21}
+
+${\footnote Informationsquellen}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Informationsquellen}
+
+{}#{\footnote GPG_Minihowto_Informationsquellen}
+{}K{\footnote GPG_Minihowto_Informationsquellen}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.1 GnuPG}}
+{}#{\footnote TOC_22}
+{}K{\footnote GnuPG}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Die \url{GnuPG  Homepage} 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Die GnuPG Mailingliste. Inklusive Archiv und Beschreibung auf 
+der \url{GnuPG  Homepage} zu finden. 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Die beiliegende Dokumentation. Bisher (Stand 0.9.2) noch nicht 
+sehr umfangreich, aber eben unverzichtbar. Nicht vergessen:  
+
+\par\pard\sb200\keep\li1500{}{\f1 \line
+\line
+\par\pard\sb200\keep\li2000{}{\f1 gpg --help }\line
+\par\pard\sb200\li1500{}}
+\par\pard\sb200\li1000{}  
+hilft! 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.2 PGP}}
+{}#{\footnote TOC_23}
+{}K{\footnote PGP}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+PGP ist das [auml  ]ltere und (noch) weiter verbreitete Kryptographie 
+Programm. Deshalb gibt es dazu auch viel mehr Informationen, sie sind 
+aber teilweise so allgemein, da[szlig ] sie auch f[uuml  ]r GnuPG 
+n[uuml  ]tzlich sein k[ouml  ]nnen.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Die \url{Internationale PGP Homepage}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Die \url{PGP DH vs. RSA FAQ} gibt Informationen [uuml  ]ber die 
+verwendeten Algorithmen.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.3 Keyserver}}
+{}#{\footnote TOC_24}
+{}K{\footnote Keyserver}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7}  \url{Keyserver.net}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7}  \url{urlnam}
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.4 B[uuml  ]cher}}
+{}#{\footnote TOC_25}
+{}K{\footnote B[uuml  ]cher}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} B. Schneier, [quot  ]Applied Cryptography, Second 
+Edition[quot  ], Wiley, 1996 
+{}#{\footnote BSchneier}
+{}K{\footnote BSchneier}
+
+ Deutsche Ausgabe 
+unter dem Titel [quot  ]Angewandte Kryptographie[quot  ], Addison-Wesley, 1996
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{7 [Uuml  ]ber dieses Dokument }}
+{}#{\footnote TOC_26}
+
+${\footnote _Uuml___ber_dieses_Dokument}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote [Uuml  ]ber dieses Dokument}
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Copyright [copy  ] 1999 Michael Fischer v. Mollard
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Dieses Dokument wird unter den Bedingungen der Gnu Public License (GPL) 
+ver[ouml  ]ffentlicht. Alle Angaben sind nach bestem Wissen, aber 
+nat[uuml  ]rlich ohne Gew[auml  ]hr (no warranty in any kind).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{7.1 Versionen}}
+{}#{\footnote TOC_27}
+{}K{\footnote Versionen}
+
+Version 0.1 war die erste [ouml  ]ffentliche Version dieses 
+Dokumentes. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b [Auml  ]nderungen in Version 0.1.1}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Neuer Abschnitt [quot  ]Grenzen der Sicherheit[quot  ]
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Erkl[auml  ]rung der Signatur verbessert
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} kleinere Detailverbesserungen nach Hinweisen von Werner Koch (danke!)
+ 
+Alle [Auml  ]nderungen sind in einem diff File aufgef[uuml  ]hrt, das man an 
+gleicher Stelle wie  
+\url{dieses Dokument} 
+finden kann.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Anregungen, Kritik, Verbesserungen und Erweiterungen 
+einfach an Michael Fischer v. Mollard ({\f1 \url{fischer@math.uni-goettingen.de}}) senden, damit dieses 
+Dokument weiter verbessert werden kann.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+}

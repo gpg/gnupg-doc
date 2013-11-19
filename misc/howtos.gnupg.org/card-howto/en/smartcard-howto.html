@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>How to use the Fellowship Smartcard</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="next" href="ch01.html" title="Chapter 1. Introduction" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">How to use the Fellowship Smartcard</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch01.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="book" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="id2408793"></a>How to use the Fellowship Smartcard</h1>
+          </div>
+          <div>
+            <h2 class="subtitle">The GnuPG Smartcard HOWTO</h2>
+          </div>
+          <div>
+            <div class="authorgroup">
+              <div class="author">
+                <h3 class="author"><span class="firstname">Rebecca</span> <span class="surname">Ehlers</span></h3>
+              </div>
+              <div class="author">
+                <h3 class="author"><span class="firstname">Thorsten</span> <span class="surname">Ehlers</span></h3>
+              </div>
+              <div class="author">
+                <h3 class="author"><span class="firstname">Werner</span> <span class="surname">Koch</span></h3>
+              </div>
+              <div class="author">
+                <h3 class="author"><span class="firstname">Matthias</span> <span class="surname">Kirschner</span></h3>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="copyright">Copyright © 2005 Free Software Foundation Europe e.V.</p>
+          </div>
+          <div>
+            <div class="legalnotice"><a id="id2509673"></a>
+            This file is free software; as a special exception the authors give unlimited permission to copy and/or distribute it, with or without modifications, as long as this notice is preserved.
+            This file is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY, to the extent permitted by law; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        </div>
+          </div>
+          <div>
+            <p class="pubdate">June 29, 2006</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="chapter">
+              <a href="ch01.html">1. Introduction</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch01.html#id2472312">1.1. The OpenPGP card</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="chapter">
+              <a href="ch02.html">2. Installation for GNU/Linux</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch02.html#id2472151">2.1. Prerequisites</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch02.html#id2472249">2.1.1. Installation of GnuPG</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+              <dt>
+                <span class="section">
+                  <a href="ch02s02.html">2.2. Required Hardware</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch02s02.html#id2519120">2.2.1. A List of tested Readers</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+              <dt>
+                <span class="section">
+                  <a href="ch02s03.html">2.3. Installation of Card Reader</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch02s03.html#id2519429">2.3.1. CCID (Chip Card Interface Description)</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="section">
+                      <a href="ch02s03.html#id2520028">2.3.2. PC/SC (Personal computer/Smart Card)</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+            </dl>
+          </dd>
+          <dt>
+            <span class="chapter">
+              <a href="ch03.html">3. Administrating the Card</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch03.html#id2521300">3.1. Looking at the card</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch03.html#id2521343">3.1.1. Describing the output</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+              <dt>
+                <span class="section">
+                  <a href="ch03s02.html">3.2. Managing PINs</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch03s02.html#id2521670">3.2.1. General Information about PINs</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="section">
+                      <a href="ch03s02.html#id2521711">3.2.2. PIN operations</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+              <dt>
+                <span class="section">
+                  <a href="ch03s03.html">3.3. Initialising the card</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch03s03.html#id2521895">3.3.1. Personalising the card</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="section">
+                      <a href="ch03s03.html#id2521952">3.3.2. Generating keys</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+            </dl>
+          </dd>
+          <dt>
+            <span class="chapter">
+              <a href="ch04.html">4. Daily usage</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch04.html#id2523263">4.1. Signing and encrypting files</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="ch04s02.html">4.2. Signing and encrypting mails</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="chapter">
+              <a href="ch05.html">5. Advanced Features</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch05.html#id2523191">5.1. Moving an existing key to the card</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="ch05s02.html">5.2. Using the card only for subkeys</a>
+                </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="section">
+                      <a href="ch05s02.html#id2523217">5.2.1. What are Subkeys?</a>
+                    </span>
+                  </dt>
+                  <dt>
+                    <span class="section">
+                      <a href="ch05s02.html#id2523237">5.2.2. Moving a Subkey to the Card</a>
+                    </span>
+                  </dt>
+                </dl>
+              </dd>
+            </dl>
+          </dd>
+          <dt>
+            <span class="appendix">
+              <a href="apa.html">A. Appendix</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="apa.html#id2523061">A.1. A small OpenPGP card FAQ</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="glossary">
+                  <a href="apa.html#id2524144">Glossary</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="bibliography">
+                  <a href="apa.html#id2524218">Further resources</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch01.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right" valign="top"> Chapter 1. Introduction</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

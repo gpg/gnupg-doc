@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.2. Managing PINs</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="ch03.html" title="Chapter 3. Administrating the Card" />
+    <link rel="prev" href="ch03.html" title="Chapter 3. Administrating the Card" />
+    <link rel="next" href="ch03s03.html" title="3.3. Initialising the card" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">3.2. Managing PINs</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td>
+          <th width="60%" align="center">Chapter 3. Administrating the Card</th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch03s03.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="section" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="id2521664"></a>3.2. Managing PINs</h2>
+          </div>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2521670"></a>3.2.1. General Information about PINs</h3>
+            </div>
+          </div>
+        </div>
+        <p>A new card has the following default PINs stored.  The AdminPIN's value is 12345678.  The normal PIN is 123456.  Please note that the second PIN is two digits shorter.</p>
+        <p>You might have received a card with a few data
+            fields already personalized (e.g. the FSFE Fellowship
+            card).  Please check the documentation which comes with
+            this card to see whether the default PINs are really to be
+            used or from where to get the actual PINs.  Often the
+            AdminPIN is send by separate mail.</p>
+        <p>If a wrong PIN has been entered three times in a row the card will be blocked.  It can be unblocked with the AdminPIN.</p>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Warning</h3>
+          <p>It is also important to know that <span class="emphasis"><em>entering a wrong AdminPIN three times in a row destroys(!) the card</em></span>.  There is no way to unblock the card when a wrong AdminPIN has been entered three times.</p>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2521711"></a>3.2.2. PIN operations</h3>
+            </div>
+          </div>
+        </div>
+        <p>To access the PIN operations enter <strong class="userinput"><code>gpg --change-pin</code></strong>.  Different options for PIN management will be displayed.  To select a command enter the number displayed in front of the command.</p>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2521728"></a>Changing PIN</h4>
+              </div>
+            </div>
+          </div>
+          <p>You are first asked to enter the current PIN.  Afterwards you are asked to enter the new PIN.  Then you are asked to re-enter the new PIN.  The cursor will not move forward to indicate your typing.</p>
+          <p>The PIN has been successfully changed.  The AdminPIN is not affected by these changes.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2521747"></a>Unblocking PIN</h4>
+              </div>
+            </div>
+          </div>
+          <p>Use this command to unblock a blocked PIN.</p>
+          <p>First you are asked for the AdminPIN and then to enter and re-enter a new PIN.  The AdminPIN is not affected by this procedure.</p>
+          <p>Please note that an AdminPIN cannot be unblocked.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2521767"></a>Changing AdminPIN</h4>
+              </div>
+            </div>
+          </div>
+          <p>Changing the AdminPIN is the same procedure as changing the PIN.  Enter the current AdminPIN.  Then enter a new AdminPIN and re-enter it.  The normal PIN is not affected by these changes.</p>
+        </div>
+        <p>PINs can also be managed via <strong class="userinput"><code>--card-edit</code></strong> commands.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="ch03.html">Up</a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch03s03.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">Chapter 3. Administrating the Card </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> 3.3. Initialising the card</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

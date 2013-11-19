@@ -1,0 +1,202 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-2.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-1.html">Previous</a> <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">1. Khái ni&#7879;m</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">1.1 Mã hoá b&#7857;ng khoá công c&#7897;ng (Public Key
+  Encryption)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Ph&#432;&#417;ng pháp mã hoá c&#7893; &#273;i&#7875;n
+  ch&#7881; s&#7917; d&#7909;ng m&#7897;t&nbsp;Key cho s&#7921; mã hoá. Ng&#432;&#7901;i
+  g&#7917;i s&#7869; mã hoá thông &#273;i&#7879;p c&#7911;a h&#7885;
+  b&#7857;ng Key này. V&#7873; phía ng&#432;&#7901;i nh&#7853;n &#273;&#7875;
+  gi&#7843;i mã hoá thông &#273;i&#7879;p thì h&#7885; c&#361;ng c&#7847;n
+  ph&#7843;i có Key &#273;ó. Nh&#432; v&#7853;y ch&#7855;c ch&#7855;n ng&#432;&#7901;i
+  g&#7917;i s&#7869; ph&#7843;i g&#7917;i cho ng&#432;&#7901;i nh&#7853;n Key
+  &#273;ó. Trên lý thuy&#7871;t b&#7843;n thân key &#273;ó r&#7845;t có
+  th&#7875; s&#7869; b&#7883; m&#7897;t ng&#432;&#7901;i khác chi&#7871;m
+  &#273;&#432;&#7907;c trong quá trình v&#7853;n chuy&#7875;n. N&#7871;u nh&#432;
+  m&#7897;t ng&#432;&#7901;i khác có &#273;&#432;&#7907;c Key &#273;ó thì
+  h&#7885; s&#7869; có th&#7875; gi&#7843;i mã hoá và xem &#273;&#432;&#7907;c
+  n&#7897;i dung thông &#273;i&#7879;p c&#7911;a ng&#432;&#7901;i g&#7917;i. Nh&#432;
+  v&#7853;y tính an toàn và b&#7843;o m&#7853;t cho thông tin không còn
+  n&#7919;a.</font>
+</div>
+<div>
+</div>
+<div>
+  <font face="Arial" size="2">Khoá công c&#7897;ng (Public Keys) &#273;&#432;&#7907;c
+  ra &#273;&#7901;i &#273;&#7875; gi&#7843;i quy&#7871;t v&#7845;n &#273;&#7873;
+  này. Th&#7921;c ch&#7845;t khoá Public Keys là vi&#7879;c s&#7917;
+  d&#7909;ng 2 Keys có liên quan v&#7899;i nhau:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">- <strong><u>Public Key</u></strong>: &#272;&#432;&#7907;c
+  s&#7917; d&#7909;ng &#273;&#7875; mã hoá nh&#7919;ng thông tin mà
+  b&#7841;n mu&#7889;n chia s&#7867; v&#7899;i b&#7845;t c&#7913; ai. Chính vì
+  v&#7853;y b&#7841;n có th&#7875; t&#7921; do phân phát nó cho b&#7845;t
+  c&#7913; ai mà b&#7841;n c&#7847;n chia s&#7867; thông tin &#7903;
+  d&#7841;ng mã hoá.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">- <strong><u>Private Key</u></strong>: &#272;úng
+  nh&#432; cái tên, Key này thu&#7897;c s&#7903; h&#7919;u riêng t&#432;
+  c&#7911;a b&#7841;n và nó &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#273;&#7875;
+  mã hoá thông tin cho m&#7909;c &#273;ích cá nhân c&#7911;a riêng
+  b&#7841;n. Ch&#7881; mình b&#7841;n s&#7903; h&#7919;u nó, Key này không
+  &#273;&#432;&#7907;c phép và không lên phân phát cho b&#7845;t c&#7913;
+  ai.</font>
+</div>
+<div>
+</div>
+<div>
+  <font face="Arial" size="2">Khi c&#7847;n th&#7921;c hi&#7879;n các nhu
+  c&#7847;u mã hoá các thông tin riêng t&#432; c&#7911;a chính mình
+  m&#7897;t cách bí m&#7853;t mà không mu&#7889;n chia s&#7867; thông tin
+  &#7845;y cho b&#7845;t c&#7913; ai. B&#7841;n c&#7847;n ph&#7843;i s&#7917;
+  d&#7909;ng Private Key. Ng&#432;&#7907;c l&#7841;i khi mu&#7889;n mã hoá các
+  thông tin v&#7899;i m&#7909;c &#273;ích chia s&#7867; nó v&#7899;i
+  m&#7897;t s&#7889; &#273;&#7889;i t&#432;&#7907;ng mà b&#7841;n mu&#7889;n
+  chia s&#7867; thông tin b&#7841;n s&#7869; s&#7917; d&#7909;ng Public Key
+  &#273;&#7875; mã hoá chúng r&#7891;i g&#7917;i cho h&#7885;. Sau &#273;ó
+  b&#7843;n thân h&#7885; s&#7869; s&#7917; d&#7909;ng Private Key c&#7911;a chính
+  mình &#273;&#7875; gi&#7843;i mã hoá.</font>
+</div>
+<div>
+</div>
+<div>
+  <font face="Arial" size="2">&#272;i&#7873;u quan tr&#7885;ng &#7903; khái
+  ni&#7879;m này là b&#7841;n phân bi&#7879;t và hi&#7875;u &#273;&#432;&#7907;c
+  tính n&#259;ng và cách s&#7917; d&#7909;ng c&#7911;a 2 lo&#7841;i Keys:
+  Public Key và Private Key.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">1.2 Ch&#7919; ký &#273;i&#7879;n t&#7917;
+  (Digital Signatures)</font>
+</div>
+<div>
+</div>
+<div>
+  <p><font face="Arial" size="2">&#272;&#7875; ch&#7913;ng minh r&#7857;ng
+  m&#7897;t thông &#273;i&#7879;p &#273;ã th&#7921;c s&#7921; &#273;&#432;&#7907;c
+  g&#7917;i b&#7903;i chính ng&#432;&#7901;i g&#7917;i mà không ph&#7843;i là
+  do m&#7897;t k&#7867; khác gi&#7843; m&#7841;o. Khái ni&#7879;m Digital
+  Signatures &#273;&#432;&#7907;c ra &#273;&#7901;i. Khi s&#7917; d&#7909;ng
+  Digital Signatures b&#7841;n s&#7869; ki&#7875;m tra &#273;&#432;&#7907;c tính
+  xác th&#7921;c c&#7911;a m&#7897;t thông &#273;i&#7879;p. Vi&#7879;c
+  s&#7917; d&#7909;ng Digital Signatures s&#7869; gi&#7843;m b&#7899;t nguy c&#417;
+  gi&#7843; m&#7841;o thông &#273;i&#7879;p (&#273;&#7863;c bi&#7879;t là các
+  thông &#273;i&#7879;p gi&#7843; m&#7841;o các hãng Security, Software
+  l&#7899;n v&#7899;i m&#7909;c &#273;ích phát tán Virus hay Trojan t&#7899;i
+  b&#7841;n). B&#7903;i b&#7841;n có th&#7875; d&#7877; dàng xác minh
+  &#273;&#432;&#7907;c thông &#273;i&#7879;p &#273;ó có ph&#7843;i th&#7921;c
+  s&#7921; &#273;&#7871;n t&#7915; &#273;ó hay không ?</font></p>
+  <p><font face="Arial" size="2">Digital Signatures là s&#7921; k&#7871;t
+  h&#7907;p gi&#7919;a Secret Key (khoá bí m&#7853;t) và text. Ti&#7871;p
+  &#273;ó nó s&#7869; s&#7917; d&#7909;ng Public Key c&#7911;a ng&#432;&#7901;i
+  g&#7917;i &#273;&#7875; th&#7849;m tra thông &#273;i&#7879;p. Nó không
+  ch&#7881; ki&#7875;m tra, th&#7849;m &#273;&#7883;nh thông tin v&#7873; ng&#432;&#7901;i
+  g&#7917;i mà nó còn có th&#7875; ki&#7875;m tra c&#7843; n&#7897;i dung
+  c&#7911;a thông &#273;i&#7879;p. Nh&#432; v&#7853;y b&#7841;n s&#7869;
+  bi&#7871;t &#273;&#432;&#7907;c r&#7857;ng thông &#273;i&#7879;p &#273;ó không
+  b&#7883; gi&#7843; m&#7841;o và nó không b&#7883; s&#7917;a &#273;&#7893;i
+  hay can thi&#7879;p vào n&#7897;i dung trong quá trình v&#7853;n
+  chuy&#7875;n.</font></p>
+  <p><font face="Arial" size="4">1.3 M&#7841;ng an toàn (Web Of Trust)</font></p>
+  <p><font face="Arial" size="2">M&#7897;t &#273;i&#7875;m y&#7871;u trong
+  thu&#7853;t toán c&#7911;a Public Key. Cho phép m&#7897;t ng&#432;&#7901;i
+  s&#7917; d&#7909;ng có th&#7875; mang và l&#432;u hành m&#7897;t Public Key
+  v&#7899;i User ID không chính xác. K&#7867; t&#7845;n công có th&#7875;
+  l&#7907;i d&#7909;ng y&#7871;u &#273;i&#7875;m này &#273;&#7875; gi&#7843;i mã
+  và &#273;&#7885;c nh&#7919;ng thông &#273;i&#7879;p c&#7911;a b&#7841;n.
+  K&#7867; t&#7845;n công s&#7869; khai thác nó b&#7857;ng cách s&#7917;
+  d&#7909;ng các Public Key v&#7899;i các thông tin v&#7873; User ID
+  gi&#7843; m&#7841;o trong &#273;ó.</font></p>
+  <p><font face="Arial" size="2">Chính vì v&#7853;y gi&#7843;i pháp PGP (GnuPG
+  - Gnu Privacy Guard) &#273;ã &#273;&#432;&#7907;c ra &#273;&#7901;i &#273;&#7875;
+  gi&#7843;i quy&#7871;t v&#7845;n &#273;&#7873; này. Public Key có th&#7875;
+  &#273;&#432;&#7907;c ký nh&#7853;n b&#7903;i ng&#432;&#7901;i s&#7917;
+  d&#7909;ng khác. Ch&#7919; ký này (Signatures) th&#7915;a nh&#7853;n Key
+  &#273;&#432;&#7907;c s&#7917; d&#7909;ng b&#7903;i UID (User Identification -
+  &#272;&#7883;nh danh ng&#432;&#7901;i dùng) th&#7921;c s&#7921; thu&#7897;c
+  v&#7873; nh&#7919;ng ng&#432;&#7901;i s&#7903; h&#7919;u nó chính th&#7913;c.
+  B&#7841;n có th&#7875; tin t&#432;&#7903;ng vào s&#7921; tin c&#7853;y
+  c&#7911;a Key &#273;ó, khi b&#7841;n tin t&#432;&#7903;ng ng&#432;&#7901;i
+  g&#7917;i Key &#273;ó và b&#7841;n bi&#7871;t ch&#7855;c ch&#7855;n
+  r&#7857;ng Key &#273;ó th&#7921;c s&#7921; thu&#7897;c quy&#7873;n s&#7903;
+  h&#7919;u c&#7911;a ng&#432;&#7901;i g&#7917;i &#273;ó. Ch&#7881; khi
+  b&#7841;n th&#7921;c s&#7921; tin t&#432;&#7903;ng vào Key c&#7911;a ng&#432;&#7901;i
+  ký nh&#7853;n c&#361;ng nh&#432; tin t&#432;&#7903;ng vào Signatures &#273;ó.
+  &#272;&#7875; t&#259;ng thêm tính tin t&#432;&#7903;ng vào Key b&#7841;n có
+  th&#7875; so sánh Finger Print b&#7903;i các kênh &#273;áng tin c&#7853;y&nbsp;</font></p>
+  <p><font face="Arial" size="4">1.4 Nh&#7919;ng danh gi&#7899;i t&#7899;i
+  s&#7921; an toàn (Boundaries to security)</font></p>
+  <p><font face="Arial" size="2">N&#7871;u b&#7841;n có d&#7919; li&#7879;u và
+  b&#7841;n mu&#7889;n gi&#7919; an toàn cho d&#7919; liêuj c&#7911;a
+  b&#7841;n. Khi &#273;ó b&#7841;n c&#7847;n xác &#273;&#7883;nh nó s&#7917;
+  d&#7909;ng thu&#7853;t toán mã hoá nào. B&#7841;n &#273;ang ngh&#297;
+  v&#7873; s&#7921; an toàn m&#7897;t cách t&#7893;ng th&#7875; cho h&#7879;
+  th&#7889;ng c&#7911;a b&#7841;n. Trên lý thuy&#7871;t PGP &#273;&#432;&#7907;c
+  chúng ta coi là an toàn, nh&#432;ng khi b&#7841;n &#273;&#7885;c tài
+  li&#7879;u này &#273;ã có m&#7897;t s&#7889; tính d&#7877; t&#7893;n th&#432;&#417;ng
+  c&#7911;a PGP &#273;&#432;&#7907;c bi&#7871;t &#273;&#7871;n. Trong cu&#7897;c
+  s&#7889;ng không m&#7897;t &#273;i&#7873;u gì có th&#7875; &#273;&#432;&#7907;c
+  coi là tuy&#7879;t &#273;&#7889;i. Tính an toàn c&#7911;a PGP c&#361;ng vây.
+  Nh&#432;ng tôi dám kh&#7859;ng &#273;&#7883;nh v&#7899;i b&#7841;n
+  r&#7857;ng vi&#7879;c t&#7845;n công PGP không ph&#7843;i là vi&#7879;c
+  d&#7877;. &#272;a s&#7889; các cu&#7897;c t&#7845;n công &#273;&#7873;
+  x&#7843;y ra ph&#7847;n l&#7899;n do s&#7921; b&#7845;t c&#7849;n c&#7911;a ng&#432;&#7901;i
+  s&#7917; d&#7909;ng. Ch&#7859;ng h&#7841;n nh&#432; vi&#7879;c &#273;&#7863;t
+  Password không t&#7889;t s&#7869; d&#7851;n &#273;&#7871;n vi&#7879;c Secret
+  Key b&#7883; Crack.&nbsp;Hay m&#7897;t vài nguyên nhân khác m&#7863;c dù
+  khó x&#7843;y ra nh&#432;ng chúng ta không th&#7875; không&nbsp;&#273;&#7873;
+  phòng nh&#432;: PC c&#7911;a b&#7841;n b&#7883; dính Trojan, Keylogger,
+  m&#7897;t ai&nbsp;&#273;ó&nbsp;&#273;&#7885;c các thông tin v&#7873; PGP
+  hi&#7875;n th&#7883; trên màn hình c&#7911;a b&#7841;n...</font></p>
+  <p><font face="Arial" size="2">Nh&#7919;ng s&#7921; kém an toàn tôi &#273;ã
+  nêu &#7903; trên không h&#7873; có ý gì khác ch&#7881; mong b&#7841;n
+  hi&#7875;u r&#7857;ng. Không m&#7897;t công c&#7909; nào có tính an toàn
+  tuy&#7879;t &#273;&#7889;i c&#7843; (PGP c&#361;ng v&#7853;y). B&#7841;n
+  s&#7869; có s&#7921; an toàn tuy&#7879;t &#273;&#7889;i trên h&#7879;
+  th&#7889;ng c&#7911;a mình khi b&#7841;n th&#432;&#7901;ng xuyên &#273;&#7875;
+  ý, th&#7855;t ch&#7863;t và th&#7921;c hi&#7879;n nghiêm túc các chính sách
+  và n&#7897;i quy v&#7873; b&#7843;o m&#7853;t, an toàn h&#7879; th&#7889;ng...</font></p>
+</div>
+
+<hr>
+<p><a HREF="GPGVNHowto-2.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+<a HREF="GPGMiniHowto-1.html">Previous</a> <a HREF="index.htm">Contents</a></font></p>
+
+</body>
+
+</html>

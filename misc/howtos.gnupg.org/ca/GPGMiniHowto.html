@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català)</TITLE>
+ <LINK HREF="GPGMiniHowto-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1>Gnu Privacy Guard (GnuPG) Mini Howto (Català)</H1>
+
+<H2>Michael Fischard v. Mollard
+<A HREF="mailto:fischer@math.uni-goettingen.de">&lt;fischer@math.uni-goettingen.de&gt;</A> (versió original en alemany)<BR>
+Brenno J.S.A.A.F. de Winter 
+<A HREF="mailto:brenno@dewinter.com">&lt;brenno@dewinter.com&gt;</A> (versió en anglès)<BR>
+Horacio 
+<A HREF="mailto:homega@ciberia.es">&lt;homega@ciberia.es&gt;</A> (versió en castellà)<BR>
+Josep Monés i Teixidor 
+<A HREF="mailto:jmones@puntbarra.com">&lt;jmones@puntbarra.com&gt;</A> (versió en català)<BR></H2>Versió 0.1.3, 17 de maig de 2002
+<HR>
+<EM> Aquest document mostra com emprar GNU Privacy Guard
+(GnuPG), un sistema de xifratge de codi obert (programari lliure)
+compatible amb OpenPGP. Per poder mantenir aquest programa totalment
+lliure s'ha evitat l'ús de l'algoritme RSA i d'altres algoritmes
+patentats. El document original el va escriure Michael Fischer v.
+Mollard en alemany. Va ser posteriorment traduït a l'anglès, i
+revisat, per Brenno J.S.A.A.F. de Winter. Finalment, va ser traduït al
+castellà i novament revisat a partir de la versió anglesa. El document
+en català es basa principalment en la darrera revisió de la versió
+anglesa però també inclou la traducció d'un capítol només present en la versió en castellà.</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="GPGMiniHowto-1.html">Conceptes bàsics</A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="GPGMiniHowto-1.html#ss1.1">Xifratge de clau pública</A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="GPGMiniHowto-1.html#ss1.2">Signatures digitals</A>
+<LI><A NAME="toc1.3">1.3</A> <A HREF="GPGMiniHowto-1.html#ss1.3">Anells de confiança </A>
+<LI><A NAME="toc1.4">1.4</A> <A HREF="GPGMiniHowto-1.html#ss1.4">Límits de seguretat</A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="GPGMiniHowto-2.html">Instal·lació </A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="GPGMiniHowto-2.html#ss2.1">Codi font de GnuPG.</A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="GPGMiniHowto-2.html#ss2.2">Configuració </A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="GPGMiniHowto-2.html#ss2.3">Compilació</A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="GPGMiniHowto-2.html#ss2.4">Instal·lació</A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="GPGMiniHowto-3.html">Ús i gestió de les claus</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="GPGMiniHowto-3.html#ss3.1">Generant una clau</A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="GPGMiniHowto-3.html#ss3.2">Exportant claus</A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="GPGMiniHowto-3.html#ss3.3">Important les claus</A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="GPGMiniHowto-3.html#ss3.4">Revocant una clau</A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="GPGMiniHowto-3.html#ss3.5">Administració de les claus</A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="GPGMiniHowto-3.html#ss3.6">Signant les claus</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="GPGMiniHowto-4.html">Xifrant i desxifrant</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="GPGMiniHowto-4.html#ss4.1">Xifrar</A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="GPGMiniHowto-4.html#ss4.2">Desxifrar </A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="GPGMiniHowto-5.html">Signant i verificant signatures</A></H2>
+
+<UL>
+<LI><A NAME="toc5.1">5.1</A> <A HREF="GPGMiniHowto-5.html#ss5.1">Signar</A>
+<LI><A NAME="toc5.2">5.2</A> <A HREF="GPGMiniHowto-5.html#ss5.2">Verificar</A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="GPGMiniHowto-6.html">GnuPG + PGP</A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="GPGMiniHowto-6.html#ss6.1">Ús d'algoritmes <EM>no lliures</EM></A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="GPGMiniHowto-6.html#ss6.2">Signatura digital amb GnuPG</A>
+<LI><A NAME="toc6.3">6.3</A> <A HREF="GPGMiniHowto-6.html#ss6.3">Importar anells de claus de PGP a GnuPG</A>
+<LI><A NAME="toc6.4">6.4</A> <A HREF="GPGMiniHowto-6.html#ss6.4">Emprar anells de claus de PGP amb GnuPG</A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="GPGMiniHowto-7.html">Interfícies gràfiques</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="GPGMiniHowto-7.html#ss7.1">Interfícies gràfiques</A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="GPGMiniHowto-7.html#ss7.2">Programes de correu electrònic </A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="GPGMiniHowto-8.html">Fonts d'informació</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="GPGMiniHowto-8.html#ss8.1">GnuPG</A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="GPGMiniHowto-8.html#ss8.2">PGP</A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="GPGMiniHowto-8.html#ss8.3">Servidors de claus</A>
+<LI><A NAME="toc8.4">8.4</A> <A HREF="GPGMiniHowto-8.html#ss8.4">Llibres</A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="GPGMiniHowto-9.html">A propòsit d'aquest document</A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="GPGMiniHowto-9.html#ss9.1">Versions</A>
+</UL>
+<HR>
+<A HREF="GPGMiniHowto-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

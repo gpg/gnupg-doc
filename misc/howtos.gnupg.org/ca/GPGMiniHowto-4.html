@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): Xifrant i desxifrant</TITLE>
+ <LINK HREF="GPGMiniHowto-5.html" REL=next>
+ <LINK HREF="GPGMiniHowto-3.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-5.html">Next</A>
+<A HREF="GPGMiniHowto-3.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="GPGMinihowto-xifrant"></A> <A NAME="s4">4.</A> <A HREF="GPGMiniHowto.html#toc4">Xifrant i desxifrant</A></H2>
+
+<P>Després d'haver-ho instal·lat i configurat tot tal com voleu,
+podeu començar a xifrar i desxifrar.</P>
+
+<P>És possible que quan vulguem xifrar o desxifrar quelcom, tingueu
+més d'una clau privada en el nostre anell de claus. Si això passa, és
+necessari seleccionar-ne una com activa. Per fer-ho, es pot emprar
+l'opció 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+-u UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>o bé l'opció 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+--local-user UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>També podeu afegir la línia següent al fitxer de configuració
+<CODE>$HOME/.gnupg/options</CODE>:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+default-key UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Si desitgeu indicar l'UID d'un destinatari per xifrar un fitxer amb la
+seva clau, ho podeu fer amb l'opció 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+-r
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>o bé l'opció 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+--recipient
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+
+<H2><A NAME="ss4.1">4.1</A> <A HREF="GPGMiniHowto.html#toc4.1">Xifrar</A>
+</H2>
+
+<P>L'ordre per xifrar és la següent: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg -e [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>o bé: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --encrypt [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>El programa demanarà el UID del destinatari (o dels destinataris, és
+possible posar-ne més d'un). Es pot evitar que el programa ho pregunti
+emprant l'ordre:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$gpg -er [UID del destinatari] [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P><CODE>GnuPG</CODE> generarà un fitxer xifrat amb el nom <CODE>[fitxer].gpg</CODE>.
+També podem emprar l'opció: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+--armor
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>o bé 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+-a
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>perquè el fitxer generat sigui del tipus ASCII de 7 bits. L'ordre
+seria doncs: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg -a -er [UID del destinatari] [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Aquesta ordre generarà un fitxer codificat de nom <CODE>[fitxer].asc</CODE>
+amb el format ASCII de 7 bits. </P>
+
+<P>Heu de tenir en compte que el fet de xifrar un fitxer (o un
+missatge) l'únic que fa és protegir les dades amb un xifratge que
+només pot desfer el destinatari; no protegeix del risc que algú
+intenti suplantar la nostra identitat. Per tal d'evitar-ho, només cal
+signar digitalment tot allò que es xifri (vegeu 
+<A HREF="GPGMiniHowto-5.html#GPGMinihowto-Signatures">Signatures</A>).</P>
+
+<H2><A NAME="ss4.2">4.2</A> <A HREF="GPGMiniHowto.html#toc4.2">Desxifrar </A>
+</H2>
+
+<P>L'ordre per desxifrar és: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg [-d] [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>o bé: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg [--decrypt] [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>En aquest cas no és necessària l'opció, és opcional, ja que <CODE>gpg</CODE>
+utilitza per defecte: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+--decrypt
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>En els casos anteriors, el resultat es mostra a <CODE>stdout</CODE>
+(habitualment la sortida de l'intèrpret d'ordres), però el podeu
+redireccionar amb l'opció:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+-o [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>, on [fitxer] és el nom del fitxer on vulgueu el resultat.</P>
+
+
+<HR>
+<A HREF="GPGMiniHowto-5.html">Next</A>
+<A HREF="GPGMiniHowto-3.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc4">Contents</A>
+</BODY>
+</HTML>

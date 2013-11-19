@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-9" />
+ <TITLE>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe): Kurulum</TITLE>
+ <LINK HREF="GPGMinikNasil-3.html" REL=next>
+ <LINK HREF="GPGMinikNasil-1.html" REL=previous>
+ <LINK HREF="GPGMinikNasil.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMinikNasil-3.html">Sonraki</A>
+<A HREF="GPGMinikNasil-1.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc2">Içerik</A>
+<HR>
+<H2><A NAME="s2">2.</A> <A HREF="GPGMinikNasil.html#toc2">Kurulum</A></H2>
+
+
+<H2><A NAME="ss2.1">2.1</A> <A HREF="GPGMinikNasil.html#toc2.1">GnuPG için Kaynaklar</A>
+</H2>
+
+
+<P>
+<A HREF="http://www.gnupg.org/download.html">GnuPG Anasayfası</A>, resmi 
+indirme sitesidir. Bu konumda yansıma sitelere bağları da bulabilirsiniz.</P>
+<P>Resmi kısıtlamalar yüzünden GnuPG ABD temelli sunuculardan indirilemez. ABD gizlembilim
+ile ilgili yazılımların ihracını kısıtlıyor. Bu yüzden PGP her zaman uluslararası ve
+yerel (ABD için) sürümleri ile bulunur. </P>
+<P>Uluslararası sürüm için GnuPG kaynak kodu basılı kitap biçiminde ABD dışına gönderilmiştir. 
+Avrupa'da (Oslo'da) taranmıştır. Bu konu üzerinde daha fazla bilgiyi 
+<A HREF="http://www.pgpi.com">Uluslararası PGP Anasayfası</A> adresinden bulabilirsiniz.</P>
+
+<P>Eğer sisteminizde zaten PGP veya GnuPG'nin kuruluysa, dosyanın imzasını kontrol etmelisiniz. 
+(bakın 
+<A HREF="GPGMinikNasil-5.html#GPG-Minihowto-signatures">İmzalar</A>)</P>
+
+<H2><A NAME="ss2.2">2.2</A> <A HREF="GPGMinikNasil.html#toc2.2">Yapılandırma</A>
+</H2>
+
+<P>GnuPG'yi Debian paketi olarak, RPM paketi olarak (RedHat Packet Manager) veya kaynak
+kodu olarak elde edebilirsiniz. 
+GnuPG en son Fedora/RedHat Linux dağıtımlarında bulunmaktadır. 
+GnuPG'nin sisteminizde kurulu olup olmadıgını aşağıdaki komutu kullanarak kontrol
+edebilirisniz:
+<BLOCKQUOTE><CODE>
+<PRE>
+rpm -q gnupg
+</PRE>
+</CODE></BLOCKQUOTE>
+  </P>
+<P>Paketler Linux platformaları için gerekli olan ikili dosyaları yüklerler. GnuPG'yi farklı
+bir platform için kullanmak isterseniz, onu kendiniz derlemek zorundasınız. Farklı platformalar
+için aternatif kurma yöntemlerini genel kullanıma sunmanız sevindirici olabilir.</P>
+
+<P>Geliştirmenin büyük bir kısmı Linux (x86) üzerinde olduğu için, diğer sistemlere
+çevirimi problem olarak görülmemiştir. GnuPG'nin desteklediği işletim sistemler için 
+<A HREF="http://www.gnupg.org">GnuPG Anasayfasına</A> bakabilirsiniz. Aşağıda
+anlatılan işlemler platforma bağımlı değildir. Bu işlemleri GnuPG'yi kaynak
+kodu tar dosyasından kurmak için kullanabilirsiniz.</P>
+
+<P>Tar dosyasını aşağıdaki kommut ile açın:
+Gzip ile sıkıştırılmış olanlar için:
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Bzip2 ile sıkıştırılmış olanlar için:
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvjf gnupg-?.?.?.tar.bz2
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Açtıktan sonra, kaynak kodunun bulunduğu dizine girin ve aşağıdaki komutu 
+çalıştırın:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+  </P>
+<P>Bunu yaparkan özel bir şey olmaz. </P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Komutu ile derleme için geçerli yapılandırma ayarlarını görebilirsiniz. Eğer yerelleştirme 
+ile alakalı bir sorun oluşursa (Gettext), <CODE>--with-included-gettext</CODE> seçeneğini
+kullanarak kaynak kodunda bulunan başka bir sürümü kullanabilir ya da <CODE>--disable-NLS</CODE>
+seçeneği ile kapatabilirsiniz.</P>
+
+<H2><A NAME="ss2.3">2.3</A> <A HREF="GPGMinikNasil.html#toc2.3">Derleme</A>
+</H2>
+
+<P>Bundan sonra derlemek için aşağıdaki komutu kullanabiliriz:
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+ </P>
+<P>Bu sorunsuz çalışmalıdır. Eğer bir sorun olursa burada anlatıldığı sırada belirtilen
+adımları uygulayabilirsiniz: Öncelikle sorunu kendiniz çözmeyi deneyin (tabi ki mevcut
+belgeleri kullanarak).
+Daha sonra sorunun belirtilen hatalar arasında olup olmadığını kontrol edin (http://www.gnupg.org
+adresindeki BUGS kontrol dosyasını kullanarak). Bildiğiniz birisine danışın ya da yardım alın. 
+Eğer bu adımların hiçbiri sorununuzu çözmüyorsa GnuPG posta listesine sorununuzu yöneltin (bakın 
+<A HREF="GPGMinikNasil-7.html#GPG-Minihowto-Informationsources">Bilgi kaynakları</A>. Eğer sorun yol kaynaklı ise
+<CODE>make clean</CODE> komutunu çalıştırın, daha sonra <CODE>configure</CODE> komutunu tekrar çalıştırın
+ve tekrar derlemeyi deneyin. Eğer bu da çalışmazsa paniklemenin vakti geldi demektir.</P>
+
+<H2><A NAME="ss2.4">2.4</A> <A HREF="GPGMinikNasil.html#toc2.4">Kurulum</A>
+</H2>
+
+<P>Programları kesin olarak kurmak ve kılavuz sayfalarını kurma dizinlerine kopyalamak
+için aşağıdaki komutu yazın:
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Eğer kurulum dizinini ./configure kullanırken değiştirmediyseniz <CODE>usr/local/share/gnupg/</CODE>
+kurulum dizini olacaktır. Bu dizini <CODE>options.skel</CODE> dosyasi içinde bulabilirsiniz. 
+<CODE>options.skel</CODE> dosyasında değişiklik yapabilirsiniz ve <CODE>~/.gnupg/options</CODE> 
+içine kopyalarsanız uygun düzenlemeler standart olarak kullanılır. Kopyalama <CODE>~/.gnupg/</CODE> 
+yaratılırken kendiliğinden olabilir. Mümkün olan bütün seçenekler çok iyi belgelendirilmiştir
+o yüzden bir daha burada açıklamak çok kullanışlı olmaz.</P>
+
+<P>GnuPG'yi suid kipli root olarak çalıştırabilirsiniz. Böylelikle program süper 
+kullanıcının tüm yetkilerine sahip bir şekilde çalışır. Bu sayede programın bazı
+bölümlerinin harici olarak saklanmasını ve başkaları tarafından okunmasını 
+engellemiş olursunuz. Burada bu riskin değerini yargılamak pek uygun değildir. Fakat
+programı suid kipinde root olarak çalıştırırsanız truva atı tehlikesine karşı 
+dikkatli olmalısınız. Çünkü süper kullanıcı olarak çalışan truva atları tüm
+sisteme zarar verebilir. Eğer bu nedenden (veya herhangi başka bir nedenden) GnuPG'yi
+suid kipinde root olarak çalıştırmak istemiyorsanız, programdaki uyarıyı kapatmak
+için <CODE>~/.gnupg/options</CODE> içinde <CODE>no-secmem-warning</CODE> seçeneğini
+ayarlayın.</P>
+
+
+<HR>
+<A HREF="GPGMinikNasil-3.html">Sonraki</A>
+<A HREF="GPGMinikNasil-1.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc2">Içerik</A>
+</BODY>
+</HTML>

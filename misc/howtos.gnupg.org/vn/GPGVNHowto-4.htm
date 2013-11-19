@@ -1,0 +1,155 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-5.htm"><font size="2" face="Arial">Next</font></a><font size="2" face="Arial">
+  <a HREF="GPGVNHowto-3.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">4. Mã hoá và gi&#7843;i mã hoá (Encrypt And
+  Decrypt)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Sau khi m&#7885;i công vi&#7879;c nh&#432; cài
+  &#273;&#7863;t và c&#7845;u hình &#273;ã xong xuôi. Bây gi&#7901; chúng
+  ta b&#7855;t &#273;&#7847;u xem xét &#273;&#7871;n tính n&#259;ng chính
+  c&#7911;a GnuPG là mã hoá và gi&#7843;i mã hoá.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n c&#7847;n bi&#7871;t r&#7857;ng trong quá
+  trình mã hoá và gi&#7843;i mã hoá không ch&#7881; c&#7847;n Public Key
+  và Secret Key c&#7911;a b&#7841;n mà còn c&#7847;n &#273;&#7871;n Public
+  key c&#7911;a nh&#7919;ng ng&#432;&#7901;i mà b&#7841;n mu&#7889;n trao
+  &#273;&#7893;i d&#7919; li&#7879;u v&#7899;i h&#7885; m&#7897;t cách an toàn.
+  Khi mã hoá m&#7897;t &#273;&#7889;i t&#432;&#7907;ng d&#7919; li&#7879;u cho
+  ng&#432;&#7901;i khác thì b&#7841;n s&#7869; ph&#7843;i ch&#7885;n chính
+  Public Key c&#7911;a h&#7885; &#273;&#7875; mã hoá nó. Sau &#273;ó
+  g&#7917;i cho h&#7885;, h&#7885; s&#7869; dùng chính Secret Key c&#7911;a mình
+  &#273;&#7875; gi&#7843;i mã hoá d&#7919; li&#7879;u mà b&#7841;n &#273;ã mã
+  hoá b&#7857;ng chính Public Key c&#7911;a h&#7885;. Chính vì v&#7853;y ph&#432;&#417;ng
+  pháp mã hoá d&#7919; li&#7879;u này t&#7887; ra r&#7845;t an toàn. Tuy
+  &#273;&#7875; quá trình này di&#7877;n ra nh&#432; ý mu&#7889;n , tr&#432;&#7899;c
+  h&#7871;t b&#7841;n c&#7847;n ph&#7843;i có Public Key c&#7911;a h&#7885;,
+  ti&#7871;p &#273;ó b&#7841;n c&#7847;n ph&#7843;i b&#7893; xung Public Key
+  c&#7911;a h&#7885; vào Database Key c&#7911;a b&#7841;n.</font>
+</div>
+<div>
+  <font size="4">&nbsp;</font>
+</div>
+<div>
+  <font face="Arial" size="4">4.1 Mã hoá (Encrypt)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; mã hoá d&#7919; li&#7879;u
+  b&#7841;n dùng l&#7879;nh</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg -e Recipient [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">hay</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --encrypt Recipient [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">L&#432;u ý: Recipient chính là tên c&#7911;a
+  ng&#432;&#7901;i mà b&#7841;n mu&#7889;n trao &#273;&#7893;i thông tin mã
+  hoá v&#7899;i h&#7885;. Tr&#432;&#7899;c khi mu&#7889;n mã hoá d&#7919;
+  li&#7879;u và trao &#273;&#7893;i v&#7899;i h&#7885; b&#7841;n ph&#7843;i có
+  và &#273;ã b&#7893; xung Public Key c&#7911;a h&#7885; vào Database Key
+  c&#7911;a b&#7841;n. Nói m&#7897;t cách d&#7877; hi&#7875;u tôi &#273;ã dùng
+  chính Public Key c&#7911;a h&#7885; &#273;&#7875; mã hoá d&#7919;
+  li&#7879;u r&#7891;i g&#7917;i l&#7841;i cho h&#7885;.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">4.2 Gi&#7843;i mã hoá (Decrypt)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Quá trình gi&#7843;i mã hoá thì &#273;&#417;n
+  gi&#7843;n h&#417;n, sau khi nh&#7853;n &#273;&#432;&#7907;c d&#7919;
+  li&#7879;u &#273;ã mã hoá c&#7911;a tôi g&#7917;i cho. V&#7873; phía ng&#432;&#7901;i
+  nh&#7853;n n&#7871;u h&#7885; mu&#7889;n gi&#7843;i mã hoá, h&#7885;
+  ch&#7881; vi&#7879;c dùng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg -d [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">hay</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --decrypt [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Th&#7921;c ch&#7845;t c&#7911;a quá trình
+  gi&#7843;i mã hoá d&#7919; li&#7879;u là ng&#432;&#7901;i nh&#7853;n
+  s&#7869; dùng chính Secret Key c&#7911;a h&#7885; &#273;&#7875; gi&#7843;i mã
+  hoá d&#7919; li&#7879;u mà ta &#273;ã mã hoá b&#7857;ng chính Public Key
+  c&#7911;a h&#7885;. D&#297; nhiên, khi h&#7885; mu&#7889;n trao &#273;&#7893;i
+  d&#7919; li&#7879;u mã hoá b&#7857;ng GnuPG v&#7899;i tôi thì h&#7885; c&#361;ng
+  làm nh&#7919;ng vi&#7879;c t&#432;&#417;ng t&#7921; nh&#432; &#273;ã nêu
+  &#7903; trên &#273;&#7889;i v&#7899;i tôi.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; s&#7917; d&#7909;ng thêm
+  tu&#7923; ch&#7885;n &quot;-o&quot; &#273;&#7875; xu&#7845;t n&#7897;i dung
+  gi&#7843;i mã hoá d&#7919; li&#7879;u ra m&#7897;t file &#7903; bên ngoài</font>
+  <hr>
+  <p><a HREF="GPGVNHowto-5.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-3.htm">Previous</a> <a HREF="index.htm">Contents</a></font></p>
+</div>
+
+</body>
+
+</html>

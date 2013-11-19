@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-9" />
+ <TITLE>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe): Arayüzler</TITLE>
+ <LINK HREF="GPGMinikNasil-7.html" REL=next>
+ <LINK HREF="GPGMinikNasil-5.html" REL=previous>
+ <LINK HREF="GPGMinikNasil.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMinikNasil-7.html">Sonraki</A>
+<A HREF="GPGMinikNasil-5.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc6">Içerik</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-frontends"></A> <A NAME="s6">6.</A> <A HREF="GPGMinikNasil.html#toc6">Arayüzler</A></H2>
+
+<P>GnuPG kullanırken hayatı çok daha kolaylaştırmak için GnuPG şifrelemesini destekleyen
+ya da kullanan bir çok program seçeneğiniz vardır. Anahtar yönetimini fare tıklamaları
+ile yapabileceğiniz grafik arayüzleri ve bir çok MUA (Posta Kullanıcı Aracı) size 
+E-postalarınızı imzalama ve şifreleme olanağını sağlar. </P>
+<P>Neredeyse bütün arayüzlerin bulunduğu bir listeyi 
+<A HREF="www.gnupg.org/(en)/related_software/frontends.html">GnuPG Arayüzleri</A> sayfasından edinebilirsiniz.</P>
+
+<H2><A NAME="ss6.1">6.1</A> <A HREF="GPGMinikNasil.html#toc6.1">Grafik arayüzleri</A>
+</H2>
+
+
+<H3>GPA</H3>
+
+
+<P>
+<A HREF="http://www.gnupg.org/gpa.html">GPA</A>, <EM>GNU Güvenlik
+Asistanı</EM> GNU Privacy Guard (GnuPG) için grafik arayüzüdür. Bu standart bir 
+grafik arayüzüdür, ve GnuPG projesi içinde bulunur. GPA ile, anahtar halkalarınızı
+görüntüleyebilir, anahtarları içe ve dışa aktarabilir, yeni anahtar oluşturabilir, 
+anahtar özelliklerini düzenleyebilir ve belgeleri; şifreleyebilir, imzalayabilir veya şifresini
+çözebilirsiniz.
+GPA'yı kurmak çok kolaydır. Tar dosyasını indirin, açın ve her zamanki komutları kullanın:
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure; make; make install.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Programı 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpa
+</PRE>
+</CODE></BLOCKQUOTE>
+ yazarak çalıştırın.</P>
+
+<H3>Seahorse</H3>
+
+<P>
+<A HREF="http://seahorse.sourceforge.net/">Seahorse</A> GNOME için GnuPG
+arayüzüdür. Metinleri ve dosyarı imzalamak, şifrelemek, kontrol etmek, ve şifresini
+çözmek için kullanılır. Metinler panodan ya da kendisinde bulunan düzenleyici içine
+yazılabilir. Searhorse ayrıca anahtar halkanızdaki anahtarın hemen hemen tüm 
+özelliklerini düzenleyebileceğiniz bir anahtar yöneticisidir. Searhorse'u kaynak 
+tar dosyasından ya da Debian/RPM paketinden yükleyebilirsiniz. 
+Kaynaktan kurulum diğer paketlerde olduğu gibidir. İndirin, tar'ı açın, 
+configure ve make install komutlarını kullanın. 
+Kurulum Searhorse'u <CODE>/usr/local</CODE> içine koyar ve Gnome 'Uygulamalar' menüsüne
+bir öğe ekler.</P>
+
+<H3>KGPG</H3>
+
+<P>
+<A HREF="http://devel-home.kde.org/~kgpg/index.html">KGPG</A> KDE temelli
+bir arayüzdür. KGPG anahtar imzalamayı, içe ve dışa aktarımını destekler. Ayrıca 
+konquerer gibi araçlar ile etkileşimli çalışabilir.</P>
+
+<H2><A NAME="ss6.2">6.2</A> <A HREF="GPGMinikNasil.html#toc6.2">E-posta programları</A>
+</H2>
+
+<P>Çoğu popüler E-posta programı (ya da MUA'lar) GnuPG'yi destekler. Bunlardan 
+bir kaçı şunlardır:</P>
+<P>
+<UL>
+<LI>Evolution</LI>
+<LI>Mozilla</LI>
+<LI>Pine</LI>
+<LI>Kmail</LI>
+<LI>Eudora</LI>
+<LI>Mutt</LI>
+<LI>exmh</LI>
+</UL>
+</P>
+<P>Muhtemelen çok daha fazlası mevcuttur. Ancak hepsini denemek pek mümkün değil.</P>
+<P>Posta programınızda GnuPG desteğini kullanmak size gönderilen genel anahtarınızla
+şifrelenmiş mektupların şifresini çözmenizi, iletilerinizi alıcının gönderenin
+siz olduğundan emin olması için imzalamanızı, ve alıcıların genel anahtarı ile 
+mektuplarını şifreleyebilmenizi sağlar.</P>
+
+<H3>EvolutionEvolution, Gnome için gelişmiş bir eposta programıdır. Bütünleşmiş GnuPG desteğinesahiptir. Evolution için ayarları Posta Hesaplarında her posta hesabına göre farklışekilde yapabilirsiniz. Evolution mektupları şifreleme/şifresini çözme, imzalama,gelen mektupların kimlik doğrulamasını yapmak gibi işleri kendiliğinden yapabilir. </H3>
+
+<H3>Mozilla ve Enigmail</H3>
+
+
+<P>Mozilla GnuPG'yi kendisi desteklemez. Mozilla ile GnuPG kullanmak için
+<A HREF="http://enigmail.mozdev.org/">EnigMail</A> gibi bir eklenti
+yüklemelisiniz. EnigMail Mozilla/Netscape için eklentidir ve popüler GPG ve
+PGP yazılımlarını ile şifrelemek ve şifre çözmek için kullanılır. EnigMail 
+gönderme esnasında şifreleyebilir/imzalayabilir, ve ayrıca gelen mektupların
+şifresini çözebilir/kimlik doğrulaması yapabilir. Genel anahtarların
+içe aktarımı ve dışa aktarımını yapabilir.</P>
+
+
+<P>EnigMail'i yüklemek için 
+<A HREF="http://enigmail.mozdev.org/download.html"> EnigMail indirme</A> konumuna gidebilir ve size uygun olan Mozilla sürümü seçebilirsiniz.
+EnigMail bir eklenti olarak Mozilla tarafından kurulacaktır.</P>
+<P>Eski sürümler ya da farklı platformlar için EnigMail'i derlemeniz gerekebilir.</P>
+
+
+<H3>Kmail</H3>
+
+<P>Kmail, KDE için bir e-posta programıdır ve bütünleşmiş bir GnuPG ve PGP şifreleme 
+desteğine sahiptir. </P>
+
+<HR>
+<A HREF="GPGMinikNasil-7.html">Sonraki</A>
+<A HREF="GPGMinikNasil-5.html">Onceki</A>
+<A HREF="GPGMinikNasil.html#toc6">Içerik</A>
+</BODY>
+</HTML>

@@ -44,6 +44,9 @@ Redirect /why-not-idea.html  http://www.gnupg.org/faq/why-not-idea.html
 Redirect /howtos/ch/  http://www.gnupg.org/howtos/zh/
 #+END_EXAMPLE
 
+The howtos are symlinked into the www.gnupg.org tree.
+
+
 ** Symlinks
 
 For compatibility with the old webseite it is best to run this script

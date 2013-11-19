@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Firmare e verificare le firme</TITLE>
+ <LINK HREF="GPGMiniHowto-6.html" REL=next>
+ <LINK HREF="GPGMiniHowto-4.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-6.html">Avanti</A>
+<A HREF="GPGMiniHowto-4.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc5">Indice</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-signatures"></A> <A NAME="s5">5.</A> <A HREF="GPGMiniHowto.html#toc5">Firmare e verificare le firme</A></H2>
+
+<P>Per firmare dati con la propria chiave, si usa il comando:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -s (o --sign) [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Durante questa operazione, i dati vengono anche compressi, quindi il
+risultato non sar&agrave; leggibile. Per avere un risultato leggibile si pu&ograve; usare:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --clearsign [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+ </P>
+<P>In questo modo si firmeranno i dati lasciandoli leggibili.</P>
+<P>Con 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -b (o --detach-sign) [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+&egrave; possibile scrivere la firma in un file separato. Questa opzione &egrave; utile
+specialmente per firmare file binari (come ad esempio archivi).
+Anche l'opzione <CODE>--armor</CODE> pu&ograve; tornare utile.</P>
+
+<P>Spesso si troveranno dati cifrati e firmati allo stesso tempo. Il comando
+completo &egrave;:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-u mittente] [-r destinatario] [--armor] --sign --encrypt [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>L'utilizzo delle opzioni <CODE>-u</CODE> (<CODE>--local-user</CODE>) e <CODE>-r</CODE> 
+(<CODE>--recipient</CODE>) &egrave; stato descritto in precedenza.</P>
+
+<P>Quando dei dati cifrati sono stati anche firmati, la firma viene verificata
+dopo aver decifrato i dati. &Egrave; possibile verificare le firme con il comando
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--verify] [dati]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Ovviamente per fare questo &egrave; necessario possedere la chiave pubblica del
+mittente.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-6.html">Avanti</A>
+<A HREF="GPGMiniHowto-4.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc5">Indice</A>
+</BODY>
+</HTML>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Français): Quelques
+données sur les cryptosystèmes</TITLE>
+ <LINK HREF="GPGMiniHowto-2.html" REL=next>
+
+ <LINK HREF="GPGMiniHowto.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-2.html">Page suivante</A>
+Page précédente
+<A HREF="GPGMiniHowto.html#toc1">Table des matières</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Concept"></A> <A NAME="s1">1. Quelques
+données sur les cryptosystèmes</A></H2>
+
+<P>
+<P>
+<H2><A NAME="ss1.1">1.1 Qu'est ce qu'un cryptosystème ?</A>
+</H2>
+<P>
+Les missions essentielles d'un cryptosystème sont au nombre de trois :
+<UL>
+<LI><B>intégrité</B> : le message reçu est indistinguable du message
+envoyé,
+<LI><B>confidentialité</B> : le message est incompréhensible à toute
+personne non autorisée,
+<LI><B>authentification</B> : l'authenticité du message est vérifiable.
+</UL>
+
+On peut donc définir un cryptosystème comme un système assurant la
+confidentialité, l'intégrité et l'authentification de messages
+transitant sur des canaux de communications. Pour certaines
+utilisations, comme l'établissement de contrats ou de preuves, un
+cryptosystème peut aussi devoir assurer la non répudiation de
+messages, c'est à dire assurer qu'il soit impossible à quiconque de
+répudier un de ses messages.
+<P>
+
+
+
+<H2><A NAME="ss1.2">1.2 Qu'est ce qu'un cryptosystème à clef publique
+?</A>
+</H2>
+
+<P>
+<P>Jusqu'en 1976, les cryptosystèmes reposent sur une seule
+clef. Cette clef est utilisé à la fois pour le chiffrement <B>et</B>
+et pour le déchiffrement, de sorte que quiconque possède cette clef est
+capable de lire et d'écrire n'importe quel message chiffré avec cette
+clef. Ces cryptosystèmes posent de fait deux préalables à leur
+utilisation : 
+<OL>
+<LI>l'expéditeur et le destinataire doivent s'échanger la clef de
+chiffrement <B>avant</B> de pouvoir s'échanger des messages 
+chiffrés,
+<LI>l'échange de la clef nécessite l'existence d'un canal de
+transmission <B>protégé</B> de toute écoute extérieure pour éviter
+qu'un intrus puisse prendre connaissance de la clef de chiffrement.
+</OL>
+
+Ces deux préalables étant très difficiles à satisfaire dans la plupart
+des cas, Whitfield DIFFIE et Martin HELLMAN proposent en 1976 un nouveau
+principe de cryptosystème : la <B>cryptographie à clef
+publique</B>. Les cryptosystèmes de ce type utilise <B>deux clefs</B> aux
+roles bien distincts. La première clef est dite clef publique
+puisqu'elle est connu de tout un chacun. C'est la clef publique du
+destinataire d'un message qui est utilisée pour chiffrer un message à
+son intention. La seconde clef, dite clef privée, est connue seulement
+de son propriétaire et sert à déchiffrer les messages chiffrés avec sa
+clef publique. Le caractère publique de la première clef permet
+l'échange de messages entre deux personnes sans communication directe
+préalable entre les deux parties, ni canal de transmission protégé.
+<P>
+Si la clef privée vient a être découverte par un intrus, le secret des
+messages chiffrés avec cette clef privée et la clef publique
+correspondante est compromis. Le plus grand soin doit donc être apporter
+à la préservation du secret de la clef privée. En particulier, cette
+clef ne doit JAMAIS être communiqué à travers un canal moins
+qu'absolument sûr. Une conséquence est que, sur un plan pratique,
+l'utilisation de GnuPG à travers une connexion réseau est à
+<B>proscrire</B> si ce réseau est un tant soit peu accessible à des
+personnes extérieures. Il va sans dire que la sécurité est une chaine
+dont le niveau est égal à celui de son plus faible maillon.
+<P>
+<H2><A NAME="ss1.3">1.3 Qu'est ce qu'une signature numérique ?</A>
+</H2>
+<P>
+<P>
+Contrairement à ce que son nom peut laisser penser, une signature
+numérique est bien plus que le pendant numérique de la signature
+manuscrite. En effet, la signature numérique est fonction de
+l'expéditeur <B>et</B> du contenu du message. Une signature témoigne
+donc simultannement de l'authenticité de l'origine supposée et de
+l'intégrité d'un message. Par exemple, l'utilisation
+<B>systématique</B> des signatures des paquets ou des patchs installés
+sur votre système réduit considérablement les risques de chevaux de
+Troie.  
+<P>
+Techniquement parlant, une signature numérique n'est rien d'autre
+qu'une clef de hachage calculée sur tout le message et qui est chiffrée
+avec la clef secrète de l'expéditeur *8) 
+Vérifier la signature d'un message revient donc simplement à
+recalculer la clef de hachage à partir du texte déchiffré et à la
+comparer avec la signature déchiffrée à l'aide de la clef publique de
+l'expéditeur supposé. Si les deux clefs sont identiques, la signature
+est dite valide, c'est à dire que l'on peut raisonnablement penser que
+l'expéditeur du message est bien celui qu'il prétend être et que le
+message n'a pas été modifié au cours de sa transmission.
+<P>
+
+<H2><A NAME="ss1.4">1.4 Pourquoi signer une clef publique ?</A>
+</H2>
+<P>
+Le talon d'Achille des cryptosystèmes à clef publique réside dans
+la distribution des clefs publiques. En effet, si un intrus réussi à
+vous faire accepter sa clef publique comme la clef publique d'un de
+vos interlocuteurs, il pourra lire tous vos messages et même y
+répondre en se faisant passer pour votre interlocuteur ! S'il fait
+suivre vos messages à votre interlocuteur en utilisant la véritable
+clef publique de votre interlocuteur, il vous serra en plus très
+difficile de découvrir qu'un intrus lit tous vos messages.
+<P>
+La solution adoptée par <A HREF="GPGMiniHowto-6.html#ss6.2">PGP</A>,
+et donc par GnuPG, consiste à signer les clefs 
+publiques. L'idée est que si vous disposez d'une clef publique en
+laquelle vous avez toute confiance alors vous pouvez étendre votre
+confiance à toutes les clefs publiques signée par cette clef, après
+en avoir <A HREF="GPGMiniHowto-5.html#ss5.2">vérifier</A> la
+signature, bien sûr. Une fois que vous accordez votre confiance à ces
+nouvelles clefs, vous pouvez vous en servir pour vérifier d'autres
+clefs, et ainsi de suite. Le problème se réduit maintenant à comment
+faire confiance à cette première clef. La solution consiste à disposer
+d'un canal de communication assurant l'intégrité et l'authentification
+des messages pour comparer l'empreinte d'une clef publique que vous
+avez reçue à l'empreinte calculée par le proprétaire de la clef
+publique. Ce canal peut, par exemple, être le téléphone ou une
+rencontre directe. 
+<P>
+GnuPG vous permet de modifier le niveau de confiance, variant de 1
+(je ne sais pas) à 4 (confiance totale), de chacune des clefs
+publiques en votre possession. GnuPG sait également calculer
+automatiquement le niveau de confiance d'une clef en fonction des
+niveaux de confiance des signatures de cette clef. Vous devez donc
+n'accorder votre confiance qu'avec le plus grand soin si vous ne
+voulez pas compromettre la sécurité de votre cryptosystème et des
+cryptosystèmes de tous ceux qui vous font confiance ! 
+ 
+<H2><A NAME="ss1.5">1.5 Qu'est ce qu'un certificat de révocation ?</A>
+</H2>
+Lorsqu'une clef ne vous convient plus, que ce soit parce que la clef
+privée a été découverte ou parce que la longueur de la clef s'avère
+trop petite ou pour n'importe quelle autre raison, vous pouvez
+révoquer cette paire de clefs. Un certificat de révocation vous permet
+de faire savoir publiquement que vous n'utilisez plus une de vos
+paires de clefs. Pour éviter que n'importe qui puisse générer un
+tel certificat, ce dernier est signé par la clef privée de la paire à
+révoquer. La validité d'un certificat de révocation est ainsi aisement
+vérifiable par tout un chacun.
+<P>
+
+<H2><A NAME="ss1.6">1.6 Est-il possible de lire mes messages chiffrés
+sans mon accord lorsque j'utilise GnuPG ?</A> 
+</H2>
+<P>
+<P>
+La confidentialité des messages que vous échangez en utilisant GnuPG
+ne dépend évidemment pas seulement de la qualité de GnuPG ou des
+algorithmes choisis, même si cette dernière y est pour beaucoup.  
+L'évaluation du niveau de confidentialité de vos messages doit prendre
+en compte l'<B>ensemble</B> de votre système. Le niveau de
+confidentialité de PGP semble tout à fait raisonnable puisqu'aucune
+histoire d'attaque réussi sur PGP n'a filtré à ce jour. Bien sûr, si
+une entité quelconque a réussi à casser PGP, il est peu probable
+qu'elle l'annonce publiquement mais de nombreux experts ont
+attentivement étudiés les algorithmes utilisés sans y découvrir de
+faille. Cependant, même si PGP semble raisonnablement sûr, il reste de
+nombreuses autres voies d'attaque, principalement par le biais de
+votre système d'exploitation, par exemple en y installant à votre insu
+un programme chargé d'analyser ce que vous tapez sur votre clavier à
+la recherche de votre phrase clef pour l'envoyer ensuite par le réseau
+à une adresse bien précise ! Si vous pensez qu'il s'agit de fiction,
+pensez à la facilité avec laquelle les virus s'installent sur certains
+systèmes d'exploitation. Ces systèmes d'exploitation, même
+très récents, sont particulièrement sensibles à ce type d'attaques et
+sont à <B>proscrire</B> dès lors que le niveau des intrus potentiels
+dépasse celui d'un novice en informatique. Inutile en effet d'utiliser
+un cryptosystème nécessitant une puissance de calcul titanesque pour
+casser un message si votre système d'exploitation est une véritable
+passoire ! Mais votre système d'exploitation n'est pas le seul angle
+d'attaque possible, une phrase clef trop simple à deviner, un
+pense-bête sur votre bureau, l'acceptation d'une clef publique sans
+trop de vérification, etc sont autant de moyens permettant de
+compromettre la confidentialité de vos échanges, et ceci sans parler
+de moyens plus coûteux ou plus sophistiqués. 
+<P>
+Ces remarques n'ont pas pour objet de vous rendre paranoïaque, mais de
+vous faire prendre conscience que la sécurité est un tout. La
+cryptographie n'est la panacée dans ce domaine. Il vous faut aussi
+comprendre que la confidentialité absolue est irréalisable (sauf si
+vous n'avez plus besoin d'accéder au contenu d'un message une fois ce
+message chiffré), mais vous n'avez probablement pas besoin d'un telle
+confidentialité. L'idéal est d'adapter vos moyens à la menace.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-2.html">Page suivante</A>
+Page précédente
+<A HREF="GPGMiniHowto.html#toc1">Table des matières</A>
+</BODY>
+</HTML>

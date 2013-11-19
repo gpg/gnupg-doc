@@ -1,0 +1,148 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-6.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-4.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">5 Quá trình ký nh&#7853;n và ki&#7875;m tra
+  ch&#7919; ký (Sign And Checking Signatures)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Th&#7921;c ch&#7845;t có quá trình ký
+  nh&#7853;n và ki&#7875;m tra ch&#7919; ký nh&#7857;m m&#7909;c &#273;ích t&#259;ng
+  c&#432;&#7901;ng tính an toàn cho các phiên trao &#273;&#7893;i d&#7919;
+  li&#7879;u mã hoá. Nó có tác d&#7909;ng ch&#7913;ng th&#7921;c ng&#432;&#7901;i
+  mã hoá gi&#7843;m kh&#7843; n&#259;ng gi&#7843; m&#7841;o ng&#432;&#7901;i mã
+  hoá và các Key mã hoá.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; ký nh&#7853;n d&#7919; li&#7879;u
+  b&#7857;ng Key c&#7911;a mình b&#7841;n dùng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div style="width: 597; height: 28">
+  <font face="Arial" size="2">gpg -s [Data]<br>
+  </font>
+</div>
+<div style="width: 599; height: 27">
+  <font face="Arial" size="2">hay</font>
+</div>
+<div>
+  <font face="Arial" size="2">gpg --sign [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Khi các k&#7871;t qu&#7843; &#273;&#432;&#7907;c
+  hi&#7875;n th&#7883; không rõ ràng. N&#7871;u nh&#432; b&#7841;n mu&#7889;n
+  có m&#7897;t k&#7871;t qu&#7843; rõ ràng h&#417;n b&#7841;n có th&#7875;
+  s&#7917; d&#7909;ng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --clearsign [Data]<br>
+  </font>
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u b&#7841;n mu&#7889;n tách riêng
+  ch&#7919; ký c&#7911;a mình ra m&#7897;t file riêng bi&#7879;t ? Tính n&#259;ng
+  này th&#432;&#7901;ng &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#273;&#7875;
+  mã hoá nh&#7919;ng file nh&#7883; phân (Binary). B&#7841;n có th&#7875;
+  s&#7917; d&#7909;ng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div style="width: 598; height: 40">
+  <font face="Arial" size="2">gpg -b [Data]<br>
+  </font>
+</div>
+<div>
+  <font face="Arial" size="2">hay</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg&nbsp; --detach-sign [Data]<br>
+  </font>
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; an toàn b&#7841;n v&#7915;a
+  mu&#7889;n mã hoá d&#7919; li&#7879;u l&#7841;i v&#7915;a mu&#7889;n ký
+  nh&#7853;n cho nó...Không v&#7845;n &#273;&#7873; gì c&#7843;! B&#7841;n có
+  th&#7875; s&#7917; d&#7909;ng l&#7879;nh sau:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div style="width: 599; height: 44">
+  <font face="Arial" size="2">gpg -u Sender -r Recipient --armor --sign
+  --encrypt [Data]<br>
+  </font>
+</div>
+<div>
+  <font face="Arial" size="2">hay</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --local-user --recipient --armor --sign
+  --encrypt [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Sau khi quá trình mã hoá và ký nh&#7853;n
+  d&#7919; li&#7879;u &#273;&#432;&#7907;c th&#7921;c hi&#7879;n. Theo&nbsp;nguyên
+  t&#7855;c ch&#7919; ký s&#7869;&nbsp;&#273;&#432;&#7907;c ki&#7875;m tra khi
+  d&#7919; li&#7879;u&nbsp;&#273;&#432;&#7907;c gi&#7843;i mã hoá. B&#7841;n có
+  th&#7875; ki&#7875;m tra ch&#7919; ký c&#7911;a d&#7919; li&#7879;u &#273;ã
+  &#273;&#432;&#7907;c ký nh&#7853;n và mã hoá b&#7857;ng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --verify [Data]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">T&#7845;t nhiên quá trình này ch&#7881;
+  ho&#7841;t &#273;&#7897;ng và cho ra k&#7871;t qu&#7843; chính xác khi
+  b&#7841;n &#273;ã b&#7893; xung Public Key c&#7911;a ng&#432;&#7901;i
+  nh&#7853;n vào Database Key c&#7911;a mình.<br>
+  </font>
+  <hr>
+  <p><a HREF="GPGVNHowto-6.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-4.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.46">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article">
+<div class="titlepage">
+<div><h1 class="title">
+<a name="id2711310"></a>Gnu Privacy Guard (GnuPG) Mini Howto</h1></div>
+<div><h3 class="author">Michael Fischer v. Mollard </h3></div>
+<div><p class="copyright">Copyright © 1999, 2001 Michael Fischer v. Mollard</p></div>
+<div><div class="legalnotice"><p>Dieser Text ist freie Software, er kann gemäß der
+      Bedingungen der GNU Public License Version 2 weiterverteilt und/oder
+      modifiziert werden. Diese Anleitung wurde nach bestem Wissen
+      erstellt, aber der Autor übernimmt keine Haftung für eventuelle
+      Fehler und deren Folgen.</p></div></div>
+<div><p class="pubdate">30. November 2001</p></div>
+<div><div class="revhistory"><table border="1" width="100%" summary="Revision history">
+<tr><th align="left" valign="top" colspan="2"><b>Versionsgeschichte</b></th></tr>
+<tr>
+<td align="left">Version 0.1.1</td>
+<td align="left">12. Februar 1999</td>
+</tr>
+<tr>
+<td align="left">Version 0.2.0</td>
+<td align="left">30. November 2001</td>
+</tr>
+</table></div></div>
+<div><div class="abstract">
+<p><b>Zusammenfassung</b></p>
+<p>
+	Dieses Dokument beschreibt die Grundlagen der Benutzung von
+	GNU Privacy Guard (GnuPG), einem
+	freien, OpenPGP kompatiblen Verschlüsselungssystem, welches
+	hauptsächlich für die Verschlüsselung von Email benutzt wird.
+	Damit das Programm wirklich frei ist, wurde auf patentierte
+	Algorithmen wie IDEA verzichtet.
+	GnuPG gehört zu allen Standard
+	Linux Distributionen und ist auf einer Vielzahl anderer System
+	lauffähig. 
+      </p>
+</div></div>
+<hr>
+</div>
+<div class="toc">
+<p><b>Inhaltsverzeichnis</b></p>
+<dl>
+<dt><a href="#gpg-minihowto-konzepte">Konzepte</a></dt>
+<dd><dl>
+<dt><a href="#id2712696">Public Key Verschlüsselung</a></dt>
+<dt><a href="#id2709417">Digitale Unterschriften</a></dt>
+<dt><a href="#id2711308">Web of trust</a></dt>
+<dt><a href="#id2712941">Grenzen der Sicherheit</a></dt>
+</dl></dd>
+<dt><a href="#id2713000">Installation </a></dt>
+<dd><dl>
+<dt><a href="#id2713003">Bezugsquellen </a></dt>
+<dt><a href="#id2712861">Konfigurieren </a></dt>
+<dt><a href="#id2712754">Kompilieren </a></dt>
+<dt><a href="#id2712804">Einrichten </a></dt>
+</dl></dd>
+<dt><a href="#gpg-minihowto-schluessel">Umgang mit Schlüsseln</a></dt>
+<dd><dl>
+<dt><a href="#id2713400">Erzeugen</a></dt>
+<dt><a href="#id2713518">Exportieren</a></dt>
+<dt><a href="#id2713563">Importieren</a></dt>
+<dt><a href="#gpg-minihowto-swiderrufen">Widerrufen</a></dt>
+<dt><a href="#gpg-minihowto-sverwalten">Schlüsselbund verwalten</a></dt>
+<dt><a href="#gpg-minihowto-ssignieren">Schlüssel signieren</a></dt>
+<dt><a href="#gpg-minihowto-keyserver">Keyserver benutzen</a></dt>
+</dl></dd>
+<dt><a href="#gpg-minihowto-verschl">Verschlüsseln und entschlüsseln</a></dt>
+<dd><dl>
+<dt><a href="#id2713906">Verschlüsseln</a></dt>
+<dt><a href="#id2713933">Entschlüsseln</a></dt>
+</dl></dd>
+<dt><a href="#gpg-minihowto-signaturen">Signieren und Signaturen prüfen</a></dt>
+<dt><a href="#gpg-minihowto-informationsquellen">Informationsquellen</a></dt>
+<dd><dl>
+<dt><a href="#id2714069">GnuPG</a></dt>
+<dt><a href="#id2714150">PGP</a></dt>
+<dt><a href="#id2714178">Keyserver</a></dt>
+<dt><a href="#id2714213">Relevante RFCs</a></dt>
+<dt><a href="#id2714268">Bücher</a></dt>
+</dl></dd>
+<dt><a href="#id2714360">Über dieses Dokument </a></dt>
+<dd><dl><dt><a href="#id2714375">Versionen</a></dt></dl></dd>
+</dl>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="gpg-minihowto-konzepte"></a>Konzepte</h2></div></div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2712696"></a>Public Key Verschlüsselung</h3></div></div>
+<p>
+	Klassische Methoden zur Verschlüsselung benutzen nur einen
+	Schlüssel. Der Sender verschlüsselt seine Nachricht mit diesem
+	Schlüssel, und der Empfänger entschlüsselt ihn mit demselben
+	wieder. Solche Verfahren heißen <i>symmetrische
+	  Verfahren</i>. Damit das funktioniert, muss der
+	Empfänger vorher den Schlüssel bekommen haben, und zwar auf
+	einem sicheren Kommunikationskanal, da sonst Unbefugte in
+	Kenntnis des Schlüssels gelangen könnten. Also braucht man
+	einen sicheren Kommunikationskanal, aber wenn man den hat,
+	braucht man auch meist nicht mehr zu verschlüsseln (wenn man
+	von Anwendungen wie einem Codebuch für den Funkverkehr und
+	ähnlichem absieht).
+      </p>
+<p>
+<i>Public Key Verfahren</i> (auch:
+	<i>asymmetrischen Verfahren</i>) beseitigen
+	dieses Problem, indem zwei Schlüssel erzeugt werden: Der
+	öffentliche, der über beliebige Kommunikationskanäle
+	verschickt werden kann und der private, den nur der Besitzer
+	kennt. Idealerweise ist der private Schlüssel nicht mit dem
+	öffentlichen rekonstruierbar. Der Sender verschlüsselt die
+	Nachricht mit dem öffentlichen Schlüssel des Empfängers.
+	Entschlüsselt wird die Nachricht dann mit dem privaten
+	Schlüssel des Empfängers. Nach diesem Schema kann man demnach
+	effektiv verschlüsseln, ohne über einen sicheren
+	Kommunikationskanal zu verfügen.
+      </p>
+<p>
+	Ein ganz wichtiger Punkt ist aber die Geheimhaltung des
+	privaten Schlüssels. Er darf auf keinen Fall in fremde Hände
+	geraten, auch nicht über das Netz verbreitet werden.
+	GnuPG via <b>telnet</b>
+	zu benutzen, ist zum Beispiel eine ziemlich schlechte
+	Idee. (Eigentlich sollte man <b>telnet</b> sowieso
+	durch <a href="http://www.openssh.org" target="_top"><b>ssh</b></a> ersetzen. )
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2709417"></a>Digitale Unterschriften</h3></div></div>
+<p>
+	Digitale Unterschriften sollen die Authenzität einer Nachricht
+	beweisen. Würden Nachrichten von offizieller Seite signiert,
+	wäre es deutlich schwerer, mit gefälschten Nachrichten Unruhe
+	oder Schaden anzurichten (Echtes Beispiel: Ein Trojaner,
+	verschickt als Patch eines bekannten Webbrowsers).
+      </p>
+<p>
+	Ein digitale Signatur wird mit Hilfe des privaten Schlüssels
+	aus dem Text erzeugt. Diese kann dann vom Empfänger mit dem
+	öffentlichen Schlüssel des Senders überprüft werden. Dabei
+	wird nicht nur der Absender (nur der kennt den privaten
+	Schlüssel) überprüft, sondern auch, ob der Text unverändert
+	angekommen ist.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2711308"></a>Web of trust</h3></div></div>
+<p>
+	Eine Schwachstelle der Public Key Algorithmen ist die
+	Verbreitung der öffentlichen Schlüssel. Ein Benutzer könnte
+	einen öffentlichen Schlüssel mit falscher User ID in Umlauf
+	bringen. Wenn dann mit diesem Schlüssel Nachrichten kodiert
+	werden, kann der Eindringling die Nachrichten dekodieren und
+	lesen. Wenn er sie dann noch mit einem echten öffentlichen
+	Schlüssel kodiert an den eigentlichen Empfänger weiterleitet,
+	fällt dieser Angriff nicht einmal auf. In der Literatur
+	heißen solche Angriffe <i>man-in-the-middle
+	attacks</i>, sie stellen auch bei vielen anderen
+	Protokollen eine Bedrohung dar.
+      </p>
+<p>
+	Die von PGP (und damit auch von
+	GnuPG) gewählte Lösung besteht im
+	Unterschreiben von Schlüsseln. Ein öffentlicher Schlüssel kann
+	von anderen Leuten unterschrieben werden. Diese Unterschrift
+	bestätigt, dass der Schlüssel zu der in der UID angegebenen
+	Person gehört. Der Benutzer kann festlegen, welchen
+	Unterschriften er wie weit traut. Vertrauen ist dabei zwar
+	reflexiv, aber nicht symmetrisch und transitiv. Ein Schlüssel
+	gilt als vertrauenswürdig, wenn er von Leuten unterzeichnet
+	wurde, denen man vertraut. Wenn man Schlüssel unterzeichnet,
+	sollte man sich sicher sein, dass man die Identität
+	desjenigen, dessen Schlüssel man unterschreibt, genau kennt.
+	Eine Möglichkeit ist es, den Schlüssel persönlich bekommen zu
+	haben, eine andere, den Fingerprint über zuverlässige Kanäle
+	zu vergleichen.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2712941"></a>Grenzen der Sicherheit</h3></div></div>
+<p>
+	Wenn man Daten vertraulich halten will, sollte man sich nicht
+	nur Gedanken über die Sicherheit des
+	Verschlüsselungsalgorithmus machen, sondern über die
+	Systemsicherheit allgemein. Die in
+	GnuPG verwendeten Algorithmen
+	gelten gemeinhin als nicht zu knacken. Daraus zu schließen,
+	dass alle verschlüsselten Daten sicher seien, ist naiv. Es
+	gibt auch noch andere Formen von Angriffen. Anfang Februar
+	1999 tauchte zum Beispiel ein Word Trojaner auf, der private
+	PGP Schlüsselbunde auf der Festplatte suchte und via ftp
+	verschickte (Meldung im Heise Newsticker vom 03.02.99). Ein
+	privates Schlüsselbund lässt sich, insbesondere bei schlechtem
+	Passwort, deutlich leichter knacken als eine einzelne Datei.
+      </p>
+<p>
+	Denkbar sind auch Trojaner, die Tastatureingaben weiterleiten.
+	Auf Slashdot wurde erst kürzlich (November 2001) berichtet,
+	dass das FBI tatsächlich versucht, mittels bekannter
+	Schwachstellen Backdoors zu installieren, um Verschlüsselung
+	zu umgehen. Falls man die Nachrichten entschlüsselt auf dem
+	Rechner lagert, können sie dort natürlich auch gelesen werden.
+	Aufwendiger, aber technisch möglich ist es, die Abstrahlung
+	des Monitors zu messen und sichtbar zu machen, so dass der
+	Bildschirminhalt mitgelesen werden kann. Dann nützt es auch
+	nichts, eine verschlüsselte Datei nur zum Lesen zu
+	entschlüsseln. Zum Thema “Überwachung” gibt es den
+	interessanten Artikel “Abhör-Dschungel” aus der
+	c't 5/98, Seite 82 und “In die Röhre geguckt” c't
+	24/98, Seite 90. Wiederum bei Slashdot konnte man im Sommer
+	2001 lesen, dass das FBI im Rahmen einer Ermittlung gegen
+	Mafiosi Wanzen in den Tastaturen angebracht hat, um deren PGP
+	Key zu erfahren.
+      </p>
+<p>
+	Die obigen Möglichkeiten sollen keine Paranoia hervorrufen,
+	sondern nur darauf hinweisen, dass Verschlüsselung von Daten
+	nur ein Baustein eines Sicherheitskonzeptes sein kann. Um so
+	erstaunlicher, dass es immer wieder Versuche gibt,
+	Verschlüsselung von Daten zu be- beziehungsweise zu
+	verhindern.
+      </p>
+</div>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="id2713000"></a>Installation </h2></div></div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713003"></a>Bezugsquellen </h3></div></div>
+<p>Mittlerweile enthält wohl jede aktuelle Linux Distribution
+	GnuPG. Die erste Wahl ist es
+	natürlich, das mitgelieferte GnuPG
+	mit den ‘Bordwerkzeugen’ zu installieren. Das
+	sollte problemlos funktionieren. Das Laden des Quellcodes ist
+	dann nur noch nötig, wenn eine neue Version installiert werden
+	soll (zum Beispiel, wenn ein kritischer Bug entdeckt
+	wurde)</p>
+<p>
+	Die offizielle Bezugsquelle ist die  <a href="http://www.gnupg.org/download.html" target="_top">GnuPG Homepage</a>. Dort gibt es auch eine Liste der Mirrors. 
+      </p>
+<p>
+	Aus rechtlichen Gründen darf GnuPG
+	nicht aus Servern in den USA geladen werden, da Kryptographie
+	in den USA als Rüstungsgut gilt. Aus diesem Grund gibt es
+	übrigens PGP immer in nationalen und internationalen
+	Versionen, wobei bei letzteren der Sourcecode in Buchform
+	exportiert wird und er in Oslo wieder eingescant wird.
+	Genaueres dazu auf der <a href="http://www.pgpi.com" target="_top">Internationalen PGP  Homepage</a>. Nichtsdestotrotz darf GnuPG in die USA eingeführt und benutzt werden, es darf dort auch auf ftp-Servern abgelegt werden. Es muss dabei nur garantiert werden, dass GnuPG nicht reexportiert wird.
+      </p>
+<p>
+	Falls man schon eine lauffähige
+	GnuPG oder PGP Version hat, sollte
+	man die Signatur des Archivs überprüfen (siehe <a href="#gpg-minihowto-signaturen" title="Signieren und Signaturen prüfen">“Signieren und Signaturen prüfen”</a>).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2712861"></a>Konfigurieren </h3></div></div>
+<p>
+	Da die Entwicklung unter Linux (x86) stattfindet, ist die
+	Übersetzung dort meist gar kein Problem. Eine aktuelle Liste
+	der offiziell unterstützten Betriebssysteme steht auch auf der
+	<a href="http://www.gnupg.org" target="_top">GnuPG Homepage</a>. Das folgende Vorgehen gilt aber betriebssystemunabhängig.
+      </p>
+<p>
+	Nachdem das Archiv mit  
+
+	<pre class="screen">tar xvzf gnupg-?.?.?.tar.gz</pre> 
+	entpackt ist, tippt man  
+
+	<pre class="screen">./configure</pre> 
+
+	Dabei sollte nichts verblüffendes passieren. Mit
+	
+	<pre class="screen">./configure --help</pre>
+	
+	kann man sich, falls nötig, die möglichen
+	Konfigurationsparameter ansehen. Falls es Probleme mit der der
+	Internationalisierung (gettext) geben sollte, kann man mit
+	<tt>--with-included-gettext</tt> eine mitgelieferte
+	Version benutzen oder sie mit <tt>--disable-NLS</tt>
+	abschalten.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2712754"></a>Kompilieren </h3></div></div>
+<p>
+	Danach sollte 
+	<pre class="screen">make</pre> 
+	
+	problemlos laufen. Falls es dabei wider Erwarten Probleme
+	gibt, sollte man (in dieser Reihenfolge): Selbst probieren
+	(natürlich mit Lesen der Dokumentation), jemanden in der Nähe
+	fragen, der sich auskennt und schließlich auf der Mailingliste
+	(siehe <a href="#gpg-minihowto-informationsquellen" title="Informationsquellen">“Informationsquellen”</a>) um
+	Rat fragen. Falls es sich nur um falsche Pfade handelt, sollte
+	man mit <tt>make clean</tt> (oder
+	rabiater) das Verzeichnis säubern, neu konfigurieren und es
+	dann noch einmal versuchen.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2712804"></a>Einrichten </h3></div></div>
+<p>
+	Mit 
+
+	<pre class="screen">make install</pre> 
+	
+	werden die Programme und die Manpage in die dafür vorgesehenen
+	Verzeichnisse kopiert. In
+	<tt>usr/local/share/gnupg/</tt> (oder in dem bei
+	./configure angegebenen Verzeichnis) liegt die Datei
+	<tt>options.skel</tt>. Wenn man diese nach
+	<tt>˜/.gnupg/options</tt> kopiert, werden
+	die entsprechenden Einstellungen als Standard benutzt. Das
+	Kopieren sollte eigentlich beim Anlegen von
+	<tt>˜/.gnupg/</tt> automatisch
+	passieren. Jeder mögliche Eintrag ist gut dokumentiert,
+	deshalb werden sie hier nicht beschrieben.
+      </p>
+<p>
+	Man kann GnuPG als suid root laufen
+	lassen (das heißt: das Programm läuft mit allen Rechten des
+	Superusers), damit die Möglichkeit ausgeschlossen wird, dass
+	Teile des Programmes ausgelagert werden und dann gelesen
+	werden können. Wie real diese Gefahr ist, kann ich nicht
+	beurteilen, allerdings ist auch mit suid root Vorsicht
+	geboten, da ein trojanisches Pferd mit suid root beliebigen
+	Schaden anrichten kann. Man kann die Warnmeldung, die
+	ausgegeben wird, falls GnuPG nicht
+	suid root läuft, mit <tt>no-secmem-warning</tt> in
+	<tt>˜/gnupg/options</tt> abschalten.
+      </p>
+</div>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="gpg-minihowto-schluessel"></a>Umgang mit Schlüsseln</h2></div></div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713400"></a>Erzeugen</h3></div></div>
+<p>
+	Mit  
+	
+	<pre class="screen">gpg --gen-key</pre> 
+
+	wird ein neues Schlüsselpaar erzeugt. Als Erstes wird man nach
+	dem zu verwendenden Algorithmen gefragt. Genaueres zu den
+	Algorithmen steht in der <a href="http://www.scramdisk.clara.net/pgpfaq.html" target="_top">PGP DH
+	vs. RSA FAQ</a> oder in <a href="#bschneier">Schneier (1996)</a> Man
+	kann (und sollte) einfach den default Wert (DSA/ ElGamal)
+	nehmen.
+      </p>
+<p>
+	Bei der Schlüssellänge muss man zwischen Sicherheit und
+	Rechenzeit abwägen. Je länger ein Schlüssel, desto sicherer
+	ist er, desto länger dauern aber auch Operationen mit ihm. Bei
+	der Rechenzeit muss man aber berücksichtigen, dass der
+	Schlüssel möglicherweise auch noch in einigen Jahren benutzt
+	werden soll, wenn die durchschnittliche Rechenleistung stark
+	angewachsen sein wird. GnuPG fragt
+	ab einer Schlüssellänge von mehr als 1536 Bits, ob ein so
+	großer Schlüssel wirklich nötig sei, andere Leute empfehlen
+	mindestens 2048 Bits. Für DSA ist 1024 Bits Standard.
+      </p>
+<p>
+	Dann wird nach Namen, Kommentar und Email Adresse gefragt.
+	Anhand dieser Angaben wird der Schlüssel identifiziert. Man
+	kann die Angaben aber später noch ändern beziehungsweise
+	ergänzen. Siehe <a href="#gpg-minihowto-sverwalten" title="Schlüsselbund verwalten">“Schlüsselbund verwalten”</a> Man
+	sollte eine länger gültige Email Adresse wählen, da die
+	komplette Benutzerkennung unterschrieben wird. Wird dann etwas
+	geändert, gelten die Unterschriften unter die geänderten
+	Angaben nicht mehr.
+      </p>
+<p>
+	Als letztes wird nach dem Passwort (beziehungsweise Passsatz
+	(in der deutschen Übersetzung: Mantra) denn es können
+	Leerzeichen vorkommen) gefragt, mit dem der private Schlüssel
+	gesichert werden soll. <span class="emphasis"><i>Verwenden Sie ein gutes
+	  Mantra</i></span>. Ein gutes Mantra ist
+	
+	<div class="itemizedlist"><ul>
+<li>
+	      nicht zu kurz,
+	    </li>
+<li>
+	      enthält Sonderzeichen,
+	    </li>
+<li>
+	      ist kein Name und
+	    </li>
+<li>
+	      nicht mit Kenntnis des Benutzers leicht zu erraten (wie
+	      Telefonnummer, Bankleitzahl, Name und Anzahl der Kinder,
+	      ...)
+	    </li>
+</ul></div> Man kann durch willkürlich eingestreute
+	GRoß/KlEinSchReibung und Leerzeichen weitere Sicherheit
+	erhalten. Außerdem muss man es sich merken können, da der
+	geheime Schlüssel ohne Mantra wertlos ist. Es kann in diesem
+	Zusammenhang ein guter Gedanke sein, gleich ein
+	Rückrufzertifikat zu erstellen. Siehe <a href="#gpg-minihowto-swiderrufen" title="Widerrufen">“Widerrufen”</a>.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713518"></a>Exportieren</h3></div></div>
+<p>
+	Mit 
+
+	<pre class="screen">gpg --export [UID]</pre> 
+	
+	wird der Schlüssel mit der User ID UID exportiert. Wird keine
+	UID angegeben, so wird der ganze Schlüsselbund exportiert.
+	Voreingestellt ist Ausgabe auf <tt>stdout</tt>,
+	man kann aber mit der Option <tt>-o [Datei]</tt> in
+	eine Datei ausgeben. Es empfiehlt sich noch, mit der Option
+	<tt>-a</tt> (<tt>--armor</tt>) zu arbeiten, da
+	ich andernfalls Probleme hatte. Mit dieser Option werden die
+	Schlüssel nicht im Binärformat ausgegeben, sondern als ASCII
+	(7 Bit) Dateien.
+      </p>
+<p>
+	Den exportierten Schlüssel kann man dann in der Welt
+	verbreiten, wahlweise auf der Homepage, via finger, über
+	Keyserver, ... .
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713563"></a>Importieren</h3></div></div>
+<p>
+	Wenn man von irgendwoher einen öffentlichen Schlüssel bekommen
+	hat, sollte man ihn in sein Schlüsselbund aufnehmen. Das wird
+	mit 
+
+	<pre class="screen">gpg --import [Datei]</pre> 
+
+	erreicht.  Wenn man den Dateinamen weglässt, wird von
+	<tt>stdin</tt> gelesen.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="gpg-minihowto-swiderrufen"></a>Widerrufen</h3></div></div>
+<p>
+	Es gibt verschiedene Gründe, einen alten Schlüssel zu
+	widerrufen: Er könnte in fremde Hände geraten sein, die UID
+	stimmt nicht mehr oder er ist einfach zu klein geworden. In
+	all diesen Fällen ist der Befehl der Wahl 
+
+	<pre class="screen">gpg --gen-revoke</pre>
+
+	Damit wird ein Schlüsselwiderruf-Zertifikat
+	erzeugt. <span class="emphasis"><i>Dafür braucht man den privaten
+	Schlüssel</i></span>, denn sonst könnten solche Zertifikate
+	auch von Fremden erzeugt werden. Das hat aber einen Nachteil:
+	Ein Schlüssel, dessen Mantra ich nicht weiß, ist
+	offensichtlich nutzlos. Aber weil ich das Mantra nicht weiß,
+	kann ich ihn nicht widerrufen. Deshalb ist es geschickt, sich
+	gleich bei der Erzeugung des Schlüssels ein
+	Widerruf-Zertifikat zu erzeugen. Das sollte dann aber sicher
+	verwahrt werden, am besten auf Diskette und auf Papier, damit
+	es nicht in falsche Hände gerät.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="gpg-minihowto-sverwalten"></a>Schlüsselbund verwalten</h3></div></div>
+<p>
+	Der Schlüsselbund ist eine Datei, in der alle Schlüssel mit
+	den dazugehörigen Informationen (bis auf die Ownertrust Werte,
+	was das ist steht in <a href="#gpg-minihowto-ssignieren" title="Schlüssel signieren">“Schlüssel signieren”</a>) gespeichert werden. Mit
+	
+
+	<pre class="screen">gpg --list-keys</pre> 
+
+	können alle Schlüssel des öffentlichen Schlüsselbundes
+	angezeigt werden. Mit 
+
+	<pre class="screen">gpg --list-sigs</pre> 
+
+	werden zusätzlich noch die Signaturen angezeigt (siehe <a href="#gpg-minihowto-ssignieren" title="Schlüssel signieren">“Schlüssel signieren”</a>). Mit 
+
+	<pre class="screen">gpg --fingerprint</pre> 
+
+	werden die Schlüssel mit ihren ‘Fingerabdrücken’
+	aufgelistet. Das sind (verhältnismäßig) kurze Zahlenfolgen, an
+	denen sich der Schlüssel identifizieren lässt. Das kann
+	praktisch sein, um sich über Telefon zu vergewissern, dass ein
+	öffentlicher Schlüssel vom Gesprächspartner
+	stammt. Fingerabdrücke im Abspann von Email oder Usenet
+	Artikeln zu verschicken ist übrigens nicht sinnvoll. 
+
+	<pre class="screen">gpg --list-secret-keys</pre> 
+
+	listet die Schlüssel des privaten Schlüsselbundes
+	auf. Unterschriften und Fingerabdrücke von privaten Schlüsseln
+	haben keinen Informationswert.
+      </p>
+<p>
+	Mit dem Befehl  
+
+	<pre class="screen">gpg --delete-key UID bzw. gpg --delete-secret-key</pre> 
+
+	kann man Schlüssel aus dem entsprechenden Schlüsselbund
+	löschen.
+      </p>
+<p>
+	Der letzte wichtige Befehl für den Umgang mit Schlüsseln
+	lautet 
+
+	<pre class="screen">gpg --edit-key UID</pre> 
+
+	In dem dann folgenden Menü kann man unter anderem das Mantra
+	und das Verfallsdatum ändern, Fingerabdrücke anzeigen lassen
+	und Schlüssel signieren, womit wir beim nächsten Abschnitt
+	wären.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="gpg-minihowto-ssignieren"></a>Schlüssel signieren</h3></div></div>
+<p>
+	Wie in der Einleitung erwähnt, ist die Echtheit eines
+	öffentlichen Schlüssels die Achillesferse des Systems. Deshalb
+	gibt es die Möglichkeit, Schlüssel zu unterschreiben. Damit
+	bestätigt der Unterzeichnende, dass der in der User ID
+	angegeben User tatsächlich der Besitzer des Schlüssels ist.
+      </p>
+<p>
+	Nachdem man mit <tt>gpg --edit-key
+	  UID</tt> den zu unterzeichnenden  Schlüssel ausgewählt
+	hat, kann man ihn mit dem Kommando <tt>sign</tt> unterschreiben. 
+      </p>
+<p>
+<span class="emphasis"><i>Unterschreiben Sie nur Schlüssel von deren Echtheit
+	  sie sich überzeugt haben.</i></span> Das kann geschehen, in
+	dem man entweder den Schlüssel persönlich bekommen hat (zum
+	Beispiel auf einer Keysigning Party), oder man über Telefon
+	den Fingerprint vergleicht. Man sollte keinen Schlüssel nur
+	deshalb unterschreiben, weil man den anderen Unterschriften
+	vertraut.
+      </p>
+<p>
+	Anhand der Unterschriften und des ‘ownertrusts’
+	ermittelt GnuPG die Gültigkeit des
+	Schlüssels. Der Ownertrust ist ein Wert mit dem der Benutzer
+	festlegt, in welchem Maße er dem Schlüsselinhaber zutraut,
+	andere Schlüssel verlässlich zu unterzeichnen. Die möglichen
+	Abstufungen sind ‘gar nicht’, ‘weiß
+	nicht’, ‘teilweise’ und
+	‘vollständig’. Wenn der Benutzer also einem
+	anderem nicht traut, kann er GnuPG
+	über diesen Mechanismus anweisen, dessen Unterschrift zu
+	ignorieren. Der Ownertrust wird nicht im Schlüsselbund
+	gespeichert, sondern in einer separaten Datei.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="gpg-minihowto-keyserver"></a>Keyserver benutzen</h3></div></div>
+<p>
+<a href="#keyserver">Keyserver</a> sind große
+      Datenbanken mit öffentlichen Schlüsseln. GnuPG kann von Haus aus
+      Schlüssel von Keyservern importieren und zu Keyservern
+      exportieren. GnuPG kommuniziert mit dem Keyserver über HTTP,
+      benutzt aber den Port 11371. Man muss darauf achten, dass eine
+      eventuell vorhandene Firewall diesen Port nicht
+      blockiert.</p>
+<p>Die Adresse des Keyservers übergibt man mit der Option
+	<tt>--keyserver</tt> beim Aufruf auf der
+	Kommandozeile, man kann den Eintrag aber auch in
+	Konfigurationsdatei <tt>˜/.gnupg/options</tt> anlegen:</p>
+<pre class="programlisting">
+# Tragen Sie hier Ihren Lieblingserver ein:
+keyserver search.keyserver.net
+</pre>
+<p>Den Server gibt es übrigens wirklich. Hat man nun dafür
+      gesorgt, dass GnuPG weiß, wo die Schlüssel zu finden sind,
+      importiert man mittels</p>
+<pre class="screen">gpg --recv-keys UID</pre>
+
+      und exportiert mittels
+
+      <pre class="screen">gpg --send-key UID</pre>
+</div>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="gpg-minihowto-verschl"></a>Verschlüsseln und entschlüsseln</h2></div></div>
+<p>
+      Falls man mehrere private Schlüssel hat, kann man mit der Option
+      <tt>-u UID</tt> oder <tt>--local-user UID</tt>
+      einen (oder mehrere) Schlüssel nach seiner UID auswählen. Diese
+      Auswahl ersetzt den im Konfigurationsfile mit dem Befehl
+      <tt>default-key KeyID</tt> einen Schlüssel standardmäßig
+      ausgewählten Schlüssel.
+    </p>
+<p>
+      Mit <tt>-r UID</tt> oder <tt>--recipient
+	UID</tt> kann man den Empfänger in der Kommandozeile
+	auswählen.
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713906"></a>Verschlüsseln</h3></div></div>
+<p>
+	Das Kommando zum Verschlüsseln lautet 
+
+	<pre class="screen">gpg -e Empfänger [Datei]</pre> 
+
+	oder 
+
+	<pre class="screen">gpg --encrypt Empfänger [Datei]</pre> 
+
+Es ist sinnvoll, die Dateien auch zu signieren, genaueres siehe <a href="#gpg-minihowto-signaturen" title="Signieren und Signaturen prüfen">“Signieren und Signaturen prüfen”</a>.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2713933"></a>Entschlüsseln</h3></div></div>
+<p>
+	Das Kommando zum Entschlüsseln lautet 
+
+	<pre class="screen">gpg [-d] [Datei]</pre> 
+	oder 
+	<pre class="screen">gpg [--decrypt] [Datei]</pre>
+</p>
+<p>
+	Auch hier gilt: Voreingestellt ist Ausgabe auf
+	<tt>stdout</tt>, man kann aber mit der Option
+	<tt>-o [Datei]</tt> in eine Datei ausgeben.
+      </p>
+</div>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="gpg-minihowto-signaturen"></a>Signieren und Signaturen prüfen</h2></div></div>
+<p>
+      Mit dem Befehl 
+      <pre class="screen">gpg -s (oder --sign)[Datei]</pre> 
+
+      unterschreibt man eine Datei mit seinem privaten Schlüssel. Sie
+      wird dabei gleichzeitig komprimiert, ist dann also nicht mehr
+      ohne weiteres lesbar. Mit 
+
+      <pre class="screen">gpg --clearsign [Datei]</pre>
+
+      belässt man die Datei lesbar, mit 
+
+      <pre class="screen">gpg -b (oder --detach-sign) [Datei]</pre> 
+
+      erzeugt man eine Unterschrift in einer separaten
+      Datei. Letzteres ist insbesondere zum signieren von Binärdateien
+      wie Archiven zu empfehlen. Auch bei diesen Befehlen kann die
+      Option <tt>--armor</tt> nützlich sein.
+    </p>
+<p>
+      Üblicherweise wird sowohl signiert als auch verschlüsselt, der
+      Befehl lautet dann vollständig 
+
+      <pre class="screen">gpg [-u Sender] [-r Empfänger] [--armor] --sign --encrypt [Datei]</pre>
+</p>
+<p>
+      Die Optionen <tt>-u</tt> (<tt>--local</tt>) und
+      <tt>-r</tt> (<tt>--recipient</tt>) funktionieren
+      wie oben erläutert.
+    </p>
+<p>
+      Wenn eine verschlüsselte Datei signiert ist, so wird beim
+      Entschlüsseln die Signatur mitgeprüft. Die Signatur einer
+      unverschlüsselten Datei prüft man mit 
+
+      <pre class="screen">gpg [--verify] [Datei]</pre> 
+
+      immer natürlich vorausgesetzt, dass man im Besitz des
+      entsprechenden öffentlichen Schlüssels ist.
+    </p>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="gpg-minihowto-informationsquellen"></a>Informationsquellen</h2></div></div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714069"></a>GnuPG</h3></div></div>
+<p><div class="itemizedlist"><ul>
+<li><p>
+	      Die <a href="http://www.gnupg.org" target="_top">GnuPG
+		Homepage</a>. Die zentrale Anlaufstelle für
+	      Ankündigungen, Bugfixes, Dokumentationen, Links auf
+	      Frontends und allem, was mit
+	      GnuPG zusammen hängt.
+	    </p></li>
+<li><p>Die sehr ausführliche <a href="http://www.gnupg.org/faq.html" target="_top">GnuPG FAQ</a>. </p></li>
+<li><p>Das GNU Privacy Handbook <a href="http://www.gnupg.org/gph/de/manual/" target="_top">http://www.gnupg.org/gph/de/manual/</a>, welches auf der Homepage in diversen Sprachen, auch in Deutsch, zu finden ist.</p></li>
+<li><p>
+	      Die GnuPG Mailinglisten. Inklusive Archiven und
+	      Beschreibungen auf der <a href="http://lists.gnupg.org/" target="_top">GnuPG Homepage</a> zu finden.
+	    </p></li>
+<li><p>
+	      Die beiliegende Dokumentation. Nicht vergessen,
+	      <pre class="screen">gpg --help</pre> hilft!
+	    </p></li>
+</ul></div></p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714150"></a>PGP</h3></div></div>
+<p>
+	PGP ist das ältere und (noch) weiter verbreitete Kryptographie
+	Programm. Deshalb gibt es dazu auch viel mehr Informationen,
+	sie sind aber teilweise so allgemein, dass sie auch für
+	GnuPG nützlich sein können.
+      </p>
+<p><div class="itemizedlist"><ul>
+<li><p>
+	      Die <a href="http://www.pgpi.com" target="_top">Internationale PGP
+		Homepage</a>
+</p></li>
+<li><p>
+	      Die <a href="http://www.scramdisk.clara.net/pgpfaq.html" target="_top">PGP DH vs. RSA FAQ</a> gibt Informationen über die verwendeten Algorithmen.
+	    </p></li>
+</ul></div></p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714178"></a><a name="keyserver"></a>Keyserver</h3></div></div>
+<p><div class="itemizedlist"><ul><li><p>
+<a href="http://www.keyserver.net" target="_top">Keyserver.net</a>
+		     Dort findet man auch eine Liste von anderen
+		     Keyservern.
+	    </p></li></ul></div></p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714213"></a>Relevante RFCs</h3></div></div>
+<p>RFCs (Abkürzung für Request for
+	Comments: Bitte um Kommentare) sind ein Rückgrat der Internets:
+	Dort werden unzählige Protokolle definiert. Die Lektüre von
+	RFCs mag etwas trocken sein, aber danach weiß man
+	<span class="emphasis"><i>wirklich</i></span> Bescheid. Die folgenden RFCs
+	beschäftigen sich im weiteren Sinne mit
+	GnuPG: </p>
+<div class="variablelist"><dl>
+<dt><span class="term">RFC 2440</span></dt>
+<dd><a href="http://www.imc.org/rfc2440" target="_top">OpenPGP
+	    Message Format</a></dd>
+<dt><span class="term">RFC 3156</span></dt>
+<dd><a href="http://www.imc.org/rfc3156" target="_top">MIME
+	    Security with Pretty Good Privacy</a></dd>
+</dl></div>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714268"></a>Bücher</h3></div></div>
+<p><div class="itemizedlist"><ul>
+<li>
+<p>
+<a name="bschneier"></a>
+	      B. Schneier, “Applied Cryptography, Second
+	      Edition”, Wiley, 1996  Deutsche Ausgabe unter dem
+	      Titel “Angewandte Kryptographie”,
+	      Addison-Wesley, 1996 
+	    </p>
+<p>Das Standardwerk zum Thema Kryptographische
+	    Algorithmen, bis auf neuere wie AES sollte man dort alle
+	    nötigen Informationen bekommen.</p>
+</li>
+<li>
+<p>B. Schneier, “Secrets and Lies - Digital
+	    Security in a Networked world”, Wiley,
+	    2000. Deutsche Ausgabe unter dem Titel “Secrets
+	     Lies: IT Sicherheit in einer vernetzten Welt”,
+	    dpunkt 2001</p>
+<p>Dieses Buch behandelt die IT Sicherheit in einem
+	      etwas größeren Kontext. Im Vorwort schreibt er
+	      “Der Fehler in <i>Applied
+	      Cryptography</i> bestand darin, überhaupt nicht
+	      über den Zusammenhang zu sprechen. Kryptographie war für
+	      mich die Antwort auf alle Fragen [...] Eine Kollege
+	      sagte mir, dass die Welt voller schlechter
+	      Sicherheitssystem sei, die von Leuten entwickelt wurden,
+	      die <i>Applied Cryptography</i> gelesen
+	      hätten.” In Secrets  Lies spricht er über
+	      die Zusammenhänge, ein wirklich lehrreiches Buch.</p>
+</li>
+<li>
+<p>R. Russell, S. Cunningham, “Hack Proofing your
+	    Network”, Osborne/McGraw-Hill, 2000. Deutsche
+	    Ausgabe unter dem Titel “Maximum Protection”
+	    MITP, 2001</p>
+<p>Hat direkt nichts mit GnuPG zu tun, macht aber auf
+	    einer anderen, eher technischen Ebene deutlich, dass GnuPG
+	    nur ein Teil einer Lösung sein kann.</p>
+</li>
+</ul></div></p>
+</div>
+</div>
+<div class="sect1">
+<div class="titlepage"><div><h2 class="title" style="clear: both">
+<a name="id2714360"></a>Über dieses Dokument </h2></div></div>
+<p>
+      Copyright © 1999, 2001 Michael Fischer v. Mollard
+    </p>
+<p>
+      Dieses Dokument wird unter den Bedingungen der Gnu Public
+      License (GPL) veröffentlicht. Alle Angaben sind nach bestem
+      Wissen, aber natürlich ohne Gewähr (no warranty in any kind).
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><h3 class="title">
+<a name="id2714375"></a>Versionen</h3></div></div>
+<p>
+	Version 0.1 war die erste öffentliche Version dieses
+	Dokumentes. 
+      </p>
+<div class="sect3">
+<div class="titlepage"><div><h4 class="title">
+<a name="id2714382"></a>Änderungen in Version 0.1.1</h4></div></div>
+<p><div class="itemizedlist"><ul>
+<li><p>
+	      Neuer Abschnitt “Grenzen der Sicherheit”
+	    </p></li>
+<li><p>
+	      Erklärung der Signatur verbessert
+	    </p></li>
+<li><p>
+	      kleinere Detailverbesserungen nach Hinweisen von Werner
+	      Koch (danke!)
+	    </p></li>
+</ul></div></p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><h4 class="title">
+<a name="id2714389"></a>Änderungen in Version
+	  0.2</h4></div></div>
+<p>Ich hatte mich längere Zeit nicht mehr mit der HOWTO
+	beschäftigt und war auch unter der angegebenen Adresse nicht
+	erreichbar, weil ich andere Dinge zu tun hatte. Mittlerweile
+	ist es aber unvermeidlich, das Dokument wieder zu
+	verbessern. Dabei soll aber der Charakter als Schnelleinstieg
+	erhalten bleiben und die Beschreibung bewusst knapp sein, aber
+	ich hoffe, dass insbesondere die neuen Links das Dokument
+	besser machen.</p>
+<div class="itemizedlist"><ul>
+<li><p>Auf <a href="http://www.oasis-open.org/specs/docbook.shtml" target="_top">DocBook</a> umgestellt. Da ich vorläufig keine Zeit habe, mich mit fop zu beschäftigen, ist im Moment nur eine HTML Ausgabe vorhanden. Längerfristig ist DocBook aber die deutlich flexiblere Lösung.</p></li>
+<li><p>Neue Literaturangaben eingefügt und diverse
+	      Kleinigkeiten entstaubt und korregiert.</p></li>
+<li><p>Neuer Absatz über Keyserver.</p></li>
+</ul></div>
+<p>
+	  Anregungen, Kritik, Verbesserungen und Erweiterungen einfach
+	  an Michael Fischer v. Mollard (<tt>&lt;<a href="mailto:mfvm@epost.de">mfvm@epost.de</a>&gt;</tt>)
+	  Dokument weiter verbessert werden kann. Besonders
+	  interessiert wäre ich an Bemerkungen und Anregungen zum
+	  Thema DocBook und Formatierung von DocBook Texten.
+	</p>
+</div>
+</div>
+</div>
+</div></body>
+</html>

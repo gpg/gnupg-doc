@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+ <META HTTP-EQUIV="Content-Type" CONTENT="TEXT/HTML; CHARSET=gb2312">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Signing and checking singnatures</TITLE>
+ <LINK HREF="GPGMiniHowto-6.html" REL=next>
+ <LINK HREF="GPGMiniHowto-4.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-6.html">下页</A>
+<A HREF="GPGMiniHowto-4.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc5">目录</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-signatures"></A> <A NAME="s5">5. 签名和检验签名</A></H2>
+
+<P>
+<P>
+以下命令可用于以你的钥匙对数据签名：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -s (--sign) [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+这样做的时候，同时数据也被压缩。也就是说，最终结果是无法直接读懂的。若你想要一个能直接读懂的结果，你可以用：
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --clearsign [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+
+这样就能保证结果是清晰可读的。同时它也照样对数据签名。
+<P>
+用
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -b (--detach-sign) [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+你可以将签名写进另一个文件。我们高度推荐这种用法，尤其是对二进制文件（如文档）签名的时候。另外，
+<CODE>--armor</CODE>
+选项在这儿也非常有用。
+<P>
+<P>
+经常你会发现有些数据既加了密又签了名。要这么做，完整的命令行大致如下：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-u Sender] [-r Recipient] [--armor] --sign --encrypt [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+选项<CODE>-u</CODE> (<CODE>--local-user</CODE>) 和 <CODE>-r</CODE> 
+(<CODE>--recipient</CODE>)
+的作用如前所述。
+<P>
+<P>
+如果数据既加了密又签了名，签名是在解密过程中检验的。你可以用以下命令检验签名：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--verify] [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+当然，只有当你有讯息发出者的公钥时，这才起作用。
+<P>
+<P>
+<HR>
+<A HREF="GPGMiniHowto-6.html">下页</A>
+<A HREF="GPGMiniHowto-4.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc5">目录</A>
+</BODY>
+</HTML>

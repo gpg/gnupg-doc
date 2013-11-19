@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): Instal·lació </TITLE>
+ <LINK HREF="GPGMiniHowto-3.html" REL=next>
+ <LINK HREF="GPGMiniHowto-1.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-3.html">Next</A>
+<A HREF="GPGMiniHowto-1.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2.</A> <A HREF="GPGMiniHowto.html#toc2">Instal·lació </A></H2>
+
+<H2><A NAME="ss2.1">2.1</A> <A HREF="GPGMiniHowto.html#toc2.1">Codi font de GnuPG.</A>
+</H2>
+
+<P>El web oficial per la descàrrega de <CODE>GnuPG</CODE> és
+<A HREF="http://www.gnupg.org/download.html">la pàgina oficial de GnuPG</A>.
+Allà també hi trobareu els enllaços a rèpliques oficials. </P>
+
+
+<P>Degut a restriccions legals no es permet descarregat material
+criptogràfic des de servidors localitzats als EUA a les persones que
+no hi resideixen. Als EUA existeixen lleis que restringeixen
+l'exportació de codi criptogràfic així com dels programes que
+l'inclouen. Per aquesta raó PGP sempre es troba disponible en dues
+versions: una internacional i l'altra per als EUA.</P>
+
+<P>El codi font de la versió internacional es va exportar en format de
+text ascii imprimit en un llibre. A continuació es va escanejar a
+Europa (Oslo). Se'n pot obtenir més informació a la 
+<A HREF="http://www.pgpi.com">pàgina international de PGP</A>.
+La versió internacional de PGP pot ser importada lliurement als EUA
+sempre i que no es torni a reexporta-la.</P>
+
+<P>Si ja teniu instal·lada una versió de <CODE>GnuPG</CODE> o <CODE>PGP</CODE>,
+hauríeu de comprovar la signatura del fitxer (vegeu
+<A HREF="GPGMiniHowto-5.html#GPGMinihowto-Signatures">Signatures</A>).</P>
+
+<H2><A NAME="ss2.2">2.2</A> <A HREF="GPGMiniHowto.html#toc2.2">Configuració </A>
+</H2>
+
+<P> Es pot obtenir GnuPG com a un paquet binari de
+<A HREF="http://www.debian.org/">Debian</A> 
+(.deb), com a un paquet binari de 
+<A HREF="http://www.redhat.com/">RedHat</A> (.rpm),
+o en codi font.</P>
+
+<P>GnuPG s'inclou en la darreres distribucions de RedHat Linux. Si
+aquestes distribucions, per comprovar si teniu GnuPG instal·lat en el
+vostre sistema, empreu:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+rpm -q gnupg
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+  </P>
+<P>Els paquests esmentats són fitxers comprimits que es poden instal·lar
+amb les eines corresponents, segons la distribució. Si necessiteu
+instal·lar GnuPG en altres sistemes operatius, necessitareu
+compilar-lo a partir del codi font. S'agraïrà que qui compili un
+paquet d'instal·lació per altres sistemes o arquitectures, el faci de
+domini públic.</P>
+
+<P> Com que la gran part del desenvolupament de GnuPG es fa en
+màquines x86 sota 
+<A HREF="http://www.linux.org/">Linux</A>,
+l'adaptació del programa a d'altres sistemes diferents no hauria de
+suposar cap problema. La llista de sistemes operatius suportats per
+GnuPG es pot trobar a les pàgines de
+<A HREF="http://www.gnupg.org/">GnuPG</A>. El procediment que
+es descriu a continuació no és exclusiu de cap plataforma. Aquest
+procediment es pot utilitzar per instal·lar GnuPG a partir d'un
+fitxer comprimit de codi font (.tar.gz).</P>
+
+
+<P>Descomprimiu i desarxiveu el paquet amb el codi font amb l'ordre
+(suposant que teniu <CODE>Gnu tar</CODE> instal·lat):</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P>Després de desempaquetar-lo, canvieu al directori on heu
+descomprimit el codi font. Llavors executeu:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ ./configure
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+  </P>
+
+<P>Amb aquest pas no hauria de succeir res d'especial. Si executeu</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ ./configure --help
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>podeu veure les opcions de configuració disponibles per a la
+compilació. Si apareixen problemes referents a la internacionalització
+(GET text), podeu incloure una versió que està inclosa amb el codi
+font emprant la opció <CODE>--with-included-gettext</CODE>, o bé
+desactivar la internacionalització amb l'opció <CODE>--disable-NLT</CODE>.</P>
+
+<H2><A NAME="ss2.3">2.3</A> <A HREF="GPGMiniHowto.html#toc2.3">Compilació</A>
+</H2>
+
+<P>A continuació, compileu el codi font amb l'ordre:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ make
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+ </P>
+
+<P>La compilació hauria de transcórrer sense cap problema. Si passés
+quelcom anormal seguiu els passos següents (en el mateix ordre en què
+es descriuen aquí): Primer proveu de solucionar-ho vosaltres mateixos
+(fent ús de la documentació existent). Llavors assegureu-vos que el
+vostre problema no és un error conegut (comproveu el fitxer BUGS a
+<A HREF="http://www.gnupg.org/">http://www.gnupg.org</A>. Si
+cap d'aquests passos no solucionen el vostre problema, envieu la
+vostra pregunta a la llista de correu de GnuPG (en anglès) (vegeu
+<A HREF="GPGMiniHowto-8.html#GPGMinihowto-FontsInformacio">Fonts d'informació</A>). 
+Si el vostre problema està relacionat amb la ruta d'accés, podeu
+provar <CODE>make clean</CODE>, executar <CODE>./configure</CODE> un altre cop i
+intentar una vegada més compilar (amb <CODE>make</CODE>). </P>
+
+
+<H2><A NAME="ss2.4">2.4</A> <A HREF="GPGMiniHowto.html#toc2.4">Instal·lació</A>
+</H2>
+
+<P>Llavors escriviu:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ make install 
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>que copiarà el programa i les pàgines del manual al directori
+d'instal·lació. Si no heu canviat el directori d'instal·lació en
+executar <CODE>./configure</CODE>, llavors el directori d'instal·lació
+serà <CODE>/usr/local/share/gnupg</CODE>. Podeu trobar aquest directori en
+el fitxer <CODE>options.skel</CODE>. Si canvieu <CODE>options.skel</CODE>, si es
+copia a <CODE>~/.gnupg/options</CODE> els ajustaments apropiats s'usaran
+de forma predeterminada. L'acció de copiar haria de realitzar-se
+automàticament en crear <CODE>~/.gnupg/</CODE>. Totes les opcions
+possibles estan ben documentades i provar d'explicar-les aquí no seria
+de gaire utilitat.</P>
+
+<P>Podeu executar GnuPG com a suid root. D'aquesta manera, el
+programa s'executa amb tots els drets que té el superusuari, i
+s'exclou la possibilitat que certes parts del sistema es desin
+externament i altres persones les puguin llegir. No m'és possible de
+valorar els riscos d'executar el programa com a superusuari. Però
+executant el programa com a suid root s'hauria d'estar alerta dels
+perills de cavalls de Troia, ja que un troià executant-se com a
+superusuari podria malmetre tit el sistema. Si per aquesta raó (o per
+qualsevol altra) escolliu de no executar GnuPG com a superusuari,
+podeu desactivar l'avís activant <CODE>no-secmem-warning</CODE> a
+<CODE>~/.gnupg/options</CODE>.</P>
+
+
+<HR>
+<A HREF="GPGMiniHowto-3.html">Next</A>
+<A HREF="GPGMiniHowto-1.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc2">Contents</A>
+</BODY>
+</HTML>

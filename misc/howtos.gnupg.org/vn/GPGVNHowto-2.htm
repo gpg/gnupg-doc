@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-3.htm"><font face="Arial" size="2">Next</a> <a HREF="GPGVNHowto-1.html">Previous</a>
+  <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">2. Cài &#273;&#7863;t (Installtion)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">2.1 Ngu&#7891;n GnuPG (Source For GnuPG)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; l&#7845;y GnuPG t&#7915;
+  Site chính th&#7921;c c&#7911;a GnuPG (<a href="http://www.gnupg.org/)">http://www.gnupg.org/)</a>
+  t&#7915; b&#7841;n có th&#7875; ch&#7885;n các Mirmor có v&#7883; trí
+  &#273;&#7883;a lý &#7903; g&#7847;n b&#7841;n &#273;&#7875; Download GnuPG
+  v&#7873;.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u PC c&#7911;a b&#7841;n &#273;ã cài
+  &#273;&#7863;t các phiên b&#7843;n c&#7911;a GnuPG hay PGP, b&#7841;n
+  c&#7847;n ki&#7875;m tra ch&#7919; ký c&#7911;a các Files.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">2.2 C&#7845;u hình (Configuration)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; Down v&#7873; GnuPG&nbsp;&#7903;
+  d&#7841;ng các gói Debian (Debian Packages), RPM (Redhat&nbsp;Packages
+  Manager)&nbsp;hay&nbsp;&#7903; d&#7841;ng mã ngu&#7891;n (Open Source). Thông
+  th&#432;&#7901;ng&nbsp;&#7903; các&nbsp;Distributed thông d&#7909;ng
+  c&#7911;a Linux nh&#432; Redhat, Mandrake, SuSE...GnuPG th&#432;&#7901;ng&nbsp;&#273;&#432;&#7907;c
+  cài&nbsp;&#273;&#7863;t m&#7863;c&nbsp;&#273;&#7883;nh kèm&nbsp;ngay khi cài&nbsp;&#273;&#7863;t
+  Linux.&nbsp;&#272;&#7875; ki&#7875;m tra xem GnuPG&nbsp;&#273;ã&nbsp;&#273;&#432;&#7907;c
+  cài&nbsp;&#273;&#7863;t trên h&#7879; th&#7889;ng c&#7911;a b&#7841;n ch&#432;a
+  ? B&#7841;n&nbsp;dùng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">rpm -q gnupg</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Thông th&#432;&#7901;ng các gói RPM thi&#7871;t&nbsp;&#273;&#7863;t
+  các file nh&#7883; phân, nh&#7919;ng công c&#7909; tài li&#7879;u trên
+  n&#7873;n t&#7843;ng h&#7879; th&#7889;ng Linux. N&#7871;u b&#7841;n s&#7917;
+  d&#7909;ng các h&#7879; th&#7889;ng khác nh&#432;: Sun, *BSD, Unix...B&#7841;n
+  lên Down GnuPG&nbsp;&#7903; d&#7841;ng mã ngu&#7891;n và&nbsp;tr&#7921;c
+  ti&#7871;p&nbsp;c&#7845;u hình và biên d&#7883;ch chúng&nbsp;&#273;&#7875;&nbsp;&#273;&#7841;t&nbsp;&#273;&#432;&#7907;c
+  yêu c&#7847;u t&#7889;i&nbsp;&#432;u hoá GnuPG cho h&#7879; th&#7889;ng
+  c&#7911;a b&#7841;n.&nbsp;B&#7841;n có th&#7875; tìm&nbsp;&#273;&#432;&#7907;c&nbsp;danh
+  sách nh&#7919;ng h&#7879; th&#7889;ng t&#432;&#417;ng thích GnuPG trên Site&nbsp;chính
+  th&#7913;c&nbsp;&#273;ã nêu trên.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Vi&#7879;c cài&nbsp;&#273;&#7863;t GnuPG t&#7915;
+  các Packages khá&nbsp;&#273;&#417;n gi&#7843;n lên tôi không nh&#7855;c&nbsp;&#273;&#7871;n.
+  Bây gi&#7901;&nbsp;tôi s&#7869; nêu qua các thao tác c&#7845;u hình và
+  cài&nbsp;&#273;&#7863;t GnuPG t&#7915;&nbsp;mã ngu&#7891;n c&#7911;a nó.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7847;u tiên b&#7841;n hãy bung nén
+  t&#7853;p tin mã&nbsp;ngu&#7891;n c&#7911;a GnuPG:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">tar xvzf gnupg-?.?.?.tar.gz</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">?.?.?&nbsp;&#7903;&nbsp;&#273;ây chính là thông
+  tin v&#7873;&nbsp;phiên b&#7843;n GnuPG mà b&#7841;n&nbsp;Down v&#7873;. Di
+  chuy&#7875;n vào th&#432; m&#7909;c v&#7915;a bung nén mã ngu&#7891;n:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">./configure</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u có khúc m&#7855;c b&#7841;n có
+  th&#7875; s&#7917; d&#7909;ng tu&#7923; ch&#7885;n Help&nbsp;&#273;&#7875;
+  bi&#7871;t thêm thông tin:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">./configure --help</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">2.3&nbsp;Biên d&#7883;ch (Complie)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; biên d&#7883;ch GnuPG chúng ta gõ:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">make</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">M&#7885;i vi&#7879;c&nbsp;di&#7877;n ra&nbsp;xuôn
+  x&#7867; thì không có gì&nbsp;&#273;&#7875; nói. N&#7871;u nh&#432;
+  m&#7885;i vi&#7879;c di&#7877;n ra không nh&#432;&nbsp;ý&nbsp;mu&#7889;n.
+  B&#7841;n hãy tham kh&#7843;o thêm&nbsp;thông tin v&#7873; g&#7905;
+  r&#7895;i&nbsp;&#7903; trang ch&#7911; c&#7911;a GnuPG&nbsp;(<a href="http://www.gnupg.org/">http://www.gnupg.org/</a>)
+  ho&#7863;c&nbsp;b&#7841;n hãy&nbsp;&#273;&#432;a v&#7845;n&nbsp;&#273;&#7873;
+  c&#7911;a mình lên Mail List c&#7911;a GnuPG.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">2.4 Cài&nbsp;&#273;&#7863;t (Installtion)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Bây gi&#7901;&nbsp;&#273;&#7875; cài&nbsp;&#273;&#7863;t
+  b&#7841;n gõ:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">make&nbsp;install</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Theo m&#7863;c&nbsp;&#273;&#7883;nh thì các
+  trang man c&#7911;a GnuPG&nbsp;&#273;&#432;&#7907;c ch&#7913;a&nbsp;&#7903;
+  /local/share/gnupg. B&#7841;n có th&#7875; ch&#7841;y GnuPG nh&#432; SUID
+  root hay b&#7845;t c&#7913; SUID nào khác. Nh&#432; v&#7853;y ch&#432;&#417;ng
+  trình &#273;ó s&#7869; &#273;&#432;&#7907;c ch&#7841;y v&#7899;i t&#7845;t
+  c&#7843; &#273;&#7863;c quy&#7873;n mà User &#273;ó có. Vi&#7879;c này
+  ngo&#7841;i tr&#7915; kh&#7843; n&#259;ng nh&#7919;ng b&#7897; ph&#7853;n
+  nh&#7845;t &#273;&#7883;nh c&#7911;a ch&#432;&#417;ng trình &#273;&#432;&#7907;c
+  l&#432;u gi&#7919; &#7903; m&#7897;t n&#417;i khác và nó có th&#7875;
+  b&#7883; s&#7917; d&#7909;ng b&#7903;i m&#7897;t User khác trên cùng
+  h&#7879; th&#7889;ng &#273;ó. Nh&#432;ng cho lý do an toàn b&#7841;n không
+  lên s&#7917; d&#7909;ng GnuPG v&#7899;i SUID root. N&#7871;u nh&#432; không
+  mu&#7889;n GnuPG ch&#7841;y v&#7899;i SUID root b&#7841;n thi&#7871;t
+  l&#7853;p tu&#7923; ch&#7885;n &quot;no-secmen-warning&quot; vào trong file:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">~/.gnupg/options</font>
+</div>
+
+<hr>
+<p><a HREF="GPGVNHowto-3.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+<a HREF="GPGVNHowto-1.html">Previous</a> <a HREF="index.htm">Contents</a></font></p>
+
+</body>
+
+</html>

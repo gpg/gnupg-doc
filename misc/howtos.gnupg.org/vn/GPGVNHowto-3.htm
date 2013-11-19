@@ -1,0 +1,419 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-4.htm"><font size="2" face="Arial">Next</font></a><font size="2" face="Arial">
+  <a HREF="GPGVNHowto-3.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">3. S&#7917; d&#7909;ng khoá (Using Keys)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">3.1 T&#7841;o khoá (Creating Keys)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">V&#7899;i vi&#7879;c s&#7917; d&#7909;ng
+  l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --gen-key</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">M&#7897;t c&#7863;p khoá m&#7899;i s&#7869;
+  &#273;&#432;&#7907;c t&#7841;o (g&#7891;m Secret Key và Public Key). GnuPG
+  s&#7869; h&#7887;i b&#7841;n&nbsp;s&#7917; d&#7909;ng thu&#7853;t toán mã hoá
+  nào. B&#7841;n có th&#7875; tham kh&#7843;o thông tin v&#7873; các
+  thu&#7853;t toán mã hoá:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://www.hertreg.ac.uk/ss/pgpfaq.html">http://www.hertreg.ac.uk/ss/pgpfaq.html
+      </a>- PGP DH vs. RSA FAQ</font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">2 thu&#7853;t toán mã hoá &#273;&#432;&#7907;c
+  s&#7917; d&#7909;ng r&#7897;ng rãi là DSA và RSA. Tuy nhiên theo ý
+  ki&#7871;n c&#7911;a b&#7843;n thân tôi thì RSA &#273;&#432;&#7907;c
+  s&#7917; d&#7909;ng r&#7895;ng rãi và có kh&#7843; n&#259;ng mã hoá
+  d&#7919; li&#7879;u &#7903; m&#7913;c &#273;&#7897; cao h&#417;n DSA.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">L&#7921;a ch&#7885;n k&#7871; ti&#7871;p c&#7911;a
+  b&#7841;n s&#7869; là &#273;&#7897; dài c&#7911;a&nbsp;Key (Key Lenght).
+  B&#7841;n c&#7847;n l&#7921;a ch&#7885;n gi&#7919;a 2 tính n&#259;ng s&#7921;
+  b&#7843;o m&#7853;t và th&#7901;i gian. Nói m&#7897;t cách d&#7877;
+  hi&#7875;u n&#7871;u&nbsp;&#273;&#7897; dài c&#7911;a Key l&#7899;n thì
+  kh&#7843; n&#259;ng mã hoá thông&nbsp;&#273;i&#7879;p càng cao. Chính vì
+  v&#7853;y th&#7901;i gian mà PC c&#7911;a b&#7841;n dành&nbsp;&#273;&#7875;
+  th&#7921;c hi&#7879;n công vi&#7879;c mã hoá và gi&#7843;i mã hoá
+  s&#7869; l&#7899;n. M&#7863;c&nbsp;&#273;&#7883;nh v&#7899;i GnuPG giá
+  tr&#7883; c&#7921;c ti&#7875;u&nbsp;&#273;&#7897; dài c&#7911;a key là&nbsp;768
+  bits và giá tr&#7883; c&#7921;c&nbsp;&#273;&#7841;i là 2048 bits.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">GnuPG s&#7869; l&#7847;n l&#432;&#7907;t yêu
+  c&#7847;u b&#7841;n vào các thông tin v&#7873; b&#7841;n nh&#432;: H&#7885;
+  và tên &#273;&#7847;y &#273;&#7911; (Fullname), &#273;&#7883;a ch&#7881;
+  (Comment), &#273;&#7883;a ch&#7881; mail (E-mail). &#272;&#7875; làm c&#417;
+  s&#7903; cho công vi&#7879;c t&#7841;o ra c&#7863;p khoá m&#7899;i c&#7911;a
+  GnuPG. B&#7841;n có th&#7875; thay &#273;&#7893;i các thông tin này sau.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Cu&#7889;i cùng b&#7841;n s&#7869; ph&#7843;i
+  nh&#7853;p vào m&#7897;t Password (có ch&#7845;p nh&#7853;n ký t&#7921;
+  Space). Nó &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#273;&#7875; &#273;i&#7873;u
+  khi&#7875;n Secret Key c&#7911;a b&#7841;n. M&#7897;t Passphrase t&#7889;t
+  ch&#7913;a&nbsp;&#273;&#7921;ng nh&#7919;ng y&#7871;u t&#7889; sau:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2">Nó ph&#7843;i có&nbsp;&#273;&#7897; dài
+      h&#7907;p lý</font></li>
+    <li><font face="Arial" size="2">Ch&#7913;a&nbsp;&#273;&#7921;ng nh&#7919;ng&nbsp;ký
+      t&#7921;&nbsp;&#273;&#7863;c bi&#7879;t</font></li>
+    <li><font face="Arial" size="2">&#272;&#7843;m b&#7843;o an toàn không
+      b&#7883;&nbsp;suy&nbsp;&#273;oán m&#7897;t cách d&#7877; dàng (không
+      s&#7917; d&#7909;ng các thông tin liên quan&nbsp;&#273;&#7871;n
+      b&#7841;n nh&#432;: tên, ngày sinh,&nbsp;&#273;&#7883;a ch&#7881;,
+      s&#7889; nhà...)</font></li>
+  </ul>
+  <p>&nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Lên nh&#7899; r&#7857;ng b&#7841;n không&nbsp;&#273;&#432;&#7907;c
+  phép quên Password&nbsp;&#273;ã nêu&nbsp;&#7903; trên. B&#7903;i
+  n&#7871;u quên nó b&#7841;n s&#7869; không th&#7875;&nbsp;ph&#7909;c
+  h&#7891;i l&#7841;i nó c&#361;ng nh&#432;&nbsp;&#273;i&#7873;u&nbsp;ki&#7875;m
+  soát Secret Key mà b&#7841;n&nbsp;&#273;ã t&#7841;o ra.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Sau cùng b&#7841;n dùng&nbsp;bàn phím
+  nh&#7853;p&nbsp;vào các ký t&#7921; ng&#7851;u nhiên&nbsp;&#273;&#7911; yêu
+  c&#7847;u s&#7889; bit mà GnuPG&nbsp;c&#7847;n&nbsp;&#273;&#7875; t&#7841;o
+  ra m&#7897;t c&#7863;p khoá m&#7899;i (&#273;&#7875; &#273;&#7843;m b&#7843;o
+  tính ng&#7851;u nhiên và s&#7921; b&#7843;o m&#7853;t cho c&#7863;p khoá
+  m&#7899;i).&nbsp;B&#7841;n&nbsp;&#273;&#7907;i trong giây l&#7845;t, GnuPG&nbsp;&#273;ang
+  phân tích, tính toán các thông tin mà b&#7841;n&nbsp;&#273;&#432;a vào&nbsp;&#273;&#7875;
+  t&#7841;o ra cho b&#7841;n m&#7897;t c&#7863;p khoá m&#7899;i.&nbsp;Quá trình
+  này hoàn t&#7845;t b&#7841;n s&#7869; có trong tay 2 Key: Public Key và
+  Secret Key.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font size="4" face="Arial">3.2 Xu&#7845;t khoá (Exporting Key)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; xu&#7845;t&nbsp;Key cho m&#7897;t ng&#432;&#7901;i
+  dùng b&#7841;n s&#7917; d&#7909;ng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --export&nbsp;[UID]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u không có thông tin v&#7873; UID thì
+  t&#7845;t c&#7843; các khoá hi&#7879;n hành s&#7869;&nbsp;&#273;&#432;&#7907;c
+  xu&#7845;t ra. Theo m&#7863;c&nbsp;&#273;&#7883;nh&nbsp;&#273;ã&nbsp;&#273;&#432;&#7907;c
+  thi&#7871;t l&#7853;p t&#7899;i tuy&#7871;n stdout.&nbsp;Khi s&#7917;
+  d&#7909;ng tu&#7923; ch&#7885;n -o thông tin&nbsp;&#273;ó s&#7869;&nbsp;&#273;&#432;&#7907;c
+  g&#7917;i &#273;&#7871;n m&#7897;t file. Khi s&#7917; d&#7909;ng tu&#7923;
+  ch&#7885;n -a nó s&#7869; ghi ra m&#7897;t khoá&nbsp;ASCII 7 bit thay cho
+  file nh&#7883; phân Binary.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Ch&#7855;c&nbsp;&#273;&#7871;n&nbsp;&#273;ây
+  b&#7841;n s&#7869;&nbsp;&#273;&#7863;t câu h&#7887;i t&#7841;i sao l&#7841;i
+  ph&#7843;i xu&#7845;t&nbsp;Keys&nbsp;?&nbsp;Hi&#7875;u m&#7897;t cách&nbsp;&#273;&#417;n
+  gi&#7843;n khi xu&#7845;t khoá b&#7841;n s&#7869; có kh&#7843; n&#259;ng
+  trao&nbsp;&#273;&#7893;i&nbsp;d&#7919; li&#7879;u m&#7897;t cách an toàn
+  v&#7899;i nhi&#7873;u&nbsp;dùng khác trên Internet. Khi xu&#7845;t&nbsp;Public
+  Key</font>&nbsp;<font face="Arial" size="2">b&#7841;n s&#7869; chia s&#7867; nó
+  v&#7899;i b&#7845;t c&#7913; ai mu&#7889;n trao &#273;&#7893;i thông tin
+  v&#7899;i b&#7841;n m&#7897;t cách an toàn. B&#7841;n có th&#7875; Up
+  Public Key mình lên m&#7897;t &#273;&#7883;a &#273;i&#7875;m nào &#273;ó
+  trên Internet &#273;&#7875; chia s&#7867; v&#7899;i m&#7885;i ng&#432;&#7901;i
+  nh&#432;:</font>&nbsp;
+  <ul>
+    <li><font face="Arial" size="2">Up lên chính Homepage c&#7911;a b&#7841;n.</font></li>
+    <li><font face="Arial" size="2">Up lên các Key Server thông d&#7909;ng nh&#432;:
+      <a href="http://www.pca.dfn.de/dfnpca/pgpkserv/">http://www.pca.dfn.de/dfnpca/pgpkserv/</a></font></li>
+    <li><font face="Arial" size="2">Hay b&#7845;t c&#7913; ph&#432;&#417;ng pháp
+      nào mà b&#7841;n cho là h&#7907;p lý...</font></li>
+  </ul>
+  <p>&nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">3.3 Nh&#7853;p khoá (Import Keys)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Khi b&#7841;n có &#273;&#432;&#7907;c Public Key
+  c&#7911;a m&#7897;t ai &#273;ó. B&#7841;n c&#7847;n ph&#7843;i Add nó vào
+  Key Database c&#7911;a b&#7841;n &#273;&#7875; sau này s&#7869; s&#7917;
+  d&#7909;ng &#273;&#7871;n nó. B&#7841;n s&#7869; dùng chính nó &#273;&#7875;
+  gi&#7843;i mã hoá các d&#7919; li&#7879;u &#273;ã &#273;&#432;&#7907;c chính
+  ch&#7911; nhân c&#7911;a nó mã hoá b&#7857;ng Public Key mà b&#7841;n
+  &#273;ang có &#7903; các l&#7847;n sau.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; b&#7893; xung m&#7897;t Public Key vào
+  Key Database c&#7911;a mình b&#7841;n dùng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --import [filename]</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u giá tr&#7883; filename b&#7883;
+  b&#7887; xót thì giá tr&#7883; thay th&#7871; m&#7863;c &#273;&#7883;nh
+  s&#7869; là stdin</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">3.4 Hu&#7927; b&#7887; khoá (Revoke A Keys)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7903;i m&#7897;t vài lý do nh&#432;: Secret
+  Key b&#7883; m&#7845;t, UID b&#7883; thay &#273;&#7893;i, nó không còn
+  &#273;áp &#7913;ng &#273;&#432;&#7907;c các nhu c&#7847;u c&#7911;a
+  b&#7841;n n&#7919;a...hay &#273;&#417;n gi&#7843;n là b&#7841;n không
+  mu&#7889;n s&#7917; d&#7909;ng Key &#273;ó n&#7919;a. B&#7841;n mu&#7889;n
+  hu&#7927; b&#7887; chúng. Okies! hãy s&#7917; d&#7909;ng l&#7879;nh:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --gen-revoke</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; th&#7921;c hi&#7879;n &#273;i&#7873;u
+  này b&#7841;n c&#7847;n m&#7897;t Secret Key khác &#273;&#7875; &#273;&#7843;m
+  b&#7843;o r&#7857;ng ch&#7881; có ch&#7911; s&#7903; h&#7919;u th&#7921;c
+  s&#7921; m&#7899;i có quy&#7873;n hu&#7927; b&#7887; các Key &#273;ó. Lúc
+  này! n&#7871;u nh&#432; không bi&#7871;t Passphrase c&#7911;a Key &#273;ó
+  thì m&#7885;i vi&#7879;c s&#7867; tr&#7903; lên vô ích, th&#7853;t
+  b&#7845;t l&#7907;i. &#272;&#7875; kh&#7855;c ph&#7909;c v&#7845;n &#273;&#7873;
+  này, GnuPG s&#7869; c&#7845;p cho b&#7841;n m&#7897;t s&#7921; cho phép
+  hu&#7927; b&#7887; Key &quot;License Revoke&quot; ngay khi b&#7841;n t&#7841;o
+  m&#7897;t c&#7863;p khoá m&#7899;i. B&#7841;n lên c&#7845;t gi&#7919; nó
+  m&#7897;t cách c&#7849;n th&#7853;n...B&#7903;i n&#7871;u b&#7883; l&#7885;t
+  ra ngoài thì h&#7853;u qu&#7843; c&#7911;a nó s&#7869; r&#7845;t nghiêm
+  tr&#7885;ng.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">3.5 Qu&#7843;n lý Key (Administration Keys)</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#7902; trên tôi &#273;ã &#273;&#7873;
+  c&#7853;p &#273;&#7871;n vi&#7879;c t&#7841;o, xu&#7845;t, nh&#7853;p và
+  hu&#7927; b&#7887; Key. Bây gi&#7901; chúng ta s&#7869; ti&#7871;p t&#7909;c
+  tìm hi&#7875;u v&#7873; vi&#7879;c qu&#7843;n lý các Key.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7847;u tiên! &#273;&#7875; li&#7879;t kê
+  t&#7845;t c&#7843; các thông tin v&#7873; Key &#273;&#432;&#7907;c c&#7845;t
+  gi&#7919; trong Key Database c&#7911;a b&#7841;n:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --list-keys</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; li&#7879;t kê nh&#7919;ng
+  Signatures:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --list-sigs</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; li&#7879;t kê thông tin v&#7873;
+  Fingerprint:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --fingerprint</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; li&#7879;t kê thông tin v&#7873;
+  Secret Keys:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --list-secret-keys</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Trên &#273;ây là nh&#7919;ng l&#7879;nh
+  &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#273;&#7875; li&#7879;t kê và
+  hi&#7875;n th&#7883; các thông tin v&#7873; Keys. Bây gi&#7901; s&#7869; là
+  các l&#7879;nh &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#273;&#7875; can
+  thi&#7879;p tr&#7921;c ti&#7871;p vào các Keys &#273;ó.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; xoá b&#7887; m&#7897;t Public Key</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --delete-key UID</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; xoá b&#7887; m&#7897;t Secret Key</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --delete-secret-key</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;&#7875; ch&#7881;nh s&#7917;a thông tin
+  v&#7873; các Keys:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpg --edit-key UID</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">&#272;ây là m&#7897;t l&#7879;nh khá quan
+  tr&#7885;ng trong quá trình s&#7917; d&#7909;ng các Keys. Nó &#273;&#432;&#7907;c
+  s&#7917; d&#7909;ng &#273;&#7875; thay &#273;&#7893;i thông tin v&#7873;
+  th&#7901;i h&#7841;n cu&#7843; Keys (Expiration Dates), thêm vào
+  Fingerprint...c&#361;ng nh&#432; ch&#7881;nh s&#7917;a các thông tin quan
+  tr&#7885;ng khác. Tr&#432;&#7899;c khi b&#7855;t &#273;&#7847;u quá trình
+  ch&#7881;nh s&#7917;a, &#273;&#7875; &#273;&#7843;m b&#7843;o an toàn GnuPG
+  s&#7869; yêu c&#7847;u b&#7841;n vào thông tin v&#7873; Passphrase. Khi thông
+  tin v&#7873; Passphrase &#273;&#432;&#7907;c nh&#7853;p chính xác, b&#7841;n
+  s&#7869; th&#7845;y m&#7897;t dòng &#273;&#7907;i l&#7879;nh có d&#7841;ng:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">command&gt;</font>
+  <hr>
+  <p><a HREF="GPGVNHowto-4.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-2.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto : Konzepte</TITLE>
+ <LINK HREF="GPGMiniHowto-2.html" REL=next>
+
+ <LINK HREF="GPGMiniHowto.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-2.html">Weiter</A>
+Zurück
+<A HREF="GPGMiniHowto.html#toc1">Inhalt</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Konzepte"></A> <A NAME="s1">1. Konzepte</A></H2>
+
+<P>
+<P>
+<H2><A NAME="ss1.1">1.1 Public Key Verschl&uuml;sselung</A>
+</H2>
+
+<P>
+<P>Klassische Methoden zur Verschl&uuml;sselung benutzen nur einen
+Schl&uuml;ssel. Der Sender verschl&uuml;sselt seine Nachricht mit diesem
+Schl&uuml;ssel, und der Empf&auml;nger entschl&uuml;sselt ihn mit demselben
+wieder. Damit das funktioniert, mu&szlig; der Empf&auml;nger vorher den Schl&uuml;ssel
+bekommen haben, und zwar auf einem sicheren Kommunikationskanal, da
+sonst Unbefugte in Kenntnis des Schl&uuml;ssels gelangen k&ouml;nnten. Also
+braucht man einen sicheren Kommunikationskanal, aber wenn man den hat,
+braucht man auch nicht mehr zu verschl&uuml;sseln.
+<P>
+<P>Public Key Verfahren (auch: asymmetrischen Verfahren) beseitigen
+dieses Problem, indem zwei Schl&uuml;ssel erzeugt werden: Der
+&ouml;ffentliche, der &uuml;ber beliebige Kommunikationskan&auml;le
+verschickt werden kann und der private, den nur der Besitzer
+kennt. Idealerweise ist der private Schl&uuml;ssel nicht mit dem
+&ouml;ffentlichen rekonstruierbar. Der Sender verschl&uuml;sselt die
+Nachricht mit dem &ouml;ffentlichen Schl&uuml;ssel des
+Empf&auml;ngers. Entschl&uuml;sselt wird die Nachricht dann mit dem
+privaten Schl&uuml;ssel des Empf&auml;ngers. Nach diesem Schema kann
+man demnach effektiv verschl&uuml;sseln, ohne &uuml;ber einen sicheren
+Kommunikationskanal zu verf&uuml;gen. 
+<P>
+<P>Ein ganz wichtiger Punkt ist aber die Geheimhaltung des privaten
+Schl&uuml;ssels. Er darf auf keinen Fall in fremde H&auml;nde geraten,
+auch nicht &uuml;ber das Netz verbreitet werden. GnuPG via
+<CODE>telnet</CODE> zu benutzen, ist zum Beispiel eine ziemlich schlechte
+Idee. (Eigentlich sollte man <CODE>telnet</CODE> sowieso durch
+<CODE>ssh</CODE> ersetzen) 
+<P>
+<H2><A NAME="ss1.2">1.2 Digitale Unterschriften</A>
+</H2>
+
+<P>
+<P>Digitale Unterschriften sollen die Authenzit&auml;t einer Nachricht
+beweisen. W&uuml;rden Nachrichten von offizieller Seite signiert,
+w&auml;re es deutlich schwerer, mit gef&auml;lschten Nachrichten
+Unruhe oder Schaden anzurichten (aktuelles Beispiel: Ein trojanische
+Pferd, verschickt als Patch eines bekannten Webbrowsers).
+<P>
+<P>Ein digitale Signatur wird mit Hilfe des privaten Schl&uuml;ssels aus dem
+Text erzeugt. Diese kann dann vom Empf&auml;nger mit dem &ouml;ffentlichen
+Schl&uuml;ssel des Senders &uuml;berpr&uuml;ft werden. Dabei wird nicht nur der
+Absender (nur der kennt den privaten Schl&uuml;ssel) &uuml;berpr&uuml;ft, sondern
+auch, ob der Text unver&auml;ndert angekommen ist.
+<P>
+<H2><A NAME="ss1.3">1.3 Web of trust</A>
+</H2>
+
+<P>
+<P>Eine Schwachstelle der Public Key Algorithmen ist die Verbreitung der
+&ouml;ffentlichen Schl&uuml;ssel. Ein Benutzer k&ouml;nnte einen
+&ouml;ffentlichen Schl&uuml;ssel mit falscher User ID in Umlauf
+bringen. Wenn dann mit diesem Schl&uuml;ssel Nachrichten kodiert
+werden, kann der Eindringling die Nachrichten dekodieren und
+lesen. Wenn er sie dann noch mit einem echten &ouml;ffentlichen
+Schl&uuml;ssel kodiert an den eigentlichen Empf&auml;nger
+weiterleitet, f&auml;llt dieser Angriff nicht einmal auf.
+<P>
+<P>Die von PGP (und damit auch von GnuPG) gew&auml;hlte L&ouml;sung
+besteht im Unterschreiben von Schl&uuml;sseln. Ein &ouml;ffentlicher
+Schl&uuml;ssel kann von anderen Leuten unterschrieben werden. Diese
+Unterschrift best&auml;tigt, da&szlig; der Schl&uuml;ssel zu der in
+der UID angegebenen Person geh&ouml;rt. Der Benutzer kann festlegen,
+welchen Unterschriften er wie weit traut. Vertrauen ist dabei zwar
+reflexiv, aber nicht symmetrisch und transitiv. Ein Schl&uuml;ssel
+gilt als vertrauensw&uuml;rdig, wenn er von Leuten unterzeichnet wurde,
+denen man vertraut. Wenn man Schl&uuml;ssel unterzeichnet, sollte man
+sich sicher sein, da&szlig; man die Identit&auml;t desjenigen, dessen
+Schl&uuml;ssel man unterschreibt, genau kennt. Eine M&ouml;glichkeit
+ist es, den Schl&uuml;ssel pers&ouml;nlich bekommen zu haben, eine
+andere, den Fingerprint &uuml;ber zuverl&auml;ssige Kan&auml;le zu
+vergleichen.
+<P>
+<H2><A NAME="ss1.4">1.4 Grenzen der Sicherheit</A>
+</H2>
+
+<P>
+<P>Wenn man Daten vertraulich halten will, sollte man sich nicht nur
+Gedanken &uuml;ber die Sicherheit des Verschl&uuml;sselungsalgorithmus machen,
+sondern &uuml;ber die Systemsicherheit allgemein. Die in GnuPG verwendeten
+Algorithmen gelten gemeinhin als nicht zu knacken. Daraus zu
+schlie&szlig;en, da&szlig; alle verschl&uuml;sselten Daten sicher seien, ist naiv. Es
+gibt auch noch andere Formen von Angriffen. Anfang Februar 1999
+tauchte zum Beispiel ein Word Trojaner auf, der private PGP
+Schl&uuml;sselbunde auf der Festplatte suchte und via ftp verschickte
+(Meldung im Heise Newsticker vom 03.02.99). Ein privates Schl&uuml;sselbund
+l&auml;&szlig;t sich, insbesondere bei schlechtem Passwort, deutlich leichter
+knacken als eine einzelne Datei.
+<P>
+<P>Denkbar sind auch Trojaner, die Tastatureingaben weiterleiten.  Falls
+man die Nachrichten entschl&uuml;sselt auf dem Rechner lagert, k&ouml;nnen sie
+nat&uuml;rlich auch gelesen werden. Aufwendiger, aber technisch m&ouml;glich ist
+es, die Abstrahlung des Monitors zu messen und sichtbar zu machen, so
+da&szlig; der Bildschirminhalt mitgelesen werden kann. Dann n&uuml;tzt es auch
+nichts, eine verschl&uuml;sselte Datei nur zum Lesen zu entschl&uuml;sseln. Zum
+Thema &quot;&Uuml;berwachung&quot; gibt es den interessanten Artikel
+&quot;Abh&ouml;r-Dschungel&quot; aus der c't 5/98, Seite 82 und &quot;In
+die R&ouml;hre geguckt&quot; c't 24/98, Seite 90. 
+<P>
+<P>Die obigen M&ouml;glichkeiten sollen keine Paranoia hervorrufen, sondern
+nur darauf hinweisen, da&szlig; Verschl&uuml;sselung von Daten nur ein Baustein
+eines Sicherheitskonzeptes sein kann. Um so erstaunlicher, da&szlig; es
+immer wieder Versuche gibt, Verschl&uuml;sselung von Daten zu be-
+beziehungsweise zu verhindern. 
+<P>
+<HR>
+<A HREF="GPGMiniHowto-2.html">Weiter</A>
+Zurück
+<A HREF="GPGMiniHowto.html#toc1">Inhalt</A>
+</BODY>
+</HTML>

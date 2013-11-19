@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.20">
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-9" />
+ <TITLE>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe)</TITLE>
+ <LINK HREF="GPGMinikNasil-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="GPGMinikNasil-1.html">Sonraki</A>
+Onceki
+Içerik
+<HR>
+<H1>Gnu Privacy Guard (GnuPG) Minik Nasıl (Türkçe)</H1>
+
+<H2>Brenno J.S.A.A.F. de Winter (İngilizce) <CODE>&lt;brenno@dewinter.com&gt;</CODE>
+Michael Fischer v. Mollard (Almanca)
+<CODE>&lt;fischer@math.uni-goettingen.de&gt;</CODE>
+Arjen Baart
+<CODE>&lt;arjen@andromeda.nl&gt;</CODE>
+Barış Çiçek (Türkçe)
+<CODE>&lt;baris teamforce.name.tr&gt;</CODE></H2>Version 0.1.4 24 Nisan, 2004
+<HR>
+<EM>  Bu belgeler Açık Kaynaklı OpenPGP uyumlu şifreleme sitemi GNU Privacy Guard
+  (GnuPG) kullanımını anlatır. Bu programı tamamiyle serbest kılabilmek için   RSA algoritması gibi patentli algoritmalardan kaçınılmıştır. Belge özgün
+  olarak Almanca olarak Michael Fischer v. Mollar tarafından yazılmıştır. Metin
+  daha sonra tercüme edilip düzenlenmiştir. Eksiksiz birebir kopya değildir.</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="GPGMinikNasil-1.html">Kapsam</A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="GPGMinikNasil-1.html#ss1.1">Genel Anahtarlı Şifreleme</A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="GPGMinikNasil-1.html#ss1.2">Sayısal İmzalar</A>
+<LI><A NAME="toc1.3">1.3</A> <A HREF="GPGMinikNasil-1.html#ss1.3">Güven ağı</A>
+<LI><A NAME="toc1.4">1.4</A> <A HREF="GPGMinikNasil-1.html#ss1.4">Güvenliğin sınırları</A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="GPGMinikNasil-2.html">Kurulum</A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="GPGMinikNasil-2.html#ss2.1">GnuPG için Kaynaklar</A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="GPGMinikNasil-2.html#ss2.2">Yapılandırma</A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="GPGMinikNasil-2.html#ss2.3">Derleme</A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="GPGMinikNasil-2.html#ss2.4">Kurulum</A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="GPGMinikNasil-3.html">Anahtarları Kullanma</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="GPGMinikNasil-3.html#ss3.1">Anahtar yaratmak</A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="GPGMinikNasil-3.html#ss3.2">Anahtarların Dışarıya Aktarımı</A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="GPGMinikNasil-3.html#ss3.3">Anahtarların İçe Aktarımı</A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="GPGMinikNasil-3.html#ss3.4">Anahtarı Feshetmek</A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="GPGMinikNasil-3.html#ss3.5">Anahtar yönetimi</A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="GPGMinikNasil-3.html#ss3.6">Anahtar imzalama</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="GPGMinikNasil-4.html">Şifreleme ve şifre çözümleme</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="GPGMinikNasil-4.html#ss4.1">Şifreleme</A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="GPGMinikNasil-4.html#ss4.2">Şifre çözümleme</A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="GPGMinikNasil-5.html">İmzalama ve imza denetimi</A></H2>
+
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="GPGMinikNasil-6.html">Arayüzler</A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="GPGMinikNasil-6.html#ss6.1">Grafik arayüzleri</A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="GPGMinikNasil-6.html#ss6.2">E-posta programları</A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="GPGMinikNasil-7.html">Bilgi kaynakları</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="GPGMinikNasil-7.html#ss7.1">GnuPG</A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="GPGMinikNasil-7.html#ss7.2">PGP</A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="GPGMinikNasil-7.html#ss7.3">Anahtar sunucuları</A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="GPGMinikNasil-7.html#ss7.4">Kitaplar</A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="GPGMinikNasil-8.html">Bu belge hakkında</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="GPGMinikNasil-8.html#ss8.1">Sürümler</A>
+</UL>
+<HR>
+<A HREF="GPGMinikNasil-1.html">Sonraki</A>
+Onceki
+Içerik
+</BODY>
+</HTML>

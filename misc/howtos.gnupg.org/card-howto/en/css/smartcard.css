@@ -1,0 +1,119 @@
+/* Adjust docbook <note></note> areas */
+
+div.note span.important {
+  color: black;
+  background-color : red;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+/* Adjust docbook <table></table> areas */
+
+div.table th {
+  background: #000030;
+  color: white;
+}
+
+div.table td {
+  background: #ddddff;
+  color: black;
+}
+
+div.table td.even {
+  color: black;
+  background-color : white;
+}
+
+div.table td.odd {
+  color: black;
+  background-color : #ddddff;
+}
+
+div.table td.total {
+  color: black;
+  font-weight: bold;
+  font-size: 12pt;
+  background-color : #FFFF66;
+}
+
+/* <note></note> <warning></warning> and <error></error> sections */
+
+div.note {
+  background-color : #9ccb4a;
+}
+
+div.warning {
+  background-color : #ffffaa;
+}
+
+div.error {
+  background-color : #ffeeee;
+}
+
+/* Adjustments to docbook <screen></screen> areas */
+
+pre.screen {
+  /* color: #33FF33; */
+  /* color : #9ccb4a;
+  background-color : black; */
+
+  color : white;
+  background-color : black;
+
+  margin: 24pt;
+  overflow: auto;
+
+/*  height: 25%; */
+}
+
+pre.screen b {
+  color: yellow;
+}
+
+/* Adjust docbook <programlisting></programlisting> areas */
+
+pre.programlisting {
+  padding: .5em; 
+  /* background-color : #eeffff; */
+  background-color : #9ccb4a;
+
+  margin: 24pt;
+  overflow: auto;
+
+/*  height: 25%; */
+}
+
+/* Adjust docbook <command></command> areas */
+.command {
+  font-weight : bold;
+}
+
+/* Adjust the header/footer regions */
+
+div.navheader table{
+  color: black;
+  /* background-color : #000030; */
+  padding: 5px;
+  margin-top: 10px;
+  width: 100%;
+  /* border: 2pt solid #a0a0d0; */
+  font-size: 8pt;
+}
+
+div.navfooter table{
+  color: black;
+  /* background-color : #000030; */
+  padding: 5px;
+  margin-top: 10px;
+  width: 100%;
+  /* border: 2pt solid #a0a0d0; */
+  font-size: 8pt;
+}
+
+tt.filename {
+  font-weight : bold;
+}
+
+.emphasis {
+  font-weight : bold;
+}

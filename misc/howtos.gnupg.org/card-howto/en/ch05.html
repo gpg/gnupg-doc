@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 5. Advanced Features</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="prev" href="ch04s02.html" title="4.2. Signing and encrypting mails" />
+    <link rel="next" href="ch05s02.html" title="5.2. Using the card only for subkeys" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">Chapter 5. Advanced Features</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch05s02.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="chapter" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="id2523179"></a>Chapter 5. Advanced Features</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="section">
+              <a href="ch05.html#id2523191">5.1. Moving an existing key to the card</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="section">
+              <a href="ch05s02.html">5.2. Using the card only for subkeys</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch05s02.html#id2523217">5.2.1. What are Subkeys?</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="ch05s02.html#id2523237">5.2.2. Moving a Subkey to the Card</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <h3 class="title">Warning</h3>
+        <p>Please make sure to make a backup of you key before experimenting with any of the following commands.</p>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2523191"></a>5.1. Moving an existing key to the card</h2>
+            </div>
+          </div>
+        </div>
+        <p>Theoretically you can move any existing key to the card.  It does not make a difference if you want to import a primary key or a subkey.  Practically there are some restrictions.  First, the card does not support DSA keys.  Second, only 1024 bit RSA keys are currently supported by the card.</p>
+        <p>Use the <strong class="userinput"><code>keytocard</code></strong> command to move the key.  gpg will do the checking for you and will also tell you if it is possible to move the key or not.</p>
+        <div class="informalexample">
+          <pre class="screen">
+archi@foobar:~ &gt; gpg --edit-key 4A1D3D53
+gpg (GnuPG) 1.4.0; Copyright (C) 2004 Free Software Foundation, Inc.
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions. See the file COPYING for details.
+
+Secret key is available.
+
+pub  1024R/4A1D3D53  created: 2005-03-05  expires: never       usage: CS
+                     trust: ultimate      validity: ultimate
+[ultimate] (1). Archibald Goodwin (2) (The Tester) &lt;archi@foobar.example&gt;
+
+Command&gt; toggle
+
+sec  1024R/4A1D3D53  created: 2005-03-05  expires: never
+(1)  Archibald Goodwin (2) (The Tester) &lt;archi@foobar.example&gt;
+
+Command&gt; keytocard
+Really move the primary key? (y/N) y
+Signature key ....: 5140 AA49 39A0 01D1 29A9  9042 28D4 524A 2AB4 B711
+Encryption key....: E684 AB4A AD27 DEC3 986E  C90F 2AEB 898F F651 8D6B
+Authentication key: AF53 357B 5E13 9D2A 4E14  AEB7 07A6 51FA 53CD 8E68
+
+Please select where to store the key:
+   (1) Signature key
+   (3) Authentication key
+Your selection? 3
+
+gpg: WARNING: such a key has already been stored on the card!
+
+Replace existing key? (y/N) y
+
+You need a passphrase to unlock the secret key for
+user: "Archibald Goodwin (2) (The Tester) &lt;archi@foobar.example&gt;"
+1024-bit RSA key, ID 4A1D3D53, created 2005-03-05
+
+gpg: 3 Admin PIN attempts remaining before card is permanently locked
+
+Admin PIN
+
+sec  1024R/4A1D3D53  created: 2005-03-05  expires: never
+                     card-no: 0001 00000049 <em class="lineannotation"><span class="lineannotation">// Indicating the key has been moved to the card.</span></em>
+(1)  Archibald Goodwin (2) (The Tester) &lt;archi@foobar.example&gt;
+            </pre>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch04s02.html">Prev</a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch05s02.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">4.2. Signing and encrypting mails </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> 5.2. Using the card only for subkeys</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

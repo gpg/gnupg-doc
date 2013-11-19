@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 1. Introduction</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="prev" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="next" href="ch02.html" title="Chapter 2. Installation for GNU/Linux" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">Chapter 1. Introduction</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="smartcard-howto.html">Prev</a> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch02.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="chapter" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="id2472293"></a>Chapter 1. Introduction</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="section">
+              <a href="ch01.html#id2472312">1.1. The OpenPGP card</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <p>With GnuPG everybody has the chance to secure his communication.</p>
+      <p>To work with GnuPG on different machines (private PC, at work, with laptop etc.) the secret key has to be present on every machine.  Distributing the secret key to a lot of different machines does not support its secrecy.  Especially at work where other peple have root access on your machine it is not save to store your secret key.  Starting with version 1.3.3 GnuPG supports smart cards to save your keys.</p>
+      <p>This Howto describes how to use GnuPG with a smart card distributed to <a href="http://www.fsfe.org" target="_top">fellows</a> of the <a href="http://www.fsfeurope.org" target="_top">Free Software Foundation Europe</a>.</p>
+      <p>In general cards that implement the <a href="http://g10code.com/docs/openpgp-card-1.1.pdf" target="_top">OpenPGP card specification</a> in version 1.0 or higher are supported by GnuPG.</p>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2472312"></a>1.1. The OpenPGP card</h2>
+            </div>
+          </div>
+        </div>
+        <p>
+        The OpenPGP Card is a smart card (standard size; ISO 7816-4,-8 compatible).
+        Features of this card are:
+        </p>
+        <div class="itemizedlist">
+          <ul type="disc">
+            <li>
+              <p>3 independent 1024 bit RSA keys (signing,encryption,authentication).</p>
+            </li>
+            <li>
+              <p>Key generation on card or import of existing keys.</p>
+            </li>
+            <li>
+              <p>Signature counter.</p>
+            </li>
+            <li>
+              <p>Data object to store an URL to access the full OpenPGP public key.</p>
+            </li>
+            <li>
+              <p>Data objects for card holder name etc.</p>
+            </li>
+            <li>
+              <p>Data object for login specific data.</p>
+            </li>
+            <li>
+              <p>Length of PIN between 6 and 254 characters; not restricted to numbers.</p>
+            </li>
+            <li>
+              <p>T=1 protocol; compatible with most readers.</p>
+            </li>
+            <li>
+              <p>Specification freely available and usable without any constraints.</p>
+            </li>
+            <li>
+              <p>Reasonably priced. </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="smartcard-howto.html">Prev</a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch02.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">How to use the Fellowship Smartcard </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> Chapter 2. Installation for GNU/Linux</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+The card-howto is not automatically updated but copied from the
+card-howto module created build directory to thsi CVS.  Eventually we
+should implement a mechanism like what we do with the GPH but for now
+this is easier.
+

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto : Installation </TITLE>
+ <LINK HREF="GPGMiniHowto-3.html" REL=next>
+ <LINK HREF="GPGMiniHowto-1.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-3.html">Weiter</A>
+<A HREF="GPGMiniHowto-1.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc2">Inhalt</A>
+<HR>
+<H2><A NAME="s2">2. Installation </A></H2>
+
+<P>
+<H2><A NAME="ss2.1">2.1 Bezugsquellen </A>
+</H2>
+
+<P>
+<P>Die offizielle Bezugsquelle ist die 
+<A HREF="http://www.gnupg.org/download.html">GnuPG Homepage</A>. Dort gibt es
+auch eine Liste der Mirrors. 
+<P>Aus rechtlichen Gr&uuml;nden darf GnuPG nicht aus Servern in den USA
+geladen werden, da Kryptographie in den USA als R&uuml;stungsgut gilt. Aus
+diesem Grund gibt es &uuml;brigens PGP immer in nationalen und
+internationalen Versionen, wobei bei letzteren der Sourcecode in
+Buchform exportiert wird und er in Oslo wieder eingescant
+wird. Genaueres dazu auf der
+<A HREF="http://www.pgpi.com">Internationalen PGP  Homepage</A>. Nichtsdestotrotz darf GnuPG in die USA eingef&uuml;hrt und
+benutzt werden, es darf dort auch auf ftp-Servern abgelegt werden. Es
+mu&szlig; dabei nur garantiert werden, da&szlig; GnuPG nicht reexportiert wird.
+<P>
+<P>Falls man schon eine lauff&auml;hige GnuPG oder PGP Version
+hat, sollte man die Signatur des Archivs &uuml;berpr&uuml;fen (siehe 
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signaturen">Signaturen</A>).
+<P>
+<P>
+<H2><A NAME="ss2.2">2.2 Konfigurieren </A>
+</H2>
+
+<P>
+<P>GnuPG wird als Debian Package, als RedHat rpm oder als Sourcecode
+vertrieben. In den ersten beiden F&auml;llen nimmt man die entsprechenden
+Werkzeuge zum installieren (ich kenne nur rpm), alles weitere bezieht
+sich auf den Sourcecode. 
+<P>Da die Entwicklung unter Linux (x86) stattfindet, ist die
+&Uuml;bersetzung dort meist gar kein Problem. Eine aktuelle Liste der
+offiziell unterst&uuml;tzten Betriebssysteme steht auch auf der 
+<A HREF="http://www.gnupg.org">GnuPG Homepage</A>. Das folgende
+Vorgehen gilt aber betriebssystemunabh&auml;ngig.
+<P>
+<P>Nachdem das Archiv mit 
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+
+entpackt ist, tippt man 
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+Dabei sollte nichts verbl&uuml;ffendes passieren. Mit 
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+
+kann man sich, falls n&ouml;tig, die m&ouml;glichen Konfigurationsparameter
+ansehen. Falls es Probleme mit der der Internationalisierung
+(gettext) geben sollte, kann man mit <CODE>--with-included-gettext</CODE>
+eine mitgelieferte Version benutzen oder sie mit <CODE>--disable-NLS</CODE>
+abschalten.
+<P>
+<P>
+<H2><A NAME="ss2.3">2.3 Kompilieren </A>
+</H2>
+
+<P>
+<P>Danach sollte 
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+problemlos laufen. Falls es dabei wider Erwarten Probleme gibt, sollte
+man (in dieser Reihenfolge): Selbst probieren (nat&uuml;rlich mit Lesen der
+Dokumentation), jemanden in der N&auml;he fragen, der sich auskennt und
+schlie&szlig;lich auf der Mailingliste (siehe 
+<A HREF="GPGMiniHowto-6.html#GPG-Minihowto-Informationsquellen">Informationsquellen</A>) um
+Rat fragen. Falls es sich nur um falsche Pfade handelt, sollte man mit
+<CODE>make clean</CODE> (oder rabiater) das Verzeichnis
+s&auml;ubern, neu konfigurieren und es dann noch einmal versuchen.
+<P>
+<H2><A NAME="ss2.4">2.4 Einrichten </A>
+</H2>
+
+<P>
+<P>Mit 
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+
+werden die Programme und die Manpage in die daf&uuml;r vorgesehenen
+Verzeichnisse kopiert. In <CODE>usr/local/share/gnupg/</CODE> (oder in dem
+bei ./configure angegebenen Verzeichnis) liegt die Datei
+<CODE>options.skel</CODE>. Wenn man diese nach <CODE>~/.gnupg/options</CODE>
+kopiert, werden die entsprechenden Einstellungen als Standard
+benutzt. Das Kopieren sollte eigentlich beim Anlegen von <CODE>~/.gnupg/</CODE>
+automatisch passieren. Jeder m&ouml;gliche Eintrag ist gut dokumentiert, deshalb
+werden sie hier nicht beschrieben.
+<P>
+<P>Man kann GnuPG als suid root laufen lassen (das hei&szlig;t: das Programm
+l&auml;uft mit allen Rechten des Superusers), damit die
+M&ouml;glichkeit ausgeschlossen wird, da&szlig; Teile des Programmes
+ausgelagert werden und dann gelesen werden k&ouml;nnen. Wie real diese
+Gefahr ist, kann ich nicht beurteilen, allerdings ist auch mit suid
+root Vorsicht geboten, da ein trojanisches Pferd mit suid root
+beliebigen Schaden anrichten kann. Man kann die Warnmeldung, die
+ausgegeben wird, falls GnuPG nicht suid root l&auml;uft, mit  
+<CODE>no-secmem-warning</CODE> in <CODE>~/gnupg/options</CODE> abschalten.
+<P>
+<P>
+<HR>
+<A HREF="GPGMiniHowto-3.html">Weiter</A>
+<A HREF="GPGMiniHowto-1.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc2">Inhalt</A>
+</BODY>
+</HTML>

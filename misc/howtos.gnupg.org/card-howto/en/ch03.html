@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 3. Administrating the Card</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="prev" href="ch02s03.html" title="2.3. Installation of Card Reader" />
+    <link rel="next" href="ch03s02.html" title="3.2. Managing PINs" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">Chapter 3. Administrating the Card</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch02s03.html">Prev</a> </td>
+          <th width="60%" align="center"> </th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch03s02.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="chapter" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="features"></a>Chapter 3. Administrating the Card</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="section">
+              <a href="ch03.html#id2521300">3.1. Looking at the card</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch03.html#id2521343">3.1.1. Describing the output</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section">
+              <a href="ch03s02.html">3.2. Managing PINs</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch03s02.html#id2521670">3.2.1. General Information about PINs</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="ch03s02.html#id2521711">3.2.2. PIN operations</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section">
+              <a href="ch03s03.html">3.3. Initialising the card</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="ch03s03.html#id2521895">3.3.1. Personalising the card</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="ch03s03.html#id2521952">3.3.2. Generating keys</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <h3 class="title">Warning</h3>
+        <p>Whenever your are asked to enter a <span class="emphasis"><em>PIN</em></span> make sure you know which <span class="emphasis"><em>PIN</em></span> is meant.  There are two <span class="emphasis"><em>PINs</em></span> for the card - the <span class="emphasis"><em>PIN</em></span> and the <span class="emphasis"><em>AdminPIN</em></span>.  Please make sure you do not mix them up.</p>
+      </div>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <h3 class="title">Note</h3>
+        <p>During the writing of this HowTo it seemed that every once in a while GnuPG did not want to talk with the card reader.  We were quite sure we have not changed anything in the configuration but for some reason it just did not work.  Werner knows this problem and it will hopefully soon be fixed. Note that we never encountered this problem with Linux kernels 2.4.x - only with most 2.6 kernels.</p>
+        <p>This phenomenom occurs when the card reader has been in use for quite some time.  It might help to re-plug the reader.</p>
+        <p>The error message displayed looks like this:
+        
+            </p>
+        <div class="informalexample">
+          <pre class="screen">
+gpg: ccid_transceive failed: (0x1000a)
+gpg: apdu_send_simple(0) failed: card I/O error
+                </pre>
+        </div>
+        <p>
+        
+        </p>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id2521300"></a>3.1. Looking at the card</h2>
+            </div>
+          </div>
+        </div>
+        <p>To check if your card (and installation) is working please put your OpenPGP card in the reader and run <strong class="userinput"><code>gpg --card-status</code></strong>.  For an empty card the output should look like this:</p>
+        <div class="informalexample">
+          <pre class="screen">
+archi@foobar: &gt; gpg --card-status
+Application ID ...: D2760001240101010001000000490000
+Version ..........: 1.1
+Manufacturer .....: PPC Card Systems
+Serial number ....: 00000049
+Name of cardholder: [not set]
+Language prefs ...: de
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Private DO 1 .....: [not set]
+Private DO 2 .....: [not set]
+Signature PIN ....: forced
+Max. PIN lengths .: 254 254 254
+PIN retry counter : 3 3 3
+Signature counter : 0
+Signature key ....: [not set]
+Encryption key....: [not set]
+Authentication key: [not set]
+General key info..: [none]
+            </pre>
+        </div>
+        <p>The information displayed is the standard output for the Fellowship smartcard we are using.  Cards from other manufacturers might produce a different output.</p>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id2521343"></a>3.1.1. Describing the output</h3>
+              </div>
+            </div>
+          </div>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <h3 class="title">Note</h3>
+            <p>The output depends on manufacturer and specification.</p>
+          </div>
+          <div class="glosslist">
+            <dl>
+              <dt>Application ID</dt>
+              <dd>
+                <p>The manufacture's ID. This includes the type of the card, the implemented version of the specification, the manufacturer and the serial number. This is a unique identifier for any card.</p>
+              </dd>
+              <dt>Version</dt>
+              <dd>
+                <p>The used OpenPGP specification.</p>
+              </dd>
+              <dt>Manufacturer</dt>
+              <dd>
+                <p>The card's manufacturer.</p>
+              </dd>
+              <dt>Serial number</dt>
+              <dd>
+                <p>A unique number for all cards from this manufacturer.</p>
+              </dd>
+              <dt>Name of cardholder</dt>
+              <dd>
+                <p>The holder of this card.  Only plain ASCII characters are Allowed here. gpg does not use this field.</p>
+              </dd>
+              <dt>Language prefs</dt>
+              <dd>
+                <p>The card holder's language preferences. gpg ignores this value.</p>
+              </dd>
+              <dt>Sex</dt>
+              <dd>
+                <p>Male or female. gpg ignores this value.</p>
+              </dd>
+              <dt>URL of public key</dt>
+              <dd>
+                <p>Used by the <strong class="userinput"><code>fetch</code></strong> command of <strong class="userinput"><code>gpg --edit-card</code></strong>. It may contain an URL to be used to retrieve the public key.</p>
+              </dd>
+              <dt>Login data</dt>
+              <dd>
+                <p>This field may be used to store the account name of the card holder.  It may be used for login purposes.  gpg does not enforce any match of this name with a name used in the key.  See the source (app-openpgp.c) for some special features of the login-name field.</p>
+              </dd>
+              <dt>Private DO 1</dt>
+              <dd>
+                <p>This is a field reserved for arbitrary data.</p>
+              </dd>
+              <dt>Private DO 2</dt>
+              <dd>
+                <p>This is a field reserved for arbitrary data.</p>
+              </dd>
+              <dt>Signature PIN</dt>
+              <dd>
+                <p>When set to "forced", gpg requests the entry of a PIN for each signature operation. When set to "non forced", gpg may cache the PIN as long as the card has not been removed from the reader.</p>
+              </dd>
+              <dt>Max. PIN lengths</dt>
+              <dd>
+                <p>This field is unchangeable.  The values are put on the card right after personalisation - this is the moment after the chip has been glued on the card.</p>
+              </dd>
+              <dt>PIN retry counter</dt>
+              <dd>
+                <p>This field saves how many tries still are left to enter the right PIN.  They are decremented whenever a wrong PIN is entered.  They are reset whenever a correct AdminPIN is entered.  The first and second PIN are for the standard PIN.  gpg makes sure that the two numbers are synchronized.  The second PIN is only required due to peculiarities of the ISO-7816 standard; gpg tries to keep this PIN in sync with the first PIN.  The third PIN represents the retry counter for the AdminPIN.</p>
+              </dd>
+              <dt>Signature counter</dt>
+              <dd>
+                <p>This number keeps track of the signatures performed with the stored key.  It is only reset if a new signature key is created on or imported to the card.</p>
+              </dd>
+              <dt>Signature key</dt>
+              <dd>
+                <p>This key is commonly used as the primary OpenPGP key.</p>
+              </dd>
+              <dt>Encryption key</dt>
+              <dd>
+                <p>This key is commonly used as an encryption subkey.</p>
+              </dd>
+              <dt>Authentication key</dt>
+              <dd>
+                <p>This key is not used by gpg at all.  Other tools like PAM modules or ssh use this key for authentication services.</p>
+              </dd>
+              <dt>General key info</dt>
+              <dd>
+                <p>This primary user ID is shown if the corresponding public OpenPGP key is available.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch02s03.html">Prev</a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch03s02.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">2.3. Installation of Card Reader </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> 3.2. Managing PINs</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

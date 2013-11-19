@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto : Verschl&uuml;sseln und entschl&uuml;sseln</TITLE>
+ <LINK HREF="GPGMiniHowto-5.html" REL=next>
+ <LINK HREF="GPGMiniHowto-3.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-5.html">Weiter</A>
+<A HREF="GPGMiniHowto-3.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc4">Inhalt</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-verschl"></A> <A NAME="s4">4. Verschl&uuml;sseln und entschl&uuml;sseln</A></H2>
+
+<P>
+<P>Falls man mehrere private Schl&uuml;ssel hat, kann man mit der Option
+<CODE>-u UID</CODE> oder<CODE> --local-user UID</CODE> einen (oder mehrere) 
+Schl&uuml;ssel nach seiner UID ausw&auml;hlen. Diese Auswahl ersetzt den im
+Konfigurationsfile mit dem Befehl <CODE>default-key KeyID</CODE> einen
+Schl&uuml;ssel standardm&auml;&szlig;ig ausgew&auml;hlten Schl&uuml;ssel.
+<P>Mit <CODE>-r UID</CODE> oder<CODE> --recipient UID</CODE> kann man den
+Empf&auml;nger in der Kommandozeile ausw&auml;hlen.
+<P>
+<P>
+<H2><A NAME="ss4.1">4.1 Verschl&uuml;sseln</A>
+</H2>
+
+<P>
+<P>Das Kommando zum Verschl&uuml;sseln lautet
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -e Empf&auml;nger [Datei] 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+oder
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --encrypt Empf&auml;nger [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Es ist sinnvoll, die Dateien auch zu signieren, genaueres siehe 
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signaturen">Signaturen</A>.
+<P>
+<H2><A NAME="ss4.2">4.2 Entschl&uuml;sseln</A>
+</H2>
+
+<P>Das Kommando zum Entschl&uuml;sseln lautet
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-d] [Datei] 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+oder
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--decrypt] [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Auch hier gilt: Voreingestellt ist Ausgabe auf <CODE>stdout</CODE>, man
+kann aber mit der Option <CODE>-o [Datei]</CODE> in eine Datei ausgeben.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-5.html">Weiter</A>
+<A HREF="GPGMiniHowto-3.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc4">Inhalt</A>
+</BODY>
+</HTML>

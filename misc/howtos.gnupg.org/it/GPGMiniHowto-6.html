@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Front-end</TITLE>
+ <LINK HREF="GPGMiniHowto-7.html" REL=next>
+ <LINK HREF="GPGMiniHowto-5.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-7.html">Avanti</A>
+<A HREF="GPGMiniHowto-5.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc6">Indice</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-frontends"></A> <A NAME="s6">6.</A> <A HREF="GPGMiniHowto.html#toc6">Front-end</A></H2>
+
+
+<P>L'uso di GnuPG &egrave; molto facilitato grazie all'esistenza di una vasta scelta di 
+programmi che usano o supportano la crittografia di GnuPG.
+Ci sono front-end grafici che consentono di gestire le chiavi con semplici
+clic del mouse, e molti programmi di posta elettronica permettono di cifrare
+e decifrare i messaggi in modo automatico.
+Una lista quasi completa di front-end &egrave; disponibile sulla pagina
+<A HREF="http://www.gnupg.org/related_software/frontends.html">GnuPG front-end</A>.
+Ne illustreremo alcuni in questo capitolo.</P>
+
+<H2><A NAME="ss6.1">6.1</A> <A HREF="GPGMiniHowto.html#toc6.1">Interfacce grafiche</A>
+</H2>
+
+
+
+<H3>GPA</H3>
+
+<P>
+<A HREF="http://www.gnupg.org/gpa.html">GPA</A>, <EM>GNU Privacy
+Assistant</EM> &egrave; un'interfaccia utente grafica per GNU Privacy Guard
+(GnuPG), sviluppata nell'ambito del progetto GnuPG.
+Con GPA, &egrave; possibile vedere il proprio portachiavi, importare ed esportare
+chiavi, generarle, modificarne le caratteristiche e cifrare, firmare o
+decifrare documenti. Installare GPA &egrave; facile: occorre scaricare il
+pacchetto, decomprimerlo ed eseguire la solita sequenza:
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure; make; make install.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Il programma si esegue digitando 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpa
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H3>Seahorse</H3>
+
+<P>
+<A HREF="http://seahorse.sourceforge.net/">Seahorse</A> &egrave; un front-end
+GNOME per GnuPG.  Pu&ograve; essere usato per cifrare, firmare e decifrare testi e
+altri file.  Il testo pu&ograve; essere preso dagli appunti o scritto direttamente con
+il piccolo editor incluso. Seahorse ha anche un gestore di chiavi che pu&ograve;
+essere usato per modificare quasi tutte le caratteristiche delle chiavi
+presenti nel proprio portachiavi. &Egrave; possibile installare Seahorse da un
+pacchetto Debian (gli RPM non sono ancora disponibili al momento) o dai
+sorgenti. L'installazione dai sorgenti avviene come per gli altri programmi:
+scaricare, decomprimere, configure e make install.
+L'installazione pone seahorse in <CODE>/usr/local</CODE> e aggiunge un elemento
+al men&ugrave; "Applicazioni" di GNOME.</P>
+
+<H3>Geheimnis</H3>
+
+
+<P>
+<A HREF="http://geheimnis.sourceforge.net/">Geheimnis</A> &egrave; un
+front-end per GnuPG basato su KDE.
+Dovrebbe avere tutte le funzioni di GPA o Seahorse.
+(Nota dell'autore: purtroppo quando ho provato a compilare il programma, mi
+sono bloccato a causa di una libreria mancante: /usr/lib/libfam.la).</P>
+
+<H2><A NAME="ss6.2">6.2</A> <A HREF="GPGMiniHowto.html#toc6.2">Programmi di posta elettronica</A>
+</H2>
+
+<P>La maggior parte dei programmi di posta elettronica supportano GnuPG. Tra
+i tanti:
+<UL>
+<LI>Mozilla</LI>
+<LI>Pine</LI>
+<LI>Kmail</LI>
+<LI>Eudora</LI>
+<LI>Mutt</LI>
+<LI>exmh</LI>
+</UL>
+</P>
+<P>Ce ne sono probabilmente molti di pi&ugrave;: &egrave; difficile elencarli tutti.</P>
+
+<P>Usare un programma di posta elettronica con il supporto GnuPG permette di
+decifrare i messaggi che sono stati cifrati con la propria chiave pubblica, 
+firmare i propri messaggi in modo che il destinatario possa verificarne
+l'autenticit&agrave; e cifrare la propria posta con la chiave pubblica dei
+destinatari.</P>
+
+<H3>Mozilla e Enigmail</H3>
+
+<P>Mozilla non ha in s&eacute; il supporto per GnuPG. Per usare GnuPG con Mozilla
+occorre installare un "plug-in", come
+<A HREF="http://enigmail.mozdev.org/">EnigMail</A>.
+Enigmail &egrave; un "plug-in" per Mozilla/Netscape Mail che permette agli utenti
+di accedere alle capacit&agrave; di autenticazione e crittografia fornite da
+programmi popolari come GPG e PGP.
+Enigmail pu&ograve; cifrare/firmare la posta in uscita e decifrare/verificare
+quella in entrata. Pu&ograve; anche importare ed esportare chiavi.</P>
+
+<P>Installare EnigMail su un sistema Linux RedHat &egrave; facile, visto che sono
+disponibili RPM per l'ultima versione di Mozilla.
+Ci sono due pacchetti da installare: <CODE>mozilla-enigmail-0.39-3.i386.rpm</CODE>
+e <CODE>mozilla-ipc-0.99-0_rh7x.rpm</CODE>.
+Dopo aver installato questi RPM e aver riavviato Mozilla (o Netscape 6.x) si
+&egrave; pronti per usare GnuPG nella propria posta.
+Si noti tuttavia che EnigMail cifra solo i testi dei messaggi, non gli
+allegati; occorrer&agrave; cifrare separatamente i file che si vuole allegare.
+Su altri sistemi probabilmente occorre installare EnigMail dai sorgenti.</P>
+
+<H3>Kmail</H3>
+
+<P>Kmail, il programma di posta elettronica standard per KDE, ha il supporto
+integrato per GnuPG e PGP.
+Per impostare il programma in modo da poter firmare e cifrare i messaggi,
+occorre inserire il proprio user ID di GnuPG nella sezione "Identit&agrave;" della
+configurazione di Kmail. 
+Quando si spedisce un messaggio, per firmarlo o cifrarlo occorre usare i
+pulsanti "Firma messaggio" o "Cifra messaggio" sulla barra degli strumenti.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-7.html">Avanti</A>
+<A HREF="GPGMiniHowto-5.html">Indietro</A>
+<A HREF="GPGMiniHowto.html#toc6">Indice</A>
+</BODY>
+</HTML>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.16">
+<TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Front ends</TITLE>
+<LINK HREF="GPGMiniHowto-7.html" REL=next>
+<LINK HREF="GPGMiniHowto-5.html" REL=previous>
+<LINK HREF="GPGMiniHowto.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-7.html">Next</A>
+<A HREF="GPGMiniHowto-5.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-frontends"></A> <A NAME="s6">6.</A> <A HREF="GPGMiniHowto.html#toc6">Front ends</A></H2>
+<P>To make life a lot easier in using GnuPG, you have a wide choice of programs
+that either use or support GnuPG encryption.
+There are graphical front ends that put your key administration at the
+click of a mouse button and many MUAs (Mail User Agents) let you encrypt and
+sign your Email messages seamlessly.
+A nearly full list of front ends is available from the
+<A HREF="http:/www.gnupg.org/(en)/related_software/frontends.html">GnuPG Frontends</A> page.
+We will highlight a few of them in this section.</P>
+<H2><A NAME="ss6.1">6.1</A> <A HREF="GPGMiniHowto.html#toc6.1">Graphical interfaces</A>
+</H2>
+<H3>GPA</H3>
+<P>
+<A HREF="http:/www.gnupg.org/gpa.html">GPA</A>, the <EM>GNU Privacy
+Assistant</EM> is a graphical user interface for the GNU Privacy Guard (GnuPG).
+This is the standard graphical front end, provided by the GnuPG project.
+With GPA, you can view your keyring, import and export keys, generate keys,
+edit key properties and encrypt, sign or decrypt documents.
+Installing GPA is easy.
+Download the tarball, unpack and do the usual
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure; make; make install.
+</PRE>
+</CODE></BLOCKQUOTE>
+Start the program by typing
+<BLOCKQUOTE><CODE>
+<PRE>
+gpa
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<H3>Seahorse</H3>
+<P>
+<A HREF="http:/seahorse.sourceforge.net/">Seahorse</A>
+is a GNOME front-end for GnuPG.
+It can be used for sign, encrypt, verify and decrypt text and files.
+The text can be taken from the clipboard, or written directly in the little
+editor it has. Seahorse is also a key manager, which can be used to edit
+almost all the properties of the keys stored in your key rings.
+You can install Seahorse from a Debian package (RPMs are not available
+at this time) or from the source tarball.
+Installing from source is like any other package. Download, untar, configure
+and make install.
+The installation puts seahorse in <CODE>/usr/local</CODE> and puts a menu item in
+the Gnome 'Applications' menu.</P>
+<H3>Geheimnis</H3>
+<P>
+<A HREF="http:/devel-home.kde.org/~kgpg/index.html">KGPG</A> is a
+front end for GnuPG which is based upon KDE.
+KGPG supports key signing, importing and exporting. It can also work with
+other KDE tools interactively like konquerer. </P>
+<H2><A NAME="ss6.2">6.2</A> <A HREF="GPGMiniHowto.html#toc6.2">Email programs</A>
+</H2>
+<P>Most popular Email programs (or MUAs) support GnuPG. Among these are
+at least the following:
+<UL>
+<LI>Mozilla</LI>
+<LI>Evolution</LI>
+<LI>Pine</LI>
+<LI>Kmail</LI>
+<LI>Eudora</LI>
+<LI>Mutt</LI>
+<LI>exmh</LI>
+</UL>
+</P>
+<P>There are probably more; it is hardly possible to try them all.</P>
+<P>Using GnuPG support in your mail program lets you decrypt Email messages sent
+to you that are encrypted with your public key, sign your messages so the
+receiving party can make sure you are the author and encrypt your Email
+with the public keys of your recipients.</P>
+<H3>Mozilla and Enigmail</H3>
+<P>Mozilla does not have GnuPG support in itself. To use GnuPG encryption with
+Mozilla, you must install a plug-in, such as
+<A HREF="http:/enigmail.mozdev.org/">EnigMail</A>.
+Enigmail is a "plugin" for Mozilla/Netscape Mail which allows users to access
+the authentication and encryption features provided by the popular
+GPG and PGP software.
+Enigmail can encrypt/sign mail when sending, and also decrypt/authenticate
+received mail. It can also import/export public keys.</P>
+<P>Enigmail can easily be installed by Mozilla extension management. The only thing
+you should do is to click on the proper link related with your Mozilla version
+on the
+<A HREF="http:/enigmail.mozdev.org/download.html">Download</A> page.
+Unfortunately, RPMs for enigmail are not available.</P>
+<H3>Evolution</H3>
+<P>Evolution is a well-known MUA for Linux and has fairly good GnuPG support. It can
+get e-mails encrypted and decrypt them. It also has built in key signing and
+key authorising options. It supports S/MIME but inline pgp support (which is
+not standard but used by some MUAs) is not implemented.
+To configure the GnuPG settings you should check the mail account preferences.</P>
+<H3>Kmail</H3>
+<P>Kmail, the standard Email program for KDE has integrated support for GnuPG
+and PGP encryption.
+To set things up so you can sign and decrypt messages, you have to enter your
+GnuPG user ID in the 'Identity' section of the Kmail configuration.
+When you send a new message, the message will not be signed or encrypted by
+default. You have to check the 'Sign message' and 'Encrypt message' buttons
+in the tool bar.</P>
+<HR>
+<A HREF="GPGMiniHowto-7.html">Next</A>
+<A HREF="GPGMiniHowto-5.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc6">Contents</A>
+</BODY>
+</HTML>

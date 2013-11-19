@@ -1,0 +1,1339 @@
+<!doctype linuxdoc system> <article>
+
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Català)
+
+<author>Michael Fischard v. Mollard
+<htmlurl url="mailto:fischer@math.uni-goettingen.de" name="&lt;fischer@math.uni-goettingen.de&gt;"> 
+(versió original en alemany)&nl;
+
+Brenno J.S.A.A.F. de Winter <htmlurl url="mailto:brenno@dewinter.com" name="&lt;brenno@dewinter.com&gt;"> 
+(versió en anglès)&nl;
+
+Horacio <htmlurl url="mailto:homega@ciberia.es" name="&lt;homega@ciberia.es&gt;"> 
+(versió en castellà)&nl;
+
+Josep Monés i Teixidor <htmlurl url="mailto:jmones@puntbarra.com" name="&lt;jmones@puntbarra.com&gt;"> 
+(versió en català)&nl;
+
+<date>Versió 0.1.3, 17 de maig de 2002
+
+<abstract> Aquest document mostra com emprar GNU Privacy Guard
+(GnuPG), un sistema de xifratge de codi obert (programari lliure)
+compatible amb OpenPGP. Per poder mantenir aquest programa totalment
+lliure s'ha evitat l'ús de l'algoritme RSA i d'altres algoritmes
+patentats. El document original el va escriure Michael Fischer v.
+Mollard en alemany. Va ser posteriorment traduït a l'anglès, i
+revisat, per Brenno J.S.A.A.F. de Winter. Finalment, va ser traduït al
+castellà i novament revisat a partir de la versió anglesa. El document
+en català es basa principalment en la darrera revisió de la versió
+anglesa però també inclou la traducció d'un capítol només present en la versió en castellà.
+</abstract>
+
+<toc>
+
+<sect>Conceptes bàsics<label id="GPGMinihowto-ConceptesBasics">
+<p>
+<#if output=latex2e>
+<em><bf>Comentari per les versions destinades a
+impressió:</bf> Degut a dificultats tècniques, el guió doble, que
+s'empra en les opcions llargues de GnuPG, el text contingut en
+paràgrafs es representa visualment com a guions simples. Per tant,
+interpreteu-los com a guions simples en els casos d'opcions llargues.
+</em>
+</#if>
+</p>
+
+<sect1>Xifratge de clau pública
+
+<p>Per poder entendre millor el sistema de xifratge emprat pels
+sistemes de claus asimètriques (de claus públiques i privades), és
+necessari entendre la diferència amb els sistemes de claus simètriques
+(claus secretes).
+
+<p>Els sistemes de xifratge de <em/clau simètrica/ són aquells en els
+que la clau que s'empra per xifrar les dades és la mateixa que
+s'utilitza per desxifrar-los. En el cas del correu electrònic, el
+remitent xifra el missatge amb una <em/clau secreta/, perquè el
+destinatari el pugui desxifrar, necessita obtenir prèviament aquesta
+mateixa clau de manera &laquo;segura&raquo;, o sigui, de manera que
+terceres persones no tinguin l'oportunitat d'obtenir aquesta clau. Si
+no es té certesa que l'intercanvi de claus ha estat segur, la validesa
+del sistema és nul·la.
+
+<p>Els sistemes de xifratge amb <em/claus asimètriques/, en canvi,
+empren dues claus diferents per al xifratge i el desxifratge de les
+dades. El el cas anterior del correu electrònic, el remitent empraria
+la <em/clau pública/ del destinatari per xifrar el missatge, i el
+destinatari desxifraria el missatge amb la seva pròpia <em/clau
+privada/. Així doncs, la <em/clau privada/ no ha de ser accessible per
+a <bf/ningú/ que no en sigui el propietari, mentre que la <em/clau
+pública/, pot ser entregada a qualsevol persona. En un sistema de
+xifratge ben implementat, la <em/clau privada/ no es pot obtenir a
+partir de la <em/clau pública/.
+
+<p>El punt crucial de tot aquest sistema és que la <em/clau privada/
+ha de mantenir-se en secret i només el seu propietari hi ha de tenir
+accés. NO ENVIEU AQUESTA CLAU A TRAVÉS D'INTERNET. De la mateixa
+manera és molt perillós utilitzar GnuPG a través de <tt>telnet</tt>
+(considereu la possibilitat de no emprar mai telnet degut als riscos
+de seguretat importants que presenta).
+
+<sect1>Signatures digitals
+
+<p>El concepte de <bf/signatura digital/ es basa en la verificació de
+l'autoria d'un missatge. Això vol dir que el destinatari d'un missatge
+pot comprovar que el «suposat» remitent és qui diu que és. Per fer-ho,
+el remitent, una vegada ha escrit el missatge, el signa emprant la
+seva pròpia clau privada. El destinatari, una vegada ha rebut el
+missatge, comprovarà l'autenticitat d'aquest, és a dir, el verificarà
+emprant la clau pública del remitent.
+
+<p>Aquest mètode és d'especial utilitat per a reduir els riscos de
+seguretat en els nostres sistemes (ens podrien enviar un suposat pegat
+per a un programa, i ser en realitat un virus o un troià); també
+podrien enviar-nos informació o dades, com provinents d'una font
+lícita o fiable. En ambdós casos, no seria gaire difícil falsificar la
+direcció i el nom del remitent, però sí impossible falsificar-ne la
+signatura digital.
+
+<p>Com ja hem comentat, la verificació d'un missatge signat
+digitalment es duu a terme mitjançant l'ús de la <em/clau pública/ del
+remitent <bf/sobre el text/ del propi missatge. D'aquesta manera no
+només podem verificat la identitat de l'autor, sinó que també podem
+comprovar la integritat del missatge, ja que la signatura digital ha estat
+generada amb el <bf/text/ i la <bf/clau privada/. Així doncs, una
+alteració o modificació del text «a posteriori», o qualsevol
+manipulació del missatge (especialment si fem ús de les
+especificacions MIME/PGP), donaria com a resultat un error en la
+verificació.
+
+<sect1>Anells de confiança <p>Un punt feble dels algoritmes de clau
+asimètrica és la transmissió de les claus públiques. Un intrús podria
+posar en circulació una clau pública amb un identificador d'usuari
+fals. Si es xifren missatges amb aquesta clau, l'intrús podria
+desxifrar i llegir els missatges. Si llavors l'intrús el xifrés amb la
+clau pública autèntica de l'usuari i li passés, aquest atac no seria
+perceptible.
+
+<p>La solució de <tt/PGP/ (i per tant la solució de <tt/GnuPG/) és la
+signatura de les claus. La clau pública d'un usuari pot estar
+<bf/signada/ per altres usuaris. L'objectiu d'aquestes signatures és
+que l'usuari que signa reconeix que l'UID (identificador d'usuari) de
+la clau signada pertany a l'usuari a qui diu que pertany. A partir
+d'aquí és responsabilitat de l'usuari de <tt/GnuPG/ decidir fins a
+quin punt es refia de la signatura. Una clau es pot consiferar fiable
+que es confia en el remitent i se sap amb seguretat que la clau
+signant pertany a aquella persona. Només quan es pot confiar plenament
+en la clau del signant, es pot confiar en la clau a la que signa (i en
+les signatures generades amb aquesta clau). Per tenir la seguretat que
+la clau és correcta, s'ha de comparar amb la seva <bf/empremta
+digital/ mitjançant un mitjà de canal fiable. Per exemple, podríem
+buscar el seu telèfon a la guia i trucar-lo, demanant-li que ens
+digues l'empremta digital a viva veu per tal de poder-li donar
+confiança absoluta.
+
+
+<sect1>Límits de seguretat
+
+<p>Si el que es vol és mantenir la confidencialitat de les dades
+que es posseixen, no n'hi ha prou amb determinar quin algoritme de
+xifratge cal emprar; és necessari també pensar amb la seguretat general
+del sistema. En principi, <tt/PGP/ està considerat com suficientment
+segur, i fins aquest moment, no se sap de cap cas en el que una clau
+PGP hagi estat trencada. Això no vol dir que tot el que s'ha xifrat
+sigui segur. Per exemple, si la NSA (l'Agència de Seguretat Nacional
+dels EUA) hagués aconseguit trencar una clau PGP d'alguna manera,
+probablement no ho farien públic. Però, encara que les claus de PGP
+fossin absolutament impossibles de trencar, hi ha d'altres tipus
+d'atacs que poden ser utilitzats per trencar-ne la seguretat. A
+principis de febrer de 1999, es va descobrir un troià que cercava
+claus privades de PGP en el disc dur i els transferia mitjançant FTP.
+Si s'hagués escollit una contrasenya feble, un atacant podria haver
+obtingut fàcilment les claus privades.
+
+<p>Una altra possibilitat tècnica (encara que més difícil) és la d'un
+troià que recollís tot el que s'escriu pel teclat i ho transmetés a
+l'atacant. També és possible, encara que difícil, passar el contingut
+d'una pantalla a una altra. En aquest cas, no caldria fer cap anàlisi
+de les dades xifrades, ja que es tindria accés a les dades abans de
+xifrar.
+
+<p>Per tot això, és necessari una planificació de la seguretat que
+estigui ben prevista i que en minimitzi els perills.
+
+<p>La idea no és crear una atmosfera de paranoia entre la gent, sinó
+deixar clar que per tenir un sistema segur no n'hi ha prou amb
+instal·lar un programa criptogràfic, ja que, si bé és un pas cap a un
+sistema més segur, no és la solució completa. Troians com els que
+aparegueren el març del 1999 amb el virus Melissa van demostrar que
+moltes empreses no estan preparades pel que fa a la seguretat.
+
+
+<sect>Instal·lació 
+
+<sect1>Codi font de GnuPG.
+
+<p>El web oficial per la descàrrega de <tt/GnuPG/ és
+<htmlurl url="http://www.gnupg.org/download.html" name="la pàgina oficial de GnuPG">.
+Allà també hi trobareu els enllaços a rèpliques oficials. 
+
+
+<p>Degut a restriccions legals no es permet descarregat material
+criptogràfic des de servidors localitzats als EUA a les persones que
+no hi resideixen. Als EUA existeixen lleis que restringeixen
+l'exportació de codi criptogràfic així com dels programes que
+l'inclouen. Per aquesta raó PGP sempre es troba disponible en dues
+versions: una internacional i l'altra per als EUA.
+
+<p>El codi font de la versió internacional es va exportar en format de
+text ascii imprimit en un llibre. A continuació es va escanejar a
+Europa (Oslo). Se'n pot obtenir més informació a la 
+<htmlurl url="http://www.pgpi.com" name="pàgina international de PGP">.
+La versió internacional de PGP pot ser importada lliurement als EUA
+sempre i que no es torni a reexporta-la.
+
+<p>Si ja teniu instal·lada una versió de <tt/GnuPG/ o <tt/PGP/,
+hauríeu de comprovar la signatura del fitxer (vegeu
+<ref id="GPGMinihowto-Signatures" name="Signatures">).
+
+<sect1>Configuració 
+
+<p> Es pot obtenir GnuPG com a un paquet binari de
+<htmlurl url="http://www.debian.org/" name="Debian"> 
+(.deb), com a un paquet binari de 
+<htmlurl url="http://www.redhat.com/" name="RedHat"> (.rpm),
+o en codi font.
+
+<p>GnuPG s'inclou en la darreres distribucions de RedHat Linux. Si
+aquestes distribucions, per comprovar si teniu GnuPG instal·lat en el
+vostre sistema, empreu:
+
+<tscreen><code>
+rpm -q gnupg
+</code></tscreen>  
+
+Els paquests esmentats són fitxers comprimits que es poden instal·lar
+amb les eines corresponents, segons la distribució. Si necessiteu
+instal·lar GnuPG en altres sistemes operatius, necessitareu
+compilar-lo a partir del codi font. S'agraïrà que qui compili un
+paquet d'instal·lació per altres sistemes o arquitectures, el faci de
+domini públic.
+
+<p> Com que la gran part del desenvolupament de GnuPG es fa en
+màquines x86 sota <htmlurl url="http://www.linux.org/" name="Linux">,
+l'adaptació del programa a d'altres sistemes diferents no hauria de
+suposar cap problema. La llista de sistemes operatius suportats per
+GnuPG es pot trobar a les pàgines de
+<htmlurl url="http://www.gnupg.org/" name="GnuPG">. El procediment que
+es descriu a continuació no és exclusiu de cap plataforma. Aquest
+procediment es pot utilitzar per instal·lar GnuPG a partir d'un
+fitxer comprimit de codi font (.tar.gz).
+
+ 
+<p>Descomprimiu i desarxiveu el paquet amb el codi font amb l'ordre
+(suposant que teniu <tt/Gnu tar/ instal·lat):
+
+<tscreen><code>
+$ tar xvzf gnupg-?.?.?.tar.gz
+</code></tscreen>
+
+<p>Després de desempaquetar-lo, canvieu al directori on heu
+descomprimit el codi font. Llavors executeu:
+
+<tscreen><code>
+$ ./configure
+</code></tscreen>  
+
+<p>Amb aquest pas no hauria de succeir res d'especial. Si executeu
+
+<tscreen><code>
+$ ./configure --help
+</code></tscreen>
+
+podeu veure les opcions de configuració disponibles per a la
+compilació. Si apareixen problemes referents a la internacionalització
+(GET text), podeu incloure una versió que està inclosa amb el codi
+font emprant la opció <tt>--with-included-gettext</tt>, o bé
+desactivar la internacionalització amb l'opció <tt>--disable-NLT</tt>.
+
+<sect1>Compilació
+
+<p>A continuació, compileu el codi font amb l'ordre:
+
+<tscreen><code>
+$ make
+</code></tscreen> 
+
+<p>La compilació hauria de transcórrer sense cap problema. Si passés
+quelcom anormal seguiu els passos següents (en el mateix ordre en què
+es descriuen aquí): Primer proveu de solucionar-ho vosaltres mateixos
+(fent ús de la documentació existent). Llavors assegureu-vos que el
+vostre problema no és un error conegut (comproveu el fitxer BUGS a
+<htmlurl url="http://www.gnupg.org/" name="http://www.gnupg.org">. Si
+cap d'aquests passos no solucionen el vostre problema, envieu la
+vostra pregunta a la llista de correu de GnuPG (en anglès) (vegeu
+<ref id="GPGMinihowto-FontsInformacio" name="Fonts d'informació">). 
+Si el vostre problema està relacionat amb la ruta d'accés, podeu
+provar <tt/make clean/, executar <tt>./configure</tt> un altre cop i
+intentar una vegada més compilar (amb <tt>make</tt>). 
+
+ 
+<sect1>Instal·lació
+
+<p>Llavors escriviu:
+
+<tscreen><code>
+$ make install 
+</code></tscreen>
+
+que copiarà el programa i les pàgines del manual al directori
+d'instal·lació. Si no heu canviat el directori d'instal·lació en
+executar <tt>./configure</tt>, llavors el directori d'instal·lació
+serà <tt>/usr/local/share/gnupg</tt>. Podeu trobar aquest directori en
+el fitxer <tt>options.skel</tt>. Si canvieu <tt/options.skel/, si es
+copia a <tt>~/.gnupg/options</tt> els ajustaments apropiats s'usaran
+de forma predeterminada. L'acció de copiar haria de realitzar-se
+automàticament en crear <tt>~/.gnupg/</tt>. Totes les opcions
+possibles estan ben documentades i provar d'explicar-les aquí no seria
+de gaire utilitat.
+
+<p>Podeu executar GnuPG com a suid root. D'aquesta manera, el
+programa s'executa amb tots els drets que té el superusuari, i
+s'exclou la possibilitat que certes parts del sistema es desin
+externament i altres persones les puguin llegir. No m'és possible de
+valorar els riscos d'executar el programa com a superusuari. Però
+executant el programa com a suid root s'hauria d'estar alerta dels
+perills de cavalls de Troia, ja que un troià executant-se com a
+superusuari podria malmetre tit el sistema. Si per aquesta raó (o per
+qualsevol altra) escolliu de no executar GnuPG com a superusuari,
+podeu desactivar l'avís activant <tt>no-secmem-warning</tt> a
+<tt>~/.gnupg/options</tt>.
+
+
+<sect>Ús i gestió de les claus<label id="GPGMinihowto-Claus">
+<sect1>Generant una clau
+
+<p>Amb l'ordre
+
+<tscreen><code>
+$ gpg --gen-key
+</code></tscreen> 
+
+podeu general un nou parell de claus (el parell es composa de clau
+pública i clau privada). La primera pregunta és quin algoritme
+s'emprarà. Podeu llegir més a propòsit dels algoritmes a
+<url url="http://www.hertreg.ac.uk/ss/pgpfaq.html" name="PGP DH vs. RSA FAQ">
+o a <ref id="BSchneier" name="Applied Cryptography">.  L'algoritme
+recomanat per GnuPG és DSA/ElGamal, ja que no està patentat.
+ 
+<p>La següent pregunta és la longitud de la clau. Aquesta decisió
+depèn molt de cada usuari. Heu d'escollir entre la seguretat i el
+temps de càlcul. Si una clau és més llarga, el risc de trencar el
+missatge si és interceptat decreix. Però amb claus més llarges el
+temps de càlcul també augmenta. Si el temps de càlcul és un problema,
+heu de tenir en compte que voleu emprar la clau durant algun temps.
+Tothom sap que el rendiment aritmètic augmenta molt ràpidament, ja que
+els nous processadors són cada vegada més ràpids. Tingueu això en
+compte. La llargada mínima requerida per GnuPG és de 768 bits, encara
+que molta gent opina que hauria de ser de 2048 (que és el màxim de
+GnuPG en aquest moment). Per a DSA, 1024 és una llargada fixa. Si la
+seguretat té prioritat envers el temps de càlcul, hauríeu d'escollir
+la mida de clau més llarga disponible.
+
+
+<p> El sistema demana a continuació que introduïu el nom, un comentari
+i l'adreça de correu electrònic. La clau es clacula en base a aquestes
+dades. Podeu canviar aquesta informació més tard (vegeu
+<ref id="GPGMinihowto-Administracio" name="Administració de claus">.
+La direcció de correu electrònic que escolliu hauria de ser vàlida, ja
+que serà emprada per signar l'identificador d'usuari. Si aquesta
+direcció es modifica d'alguna manera, la signatura no es
+correspondria.
+
+<p> Finalment heu d'introduir una contrasenya. Noteu la diferència
+entre els termes anglesos per la paraula &laquo;contrasenya&raquo;: el
+terme &dquot;password&dquot; denota una &dquot;paraula de pas&dquot;,
+mentre que el terme &dquot;passphase&dquot; denota una &dquot;frase de
+pas&dquot;. Per tant, aquesta contrasenya s'ha de composar de més
+d'una paraula. Per a que una contrasenya sigui efectiva (segura),
+haurà de contenir els elements següents:
+<itemize>
+<item>ha de ser llarga;
+<item>ha de combinar majúscules, minúscules i nombres;
+<item>ha de contenir caràcters especials (no alfanumèrics);
+<item>ha de ser difícil d'endevinar (no ha de ser, doncs, noms, dates
+de naixement, números de telèfon, de targeta de crèdit o de compte
+corrent, noms i nombre de fills, ...). 
+</itemize>
+
+<p>En general, per tal d'aconseguir una contrasenya forta és
+aconsellable intercal·lar maJúsCUlEs amb mInÚScuLEs, nombres, i
+d'altres caràcters no alfanumèrics. En escollir les paraules i les
+frases s'han d'evitar les paraules massa òbvies, dates significatives,
+i no heu d'emprar mai cites de llibres o frases cèlebres. Dit això,
+heu d'assegurar-vos que la contrasenya que escolliu sigui
+suficientment difícil perquè no pugui ser vulnerada amb un &laquo;atac
+de força bruta&raquo;, ni tan sols per un &laquo;atac de
+diccionari&raquo;, però suficientment fàcil perquè NO LA OBLIDEU. Si
+oblidéssiu la vostra contrasenya, la clau quedaria totalment
+inutilitzada, i tota la informació que s'hagi xifrat amb aquesta clau
+no podria ser desxifrada. Per tal d'evitar aquesta possibilitat es
+recomana crear certificats de revocació junt amb les claus (vegeu
+<ref id="GPGMinihowto-Revocant" name="Revocació">).
+
+<p> Una vegada que s'han introduït totes les dades necessàries, el
+sistema comença a generar les claus. Aquest procés triga un temps que
+depèn de la llargada de les claus. Durant aquest procés, el programa
+recull dades aleatòries que emprarà per generar les claus; una manera
+d'ajudar a fer més aleatori aquest procés és cambiar a una consola
+virtual diferent i emprar el teclat mentre el procés està en marxa. La
+clau que genereu sempre serà diferent. Si genereu una clau ara i una
+altra d'aquí 5 minuts amb exactament la mateixa informació, obtindreu
+dues claus diferents. Aquesta és la raó per la qual no heu d'oblidar
+mai la vostra contrasenya.
+
+
+<sect1>Exportant claus
+
+<p>L'ordre per exportar una clau d'un usuari
+és la següent:
+
+<tscreen><code>
+$ gpg --export [UID]
+</code></tscreen>
+
+Si no es designa cap identificador d'usuari (UID) s'exportaran totes
+les claus presents. El resultat s'envia per defecta a <tt/stdout/,
+però amb l'opció <tt/-o/ podem especificar que s'envïi a un fitxer. Es
+recomana emprar l'opció <tt/-a/ per tal de que el resultat sigui un
+fitxer de ASCII de 7 bits en comptes d'un fitxer binari.
+
+
+<p> Si exporteu les vostra clau pública, la podeu facilitar a les
+persones amb les que voleu comunicar-vos de forma segura. La clau es
+pot exportar publicant-la a la vostra plana <em/web/, emprant
+<em/finger/, <em/ftp/, enviant-la a un servidor de claus públiques com
+per exemple http://www.pca.dfn.de/dfnpca/pgpkserv/, o qualsevol altre
+mètode.
+
+
+<sect1>Important les claus
+<p>En rebre la clau pública d'algú (o vàries claus públiques), les heu
+d'afegir a la vostra base de dades de claus per tal de poder-les
+utilitzar. Per importar-les a la base de dades, heu d'executar l'ordre
+següent:
+<tscreen><code>
+$ gpg --import [nom del fitxer]
+</code></tscreen>
+
+<p> Si s'omet el nom del fitxer, les dades es llegiran de <tt/stdin/.
+El fitxer pot contenir una sola clau o més d'una, que pertanyin a una
+o més persones.
+
+<sect1>Revocant una clau<label id="GPGMinihowto-Revocant">
+<p>Hi ha diverses raons per les quals podeu voler revocar una clau
+existent.  Per exemple, que la clau privada hagi estat robada, hagi
+canviat el UID (identificador d'usuari), que ja no sigui prou llarga,
+etc. En tots aquests casos, el comandament per revocar la clau és:
+<tscreen><code>
+$ gpg --gen-revoke
+</code></tscreen>
+
+<p>Això crea un <bf/certificat de revocació/. Per poder-ho fer,
+necessiteu la clau privada, sinó qualsevol podria crear un certificat
+i revocar una clau que no fos seva. Això té un desavantatge, si hem
+oblidat la contrasenya, la clau no serveix de res, i tampoc es pot
+generar un certificat de revocació. Per aquesta raó, és aconsellable
+generar un certificat de revocació en crear el parell de claus. Si ho
+feu, però, guardeu-lo en un lloc segur perquè ningú no pugui
+emprar-lo i revocar la clau.
+
+
+<sect1>Administració de les claus
+<label id="GPGMinihowto-Administracio">
+<p>En el sistema GnuPG hi ha un fitxer que actua com una mena de base
+de dades. En aquest fitxer es desen totes les dades relacionades amb
+les claus, inclosos els valors que fan referència al grau de confiança
+(<em/Ownertrust/); per a més informació sobre el grau de confiança
+llegiu <ref id="GPGMinihowto-Signant" name="Signant les claus">).
+
+Amb l'ordre
+<tscreen><code>
+$ gpg --list-keys
+</code></tscreen>
+
+es mostraran totes les claus presents. Per veure també totes les
+signatures escriviu:
+<tscreen><code>
+$ gpg --list-sigs
+</code></tscreen> 
+
+(vegeu <ref id="GPGMinihowto-Signant" name="Signant les claus"> per a
+més informació).
+
+Per veure les empremtes digitals (<em/fingerprints/) escriviu:
+<tscreen><code>
+$ gpg --fingerprint
+</code></tscreen>
+
+Les &quot;empremtes digitals&quot; serveixen per confirmar la
+identitat d'una persona. Aquesta ordre ens mostra una llista
+alfanumèrica (relacionada amb la clau) que podem compravar, per
+exemple, per telèfon.
+
+Per veure el llistat de claus privades escriviu:
+<tscreen><code>
+$ gpg --list-secret-keys
+</code></tscreen>
+
+Nota: el llistat d'empremtes digitals i de signatures de les claus
+privades no té cap utilitat directa més de la de donar-nos aquesta
+informació.
+
+<p>Per tal d'esborrar una clau pública executeu l'ordre:
+<tscreen><code>
+$ gpg --delete-key UID
+</code></tscreen>
+
+Per eliminar una clau privada escriviu:
+<tscreen><code>
+$ gpg --delete-secret-key
+</code></tscreen> 
+
+<p>Hi ha encara un altre comandament important que té relació amb la
+gestió de les claus:
+<tscreen><code>
+$ gpg --edit-key UID
+</code></tscreen>
+
+Emprant aquesta ordre podeu editar (entre d'altres coses) la data
+d'expiració, afegir una empremta digital i signar la vostra clau. Per
+realitzar aquestes operacions necessiteu la contrasenya. En executar
+aquesta ordre veureu una linia de comandaments.
+
+<sect1>Signant les claus<label id="GPGMinihowto-Signant">
+
+<p>Com s'ha comentat anteriorment, hi ha un taló d'Aquil·les al
+sistema: l'autentificació de les claus públiques. Si teniu una clau
+pública errònia, ja us podeu oblidar dels valor del xifratge. Per tal
+d'evitar aquests riscos existeix la possibilitat de signar les claus.
+Quan tenim la certesa que una clau és vàlida i que pertany a qui diu
+que pertany, podem signar-la digitalment, de manera que la nostra
+signatura donarà fe (als que confien en la nostra signatura) que
+aquella clau pública correspon a aquell ID d'usuari.
+
+<p> Si executeu l'ordre:
+<tscreen><code>
+$ gpg --edit-key UID
+</code></tscreen>
+
+per la clau que voleu signar, podreu signar-la amb la subordre:
+
+<tscreen><code>
+Command> sign
+</code></tscreen>
+
+<p><bf>Només heu de signar una clau quan estigueu ABSOLUTAMENT SEGURS
+que la clau és autèntica!!!</bf> En realitat, només es pot estar segur
+quan la clau ha estat rebuda en mà, o, per exemple, si s'ha rebut per
+correu i a continuació s'ha comprovar l'empremta digital de la clau
+per algun altre mitjà (per exemple, per telèfon). No heu de signar mai
+cap clau basant-vos en una suposició.
+
+<p>Basant-se en les signatures disponibles en una clau i en el
+&laquo;grau de confiança&raquo;, <tt/GnuPG/ determina la validesa de
+les claus. El grau de confiança (<em/Ownertrust/) és un valor que el
+propietari d'una clau empra per determinar el nivell de confiança per
+una clau concreta. Aquests valors són:
+
+<itemize>
+<item>1 = Don't know (No ho sé)
+<item>2 = I do NOT trust (No hi confio)
+<item>3 = I trust marginally (Hi confio poc) 
+<item>4 = I trust fully (Hi confio plenament)
+</itemize>
+
+Si l'usuari no es refia d'una signatura, ho pot indicar i refusar la
+confiança en la mateixa. La informació sobre la confiança no es desa
+en el mateix fitxer que el de les claus, sinó que en un altre
+diferent.
+
+<sect>Xifrant i desxifrant<label id="GPGMinihowto-xifrant">
+
+<p>Després d'haver-ho instal·lat i configurat tot tal com voleu,
+podeu començar a xifrar i desxifrar.
+
+<p>És possible que quan vulguem xifrar o desxifrar quelcom, tingueu
+més d'una clau privada en el nostre anell de claus. Si això passa, és
+necessari seleccionar-ne una com activa. Per fer-ho, es pot emprar
+l'opció 
+<tscreen><code>
+-u UID
+</code></tscreen>
+
+o bé l'opció 
+<tscreen><code>
+--local-user UID
+</code></tscreen>
+
+També podeu afegir la línia següent al fitxer de configuració
+<tt>$HOME/.gnupg/options</tt>:
+
+<tscreen><code>
+default-key UID
+</code></tscreen>
+
+Si desitgeu indicar l'UID d'un destinatari per xifrar un fitxer amb la
+seva clau, ho podeu fer amb l'opció 
+<tscreen><code>
+-r
+</code></tscreen>
+
+o bé l'opció 
+<tscreen><code>
+--recipient
+</code></tscreen>
+
+
+<sect1>Xifrar
+
+<p>L'ordre per xifrar és la següent: 
+<tscreen><code>
+$ gpg -e [fitxer]
+</code></tscreen>
+
+o bé: 
+<tscreen><code>
+$ gpg --encrypt [fitxer]
+</code></tscreen>
+
+El programa demanarà el UID del destinatari (o dels destinataris, és
+possible posar-ne més d'un). Es pot evitar que el programa ho pregunti
+emprant l'ordre:
+
+<tscreen><code>
+$gpg -er [UID del destinatari] [fitxer]
+</code></tscreen>
+
+<p><tt/GnuPG/ generarà un fitxer xifrat amb el nom <tt/[fitxer].gpg/.
+També podem emprar l'opció: 
+<tscreen><code>
+--armor
+</code></tscreen>
+
+o bé 
+<tscreen><code>
+-a
+</code></tscreen>
+
+perquè el fitxer generat sigui del tipus ASCII de 7 bits. L'ordre
+seria doncs: 
+<tscreen><code>
+$ gpg -a -er [UID del destinatari] [fitxer]
+</code></tscreen>
+
+Aquesta ordre generarà un fitxer codificat de nom <tt/[fitxer].asc/
+amb el format ASCII de 7 bits. 
+
+<p>Heu de tenir en compte que el fet de xifrar un fitxer (o un
+missatge) l'únic que fa és protegir les dades amb un xifratge que
+només pot desfer el destinatari; no protegeix del risc que algú
+intenti suplantar la nostra identitat. Per tal d'evitar-ho, només cal
+signar digitalment tot allò que es xifri (vegeu 
+<ref id="GPGMinihowto-Signatures" name="Signatures">).
+
+<sect1>Desxifrar 
+
+<p>L'ordre per desxifrar és: 
+<tscreen><code>
+$ gpg [-d] [fitxer]
+</code></tscreen>
+
+o bé: 
+<tscreen><code>
+$ gpg [--decrypt] [fitxer]
+</code></tscreen>
+
+En aquest cas no és necessària l'opció, és opcional, ja que <tt/gpg/
+utilitza per defecte: 
+<tscreen><code>
+--decrypt
+</code></tscreen>
+
+En els casos anteriors, el resultat es mostra a <tt/stdout/
+(habitualment la sortida de l'intèrpret d'ordres), però el podeu
+redireccionar amb l'opció:
+<tscreen><code>
+-o [fitxer]
+</code></tscreen>
+
+, on [fitxer] és el nom del fitxer on vulgueu el resultat.
+
+
+<sect>Signant i verificant signatures<label id="GPGMinihowto-Signatures">
+
+<p>Signar i verificar signatures és una
+part molt important dels sistemes de criptografia de clau pública.
+L'usuari pot signar una sèrie de dades o un document, per la qual cosa
+utilitza la seva clau privada. Per verificar les signatures d'altres
+usuaris, és necessari obtenir prèviament les seves claus públiques.
+
+
+<sect1>Signar
+
+<p>Per signar un fitxer amb la vostra clau, utilitzeu
+l'ordre:
+<tscreen><code>
+$ gpg -s [fitxer]
+</code></tscreen>
+o bé
+<tscreen><code>
+$ gpg --sign [fitxer]
+</code></tscreen>
+
+<p>Aquesta ordre, a més de produir una signatura digital, també
+comprimeix el fitxer, per la qual cosa el resultat és un fitxer binari
+il·legible. Per produir un fitxer signat legible (en format ASCII),
+s'empra l'ordre: 
+<tscreen><code>
+$ gpg --clearsign [fitxer]
+</code></tscreen>
+
+<p>D'aquesta manera, tant la signatura com les dades signades, són
+legibles en un editor.
+
+<p>La signatura també es pot generar en un fitxer separat (de les dades).
+Aquesta opció és molt recomanable especialment quan es signen fitxers
+binaris (per exemple, fitxers comprimits). Per realitzar-ho s'ha
+d'utilitzar l'ordre:
+<tscreen><code>
+$ gpg -b [fitxer]
+</code></tscreen>
+o bé
+<tscreen><code>
+$ gpg --detach-sign [fitxer]
+</code></tscreen>
+
+<p>Aquest és el mode que MIME/PGP empra per signar els missatges de
+correu electrònic. Aquest mode és molt útil quan s'ha de signar un
+binari, per exemple, per distribuir-lo, ja que la signatura es basa en
+el binari però va en un fitxer apart. L'opció <tt/--armor/ també pot
+ésser d'utilitat en aquests casos.
+
+<p> Sovint haureu de signar i xifrar un fitxer alhora. L'ordre que
+permet fer això és:
+<tscreen><code>
+$ gpg [-u Remitent] [-r Destinatari] [--armor] --sign --encrypt
+[fixer]
+</code></tscreen>
+
+<p>La funcionalitat de les opcions <tt/-u/ (<tt/--local-user/) i
+<tt/-r/ (<tt/--recipient/) és la que s'ha descrit anteriorment.
+
+<sect1>Verificar
+
+<p>En desxifrar un fitxer xifrat que també hagi estat signat
+digitalment, la signatura es verifica automàticament. En tot cas, és
+possible verificar la signatura simplament amb l'ordre:
+<tscreen><code>
+$ gpg [--verify] [fitxer]
+</code></tscreen>
+
+Aquesta ordre només funcionarà (és clar) quan tingueu la clau pública
+del remitent.
+
+
+
+<sect>GnuPG + PGP
+
+<p>En ser <tt/PGP/ un programa més antic que <tt/GnuPG/, és normal que un
+usuari nou de <tt/GnuPG/ tingui ja instal·lada alguna versió de <tt/PGP/ al
+seu sistema, i que desitgi mantenir les seves claus velles després
+d'actualitzar-se a <tt/GnuPG/. Doncs bé, no només és possible importar el
+contingut dels anells de claus, sinó que, alternativament, és possible que
+<tt/GnuPG/ gestioni els anells de claus de <tt/PGP 2.6.3/ i <tt/PGP 5.0/.
+
+<p>Hi ha altres &laquo;problemes&raquo; de compatibilitat que també
+tractarem en aquest capítol, com són les signatures de tipus <bf/V4/
+generades per <tt/GnuPG/, o de l'ús per part de <tt/PGP/ dels algoritmes
+propietaris <tt/RSA/ o <tt/IDEA/. Començarem per aquesta darrera qüestió.
+
+<sect1>Ús d'algoritmes <em/no lliures/
+<p>L'ús d'algoritmes amb patents restrictives per part de <tt/PGP/
+representa un problema donat que la filosofia al voltant de <tt/GnuPG/ és
+la d'implementar un sistema criptogràfic lliure. Així doncs, les patents
+sobre aquests algoritmes n'impossibiliten una implementació total. Però
+<tt/GnuPG/ també pretén cumplir amb les normes dels
+&laquo;estàndards&raquo; d'<htmlurl url="http://www.d.shuttle.de/isil/gnupg/rfc2440.html" name="OpenPGP">.
+
+<p>Existeixen unes extensions per a
+<htmlurl url="http://www.rsa.com/" name="RSA"> i 
+<htmlurl url="http://www.ascom.ch/" name="IDEA"> que poden ser instal·lades
+i permeten un cert ús d'aquests algoritmes. Les claus generades per <tt/PGP
+2.6.x/ són del tipus <tt/RSA/, i l'algoritme de xifratge emprat és <tt/IDEA/
+(també pot ser emprat per <tt/PGP 5.x/). És possible conseguir el codi font
+d'aquests algoritmes als fitxers  
+<htmlurl url="ftp://ftp.guug.de/pub/gcrypt/contrib/rsa.c.Z" name="rsa.c"> i 
+<htmlurl url="ftp://ftp.guug.de/pub/gcrypt/contrib/idea.c.Z" name="idea.c">.
+
+<p>També existeixen els binaris instal·lables d'aquestes extensions per
+algunes distribucions de <htmlurl url="http://www.debian.org" name="Linux">
+, com per exemple 
+<htmlurl url="http://www.debian.org" name="Debian"> (comproveu-ho per a
+d'altres distribucions).
+
+
+<sect1>Signatura digital amb GnuPG<label id="GPGMiniHowto-SignaturesGnuPG">
+
+<p><tt/GnuPG/ és l'únic sistema capaç d'implementar signatures digitals
+<bf/V4/ (segons <em/OpenPGP/) i aquesta n'és l'opció per defecte, però en
+aquest cas <tt/PGP/ no és capaç de verificar-les. És possible obligar a
+<tt/GnuPG/ a emprar <bf/V3/, de dues maneres:
+
+<itemize>
+<item>Indicant-ho en el fitxer de configuració <tt>$HOME/.gnupg/options</tt>
+afegint la línia:
+</itemize>
+
+<tscreen><code>
+force-v3-sigs
+</code></tscreen>
+
+<itemize>
+<item>Indicant aquesta opció cada vegada que es desitgi signar un missatge
+en <bf/V3/:
+</itemize>
+
+<tscreen><code>
+$ gpg &lt;opció&gt; --force-v3-sigs [fitxer]
+</code></tscreen>
+
+<sect1>Importar anells de claus de PGP a GnuPG
+
+<p>Intentarem explicar com exportar les claus públiques i privades des dels
+nostres anells de claus <tt/PGP/ als anells de claus <tt/GnuPG/.
+
+<p><bf>NOTA: aquest mètode s'ha extret del <htmlurl
+url="http://technocage.com/~caskey/gpg/pgp2gnupgp.html" name="PGP2GnuPG">
+Howto de Caskey L.  Dickson i no l'he provat personalment. L'última
+actualització del &laquo;PGP2GnuPG Howto&raquo; data del desembre de 1998.
+Per aquesta raó, i per poder integrar <tt/PGP/ amb <tt/GnuPG/, recomano
+l'ús del mètode que s'explica a la
+<ref id="GPGMiniHowto-AnellsPGP" name="secció següent">, ja que és més senzill
+i fiable.</bf>
+
+<p>Suposant que tingueu instal·lades dues versions de <tt/PGP/ per a
+<tt>Unix/Linux</tt>, tenim els seus respectius anells de claus públiques i
+privades a <tt>$HOME/.pgp/</tt>:
+
+<itemize>
+<item>pubring.pgp -&gt; fitxer de claus públiques de <tt/PGP 2.6.x/
+<item>secring.pgp -&gt; fitxer de claus privades de <tt/PGP 2.6.x/
+<item>pubring.pkr -&gt; fitxer de claus públiques de <tt/PGP  5.x/
+<item>secring.skr -&gt; fitxer de claus privades de <tt/PGP  5.x/
+</itemize>
+
+A continuació utilitzaríem les ordres que corresponguin a cada verió per
+tal d'extreure les claus que desitgem.
+
+<p>Així, per extreure una clau de <tt/PGP 2.6.x/:
+<tscreen><code>
+$ pgp -kx UID fitxer anell
+</code></tscreen>
+
+per exemple:
+
+<tscreen><code>
+$ pgp -kx Pepe clavepepe2 ~/.pgp/pubring.pgp
+</code></tscreen>
+
+
+Aquesta operació ens donaria el fitxer clavepepe2.pgp. Per extreure'n la
+nostra clau privada, no hauríem de fer cap altra cosa que indicar el nostre
+UID i el fitxer de les claus privades <tt>~/.pgp/secring.pgp</tt>. No em
+consta que hi hagi cap manera d'indicar més d'un UID amb <tt/PGP 2.6.3/, si
+en sabeu alguna, si us plau envieu-me un
+<htmlurl url="mailto:homega@ciberia.es" name="mensaje"> (NT: adreça de
+correu de l'autor d'aquesta secció i de la traducció a la versió castellana
+del document).
+
+<p>Una vegada s'ha extret la clau només s'ha d'importar al fitxer de 
+<tt/GnuPG/:
+
+<tscreen><code>
+$ gpg --import clavepepe2
+</code></tscreen>
+
+Per extreure una clau de <tt/PGP 5.0/:
+
+<tscreen><code>
+$ pgpk -x UID -o fitxer
+</code></tscreen>
+
+per exemple:
+
+<tscreen><code>
+$ pgpk -x Pepe -o clavepepe5
+</code></tscreen>
+
+En aquest cas, el fitxer per defecte és el de claus públiques, i obtindríem
+el fitxer clavepepe5 tal i com hem indicat.
+
+<p>Una vegada més, només ens queda importar la clau:
+
+<tscreen><code>
+$ gpg --import clavepepe5
+</code></tscreen>
+
+Ja que <tt/PGP 5.0/ no ens permet indicar el fitxer sobre el que volem
+operar, la extracció de la clau privada es complica una miqueta. La solució
+ve donada per un sistema superior com el de GnuPG:
+
+<p>Aquest procediment posa en risc la clau privada durant un breu període
+de temps, així que no hauria de ser emprat en un sistema multiusuari o
+públic. Els passos a seguir són:
+
+<itemize>
+<item>Extreure la clau pública corresponent a la clau provada que volem
+exportar, i importar-la a <tt/GnuPG/.
+<item>Esborrar la contrasenya de la clau privada!! (es recomana fer una
+còpia de seguretat del fitxer secring.skr):
+</itemize>
+
+<tscreen><code>
+$ pgpk -e UID
+</code></tscreen>
+
+per exemple:
+
+<tscreen><verb>
+$ pgpk -e 0x614DB9FA
+
+sec  1024 0x614DB9FA 1998-03-22 ---------- DSS        Sign & Encrypt
+
+sub  1024 0x2B9E0571 1998-03-22 ---------- Diffie-Hellman
+
+uid  Horacio &lt;homega@vlc.servicom.es&gt;
+
+uid  Horacio &lt;homega@correo.com&gt;
+
+
+1024 bits, Key ID 0x614DB9FA, created 1998-03-22
+
+"Horacio &lt;homega@vlc.servicom.es&gt;"
+
+"Horacio &lt;homega@correo.com&gt;"
+</verb></tscreen>
+
+<tscreen><verb>
+Do you want to unset this key as axiomatic [y/N]? N
+
+Do you want to unset this key as axiomatic [y/N]? N
+
+Do you want to add a new user ID [y/N]? N
+
+Do you want to change your pass phrase (y/N)? Y
+Need old passphrase. Enter pass phrase: &lt;introduïu la contrasenya&gt;
+Need new passphrase. Enter pass phrase: &lt;deixeu-ho buit&gt;
+Enter it a second time. Enter pass phrase: &lt;deixeu-ho buit&gt;
+Changing master key passphrase...
+
+Changing subkey passphrase...
+
+Do want to set this as your default key [y/N]? N
+
+Keyrings updated.
+</verb></tscreen>
+
+<itemize>
+<item>El pas següent és exportar la clau privada. Com ja hem pogut veure,
+<tt/PGP 5.0/ és incapaç de fer-ho, així que emprarem <tt/GnuPG/:
+</itemize>
+
+<tscreen><code>
+$ gpg --export-secret-keys --secret-key-ring ~/.pgp/secring.skr 0x614DB9FA &gt; lamevaclau
+</code></tscreen>
+
+Tot això en una sola línia, i es crearà el fitxer <tt/lamevaclau/.
+
+<itemize>
+<item>Ara ja podem importar la clau privada a GnuPG:
+</itemize>
+
+<tscreen><code>
+$ gpg --import &lt; lamevaclau
+</code></tscreen>
+
+Swguidament torneu a introduir una contrasenya a la clau des de <tt/GnuPG/.
+
+<sect1>Emprar anells de claus de PGP amb GnuPG<label id="GPGMiniHowto-AnellsPGP">
+
+<p>És possible evitar tota aquesta operació anterior, mantenint
+instal·lades les diferents versions de <tt/PGP/ al mateix temps que la de
+<tt/GnuPG/. Essent <tt/GnuPG/ un sistema superior i més nou, pot reconéixer
+els anells de claus de <tt/PGP/ com a propis.
+
+<p>En el cas de <tt/PGP 5.0/, n'hi ha prou amb afegir la ruta d'accés
+completa als fitxers de claus de <tt/PGP 5.0/, precedit per <tt/keyring/ o 
+<tt/secret-keyring/, al final del fitxer <tt>~/.gnupg/options</tt> segons
+correspongui:
+
+<tscreen><code>
+keyring ~/.pgp/pubring.pkr
+secret-keyring ~/.pgp/secring.skr
+</code></tscreen>
+
+Els fitxers de claus de <tt/PGP 2.6.3/ són reconeguts per <tt/GnuPG/ per
+defecto. Si això no fos així, només caldria repetir la mateixa operació
+anterior adaptant-la a les circumstàncies:
+
+<tscreen><code>
+keyring ~/.pgp/pubring.pgp
+secret-keyring ~/.pgp/secring.pgp
+</code></tscreen>
+
+Si a continuació feu un llistat de les claus públiques amb <tt/GnuPG/,
+observareu que llegeix els tres fitxers, <tt>~/.gnupg/pubring.gpg</tt>,
+<tt>~/.pgp/pubring.pkr</tt>, y <tt>~/pubring.pgp</tt>:
+
+<tscreen><verb>
+$ gpg --list-keys
+
+     /home/usuario/.gnupg/pubring.gpg
+     --------------------------------
+     pub 1024D/57548DCD 1998-07-07 Werner Koch (gnupg sig)
+     &lt;dd9jn@gnu.org&gt;
+     pub 1024D/A95AF46C 1998-11-29 Brenno J.S.A.A.F. de Winter
+     &lt;brenno@dewinter.com&gt;
+     sub 3072g/A3CA62A0 1998-11-29
+
+   (... y demás claves públicas DSA/ElGamal...)
+
+     /home/usuario/.pgp/pubring.pkr
+     ------------------------------
+     pub 1024D/FAEBD5FC 1997-04-07 Philip R. Zimmermann &lt;prz@pgp.com&gt;
+     sub 2048g/42F0A0A0 1997-04-07
+
+   (... etc DSS/Diffie-Helman...)
+
+     /home/usuario/.pgp/pubring.pgp
+     ------------------------------
+     pub 1024R/88A17FF5 1995-09-11 IRIS-CERT, Spain
+
+   (... etc RSA...)
+
+</verb></tscreen>
+
+El mateix succeïria amb les claus privades:
+
+<tscreen><verb>
+$ gpg --list-secret-keys
+
+     /home/horacio/.gnupg/secring.gpg
+     --------------------------------
+     sec 1024D/42337AE6 1999-03-14 Horacio (comentari)
+     &lt;homega@vlc.servicom.es&gt;
+     ssb 2048g/1F177864 1999-03-14
+
+     /home/horacio/.pgp/secring.skr
+     ------------------------------
+     sec 1024D/7992AB40 1998-05-04 Horacio &lt;homega@vlc.servicom.es&gt;
+     uid Horacio &lt;homega@correo.com&gt;
+     ssb 2048g/917366AE 1998-05-04
+
+     /home/horacio/.pgp/secring.pgp
+     ------------------------------
+     sec 1024R/32D4A925 1997-09-23 Horacio &lt;homega@vlc.servicom.es&gt;
+</verb></tscreen>
+
+
+
+<sect>Interfícies gràfiques<label id="GPGMinihowto-Frontends">
+<p>Per fer més fàcil l'ús de GnuPG, teniu una àmplia varietat de
+programes que empren o són compatibles amb el xifratge de GnuPG.  Hi ha
+interfícies gràfiques que permeten administrar les claus amb el ratolí i
+també hi ha molts MUA (Mail User Agents) que permeten xifrar i signar
+missatges de correu electrònic de forma molt senzilla.  Hi ha una
+llista quasi bé completa de front ends a la pàgina
+<htmlurl url="http://www.gnupg.org/frontends.html" name="GnuPG Frontends">.
+En destacarem alguns d'ells a continuació.
+
+<sect1>Interfícies gràfiques
+
+<sect2>GPA
+
+<p><htmlurl url="http://www.gnupg.org/gpa.html" name="GPA">, <em>GNU
+Privacy Assistant</em> és una interfície d'usuari gràfica per Gnu
+Privacy Guard (GnuPG). Aquest és el front end gràfic estàndard que
+ofereix el projecte GnuPG. Amb GPA, podeu veure el vostre anell de
+claus, importar i exportar claus, generar claus, editar-ne les
+propietats i xifrar, signar o desxifrar documents.
+
+Instal·lar GPA és senzill. Descarregueu-ne el codi font comprimit,
+descomprimiu-lo i llavors executeu l'ordre:
+<tscreen><code>
+$ ./configure; make
+# make install
+</code></tscreen>
+
+Executeu el programa escrivint: 
+<tscreen><code>
+$ gpa
+</code></tscreen>
+
+<sect2>Seahorse
+
+<p><htmlurl url="http://seahorse.sourceforge.net/" name="Seahorse">
+és una interfície gràfica de GnuPG per a GNOME. Es pot emprar per signar,
+xifrar, verificar i desxifrar text i fitxers. El text es pot obtenir
+del porta-retalls, o el podeu escriure directament en el petit editor
+que porta. Seahorse és també un gestor de claus que es pot utilitzar
+per editar quasi bé totes les propietats de les claus que
+emmagatzemeu en el vostre anell de claus.
+
+Podeu instal·lar Seahorse mitjançant un paquet per a la vostra
+distribució, o bé descarregant-vos un fitxer comprimit amb el codi
+font. Instal·lar l'aplicació des del codi font es fa com amb qualsevol
+altre paquet. Descarregeu-lo, descomprimiu-lo, executeu <tt/configure/
+i feu <tt/make install/. La instal·lació es fa sota el directori
+<tt>/usr/local</tt> i inserta un element de menú al menú d'aplicacions
+de GNOME.
+
+<sect2>Geheimnis
+<p><htmlurl url="http://geheimnis.sourceforge.net/" name="Geheimnis">
+és un front-end per GNUPG que està basat en KDE. Se suposa que té totes les
+funcions de GPA i Seahorse. Lamentablement, quan vaig provar de compilar el
+programa em vaig quedar encallat perquè em mancava una lliberia
+(/usr/lib/libfam.la).
+
+<sect1>Programes de correu electrònic 
+<p>Els programes de correu electrònic (o MUAs) més populars permeten
+l'ús de GnuPG. Entre aquests, hi ha almenys els següents:
+<itemize>
+<item>Evolution
+<item>Balsa
+<item>Mozilla
+<item>Pine
+<item>Kmail
+<item>Eudora
+<item>Mutt
+<item>exmh
+</itemize>
+
+Amb tota certesa n'hi ha molts més, però és quasi bé impossible
+provar-los tots.
+
+<p>Emprant GnuPG des del vostre programa de correu us permet
+desxifrar missatges de correu electrònic que us enviïn xifrats amb la
+vostra clau pública, signar els vostres missatges per tal que el
+destinatari pugui estar segur que en sou l'autor i xifrar el vostre
+correu electrònic amb les claus públiques dels destinataris.
+
+<sect2>Evolution
+<p>Evolution, el programa més corrent per GNOME, conté integrada la
+possibilitat d'emprar el xifratge de GnuPG i de PGP.  Per poder-lo
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir
+el vostre ID d'usuari a la pestanya 'Seguretat' de les propietats del
+compte de correu.
+
+Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per
+fer-ho, heu de seleccionar 'Signa amb PGP' i 'Xifra amb PGP' del menú
+'Seguretat'.
+
+En rebre un missatge signat o xifrat, es desxifrarà automàticament i
+apareixerà un candau al final del text. Si premeu el candau, es
+verificarà la signatura i us mostrarà si és correcta o no.
+
+
+<sect2>Mozilla i Enigmail 
+<p>Mozilla no inclou la possibilitat d'emprar GnuPG per ell mateix. Per
+emprar el xifrat GnuPG amb Mozilla, heu d'instal·lar un connector, com 
+<htmlurl url="http://enigmail.mozdev.org/" name="EnigMail">.  Enigmail és
+un connector per Mozilla/Netscape Mail que permet als usuaris accedir a les
+característiques d'autentificació i xifrat que facilita el programari GPG i
+PGP. Enigmail és capaç de xifrar i signar correu electrònic en enviar-lo, i
+també de desxifrar i verificar el correu rebut. També és capaç d'importar i
+exportar claus privades.
+
+<p>Instal·lar EnigMail en un sistema RedHat Linux és especialment senzill,
+ja que hi ha RPM disponibles per les darreres versions de Mozilla. S'han
+d'instal·lar dos paquets: <tt>mozilla-enigmail-0.39-3.i386.rpm</tt> i 
+<tt>mozilla-ipc-0.99-0_rh7x.rpm</tt>. Després d'instal·lar aquests RPM,
+reinicieu Mozilla (o Netscape 6.x) i hauríeu de ser capaços d'emprar GnuPG
+en el vostre correu electrònic. Tingueu en compte, però, que EnigMail només
+xifra el text del vostre missatge. No xifra els afegits; haureu de xifrar
+qualsevol fitxer que vulgueu afegir separadament. En altres sistemes,
+probablement haureu d'instal·lar EnigMail a partir del codi font.
+
+<sect2>Kmail
+
+<p>Kmail, el programa de correu electrònic més corrent per KDE conté
+integrada la possibilitat d'emprar el xifratge de GnuPG i PGP. Per poder-lo
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir
+el vostre ID d'usuari a la secció 'Identitat' de la configuració de Kmail.
+Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per
+fer-ho, heu de seleccionar els butons 'Signa el missatge' i 'Xifra el
+missatge' de la barra d'eines.
+
+<sect>Fonts d'informació
+<label id="GPGMinihowto-FontsInformacio">
+
+<sect1>GnuPG
+
+<p>
+<itemize>
+<item>La <url url="http://www.gnupg.org" name="pàgina web de GnuPG">
+<item>La llista de correu electrònic de GnuPG, incloent la possibilitat de
+consultar els missatges antics i les descripcions a 
+<htmlurl url="http://www.gnupg.org/docs.html" name="la pàgina web de GnuPG">.
+
+<item>La informació del project GnuPG (actualitzada fins la versió 0.9.2),
+tot i que encara no està prou acabada. I no s'ha d'oblidar: 
+<tscreen><verb>gpg --help</verb></tscreen>. Aquesta és una font de molt de
+valor.
+</itemize>
+
+<sect1>PGP
+
+<p>PGP és el programa de criptografia més antic que (encara) està
+àmpliament extès. Durant aquest temps s'han publicat nombrosos documents.
+Aquesta informació és molt útil. Molta d'aquesta informació és tan general
+que la podeu aplicar a GnuPG també. Mireu-vos les adreces següents per
+obtenir aquests documents:
+
+<itemize>
+<item>La <url url="http://www.pgpi.com" name="pàgina web internacional de PGP">
+<item>La pàgina de <url url="http://www.hertreg.ac.uk/ss/pgpfaq.html" name="preguntes més freqüents de PGP DH vs. RSA">
+conté informació de les diferències entre aquests dos algoritmes. Aquests
+són els dos algoritmes que utilitza GnuPG.
+</itemize>
+
+<sect1>Servidors de claus
+
+<p>
+<itemize>
+<item> <url url="http://www.keyserver.net" name="Keyserver.net">
+<item> <url url="http://wwwkeys.eu.pgp.net">
+</itemize>
+
+<sect1>Llibres
+
+<p>
+<itemize>
+<item>B. Schneier, &quot;Applied Cryptography, Second
+Edition&quot;, Wiley, 1996 <label id="BSchneier"> Deutsche Ausgabe
+unter dem Titel &quot;Angewandte Kryptographie&quot;, Addison-Wesley,
+1996
+</itemize>
+
+
+<sect>A propòsit d'aquest document
+<p>
+Copyright &copy; 2002 Josep Monés i Teixidor (versió en català)&nl;
+Copyright &copy; 2002 Arjen Baart (versió en neerlandès)&nl;
+Copyright &copy; 1999 J.H. M.G. (versió en castellà)&nl;
+Copyright &copy; 1999 Brenno J.S.A.A.F. de Winter (versió en anglès)&nl;
+Copyright &copy; 1999 Michael Fischer v. Mollard (versió original en alemany)
+
+
+
+<p>
+Aquest document és documentació lliure i es pot redistribuir i/o modificar
+sota les condicions de la GNU Library General Public License, segons ha
+publicat la Free Software Foundation; en la seva versió 2, o (si ho
+preferiu) en qualsevol versió posterior.
+ 
+Aquest document es distribueix esperant que serà útil, però SENSE CAP
+GARANTIA. Vegeu la "GNU Library General Public License"
+(<htmlurl url="http://www.gnu.org/copyleft/gpl.html" name="http://www.gnu.org/copyleft/gpl.html">)
+per obtenir-ne més detalls. Podeu obtenir-ne una traducció aproximada i NO OFICIAL al català a
+<htmlurl url="http://ca.dodds.net/gnu/gpl.ca.html" name="http://ca.dodds.net/gnu/gpl.ca.html">.
+
+
+Hauríeu d'haver rebut una còpia de la "GNU Library General Public License"
+amb la distribució d'aquest document; si no és així, podeu demanar-la
+escriguent a:
+
+<code>
+Free Software Foundation, Inc.
+59 Temple Place - Suite 330
+Boston, MA 02111-1307
+USA
+</code>
+
+
+<sect1>Versions
+<p>Versió original en alemany: la <bf/versió 0.1/ va
+ser la primer versió en alemany.
+
+Tots els canvis per la versió original, en alemany, estan documentats
+en un fitxer diff: <htmlurl url="http://www.stud.uni-goettingen.de/~s070674/GnuPGMiniHowto/" name="dieses Dokument">
+
+
+<itemize>
+<item><bf/Anglès versió 0.1.0/, del 30 d'abril del 1999.
+Aquesta versió és una traducció de la versió alemanya a l'anglès, amb
+alguns canvis.
+<item><bf/Alemany versió 0.1.1/
+	<itemize>
+	<item>Nova secció &laquo;Límits de seguretat&raquo;
+	<item>Explicació de les signatures millorada
+	<item>Alguns canvis suggerits per Werner Koch (gràcies!)
+	</itemize>
+<item><bf/Castellà versió 0.1.2/, del 29 de maig del 1999. 
+	<itemize>
+	<item>Aquesta versió en castellà és la traducció de la versió
+	anglesa, i s'han fet alguns canvis.
+	<item>S'ha afegit el capítol sobre comptabilitat i
+	interoperabilitat de <tt/GnuPG/ amb <tt/PGP/.
+	</itemize>
+<item><bf/Castellà versió 0.1.3/, del 28 de setembre de 1999.
+	<itemize>
+	<item>S'ha reescrit a codi SGML (LinuxDoc) des del codi HTML.
+	<item>Correcció d'alguns errors en castellà.
+	</itemize>
+
+<item><bf/Anglès versió 0.1.2/, del 3 d'abril del 2002.
+	<itemize>
+	<item>S'han corregit algunes faltes.
+	<item>Nova secció sobre interfícies d'usuari.
+	</itemize>
+
+<item><bf/Holandès versió 0.1.3/, del 17 de maig del 2002.
+	<itemize>
+	<item>Traducció de la versió anglesa a l'holandès.
+	</itemize>
+<item><bf/Català versió 0.1.3/, del 10 de desembre del 2002.
+	<itemize>
+	<item>Traducció de la versió anglesa al català (amb molta
+	influència de les modificacions realitzades en la versió
+	castellana).
+	</itemize>
+</itemize>	
+
+<bf/Notes per a la versió catalana:/ Podeu enviar qualsevol suggeriment o
+comentari sobre aquest document a Josep Monés i Teixidor (<tt><htmlurl
+url="mailto:jmones@puntbarra.com"></tt>). Qualsevol comentari o correció és
+benvingut.
+
+<bf/Notes per a la versió castellana:/  Cualquier comentario o corrección al 
+documento que ayude a mejorarlo es bienvenido.  Por favor, enviad cualquier
+sugerencia a <htmlurl url="mailto:homega@ciberia.es" 
+name="&lt;homega@ciberia.es&gt;">.
+
+<bf/Notes per a la versió anglesa i neerlandesa:/  All
+remarks for this document can be sent to Brenno J.S.A.A.F. de Winter
+(<tt><htmlurl url="mailto:brenno@dewinter.com"
+name="brenno@dewinter.com"></tt>).  or Arjen Baart (<tt><htmlurl
+url="mailto:arjen@andromeda.nl" name="arjen@andromeda.nl"></tt>).
+Comments help us make a better document and are greatly appreciated.
+
+<bf/Notes per a la versió alemanya:/  Anregungen, Kritik, Verbesserungen und
+Erweiterungen einfach an Michael Fischer v. Mollard 
+<htmlurl url="mailto:fischer@math.uni-goettingen.de"
+name="&lt;fischer@math.uni-goettingen.de&gt;"> senden, damit dieses Dokument
+weiter verbessert werden kann.
+
+
+
+</article>

@@ -1,0 +1,274 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Gnu Privacy Guard (GnuPG) Mini Howto (Vietnam)</title>
+</head>
+
+<body>
+
+<div>
+  <a HREF="GPGVNHowto-7.htm"><font size="2" face="Arial">Next</font></a><font size="2" face="Arial">
+  <a HREF="GPGVNHowto-5.htm">Previous</a> <a HREF="index.htm">Contents</a></font>
+  <hr>
+  <p>
+  <font face="Arial" size="4">6 Front End</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">N&#7871;u b&#7841;n không quen v&#7899;i
+  vi&#7879;c s&#7917; d&#7909;ng giao di&#7879;n dòng l&#7879;nh. Có r&#7845;t
+  nhi&#7873;u các khác &#273;&#7875; s&#7917; d&#7909;ng GnuPG m&#7897;t cách
+  d&#7877; dàng h&#417;n. B&#7841;n có th&#7875; ch&#7885;n và s&#7917;
+  d&#7909;ng nh&#7919;ng ch&#432;&#417;ng trình có giao di&#7879;n&nbsp;&#273;&#7891;
+  ho&#7841; d&#7877; s&#7917; d&#7909;ng&nbsp;có h&#7895; tr&#7907; chu&#7849;n
+  mã hoá và gi&#7843;i mã c&#7911;a GnuPG. Nh&#7919;ng ch&#432;&#417;ng trình
+  d&#7841;ng này&nbsp;&#273;&#432;&#7907;c g&#7885;i là nh&#7919;ng ch&#432;&#417;ng
+  trình d&#7841;ng Front End. B&#7841;n có th&#7875; tìm th&#7845;y danh sách
+  các ch&#432;&#417;ng trình GnuPG Front End&nbsp;&#7903;:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://www.gnupg.org/frontends.html">http://www.gnupg.org/frontends.html</a></font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="4">6.1 Graphic Interface</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2"><strong>GPA</strong></font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">GNU Privacy Assistant m&#7897;t ch&#432;&#417;ng
+  trình GnuPG v&#7899;i giao di&#7879;n &#273;&#7891; ho&#7841; ng&#432;&#7901;i
+  dùng thân thi&#7879;n. V&#7899;i GPA b&#7841;n có th&#7875; xem Keyring
+  c&#7911;a mình, xu&#7845;t và nh&#7853;p Key, t&#7841;o&nbsp;Key,
+  Ch&#7881;nh&nbsp;s&#7917;a Key...Và t&#7845;t c&#7843; các tính n&#259;ng mà
+  phiên b&#7843;n GnuPG chu&#7849;n&nbsp;&#7903; d&#7841;ng dòng l&#7879;nh có
+  th&#7875; làm&nbsp;&#273;&#432;&#7907;c.&nbsp;&#272;&#7875; cài&nbsp;&#273;&#7863;t
+  GPA b&#7841;n ch&#7881; vi&#7879;c Down gói Tarball v&#7873;&nbsp;bung nén nó
+  ra và th&#7921;c hi&#7879;nc&nbsp;các câu l&#7879;nh sau:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">./configure</font>
+</div>
+<div>
+  <font face="Arial" size="2">make</font>
+</div>
+<div>
+  <font face="Arial" size="2">make&nbsp;install</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Khi m&#7885;i vi&#7879;c&nbsp;&#273;ã xong xuôi,&nbsp;&#273;&#7875;
+  kh&#7903;i&nbsp;s&#7917; d&#7909;ng GPA b&#7841;n gõ:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">gpa&nbsp;&nbsp;</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; Download GPA &#7903;:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://www.gnupg.org/gpa.html">http://www.gnupg.org/gpa.html</a></font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2"><strong>Seahorse</strong></font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">C&#361;ng là m&#7897;t ch&#432;&#417;ng trình
+  &#7903; d&#7841;ng Front End c&#7911;a GnuPG &#273;&#432;&#7907;c vi&#7871;t
+  trên môi tr&#432;&#7901;ng &#273;&#7891; ho&#7841; GNOME. B&#7841;n có
+  th&#7875; s&#7917; d&#7909;ng nó&nbsp;&#273;&#7875; Sign,&nbsp;Encrypt,
+  Decrypt, Verify d&#7919; li&#7879;u. D&#7919; li&#7879;u có th&#7875;&nbsp;&#273;&#432;&#7907;c
+  xu&#7845;t vào b&#7897; nh&#7899;&nbsp;&#273;&#7879;m Clipboard r&#7891;i nó&nbsp;s&#7869;&nbsp;&#273;&#432;&#7907;c&nbsp;x&#7917;
+  lý b&#7903;i Seahorse. Nó th&#7921;c&nbsp;qu&#7843;n lý các Key c&#361;ng
+  nh&#432; ch&#7881;nh s&#7917;a các thu&#7897;c tính c&#7911;a các Key&nbsp;&#273;ã&nbsp;&#273;&#432;&#7907;c
+  l&#432;u tr&#7919; trong Key Ring c&#7911;a b&#7841;n.&nbsp;</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; Download Seahorse&nbsp;&#7903;:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://seahorse.sourceforge.net/">http://seahorse.sourceforge.net/</a><a href="http://www.freshmeat.net/"></a></font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2"><strong>Geheimnis</strong></font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Là m&#7897;t ng&#432;&#7901;i &#273;&#7891;ng
+  nghi&#7879;p c&#7911;a GPA và Seahorse nh&#432;ng nó &#273;&#432;&#7907;c
+  vi&#7871;t cho môi tr&#432;&#7901;ng &#273;&#7891; ho&#7841; KDE.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; Downloaf nó &#7903;:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://geheimnis.sourceforge.net/">http://geheimnis.sourceforge.net/</a></font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2"><strong>6.2 Các ch&#432;&#417;ng trình E-Mail
+  (E-Mail Programs)</strong></font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">G&#7847;n nh&#432; các ch&#432;&#417;ng trình
+  E-mail chuyên d&#7909;ng&nbsp;&#273;&#7873;u h&#7895; tr&#7907; GnuPG:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2">&nbsp;Mozilla</font></li>
+    <li><font face="Arial" size="2">Netscape Messenger</font></li>
+    <li><font face="Arial" size="2">Kmail</font></li>
+    <li><font face="Arial" size="2">Pine</font></li>
+    <li><font face="Arial" size="2">Eudora</font></li>
+    <li><font face="Arial" size="2">Mutt</font></li>
+    <li><font face="Arial" size="2">exmh</font></li>
+  </ul>
+  <p>&nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">B&#7841;n có th&#7875; s&#7917; d&#7909;ng GnuPG&nbsp;kèm
+  v&#7899;i các ch&#432;&#417;ng trình E-mail chuyên d&#7909;ng&nbsp;&#273;&#7875;
+  th&#7921;c hi&#7879;n công vi&#7879;c mã hoá và gi&#7843;i mã hoá
+  d&#7919;&nbsp;li&#7879;u v&#7899;i vi&#7879;c s&#7917; d&#7909;ng các Public
+  Key c&#7911;a&nbsp;nh&#7919;ng ng&#432;&#7901;i mà b&#7841;n mu&#7889;n trao&nbsp;&#273;&#7893;i
+  d&#7919; li&#7879;u mã hoá.</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <strong><font face="Arial" size="2">Mozilla và Enigmail</font></strong>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">V&#7873; m&#7863;c&nbsp;&#273;&#7883;nh ch&#432;&#417;ng
+  trình h&#7895; tr&#7907;&nbsp;E-mail c&#7911;a&nbsp;Mozilla không h&#7895;
+  tr&#7907; GnuPG.&nbsp;&#272;&#7875; s&#7917; d&#7909;ng GnuPG v&#7899;i
+  Mozilla b&#7841;n ph&#7843;i s&#7917; d&#7909;ng thêm m&#7897;t Plugin có tên
+  là &quot;Enigmail&quot;. B&#7841;n có th&#7875;&nbsp;Download&nbsp;&#7903;:</font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <ul>
+    <li><font face="Arial" size="2"><a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a></font></li>
+  </ul>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">Enigmail là m&#7897;t&nbsp;Plugin cho Mozilla/Netscape
+  Mail&nbsp;&#273;&#7875; s&#7917; d&#7909;ng các tính n&#259;ng mã hoá và
+  gi&#7843;i mã hoá c&#7911;a các ch&#432;&#417;ng trình mã hoá thông
+  d&#7909;ng nh&#432;: PGP và GPG...</font>&nbsp;&nbsp;
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2"><strong>Kmail</strong></font>
+</div>
+<div>
+  &nbsp;
+</div>
+<div>
+  <font face="Arial" size="2">M&#7897;t ch&#432;&#417;ng trình th&#432; tín
+  m&#7863;c &#273;&#7883;nh &#273;&#432;&#7907;c tích h&#7907;p trên môi tr&#432;&#7901;ng
+  KDE. M&#7863;c &#273;&#7883;nh nó h&#7895; tr&#7907; các chu&#7849;n mã hoá
+  nh&#432; GnuPG và PGP. B&#7841;n có th&#7875; ký nh&#7853;n và gi&#7843;i
+  mã hoá các thông &#273;i&#7879;p. &#272;&#7875; th&#7921;c hi&#7879;n
+  &#273;&#432;&#7907;c &#273;i&#7873;u này b&#7841;n ph&#7843;i&nbsp;cho Kmail
+  bi&#7871;t &quot;GnuPG User ID&quot; c&#7911;a b&#7841;n. Thông th&#432;&#7901;ng
+  khi g&#7917;i m&#7897;t thông &#273;i&#7879;p b&#7841;n s&#7869; không
+  g&#7863;p ph&#7843;i yêu c&#7847;u ký nh&#7853;n c&#361;ng nh&#432; mã hoá
+  thông &#273;i&#7879;p &#273;ó. Mu&#7889;n Kmail mã hoá các thông&nbsp;&#273;i&#7879;p
+  b&#7857;ng GnuPG b&#7841;n ph&#7843;i nh&#7845;n vào bi&#7875;u t&#432;&#7903;ng
+  &quot;&#7893; khoá&quot; trên thanh công c&#7909;.</font>
+  <hr>
+  <p><a HREF="GPGVNHowto-7.htm"><font face="Arial" size="2">Next</font></a><font face="Arial" size="2">
+  <a HREF="GPGVNHowto-5.htm">Previous</a> <a HREF="index.htm">Contents</a></font></p>
+</div>
+
+</body>
+
+</html>

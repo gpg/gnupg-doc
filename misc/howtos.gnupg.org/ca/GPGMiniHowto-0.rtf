@@ -1,0 +1,2085 @@
+{\rtf1\ansi
+{\fonttbl
+{\f0\fswiss Helvetica;}
+{\f1\fmodern Courier;}
+{\f2\froman Times;}
+{\f3\froman Symbol;}
+}
+{\info{\comment Translated from SGML to RTF w/ Linuxdoc-SGML}}
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{1 Conceptes bàsics}}
+{}#{\footnote TOC_0}
+
+${\footnote Conceptes_b_sics}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Conceptes bàsics}
+
+{}#{\footnote GPGMinihowto_ConceptesBasics}
+{}K{\footnote GPGMinihowto_ConceptesBasics}
+
+
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.1 Xifratge de clau pública}}
+{}#{\footnote TOC_1}
+{}K{\footnote Xifratge de clau pública}
+
+Per poder entendre millor el sistema de xifratge emprat pels 
+sistemes de claus asimètriques (de claus públiques i privades), és 
+necessari entendre la diferència amb els sistemes de claus simètriques 
+(claus secretes).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Els sistemes de xifratge de {\i clau simètrica} són aquells en els 
+que la clau que s'empra per xifrar les dades és la mateixa que 
+s'utilitza per desxifrar-los. En el cas del correu electrònic, el 
+remitent xifra el missatge amb una {\i clau secreta}, perquè el 
+destinatari el pugui desxifrar, necessita obtenir prèviament aquesta 
+mateixa clau de manera [laquo ]segura[raquo ], o sigui, de manera que 
+terceres persones no tinguin l'oportunitat d'obtenir aquesta clau. Si 
+no es té certesa que l'intercanvi de claus ha estat segur, la validesa 
+del sistema és nul·la.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Els sistemes de xifratge amb {\i claus asimètriques}, en canvi, 
+empren dues claus diferents per al xifratge i el desxifratge de les 
+dades. El el cas anterior del correu electrònic, el remitent empraria 
+la {\i clau pública} del destinatari per xifrar el missatge, i el 
+destinatari desxifraria el missatge amb la seva pròpia {\i clau 
+privada}. Així doncs, la {\i clau privada} no ha de ser accessible per 
+a {\b ningú} que no en sigui el propietari, mentre que la {\i clau 
+pública}, pot ser entregada a qualsevol persona. En un sistema de 
+xifratge ben implementat, la {\i clau privada} no es pot obtenir a 
+partir de la {\i clau pública}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+El punt crucial de tot aquest sistema és que la {\i clau privada} 
+ha de mantenir-se en secret i només el seu propietari hi ha de tenir 
+accés. NO ENVIEU AQUESTA CLAU A TRAVÉS D'INTERNET. De la mateixa 
+manera és molt perillós utilitzar GnuPG a través de {\f1 telnet} 
+(considereu la possibilitat de no emprar mai telnet degut als riscos 
+de seguretat importants que presenta).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.2 Signatures digitals}}
+{}#{\footnote TOC_2}
+{}K{\footnote Signatures digitals}
+
+El concepte de {\b signatura digital} es basa en la verificació de 
+l'autoria d'un missatge. Això vol dir que el destinatari d'un missatge 
+pot comprovar que el «suposat» remitent és qui diu que és. Per fer-ho, 
+el remitent, una vegada ha escrit el missatge, el signa emprant la 
+seva pròpia clau privada. El destinatari, una vegada ha rebut el 
+missatge, comprovarà l'autenticitat d'aquest, és a dir, el verificarà 
+emprant la clau pública del remitent.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquest mètode és d'especial utilitat per a reduir els riscos de 
+seguretat en els nostres sistemes (ens podrien enviar un suposat pegat 
+per a un programa, i ser en realitat un virus o un troià); també 
+podrien enviar-nos informació o dades, com provinents d'una font 
+lícita o fiable. En ambdós casos, no seria gaire difícil falsificar la 
+direcció i el nom del remitent, però sí impossible falsificar-ne la 
+signatura digital.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Com ja hem comentat, la verificació d'un missatge signat 
+digitalment es duu a terme mitjançant l'ús de la {\i clau pública} del 
+remitent {\b sobre el text} del propi missatge. D'aquesta manera no 
+només podem verificat la identitat de l'autor, sinó que també podem 
+comprovar la integritat del missatge, ja que la signatura digital ha estat 
+generada amb el {\b text} i la {\b clau privada}. Així doncs, una 
+alteració o modificació del text «a posteriori», o qualsevol 
+manipulació del missatge (especialment si fem ús de les 
+especificacions MIME/PGP), donaria com a resultat un error en la 
+verificació.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.3 Anells de confiança }}
+{}#{\footnote TOC_3}
+{}K{\footnote Anells de confiança }
+
+Un punt feble dels algoritmes de clau 
+asimètrica és la transmissió de les claus públiques. Un intrús podria 
+posar en circulació una clau pública amb un identificador d'usuari 
+fals. Si es xifren missatges amb aquesta clau, l'intrús podria 
+desxifrar i llegir els missatges. Si llavors l'intrús el xifrés amb la 
+clau pública autèntica de l'usuari i li passés, aquest atac no seria 
+perceptible.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+La solució de {\f1 PGP} (i per tant la solució de {\f1 GnuPG}) és la 
+signatura de les claus. La clau pública d'un usuari pot estar 
+{\b signada} per altres usuaris. L'objectiu d'aquestes signatures és 
+que l'usuari que signa reconeix que l'UID (identificador d'usuari) de 
+la clau signada pertany a l'usuari a qui diu que pertany. A partir 
+d'aquí és responsabilitat de l'usuari de {\f1 GnuPG} decidir fins a 
+quin punt es refia de la signatura. Una clau es pot consiferar fiable 
+que es confia en el remitent i se sap amb seguretat que la clau 
+signant pertany a aquella persona. Només quan es pot confiar plenament 
+en la clau del signant, es pot confiar en la clau a la que signa (i en 
+les signatures generades amb aquesta clau). Per tenir la seguretat que 
+la clau és correcta, s'ha de comparar amb la seva {\b empremta 
+digital} mitjançant un mitjà de canal fiable. Per exemple, podríem 
+buscar el seu telèfon a la guia i trucar-lo, demanant-li que ens 
+digues l'empremta digital a viva veu per tal de poder-li donar 
+confiança absoluta.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{1.4 Límits de seguretat}}
+{}#{\footnote TOC_4}
+{}K{\footnote Límits de seguretat}
+
+Si el que es vol és mantenir la confidencialitat de les dades 
+que es posseixen, no n'hi ha prou amb determinar quin algoritme de 
+xifratge cal emprar; és necessari també pensar amb la seguretat general 
+del sistema. En principi, {\f1 PGP} està considerat com suficientment 
+segur, i fins aquest moment, no se sap de cap cas en el que una clau 
+PGP hagi estat trencada. Això no vol dir que tot el que s'ha xifrat 
+sigui segur. Per exemple, si la NSA (l'Agència de Seguretat Nacional 
+dels EUA) hagués aconseguit trencar una clau PGP d'alguna manera, 
+probablement no ho farien públic. Però, encara que les claus de PGP 
+fossin absolutament impossibles de trencar, hi ha d'altres tipus 
+d'atacs que poden ser utilitzats per trencar-ne la seguretat. A 
+principis de febrer de 1999, es va descobrir un troià que cercava 
+claus privades de PGP en el disc dur i els transferia mitjançant FTP. 
+Si s'hagués escollit una contrasenya feble, un atacant podria haver 
+obtingut fàcilment les claus privades.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Una altra possibilitat tècnica (encara que més difícil) és la d'un 
+troià que recollís tot el que s'escriu pel teclat i ho transmetés a 
+l'atacant. També és possible, encara que difícil, passar el contingut 
+d'una pantalla a una altra. En aquest cas, no caldria fer cap anàlisi 
+de les dades xifrades, ja que es tindria accés a les dades abans de 
+xifrar.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Per tot això, és necessari una planificació de la seguretat que 
+estigui ben prevista i que en minimitzi els perills.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+La idea no és crear una atmosfera de paranoia entre la gent, sinó 
+deixar clar que per tenir un sistema segur no n'hi ha prou amb 
+instal·lar un programa criptogràfic, ja que, si bé és un pas cap a un 
+sistema més segur, no és la solució completa. Troians com els que 
+aparegueren el març del 1999 amb el virus Melissa van demostrar que 
+moltes empreses no estan preparades pel que fa a la seguretat.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{2 Instal·lació }}
+{}#{\footnote TOC_5}
+
+${\footnote Instal_laci_}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Instal·lació}
+
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.1 Codi font de GnuPG.}}
+{}#{\footnote TOC_6}
+{}K{\footnote Codi font de GnuPG.}
+
+El web oficial per la descàrrega de {\f1 GnuPG} és 
+\url{la pàgina oficial de GnuPG}. 
+Allà també hi trobareu els enllaços a rèpliques oficials. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Degut a restriccions legals no es permet descarregat material 
+criptogràfic des de servidors localitzats als EUA a les persones que 
+no hi resideixen. Als EUA existeixen lleis que restringeixen 
+l'exportació de codi criptogràfic així com dels programes que 
+l'inclouen. Per aquesta raó PGP sempre es troba disponible en dues 
+versions: una internacional i l'altra per als EUA.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+El codi font de la versió internacional es va exportar en format de 
+text ascii imprimit en un llibre. A continuació es va escanejar a 
+Europa (Oslo). Se'n pot obtenir més informació a la  
+\url{pàgina international de PGP}. 
+La versió internacional de PGP pot ser importada lliurement als EUA 
+sempre i que no es torni a reexporta-la.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Si ja teniu instal·lada una versió de {\f1 GnuPG} o {\f1 PGP}, 
+hauríeu de comprovar la signatura del fitxer (vegeu 
+{\uldb Signatures}{\v GPGMinihowto-Signatures}).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.2 Configuració }}
+{}#{\footnote TOC_7}
+{}K{\footnote Configuració }
+
+ Es pot obtenir GnuPG com a un paquet binari de 
+\url{Debian}  
+(.deb), com a un paquet binari de  
+\url{RedHat} (.rpm), 
+o en codi font.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+GnuPG s'inclou en la darreres distribucions de RedHat Linux. Si 
+aquestes distribucions, per comprovar si teniu GnuPG instal·lat en el 
+vostre sistema, empreu:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 rpm -q gnupg}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Els paquests esmentats són fitxers comprimits que es poden instal·lar 
+amb les eines corresponents, segons la distribució. Si necessiteu 
+instal·lar GnuPG en altres sistemes operatius, necessitareu 
+compilar-lo a partir del codi font. S'agraïrà que qui compili un 
+paquet d'instal·lació per altres sistemes o arquitectures, el faci de 
+domini públic.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Com que la gran part del desenvolupament de GnuPG es fa en 
+màquines x86 sota \url{Linux}, 
+l'adaptació del programa a d'altres sistemes diferents no hauria de 
+suposar cap problema. La llista de sistemes operatius suportats per 
+GnuPG es pot trobar a les pàgines de 
+\url{GnuPG}. El procediment que 
+es descriu a continuació no és exclusiu de cap plataforma. Aquest 
+procediment es pot utilitzar per instal·lar GnuPG a partir d'un 
+fitxer comprimit de codi font (.tar.gz).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Descomprimiu i desarxiveu el paquet amb el codi font amb l'ordre 
+(suposant que teniu {\f1 Gnu tar} instal·lat):
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ tar xvzf gnupg-?.?.?.tar.gz}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Després de desempaquetar-lo, canvieu al directori on heu 
+descomprimit el codi font. Llavors executeu:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ ./configure}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}  
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Amb aquest pas no hauria de succeir res d'especial. Si executeu
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ ./configure --help}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+podeu veure les opcions de configuració disponibles per a la 
+compilació. Si apareixen problemes referents a la internacionalització 
+(GET text), podeu incloure una versió que està inclosa amb el codi 
+font emprant la opció {\f1 --with-included-gettext}, o bé 
+desactivar la internacionalització amb l'opció {\f1 --disable-NLT}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.3 Compilació}}
+{}#{\footnote TOC_8}
+{}K{\footnote Compilació}
+
+A continuació, compileu el codi font amb l'ordre:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ make}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+La compilació hauria de transcórrer sense cap problema. Si passés 
+quelcom anormal seguiu els passos següents (en el mateix ordre en què 
+es descriuen aquí): Primer proveu de solucionar-ho vosaltres mateixos 
+(fent ús de la documentació existent). Llavors assegureu-vos que el 
+vostre problema no és un error conegut (comproveu el fitxer BUGS a 
+\url{http://www.gnupg.org}. Si 
+cap d'aquests passos no solucionen el vostre problema, envieu la 
+vostra pregunta a la llista de correu de GnuPG (en anglès) (vegeu 
+{\uldb Fonts d'informació}{\v GPGMinihowto-FontsInformacio}).  
+Si el vostre problema està relacionat amb la ruta d'accés, podeu 
+provar {\f1 make clean}, executar {\f1 ./configure} un altre cop i 
+intentar una vegada més compilar (amb {\f1 make}). 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{2.4 Instal·lació}}
+{}#{\footnote TOC_9}
+{}K{\footnote Instal·lació}
+
+Llavors escriviu:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ make install }\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+que copiarà el programa i les pàgines del manual al directori 
+d'instal·lació. Si no heu canviat el directori d'instal·lació en 
+executar {\f1 ./configure}, llavors el directori d'instal·lació 
+serà {\f1 /usr/local/share/gnupg}. Podeu trobar aquest directori en 
+el fitxer {\f1 options.skel}. Si canvieu {\f1 options.skel}, si es 
+copia a {\f1 [tilde ]/.gnupg/options} els ajustaments apropiats s'usaran 
+de forma predeterminada. L'acció de copiar haria de realitzar-se 
+automàticament en crear {\f1 [tilde ]/.gnupg/}. Totes les opcions 
+possibles estan ben documentades i provar d'explicar-les aquí no seria 
+de gaire utilitat.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Podeu executar GnuPG com a suid root. D'aquesta manera, el 
+programa s'executa amb tots els drets que té el superusuari, i 
+s'exclou la possibilitat que certes parts del sistema es desin 
+externament i altres persones les puguin llegir. No m'és possible de 
+valorar els riscos d'executar el programa com a superusuari. Però 
+executant el programa com a suid root s'hauria d'estar alerta dels 
+perills de cavalls de Troia, ja que un troià executant-se com a 
+superusuari podria malmetre tit el sistema. Si per aquesta raó (o per 
+qualsevol altra) escolliu de no executar GnuPG com a superusuari, 
+podeu desactivar l'avís activant {\f1 no-secmem-warning} a 
+{\f1 [tilde ]/.gnupg/options}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{3 Ús i gestió de les claus}}
+{}#{\footnote TOC_10}
+
+${\footnote _s_i_gesti__de_les_claus}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Ús i gestió de les claus}
+
+{}#{\footnote GPGMinihowto_Claus}
+{}K{\footnote GPGMinihowto_Claus}
+
+
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.1 Generant una clau}}
+{}#{\footnote TOC_11}
+{}K{\footnote Generant una clau}
+
+Amb l'ordre
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --gen-key}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+podeu general un nou parell de claus (el parell es composa de clau 
+pública i clau privada). La primera pregunta és quin algoritme 
+s'emprarà. Podeu llegir més a propòsit dels algoritmes a 
+\url{PGP DH vs. RSA FAQ} 
+o a {\uldb Applied Cryptography}{\v BSchneier}.  L'algoritme 
+recomanat per GnuPG és DSA/ElGamal, ja que no està patentat.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+La següent pregunta és la longitud de la clau. Aquesta decisió 
+depèn molt de cada usuari. Heu d'escollir entre la seguretat i el 
+temps de càlcul. Si una clau és més llarga, el risc de trencar el 
+missatge si és interceptat decreix. Però amb claus més llarges el 
+temps de càlcul també augmenta. Si el temps de càlcul és un problema, 
+heu de tenir en compte que voleu emprar la clau durant algun temps. 
+Tothom sap que el rendiment aritmètic augmenta molt ràpidament, ja que 
+els nous processadors són cada vegada més ràpids. Tingueu això en 
+compte. La llargada mínima requerida per GnuPG és de 768 bits, encara 
+que molta gent opina que hauria de ser de 2048 (que és el màxim de 
+GnuPG en aquest moment). Per a DSA, 1024 és una llargada fixa. Si la 
+seguretat té prioritat envers el temps de càlcul, hauríeu d'escollir 
+la mida de clau més llarga disponible.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ El sistema demana a continuació que introduïu el nom, un comentari 
+i l'adreça de correu electrònic. La clau es clacula en base a aquestes 
+dades. Podeu canviar aquesta informació més tard (vegeu 
+{\uldb Administració de claus}{\v GPGMinihowto-Administracio}. 
+La direcció de correu electrònic que escolliu hauria de ser vàlida, ja 
+que serà emprada per signar l'identificador d'usuari. Si aquesta 
+direcció es modifica d'alguna manera, la signatura no es 
+correspondria.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Finalment heu d'introduir una contrasenya. Noteu la diferència 
+entre els termes anglesos per la paraula [laquo ]contrasenya[raquo ]: el 
+terme [quot  ]password[quot  ] denota una [quot  ]paraula de pas[quot  ], 
+mentre que el terme [quot  ]passphase[quot  ] denota una [quot  ]frase de 
+pas[quot  ]. Per tant, aquesta contrasenya s'ha de composar de més 
+d'una paraula. Per a que una contrasenya sigui efectiva (segura), 
+haurà de contenir els elements següents: 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} ha de ser llarga;
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} ha de combinar majúscules, minúscules i nombres;
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} ha de contenir caràcters especials (no alfanumèrics);
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} ha de ser difícil d'endevinar (no ha de ser, doncs, noms, dates 
+de naixement, números de telèfon, de targeta de crèdit o de compte 
+corrent, noms i nombre de fills, ...). 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+En general, per tal d'aconseguir una contrasenya forta és 
+aconsellable intercal·lar maJúsCUlEs amb mInÚScuLEs, nombres, i 
+d'altres caràcters no alfanumèrics. En escollir les paraules i les 
+frases s'han d'evitar les paraules massa òbvies, dates significatives, 
+i no heu d'emprar mai cites de llibres o frases cèlebres. Dit això, 
+heu d'assegurar-vos que la contrasenya que escolliu sigui 
+suficientment difícil perquè no pugui ser vulnerada amb un [laquo ]atac 
+de força bruta[raquo ], ni tan sols per un [laquo ]atac de 
+diccionari[raquo ], però suficientment fàcil perquè NO LA OBLIDEU. Si 
+oblidéssiu la vostra contrasenya, la clau quedaria totalment 
+inutilitzada, i tota la informació que s'hagi xifrat amb aquesta clau 
+no podria ser desxifrada. Per tal d'evitar aquesta possibilitat es 
+recomana crear certificats de revocació junt amb les claus (vegeu 
+{\uldb Revocació}{\v GPGMinihowto-Revocant}).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Una vegada que s'han introduït totes les dades necessàries, el 
+sistema comença a generar les claus. Aquest procés triga un temps que 
+depèn de la llargada de les claus. Durant aquest procés, el programa 
+recull dades aleatòries que emprarà per generar les claus; una manera 
+d'ajudar a fer més aleatori aquest procés és cambiar a una consola 
+virtual diferent i emprar el teclat mentre el procés està en marxa. La 
+clau que genereu sempre serà diferent. Si genereu una clau ara i una 
+altra d'aquí 5 minuts amb exactament la mateixa informació, obtindreu 
+dues claus diferents. Aquesta és la raó per la qual no heu d'oblidar 
+mai la vostra contrasenya.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.2 Exportant claus}}
+{}#{\footnote TOC_12}
+{}K{\footnote Exportant claus}
+
+L'ordre per exportar una clau d'un usuari 
+és la següent:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --export [UID]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Si no es designa cap identificador d'usuari (UID) s'exportaran totes 
+les claus presents. El resultat s'envia per defecta a {\f1 stdout}, 
+però amb l'opció {\f1 -o} podem especificar que s'envïi a un fitxer. Es 
+recomana emprar l'opció {\f1 -a} per tal de que el resultat sigui un 
+fitxer de ASCII de 7 bits en comptes d'un fitxer binari.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Si exporteu les vostra clau pública, la podeu facilitar a les 
+persones amb les que voleu comunicar-vos de forma segura. La clau es 
+pot exportar publicant-la a la vostra plana {\i web}, emprant 
+{\i finger}, {\i ftp}, enviant-la a un servidor de claus públiques com 
+per exemple http://www.pca.dfn.de/dfnpca/pgpkserv/, o qualsevol altre 
+mètode.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.3 Important les claus}}
+{}#{\footnote TOC_13}
+{}K{\footnote Important les claus}
+
+En rebre la clau pública d'algú (o vàries claus públiques), les heu 
+d'afegir a la vostra base de dades de claus per tal de poder-les 
+utilitzar. Per importar-les a la base de dades, heu d'executar l'ordre 
+següent: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --import [nom del fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+ Si s'omet el nom del fitxer, les dades es llegiran de {\f1 stdin}. 
+El fitxer pot contenir una sola clau o més d'una, que pertanyin a una 
+o més persones.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.4 Revocant una clau}}
+{}#{\footnote TOC_14}
+{}K{\footnote Revocant una clau}
+
+{}#{\footnote GPGMinihowto_Revocant}
+{}K{\footnote GPGMinihowto_Revocant}
+
+
+Hi ha diverses raons per les quals podeu voler revocar una clau 
+existent.  Per exemple, que la clau privada hagi estat robada, hagi 
+canviat el UID (identificador d'usuari), que ja no sigui prou llarga, 
+etc. En tots aquests casos, el comandament per revocar la clau és: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --gen-revoke}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Això crea un {\b certificat de revocació}. Per poder-ho fer, 
+necessiteu la clau privada, sinó qualsevol podria crear un certificat 
+i revocar una clau que no fos seva. Això té un desavantatge, si hem 
+oblidat la contrasenya, la clau no serveix de res, i tampoc es pot 
+generar un certificat de revocació. Per aquesta raó, és aconsellable 
+generar un certificat de revocació en crear el parell de claus. Si ho 
+feu, però, guardeu-lo en un lloc segur perquè ningú no pugui 
+emprar-lo i revocar la clau.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.5 Administració de les claus }}
+{}#{\footnote TOC_15}
+{}K{\footnote Administració de les claus }
+
+{}#{\footnote GPGMinihowto_Administracio}
+{}K{\footnote GPGMinihowto_Administracio}
+
+
+En el sistema GnuPG hi ha un fitxer que actua com una mena de base 
+de dades. En aquest fitxer es desen totes les dades relacionades amb 
+les claus, inclosos els valors que fan referència al grau de confiança 
+({\i Ownertrust}); per a més informació sobre el grau de confiança 
+llegiu {\uldb Signant les claus}{\v GPGMinihowto-Signant}).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Amb l'ordre 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --list-keys}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+es mostraran totes les claus presents. Per veure també totes les 
+signatures escriviu: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --list-sigs}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+(vegeu {\uldb Signant les claus}{\v GPGMinihowto-Signant} per a 
+més informació).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Per veure les empremtes digitals ({\i fingerprints}) escriviu: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --fingerprint}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Les [quot  ]empremtes digitals[quot  ] serveixen per confirmar la 
+identitat d'una persona. Aquesta ordre ens mostra una llista 
+alfanumèrica (relacionada amb la clau) que podem compravar, per 
+exemple, per telèfon.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Per veure el llistat de claus privades escriviu: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --list-secret-keys}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Nota: el llistat d'empremtes digitals i de signatures de les claus 
+privades no té cap utilitat directa més de la de donar-nos aquesta 
+informació.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Per tal d'esborrar una clau pública executeu l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --delete-key UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Per eliminar una clau privada escriviu: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --delete-secret-key}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Hi ha encara un altre comandament important que té relació amb la 
+gestió de les claus: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --edit-key UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Emprant aquesta ordre podeu editar (entre d'altres coses) la data 
+d'expiració, afegir una empremta digital i signar la vostra clau. Per 
+realitzar aquestes operacions necessiteu la contrasenya. En executar 
+aquesta ordre veureu una linia de comandaments.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{3.6 Signant les claus}}
+{}#{\footnote TOC_16}
+{}K{\footnote Signant les claus}
+
+{}#{\footnote GPGMinihowto_Signant}
+{}K{\footnote GPGMinihowto_Signant}
+
+
+Com s'ha comentat anteriorment, hi ha un taló d'Aquil·les al 
+sistema: l'autentificació de les claus públiques. Si teniu una clau 
+pública errònia, ja us podeu oblidar dels valor del xifratge. Per tal 
+d'evitar aquests riscos existeix la possibilitat de signar les claus. 
+Quan tenim la certesa que una clau és vàlida i que pertany a qui diu 
+que pertany, podem signar-la digitalment, de manera que la nostra 
+signatura donarà fe (als que confien en la nostra signatura) que 
+aquella clau pública correspon a aquell ID d'usuari.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Si executeu l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --edit-key UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+per la clau que voleu signar, podreu signar-la amb la subordre:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 Command> sign}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b Només heu de signar una clau quan estigueu ABSOLUTAMENT SEGURS 
+que la clau és autèntica!!!} En realitat, només es pot estar segur 
+quan la clau ha estat rebuda en mà, o, per exemple, si s'ha rebut per 
+correu i a continuació s'ha comprovar l'empremta digital de la clau 
+per algun altre mitjà (per exemple, per telèfon). No heu de signar mai 
+cap clau basant-vos en una suposició.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Basant-se en les signatures disponibles en una clau i en el 
+[laquo ]grau de confiança[raquo ], {\f1 GnuPG} determina la validesa de 
+les claus. El grau de confiança ({\i Ownertrust}) és un valor que el 
+propietari d'una clau empra per determinar el nivell de confiança per 
+una clau concreta. Aquests valors són:
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} 1 = Don't know (No ho sé)
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} 2 = I do NOT trust (No hi confio)
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} 3 = I trust marginally (Hi confio poc) 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} 4 = I trust fully (Hi confio plenament)
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Si l'usuari no es refia d'una signatura, ho pot indicar i refusar la 
+confiança en la mateixa. La informació sobre la confiança no es desa 
+en el mateix fitxer que el de les claus, sinó que en un altre 
+diferent.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{4 Xifrant i desxifrant}}
+{}#{\footnote TOC_17}
+
+${\footnote Xifrant_i_desxifrant}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Xifrant i desxifrant}
+
+{}#{\footnote GPGMinihowto_xifrant}
+{}K{\footnote GPGMinihowto_xifrant}
+
+
+Després d'haver-ho instal·lat i configurat tot tal com voleu, 
+podeu començar a xifrar i desxifrar.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+És possible que quan vulguem xifrar o desxifrar quelcom, tingueu 
+més d'una clau privada en el nostre anell de claus. Si això passa, és 
+necessari seleccionar-ne una com activa. Per fer-ho, es pot emprar 
+l'opció  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 -u UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+o bé l'opció  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 --local-user UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+També podeu afegir la línia següent al fitxer de configuració 
+{\f1 $HOME/.gnupg/options}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 default-key UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Si desitgeu indicar l'UID d'un destinatari per xifrar un fitxer amb la 
+seva clau, ho podeu fer amb l'opció  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 -r}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+o bé l'opció  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 --recipient}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{4.1 Xifrar}}
+{}#{\footnote TOC_18}
+{}K{\footnote Xifrar}
+
+L'ordre per xifrar és la següent:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg -e [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+o bé:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --encrypt [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+El programa demanarà el UID del destinatari (o dels destinataris, és 
+possible posar-ne més d'un). Es pot evitar que el programa ho pregunti 
+emprant l'ordre:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $gpg -er [UID del destinatari] [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+{\f1 GnuPG} generarà un fitxer xifrat amb el nom {\f1 [fitxer].gpg}. 
+També podem emprar l'opció:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 --armor}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+o bé  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 -a}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+perquè el fitxer generat sigui del tipus ASCII de 7 bits. L'ordre 
+seria doncs:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg -a -er [UID del destinatari] [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquesta ordre generarà un fitxer codificat de nom {\f1 [fitxer].asc} 
+amb el format ASCII de 7 bits. 
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Heu de tenir en compte que el fet de xifrar un fitxer (o un 
+missatge) l'únic que fa és protegir les dades amb un xifratge que 
+només pot desfer el destinatari; no protegeix del risc que algú 
+intenti suplantar la nostra identitat. Per tal d'evitar-ho, només cal 
+signar digitalment tot allò que es xifri (vegeu  
+{\uldb Signatures}{\v GPGMinihowto-Signatures}).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{4.2 Desxifrar }}
+{}#{\footnote TOC_19}
+{}K{\footnote Desxifrar }
+
+L'ordre per desxifrar és:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg [-d] [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+o bé:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg [--decrypt] [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+En aquest cas no és necessària l'opció, és opcional, ja que {\f1 gpg} 
+utilitza per defecte:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 --decrypt}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+En els casos anteriors, el resultat es mostra a {\f1 stdout} 
+(habitualment la sortida de l'intèrpret d'ordres), però el podeu 
+redireccionar amb l'opció: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 -o [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+, on [lsqb  ]fitxer] és el nom del fitxer on vulgueu el resultat.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{5 Signant i verificant signatures}}
+{}#{\footnote TOC_20}
+
+${\footnote Signant_i_verificant_signatures}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Signant i verificant signatures}
+
+{}#{\footnote GPGMinihowto_Signatures}
+{}K{\footnote GPGMinihowto_Signatures}
+
+
+Signar i verificar signatures és una 
+part molt important dels sistemes de criptografia de clau pública. 
+L'usuari pot signar una sèrie de dades o un document, per la qual cosa 
+utilitza la seva clau privada. Per verificar les signatures d'altres 
+usuaris, és necessari obtenir prèviament les seves claus públiques.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{5.1 Signar}}
+{}#{\footnote TOC_21}
+{}K{\footnote Signar}
+
+Per signar un fitxer amb la vostra clau, utilitzeu 
+l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg -s [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+o bé 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --sign [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquesta ordre, a més de produir una signatura digital, també 
+comprimeix el fitxer, per la qual cosa el resultat és un fitxer binari 
+il·legible. Per produir un fitxer signat legible (en format ASCII), 
+s'empra l'ordre:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --clearsign [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+D'aquesta manera, tant la signatura com les dades signades, són 
+legibles en un editor.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+La signatura també es pot generar en un fitxer separat (de les dades). 
+Aquesta opció és molt recomanable especialment quan es signen fitxers 
+binaris (per exemple, fitxers comprimits). Per realitzar-ho s'ha 
+d'utilitzar l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg -b [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{} 
+o bé 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --detach-sign [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquest és el mode que MIME/PGP empra per signar els missatges de 
+correu electrònic. Aquest mode és molt útil quan s'ha de signar un 
+binari, per exemple, per distribuir-lo, ja que la signatura es basa en 
+el binari però va en un fitxer apart. L'opció {\f1 --armor} també pot 
+ésser d'utilitat en aquests casos.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+ Sovint haureu de signar i xifrar un fitxer alhora. L'ordre que 
+permet fer això és: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg [-u Remitent] [-r Destinatari] [--armor] --sign --encrypt \line
+[fixer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+La funcionalitat de les opcions {\f1 -u} ({\f1 --local-user}) i 
+{\f1 -r} ({\f1 --recipient}) és la que s'ha descrit anteriorment.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{5.2 Verificar}}
+{}#{\footnote TOC_22}
+{}K{\footnote Verificar}
+
+En desxifrar un fitxer xifrat que també hagi estat signat 
+digitalment, la signatura es verifica automàticament. En tot cas, és 
+possible verificar la signatura simplament amb l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg [--verify] [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquesta ordre només funcionarà (és clar) quan tingueu la clau pública 
+del remitent.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{6 GnuPG + PGP}}
+{}#{\footnote TOC_23}
+
+${\footnote GnuPG___PGP}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote GnuPG + PGP}
+
+En ser {\f1 PGP} un programa més antic que {\f1 GnuPG}, és normal que un 
+usuari nou de {\f1 GnuPG} tingui ja instal·lada alguna versió de {\f1 PGP} al 
+seu sistema, i que desitgi mantenir les seves claus velles després 
+d'actualitzar-se a {\f1 GnuPG}. Doncs bé, no només és possible importar el 
+contingut dels anells de claus, sinó que, alternativament, és possible que 
+{\f1 GnuPG} gestioni els anells de claus de {\f1 PGP 2.6.3} i {\f1 PGP 5.0}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Hi ha altres [laquo ]problemes[raquo ] de compatibilitat que també 
+tractarem en aquest capítol, com són les signatures de tipus {\b V4} 
+generades per {\f1 GnuPG}, o de l'ús per part de {\f1 PGP} dels algoritmes 
+propietaris {\f1 RSA} o {\f1 IDEA}. Començarem per aquesta darrera qüestió.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.1 Ús d'algoritmes {\i no lliures}}}
+{}#{\footnote TOC_24}
+{}K{\footnote Ús d'algoritmes {\i no lliures}}
+
+L'ús d'algoritmes amb patents restrictives per part de {\f1 PGP} 
+representa un problema donat que la filosofia al voltant de {\f1 GnuPG} és 
+la d'implementar un sistema criptogràfic lliure. Així doncs, les patents 
+sobre aquests algoritmes n'impossibiliten una implementació total. Però 
+{\f1 GnuPG} també pretén cumplir amb les normes dels 
+[laquo ]estàndards[raquo ] d'\url{OpenPGP}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Existeixen unes extensions per a 
+\url{RSA} i  
+\url{IDEA} que poden ser instal·lades 
+i permeten un cert ús d'aquests algoritmes. Les claus generades per {\f1 PGP 
+2.6.x} són del tipus {\f1 RSA}, i l'algoritme de xifratge emprat és {\f1 IDEA} 
+(també pot ser emprat per {\f1 PGP 5.x}). És possible conseguir el codi font 
+d'aquests algoritmes als fitxers   
+\url{rsa.c} i  
+\url{idea.c}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+També existeixen els binaris instal·lables d'aquestes extensions per 
+algunes distribucions de \url{Linux} 
+, com per exemple  
+\url{Debian} (comproveu-ho per a 
+d'altres distribucions).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.2 Signatura digital amb GnuPG}}
+{}#{\footnote TOC_25}
+{}K{\footnote Signatura digital amb GnuPG}
+
+{}#{\footnote GPGMiniHowto_SignaturesGnuPG}
+{}K{\footnote GPGMiniHowto_SignaturesGnuPG}
+
+
+{\f1 GnuPG} és l'únic sistema capaç d'implementar signatures digitals 
+{\b V4} (segons {\i OpenPGP}) i aquesta n'és l'opció per defecte, però en 
+aquest cas {\f1 PGP} no és capaç de verificar-les. És possible obligar a 
+{\f1 GnuPG} a emprar {\b V3}, de dues maneres:
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Indicant-ho en el fitxer de configuració {\f1 $HOME/.gnupg/options} 
+afegint la línia:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 force-v3-sigs}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Indicant aquesta opció cada vegada que es desitgi signar un missatge 
+en {\b V3}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg [lt    ]opció[gt    ] --force-v3-sigs [fitxer]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.3 Importar anells de claus de PGP a GnuPG}}
+{}#{\footnote TOC_26}
+{}K{\footnote Importar anells de claus de PGP a GnuPG}
+
+Intentarem explicar com exportar les claus públiques i privades des dels 
+nostres anells de claus {\f1 PGP} als anells de claus {\f1 GnuPG}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b NOTA: aquest mètode s'ha extret del \url{PGP2GnuPG} 
+Howto de Caskey L.  Dickson i no l'he provat personalment. L'última 
+actualització del [laquo ]PGP2GnuPG Howto[raquo ] data del desembre de 1998. 
+Per aquesta raó, i per poder integrar {\f1 PGP} amb {\f1 GnuPG}, recomano 
+l'ús del mètode que s'explica a la 
+{\uldb secció següent}{\v GPGMiniHowto-AnellsPGP}, ja que és més senzill 
+i fiable.}
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Suposant que tingueu instal·lades dues versions de {\f1 PGP} per a 
+{\f1 Unix/Linux}, tenim els seus respectius anells de claus públiques i 
+privades a {\f1 $HOME/.pgp/}:
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} pubring.pgp -[gt    ] fitxer de claus públiques de {\f1 PGP 2.6.x}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} secring.pgp -[gt    ] fitxer de claus privades de {\f1 PGP 2.6.x}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} pubring.pkr -[gt    ] fitxer de claus públiques de {\f1 PGP  5.x}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} secring.skr -[gt    ] fitxer de claus privades de {\f1 PGP  5.x}
+\par\pard\plain
+\li500{}
+\sb200\fi0
+A continuació utilitzaríem les ordres que corresponguin a cada verió per 
+tal d'extreure les claus que desitgem.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Així, per extreure una clau de {\f1 PGP 2.6.x}: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgp -kx UID fitxer anell}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+per exemple:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgp -kx Pepe clavepepe2 ~/.pgp/pubring.pgp}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquesta operació ens donaria el fitxer clavepepe2.pgp. Per extreure'n la 
+nostra clau privada, no hauríem de fer cap altra cosa que indicar el nostre 
+UID i el fitxer de les claus privades {\f1 [tilde ]/.pgp/secring.pgp}. No em 
+consta que hi hagi cap manera d'indicar més d'un UID amb {\f1 PGP 2.6.3}, si 
+en sabeu alguna, si us plau envieu-me un 
+\url{mensaje} (NT: adreça de 
+correu de l'autor d'aquesta secció i de la traducció a la versió castellana 
+del document).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Una vegada s'ha extret la clau només s'ha d'importar al fitxer de  
+{\f1 GnuPG}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --import clavepepe2}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Per extreure una clau de {\f1 PGP 5.0}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgpk -x UID -o fitxer}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+per exemple:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgpk -x Pepe -o clavepepe5}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+En aquest cas, el fitxer per defecte és el de claus públiques, i obtindríem 
+el fitxer clavepepe5 tal i com hem indicat.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Una vegada més, només ens queda importar la clau:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --import clavepepe5}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Ja que {\f1 PGP 5.0} no ens permet indicar el fitxer sobre el que volem 
+operar, la extracció de la clau privada es complica una miqueta. La solució 
+ve donada per un sistema superior com el de GnuPG:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquest procediment posa en risc la clau privada durant un breu període 
+de temps, així que no hauria de ser emprat en un sistema multiusuari o 
+públic. Els passos a seguir són:
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Extreure la clau pública corresponent a la clau provada que volem 
+exportar, i importar-la a {\f1 GnuPG}.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Esborrar la contrasenya de la clau privada!! (es recomana fer una 
+còpia de seguretat del fitxer secring.skr):
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgpk -e UID}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+per exemple:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ pgpk -e 0x614DB9FA \line
+\line
+sec  1024 0x614DB9FA 1998-03-22 ---------- DSS        Sign & Encrypt \line
+\line
+sub  1024 0x2B9E0571 1998-03-22 ---------- Diffie-Hellman \line
+\line
+uid  Horacio [lt    ]homega@vlc.servicom.es[gt    ] \line
+\line
+uid  Horacio [lt    ]homega@correo.com[gt    ] \line
+\line
+ \line
+1024 bits, Key ID 0x614DB9FA, created 1998-03-22 \line
+\line
+"Horacio [lt    ]homega@vlc.servicom.es[gt    ]" \line
+\line
+"Horacio [lt    ]homega@correo.com[gt    ]"}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 Do you want to unset this key as axiomatic [y/N]? N \line
+\line
+Do you want to unset this key as axiomatic [y/N]? N \line
+\line
+Do you want to add a new user ID [y/N]? N \line
+\line
+Do you want to change your pass phrase (y/N)? Y \line
+Need old passphrase. Enter pass phrase: [lt    ]introduïu la contrasenya[gt    ] \line
+Need new passphrase. Enter pass phrase: [lt    ]deixeu-ho buit[gt    ] \line
+Enter it a second time. Enter pass phrase: [lt    ]deixeu-ho buit[gt    ] \line
+Changing master key passphrase... \line
+\line
+Changing subkey passphrase... \line
+\line
+Do want to set this as your default key [y/N]? N \line
+\line
+Keyrings updated.}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} El pas següent és exportar la clau privada. Com ja hem pogut veure, 
+{\f1 PGP 5.0} és incapaç de fer-ho, així que emprarem {\f1 GnuPG}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --export-secret-keys --secret-key-ring ~/.pgp/secring.skr 0x614DB9FA [gt    ] lamevaclau}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Tot això en una sola línia, i es crearà el fitxer {\f1 lamevaclau}.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Ara ja podem importar la clau privada a GnuPG:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --import [lt    ] lamevaclau}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Swguidament torneu a introduir una contrasenya a la clau des de {\f1 GnuPG}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{6.4 Emprar anells de claus de PGP amb GnuPG}}
+{}#{\footnote TOC_27}
+{}K{\footnote Emprar anells de claus de PGP amb GnuPG}
+
+{}#{\footnote GPGMiniHowto_AnellsPGP}
+{}K{\footnote GPGMiniHowto_AnellsPGP}
+
+
+És possible evitar tota aquesta operació anterior, mantenint 
+instal·lades les diferents versions de {\f1 PGP} al mateix temps que la de 
+{\f1 GnuPG}. Essent {\f1 GnuPG} un sistema superior i més nou, pot reconéixer 
+els anells de claus de {\f1 PGP} com a propis.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+En el cas de {\f1 PGP 5.0}, n'hi ha prou amb afegir la ruta d'accés 
+completa als fitxers de claus de {\f1 PGP 5.0}, precedit per {\f1 keyring} o  
+{\f1 secret-keyring}, al final del fitxer {\f1 [tilde ]/.gnupg/options} segons 
+correspongui:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 keyring ~/.pgp/pubring.pkr \line
+secret-keyring ~/.pgp/secring.skr}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Els fitxers de claus de {\f1 PGP 2.6.3} són reconeguts per {\f1 GnuPG} per 
+defecto. Si això no fos així, només caldria repetir la mateixa operació 
+anterior adaptant-la a les circumstàncies:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 keyring ~/.pgp/pubring.pgp \line
+secret-keyring ~/.pgp/secring.pgp}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Si a continuació feu un llistat de les claus públiques amb {\f1 GnuPG}, 
+observareu que llegeix els tres fitxers, {\f1 [tilde ]/.gnupg/pubring.gpg}, 
+{\f1 [tilde ]/.pgp/pubring.pkr}, y {\f1 [tilde ]/pubring.pgp}:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --list-keys \line
+\line
+     /home/usuario/.gnupg/pubring.gpg \line
+     -------------------------------- \line
+     pub 1024D/57548DCD 1998-07-07 Werner Koch (gnupg sig) \line
+     [lt    ]dd9jn@gnu.org[gt    ] \line
+     pub 1024D/A95AF46C 1998-11-29 Brenno J.S.A.A.F. de Winter \line
+     [lt    ]brenno@dewinter.com[gt    ] \line
+     sub 3072g/A3CA62A0 1998-11-29 \line
+\line
+   (... y demás claves públicas DSA/ElGamal...) \line
+\line
+     /home/usuario/.pgp/pubring.pkr \line
+     ------------------------------ \line
+     pub 1024D/FAEBD5FC 1997-04-07 Philip R. Zimmermann [lt    ]prz@pgp.com[gt    ] \line
+     sub 2048g/42F0A0A0 1997-04-07 \line
+\line
+   (... etc DSS/Diffie-Helman...) \line
+\line
+     /home/usuario/.pgp/pubring.pgp \line
+     ------------------------------ \line
+     pub 1024R/88A17FF5 1995-09-11 IRIS-CERT, Spain \line
+\line
+   (... etc RSA...) \line
+}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+El mateix succeïria amb les claus privades:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpg --list-secret-keys \line
+\line
+     /home/horacio/.gnupg/secring.gpg \line
+     -------------------------------- \line
+     sec 1024D/42337AE6 1999-03-14 Horacio (comentari) \line
+     [lt    ]homega@vlc.servicom.es[gt    ] \line
+     ssb 2048g/1F177864 1999-03-14 \line
+\line
+     /home/horacio/.pgp/secring.skr \line
+     ------------------------------ \line
+     sec 1024D/7992AB40 1998-05-04 Horacio [lt    ]homega@vlc.servicom.es[gt    ] \line
+     uid Horacio [lt    ]homega@correo.com[gt    ] \line
+     ssb 2048g/917366AE 1998-05-04 \line
+\line
+     /home/horacio/.pgp/secring.pgp \line
+     ------------------------------ \line
+     sec 1024R/32D4A925 1997-09-23 Horacio [lt    ]homega@vlc.servicom.es[gt    ]}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{7 Interfícies gràfiques}}
+{}#{\footnote TOC_28}
+
+${\footnote Interf_cies_gr_fiques}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Interfícies gràfiques}
+
+{}#{\footnote GPGMinihowto_Frontends}
+{}K{\footnote GPGMinihowto_Frontends}
+
+
+Per fer més fàcil l'ús de GnuPG, teniu una àmplia varietat de 
+programes que empren o són compatibles amb el xifratge de GnuPG.  Hi ha 
+interfícies gràfiques que permeten administrar les claus amb el ratolí i 
+també hi ha molts MUA (Mail User Agents) que permeten xifrar i signar 
+missatges de correu electrònic de forma molt senzilla.  Hi ha una 
+llista quasi bé completa de front ends a la pàgina 
+\url{GnuPG Frontends}. 
+En destacarem alguns d'ells a continuació.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{7.1 Interfícies gràfiques}}
+{}#{\footnote TOC_29}
+{}K{\footnote Interfícies gràfiques}
+
+
+{\pard\plain\f0\sb200\fs24\b\tx576{GPA}}
+{}K{\footnote GPA}\par\pard\plain\li500\sb200\fi0
+
+\url{GPA}, {\i GNU 
+Privacy Assistant} és una interfície d'usuari gràfica per Gnu 
+Privacy Guard (GnuPG). Aquest és el front end gràfic estàndard que 
+ofereix el projecte GnuPG. Amb GPA, podeu veure el vostre anell de 
+claus, importar i exportar claus, generar claus, editar-ne les 
+propietats i xifrar, signar o desxifrar documents.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Instal·lar GPA és senzill. Descarregueu-ne el codi font comprimit, 
+descomprimiu-lo i llavors executeu l'ordre: 
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ ./configure; make \line
+# make install}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+Executeu el programa escrivint:  
+
+\par\pard\sb200\keep\li1000{}{\f1 \line
+\line
+\par\pard\sb200\keep\li1500{}{\f1 $ gpa}\line
+\par\pard\sb200\li1000{}}
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\plain\f0\sb200\fs24\b\tx576{Seahorse}}
+{}K{\footnote Seahorse}\par\pard\plain\li500\sb200\fi0
+
+\url{Seahorse} 
+és una interfície gràfica de GnuPG per a GNOME. Es pot emprar per signar, 
+xifrar, verificar i desxifrar text i fitxers. El text es pot obtenir 
+del porta-retalls, o el podeu escriure directament en el petit editor 
+que porta. Seahorse és també un gestor de claus que es pot utilitzar 
+per editar quasi bé totes les propietats de les claus que 
+emmagatzemeu en el vostre anell de claus.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Podeu instal·lar Seahorse mitjançant un paquet per a la vostra 
+distribució, o bé descarregant-vos un fitxer comprimit amb el codi 
+font. Instal·lar l'aplicació des del codi font es fa com amb qualsevol 
+altre paquet. Descarregeu-lo, descomprimiu-lo, executeu {\f1 configure} 
+i feu {\f1 make install}. La instal·lació es fa sota el directori 
+{\f1 /usr/local} i inserta un element de menú al menú d'aplicacions 
+de GNOME.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\plain\f0\sb200\fs24\b\tx576{Geheimnis}}
+{}K{\footnote Geheimnis}\par\pard\plain\li500\sb200\fi0
+
+\url{Geheimnis} 
+és un front-end per GNUPG que està basat en KDE. Se suposa que té totes les 
+funcions de GPA i Seahorse. Lamentablement, quan vaig provar de compilar el 
+programa em vaig quedar encallat perquè em mancava una lliberia 
+(/usr/lib/libfam.la).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{7.2 Programes de correu electrònic }}
+{}#{\footnote TOC_30}
+{}K{\footnote Programes de correu electrònic }
+
+Els programes de correu electrònic (o MUAs) més populars permeten 
+l'ús de GnuPG. Entre aquests, hi ha almenys els següents: 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Evolution
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Balsa
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Mozilla
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Pine
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Kmail
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Eudora
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} Mutt
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} exmh
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Amb tota certesa n'hi ha molts més, però és quasi bé impossible 
+provar-los tots.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Emprant GnuPG des del vostre programa de correu us permet 
+desxifrar missatges de correu electrònic que us enviïn xifrats amb la 
+vostra clau pública, signar els vostres missatges per tal que el 
+destinatari pugui estar segur que en sou l'autor i xifrar el vostre 
+correu electrònic amb les claus públiques dels destinataris.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\plain\f0\sb200\fs24\b\tx576{Evolution}}
+{}K{\footnote Evolution}\par\pard\plain\li500\sb200\fi0
+
+Evolution, el programa més corrent per GNOME, conté integrada la 
+possibilitat d'emprar el xifratge de GnuPG i de PGP.  Per poder-lo 
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir 
+el vostre ID d'usuari a la pestanya 'Seguretat' de les propietats del 
+compte de correu.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per 
+fer-ho, heu de seleccionar 'Signa amb PGP' i 'Xifra amb PGP' del menú 
+'Seguretat'.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+En rebre un missatge signat o xifrat, es desxifrarà automàticament i 
+apareixerà un candau al final del text. Si premeu el candau, es 
+verificarà la signatura i us mostrarà si és correcta o no.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\plain\f0\sb200\fs24\b\tx576{Mozilla i Enigmail }}
+{}K{\footnote Mozilla i Enigmail }\par\pard\plain\li500\sb200\fi0
+
+Mozilla no inclou la possibilitat d'emprar GnuPG per ell mateix. Per 
+emprar el xifrat GnuPG amb Mozilla, heu d'instal·lar un connector, com  
+\url{EnigMail}.  Enigmail és 
+un connector per Mozilla/Netscape Mail que permet als usuaris accedir a les 
+característiques d'autentificació i xifrat que facilita el programari GPG i 
+PGP. Enigmail és capaç de xifrar i signar correu electrònic en enviar-lo, i 
+també de desxifrar i verificar el correu rebut. També és capaç d'importar i 
+exportar claus privades.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Instal·lar EnigMail en un sistema RedHat Linux és especialment senzill, 
+ja que hi ha RPM disponibles per les darreres versions de Mozilla. S'han 
+d'instal·lar dos paquets: {\f1 mozilla-enigmail-0.39-3.i386.rpm} i  
+{\f1 mozilla-ipc-0.99-0[lowbar]rh7x.rpm}. Després d'instal·lar aquests RPM, 
+reinicieu Mozilla (o Netscape 6.x) i hauríeu de ser capaços d'emprar GnuPG 
+en el vostre correu electrònic. Tingueu en compte, però, que EnigMail només 
+xifra el text del vostre missatge. No xifra els afegits; haureu de xifrar 
+qualsevol fitxer que vulgueu afegir separadament. En altres sistemes, 
+probablement haureu d'instal·lar EnigMail a partir del codi font.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\plain\f0\sb200\fs24\b\tx576{Kmail}}
+{}K{\footnote Kmail}\par\pard\plain\li500\sb200\fi0
+
+Kmail, el programa de correu electrònic més corrent per KDE conté 
+integrada la possibilitat d'emprar el xifratge de GnuPG i PGP. Per poder-lo 
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir 
+el vostre ID d'usuari a la secció 'Identitat' de la configuració de Kmail. 
+Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per 
+fer-ho, heu de seleccionar els butons 'Signa el missatge' i 'Xifra el 
+missatge' de la barra d'eines.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{8 Fonts d'informació }}
+{}#{\footnote TOC_31}
+
+${\footnote Fonts_d_informaci_}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote Fonts d'informació}
+
+{}#{\footnote GPGMinihowto_FontsInformacio}
+{}K{\footnote GPGMinihowto_FontsInformacio}
+
+
+
+{\pard\sb200\plain\f0\fs24\b\tx576{8.1 GnuPG}}
+{}#{\footnote TOC_32}
+{}K{\footnote GnuPG}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} La \url{pàgina web de GnuPG}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} La llista de correu electrònic de GnuPG, incloent la possibilitat de 
+consultar els missatges antics i les descripcions a  
+\url{la pàgina web de GnuPG}. 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} La informació del project GnuPG (actualitzada fins la versió 0.9.2), 
+tot i que encara no està prou acabada. I no s'ha d'oblidar:  
+
+\par\pard\sb200\keep\li1500{}{\f1 \line
+\line
+\par\pard\sb200\keep\li2000{}{\f1 gpg --help}\line
+\par\pard\sb200\li1500{}}
+\par\pard\sb200\li1000{}. Aquesta és una font de molt de 
+valor.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{8.2 PGP}}
+{}#{\footnote TOC_33}
+{}K{\footnote PGP}
+
+PGP és el programa de criptografia més antic que (encara) està 
+àmpliament extès. Durant aquest temps s'han publicat nombrosos documents. 
+Aquesta informació és molt útil. Molta d'aquesta informació és tan general 
+que la podeu aplicar a GnuPG també. Mireu-vos les adreces següents per 
+obtenir aquests documents:
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} La \url{pàgina web internacional de PGP}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} La pàgina de \url{preguntes més freqüents de PGP DH vs. RSA} 
+conté informació de les diferències entre aquests dos algoritmes. Aquests 
+són els dos algoritmes que utilitza GnuPG.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{8.3 Servidors de claus}}
+{}#{\footnote TOC_34}
+{}K{\footnote Servidors de claus}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7}  \url{Keyserver.net}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7}  \url{urlnam}
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{8.4 Llibres}}
+{}#{\footnote TOC_35}
+{}K{\footnote Llibres}
+
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} B. Schneier, [quot  ]Applied Cryptography, Second 
+Edition[quot  ], Wiley, 1996 
+{}#{\footnote BSchneier}
+{}K{\footnote BSchneier}
+
+ Deutsche Ausgabe 
+unter dem Titel [quot  ]Angewandte Kryptographie[quot  ], Addison-Wesley, 
+1996
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\page{\pard\plain\keepn\f0\fs36\b\tx576{9 A propòsit d'aquest document}}
+{}#{\footnote TOC_36}
+
+${\footnote A_prop_sit_d_aquest_document}
++{\footnote browse}
+\par\pard\plain\li500\sb200\fi0
+{}K{\footnote A propòsit d'aquest document}
+
+Copyright [copy  ] 2002 Josep Monés i Teixidor (versió en català)\\  
+Copyright [copy  ] 2002 Arjen Baart (versió en neerlandès)\\  
+Copyright [copy  ] 1999 J.H. M.G. (versió en castellà)\\  
+Copyright [copy  ] 1999 Brenno J.S.A.A.F. de Winter (versió en anglès)\\  
+Copyright [copy  ] 1999 Michael Fischer v. Mollard (versió original en alemany)
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquest document és documentació lliure i es pot redistribuir i/o modificar 
+sota les condicions de la GNU Library General Public License, segons ha 
+publicat la Free Software Foundation; en la seva versió 2, o (si ho 
+preferiu) en qualsevol versió posterior.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Aquest document es distribueix esperant que serà útil, però SENSE CAP 
+GARANTIA. Vegeu la "GNU Library General Public License" 
+(\url{http://www.gnu.org/copyleft/gpl.html}) 
+per obtenir-ne més detalls. Podeu obtenir-ne una traducció aproximada i NO OFICIAL al català a 
+\url{http://ca.dodds.net/gnu/gpl.ca.html}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Hauríeu d'haver rebut una còpia de la "GNU Library General Public License" 
+amb la distribució d'aquest document; si no és així, podeu demanar-la 
+escriguent a:
+\par\pard\plain
+\li500{}
+\sb200\fi0
+
+\par\pard\sb200\keep\li1000{}{\f1 Free Software Foundation, Inc. \line
+59 Temple Place - Suite 330 \line
+Boston, MA 02111-1307 \line
+USA}\line
+\par\pard\sb200\li500{}\par\pard\plain
+\li500{}
+\sb200\fi0
+
+{\pard\sb200\plain\f0\fs24\b\tx576{9.1 Versions}}
+{}#{\footnote TOC_37}
+{}K{\footnote Versions}
+
+Versió original en alemany: la {\b versió 0.1} va 
+ser la primer versió en alemany.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+Tots els canvis per la versió original, en alemany, estan documentats 
+en un fitxer diff: \url{dieses Dokument}
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Anglès versió 0.1.0}, del 30 d'abril del 1999. 
+Aquesta versió és una traducció de la versió alemanya a l'anglès, amb 
+alguns canvis.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Alemany versió 0.1.1} 
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Nova secció [laquo ]Límits de seguretat[raquo ]
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Explicació de les signatures millorada
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Alguns canvis suggerits per Werner Koch (gràcies!)
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Castellà versió 0.1.2}, del 29 de maig del 1999.  
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Aquesta versió en castellà és la traducció de la versió 
+anglesa, i s'han fet alguns canvis.
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} S'ha afegit el capítol sobre comptabilitat i 
+interoperabilitat de {\f1 GnuPG} amb {\f1 PGP}.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Castellà versió 0.1.3}, del 28 de setembre de 1999. 
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} S'ha reescrit a codi SGML (LinuxDoc) des del codi HTML.
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Correcció d'alguns errors en castellà.
+ 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Anglès versió 0.1.2}, del 3 d'abril del 2002. 
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} S'han corregit algunes faltes.
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Nova secció sobre interfícies d'usuari.
+ 
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Holandès versió 0.1.3}, del 17 de maig del 2002. 
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Traducció de la versió anglesa a l'holandès.
+\par\pard\plain
+\li1000{}
+\sb200\fi0
+\li1000{}\fi-200{\f3\'B7} {\b Català versió 0.1.3}, del 10 de desembre del 2002. 
+\par\pard\plain
+\li1500{}
+\sb200\fi0
+\li1500{}\fi-200{\f3\'B7} Traducció de la versió anglesa al català (amb molta 
+influència de les modificacions realitzades en la versió 
+castellana).
+\par\pard\plain
+\li500{}
+\sb200\fi0
+        
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b Notes per a la versió catalana:} Podeu enviar qualsevol suggeriment o 
+comentari sobre aquest document a Josep Monés i Teixidor ({\f1 \url{urlnam}}). Qualsevol comentari o correció és 
+benvingut.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b Notes per a la versió castellana:}  Cualquier comentario o corrección al  
+documento que ayude a mejorarlo es bienvenido.  Por favor, enviad cualquier 
+sugerencia a \url{[lt    ]homega@ciberia.es[gt    ]}.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b Notes per a la versió anglesa i neerlandesa:}  All 
+remarks for this document can be sent to Brenno J.S.A.A.F. de Winter 
+({\f1 \url{brenno@dewinter.com}}).  or Arjen Baart ({\f1 \url{arjen@andromeda.nl}}). 
+Comments help us make a better document and are greatly appreciated.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+{\b Notes per a la versió alemanya:}  Anregungen, Kritik, Verbesserungen und 
+Erweiterungen einfach an Michael Fischer v. Mollard  
+\url{[lt    ]fischer@math.uni-goettingen.de[gt    ]} senden, damit dieses Dokument 
+weiter verbessert werden kann.
+\par\pard\plain
+\li500{}
+\sb200\fi0
+}

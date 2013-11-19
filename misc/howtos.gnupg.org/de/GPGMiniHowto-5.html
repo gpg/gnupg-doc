@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto : Signieren und Signaturen pr&uuml;fen</TITLE>
+ <LINK HREF="GPGMiniHowto-6.html" REL=next>
+ <LINK HREF="GPGMiniHowto-4.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-6.html">Weiter</A>
+<A HREF="GPGMiniHowto-4.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc5">Inhalt</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-signaturen"></A> <A NAME="s5">5. Signieren und Signaturen pr&uuml;fen</A></H2>
+
+<P>
+<P>Mit dem Befehl 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -s (oder --sign) [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+unterschreibt man eine Datei mit seinem privaten Schl&uuml;ssel. Sie
+wird dabei gleichzeitig komprimiert, ist dann also nicht mehr ohne
+weiteres lesbar. Mit 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --clearsign [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+bel&auml;sst man die Datei lesbar, mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -b (oder --detach-sign) [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+erzeugt man eine Unterschrift in einer separaten Datei. Letzteres ist
+insbesondere zum signieren von Bin&auml;rdateien wie Archiven zu
+empfehlen. Auch bei diesen Befehlen kann die Option <CODE>--armor</CODE>
+n&uuml;tzlich sein.
+<P>
+<P>&Uuml;blicherweise wird sowohl signiert als auch verschl&uuml;sselt,
+der Befehl lautet dann vollst&auml;ndig
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-u Sender] [-r Empf&auml;nger] [--armor] --sign --encrypt [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Die Optionen <CODE>-u</CODE> (<CODE>--local-user</CODE>) und <CODE>-r</CODE> 
+(<CODE>--recipient</CODE>) funktionieren wie oben erl&auml;utert.
+<P>
+<P>Wenn eine verschl&uuml;sselte Datei signiert ist, so wird beim
+Entschl&uuml;sseln die Signatur mitgepr&uuml;ft. Die
+Signatur einer unverschl&uuml;sselten Datei pr&uuml;ft man mit
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--verify] [Datei]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+immer nat&uuml;rlich vorausgesetzt, da&szlig; man im Besitz des
+entsprechenden &ouml;ffentlichen Schl&uuml;ssels ist.
+<P>
+<P>
+<P>
+<HR>
+<A HREF="GPGMiniHowto-6.html">Weiter</A>
+<A HREF="GPGMiniHowto-4.html">Zurück</A>
+<A HREF="GPGMiniHowto.html#toc5">Inhalt</A>
+</BODY>
+</HTML>

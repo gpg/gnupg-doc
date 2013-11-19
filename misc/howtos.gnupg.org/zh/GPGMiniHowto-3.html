@@ -1,0 +1,230 @@
+<HTML>
+<HEAD>
+ <META HTTP-EQUIV="Content-Type" CONTENT="TEXT/HTML; CHARSET=gb2312">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Using keys</TITLE>
+ <LINK HREF="GPGMiniHowto-4.html" REL=next>
+ <LINK HREF="GPGMiniHowto-2.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-4.html">下页</A>
+<A HREF="GPGMiniHowto-2.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc3">目录</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Key"></A> <A NAME="s3">3. 使用钥匙</A></H2>
+
+<P>
+<H2><A NAME="ss3.1">3.1 产生钥匙</A>
+</H2>
+
+<P>
+<P>使用以下命令
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+以产生一个新的钥匙对（一个钥匙对包括一把隐密钥匙和相应的一把公开钥匙）。运行时，第一个问题是选择使用哪个算法。你可以在
+<A HREF="http://www.hertreg.ac.uk/ss/pgpfaq.html">PGP DH vs. RSA FAQ</A>
+或
+<A HREF="GPGMiniHowto-6.html#BSchneier">Applied Cryptography</A>
+书中读到更多算法方面的信息。对这个问题你可以很容易地（也许你正该如此，因为它受到广泛使用）选择DSA/ElGamal。该算法没有专利。
+<P>
+<P>
+下一个问题是钥匙长度。对这个问题的答案因人而异。你需要在安全和计算时间二者选一。如果钥匙长些，讯息被截获后被破解的风险就小些。但是使用时计算时间也要长些。如果计算时间是考虑的重要因素，你仍然应该考虑到你将使用这把钥匙一段时间。我们都知道由于新处理器越来越快，使得数值计算速度增加非常快。因此，选择钥匙长度时，要考虑到这个因素。GnuPG要求的最短钥匙长度是768字位。不过，有人认为你应该使用2048位的钥匙（这实际也是GnuPG目前允许的最大长度）。就DSA而言，1024位是一个标准的长度。当安全是首要考虑因素而速度相对次要时，你应该选用最大可能的长度。
+<P>
+<P>
+
+程序现在要你输入你的名字，介绍和电子邮件地址。密码将根据以上输入的内容产生出来。你可以在将来改变这些设置。见 
+<A HREF="#GPG-Minihowto-KPAdministration">
+钥匙管理</A>。你应该用一个较长的真实的电子邮件地址，因为以上完整的用户身份识别（包括名字，介绍和电子邮件地址）都被签名。如果你修改了地址，签名就将与修改后的内容不符。最后一点，你可以输入一些介绍性内容。在此你输入什么都行，可以相当有用。
+<P>
+<P>
+最后，你得敲入密码，或称通行字（实际上，由于允许使用空格，叫作通行句更合适）。该密码使你可以使用与你的密钥有关的各项功能。一个好的通行句具有下列要素：
+<UL>
+<LI>长度要长，</LI>
+<LI>包含特殊字符（非英文字母或阿拉伯数字），</LI>
+<LI>要是某种特殊的东西（不能是姓名），</LI>
+<LI>要很难被猜到（因此请万勿使用姓名，生日，电话号码，信用卡号码，支票帐号号码，小孩的姓名或人数等）
+</LI>
+</UL>
+
+在通行句中，用大小写混杂的方式你可以进一步增进安全。当你想出密码时，一定要保证你不会忘掉它。如果你忘掉了，发给你的讯息就再也没法解密因而再也没法读了，你的密钥也再也用不成了。产生包含这个信息的某种形式的证书可能是一种明智之举。（当然要小心不要让别人得到你的通行句）。见
+<A HREF="#GPG-Minihowto-Revoke">取消钥匙</A>.
+<P>
+在上述所有都输入之后，系统开始产生钥匙。这会花一些时间。在这段时间，它需要收集许多随机数据。如果你在这段时间在另一个窗口工作，你就可以帮助系统收集随机数据。正如你现在已经懂得的，产生出的钥匙总是不同的。如果你在现在和五分钟后输入完全相同的数据来产生钥匙，你会得到两把不同的钥匙。现在你一定明白为什么你不应该忘记你的通行句了。
+<P>
+<P>
+<H2><A NAME="ss3.2">3.2 输出钥匙</A>
+</H2>
+
+<P>
+<P>下列命令可以输出一个用户的钥匙：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [UID]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+如果没有给出一个用户身份识别（UID），所有现有的钥匙都会被输出。隐含地，结果将输出到标准输出（
+<CODE>stdout</CODE>）去。但
+是用<CODE>-o</CODE>
+选项可以把它放到一个文件里去。建议你同时使用
+<CODE>-a</CODE>
+选项来把钥匙写进一个7位的文件，而不是一个二进制文件。
+<P>
+<P>
+输出钥匙后，你就可以增大你的视野。别人可以与你安全地通讯了。你可以把钥匙放在你的主页上，用finger服务，用钥匙服务器，或任何别的你能想到的方式来让别人知道你的公钥。
+<P>
+<H2><A NAME="ss3.3">3.3 引进钥匙</A>
+</H2>
+
+<P>
+<P>
+当你收到一把别人的公钥（或好几把公钥）时，为了能使用它们，你得把它们加进你的钥匙数据库。加进数据库的命令如下：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [Filename]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+如果文件名（filename）省略了，数据将从标准输入（
+<CODE>stdin</CODE>）读入。
+<P>
+<H2><A NAME="GPG-Minihowto-Revoke"></A> <A NAME="ss3.4">3.4 取消钥匙</A>
+</H2>
+
+<P>
+因为好些原因，你可以想要取消一把已经存在的钥匙，例如：密钥被盗了或被不该得到它的人得到，用户身份识别改变了，钥匙不够长了，等等。对上述各种情况，取消钥匙的命令是：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke
+</PRE>
+</CODE></BLOCKQUOTE>
+
+该命令将产生一份取消钥匙证书。
+<EM>要这么做，一定要先有密钥！</EM>
+否则任何人都能取消你的钥匙。
+这种方法有一个缺点：
+如果我不知道通行句就用不了密钥。但用不了密钥，我就不能取消我的钥匙。
+为解决这个问题，在你产生钥匙对的时候就产生一份取消钥匙证书是一种明智的做法。
+如果你这样做的话，一定要把证书保存好！
+你可以把它放在磁盘上，纸张上，等等。
+一定要保证证书不落入坏人之手！！！
+否则别人就可以发出该证书取消你的钥匙，使你的钥匙作废。
+
+<P>
+<H2><A NAME="GPG-Minihowto-KPAdministration"></A> <A NAME="ss3.5">3.5 钥匙管理</A>
+</H2>
+
+<P>
+<P>
+随系统而来，有一个文件，起到某种数据库的作用。
+所有有关钥匙和钥匙附带信息的数据都存在这个文件里（只有一样例外：主人的信任值。更多的信息见
+<A HREF="#GPG-Minihowto-KSigning">钥匙签名</A>）。用
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+可以显示所有现有的钥匙。
+要想同时显示签名，用
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+（更多的信息见
+<A HREF="#GPG-Minihowto-KSigning">钥匙签名</A>）。
+要想见到钥匙的指纹，敲入：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+用户需要见到”指纹”来确认某人的确是其自称是的人（就象在电话中一样）。
+这个命令将会产生一列相对较小的数字。
+
+<P>要列出私密钥匙，你可以敲
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+注意：列出私密钥匙的指纹和签名根本就没用。
+
+<P>要删除一把公钥，你可以敲
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key UID 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+要删除一把密钥，你可以敲
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --delete-secret-key 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+<P>还有一个与钥匙有关的重要命令：
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+
+用此命令你可以修改钥匙的失效日期，加进一个指纹，对钥匙签名等等。
+尽管显得太清楚而不用提，这里还是要说，要做以上事情你得用你的通行句。
+敲入通行句后，你会见到命令行。
+<P>
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.6">3.6 钥匙签名</A>
+</H2>
+
+<P>
+<P>
+正如前言所提到的，这个系统有一个最大的薄弱点，那就是公钥的真实性问题。
+如果用的是错误的公钥，你加密的价值就全没了。
+要克服这种风险，一种可能是对钥匙签名：
+你把你的签名放在一把钥匙上，这样你就绝对确信这把钥匙是真实的。
+这样，钥匙上的签名就表示承认钥匙上的用户身份确实是这把钥匙的主人。
+有了这个保证，用户就可以开始放心用这把钥匙加密了。
+<P>
+<P>
+要对一把钥匙签名，用
+<CODE>gpg --edit-key UID</CODE>
+，然后用
+<CODE>sign</CODE>命令。
+<P>
+<P>
+<EM>你只有在绝对确信一把钥匙的真实性的时候，才应该对它签名认可！！！</EM> 
+例如你本人拿到了这把钥匙（比如说在一个钥匙签名派对上），
+或者你通过别的渠道得到了钥匙，然后检查了它的指纹（例如通过打电话询问）。
+你永远不应该光凭假设就对一把钥匙签名。
+<P>
+<P>
+GnuPG根据现有的签名和”主人的信任度”来决定钥匙的真实性。
+主人信任度是钥匙的主人用来决定对别的某把钥匙的信任程度的一个值。
+这个值可以是
+<UL>
+<LI> 1 = 我不知道</LI>
+<LI> 2 = 我不信任（这把钥匙）</LI>
+<LI> 3 = 我勉强信任</LI>
+<LI> 4 = 我完全信任</LI>
+</UL>
+
+如果用户不信任一个签名，可以就这么说，因而将弃这个签名不用。
+这些信任信息不是存在储存钥匙的文件里，
+而是存在另一个文件里。
+<P>
+<HR>
+<A HREF="GPGMiniHowto-4.html">下页</A>
+<A HREF="GPGMiniHowto-2.html">上页</A>
+<A HREF="GPGMiniHowto.html#toc3">目录</A>
+</BODY>
+</HTML>

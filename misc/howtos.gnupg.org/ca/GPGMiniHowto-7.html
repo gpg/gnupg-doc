@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): Interfícies gràfiques</TITLE>
+ <LINK HREF="GPGMiniHowto-8.html" REL=next>
+ <LINK HREF="GPGMiniHowto-6.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-8.html">Next</A>
+<A HREF="GPGMiniHowto-6.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="GPGMinihowto-Frontends"></A> <A NAME="s7">7.</A> <A HREF="GPGMiniHowto.html#toc7">Interfícies gràfiques</A></H2>
+
+<P>Per fer més fàcil l'ús de GnuPG, teniu una àmplia varietat de
+programes que empren o són compatibles amb el xifratge de GnuPG.  Hi ha
+interfícies gràfiques que permeten administrar les claus amb el ratolí i
+també hi ha molts MUA (Mail User Agents) que permeten xifrar i signar
+missatges de correu electrònic de forma molt senzilla.  Hi ha una
+llista quasi bé completa de front ends a la pàgina
+<A HREF="http://www.gnupg.org/frontends.html">GnuPG Frontends</A>.
+En destacarem alguns d'ells a continuació.</P>
+
+<H2><A NAME="ss7.1">7.1</A> <A HREF="GPGMiniHowto.html#toc7.1">Interfícies gràfiques</A>
+</H2>
+
+<H3>GPA</H3>
+
+<P>
+<A HREF="http://www.gnupg.org/gpa.html">GPA</A>, <EM>GNU
+Privacy Assistant</EM> és una interfície d'usuari gràfica per Gnu
+Privacy Guard (GnuPG). Aquest és el front end gràfic estàndard que
+ofereix el projecte GnuPG. Amb GPA, podeu veure el vostre anell de
+claus, importar i exportar claus, generar claus, editar-ne les
+propietats i xifrar, signar o desxifrar documents.</P>
+<P>Instal·lar GPA és senzill. Descarregueu-ne el codi font comprimit,
+descomprimiu-lo i llavors executeu l'ordre:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ ./configure; make
+# make install
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Executeu el programa escrivint: 
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpa
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H3>Seahorse</H3>
+
+<P>
+<A HREF="http://seahorse.sourceforge.net/">Seahorse</A>
+és una interfície gràfica de GnuPG per a GNOME. Es pot emprar per signar,
+xifrar, verificar i desxifrar text i fitxers. El text es pot obtenir
+del porta-retalls, o el podeu escriure directament en el petit editor
+que porta. Seahorse és també un gestor de claus que es pot utilitzar
+per editar quasi bé totes les propietats de les claus que
+emmagatzemeu en el vostre anell de claus.</P>
+<P>Podeu instal·lar Seahorse mitjançant un paquet per a la vostra
+distribució, o bé descarregant-vos un fitxer comprimit amb el codi
+font. Instal·lar l'aplicació des del codi font es fa com amb qualsevol
+altre paquet. Descarregeu-lo, descomprimiu-lo, executeu <CODE>configure</CODE>
+i feu <CODE>make install</CODE>. La instal·lació es fa sota el directori
+<CODE>/usr/local</CODE> i inserta un element de menú al menú d'aplicacions
+de GNOME.</P>
+
+<H3>Geheimnis</H3>
+
+<P>
+<A HREF="http://geheimnis.sourceforge.net/">Geheimnis</A>
+és un front-end per GNUPG que està basat en KDE. Se suposa que té totes les
+funcions de GPA i Seahorse. Lamentablement, quan vaig provar de compilar el
+programa em vaig quedar encallat perquè em mancava una lliberia
+(/usr/lib/libfam.la).</P>
+
+<H2><A NAME="ss7.2">7.2</A> <A HREF="GPGMiniHowto.html#toc7.2">Programes de correu electrònic </A>
+</H2>
+
+<P>Els programes de correu electrònic (o MUAs) més populars permeten
+l'ús de GnuPG. Entre aquests, hi ha almenys els següents:
+<UL>
+<LI>Evolution</LI>
+<LI>Balsa</LI>
+<LI>Mozilla</LI>
+<LI>Pine</LI>
+<LI>Kmail</LI>
+<LI>Eudora</LI>
+<LI>Mutt</LI>
+<LI>exmh</LI>
+</UL>
+</P>
+<P>Amb tota certesa n'hi ha molts més, però és quasi bé impossible
+provar-los tots.</P>
+
+<P>Emprant GnuPG des del vostre programa de correu us permet
+desxifrar missatges de correu electrònic que us enviïn xifrats amb la
+vostra clau pública, signar els vostres missatges per tal que el
+destinatari pugui estar segur que en sou l'autor i xifrar el vostre
+correu electrònic amb les claus públiques dels destinataris.</P>
+
+<H3>Evolution</H3>
+
+<P>Evolution, el programa més corrent per GNOME, conté integrada la
+possibilitat d'emprar el xifratge de GnuPG i de PGP.  Per poder-lo
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir
+el vostre ID d'usuari a la pestanya 'Seguretat' de les propietats del
+compte de correu.</P>
+<P>Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per
+fer-ho, heu de seleccionar 'Signa amb PGP' i 'Xifra amb PGP' del menú
+'Seguretat'.</P>
+<P>En rebre un missatge signat o xifrat, es desxifrarà automàticament i
+apareixerà un candau al final del text. Si premeu el candau, es
+verificarà la signatura i us mostrarà si és correcta o no.</P>
+
+
+<H3>Mozilla i Enigmail </H3>
+
+<P>Mozilla no inclou la possibilitat d'emprar GnuPG per ell mateix. Per
+emprar el xifrat GnuPG amb Mozilla, heu d'instal·lar un connector, com 
+<A HREF="http://enigmail.mozdev.org/">EnigMail</A>.  Enigmail és
+un connector per Mozilla/Netscape Mail que permet als usuaris accedir a les
+característiques d'autentificació i xifrat que facilita el programari GPG i
+PGP. Enigmail és capaç de xifrar i signar correu electrònic en enviar-lo, i
+també de desxifrar i verificar el correu rebut. També és capaç d'importar i
+exportar claus privades.</P>
+
+<P>Instal·lar EnigMail en un sistema RedHat Linux és especialment senzill,
+ja que hi ha RPM disponibles per les darreres versions de Mozilla. S'han
+d'instal·lar dos paquets: <CODE>mozilla-enigmail-0.39-3.i386.rpm</CODE> i 
+<CODE>mozilla-ipc-0.99-0_rh7x.rpm</CODE>. Després d'instal·lar aquests RPM,
+reinicieu Mozilla (o Netscape 6.x) i hauríeu de ser capaços d'emprar GnuPG
+en el vostre correu electrònic. Tingueu en compte, però, que EnigMail només
+xifra el text del vostre missatge. No xifra els afegits; haureu de xifrar
+qualsevol fitxer que vulgueu afegir separadament. En altres sistemes,
+probablement haureu d'instal·lar EnigMail a partir del codi font.</P>
+
+<H3>Kmail</H3>
+
+<P>Kmail, el programa de correu electrònic més corrent per KDE conté
+integrada la possibilitat d'emprar el xifratge de GnuPG i PGP. Per poder-lo
+configurar per tal de poder signar i desxifrar missatges, heu d'introduir
+el vostre ID d'usuari a la secció 'Identitat' de la configuració de Kmail.
+Quan envieu un nou missatge no l'estareu signant o xifrant per defecte. Per
+fer-ho, heu de seleccionar els butons 'Signa el missatge' i 'Xifra el
+missatge' de la barra d'eines.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-8.html">Next</A>
+<A HREF="GPGMiniHowto-6.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc7">Contents</A>
+</BODY>
+</HTML>

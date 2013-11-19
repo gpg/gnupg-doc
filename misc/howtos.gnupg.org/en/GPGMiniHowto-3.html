@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+
+<META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.16">
+<TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Using keys</TITLE>
+<LINK HREF="GPGMiniHowto-4.html" REL=next>
+<LINK HREF="GPGMiniHowto-2.html" REL=previous>
+<LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+
+<A HREF="GPGMiniHowto-4.html">Next</A>
+<A HREF="GPGMiniHowto-2.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Key"></A> <A NAME="s3">3.</A> <A HREF="GPGMiniHowto.html#toc3">Using keys</A></H2>
+<H2><A NAME="ss3.1">3.1</A> <A HREF="GPGMiniHowto.html#toc3.1">Creating a key</A>
+</H2>
+<P>With
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+a new key-pair is created (key pair: secret and public key).
+The first question is which algorithm can be used. You can read more about algorithms in
+<A HREF="http:/www.samsimpson.com/cryptography/pgp/pgpfaq.html">PGP DH vs. RSA FAQ</A> or in
+<A HREF="GPGMiniHowto-7.html#BSchneier">Applied Cryptography</A>.
+You can easily (and maybe you should - since it is used so
+widely) use DSA/ ElGamal. This is not patented.</P>
+<P>The next question is key length. This is something that is very user dependent.
+You need to choose between security and calculating time.
+If a key is longer the risk for cracking the message when intercepted decreases.
+But with a larger key calculation time also increases.
+If computing time is an issue you still should consider that you want to
+use the key for sometime.
+We all know that arithmetic performance increases very quickly,
+since new processors are getting quicker and quicker.
+So keep this in mind. The minimal key length GnuPG demands is 768 bits.
+However some people say you should have at a key-size of 2048 bits
+(which is also really a maximum with GnuPG at this moment).
+For DSA 1024 is a standard size. When security is a top priority and
+performance is less an issue you ought to pick the largest key-size available.</P>
+<P>The system now asks to enter names, comment and e-mail address. Based upon the
+entries here the code is calculated. You can change these settings later. See
+<A HREF="GPGMiniHowto-3.html#GPG-Minihowto-KPAdministration">Administering keypairs</A>.</P>
+<P>Finally you have to enter a password (actually passphrase would be more
+appropriate, since blanks are allowed). This password is used to be able to use
+the functionality which belongs to your secret key. A good passphrase contains
+the following elements:
+<UL>
+<LI>it is long,</LI>
+<LI>it has special (non alphanumeric) characters,</LI>
+<LI>it is something special (not a name),</LI>
+<LI>it is very hard to guess (so NOT names, birth dates, phone numbers,
+number of a credit card/checking account, names and number of children, ...)</LI>
+</UL>
+By sometimes using CaPItaLs aNd SOMEtimes NoT you can build in further security.
+When you make your password make sure that you WILL NOT FORGET it.
+Since if you do messages are not legible and the use of your secret key has gone.
+It might
+be wise to generate some kind of a certificate containing this information
+(of course be careful that nobody gets to your passphrase). See
+<A HREF="GPGMiniHowto-3.html#GPG-Minihowto-Revoke">Revoke</A>.</P>
+<P>After everything was entered the systems starts generating the keys.
+This will take some time.
+During that time it needs to collect a lot of random data.
+By working in a different screen you can help the system collecting
+changing random data. As you understand by now, the key will be always different.
+If you generate a key now and 5 minutes later with exactly the same data,
+you'll get two different keys. Now you must understand why you shouldn't
+forget your password.</P>
+<H2><A NAME="ss3.2">3.2</A> <A HREF="GPGMiniHowto.html#toc3.2">Exporting keys</A>
+</H2>
+<P>The command for exporting a key for a user is:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [UID]
+</PRE>
+</CODE></BLOCKQUOTE>
+If no UID has been submitted all present keys will be exported. By default the
+output is set to <CODE>stdout</CODE>. But with the <CODE>-o</CODE> option this is
+sent to a file. It may be advisable using the option <CODE>-a</CODE> to write the
+key to a 7-bit ASCII file instead of a binary file.</P>
+<P>By exporting public keys you can broaden your horizon. Others can start
+contacting you securely. This can be done by publishing it on your homepage, by
+finger, through a key server like http://www.pca.dfn.de/dfnpca/pgpkserv/
+or any other method you can think of.</P>
+<H2><A NAME="ss3.3">3.3</A> <A HREF="GPGMiniHowto.html#toc3.3">Importing keys</A>
+</H2>
+<P>When you received someone's public key (or several public keys)
+you have to add them to your key database in order to be able to use them.
+To import into the
+database the command looks like this:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [Filename]
+</PRE>
+</CODE></BLOCKQUOTE>
+if the filename is omitted the data will be read from
+<CODE>stdin</CODE>.</P>
+<H2><A NAME="GPG-Minihowto-Revoke"></A> <A NAME="ss3.4">3.4</A> <A HREF="GPGMiniHowto.html#toc3.4">Revoke a key</A>
+</H2>
+<P>For several reasons you may want to revoke an existing key. For instance:
+the secret key has been stolen or became available to the wrong people,
+the UID has been changed, the key is not large enough anymore, etc.
+In all these cases the command to revoke the key is:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke
+</PRE>
+</CODE></BLOCKQUOTE>
+This creates a revocation certificate.
+<EM>To be able to do this, you need a secret key</EM>, else anyone could revoke your certificate. This has one disadvantage.
+If I do not know the passphrase the key has become useless.
+But I cannot revoke the key! To overcome this problem it is wise to create a
+revoke license when you create a key pair. And if you do so, keep it safe!
+This can be on disk, paper, etc.
+Make sure that this certificate will not fall into wrong hands!!!!
+If you don't someone else can issue the revoke certificate for your
+key and make it useless.</P>
+<H2><A NAME="GPG-Minihowto-KPAdministration"></A> <A NAME="ss3.5">3.5</A> <A HREF="GPGMiniHowto.html#toc3.5">Key administration</A>
+</H2>
+<P>With the GnuPG system comes a file that acts as some kind of database. In this file
+all data regarding keys with the information that comes with the keys is stored
+(everything until the Ownertrust values: for more information on that read
+<A HREF="GPGMiniHowto-3.html#GPG-Minihowto-KSigning">Key signing</A>).
+With
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+all present keys will be displayed. To see the signatures as well type:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs
+</PRE>
+</CODE></BLOCKQUOTE>
+(see
+<A HREF="GPGMiniHowto-3.html#GPG-Minihowto-KSigning">Key signing</A> for further information).
+To see the fingerprints type:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint
+</PRE>
+</CODE></BLOCKQUOTE>
+You want to see &quot;Fingerprints&quot; to ensure that somebody is really
+the person they claim (like in a telephone call). This command will result in
+a list of relatively small numbers.</P>
+<P>To list the secret keys you type:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+Note that listing fingerprints and signatures from private keys has no use what soever.</P>
+<P>In order to delete a public key you type:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+For deleting a secrete key you type:
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --delete-secret-key
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>There is one more important command that is relevant for working with keys.
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key UID
+</PRE>
+</CODE></BLOCKQUOTE>
+Using this you can edit (among other things) the expiration date, add a
+fingerprint and sing your key. Although it is too logic to mention. For this
+you need your passphrase. When entering this you will see a command line.</P>
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.6">3.6</A> <A HREF="GPGMiniHowto.html#toc3.6">Key signing</A>
+</H2>
+<P>As mentioned before in the introduction there is one major Achilles' heel
+in the system. This is the authenticity of public keys.
+If you have a wrong public key
+you can say bye bye to the value of your encryption.
+To overcome such risks there is a possibility of signing keys.
+In that case you place your signature over the key,
+so that you are absolutely positive that this key is valid.
+This leads to the situation where the
+signature acknowledges that the user ID mentioned in the key is
+actually the owner of that key. With that reassurance you can start encrypting.</P>
+<P>Using the <CODE>gpg --edit-key UID</CODE> command for the key that needs to be
+signed you can sign it with the <CODE>sign</CODE> command. </P>
+<P><EM>You should only sign a key as being authentic when you are ABSOLUTELY SURE
+that the key is really authentic!!!</EM>.
+So if you are positive you got the key yourself (like on a key signing party)
+or you got the key through other means and checked it (for instance by phone)
+using the fingerprint-mechanism. You should never sign a key based on any assumption.</P>
+<P>Based on the available signatures and
+&quot;ownertrusts&quot;
+GnuPG determines the validity of keys. Ownertrust is a value that the owner of
+a key uses to determine the level of trust for a certain key. The values are
+<UL>
+<LI> 1 = Don't know</LI>
+<LI> 2 = I do NOT trust</LI>
+<LI> 3 = I trust marginally</LI>
+<LI> 4 = I trust fully</LI>
+</UL>
+If the user does not trust a signature it can say so and thus disregard the
+signature. Trust information is not stored in the same file as the keys,
+but in a separate file.</P>
+<HR>
+<A HREF="GPGMiniHowto-4.html">Next</A>
+<A HREF="GPGMiniHowto-2.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc3">Contents</A>
+</BODY>
+</HTML>

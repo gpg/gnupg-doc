@@ -1,0 +1,567 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<title>Gnu Privacy Guard (GnuPG) Mini Howto 
+
+<author>Michael Fischer v. Mollard 
+<tt>&lt;fischer@math.uni-goettingen.de&gt;</tt>
+
+<date>Version 0.1.1 vom 12. Februar 1999
+
+<abstract>
+Dieses Dokument beschreibt die Benutzung von GNU Privacy
+  Guard (GnuPG), einem freien, OpenPGP kompatiblen
+  Verschlüsselungssystem. Damit das Programm wirklich frei ist, wurde
+  auf patentierte Algorithmen wie RSA verzichtet. 
+<p> 
+<#if output=latex2e> 
+<em><bf>Bemerkung für die gedruckten Versionen:</bf> Aufgrund von
+  technischen Schwierigkeiten wird der doppelte Bindestrich, der die
+  langen Optionen von GnuPG einleitet, in in Absätzen eingebetteten
+  Text als ein einzelner dargestellt. Lesen Sie also bei langen
+  Optionen (also denjenigen, die aus mehr als einem Buchstaben
+  bestehen) zwei Bindestriche.</em> 
+</#if>
+</abstract>
+
+<toc>
+
+
+<sect>Konzepte<label id="GPG-Minihowto-Konzepte">
+<p>
+
+<sect1>Public Key Verschlüsselung
+<p>
+
+Klassische Methoden zur Verschlüsselung benutzen nur einen
+Schlüssel. Der Sender verschlüsselt seine Nachricht mit diesem
+Schlüssel, und der Empfänger entschlüsselt ihn mit demselben
+wieder. Damit das funktioniert, muß der Empfänger vorher den Schlüssel
+bekommen haben, und zwar auf einem sicheren Kommunikationskanal, da
+sonst Unbefugte in Kenntnis des Schlüssels gelangen könnten. Also
+braucht man einen sicheren Kommunikationskanal, aber wenn man den hat,
+braucht man auch nicht mehr zu verschlüsseln.
+
+<p>
+Public Key Verfahren (auch: asymmetrischen Verfahren) beseitigen
+dieses Problem, indem zwei Schlüssel erzeugt werden: Der
+öffentliche, der über beliebige Kommunikationskanäle
+verschickt werden kann und der private, den nur der Besitzer
+kennt. Idealerweise ist der private Schlüssel nicht mit dem
+öffentlichen rekonstruierbar. Der Sender verschlüsselt die
+Nachricht mit dem öffentlichen Schlüssel des
+Empfängers. Entschlüsselt wird die Nachricht dann mit dem
+privaten Schlüssel des Empfängers. Nach diesem Schema kann
+man demnach effektiv verschlüsseln, ohne über einen sicheren
+Kommunikationskanal zu verfügen. 
+
+<p>
+Ein ganz wichtiger Punkt ist aber die Geheimhaltung des privaten
+Schlüssels. Er darf auf keinen Fall in fremde Hände geraten,
+auch nicht über das Netz verbreitet werden. GnuPG via
+<tt>telnet</tt> zu benutzen, ist zum Beispiel eine ziemlich schlechte
+Idee. (Eigentlich sollte man <tt>telnet</tt> sowieso durch
+<tt>ssh</tt> ersetzen) 
+
+<sect1>Digitale Unterschriften
+<p>
+
+Digitale Unterschriften sollen die Authenzität einer Nachricht
+beweisen. Würden Nachrichten von offizieller Seite signiert,
+wäre es deutlich schwerer, mit gefälschten Nachrichten
+Unruhe oder Schaden anzurichten (aktuelles Beispiel: Ein trojanische
+Pferd, verschickt als Patch eines bekannten Webbrowsers).
+
+<p>
+Ein digitale Signatur wird mit Hilfe des privaten Schlüssels aus dem
+Text erzeugt. Diese kann dann vom Empfänger mit dem öffentlichen
+Schlüssel des Senders überprüft werden. Dabei wird nicht nur der
+Absender (nur der kennt den privaten Schlüssel) überprüft, sondern
+auch, ob der Text unverändert angekommen ist.
+
+<sect1>Web of trust
+<p>
+
+Eine Schwachstelle der Public Key Algorithmen ist die Verbreitung der
+öffentlichen Schlüssel. Ein Benutzer könnte einen
+öffentlichen Schlüssel mit falscher User ID in Umlauf
+bringen. Wenn dann mit diesem Schlüssel Nachrichten kodiert
+werden, kann der Eindringling die Nachrichten dekodieren und
+lesen. Wenn er sie dann noch mit einem echten öffentlichen
+Schlüssel kodiert an den eigentlichen Empfänger
+weiterleitet, fällt dieser Angriff nicht einmal auf.
+
+<p>
+Die von PGP (und damit auch von GnuPG) gewählte Lösung
+besteht im Unterschreiben von Schlüsseln. Ein öffentlicher
+Schlüssel kann von anderen Leuten unterschrieben werden. Diese
+Unterschrift bestätigt, daß der Schlüssel zu der in
+der UID angegebenen Person gehört. Der Benutzer kann festlegen,
+welchen Unterschriften er wie weit traut. Vertrauen ist dabei zwar
+reflexiv, aber nicht symmetrisch und transitiv. Ein Schlüssel
+gilt als vertrauenswürdig, wenn er von Leuten unterzeichnet wurde,
+denen man vertraut. Wenn man Schlüssel unterzeichnet, sollte man
+sich sicher sein, daß man die Identität desjenigen, dessen
+Schlüssel man unterschreibt, genau kennt. Eine Möglichkeit
+ist es, den Schlüssel persönlich bekommen zu haben, eine
+andere, den Fingerprint über zuverlässige Kanäle zu
+vergleichen.
+
+<sect1>Grenzen der Sicherheit
+<p>
+
+Wenn man Daten vertraulich halten will, sollte man sich nicht nur
+Gedanken über die Sicherheit des Verschlüsselungsalgorithmus machen,
+sondern über die Systemsicherheit allgemein. Die in GnuPG verwendeten
+Algorithmen gelten gemeinhin als nicht zu knacken. Daraus zu
+schließen, daß alle verschlüsselten Daten sicher seien, ist naiv. Es
+gibt auch noch andere Formen von Angriffen. Anfang Februar 1999
+tauchte zum Beispiel ein Word Trojaner auf, der private PGP
+Schlüsselbunde auf der Festplatte suchte und via ftp verschickte
+(Meldung im Heise Newsticker vom 03.02.99). Ein privates Schlüsselbund
+läßt sich, insbesondere bei schlechtem Passwort, deutlich leichter
+knacken als eine einzelne Datei.
+
+<p>
+Denkbar sind auch Trojaner, die Tastatureingaben weiterleiten.  Falls
+man die Nachrichten entschlüsselt auf dem Rechner lagert, können sie
+natürlich auch gelesen werden. Aufwendiger, aber technisch möglich ist
+es, die Abstrahlung des Monitors zu messen und sichtbar zu machen, so
+daß der Bildschirminhalt mitgelesen werden kann. Dann nützt es auch
+nichts, eine verschlüsselte Datei nur zum Lesen zu entschlüsseln. Zum
+Thema &quot;Überwachung&quot; gibt es den interessanten Artikel
+&quot;Abhör-Dschungel&quot; aus der c't 5/98, Seite 82 und &quot;In
+die Röhre geguckt&quot; c't 24/98, Seite 90. 
+
+<p>
+Die obigen Möglichkeiten sollen keine Paranoia hervorrufen, sondern
+nur darauf hinweisen, daß Verschlüsselung von Daten nur ein Baustein
+eines Sicherheitskonzeptes sein kann. Um so erstaunlicher, daß es
+immer wieder Versuche gibt, Verschlüsselung von Daten zu be-
+beziehungsweise zu verhindern. 
+
+<sect>Installation 
+<p>
+<sect1>Bezugsquellen 
+<p>
+
+Die offizielle Bezugsquelle ist die 
+<url url="http://www.gnupg.org/download.html" name="GnuPG Homepage">. Dort gibt es
+ auch eine Liste der Mirrors. 
+
+Aus rechtlichen Gründen darf GnuPG nicht aus Servern in den USA
+ geladen werden, da Kryptographie in den USA als Rüstungsgut gilt. Aus
+ diesem Grund gibt es übrigens PGP immer in nationalen und
+ internationalen Versionen, wobei bei letzteren der Sourcecode in
+ Buchform exportiert wird und er in Oslo wieder eingescant
+ wird. Genaueres dazu auf der
+<url url="http://www.pgpi.com" name="Internationalen PGP
+ Homepage">. Nichtsdestotrotz darf GnuPG in die USA eingeführt und
+ benutzt werden, es darf dort auch auf ftp-Servern abgelegt werden. Es
+ muß dabei nur garantiert werden, daß GnuPG nicht reexportiert wird.
+
+<p>
+ Falls man schon eine lauffähige GnuPG oder PGP Version
+ hat, sollte man die Signatur des Archivs überprüfen (siehe <ref
+ id="GPG-Minihowto-signaturen" name="Signaturen">).
+
+ 
+<sect1>Konfigurieren 
+<p>
+
+GnuPG wird als Debian Package, als RedHat rpm oder als Sourcecode
+ vertrieben. In den ersten beiden Fällen nimmt man die entsprechenden
+ Werkzeuge zum installieren (ich kenne nur rpm), alles weitere bezieht
+ sich auf den Sourcecode. 
+<p>
+Da die Entwicklung unter Linux (x86) stattfindet, ist die
+ Übersetzung dort meist gar kein Problem. Eine aktuelle Liste der
+ offiziell unterstützten Betriebssysteme steht auch auf der <htmlurl
+ url="http://www.gnupg.org" name="GnuPG Homepage">. Das folgende
+ Vorgehen gilt aber betriebssystemunabhängig.
+ 
+<p>
+Nachdem das Archiv mit 
+<tscreen><verb>tar xvzf gnupg-?.?.?.tar.gz</verb></tscreen>
+ entpackt ist, tippt man 
+<tscreen><verb>./configure</verb></tscreen>  
+Dabei sollte nichts verblüffendes passieren. Mit 
+<tscreen><verb>./configure --help</verb></tscreen>
+ kann man sich, falls nötig, die möglichen Konfigurationsparameter
+ ansehen. Falls es Probleme mit der der Internationalisierung
+ (gettext) geben sollte, kann man mit <tt>--with-included-gettext</tt>
+ eine mitgelieferte Version benutzen oder sie mit <tt>--disable-NLS</tt>
+ abschalten.
+
+
+<sect1>Kompilieren 
+<p>
+
+Danach sollte 
+<tscreen><verb>make</verb></tscreen> 
+problemlos laufen. Falls es dabei wider Erwarten Probleme gibt, sollte
+man (in dieser Reihenfolge): Selbst probieren (natürlich mit Lesen der
+Dokumentation), jemanden in der Nähe fragen, der sich auskennt und
+schließlich auf der Mailingliste (siehe <ref
+id="GPG-Minihowto-Informationsquellen" name="Informationsquellen">) um
+Rat fragen. Falls es sich nur um falsche Pfade handelt, sollte man mit
+<tt>make clean</tt> (oder rabiater) das Verzeichnis
+säubern, neu konfigurieren und es dann noch einmal versuchen.
+
+<sect1>Einrichten 
+<p>
+
+Mit 
+<tscreen><verb>make install</verb></tscreen>
+ werden die Programme und die Manpage in die dafür vorgesehenen
+Verzeichnisse kopiert. In <tt>usr/local/share/gnupg/</tt> (oder in dem
+bei ./configure angegebenen Verzeichnis) liegt die Datei
+<tt>options.skel</tt>. Wenn man diese nach <tt>~/.gnupg/options</tt>
+kopiert, werden die entsprechenden Einstellungen als Standard
+benutzt. Das Kopieren sollte eigentlich beim Anlegen von <tt>~/.gnupg/</tt>
+automatisch passieren. Jeder mögliche Eintrag ist gut dokumentiert, deshalb
+werden sie hier nicht beschrieben.
+
+<p>
+Man kann GnuPG als suid root laufen lassen (das heißt: das Programm
+läuft mit allen Rechten des Superusers), damit die
+Möglichkeit ausgeschlossen wird, daß Teile des Programmes
+ausgelagert werden und dann gelesen werden können. Wie real diese
+Gefahr ist, kann ich nicht beurteilen, allerdings ist auch mit suid
+root Vorsicht geboten, da ein trojanisches Pferd mit suid root
+beliebigen Schaden anrichten kann. Man kann die Warnmeldung, die
+ausgegeben wird, falls GnuPG nicht suid root läuft, mit  
+<tt>no-secmem-warning</tt> in <tt>~/gnupg/options</tt> abschalten.
+
+
+<sect>Umgang mit Schlüsseln<label id="GPG-Minihowto-schluessel">
+<p>
+<sect1>Erzeugen
+<p>
+
+Mit 
+<tscreen><verb>gpg --gen-key</verb></tscreen> 
+wird ein neues Schlüsselpaar erzeugt. Als Erstes wird man nach dem zu
+verwendenden Algorithmen gefragt. Genaueres zu den Algorithmen steht
+in der <url url="http://www.hertreg.ac.uk/ss/pgpfaq.html" name="PGP DH
+vs. RSA FAQ"> oder in <ref id="BSchneier" name="Applied
+Cryptography">. 
+Man kann (und sollte) einfach den default Wert (DSA/ ElGamal) nehmen.
+
+<p>
+Bei der Schlüssellänge muß man zwischen Sicherheit und
+Rechenzeit abwägen. Je länger ein Schlüssel, desto
+sicherer ist er, desto länger dauern aber auch Operationen mit
+ihm. Bei der Rechenzeit muß man aber berücksichtigen, daß
+der Schlüssel möglicherweise auch noch in einigen Jahren
+benutzt werden soll, wenn die durchschnittliche Rechenleistung stark
+angewachsen sein wird. GnuPG fragt ab einer
+Schlüssellänge von mehr als 1536 Bits, ob ein so
+großer Schlüssel wirklich nötig sei, andere Leute
+empfehlen mindestens 2048 Bits. Für DSA ist 1024 Bits Standard.
+
+<p>
+Dann wird nach Namen, Kommentar und Email Adresse gefragt. Anhand
+dieser Angaben wird der Schlüssel identifiziert. Man kann die
+Angaben aber später noch ändern beziehungsweise
+ergänzen. Siehe <ref id="GPG-Minihowto-Sverwalten"
+name="Schlüsselbund verwalten"> Man sollte eine länger gültige Email
+Adresse wählen, da die komplette Benutzerkennung unterschrieben
+wird. Wird dann etwas geändert, gelten die Unterschriften unter die
+geänderten Angaben nicht mehr.
+
+<p>
+Als letztes wird nach dem Passwort (beziehungsweise Passsatz (in der
+deutschen Übersetzung: Mantra) denn es können Leerzeichen vorkommen)
+gefragt, mit dem der private Schlüssel gesichert werden
+soll. <em>Verwenden sie ein gutes Mantra</em>. Ein gutes Mantra
+ist
+<itemize>
+ <item>nicht zu kurz,
+ <item>enthält Sonderzeichen,
+ <item>ist kein Name und
+ <item>nicht mit Kenntnis des Benutzers leicht zu erraten (wie
+ Telefonnummer, Bankleitzahl, Name und Anzahl der Kinder, ...)
+</itemize>
+Man kann durch willkürlich eingestreute GRoß/KlEinSchReibung und
+Leerzeichen weitere Sicherheit erhalten.
+Außerdem muß man es sich merken können, da der geheime Schlüssel ohne
+Mantra wertlos ist. Es kann in diesem Zusammenhang ein guter Gedanke
+sein, gleich ein Rückrufzertifikat zu erstellen. Siehe <ref
+id="GPG-Minihowto-Swiderrufen" name="Widerrufen">.
+
+<sect1>Exportieren
+<p>
+
+Mit
+<tscreen><verb>gpg --export [UID]</verb></tscreen>
+wird der Schlüssel mit der User ID UID exportiert. Wird keine UID
+angegeben, so wird der ganze Schlüsselbund exportiert. Voreingestellt
+ist Ausgabe auf <tt>stdout</tt>, man kann aber mit der Option <tt>-o
+[Datei]</tt> in eine Datei ausgeben. Es empfiehlt sich noch, mit der
+Option <tt>-a</tt> (<tt>--armor</tt>) zu arbeiten, da ich andernfalls 
+Probleme hatte. Mit dieser Option werden die Schlüssel nicht im
+Binärformat ausgegeben, sondern als ASCII (7 Bit) Dateien.
+
+<p>
+Den exportierten Schlüssel kann man dann in der
+Welt verbreiten, wahlweise auf der Homepage, via
+finger, über Keyserver, ... . 
+
+
+<sect1>Importieren
+<p>
+
+Wenn man von irgendwoher einen öffentlichen Schlüssel bekommen hat,
+sollte man ihn in sein Schlüsselbund aufnehmen. Das wird mit
+<tscreen><verb>gpg --import [Datei]</verb></tscreen>
+erreicht. Wenn man den Dateinamen weglässt, wird von
+<tt>stdin</tt> gelesen.
+
+<sect1>Widerrufen<label id="GPG-Minihowto-Swiderrufen">
+<p>
+
+Es gibt verschiedene Gründe, einen alten Schlüssel zu
+widerrufen: Er könnte in fremde Hände geraten sein, die UID
+stimmt nicht mehr oder er ist einfach zu klein geworden. In all diesen
+Fällen ist der Befehl der Wahl
+<tscreen><verb>gpg --gen-revoke</verb></tscreen>
+Damit wird ein Schlüsselwiderruf-Zertifikat
+erzeugt. <em>Dafür braucht man den privaten
+Schlüssel</em>, denn sonst könnten solche Zertifikate auch
+von Fremden erzeugt werden. Das hat aber einen Nachteil: Ein
+Schlüssel, dessen Mantra ich nicht weiß, ist offensichtlich
+nutzlos. Aber weil ich das Mantra nicht weiß, kann ich ihn nicht
+widerrufen. Deshalb ist es geschickt, sich gleich bei der Erzeugung
+des Schlüssels ein Widerruf-Zertifikat zu erzeugen. Das sollte
+dann aber sicher verwahrt werden, am besten auf Diskette und auf
+Papier, damit es nicht in falsche Hände gerät. 
+
+<sect1>Schlüsselbund verwalten<label id="GPG-Minihowto-Sverwalten">
+<p>
+
+Der Schlüsselbund ist eine Datei, in der alle Schlüssel mit
+den dazugehörigen Informationen (bis auf die Ownertrust Werte, was das
+ist steht in <ref id="GPG-Minihowto-Ssignieren" name="Schlüssel
+signieren">) gespeichert werden. Mit
+<tscreen><verb>gpg --list-keys</verb></tscreen>
+können alle Schlüssel des öffentlichen Schlüsselbundes angezeigt
+werden. Mit
+<tscreen><verb> gpg --list-sigs </verb></tscreen> 
+werden zusätzlich noch die Signaturen angezeigt (siehe <ref
+id="GPG-Minihowto-Ssignieren" name="Schlüssel signieren">). Mit
+<tscreen><verb>gpg --fingerprint </verb></tscreen>
+werden die Schlüssel mit ihren &quot;Fingerabdrücken&quot;
+aufgelistet. Das sind (verhältnismäßig) kurze Zahlenfolgen, an denen
+sich der Schlüssel identifizieren läßt. Das kann praktisch sein, um
+sich über Telefon zu vergewissern, daß ein öffentlicher Schlüssel vom
+Gesprächspartner stammt. Fingerabdrücke im Abspann von Email oder
+Usenet Artikeln zu verschicken ist übrigens nicht sinnvoll.
+<tscreen><verb>gpg --list-secret-keys</verb></tscreen> 
+listet die Schlüssel des privaten Schlüsselbundes auf. Unterschriften
+und Fingerabdrücke von privaten Schlüsseln haben keinen
+Informationswert.
+
+<p>
+Mit dem Befehl 
+<tscreen><verb>gpg --delete-key UID bzw. gpg --delete-secret-key </verb></tscreen> 
+kann man Schlüssel aus dem entsprechenden Schlüsselbund
+löschen.
+
+<p>
+Der letzte wichtige Befehl für den Umgang mit Schlüsseln
+lautet
+<tscreen><verb>gpg --edit-key UID</verb></tscreen>
+In dem dann folgenden Menü kann man unter anderem das Mantra
+und das Verfallsdatum ändern, Fingerabdrücke anzeigen lassen
+und Schlüssel signieren, womit wir beim nächsten Abschnitt
+wären. 
+
+
+<sect1>Schlüssel signieren<label id="GPG-Minihowto-Ssignieren">
+<p>
+
+Wie in der Einleitung erwähnt, ist die Echtheit eines
+öffentlichen Schlüssels die Achillesferse des
+Systems. Deshalb gibt es die Möglichkeit, Schlüssel zu
+unterschreiben. Damit bestätigt der Unterzeichnende, daß der in der
+User ID angegeben User tatsächlich der Besitzer des Schlüssels ist.
+
+<p>
+Nachdem man mit <tt>gpg --edit-key UID</tt> den zu unterzeichnenden 
+Schlüssel ausgewählt hat, kann man ihn mit dem Kommando <tt>sign</tt>
+unterschreiben. 
+
+<p>
+<em>Unterschreiben Sie nur Schlüssel von deren Echtheit sie sich überzeugt
+haben.</em> Das kann geschehen, in dem man entweder den Schlüssel persönlich
+bekommen hat (zum Beispiel auf einer Keysigning Party), oder man über Telefon
+den Fingerprint vergleicht. Man sollte keinen Schlüssel nur deshalb
+unterschreiben, weil man den anderen Unterschriften vertraut.
+
+<p>
+Anhand der Unterschriften und des &quot;ownertrusts&quot;
+ermittelt GnuPG die Gültigkeit des Schlüssels. Der Ownertrust ist ein
+Wert mit dem der Benutzer festlegt, in welchem Maße er dem
+Schlüsselinhaber zutraut, andere Schlüssel verläßlich zu
+unterzeichnen. Die möglichen Abstufungen sind &quot;gar
+nicht&quot;, &quot;weiß nicht&quot;, &quot;teilweise&quot;
+und &quot;vollständig&quot;. Wenn der Benutzer also einem anderem
+nicht traut, kann er GnuPG über diesen Mechanismus anweisen, dessen
+Unterschrift zu ignorieren. Der Ownertrust wird nicht im Schlüsselbund
+gespeichert, sondern in einer separaten Datei.
+
+<sect>Verschlüsseln und entschlüsseln<label id="GPG-Minihowto-verschl">
+<p>
+
+Falls man mehrere private Schlüssel hat, kann man mit der Option
+<tt>-u UID</tt> oder<tt> --local-user UID</tt> einen (oder mehrere) 
+Schlüssel nach seiner UID auswählen. Diese Auswahl ersetzt den im
+Konfigurationsfile mit dem Befehl <tt>default-key KeyID</tt> einen
+Schlüssel standardmäßig ausgewählten Schlüssel.
+<p>
+Mit <tt>-r UID</tt> oder<tt> --recipient UID</tt> kann man den
+Empfänger in der Kommandozeile auswählen.
+
+
+<sect1>Verschlüsseln
+<p>
+
+Das Kommando zum Verschlüsseln lautet
+<tscreen><verb>gpg -e Empfänger [Datei] </verb></tscreen>
+oder
+<tscreen><verb>gpg --encrypt Empfänger [Datei]</verb></tscreen>
+Es ist sinnvoll, die Dateien auch zu signieren, genaueres siehe <ref
+ id="GPG-Minihowto-signaturen" name="Signaturen">.
+
+<sect1>Entschlüsseln
+<p>Das Kommando zum Entschlüsseln lautet
+<tscreen><verb>gpg [-d] [Datei] </verb></tscreen>
+oder
+<tscreen><verb>gpg [--decrypt] [Datei]</verb></tscreen>
+
+Auch hier gilt: Voreingestellt ist Ausgabe auf <tt>stdout</tt>, man
+kann aber mit der Option <tt>-o [Datei]</tt> in eine Datei ausgeben.
+
+<sect>Signieren und Signaturen prüfen<label id="GPG-Minihowto-signaturen">
+<p>
+
+Mit dem Befehl 
+<tscreen><verb>gpg -s (oder --sign) [Datei]</verb></tscreen>
+unterschreibt man eine Datei mit seinem privaten Schlüssel. Sie
+wird dabei gleichzeitig komprimiert, ist dann also nicht mehr ohne
+weiteres lesbar. Mit 
+<tscreen><verb>gpg --clearsign [Datei]</verb></tscreen> 
+belässt man die Datei lesbar, mit
+<tscreen><verb>gpg -b (oder --detach-sign) [Datei]</verb></tscreen> 
+erzeugt man eine Unterschrift in einer separaten Datei. Letzteres ist
+insbesondere zum signieren von Binärdateien wie Archiven zu
+empfehlen. Auch bei diesen Befehlen kann die Option <tt>--armor</tt>
+nützlich sein.
+
+<p>
+Üblicherweise wird sowohl signiert als auch verschlüsselt,
+der Befehl lautet dann vollständig
+<tscreen><verb>gpg [-u Sender] [-r Empfänger] [--armor] --sign --encrypt [Datei]</verb></tscreen>
+
+Die Optionen <tt>-u</tt> (<tt>--local-user</tt>) und <tt>-r</tt> 
+(<tt>--recipient</tt>) funktionieren wie oben erläutert.
+
+<P>
+Wenn eine verschlüsselte Datei signiert ist, so wird beim
+Entschlüsseln die Signatur mitgeprüft. Die
+Signatur einer unverschlüsselten Datei prüft man mit
+<tscreen><verb>gpg [--verify] [Datei]</verb></tscreen>
+immer natürlich vorausgesetzt, daß man im Besitz des
+entsprechenden öffentlichen Schlüssels ist.
+
+
+
+<sect>Informationsquellen<label id="GPG-Minihowto-Informationsquellen">
+<p>
+
+<sect1>GnuPG
+<p>
+
+<itemize>
+ <item>Die <url url="http://www.gnupg.org" name="GnuPG
+ Homepage">
+
+ <item>Die GnuPG Mailingliste. Inklusive Archiv und Beschreibung auf
+ der <htmlurl url="http://www.gnupg.org/docs.html" name="GnuPG
+ Homepage"> zu finden.
+
+ <item>Die beiliegende Dokumentation. Bisher (Stand 0.9.2) noch nicht
+ sehr umfangreich, aber eben unverzichtbar. Nicht vergessen: 
+<tscreen><verb>gpg --help </verb></tscreen> 
+hilft!
+
+</itemize>
+
+<sect1>PGP
+<p>
+
+PGP ist das ältere und (noch) weiter verbreitete Kryptographie
+Programm. Deshalb gibt es dazu auch viel mehr Informationen, sie sind
+aber teilweise so allgemein, daß sie auch für GnuPG
+nützlich sein können.
+
+<itemize>
+ <item>Die <url url="http://www.pgpi.com" name="Internationale PGP Homepage">
+ <item>Die <url url="http://www.hertreg.ac.uk/ss/pgpfaq.html"
+ name="PGP DH vs. RSA FAQ"> gibt Informationen über die
+ verwendeten Algorithmen.
+</itemize>
+
+<sect1>Keyserver
+<p>
+<itemize>
+ <item> <url url="http://www.keyserver.net" name="Keyserver.net">
+ <item> <url url="http://wwwkeys.eu.pgp.net">
+</itemize>
+
+<sect1>Bücher
+<p>
+
+<itemize>
+ <item>B. Schneier, &quot;Applied Cryptography, Second
+ Edition&quot;, Wiley, 1996 <label id="BSchneier"> Deutsche Ausgabe
+ unter dem Titel &quot;Angewandte Kryptographie&quot;, Addison-Wesley, 1996
+</itemize>
+
+
+<sect>Über dieses Dokument 
+<p>
+
+Copyright &copy; 1999 Michael Fischer v. Mollard
+<p>
+Dieses Dokument wird unter den Bedingungen der Gnu Public License (GPL)
+veröffentlicht. Alle Angaben sind nach bestem Wissen, aber
+natürlich ohne Gewähr (no warranty in any kind).
+
+<sect1>Versionen
+<p>
+Version 0.1 war die erste öffentliche Version dieses
+Dokumentes. 
+<p>
+<bf>Änderungen in Version 0.1.1</bf>
+<p>
+<itemize>
+  <item>Neuer Abschnitt &quot;Grenzen der Sicherheit&quot;
+  <item>Erklärung der Signatur verbessert
+  <item>kleinere Detailverbesserungen nach Hinweisen von Werner Koch (danke!)
+</itemize>
+Alle Änderungen sind in einem diff File aufgeführt, das man an
+gleicher Stelle wie 
+<url url="http://www.stud.uni-goettingen.de/~s070674/GnuPGMiniHowto/" name="dieses Dokument">
+ finden kann.
+<p>
+Anregungen, Kritik, Verbesserungen und Erweiterungen
+einfach an Michael Fischer v. Mollard (<tt><htmlurl
+url="mailto:fischer@math.uni-goettingen.de"
+name="fischer@math.uni-goettingen.de"></tt>) senden, damit dieses
+Dokument weiter verbessert werden kann.
+
+
+</article>

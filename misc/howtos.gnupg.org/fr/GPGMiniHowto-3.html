@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Français): Gestion des clefs</TITLE>
+ <LINK HREF="GPGMiniHowto-4.html" REL=next>
+ <LINK HREF="GPGMiniHowto-2.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-4.html">Page suivante</A>
+<A HREF="GPGMiniHowto-2.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc3">Table des matières</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Key"></A> <A NAME="s3">3. Gestion de votre trousseau de clefs</A></H2>
+
+Une fois GnuPG installé, vous pouvez commencer à l'utiliser pour protéger le contenu de vos messages des regards
+indiscrets. L'envoi d'un message fait appel à votre clef privée pour l'opération de 
+<A HREF="GPGMiniHowto-5.html">signature</A> et à la clef publique du destinataire pour l'opération de
+<A HREF="GPGMiniHowto-4.html">chiffrement</A>. Le nombre de clefs en votre possession est donc directement lié au nombre
+de vos interlocuteurs, sans compter que vous pouvez choisir d'avoir plusieurs paires clef privée/clef
+publique. L'ensemble de ces clefs est appelé un trousseau de clefs et GnuPG fournit des commandes pour vous aider à le
+gérer.
+<P>
+<H2><A NAME="ss3.1">3.1 Comment générer votre paire clef privée/clef publique ?</A>
+</H2>
+
+<P>
+La première opération à réaliser est la génération d'une paire clef privée/clef publique avec la commande
+<CODE>--gen-key</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-key
+</PRE>
+</CODE></BLOCKQUOTE>
+Cette commande génère une nouvelle paire de clefs, une privée et une publique en se basant sur vos réponses à quelques
+questions. La première concerne l'algorithme de chiffrement et de signature que vous voulez utiliser. Vous trouverez des
+informations sur les algorithmes proposés dans <A HREF="http://www.hertreg.ac.uk/ss/pgpfaq.html">PGP DH vs. RSA FAQ</A>
+et surtout dans l'excellent ouvrage de Bruce Schneier : <A HREF="GPGMiniHowto-6.html#BSchneier">Cryptographie appliquée</A>.
+Le choix DSA and ElGamal est à privilégier étant donné leur utilisation très courante sur le réseau Internet. Si vous
+choisissez de n'utiliser que l'algorithme ElGamal, il vous sera demandé de confirmer ce choix (implications à préciser).
+<P>
+La seconde question concerne la longueur de votre clef de chiffrement ou de signature si vous avez choisi de générer
+une clef de signature seulement. La réponse à cette question dépend pour beaucoup de l'usage que vous comptez en
+faire. Pour l'algorithme DSA, la longueur de la clef est généralement de 1024 bits. Pour ElGamal, vous pourrez choisir une
+longueur entre 768 bits et 2048 bits. Dans l'absolu, plus une clef est longue, mieux c'est. Cependant, le temps de
+chiffrement augmente avec la longueur de votre clef. Si vous n'avez pas d'idée précise quand à la longueur nécessaire,
+le mieux est de choisir la taille proposée par défaut. Si à l'usage cette taille s'avère inadaptée, vous pourrez
+toujours générer une nouvelle paire de clef plus adaptée à vos besoins.
+<P>
+Les questions suivantes servent à collecter de l'information qui servira plus tard à distinguer sans ambiguïté cette
+nouvelle paire de clefs parmi toutes les paires de clefs en votre
+possession. C'est grâce à ces informations, par exemple,
+que vous pourrez choisir la paire de clefs à utiliser pour <A HREF="GPGMiniHowto-5.html">signer</A> un message.
+Vous devez donc entrer un nom, une adresse email et un commentaire. Le commentaire étant un champs libre est très
+pratique pour distinguer vos paires de clefs les unes des autres. Toutes ces informations et un générateur de nombres
+pseudo-aléatoires seront ensuite utilisés pour générer une nouvelle paire de clefs. Vous pourrez, si vous le souhaitez, 
+<A HREF="#ss3.9">modifier</A> ultérieurement les informations contenues dans une paire de
+clefs.
+<P>
+Il ne vous reste plus qu'à choisir une phrase clef qui servira à chiffrer votre clef privée pour pouvoir la stocker sans
+risques sur votre disque dur. Cette phrase vous sera demandée à chaque fois que vous voudrez utilisez votre clef
+privée. Autrement dit, si vous oubliez la phrase clef d'une paire de clefs, vous ne pourrez plus utiliser cette paire de
+clefs ! Veillez donc à vous prémunir contre ce genre de risques sans mettre en péril la confidentialité de votre phrase
+clef. En effet, la sécurité de vos messages repose sur la confidentialité de votre clef privée et la confidentialité de
+votre clef privée sur celle de votre phrase clef. La première mesure à prendre est donc de choisir une phrase clef
+<B>robuste</B>. Le problème ici est qu'il n'existe pas de définition rigoureuse de robuste. Nous pouvons seulement
+donner quelques conseils : 
+<UL>
+<LI>la phrase clef doit être longue,
+<LI>la phrase clef doit contenir des caractères non alphabétiques, ponctuation, chiffres, caractères spéciaux,
+<LI>la phrase clef ne doit <B>EN AUCUN CAS</B> être une date de naissance, un prénom, un numéro de sécurité sociale, un
+nom ou quoi que ce soit d'aussi facile à deviner, ni même une
+concaténation de données de ce type.
+</UL>
+
+Le choix d'une bonne phrase clef est difficile, mais n'oubliez pas qu'une chaine n'est jamais plus solide que son
+maillon le plus faible. VoUs pOUvEz AmélIOReR lA SécUrité dE vOtRe pHRaSE CLEF en utiLISaNT DEs mAjUsCUles eT dEs
+MInUscUlEs (mais pas uniquement !) dE FAçOn IRrégUlièRE. 
+<P>
+La seconde mesure consiste à <A HREF="#ss3.8">générer un certificat de révocation</A> pour <B>toute</B> une nouvelle
+paire de clefs. La raison de procéder ainsi est qu'il vous faut disposer de la clef privée, et 
+donc de la phrase clef, pour générer le certificat de révocation d'une paire de clef. Générer le certificat de
+révocation le plus tôt possible vous mets à l'abri de l'oubli de votre clef. Vous devrez bien sûr conserver ce
+certificat à l'abri.
+<P>
+Une fois toutes les informations entrées, le calcul de votre paire de clef commence. Le générateur de nombres
+pseudo-aléatoires a besoin d'un très grand nombre de données aléatoires, ce qui est difficile sur un ordinateur. Vous
+pouvez améliorer la qualité des résultats du générateur de nombres pseudo-aléatoires en générant vous même un peu de
+hasard, par exemple en bougeant votre souris, en tapant sur votre clavier, en exécutant des applications, etc.
+L'utilisation de pseudo-hasard est nécessaire pour s'assurer qu'il n'est pas possible d'obtenir votre clef privée en
+effectuant le même calcul que vous. En fait, les chances de succès d'une telle attaque sont directement liées à la
+qualité du pseudo-hasard généré par le générateur de nombres pseudo-aléatoires.
+<P>
+
+
+<H2><A NAME="ss3.2">3.2 Comment rendre publique votre clef publique ?</A>
+</H2>
+
+<P>
+<P>Vos paires de clefs sont stockées sur votre système et la commande <CODE>--export</CODE> vous permet d'extraire la
+clef publique d'une paire de clefs et de l'écrire sur la sortie standard :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --export [info-clef]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<CODE>[info-clef]</CODE> est une information permettant de distinguer sans ambiguïté la paire de clefs dont vous voulez
+extraire la clef publique. Si cette information n'est pas fournie alors ce sont les clefs publiques de toutes les paires
+de clefs en votre possession qui seront affichées. Bien sûr, si vous ne possedez qu'une paire de clef, aucune
+information n'est nécessaire pour en extraire la clef publique.
+<P>
+La commande <CODE>--export</CODE> écrit la clef publique en caractères codés sur 8 bits, ce qui peut poser quelques
+problèmes pour l'envoyer par email ou pour l'afficher. L'option <CODE>--armor</CODE> ou <CODE>-a</CODE> 
+permet d'obtenir une clef publique en caractères codés sur 7 bits.
+<P>
+Par défaut, la clef publique est écrite sur la sortie standard. L'option <CODE>--output</CODE> ou <CODE>-o</CODE> permet
+d'écrire cette clef dans un fichier plutôt que sur la sortie standard. 
+<P>
+Une fois votre clef publique dans un fichier, vous devez la mettre à disposition de vos éventuels interlocuteurs pour
+qu'ils puissent s'en servir pour vous envoyer des messages chiffrés avec. Vous pouvez le faire, par exemple, en plaçant cette
+clef sur une de vos pages web, dans votre fichier <CODE>~/.plan</CODE>, en l'envoyant par mail ou en la déposant sur un 
+<A HREF="GPGMiniHowto-6.html#ss6.3">serveur de clefs</A>. 
+<P>
+
+<H2><A NAME="ss3.3">3.3 Comment ajouter une clef publique à votre trousseau ?</A>
+</H2>
+
+<P>
+<P>
+Pour pouvoir utiliser la clef publique d'un de vos interlocuteurs, vous devez l'ajouter à votre trousseau grâce à la
+commande <CODE>--import</CODE> : 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --import [fichier]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Si aucun nom de fichier n'est passé en paramètre, la clef publique est lue depuis l'entrée standard.
+<P>
+
+<H2><A NAME="ss3.4">3.4 Comment afficher le contenu de votre trousseau de clefs ?</A>
+</H2>
+
+<P>
+<P>
+La commande <CODE>--list-keys</CODE> affiche toutes les clefs publiques en votre possession et toutes les informations
+attachées à vos clefs publique sur la sortie standard :  
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Vous pouvez aussi obtenir les signatures des clefs publiques en votre possession avec la commande 
+<CODE>--list-sigs</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --list-sigs 
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+et les clefs privées de votre trousseau avec la commande <CODE>--list-secret-keys</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --list-secret-keys
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<P>
+
+<H2><A NAME="ss3.5">3.5 Comment retirer des clefs de votre trousseau de clefs ?</A>
+</H2>
+
+<P>La commande <CODE>--delete-key</CODE> vous permet d'effacer une clef publique de votre trousseau :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --delete-key info-clef 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+et la commande <CODE>--delete-secret-key</CODE> vous permet d'effacer une clef privée de votre trousseau :
+<BLOCKQUOTE><CODE>
+<PRE>
+ gpg --delete-secret-key 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+
+<P>
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.6">3.6 Comment afficher l'empreinte d'une clef publique de votre
+trousseau de clefs ?</A>
+</H2>
+La commande <CODE>--fingerprint</CODE> affiche les empreintes des clefs publiques de votre trousseau :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --fingerprint 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<P>
+<H2><A NAME="GPG-Minihowto-KSigning"></A> <A NAME="ss3.7">3.7 Comment signer une clef publique de votre trousseau de
+clefs ?</A>
+</H2>
+Comme nous l'avons vu dans l'introduction, l'authenticité des clefs publiques de votre trousseau est essentielle à la
+sécurité de vos échanges chiffrés. Pour vous assurer de l'authenticité de nouvelles clefs publiques, vous pouvez
+utilisez les signatures de ces clefs. Vous pouvez également vous porter garant de l'authenticité de certaines
+clefs publiques en les signant avec une de vos clefs privées grâce à la commande <CODE>--edit-key</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key info-clef
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Cette commande vous donne accès à un menu textuel qui vous permet, entre autres, de signer la clef désignée par 
+<CODE>info-clef</CODE> en tapant <CODE>sign</CODE>. Une fois la clef publique signée, vous pouvez la 
+<A HREF="#ss3.2">rendre publique</A> de la même façon que pour une de vos clefs publiques. Une fois de plus, rappelons
+que vous pouvez totalement compromettre la sécurité de vos échanges et
+de ceux de ceux qui vous font confiance, en
+accordant votre confiance à la légère. Vous ne donc signer une clef publique que lorsque vous êtes <B>ABSOLUMENT SUR</B>
+de l'authenticité de la clef que vous signez.
+<P>
+Ce menu textuel vous permet aussi de modifier le niveau de confiance avec la commande <CODE>trust</CODE>. Les niveaux de
+confiance sont :
+<UL>
+<LI> 1 = Je ne sais pas (I Don't know)</LI>
+<LI> 2 = Je ne fais pas confiance (I do NOT trust)</LI>
+<LI> 3 = Je fais un peu confiance (I trust marginally)</LI>
+<LI> 4 = Je fais totalement confiance (I trust fully)</LI>
+</UL>
+
+Ces niveaux de confiance sont utilisés lors de la vérification de la signature d'un message. En effet, si vous n'avez
+pas ou peu confiance en une clef publique, la validité d'une signature basée sur cette clef publique ne peut garantir
+l'authenticité du message.
+<P>
+
+<H2><A NAME="ss3.8">3.8 Comment générer un certificat de révocation pour une de vos paires de clefs ?</A>
+</H2>
+<P>
+Vous pouvez générer un certificat de révocation pour une paire de clefs en votre possession à tout moment avec la
+commande <CODE>--gen-revoke</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --gen-revoke info-clef
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Attention, la génération d'un certificat de révocation d'une paire de clef nécessite de connaitre la clef privée de la
+paire à révoquer. Si vous oubliez la phrase clef d'une paire de clefs, vous ne pourrez plus révoquer cette paire. Vous
+avez donc intêret de ce point de vue à générer ce certificat dès que vous créer une paire. D'un autre coté, si quelqu'un
+réussi à obtenir ce certificat, il peut faire croire que vous avez révoquer la paire de clefs décrite par ce
+certificat. Vous devrez donc mettre ce certificat en sécurité tant que vous voudrez vous servir de la paire de clefs
+révocable par ce certificat.
+
+<H2><A NAME="ss3.9">3.9 Comment modifier des informations associées à une clef publique de votre trousseau de clefs ?</A>
+</H2>
+<P>
+La commande <CODE>--edit-key</CODE> vous donne accès à un menu textuel vous permettant de modifier certaines
+informations associées à une clef publique de votre trousseau de clefs :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --edit-key info-clef
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Vous pouvez connaitre les commandes accessibles sous ce menu textuel avec la commande <CODE>help</CODE>.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-4.html">Page suivante</A>
+<A HREF="GPGMiniHowto-2.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc3">Table des matières</A>
+</BODY>
+</HTML>
+

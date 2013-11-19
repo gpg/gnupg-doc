@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Français)</TITLE>
+ <LINK HREF="GPGMiniHowto-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-1.html">Page suivante</A>
+Page précédente
+Table des matières
+<HR>
+<H1>Gnu Privacy Guard (GnuPG) Mini Howto (Français)</H1>
+
+<H3>Dindart Jean-François (français) <CODE>&lt;dindart@labri.u-bordeaux.fr&gt;</CODE>
+<H3>Brenno J.S.A.A.F. de Winter (english) <CODE>&lt;brenno@dewinter.com&gt;</CODE>
+<H3>Michael Fischer v. Mollard (german)
+<CODE>&lt;fischer@math.uni-goettingen.de&gt;</CODE></H3></H3>Version 0.1.0 du 10 octobre 1999
+<P><HR>
+<EM> Ce mini HOWTO présente les bases de l'utilisation de GNU Privacy
+Guard (GnuPG), une implémentation Open Source d'OpenPGP. Pour rester 
+libre de toute licence d'utilisation, cette implémentation n'utilise
+ni l'algorithme RSA, ni aucun algorithme breveté. La version originale
+de ce document a été écrite en allemand par Michael Fischer v. Mollar.
+Cette version française est quand à elle basée sur la traduction
+anglaise réalisée par Brenno J.S.A.A.F. de Winter. 
+<HR>
+<P> 
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+
+<H3><A NAME="tocp"></A><A HREF="GPGMiniHowto-0.html">Préambule</A></H3>
+
+<H3><A NAME="toc1">1.</A> <A HREF="GPGMiniHowto-1.html">Quelques
+données sur les cryptosystèmes</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.1">1.1 Qu'est ce qu'un cryptosystème ?</A>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.2">1.2 Qu'est ce qu'un cryptosystème à clef publique ?</A>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.3">1.3 Qu'est ce qu'une signature numérique ?</A>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.4">1.4 Pourquoi signer une clef publique ?</A>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.5">1.5 Qu'est ce qu'un certificat de révocation ?</A>
+<LI><A HREF="GPGMiniHowto-1.html#ss1.6">1.6 Est-il possible de lire mes messages chiffrés
+sans mon accord lorsque j'utilise GnuPG ?</A> 
+</UL>
+<P>
+
+<H3><A NAME="toc2">2.</A> <A HREF="GPGMiniHowto-2.html">Installation de GnuPG</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-2.html#ss2.1">2.1 Où récupérer les sources de GnuPG ?</A>
+<LI><A HREF="GPGMiniHowto-2.html#ss2.2">2.2 Comment configurer la compilation de GnuPG ?</A>
+<LI><A HREF="GPGMiniHowto-2.html#ss2.3">2.3 Comment compiler GnuPG ?</A>
+<LI><A HREF="GPGMiniHowto-2.html#ss2.4">2.4 Comment installer GnuPG ?</A>
+</UL>
+<P>
+
+<H3><A NAME="toc3">3.</A> <A HREF="GPGMiniHowto-3.html">Gestion de votre trousseau de clefs</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.1">3.1 Comment générer votre paire clef privée/clef publique ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.2">3.2 Comment rendre publique votre clef publique ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.3">3.3 Comment ajouter une clef publique à votre trousseau ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.4">3.4 Comment afficher le contenu de votre trousseau de clefs ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.5">3.5 Comment retirer des clefs de votre trousseau de clefs ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.6">3.6 Comment afficher l'empreinte d'une clef publique de votre trousseau de clefs
+?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.7">3.7 Comment signer une clef publique de votre trousseau de clefs ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.8">3.8 Comment générer un certificat de révocation pour une de vos paires de clefs ?</A>
+<LI><A HREF="GPGMiniHowto-3.html#ss3.9">3.9 Comment modifier une clef publique de votre trousseau de clefs ?</A>
+</UL>
+<P>
+
+<H3><A NAME="toc4">4.</A> <A HREF="GPGMiniHowto-4.html">Chiffrement et déchiffrement</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-4.html#ss4.1">4.1 Comment chiffrer un message ?</A>
+<LI><A HREF="GPGMiniHowto-4.html#ss4.2">4.2 Comment déchiffrer un message ?</A>
+</UL>
+<P>
+
+<H3><A NAME="toc5">5.</A> <A HREF="GPGMiniHowto-5.html">Signer et vérifier des signatures</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-5.html#ss5.1">5.1 Comment signer un message ?</A>
+<LI><A HREF="GPGMiniHowto-5.html#ss5.2">5.2 Comment vérifier la signature d'un message ?</A>
+</UL>
+<P>
+
+<H3><A NAME="toc6">6.</A> <A HREF="GPGMiniHowto-6.html">Documentations supplémentaires</A></H3>
+<UL>
+<LI><A HREF="GPGMiniHowto-6.html#ss6.1">6.1 GnuPG</A>
+<LI><A HREF="GPGMiniHowto-6.html#ss6.2">6.2 PGP</A>
+<LI><A HREF="GPGMiniHowto-6.html#ss6.3">6.3 Serveurs de clefs</A>
+<LI><A HREF="GPGMiniHowto-6.html#ss6.4">6.4 Livres</A>
+</UL>
+<P>
+
+<H3><A NAME="toc7">7.</A> <A HREF="GPGMiniHowto-7.html">Versions de ce document</A></H3>
+
+<HR>
+<A HREF="GPGMiniHowto-1.html">Page suivante</A>
+Page précédente
+Table des matières
+</BODY>
+</HTML>

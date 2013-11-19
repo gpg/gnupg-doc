@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (italiano): Concetti</TITLE>
+ <LINK HREF="GPGMiniHowto-2.html" REL=next>
+
+ <LINK HREF="GPGMiniHowto.html#toc1" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-2.html">Avanti</A>
+Indietro
+<A HREF="GPGMiniHowto.html#toc1">Indice</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-Concept"></A> <A NAME="s1">1.</A> <A HREF="GPGMiniHowto.html#toc1">Concetti</A></H2>
+
+<H2><A NAME="ss1.1">1.1</A> <A HREF="GPGMiniHowto.html#toc1.1">Crittografia a chiave pubblica</A>
+</H2>
+
+<P>I metodi classici di crittografia usano una sola chiave per cifrare:
+il mittente cifra il messaggio con una chiave e il destinatario decifra 
+il messaggio con questa stessa chiave, che gli deve essere fornita dal mittente
+con modalit&agrave; che impediscano ad altri di entrarne in possesso. Se qualcun altro
+possiede la chiave, questi metodi crittografici diventano inutili.</P>
+
+<P>L'uso della cosiddetta crittografia a chiave pubblica pu&ograve; risolvere questo
+problema. La crittografia a chiave pubblica prevede due chiavi: una chiave
+pubblica, che pu&ograve; essere diffusa con ogni mezzo, e una chiave privata, che non
+va diffusa e deve essere mantenuta segreta dal proprietario. Se il sistema &egrave;
+implementato bene, dalla chiave pubblica non si pu&ograve; risalire a quella privata.
+In questo modo, il mittente cifrer&agrave; il messaggio con la chiave pubblica del
+destinatario e quest'ultimo lo decifrer&agrave; con la propria chiave privata.</P>
+
+<P>&Egrave; cruciale che la chiave privata resti segreta e non sia a disposizione di
+nessuno all'infuori del proprietario: NON PU&Ograve; ESSERE SPEDITA ATTRAVERSO
+INTERNET!  &Egrave; anche altamente sconsigliato usare GnuPG via <CODE>telnet</CODE> 
+(&egrave; consigliabile non usare mai telnet, visti i suoi alti rischi di
+sicurezza).</P>
+
+<H2><A NAME="ss1.2">1.2</A> <A HREF="GPGMiniHowto.html#toc1.2">Firme digitali</A>
+</H2>
+
+
+<P>Per provare che un certo messaggio &egrave; stato inviato proprio dalla 
+persona che dichiara di averlo fatto, &egrave; stato inventato il concetto 
+di firma digitale. Con questa firma si pu&ograve; verificare l'autenticit&agrave; 
+di un messaggio, riducendo i rischi di imbattersi in un "cavallo di Troia" 
+(ad esempio un messaggio che afferma di essere una patch per un certo 
+problema, ma in realt&agrave; contiene un virus, o causa danni ai dati del
+vostro computer). Si pu&ograve; quindi verificare che qualsiasi informazione o 
+dato provenga dalla fonte legittimata ad emetterlo.</P>
+
+<P>Una firma digitale si ottiene dalla combinazione tra la chiave privata e il
+testo. Usando la chiave pubblica del mittente si pu&ograve; verificare un messaggio e
+controllare non solo che sia stato inviato dalla persona corretta, ma anche che il 
+contenuto non sia stato modificato durante il trasporto.</P>
+
+<H2><A NAME="ss1.3">1.3</A> <A HREF="GPGMiniHowto.html#toc1.3">Rete di fiducia</A>
+</H2>
+
+<P>Un punto debole degli algoritmi a chiave pubblica &egrave; la diffusione delle chiavi.
+Un utente potrebbe spacciarsi per qualcun'altro, facendo circolare una chiave
+pubblica con un falso user ID e intercettando tutti i messaggi che venissero
+cifrati per quell'user ID. L'impostore potrebbe, dopo aver intercettato il
+messaggio, cifrarlo con la vera chiave pubblica del destinatario originale e 
+inviarglielo, senza che quest'ultimo si renda conto dell'intercettazione.</P>
+
+<P>La soluzione adottata da PGP (e quindi da GnuPG) &egrave; la firma delle chiavi:
+una chiave pubblica pu&ograve; essere firmata da altre persone, certificando cos&igrave; che
+la chiave appartiene veramente alla persona che sostiene di esserne il
+proprietario. La decisione su quanta fiducia riporre nelle firme spetta
+all'utente di GnuPG: sostanzialmente la fiducia in una firma dipende dalla
+fiducia che si ha nella chiave della persona che ha apposto la firma.
+Per essere assolutamente sicuri che una chiave appartenga a una certa persona,
+&egrave; consigliabile fare un controllo della cosiddetta "impronta digitale" della 
+chiave (&quot;fingerprint&quot;) usando un canale di comunicazione sicuro.</P>
+
+<H2><A NAME="ss1.4">1.4</A> <A HREF="GPGMiniHowto.html#toc1.4">Limiti alla sicurezza</A>
+</H2>
+
+
+<P>Se si possiedono dati considerati confidenziali, occorre preoccuparsi non
+solo del tipo di algoritmo di cifratura da usare, ma anche della sicurezza
+generale del proprio sistema. Fondamentalmente PGP pu&ograve; essere considerato sicuro
+e al momento della scrittura di questo documento non sono noti esempi di
+attacchi riusciti a PGP, ma ci&ograve; non implica una sicurezza assoluta (ad esempio,
+se la NSA riuscisse a rompere PGP non lo direbbe facilmente, n&eacute; lo farebbero
+altre persone che cercano di rompere i sistemi con scopi criminali). Comunque,
+anche se PGP fosse completamente inattaccabile, resterebbero altre minacce per
+la sicurezza.  Nel febbraio 1999 fu scoperto un cavallo di Troia che cercava
+chiavi private PGP sull'hard disk e le spediva via FTP: se le passphrase
+fossero state scelte male, le chiavi private avrebbero potuto facilmente essere
+scoperte.</P>
+
+<P>Un possibile attacco (anche se poco probabile) &egrave; costituito da un cavallo di
+Troia che ritrasmetta ci&ograve; che si scrive sulla tastiera. &Egrave; anche tecnicamente
+possibile (ma molto difficile) copiare il contenuto dello schermo: in questo
+caso non occorrerebbe decifrare alcun messaggio cifrato. Per tutti questi
+rischi occorre mettere in opera un buon sistema di sicurezza.</P>
+
+<P>Non si tratta di diffondere la paranoia tra la gente, quanto piuttosto la
+consapevolezza che ci sono molti aspetti da considerare per essere pi&ugrave; sicuri:
+la cosa pi&ugrave; importante &egrave; tenere in mente che la crittografia &egrave; solo uno dei passi
+verso la sicurezza, non una soluzione totale. I cavalli di Troia, come il virus
+Melissa del marzo 1999, hanno spesso colto molte societ&agrave; impreparate.</P>
+
+<HR>
+<A HREF="GPGMiniHowto-2.html">Avanti</A>
+Indietro
+<A HREF="GPGMiniHowto.html#toc1">Indice</A>
+</BODY>
+</HTML>

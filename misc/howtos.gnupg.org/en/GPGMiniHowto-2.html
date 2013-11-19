@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.16">
+<TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Installation </TITLE>
+<LINK HREF="GPGMiniHowto-3.html" REL=next>
+<LINK HREF="GPGMiniHowto-1.html" REL=previous>
+<LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+
+<A HREF="GPGMiniHowto-3.html">Next</A>
+<A HREF="GPGMiniHowto-1.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2.</A> <A HREF="GPGMiniHowto.html#toc2">Installation </A></H2>
+<H2><A NAME="ss2.1">2.1</A> <A HREF="GPGMiniHowto.html#toc2.1">Sources for GnuPG.</A>
+</H2>
+<P>The official download site is:
+<A HREF="http://www.gnupg.org/download.html">GnuPG Homepage</A>.
+At that location you will find links to mirror sites.</P>
+<P>Due to legal restrictions it is not allowed to download GnuPG from servers
+based in the USA. The USA imposes export restrictions on the export of
+cryptographic software. This is why PGP is always available in an international
+and a national (for the USA) version.
+For the international version the source code has been exported in a printed format
+as a book. In Europe (Oslo) it has
+been scanned. More information on that can be found on
+<A HREF="http://www.pgpi.com/">International PGP Homepage</A>.
+The international version of PGP is
+free to be imported into the United States as long as it is not reexported again.</P>
+<P>If you already have an installed version of GnuPG or PGP, you should check the
+signature of the file (see
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">Signatures</A>).</P>
+<H2><A NAME="ss2.2">2.2</A> <A HREF="GPGMiniHowto.html#toc2.2">Configuration </A>
+</H2>
+<P>You can obtain GnuPG as a Debian Package, as a RPM package (Redhat Package Manager)
+or in source code.
+GnuPG is included in the latest Fedora/Redhat Linux distributions.
+To check if you have GnuPG installed on your system, use:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+rpm -q gnupg
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>The packages are installed as binary files with the
+tools needed for Linux platforms. When you need GnuPG for different platforms
+you need to compile this yourself. It would be appreciated when you make
+alternative installation methods for different platforms available to the
+general public. </P>
+<P>Since development for the major part takes place with Linux (x86), translation to
+different systems should not be regarded as being a problem. The actual list of
+known operating systems that support GnuPG can be found on
+<A HREF="http://www.gnupg.org/">GnuPG Homepage</A>.
+The procedure as described below is pretty platform independent. This procedure can
+be used to install GnuPG out of a source code tar-ball.</P>
+<P>Unpack the tar-ball with the following commands,
+For sources compressed with gzip use:
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>and for sources compressed with bzip2 use:
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvjf gnupg-?.?.?.tar.bz2
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>After the unpack, please step into the directory containing the source code.
+Then type</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>When doing this nothing special should happen. With </P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>you can view the available configuration settings for compilation. If problems
+occur that have to do with internationalization (gettext), you can include
+a version that is delivered with the source code by using the option
+<CODE>--with-included-gettext</CODE> or switch it of by using
+the <CODE>--disable-NLS</CODE> option.</P>
+<H2><A NAME="ss2.3">2.3</A> <A HREF="GPGMiniHowto.html#toc2.3">Compile </A>
+</H2>
+<P>After this we want to compile the stuff by typing:
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+This should work without any problems. If any problems occur take the following
+steps (in the same order as described here): First try to solve this yourself
+(of course also by using the available documentation).
+Then make sure that your problem is not a known bug (check the BUGS file on http://www.gnupg.org).
+Then ask someone you know. If
+these steps do not solve your problem post a question to the GnuPG-mailing list
+(see
+<A HREF="GPGMiniHowto-7.html#GPG-Minihowto-Informationsources">Informationsources</A>). If
+the problem is path related, you should try <CODE>make clean</CODE>, then run
+<CODE>configure</CODE> again and retry to compile. If that doesn't work it is
+time to panic.</P>
+<H2><A NAME="ss2.4">2.4</A> <A HREF="GPGMiniHowto.html#toc2.4">Installation</A>
+</H2>
+<P>Now type:
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+to actually copy the program and the man-pages into the installation directory.
+If you didn't change the installation directory when you did ./configure the
+<CODE>usr/local/share/gnupg/</CODE> will be the installation directory. You can
+find this directory in the file <CODE>options.skel</CODE>. When you change this
+<CODE>options.skel</CODE>. If you copy this to <CODE>~/.gnupg/options</CODE> the
+appropriate adjustments will be used as standard. Copying should occur
+automatically when creating <CODE>~/.gnupg/</CODE>. All possible options are
+well documented and explaining them here would not be useful.</P>
+<P>You can run GnuPG as suid root. So the program runs with all the rights the
+superuser has. By doing this you exclude the possibility that certain parts
+of the program are stored externally and then could be read by anyone. It is
+not feasible for me to judge on the value of this risk. But running the program
+as suid root one should be alert to the danger of Trojan horses. Since a Trojan
+horse running as superuser can damage an entire system. If for this reason (or
+any other reason) you choose not run GnuPG as root you can switch off the warning
+by setting
+<CODE>no-secmem-warning</CODE> in <CODE>~/.gnupg/options</CODE>.</P>
+<HR>
+<A HREF="GPGMiniHowto-3.html">Next</A>
+<A HREF="GPGMiniHowto-1.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc2">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Installation </TITLE>
+ <LINK HREF="GPGMiniHowto-3.html" REL=next>
+ <LINK HREF="GPGMiniHowto-1.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-3.html">Page suivante</A>
+<A HREF="GPGMiniHowto-1.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc2">Table des matières</A>
+<HR>
+<H2><A NAME="s2">2. Installation de GnuPG</A></H2>
+
+<P>
+<H2><A NAME="ss2.1">2.1 Où récupérer GnuPG ?</A>
+</H2>
+
+<P>
+<P>Le logiciel GnuPG est disponible sur plusieurs sites mais le mieux est de le télécharger depuis
+son <A HREF="http://www.gnupg.org/download.html">site officiel</A>. Vous trouverez aussi sur
+ce site les adresses de sites mirroirs. Si vous disposez déjà d'une version installée de GnuPG ou de PGP, il
+est fortement recommandé d'en profiter pour 
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">vérifier</A> que les sources de GnuPG que vous avez téléchargées
+sont bien les sources authentiques.
+<P>
+Le logiciel GnuPG est disponible sous forme de paquets Debian ou Red Hat et sous forme de
+sources. Les paquets Debian et Red Hat s'installent directement à l'aide des outils
+de gestion de paquets fournis avec les distributions correspondantes et leur installation n'est pas
+abordée dans ce document. La marche à suivre pour installer GnuPG à partir des sources est detaillée
+ci-dessous. Si vous installez GnuPG sur une architecture ou un système différent de ceux
+initialement prévus, il serait bien 8) de faire parvenir les détails de votre installation aux
+auteurs de GnuPG qui pourront ainsi en faire profiter le plus grand nombre. La liste des systèmes
+d'exploitation sur lesquels GnuPG a déjà été compilé avec succès est disponible sur le 
+<A HREF="http://www.gnupg.org">site officiel</A> de GnuPG.
+<P>
+<B>Remarque</B> : la réglemention des Etats Unis d'Amérique restreint très sévèrement l'exportation de
+produits de chiffrement fort. Cette régulation a deux conséquences importantes. La première est
+qu'il est illégal de télécharger GnuPG sur un site hébergé sur le territoire des Etats Unis
+d'Amérique depuis un ordinateur situé à l'extérieur de ce territoire. La seconde est qu'il existe
+une version internationale et une version nationale (destinée aux Etats Unis d'Amérique) du logiciel
+PGP. Il est aussi intéressant de noter que vous êtes libre de télécharger la version internationale
+de PGP depuis une machine située sur le territoire des Etats Unis d'Amérique mais qu'il vous sera
+cependant totalement interdit de quitter ce même territoire avec cette version !
+<P>
+<B>Anecdote</B> : les sources de la version internationale ont été légalement exportées sous forme
+d'un livre qui a ensuite été scanné à Oslo. Vous trouverez d'autres informations à ce sujet sur le
+site <A HREF="http://www.pgpi.com">International PGP Homepage</A>. 
+
+<H2><A NAME="ss2.2">2.2 Comment configurer la compilation de GnuPG ?</A>
+</H2>
+<P>
+<P>Détarrer les sources de GnuPG : 
+<BLOCKQUOTE><CODE>
+<PRE>
+tar xvzf gnupg-?.?.?.tar.gz
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>puis descendez dans le répertoire créé par la commande précédente et lancez la configuration des
+sources de GnuPG pour votre système :
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<P>
+<A NAME="ss2.3PREFIX"></A>
+Par défaut, GnuPG s'installe dans des répertoires où seul root peut écrire. Si vous n'avez pas les
+droits root, vous pouvez changer le répertoire de base de ces répertoires d'installation :
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --prefix=AutreRépertoireDeBase
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Dans ce cas, il vous faudra aussi ajouter le répertoire <CODE>AutreRépertoireDeBase/bin</CODE> à
+votre variable d'environnement <CODE>PATH</CODE>.
+
+<P>
+Si aucun message d'erreur n'apparait à la fin de la configuration, c'est que celle ci s'est bien
+déroulée. En cas de problème avec l'internationalisation (gettext) de GnuPG, vous pouvez essayer 
+<CODE>./configure --with-included-gettext</CODE> ou <CODE>./configure --disable-NLS</CODE>.
+<P>
+Si un message d'erreur est affiché durant cette configuration, vous pouvez consulter le fichier 
+<CODE>config.log</CODE> qui contient tous les détails sur le déroulement du processus de
+configuration.
+
+<P>
+<P>La configuration des sources est un processus très paramétrable. Vous pouvez afficher
+toutes les options de configuration possibles grâce à l'option <CODE>--help</CODE> :
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+./configure --help
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<P>
+<H2><A NAME="ss2.3">2.3 Comment compiler GnuPG ?</A>
+</H2>
+
+<P>
+<P>Pour lancer la compilation, il suffit maintenant de taper :
+<BLOCKQUOTE><CODE>
+<PRE>
+make
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+La compilation devrait se dérouler sans problème. S'il y en avait, vous pouvez consulter le fichier
+<CODE>BUGS</CODE> fourni avec les sources de GnuPG. Si ce fichier n'est pas suffisant, vous pouvez
+demander de l'aide en postant vos questions (soyez PRECIS) dans la 
+<A HREF="GPGMiniHowto-6.html#GPG-Minihowto-Informationsources">liste de diffusion</A> adéquate de GnuPG.
+
+<P>
+<H2><A NAME="ss2.4">2.4 Comment installer GnuPG ?</A>
+</H2>
+
+<P>
+<P>L'installation utilise la même commande que la compilation mais avec l'option
+<CODE>install</CODE> :
+<BLOCKQUOTE><CODE>
+<PRE>
+make install
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Rappelez vous que par défaut l'installation aura lieu dans des répertoires accessibles uniquement
+avec les droits root. Si vous ne les avez pas, il vous faut modifier les répertoires d'installation
+lors de la configuration comme vu <A HREF="GPGMiniHowto-2.html#ss2.3PREFIX">ci-dessus</A>.
+<P>
+<P>
+Si vous disposez des droits root, vous
+pouvez décidez de positionner le suid bit de l'exécutable <CODE>gpg</CODE>. L'intérêt est qu'ainsi,
+<CODE>gpg</CODE> pourra empêcher le système de swapper des données confidentielles sur le disque
+dur. L'inconvénient est que si vous n'avez pas pu vérifier l'authenticité des sources de GnuPG que
+vous avez téléchargées, il existe alors une probabilité non nulle que ces sources aient été
+modifiées de façon mal intentionnée (cheval de Troie). Dans ce cas, accorder les droits d'exécution
+root à un tel programme compromet fortement la sécurité de votre système, si ce n'est son
+fonctionnement correct. Pour être complet, même dans le cas où vous avez vérifié l'authenticité des
+sources de GnuPG, il vous faut encore vous interroger sur l'authenticité de la signature dont vous
+vous êtes servi, du programme utilisé pour récupérer cette signature, du programme utilisé pour
+vérifier la signature des sources, etc. L'attribution des droits d'exécution root à <CODE>gpg</CODE> n'est donc pas une
+décision à prendre à la légère. 
+<P>
+Si vous choisissez de ne pas accorder les droits d'exécution root à <CODE>gpg</CODE> ou que vous n'avez pas les droits
+root, <CODE>gpg</CODE> affichera un message d'avertissement à chaque fois que des données confidentielles risquent
+d'être écrites sur votre disque dur suite à un swap :
+<BLOCKQUOTE><CODE>
+<PRE>
+Warning: using insecure memory!
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Vous pouvez désactiver l'affichage de ce message d'avertissement en ajoutant l'option
+<CODE>no-secmem-warning</CODE> dans votre fichier <CODE>~/gnupg/options</CODE>.
+<P>
+<HR>
+<A HREF="GPGMiniHowto-3.html">Page suivante</A>
+<A HREF="GPGMiniHowto-1.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc2">Table des matières</A>
+</BODY>
+</HTML>
+

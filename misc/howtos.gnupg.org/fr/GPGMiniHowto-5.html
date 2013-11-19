@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.7">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Français): Signer et vérifier des signatures</TITLE>
+ <LINK HREF="GPGMiniHowto-6.html" REL=next>
+ <LINK HREF="GPGMiniHowto-4.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc5" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-6.html">Page suivante</A>
+<A HREF="GPGMiniHowto-4.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc5">Table des matières</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-signatures"></A> <A NAME="s5">5. Signer et vérifier des signatures</A></H2>
+Tout comme pour le chiffrement, signer un message produit une signature en caractères codés sur 8 bits, ce qui
+peut poser quelques problèmes pour l'envoyer par email ou pour l'afficher. Là encore, l'option 
+<CODE>--armor</CODE> ou <CODE>-a</CODE> permet de produire une signature en caractères codés sur 7 bits.
+<P>
+L'option <CODE>--output</CODE> ou <CODE>-o</CODE> permet aussi d'écrire le résultat de l'opération 
+de signature dans un fichier plutôt que sur la sortie standard.
+
+<P>
+<H2><A NAME="ss5.1">5.1 Comment signer un message ?</A>
+</H2>
+La commande <CODE>--sign</CODE> (ou <CODE>-s</CODE>) vous permet de signer un message :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --sign [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+La commande <CODE>--sign</CODE> signe et compresse le message en même temps. Si vous ne voulez pas 
+compresser le résultat, vous pouvez simplement ajouter une signature à la fin d'un message grâce à 
+la commande <CODE>--clearsign</CODE> : 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --clearsign [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<P>
+Les deux commandes précédentes renvoie le message suivi de la signature. Si seule la signature
+vous intéresse, vous pouvez utiliser la commande <CODE>--detach-sign</CODE> (ou <CODE>-b</CODE>) :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --detach-sign [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+Cette commande est particulièrement utile pour signer des fichiers de
+données binaires ou des exécutables.
+
+<P>
+<P>Vous pouvez également signer et chiffrer un message en une seule opération :
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-u expéditeur] [-r destinataire] [--armor] --sign --encrypt [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<H2><A NAME="ss5.2">5.2 Comment vérifier la signature d'un message ?</A>
+</H2>
+<P>
+<P>Quand un message est chiffré, il est également signé et cette signature est automatiquement
+vérifiée lors du déchiffrage (à condition, bien sûr, que vous disposiez de la clef publique du
+signataire). Vous pouvez aussi vous contentez de vérifier la signature d'un message : 
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --verify [message]
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Cette vérification s'appuyant sur la clef publique associée à la clef privée ayant servi à signer le
+message, vous devez bien-sûr disposer de cette clef publique. Cette vérification n'est cependant
+valable que dans la mesure où vous apportez un soin tout particulier à la vérification de
+l'authenticité des clefs publiques que vous utilisez. 
+<P>
+<P>
+<HR>
+<A HREF="GPGMiniHowto-6.html">Page suivante</A>
+<A HREF="GPGMiniHowto-4.html">Page précédente</A>
+<A HREF="GPGMiniHowto.html#toc5">Table des matières</A>
+</BODY>
+</HTML>

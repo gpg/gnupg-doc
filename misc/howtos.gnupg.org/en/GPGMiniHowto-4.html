@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.16">
+<TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (English): Encrypt and decrypt</TITLE>
+<LINK HREF="GPGMiniHowto-5.html" REL=next>
+<LINK HREF="GPGMiniHowto-3.html" REL=previous>
+<LINK HREF="GPGMiniHowto.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-5.html">Next</A>
+<A HREF="GPGMiniHowto-3.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="GPG-Minihowto-encrypt"></A> <A NAME="s4">4.</A> <A HREF="GPGMiniHowto.html#toc4">Encrypt and decrypt</A></H2>
+<P>After installing everything and configuring everything in the way we want,
+we can start on encrypting and decrypting. </P>
+<P>When encrypting or decrypting it is possible to have more than one private key
+in use. If this occurs you need to select the active key. This can be done by
+using the option <CODE>-u UID</CODE> or by using the option <CODE> --local-user UID</CODE>.
+This causes the default key to use to be replaced by wanted key.</P>
+<P>If you want to change recipient this can be done by the option <CODE>-r</CODE>
+or by the option <CODE>--recipient</CODE>.</P>
+<H2><A NAME="ss4.1">4.1</A> <A HREF="GPGMiniHowto.html#toc4.1">Encrypt</A>
+</H2>
+<P>The command to encrypt is
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg -e Recipient [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+or
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg --encrypt Recipient [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+To avoid the risk that somebody else claims to be you,
+it is very useful to sign everything you encrypt, see
+<A HREF="GPGMiniHowto-5.html#GPG-Minihowto-signatures">signatures</A>.</P>
+<H2><A NAME="ss4.2">4.2</A> <A HREF="GPGMiniHowto.html#toc4.2">Decrypt</A>
+</H2>
+<P>The command for decrypting is:
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [-d] [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+or
+<BLOCKQUOTE><CODE>
+<PRE>
+gpg [--decrypt] [Data]
+</PRE>
+</CODE></BLOCKQUOTE>
+Also here <CODE>stdout</CODE> is preset, but with the <CODE>-o</CODE> option you can
+redirect the output to a file.</P>
+<HR>
+<A HREF="GPGMiniHowto-5.html">Next</A>
+<A HREF="GPGMiniHowto-3.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc4">Contents</A>
+</BODY>
+</HTML>

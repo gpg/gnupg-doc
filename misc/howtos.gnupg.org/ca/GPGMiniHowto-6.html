@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.21">
+ <TITLE>Gnu Privacy Guard (GnuPG) Mini Howto (Català): GnuPG + PGP</TITLE>
+ <LINK HREF="GPGMiniHowto-7.html" REL=next>
+ <LINK HREF="GPGMiniHowto-5.html" REL=previous>
+ <LINK HREF="GPGMiniHowto.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="GPGMiniHowto-7.html">Next</A>
+<A HREF="GPGMiniHowto-5.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="s6">6.</A> <A HREF="GPGMiniHowto.html#toc6">GnuPG + PGP</A></H2>
+
+<P>En ser <CODE>PGP</CODE> un programa més antic que <CODE>GnuPG</CODE>, és normal que un
+usuari nou de <CODE>GnuPG</CODE> tingui ja instal·lada alguna versió de <CODE>PGP</CODE> al
+seu sistema, i que desitgi mantenir les seves claus velles després
+d'actualitzar-se a <CODE>GnuPG</CODE>. Doncs bé, no només és possible importar el
+contingut dels anells de claus, sinó que, alternativament, és possible que
+<CODE>GnuPG</CODE> gestioni els anells de claus de <CODE>PGP 2.6.3</CODE> i <CODE>PGP 5.0</CODE>.</P>
+
+<P>Hi ha altres &laquo;problemes&raquo; de compatibilitat que també
+tractarem en aquest capítol, com són les signatures de tipus <B>V4</B>
+generades per <CODE>GnuPG</CODE>, o de l'ús per part de <CODE>PGP</CODE> dels algoritmes
+propietaris <CODE>RSA</CODE> o <CODE>IDEA</CODE>. Començarem per aquesta darrera qüestió.</P>
+
+<H2><A NAME="ss6.1">6.1</A> <A HREF="GPGMiniHowto.html#toc6.1">Ús d'algoritmes <EM>no lliures</EM></A>
+</H2>
+
+<P>L'ús d'algoritmes amb patents restrictives per part de <CODE>PGP</CODE>
+representa un problema donat que la filosofia al voltant de <CODE>GnuPG</CODE> és
+la d'implementar un sistema criptogràfic lliure. Així doncs, les patents
+sobre aquests algoritmes n'impossibiliten una implementació total. Però
+<CODE>GnuPG</CODE> també pretén cumplir amb les normes dels
+&laquo;estàndards&raquo; d'
+<A HREF="http://www.d.shuttle.de/isil/gnupg/rfc2440.html">OpenPGP</A>.</P>
+
+<P>Existeixen unes extensions per a
+<A HREF="http://www.rsa.com/">RSA</A> i 
+<A HREF="http://www.ascom.ch/">IDEA</A> que poden ser instal·lades
+i permeten un cert ús d'aquests algoritmes. Les claus generades per <CODE>PGP
+2.6.x</CODE> són del tipus <CODE>RSA</CODE>, i l'algoritme de xifratge emprat és <CODE>IDEA</CODE>
+(també pot ser emprat per <CODE>PGP 5.x</CODE>). És possible conseguir el codi font
+d'aquests algoritmes als fitxers  
+<A HREF="ftp://ftp.guug.de/pub/gcrypt/contrib/rsa.c.Z">rsa.c</A> i 
+<A HREF="ftp://ftp.guug.de/pub/gcrypt/contrib/idea.c.Z">idea.c</A>.</P>
+
+<P>També existeixen els binaris instal·lables d'aquestes extensions per
+algunes distribucions de 
+<A HREF="http://www.debian.org">Linux</A>
+, com per exemple 
+<A HREF="http://www.debian.org">Debian</A> (comproveu-ho per a
+d'altres distribucions).</P>
+
+
+<H2><A NAME="GPGMiniHowto-SignaturesGnuPG"></A> <A NAME="ss6.2">6.2</A> <A HREF="GPGMiniHowto.html#toc6.2">Signatura digital amb GnuPG</A>
+</H2>
+
+<P><CODE>GnuPG</CODE> és l'únic sistema capaç d'implementar signatures digitals
+<B>V4</B> (segons <EM>OpenPGP</EM>) i aquesta n'és l'opció per defecte, però en
+aquest cas <CODE>PGP</CODE> no és capaç de verificar-les. És possible obligar a
+<CODE>GnuPG</CODE> a emprar <B>V3</B>, de dues maneres:</P>
+<P>
+<UL>
+<LI>Indicant-ho en el fitxer de configuració <CODE>$HOME/.gnupg/options</CODE>
+afegint la línia:</LI>
+</UL>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+force-v3-sigs
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>
+<UL>
+<LI>Indicant aquesta opció cada vegada que es desitgi signar un missatge
+en <B>V3</B>:</LI>
+</UL>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg &lt;opció&gt; --force-v3-sigs [fitxer]
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<H2><A NAME="ss6.3">6.3</A> <A HREF="GPGMiniHowto.html#toc6.3">Importar anells de claus de PGP a GnuPG</A>
+</H2>
+
+<P>Intentarem explicar com exportar les claus públiques i privades des dels
+nostres anells de claus <CODE>PGP</CODE> als anells de claus <CODE>GnuPG</CODE>.</P>
+
+<P><B>NOTA: aquest mètode s'ha extret del 
+<A HREF="http://technocage.com/~caskey/gpg/pgp2gnupgp.html">PGP2GnuPG</A>
+Howto de Caskey L.  Dickson i no l'he provat personalment. L'última
+actualització del &laquo;PGP2GnuPG Howto&raquo; data del desembre de 1998.
+Per aquesta raó, i per poder integrar <CODE>PGP</CODE> amb <CODE>GnuPG</CODE>, recomano
+l'ús del mètode que s'explica a la
+<A HREF="#GPGMiniHowto-AnellsPGP">secció següent</A>, ja que és més senzill
+i fiable.</B></P>
+
+<P>Suposant que tingueu instal·lades dues versions de <CODE>PGP</CODE> per a
+<CODE>Unix/Linux</CODE>, tenim els seus respectius anells de claus públiques i
+privades a <CODE>$HOME/.pgp/</CODE>:</P>
+<P>
+<UL>
+<LI>pubring.pgp -&gt; fitxer de claus públiques de <CODE>PGP 2.6.x</CODE></LI>
+<LI>secring.pgp -&gt; fitxer de claus privades de <CODE>PGP 2.6.x</CODE></LI>
+<LI>pubring.pkr -&gt; fitxer de claus públiques de <CODE>PGP  5.x</CODE></LI>
+<LI>secring.skr -&gt; fitxer de claus privades de <CODE>PGP  5.x</CODE></LI>
+</UL>
+</P>
+<P>A continuació utilitzaríem les ordres que corresponguin a cada verió per
+tal d'extreure les claus que desitgem.</P>
+
+<P>Així, per extreure una clau de <CODE>PGP 2.6.x</CODE>:
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ pgp -kx UID fitxer anell
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>per exemple:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ pgp -kx Pepe clavepepe2 ~/.pgp/pubring.pgp
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+
+<P>Aquesta operació ens donaria el fitxer clavepepe2.pgp. Per extreure'n la
+nostra clau privada, no hauríem de fer cap altra cosa que indicar el nostre
+UID i el fitxer de les claus privades <CODE>~/.pgp/secring.pgp</CODE>. No em
+consta que hi hagi cap manera d'indicar més d'un UID amb <CODE>PGP 2.6.3</CODE>, si
+en sabeu alguna, si us plau envieu-me un
+<A HREF="mailto:homega@ciberia.es">mensaje</A> (NT: adreça de
+correu de l'autor d'aquesta secció i de la traducció a la versió castellana
+del document).</P>
+
+<P>Una vegada s'ha extret la clau només s'ha d'importar al fitxer de 
+<CODE>GnuPG</CODE>:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --import clavepepe2
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Per extreure una clau de <CODE>PGP 5.0</CODE>:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ pgpk -x UID -o fitxer
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>per exemple:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ pgpk -x Pepe -o clavepepe5
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>En aquest cas, el fitxer per defecte és el de claus públiques, i obtindríem
+el fitxer clavepepe5 tal i com hem indicat.</P>
+
+<P>Una vegada més, només ens queda importar la clau:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --import clavepepe5
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Ja que <CODE>PGP 5.0</CODE> no ens permet indicar el fitxer sobre el que volem
+operar, la extracció de la clau privada es complica una miqueta. La solució
+ve donada per un sistema superior com el de GnuPG:</P>
+
+<P>Aquest procediment posa en risc la clau privada durant un breu període
+de temps, així que no hauria de ser emprat en un sistema multiusuari o
+públic. Els passos a seguir són:</P>
+<P>
+<UL>
+<LI>Extreure la clau pública corresponent a la clau provada que volem
+exportar, i importar-la a <CODE>GnuPG</CODE>.</LI>
+<LI>Esborrar la contrasenya de la clau privada!! (es recomana fer una
+còpia de seguretat del fitxer secring.skr):</LI>
+</UL>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ pgpk -e UID
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>per exemple:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+$ pgpk -e 0x614DB9FA
+
+sec  1024 0x614DB9FA 1998-03-22 ---------- DSS        Sign &amp; Encrypt
+
+sub  1024 0x2B9E0571 1998-03-22 ---------- Diffie-Hellman
+
+uid  Horacio &lt;homega@vlc.servicom.es&gt;
+
+uid  Horacio &lt;homega@correo.com&gt;
+
+
+1024 bits, Key ID 0x614DB9FA, created 1998-03-22
+
+"Horacio &lt;homega@vlc.servicom.es&gt;"
+
+"Horacio &lt;homega@correo.com&gt;"
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+Do you want to unset this key as axiomatic [y/N]? N
+
+Do you want to unset this key as axiomatic [y/N]? N
+
+Do you want to add a new user ID [y/N]? N
+
+Do you want to change your pass phrase (y/N)? Y
+Need old passphrase. Enter pass phrase: &lt;introduïu la contrasenya&gt;
+Need new passphrase. Enter pass phrase: &lt;deixeu-ho buit&gt;
+Enter it a second time. Enter pass phrase: &lt;deixeu-ho buit&gt;
+Changing master key passphrase...
+
+Changing subkey passphrase...
+
+Do want to set this as your default key [y/N]? N
+
+Keyrings updated.
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>
+<UL>
+<LI>El pas següent és exportar la clau privada. Com ja hem pogut veure,
+<CODE>PGP 5.0</CODE> és incapaç de fer-ho, així que emprarem <CODE>GnuPG</CODE>:</LI>
+</UL>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --export-secret-keys --secret-key-ring ~/.pgp/secring.skr 0x614DB9FA &gt; lamevaclau
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Tot això en una sola línia, i es crearà el fitxer <CODE>lamevaclau</CODE>.</P>
+<P>
+<UL>
+<LI>Ara ja podem importar la clau privada a GnuPG:</LI>
+</UL>
+</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+$ gpg --import &lt; lamevaclau
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Swguidament torneu a introduir una contrasenya a la clau des de <CODE>GnuPG</CODE>.</P>
+
+<H2><A NAME="GPGMiniHowto-AnellsPGP"></A> <A NAME="ss6.4">6.4</A> <A HREF="GPGMiniHowto.html#toc6.4">Emprar anells de claus de PGP amb GnuPG</A>
+</H2>
+
+<P>És possible evitar tota aquesta operació anterior, mantenint
+instal·lades les diferents versions de <CODE>PGP</CODE> al mateix temps que la de
+<CODE>GnuPG</CODE>. Essent <CODE>GnuPG</CODE> un sistema superior i més nou, pot reconéixer
+els anells de claus de <CODE>PGP</CODE> com a propis.</P>
+
+<P>En el cas de <CODE>PGP 5.0</CODE>, n'hi ha prou amb afegir la ruta d'accés
+completa als fitxers de claus de <CODE>PGP 5.0</CODE>, precedit per <CODE>keyring</CODE> o 
+<CODE>secret-keyring</CODE>, al final del fitxer <CODE>~/.gnupg/options</CODE> segons
+correspongui:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+keyring ~/.pgp/pubring.pkr
+secret-keyring ~/.pgp/secring.skr
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Els fitxers de claus de <CODE>PGP 2.6.3</CODE> són reconeguts per <CODE>GnuPG</CODE> per
+defecto. Si això no fos així, només caldria repetir la mateixa operació
+anterior adaptant-la a les circumstàncies:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<HR>
+<PRE>
+keyring ~/.pgp/pubring.pgp
+secret-keyring ~/.pgp/secring.pgp
+</PRE>
+<HR>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Si a continuació feu un llistat de les claus públiques amb <CODE>GnuPG</CODE>,
+observareu que llegeix els tres fitxers, <CODE>~/.gnupg/pubring.gpg</CODE>,
+<CODE>~/.pgp/pubring.pkr</CODE>, y <CODE>~/pubring.pgp</CODE>:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+$ gpg --list-keys
+
+     /home/usuario/.gnupg/pubring.gpg
+     --------------------------------
+     pub 1024D/57548DCD 1998-07-07 Werner Koch (gnupg sig)
+     &lt;dd9jn@gnu.org&gt;
+     pub 1024D/A95AF46C 1998-11-29 Brenno J.S.A.A.F. de Winter
+     &lt;brenno@dewinter.com&gt;
+     sub 3072g/A3CA62A0 1998-11-29
+
+   (... y demás claves públicas DSA/ElGamal...)
+
+     /home/usuario/.pgp/pubring.pkr
+     ------------------------------
+     pub 1024D/FAEBD5FC 1997-04-07 Philip R. Zimmermann &lt;prz@pgp.com&gt;
+     sub 2048g/42F0A0A0 1997-04-07
+
+   (... etc DSS/Diffie-Helman...)
+
+     /home/usuario/.pgp/pubring.pgp
+     ------------------------------
+     pub 1024R/88A17FF5 1995-09-11 IRIS-CERT, Spain
+
+   (... etc RSA...)
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>El mateix succeïria amb les claus privades:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+$ gpg --list-secret-keys
+
+     /home/horacio/.gnupg/secring.gpg
+     --------------------------------
+     sec 1024D/42337AE6 1999-03-14 Horacio (comentari)
+     &lt;homega@vlc.servicom.es&gt;
+     ssb 2048g/1F177864 1999-03-14
+
+     /home/horacio/.pgp/secring.skr
+     ------------------------------
+     sec 1024D/7992AB40 1998-05-04 Horacio &lt;homega@vlc.servicom.es&gt;
+     uid Horacio &lt;homega@correo.com&gt;
+     ssb 2048g/917366AE 1998-05-04
+
+     /home/horacio/.pgp/secring.pgp
+     ------------------------------
+     sec 1024R/32D4A925 1997-09-23 Horacio &lt;homega@vlc.servicom.es&gt;
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+
+
+
+<HR>
+<A HREF="GPGMiniHowto-7.html">Next</A>
+<A HREF="GPGMiniHowto-5.html">Previous</A>
+<A HREF="GPGMiniHowto.html#toc6">Contents</A>
+</BODY>
+</HTML>

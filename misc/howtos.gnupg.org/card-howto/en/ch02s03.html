@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.3. Installation of Card Reader</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="ch02.html" title="Chapter 2. Installation for GNU/Linux" />
+    <link rel="prev" href="ch02s02.html" title="2.2. Required Hardware" />
+    <link rel="next" href="ch03.html" title="Chapter 3. Administrating the Card" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">2.3. Installation of Card Reader</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch02s02.html">Prev</a> </td>
+          <th width="60%" align="center">Chapter 2. Installation for GNU/Linux</th>
+          <td width="20%" align="right"> <a accesskey="n" href="ch03.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="section" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="id2519419"></a>2.3. Installation of Card Reader</h2>
+          </div>
+        </div>
+      </div>
+      <p>Two standard protocols are used by GnuPG to access card readers. </p>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2519429"></a>2.3.1. CCID (Chip Card Interface Description)</h3>
+            </div>
+          </div>
+        </div>
+        <p>The driver to access CCID cards is built into GnuPG.  This driver will be used by default.</p>
+        <p>To use this driver follow the instructions and make sure you have sufficient permission (see below) to access the USB device for reading and writing.</p>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519446"></a>With udev (preferred installation)</h4>
+              </div>
+            </div>
+          </div>
+          <p>First of all, you will need to download two files for udev and copy them to the udev configuration directories, in order to let it identify your card reader:</p>
+          <div class="itemizedlist">
+            <ul type="disc">
+              <li>
+                <p>
+                  <a href="http://www.fsfe.org/en/content/download/17665/125518/file/gnupg-ccid.rules" target="_top">gnupg-ccid.rules</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="" target="_top">gnupg-ccid</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <p>Now, open a terminal and become root (you will be asked for your root password):</p>
+          <pre class="screen">
+archi@foobar:~ &gt; su -
+                </pre>
+          <p>On Ubuntu systems, you should run (and then you will be asked for the user password):</p>
+          <pre class="screen">
+archi@foobar:~ &gt; sudo su -
+                </pre>
+          <p>Then you will have to move the files from the directory you have saved them to, to the udev configuration directories:</p>
+          <pre class="screen">
+# cd /home/directory/where/you/saved/the/file <em class="lineannotation"><span class="lineannotation">(change for the right path)</span></em>
+# cp gnupg-ccid.rules /etc/udev/gnupg-ccid.rules
+# cp gnupg-ccid /etc/udev/scripts/gnupg-ccid
+# chmod +x /etc/udev/scripts/gnupg-ccid
+# ln -s /etc/udev/gnupg-ccid.rules /etc/udev/rules.d/gnupg-ccid.rules
+                </pre>
+          <p>All the configuration files are in the right place and with the right permissions by now.</p>
+          <p>You will now create a group scard, give this group permission to access the smart card reader, and include the users who should have access to the card reader to this group.</p>
+          <pre class="screen">
+# addgroup scard
+# addgroup yourusername scard <em class="lineannotation"><span class="lineannotation">(change for the right username)</span></em>
+# exit <em class="lineannotation"><span class="lineannotation">(to logout the root user)</span></em> 
+                </pre>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519553"></a>With hotplug (deprecated in modern systems)</h4>
+              </div>
+            </div>
+          </div>
+          <p>The described hotplugging mechanism assigns permission for all CCID devices to the users in <span class="emphasis"><em>scard</em></span> group.</p>
+          <p>Create the following two files.  The first file is a mapping file which decides on the script to run when detecting a CCID device.  The second file is the script that should be run if a device with the matching parameters is plugged in.  This script is the one to actually assign the permissions.</p>
+          <div class="informalexample">
+            <pre class="programlisting">
+
+                        <code class="filename">/etc/hotplug/usb/gnupg-ccid.usermap</code>
+# The entries below are used to detect CCID devices and run a script
+#
+# USB_MATCH_VENDOR            0x0001
+# USB_MATCH_PRODUCT           0x0002
+# USB_MATCH_DEV_LO            0x0004
+# USB_MATCH_DEV_HI            0x0008
+# USB_MATCH_DEV_CLASS         0x0010
+# USB_MATCH_DEV_SUBCLASS      0x0020
+# USB_MATCH_DEV_PROTOCOL      0x0040
+# USB_MATCH_INT_CLASS         0x0080
+# USB_MATCH_INT_SUBCLASS      0x0100
+# USB_MATCH_INT_PROTOCOL      0x0200
+#
+# script   match_flags idVendor idProduct bcdDevice_lo bcdDevice_hi
+#          bDeviceClass bDeviceSubClass bDeviceProtocol
+#          bInterfaceClass bInterfaceSubClass bInterfaceProtocol driver_info
+#
+#           flags  V       P     Bcd C S Prot Clas Sub  Prot Info
+#
+# Generic CCID device
+gnupg-ccid  0x0080 0x0    0x0    0x0 0x0 0x0 0x0 0x00 0x0B 0x00 0x00 0x00000000
+# SPR532 is CCID but without the proper CCID class
+gnupg-ccid  0x0003 0x04e6 0xe003 0x0 0x0 0x0 0x0 0x00 0x0B 0x00 0x00 0x00000000
+# SCR33x is CCID but without the proper CCID class
+gnupg-ccid  0x0003 0x04e6 0x5115 0x0 0x0 0x0 0x0 0x00 0x0B 0x00 0x00 0x00000000
+                    </pre>
+          </div>
+          <p><span class="emphasis"><em>script</em></span> states the script that should be run if a device matching the parameters is plugged in via USB.</p>
+          <p><span class="emphasis"><em>match_flags</em></span> is one of the given <span class="emphasis"><em>USB_MATCH_XXX</em></span> options. The <span class="emphasis"><em>idVendor</em></span> and the <span class="emphasis"><em>idProduct</em></span> can be figured out by calling <strong class="userinput"><code>lsusb</code></strong>.  The output looks something like this:
+                
+                </p>
+          <div class="informalexample">
+            <pre class="screen">
+archi@foobar:~ &gt; lsusb
+Bus 001 Device 009: ID 04e6:5115 SCM Microsystems, Inc.
+                   </pre>
+          </div>
+          <p>
+                
+                The values given behind ID are <span class="emphasis"><em>idVendor:idProduct</em></span> and with a leading <span class="emphasis"><em>0x</em></span> could be used in <span class="emphasis"><em>gnupg-ccid.usermap</em></span> in combination with <span class="emphasis"><em>USB_MATCH_VENDOR</em></span> or <span class="emphasis"><em>USB_MATCH_PRODUCT</em></span>.
+                </p>
+          <div class="informalexample">
+            <pre class="programlisting">
+
+                        <code class="filename">/etc/hotplug/usb/gnupg-ccid</code>
+#!/bin/bash
+#
+# taken from libgphoto2
+#
+# Sets up newly plugged in card reader so that only members of the
+# group can access it
+
+GROUP=scard
+
+# can access it from user space. (Replace scard with the name of the
+# group you want to have access to the card reader.)
+#
+# Note that for this script to work, you'll need all of the following:
+# a) a line in the file /etc/hotplug/gnupg-ccid.usermap that corresponds
+#    to the card reader you are using.
+# b) a group "scard" where all users allowed access to the
+#    card reader are listed
+# c) a Linux kernel supporting hotplug and usbdevfs
+# d) the hotplug package (http://linux-hotplug.sourceforge.net/)
+#
+# In the usermap file, the first field "usb module" should be named
+# "gnupg-ccid" like this script.
+#
+
+if [ "${ACTION}" = "add" ] &amp;&amp; [ -f "${DEVICE}" ]
+then
+    chmod o-rwx "${DEVICE}"
+    chgrp "${GROUP}" "${DEVICE}"
+    chmod g+rw "${DEVICE}"
+fi            
+                    </pre>
+          </div>
+          <p>This script changes the permissions and the ownership of a USB device under <span class="emphasis"><em>/proc/bus/usb</em></span> to grant acces to this device to users in the specified group.  The group in this example is <span class="emphasis"><em>scard</em></span>.  <span class="emphasis"><em>ACTION</em></span> and <span class="emphasis"><em>DEVICE</em></span> are passed via the hotplug mechanism.</p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <h3 class="title">Note</h3>
+            <p> Do not forget to run <strong class="userinput"><code>chmod +x</code></strong> on the script.</p>
+            <p> You should also create the group <span class="emphasis"><em>scard</em></span> and then add the users to access the card reader to the group.  This is done by the following commands: <strong class="userinput"><code>addgroup scard</code></strong> and <strong class="userinput"><code>addgroup &lt;user&gt; scard</code></strong>.</p>
+          </div>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <h3 class="title">Note</h3>
+            <p>Brian Gough &lt;bjg@network-theory.co.uk&gt; made the following remark: The hotplug package in Debian woody requires all the numbers in gnupg-ccid.usermap to have a 0x prefix otherwise it gives an "unparseable line" error and the i.e. <strong class="userinput"><code>gnupg-ccid 0x0003 0x04e6 0xe003 0x0 0x0 0x0 0x0 0x00 0x0B 0x00 0x00 0x00000000</code></strong> instead of <strong class="userinput"><code>gnupg-ccid  0x0003  0x04e6 0xe003 0 0 0 0 0x00 0x0B 0x00 0x00 0x00000000</code></strong>.  After installing the modified file call <strong class="userinput"><code>update-usb.usermap</code></strong>.</p>
+          </div>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2519949"></a>With usbdevfs</h4>
+              </div>
+            </div>
+          </div>
+          <p>Please make sure that you can mount a USB device.  This can be achieved by accessing the USB stack via <span class="emphasis"><em>libusb</em></span> through the <span class="emphasis"><em>usbfs</em></span> (USB filesystem). If you are using USB &lt; 2.0 the filesystem is called <span class="emphasis"><em>usbdevfs</em></span>.</p>
+          <p>To accomplish this goal please add the following line to your <span class="emphasis"><em>/etc/fstab</em></span>.
+                
+                    </p>
+          <div class="informalexample">
+            <pre class="programlisting">
+                    
+                            <code class="filename">/etc/fstab</code>
+none  /proc/bus/usb  usbfs defaults,user  0 0                        
+                        </pre>
+          </div>
+          <p>
+                
+                </p>
+          <p>To make sure that a specific user has read and write access to the USB device add <span class="emphasis"><em>devuid=[user id]</em></span> to the <span class="emphasis"><em>defaults, user</em></span> options.  With <span class="emphasis"><em>devgid=[group id]</em></span> access will be granted to the given group.</p>
+          <p>This approach creates a major security problem.  The owner of the files has full permissions to <span class="emphasis"><em>ALL</em></span> connected USB devices.  It does not matter what kind of device is connected.  Therefore it is strongly suggested to use the hotplug method.</p>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2520028"></a>2.3.2. PC/SC (Personal computer/Smart Card)</h3>
+            </div>
+          </div>
+        </div>
+        <p> TODO </p>
+        <p>To use PC/SC make sure you disable CCID by passing the --disable-ccid option to GnuPG.</p>
+      </div>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <h3 class="title">Note</h3>
+        <p>You can easily check your installation by inserting the card in the card reader and entering <strong class="userinput"><code>gpg --card-status</code></strong> (more about this command in <a href="ch03.html" title="Chapter 3. Administrating the Card">Chapter 3, <i>Administrating the Card</i></a>).</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch02s02.html">Prev</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="ch02.html">Up</a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="ch03.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">2.2. Required Hardware </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> Chapter 3. Administrating the Card</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

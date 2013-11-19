@@ -1,0 +1,2752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Il Key Signing Party HOWTO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="book"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="AEN1"
+>Il Key Signing Party HOWTO</A
+></H1
+><H3
+CLASS="author"
+><A
+NAME="AEN4"
+></A
+>V. Alex Brennen</H3
+><DIV
+CLASS="affiliation"
+><DIV
+CLASS="address"
+><P
+CLASS="address"
+><CODE
+CLASS="email"
+>&#60;<A
+HREF="mailto:vab@MIT.EDU"
+>vab@MIT.EDU</A
+>&#62;</CODE
+></P
+></DIV
+></DIV
+><H3
+CLASS="author"
+><A
+NAME="AEN10"
+></A
+>Cristian Rigamonti (traduzione italiana)</H3
+><DIV
+CLASS="affiliation"
+><DIV
+CLASS="address"
+><P
+CLASS="address"
+><CODE
+CLASS="email"
+>&#60;<A
+HREF="mailto:cri@linux.it"
+>cri@linux.it</A
+>&#62;</CODE
+></P
+></DIV
+></DIV
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Sommario</B
+></DT
+><DT
+>1. <A
+HREF="#about"
+>Informazioni su questo documento</A
+></DT
+><DD
+><DL
+><DT
+>1.1. <A
+HREF="#general"
+>Informazioni generali</A
+></DT
+><DT
+>1.2. <A
+HREF="#translations"
+>Traduzioni</A
+></DT
+><DT
+>1.3. <A
+HREF="#contrib"
+>Contributori</A
+></DT
+></DL
+></DD
+><DT
+>2. <A
+HREF="#overview"
+>Panoramica di un key signing party</A
+></DT
+><DD
+><DL
+><DT
+>2.1. <A
+HREF="#AEN157"
+>Cos'è un key signing party?</A
+></DT
+><DT
+>2.2. <A
+HREF="#AEN160"
+>Cosa significa firmare una chiave?</A
+></DT
+><DT
+>2.3. <A
+HREF="#AEN166"
+>Cos'è la rete della fiducia?</A
+></DT
+><DT
+>2.4. <A
+HREF="#AEN174"
+>Perché dovrei organizzare un key signing party?</A
+></DT
+><DT
+>2.5. <A
+HREF="#AEN180"
+>Puoi farmi qualche esempio pratico dell'utilità di un key signing party?</A
+></DT
+><DT
+>2.6. <A
+HREF="#AEN186"
+>Scegliere un tipo di key signing party</A
+></DT
+><DT
+>2.7. <A
+HREF="#traditional"
+>Party informale</A
+></DT
+><DD
+><DL
+><DT
+>2.7.1. <A
+HREF="#AEN191"
+>Teoria</A
+></DT
+><DT
+>2.7.2. <A
+HREF="#AEN194"
+>Organizzazone</A
+></DT
+><DT
+>2.7.3. <A
+HREF="#AEN197"
+>Partecipazione</A
+></DT
+></DL
+></DD
+><DT
+>2.8. <A
+HREF="#list-based"
+>Party con lista dei partecipanti</A
+></DT
+><DD
+><DL
+><DT
+>2.8.1. <A
+HREF="#AEN202"
+>Teoria</A
+></DT
+><DT
+>2.8.2. <A
+HREF="#AEN205"
+>Organizzazione</A
+></DT
+><DT
+>2.8.3. <A
+HREF="#AEN209"
+>Partecipazione</A
+></DT
+></DL
+></DD
+><DT
+>2.9. <A
+HREF="#hash-based"
+>Party con hash</A
+></DT
+><DD
+><DL
+><DT
+>2.9.1. <A
+HREF="#AEN214"
+>Teoria</A
+></DT
+><DT
+>2.9.2. <A
+HREF="#AEN219"
+>Organizzazione</A
+></DT
+><DT
+>2.9.3. <A
+HREF="#AEN223"
+>Partecipazione</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>3. <A
+HREF="#preparing"
+>Annunciare il party</A
+></DT
+><DD
+><DL
+><DT
+>3.1. <A
+HREF="#AEN228"
+>Gruppi locali</A
+></DT
+><DT
+>3.2. <A
+HREF="#AEN234"
+>Comunicati stampa</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="#prep"
+>Prepararsi per il party</A
+></DT
+><DD
+><DL
+><DT
+>4.1. <A
+HREF="#AEN251"
+>Generare un paio di chiavi</A
+></DT
+><DT
+>4.2. <A
+HREF="#AEN325"
+>Spedire la chiave pubblica a un keyserver</A
+></DT
+><DT
+>4.3. <A
+HREF="#AEN330"
+>Decidere la propria politica per le firme</A
+></DT
+></DL
+></DD
+><DT
+>5. <A
+HREF="#after"
+>Dopo il party</A
+></DT
+><DD
+><DL
+><DT
+>5.1. <A
+HREF="#AEN335"
+>Firma delle chiavi</A
+></DT
+><DT
+>5.2. <A
+HREF="#AEN363"
+>Modalità di firma avanzate</A
+></DT
+><DT
+>5.3. <A
+HREF="#AEN377"
+>Rappresentazione grafica della rete della fiducia</A
+></DT
+><DT
+>5.4. <A
+HREF="#AEN387"
+>Chiavi "di ruolo" e pseudonimi</A
+></DT
+><DT
+>5.5. <A
+HREF="#AEN396"
+>Statistiche avanzate</A
+></DT
+></DL
+></DD
+><DT
+>6. <A
+HREF="#AEN401"
+>Cura delle proprie chiavi e della rete della fiducia</A
+></DT
+><DD
+><DL
+><DT
+>6.1. <A
+HREF="#revoca"
+>Generare un certificato di revoca</A
+></DT
+><DT
+>6.2. <A
+HREF="#AEN411"
+>Revocare la propria chiave</A
+></DT
+><DT
+>6.3. <A
+HREF="#AEN419"
+>Revocare una firma</A
+></DT
+><DT
+>6.4. <A
+HREF="#AEN427"
+>Scadenza delle chiavi</A
+></DT
+><DT
+>6.5. <A
+HREF="#AEN430"
+>Tenersi aggiornati con gli sviluppi tecnologici</A
+></DT
+><DD
+><DL
+><DT
+>6.5.1. <A
+HREF="#AEN432"
+>Il blog CryptoWatch</A
+></DT
+><DT
+>6.5.2. <A
+HREF="#AEN437"
+>Il blog "Schneier on Security"</A
+></DT
+></DL
+></DD
+><DT
+>6.6. <A
+HREF="#AEN441"
+>Attivismo politico</A
+></DT
+><DD
+><DL
+><DT
+>6.6.1. <A
+HREF="#AEN443"
+>La Electronic Frontier Foundation</A
+></DT
+><DT
+>6.6.2. <A
+HREF="#AEN448"
+>Il Free State Project</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>7. <A
+HREF="#AEN452"
+>Altre informazioni</A
+></DT
+><DD
+><DL
+><DT
+>7.1. <A
+HREF="#AEN454"
+>Lista parziale di keyserver pubblici</A
+></DT
+><DT
+>7.2. <A
+HREF="#AEN463"
+>Siti web</A
+></DT
+><DT
+>7.3. <A
+HREF="#AEN496"
+>Programmi</A
+></DT
+><DT
+>7.4. <A
+HREF="#AEN520"
+>RFC</A
+></DT
+><DT
+>7.5. <A
+HREF="#AEN529"
+>Blog</A
+></DT
+><DT
+>7.6. <A
+HREF="#AEN538"
+>Fotografie di key signing party</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="#AEN551"
+>Glossario dei termini</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>Lista delle Figure</B
+></DT
+><DT
+>2-1. <A
+HREF="#AEN169"
+>Un esempio grafico di rete della fiducia</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="about"
+></A
+>Capitolo 1. Informazioni su questo documento</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="general"
+>1.1. Informazioni generali</A
+></H2
+><P
+>Copyright (c) 2000-2006
+<A
+HREF="http://cryptnet.net/people/vab/"
+TARGET="_top"
+>V. Alex Brennen</A
+> (<A
+HREF="http://cryptnet.net/people/vab/"
+TARGET="_top"
+>VAB</A
+>).
+</P
+><P
+>Questo documento è di pubblico dominio.</P
+><P
+>La versione originale di questo documento è pubblicata su
+<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html"
+TARGET="_top"
+>&#13;http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html
+</A
+> (<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.xml"
+TARGET="_top"
+>DocBook XML</A
+>)
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="translations"
+>1.2. Traduzioni</A
+></H2
+><P
+>Al momento, il documento è disponibile anche nelle lingue seguenti:</P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;      [<A
+HREF="http://alfie.ist.org/projects/gpg-party/gpg-party.de.html"
+TARGET="_top"
+>de</A
+>] Tedesco (<A
+HREF="http://cryptnet.net/fdp/crypto/gpg-party/gpg-party.de.html"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+><LI
+><P
+>&#13;      [<A
+HREF="http://members.fortunecity.com/keyparty/gpg-party.es.html"
+TARGET="_top"
+>es</A
+>] Spagnolo (<A
+HREF="http://cryptnet.net/fdp/crypto/gpg-party/gpg-party.es.html"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+><LI
+><P
+>&#13;      [<A
+HREF="http://www.gnupg.org/howtos/it/keysigning_party.html"
+TARGET="_top"
+>it</A
+>] Italiano (<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+><LI
+><P
+>&#13;      [<A
+HREF="http://ivlad.unixgods.net/gpg-party/gpg-party-howto-ru.html"
+TARGET="_top"
+>ru</A
+>] Russo (<A
+HREF="http://cryptnet.net/fdp/crypto/gpg-party/gpg-party.html.ru"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+><LI
+><P
+>&#13;      [<A
+HREF="http://neonatus.net/~neonatus/GPG/gpg-party-howto-si.html"
+TARGET="_top"
+>si</A
+>] Sloveno (<A
+HREF="http://cryptnet.net/fdp/crypto/gpg-party/gpg-party.si.html"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+><LI
+><P
+>&#13;      [<A
+HREF="http://www.zope.org.tw/Members/pwchi/Tech_Docs/pgp-party"
+TARGET="_top"
+>zh-TW</A
+>] Cinese tradizionale (<A
+HREF="http://cryptnet.net/fdp/crypto/gpg-party/gpg-party.zh-TW.html.euc-tw"
+TARGET="_top"
+>Mirror</A
+>)
+    </P
+></LI
+></UL
+><P
+>Se siete a conoscenza di una traduzione, o si vuole tradurre il
+          documento in un'altra lingua, fatemelo sapere, in modo che possa
+          distribuirlo o mettere un link alle versioni tradotte.
+        </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="contrib"
+>1.3. Contributori</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;    <A
+HREF="http://cryptnet.net/people/vab/"
+TARGET="_top"
+>V. Alex Brennen</A
+> (autore principale)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://www.chaosreigns.com/"
+TARGET="_top"
+>Darxus</A
+> (codice per i grafici (sig2dot.pl &#38; sigtrace.pl))
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://neonatus.net/~neonatus/"
+TARGET="_top"
+>Bostjan Muller</A
+> (traduzione slovena)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://alfie.ist.org/"
+TARGET="_top"
+>Gerfried Fuchs</A
+> (traduzione tedesca)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://members.fortunecity.com/keyparty/"
+TARGET="_top"
+>Alex Bergonzini</A
+> (traduzione spagnola)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="mailto:cri@linux.it"
+TARGET="_top"
+>Cristian Rigamonti</A
+> (traduzione italiana)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://ivlad.unixgods.net/"
+TARGET="_top"
+>Vladimir Ivanov</A
+> (traduzione russa)
+    </P
+></LI
+><LI
+><P
+>&#13;    <A
+HREF="http://kalug.linux.org.tw/~chihchun/"
+TARGET="_top"
+>chihchun</A
+>,
+    <A
+HREF="http://formosa.muds.net:7777/mt/"
+TARGET="_top"
+>clotho</A
+>, fetag,
+    <A
+HREF="http://blog.elixus.org/jedi/"
+TARGET="_top"
+>jedi</A
+>,
+    <A
+HREF="mailto:kcwu%5Bat%5Dcsie.org"
+TARGET="_top"
+>kcwu</A
+>,
+    <A
+HREF="http://pwchi.info/"
+TARGET="_top"
+>pwchi</A
+>, e
+    <A
+HREF="http://mafia.ee.ccu.edu.tw/~winfred/"
+TARGET="_top"
+>winfred</A
+>
+    (traduzione cinese tradizionale)
+    </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="overview"
+></A
+>Capitolo 2. Panoramica di un key signing party</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN157"
+>2.1. Cos'è un key signing party?</A
+></H2
+><P
+>&#13;  Un key signing party è una riunione di persone che usano il sistema di
+  crittografia PGP, durante la quale ogni partecipante ha la possibilità di
+  firmare la chiave degli altri. I key signing party aiutano in modo consistente
+  a estendere la propria rete della fiducia, inoltre offrono un'opportunità per
+  discutere di questioni sociali e politiche che riguardano la crittografia
+  forte, la sovranità e le libertà individuali, dell'implementazione di
+  tecnologie crittografiche, o perfino degli sviluppi futuri del software libero
+  per la crittografia.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN160"
+>2.2. Cosa significa firmare una chiave?</A
+></H2
+><P
+>&#13;  Firmare una chiave significa apporre una firma digitale su una chiave
+  pubblica e sullo user id che la accompagna. La firma delle chiavi serve
+  per verificare che un dato user id e una data chiave pubblica appartengano
+  veramente alla persona che sembra possedere la chiave, ossia in termini più
+  generali, a verificare che la rappresentazione dell'identità contenuta nel
+  pacchetto user id sia valida. Di solito, ciò significa che il nome associato
+  alla chiave PGP corrisponde al nome scritto sul documento di identificazione
+  che una persona vi presenta quando chiede di firmare la sua chiave.
+</P
+><P
+>&#13;  Il termine "chiave pubblica" ha due significati nell'ambito di PGP. Può riferirsi
+  sia alla vera e propria chiave pubblica di cifratura, che fa parte di una
+  coppia di chiavi, oppure può riferirsi alla chiave di cifratura e a tutte le
+  firme apposte su quella chiave, come anche ad eventuali sotto-chiavi di
+  cifratura auto-firmate con quella chiave. Per evitare confusioni, in questo
+  documento userò sempre il termine "chiave pubblica" per riferirmi alla chiave,
+  comprese le firme e le sottochiavi. Userò invece "pacchetto chiave pubblica"
+  per riferirmi solo alla chiave pubblica di cifratura facente parte di una
+  coppia di chiavi.
+</P
+><P
+>&#13;  È possibile firmare il proprio pacchetto chiave pubblica e qualsiasi user id
+  associato a quella chiave pubblica, oppure la coppia chiave - user id di
+  un'altra persona. La firma delle proprie chiavi impedisce di aggiungere false
+  chiavi di cifratura o di firma alla vostra chiave pubblica a chiunque se la
+  possa procurare (ad esempio perché la chiave è disponibile su un archivio
+  pubblico, o perché viene intercettata durante il suo trasferimento).
+  Se un avversario fosse in grado di aggiungere alla chiave una falsa chiave di
+  firma o di cifratura, potrebbe aggiungere un pacchetto chiave pubblica di cui
+  lui solo possiede la corrispondente chiave privata. Ciò potrebbe far sì che
+  chiunque volesse comunicare con voi in modo cifrato, si troverebbe a
+  trasmettere inavvertitamente informazioni confidenziali alla persona che è
+  riuscita ad alterare la vostra chiave pubblica. Per impostazione predefinita,
+  GnuPG e la maggior parte delle altre implementazioni dello standard openPGP
+  eseguono l'auto-firma su tutti i pacchetti user id generati per una chiave
+  pubblica.
+</P
+><P
+>&#13;  In un certo senso le firme convalidano le chiavi. Rappresentano una
+  dichiarazione di approvazione della validità di una chiave pubblica e dell'id
+  associato, ad opera di una terza parte. In questo senso la firma delle chiavi
+  aiuta a costruire la rete della fiducia.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN166"
+>2.3. Cos'è la rete della fiducia?</A
+></H2
+><P
+>&#13;  "Rete della fiducia" è un termine usato per descrivere le relazioni di
+  fiducia esistenti tra un gruppo di chiavi.  La firma su una chiave rappresenta
+  un collegamento, o un filo se volete, nella rete della fiducia.  Questi
+  collegamenti sono chiamati "percorsi di fiducia" e possono essere
+  bidirezionali o a senso unico.  La rete della fiducia ideale è quella in cui
+  ogni persona è connessa ad ogni altra in modo bidirezionale, così che ognuno
+  abbia la fiducia che ogni chiave appartenga veramente al proprio proprietario.
+  La rete della fiducia può essere pensata come la somma dei percorsi di fiducia,
+  o collegamenti, tra tutti i proprietari delle chiavi. Per avere un esempio
+  visuale, ecco la rappresentazione grafica della rete di fiducia a cui
+  appartengo.
+</P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN169"
+></A
+><P
+><B
+>Figura 2-1. Un esempio grafico di rete della fiducia</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/wot_example_small.jpg"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN174"
+>2.4. Perché dovrei organizzare un key signing party?</A
+></H2
+><P
+>&#13;  Ci sono tre motivi principali per organizzare quanti più key signing party è
+  possibile.
+</P
+><P
+>&#13;  Il primo motivo, forse il più importante, per cui dovreste organizzare quanti
+  più key signing party possibili è per espandere la rete della fiducia: più
+  questa diventa profonda e interconnessa, più risulta difficile comprometterla.
+  Questo è molto importante per la comunità del software libero, sia per gli
+  sviluppatori che per gli utenti.  I membri della comunità usano la tecnologia
+  PGP per proteggere crittograficamente i loro pacchetti software, gli annunci,
+  i comunicati riguardanti la sicurezza.  La forza e la protezione che PGP
+  fornisce alla comunità, contro minacce per la sicurezza come cavalli di Troia,
+  virus, messaggi fasulli, ecc, sono direttamente proporzionali alla forza e
+  alla robustezza della rete della fiducia.
+</P
+><P
+>&#13;  In secondo luogo, i key signing party aiutano ad acquisire una cultura della
+  sicurezza e una conoscenza del funzionamento di PGP e delle altre tecnologie
+  per la crittografia forte.  Per sfruttare i benefici della crittografia forte,
+  occorre usarla, e usarla nel modo corretto. Questo richiede la comprensione
+  della tecnologia che ne sta alla base, una comprensione che può risultare
+  difficile a chi non ha familiarità con i computer o la cultura del software
+  libero. Far incontrare persone che non conoscono la crittografia con persone
+  più esperte è sicuramente di aiuto per chi vuole imparare.
+</P
+><P
+>&#13;  Infine, i key signing party aiutano a costruire comunità.  Aiutano i tecnici
+  a conoscersi meglio, a lavorare in rete e discutere di importanti questioni
+  riguardanti i diritti civili, il diritto alla crittografia e i meccanismi di
+  regolamentazione di internet.  La discussione è importante, non solo perché
+  rappresenta il primo passo, ma anche perché è il passo che precede l'azione.
+  Quando ho scritto la prima versione di questo documento non c'erano al mondo
+  reti della fiducia molto complesse, ma la situazione è ora molto migliorata: ci
+  sono molte più reti e molto più profonde, rispetto a qualche anno fa. Resta
+  sempre il fatto che se volete costruire una rete della fiducia nella
+  vostra zona, è molto probabile che i primi a farne parte saranno i leader della
+  comunità internet locale: sono le persone che hanno la possibilità di
+  introdurre tecnologie di crittografia forte nelle infrastrutture che
+  gestiscono, se decidono di farlo.  L'introduzione di queste tecnologie e
+  protocolli toglierebbe pericolosità a iniziative dannose per la privacy, come il 
+  sistema carnivore dell'FBI, o le intercettazioni illegali compiute dalla
+  National Security Agency.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN180"
+>2.5. Puoi farmi qualche esempio pratico dell'utilità di un key signing party?</A
+></H2
+><P
+>&#13;  Per esempio, poniamo che Alice e Bob creino delle chiavi PGP con Gnu Privacy
+  Guard (GPG) e organizzino un key signing party. Durante il party, Alice e Bob
+  verificano ognuno le chiavi dell'altro e successivamente le firmano.  Poiché GPG
+  firma automaticamente le chiavi pubbliche che genera usando la chiave privata
+  associata, Alice e Bob avranno almeno due firme che indicano che la chiave
+  appartiene veramente a loro: la chiave di Alice è stata firmata da Alice stessa
+  e da Bob, così pure per la chiave di Bob.  In seguito Alice e Bob conoscono
+  Cathy, che genera un paio di chiavi e spedisce la propria chiave pubblica ad
+  Alice e Bob.  Alice però non vuole che Bob comunichi con Cathy in modo cifrato,
+  così crea una chiave con il nome di Cathy e la spedisce a Bob.  Bob riceve così
+  due chiavi che portano entrambe il nome di Cathy e la firma della chiave
+  privata di Cathy, ma non sa quale delle due è veramente la chiave di Cathy.
+</P
+><P
+>&#13;  Cathy scopre che Bob ha ricevuto due chiavi, sospetta subito di Alice e decide
+  di vendicarsi; per farlo, manda a Bob una finta e-mail a nome di Alice
+  comunicandogli di aver generato una nuova coppia di chiavi e includendo la
+  "nuova" chiave di Alice (che in realtà è una falsa chiave generata da Cathy).
+  Ma Bob scopre subito che si tratta di un trucco, visto che una delle due chiavi
+  di Alice che possiede è stata firmata da più persone (Alice e Bob), confermando
+  che essa appartiene davvero ad Alice, mentre l'altra chiave (la falsa chiave
+  creata da Cathy) ha solo una firma.
+</P
+><P
+>&#13;  Questo esempio è molto semplice, ma possono esistere situazioni molto più
+  complicate: potete leggere le FAQ di PGP o un buon libro sulle PKI (Public Key
+  Infrastructure) per maggiori informazioni e spiegazioni più dettagliate.
+  L'esempio mostra comunque i concetti base della firma delle chiavi e la sua
+  importanza: Cathy non è riuscita a introdurre una falsa chiave di Alice, grazie alle
+  interconnessioni esistenti tra Bob e Alice nella loro rete della fiducia.
+</P
+><P
+>&#13;  Tuttavia, firme e reti della fiducia non garantiscono chiavi di cui ci si
+  possa fidare ciecamente.  Ad esempio, supponiamo che quando Bob e Alice hanno
+  conosciuto Cathy fosse presente anche Donald, un amico di Cathy.  Donald
+  potrebbe aver generato una coppia di false chiavi di Alice e Bob, potrebbe aver
+  firmato ognuna delle due chiavi con quella dell'altro, oltre che con la propria
+  chiave, in modo che ogni chiave contenesse tre firme, e potrebbe aver spedito
+  le chiavi a Cathy.  Cathy ora si troverebbe di fronte un gruppo di chiavi e di
+  firme tutte "false": come potrebbe usare il meccanismo della firma per
+  proteggersi da questo tipo di attacchi?  Supponiamo che tutte le persone
+  coinvolte scambino le chiavi attraverso un keyserver.  Se Cathy cercasse le
+  chiavi di Alice e Bob sul keyserver, troverebbe due paia di chiavi per Alice e
+  Bob, ma se Alice e Bob avessero raccolto venti firme durante un key signing
+  party, è ovvio che Cathy si fiderebbe di più delle chiavi firmate venti volte,
+  piuttosto che di quelle firmate solo tre volte.  Inoltre, Cathy potrebbe
+  ricavare altre informazioni riguardanti le venti chiavi usate per le firme, ad
+  esempio le loro date di generazione, ricostruendo così la rete di fiducia che
+  lega le chiavi.  Probabilmente le chiavi usate per apporre le firme durante il
+  party saranno state a loro volta firmate con altre chiavi, quasi sicuramente
+  avranno date di generazione molto diverse.  Di certo non sarebbe così se Donald
+  avesse generato venti false chiavi e le avesse usate per creare una falsa rete
+  della fiducia. L'ampiezza della falsa rete della fiducia creata da Donald
+  sarebbe limitata al numero di chiavi che egli ha generato, mentre l'ampiezza
+  della rete di fiducia di cui fanno parte le vere chiavi di Alice e Bob
+  garantisce una maggiore affidabilità di queste chiavi rispetto a quelle generate
+  da Donald.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN186"
+>2.6. Scegliere un tipo di key signing party</A
+></H2
+><P
+>&#13;  Ci sono tre modi diversi di organizzare un key signing party: ognuno è stato immaginato per
+  adeguarsi ai crescenti livelli di partecipazione dovuti alla popolarità di
+  PGP. I paragrafi successivi forniscono istruzioni per tre dei più comuni
+  metodi di organizzazione di un key signing party; leggendoli, potrete farvi un'idea di quale
+  sia la modalità più adeguata per il key signing party che volete organizzare.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="traditional"
+>2.7. Party informale</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN191"
+>2.7.1. Teoria</A
+></H3
+><P
+>&#13;  Il tipo più comune di key signing party è quello informale. Non è richiesto alcun
+  coordinamento prima del party, se non per annunciare la data e il luogo. I
+  partecipanti portano con sé le informazioni sulla propria chiave e dei
+  documenti sufficienti per dimostrare la propria identità.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN194"
+>2.7.2. Organizzazone</A
+></H3
+><P
+>&#13;  I party informali sono semplici da organizzare: possono essere annunciati con
+  poco preavviso, magari associati a un altro evento che può attirare membri
+  della comunità interessata alla crittografia, come convegni tecnici o sui
+  diritti civili, LAN party, riunioni di appassionati di fantascienza, o di
+  comitati di standard tecnologici, e così via.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN197"
+>2.7.3. Partecipazione</A
+></H3
+><P
+>&#13;  L'ideale è portare con sé dei bigliettini con stampato il proprio nome e
+  l'impronta digitale (fingerprint) della propria chiave, da distribuire agli
+  altri partecipanti. Molte persone stampano l'impronta digitale della propria
+  chiave PGP sul proprio biglietto da visita, spesso insieme all'indirizzo di un
+  keyserver da cui poter recuperare la chiave. Alcuni stampano anche una piccola
+  casella "verificato", in modo che chi riceve il biglietto da visita possa
+  segnare se ha verificato l'identità del possessore di quella chiave.
+  </P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="list-based"
+>2.8. Party con lista dei partecipanti</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN202"
+>2.8.1. Teoria</A
+></H3
+><P
+>&#13;  Per un party basato su una lista di partecipanti occorre un po' più di
+  coordinamento: l'organizzatore deve redigere un elenco delle impronte digitali
+  PGP delle chiavi di coloro che hanno deciso di partecipare al party. Questa
+  modalità è più adeguata nei casi in cui ci si aspetta un'alta partecipazione e
+  organizzare un party informale renderebbe difficile garantire che ogni
+  partecipante abbia la possibilità di firmare le chiavi di tutti gli altri.
+  Avendo una lista, i partecipanti sono incentivati a controllare di aver
+  firmato tutte le chiavi possibili, garantendo così una rete della fiducia
+  ancora più profondamente interconnessa, a beneficio di tutti gli utenti di PGP.
+  </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN205"
+>2.8.2. Organizzazione</A
+></H3
+><P
+>Ho scritto uno <A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/party-table.pl"
+TARGET="_top"
+>script
+    perl per generare la lista dei partecipanti a un key signing party partendo da un
+    portachiavi openPGP</A
+>, di pubblico dominio. Una volta generata la
+  lista, è possibile pubblicarla sul web in modo che i partecipanti possano
+  stamparla; è utile anche portarne al party qualche copia già stampata.
+  </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN209"
+>2.8.3. Partecipazione</A
+></H3
+><P
+>&#13;  Occorre controllare l'identità e l'impronta digitale di tutte le persone
+  presenti sulla lista. Occorre anche controllare che le proprie informazioni
+  presenti sulle liste degli altri partecipanti siano corrette, per evitare che
+  un organizzatore disonesto non abbia manomesso le liste distribuite ai
+  partecipanti.
+  </P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="hash-based"
+>2.9. Party con hash</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN214"
+>2.9.1. Teoria</A
+></H3
+><P
+>L'uso del metodo hash è stato immaginato per la prima volta da
+  Phil Zimmermann e Len Sassaman per ottimizzare l'organizzazione di grandi key signing party,
+  che prevedono la partecipazione di centinaia di persone, ad esempio durante
+  conferenze sul software libero. L'idea di base è che le persone si possano
+  fidare di un hash crittografico per proteggere le informazioni di identità e
+  impronta digitale contenute nella lista dei partecipanti. In questo modo, i
+  partecipanti devono solo controllare l'hash della propria copia digitale della
+  lista, rispetto a quello della copia principale, senza dover controllare i
+  dati di ogni individuo. Ogni partecipante dichiarerà che l'impronta digitale
+  contenuta nella lista è corretta per la propria chiave e presenterà un valido
+  documento di identità.
+</P
+><P
+>&#13;  La pietra angolare per la sicurezza delle firme digitali è la funzione hash
+  crittografica a senso unico. Se si usa PGP per comunicare in modo sicuro e si
+  fa affidamento sulle firme digitali per determinare l'autenticità delle
+  chiavi, si fa implicitamente affidamento sulla tecnologia hash. E se ci si
+  fida dell'hash per garantire l'autenticità delle chiavi, non è un azzardo
+  fidarsi anche per garantire l'autenticità delle impronte digitali stampate
+  nella lista dei partecipanti.
+</P
+><P
+>&#13;  Di tutti i metodi per organizzare un key signing party, questo è il meno sicuro, e andrebbe
+  usato solo nei casi in cui lo renda necessario il numero dei partecipanti.
+  Ricerche recenti hanno rivelato che molti algoritmi hash sono meno sicuri di
+  quanto si credesse, rispetto a nuovi tipi di attacchi.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN219"
+>2.9.2. Organizzazione</A
+></H3
+><P
+>&#13;  Il party va annunciato. L'organizzatore deve raccogliere le informazioni
+  riguardanti le chiavi, pubblicare la lista dei partecipanti e il suo valore
+  hash.
+</P
+><P
+>&#13;  Al party, occorre chiedere se tutti i partecipanti sono presenti e se le
+  informazioni sulla propria chiave sono corrette. Se non ci sono obiezioni,
+  nessuno è assente, le identità sono verificate, e il valore hash della lista è
+  verificato da tutti i partecipanti, allora tutte le chiavi sulla lista possono
+  essere firmate.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN223"
+>2.9.3. Partecipazione</A
+></H3
+><P
+>&#13;  Ognuno deve verificare le informazioni sulla propria chiave, l'hash della
+  lista e la presenza e identità di ogni persona. Fatto questo, è possibile
+  firmare le chiavi di tutte le persone per cui si è verificata l'identità e la
+  presenza.
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="preparing"
+></A
+>Capitolo 3. Annunciare il party</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN228"
+>3.1. Gruppi locali</A
+></H2
+><P
+>&#13;  Più grande è il party, meglio è.  Potete annunciare il party sulla mailing
+  list del LUG locale, o su altre liste dedicate all'informatica, o anche con un
+  annuncio sui giornali o una conferenza stampa.
+</P
+><P
+>&#13;  Se state appena iniziando a costruire la rete della fiducia nella vostra zona,
+  è una buona idea cercare di coinvolgere altri utenti attivi di PGP, visto che
+  sono tra quelli che più probabilmente organizzeranno altri key signing party
+  in futuro. Un buon modo per rintracciarli è chiedere a chi spedisce messaggi
+  con firme PGP sulle liste a cui partecipate, o cercare sulle reti di keyserver
+  chiavi con indirizzi mail tipici della vostra zona, ad esempio indirizzi mail
+  con nomi di dominio di un'università o di una grande impresa della vostra
+  zona.
+</P
+><P
+>&#13;  Greg Mullane ha sviluppato un bel sito, <A
+HREF="http://www.biglumber.com/"
+TARGET="_top"
+>Big Lumber</A
+>, che permette di
+  rintracciare all'interno di una certa area geografica persone interessate a
+  partecipare a dei key signing party. Inserire nel sito il proprio nome e il
+  key signing party che si vuole organizzare è un buon modo per promuovere il
+  party. È anche un buon modo per venire a conoscenza di altri party che si
+  svolgeranno nella propria area geografica o in posti che si intende visitare.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN234"
+>3.2. Comunicati stampa</A
+></H2
+><P
+>&#13;  Ecco alcuni esempi di annuncio [gli esempi sono in lingua inglese; alcuni
+  esempi in lingua italiana sono disponibili 
+  <A
+HREF="http://www.montellug.it/wiki/index.php/Keysigning_ld06"
+TARGET="_top"
+>qui</A
+> e
+  <A
+HREF="http://mocm.olografix.org/index.php?option=com_content&task=view&id=7&Itemid=7"
+TARGET="_top"
+>qui</A
+>, NdT]:
+</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/annc-example.html"
+TARGET="_top"
+>PGP Keysigning Party Announcement Web Page</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/email-example.txt"
+TARGET="_top"
+>PGP Keysigning Party Announcement E-Mail</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/press-release-example.txt"
+TARGET="_top"
+>PGP Keysigning Party Announcement Press Release</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="prep"
+></A
+>Capitolo 4. Prepararsi per il party</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN251"
+>4.1. Generare un paio di chiavi</A
+></H2
+><P
+>La procedura per generare un paio di chiavi è abbastanza semplice. In
+pratica dovete eseguire:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;gpg --gen-key
+</PRE
+></P
+><P
+>&#13;  In ogni caso, è raccomandabile generare anche un certificato di revoca per la
+  propria chiave, nel caso si perdesse l'accesso alla propria chiave privata (ad
+  es. se si dimentica la passphrase o si perde la chiave privata). Per le istruzioni
+  per generare un certificato di revoca si veda <A
+HREF="#revoca"
+>la Sezione 6.1</A
+>
+  di questo documento.
+</P
+><P
+>&#13;  Le istruzioni dettagliate che seguono sono basate sulle migliori pratiche di
+  sicurezza (in modo paranoico). Ad esempio:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;    Generare chiavi della massima dimensione possibile, in modo che siano
+    resistenti ad attacchi a forza bruta;
+  </P
+></LI
+><LI
+><P
+>&#13;    Generare chiavi con una durata limitata, per evitare che cambiamenti
+    inattesi nel campo della tecnologia di decifrazione le rendano insicure.
+  </P
+></LI
+><LI
+><P
+>&#13;    Tenere le chiavi su dispositivi rimuovibili (es. USB) per evitare che
+    qualcuno possa rubarle, una volta ottenuto l'accesso (fisico o remoto)
+    al proprio computer.
+  </P
+></LI
+><LI
+><P
+>&#13;    Generare un certificato di revoca per consentire una futura revoca
+    della chiave pubblica nel caso di compromissione o perdita della chiave.
+  </P
+></LI
+></UL
+><P
+>&#13;  Alcuni potrebbero sentirsi a proprio agio anche senza adottare queste
+  precauzioni di sicurezza. Ad esempio, se avete un computer portatile o desktop
+  su cui leggete tutta la vostra posta, potete salvare la vostra chiave sul disco
+  rigido di quel computer. Potete anche generare un paio di chiavi senza scadenza
+  da usare per identificarvi e per la maggior parte delle comunicazioni, e
+  generare altre paia di chiavi per le comunicazioni estremamente delicate (se
+  doveste averne). Le istruzioni riportate di seguito tengono conto delle migliori
+  precauzioni di sicurezza: non dovete necessariamente seguirle, visto che tutto
+  quello di cui avete bisogno è un paio di chiavi, ma se siete un paranoico
+  ossessionato dalla sicurezza come me, seguirle vi procurerà quel piacevole senso
+  di calma di cui avete così bisogno.
+</P
+><P
+>1)  Andate sul <A
+HREF="http://www.gnupg.org/"
+TARGET="_top"
+>sito di GnuPG</A
+> e
+  scaricate l'ultima versione di gnupg, gnupg-x.x.x.tar.gz. Scaricate anche la
+  firma PGP dell'archivio, gnupg-x.x.x.tar.gz.sig.
+</P
+><P
+>&#13;  Attenzione: assicuratevi di usare almeno la versione 1.0.6 di GnuPG.  Le
+  versioni precedenti alla 1.0.6 avevano almeno un problema di sicurezza
+  significativo.
+</P
+><P
+>2)  Controllate le firme PGP e il Checksum SHA-1 dell'archivio GnuPG:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --verify gnupg-x.x.x.tar.gz.sig gnupg-x.x.x.tar.gz
+bash$ sha1sum gnupg-x.x.x.tar.gz
+</PRE
+></P
+><P
+>3)  Estraete l'archivio, configurate, compilate e installate:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ tar xzf gnupg-x.x.x.tar.gz
+bash$ cd gnupg-x.x.x
+bash$ ./configure
+bash$ make
+bash$ su
+bash# make install
+bash# exit
+bash$ cd
+</PRE
+></P
+><P
+>&#13;  Se il sistema su cui installate GnuPG è condiviso con altri utenti,
+  probabilmente vorrete rendere gpg setuid root, in modo da usare memoria
+  sicura. Se scegliete di fare questo, per precauzione controllate sempre
+  l'archivio con la firma sha1 e la firma pgp per essere sicuri di non installare
+  un cavallo di Troia.
+</P
+><P
+>4)  Procuratevi un dispositivo USB su cui conservare le chiavi, partizionatelo e formattatelo.</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash# /sbin/fdisk /dev/sda
+bash# /sbin/mkfs.ext3 /dev/sda1
+</PRE
+></P
+><P
+>4a) Montate il dispositivo USB e create una directory di cui siete il proprietario:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ mount /mnt/usbfs
+bash$ mkdir /mnt/usbfs/.gnupg
+</PRE
+></P
+><P
+>&#13;  se necessario (a seconda di come è regolato l'accesso ai dispositivi sul
+  vostro sistema), eseguite:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ chown &#60;vostro_uid&#62;:&#60;vostro_gid&#62; /mnt/usbfs/.gnupg
+</PRE
+></P
+><P
+>4b) Create un symlink dalla vostra directory personale al dispositivo USB</P
+><P
+><PRE
+CLASS="screen"
+>&#13;  bash$ ln -s /mnt/usbfs/.gnupg .gnupg
+</PRE
+></P
+><P
+>5)  Generate la coppia di chiavi gnupg</P
+><P
+><PRE
+CLASS="screen"
+>&#13;  bash$ gpg --gen-key
+</PRE
+></P
+><P
+>5a) Selezionate i tipi di chiave che volete (le scelte predefinite vanno
+  bene).
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;Per favore scegli che tipo di chiave vuoi:
+   (1) DSA and Elgamal (default)
+   (2) DSA (firma solo)
+   (5) RSA (firma solo)
+Cosa scegli? &#60;invio&#62;
+</PRE
+></P
+><P
+>5b) Selezionate la dimensione della chiave:  4096</P
+><P
+><PRE
+CLASS="screen"
+>&#13;DSA keypair will have 1024 bits.
+ELG-E keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096&#60;invio&#62;
+</PRE
+></P
+><P
+>5c) Impostate la durata della chiave: 5 anni è una buona scelta</P
+><P
+><PRE
+CLASS="screen"
+>La dimensione richiesta della chiave è 4096 bit
+Per favore specifica per quanto tempo la chiave sarà valida.
+         0 = la chiave non scadrà
+      &#60;n&#62;  = la chiave scadrà dopo n giorni
+      &#60;n&#62;w = la chiave scadrà dopo n settimane
+      &#60;n&#62;m = la chiave scadrà dopo n mesi
+      &#60;n&#62;y = la chiave scadrà dopo n anni
+Chiave valida per? (0) 5y&#60;invio&#62;
+Key expires at Fri Nov  5 00:19:43 EST 2011
+Is this correct (y/n)? y&#60;invio&#62;
+</PRE
+></P
+><P
+>5d) Inserite il vostro nome e il vostro indirizzo e-mail (o anche più indirizzi)
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;Nome e Cognome: Utente di Prova&#60;invio&#62;
+Indirizzo di Email: utente@dominio.qualsiasi&#60;invio&#62;
+Commento:
+Hai selezionato questo User Id:
+    "Utente di Prova &#60;utente@dominio.qualsiasi&#62;"
+
+Modifica (N)ome, (C)ommento, (E)mail oppure (O)kay/(Q)uit?
+</PRE
+></P
+><P
+>5e) Scegliete una passphrase. Dovete sceglierla bene: dev'essere lunga e molto
+  difficile da indovinare: la tecnologia di cluster computing attuale permette
+  di indovinare passphrase più corte di 12 caratteri. La passphrase deve anche
+  esere difficile da dimenticare: se la dimenticate, non potrete recuperare la
+  vostra chiave.
+</P
+><P
+>5f) Muovete il mouse e premete qualche tasto, o eseguite in background un
+  comando come updatedb o find. GPG leggerà /dev/random per raccogliere dei
+  numeri casuali necessari per generare le chiavi, e /dev/random è popolato in
+  parte anche dagli interrupt del computer.
+</P
+><P
+>6) Modificate la vostra chiave, se volete. Ad esempio, se avete più di un
+  indirizzo e-mail e volete che compaiano tutti sulla vostra chiave:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --list-secret-keys
+
+/home/prova/.gnupg/secring.gpg
+----------------------------
+sec  1024D/C01BAFC3 2006-11-05 Utente di Prova &#60;utente@dominio.qualsiasi&#62;
+ssb  2048g/7A4087F3 2006-11-05
+bash$ gpg --edit-key C01BAFC3
+Command&#62; help
+Command&#62; adduid
+[...]
+Command&#62; save
+</PRE
+></P
+><P
+>7) Spedite la vostra chiave pubblica al keyserver:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --keyserver &#60;keyserver&#62; --send-key &#60;vostro_key_id&#62;
+</PRE
+></P
+><P
+>Dovreste ottenere un messaggio di successo simile a questo:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;  gpg: inviata con successo a `&#60;keyserver&#62;' (status=200)
+</PRE
+></P
+><P
+>8) Spedite le vostre informazioni al coordinatore, dicendo che avete
+  intenzione di partecipare al key signing party. Se la vostra chiave è
+  disponibile sui keyserver, il comando qui sotto mostrerà tutte le informazioni
+  che dovete spedire al coordinatore; la spedizione può avvenire ad esempio
+  tramite un messaggio e-mail cifrato.
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --fingerprint  &#60;vostro_Key_ID&#62;
+</PRE
+></P
+><P
+>9)  Smontate il dispositivo USB e rimuovetelo:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ umount /mnt/usbfs
+</PRE
+></P
+><P
+>&#13;  Nota: potete portare con voi il dispositivo USB per sicurezza, o potete
+  lasciarlo in un posto sicuro, in un cassetto sotto chiave ecc. In generale è
+  una pessima idea lasciare la vostra directory .gnupg, che contiene le vostre
+  chiavi, in un posto accessibile via internet. Se un malintenzionato riesce ad
+  avere accesso al vostro portachiavi privato, può tentare un attacco basato su
+  dizionari (cercando di indovinare la passphrase a forza bruta) per entrare in
+  controllo delle vostre chiavi.
+</P
+><P
+>10) Andate al party.</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN325"
+>4.2. Spedire la chiave pubblica a un keyserver</A
+></H2
+><P
+>&#13;  Nota importante: alcuni pensano che tenere segreta la propria chiave
+  pubblica aggiunga ulteriore sicurezza alle proprie comunicazioni cifrate.
+  Questo è vero, nel senso che un keyserver potrebbe essere difettoso o potrebbe
+  venir compromesso e restituire chiavi pubbliche sbagliate. Inoltre, la chiave
+  disponibile su un keyserver potrebbe non essere la più aggiornata disponibile:
+  ad esempio, potrebbero essere state aggiunte delle firme alla chiave che non
+  sono state caricate sul keyserver. È anche vero che la chiave pubblica può
+  essere usata per certi tipi di attacco ai sistemi di crittografia pubblica, e
+  anche se molti pensano che questi tipi di attacco siano estremamente
+  improbabili nel caso venga usata una chiave di dimensione abbastanza grande,
+  tenere segreta la chiave pubblica di fatto riduce questa possibilità.
+  Infine, la conoscenza delle firme presenti sulla vostra chiave pubblica rivela
+  la rete delle persone con cui siete stati (o siete tuttora) in contatto.
+</P
+><P
+>&#13;  Tuttavia, non vi consiglio di tenere segreta la vostra chiave pubblica,
+  visto che scoraggerebbe gli altri dall'usare PGP per le loro comunicazioni con
+  voi. Per risolvere il problema di un possibile keyserver difettoso o
+  compromesso che restituisce le chiavi sbagliate, potete evitare di ricevere
+  messaggi cifrati con la chiave sbagliata ad esempio pubblicando l'impronta
+  digitale della vostra chiave nel vostro file .signature o sulla vostra pagina
+  web. Per quanto riguarda il problema del possibile attacco alla vostra chiave
+  privata attraverso la conoscenza della vostra chiave pubblica, se siete davvero
+  così preoccupati per la robustezza delle vostre chiavi o per la segretezza
+  delle vostre comunicazioni, potete generare ulteriori paia di chiavi (che
+  scadano entro qualche ora o qualche giorno) per ogni comunicazione e scambiare
+  le chiavi pubbliche attraverso canali cifrati con la persona con cui dovete
+  comunicare.
+</P
+><P
+>&#13;  Se non volete che la vostra chiave sia pubblicata su un keyserver, non
+  seguite questo passo della procedura, e invece spedite la vostra chiave
+  pubblica al coordinatore del key signing party, indicandogli che non volete che
+  la vostra chiave sia pubblicata su un keyserver. Il coordinatore potrà quindi
+  estrarre le informazioni della vostra chiave pubblica e inoltrare la chiave
+  agli altri partecipanti attraverso posta elettronica cifrata, o qualche altro
+  metodo, insieme a un messaggio che indica che la chiave, una volta firmata, va
+  rispedita al proprietario, ma non caricata su un keyserver.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN330"
+>4.3. Decidere la propria politica per le firme</A
+></H2
+><P
+>&#13;  Può essere utile stabilire e rendere nota la politica che si intende adottare
+  per la firma delle chiavi, ossia le condizioni a cui si è disposti a firmare
+  una chiave.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="after"
+></A
+>Capitolo 5. Dopo il party</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN335"
+>5.1. Firma delle chiavi</A
+></H2
+><P
+>Passo 1:   Procuratevi una copia della chiave</P
+><P
+>&#13;  Di solito userete un keyserver, ma se state firmando una chiave che non è
+  disponibile su un keyserver, potete semplicemente importare la chiave con gpg
+  --import. Se usate un keyserver, il comando seguente scaricherà la chiave dal
+  keyserver e la importerà nel vostro portachiavi.
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --keyserver &#60;keyserver&#62; --recv-keys &#60;Key_ID&#62;
+</PRE
+></P
+><P
+>&#13;  Se ricevete un errore di lettura, il keyserver può essere sovraccarico;
+  riprovate dopo qualche secondo.
+</P
+><P
+>&#13;  Passo 2:  Prendete l'impronta digitale e verificate la chiave
+</P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --fingerprint &#60;Key_ID&#62;
+</PRE
+><P
+>&#13;  GPG stamperà l'impronta digitale della chiave con l'identificativo
+  &#60;Key_ID &#62; (la chiave che avete appena scaricato). Controllate che
+  l'impronta digitale corrisponda a quella riportata sulla lista che avete
+  ricevuto al party. Nota: non controllate che l'impronta digitale che avete
+  sulla lista corrisponda con quella pubblicata sulla pagina web del keyserver,
+  visto che un keyserver difettoso o compromesso potrebbe non spedirvi la stessa
+  chiave che mostra sulla pagina web.
+</P
+><P
+>&#13;Passo 3: Firmate la chiave
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --sign-key &#60;Key_ID&#62;
+</PRE
+></P
+><P
+>&#13;  Se avete più di una chiave privata, potete specificare quale delle vostre
+chiavi private usare per firmare le chiavi pubbliche degli altri in questo
+modo:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --default-key &#60;chiave_da_usare&#62; --sign-key &#60;Key_ID&#62;
+</PRE
+></P
+><P
+>&#13;  Se avete problemi con le chiavi RSA, probabilmente state usando una vecchia
+  versione di gnupg. Le versioni precedenti alla 1.0.3 non includono il supporto
+  RSA. Nota: potreste dover disinstallare una versione precedente di gnupg se
+  l'avevate installata tramite il sistema di gestione di pacchetti della vostra
+  distribuzione. Potete controllare che versione state usando così:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --version
+</PRE
+></P
+><P
+>Passo 4:  Rispedite o caricate la chiave firmata</P
+><P
+>&#13;  Se la persona con cui avete a che fare non vuole che la sua chiave sia
+  pubblicata su un keyserver, a questo punto dovete rispedirgli la chiave firmata
+  con la modalità che vi avrà indicato (di solito via e-mail cifrata).  Non
+  dovreste spedire una chiave pubblica a un keyserver senza il permesso del
+  proprietario. Far circolare la chiave pubblica riduce lievemente la sicurezza
+  di un paio di chiavi, quindi è considerato scortese rendere una chiave più
+  pubblica di quanto il proprietario desideri.
+</P
+><P
+>&#13;  Più probabilmente userete un keyserver.  Se è questo il caso, potete
+  caricare sul keyserver la chiave firmata in questo modo:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --keyserver &#60;keyserver&#62; --send-key &#60;Key_ID&#62;
+</PRE
+></P
+><P
+>&#13;  Dovreste ottenere un messaggio di successo simile al seguente:
+</P
+><P
+><PRE
+CLASS="screen"
+>&#13;gpg: inviata con successo a `&#60;keyserver&#62;' (status=200)
+</PRE
+></P
+><P
+>&#13;  Congratulazioni, la procedura di firma della chiave è stata completata e la
+vostra firma è ora incorporata nella chiave pubblica. È stato così creato un
+nuovo collegamento nella rete della fiducia.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN363"
+>5.2. Modalità di firma avanzate</A
+></H2
+><P
+>&#13;  Lo standard openPGP include diversi tipi di pacchetti di firma, quindi è
+  possibile firmare una chiave pubblica e uno user id con diversi livelli di fiducia.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>0x10: livello generico di fiducia (chi emette la firma non fa alcuna asserzione
+    sul livello di attenzione con cui ha controllato che la chiave appartenesse
+    effettivamente alla persona indicata dallo user id).</P
+></LI
+><LI
+><P
+>0x11: livello di fiducia basso (chi emette la firma dichiara di non aver
+  fatto alcun controllo sull'identità del possessore della chiave).
+</P
+></LI
+><LI
+><P
+>0x12: livello di fiducia medio (chi emette la firma dichiara di aver controllato
+    l'identità in modo sufficientemente accurato).
+</P
+></LI
+><LI
+><P
+>0x13: livello di fiducia elevato (chi emette la firma dichiara di aver
+    controllato scrupolosamente l'identità del possessore della chiave).
+  </P
+></LI
+></UL
+><P
+>&#13;  Tipicamente, è corretto usare il tipo di firma predefinito in GnuPG, comunque
+  gli altri tipi disponibili sono utilizzabili se si vuole costruire una rete
+  della fiducia più accurata e precisa. Per informazioni più dettagliate
+  sull'uso di questi tipi speciali di firma, si veda la <A
+HREF="http://cryptnet.net/mirrors/rfcs/rfc2040.html"
+TARGET="_top"
+>RFC2040</A
+>.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN377"
+>5.3. Rappresentazione grafica della rete della fiducia</A
+></H2
+><P
+>&#13;  Non c'è niente di meglio di un grafico colorato per attirare l'interesse della
+  gente, quindi rappresentare graficamente la rete della fiducia locale man mano
+  che la si costruisce può motivare la gente a partecipare, e allo stesso tempo
+  dare un'idea precisa dei risultati che man mano si raggiungono.
+</P
+><P
+>&#13;  Potete creare facilmente un grafico di tutte le chiavi e le firme della
+  vostra rete della fiducia convertendo queste informazioni in un dot file, che
+  può essere poi elaborato con un programma per creare grafici, come dot o neato.
+  Uno script perl che converte le chiavi e le firme di un portachiavi in un file
+  in formato dot è stato scritto da Darxus ed è disponibile sotto i termini della
+  GPL. Per rappresentare graficamente la vostra rete della fiducia, dovete
+  scaricare lo script <A
+HREF="http://www.chaosreigns.com/code/sig2dot/sig2dot.pl"
+TARGET="_top"
+>sig2dot.pl</A
+> e il
+  programma <A
+HREF="http://www.research.att.com/sw/tools/graphviz/"
+TARGET="_top"
+>graphviz</A
+>
+  della AT&#38;T Research, oppure il programma perl <A
+HREF="http://www.chaosreigns.com/code/springgraph/"
+TARGET="_top"
+>springgraph</A
+> di
+  Darxus, che permette di generare grafici 3D. A causa della memoria richiesta per
+  queste operazioni, può risultare difficile rappresentare graficamente una rete
+  della fiducia con più di qualche centinaio di nodi.
+</P
+><P
+>&#13;  Istruzioni per rappresentare la rete della fiducia di un portachiavi gpg si
+  trovano nello script sig2dot.pl, o sulla "Debian keyring graphing page".  Ecco
+  un link per vedere un <A
+HREF="http://www.chaosreigns.com/code/sig2dot/debian-keyring.neato.1024.jpg"
+TARGET="_top"
+>&#13;  grafico di una rete della fiducia</A
+> prodotto con lo script sig2dot.pl e
+  il programma grafico neato. Maggiori informazioni sono disponibili
+  sulla <A
+HREF="http://www.chaosreigns.com/code/sig2dot/debian.html"
+TARGET="_top"
+>Debian
+  keyring graphing page</A
+>.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN387"
+>5.4. Chiavi "di ruolo" e pseudonimi</A
+></H2
+><P
+>&#13;  È possibile ricevere durante un party, o tramite e-mail, o addirittura
+  attraverso un remailer anonimo, la richiesta di firmare una chiave PGP a cui
+  corrisponde un'identità pseudonima. Di solito, la maggior parte delle persone
+  considera la rete della fiducia come un meccanismo matematico che mette in
+  corrispondenza le identità di persone reali con le loro identità virtuali nel
+  cyberspazio. Ma questo è solo uno dei possibili usi della rete della fiducia:
+  il suo scopo essenziale è quello di garantire una ragionevole certezza che la
+  persona con cui si sta comunicando sia effettivamente la persona con cui si
+  pensa di comunicare. La rete della fiducia è un meccanismo di autenticazione
+  delle identità.
+</P
+><P
+>&#13;  Le identità possono assumere molte forme diverse: le persone possono avere
+  pseudonimi, come accadde per i Padri Fondatori degli USA, oppure possono
+  rappresentare società, o gruppi informali, o ancora avere un'identità
+  combinata con quella di altre persone, come accade per le coppie sposate.
+  Le persone possono addirittura assegnare delle identità a programmi per
+  computer, per nomi commerciali, o per costruzioni interamente virtuali come
+  siti internet, o eventi immateriali, come conferenze, gare, riunioni, ecc.
+</P
+><P
+>&#13;  Come è possibile usare la rete della fiducia per convalidare il possesso di
+  una chiave da parte di un'identità a cui non corrisponde una persona fisica?
+  È possibile, perché collegare una chiave a un'identità richiede semplicemente
+  la comunicazione di un segreto condiviso attraverso un canale reso sicuro
+  attraverso la coppia di chiavi che si ritiene collegata all'identità indicata
+  nel pacchetto user id della chiave pubblica. La dimostrazione del possesso del
+  segreto è la prova del possesso della chiave privata, e quindi del controllo
+  della coppia di chiavi.
+</P
+><P
+>&#13;  Per un esempio pratico, supponiamo che qualcuno abbia intenzione di rilasciare
+  una nuova distribuzione linux. Si è assicurato il nome di dominio grayhat.org,
+  perché la nuova distribuzione si chiamerà Gray Hat Linux, ma non dispone
+  ancora di una società o di un'organizzazione formale. Lo sviluppatore vuole
+  che la chiave PGP che usa per firmare i pacchetti e i comunicati riguardanti la
+  sicurezza sia integrata nella rete della fiducia. Inoltre, questa persona è
+  riuscita ad ottenere la collaborazione di molte altre persone, ognuna delle
+  quali si occupa di uno specifico pacchetto della distribuzione. Per questo
+  motivo ha creato una chiave "di ruolo" con lo user id "GrayHat Security
+  &#60;security@grayhat.org&#62;". Supponiamo anche di non conoscere questo
+  individuo, così che non si abbia modo di sapere se egli sia effettivamente
+  autorizzato a rappresentare il possessore del dominio grayhat.
+</P
+><P
+>&#13;  C'è un modo per verificare che questo individuo abbia accesso sia
+  all'indirizzo e-mail, sia alla chiave privata della coppia di chiavi che vi ha
+  chiesto di convalidare: esso consiste nello spedire un segreto cifrato con la
+  chiave pubblica che in questione all'indirizzo indicato sullo user id della
+  chiave. Se la persona è in grado di ricevere il messaggio e di decifrarlo,
+  dimostrando la conoscenza del segreto, potete assumere che egli sia il
+  legittimo possessore del paio di chiavi PGP e dell'identità (comprensiva di
+  indirizzo e-mail) indicata dallo user id della chiave.
+</P
+><P
+>&#13;  Anche se è certamente possibile che possa trattarsi di un malintenzionato che
+  ha preso il controllo del server graynet.org (o del suo record DNS), ciò non
+  deve preoccuparvi: la vostra firma PGP sulla chiave non dice nulla sulla
+  sicurezza del dominio grayhat.org, ma solo che avete compiuto un certo sforzo
+  per verificare che l'individuo che vi ha fornito la chiave da firmare fosse
+  effettivamente in suo controllo. Altre persone, che vogliano valutare la
+  fiducia da riporre nella vostra firma apposta sulla chiave della GrayHat
+  Security, dovranno tenere conto del fatto che non esiste nessun documento,
+  rilasciato dallo stato o da altre organizzazioni, che certifichi la
+  connessione tra l'individuo in questione e l'identità virtuale che egli
+  afferma di avere. Dovranno anche considerare che la coppia di chiavi in
+  questione potrebbe essere condivisa da un gruppo di sviluppatori, e che
+  l'individuo che dice di possedere la chiave potrebbe essere qualcuno che voi,
+  che l'avete firmata, non avete mai incontrato.
+</P
+><P
+>&#13;  Se l'account associato a una chiave viene compromesso, ciò non pregiudica il
+  vaore della vostra chiave, o delle firme che avete apposto. La firma non
+  rappresenta una garanzia incondizionata e illimitata dell'identità e della
+  validità della chiave: essa afferma solamente che avete compiuto una verifica
+  con la diligenza che avete ritenuto opportuna per poter firmare la chiave con
+  una sufficiente fiducia. La fiducia si instaura tra due individui che
+  interagiscono in un certo momento: è qualcosa di immateriale. Detto ciò, se la
+  diligenza che avete usato si rivela insufficiente in più occasioni, e altre
+  persone si accorgono che le vostre firme sono apposte con leggerezza (ad
+  esempio se firmate chiavi senza controllare le impronte digitali della chiave,
+  o senza tentare di verificare l'identità dello user id), il valore delle
+  vostre firme si riduce sicuramente.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN396"
+>5.5. Statistiche avanzate</A
+></H2
+><P
+>&#13;  Visto che le firme apposte sulle chiavi possono essere viste come collegamenti
+  fra le chiavi stesse, è possibile applicare alcuni interessanti metodi di
+  analisi derivati dalla teoria dei grafi. Le chiavi sono rappresentabili come
+  nodi di un grafo, mentre le firme come spigoli. Se si vede la rete della
+  fiducia come un grafo, è possibile calcolare una serie di statistiche sulle
+  chiavi, sulla prossimità tra una chiave e l'altra, o sul loro livello di
+  interconnessione. Un programma che può calcolare questo tipo di valori è
+  <A
+HREF="http://www.lysator.liu.se/~jc/wotsap/"
+TARGET="_top"
+>wotsap</A
+>.</P
+><P
+>&#13;  Come abbiamo visto nel capitolo dedicato alla firma avanzata, lo standard
+  openPGP prevede che chi firma una chiave possa farlo con diversi livelli di
+  fiducia. Anche se non ci sono ancora esempi pubblicati, è possibile condurre
+  l'analisi di una rete della fiducia tenendo conto di questi tipi diversi di
+  fiducia sui pacchetti di firma. In una visualizzazione grafica, questo tipo di
+  informazione potrebbe essere rappresentata sotto forma di pesi associati agli
+  spigoli del grafo. Sarebbe così ordinare ogni nodo del grafo, ossia ogni
+  chiave, per il suo valore di reputazione. Visto che l'uso dei vari tipi di
+  firma previsto da openPGP non è molto diffuso, non si conoscono programmi che
+  permettono di condurre un'analisi come quella appena descritta.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN401"
+></A
+>Capitolo 6. Cura delle proprie chiavi e della rete della fiducia</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="revoca"
+>6.1. Generare un certificato di revoca</A
+></H2
+><P
+>Questo è un passo opzionale.</P
+><P
+>&#13;  Generare e conservare un certificato di revoca vi permetterà di revocare la
+  vostra chiave pubblica anche nell'eventualità che non possiate più accedere
+  alla vostra chiave privata, a causa di un furto, di una compromissione, della
+  dimenticanza della passphrase, o di un guasto del supporto. Se volete avere la
+  possibilità di revocare la vostra chiave pubblica senza avere accesso alla
+  chiave privata, dovete generare un certificato di revoca e conservarlo in un
+  posto sicuro. Dovreste anche stampare una copia del vostro certificato di
+  revoca in modo da poterlo riscrivere e usare in caso di guasto del supporto su
+  cui è registrato.
+</P
+><P
+>&#13;  Se il certificato di revoca viene compromesso, la persona che riesce ad
+  entrarne in possesso sarà in grado di farlo circolare, disabilitando così la
+  vostra chiave pubblica. Tuttavia, non sarà in grado di compromettere la vostra
+  chiave privata e quindi neanche di generare false firme, decifrare messaggi
+  cifrati con la vostra chiave pubblica o presentarsi abusivamente come il
+  proprietario del vostro paio di chiavi. Visto che l'unico rischio connesso
+  alla compromissione di un certificato di revoca consiste nella disabilitazione
+  della vostra chiave pubblica, è abbastanza sicuro e utile generarne uno.
+</P
+><P
+>Il comando GnuPG per generare un certificato di revoca è:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --output certificato_revoca.asc --gen-revoke &#60;key_id&#62;
+</PRE
+></P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN411"
+>6.2. Revocare la propria chiave</A
+></H2
+><P
+>&#13;  Nel caso sospettiate che la vostra chiave privata sia stata compromessa,
+  dovreste immediatamente revocare la vostra chiave pubblica. La revoca di una
+  chiave avviene aggiungendo un certificato di revoca a una chiave pubblica: la
+  revoca indica che quella chiave non è più valida (sicura) e non va usata. Una
+  volta aggiunto, un certificato di revoca non può più essere ritirato.
+</P
+><P
+>&#13;  Poiché la vostra chiave pubblica PGP non viene distribuita da una fonte
+  centralizzata ogni volta che viene usata, ma viene fatta circolare liberamente
+  tra le persone, dovete far circolare anche il certificato di revoca nello
+  stesso modo in cui avete distribuito la vostra chiave pubblica. Questo di
+  solito significa caricare il certificato di revoca sulle reti di keyserver.
+  Anche se non avete caricato la vostra chiave pubblica su un keyserver per
+  motivi di sicurezza, potreste comunque voler caricare sul keyserver il
+  certificato di revoca, facendo così un compromesso tra la leggera riduzione
+  della sicurezza risultante dalla pubblicazione della vostra chiave pubblica, e
+  la riduzione della sicurezza risultante dal fatto che qualcuno potrebbe usare
+  la vostra chiave pubblica senza sapere che è stata revocata.
+</P
+><P
+>In sintesi, il comando gpg per generare un certificato di revoca è:</P
+><P
+><PRE
+CLASS="screen"
+>&#13;bash$ gpg --output certificato_revoca.asc --gen-revoke &#60;key_id&#62;
+</PRE
+></P
+><P
+>&#13;  Se conoscete il motivo o la data della compromissione della vostra chiave e
+  avevate generato un certificato di revoca generico al momento della creazione
+  della chiave, potete comunque generare un nuovo certificato di revoca. Lo
+  standard openPGP infatti permette di specificare il motivo della revoca di una
+  chiave e di includere anche un commento libero in proposito. Far circolare un
+  certificato di revoca con informazioni precise è preferibile, rispetto all'uso
+  di un certificato di revoca generico creato al momento della generazione della
+  chiave.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN419"
+>6.3. Revocare una firma</A
+></H2
+><P
+>È possibile in ogni momento revocare la firma apposta su una chiave.</P
+><P
+>Per revocare uno qualsiasi dei quattro tipi di firma previsti dallo
+standard openPGP, dal 0x10 al 0x13, basta apporre sulla chiave una firma del
+tipo seguente:</P
+><P
+></P
+><UL
+><LI
+><P
+>0x30: Certification revocation signature.
+</P
+></LI
+></UL
+><P
+>Questa firma di revoca deve essere apposta dalla stessa chiave che è stata
+usata per apporre la firma che si intende revocare. Se non è possibile farlo, si
+può usare un'altra chiave che è stata autorizzata all'operazione di revoca.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN427"
+>6.4. Scadenza delle chiavi</A
+></H2
+><P
+>&#13;  Quando la vostra chiave scade, avete due opzioni: potete generare una nuova
+  chiave, o potete estendere la durata della chiave stessa. Il modo più corretto
+  di comportarsi in questo caso è quello di generare una nuova chiave.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN430"
+>6.5. Tenersi aggiornati con gli sviluppi tecnologici</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN432"
+>6.5.1. Il blog CryptoWatch</A
+></H3
+><P
+>&#13;  Esistono alcuni buoni blog per tenersi informati sulle notizie relative ai
+  sistemi crittografici. Se si intende usare le proprie chiavi PGP per scopi di
+  una certa importanza, o si vuole essere sicuri che le proprie firme siano
+  affidabili e che la propria reputazione sia preservata, è una buona idea
+  seguire gli sviluppi nei campi rilevanti per la sicurezza delle proprie
+  chiavi.
+</P
+><P
+>&#13;  Ci sono molti sviluppi interessanti all'orizzonte, come i miglioramenti alla
+  tecnologia FGPA, agli algoritmi di fattorizzazione, nuove scoperte in varie
+  aree della matematica, i computer quantistici, e la nanotecnologia.
+  Io curo il <A
+HREF="http://cryptnet.net/people/vab/blogs/cryptowatch/"
+TARGET="_top"
+>CryptoWatch
+  Blog</A
+>, che tenta di seguire questi sviluppi e offrire qualche idea
+  sul loro impatto e significato.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN437"
+>6.5.2. Il blog "Schneier on Security"</A
+></H3
+><P
+>&#13;  Il blog <A
+HREF="http://www.schneier.com/blog/"
+TARGET="_top"
+>Schneier on
+  Security</A
+> di Bruce Schneier è un'altra grande fonte di informazione,
+  anche se affronta una serie di argomenti molto vasta, che va dalle tecniche
+  crittografiche, alle questioni relative alla sicurezza in generale, ad esempio
+  riferita ai voli di linea. Il blog è interessante, oltre che per la profonda
+  conoscenza della crittografia di Schneier, anche per le molte informazioni
+  contenute nei commenti dei lettori.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN441"
+>6.6. Attivismo politico</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN443"
+>6.6.1. La Electronic Frontier Foundation</A
+></H3
+><P
+>&#13;  È sempre utile spendere qualche ora per leggere la storia della crittografia
+  nei periodi in cui in America l'esportazione di software per la crittografia
+  sicura, o la trasmissione di testi cifrati era un crimine. Nel periodo buio
+  dell'amministrazione Bush, l'America sembra proprio retrocedere a quei tempi
+  in cui i diritti alla privacy digitale erano fortemente ristretti. Non importa
+  quale siano le vostre opinioni politiche o il partito a cui siete iscritti, la
+  dignità garantita dalla privacy è un aspetto fondamentale per lo sviluppo
+  dello spirito umano.
+</P
+><P
+>&#13;  Spero che i lettori di questo testo comprendano questa verità universale e
+  vogliano sostenere coloro che lavorano per preservare questo diritto
+  fondamentale. Invito tutti a iscriversi alla <A
+HREF="http://www.eff.org"
+TARGET="_top"
+>Electronic Frontier Foundation (EFF)</A
+> e a
+  sostenere il loro importante lavoro. Personalmente, ne sono membro da molto tempo.
+</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN448"
+>6.6.2. Il Free State Project</A
+></H3
+><P
+>&#13;  Vista l'abilità del governo federale americano nel commettere questi terribili
+  e continui errori nell'interpretare la Costituzione e gli scritti dei Padri
+  Fondatori, vi invito anche, se siete cittadini americani, a dare un'occhiata
+  al <A
+HREF="http://www.freestateproject.org/"
+TARGET="_top"
+>Free State Project (FSP)</A
+>.
+  Il FSP è un movimento che tenta di raggiungere la massa critica necessaria a
+  far approvare in uno stato dell'unione leggi che riportino il potere del
+  governo federale americano entro i limiti originari. Oltre ad essere un membro
+  della EFF, sono anche membro del FSP.
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN452"
+></A
+>Capitolo 7. Altre informazioni</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN454"
+>7.1. Lista parziale di keyserver pubblici</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://gnv.us.ks.cryptnet.net/"
+TARGET="_top"
+>gnv.us.ks.cryptnet.net</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://pgp.mit.edu/"
+TARGET="_top"
+>pgp.mit.edu</A
+>
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN463"
+>7.2. Siti web</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://www.biglumber.com/"
+TARGET="_top"
+>Biglumber - Key Signing Coordination</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.openpgp.org/"
+TARGET="_top"
+>OpenPGP Alliance Home Page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://keyserver.kjsl.com/~jharris/keysigning.html"
+TARGET="_top"
+>Jason Harris' PGP Keysigning Page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://keyserver.kjsl.com/~jharris/ka"
+TARGET="_top"
+>KeyAnalyze Page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.pgpi.org/"
+TARGET="_top"
+>International PGP Home Page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.chaosreigns.com/code/sig2dot/"
+TARGET="_top"
+>The Debian keyring graphing page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.chaosreigns.com/code/sigtrace/"
+TARGET="_top"
+>Signature Path Tracing page</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://cryptnet.net/"
+TARGET="_top"
+>CryptNET</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.eff.org/"
+TARGET="_top"
+>Electronic Frontier Foundation (EFF)</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.freestateproject.org/"
+TARGET="_top"
+>Free State Project (FSP)</A
+>
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN496"
+>7.3. Programmi</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://www.gnupg.org/"
+TARGET="_top"
+>Gnu Privacy Guard (GnuPG)</A
+> (<A
+HREF="http://freshmeat.net/projects/gnupg/"
+TARGET="_top"
+>FreshMeat</A
+>)
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://cryptnet.net/fsp/cks/"
+TARGET="_top"
+>CryptNET Keyserver</A
+> (<A
+HREF="http://freshmeat.net/projects/cks/"
+TARGET="_top"
+>FreshMeat</A
+>)
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.lysator.liu.se/~jc/wotsap/"
+TARGET="_top"
+>Wotsap</A
+> Statistiche sulla rete della fiducia (<A
+HREF="http://freshmeat.net/projects/wotsap/"
+TARGET="_top"
+>FreshMeat</A
+>)
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.chaosreigns.com/code/sig2dot/"
+TARGET="_top"
+>Sig2dot</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.chaosreigns.com/code/springgraph/"
+TARGET="_top"
+>Springgraph</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.research.att.com/sw/tools/graphviz/"
+TARGET="_top"
+>The AT&#38;T Labs-Research Graphviz package</A
+>
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN520"
+>7.4. RFC</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://cryptnet.net/mirrors/rfcs/rfc2040.txt"
+TARGET="_top"
+>RFC2040: OpenPGP Message Format</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://cryptnet.net/mirrors/rfcs/rfc2015.txt"
+TARGET="_top"
+>RFC2015: MIME Security With Pretty Good Privacy</A
+>
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN529"
+>7.5. Blog</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://cryptnet.net/people/vab/blogs/cryptowatch/"
+TARGET="_top"
+>CryptoWatch Blog</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.schneier.com/blog/"
+TARGET="_top"
+>Schneier on Security Blog</A
+>
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN538"
+>7.6. Fotografie di key signing party</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;Gainesville, Florida, USA [<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/pgp_signing_party_3.jpg"
+TARGET="_top"
+>1</A
+>]
+</P
+></LI
+><LI
+><P
+>&#13;San Francisco, California, USA [<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/pgp_signing_party_4.jpg"
+TARGET="_top"
+>1</A
+>]
+</P
+></LI
+><LI
+><P
+>&#13;Israele [<A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/pgp_signing_party_1.jpg"
+TARGET="_top"
+>1</A
+> <A
+HREF="http://cryptnet.net/fdp/crypto/keysigning_party/en/extra/pgp_signing_party_2.jpg"
+TARGET="_top"
+>2</A
+>]
+</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="GLOSSARY"
+><H1
+><A
+NAME="AEN551"
+></A
+>Glossario dei termini</H1
+><DL
+><DT
+><B
+>Auto-firma (Self Signature)</B
+></DT
+><DD
+><P
+>&#13;  Una firma apposta su una chiave pubblica e su un pacchetto user id, eseguita con
+  la chiave privata corrispondente alla stessa chiave pubblica. La firma così
+  generata è usata per convalidare l'associazione tra l'utente e la chiave
+  pubblica. Firmare lo user id con la chiave privata evita che chi non ne sia in
+  possesso, possa modificarlo (ad esempio modificando l'indirizzo e-mail
+  indicato), o aggiungere nuovi user id.
+</P
+></DD
+><DT
+><B
+>Certificato di revoca (Revocation Certificate)</B
+></DT
+><DD
+><P
+>&#13;  Una firma di revoca (cfr) separata.
+</P
+></DD
+><DT
+><B
+>Chiave (Key)</B
+></DT
+><DD
+><P
+>&#13;  Uno o più bit di dati usati in un procedimento di cifratura o decifratura.
+</P
+></DD
+><DT
+><B
+>Chiave privata (Secret Key)</B
+></DT
+><DD
+><P
+>&#13;Nella crittografia a chiave pubblica, la chiave, fra quelle che costituiscono un paio
+di chiavi, che viene tenuta segreta.
+</P
+></DD
+><DT
+><B
+>Chiave pubblica (Public Key)</B
+></DT
+><DD
+><P
+>&#13;1. Nella crittografia a chiave pubblica, la chiave, fra quelle che costituiscono
+un paio di chiavi, che viene distribuita. 2. La raccolta di chiavi pubbliche,
+user id, firme e sotto-chiavi che formano un certificato PGP completo.
+</P
+></DD
+><DT
+><B
+>Firma di revoca (Revocation Signature)</B
+></DT
+><DD
+><P
+>&#13;Una firma su una chiave che specifica che lo user id o la chiave non devono più
+essere usati. Le firme di revoca possono essere fatte circolare come parte di
+chiavi PGP, o in forma separata.
+</P
+></DD
+><DT
+><B
+>Impronta digitale della chiave (Key Fingerprint) </B
+></DT
+><DD
+><P
+>&#13;Se si tratta di PGP, un valore usato per identificare una chiave, ricavato
+calcolando un hash della chiave.
+</P
+></DD
+><DT
+><B
+>Key Server</B
+></DT
+><DD
+><P
+>&#13;Un sistema che immagazzina chiavi in un database. Questi server possono essere
+interrogati per conoscere la chiave pubblica di un destinatario con cui non si è
+mai entrati in contatto prima.
+</P
+></DD
+><DT
+><B
+>Key Signing Party</B
+></DT
+><DD
+><P
+>&#13;Una riunione di persone che usano il sistema di crittografia PGP con lo scopo di
+permettere ai partecipanti di firmare a vicenda le proprie chiavi. I key signing
+party servono ad estendere la rete della fiducia.
+</P
+></DD
+><DT
+><B
+>openPGP</B
+></DT
+><DD
+><P
+>&#13;Uno standard aperto che definisce una versione del sistema di sicurezza PGP.
+</P
+></DD
+><DT
+><B
+>Paio di chiavi (Key Pair)</B
+></DT
+><DD
+><P
+>&#13;Nella crittografia a chiave pubblica, un paio di chiavi consiste in una chiave
+pubblica e una privata, correlate fra loro.
+</P
+></DD
+><DT
+><B
+>Percorso di fiducia (Trust Path)</B
+></DT
+><DD
+><P
+>&#13;La via attraverso cui la fiducia si estende da un individuo a un altro. In PGP è
+un collegamento di fiducia tra due chiavi pubbliche.
+</P
+></DD
+><DT
+><B
+>Politica di firma (Key Signing Policy)</B
+></DT
+><DD
+><P
+>&#13;Un documento, di solito pubblicato, che indica nel dettaglio le condizioni
+a cui l'autore è disposto a firmare una chiave PGP.
+</P
+></DD
+><DT
+><B
+>Portachiavi (Keyring)</B
+></DT
+><DD
+><P
+>&#13;Una collezione di chiavi. Tipicamente il termine è usato in relazione a PGP,
+dove un portachiavi consiste in una raccolta di uno o più pacchetti di chiave.
+</P
+></DD
+><DT
+><B
+>Portachiavi privato (Secret Keyring)</B
+></DT
+><DD
+><P
+>&#13;Una raccolta di chiavi private. Il termine è usato per lo più
+in relazione a PGP, dove definisce una raccolta di pacchetti chiave privata.
+</P
+></DD
+><DT
+><B
+>Portachiavi pubblico (Public Keyring)</B
+></DT
+><DD
+><P
+>&#13;Un portachiavi che contiene chiavi pubbliche. Il termine è usato per lo più
+in relazione a PGP.
+</P
+></DD
+><DT
+><B
+>Pretty Good Privacy [PGP]</B
+></DT
+><DD
+><P
+>&#13;Un programma per la privacy sviluppato da Phil Zimmermann, che include
+crittografia a chiave pubblica, un formato standard per i pacchetti e le chiavi,
+e anche metodi di crittografia simmetrica.
+</P
+></DD
+><DT
+><B
+>Radix</B
+></DT
+><DD
+><P
+>&#13;Un metodo di codificare i dati in modo che possano essere trasmessi su un canale
+che supporta solo caratteri a 7 bit (ad esempio, l'e-mail o Usenet).
+</P
+></DD
+><DT
+><B
+>Rete della fiducia (Web of Trust)</B
+></DT
+><DD
+><P
+>&#13;  L'insieme delle chiavi e dei risultanti percorsi di fiducia in un
+  modello di fiducia incentrato sull'utente, che garantisce l'autenticazione. In
+  senso collettivo, le relazioni di fiducia in un gruppo di chiavi.
+</P
+></DD
+></DL
+></DIV
+></DIV
+></BODY
+></HTML
+>

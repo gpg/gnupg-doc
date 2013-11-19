@@ -1,0 +1,892 @@
+<HTML><HEAD><TITLE>GPG Keysigning Party HOWTO</TITLE>
+<BODY BGCOLOR=#FFFFFF>
+
+<HR>
+<H1>GnuPG Grupos de Firmas (Keysigning Party) COMO</H1>
+
+<H2><A HREF="http://www.cryptnet.net/people/vab/">V. Alex Brennen</A> (<A HREF="mailto:vab@cryptnet.net">vab@cryptnet.net</A>)</H2>v1.0.8, 09 de Mayo de 2003
+
+<P><HR>
+<EM>
+Este documento describe el protocolo y los métodos a seguir para mantener y participar
+en un Grupo de Firmas utilizando la implementación de GNU PGP, GnuPG. Se explican los
+protocolos de firmado, respuestas a las preguntas más frecuentes y como crear un buen
+par de llaves para que otros las firmen.</EM>
+<HR>
+
+<H2><A HREF="#toc1">1. Prólogo del Grupo de Firmas</A></H2>
+<UL>
+<LI><A HREF="#ss1.1">1.1 Qué es exactamente un Grupo de Firmas?</A>
+<LI><A HREF="#ss1.2">1.2 Qué es una Llave firmada?</A>
+<LI><A HREF="#ss1.3">1.3 Qué es un sistema de confianza?</A>
+<LI><A HREF="#ss1.4">1.4 Puedes darme un ejemplo aplicativo de llaves firmadas?</A>
+<LI><A HREF="#ss1.5">1.5 Por qué debo firmar mi llave en grupo</A>
+</UL>
+<H2><A HREF="#toc2">2. Organizando el Grupo</A></H2>
+<UL>
+<LI><A HREF="#ss2.1">2.1 El Coordinador</A>
+<LI><A HREF="#ss2.2">2.2 Como debe estar estructurado el Grupo?</A>
+<LI><A HREF="#ss2.3">2.3 Anunciando el Grupo</A>
+<LI><A HREF="#ss2.4">2.4 Generando la lista de llaves</A>
+<LI><A HREF="#ss2.5">2.5 Resultado gráfico de la web de confianza</A>
+</UL>
+<H2><A HREF="#toc3">3. Participando en el Grupo</A></H2>
+<UL>
+<LI><A HREF="#ss3.1">3.1 El Participante</A>
+<LI><A HREF="#ss3.2">3.2 Qué hay que llevar al Grupo</A>
+<LI><A HREF="#ss3.3">3.3 Qué no hay que llevar</A>
+<LI><A HREF="#ss3.4">3.4 Por qué no debes traer un PC</A>
+<LI><A HREF="#ss3.5">3.5 Generando el par de llaves</A>
+<LI><A HREF="#ss3.6">3.6 Publicando tu llave en un servidor de llaves</A>
+<LI><A HREF="#ss3.7">3.7 Generando un certificado Cancelación</A>
+<LI><A HREF="#ss3.8">3.8 Firmando de otras llaves</A>
+<LI><A HREF="#ss3.9">3.9 Cancelación de tus llaves</A>
+</UL>
+<H2><A HREF="#toc4">4. Glosario</A></H2>
+<H2><A HREF="#toc5">5. Información Relevante y otras fuentes</A></H2>
+<UL>
+<LI><A HREF="#ss5.1">5.1 Lista de servidores públicos</A>
+<LI><A HREF="#ss5.2">5.2 Enlaces a documentos relacionados</A>
+<LI><A HREF="#ss5.3">5.3 Programas Relacionados</A>
+<LI><A HREF="#ss5.4">5.4 Webs Relacionadas</A>
+<LI><A HREF="#ss5.5">5.5 Normativa RFCs Relacionada</A>
+<LI><A HREF="#ss5.6">5.6 Fotografias de los Grupos de Firmas</A>
+</UL>
+<H2><A HREF="#toc6">6. Sobre este documento</A></H2>
+<UL>
+<LI><A HREF="#ss6.1">6.1 Versiones</A>
+<LI><A HREF="#ss6.2">6.2 Traducciones</A>
+<LI><A HREF="#ss6.3">6.3 Contribuciones</A>
+</UL>
+<HR>
+
+<H2><A NAME="toc1">1. Prólogo del Grupo de Firmas</A></H2>
+<B><A NAME="ss1.1">1.1 Qué es exactamente un Grupo de Firmas?</A></B>
+
+<P>
+Un Grupo de Firmas es la forma de reunir a personas que utilizan sistemas
+criptográficos tipo PGP con el propósito de permitir a dichas personas el firmado
+mútuo. Los Grupos de Firmas sirven para extender la confianza por la red. También
+los grupos de Firmas son una gran escusa para discutir temas políticos o sociales
+bajo una fuertes medidas de seguridad criptográfica, libertades individuales,
+soberanías e incluso implementar tecnologías criptográficas o posibles trabajos de
+software criptográfico gratuito.
+
+<BR>
+
+<P><B><A NAME="ss1.2">1.2 Qué es una Llave firmada?</A></B>
+
+<P>
+El Firmado de llaves es el acto de firmar digitalmente una llave pública y un id
+asociado con dicha llave. La Firma nos sirve para verificar que el id y la llave
+pública pertenecen realmente a la entidad que aparece en la firma que representa esa
+llave.
+
+<P>
+Cada uno puede firmar su propia llave pública y los id asociados a ella, o otras
+entidades y asociarlas a la llave pública.
+
+<P>En esencia, las firmas validan las llaves públicas. Es una forma de validar
+una llave pública y una identidad gracias a una tercera parte. Esta es la forma
+en la cuál las firmas crean un sistema de confianza.
+
+<P><B><A NAME="ss1.3">1.3 Qué es un sistema de confianza?</A></B>
+
+<P>
+Un sistema de confianza es el término utilizado para describir la relación de confianza
+entre un grupo de firmas. La firma es un enlace, o una ramificación, en el sistema
+de firmas de confianza. Estos enlaces son llamados <I>Vias de confianza</I> (<I>Trust Paths</I>).
+Las Vías de Confianza pueden ser bidireccionales o de una única dirección. El ideal de
+un sistema de confianza es que cada uno esté conectado de forma bidireccional con los
+demás. De hecho, cada uno confia en que cada llave pertence a su propietario legítimo. El
+sistema de confianza es la suma de la confianza de todos las vías de confianza, o enlaces,
+entre todas las firmas participantes. Aquí tienes un ejemplo visual de un
+<A HREF="http://www.cryptnet.net/fdp/crypto/pgp_party/wot.example.jpg">sistema de confianza</A>.
+
+<P><B><A NAME="ss1.4">1.4 Puedes darme un ejemplo aplicativo de llaves firmadas?</A></B>
+
+<P>Como ejemplo podemos explicar que Alicia y Benito crean sus propias llaves con GPG y
+firmadas en un Grupo de Firmas. En el Grupo, Alicia y Benito verifican otras llaves y
+luego las firman. GPG, por defecto, firma de forma automáticamente la llave pública
+asociada a la llave privada cuando se crea. Entonces Alicia y Benito tienen como mínimo
+dos firmas validando sus llaves. La llave de Alicia ha sido firma por ella misma y por
+la firma de Benito, mientras que la llave pública de Benito está firmada por él mismo
+y por Alicia.
+<p>En un futuro, Alicia y Benito conocen a Carmen. Carmen crea un par de
+llaves y les dice a Alicia y a Benito que les enviará su llave pública. Pero a Alicia no
+le gusta Carmen y no quiere que Benito intercambie comunicaciones cifrada con ella. Ambas,
+Alicia y Carmen, crean nuevas llaves que dicen ser de Carmen y ambas se la envia a Benito.
+Ambas llaves tienen una firma, la firma asociada a la llave privada. Benito no sabe cuál
+es realmente la llave de Carmen, pero ésta se entera de que Benito tiene dos llaves suyas y
+sospecha de Alicia. Carmen, ahora enfadada, quiere obtener información que utilizar
+contra Alicia y para obtener dicha información Carmen debe comprometer las comunicaciones
+entre Alicia y Benito. Para hacerlo, Carmen decide falser un correo hacia Benito diciendo
+que ella es Alicia y que ha creado una nueva Llave Pública. En el correo, Carmen
+incluye la "nueva" llave de Alicia (que en realidad es la falsa que ha generado Carmen).
+Sin embargo Benito está seguro de que es un truco, porque Benito tiene dos llaves de Alicia,
+una de las cuales ha sido firmada por multiples personas (él mismo y Alicia) verificando
+que proviene de Alicia, mientras que la otra llave (la falsa de Carmen) sólo tiene su
+propia firma.
+
+<P>Este ejemplo tan sencillo puede complicarse muchisimo más. Puedes leer más
+documentación sobre PGP o un buen libro de PKI para ejemplos más detallados. El ejemplo
+explica claramente las bases del firmado y su importancia. Carmen no podrá introducir su
+falsa llave de Alicia por que existe un sistema de confianza entre Benito y Alicia.
+
+<P>Sin embargo, las firmas y los sistemas de confianza no garantizan la credibilidad de
+las llaves. Por ejemplo, cuando Benito y Alicia conocieron por primera vez a Carmen,
+esta traía a un amigo consigo: David. David tenia creadas unas llaves falsas para Alicia
+y Benito, firmadas por él mismo y por las llaves falsas resultando que cada firma poseía
+tres firmas y se las había enviado a Carmen. Carmen posee una serie de falsas firmas.
+Como las firmas pueden ayudar a Carmen a resistir un ataque? Bien, hay que decir que
+todas las firmas que la gente intercambia existen en un servidor de llaves público.
+Si Carmen hubiese buscado en el servidor de llaves las llaves de Alicia y Benito,
+encontraría dos pares de llaves para Alicia y para Benito. Si Alicia y Benito
+recopilaron veinte firmas en el Grupo de Firmas es obvio que Carmen podría confiar en
+las llaves con mayor cantidad de firmas que no en las llaves con sólo tres firmas.
+Carmen debería sopechar algo más sobre la existencia de esas llaves públicas, podría
+sospechar de las fechas de generación y del sistema de confianza de dichas llaves.
+Las veinte llaves del Grupo de Firmas han sido firmadas veinte o más veces en
+diferentes periodos de tiempos, muchas de ellas firmadas por Alicia, Benito y por otras
+personas. Ese no sería el caso si David hubiese generado veinte falsas llaves con un
+falsa confianza.
+
+<P><B><A NAME="ss1.5">1.5 Por qué debo firmar mi llave en grupo</A></B>
+
+<P>
+Existen tres razones principales para tener tantas firmas como se pueda.
+
+<P>La primera y la más importante, debes tener la mayor cantidad de firmas para expandir
+tus vías de confianza. Cuanto más profundo y extrechamente interconectado sea el
+sistema de confianza, más difícil será comprometerlo. Esto tiene un significado especial
+para Free Software Community (Comunidad de Software Libre), sean desarrolladores o
+usuarios. Los miembros de esta comunidad delegan sobre la tecnología criptográfica PGP la
+protección e integridad de sus paquetes de software, avisos de seguridad y anuncios. La
+fuerza y robustez del sistema de confianza es directamente proporcional a la fuerza de
+protección que PGP provee a la comunidad.
+
+<P>La segunda razón es que los grupos de Firmas ayudan a otras personas a integrarse
+dentro de la cultura de las seguridad y les anima a adquirir conocimientos sobre PGP y
+otras tecnologias de criptografía. Para conseguir toda la fuerza de la criptografía
+la gente debe usarla y usarla correctamente.
+
+<P>Finalmente, los grupos de Firmas ayudan a construir comunidades. Ayudan a juntar
+nuevos conocimientos y discusiones importantes sobre libertades civiles,
+cripto-derechos y regulación de internet. La discusión es importante por que no sólo es 
+el primer paso, pero es el paso antes de la acción. Ahora que estoy escribiendo
+este artículo no existen sistemas de seguridad demasiado complejos en el mundo. Si
+trabajas para construir un sistema de seguridad en tu localidad, es muy probable que esos
+primeros participantes sean los líderes asentando las bases de internet en su comunidad.
+
+Ellos son los individuos que podrán escoger construir el sistema criptográfico seguro y
+sus protocolos dentro de la infraestructura local, si pueden escoger. La integración de
+sistemas y protocolos pueden transformar sistemas como el Carnivore del FBI en 
+inservibles.
+
+<HR>
+
+<H2><A NAME="toc2">2. Organizando el Grupo</A></H2>
+
+<P><B><A NAME="ss2.1">2.1 El Coordinador</A></B>
+
+<P>
+No es difícil organizar y coordinar un Grupo de Firmas. Sin embargo a parte de las
+tareas normales de invitar a la gente, seleccionar un lugar y una fecha, el coordinador
+tiene otras tareas claves específicas a su responsabilidad. Eso, normalmente, incluye el
+suministro de una lista de llaves para cada participante y una determinación de la
+estructura del Grupo.
+
+<P><B><A NAME="ss2.2">2.2 Como debe de estar estructurado el Grupo?</A></B>
+
+<P>
+Hay dos formas de conducir un Grupo de Firmas de forma Estructurada -- de forma
+centralizada o de forma descentralizada. La mejor forma de determinar como hacerlo es
+dependiendo del número de participantes y la atmósfera del local donde se lleva a cabo la
+Fiesta. Los requisitos básicos del Grupo son que los participantes se verifiquen unos
+a otros las llaves y las identidades. Dados estos resquisitos básicos el coordinador
+puede introducir algunas variaciones a estos dos tipos.
+
+<P>Un Grupo centralizada es un asunto más organizado donde se trabaja bien con un grupo
+pequeño o medio de personas. Los participantes envian la información de sus llave pública
+al coordinador quién las anota en una lista. Cada participante, tal como van llegando al
+Grupo, recibirá una copia de la lista, reunidos todos, cada participante será llamado
+por el cordinador.<br>
+El particiapante comprobará que los datos son correctos respecto a la lista dada por el
+coordinador. Si el participante está seguro que su llave es la misma que la facilitada
+por el coordinador, entonces el participante leerá su huella digital ante los demás
+participantes para que estos puedan comprobar que sea la correcta. Si es correcta, los
+participantes deberán marcarlo en su hoja. Esto es necesario para evitar errores o
+falsedades en la hoja creada por el coordinador. Hasta que todos hayan comprobado la
+llave del participante, entonces el coordinador podrá llamar a otro participante y
+así sucesivamente.
+<p>
+Una vez que todas las llaves han sido verificadas, los participantes
+y el coordinador rogará a los participantes que formen una línea con sus identificaciones
+bien visibles. La persona en cabeza de la fila caminará hacia abajo de la fila
+comprobando los IDs. Si la ID es correcta y se ha validado lo que se ha dicho
+sobre la llave al principio del encuentro, entonces se pondrá una segunda marca
+en su lista. Sólo la llave que tenga dos marcas será firmada.
+
+<P>Un Grupo de Firmas descentralizada es básicamente libre albedrío. Los
+participantes se espera que se mezclen informalmente y buscarán a otros participantes cuyas
+llaves no hayan sido firmadas aún. Mientras duré el evento, cada uno verificará la llave
+y el ID de cada persona. los grupos descentralizadas permiten incluir más fácilmente a
+gente nueva.
+
+En un Grupo Descentralizada, es importante para el coordinador anime a cada uno a que
+se asegure de que se ha reunido con todo el mundo, almenos para la validación de la
+llave. En este caso no es necesario hacer una lista de llaves y de huellas, aunque es
+una buena práctica.
+
+<P>Los Grupos Centralizadas son ideales para conferencias, durante la comida, reuniones
+informales en casa de alguien o en algún restaurante, etc. Las descentralizadas son mucho
+más practicas cuando hay un gran número de gente y el lugar es un bar o un sitio muy
+ruidoso, o grupos particularmente escandalosos y difíciles de manejar.
+
+<P><B><A NAME="ss2.3">2.3 Anunciando el Grupo</A></B>
+
+<P>Cuanto más conocida sea el Grupo, mejor. Se puede anunciar el Grupo via listado de
+correo LUG, o a otras listas relacionadas con la informática dentro de tu localidad,
+incluso poniendo un anunció en el prensa.
+
+<P>Si estas creando un sistema de confianza en tu comunidad, es buena idea intentar
+atraer a usuarios de PGP activos porque ellos son los principales interesados en mantener
+los grupos de Firmas. La mejor forma de encontrar a la gente es hablando con aquellas personas que se
+encuentran en las listas de correo con firma PGP o buscando en el servidores de llaves
+aquellos cuentas de correo que puedan pertenecer a tu localidad. Por ejemplo, las cuentas
+de correo con el dominio de una universidad o una gran compañia de tu localidad, puede que
+encuentres un alto número de interesados en el Grupo de Firmas.
+
+<P>Aquí encontrarás algunos ejemplos de anuncios:
+<UL>
+<LI><A HREF="web-anun.es.html">PGP Keysigning Party Página Web</A>
+<LI><A HREF="email-example.html">PGP Keysigning Party E-Mail</A>
+<LI><A HREF="nota-prensa.html">PGP Keysigning Party Nota de Prensa</A>
+</UL>
+
+<P><B><A NAME="ss2.4">2.4 Generando la lista de llaves</A></B>
+
+<P>
+Si vas a utilizar un formato de Fiesta estructurada se necesita que cada participante
+tenga una lista de llaves de todo el mundo, el coordinador tendrá que imprimir muchos
+listados. Dichos listados suelen recopilarse en el siguiente formato:
+
+<TABLE BORDER=1><TR><TD>Llave ID</TD><TD>Propietario</td><TD>Huella</TD><TD>Tamaño
+</TD><TD>Tipo</TD><TD>Llave Válida?</TD><TD>ID Válido?</TD></TR>
+<TR><TD>992A4B3F</TD><TD>V. Alex Brennen	&#60; vab@cryptnet.net &#62; </TD><TD>0EC8 B0E3 052D FC4C 208F 76EB FA92 0973 992A 4B3F</TD><TD>1024</TD><TD>DSA</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<P>He escrito un programa en perl para crear un documento HTML con el formato de arriba.
+El <A HREF="http://www.cryptnet.net/fdp/crypto/pgp_party/party-table.pl">programa que genera la lista de llaves</A>
+está disponible bajo terminos de licencia: GNU General Public License (GPL).
+
+<P>Una copia de esta lista de llaves debe de ser impresa y entrega a cada uno de los
+participantes. El coordinador puede imprimir el listado él mismo o enviar un correo para
+que cada participante se lo imprima él mismo, o puede colgarlo en una página web para que
+los participantes lo impriman.
+
+<P><B><A NAME="ss2.5">2.5 Resultado gráfico de la web de confianza</A></B>
+
+<P>Nada gusta más al usuario que los gráficos con muchos colores. Por ello, crear un
+gráfico del sistema de confianza establecido en tu entorno puede motivar a la gente a
+participar, viendo los progresos obtenidos.
+
+<P>Puedes obtener un sencillo gráfico, de todas las llaves firmadas en tu sistema de
+seguridad convirtiendo esa información en un fichero de puntos, el cuál puede ser tratado
+por programas tipo DOT o NEATO. Un programa de Darxus que fue escrito en perl convierte
+las llaves y firmas de un anillo en un fichero de puntos y este está disponible bajo los
+términos de GPL. Para poder obtener dicho gráfico necesitas bajarte el programa de Darxus
+<A HREF="http://www.ChaosReigns.com/code/sig2dot/sig2dot.pl">sig2dot.pl</A> y el
+<A HREF="http://www.research.att.com/sw/tools/graphviz/">graphviz</A> de AT&T Research.
+La restricción es que no se puede generar un gráfico de más de cien nodos por problemas
+de que el ordenador puede necesitar mucha memória.
+
+<P>Las instrucciones para dibujar el sistema de confianza de un anillo gpg estan incluidas
+en el poprio script: sig2dot.pl o pueden encontrarse en el paquete de Debian. Aquí hay un
+<A HREF="http://www.cryptnet.net/fdp/crypto/pgp_party/wot.example.jpg">enlace</a> a un gráfico de sistema de confianza que
+fue creado con sig2dot.pl y neato. Existe más información disponible en la página de
+<A HREF="http://www.ChaosReigns.com/code/sig2dot/">Debian</A>.
+<HR>
+<H2><A NAME="toc3">3. Participando en el Grupo</A></H2>
+
+
+<B><A NAME="ss3.1">3.1 El Participante</A></B>
+<OL>
+<LI>Generar un par de llaves
+<LI>Enviar la llave pública al servidor de llaves (o al Coordinador)
+<LI>Enviar los detalles de tu llave pública al coordinador
+<LI>Ir a el Grupo de Firmas
+<LI>Verificar los detalles de su llave
+<LI>Verificar los detalles de la llave de los demás
+<LI>Verificar la identidad para los IDs que se va a firmar
+<LI>Firmar todos aquellos IDs y llaves que se hayan Verificado
+<LI>Enviar todas las llaves que se han firmado al servidor de llaves (o a su propietario)
+</OL>
+
+<B><A NAME="ss3.2">3.2 Qué hay que llevar a el Grupo</A></B>
+<OL>
+<LI>Tu mismo - No puedes participar virtualmente
+<LI>Dos identificaciones con foto - Licencia de conducir y pasaporte
+<LI>Detalles de las propias llaves: ID, Tipo, Huella y Tamaño
+<LI>Un bolígrafo/lápiz
+</OL>
+<B><A NAME="ss3.3">3.3 Qué <FONT COLOR=#FF0000>No</FONT> hay que llevar </A></B>
+<OL>
+<LI>Un ordenador.
+</OL>
+
+<B><A NAME="ss3.4">3.4 Por qué no debes traer un PC</A></B>
+
+<P>No se deben llevar ordenadores a los grupos porque los programas pueden haber sido
+alterados de tal forma que comprometan la seguridad del PGP.
+
+<P>Si alguien llevase un ordenador y todos utilizasen ese ordenador para firmar las
+llaves, nadie sabría si en dicho ordenador hay un grabador de teclas (KeyLogger)
+activo, o la versión del GPG ha sido modificada o incluso el Kernel de Linux, o que el
+teclado está especialmente modificado, cualquiera de estas cosas pueden capturar las
+llaves secretas de aquellos que utilicen el ordenador.
+
+<P>La utilización de un ordenador en una fiesta también deja la puerta abierta para
+ataques desde el exterior o ataques complejos con las llaves débiles, modificaciones que
+llaves secretas o incluso infecciones con virus en los propios ejecutables del GPG que
+pueden debilitar tus llaves secretas en el futuro.
+
+<BR>
+<BR><B><A NAME="ss3.5">3.5 Generando el par de llaves</A></B>
+
+<P>El proceso de crear un par de llaves es sencillo, basicamente sólo necesitas
+ejecutar <code>gpg --gen-key</code>. Sin embargo, recomiendo que también generes un
+certificado de cancelación para tus llaves en caso de perdida de la llave secreta (eso
+significa que has olvidado la palabra clave o has pedido la llave secreta). El comando
+para generar el certificado de cancelación puede encontrarse en el apartado
+<A HREF="#ss3.7">3.7</A> de este documento.
+
+<P>Los siguientes pasos deben ser utilizados con la suficientes seguridad, por ejemplo:
+<UL>
+<LI>Las llaves deben generarse con la mayor longitud posible para hacerlas más resistentes a un ataque de fuerza bruta,
+<LI>el Certificado de Cancelación se generará para permitir cancelar la llave pública si la seguridad es ve comprometida o se pierde la llave secreta
+</UL>
+<P>Algunas personas se sienten más seguras utilizando estas medidas básicas, por ejemplo
+si tienes un ordenador portátil o de sobremesa con la que lees los mails, estarás más
+cómodo si guardas las llaves en ese ordenador. También puedes crear las llaves sin periódo
+de caducidad para poder ser identificado y para las comunicaciones habituales - puedes
+generar otro par de llaves para comunicaciones extremadamente más seguras (si las tienes).
+Las siguientes instrucciones deben de ser escritas bajo las mejores medidas de seguridad,
+no necesitas seguirlas todas, sólo aquellas para generar el par de llaves. Por otro lado,
+si eres extremadamente paranoico como yo siguiendos las siguientes directivas te
+proveerá temporalmente con una sensación de fugaz calma que necesitas sentir en este
+momento.
+
+<P>Las siguientes instrucciones deben seguirse con la mayor seguridad (paranoia) posible,
+por ejemplo:
+<UL>
+<LI>las llaves deben generarse lo más grande posibles para resistir un ataque de fuerza bruta
+<LI>las llaves deben generarse con una caducidad para prevenir un eventual compriso de las mismas por un incremento en la ciencia computacional
+<LI>las llaves deben almacenarse en un disquette para prevenir su robo si alguien accede a tu ordenador (fisica o remotamente)
+<LI>se debe crear un Certificado de Cancelación para permitir cancelar la llave pública si la seguridad de la misma se encuentra comprometida o se pierde la llave
+</UL>
+
+<P>1)  Ve a www.gnupg.org y bajate la última versión de gnupg: gnupg-x.x.x.tar.gz
+
+<P>Advertencia:  Asegurate que estas utilizando almenos la versión 1.0.6 of GnuPG. ya que anteriores versiones tenian un fallo de seguridad.
+
+<P>2)  Comprueba la firma y el MD5 Checksum del programa GnuPG:
+
+<BR>
+<P><CODE>
+bash$ gpg --verify gnupg-x.x.x.tar.gz.sig gnupg-x.x.x.tar.gz
+<BR>bash$ md5sum gnupg-x.x.x.tar.gz
+</CODE>
+
+<P>3)  Extraer los archivos, configurarlos, compilarlos e instalarlos:
+
+<BR>
+<P><CODE>
+bash$ tar xvzf gnupg-x.x.x.tar.gz
+<BR>bash$ cd gnupg-x.x.x
+<BR>bash$ ./configure
+<BR>bash$ make
+<BR>bash$ su
+<BR>bash# make install
+<BR>bash# exit
+<BR>bash$ cd
+</CODE>
+
+<P>Si estas compartiendo el sistema donde instalas el GnuPg con otros usuarios, debes 
+también querer poner el gpg en la root de esta forma su ejecució será más segura.
+Si lo haces así, debes comprobar el md5 y la firma del pgp para estar seguro de no
+estar instalando un troyano.
+
+<P>4)  Consigue un disquette para almacenar las llaves y formatealo.
+
+<P><CODE>
+bash$ /sbin/mkfs.ext2 /dev/fd0
+</CODE>
+
+<P>4a) Montar el disquette y haz un directorio para tus llaves:
+
+<BR>
+<P><CODE>
+bash$ mount /mnt/floppy
+<BR>bash$ mkdir /mnt/floppy/.gnupg
+</CODE>
+
+<P>y si es necesario (y dependiendo del acceso a fd0):
+
+<P><CODE>
+bash$ chown &#60;your_uid&#62;:&#60;your_gid&#62; /mnt/floppy/.gnupg
+</CODE>
+
+<P>4b) Crea un enlace desde tu directorio local hacia el disquette
+
+<BR>
+<P><CODE>
+bash$ ln -s /mnt/floppy/.gnupg .gnupg
+</CODE>
+
+<P>5)  Crear un par de llaves
+
+<BR>
+<P><CODE>
+bash$ gpg --gen-key
+</CODE>
+
+<P>5a) Seleccionar el tipo de llave que quieres - La que nos suguiere es suficiente.
+
+<BR>
+<P><CODE>
+Please select what kind of key you want:
+<BR>	 (1) DSA and ElGamal (default)
+<BR>	 (2) DSA (sign only)
+<BR>	 (4) ElGamal (sign and encrypt)
+<BR>Your selection? &#60;return&#62;
+</CODE>
+
+<P>5b) Seleccionar el tamaño:  2048
+<BR>
+<P><CODE>
+DSA keypair will have 1024 bits.
+<BR>About to generate a new ELG-E keypair.
+<BR>				  minimum keysize is  768 bits
+<BR>					default keysize is 1024 bits
+<BR>	  highest suggested keysize is 2048 bits
+<BR>What keysize do you want? (1024) 2048&#60;return&#62;
+<BR>Do you really need such a large keysize? yes&#60;return&#62;
+</CODE>
+
+<P>5c) Seleccionar un periodo de caducidad:	5 años es suficiente
+
+<BR>
+<P><CODE>Requested keysize is 2048 bits
+<BR>Please specify how long the key should be valid.
+<BR>			 0 = key does not expire
+<BR>		 &#60;n&#62;  = key expires in n days
+<BR>		 &#60;n&#62;w = key expires in n weeks
+<BR>		 &#60;n&#62;m = key expires in n months
+<BR>		 &#60;n&#62;y = key expires in n years
+<BR>Key is valid for? (0) 5y&#60;return&#62;
+<BR>Key expires at Sun Sep 21 16:17:15 2005 EDT
+<BR>Is this correct (y/n)? y&#60;return&#62;
+</CODE>
+
+<P>5d) Introduce tu nombre y tu direccion(es) de correo electrónico...
+
+<BR>
+<P><CODE>
+Real name: Demo User&#60;return&#62;
+<BR>Email address: demo@nonexistent.nowhere&#60;return&#62;
+<BR>Comment:
+<BR>You selected this USER-ID:
+<BR>	  "Demo User &#60;demo@nonexistent.nowhere&#62;"
+<BR>
+<BR>Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?	O&#60;return&#62;
+</CODE>
+
+<P>5e) Escoje una frase clave, debes escoger una buena lo sufientemente
+		 larga para no ser adivinada y lo suficientemente fácil para que no te
+			 olvides de ella. Si te olvidas de la frase no podrás recuperar tus
+			 llaves.
+
+<P>5f) Mueve el raton y haz algunos clicks en el escritorio o ejecuta una
+		 búsqueda grande. GPG está buscando números aleatorios para crear las
+			 las llaves, de esta forma introducirás mas aleatoriedad interrumpiéndole.
+			 interrumpe.
+
+<P>6)  Modifica la llave si quieres, por ejemplo si tienes multiples cuentas
+		 de correo que quieras añadir como válidas a tu llave:
+
+<BR>
+<P><CODE>
+bash$ gpg --list-secret-keys
+<BR>
+<BR>/home/demo/.gnupg/secring.gpg
+<BR>----------------------------
+<BR>sec	1024D/C01BAFC3 2000-09-21 Demo User &#60;demo@nonexistent.nowhere&#62;
+<BR>ssb	2048g/7A4087F3 2000-09-21
+<BR>bash$ gpg --edit-key C01BAFC3
+<BR>Command> help
+<BR>Command> adduid
+<BR>[...]
+<BR>Command> save
+</CODE>
+
+<P>7) Envia tus llaves a un servidor:
+<BR>
+<P><CODE>
+[vab@firster vab]$ gpg --keyserver &#60;servidor&#62; --send-key &#60;ID_Llave&#62;
+</CODE>
+
+<P>Debes ver un mensaje de éxito como este:
+<BR>
+<P><CODE>
+gpg: success sending to `&#60;servidor&#62;' (status=200)
+</CODE>
+
+<P><B><A NAME="ss3.6">3.6 Publicando tu llave en un servidor de llaves</A></B>
+
+<P>Hay gente que cree que es importante mantener su llave pública en secreto ya que le
+otorga mayor seguridad en sus comunicaciones. Esto es cierto por que un servidor puede
+ser manipulado o comprometido y enviar llaves públicas de forma incorrecta. Por ello, la
+llave pública que se envia a los servidores no debe ser la última actualización de la
+misma. Por ejemplo, firmas adicionales pueden ser añadidas a la llave pública local pero
+no subidas al servidor de llaves. Eso es así porque la llave pública del par de llaves es
+necesaria para realizar cierto ataques en criptosistemas. Estos ataques dificilmente podrán
+tener éxito, no importa si la llave pública es emitida, ya que la fuerza del par de llave
+reside en mantener oculta la llave secretra.
+
+<P>Yo no recomiendo que mantengas tu llave pública en secreto por que eso desanima a los
+demás usuarios que utilizan PGp en sus comunicación contigo. Para evitar la posibilidad
+de que el servidor esté comprometido o haya sido alterado en su retorno de llaves pública
+es recomendable que publiques las huellas de tu llave dentro de un fichero .signatura o
+en tu página web, para evitar la posibilidad de que alguien ataque tu llave pública y de
+esa forma comprometa la seguridad de tus comunicaciones, puedes generar otro par de
+llaves adicional (que caduque en horas o en dias) para cada una de las comunicaciones e
+intercambios de llaves.
+
+<P>Si no deseas que tu llave esté en un servidor, no debes realizar el último paso e
+indicar al coordinador del Grupo de Firmas que tu llave firmada no debe subirse al
+servidor de llaves. El coordinador puede extraer los detalles de tu llave y reenviarlos a
+los demás participantes via correo encriptado, o por otros métodos, adjuntando una nota
+indicando que deben devolverse una vez firmado en vez de subirlar al servirdor de llaves.
+
+<P><B><A NAME="ss3.7">3.7 Generando un Certificado de Cancelación</A></B>
+
+<P>Este paso es opcional.
+
+<P>La creación y almacenamiento del Certificado de Cancelación te permitirá cancelar tu
+llave pública en cualquier momento que pierdas acceso a tu llave privada o esta se vea
+comprometida: fallo del soporte, ataque, olvido de frase secreta. Si quieres cancelar la
+llave pública incluso cuando no tienes acceso a la llave privada, entonces debes generar
+un Certificado de Cancelación y almacenarlo en un lugar seguro. Puedes incluso imprimir
+una copia del certificado para poder entrarla manualmente, por si falla el medio de
+almacenaeje.
+
+
+<P>Si el Certificado de Cancelación queda comprometido, la persona que lo comprometa podrá
+cancelar la llave pública en circulación, sin embargo no podrá acceder a la llave secreta
+y tampoco podrá generar falsas firmas, desencriptar mensajes o cualquier otra cosa que
+pueda hacer el usuario del par de llaves. Realmente lo único negativo de esto es que
+deshabilita el par de llaves.
+
+<P><A HREF="#ss3.9">3.9</A> Cancelando tus llaves.
+
+<P>El comando GnuPG para crear un Certificado de Cancelación es:
+
+<BR>
+<P><CODE>
+bash$ gpg --output revcert.asc --gen-revoke &#60;ID_Llave&#62;
+</CODE>
+
+<P>9)   Envia la información al Coordinador indicándole que vas a asistir a el Grupo de
+Firmas. El siguiente comando te permite imprimir la información necesaria y que debes
+enviar al coordinador si no utilizas un ser servidor de llaves, pueden enviar la 
+información encriptada al coordinador.
+
+<BR>
+<P><CODE>
+bash$ gpg --fingerprint  &#60;ID_LLave&#62;
+</CODE>
+
+<P>10)  Desmontar el disquette y expulsarlo:
+
+<BR>
+<P><CODE>
+bash$ umount /mnt/floppy
+</CODE>
+
+<P>Nota: Para una máxima seguridad, puedes llevarte contigo el disquette allá donde vayas
+o puedes dejarlo en un lugar seguro, encerrado en tu escritorio, etc. DO DEBES dejar tus
+llaves accesibles por internet.
+
+<P>11) Ir a el Grupo de Firmas.
+<BR>
+
+<P><B><A NAME="ss3.8">3.8 Firmando de otras llaves</A></B>
+
+<P>Paso 1:	 Obtener un copia de la llave.
+
+<P>Normalmente se obtiene de los servidores de llaves, sin embargo si la llave no está
+disponible en el servidor puedes importarla utilizando <CODE>gpg --import</CODE>.
+Si trabajas con servidores de llaves, el siguiente comando te servirá para descargar la
+llave publica e incorporarla en tu anillo público.
+<BR>
+<P><CODE>
+bash$ gpg --keyserver &#60;servidor&#62; --recv-keys	&#60;ID_Llave&#62;
+</CODE>
+
+<P>Si recibes un error, significa que el servidor está sobrecargado. Por favor, inténtalo
+dentro de unos segundos.
+
+<P>Paso 2:	Huella y verificado de llave
+
+<BR>
+<P><CODE>
+bash$ gpg --fingerprint &#60;ID_Llave&#62;
+</CODE>
+
+<P>GPG imprimirá la huella del usuario &#60;ID_Llave&#62; (la llave que se acaba de
+descargar). Comprobamos la huella con la que tenemos en el listado del Grupo de
+Firmas. Nota: No compruebes la huella de tu listado contra la huella que aparece en la 
+web del servidor, ya que puede no haberte enviado la misma llave.
+
+<P>Paso 3:	Firmar una llave
+
+<BR>
+<P><CODE>
+bash$ gpg --sign-key &#60;Key_ID&#62;
+</CODE>
+
+<P>Si tienes multiples llaves privadas, debes especificar cuál de todas tu llaves 
+privadas es la que va a firmar la llave pública, este es el comando:
+
+<BR>
+<P><CODE>
+bash$ gpg --default-key &#60;ID_a_usar&#62; --sign-key &#60;ID_Llave&#62;
+</CODE>
+
+<P>Si tienes problemas con llaves tipo RSA es por que probablemente estés utilizando una
+versión antigua de GnuPg. Versiones anteriores a la 1.0.3 no incluye compatibilidad con
+RSA. Nota: Debes desintalar la versión antigua, para comprobar que versión estas
+utilizando usa el siguiente comando:
+
+<BR>
+<P><CODE>
+bash$ gpg --version
+</CODE>
+
+<P>Paso 4:	Devolver o subir la llave firmada
+
+<P>Si estas trabajando con una entidad que no quiere que su llave esté en un servidor
+público, deberás devolver la llave pública firmada a su propietario por el método que él
+eliga - normalmente encriptada. No debes enviar la llave pública firmada al servidor sin
+el permiso de su propietario. Publicar una llave reduce levemente la seguridad del par de
+llaves, por lo tanto está mal visto publicar una llave si su propietario no lo desea.
+
+<P>Pero normalmente trabajarás con servidores de llaves. Si es el caso, deberás enviar
+la llave pública firmada de vuelta al servidor con el siguiente comando:
+
+<BR>
+<P><CODE>
+bash$ gpg --keyserver &#60;servidor&#62; --send-key &#60;ID_Llave&#62;
+</CODE>
+
+<P>Verás un mensaje de éxito como este:
+<BR>
+<P><CODE>
+gpg: success sending to `&#60;servidor&#62;' (status=200)
+</CODE>
+
+<P>Felicidades, el firmado de llave pública ha terminado y tu firma ha sido incluida en
+su llave pública. Se han establecido las vías de confianza.
+
+<P><B><A NAME="ss3.9">3.9 Cancelando tus llaves</A></B>
+
+<P>En el momento que sospeches que tu llave secreta ha sido comprometida, debes cancelarla
+de forma inmediata. La cancelación de llaves tiene lugar añadiendo una firma de cancelación
+dentro de tu llave pública. La cancelación de una llave pública sugiere que la llave ya no
+es válida (segura) y no debe usarse. Cuando se libera un Certificado de Cancelación este
+no puede retrocederse.
+
+<P>Piensa que tu llave PGP se ha distribuido (está en circulación) para los demás desde un
+punto central (servidor de llaves) al cuál se accede cada vez para obtenerla, debes
+distribuir o poner en circulación el Certificado de Cancelación de la misma forma
+que has distribuido tu llave pública. Para poner en circulación el certificado de
+cancelación de la misma forma que tu llave pública sólo hay que subirla al servidor de
+llaves públicas. Si no lo has subido por razones de seguridad, puede que ahora si debas
+subir el Certificado de Cancelación al servidor de llaves. En ese caso deberás plantearte
+una leve inseguridad como resultado de publicar tu llave en un servidor de llaves y
+reducir el peligro de que alguien no se entere de que tu llave ha sido cancelada.
+
+<P>El comando para crear el Certificado de Cancelación es:
+
+<BR>
+<P><CODE>
+bash$ gpg --output revcert.asc --gen-revoke &#60;key_id&#62;
+</CODE>
+
+<P>Si tienes sospechas de como o cuando tu llave ha sido comprometida y generaste un
+certificado de cancelación en su momento, deberías de crear un nuevo certificado que
+cancele tu par de llaves, ya que en openPGP se puede dar un motivo por el cuál se cancela
+el par de llaves e incluso se puede añadir unas cuantas lineas de texto. Enviar este nuevo
+Certificado de Cancelación sobre el antiguo es mucho mejor, ya que el texto es más
+específico que el inicial.
+
+<HR>
+<H2><A NAME="toc4">4. Glosario</A></H2>
+
+<P><B><A NAME="key">Llave</A></B> - Uno o más bits de información usados para procesos de encriptación y desencriptación.
+
+<P><B><A NAME="keyfingerprint">Huella</A></B> - Si PGP, un valor que identifica a la llave generada por un método de "hash" de su contenido.
+
+<P><B><A NAME="keypair">Par de Llaves</A></B> - En la criptografía pública, una par de llaves consiste en una llave pública y otra privada o secreta, ambas estan relacionadas.
+
+<P><B><A NAME="keyring">Anillo</A></B> - Una colección de llaves. Este término se utiliza en relación al PGP donde el anillo consiste en una colección de uno a más paquetes de llaves.
+
+<P><B><A NAME="keyserver">Servidor de Llaves</A></B> - Es un sistema donde se almacena llaves. Estos servidores se utilizan para recuperar llaves públicas de personas con las cuales no se ha contactado.
+
+<P><B><A NAME="keysigningparty">Grupo de Firmas</A></B> - Reunión de personas que utilizan tecnología de encriptación PGP con el propósito de permitier que otra gente firme sus llaves públicas mutuamente para extender las <A HREF="#weboftrust">vías de confianza</A>.
+
+<P><B><A NAME="openpgp">openPGP</A></B> - El estandard abierto que define el sistema de seguridad del PGP.
+
+<P><B><A NAME="prettygoodprivacy">Pretty Good Privacy [PGP]</A></B> - Software Privado desarrollado por Phil Zimmermann, en el cuál se incluye criptografía pública, el estandard en el formato de llaves y con criptografía simétrica.
+
+<P><B><A NAME="publickey">Llave Pública</A></B> - En la cripografía pública, la llave del par de llaves que es compartida.
+
+<P><B><A NAME="publickeyring">Anillo Público</A></B> - Un anillo de llaves públicas. Este término esta relacionado con <A HREF="#pgp">PGP</A>.
+
+<P><B><A NAME="radix">Radix</A></B> - Un método de codificación de datos que es transmitido por un canal que sólo soporta 8 bits. Por ejemplo, un correo o UseNet.
+
+<P><B><A NAME="secretkey">Llave Secreta</A></B> - En la criptografía pública, en el par de llaves la que se debe mantener segura.
+
+<P><B><A NAME="secretkeyring">Anillo Secreto</A></B> - Una colección de llaves secretas. Este término se utiliza en relación al PGP donde el anillo consiste en una colección de uno a más paquetes de llaves.
+
+<P><B><A NAME="trustpath">Vias de Confianza</A></B> - Una ruta de confianza que va desde una entidad hasta otra. En PGP, este es el enlace que va entre dos llaves públicas
+
+<P><B><A NAME="weboftrust">Sistema de Confianza</A></B> - Colleción de firmas basado en las <A HREF="#trustpath">vías de confianza</A> sobre un usuario concéntrico que es el modelo que provee la autentificación. La confianza que hay entre un grupo de llaves.
+
+<HR>
+<H2><A NAME="toc5">5. Información Relevante y otras fuentes</A></H2>
+
+<P><B><A NAME="ss5.1">5.1 Lista de servidores públicos</A></B>
+<OL>
+<LI><A HREF="http://keyserver.cryptnet.net/">CryptNET Keyserver Network</A>
+<OL>
+<LI><A HREF="http://gnv.us.ks.cryptnet.net/">gnv.keyserver.cryptnet.net</A>
+</OL>
+<LI><A HREF="http://wwwkeys.pgp.net/">pgp.net</A>
+<OL>
+<LI><A HREF="http://wwwkeys.us.pgp.net/">wwwkeys.us.pgp.net</A>
+<LI><A HREF="http://wwwkeys.nl.pgp.net/">wwwkeys.nl.pgp.net</A>
+<LI><A HREF="http://wwwkeys.ch.pgp.net/">wwwkeys.ch.pgp.net</A>
+<LI><A HREF="http://wwwkeys.uk.pgp.net/">wwwkeys.uk.pgp.net</A>
+<LI><A HREF="http://wwwkeys.cz.pgp.net/">wwwkeys.cz.pgp.net</A>
+<LI><A HREF="http://wwwkeys.de.pgp.net/">wwwkeys.de.pgp.net</A>
+<LI><A HREF="http://wwwkeys.dk.pgp.net/">wwwkeys.dk.pgp.net</A>
+<LI><A HREF="http://wwwkeys.es.pgp.net/">wwwkeys.es.pgp.net</A>
+</OL>
+<LI><A HREF="http://www.keyserver.net/">www.keyserver.net Network</A>
+<OL>
+<LI><A HREF="http://search.keyserver.net/">search.keyserver.net</A>
+<LI><A HREF="http://seattle.keyserver.net/">seattle.keyserver.net</A>
+<LI><A HREF="http://germany.keyserver.net/">germany.keyserver.net</A>
+<LI><A HREF="http://belgium.keyserver.net/">belgium.keyserver.net</A>
+<LI><A HREF="http://finland.keyserver.net/">finland.keyserver.net</A>
+<LI><A HREF="http://thailand.keyserver.net/">thailand.keyserver.net</A>
+</OL>
+<LI><A HREF="http://pgp.ai.mit.edu/">pgp.ai.mit.edu</A>
+<LI><A HREF="http://pgp.cc.gatech.edu/">pgp.cc.gatech.edu</A>
+<LI><A HREF="http://pgp.es.net/">pgp.es.net</A>
+<LI><A HREF="http://pgp.rediris.es/">pgp.rediris.es</A>
+<LI><A HREF="http://pgp.uk.demon.net/">pgp.uk.demon.net</A>
+<LI><A HREF="http://pgp.uni-mainz.de/">pgp.uni-mainz.de</A>
+<LI><A HREF="http://pgp.nic.ad.jp/">pgp.nic.ad.jp</A>
+<LI><A HREF="http://ds.carnet.hr/">ds.carnet.hr</A>
+</OL>
+
+<P><B><A NAME="ss5.2">5.2 Enlaces a documentos relacionados</A></B>
+<UL>
+<LI><A HREF="http://www.cryptnet.net/mirrors/docs/zimmermann-sassaman.txt">The Zimmermann-Sassaman Keysigning Party Protocol Definition</A>
+<LI><A HREF="http://www.gnupg.org/faq.html">GnuPG FAQ</A>
+<LI><A HREF="http://www.gnupg.org/gph/en/manual.html">GnuPG Handbook</A>
+<LI><A HREF="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.html">GnuPG Mini Howto (English)</A>
+<LI><A HREF="http://www.uk.pgp.net/pgpnet/pgp-faq/">comp.security.pgp FAQ</A>
+<LI><A HREF="http://www.cryptnet.net/fdp/crypto/strong_distro.html">Strong Distribution HOWTO</A>
+<LI><A HREF="http://www.cryptnet.net/fdp/crypto/guerrilla-devl.html">Guerrilla Software Development HOWTO</A>
+<LI><A HREF="http://www.cryptnet.net/fdp/crypto/pgp-compromise.html">PGP Compromise HOWTO</A>
+<LI><A HREF="http://www.cryptnet.net/fdp/crypto/crypto-dict.html">Cryptography Dictionary</A>
+</UL>
+
+<P><B><A NAME="ss5.3">5.3 Programas Relacionados</A></B>
+<UL>
+<LI><A HREF="http://www.gnupg.org/">Gnu Privacy Guard (GnuPG)</A> (<A HREF="http://freshmeat.net/projects/gnupg/">FreshMeat</A>)
+<LI><A HREF="http://www.cryptnet.net/fsp/cks/">CryptNET Keyserver</A> (<A HREF="http://freshmeat.net/projects/cks/">FreshMeat</A>)
+<LI><A HREF="http://www.lysator.liu.se/~jc/wotsap/">Wotsap</A> Web of trust statistics and pathfinder (<A HREF="http://freshmeat.net/projects/wotsap/">FreshMeat</A>)
+<LI><A HREF="http://www.research.att.com/sw/tools/graphviz/">The AT&T Labs-Research Graphviz package</A>
+</UL>
+
+<P><B><A NAME="ss5.4">5.4 Webs Relacionadas</A></B>
+<UL>
+<LI><A HREF="http://www.biglumber.com/">Biglumber - Coordinación de Firmado de Llaves</A>
+<LI><A HREF="http://lists.alt.org/mailman/listinfo/keysignings">Mailing List de Fiestas</A>
+<LI><A HREF="http://lists.alt.org/pipermail/keysignings/">Archivo de Fiestas por Mailing List</A>
+<LI><A HREF="http://www.openpgp.org/">OpenPGP Alianza Página Web</A>
+<LI><A HREF="http://keyserver.kjsl.com/~jharris/keysigning.html">Jason Harris' Página de Firmado</A>
+<LI><A HREF="http://keyserver.kjsl.com/~jharris/ka">Analizador de Llaves</A>
+<LI><A HREF="http://www.pgpi.org/">PGP Internacional</A>
+<LI><A HREF="http://www.chaosreigns.com/code/sig2dot/">Anillo de llaves de Debian</A>
+<LI><A HREF="http://www.chaosreigns.com/code/sigtrace/">Seguimiento de Firmas</A>
+<LI><A HREF="http://www.cryptnet.net/">CryptNET</A>
+</UL>
+
+<P><B><A NAME="ss5.5">5.5 Normativa RFCs Relacionada</A></B>
+<UL>
+<LI><A HREF="http://www.cryptnet.net/mirrors/rfcs/rfc2440.txt">RFC2440: OpenPGP Message Format</A>
+<LI><A HREF="http://www.cryptnet.net/mirrors/rfcs/rfc2015.txt">RFC2015: MIME Security With Pretty Good Privacy</A>
+</UL>
+
+<P><B><A NAME="ss5.6">5.6 Fotografias de los grupos</A></B>
+<UL>
+<LI>Gainesville, Florida, USA
+<LI>Isreal [<A HREF="http://www.cryptnet.net/fdp/crypto/pgp_party/pgp_signing_party_1.jpg">1</A>][<A HREF="http://www.cryptnet.net/fdp/crypto/pgp_party/pgp_signing_party_2.jpg">2</A>]
+</UL>
+<HR>
+
+<H2><A NAME="toc6">6. Sobre este documento</A></H2>
+
+<P>Copyright (c) 2000 - 2003	V. Alex Brennen.
+<P>El permisó está garantizado para copiar, distribuir y/o modificar este documento bajo
+los términos de la <A HREF="http://www.fsf.org/copyleft/fdl.html">GNU Free Documentation License, Version 1.1</A>
+o cualquier otra verisón publicada por Free Software Foundation.
+
+<P>Este documeto se encuentra en <A HREF="http://members.fortunecity.com/keyparty/gpg-party.html">http://members.fortunecity.com/keyparty/gpg-party.html</A>
+
+<P><B><A NAME="ss6.1">6.1 Versiones</A></B>
+<P>Version 1.0.0, 2000.10.01 Initial Release.
+<P>Version 1.0.1, 2000.10.03 Format/Writing changes, private public keys info.
+<P>Version 1.0.2, 2000.12.07 HTML (Bad Link) Fix.
+<P>Version 1.0.3, 2001.01.14 Simplification revisions, graphing, keyserver security/etiquette information, perl code, announcement examples, additional material, and general fixes.
+<P>Version 1.0.4, 2001.06.21 Revocation information added: 3.5, 3.7. RFC info added: 4.4.  Keyserver list and web site links updated.
+<P>Version 1.0.5, 2003.03.24 Glossary Added: 4. Pictures Added: 5.5. Minor corrections, additional material, and formatting changes.
+<P>Version 1.0.6, 2003.03.24 New Content: Zimmermann-Sassaman Method, Brennen Method.	General document clean-up.
+<P>Version 1.0.7, 2003.05.07 Added German Translation
+<P>Version 1.0.8, 2003.05.09 Added Section 5.3 Related Programs
+
+<P><B><A NAME="ss6.2">6.2 Traducciones</A></B>
+<P>Este documento se encuentra sólo disponible para los siguientes idiomas:
+
+<P>[<A HREF="http://www.cryptnet.net/fdp/crypto/gpg-party.html">en</A>] English
+<P>[<A HREF="http://alfie.ist.org/projects/gpg-party/gpg-party.de.html">de</A>]German (<A HREF="http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party/de/">Local Mirror</A>)
+<P>[<A HREF="http://neonatus.net/~neonatus/GPG/index.html">si</A>] Slovenian (<A HREF="http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party/si/">Local Mirror</A>)
+<P>[<A HREF="http://members.fortunecity.com/keyparty/gpg-party.html">es</A>] Spanish (<A HREF="http://www.cryptnet.net/fdp/crypto/gpg-party/es/">Local Mirror</A>)
+
+<P>Si conoces alguna otra traducción o quieres traducirlo a algún otro idioma, por favor,
+hazmelo saber para que se pueda distribuir o enlazar con la nueva versión traducida.
+
+<P><B><A NAME="ss6.3">6.3 Contribuciones</A></B>
+<P><A HREF="http://www.cryptnet.net/people/vab/">V. Alex Brennen</A> (Principal Author)
+<P><A HREF="http://www.chaosreigns.com/">Darxus</A> (Graphing Code (sig2dot.pl & sigtrace.pl))
+<P><A HREF="http://neonatus.net/~neonatus/">Bostjan Muller</A> (Slovenian Translation)
+<P><A HREF="http://alfie.ist.org/">Gerfried Fuchs</A> (German Translation)
+<P><A HREF="http://members.fortunecity.com/keyparty/">Alex Bergonzini</A> (Spanish Translation)
+<P>
+</BODY></HTML>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.2. Using the card only for subkeys</title>
+    <link rel="stylesheet" href="css/smartcard.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.68.1" />
+    <link rel="start" href="smartcard-howto.html" title="How to use the Fellowship Smartcard" />
+    <link rel="up" href="ch05.html" title="Chapter 5. Advanced Features" />
+    <link rel="prev" href="ch05.html" title="Chapter 5. Advanced Features" />
+    <link rel="next" href="apa.html" title="Appendix A. Appendix" />
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tr>
+          <th colspan="3" align="center">5.2. Using the card only for subkeys</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left"><a accesskey="p" href="ch05.html">Prev</a> </td>
+          <th width="60%" align="center">Chapter 5. Advanced Features</th>
+          <td width="20%" align="right"> <a accesskey="n" href="apa.html">Next</a></td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+    <div class="section" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="id2523206"></a>5.2. Using the card only for subkeys</h2>
+          </div>
+        </div>
+      </div>
+      <p>Using the card this way is suggested if you already have a key with a lot of key signatures.</p>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2523217"></a>5.2.1. What are Subkeys?</h3>
+            </div>
+          </div>
+        </div>
+        <p>Subkeys are keys to use in every day life.  They are bound to your private key and are used for signing and decrypting.  They normally have a set expiration date.  Even overlapping subkeys for a single private key are possible.  However, there is one limitation to a full featured private key - subkeys cannot be used for key signing.</p>
+        <p>Therefore they are a perfect alternative to use on a smartcard.</p>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2523237"></a>5.2.2. Moving a Subkey to the Card</h3>
+            </div>
+          </div>
+        </div>
+        <p>The card does not support DSA keys.  Even if you are using a RSA key you might encounter problems.  The cards available at the moment only support 1024 bit keys.</p>
+        <p>The suggestion is to use the key on the card only for signing and decrypting but NOT for key signing.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p class="remark">
+            <i>
+              <span class="remark">By keeping the primary key offline it is not exposed to remote attacks.  gpg has offered this feature for many years.  Werner in fact has been using this method for his 5B0358A2 key since 1999.  Using this method was not easy at first since some OpenPGP implementations and the keyservers were not able to cope with signing subkeys.  Times have changed and signing subkeys is state of the art today.</span>
+            </i>
+          </p>
+        </div>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Warning</h3>
+          <p>Secret keys stored on a computer accessible via network can be compromised.</p>
+        </div>
+        <p>Initialise your card but do not call <strong class="userinput"><code>generate</code></strong> - call <strong class="userinput"><code>quit</code></strong>.  Start <strong class="userinput"><code>gpg</code></strong> calling <strong class="userinput"><code>--edit-key &lt;your_keyid&gt;</code></strong>.  Now enter <strong class="userinput"><code>addcardkey</code></strong> and make your decision to either create a signature, an encryption or an authentication key.</p>
+        <div class="informalexample">
+          <pre class="screen">
+archi@foobar:~ &gt; gpg --edit-key FF19F200
+gpg (GnuPG) 1.4.0; Copyright (C) 2004 Free Software Foundation, Inc.
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions. See the file COPYING for details.
+
+Secret key is available.
+
+pub  1024R/FF19F200  created: 2005-03-05  expires: never       usage: CS
+                     trust: ultimate      validity: ultimate
+sub  1024R/F09033F1  created: 2005-03-05  expires: never       usage: E
+sub  1024R/3239D981  created: 2005-03-05  expires: never       usage: A
+[ultimate] (1). Archibald Goodwin (The Tester) &lt;archi@foobar.example&gt;
+
+Command&gt; addcardkey
+Signature key ....: 884B 9142 F645 1A72 4B92  EB94 DF80 CCEF FF19 F200
+Encryption key....: 31C1 2190 FCF1 A684 5AF9  D719 26D7 28A8 F090 33F1
+Authentication key: 811F C45F 911A C15A F6DC  5BD6 58BA B8D1 3239 D981
+
+Please select the type of key to generate:
+   (1) Signature key
+   (2) Encryption key
+   (3) Authentication key
+Your selection? 2
+
+gpg: WARNING: such a key has already been stored on the card!
+
+Replace existing key? (y/N) y
+gpg: 3 Admin PIN attempts remaining before card is permanently locked
+
+Admin PIN
+
+PIN
+Key is protected.
+Please specify how long the key should be valid.
+         0 = key does not expire
+         &lt;n&gt;  = key expires in n days
+         &lt;n&gt;w = key expires in n weeks
+         &lt;n&gt;m = key expires in n months
+         &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+Really create? (y/N) y
+gpg: existing key will be replaced
+gpg: please wait while key is being generated ...
+gpg: key generation completed (27 seconds)
+gpg: signatures created so far: 6
+gpg: signatures created so far: 6
+
+
+pub  1024R/FF19F200  created: 2005-03-05  expires: never       usage: CS
+                     trust: ultimate      validity: ultimate
+sub  1024R/F09033F1  created: 2005-03-05  expires: never       usage: E
+sub  1024R/3239D981  created: 2005-03-05  expires: never       usage: A
+sub  1024R/F6518D6B  created: 2005-03-05  expires: never       usage: E
+[ultimate] (1). Archibald Goodwin (The Tester) &lt;archi@foobar.example&gt;
+                </pre>
+        </div>
+        <p>First create a signing key.  If this kind of key already exists on the card, a security question has to be answered.  Run <strong class="userinput"><code>save</code></strong> to commit the changes to the card.  The key on the card will not be removed if you do not <strong class="userinput"><code>save</code></strong> the changes.  You can create another subkey by again calling <strong class="userinput"><code>addcardkey</code></strong>.  Choose the encryption key and proceed as explained.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p>gpg will always use the latest created key of a given type.</p>
+        </div>
+        <p>There is no direct way to create a backup key of the card's decryption key like it is done with the <strong class="userinput"><code>generate</code></strong> command.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <h3 class="title">Note</h3>
+          <p>Make a copy of your secret key before running the following commands.  Otherwise the whole procedure will be pointless.</p>
+        </div>
+        <p>A few steps more will help you to achieve this goal. First create a regular RSA subkey of 1024 bit length using the <strong class="userinput"><code>addkey</code></strong> command.  Then select this new key and run <strong class="userinput"><code>keytocard</code></strong>.  gpg transfers the key to the card and replaces the existing secret key with a stub.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="ch05.html">Prev</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="ch05.html">Up</a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="apa.html">Next</a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top">Chapter 5. Advanced Features </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="smartcard-howto.html">Home</a>
+          </td>
+          <td width="40%" align="right" valign="top"> Appendix A. Appendix</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
