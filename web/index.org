@@ -41,9 +41,9 @@ Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functi
 The following frames report the latest news from GnuPG.  A list with
 all [[news.org][news of previous years]] is also available.
 
-For those of you who like reading world’s news with an RSS reader,
-GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
-point or paste the [[news.en.rss][RSS file]] into your aggregator.
+# For those of you who like reading world’s news with an RSS reader,
+# GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
+# point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
 ** Blog: Friends tell friends they love GnuPG (2013-11-13)
