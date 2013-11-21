@@ -2047,10 +2047,9 @@ against all threats.
    :CUSTOM_ID: use_pgpmime
    :END:
 
-Probably not.
+This is controversial, thus there are two commonly given answers.
 
-# This is controversial.  rjh: we should discuss on how we can extend
-# this answer -wk
+*** 1. Probably not.
 
 PGP/MIME is the official, standardized way of using GnuPG with
 electronic mail.  PGP/MIME packages the data up as encrypted
@@ -2072,6 +2071,32 @@ mailing lists, it’s hard to claim that PGP/MIME is ready for
 widespread usage.  For now, it’s best to use inline traffic unless you
 can be certain that PGP/MIME messages will not be mangled in transit.
 
+*** 2. Yes, it is the safer solution.
+
+The problems with the mailing list software are annoying but harmless.
+
+In most other cases PGP/MIME works very well and avoids a lot of
+semantic problems when sending signed mails.  For example it is much
+easier for mail readers to indicate what parts of the mail are covered
+by the signature.  Many mail readers have bugs pertaining to inline
+signatures which can be used to trick the user into assuming that some
+parts of a mail are covered by the signatures while in reality they
+are not.
+
+For encrypted and signed mails there are no problems with signature
+verification because almost all software uses the combined
+signature+encryption approach of PGP/MIME and thus GnuPG takes care of
+it in exactly the same way as it does with inline traffic.
+
+Non-ASCII character encoding is problematic with inline data.
+Although OpenPGP provides a way to specify the encoding, that feature
+is not widely supported.  In good Unix tradition GnuPG does not try to
+interpret the data it signs or encrypts but relies on the peers to
+agree on a common encoding.  PGP/MIME provides a well established and
+matured way of doing exactly that.
+
+Some plugins for Outlook do not support PGP/MIME but after all the
+OpenPGP support in Outlook is anyway quite limited.
 
 
 ** What are the best algorithms in GnuPG?
