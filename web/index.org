@@ -14,7 +14,7 @@ sign your data and communication, features a versatile key management
 system as well as access modules for all kinds of public key
 directories. GnuPG, also known as /GPG/, is a command line tool with
 features for easy integration with other applications. A wealth of
-[[related_software/frontends.html][frontend applications]] and [[related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
+[[file:related_software/frontends.html][frontend applications]] and [[file:related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
 also provides support for S/MIME.
 
 GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
@@ -39,7 +39,7 @@ Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functi
 #+index: News
 
 The following frames report the latest news from GnuPG.  A list with
-all [[news.org][news of previous years]] is also available.
+all [[file:news.org][news of previous years]] is also available.
 
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
