@@ -72,10 +72,10 @@ for any errors.
   :CUSTOM_ID: welcome
   :END:
 
-Welcome to the *unofficial* GnuPG FAQ.
-
-*As of this writing, this FAQ is both inaccurate and incomplete. It is
-a work in progress. Do not rely on the answers found herein.*
+Welcome to the official GnuPG FAQ.  This FAQ has been written from
+scratch and makes the old FAQ obsolete.  Nevertheless this text is
+still incomplete but we believe it to be more accurate than the long
+outdated former FAQ.
 
 
 ** What conventions are used in this FAQ?
@@ -118,7 +118,7 @@ italicized, and initialed by their author.  The different editors are:
    :CUSTOM_ID: is_it_official
    :END:
 
-Not yet.
+Yes.
 
 
 ** When was this FAQ last checked for accuracy?
@@ -184,7 +184,7 @@ clients, such as Psi.
    :END:
 
 Largely, yes.  It can be made to interoperate with anything from PGP
-5.0 and onwards, and has excellent interoperability with the most
+2.6 and onwards, and has excellent interoperability with the most
 recent releases.
 
 
@@ -328,6 +328,13 @@ Alternatively, you can install GnuPG using a package manager:
 #+begin_example
 sudo pkg_add -r gnupg
 #+end_example
+
+*** … for VMS?
+    :PROPERTIES:
+    :CUSTOM_ID: get_gnupg_vms
+    :END:
+
+A port to *VMS* is maintained by Steven M. Schweda at [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
 
 
 ** Is there source code available for it?
@@ -658,7 +665,12 @@ Many email clients offer strong GnuPG integration.
   - Actively developed :: Yes
   Kontact is KDE’s integrated personal information manager of KDE.  It runs anywhere that KDE does, and even on some mobile devices as Kontact Touch.
 
-
+- Claws-Mail
+  - Plugin? :: Yes (internal plugin)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
+  Claws-Mail for Windows is included in the [[http://www.gpg4win.org][Gpg4win]] installer.
 
 ** … Mac OS X?
    :PROPERTIES:
@@ -680,13 +692,16 @@ Many email clients offer strong GnuPG integration.
   - Supports GnuPG versions :: 1.4, 2.0
   - Supports PGP/MIME :: Yes
   - Actively developed :: Yes
+  EasyPG is part of Emacs 23, proper.  Thus there is no more need
+  to install the plugin.  See the Gnus manual for configuration hints.
 
 - Mutt
   - Plugin? :: No (natively supported)
   - Supports GnuPG versions :: 1.4, 2.0
   - Supports PGP/MIME :: Yes
   - Actively developed :: Yes
-  Make sure to put ~set crypt_use_gpgme~ in your =~/.muttrc= file.
+  For best experience make sure to put ~set crypt_use_gpgme~ in your
+  =~/.muttrc= file.
 
 - Apple Mail
   - Plugin? :: Yes, via [[http://www.gpgtools.org][GPGtools]]
@@ -717,13 +732,16 @@ Many email clients offer strong GnuPG integration.
   - Supports GnuPG versions :: 1.4, 2.0
   - Supports PGP/MIME :: Yes
   - Actively developed :: Yes
+  EasyPG is part of Emacs 23, proper.  Thus there is no more need
+  to install the plugin.  See the Gnus manual for configuration hints.
 
 - Mutt
   - Plugin? :: No (natively supported)
   - Supports GnuPG versions :: 1.4, 2.0
   - Supports PGP/MIME :: Yes
   - Actively developed :: Yes
-  Make sure to put ~set crypt_use_gpgme~ in your =~/.muttrc= file.
+  For best experience make sure to put ~set crypt_use_gpgme~ in your
+  =~/.muttrc= file.
 
 - Kontact
   - Plugin? :: No (natively supported)
@@ -740,13 +758,19 @@ Many email clients offer strong GnuPG integration.
   - Supports PGP/MIME :: Yes
   - Actively developed :: Yes
 
+- Claws-Mail
+  - Plugin? :: Yes (internal plugin)
+  - Supports GnuPG versions :: 1.4, 2.0
+  - Supports PGP/MIME :: Yes
+  - Actively developed :: Yes
 
 * Is GnuPG available as a ‘portable app’?
   :PROPERTIES:
   :CUSTOM_ID: portable_app
   :END:
 
-For Windows users, check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps.com]].
+For Windows users, check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps.com]].  To build you own portable
+application you may use the /mkportable/ tool which comes with [[http://www.gpg4win.org][Gpg4win]].
 
 
 * What do all these strange words mean?
