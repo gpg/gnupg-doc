@@ -16,9 +16,9 @@
   signature of the file =gnupg-{{{gnupg_ver}}}.tar.bz2= you would use
   this command:
 
-#+begin_example
-  gpg --verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig
-#+end_example
+  {{{begin_example}}}
+  gpg {{{twodashes}}}verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig
+  {{{end_example}}}
 
   This checks whether the signature file matches the source file. You
   should see a message indicating that the signature is good and made
@@ -33,19 +33,19 @@
 
    If you are not able to use an old version of GnuPG, you have to
    verify the SHA1 checksum. Assuming you downloaded the file
-   =gnupg-{{{gnupg_ver}}}.tar.bz2=, you would run the =sha1sum=
+   gnupg-{{{gnupg_ver}}}.tar.bz2, you would run the =sha1sum=
    command like this:
 
-#+begin_example
+   {{{begin_chksum}}}
    sha1sum gnupg-{{{gnupg_ver}}}.tar.bz2
-#+end_example
+   {{{end_chksum}}}
 
    and check that the output matches the SHA-1 checksum reported on
    this site. An example of a =sha1sum= output is:
 
-#+begin_example
+   {{{begin_chksum}}}
    {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
-#+end_example
+   {{{end_chksum}}}
 
    To be sure that this page has not been tampered, you may want to
    compare the list below with the one included in the announcement
@@ -56,7 +56,7 @@
    For your convenience, all SHA1 sums available for software that can
    be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
 
-#+begin_example
+   {{{begin_chksum}}}
    {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
    {{{gnupg1_patch_sha1}}}  gnupg-{{{gnupg1_patch_ver}}}.diff.bz2
    {{{gnupg1_sha1_gz}}}  gnupg-{{{gnupg1_ver}}}.tar.gz
@@ -69,4 +69,7 @@
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
-#+end_example
+   {{{end_chksum}}}
+
+
+#eof#

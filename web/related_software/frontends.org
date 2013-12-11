@@ -11,7 +11,7 @@
   homogeneous categories. A frontend may belong to one or more
   categories at a time. A list is sorted in an alphabetical order.
 
-  -  [[GUI frontends]]
+  -  [[GUI%20frontends][GUI frontends]]
   -  [[MUA frontends]]
   -  [[Chat programs]]
   -  [[Network related]]

@@ -2,6 +2,9 @@
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 #+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][integrity]].
+#+macro: ftpopen  @@html:<a href="@@
+#+macro: ftpclose @@html:">FTP</a>@@
+
 
 * Download
 
@@ -23,13 +26,13 @@
    GnuPG 2.0 is the new modularized version of GnuPG supporting
    OpenPGP and S/MIME
 
-   | GnuPG {{{gnupg_ver}}} full source code     | {{{gnupg_size}}} | S | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                |                  |   | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2.sig][FTP]] |
+   | GnuPG {{{gnupg_ver}}} full source code     | {{{gnupg_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2{{{ftpclose}}}  |
+   | Signature for previous file                |                  |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{gnupg_sha1}}} gnupg-{{{gnupg_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -37,18 +40,18 @@
 ** GnuPG 1.4
 #  <<gnupg1>>
 
-   | GnuPG {{{gnupg1_ver}}} source compressed using /bzip2/     | {{{gnupg1_size}}}       | S | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                                |                         |   | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig][FTP]] |
-   | GnuPG {{{gnupg1_ver}}} source compressed using /gzip/      | {{{gnupg1_size_gz}}}    | S | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz][FTP]] |
-   | Signature for previous file                                |                         |   | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz.sig][FTP]] |
-   | A patch file to upgrade to a {{{gnupg1_ver}}} source tree  | {{{gnupg1_patch_size}}} | S | [[{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_patch_ver}}}.diff.bz2][FTP]] |
+   | GnuPG {{{gnupg1_ver}}} source compressed using /bzip2/     | {{{gnupg1_size}}}       | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                                |                         |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}} |
+   | GnuPG {{{gnupg1_ver}}} source compressed using /gzip/      | {{{gnupg1_size_gz}}}    | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz{{{ftpclose}}} |
+   | Signature for previous file                                |                         |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz.sig{{{ftpclose}}} |
+   | A patch file to upgrade to a {{{gnupg1_ver}}} source tree  | {{{gnupg1_patch_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_patch_ver}}}.diff.bz2{{{ftpclose}}} |
 
    SHA-1 checksums for the above files:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{gnupg1_sha1}}} gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_sha1_gz}}} gnupg-{{{gnupg1_ver}}}.tar.gz
    {{{gnupg1_patch_sha1}}} gnupg-{{{gnupg1_patch_ver}}}.diff.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    Select one of them. To shorten the download time, you probably want
    to get the /bzip2/ compressed file. Please try another mirror if
@@ -88,8 +91,8 @@
    [[../related_software/gpa/index.org][GPA]] is still work in progress, so don't expect that everything
    works and be careful when using production quality secret keys.
 
-   | GPA {{{gpa_ver}}} full source code | {{{gpa_size}}} | S | [[{{{ftp_base}}}/gcrypt/gpa/gpa-{{{gpa_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file        |                |   | [[{{{ftp_base}}}/gcrypt/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig][FTP]] |
+   | GPA {{{gpa_ver}}} full source code | {{{gpa_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file        |                |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    {{{check_sig_note}}}
 
@@ -105,13 +108,13 @@
    encryption, decryption, signing, signature verification and key
    management.
 
-   | GPGME {{{gpgme_ver}}} full source code | {{{gpgme_size}}} | S | [[{{{ftp_base}}}/gcrypt/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file            |                  |   | [[{{{ftp_base}}}/gcrypt/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig][FTP]] |
+   | GPGME {{{gpgme_ver}}} full source code | {{{gpgme_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file            |                  |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{gpgme_sha1}}} gpgme-{{{gpgme_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -122,13 +125,13 @@
 
    [[../related_software/libraries.en.html#lib-libgcrypt][Libgcrypt]] is GNU's basic cryptographic library.
 
-   | Libgcrypt {{{libgcrypt_ver}}} full source code | {{{libgcrypt_size}}} | S | [[{{{ftp_base}}}/gcrypt/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                    |                      |   | [[{{{ftp_base}}}/gcrypt/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig][FTP]] |
+   | Libgcrypt {{{libgcrypt_ver}}} full source code | {{{libgcrypt_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                    |                      |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{libgcrypt_sha1}}} libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -139,13 +142,13 @@
 
    [[../related_software/libraries.en.html#lib-libksba][Libksba]] is a CMS and X.509 access library.
 
-   | Libksba {{{libksba_ver}}} full source code | {{{libksba_size}}} | S | [[{{{ftp_base}}}/gcrypt/libksba/libksba-{{{libksba_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                |                    |   | [[{{{ftp_base}}}/gcrypt/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig][FTP]] |
+   | Libksba {{{libksba_ver}}} full source code | {{{libksba_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                |                    |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{libksba_sha1}}} libksba-{{{libksba_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -158,13 +161,13 @@
    GnuPG 2.0. It might also be installed as a system daemon for CRL
    and OCSP checks.
 
-   | DirMngr {{{dirmngr_ver}}} full source code | {{{dirmngr_size}}} | S | [[{{{ftp_base}}}/gcrypt/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                |                    |   | [[{{{ftp_base}}}/gcrypt/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig][FTP]] |
+   | DirMngr {{{dirmngr_ver}}} full source code | {{{dirmngr_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                |                    |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{dirmngr_sha1}}} dirmngr-{{{dirmngr_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -176,13 +179,13 @@
    [[../related_software/libraries.en.html#lib-libgpg-error][Libgpg-error]] is a small library with error codes and descriptions
    shared by most GnuPG related software.
 
-   | Libgpg-error {{{libgpg_error_ver}}} full source code | {{{libgpg_error_size}}} | S | [[{{{ftp_base}}}/gcrypt/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                          |                         |   | [[{{{ftp_base}}}/gcrypt/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig][FTP]] |
+   | Libgpg-error {{{libgpg_error_ver}}} full source code | {{{libgpg_error_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                          |                         |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{libgpg_error_sha1}}} libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -193,13 +196,13 @@
 
    [[../related_software/libraries.en.html#lib-libassuan][Libassuan]] is the IPC library used by some GnuPG related software.
 
-   | Libassuan {{{libassuan_ver}}} full source code | {{{libassuan_size}}} | S | [[{{{ftp_base}}}/gcrypt/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2][FTP]] |
-   | Signature for previous file                    |                      |   | [[{{{ftp_base}}}/gcrypt/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig][FTP]] |
+   | Libassuan {{{libassuan_ver}}} full source code | {{{libassuan_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}} |
+   | Signature for previous file                    |                      |   | {{{ftpopen}}}{{{ftp_base}}}/gcrypt/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}} |
 
    SHA-1 checksum for the above file:
-#+begin_example:
+   {{{begin_chksum}}}
    {{{libassuan_sha1}}} libassuan-{{{libassuan_ver}}}.tar.bz2
-#+end_example:
+   {{{end_chksum}}}
 
    {{{check_sig_note}}}
 
@@ -211,7 +214,7 @@
   The latest version of the [[../related_software/libraries.en.html#lib-EGD][Entropy Gathering Daemon]] is available at
   the usual GnuPG sites:
 
-  | EGD 0.8 source code.         | 30kB | S | [[ftp://ftp.gnupg.org/gcrypt/egd/egd-0.8.tar.gz][FTP]] |
-  | Signature for previous file. |      |   | [[ftp://ftp.gnupg.org/gcrypt/egd/egd-0.8.tar.gz.asc][FTP]] |
+  | EGD 0.8 source code.         | 30kB | S | {{{ftpopen}}}{{{ftp_base}}}/egd/egd-0.8.tar.gz{{{ftpclose}}} |
+  | Signature for previous file. |      |   | {{{ftpopen}}}{{{ftp_base}}}/egd/egd-0.8.tar.gz.asc{{{ftpclose}}} |
 
   {{{check_sig_note}}}

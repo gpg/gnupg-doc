@@ -34,7 +34,6 @@ integrated into an installer and features all required tools.
 
 Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
 
-
 * Latest news
 #+index: News
 
