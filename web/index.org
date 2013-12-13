@@ -44,6 +44,11 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Blog: Preparing for launch (2013-12-13)
+
+Mid December, giving season, and nearly time for the GnuPG Crowdfunding
+to commence. We've been working hard on preparations ...
+[[http://blog.gnupg.org/][{more}]]
 
 ** Blog: Friends tell friends they love GnuPG (2013-11-13)
 
