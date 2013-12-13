@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$(pwd  | awk -F/ '{print $NF}')" != "blog.gnupg.org" ]; then
+  echo "upload: not invoked from the blog.gnupg.org directory" >&2;
+  exit 1
+fi
+
+rsync -vr --exclude '*~' --exclude upload . playfair.gnupg.org:/var/www/git/blog.gnupg.org/htdocs/
+
+#eof
