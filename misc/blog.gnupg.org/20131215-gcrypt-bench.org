@@ -1,0 +1,124 @@
+# About Libgcrypt 1.6 performance
+
+** Speedups in Libgcrypt 1.6
+
+   Libgcrypt is a building block of modern GnuPG versions (GnuPG 2.x)
+   and also used by a wide range of other projects.  In fact all Linux
+   distributions install Libgcrypt by default.
+
+   One problem with Libgcrypt has always been that it did not deliver
+   top performance compared to OpenSSL.  Even another GNU crypto
+   library, Nettle, is in some areas faster.  The reason for this is
+   that Libgcrypt was based on an old GnuPG version.  Back in the
+   1990s performance was not the first aim for free crypto software.
+   The crypto authors haved been treated as arms trafficker in the US
+   and not allowed to freely distribute their code.  Thus the primary
+   goal was to write free crypto code in one of the free countries.
+   Further, patents severely hindered the use of crypto algorithms.
+   This together may explain why top performance was not an issue at
+   that time.  Over the years this changed to the better.  However,
+   free software development is mostly driven by user demand and there
+   was not much demand for a faster GnuPG.  Thus we did not care much
+   on speeding up Libgcrypt.  Well, basic support for VIA and Intel
+   CPU accelerated encryption features was eventually added but still
+   lots of other things could have been optimized.
+
+   Last year, Jussi Kivilinna joined the team and started to add CPU
+   optimized implementations of common cipher algorithms.  This
+   changed the picture for cipher and hash algorithms.  The soon to be
+   released Libgcrypt 1.6 is now up to modern standards on what can be
+   achieved on general purpose CPUs.
+
+   To check how 1.6.0 will compare to the older 1.5 version of
+   Libgcrypt, I did some benchmarks using a Thinkpad X220 which
+   features an i5-2410M processor at 2.3GHz running a 64 bit Debian
+   Wheezy.  Default compiler options have been used.
+
+   First let us see how hash algorithms compare (click to enlarge):
+
+   [[file:img/libgcrypt-1.6.0-hash-bench.png][file:img/libgcrypt-1.6.0-hash-bench_s.png]]
+
+   The olive bars indicates how many bytes can be hashed by version
+   1.5.3, the green bar gives the figure for the new 1.6.0, and
+   finally for some algorithms the hatched bar to what Nettle 2.7 is
+   up to.
+
+   The number for the completely insecure MD4 algorithms is way to
+   high (~750 MiB/s) to be included in this chart, thus it has been
+   capped.  For MD5 the old Libgcrypt is faster.  This is a bit
+   surprising but we have not researched the reason; anyway, MD5 shall
+   not be used by today's software because it has been completely
+   broken.  For most of the other algorithm the performance figures
+   are all quite similar.  For the important SHA-1 algorithm 1.6 gains
+   top speed of all compared implementations and further speedups are
+   expected in future versions.
+
+   The major improvements are for SHA-256 and SHA-512 (SHA-384 is a
+   basically SHA-512 with a truncated digest).  The use of Intel
+   provided code which utilizes SSSE3 clearly boosts the performance
+   on this machine and probably on a wide range of other modern Intel
+   CPUs.
+
+   All hash functions are a target for more optimization in
+   forthcoming versions of Libgcrypt.
+
+   Now what about cipher algorithms?  Have a look at this chart:
+
+   [[file:img/libgcrypt-1.6.0-cipher-bench.png][file:img/libgcrypt-1.6.0-cipher-bench_s.png]]
+
+   First, you notice that we have a lot of algorithms here.  The
+   benchmarks are all done for ECM mode encryption.
+
+   There are two extremes here: 3DES is by far the slowest algorithm.
+   It is also the oldest one but still considered rock solid.  In the
+   top performance range we see two algorithms: Arcfour (sometimes
+   called RC4), which is a simple, hard to correctly use, and worse
+   broken design which unfortunately is still used at a lot of places.
+   Even outperforming that are the modern Salsa algorithms, which are
+   considered strong and trustworthy.  They peak at about 750 MiB/s
+   and 1150 for the reduced round SalsaR12 variant.  Both are easy to
+   use stream ciphers.
+
+   The Serpent (an AES competition final candidate) and Camellia
+   (preferred in Japan) ciphers are in the same performance range for
+   1.5 but with the improvements of 1.6 Camellia gets close to the
+   performance of AES under 1.5.  Jussi put a lot of work into fine
+   tuning AES in 1.6.  Thus even with AES-NI hardware acceleration
+   disabled (as shown here) the throughput for AES encryption has been
+   doubled.
+
+   Given that AES is the standard encryption algorithms today, it is
+   worth to have a closer look at AES under different modes of
+   operation.
+
+   [[file:img/libgcrypt-1.6.0-aes-bench.png][file:img/libgcrypt-1.6.0-aes-bench_s.png]]
+
+   For each encryption mode you see three groups of bars; one for each
+   cipher size.  The first group is for Libgcrypt 1.5, the second for
+   1.6, and the third for Nettle.  Note that only 1.6 implements all
+   modes.
+
+   It is quite obvious that the throughput available with 1.6 is way
+   better than with 1.5 and also considerable higher than with Nettle.
+
+   Finally we have a look at the performance of AES-NI acceleration:
+
+   [[file:img/libgcrypt-1.6.0-aesni-bench.png][file:img/libgcrypt-1.6.0-aesni-bench_s.png]]
+
+   This time we have no values for Nettle.  If you take the different
+   scale in consideration it is quite clear how hardware supported
+   acceleration can boost performance.  However, we can‘t be sure
+   whether the CPU has been backdoored to leak key bits.
+
+   The actual numbers have been collected using the bench-slope test
+   program from Libgcrypt and the Nettle benchmark.  They are
+   available in a Gnumeric [[file:data/gcrypt-bench-x220-2300.gnumeric][spreadsheet]].
+
+   Jussi did a another set of benchmarks which include figures for
+   OpenSSL; you find them [[http://koti.kapsi.fi/~jukivili/gcrypt/haswell-3200-ubuntu-saucy-gcrypt.pdf][here]].  He did them using a modified version
+   of a 2008 [[http://panthema.net/2008/0714-cryptography-speedtest-comparison/][speedtest comparison]].  He compared OpenSSL 1.0.1e,
+   Libgcrypt-1.5, Libgcrypt-1.6 (ECB & CTR), and Nettle (2.7.1) on
+   Intel Haswell.  Used key sizes were 256 bit or shorter if 256 bit
+   is not supported.  Each measurement did a key setup for encryption,
+   the encryption, a key setup for decryption, and the decryption all
+   for different buffer lengths.

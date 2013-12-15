@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>TITLE - Blog - Gnu Privacy Guard</title>
+  <link href="site.css" rel="stylesheet" />
+</head>
+<body>
+<table class="layout" cellspacing="30" summary="">
+<col width="20%" /><col width="80%" />
+<tbody>
+  <tr id="top-page">
+  <td class="layout" colspan="2">
+  <table class="frame" width="100%" summary="">
+  <col width="30%" /><col width="*" /><col width="30%" />
+  <col width="23" />
+<tbody>
+  <tr>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-head">
+      <a href="http://gnupg.org"
+         ><img src="logo-gnupg-light-purple-bg.png" alt="[GnuPG Logo]"
+               width="356" height="120" /></a></td>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-right">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="frame-bottom-lang">&middot; English &middot; &nbsp;</td>
+    <td class="frame-bottom-lang">&nbsp;</td>
+    <td class="frame-bottom-mirror">&nbsp;</td>
+    <td class="frame-corner">&nbsp;</td>
+  </tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-navb">Links
+	    <ul class="frame-navb">
+	      <li class="frame-navb"><a href="index.html">Blog</a></li>
+	      <li class="frame-navb"><a href="http://www.gnupg.org">GnuPG</a></li>
+	    </ul>
+	  </td>
+	  <td class="frame-right">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-bottom">&nbsp;</td>
+	  <td class="frame-corner">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-spacing">&nbsp;</td>
+	</tr>
+      </tbody>
+    </table>
+  </td>
+
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-cont">
+
+<!-- Begin Content -->
+
+<div class="entry">
+  <h2>Speedups in Libgcrypt 1.6</h2>
+  <h5>Posted 15 December 2013 by Werner Koch</h5>
+<p>
+Libgcrypt is a building block of modern GnuPG versions (GnuPG 2.x)
+and also used by a wide range of other projects.  In fact all Linux
+distributions install Libgcrypt by default.
+</p>
+
+<p>
+One problem with Libgcrypt has always been that it did not deliver
+top performance compared to OpenSSL.  Even another GNU crypto
+library, Nettle, is in some areas faster.  The reason for this is
+that Libgcrypt was based on an old GnuPG version.  Back in the
+1990s performance was not the first aim for free crypto software.
+The crypto authors haved been treated as arms trafficker in the US
+and not allowed to freely distribute their code.  Thus the primary
+goal was to write free crypto code in one of the free countries.
+Further, patents severely hindered the use of crypto algorithms.
+This together may explain why top performance was not an issue at
+that time.  Over the years this changed to the better.  However,
+free software development is mostly driven by user demand and there
+was not much demand for a faster GnuPG.  Thus we did not care much
+on speeding up Libgcrypt.  Well, basic support for VIA and Intel
+CPU accelerated encryption features was eventually added but still
+lots of other things could have been optimized.
+</p>
+
+<p>
+Last year, Jussi Kivilinna joined the team and started to add CPU
+optimized implementations of common cipher algorithms.  This
+changed the picture for cipher and hash algorithms.  The soon to be
+released Libgcrypt 1.6 is now up to modern standards on what can be
+achieved on general purpose CPUs.
+</p>
+
+<p>
+To check how 1.6.0 will compare to the older 1.5 version of
+Libgcrypt, I did some benchmarks using a Thinkpad X220 which
+features an i5-2410M processor at 2.3GHz running a 64 bit Debian
+Wheezy.  Default compiler options have been used.
+</p>
+
+<p>
+First let us see how hash algorithms compare (click to enlarge):
+</p>
+
+
+<div class="figure">
+<p><a href="img/libgcrypt-1.6.0-hash-bench.png"><img src="img/libgcrypt-1.6.0-hash-bench_s.png" alt="libgcrypt-1.6.0-hash-bench_s.png" /></a>
+</p>
+</div>
+
+<p>
+The olive bars indicates how many bytes can be hashed by version
+1.5.3, the green bar gives the figure for the new 1.6.0, and
+finally for some algorithms the hatched bar to what Nettle 2.7 is
+up to.
+</p>
+
+<p>
+The number for the completely insecure MD4 algorithms is way to
+high (~750 MiB/s) to be included in this chart, thus it has been
+capped.  For MD5 the old Libgcrypt is faster.  This is a bit
+surprising but we have not researched the reason; anyway, MD5 shall
+not be used by today's software because it has been completely
+broken.  For most of the other algorithm the performance figures
+are all quite similar.  For the important SHA-1 algorithm 1.6 gains
+top speed of all compared implementations and further speedups are
+expected in future versions.
+</p>
+
+<p>
+The major improvements are for SHA-256 and SHA-512 (SHA-384 is a
+basically SHA-512 with a truncated digest).  The use of Intel
+provided code which utilizes SSSE3 clearly boosts the performance
+on this machine and probably on a wide range of other modern Intel
+CPUs.
+</p>
+
+<p>
+All hash functions are a target for more optimization in
+forthcoming versions of Libgcrypt.
+</p>
+
+<p>
+Now what about cipher algorithms?  Have a look at this chart:
+</p>
+
+
+<div class="figure">
+<p><a href="img/libgcrypt-1.6.0-cipher-bench.png"><img src="img/libgcrypt-1.6.0-cipher-bench_s.png" alt="libgcrypt-1.6.0-cipher-bench_s.png" /></a>
+</p>
+</div>
+
+<p>
+First, you notice that we have a lot of algorithms here.  The
+benchmarks are all done for ECM mode encryption.
+</p>
+
+<p>
+There are two extremes here: 3DES is by far the slowest algorithm.
+It is also the oldest one but still considered rock solid.  In the
+top performance range we see two algorithms: Arcfour (sometimes
+called RC4), which is a simple, hard to correctly use, and worse
+broken design which unfortunately is still used at a lot of places.
+Even outperforming that are the modern Salsa algorithms, which are
+considered strong and trustworthy.  They peak at about 750 MiB/s
+and 1150 for the reduced round SalsaR12 variant.  Both are easy to
+use stream ciphers.
+</p>
+
+<p>
+The Serpent (an AES competition final candidate) and Camellia
+(preferred in Japan) ciphers are in the same performance range for
+1.5 but with the improvements of 1.6 Camellia gets close to the
+performance of AES under 1.5.  Jussi put a lot of work into fine
+tuning AES in 1.6.  Thus even with AES-NI hardware acceleration
+disabled (as shown here) the throughput for AES encryption has been
+doubled.
+</p>
+
+<p>
+Given that AES is the standard encryption algorithms today, it is
+worth to have a closer look at AES under different modes of
+operation.
+</p>
+
+
+<div class="figure">
+<p><a href="img/libgcrypt-1.6.0-aes-bench.png"><img src="img/libgcrypt-1.6.0-aes-bench_s.png" alt="libgcrypt-1.6.0-aes-bench_s.png" /></a>
+</p>
+</div>
+
+<p>
+For each encryption mode you see three groups of bars; one for each
+cipher size.  The first group is for Libgcrypt 1.5, the second for
+1.6, and the third for Nettle.  Note that only 1.6 implements all
+modes.
+</p>
+
+<p>
+It is quite obvious that the throughput available with 1.6 is way
+better than with 1.5 and also considerable higher than with Nettle.
+</p>
+
+<p>
+Finally we have a look at the performance of AES-NI acceleration:
+</p>
+
+
+<div class="figure">
+<p><a href="img/libgcrypt-1.6.0-aesni-bench.png"><img src="img/libgcrypt-1.6.0-aesni-bench_s.png" alt="libgcrypt-1.6.0-aesni-bench_s.png" /></a>
+</p>
+</div>
+
+<p>
+This time we have no values for Nettle.  If you take the different
+scale in consideration it is quite clear how hardware supported
+acceleration can boost performance.  However, we can‘t be sure
+whether the CPU has been backdoored to leak key bits.
+</p>
+
+<p>
+The actual numbers have been collected using the bench-slope test
+program from Libgcrypt and the Nettle benchmark.  They are
+available in a Gnumeric <a href="data/gcrypt-bench-x220-2300.gnumeric">spreadsheet</a>.
+</p>
+
+<p>
+Jussi did a another set of benchmarks which include figures for
+OpenSSL; you find them <a href="http://koti.kapsi.fi/~jukivili/gcrypt/haswell-3200-ubuntu-saucy-gcrypt.pdf">here</a>.  He did them using a modified version
+of a 2008 <a href="http://panthema.net/2008/0714-cryptography-speedtest-comparison/">speedtest comparison</a>.  He compared OpenSSL 1.0.1e,
+Libgcrypt-1.5, Libgcrypt-1.6 (ECB &amp; CTR), and Nettle (2.7.1) on
+Intel Haswell.  Used key sizes were 256 bit or shorter if 256 bit
+is not supported.  Each measurement did a key setup for encryption,
+the encryption, a key setup for decryption, and the decryption all
+for different buffer lengths.
+</p>
+
+
+</div>
+
+
+<!-- End Content -->
+
+</td>
+<td class="frame-right">&nbsp;</td>
+</tr>
+<tr>
+  <td class="frame-bottom">&nbsp;</td>
+  <td class="frame-corner">&nbsp;</td>
+</tr>
+<tr>
+  <td class="frame-spacing">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="layout">&nbsp;</td>
+<td class="layout">
+<div class="frame-foot">
+	<table width="100%" summary="">
+		<col width="25%" /><col width="50%" /><col width="25%" />
+		<tr>
+	<td>&nbsp;</td>
+	<td>Technical resources for this<br />
+		service are sponsered by</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td><a class="img" href="http://openit.de/">
+      <img src="logo-openit.png" alt="OpenIT" width="127"
+	   height="40"/></a>
+  </td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+<br />
+
+<p>
+  <a class="img" href="http://validator.w3.org/check/referer">
+    <img src="valid-xhtml10.png"
+	 alt="Valid XHTML 1.0!"
+	 height="31" width="88" /></a>
+  &nbsp;&nbsp;&nbsp;
+  <a class="img" href="http://www.drm.info/">
+    <img src="drm-info.png"
+	 alt="Digital Respect for the Masses"
+	 height="40" width="69" /></a>
+  &nbsp;&nbsp;&nbsp;
+  <a class="img" href="http://www.un.org/aboutun/charter/">
+    <img src="pace.png"
+	 alt="Peace!"
+	 height="40" width="58" /></a>
+  &nbsp;&nbsp;&nbsp;
+  <a class="img" href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.gnupg.org/share/site.css">
+    <img src="vcss.gif"
+	 alt="Valid CSS!"
+	 height="31" width="88" /></a>
+</p>
+
+<p id="footer-legal">
+  <a href="privacy-policy.en.html">Privacy Policy</a>
+</p>
+
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+  var u=(("https:" == document.location.protocol) ? "https" : "http") + "://alberti.gnupg.org/piwik/";
+  _paq.push(["setTrackerUrl", u+"piwik.php"]);
+  _paq.push(["setSiteId", "2"]);
+  var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+  g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+</body>
+</html>
