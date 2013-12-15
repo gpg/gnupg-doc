@@ -7,6 +7,7 @@ if [ "$(pwd  | awk -F/ '{print $NF}')" != "blog.gnupg.org" ]; then
   exit 1
 fi
 
-rsync -vr --exclude '*~' --exclude upload . playfair.gnupg.org:/var/www/git/blog.gnupg.org/htdocs/
+rsync -vr --links --exclude '*~' --exclude upload \
+   . playfair.gnupg.org:/var/www/git/blog.gnupg.org/htdocs/
 
 #eof
