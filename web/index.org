@@ -44,6 +44,18 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.6.0 released (2013-10-16)
+
+The GNU project is pleased to announce the availability of Libgcrypt
+version 1.6.0.  This is the new stable version of Libgcrypt with the API
+being mostly compatible to previous versions.  Due to the removal of
+certain long deprecated functions this version introduces an ABI
+change.
+
+The main features of this version are performance improvements,
+better support for elliptic curves, new algorithms and modes, as well as
+API and internal cleanups.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000336.html][{more}]]
+
 ** Blog: Preparing for launch (2013-12-13)
 
 Mid December, giving season, and nearly time for the GnuPG Crowdfunding

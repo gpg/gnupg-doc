@@ -59,9 +59,9 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.5.3
-#+macro: libgcrypt_size 1473k
-#+macro: libgcrypt_sha1 2c6553cc17f2a1616d512d6870fe95edf6b0e26e
+#+macro: libgcrypt_ver  1.6.0
+#+macro: libgcrypt_size 2441k
+#+macro: libgcrypt_sha1 43283c0b41c41e3d3bc13c2d8f937dfe2aaa1a77
 
 
 #
