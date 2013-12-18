@@ -42,6 +42,9 @@ Redirect /faq.html      http://www.gnupg.org/documentation/faqs.html
 Redirect /why-not-idea.html  http://www.gnupg.org/faq/why-not-idea.html
 
 Redirect /howtos/ch/  http://www.gnupg.org/howtos/zh/
+
+Redirect /fund   http://goteo.org/project/gnupg-new-website-and-infrastructure
+
 #+END_EXAMPLE
 
 The howtos are symlinked into the www.gnupg.org tree.

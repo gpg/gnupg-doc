@@ -44,6 +44,12 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 1.4.16 released (2013-12-18)                             :important:
+
+Along with the publication of an interesting new [[http://www.cs.tau.ac.il/~tromer/acoustic/][side channel attack]]
+by Genkin, Shamir, and Tromer we announce the availability of a new
+stable GnuPG release to relieve this bug: Version 1.4.16 ...  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html][{more}]]
+
 ** Libgcrypt 1.6.0 released (2013-10-16)
 
 The GNU project is pleased to announce the availability of Libgcrypt
@@ -79,8 +85,9 @@ now --- most of them have not been updated for many years anyway.
 
 ** Blog: Securing the future of GPG (2013-11-05)
 
-We have a plan for securing the long term stability of GnuPG development by giving more to our users, and asking more from them in return ...
-[[http://blog.gnupg.org/][{more}]]
+We have a plan for securing the long term stability of GnuPG
+development by giving more to our users, and asking more from them in
+return ...  [[http://blog.gnupg.org/][{more}]]
 
 ** Security update for GnuPG (2013-10-05)                         :important:
 
