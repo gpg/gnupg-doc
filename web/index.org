@@ -46,8 +46,9 @@ all [[file:news.org][news of previous years]] is also available.
 
 ** Blog: Getting Goteo crowdfunding approval (2013-12-18)
 
-The targets are set, the rewards are prepared, the press release has been edited and translated, and now we're waiting for approval from the crowdfunding platform Goteo ...
-[[http://blog.gnupg.org/][{more}]]
+The targets are set, the rewards are prepared, the press release has
+been edited and translated, and now we're waiting for approval from
+the crowdfunding platform Goteo ...  [[http://blog.gnupg.org/20131218-getting-goteo-approval.html][{more}]]
 
 ** GnuPG 1.4.16 released (2013-12-18)                             :important:
 

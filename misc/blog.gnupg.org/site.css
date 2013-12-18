@@ -236,6 +236,19 @@ A.foot:hover {
 	clear: both;
 }
 
+/* The perma link .  */
+.permalink {
+    float: right;
+    font-style: italic;
+    font-size: 0.6em;
+    margin-bottom: 1em;
+}
+
+a.permalink:before {
+    content: "{permanent link}";
+}
+
+
 /*Image caption rules*/
 .captioned-img {
 	border: 1px solid #808080;
@@ -248,3 +261,6 @@ A.foot:hover {
 	margin: 0;
 	padding: 0.5em 0 0.2em 0;
 }
+
+
+/* eof */
