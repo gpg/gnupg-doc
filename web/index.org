@@ -44,6 +44,13 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG launches crowdfunding campaign (2013-12-19)
+
+Today GNU Privacy Guard (GnuPG) has launched its first [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding
+campaign]] with the aim of building a new website and long term
+infrastructure.   [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]]
+
+
 ** Blog: Getting Goteo crowdfunding approval (2013-12-18)
 
 The targets are set, the rewards are prepared, the press release has
