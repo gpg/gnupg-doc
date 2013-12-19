@@ -46,16 +46,15 @@ all [[file:news.org][news of previous years]] is also available.
 
 ** GnuPG launches crowdfunding campaign (2013-12-19)
 
-Today GNU Privacy Guard (GnuPG) has launched its first [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding
-campaign]] with the aim of building a new website and long term
-infrastructure.   [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]]
-
+Today GNU Privacy Guard (GnuPG) has launched its first
+[[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]] with the aim of building a new website and long term
+infrastructure.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.de.html][{deutsch}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.fr.html][{francaise}]]
 
 ** Blog: Getting Goteo crowdfunding approval (2013-12-18)
 
 The targets are set, the rewards are prepared, the press release has
 been edited and translated, and now we're waiting for approval from
-the crowdfunding platform Goteo ...  [[http://blog.gnupg.org/20131218-getting-goteo-approval.html][{more}]]
+the crowdfunding platform Goteo ...   [[http://blog.gnupg.org/20131218-getting-goteo-approval.html][{more}]]
 
 ** GnuPG 1.4.16 released (2013-12-18)                             :important:
 
