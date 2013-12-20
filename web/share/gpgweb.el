@@ -1,4 +1,4 @@
-;;; gpgweb.el --- elisp helper code for the GnuPG web pages
+s/;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
 (require 'org-exp)
 ;; cl-macs is required by ox-html.el but for whatever reasons not
@@ -31,7 +31,7 @@
 
    (aput 'org-publish-project-alist "gpgweb-other"
    '(:base-directory "."
-     :base-extension "jpg\\|png\\|css"
+     :base-extension "jpg\\|png\\|css\\|txt"
      :recursive t
      :publishing-directory "../stage"
      :publishing-function org-publish-attachment
@@ -124,13 +124,13 @@
     (insert "<div id=\"cpyright\">
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
-            src=\"share/cc-by-sa-3.0_80x15.png\"/></a><br/>
+            src=\"/share/cc-by-sa-3.0_80x15.png\"/></a><br/>
     These web pages are
     Copyright 1998--2013 The GnuPG Project<a href=\"/copying.html\">¹</a>
     and licensed under a
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
-    <a href=\"copying.html\">copying<a/> for details.
+    <a href=\"/copying.html\">copying<a/> for details.
 </div>"))
   (goto-char (point-max))
   (insert "
