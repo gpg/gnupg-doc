@@ -11,7 +11,10 @@ HTML files.
    - web/      :: Source files for the web.  This also include images
                   etc.
    - web/share :: Logos, CSS, macros and elisp for building.
-   - misc      :: Otehr websites etc.
+   - misc      :: Other websites etc.
+                  - blog.gnupg.org
+                  - git.gnupg.org
+                  - howtos.gnupg.org :: Manuals etc.
    - build-aux :: Build helper rscripts
    - tools/    :: Tools used to build the web site.
    - stage/    :: staging directory for the site.
