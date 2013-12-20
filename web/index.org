@@ -44,6 +44,16 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+
+** 16 Years of protecting privacy (2013-12-20)
+
+Today marks 16 years since the first release of GnuPG. In that time
+the project has grown from being a hacker’s hobby into one of the
+world’s most critical anti-surveillance tools.  Today GnuPG stands at
+the front line of the battle between invasive surveillance and civil
+liberties.  [[http://blog.gnupg.org/20131220-gnupg-turned-0x10.html][{more}]]
+
+
 ** GnuPG launches crowdfunding campaign (2013-12-19)
 
 Today GNU Privacy Guard (GnuPG) has launched its first
