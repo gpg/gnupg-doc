@@ -223,12 +223,16 @@ A.foot:hover {
 	padding: 0.5em;
 }
 
-.left {
+.left
+, .captioned-image.left {
 	float: left;
+	margin-left: 0!important;
 }
 
-.right {
+.right
+, .captioned-image.right {
 	float: right;
+	margin-right:0!important;
 }
 
 /*Blog rules*/
@@ -252,7 +256,7 @@ a.permalink:before {
 /*Image caption rules*/
 .captioned-img {
 	border: 1px solid #808080;
-	margin: 1em 0.5em;
+	margin: 0 1em 0.5em 0.5em;
 	padding: 0.5em;
 	text-align: center;
 }
@@ -262,5 +266,8 @@ a.permalink:before {
 	padding: 0.5em 0 0.2em 0;
 }
 
+.orange-text {
+	color: #C57A04;
+}
 
 /* eof */
