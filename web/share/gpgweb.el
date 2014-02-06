@@ -1,4 +1,4 @@
-s/;;; gpgweb.el --- elisp helper code for the GnuPG web pages
+;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
 (require 'org-exp)
 ;; cl-macs is required by ox-html.el but for whatever reasons not
