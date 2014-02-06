@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>gnupg.net account management - GNU Privacy Guard</title>
+  <link href="/site.css" rel="stylesheet" />
+</head>
+<body>
+<table class="layout" cellspacing="30" summary="">
+<col width="20%" /><col width="80%" />
+<tbody>
+  <tr id="top-page">
+  <td class="layout" colspan="2">
+  <table class="frame" width="100%" summary="">
+  <col width="30%" /><col width="*" /><col width="30%" />
+  <col width="23" />
+<tbody>
+  <tr>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-head">
+      <a href="http://gnupg.org"
+         ><img src="/logo-gnupg-light-purple-bg.png" alt="[GnuPG Logo]"
+               width="356" height="120" /></a></td>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-right">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="frame-bottom-lang">&middot; English &middot; &nbsp;</td>
+    <td class="frame-bottom-lang">&nbsp;</td>
+    <td class="frame-bottom-mirror">&nbsp;</td>
+    <td class="frame-corner">&nbsp;</td>
+  </tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-navb">Links
+	    <ul class="frame-navb">
+	      <li class="frame-navb"><a href="http://www.gnupg.org">GnuPG</a></li>
+	    </ul>
+	  </td>
+	  <td class="frame-right">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-bottom">&nbsp;</td>
+	  <td class="frame-corner">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-spacing">&nbsp;</td>
+	</tr>
+      </tbody>
+    </table>
+  </td>
+
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-cont">
+
+<!-- Begin Content -->
+
+<h1>gnupg.net account management</h1>
+
+<p>Hello @NAME@!</p>
+
+@ERRORSTR@
+
+<p>You received a mail pointing you to this page.  First of all we
+   like to thank you for supporting the development of GnuPG by taking
+   an active part in the crowdfunding campaign.</p>
+
+<!--BEGIN_T_SHIRT-->
+<p>You requested a GnuPG t-shirt as your reward.  We now need to collect some
+   additional information so that we are able to ship the t-shirt.</p>
+<!--END_T_SHIRT-->
+
+<!--BEGIN_MAIL-->
+<p>You requested a GnuPG.net mail alias as your reward.  We now need
+   to collect some additional information so that we are able to setup
+   the account.</p>
+<!--END_MAIL-->
+
+<form action="/htbin/goteo-collect.cgi?id=@ID@" method="post">
+<input type="hidden" name="id" value="@ID@" />
+<input type="hidden" name="mode" value="response" />
+
+<!--BEGIN_T_SHIRT-->
+<p>Please select the size for the t-shirt:</p>
+<p>
+  <input type="radio" name="tsize" value="S">Size S</input><br/>
+  <input type="radio" name="tsize" value="L">Size L</input><br/>
+  <input type="radio" name="tsize" value="X">Size XL</input><br/>
+</p>
+
+<p>Please double check the shipping address (e.g. name and country
+  given) and change if necessary: :<p>
+<textarea cols="80" rows="6" style="width:500px" name="address"
+                >@ADDRESS@
+</textarea>
+
+
+<p>Please also enter an email address we can use in case of delivery
+problems:</p>
+<p><input type="text" size="80" style="width:500px" name="mail"
+          value="@MAIL@" /></p>
+<!--END_T_SHIRT-->
+
+
+<!--BEGIN_MAIL-->
+<p>Please enter your desired mailbox name without the name (if you enter
+"foo" the mail address wil be "foo@gnupg.net").</p>
+<p><input type="text" size="40" style="width:200px" name="mailbox"
+          value="@ACCOUNT@" />@gnupg.net</p>
+<p>In case that address has already been assigned, please enter your
+  second choice:</p>
+<p><input type="text" size="40" style="width:200px" name="mailbox2"
+          value="" />@gnupg.net</p>
+
+<p>Your new address will be an alias to your real mail address.
+Please enter this forwarding mail address:</p>
+<p><input type="text" size="80" style="width:500px" name="mail"
+          value="@MAIL@" /></p>
+
+<p>All mail received at your new gnupg.net address will be forwarded to
+that address.  We will also use this address to contact you in case of
+problems.  The gnupg.net mail server has greylisting enabled as well
+as some minor sanity checks.  No strong spam or virus checking is
+done.  You may not send mail via that server.</p>
+
+<p>We may eventually add a service to retrieve public keys for
+   gnupg.net.  If you want that, please paste the fingerprint of your
+   public key or the entire key into the field below.</p>
+<textarea cols="80" rows="10" style="width:500px" name="pubkey"
+                ></textarea>
+
+<!--END_MAIL-->
+
+
+
+<p><input type="submit" value="Send" /></p>
+
+</form>
+
+
+
+<!-- End Content -->
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

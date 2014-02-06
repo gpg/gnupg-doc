@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>gnupg.net account management - GNU Privacy Guard</title>
+  <link href="/site.css" rel="stylesheet" />
+</head>
+<body>
+<table class="layout" cellspacing="30" summary="">
+<col width="20%" /><col width="80%" />
+<tbody>
+  <tr id="top-page">
+  <td class="layout" colspan="2">
+  <table class="frame" width="100%" summary="">
+  <col width="30%" /><col width="*" /><col width="30%" />
+  <col width="23" />
+<tbody>
+  <tr>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-head">
+      <a href="http://gnupg.org"
+         ><img src="/logo-gnupg-light-purple-bg.png" alt="[GnuPG Logo]"
+               width="356" height="120" /></a></td>
+    <td class="frame-head">&nbsp;</td>
+    <td class="frame-right">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="frame-bottom-lang">&middot; English &middot; &nbsp;</td>
+    <td class="frame-bottom-lang">&nbsp;</td>
+    <td class="frame-bottom-mirror">&nbsp;</td>
+    <td class="frame-corner">&nbsp;</td>
+  </tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-navb">Links
+	    <ul class="frame-navb">
+	      <li class="frame-navb"><a href="http://www.gnupg.org">GnuPG</a></li>
+	    </ul>
+	  </td>
+	  <td class="frame-right">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-bottom">&nbsp;</td>
+	  <td class="frame-corner">&nbsp;</td>
+	</tr>
+	<tr>
+	  <td class="frame-spacing">&nbsp;</td>
+	</tr>
+      </tbody>
+    </table>
+  </td>
+
+  <td class="layout">
+    <table class="frame" width="100%" summary="">
+      <col width="*" /><col width="23" />
+      <tbody>
+	<tr>
+	  <td class="frame-cont">
+
+<!-- Begin Content -->
+
+<h1>gnupg.net account management</h1>
+
+<p>Information received.</p>
+
+<!--BEGIN_T_SHIRT-->
+<p>Please have some patience until information for all contributors
+   has been collected.  As soon as we are ready to ship the t-shirts,
+   we will notify you by mail and post
+   a <a href="http://blog.gnupg.org">blog item</a></p>
+
+<p>We now have this data on file:</p>
+<pre>
+Name: @NAME@
+Mail: @MAIL@
+Size: @TSIZE@
+Address:
+@ADDRESS@
+</pre>
+<!--END_T_SHIRT-->
+
+<!--BEGIN_MAIL-->
+<p>Please have some patience until information for all mail accounts
+   has been collected. You will receive a mail telling you when your
+   new mail address is ready for use.</p>
+
+<p>We now have this data on file:</p>
+<pre>
+Name: @NAME@
+Mail: @MAIL@
+Choice1: @MAILBOX@@gnupg.net
+Choice2: @MAILBOX2@@gnupg.net
+</pre>
+
+We may also have a public key on file.  You may update the public key at
+any later time.
+
+<!--END_MAIL-->
+
+<p>If we ever run into problems, we may ask you for a transaction id.
+  Please note it down:</p>
+<pre>@TXID@</pre>
+
+<p>Thank you.</p>
+
+
+<!-- End Content -->
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

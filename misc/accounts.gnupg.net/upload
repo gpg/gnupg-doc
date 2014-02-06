@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if [ "$(pwd  | awk -F/ '{print $NF}')" != "accounts.gnupg.net" ]; then
+  echo "upload: not invoked from the accounts.gnupg.net directory" >&2;
+  exit 1
+fi
+
+rsync -vr --links --exclude '*~' --exclude upload \
+   . alberti.gnupg.org:/var/www/all/accounts.gnupg.net/
+
+#eof
