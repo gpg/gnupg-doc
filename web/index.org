@@ -46,16 +46,10 @@ all [[file:news.org][news of previous years]] is also available.
 
 ** Mission complete: campaign ends, closing stats (2014-02-06)
 
-After 50 days of crowdfunding, the GnuPG campaign for new website and infrastructure will close tomorrow. That means rewards for backers can now be ordered and preparations for dispatch can begin. Here are the results so far.  [[http://blog.gnupg.org/20140206-crowdfunding-complete.html][{more}]]
-
-** Find us at FOSDEM (2014-01-27)
-
-On Friday Werner and Sam are heading to FOSDEM, the largest Free Software conference in Europe, along with many GnuPG hackers, users, and supporters. Get in touch if you'd like to talk about the existing or future campaigns while we're there.  [[http://blog.gnupg.org/20140127-find-fosdem.html][{more}]]
-
-** How good is Goteo? An appraisal (2013-12-30)
-
-"One question: why did you choose the quite unknown Spanish crowdfunding site Goteo?" So shot back the reply to the <a href="http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.html" target="blank">press release</a> I had just sent to a few dozen selected journalists announcing the launch of the GnuPG crowdfunding campaign. This is my experience of the Goteo crowfunding platform and conclusions.
-liberties.  [[http://blog.gnupg.org/20131230-how-good-is-goteo.html][{more}]]
+After 50 days of crowdfunding, the GnuPG campaign for new website and
+infrastructure will close tomorrow. That means rewards for backers can
+now be ordered and preparations for dispatch can begin. Here are the
+results so far.  [[http://blog.gnupg.org/20140206-crowdfunding-complete.html][{more}]]
 
 ** 16 Years of protecting privacy (2013-12-20)
 
@@ -65,120 +59,17 @@ world’s most critical anti-surveillance tools.  Today GnuPG stands at
 the front line of the battle between invasive surveillance and civil
 liberties.  [[http://blog.gnupg.org/20131220-gnupg-turned-0x10.html][{more}]]
 
-
 ** GnuPG launches crowdfunding campaign (2013-12-19)
 
 Today GNU Privacy Guard (GnuPG) has launched its first
 [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]] with the aim of building a new website and long term
 infrastructure.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.de.html][{deutsch}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.fr.html][{francaise}]]
 
-** Blog: Getting Goteo crowdfunding approval (2013-12-18)
-
-The targets are set, the rewards are prepared, the press release has
-been edited and translated, and now we're waiting for approval from
-the crowdfunding platform Goteo ...   [[http://blog.gnupg.org/20131218-getting-goteo-approval.html][{more}]]
-
 ** GnuPG 1.4.16 released (2013-12-18)                             :important:
 
 Along with the publication of an interesting new [[http://www.cs.tau.ac.il/~tromer/acoustic/][side channel attack]]
 by Genkin, Shamir, and Tromer we announce the availability of a new
 stable GnuPG release to relieve this bug: Version 1.4.16 ...  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html][{more}]]
-
-** Libgcrypt 1.6.0 released (2013-10-16)
-
-The GNU project is pleased to announce the availability of Libgcrypt
-version 1.6.0.  This is the new stable version of Libgcrypt with the API
-being mostly compatible to previous versions.  Due to the removal of
-certain long deprecated functions this version introduces an ABI
-change.
-
-The main features of this version are performance improvements,
-better support for elliptic curves, new algorithms and modes, as well as
-API and internal cleanups.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000336.html][{more}]]
-
-** Blog: Preparing for launch (2013-12-13)
-
-Mid December, giving season, and nearly time for the GnuPG Crowdfunding
-to commence. We've been working hard on preparations ...
-[[http://blog.gnupg.org/][{more}]]
-
-** Blog: Friends tell friends they love GnuPG (2013-11-13)
-
-Using GnuPG for email encryption takes two to tango. That's why
-we're asking users to share their stories using #iloveGPG ...
-[[http://blog.gnupg.org/][{more}]]
-
-** New website infrastructure (2013-11-12)
-
-After more than a decade we switched from the legacy WML based website
-system to a new [[http://org-mode.org][org-mode]] based one.  The old WML code was not anymore
-maintainable and building the website took way to long.  The new
-system uses plain text files and will make it way easier to keep
-information up to date.  Unfortunately the translations are gone for
-now --- most of them have not been updated for many years anyway.
-
-** Blog: Securing the future of GPG (2013-11-05)
-
-We have a plan for securing the long term stability of GnuPG
-development by giving more to our users, and asking more from them in
-return ...  [[http://blog.gnupg.org/][{more}]]
-
-** Security update for GnuPG (2013-10-05)                         :important:
-
-We are pleased to announce the availability of a new stable GnuPG
-release: Version 2.0.22 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000333.html][{more}]]
-
-** Security update for GnuPG (2013-10-05)                         :important:
-
-We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.15 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000334.html][{more}]]
-
-
-** GnuPG 2.0.21 released (2013-08-19)
-
-We are pleased to announce the availability of GnuPG 2.0.21. ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000332.html][{more}]]
-
-
-** Security update for GnuPG (2013-07-25)                         :important:
-
-We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.14 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html][{more}]]
-
-
-** Security update for Libgcrypt (2013-07-25)                     :important:
-
-We are pleased to announce the availability of a new stable Libgcrypt
-release: Version 1.5.3 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html][{more}]]
-
-
-** GnuPG 2.0.20 released (2013-05-10 18:59:01)
-
-We are pleased to announce the availability of GnuPG 2.0.20. ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2013q2/000328.html][{more}]]
-
-
-** GnuPG 1.4.13 released  (2012-12-20 21:51:56)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.13 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q4/000319.html][{more}]]
-
-
-** GnuPG 2.0.19 released (2012-03-27 11:22:13)
-
-We are pleased to announce the availability of GnuPG 2.0.19. ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html][{more}]]
-
-** GnuPG 1.4.12 released (2012-01-30 17:39:22)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: Version 1.4.12 ...
-[[http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000313.html][{more}]]
 
 
 
