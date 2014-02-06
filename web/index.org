@@ -44,6 +44,14 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Mission complete: campaign ends, closing stats (2014-02-06)
+
+After 50 days of crowdfunding, the GnuPG campaign for new website and infrastructure will close tomorrow. That means rewards for backers can now be ordered and preparations for dispatch can begin. Here are the results so far.  [[http://blog.gnupg.org/20140206-crowdfunding-complete.html][{more}]]
+
+** Find us at FOSDEM (2014-01-27)
+
+On Friday Werner and Sam are heading to FOSDEM, the largest Free Software conference in Europe, along with many GnuPG hackers, users, and supporters. Get in touch if you'd like to talk about the existing or future campaigns while we're there.  [[http://blog.gnupg.org/20140127-find-fosdem.html][{more}]]
+
 ** How good is Goteo? An appraisal (2013-12-30)
 
 "One question: why did you choose the quite unknown Spanish crowdfunding site Goteo?" So shot back the reply to the <a href="http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.html" target="blank">press release</a> I had just sent to a few dozen selected journalists announcing the launch of the GnuPG crowdfunding campaign. This is my experience of the Goteo crowfunding platform and conclusions.
