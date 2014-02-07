@@ -107,6 +107,19 @@ any later time.
 
 <!--END_MAIL-->
 
+<!--BEGIN_STICKER-->
+<p>Please have some patience until information from everyone
+   has been collected and the stickers been delivered.</p>
+
+<p>We now have this data on file:</p>
+<pre>
+Mail: @MAIL@
+Address:
+@ADDRESS@
+</pre>
+
+<!--END_STICKER-->
+
 <p>If we ever run into problems, we may ask you for a transaction id.
   Please note it down:</p>
 <pre>@TXID@</pre>

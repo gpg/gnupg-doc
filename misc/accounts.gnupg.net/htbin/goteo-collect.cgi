@@ -167,11 +167,15 @@ sub write_template {
             $indel = 0 if (/<!--END_/);
             next;
         }
-        elsif (($reward eq 'm') && /^<!--BEGIN_T_SHIRT/) {
+        elsif (($reward eq 'm') && /^<!--BEGIN_(T_SHIRT|STICKER)/) {
             $indel = 1;
             next;
         }
-        elsif (($reward eq 't') && /^<!--BEGIN_MAIL/) {
+        elsif (($reward eq 't') && /^<!--BEGIN_(MAIL|STICKER)/) {
+            $indel = 1;
+            next;
+        }
+        elsif (($reward eq 's') && /^<!--BEGIN_(T_SHIRT|MAIL)/) {
             $indel = 1;
             next;
         }

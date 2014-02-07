@@ -145,6 +145,21 @@ done.  You may not send mail via that server.</p>
 
 <!--END_MAIL-->
 
+<!--BEGIN_STICKER-->
+<p>We noticed that the postal address for sending out the stickers is
+  sometimes missing or maybe wrong.  Thus please check the shipping
+  address (e.g. name and country given) and change if necessary: :<p>
+<textarea cols="80" rows="6" style="width:500px" name="address"
+                >@ADDRESS@
+</textarea>
+
+
+<p>Please also check the email address we can use in case of
+problems:</p>
+<p><input type="text" size="80" style="width:500px" name="mail"
+          value="@MAIL@" /></p>
+<!--END_STICKER-->
+
 
 
 <p><input type="submit" value="Send" /></p>
