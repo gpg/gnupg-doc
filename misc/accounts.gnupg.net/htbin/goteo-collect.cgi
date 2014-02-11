@@ -44,7 +44,8 @@
 #     tail -n+2 FILE \
 #       ./addrutil -FGoteo-ID -FUser -FName -FMail -FAmount -FProblem \
 #                  -FAnon -FReward -FAddress -FDate --readcsv   \
-#       | sed '/^Address:/ s/ , , ,//' | sed '/^Address:/ s/,/\n/g' > data
+#       | sed '/^Address:/ s/ , , ,//' | sed '/^Address:/ s/,/\n/g' \
+#  | awk '/^Date:/{split($2,a,"/");print $1" "a[3]"-"a[2]"-"a[1];next};{print}'
 #
 #    Now we have the data in an easy to read format.  The tool addrutil is
 #    available at 'http://git.gnupg.org/cgi-bin/gitweb.cgi\
@@ -57,16 +58,17 @@
 #       | sed 's/^Reward: .*tshirt.*/Reward: t/'  \
 #       | sed 's/^Reward: .*Listed.*/Reward: l/' > newdata
 #
-#   cat data | sed 's/^Reward: An @GnuPG.*/Reward: m/' | sed 's/^Reward: .*sticker.*/Reward: s/'| sed 's/^Reward: .*tshirt.*/Reward: t/'  | sed 's/^Reward: .*Listed.*/Reward: l/'
-#
 #  - To add a unique ID use this command
 #
-#    awk '/^Goteo-ID:/ {cmd="gpg -a --gen-random 0 15 | tr +/ 42"; cmd | getline foo; print "Id: " foo; close(cmd); }; {print}' data >newdata
+#    awk '/^Goteo-ID:/ {cmd="gpg -a --gen-random 0 15
+#         | tr +/ 42"; cmd | getline foo; print "Id: " foo; close(cmd); };
+#        {print}' data >newdata
 #
 #  - To finally create the input data
 #    fields="-FId -FUser -FName -FReward -FMail -FAddress"
 #     ( ./addrutil -SReward=t $fields data \
-#      && ./addrutil -SReward=m $fields data) > goteo-collect.input
+#      && ./addrutil -SReward=m $fields data \
+#      && ./addrutil -SReward=s $fields data ) > goteo-collect.input
 #
 
 
@@ -153,12 +155,21 @@ sub write_template {
     local $fname = shift;
     local $indel = 0;
     local $fulladdress;
-
+    local $tsizehuman;
 
     if ( "$address" =~ /^$name/ ) {
         $fulladdress = $address;
     } else {
         $fulladdress = "$name\n$address";
+    }
+
+    if ( "$tsize" eq 'X' ) {
+        $tsizehuman = "XL";
+    } elsif ( "$tsize" eq 'Z' ) {
+        $tsizehuman = "XXL";
+    }
+    else {
+        $tsizehuman = $tsize;
     }
 
     open TEMPLATE, $htdocs . $fname;
@@ -188,7 +199,7 @@ sub write_template {
         || s/\x40MAIL\x40/$mail/g
         || s/\x40REWARD\x40/$reward/g
         || s/\x40TXID\x40/$txid/g
-        || s/\x40TSIZE\x40/$tsize/g
+        || s/\x40TSIZE\x40/$tsizehuman/g
         || s/\x40MAILBOX\x40/$mailbox/g
         || s/\x40MAILBOX2\x40/$mailbox2/g
         || s/\x40ERRORSTR\x40/$errorstr/g;
@@ -248,10 +259,10 @@ elsif (not &find_item()) {
     print $q->end_html;
 }
 elsif ($mode eq 'response') {
-    if ($q->param('mail') !~ /[a-zA-Z0-9]+@[a-zA-Z]+/ ) {
+    if ($q->param('mail') !~ /[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+/ ) {
         write_error_page('Invalid mail address given!');
     }
-    elsif ($reward eq 't' and $q->param('tsize') !~ /^[SLX]$/ ) {
+    elsif ($reward eq 't' and $q->param('tsize') !~ /^[SMLXZ]$/ ) {
         write_error_page('Size of t-shirt not given!');
     }
     else {

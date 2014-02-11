@@ -98,8 +98,10 @@
 <p>Please select the size for the t-shirt:</p>
 <p>
   <input type="radio" name="tsize" value="S">Size S</input><br/>
+  <input type="radio" name="tsize" value="M">Size M</input><br/>
   <input type="radio" name="tsize" value="L">Size L</input><br/>
   <input type="radio" name="tsize" value="X">Size XL</input><br/>
+  <input type="radio" name="tsize" value="Z">Size XXL</input><br/>
 </p>
 
 <p>Please double check the shipping address (e.g. name and country
