@@ -33,7 +33,7 @@
      [[../../gph/it/gph.tar.gz][it]] ·
      [[http://www.inar.ru/~zwon/gph.tar.gz][ru]] )
 
-   GPH is also available in the [[file:~/s/gnupg-web/web/download/cvs_access.org][source repository]].
+   GPH is also available in the [[../download/cvs_access.org][source repository]].
 
    There is also a [[http://geocities.yahoo.com.br/sdiasneto/gnupg/gnupg-manual-ptbr.html][brazilian portuguese version of GPH]].
 

@@ -78,7 +78,7 @@ Detailed list of results:
 
 ** Links
 
-   - *[[file:~/s/gnupg-web/web/aegypten2/index.org][Ägypten2 Project]]*
+   - *[[../aegypten2/index.org][Ägypten2 Project]]*
    - [[http://kmail.kde.org/][KMail]]
    - [[http://www.mutt.org/][Mutt]]
    - [[http://www.gnupg.org/][GnuPG]]

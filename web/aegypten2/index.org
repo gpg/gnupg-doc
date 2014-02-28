@@ -10,7 +10,7 @@
   frame as Ägypten1, started December 1st 2003 and finished in
   November 2004.
 
-  Please read the [[file:~/s/gnupg-web/web/aegypten/index.org][Ägypten1 Web-Pages]] to learn about the project that
+  Please read the [[../aegypten/index.org][Ägypten1 Web-Pages]] to learn about the project that
   initially estabslished the Sphinx (S/MIME) awareness of the MUAs
   KMail and Mutt.
 

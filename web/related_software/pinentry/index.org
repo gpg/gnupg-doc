@@ -8,4 +8,4 @@
   versions for the common GTK and Qt toolkits as well as for the text
   terminal (Curses).
 
-  See the [[file:~/s/gnupg-web/web/download/index.org::pinentry][download]] section for the latest tarball.
+  See the [[../../download/index.org::pinentry][download]] section for the latest tarball.

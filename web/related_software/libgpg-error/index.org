@@ -8,4 +8,4 @@
   GPG-Agent, libgcrypt, Libksba, DirMngr, Pinentry, SmartCard Daemon
   and possibly more in the future.
 
-  See the [[file:~/s/gnupg-web/web/download/index.org::libgpg-error][download]] section for the latest tarball.
+  See the [[file:../../download/index.org::libgpg-error][download]] section for the latest tarball.

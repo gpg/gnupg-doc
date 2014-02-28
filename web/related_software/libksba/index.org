@@ -15,4 +15,4 @@
   hides this by providing just one API which does the Right
   Thing\trade. Support for new features will be added as needed.
 
-  See the [[file:~/s/gnupg-web/web/download/index.org::libksba][download]] section for the latest tarball.
+  See the [[../../download/index.org::libksba][download]] section for the latest tarball.

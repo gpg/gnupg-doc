@@ -42,4 +42,4 @@
   almost any transaction based environment with non-persistent
   servers.
 
-  See the [[file:~/s/gnupg-web/web/download/index.org::libassuan][download]] section for the latest tarball.
+  See the [[../../download/index.org::libassuan][download]] section for the latest tarball.

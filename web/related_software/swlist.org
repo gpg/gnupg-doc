@@ -39,7 +39,7 @@ having to deal with GnuPG's command-line interface.
    :CUSTOM_ID: egd
    :END:
 
-Unices without a /dev/random should [[file:~/s/gnupg-web/web/download/index.org::egd][download]] and install
+Unices without a /dev/random should [[../../download/index.org::egd][download]] and install
 this Entropy Gathering Daemon.
 
 ** [[http://enigform.mozdev.org][enigform]] [Unix,Windows,OSX] MISC
@@ -184,7 +184,7 @@ handbooks for email and file encryption.
 
 Is a mail program for MAC OS X.
 
-** [[file:gpgme/index.org][GPGME]] [Unix,Windows,OSX] LIB
+** [[gpgme/index.org][GPGME]] [Unix,Windows,OSX] LIB
    :PROPERTIES:
    :CUSTOM_ID: gpgme
    :END:
@@ -362,7 +362,7 @@ PGP with GnuPG.
 
 Is a perl script to sign HTML pages.
 
-** [[file:pinentry/index.org][Pinentry]] [Unix,Windows,OSX] MISC
+** [[pinentry/index.org][Pinentry]] [Unix,Windows,OSX] MISC
    :PROPERTIES:
    :CUSTOM_ID: pinentry
    :END:
