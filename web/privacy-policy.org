@@ -5,21 +5,27 @@
 * Privacy Policy
 #+index: privacy policy
 #+index: analytics
-#+index: Piwik
+#+index: log files
 
-** Analytics
+** Log files
 
-This website uses Piwik, a Free Software web analytics system, to
-monitor traffic on our Web sites. Piwik records the general
-geographical vicinity of visitors as well as their browser and
-operating system, and records their navigation within the sites. This
-helps us gauge the impact of our materials and improve our work.
+This website uses log files to identify problems with the site and to
+monitor traffic.  The raw log files are kept for a week and are then
+deleted.  For web analytics the data from the log files is anonymized
+by truncating the IP addresses to 40 bit for IPv6 and 20 bits for IPv4
+and send to another machine.  Neither the raw log files nor the
+anonymized data from the log file is shared with anyone; however
+system administrators have access to the log files to solve technical
+problems.  Reports on the use of this site will always be fully
+anonymized and may eventually be published at this site.
 
-Our Piwik system preserves privacy by anonymizing visitors’ IP
-addresses. This means that we will not store any personally
-identifiable information about you, even though your visit produces a
-record that our site was visited by someone.
+We have not been forced by any court order or other means not to obey
+to the above rules.
 
-Piwik also respects the “[[http://donottrack.us/][Do Not Track]]” preference offered by some
-browsers, so if you have this option set, Piwik will ignore your visit
-entirely. Details of how Piwik protects privacy are on [[http://piwik.org/privacy/][their website]].
+** History
+
+- 2013-11-07 :: Installed Piwik web analytics software and wrote a
+                privacy policy.
+
+- 2014-03-12 :: Removed the Piwik web analytics software and changed
+                the policy to allow for log file based analytics.

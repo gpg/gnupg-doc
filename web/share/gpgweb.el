@@ -126,38 +126,43 @@
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa-3.0_80x15.png\"/></a><br/>
     These web pages are
-    Copyright 1998--2013 The GnuPG Project<a href=\"/copying.html\">¹</a>
+    Copyright 1998--2014 The GnuPG Project<a href=\"/copying.html\">¹</a>
     and licensed under a
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
-    <a href=\"/copying.html\">copying<a/> for details.
-</div>"))
-  (goto-char (point-max))
-  (insert "
+    <a href=\"/copying.html\">copying</a> for details.
+</div>
 </main>
-<script type=\"text/javascript\">
-  var _paq = _paq || [];
-  _paq.push([\"trackPageView\"]);
-  _paq.push([\"enableLinkTracking\"]);
-
-  (function() {
-    var u=((\"https:\" == document.location.protocol) ? \"https\" : \"http\")
-            + \"://alberti.gnupg.org/piwik/\";
-    _paq.push([\"setTrackerUrl\", u+\"piwik.php\"]);
-    _paq.push([\"setSiteId\", \"1\"]);
-    var d=document,
-        g=d.createElement(\"script\"),
-        s=d.getElementsByTagName(\"script\")[0];
-    g.type=\"text/javascript\";
-    g.defer=true;
-    g.async=true;
-    g.src=u+\"piwik.js\";
-    s.parentNode.insertBefore(g,s);
-  })();
-</script>
 </body>
-</html>
-"))
+</html>")))
+
+
+;;; The old pwik code.
+;;;  (insert "
+;;;<script type=\"text/javascript\">
+;;;  var _paq = _paq || [];
+;;;  _paq.push([\"trackPageView\"]);
+;;;  _paq.push([\"enableLinkTracking\"]);
+;;;
+;;;  (function() {
+;;;    var u=((\"https:\" == document.location.protocol) ? \"https\" : \"http\")
+;;;            + \"://alberti.gnupg.org/piwik/\";
+;;;    _paq.push([\"setTrackerUrl\", u+\"piwik.php\"]);
+;;;    _paq.push([\"setSiteId\", \"1\"]);
+;;;    var d=document,
+;;;        g=d.createElement(\"script\"),
+;;;        s=d.getElementsByTagName(\"script\")[0];
+;;;    g.type=\"text/javascript\";
+;;;    g.defer=true;
+;;;    g.async=true;
+;;;    g.src=u+\"piwik.js\";
+;;;    s.parentNode.insertBefore(g,s);
+;;;  })();
+;;;</script>
+;;;</main>
+;;;</body>
+;;;</html>
+;;;")
 
 ;;; Post-process the generated HTML file:
 ;;;

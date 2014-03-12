@@ -18,8 +18,8 @@ features for easy integration with other applications. A wealth of
 also provides support for S/MIME.
 
 GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
-be freely used, modified and distributed under the terms of the [[http://www.gnu.org/copyleft/gpl.html][GNU
-General Public License]] .
+be freely used, modified and distributed under the terms of the
+[[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
 GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the well known and
 portable standalone version, whereas [[download][{{{gnupg_ver}}}]] is the enhanced
