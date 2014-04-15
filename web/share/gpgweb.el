@@ -108,7 +108,7 @@
         <li><a href=\"/misc/thanks.html\"        >Thanks</a></li>
         <li><a href=\"/misc/donations.html\"     >Donations</a></li>
       </ul>
-    <li><a href=\"http://blog.gnupg.org/\"      >Blog</a></li>
+    <li><a href=\"/blog/index.html\"            >Blog</a></li>
     <li><a href=\"/privacy-policy.html\"        >Privacy Policy</a></li>
     <li><a href=\"/sitemap.html\"               >Sitemap</a></li>
   </ul>
@@ -136,33 +136,6 @@
 </body>
 </html>")))
 
-
-;;; The old pwik code.
-;;;  (insert "
-;;;<script type=\"text/javascript\">
-;;;  var _paq = _paq || [];
-;;;  _paq.push([\"trackPageView\"]);
-;;;  _paq.push([\"enableLinkTracking\"]);
-;;;
-;;;  (function() {
-;;;    var u=((\"https:\" == document.location.protocol) ? \"https\" : \"http\")
-;;;            + \"://alberti.gnupg.org/piwik/\";
-;;;    _paq.push([\"setTrackerUrl\", u+\"piwik.php\"]);
-;;;    _paq.push([\"setSiteId\", \"1\"]);
-;;;    var d=document,
-;;;        g=d.createElement(\"script\"),
-;;;        s=d.getElementsByTagName(\"script\")[0];
-;;;    g.type=\"text/javascript\";
-;;;    g.defer=true;
-;;;    g.async=true;
-;;;    g.src=u+\"piwik.js\";
-;;;    s.parentNode.insertBefore(g,s);
-;;;  })();
-;;;</script>
-;;;</main>
-;;;</body>
-;;;</html>
-;;;")
 
 ;;; Post-process the generated HTML file:
 ;;;

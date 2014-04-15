@@ -49,7 +49,7 @@ all [[file:news.org][news of previous years]] is also available.
 After 50 days of crowdfunding, the GnuPG campaign for new website and
 infrastructure will close tomorrow. That means rewards for backers can
 now be ordered and preparations for dispatch can begin. Here are the
-results so far.  [[http://blog.gnupg.org/20140206-crowdfunding-complete.html][{more}]]
+results so far.  [[https://www.gnupg.org/blog/20140206-crowdfunding-complete.html][{more}]]
 
 ** 16 Years of protecting privacy (2013-12-20)
 
@@ -57,13 +57,13 @@ Today marks 16 years since the first release of GnuPG. In that time
 the project has grown from being a hacker’s hobby into one of the
 world’s most critical anti-surveillance tools.  Today GnuPG stands at
 the front line of the battle between invasive surveillance and civil
-liberties.  [[http://blog.gnupg.org/20131220-gnupg-turned-0x10.html][{more}]]
+liberties.  [[https://www.gnupg.org/blog/20131220-gnupg-turned-0x10.html][{more}]]
 
 ** GnuPG launches crowdfunding campaign (2013-12-19)
 
 Today GNU Privacy Guard (GnuPG) has launched its first
 [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]] with the aim of building a new website and long term
-infrastructure.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.de.html][{deutsch}]] [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.fr.html][{francaise}]]
+infrastructure.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]] [[https://www.gnupg.org/blog/20131219-gnupg-launches-crowfunding.de.html][{deutsch}]] [[https://www.gnupg.org/blog/20131219-gnupg-launches-crowfunding.fr.html][{francaise}]]
 
 ** GnuPG 1.4.16 released (2013-12-18)                             :important:
 

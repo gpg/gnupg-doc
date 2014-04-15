@@ -11,7 +11,7 @@ page]].
 
 The targets are set, the rewards are prepared, the press release has
 been edited and translated, and now we're waiting for approval from
-the crowdfunding platform Goteo ...   [[http://blog.gnupg.org/20131218-getting-goteo-approval.html][{more}]]
+the crowdfunding platform Goteo ...   [[https://www.gnupg.org/blog/20131218-getting-goteo-approval.html][{more}]]
 
 ** GnuPG 1.4.16 released (2013-12-18)                             :important:
 
@@ -35,13 +35,13 @@ API and internal cleanups.  [[http://lists.gnupg.org/pipermail/gnupg-announce/20
 
 Mid December, giving season, and nearly time for the GnuPG Crowdfunding
 to commence. We've been working hard on preparations ...
-[[http://blog.gnupg.org/][{more}]]
+[[https://www.gnupg.org/blog/index.html][{more}]]
 
 ** Blog: Friends tell friends they love GnuPG (2013-11-13)
 
 Using GnuPG for email encryption takes two to tango. That's why
 we're asking users to share their stories using #iloveGPG ...
-[[http://blog.gnupg.org/][{more}]]
+[[https://www.gnupg.org/blog/index.html][{more}]]
 
 ** New website infrastructure (2013-11-12)
 
@@ -56,7 +56,7 @@ now --- most of them have not been updated for many years anyway.
 
 We have a plan for securing the long term stability of GnuPG
 development by giving more to our users, and asking more from them in
-return ...  [[http://blog.gnupg.org/][{more}]]
+return ...  [[https://www.gnupg.org/blog/index.html][{more}]]
 
 ** Security update for GnuPG (2013-10-05)                         :important:
 
