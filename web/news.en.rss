@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>GnuPG.org</title>
+<link>http://www.gnupg.org/</link>
+<description>Latest news about GNU Privacy Guard encryption software.</description>
+<copyright>Copyright 1998--2014 The GnuPG Project</copyright>
+<lastBuildDate>Fri, 11 Apr 2014 10:00:00 GMT</lastBuildDate>
+<language>en</language>
+<managingEditor>wk@gnupg.org</managingEditor>
+<webMaster>webmaster@gnupg.org</webMaster>
+<generator>handcrafted</generator>
+<ttl>1200</ttl>
+<docs>http://feedvalidator.org/docs/rss2.html</docs>
+<image>
+  <url>http://www.gnupg.org/share/gnupg-lock-20x25tr.png</url>
+  <title>GnuPG.org</title>
+  <link>http://www.gnupg.org/</link>
+  <width>20</width><height>25</height>
+  <description>GnuPG's logo</description>
+</image>
+
+<item>
+  <title>GnuPG 1.4.16 released</title>
+  <pubDate>Wed, 18 Dec 2013 12:00:00 GMT</pubDate>
+  <author>Werner Koch &lt;wk&#64;gnupg.org&gt;</author>
+  <description>
+  Along with the publication of an interesting new side channel attack
+  by Genkin, Shamir, and Tromer we announce the availability of a new
+  stable GnuPG release to relieve this bug: Version 1.4.16 ...
+  </description>
+  <link>http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html</link>
+  <guid isPermaLink="true">http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html</guid>
+</item>
+
+</channel>
+</rss>

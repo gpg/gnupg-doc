@@ -31,7 +31,7 @@
 
    (aput 'org-publish-project-alist "gpgweb-other"
    '(:base-directory "."
-     :base-extension "jpg\\|png\\|css\\|txt"
+     :base-extension "jpg\\|png\\|css\\|txt\\|rss"
      :recursive t
      :publishing-directory "../stage"
      :publishing-function org-publish-attachment
