@@ -32,7 +32,7 @@ English and German manuals.
 Project [[http://gpgtools.org][GPGTools]] provides a Mac OS X version of GnuPG. It is nicely
 integrated into an installer and features all required tools.
 
-Project [[http://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
+Project [[https://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
 
 * Latest news
 #+index: News
@@ -41,7 +41,7 @@ The following frames report the latest news from GnuPG.  A list with
 all [[file:news.org][news of previous years]] is also available.
 
 # For those of you who like reading world’s news with an RSS reader,
-# GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttp://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
+# GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 ** Mission complete: campaign ends, closing stats (2014-02-06)

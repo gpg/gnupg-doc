@@ -4,7 +4,7 @@
 
 * WWW Mirrors
 
-The primary HTTP site [[http://www.gnupg.org/][GnuPG.org]] is mirrored at several sites. Please
+The primary HTTP site [[https://www.gnupg.org/][GnuPG.org]] is mirrored at several sites. Please
 choose the nearest mirror to you. If you are seeking for sources and
 binaries, please consult the [[download/mirrors.en.html][FTP mirror page]] under the [[download][Download]]
 section.

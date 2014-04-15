@@ -81,7 +81,7 @@ Detailed list of results:
    - *[[../aegypten2/index.org][Ägypten2 Project]]*
    - [[http://kmail.kde.org/][KMail]]
    - [[http://www.mutt.org/][Mutt]]
-   - [[http://www.gnupg.org/][GnuPG]]
+   - [[https://www.gnupg.org/][GnuPG]]
    - [[http://www.bsi.de/aufgaben/projekte/sphinx/index.htm][Sphinx]]
 
    - [[http://www.intevation.net][Intevation]]

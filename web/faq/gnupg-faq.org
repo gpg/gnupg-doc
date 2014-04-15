@@ -3,10 +3,10 @@
 #+EMAIL:     gnupg-doc@gnupg.org
 #+AUTHOR:    Robert J. Hansen et al.
 #+LANGUAGE:  en
-#+LINK: gnupgweb http://www.gnupg.org/
+#+LINK: gnupgweb https://www.gnupg.org/
 #+LINK: roundup  https://bugs.g10code.com/gnupg/issue
 #+OPTIONS:   H:3 num:2 toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t TeX:t LaTeX:t skip:nil d:nil tags:not-in-toc
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.gnupg.org/share/site.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://www.gnupg.org/share/site.css" />
 #+STARTUP:   overview indent
 
 * Foreword
@@ -375,7 +375,7 @@ The best way is to visit the [[http://g10code.com/gnupg-donation.html][g10 Code 
    :END:
 
 Development discussion takes place on the gnupg-devel mailing list.
-Go to the [[http://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]] for links to subscribe and to the
+Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]] for links to subscribe and to the
 list's archives.
 
 The [[https://bugs.gnupg.org/gnupg/][GnuPG project's bug tracker]] is also publicly available.
@@ -549,7 +549,8 @@ better help than the GnuPG community can.
      :CUSTOM_ID: gnupg_homepage
      :END:
 
-GnuPG’s homepage can be found at [[http://www.gnupg.org][http://www.gnupg.org]].
+GnuPG’s homepage can be found at [[https://www.gnupg.org][https://www.gnupg.org]].  It is also
+available in the [[https://torproject.org][Tor]] network as =ic6au7wa3f6naxjq.onion=.
 
 
 **** … Enigmail?
@@ -1723,7 +1724,7 @@ follows.  First, on a secure machine:
    :END:
 
 
-Check out [[http://www.gnupg.org/related_software/gpgme/][GPGME (GnuPG Made Easy)]].
+Check out [[https://www.gnupg.org/related_software/gpgme/][GPGME (GnuPG Made Easy)]].
 
 
 

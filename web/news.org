@@ -297,7 +297,7 @@ We are pleased to announce the availability of GnuPG 2.0.5 ...
 
 The manuals of GnuPG and some related software are now available online.
 Check out the navigation bar or go directly to the
-[[http://www.gnupg.org/documentation/manuals.html][overview page]] .
+[[https://www.gnupg.org/documentation/manuals.html][overview page]] .
 
 
 ** GnuPG 2.0.4 released (2007-05-09 13:02)

@@ -32,7 +32,7 @@ words/acronyms not clear in their meaning.
    [[http://ietf.org/rfc/rfc2045.txt][2045]] ff.
 -  MUA :: Mail User Agent. The mail program used by a user to read,
    compose and send mail
--  OpenPGP :: [[http://www.gnupg.org/rfc2440.html][OpenPGP]] A protocol
+-  OpenPGP :: [[https://www.gnupg.org/rfc2440.html][OpenPGP]] A protocol
    for using PGP (Pretty Good Privacy) or compatible software such as
    GPG for encrypted email on the internet. It also supports other
    applications of cryptography in email, such signed mails.

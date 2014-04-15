@@ -67,7 +67,7 @@ be installed on your system or be readily available as binary package
 for simple installation. Install them before you start any building of
 other Ägypten packages.
 
--  [[http://www.gnupg.org][GnuPG]] >= 1.2.2
+-  [[https://www.gnupg.org][GnuPG]] >= 1.2.2
 
 *** Building Ägypten for KDE 3.1 and Mutt 1.5
 
