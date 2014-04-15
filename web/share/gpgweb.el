@@ -170,6 +170,17 @@
                  (while (re-search-forward
                          "^.*<li>.*>\\(GnuPG - \\).*<span.*$" nil t)
                    (replace-match "" t nil nil 1)))
+
+               ; Due to a problem with the current org exporter (cases
+               ; were we link to file mapped via a webserver alias) we
+               ; have to use a full URL at some places in the org
+               ; source.  We fix that up here.
+               (goto-char (point-min))
+               (while (re-search-forward
+                       "href=\"\\(https://www.gnupg.org\\)/.*\"" nil t)
+                 (replace-match "" t t nil 1))
+
+               ; And save the changes
                (basic-save-buffer))
       (unless visitingp (kill-buffer work-buffer))))))
 
