@@ -8,6 +8,6 @@ if [ "$(pwd  | awk -F/ '{print $NF}')" != "blog.gnupg.org" ]; then
 fi
 
 rsync -vr --links --exclude '*~' --exclude upload \
-   . playfair.gnupg.org:/var/www/git/blog.gnupg.org/htdocs/
+   . werner@trithemius.gnupg.org:/var/www/www/www.gnupg.org/misc/blog/
 
 #eof
