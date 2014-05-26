@@ -46,11 +46,12 @@
    You can subscribe to these lists [[http://lists.gnupg.org/][via web]] or by sending an e-mail:
 
 #+begin_example
-   To: /<mailing\_list>/-request@gnupg.org
+   To: <mailing_list>-request@gnupg.org
    Subject: subscribe
 #+end_example
 
-   where /<mailing\_list>/ is the mailing list name as described above.
+   where /<mailing_list>/ is the name of the mailing list as described
+   above.
 
    Posting to these mailing lists is only allowed for subscribers;
    postings from non-subcribers are held for approval but there is no
