@@ -1,0 +1,27 @@
+#+TITLE: GnuPG - Donate - Thank you
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate - Thank you
+
+  *Thank you very much for your donation to our work on GnuPG.*
+
+  We will update the list of donors once a week, thus you won’t see
+  your name immediately.  If you did not give a name you won’t be
+  listed at all.
+
+  Here is our transaction data of your payment:
+#+BEGIN_HTML
+  <pre id="checkoutSummary">
+  <!--MESSAGE-->
+  </pre>
+#+END_HTML
+
+  Your credit card statement should list this donation as /GnuPG
+  donation/. If you have any questions please contact /donations/ at
+  /gnupg.org/.
+
+
+#+BEGIN_HTML
+  <p><a href="/index.html">Continue</a></p>
+#+END_HTML

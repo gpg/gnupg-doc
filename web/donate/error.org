@@ -1,0 +1,9 @@
+#+TITLE: GnuPG - Donate - Error
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate
+
+#+BEGIN_HTML
+  <!--ERRORSTR-->
+#+END_HTML

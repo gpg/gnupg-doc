@@ -1,0 +1,61 @@
+#+TITLE: GnuPG - Donate - Checkout with card
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate - Checkout with card
+
+  You are about to donate
+  @@html:<!--AMOUNT-->@@
+  @@html:<!--CURRENCY-->@@
+  to the GnuPG project using your credit card.
+
+#+BEGIN_HTML
+  <noscript>
+    <p>
+      <strong>Please enable Javascript.</strong>
+    </p>
+    <p id="smallnote">
+       Right, for security reasons it is in general preferable to
+       disable Javascript in a browser.  However, we do not want
+       to handle credit card numbers ourselves and use a service of
+       our payment processor to convey this sensitive information
+       directly between your browser and them.  This requires that
+       you enable enable Javascript for <emph>gnupg.org</emph>
+       and <emph>stripe.com</emph>.
+    </p>
+  </noscript>
+
+
+  <!--ERRORSTR-->
+  <p>
+    <form action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="hidden" name="mode" value="checkout-stripe">
+      <input type="hidden" name="sessid" value="<!--SESSID-->">
+      <script
+        src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-key="pk_live_lcfUUC9FLdguvgEKqMeaeuWY"
+        data-image="/share/gnupg-badge-128x128.png"
+        data-name="GnuPG"
+        data-description="Donation to the GnuPG project"
+        data-amount="<!--STRIPEAMOUNT-->"
+        data-currency="<!--CURRENCY-->"
+        data-panel-label="Donate {{amount}} to GnuPG"
+        data-label="Donate now"
+      >
+      </script>
+    </form>
+  </p>
+#+END_HTML
+# Note: We do not want to send a
+#         data-email="<!-- MAIL -->"
+#       line to Stripe so to enable the user to use a
+#       a different nail address for use with them.
+
+#+BEGIN_HTML
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="re-checkout">
+    <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="submit" value="Back to payment options" />
+  </form>
+#+END_HTML

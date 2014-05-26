@@ -1,0 +1,100 @@
+#+TITLE: GnuPG - Donate - Checkout
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate - Checkout
+
+  Information on your intended donation:
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Amount:</td>
+     <td><!--AMOUNT-->
+         <!--CURRENCY--></td>
+   </tr>
+   <tr>
+     <td align="right">Name:</td>
+     <td><!--NAME--></td>
+   </tr>
+   <tr>
+     <td align="right">Mail:</td>
+     <td><!--MAIL--></td>
+   </tr>
+   <tr>
+     <td align="right" valign="top">Message:</td>
+     <td><!--MESSAGE_FMT--></td>
+   </tr>
+  </table>
+#+END_HTML
+
+  If something is wrong, please use the back button below to change
+  it.  If the data is correct, you may proceed by choosing one of the
+  payment options below.
+
+
+  - Donate with a credit card
+
+#+BEGIN_HTML
+   <p id="smallnote">
+      For privacy reasons a click on the button below will take you to a
+      dedicated page for the credit card based checkout.
+   </p>
+   <p>
+      <form action="/cgi-bin/procdonate.cgi" method="POST">
+        <input type="hidden" name="mode" value="checkout-cc">
+        <input type="hidden" name="sessid" value="<!--SESSID-->">
+        <input type="image" src="https://gnupg.org/share/btn-donate.png"
+               border="0" name="submit" alt="Donate with credit card"
+                          title="Donate with credit card">
+      </form>
+    </p>
+#+END_HTML
+
+
+  - Donate using a Paypal account
+
+
+#+HTML: <p id="smallnote">Coming soon (not yet available)</p>
+
+# #+BEGIN_HTML
+#    <p>
+#     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+#       <input type="hidden" name="cmd" value="_s-xclick">
+#       <input type="hidden" name="hosted_button_id" value="X6PJPV43S58CW">
+#       <input type="image" src="https://gnupg.org/share/btn-donate.png"
+#            border="0" name="submit" alt="Donate using PayPal"
+#                                   title="Donate using PayPal">
+#     </form>
+#   </p>
+# #+END_HTML
+#
+
+  - Donate using a SEPA bank transfer
+
+#+HTML: <p id="smallnote">Coming soon (not yet available)</p>
+
+# #+BEGIN_HTML
+#   <p id="smallnote">
+#     A SEPA bank transfer is possible in most European countries.  We
+#     will send you an account number and you simply wire the money to
+#     that account.
+#     <form action="/cgi-bin/procdonate.cgi" method="POST">
+#       <input type="hidden" name="mode" value="checkout-sepa">
+#       <input type="hidden" name="sessid" value="<!--SESSID-->">
+#       <input type="image" src="https://gnupg.org/share/btn-donate.png"
+#          border="0" name="submit" alt="Donate using SEPA"
+#                                 title="Donate using SEPA">
+#     </form>
+#   </p>
+# #+END_HTML
+
+
+
+#+BEGIN_HTML
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="re-main">
+    <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="submit" value="Back to donation page" />
+  </form>
+#+END_HTML

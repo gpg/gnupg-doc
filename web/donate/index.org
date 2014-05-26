@@ -1,0 +1,121 @@
+#+TITLE: GnuPG - Donate
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate
+
+  Maintaining and improving GnuPG is costly. For more than 10 years
+  now, [[https://g10code.com][g10^code]], a German company owned and headed by GnuPG's
+  principal author Werner Koch, is bearing the majority of these
+  costs. To help them carry on this work, they need your support.
+
+** Ways to donate
+
+   Paying using a credit card is currently our preferred choice.  [[https://en.wikipedia.org/wiki/Single_Euro_Payments_Area][SEPA]]
+   payments are acceptable but we have not yet automated this process.
+   If you have a Paypal account you may use that too.
+
+   Because the GnuPG projects is not tax exempted, we are not able to
+   send you a respective donation receipt.  If you are company,
+   [[https://g10code.com][g10^code]] can sell you a support contract for GnuPG or provide other
+   kind of paid services.
+
+** Donation form
+
+  To process your donation we need to collect some information.  This
+  information is only used for the purpose of the donation and not
+  send to any other entity not directly involved in the donation
+  process.  Not giving a name makes the donation “anonymous” in that
+  the name won’t be listed on the public thank you page.
+
+#+BEGIN_HTML
+  <!--ERRORPANEL-->
+
+  <form action="/cgi-bin/procdonate.cgi" method="post">
+   <input type="hidden" name="mode" value="main">
+   <p class="ii">Keep this field clear:
+                 <input type="text" size="40" name="url"></p>
+   <table border="0" cellpadding="0" cellspacing="4">
+    <tr>
+      <td></td>
+      <td>How much do you want to donate?</td>
+    </tr>
+    <tr>
+      <td align="right">Amount:</td>
+      <td>
+          <input type="radio" name="amount" value="500"/>500 EUR
+          <input type="radio" name="amount" value="200"/>200 EUR
+          <input type="radio" name="amount" value="100"/>100 EUR
+          <input type="radio" name="amount" value="50"/>50 EUR
+          <input type="radio" name="amount" value="20"/>20 EUR
+          <input type="radio" name="amount" value="5"/>5 EUR
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          <input type="radio" name="amount"
+                              value="other"/><!--CHECKOTHER-->other:
+          <input type="text"  size="6" name="amountother"
+                              value=""/><!--AMOUNT-->
+          <select name="currency" size="1">
+            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+            <option value="USD" ><!--SEL_USD-->US Dollar</option>
+            <option value="GBP" ><!--SEL_GBP-->British Pound</option>
+            <option value="JPY" ><!--SEL_JPY-->Yen</option>
+          </select>
+          <!--ERR_AMOUNT-->
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          If you want to be listed on the sponsors page, please enter
+          your name as it shall appear there.
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Name:</td>
+      <td>
+          <input type="text" size="40" style="width:200px" name="name"
+                 value=""/><!--NAME-->
+          <!--ERR_NAME-->
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          In case of payment problems we may want to contact you, please
+          enter your mail address.
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Mail:</td>
+      <td>
+          <input type="text" size="40" style="width:200px" name="mail"
+                   value=""/><!--MAIL--> (optional)
+           <!--ERR_MAIL-->
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          If you want to leave a message for us, please enter it here:
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          <textarea cols="40" rows="4" style="width:500px" name="message"
+                    ></textarea><!--MESSAGE-->
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          <input type="submit" value="Proceed to payment options" />
+      </td>
+    </tr>
+   </table>
+  </form>
+#+END_HTML

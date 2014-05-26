@@ -96,6 +96,11 @@ div.urgent {
 }
 
 
+.ii {
+  display: none !important;
+}
+
+
 /*
    Other elements as commonly used by org-mode
  */
@@ -258,6 +263,7 @@ div.outline-text-3 {
 #cpyright {
     font-style: italic;
     font-size: 0.6em;
+    padding-top: 4em;
 }
 
 #smallnote {
@@ -276,6 +282,11 @@ div.outline-text-3 {
     font-style: italic;
     font-size: 0.3em;
     padding: 2em 0;
+}
+
+
+#checkoutSummary {
+    background-color: #f0f0f0;
 }
 
 

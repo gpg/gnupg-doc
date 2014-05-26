@@ -1,0 +1,7 @@
+# config.rc - Configuration variables for all CGIs         -*- perl -*-
+
+htdocs  => '/var/www/www/www.gnupg.org/htdocs/',
+
+payprocd_socket => '/var/run/payproc/daemon',
+
+#eof#
