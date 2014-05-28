@@ -1,0 +1,313 @@
+# Public list of Donors (Initial version)
+# The format is:
+#   Year for listing
+#   Date of donation (or empty)
+#   Name for listing
+#   Tag  denoting special campaigns:
+#        - goteo13  The 2013 Goteo campaign
+#   LNR  line number from journal file
+#
+# The actual file is maintained on the www.gnupg.org server with the
+# help of the append-to-donors.sh script.  To manually add entries,
+# please do that on the server and do not use a LNR field.
+
+2011::Olav Seyfarth
+2011::Siniša Majstorović
+2011::Hideki Saito
+2011::Michael Kocziak
+2011::Andre Amorim
+2011::Robert Hansen
+2011::Florian Philipp
+2011::Sergey Matveev
+2012::Martin Tschosnig
+2012::Jerome Baum
+2012::Lorenzo Grifi
+2012::DistroWatch.com
+2012::Robert Hansen
+2012::Retsiger
+2012::Stuart Robertson
+2012::Peter Schmidt
+2012::Tim Wible
+2012::Robert Hansen
+2012::Kristian Fiskerstrand
+2012::David Smith
+2012::Gabriel Ruprecht
+2012::E FULLWOOD
+2012::Jeroen Budts
+2012::Richard Holliday
+2012::Michael Hannemann
+2012::ph3-der-loewe
+2012::Juergen Polster
+2012::École Ouverte Francophone
+2012::Thomas Martin
+2012::Peter Philippe
+2012::Daniel Chen
+2012::Trung Pham
+2012::Gabriele Inghirami
+2012::Ching-che Chen
+2012::William Samuels
+2012::Dazzling Beauty
+2012::David Wagner
+2012::Robert Hansen
+2012::axel kleindienst
+2012::Dillon Pyron
+2012::Embedded Systems Academy
+2012::Ed Stone
+2012::Eike Benedikt Lotz
+2013::Robert Hansen
+2013::John Howlett
+2013::David Norman
+2013::Harry Percival
+2013::Sidnet
+2013::Thomas Gries
+2013::Pete Stephenson
+2013::Daniele Ricci
+2013::Rock Flats Gear
+2013::Benjamin-Gaylor Paul
+2013::bastiaan van der veer
+2013::Günter Kuhns
+2013::Leopold Summerer
+2013::Joachim Rauscher
+2013::Matthias Kirschner
+2013::David Kaempf
+2013::Adam Harper
+2013::Rolf Strathewerd
+2013::Mike Tigas
+2013::Burghard Engel
+2013::Christine Deininger
+2013::Pedro Araújo
+2013::Markus Heinrich
+2013::Philipp Lewe
+2013::Morgan Le Douget
+2013::Avi W
+2013::Peter Hufschmid-Hirschbuehl
+2013::Laurent Joubert
+2013::pascal thuillier-charmet
+2013::Dr. Christian Leutloff
+2013::Michael Cusack
+2013::Chen Ching-che
+2013::邝 建红
+2013::Michelle Kinnucan
+2013::Igor Furlan
+2013::Stephen Revilak
+2013::Anja Göritz
+2013::Magne Larsen
+2013::William Harris
+2013::Steve Edlefsen
+2013::Georg Pohl
+2013::Matthias Matthiasson
+2013::Mark Jeromin
+2013::Sascha Xander
+2013::Jonathan Hammler
+2013::Markus Schweitzer
+2013::William Oslund
+2013::Klas Lindfors
+2013::Tomas Vasko
+2013::Christoph Maciejewski
+2013::Dennis Heitmann
+2013::Martin Schneider
+2013::Daniel Tietze
+2013::Alfred Giuliani
+2013::Jens Bräuer
+2013::Rolf-Maria Rexhausen
+2013::Hofbauer Roland
+2013::Alex Zey
+2013::Peter Ulber
+2013::hannes michalek
+2013::Artem Strizhevsky
+2013::Clemens Reitze
+2013::juergen karmann
+2013::Marcus Fihlon
+2013::Alexander Kratzer
+2013::Tomas Mrozek
+2013::Timo Fercher
+2013::Andy Sommer
+2013::Thilo Hartmann
+2013::Andreas Bittner
+2013::Jonas Gasser
+2013::Wau Holland Stiftung
+2014::Avi W.
+2014::Robert Hansen
+2014::Dennis Jefferson
+2014::Eike Benedikt Lotz
+2014::Christoph Roeger
+2014::Alessandro Francolini
+2014::Magne Larsen
+2014::Harrison Neal
+2014::Bedrossian Nathan
+2014::Margaret Timothy
+2014::Miguel Ángel Meneses García
+2014::Jason Harris
+2014::Michaela Eichwald
+2014::Pexus LLC
+2014::Martin Bauer
+2014::Ansgar Machalicky
+2014::Björn Hohe
+2014::Paul Laub
+2014::Julien Henry
+2014::Silent Cry
+2014::Moritz Grosch
+2014::michael böttner
+2014::Anthony Le Cigne
+2014::Jay Humphrey
+2014::In memory of the Honorable Allan N. Kornblum
+2014::Gerd Christiansen
+2014::Raúl Montañana Aliaga
+2014::Dr. Peter Voigt
+2014::Christoph Albers
+2014::Robin Berger
+2014::dk82
+2014::Don Moody
+2014::Marco Lazzarotto
+2014:2013-12-19:Achim Mueller:goteo13
+2014:2013-12-19:Alexander Varnin:goteo13
+2014:2013-12-19:alexbst:goteo13
+2014:2013-12-19:Arne Bachmann:goteo13
+2014:2013-12-19:ArneBabenhauserheide:goteo13
+2014:2013-12-19:Arnold Nipper:goteo13
+2014:2013-12-19:auyonghawyee:goteo13
+2014:2013-12-19:Axel van Lil:goteo13
+2014:2013-12-19:Carlos Jenkins:goteo13
+2014:2013-12-19:Chris:goteo13
+2014:2013-12-19:Christian W.:goteo13
+2014:2013-12-19:contentment:goteo13
+2014:2013-12-19:Daniel Friesen:goteo13
+2014:2013-12-19:David Glenck:goteo13
+2014:2013-12-19:Dominik Herrmann:goteo13
+2014:2013-12-19:dotplex.de:goteo13
+2014:2013-12-19:dreh23:goteo13
+2014:2013-12-19:emil:goteo13
+2014:2013-12-19:fairtragen:goteo13
+2014:2013-12-19:fkempf:goteo13
+2014:2013-12-19:flora:goteo13
+2014:2013-12-19:Franklin 1980:goteo13
+2014:2013-12-19:fred trotter:goteo13
+2014:2013-12-19:habakuk:goteo13
+2014:2013-12-19:Heywood Floyd:goteo13
+2014:2013-12-19:Isaac Puch Rojo:goteo13
+2014:2013-12-19:Iwan Zarembo:goteo13
+2014:2013-12-19:Javier Dehesa:goteo13
+2014:2013-12-19:Jay:goteo13
+2014:2013-12-19:jerger:goteo13
+2014:2013-12-19:Joerg Sievers:goteo13
+2014:2013-12-19:Johannes Barre:goteo13
+2014:2013-12-19:Johannes Körner:goteo13
+2014:2013-12-19:jonsson:goteo13
+2014:2013-12-19:kai:goteo13
+2014:2013-12-19:Kevin Read:goteo13
+2014:2013-12-19:Kobichief:goteo13
+2014:2013-12-19:MagicFab:goteo13
+2014:2013-12-19:Markus Busche:goteo13
+2014:2013-12-19:Marvin Damschen:goteo13
+2014:2013-12-19:mat-in:goteo13
+2014:2013-12-19:Messerjocke:goteo13
+2014:2013-12-19:metromogul:goteo13
+2014:2013-12-19:Michael S.:goteo13
+2014:2013-12-19:Michael Zabka:goteo13
+2014:2013-12-19:MikeA1967:goteo13
+2014:2013-12-19:Morgan Le Douget:goteo13
+2014:2013-12-19:Nadim Khoury:goteo13
+2014:2013-12-19:namani:goteo13
+2014:2013-12-19:Oliver Strutynski:goteo13
+2014:2013-12-19:Patrick Wulff:goteo13
+2014:2013-12-19:Peter Müller:goteo13
+2014:2013-12-19:Petr Uzel:goteo13
+2014:2013-12-19:Philipp Claßen:goteo13
+2014:2013-12-19:Rakete:goteo13
+2014:2013-12-19:René Schwietzke:goteo13
+2014:2013-12-19:Robert Elsner:goteo13
+2014:2013-12-19:Shura1oplot:goteo13
+2014:2013-12-19:Simon Schwarz:goteo13
+2014:2013-12-19:SuperUser123:goteo13
+2014:2013-12-19:supporter101:goteo13
+2014:2013-12-19:swifty:goteo13
+2014:2013-12-19:Telefrag:goteo13
+2014:2013-12-19:Thomas Oberhäuser:goteo13
+2014:2013-12-19:Tobias Bieniek:goteo13
+2014:2013-12-19:unimatrix zero:goteo13
+2014:2013-12-19:Vladimir Gorbunov:goteo13
+2014:2013-12-19:wcqf:goteo13
+2014:2013-12-19:windo:goteo13
+2014:2013-12-20:Alexey Kreshchuk:goteo13
+2014:2013-12-20:Angie:goteo13
+2014:2013-12-20:Anton Yakutovich:goteo13
+2014:2013-12-20:Bernd Helm:goteo13
+2014:2013-12-20:creature eternal:goteo13
+2014:2013-12-20:Dominik Heidler:goteo13
+2014:2013-12-20:Figa Sebe:goteo13
+2014:2013-12-20:Florent Peterschmitt:goteo13
+2014:2013-12-20:FrankyB:goteo13
+2014:2013-12-20:Gaël:goteo13
+2014:2013-12-20:Heiko:goteo13
+2014:2013-12-20:Heiko Siebel:goteo13
+2014:2013-12-20:Helloagain:goteo13
+2014:2013-12-20:huhucz:goteo13
+2014:2013-12-20:ianelli:goteo13
+2014:2013-12-20:jordi:goteo13
+2014:2013-12-20:jyaworski:goteo13
+2014:2013-12-20:Kai Haase:goteo13
+2014:2013-12-20:Klaus Lichtenwalder:goteo13
+2014:2013-12-20:Ladislav Hagara:goteo13
+2014:2013-12-20:Martijn Polder:goteo13
+2014:2013-12-20:Martin Siller:goteo13
+2014:2013-12-20:MilieuMax:goteo13
+2014:2013-12-20:Pantos:goteo13
+2014:2013-12-20:papa-ping:goteo13
+2014:2013-12-20:Scott Ainslie:goteo13
+2014:2013-12-20:Silvan Jegen:goteo13
+2014:2013-12-20:stubblix:goteo13
+2014:2013-12-20:Szentmarjay Tibor:goteo13
+2014:2013-12-20:Thomas Goßler:goteo13
+2014:2013-12-20:Wede:goteo13
+2014:2013-12-20:Володя:goteo13
+2014:2013-12-21:Dirk Pleiter:goteo13
+2014:2013-12-21:evhan:goteo13
+2014:2013-12-21:infosec:goteo13
+2014:2013-12-21:Karl Ove Hufthammer:goteo13
+2014:2013-12-21:kfogel:goteo13
+2014:2013-12-21:michael:goteo13
+2014:2013-12-21:ogai:goteo13
+2014:2013-12-21:simon:goteo13
+2014:2013-12-21:tincian:goteo13
+2014:2013-12-22:cyke:goteo13
+2014:2013-12-22:friedel:goteo13
+2014:2013-12-22:Hans Friedinger:goteo13
+2014:2013-12-22:Rod Sherwin:goteo13
+2014:2013-12-23:Der Frickelmeister:goteo13
+2014:2013-12-23:smiddy:goteo13
+2014:2013-12-23:Thomas Fetcke:goteo13
+2014:2013-12-23:Thomas Schwinge:goteo13
+2014:2013-12-25:Carsten Fuchs:goteo13
+2014:2013-12-26:flaburgan:goteo13
+2014:2013-12-27:Sebastian Marcelo Machuca Arias:goteo13
+2014:2013-12-29:Fernando Briano:goteo13
+2014:2013-12-30:elride:goteo13
+2014:2013-12-30:Marc-Aurèle DARCHE:goteo13
+2014:2013-12-30:teufelernie:goteo13
+2014:2013-12-31:Robyn Minkler:goteo13
+2014:2013-12-31:ZIGX:goteo13
+2014:2014-01-02:Gutschy:goteo13
+2014:2014-01-03:dhe:goteo13
+2014:2014-01-03:Marcin Wilk:goteo13
+2014:2014-01-03:Pablo Caro:goteo13
+2014:2014-01-05:Frank Reichel:goteo13
+2014:2014-01-06:Lorenzo Cappelletti:goteo13
+2014:2014-01-06:Stéphane M. Grueso:goteo13
+2014:2014-01-06:Tyler Burton:goteo13
+2014:2014-01-07:Mathias Gebbe:goteo13
+2014:2014-01-09:edwin:goteo13
+2014:2014-01-11:Alan Ruttenberg:goteo13
+2014:2014-01-12:Florian Philipp:goteo13
+2014:2014-01-13:ac:goteo13
+2014:2014-01-15:Gemini:goteo13
+2014:2014-01-17:cre8radix:goteo13
+2014:2014-01-20:Emil Hemdal:goteo13
+2014:2014-01-21:Armin Krauss:goteo13
+2014:2014-01-22:Michael Lewis:goteo13
+2014:2014-01-30:Per Tunedal:goteo13
+2014:2014-01-30:Stephan B.:goteo13
+2014:2014-02-02:Fabio Natali:goteo13
+2014:2014-02-02:Juan Luis Chulilla:goteo13
+2014:2014-02-03:Oliver Klee:goteo13
+2014:2014-02-06:Robert Fromont:goteo13:
+2014:2014-05-07:Kami:goteo13:

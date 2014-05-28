@@ -1,0 +1,28 @@
+#+TITLE: GnuPG - List of Donors - 2014
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* People who donated money to GnuPG in 2014
+
+#+HTML: <ul>
+#+HTML: <!--BEGIN-DONATIONS-->
+#+HTML: <!--END-DONATIONS-->
+#+HTML: </ul>
+
+  Thank you.
+
+* Participants of crowdfunding campaign
+
+  On December 19, 2013 we launched a crowdfunding campaign at the
+  [[Goteo.org]] site to raise money for a updating the GnuPG
+  infrastructure and help releasing version 2.1.  Our goal of 24000
+  Euro was reached within 27 hours and in the weeks following the
+  gross donations reached 36000 Euro.  Here is the list of
+  participants who opted for being listed:
+
+#+HTML: <ul>
+#+HTML: <!--BEGIN-DONATIONS_goteo13-->
+#+HTML: <!--END-DONATIONS_goteo13-->
+#+HTML: </ul>
+
+  Thank you.

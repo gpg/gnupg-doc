@@ -6,7 +6,7 @@
 
   *Thank you very much for your donation to our work on GnuPG.*
 
-  We will update the list of donors once a week, thus you won’t see
+  We will update the [[file:kudos.org][list of donors]] once a week, thus you won’t see
   your name immediately.  If you did not give a name you won’t be
   listed at all.
 
@@ -23,5 +23,5 @@
 
 
 #+BEGIN_HTML
-  <p><a href="/index.html">Continue</a></p>
+  <p><a href="/index.html">Continue</a>
 #+END_HTML

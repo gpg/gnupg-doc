@@ -55,10 +55,16 @@ The howtos are symlinked into the www.gnupg.org tree.
 
 ** Symlinks
 
-For compatibility with the old webseite it is best to run this script
+For compatibility with the old website it is best to run this script
 in the htdocs directory:
 
 for d in $(find . -type d); \\
    do (cd $d && for f in $(ls *.html | grep -v '*.??.html'); \\
        do ln -s $f ${f%.html}.en.html; ln -s $f ${f%.html}.de.html ; \\
    done ); done
+
+** Cronjobs
+
+  A cronjob needs to run mkkudos.sh to update the list of donors.
+  This can be done every few minutes becuase mkkudos won't do anything
+  if the list of donors has not been updated.

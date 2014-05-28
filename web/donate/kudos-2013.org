@@ -1,0 +1,12 @@
+#+TITLE: GnuPG - List of Donors - 2013
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* People who donated money to GnuPG in 2013
+
+#+HTML: <ul>
+#+HTML: <!--BEGIN-DONATIONS-->
+#+HTML: <!--END-DONATIONS-->
+#+HTML: </ul>
+
+  Thank you.

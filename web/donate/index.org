@@ -5,7 +5,7 @@
 * Donate
 
   Maintaining and improving GnuPG is costly. For more than 10 years
-  now, [[https://g10code.com][g10^code]], a German company owned and headed by GnuPG's
+  now, [[https://g10code.com][g10^code]] GmbH, a company owned and headed by GnuPG's
   principal author Werner Koch, is bearing the majority of these
   costs. To help them carry on this work, they need your support.
 
@@ -43,12 +43,12 @@
     <tr>
       <td align="right">Amount:</td>
       <td>
-          <input type="radio" name="amount" value="500"/>500 EUR
-          <input type="radio" name="amount" value="200"/>200 EUR
-          <input type="radio" name="amount" value="100"/>100 EUR
-          <input type="radio" name="amount" value="50"/>50 EUR
-          <input type="radio" name="amount" value="20"/>20 EUR
-          <input type="radio" name="amount" value="5"/>5 EUR
+          <label><input type="radio" name="amount" value="500"/>500 EUR</label>
+          <label><input type="radio" name="amount" value="200"/>200 EUR</label>
+          <label><input type="radio" name="amount" value="100"/>100 EUR</label>
+          <label><input type="radio" name="amount" value="50"/>50 EUR</label>
+          <label><input type="radio" name="amount" value="20"/>20 EUR</label>
+          <label><input type="radio" name="amount" value="5"/>5 EUR</label>
       </td>
     </tr>
     <tr>

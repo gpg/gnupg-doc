@@ -91,7 +91,7 @@ sub write_template ($) {
     # Create a formatted message.
     $message_fmt = $message;
     $message_fmt =~ s/\n/<br\x2f>/g;
-    print STDERR "selected currecny->$currency<-\n";
+
     if ( $currency =~ /EUR/i ) {
         $sel_eur = ' selected="selected"';
     } elsif ( $currency =~ /USD/i ) {
@@ -101,7 +101,6 @@ sub write_template ($) {
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
     }
-    print STDERR "selected currecny->$sel_gbp<-\n";
 
     # Build error strings.
     foreach (keys %errdict)
@@ -413,6 +412,7 @@ sub complete_stripe_checkout ()
         "GnuPG donation by " . $data{"Name"} . " <" . $data{"Mail"} . ">";
     $stripe{"Stmt-Desc"} = "GnuPG donation";
     $stripe{"Email"} = $q->param("stripeEmail");
+    $stripe{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
     if ($data{"Mail"} ne $q->param("stripeEmail")) {
         $stripe{"Meta[mail]"} = $data{"Mail"};
     }
@@ -454,8 +454,8 @@ EOF
 #
 # Main
 #
-print STDERR "CGI called with mode=$mode\n";
-print STDERR "CGI called with sessid=$sessid\n";
+#print STDERR "CGI called with mode=$mode\n";
+#print STDERR "CGI called with sessid=$sessid\n";
 if ($q->param('url') ne '') {
     # If the URL field has been filled out, the client did not follow
     # the instructions and thus failed the Turing test.  Provide an
