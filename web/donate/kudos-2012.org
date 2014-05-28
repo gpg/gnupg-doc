@@ -10,3 +10,7 @@
 #+HTML: </ul>
 
   Thank you.
+
+#+HTML: <div class="logobox">
+  [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
+#+HTML: </div>

@@ -6,9 +6,9 @@
 
   *Thank you very much for your donation to our work on GnuPG.*
 
-  We will update the [[file:kudos.org][list of donors]] once a week, thus you won’t see
-  your name immediately.  If you did not give a name you won’t be
-  listed at all.
+  Note that the [[file:kudos.org][list of donors]] is only updated every 30 minutes, thus
+  have some patience until you see your name.  If you did not give a
+  name you won’t be listed at all.
 
   Here is our transaction data of your payment:
 #+BEGIN_HTML
@@ -23,5 +23,7 @@
 
 
 #+BEGIN_HTML
-  <p><a href="/index.html">Continue</a>
+  <ul>
+    <li><a href="/index.html">Continue</a></li>
+  </ul>
 #+END_HTML

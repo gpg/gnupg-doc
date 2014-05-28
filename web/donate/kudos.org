@@ -4,7 +4,48 @@
 
 * List of Donors
 
-  - Donors to GnuPG in [[file:kudos-2014.org][2014]]
-  - Donors to GnuPG in [[file:kudos-2013.org][2013]]
-  - Donors to GnuPG in [[file:kudos-2012.org][2012]]
-  - Donors to GnuPG in [[file:kudos-2011.org][2011]]
+#+HTML: <div id="tagcloudlist"><ul>
+#+HTML: <!--BEGIN-DONATIONS-->
+#+HTML: <!--END-DONATIONS-->
+#+HTML: <li><a href="/donate/index.html">your name</a></li>
+#+HTML: </ul><p> </p></div>
+
+  Thank you.
+
+  - All donors to GnuPG in [[file:kudos-2014.org][2014]]
+  - All donors to GnuPG in [[file:kudos-2013.org][2013]]
+  - All donors to GnuPG in [[file:kudos-2012.org][2012]]
+  - All donors to GnuPG in [[file:kudos-2011.org][2011]]
+
+#+HTML: <div class="logobox">
+  [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
+  [[https://www.wauland.de][file:logos/whs-logo.png]]
+#+HTML: </div>
+
+** Donation summary
+
+| Year |   # |  \EUR | net \EUR |
+|      | <r> |   <r> |      <r> |
+|------+-----+-------+----------|
+| 2011 |  21 |   553 |      465 |
+| 2012 |  53 |  5991 |     4963 |
+| 2013 | 148 |  5041 |     4145 |
+| 2014 |  50 |  3244 |          |
+|------+-----+-------+----------|
+|      | 272 | 14829 |     9573 |
+#+TBLFM: $LR2=vsum(@I..@II)::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
+
+#+HTML: <div id="smallnote">
+The "net" column gives the actual value without VAT and PayPal fees.\\
+Last update: 2014-05-26
+#+HTML: </div>
+
+* Hardware and service donations
+
+  We have to thank [[https://www.openit.de][OpenIT]] for their long time support of GnuPG.  They
+  provide rack space, connectivity, and are fast in fixing problems
+  with the machines.
+
+#+HTML: <div class="logobox">
+  [[https://www.openit.de][file:../share/logo-sponsor.png]]
+#+HTML: </div>

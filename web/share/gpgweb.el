@@ -72,6 +72,10 @@
         <li><a href=\"/service.html\"  >Service</a></li>
         <li><a href=\"/legal.html\"    >Legal</a></li>
       </ul>
+    <li><a href=\"/donate/index.html\"          >Donate</a></li>
+      <ul>
+        <li><a href=\"/donate/kudos.html\" >List of Donors</a></li>
+      </ul>
     <li><a href=\"/download/index.html\"        >Download</a></li>
       <ul>
         <li><a href=\"/download/integrity_check.html\"
@@ -106,7 +110,6 @@
         <li><a href=\"/misc/links.html\"         >Links</a></li>
         <li><a href=\"/misc/logo-contest.html\"  >Logo&nbsp;Contest</a></li>
         <li><a href=\"/misc/thanks.html\"        >Thanks</a></li>
-        <li><a href=\"/misc/donations.html\"     >Donations</a></li>
       </ul>
     <li><a href=\"/blog/index.html\"            >Blog</a></li>
     <li><a href=\"/privacy-policy.html\"        >Privacy Policy</a></li>

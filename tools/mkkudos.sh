@@ -2,8 +2,8 @@
 
 set -e
 
-#htdocs="/var/www/www/www.gnupg.org/htdocs"
-htdocs="/home/wk/s/gnupg-doc/web"
+htdocs="/var/www/www/www.gnupg.org/htdocs"
+#htdocs="/home/wk/s/gnupg-doc/web"
 
 donors="$htdocs/donate/donors.dat"
 
@@ -12,10 +12,14 @@ if [ ! -f "$donors" ]; then
   exit 1
 fi
 
-for file in "$htdocs/donate/"kudos-????.html; do
+for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html; do
    [ "$file" -ot "$donors" ] || continue
-   year=${file#$htdocs/donate/kudos-}
-   year=${year%.html}
+   if [ "$file" = "$htdocs/donate/"kudos.html ]; then
+     year=$(date +%Y)
+   else
+     year=${file#$htdocs/donate/kudos-}
+     year=${year%.html}
+   fi
    echo "processing $file" >&2
    [ -f "$file.tmp" ] && rm "$file.tmp"
    awk -F: -v year=$year -v donors="$donors" <"$file"  >"$file.tmp" '

@@ -4,29 +4,33 @@
 
 * Donate
 
-  Maintaining and improving GnuPG is costly. For more than 10 years
-  now, [[https://g10code.com][g10^code]] GmbH, a company owned and headed by GnuPG's
-  principal author Werner Koch, is bearing the majority of these
-  costs. To help them carry on this work, they need your support.
+  Maintaining and improving GnuPG is costly. For more than a decade,
+  [[https://g10code.com][g10^code]] GmbH, a company owned and headed by GnuPG's principal
+  author Werner Koch, is bearing the majority of these costs. To help
+  them carry on this work, they need your support.
+
+  If you are using [[http://gnupg.org][GnuPG]], [[http://directory.fsf.org/project/libgcrypt/][Libgcrypt]], [[http://gnupg.org/related_software/gpgme/][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
+  to help with development and maintenance please consider to make a
+  donation.
 
 ** Ways to donate
 
-   Paying using a credit card is currently our preferred choice.  [[https://en.wikipedia.org/wiki/Single_Euro_Payments_Area][SEPA]]
-   payments are acceptable but we have not yet automated this process.
-   If you have a Paypal account you may use that too.
+  Paying using a credit card is currently our preferred choice.  [[https://en.wikipedia.org/wiki/Single_Euro_Payments_Area][SEPA]]
+  payments will soon be acceptable but we have not yet automated this
+  process.  If you have a Paypal account you may use that too.
 
-   Because the GnuPG projects is not tax exempted, we are not able to
-   send you a respective donation receipt.  If you are company,
-   [[https://g10code.com][g10^code]] can sell you a support contract for GnuPG or provide other
-   kind of paid services.
+  Because the GnuPG project is not tax exempted, we are not able to
+  send you a respective donation receipt.  However, if you represent a
+  company, you may want to enter into a support contract with [[https://g10code.com][g10^code]]
+  or ask for other service options.
 
 ** Donation form
 
   To process your donation we need to collect some information.  This
-  information is only used for the purpose of the donation and not
-  send to any other entity not directly involved in the donation
-  process.  Not giving a name makes the donation “anonymous” in that
-  the name won’t be listed on the public thank you page.
+  information is only used for the purpose of the donation and no data
+  will ever be send to any entity not directly involved in the
+  donation process.  Not giving a name makes the donation “anonymous”
+  in that the name won’t be listed on the public thank you page.
 
 #+BEGIN_HTML
   <!--ERRORPANEL-->
@@ -38,7 +42,8 @@
    <table border="0" cellpadding="0" cellspacing="4">
     <tr>
       <td></td>
-      <td>How much do you want to donate?</td>
+      <td>How much do you want to donate?
+          (choosing “other” allows to donate in other currencies)</td>
     </tr>
     <tr>
       <td align="right">Amount:</td>
@@ -78,14 +83,14 @@
       <td align="right">Name:</td>
       <td>
           <input type="text" size="40" style="width:200px" name="name"
-                 value=""/><!--NAME-->
+                 value=""/><!--NAME--> (optional)
           <!--ERR_NAME-->
       </td>
     </tr>
     <tr>
       <td></td>
       <td>
-          In case of payment problems we may want to contact you, please
+          In case of payment problems we may want to contact you, thus please
           enter your mail address.
       </td>
     </tr>

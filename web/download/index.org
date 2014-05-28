@@ -14,7 +14,7 @@
   the *gnupg* directory; to locate a /binary package/ (indicated by a
   `B') follow the link to the *binary*.
 
-  [[../misc/donations.org][file:../share/btn-donate.png]]
+  [[../donate/index.org][file:../share/btn-donate.png]]
 
   The table below provides links to the location of the files on the
   primary server only.

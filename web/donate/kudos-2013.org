@@ -10,3 +10,7 @@
 #+HTML: </ul>
 
   Thank you.
+
+#+HTML: <div class="logobox">
+  [[https://www.wauland.de][file:logos/whs-logo.png]]
+#+HTML: </div>

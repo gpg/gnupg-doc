@@ -11,7 +11,7 @@
 
   Thank you.
 
-* Participants of crowdfunding campaign
+* Participants of the crowdfunding campaign
 
   On December 19, 2013 we launched a crowdfunding campaign at the
   [[Goteo.org]] site to raise money for a updating the GnuPG

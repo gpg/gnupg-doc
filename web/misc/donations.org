@@ -9,5 +9,7 @@
   principal author Werner Koch, is bearing the majority of these
   costs. To help them carry on this work, they need your support.
 
-  Please consider to visit the [[http://g10code.com/gnupg-donation.html][GnuPG donation page]] over at the
-  g10^code GmbH site.
+  The donation page used to be hosted over at the g10^code GmbH site.
+  Since May 2014 the donation page is a proper part of this site:
+
+  - [[../donate/index.org][New donation page]]

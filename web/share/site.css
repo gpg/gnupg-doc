@@ -330,5 +330,45 @@ td.right  {
 }
 
 
+/* Tag cloudlist.  */
+
+#tagcloudlist ul {
+    list-style: none;
+    float: left;
+}
+
+#tagcloudlist li {
+    float: left;
+    line-height: 130%;
+    font-variant: small-caps;
+    padding-right: 1em;
+}
+
+#tagcloudlist li:before  {
+    content: "\00bb\00a0";
+}
+
+#tagcloudlist p {
+   clear: left;
+   padding-top: 1em;
+   font-size: 0.8em;
+}
+
+#tagcloudlist a {
+   font-variant: normal;
+   font-size: 0.8em;
+}
+
+
+.logobox p {
+  margin-top: 20px;
+}
+
+.logobox img {
+    margin-right: 20px;
+}
+
+
+
 
 /* EOF */

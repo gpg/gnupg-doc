@@ -51,28 +51,33 @@
     </p>
 #+END_HTML
 
+  - Donate with Bitcoins
+
+#+HTML: <p id="smallnote">Coming soon</p>
+
 
   - Donate using a Paypal account
 
+#+BEGIN_HTML
+   <p id="smallnote">Use this only if you have a Paypal account.</p>
+   <p id="smallnote">(Until we have finished the restructuring
+      of this payment option, you are unfortunately required to
+      re-enter some of the already given data.)</p>
+   <p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="GFTRVNVZVGUJW">
+      <input type="image" src="https://gnupg.org/share/btn-donate.png"
+           border="0" name="submit" alt="Donate using PayPal"
+                                  title="Donate using PayPal">
+    </form>
+  </p>
+#+END_HTML
 
-#+HTML: <p id="smallnote">Coming soon (not yet available)</p>
-
-# #+BEGIN_HTML
-#    <p>
-#     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-#       <input type="hidden" name="cmd" value="_s-xclick">
-#       <input type="hidden" name="hosted_button_id" value="X6PJPV43S58CW">
-#       <input type="image" src="https://gnupg.org/share/btn-donate.png"
-#            border="0" name="submit" alt="Donate using PayPal"
-#                                   title="Donate using PayPal">
-#     </form>
-#   </p>
-# #+END_HTML
-#
 
   - Donate using a SEPA bank transfer
 
-#+HTML: <p id="smallnote">Coming soon (not yet available)</p>
+#+HTML: <p id="smallnote">Coming soon</p>
 
 # #+BEGIN_HTML
 #   <p id="smallnote">

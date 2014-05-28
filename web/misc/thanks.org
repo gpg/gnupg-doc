@@ -58,3 +58,6 @@
   Cristian Rigamonti, David Barkatz, Deneb, Jean-François Paris,
   Lorenzo Cappelletti, Michael Nahrath, Noel D. Torres Taño,
   Pauliuc George, Werner Koch.
+
+  Many people helped with donations to keep the GnuPG running.  See
+  our [[../donate/kudos.org][list of donors]] of those who did not want to remain anonymous.

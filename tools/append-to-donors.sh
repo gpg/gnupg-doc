@@ -4,7 +4,7 @@
 
 pgm="append-to-donors.sh"
 set -e
-
+PATH="/usr/local/bin:$PATH"
 
 htdocs="/var/www/www/www.gnupg.org/htdocs"
 
