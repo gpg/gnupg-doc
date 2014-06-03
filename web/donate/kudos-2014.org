@@ -6,6 +6,7 @@
 
 #+HTML: <ul>
 #+HTML: <!--BEGIN-DONATIONS-->
+#+HTML: <li>[please reload in a few minutes while the list is being updated]
 #+HTML: <!--END-DONATIONS-->
 #+HTML: </ul>
 
@@ -22,6 +23,7 @@
 
 #+HTML: <ul>
 #+HTML: <!--BEGIN-DONATIONS_goteo13-->
+#+HTML: <li>[please reload in a few minutes while the list is being updated]
 #+HTML: <!--END-DONATIONS_goteo13-->
 #+HTML: </ul>
 
