@@ -70,6 +70,7 @@ sub write_template ($) {
     my $sel_gbp = '';
     my $sel_jpy = '';
     my $message_fmt;
+    my $publishname;
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -100,6 +101,13 @@ sub write_template ($) {
         $sel_gbp = ' selected="selected"';
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
+    }
+
+    # Set var for the paypal button
+    if ( $name eq 'Anonymous' or $name eq '') {
+        $publishname = 'No';
+    } else {
+        $publishname = 'Yes';
     }
 
     # Build error strings.
@@ -137,6 +145,7 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
             || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
             || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
+            || s/<!--PUBLISH_NAME-->/$publishname/
             || s/<!--ERRORSTR-->/$errorstr/
             || s/<!--ERR_AMOUNT-->/$err_amount/
             || s/<!--ERR_NAME-->/$err_name/

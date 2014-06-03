@@ -70,6 +70,8 @@
       <input type="image" src="https://gnupg.org/share/btn-donate.png"
            border="0" name="submit" alt="Donate using PayPal"
                                   title="Donate using PayPal">
+      <input type="hidden" name="os0" value="<!--PUBLISH_NAME-->">
+      <input type="hidden" name="os1" value="<!--NAME-->">
     </form>
   </p>
 #+END_HTML

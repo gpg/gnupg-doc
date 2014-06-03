@@ -51,6 +51,14 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+2014q2/000342.html
+
+** GnuPG 2.0.23 released (2014-06-03)
+
+We are pleased to announce the availability of GnuPG 2.0.23.  This is
+a maintenance release with a few new features. [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000342.html][{more}]]
+
+
 ** Goteo campaign: preliminary results (2014-05-12)
 
 The blog has a report on the current status of the campaign including

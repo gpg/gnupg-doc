@@ -302,6 +302,41 @@ pre {
     overflow: auto;
 }
 
+/* Classes used by makeinfo (manuals).  */
+
+pre.display {
+    font-family:inherit;
+}
+pre.format {
+    font-family:inherit;
+}
+pre.smalldisplay {
+    font-family:inherit;
+    font-size:smaller;
+}
+pre.smallformat {
+    font-family:inherit;
+    font-size:smaller;
+}
+pre.smallexample {
+    font-size:smaller;
+}
+pre.smalllisp {
+    font-size:smaller;
+}
+
+span.sc {
+    font-variant:small-caps;
+}
+span.roman {
+    font-family:serif;
+    font-weight:normal;
+}
+span.sansserif {
+    font-family:sans-serif;
+    font-weight:normal;
+}
+
 
 /* Table stuff */
 
@@ -359,6 +394,8 @@ td.right  {
    font-size: 0.8em;
 }
 
+
+/* A box of logos.  */
 
 .logobox p {
   margin-top: 20px;

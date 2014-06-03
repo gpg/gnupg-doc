@@ -8,10 +8,10 @@
 #
 # GnuPG-2
 #
-#+macro: gnupg_ver     2.0.22
+#+macro: gnupg_ver     2.0.23
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
-#+macro: gnupg_size    4177k
-#+macro: gnupg_sha1    9ba9ee288e9bf813e0f1e25cbe06b58d3072d8b8
+#+macro: gnupg_size    4196k
+#+macro: gnupg_sha1    c90e47ab95a40dd070fd75faef0a05c7b679553b
 
 #
 # GnuPG-1
