@@ -13,23 +13,24 @@
 #+macro: gnupg_size    4196k
 #+macro: gnupg_sha1    c90e47ab95a40dd070fd75faef0a05c7b679553b
 
+
 #
 # GnuPG-1
 #
-#+macro: gnupg1_ver      1.4.16
+#+macro: gnupg1_ver      1.4.17
 #+macro: gnupg1_branch   STABLE-BRANCH-1-4
-#+macro: gnupg1_size     3571k
-#+macro: gnupg1_size_gz  4955k
-#+macro: gnupg1_sha1     0bf5e475f3eb6f33d5474d017fe5bf66070e43f4
-#+macro: gnupg1_sha1_gz  ea40324a5b2e3a16ffb63ea0ccc950a3faf5b11c
+#+macro: gnupg1_size     3563k
+#+macro: gnupg1_size_gz  4929k
+#+macro: gnupg1_sha1     830c7f749ad92d6577c521addea5e5d920128d42
+#+macro: gnupg1_sha1_gz  d5b3c25901f182ea20c31f09669f44681c3aaa89
 #
 #+macro: gnupg1_patch_ver   1.4.15-1.4.16
-#+macro: gnupg1_patch_size  26k
-#+macro: gnupg1_patch_sha1  ead70b47218ba76da51c16b652bee2a712faf2f6
+#+macro: gnupg1_patch_size  21k
+#+macro: gnupg1_patch_sha1  ff761de4efc3876c57199612c24b677208da7c10
 #
-#+macro: gnupg1_w32cli_ver  1.4.16
-#+macro: gnupg1_w32cli_size 1573k
-#+macro: gnupg1_w32cli_sha1 82079c7c183467b4dd3795ca197983cd2494cec4
+#+macro: gnupg1_w32cli_ver  1.4.17
+#+macro: gnupg1_w32cli_size 1574k
+#+macro: gnupg1_w32cli_sha1 b2f0db9eebf028d27d0a119334e5e357773dd0d6
 
 
 #

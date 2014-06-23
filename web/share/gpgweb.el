@@ -203,7 +203,9 @@
      (concat "cd " gpgweb-root-dir " && cd " stagedir
              "&& rsync -rlt --exclude \"*~\" ./ "
              "werner@trithemius.gnupg.org:"
-             "/var/www/www/www.gnupg.org/htdocs/"))))
+             "/var/www/www/www.gnupg.org/htdocs/ ;"
+             " ssh werner@trithemius.gnupg.org"
+             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))))
 
 
 (provide 'gpgweb)

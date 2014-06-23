@@ -4,7 +4,8 @@
 
 pgm="append-to-donors.sh"
 set -e
-PATH="/usr/local/bin:$PATH"
+
+PATH=/usr/local/bin:$PATH
 
 htdocs="/var/www/www/www.gnupg.org/htdocs"
 
@@ -44,6 +45,7 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
     jdate=${jdate#journal-}
     jyear=$(echo $jdate |sed 's/\(....\).*/\1/')
     if [ "$jdate" -ge "$lastdate" ]; then
+        [ "$jdate" -gt "$lastdate" ] && lastline=0
         payproc-jrnl -F_lnr -Fdate -F'[name]' \
            -S "_lnr > $lastline" -Stype=C -Saccount==1 \
            --html --print "$journal_dir/journal-$jdate.log" \
