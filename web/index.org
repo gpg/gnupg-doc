@@ -51,10 +51,21 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.0.25 and 1.4.18 released (2014-06-30)
+
+To fix a minor regression in the previous releases we released today
+new version sof GnuPG-1 and GnuPG-2: [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000346.html][{2.0.25}]], [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000347.html][{1.4.18}]]
+
+** GnuPG 2.0.24 released (2014-06-24)                             :important:
+
+GnuPG 2.0.24 is now available.  This GnuPG-2 release features a fix
+for a denial of service attack and a few other changes.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000345.html][{more}]]
+
+
 ** GnuPG 1.4.17 released (2014-06-23)                             :important:
 
-GnuPG 1.4.17 is now available.  This release features a fix for a
-denial of service attack and a few other minor changes.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html][{more}]]
+GnuPG 1.4.17 is now available.  This GnuPG-1 release features a fix
+for a denial of service attack and a few other minor changes.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html][{more}]]
 
 
 ** GnuPG 2.0.23 released (2014-06-03)
