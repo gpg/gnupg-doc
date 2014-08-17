@@ -8,10 +8,10 @@
 #
 # GnuPG-2
 #
-#+macro: gnupg_ver     2.0.25
+#+macro: gnupg_ver     2.0.26
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
-#+macro: gnupg_size    4201k
-#+macro: gnupg_sha1    890d77d89f2d187382f95e83e386f2f7ba789436
+#+macro: gnupg_size    4203k
+#+macro: gnupg_sha1    3ff5b38152c919724fd09cf2f17df704272ba192
 
 
 #
@@ -51,10 +51,10 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver    1.4.3
+#+macro: gpgme_ver    1.5.1
 #+macro: gpgme_branch master
-#+macro: gpgme_size   950k
-#+macro: gpgme_sha1   ffdb5e4ce85220501515af8ead86fd499525ef9a
+#+macro: gpgme_size   943k
+#+macro: gpgme_sha1   a91c258e79acf30ec86a667e07f835e5e79342d8
 
 
 #
@@ -92,9 +92,9 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.1.1
-#+macro: libassuan_size 526k
-#+macro: libassuan_sha1 8bd3826de30651eb8f9b8673e2edff77cd70aca1
+#+macro: libassuan_ver  2.1.2
+#+macro: libassuan_size 504k
+#+macro: libassuan_sha1 7aed69734ba64b63004107cada671b5861d332a4
 
 
 

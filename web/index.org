@@ -5,17 +5,18 @@
 * The GNU Privacy Guard
 #+index: GnuPG
 #+index: GPG
+#+index: PGP
 #+index: Gpg4win
 #+index: GPGTools
 
-GnuPG is the [[http://www.gnu.org/][GNU project]]'s complete and free implementation of the
-OpenPGP standard as defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]]. GnuPG allows to encrypt and
+GnuPG is a complete and free implementation of the OpenPGP standard as
+defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]] (also known as /PGP/). GnuPG allows to encrypt and
 sign your data and communication, features a versatile key management
 system as well as access modules for all kinds of public key
 directories. GnuPG, also known as /GPG/, is a command line tool with
 features for easy integration with other applications. A wealth of
 [[file:related_software/frontends.html][frontend applications]] and [[file:related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
-also provides support for S/MIME.
+also provides support for S/MIME and Secure Shell (ssh).
 
 GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
 be freely used, modified and distributed under the terms of the
@@ -23,7 +24,7 @@ be freely used, modified and distributed under the terms of the
 
 GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the well known and
 portable standalone version, whereas [[download][{{{gnupg_ver}}}]] is the enhanced
-and somewhat harder to build version.
+and modern version and suggested for most users.
 
 Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG. It is nicely
 integrated into an installer and features several frontends as well as
@@ -32,14 +33,24 @@ English and German manuals.
 Project [[http://gpgtools.org][GPGTools]] provides a Mac OS X version of GnuPG. It is nicely
 integrated into an installer and features all required tools.
 
-Project [[https://www.gnupg.org/aegypten/][Aegypten]] developed the S/MIME functionality in GnuPG 2.
-
 #+BEGIN_HTML
   <p id="smallnote">This site is currently undergoing a complete redesign.
      We apologize for any inconveniences like broken links
      or bad formatting.  Please do not report such problems as we are probably
      already aware of them.  (2014-05-28 wk)</p>
 #+END_HTML
+
+* Reconquer your privacy
+
+Even if you have nothing to hide, using encryption helps protect the
+privacy of people you communicate with, and makes life difficult for
+bulk surveillance systems. If you do have something important to hide,
+you are in good company; GnuPG is one of the tools that Edward Snowden
+used to uncover his secrets about the NSA.
+
+Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
+should use GnuPG for your electronic communication.
+
 
 * Latest news
 #+index: News
@@ -51,10 +62,33 @@ all [[file:news.org][news of previous years]] is also available.
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+
+** GnuPG 2.0.26 released (2014-08-12)
+
+GnuPG 2.0.26 is now available.  This is a maintenance release.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000353.html][{more}]]
+
+** Libgcrypt 1.5.4 security fix release                           :important:
+
+Using any Libgcrypt version less than 1.5.4 with GnuPG 2.0.x and
+Elgamal encryption keys is vulnerable to the /Get Your Hands Off My
+Laptop/ attack.  Please update to the newly released Libgcrypt 1.5.4
+or a 1.6 version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000352.html][{more}]]
+
+** Get Your Hands Off My Laptop (2014-08-07)
+
+Daniel Genkin, Itamar Pipman, and Eran Tromer latest side channel
+attack targets an /older version/ of GnuPG.  If your GnuPG and
+Libgcrypt versions are up-to-date you are safe.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000349.html][{more}]]
+
+** GPGME 1.5.1 and 1.4.4 released (2014-08-07)                    :important:
+
+A security fix release for the GPGME library is available.  It is
+suggested to update to one of these version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000350.html][{more}]]
+
 ** GnuPG 2.0.25 and 1.4.18 released (2014-06-30)
 
 To fix a minor regression in the previous releases we released today
-new version sof GnuPG-1 and GnuPG-2: [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000346.html][{2.0.25}]], [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000347.html][{1.4.18}]]
+new versions of GnuPG-1 and GnuPG-2: [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000346.html][{2.0.25}]], [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000347.html][{1.4.18}]]
 
 ** GnuPG 2.0.24 released (2014-06-24)                             :important:
 

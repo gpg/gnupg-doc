@@ -7,7 +7,9 @@
   Maintaining and improving GnuPG is costly. For more than a decade,
   [[https://g10code.com][g10^code]] GmbH, a company owned and headed by GnuPG's principal
   author Werner Koch, is bearing the majority of these costs. To help
-  them carry on this work, they need your support.
+  them carry on this work, they need your support.  Note that despite
+  GnuPG carries an [[https://www.fsf.org][FSF]] copyright notice, they never funded the
+  development or hosting costs.
 
   If you are using [[http://gnupg.org][GnuPG]], [[http://directory.fsf.org/project/libgcrypt/][Libgcrypt]], [[http://gnupg.org/related_software/gpgme/][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
   to help with development and maintenance please consider to make a
@@ -75,8 +77,9 @@
     <tr>
       <td></td>
       <td>
-          If you want to be listed on the sponsors page, please enter
-          your name as it shall appear there.
+          If you want to be listed on the
+          <a href="kudos.html">list of donors</a>,
+          please enter your name as it shall appear there.
       </td>
     </tr>
     <tr>

@@ -1893,29 +1893,57 @@ some of the answers in this section.
 
 
 
-** Why does GnuPG use RSA-2048 by default?
+** Why does GnuPG default to 2048 bit RSA-2048?
    :PROPERTIES:
    :CUSTOM_ID: default_rsa2048
    :END:
 
-The United States National Institute of Standards and Technology
-([[http://www.nist.gov][NIST]]) believes that 2048-bit [[#define_asymc][asymmetric cryptography]] will be secure
-until at least the year 2030.  Larger keys are unlikely to extend this
-duration very much.  Further, large keys come with their own problems:
-they cannot be moved to smartcards, mobile devices have trouble with
-them, and so on.
+At the time the decision was made, 2048-bit RSA was thought to provide
+reasonable security for the next decade or more while still being
+compatible with the overwhelming majority of the OpenPGP ecosystem.
 
-GnuPG uses RSA by default instead of DSA not because of any problems
-with DSA, but just because RSA has a larger installed user base and is
-better supported by other OpenPGP-compatible products.
+*** Is that still the case?
+Largely, yes.  According to NIST Special Publication 800-57, published
+in July 2012, 2048-bit RSA is believed safe until 2030.  At present,
+no reputable cryptographer or research group has cast doubt on the
+safety of RSA-2048.  That said, many are suggesting shifting to larger
+keys, and GnuPG will be making such a shift in the near future.
 
+*** What do other groups have to say about 2048-bit RSA?
+In 2014, the German Bundesnetzagentur fuer Elektrizitaet, Gas,
+Telekommunikation, Post und Eisenbahnen recommended using RSA-2048 for
+long-term security in electronic signatures.
+
+In 2012, ECRYPT-II published their “Yearly Report on Algorithms and
+Keysizes” wherein they expressed their belief RSA-1776 will suffice
+until at least 2020, and RSA-2432 until 2030.
+
+In 2010, France’s Agence Nationale de la Securite des Systems
+d’Information stated they had confidence in RSA-2048 until at
+least 2020.
+
+*** Is there a general recommendation that 3072-bit keys be used for new applications?
+No, although some respected people and groups within the cryptographic
+community have made such recommendations.  Some even recommend
+4096-bit keys.
+
+*** Will GnuPG ever support RSA-3072 or RSA-4096 by default?
+Probably not.  The future is elliptical-curve cryptography, which will
+bring a level of safety comparable to RSA-16384.  Every minute we
+spend arguing about whether we should change the defaults to RSA-3072
+or more is one minute the shift to ECC is delayed.  Frankly, we think
+ECC is a really good idea and we'd like to see it deployed as soon as
+humanly possible.
+
+*** I think I need larger key sizes.
+By all means, feel free to generate certificates with larger keys.
+GnuPG supports up to 4096-bit keys.
 
 
 ** Do other high-security applications use RSA-2048?
    :PROPERTIES:
    :CUSTOM_ID: rsa2048_in_the_real_world
    :END:
-
 
 2048-bit RSA is commonly used to secure SSL root signing certificates.
 It’s also used to sign operating system patches, Authenticode
@@ -1924,12 +1952,10 @@ against attack until at least the year 2030, so use it with
 confidence.
 
 
-
 ** Why doesn’t GnuPG default to using RSA-4096?
    :PROPERTIES:
    :CUSTOM_ID: no_default_of_rsa4096
    :END:
-
 
 Because it gives us almost nothing, while costing us quite a lot.
 
@@ -1961,7 +1987,6 @@ well-served with RSA-2048.
    :CUSTOM_ID: please_use_ecc
    :END:
 
-
 Almost always when people use 4096-bit RSA they’re doing so because
 they believe RSA-4096 to be much stronger than it is.  The United
 States’ National Institute of Standards and Technology ([[http://www.nist.gov][NIST]]) states
@@ -1981,7 +2006,6 @@ RSA.
    :PROPERTIES:
    :CUSTOM_ID: not_a_bad_idea_just_unnecessary
    :END:
-
 
 RSA-4096 is not a bad idea: it’s just, generally speaking,
 unnecessary.  You gain very little in the way of additional resistance
