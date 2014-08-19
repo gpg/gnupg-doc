@@ -1,4 +1,5 @@
 # Version information
+# Please run make in this directory after changing this file.
 
 #
 # Primary FTP server base directory
@@ -12,6 +13,12 @@
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
 #+macro: gnupg_size    4203k
 #+macro: gnupg_sha1    3ff5b38152c919724fd09cf2f17df704272ba192
+
+#
+# GnuPG-2.1
+#
+#+macro: gnupg21_ver     2.1.0
+#+macro: gnupg21_branch  master
 
 
 #
@@ -77,7 +84,7 @@
 # DirMngr
 #
 #+macro: dirmngr_ver  1.1.0
-#+macro: dirmngr_size 543k"
+#+macro: dirmngr_size 543k
 #+macro: dirmngr_sha1 a7a7d1432db9edad2783ea1bce761a8106464165
 
 
@@ -95,6 +102,19 @@
 #+macro: libassuan_ver  2.1.2
 #+macro: libassuan_size 504k
 #+macro: libassuan_sha1 7aed69734ba64b63004107cada671b5861d332a4
+
+
+#
+# nPth
+#
+#+macro: npth_ver  0.91
+
+
+#
+# GpgEX
+#
+#+macro: gpgex_ver  1.0.1
+
 
 
 

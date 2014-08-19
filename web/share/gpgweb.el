@@ -31,7 +31,7 @@
 
    (aput 'org-publish-project-alist "gpgweb-other"
    '(:base-directory "."
-     :base-extension "jpg\\|png\\|css\\|txt\\|rss"
+     :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig"
      :recursive t
      :publishing-directory "../stage"
      :publishing-function org-publish-attachment
@@ -205,8 +205,7 @@
              "werner@trithemius.gnupg.org:"
              "/var/www/www/www.gnupg.org/htdocs/ ;"
              " ssh werner@trithemius.gnupg.org"
-             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))))
-
+             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))
 
 (provide 'gpgweb)
 
