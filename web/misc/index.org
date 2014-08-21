@@ -2,12 +2,15 @@
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Miscellaneous
+* Archive
 
-  Any respectful site features a misc section.  We are not an exception:
+  This is a list of pages we used in the past.  The content is
+  not anymore relevant for the project but we keep them here in case
+  people like to dive into old times.
 
+  - [[file:thanks.org][Thanks]] - We have to thank many people for making GnuPG possible.
   - [[file:links.org][Links]] - Cryptography is a wide-spread science and other people
     have something to tell about.
   - [[file:logo-contest.org][Logo Contest]] - GnuPG needs a new Logo.
-  - [[http://www-old.gnupg.org][The old GnuPG website]] - in case something is missing at the new one.
-  - [[file:thanks.org][Thanks]] - We have to thank many people for making GnuPG possible.
+  - [[http://www-old.gnupg.org][The old GnuPG website]] - In case something is missing at the new one.
+  - [[file:~/s/gnupg-doc/web/legal.org][Law survey]] - Info on the legal issues of using cryptography.

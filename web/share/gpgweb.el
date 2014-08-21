@@ -70,7 +70,6 @@
         <li><a href=\"/features.html\" >Features</a></li>
         <li><a href=\"/news.html\"     >News</a></li>
         <li><a href=\"/service.html\"  >Service</a></li>
-        <li><a href=\"/legal.html\"    >Legal</a></li>
       </ul>
     <li><a href=\"/donate/index.html\"          >Donate</a></li>
       <ul>
@@ -105,14 +104,9 @@
         <li><a href=\"/related_software/libraries.html\" >Libraries</a></li>
         <li><a href=\"/related_software/swlist.html\"    >All</a></li>
       </ul>
-    <li><a href=\"/misc/index.html\"            >Miscellaneous</a></li>
-      <ul>
-        <li><a href=\"/misc/links.html\"         >Links</a></li>
-        <li><a href=\"/misc/logo-contest.html\"  >Logo&nbsp;Contest</a></li>
-        <li><a href=\"/misc/thanks.html\"        >Thanks</a></li>
-      </ul>
     <li><a href=\"/blog/index.html\"            >Blog</a></li>
     <li><a href=\"/privacy-policy.html\"        >Privacy Policy</a></li>
+    <li><a href=\"/misc/index.html\"            >Archive</a></li>
     <li><a href=\"/sitemap.html\"               >Sitemap</a></li>
   </ul>
   </nav>
@@ -205,7 +199,7 @@
              "werner@trithemius.gnupg.org:"
              "/var/www/www/www.gnupg.org/htdocs/ ;"
              " ssh werner@trithemius.gnupg.org"
-             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))
+             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))))
 
 (provide 'gpgweb)
 
