@@ -149,6 +149,7 @@ This is the publishing info used for the GnuPG pages
   (progn
    (setq gpgweb-root-dir (file-name-directory (buffer-file-name)))
    (require 'gpgweb (concat gpgweb-root-dir "share/gpgweb.el"))
+   (setq org-publish-use-timestamps-flag nil)
    (setq org-export-html-toplevel-hlevel 1)
    (setq org-export-html-coding-system 'utf-8)
    (gpgweb-setup-project))

@@ -1,12 +1,11 @@
 ;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
 (require 'org-exp)
-;; cl-macs is required by ox-html.el but for whatever reasons not
-;; autoloaded.
-(load-library "cl-macs")
 
 (defun gpgweb-setup-project ()
+  "Set up an org-publish project for the gnupg.org website."
   (progn
+   (require 'ox-gpgweb (concat gpgweb-root-dir "share/ox-gpgweb.el"))
    (aput 'org-publish-project-alist "gpgweb-org"
    '(:base-directory "~/s/gnupg-doc/web"
      :base-extension "org"
@@ -20,12 +19,12 @@
      :tags nil
      :with-toc nil
      :makeindex t
-     :auto-sitemap t
+     :auto-sitemap nil
      :sitemap-title "GnuPG - Sitemap"
      :sitemap-sort-folders "last"
      :sitemap-file-entry-format "%t  @@html:<span id=\"smallnote\">@@(%d)@@html:</span>@@"
      :style-include-default nil
-     :timestamp-file t
+     :timestamp-file nil
      :html-head "<link rel=\"stylesheet\" href=\"gnupg.css\" type=\"text/css\" />"
      :html-head-include-scripts nil))
 
@@ -41,9 +40,7 @@
    '(:components ("gpgweb-org" "gpgweb-other")))))
 
 
-
-
-(defun gpgweb-insert-header (title)
+(defun gpgweb-insert-header (title generated-at)
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -52,16 +49,24 @@
 <head>
 <title>" title "</title>
 <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>
-<meta name=\"title\" content=\"" title "\"/>
-<meta name=\"generator\" content=\"Org-mode\"/>
-<meta name=\"generated\" content=\"" generated-at "\"/>
-<meta name=\"author\" content=\"Werner Koch\"/>
-<meta name=\"description\" content=\"\"/>
-<meta name=\"keywords\" content=\"\"/>
+<meta name=\"DC.Language\" content=\"en\" />
+<meta name=\"DC.Title\" content=\"" title "\"/>
+<meta name=\"DC.Description\"
+ content=\"GnuPG is a free implementation of OpenPGP\" />
+<meta name=\"DC.Creator\" content=\"The People of the GnuPG Project\" />
+<meta name=\"DC.Publisher\" content=\"The GnuPG Project\" />
+<meta name=\"DC.Date\" content=\""
+  (format-time-string "%Y-%m-%d" generated-at t) "\" />
+<meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
+<meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
 <link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
-<body>
-<div id=\"header\">&nbsp;</div>
+<body>\n"))
+
+(defun gpgweb-insert-menu ()
+  (goto-char (point-min))
+  (when (re-search-forward "^<body>\n" nil t)
+    (insert "<div id=\"header\">&nbsp;</div>
 <div id=\"leftColumn\">
   <nav>
   <ul>
@@ -112,7 +117,7 @@
   </nav>
 </div>
 <main>
-"))
+")))
 
 (defun gpgweb-insert-footer ()
   (goto-char (point-min))
@@ -147,10 +152,11 @@
                    (fname-2 (replace-regexp-in-string
                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile))
-                   (generated-at (org-today))
+                   (generated-at (current-time))
                    (tmppnt))
                ;; Insert the header and mark the active menu
-               (gpgweb-insert-header title)
+               (gpgweb-insert-header title generated-at)
+               (gpgweb-insert-menu)
                (setq tmppnt (point))
                (goto-char (point-min))
                (while (re-search-forward
@@ -186,7 +192,7 @@
 ;;;
 (defun gpgweb-org-to-html (plist filename pub-dir)
   (gpgweb-postprocess-html plist filename
-                           (org-html-publish-to-html plist filename pub-dir)))
+                           (org-gpgweb-publish-to-html plist filename pub-dir)))
 
 
 (defun gpgweb-upload ()
@@ -199,32 +205,7 @@
              "werner@trithemius.gnupg.org:"
              "/var/www/www/www.gnupg.org/htdocs/ ;"
              " ssh werner@trithemius.gnupg.org"
-             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))))
+             " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))
+))
 
 (provide 'gpgweb)
-
-;; commit 6f5180bd9fc230a31913cbdb9a4dd48cc247adc2
-;; Author: Rick Frankel <rick@rickster.com>
-;; Date:   Wed Oct 2 18:26:27 2013 -0400
-;;
-;;     Fix escaping of links in html export.
-;;
-;;     * lisp/ox-html.el (org-html-link): Unescape org-escaped links an
-;;       re-escape for html (browser).
-;;
-;;
-;; diff --git a/lisp/ox-html.el b/lisp/ox-html.el
-;; index 66862bc..0600204 100644
-;; --- a/lisp/ox-html.el
-;; +++ b/lisp/ox-html.el
-;; @@ -2624,7 +2624,9 @@ INFO is a plist holding contextual information.  See
-;;          (path
-;;           (cond
-;;            ((member type '("http" "https" "ftp" "mailto"))
-;; -           (concat type ":" raw-path))
-;; +           (org-link-escape
-;; +            (org-link-unescape
-;; +             (concat type ":" raw-path)) org-link-escape-chars-browser))
-;;            ((string= type "file")
-;;             ;; Treat links to ".org" files as ".html", if needed.
-;;             (setq raw-path
