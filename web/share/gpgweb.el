@@ -118,24 +118,43 @@ Or set a new date only if the file really changed. "
      ()))
   "The definition of the gnupg.org menu structure.")
 
+(defun gpgweb--any-selected-menu-p (menu selected-file)
+  "Return t if any item in MENU has been selected."
+  (let ((item (car menu))
+        res)
+    (when menu
+      (when item
+        (when (string= (car item) selected-file)
+            (setq res t))
+        (when (caddr item)
+          (when (gpgweb--any-selected-menu-p (caddr item) selected-file)
+            (setq res t))))
+      (when (gpgweb--any-selected-menu-p (cdr menu) selected-file)
+        (setq res t)))
+    res))
 
-(defun gpgweb--insert-menuitem (item lvl selected-file)
-  (when item
-    (dotimes (i lvl) (insert "  "))
-    (insert "    <li><a href=\"" (car item) "\"")
-    (when (string= (car item) selected-file)
-      (insert " class=\"selected\""))
-    (insert  ">" (cadr item) "</a></li>\n")
-    (when (caddr item)
-      (dotimes (i (1+ lvl)) (insert "  "))
-      (insert "  <ul>\n")
-      (gpgweb--insert-menu (caddr item) (1+ lvl) selected-file)
-      (dotimes (i (1+ lvl)) (insert "  "))
-      (insert "  </ul>\n"))))
 
 (defun gpgweb--insert-menu (menu lvl selected-file)
+  "Helper function to insert the menu."
   (when menu
-    (gpgweb--insert-menuitem (car menu) lvl selected-file)
+    (let ((item (car menu))
+          sel)
+      (when item
+        (dotimes (i lvl) (insert "  "))
+        (insert "    <li><a href=\"" (car item) "\"")
+        (when (string= (car item) selected-file)
+          (setq sel t)
+          (insert " class=\"selected\""))
+        (insert  ">" (cadr item) "</a></li>\n")
+        (when (and (caddr item)
+                   (or
+                    sel
+                    (gpgweb--any-selected-menu-p (caddr item) selected-file)))
+          (dotimes (i (1+ lvl)) (insert "  "))
+          (insert "  <ul>\n")
+          (gpgweb--insert-menu (caddr item) (1+ lvl) selected-file)
+          (dotimes (i (1+ lvl)) (insert "  "))
+          (insert "  </ul>\n"))))
     (gpgweb--insert-menu (cdr menu) lvl selected-file)))
 
 (defun gpgweb-insert-menu (selected-file)
