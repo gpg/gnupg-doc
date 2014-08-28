@@ -116,7 +116,6 @@
     (:html-link-org-files-as-html nil nil org-gpgweb-link-org-files-as-html)
     (:html-mathjax-options nil nil org-gpgweb-mathjax-options)
     (:html-mathjax-template nil nil org-gpgweb-mathjax-template)
-    (:html-metadata-timestamp-format nil nil org-gpgweb-metadata-timestamp-format)
     (:html-table-align-individual-fields
      nil nil org-gpgweb-table-align-individual-fields)
     (:html-table-caption-above nil nil org-gpgweb-table-caption-above)
@@ -127,13 +126,11 @@
     (:html-tag-class-prefix nil nil org-gpgweb-tag-class-prefix)
     (:html-todo-kwd-class-prefix nil nil org-gpgweb-todo-kwd-class-prefix)
     (:html-toplevel-hlevel nil nil org-gpgweb-toplevel-hlevel)
-    (:html-validation-link nil nil org-gpgweb-validation-link)
     (:html-inline-images nil nil org-gpgweb-inline-images)
     (:html-table-attributes nil nil org-gpgweb-table-default-attributes)
     (:html-table-row-tags nil nil org-gpgweb-table-row-tags)
     (:html-xml-declaration nil nil org-gpgweb-xml-declaration)
     ;; Redefine regular options.
-    (:creator "CREATOR" nil org-gpgweb-creator-string)
     (:with-latex nil "tex" org-gpgweb-with-latex)
     ;; Retrieve LaTeX header for fragments.
     (:latex-header "LATEX_HEADER" nil nil newline)))

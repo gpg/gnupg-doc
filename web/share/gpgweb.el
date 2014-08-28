@@ -41,6 +41,15 @@
 
 
 (defun gpgweb-insert-header (title generated-at)
+  "Insert the header.
+
+Note that using GENERATED-AT is highly problematic because rsync
+would the always update the file.  IF would be better to use the
+file date of the source file but that has the problem that git
+does not track it.  We need to find a solution for this unless we
+can do without DC.Date.  A possible way to fix this is to use a
+source file property which could be updated using Emacs features.
+Or set a new date only if the file really changed. "
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -55,65 +64,91 @@
  content=\"GnuPG is a free implementation of OpenPGP\" />
 <meta name=\"DC.Creator\" content=\"The People of the GnuPG Project\" />
 <meta name=\"DC.Publisher\" content=\"The GnuPG Project\" />
-<meta name=\"DC.Date\" content=\""
-  (format-time-string "%Y-%m-%d" generated-at t) "\" />
 <meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
 <link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>\n"))
+;;; <meta name=\"DC.Date\" content=\""
+;;;   (format-time-string "%Y-%m-%d" generated-at t) "\" />
 
-(defun gpgweb-insert-menu ()
+
+(defconst gpgweb-gnupg-menu-alist
+  '(("/index.html"
+     "Home"
+     (("/features.html"                    "Features")
+      ("/news.html"                        "News")
+      ("/service.html"                     "Service")))
+    ("/donate/index.html"
+     "Donate"
+     (("/donate/kudos.html"                "List of Donors")))
+    ("/download/index.html"
+     "Download"
+     (("/download/integrity_check.html"    "Integrity&nbsp;Check")
+      ("/download/supported_systems.html"  "Supported&nbsp;Systems")
+      ("/download/release_notes.html"      "Release&nbsp;Notes")
+      ("/download/mirrors.html"            "Mirrors")
+      ("/download/cvs_access.html"         "GIT")))
+    ("/documentation/index.html"
+     "Documentation"
+     (("/documentation/howtos.html"        "HOWTOs")
+      ("/documentation/manuals.html"       "Manuals")
+      ("/documentation/guides.html"        "Guides")
+      ("/documentation/faqs.html"          "FAQs")
+      ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
+      ("/documentation/sites.html"         "Sites")
+      ("/documentation/bts.html"           "Bug&nbsp;Tracker")))
+    ("/related_software/index.html"
+     "Related software"
+     (("/related_software/frontends.html"  "Frontends")
+      ("/related_software/tools.html"      "Tools")
+      ("/related_software/libraries.html"  "Libraries")
+      ("/related_software/swlist.html"     "All")))
+    ("/blog/index.html"
+     "Blog"
+     ())
+    ("/privacy-policy.html"
+     "Privacy&nbsp;Policy"
+     ())
+    ("/misc/index.html"
+     "Archive"
+     ())
+    ("/sitemap.html"
+     "Sitemap"
+     ()))
+  "The definition of the gnupg.org menu structure.")
+
+
+(defun gpgweb--insert-menuitem (item lvl selected-file)
+  (when item
+    (dotimes (i lvl) (insert "  "))
+    (insert "    <li><a href=\"" (car item) "\"")
+    (when (string= (car item) selected-file)
+      (insert " class=\"selected\""))
+    (insert  ">" (cadr item) "</a></li>\n")
+    (when (caddr item)
+      (dotimes (i (1+ lvl)) (insert "  "))
+      (insert "  <ul>\n")
+      (gpgweb--insert-menu (caddr item) (1+ lvl) selected-file)
+      (dotimes (i (1+ lvl)) (insert "  "))
+      (insert "  </ul>\n"))))
+
+(defun gpgweb--insert-menu (menu lvl selected-file)
+  (when menu
+    (gpgweb--insert-menuitem (car menu) lvl selected-file)
+    (gpgweb--insert-menu (cdr menu) lvl selected-file)))
+
+(defun gpgweb-insert-menu (selected-file)
+  "Insert the menu structure into the HTML file."
   (goto-char (point-min))
   (when (re-search-forward "^<body>\n" nil t)
     (insert "<div id=\"header\">&nbsp;</div>
 <div id=\"leftColumn\">
   <nav>
   <ul>
-    <li><a href=\"/index.html\"                 >Home</a></li>
-      <ul>
-        <li><a href=\"/features.html\" >Features</a></li>
-        <li><a href=\"/news.html\"     >News</a></li>
-        <li><a href=\"/service.html\"  >Service</a></li>
-      </ul>
-    <li><a href=\"/donate/index.html\"          >Donate</a></li>
-      <ul>
-        <li><a href=\"/donate/kudos.html\" >List of Donors</a></li>
-      </ul>
-    <li><a href=\"/download/index.html\"        >Download</a></li>
-      <ul>
-        <li><a href=\"/download/integrity_check.html\"
-                                                >Integrity&nbsp;Check</a></li>
-        <li><a href=\"/download/supported_systems.html\"
-                                                >Supported&nbsp;Systems</a></li>
-        <li><a href=\"/download/release_notes.html\"
-                                                >Release&nbsp;Notes</a></li>
-        <li><a href=\"/download/mirrors.html\"   >Mirrors</a></li>
-        <li><a href=\"/download/cvs_access.html\" >GIT</a></li>
-      </ul>
-    <li><a href=\"/documentation/index.html\"   >Documentation</a></li>
-      <ul>
-        <li><a href=\"/documentation/howtos.html\"       >HOWTOs</a></li>
-        <li><a href=\"/documentation/manuals.html\"      >Manuals</a></li>
-        <li><a href=\"/documentation/guides.html\"       >Guides</a></li>
-        <li><a href=\"/documentation/faqs.html\"         >FAQs</a></li>
-        <li><a href=\"/documentation/mailing-lists.html\"
-                                                 >Mailing&nbsp;Lists</a></li>
-        <li><a href=\"/documentation/sites.html\"    >Sites</a></li>
-        <li><a href=\"/documentation/bts.html\"      >Bug&nbsp;Tracker</a></li>
-      </ul>
-    <li><a href=\"/related_software/index.html\">Related software</a></li>
-      <ul>
-        <li><a href=\"/related_software/frontends.html\" >Frontends</a></li>
-        <li><a href=\"/related_software/tools.html\"     >Tools</a></li>
-        <li><a href=\"/related_software/libraries.html\" >Libraries</a></li>
-        <li><a href=\"/related_software/swlist.html\"    >All</a></li>
-      </ul>
-    <li><a href=\"/blog/index.html\"            >Blog</a></li>
-    <li><a href=\"/privacy-policy.html\"        >Privacy Policy</a></li>
-    <li><a href=\"/misc/index.html\"            >Archive</a></li>
-    <li><a href=\"/sitemap.html\"               >Sitemap</a></li>
-  </ul>
+")
+    (gpgweb--insert-menu gpgweb-gnupg-menu-alist 0 selected-file)
+    (insert "  </ul>
   </nav>
 </div>
 <main>
@@ -152,19 +187,10 @@
                    (fname-2 (replace-regexp-in-string
                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile))
-                   (generated-at (current-time))
-                   (tmppnt))
-               ;; Insert the header and mark the active menu
+                   (generated-at (current-time)))
+               ;; Insert header, menu, and footer.
                (gpgweb-insert-header title generated-at)
-               (gpgweb-insert-menu)
-               (setq tmppnt (point))
-               (goto-char (point-min))
-               (while (re-search-forward
-                       (concat "href=\"" (regexp-quote fname-2) "\"")
-                       tmppnt t)
-                 (replace-match "\\& class=\"selected\"" t))
-
-               ; Insert the footer
+               (gpgweb-insert-menu fname-2)
                (gpgweb-insert-footer)
 
                ; Fixup the sitemap
