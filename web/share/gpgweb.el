@@ -40,16 +40,11 @@
    '(:components ("gpgweb-org" "gpgweb-other")))))
 
 
-(defun gpgweb-insert-header (title generated-at)
+(defun gpgweb-insert-header (title committed-at)
   "Insert the header.
 
-Note that using GENERATED-AT is highly problematic because rsync
-would the always update the file.  IF would be better to use the
-file date of the source file but that has the problem that git
-does not track it.  We need to find a solution for this unless we
-can do without DC.Date.  A possible way to fix this is to use a
-source file property which could be updated using Emacs features.
-Or set a new date only if the file really changed. "
+COMMITED-AT is the commit date string of the source file or nil
+if not available."
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -57,9 +52,12 @@ Or set a new date only if the file really changed. "
 <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">
 <head>
 <title>" title "</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>
-<meta name=\"DC.Language\" content=\"en\" />
-<meta name=\"DC.Title\" content=\"" title "\"/>
+<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n")
+  (when (and committed-at (>= (length committed-at) 10))
+      (insert "<meta name=\"DC.Date\" content=\""
+              (substring committed-at 0 10) "\" />\n"))
+  (insert "<meta name=\"DC.Language\" content=\"en\" />
+<meta name=\"DC.Title\" content=\"" title "\" />
 <meta name=\"DC.Description\"
  content=\"GnuPG is a free implementation of OpenPGP\" />
 <meta name=\"DC.Creator\" content=\"The People of the GnuPG Project\" />
@@ -69,9 +67,6 @@ Or set a new date only if the file really changed. "
 <link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>\n"))
-;;; <meta name=\"DC.Date\" content=\""
-;;;   (format-time-string "%Y-%m-%d" generated-at t) "\" />
-
 
 (defconst gpgweb-gnupg-menu-alist
   '(("/index.html"
@@ -200,15 +195,16 @@ Or set a new date only if the file really changed. "
 ;;; - Fixup sitemap.
 (defun gpgweb-postprocess-html (plist orgfile htmlfile)
   (let* ((visitingp (find-buffer-visiting htmlfile))
-	 (work-buffer (or visitingp (find-file-noselect htmlfile))))
+	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
+         (committed-at (shell-command-to-string
+                        (concat "git log -1 --format='%ci' -- " orgfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
-                   (title (org-publish-find-title orgfile))
-                   (generated-at (current-time)))
+                   (title (org-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
-               (gpgweb-insert-header title generated-at)
+               (gpgweb-insert-header title committed-at)
                (gpgweb-insert-menu fname-2)
                (gpgweb-insert-footer)
 
@@ -231,6 +227,7 @@ Or set a new date only if the file really changed. "
                ; And save the changes
                (basic-save-buffer))
       (unless visitingp (kill-buffer work-buffer))))))
+
 
 ;;;
 ;;; The publishing function used by the HTML exporter
