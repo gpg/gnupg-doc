@@ -63,6 +63,12 @@ all [[file:news.org][news of previous years]] is also available.
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GPA 0.95 released
+
+GPA is the GNU Privacy Assistant, a frontend to GnuPG.  This new
+release has support for ECC keys and improves on the UI server
+feature.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000356.html][{more}]]
+
 ** GnuPG 2.0.26 released (2014-08-12)
 
 GnuPG 2.0.26 is now available.  This is a maintenance release.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000353.html][{more}]]
