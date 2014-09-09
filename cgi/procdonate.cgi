@@ -34,6 +34,7 @@ my $sessid = $q->param("sessid");
 # Variables used in the template pages.
 my $amount = "";
 my $stripeamount = "";
+my $euroamount = "";
 my $currency = "";
 my $name = "";
 my $mail = "";
@@ -89,6 +90,8 @@ sub write_template ($) {
     $mail =~ s/</\x26lt;/g;
     $message =~ s/</\x26lt;/g;
 
+    # No need to clean $euroamount.
+
     # Create a formatted message.
     $message_fmt = $message;
     $message_fmt =~ s/\n/<br\x2f>/g;
@@ -134,6 +137,7 @@ sub write_template ($) {
             # for the textarea tag.
             s/<!--SESSID-->/$sessid/
             || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
+            || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
             || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
             || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
             || s/(\x22\x2f>)?<!--NAME-->/$name\1/
@@ -327,6 +331,7 @@ sub check_donation ()
     $stripeamount = $data{"_amount"};
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
+    $euroamount = $data{"Euro"}
 
     # Check the mail address
     if ($mail ne '' and $mail !~ /\S+@\S+\.\S+/ ) {
@@ -343,6 +348,7 @@ sub check_donation ()
 
     # Now create a session.
     $data{"Stripeamount"} = $stripeamount;
+    $data{"Euroamount"} = $euroamount;
     $data{"Name"} = $name;
     $data{"Mail"} = $mail;
     $data{"Message"} = $message;
@@ -362,6 +368,7 @@ sub resend_main_page ()
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
     $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
@@ -379,6 +386,7 @@ sub resend_card_checkout ()
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
     $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
@@ -397,6 +405,7 @@ sub prepare_card_checkout ()
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
     $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
     $mail = $data{"Mail"};
 
     write_checkout_cc_page();
