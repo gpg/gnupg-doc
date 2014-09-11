@@ -159,7 +159,8 @@
 
    DirMngr is a daemon to handle CRL and certificate requests for
    GnuPG 2.0. It might also be installed as a system daemon for CRL
-   and OCSP checks.
+   and OCSP checks.  Note that GnuPG 2.1 already includes a modernized
+   version of dirmngr.
 
    | DirMngr {{{dirmngr_ver}}} full source code | {{{dirmngr_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}}        |
    | Signature for previous file                |                    |   | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
@@ -206,6 +207,23 @@
 
    {{{check_sig_note}}}
 
+
+** Pinentry
+#  <<pinentry>>
+#+index: Pinentry!download
+
+   Pinentry is a collection of different PIN and passphrase entry
+   modules.  One of these modules is required for GnuPG-2.
+
+   | Pinnentry {{{pinentry_ver}}} full source code | {{{pinentry_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}     |
+   | Signature for previous file                   |                    |   | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}} |
+
+   SHA-1 checksum for the above file:
+   {{{begin_chksum}}}
+   {{{pinentry_sha1}}} pinentry-{{{pinentry_ver}}}.tar.bz2
+   {{{end_chksum}}}
+
+   {{{check_sig_note}}}
 
 ** Entropy Gathering Daemon
 #  <<egd>>
