@@ -221,6 +221,18 @@ Is a Windows program which can be used to use GnuPG with all MUAs.
 GPGTools is an installer package for Mac OS X. It integrates all
 required modules for easy use of GnuPG on this OS.
 
+
+** [[https://www.dyne.org/software/jaro-mail][Jaro Mail]] [Unix,OSX] MUA
+:PROPERTIES:
+:CUSTOM_ID: jaro-mail
+:END:
+
+Jaro Mail is an integrated suite of interoperable tools to manage
+e-mail communication in a private and efficient way, without relying
+too much on on-line services, in fact encouraging users to store their
+email locally.
+
+
 ** [[ftp://ftp.gnupg.org/gcrypt/contrib/keylookup-2.1.tar.gz][Keylookup]] [Unix] MISC
    :PROPERTIES:
    :CUSTOM_ID: keylookup

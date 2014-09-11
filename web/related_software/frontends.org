@@ -25,6 +25,7 @@
    - [[file:swlist.org::#cryptophane][Cryptophane]]
    - [[file:swlist.org::#gnupg-shell][GnuPG Shell]]
    - [[file:swlist.org::#gpa][GPA]]
+   - [[file:swlist.org::#jaro-mail][Jaro Mail]]
    - [[file:swlist.org::#kgpg][KGpg]]
    - [[file:swlist.org::#seahorse][Seahorse]]
    - [[file:swlist.org::#wija][wija]]

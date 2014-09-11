@@ -1941,7 +1941,8 @@ channel."
   "Transcode a PROPERTY-DRAWER element from Org to HTML.
 CONTENTS holds the contents of the drawer.  INFO is a plist
 holding contextual information."
-  (and (org-string-nw-p contents)
+  (and nil
+       (org-string-nw-p contents)
        (format "<pre class=\"example\">\n%s</pre>" contents)))
 
 ;;;; Quote Block
