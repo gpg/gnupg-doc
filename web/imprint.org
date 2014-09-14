@@ -1,0 +1,23 @@
+#+TITLE: GnuPG - Imprint
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
+* Imprint
+
+  GnuPG is an international community project run by volunteers and
+  not a legal entity.  The technical resources are provided by:
+
+  g10 Code GmbH\\
+  Hüttenstr. 61\\
+  D-40699 Erkrath\\
+  Germany
+
+  g10 Code GmbH is registered at Amtsgericht
+  Wuppertal under HRB 14459.\\
+  Geschäftsführung:  Werner Koch.\\
+  VAT-Id: DE215605608.\\
+  Phone: +49-2104-173855
+
+  Note that we provide the phone number only for legal reasons.
+  Please do not call g10^code to ask for free support.  For paid
+  support see their [[https://g10code.com/contact.html][contact page]].

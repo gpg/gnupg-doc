@@ -105,6 +105,9 @@ if not available."
     ("/privacy-policy.html"
      "Privacy&nbsp;Policy"
      ())
+    ("/imprint.html"
+     "Imprint"
+     ())
     ("/misc/index.html"
      "Archive"
      ())
