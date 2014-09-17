@@ -16,11 +16,7 @@
   can be done at a central place and every application benefits from
   this.
 
-  Especially authors of
-  #+html: <abbr title="Mail User Agent; e.g. a mail reader">
-  MUAs
-  #+html: </abbr>
-  should consider to use GPGME.  It is even planned to create a set of
-  standard widgets for common key selection tasks.
+  Especially authors of @@html:<abbr title="Mail User Agent (mail
+  reader">@@MUAs@@html:</abbr>@@ should consider to use GPGME.
 
-  See [[https://www.gnupg.org/download/index.org#gpgme][download]] section to download the latest tarball.
+  See [[../../download/index.org::#gpgme][download]] section to download the latest tarball.
