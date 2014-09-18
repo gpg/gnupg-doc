@@ -33,13 +33,6 @@ English and German manuals.
 Project [[http://gpgtools.org][GPGTools]] provides a Mac OS X version of GnuPG. It is nicely
 integrated into an installer and features all required tools.
 
-#+BEGIN_HTML
-  <p id="smallnote">This site is currently undergoing a complete redesign.
-     We apologize for any inconveniences like broken links
-     or bad formatting.  Please do not report such problems as we are probably
-     already aware of them.  (2014-05-28 wk)</p>
-#+END_HTML
-
 * Reconquer your privacy
 
 Even if you have nothing to hide, using encryption helps protect the

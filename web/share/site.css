@@ -149,7 +149,7 @@ div.entry-qotd
     padding-top: 5%;
     font-size: 125%;
     border-bottom: 3px #FFb580 solid;
-    font-family: verdana,arial,helvetica;
+    font-family: verdana,helvetica;
     margin-bottom: 2%;
 }
 
@@ -213,6 +213,29 @@ nav img {
 }
 
 
+#nav_bottom ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    float: left;
+}
+
+#nav_bottom li {
+    float: left;
+    padding-right: 3em;
+}
+
+#nav_bottom p {
+    clear: left;
+    padding-top: 1em;
+}
+
+#nav_bottom a {
+    clear: left;
+    font-variant: normal;
+}
+
+
 /*
    Other stuff
  */
@@ -261,7 +284,6 @@ div.outline-text-3 {
 }
 
 #cpyright {
-    font-size: 0.6em;
     padding-top: 4em;
 }
 
@@ -270,15 +292,12 @@ div.outline-text-3 {
 }
 
 #footer {
+    border-top: 2px solid #5c6064;
     margin-top: 5em;
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
     clear: both;
-}
-
-#footer p {
-    font-size: 0.3em;
-    padding: 2em 0;
+    font-size: 0.8em;
 }
 
 

@@ -98,11 +98,11 @@ if not available."
      (("/related_software/frontends.html"  "Frontends")
       ("/related_software/tools.html"      "Tools")
       ("/related_software/libraries.html"  "Libraries")
-      ("/related_software/swlist.html"     "All")))
-    ("/blog/index.html"
-     "Blog"
-     ())
-    ("/privacy-policy.html"
+      ("/related_software/swlist.html"     "All"))))
+  "The definition of the gnupg.org menu structure.")
+
+(defconst gpgweb-gnupg-bottom-menu-alist
+  '(("/privacy-policy.html"
      "Privacy&nbsp;Policy"
      ())
     ("/imprint.html"
@@ -113,8 +113,12 @@ if not available."
      ())
     ("/sitemap.html"
      "Sitemap"
+     ())
+    ("/blog/index.html"
+     "Blog"
      ()))
-  "The definition of the gnupg.org menu structure.")
+  "The definition of the gnupg.org bottom menu structure.")
+
 
 (defun gpgweb--any-selected-menu-p (menu selected-file)
   "Return t if any item in MENU has been selected."
@@ -172,23 +176,38 @@ if not available."
 ")))
 
 (defun gpgweb-insert-footer ()
+  (goto-char (point-max))
+  (insert "</main>
+<div id=\"footer\">
+  <p>This site is currently undergoing a complete redesign.
+     We apologize for any inconveniences like broken links
+     or bad formatting.  Please do not report such problems as we are probably
+     already aware of them.  (2014-05-28 wk)</p>
+  <div id=\"nav_bottom\">
+  <ul>
+")
+  (gpgweb--insert-menu gpgweb-gnupg-bottom-menu-alist 0 nil)
+  (insert "  </ul>
+  </div>
+")
   (goto-char (point-min))
   (unless (search-forward "<!--disable-copyright-footer-->" nil t)
     (goto-char (point-max))
-    (insert "<div id=\"cpyright\">
+    (insert "  <div id=\"cpyright\">
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
-            src=\"/share/cc-by-sa-3.0_80x15.png\"/></a><br/>
+            src=\"/share/cc-by-sa-3.0_80x15.png\"/></a>&nbsp;
     These web pages are
     Copyright 1998--2014 The GnuPG Project<a href=\"/copying.html\">¹</a>
     and licensed under a
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
-</div>
-</main>
+  </div>\n"))
+  (goto-char (point-max))
+  (insert "</div>
 </body>
-</html>")))
+</html>"))
 
 
 ;;; Post-process the generated HTML file:
