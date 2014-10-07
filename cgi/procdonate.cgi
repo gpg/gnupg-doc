@@ -331,7 +331,17 @@ sub check_donation ()
     $stripeamount = $data{"_amount"};
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
-    $euroamount = $data{"Euro"}
+    $euroamount = $data{"Euro"};
+
+    # Check that at least some Euros are given.  Due to Stripe
+    # processing fees and our own costs for bookkeeping we need to ask
+    # for a minimum amount.
+    if ( (not $anyerr) and ($euroamount < 4.00) ) {
+        $errdict{"amount"} = 'Sorry, due to overhead costs we do' .
+                             ' not accept donations of less than 4 Euro.';
+        $anyerr = 1;
+    }
+
 
     # Check the mail address
     if ($mail ne '' and $mail !~ /\S+@\S+\.\S+/ ) {

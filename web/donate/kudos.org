@@ -31,14 +31,17 @@
 | 2011 |  21 |   553 |      465 |
 | 2012 |  53 |  5991 |     4963 |
 | 2013 | 148 |  5041 |     4145 |
-| 2014 |  66 |  4059 |          |
+| 2014 | 102 |  4742 |     3985 |
 |------+-----+-------+----------|
-|      | 272 | 14829 |     9573 |
-#+TBLFM: $LR2=vsum(@I..@II)::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
+|      |     | 16327 |    13558 |
+#+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
+
+# In 2014 without the 32641.27 (27429.64) from the Goteo campaign
 
 #+HTML: <div id="smallnote">
-The "net" column gives the actual value without VAT and PayPal fees.\\
-Last update: 2014-06-25
+The "net" column gives the actual value without VAT and credit card
+fees.\\
+Last update: 2014-10-07
 #+HTML: </div>
 
 * Hardware and service donations
