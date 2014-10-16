@@ -25,6 +25,14 @@
 
 ** Donation summary
 
+#+HTML: <p>In
+#+HTML: <!--INSERT-MONTH-DATE-->
+#+HTML: we received
+#+HTML: <!--INSERT-MONTH-EURO-->
+#+HTML: of donations by credit card plus some more donations via Paypal.
+#+HTML: </p>
+
+
 | Year |   # |  \EUR | net \EUR |
 |      | <r> |   <r> |      <r> |
 |------+-----+-------+----------|

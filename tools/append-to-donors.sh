@@ -16,6 +16,8 @@ SIGDELIM="-- "
 htdocs="/var/www/www/www.gnupg.org/htdocs"
 
 donors="$htdocs/donate/donors.dat"
+donations="$htdocs/donate/donations.dat"
+
 journal_dir="/var/log/payproc"
 LOCKFILE="$donors.lock"
 
@@ -28,7 +30,7 @@ if ! lockfile -l 7200 -r 2 $LOCKFILE; then
     echo "$pgm: another instance is still running"
     exit 0
 fi
-trap "rm -f $LOCKFILE" 0
+trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 
 
 # Send a thank you mail
@@ -42,6 +44,7 @@ trap "rm -f $LOCKFILE" 0
 # Used scratch variables:
 #  upcurrency
 #  ineuro
+#  xamount
 #
 # FIXME: Clean message and name and use an appropriate encoding.
 #        The second mail should actually be encrypted.  In fact
@@ -53,8 +56,9 @@ send_thanks () {
     if [ "$upcurrency" = EUR ]; then
         ineuro=
     else
-        ineuro=" (about $euro EUR)"
+        ineuro=" (about $(echo $euro| awk '{print int($0 + 0.5)}') EUR)"
     fi
+    xamount="$(echo $amount| awk '{print int($0 + 0.5)}')"
     ( cat <<EOF
 From: donations@gnupg.org
 To: $xmail
@@ -66,7 +70,7 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 
 Dear ${name:-Anonymous},
 
-we received $amount $upcurrency$ineuro as a donation for the GnuPG project.
+we received $xamount $upcurrency$ineuro as a donation to the GnuPG project.
 Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
@@ -113,6 +117,8 @@ lastline=$(echo $tmp | cut -d: -f2)
 [ -z "$lastdate" ] && lastdate=19700101
 [ -z "$lastline" ] && lastline=0
 
+
+[ -f "$donors".stamp ] && rm "$donors".stamp
 cat "$donors" > "$donors.tmp"
 find $journal_dir -type f -name 'journal-????????.log' -print \
      | sort | while read fname; do
@@ -131,15 +137,31 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
             name=$(echo "$name" | tr \`\$: ...)
             message=$(echo "$message" | tr \`\$ ..)
             xmail=$(echo "$xmail" | tr \`\$ ..)
-            if [ -n "$name" ]; then
-               # Note that we removed colons from $name
-               echo "$jyear:$datestr:$name::$lnr:" >> "$donors.tmp"
-            fi
+            # Note that we removed colons from $name
+            echo "$jyear:$datestr:$name::$lnr:" >> "$donors.tmp"
+            touch "$donors".stamp
             send_thanks
          done
     fi
 done
-if ! mv "$donors.tmp" "$donors"; then
-  echo "$pgm: error updating $donors" >&2
-  exit 1
+
+# If we have any new records update the files.
+if [ -f "$donors".stamp ]; then
+
+  if ! mv "$donors.tmp" "$donors"; then
+    echo "$pgm: error updating $donors" >&2
+    exit 1
+  fi
+
+  if [ -f "$donations" ]; then
+    payproc-stat -u "$donations" -- > "$donations".tmp  \
+      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+    if ! mv "$donations".tmp "$donations"; then
+        echo "$pgm: error updating $donations" >&2
+        exit 1
+    fi
+  else
+    payproc-stat -u "$donations" -- > "$donations"  \
+      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+  fi
 fi
