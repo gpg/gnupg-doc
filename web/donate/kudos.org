@@ -25,12 +25,20 @@
 
 ** Donation summary
 
-#+HTML: <p>In
-#+HTML: <!--INSERT-MONTH-DATE-->
-#+HTML: we received
-#+HTML: <!--INSERT-MONTH-EURO-->
-#+HTML: of donations by credit card plus some more donations via Paypal.
-#+HTML: </p>
+#+HTML:<p>In
+#+HTML:<!--INSERT-MONTH-DATE--> October 2014
+#+HTML:we received
+#+HTML:<!--INSERT-MONTH-N--> 2
+#+HTML:donations of
+#+HTML:<!--INSERT-MONTH-EURO--> 28 Euro
+#+HTML:.  For the entire year we
+#+HTML:received a total of
+#+HTML:<!--INSERT-YEAR-EURO--> 52 Euro
+#+HTML:from
+#+HTML:<!--INSERT-YEAR-N--> 28
+#+HTML:donations.  Note that these numbers are only for donations via Stripe
+#+HTML:(credit card) and do not yet account for those received via Paypal.
+#+HTML:</p>
 
 
 | Year |   # |  \EUR | net \EUR |
