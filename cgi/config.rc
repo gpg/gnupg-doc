@@ -1,5 +1,6 @@
 # config.rc - Configuration variables for all CGIs         -*- perl -*-
 
+baseurl => 'https://gnupg.org'
 htdocs  => '/var/www/www/www.gnupg.org/htdocs/',
 
 payprocd_socket => '/var/run/payproc/daemon',

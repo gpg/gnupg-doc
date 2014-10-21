@@ -4,10 +4,33 @@
 
 * Donate - Checkout with card
 
-  You are about to donate
-  @@html:<!--AMOUNT-->@@
-  @@html:<!--CURRENCY-->@@
-  to the GnuPG project using your credit card.
+  Information on your intended donation:
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Amount:</td>
+     <td><!--AMOUNT-->
+         <!--CURRENCY--></td>
+   </tr>
+   <tr>
+     <td align="right">Name:</td>
+     <td><!--NAME--></td>
+   </tr>
+   <tr>
+     <td align="right">Mail:</td>
+     <td><!--MAIL--></td>
+   </tr>
+   <tr>
+     <td align="right" valign="top">Message:</td>
+     <td><!--MESSAGE_FMT--></td>
+   </tr>
+  </table>
+#+END_HTML
+
+  If something is wrong, please use the back button below to change
+  it.  If the data is correct, you may now continue with the payment.
+
 
 #+BEGIN_HTML
   <noscript>
@@ -25,8 +48,8 @@
     </p>
   </noscript>
 
-
   <!--ERRORSTR-->
+  <div class="buttonbox">
   <p>
     <form action="/cgi-bin/procdonate.cgi" method="POST">
       <input type="hidden" name="mode" value="checkout-stripe">
@@ -46,16 +69,14 @@
       </script>
     </form>
   </p>
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="re-main">
+    <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="submit" class="donate-button-low" value="Back" />
+  </form>
+  </div>
 #+END_HTML
 # Note: We do not want to send a
 #         data-email="<!-- MAIL -->"
 #       line to Stripe so to enable the user to use a
-#       a different nail address for use with them.
-
-#+BEGIN_HTML
-  <form action="/cgi-bin/procdonate.cgi" method="POST">
-    <input type="hidden" name="mode" value="re-checkout">
-    <input type="hidden" name="sessid" value="<!--SESSID-->">
-    <input type="submit" value="Back to payment options" />
-  </form>
-#+END_HTML
+#       a different mail address for use with them.

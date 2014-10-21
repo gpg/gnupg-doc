@@ -20,6 +20,7 @@ use IO::Socket::UNIX;
 realpath($0) =~ /^(.*)\/.*$/;
 my %config = do $1 . '/config.rc';
 
+my $baseurl = $config{baseurl};
 my $htdocs =  $config{htdocs};
 my $socket_name = $config{payprocd_socket};
 my $error_marker = '<span style="color: red;">* error</span>';
@@ -33,6 +34,7 @@ my $sessid = $q->param("sessid");
 
 # Variables used in the template pages.
 my $amount = "";
+my $paytype = "";
 my $stripeamount = "";
 my $euroamount = "";
 my $currency = "";
@@ -47,6 +49,7 @@ my %errdict = ();
 
 # Prototypes
 sub fail ($);
+sub get_paypal_approval ();
 
 
 # Write a template file.  A template is a proper HTML file with
@@ -65,13 +68,15 @@ sub write_template ($) {
     my $err_amount = '';
     my $err_name = '';
     my $err_mail = '';
-    my $checkother = ' checked="checked"';
+    my $err_paytype = '';
+    my $check_checked = ' checked="checked"';
     my $sel_eur = '';
     my $sel_usd = '';
     my $sel_gbp = '';
     my $sel_jpy = '';
     my $message_fmt;
     my $publishname;
+    my $check_paytype = 'none';
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -106,6 +111,12 @@ sub write_template ($) {
         $sel_jpy = ' selected="selected"';
     }
 
+    if ( $paytype eq "cc" ) {
+        $check_paytype = "CC";
+    } elsif ( $paytype eq "pp" ) {
+        $check_paytype = "PP";
+    }
+
     # Set var for the paypal button
     if ( $name eq 'Anonymous' or $name eq '') {
         $publishname = 'No';
@@ -119,6 +130,7 @@ sub write_template ($) {
         if    (/amount/) { $err_amount = $error_marker; }
         elsif (/name/)   { $err_name   = $error_marker; }
         elsif (/mail/)   { $err_mail   = $error_marker; }
+        elsif (/paytype/){ $err_paytype = $error_marker; }
 
         $errorpanel = $errorpanel . "Field $_: " . $errdict{$_} . "<br/>\n"
     }
@@ -127,6 +139,7 @@ sub write_template ($) {
         $errorpanel =
             "<div style='color: red;'><p>\n" . $errorpanel . "</p></div>\n";
     }
+
 
     open TEMPLATE, $htdocs . $fname;
     while (<TEMPLATE>) {
@@ -142,7 +155,8 @@ sub write_template ($) {
             || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
             || s/(\x22\x2f>)?<!--NAME-->/$name\1/
             || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
-            || s/\x2f><!--CHECKOTHER-->/$checkother\x2f>/
+            || s/\x2f><!--CHECKOTHER-->/$check_checked\x2f>/
+            || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
             || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
             || s/<!--MESSAGE_FMT-->/$message_fmt/
             || s/(<selected=\x22selected\x22)?><!--SEL_EUR-->/$sel_eur>/
@@ -154,6 +168,7 @@ sub write_template ($) {
             || s/<!--ERR_AMOUNT-->/$err_amount/
             || s/<!--ERR_NAME-->/$err_name/
             || s/<!--ERR_MAIL-->/$err_mail/
+            || s/<!--ERR_PAYTYPE-->/$err_paytype/
             || s/<!--ERRORPANEL-->/$errorpanel/;
         }
         print;
@@ -179,7 +194,7 @@ sub payproc ($$)
     # print STDERR "calling payproc: ", $cmd, "<-\n";
 
     $sock = IO::Socket::UNIX->new($socket_name)
-        or fail "socket: $!";
+        or fail "Error connecting to payprocd: $!";
     $sock->print ($cmd, "\n");
 
     while (($key,$value) = each %$data) {
@@ -231,7 +246,7 @@ sub payproc ($$)
 }
 
 
-# Write a page with all the data inserted.
+# Write a dummy page
 sub write_overload_page ()
 {
     print $q->header(-type=>'text/html', -charset=>'utf-8');
@@ -241,6 +256,13 @@ sub write_overload_page ()
         . '<p>Please retry later.</p>';
 
     &write_template("donate/error.html");
+}
+
+sub write_cancel_page ()
+{
+    print $q->header(-type=>'text/html', -charset=>'utf-8');
+    print "\n";
+    &write_template("donate/paypal-can.html");
 }
 
 
@@ -276,15 +298,12 @@ sub write_checkout_page ()
 {
     print $q->header(-type=>'text/html', -charset=>'utf-8');
     print "\n";
-    write_template("donate/checkout.html");
-}
-
-# Write a page with all the data inserted specific for cards.
-sub write_checkout_cc_page ()
-{
-    print $q->header(-type=>'text/html', -charset=>'utf-8');
-    print "\n";
-    write_template("donate/checkout-cc.html");
+    if ( $paytype eq "cc" ) {
+        write_template("donate/checkout-cc.html");
+    }
+    else {
+        write_template("donate/checkout-pp.html");
+    }
 }
 
 
@@ -315,6 +334,7 @@ sub check_donation ()
     } else {
       $currency = 'EUR';
     }
+
     $name = $q->param("name");
     $name = 'Anonymous' if $name eq '';
     $mail = $q->param("mail");
@@ -342,6 +362,13 @@ sub check_donation ()
         $anyerr = 1;
     }
 
+    # Check the payment type
+    $paytype = $q->param("paytype");
+    if ( $paytype ne "cc" and $paytype ne "pp" ) {
+        $errdict{"paytype"} = 'No payment type selected.' .
+                              ' Use "Credit Card" or "PayPal".';
+        $anyerr = 1;
+    }
 
     # Check the mail address
     if ($mail ne '' and $mail !~ /\S+@\S+\.\S+/ ) {
@@ -355,18 +382,23 @@ sub check_donation ()
         return;
     }
 
-
     # Now create a session.
     $data{"Stripeamount"} = $stripeamount;
     $data{"Euroamount"} = $euroamount;
     $data{"Name"} = $name;
     $data{"Mail"} = $mail;
     $data{"Message"} = $message;
+    $data{"Paytype"} = $paytype;
     payproc ('SESSION create', \%data ) or fail $data{"ERR_Description"};
     $sessid = $data{"_SESSID"};
 
-    # Send the checkout page.
-    write_checkout_page();
+    # Send the checkout page and redirect to paypal
+    if ( $paytype eq "pp" ) {
+        get_paypal_approval ();
+    }
+    else {
+        write_checkout_page();
+    }
 }
 
 # This simply resends the main page again.
@@ -377,6 +409,7 @@ sub resend_main_page ()
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
+    $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
     $name = $data{"Name"};
@@ -384,41 +417,6 @@ sub resend_main_page ()
     $message = $data{"Message"};
 
     write_main_page();
-}
-
-
-# This simply resends the checkout options page.
-sub resend_card_checkout ()
-{
-    my %data;
-
-    payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
-    $amount = $data{"Amount"};
-    $currency = $data{"Currency"};
-    $stripeamount = $data{"Stripeamount"};
-    $euroamount = $data{"Euroamount"};
-    $name = $data{"Name"};
-    $mail = $data{"Mail"};
-    $message = $data{"Message"};
-
-    write_checkout_page();
-}
-
-
-
-# This simply sends the card specific checkout page.
-sub prepare_card_checkout ()
-{
-    my %data;
-
-    payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
-    $amount = $data{"Amount"};
-    $currency = $data{"Currency"};
-    $stripeamount = $data{"Stripeamount"};
-    $euroamount = $data{"Euroamount"};
-    $mail = $data{"Mail"};
-
-    write_checkout_cc_page();
 }
 
 
@@ -452,7 +450,7 @@ sub complete_stripe_checkout ()
             '<p>Error: ' . $stripe{"failure"} . '</p><p>'
             . $stripe{"failure-mesg"} . '</p>';
         # Again.
-        prepare_card_checkout ();
+        write_checkout_page ();
         return;
     }
 
@@ -476,12 +474,155 @@ EOF
 }
 
 
+# Initiate a payment with paypal and redirect to the Paypal site.
+sub get_paypal_approval ()
+{
+    my %data;
+    my %request;
+    my $redirurl;
+
+    payproc ('SESSION get ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    $request{"Currency"} = $data{"Currency"};
+    $request{"Amount"} = $data{"Amount"};
+    $request{"Desc"} =
+        "Donation of " . $data{"Amount"} . " " . $data{"Currency"} .
+        " to the GnuPG project";
+    $request{"Meta[name]"} = $data{"Name"} unless
+        $data{"Name"} eq 'Anonymous';
+    $request{"Meta[mail]"} = $data{"Mail"};
+    if ($data{"Message"} ne '') {
+        $request{"Meta[message]"} = $data{"Message"};
+    }
+    $request{"Return-Url"} =
+        $baseurl . "/cgi-bin/procdonate.cgi?mode=confirm-paypal";
+    $request{"Cancel-Url"} =
+        $baseurl . "/cgi-bin/procdonate.cgi?mode=cancel-paypal";
+    $request{"Session-Id"} = $sessid;
+
+    if (payproc ('GETINFO live', ())) {
+      $request{"Paypal-Xp"} = "XP-HD8G-XZRE-W7MH-EYNF";
+    } else {
+      $request{"Paypal-Xp"} = "XP-NBWZ-QR6Z-8CXV-Q8XS";
+    }
+
+    if (not payproc ('PPCHECKOUT prepare', \%request)) {
+        $errorstr = $request{"ERR_Description"};
+        # Back to the main page.
+        write_main_page();
+        return;
+    }
+
+    $redirurl = $request{"Redirect-Url"};
+
+    #print STDERR "Redirecting to: $redirurl\n";
+    print $q->redirect($redirurl) unless $redirurl eq "";
+}
+
+
+# The is called by paypal after approval.  We need to extract the alias
+# and the payerid and store it in the session.  Then we ask to confirm
+# the payment.
+sub confirm_paypal_checkout ()
+{
+    my $aliasid;
+    my $payerid;
+    my %data;
+
+    $aliasid = $q->param("aliasid");
+    $payerid = $q->param("PayerID");
+
+    # Get the session from the alias and store the aliasid and the
+    # payerid in the session.
+    payproc ('SESSION sessid ' . $aliasid, \%data)
+        or fail $data{"ERR_Description"};
+    $sessid = $data{"_SESSID"};
+    payproc ('SESSION get ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    if ( $data{"Paytype"} ne "pp" ) {
+        fail "Invalid paytype for Paypal transaction";
+    }
+
+    # Put a description for the thanks page into the session data.
+    # We do this only now because we send a reduced Desc field to paypal.
+    $data{"Desc"} =
+        "GnuPG donation by " . $data{"Name"} . " <" . $data{"Mail"} . ">";
+
+    # Note that the capitalization of session data names must match
+    # the rules of payprocd.
+    $data{"Paypal_aliasid"} = $aliasid;
+    $data{"Paypal_payerid"} = $payerid;
+
+    # Set vars for the checkout page.
+    $amount = $data{"Amount"};
+    $currency = $data{"Currency"};
+    $paytype = $data{"Paytype"};
+    $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
+    $name = $data{"Name"};
+    $mail = $data{"Mail"};
+    $message = $data{"Message"};
+
+    # Store the session after setting the above cars because that call
+    # clears DATA.
+    payproc ('SESSION put ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    # Write the checkout (i.e. confirm payment) page
+    write_checkout_page ();
+}
+
+
+# The approved Paypal payment has been approved.  Now execute the
+# payment.
+sub complete_paypal_checkout ()
+{
+    my %data;
+    my %request;
+
+    payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+
+    $request{"Alias-Id"}     = $data{"Paypal_aliasid"};
+    $request{"Paypal-Payer"} = $data{"Paypal_payerid"};
+
+    if (not payproc ('PPCHECKOUT execute', \%request)) {
+        $errorstr =
+            '<p>Error: ' . $request{"failure"} . '</p><p>'
+            . $request{"failure-mesg"} . '</p>';
+
+        print $q->header(-type=>'text/html', -charset=>'utf-8');
+        print "\n";
+        write_template("donate/error.html");
+        return;
+    }
+
+    # Print thanks
+
+    $message = <<EOF;
+Amount ..: $request{"Amount"} $request{"Currency"}
+Desc ....: $data{"Desc"}
+Cardno...: n/a
+Processor: PayPal
+Email ...: $request{"Email"}
+Charge-Id: $request{"Charge-Id"}
+Timestamp: $request{"_timestamp"}
+EOF
+    if ($request{"Live"} eq 'f') {
+        $message = $message . "\n!!! TEST TRANSACTION !!!";
+    }
+
+    write_thanks_page ();
+    payproc ('SESSION destroy ' . $sessid, ());
+}
 
 
 
 #
 # Main
 #
+
 #print STDERR "CGI called with mode=$mode\n";
 #print STDERR "CGI called with sessid=$sessid\n";
 if ($q->param('url') ne '') {
@@ -489,6 +630,10 @@ if ($q->param('url') ne '') {
     # the instructions and thus failed the Turing test.  Provide an
     # innocent error page.
     write_overload_page ()
+}
+elsif ($mode eq '') {
+    # No mode: Show empty template.
+    write_main_page();
 }
 elsif ($mode eq 'main') {
     # Returning from the donation start page
@@ -498,17 +643,21 @@ elsif ($mode eq 're-main') {
     # Returning from the donation start page
     resend_main_page();
 }
-elsif ($mode eq 're-checkout') {
-    # Redisplay the checkout option page
-    resend_card_checkout();
-}
-elsif ($mode eq 'checkout-cc') {
-    # The checkout page requested a card checkout.
-    prepare_card_checkout();
-}
 elsif ($mode eq 'checkout-stripe') {
     # we have the stripe token - charge the card.
     complete_stripe_checkout();
+}
+elsif ($mode eq 'cancel-paypal') {
+    # Fixme: Destroy the alias of the session.
+    write_cancel_page();
+}
+elsif ($mode eq 'confirm-paypal') {
+    # We have approval from Paypal - show the confirm checkout page.
+    confirm_paypal_checkout();
+}
+elsif ($mode eq 'checkout-paypal') {
+    # The approved Paypal payment has been approved - charge.
+    complete_paypal_checkout();
 }
 else {
     fail('Internal error: Unknown mode');

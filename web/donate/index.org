@@ -75,6 +75,21 @@
       </td>
     </tr>
     <tr>
+      <td align="right">Pay&nbsp;using:</td>
+      <td>
+        <label><input type="radio" name="paytype"
+                      value="cc" /><!--CHECK_CC-->Credit Card</label>
+        <!--ERR_PAYTYPE-->
+      </td>
+   </tr>
+   <tr>
+     <td></td>
+     <td>
+       <label><input type="radio" name="paytype"
+                     value="pp" /><!--CHECK_PP-->PayPal</label>
+     </td>
+   </tr>
+   <tr>
       <td></td>
       <td>
           If you want to be listed on the
@@ -83,9 +98,10 @@
       </td>
     </tr>
     <tr>
-      <td align="right">Name:</td>
+      <td align="right"><label for="f_name">Name:</label></td>
       <td>
-          <input type="text" size="40" style="width:200px" name="name"
+          <input id="f_name" type="text"
+                 size="40" style="width:200px" name="name"
                  value=""/><!--NAME--> (optional)
           <!--ERR_NAME-->
       </td>
@@ -98,10 +114,11 @@
       </td>
     </tr>
     <tr>
-      <td align="right">Mail:</td>
+      <td align="right"><label for="f_mail">Mail:</label></td>
       <td>
-          <input type="text" size="40" style="width:200px" name="mail"
-                   value=""/><!--MAIL--> (optional)
+          <input id="f_mail" type="text" size="40" style="width:200px"
+                 name="mail"
+                 value=""/><!--MAIL--> (optional)
            <!--ERR_MAIL-->
       </td>
     </tr>
@@ -121,7 +138,10 @@
     <tr>
       <td></td>
       <td>
-          <input type="submit" value="Proceed to payment options" />
+        <div class="buttonbox">
+          <input type="submit" class="donate-button-low"
+                 value="Proceed to checkout" />
+         </div>
       </td>
     </tr>
    </table>
