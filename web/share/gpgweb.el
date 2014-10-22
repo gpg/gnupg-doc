@@ -136,44 +136,72 @@ if not available."
     res))
 
 
+(defun gpgweb--selected-top-menu (menu selected-file)
+  "Return the selected top menu or nil."
+  (when menu
+    (let ((item (car menu)))
+      (if (and item
+               (or (string= (car item) selected-file)
+                   (gpgweb--any-selected-menu-p (caddr item) selected-file)))
+          menu
+        (gpgweb--selected-top-menu (cdr menu) selected-file)))))
+
 (defun gpgweb--insert-menu (menu lvl selected-file)
   "Helper function to insert the menu."
   (when menu
-    (let ((item (car menu))
-          sel)
+    (let ((item (car menu)))
       (when item
-        (dotimes (i lvl) (insert "  "))
-        (insert "    <li><a href=\"" (car item) "\"")
-        (when (string= (car item) selected-file)
-          (setq sel t)
+        (dotimes (i (1+ lvl)) (insert "  "))
+        (insert "  <li><a href=\"" (car item) "\"")
+        (when (or (string= (car item) selected-file)
+                  (gpgweb--any-selected-menu-p (caddr item) selected-file))
           (insert " class=\"selected\""))
-        (insert  ">" (cadr item) "</a></li>\n")
-        (when (and (caddr item)
-                   (or
-                    sel
-                    (gpgweb--any-selected-menu-p (caddr item) selected-file)))
+        (insert  ">" (cadr item) "</a>\n")
+        (when (caddr item)
           (dotimes (i (1+ lvl)) (insert "  "))
           (insert "  <ul>\n")
           (gpgweb--insert-menu (caddr item) (1+ lvl) selected-file)
           (dotimes (i (1+ lvl)) (insert "  "))
-          (insert "  </ul>\n"))))
+          (insert "  </ul>\n"))
+        (dotimes (i (1+ lvl)) (insert "  "))
+        (insert "  </li>\n")))
     (gpgweb--insert-menu (cdr menu) lvl selected-file)))
+
+
+(defun gpgweb--insert-submenu (menu selected-file)
+   "Helper function to insert the sub-menu."
+   (when menu
+     (let ((item (car menu)))
+       (when item
+         (insert "    <li><a href=\"" (car item) "\"")
+         (when (or (string= (car item) selected-file)
+                   (gpgweb--any-selected-menu-p (caddr item) selected-file))
+           (insert " class=\"selected\""))
+         (insert ">" (cadr item) "</a></li>\n")))
+     (gpgweb--insert-submenu (cdr menu) selected-file)))
+
 
 (defun gpgweb-insert-menu (selected-file)
   "Insert the menu structure into the HTML file."
   (goto-char (point-min))
   (when (re-search-forward "^<body>\n" nil t)
     (insert "<div id=\"header\">&nbsp;</div>
-<div id=\"leftColumn\">
-  <nav>
+<nav>
   <ul>
 ")
     (gpgweb--insert-menu gpgweb-gnupg-menu-alist 0 selected-file)
     (insert "  </ul>
-  </nav>
-</div>
-<main>
+</nav>
+")
+    (let ((m (caddr (car (gpgweb--selected-top-menu
+                          gpgweb-gnupg-menu-alist selected-file)))))
+      (when m
+          (insert "<nav class=\"subnav\">\n  <ul>\n")
+          (gpgweb--insert-submenu m selected-file)
+          (insert "  </ul>\n</nav>\n")))
+    (insert "<main>
 ")))
+
 
 (defun gpgweb-insert-footer ()
   (goto-char (point-max))

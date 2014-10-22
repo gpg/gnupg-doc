@@ -51,7 +51,6 @@ h3:first-letter {
    Links
  */
 
-
 a:link {
   color: #784c6c;
   font-weight: bold;
@@ -170,48 +169,152 @@ div.entry-qotd
     padding-right: 2%;
 }
 
-#leftColumn {
-    float: left;
-    text-align: right;
-    width: 18%;
-}
-
 
 /*
    Navigation
  */
+
+/* Reset the link attributes for nav except for hover  */
+nav * a:visited, a:link {
+    color: #757575;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* The menu bar is centered.  */
+nav {
+    text-align: left;
+    line-height: 0.4em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Main menu list.  */
 nav ul {
+    display: inline-table;
     list-style: none;
-    font-size: 100%;
-    font-family: verdana,helvetica;
-    margin-bottom: 1em;
+    position: relative;
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+    padding: 0 20px;
+    border-radius: 10px;
+    background: #efefef;
 }
 
+nav ul:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+/* Main menu items.  */
+nav ul li {
+    float: left;
+}
+
+nav ul li:hover {
+    background: #4b545f;
+}
+
+nav ul li:hover a {
+    color: #fff;
+}
+
+nav ul li a {
+    display: block;
+    color: #757575;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 30px;
+}
+
+/* Sub-menu lists.
+   Hide unless we over hover them.  */
 nav ul ul {
-    font-size: 80%;
+    display: none;
+    background: #5f6975;
+    border-radius: 0px;
+    padding: 0;
+    position: absolute;
+    z-index: 5;
+    top: 100%;
 }
 
-nav * li a {
-    color: #784c6c;
+nav ul li:hover > ul {
+    display: block;
 }
 
 
-nav * li a:after {
-    content: " \21d0";
-    /* FIXME: Hide the arrow using the background color.  We should use
-       width or something similar to get it aligned.  */
-    color: #f0f0fc;
+/* Sub-menu items.  */
+nav ul ul li {
+    float: none;
+    border-top: 1px solid #6b727c;
+    border-bottom: 1px solid #575f6a;
+    position: relative;
+}
+
+nav ul ul li a {
+    font-weight: bold;
+    color: #fff;
+    padding: 20px 30px;
+}
+
+nav ul ul li a:hover {
+    background: #4b545f;
+}
+
+
+
+/* Sub-sub-menu lists.
+   Put right to the sub-menus.  */
+nav ul ul ul {
+    position: absolute;
+    z-index: 10;
+    left: 100%;
+    top: 0;
+}
+
+
+
+/* The second menu line for stop menu with sub-menus.
+   This is a non-nested list.  */
+nav.subnav {
+    margin-top: -1.5em;
+}
+
+nav.subnav ul {
+    display: inline-table;
+    list-style: none;
+    color: #757575;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    background-color: #efefef;
+}
+
+nav.subnav ul li a {
+    display: block;
+    font-weight: normal;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+
+/* Put selection markers arount a selected items.
+   \2009 is a &thinsp;  \21d2 and \21d0 are arrows.  */
+nav * li a.selected:before {
+    content: "\21d2\2009";
 }
 
 nav * li a.selected:after {
-    content: " \21d0";
-    color: #784c6c;
+    content: "\2009\21d0";
 }
 
-nav img {
-    border-width: 0;
-}
 
+
+/*
+    The bottom menu
+ */
 
 #nav_bottom ul {
     list-style: none;
@@ -244,7 +347,6 @@ main {
     float: left;
     margin-left: 5%;
     margin-right: 5%;
-    width: 72%;
 }
 
 main ul {
@@ -269,6 +371,7 @@ div.outline-text-3 {
 }
 
 
+/* Not anymore used:
 #rightColumn {
     float: right;
     width: 18%;
@@ -282,6 +385,8 @@ div.outline-text-3 {
     padding-left: 0;
     margin-left: 1em;
 }
+*/
+
 
 #cpyright {
     padding-top: 4em;
