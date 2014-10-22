@@ -14,7 +14,14 @@
   the *gnupg* directory; to locate a /binary package/ (indicated by a
   `B') follow the link to the *binary*.
 
-  [[../donate/index.org][file:../share/btn-donate.png]]
+#+BEGIN_HTML
+  <div class="buttonbox">
+    <form action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="submit" class="donate-button" value="Donate" />
+    </form>
+  </div>
+  <div style="clear: both"></div>
+#+END_HTML
 
   The table below provides links to the location of the files on the
   primary server only.
