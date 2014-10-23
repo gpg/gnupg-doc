@@ -642,75 +642,57 @@ although in a different way than the EFF.
 
 Many email clients offer strong GnuPG integration.
 
+The column “Active” in the tables below indicate whether the software
+os actively developed.
 
 ** … Microsoft Windows?
    :PROPERTIES:
    :CUSTOM_ID: email_clients_win32
    :END:
 
+| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
+|-------------+----------------+----------+----------+--------+-----|
+| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
+| Kontact     | native         | 1.4, 2.0 | yes      | yes    | (2) |
+| Claws-Mail  | yes (internal) | 1.4, 2.0 | yes      | yes    | (3) |
 
-- Thunderbird
-  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  With the Enigmail plugin, Thunderbird becomes one of the most
-  popular GnuPG-aware email clients.  it’s under active development
-  and is compatible with the latest Thunderbird releases, with a
-  friendly and welcoming user community.
+(1) With the Enigmail plugin, Thunderbird becomes one of the most
+    popular GnuPG-aware email clients.  it’s under active development
+    and is compatible with the latest Thunderbird releases, with a
+    friendly and welcoming user community.
 
-- Kontact
-  - Plugin? :: No (natively supported)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  Kontact is KDE’s integrated personal information manager of KDE.  It runs anywhere that KDE does, and even on some mobile devices as Kontact Touch.
+(2) Kontact is KDE’s integrated personal information manager of KDE.
+    It runs anywhere that KDE does, and even on some mobile devices as
+    Kontact Touch.
 
-- Claws-Mail
-  - Plugin? :: Yes (internal plugin)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  Claws-Mail for Windows is included in the [[http://www.gpg4win.org][Gpg4win]] installer.
+(3) Claws-Mail for Windows is included in the [[http://www.gpg4win.org][Gpg4win]] installer.
+
 
 ** … Mac OS X?
    :PROPERTIES:
    :CUSTOM_ID: email_clients_osx
    :END:
 
-- Thunderbird
-  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  With the Enigmail plugin, Thunderbird becomes one of the most
-  popular GnuPG-aware email clients.  it’s under active development
-  and is compatible with the latest Thunderbird releases, with a
-  friendly and welcoming user community.
+| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
+|-------------+----------------+----------+----------+--------+-----|
+| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
+| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | 1.4, 2.0 | yes      | yes    | (2) |
+| Mutt        | native         | 1.4, 2.0 | yes      | yes    | (3) |
+| Apple Mail  | yes ([[http://www.gpgtools.org][GPGtools]]) | 2.0      | no       | yes    | (4) |
 
-- Gnus
-  - Plugin? :: Yes, via [[http://www.emacswiki.org/emacs/EasyPG][EasyPG]]
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  EasyPG is part of Emacs 23, proper.  Thus there is no more need
-  to install the plugin.  See the Gnus manual for configuration hints.
+(1) With the Enigmail plugin, Thunderbird becomes one of the most
+    popular GnuPG-aware email clients.  it’s under active development
+    and is compatible with the latest Thunderbird releases, with a
+    friendly and welcoming user community.
 
-- Mutt
-  - Plugin? :: No (natively supported)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  For best experience make sure to put ~set crypt_use_gpgme~ in your
-  =~/.muttrc= file.
+(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
+    install the plugin.  See the Gnus manual for configuration hints.
 
-- Apple Mail
-  - Plugin? :: Yes, via [[http://www.gpgtools.org][GPGtools]]
-  - Supports GnuPG versions :: 2.0
-  - Supports PGP/MIME :: No
-  - Actively developed :: Yes
-  PGP/MIME support in Apple Mail+GPGtools is not absent, just
-  temporarily broken.
+(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
+    =~/.muttrc= file.
+
+(4) PGP/MIME support in Apple Mail+GPGtools is not absent, just
+    temporarily broken.
 
 
 ** … Linux or FreeBSD?
@@ -718,52 +700,29 @@ Many email clients offer strong GnuPG integration.
    :CUSTOM_ID: email_clients_linux
    :END:
 
-- Thunderbird
-  - Plugin? :: Yes, via [[http://enigmail.net][Enigmail]]
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  With the Enigmail plugin, Thunderbird becomes one of the most
-  popular GnuPG-aware email clients.  it’s under active development
-  and is compatible with the latest Thunderbird releases, with a
-  friendly and welcoming user community.
+| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
+|-------------+----------------+----------+----------+--------+-----|
+| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
+| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | 1.4, 2.0 | yes      | yes    | (2) |
+| Mutt        | native         | 1.4, 2.0 | yes      | yes    | (3) |
+| Kontact     | native         | 1.4, 2.0 | yes      | yes    | (4) |
+| Evolution   | native         | 1.4, 2.0 | yes      | yes    |     |
+| Claws-Mail  | yes (internal) | 1.4, 2.0 | yes      | yes    |     |
 
-- Gnus
-  - Plugin? :: Yes, via [[http://www.emacswiki.org/emacs/EasyPG][EasyPG]]
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  EasyPG is part of Emacs 23, proper.  Thus there is no more need
-  to install the plugin.  See the Gnus manual for configuration hints.
+(1) With the Enigmail plugin, Thunderbird becomes one of the most
+    popular GnuPG-aware email clients.  it’s under active development
+    and is compatible with the latest Thunderbird releases, with a
+    friendly and welcoming user community.
 
-- Mutt
-  - Plugin? :: No (natively supported)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  For best experience make sure to put ~set crypt_use_gpgme~ in your
-  =~/.muttrc= file.
+(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
+    install the plugin.  See the Gnus manual for configuration hints.
 
-- Kontact
-  - Plugin? :: No (natively supported)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-  Kontact is KDE’s integrated personal information manager of KDE.  It
-  runs anywhere that KDE does, and even on some mobile devices as
-  Kontact Touch.
+(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
+    =~/.muttrc= file.
 
-- Evolution
-  - Plugin? :: No (natively supported)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
-
-- Claws-Mail
-  - Plugin? :: Yes (internal plugin)
-  - Supports GnuPG versions :: 1.4, 2.0
-  - Supports PGP/MIME :: Yes
-  - Actively developed :: Yes
+(4) Kontact is KDE’s integrated personal information manager of KDE.
+    It runs anywhere that KDE does, and even on some mobile devices as
+    Kontact Touch.
 
 * Is GnuPG available as a ‘portable app’?
   :PROPERTIES:
