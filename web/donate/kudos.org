@@ -25,21 +25,24 @@
 
 ** Donation summary
 
-#+HTML:<p>In
-#+HTML:<!--INSERT-MONTH-DATE--> October 2014
-#+HTML:we received
-#+HTML:<!--INSERT-MONTH-N--> 2
-#+HTML:donations of
-#+HTML:<!--INSERT-MONTH-EURO--> 28 Euro
-#+HTML:.  For the entire year we
-#+HTML:received a total of
-#+HTML:<!--INSERT-YEAR-EURO--> 52 Euro
-#+HTML:from
-#+HTML:<!--INSERT-YEAR-N--> 28
-#+HTML:donations.  Note that these numbers are only for donations via Stripe
-#+HTML:(credit card) and do not yet account for those received via Paypal.
-#+HTML:</p>
+#+BEGIN_HTML
+<p>In
+<!--INSERT-MONTH-DATE--> this month
+we received
+<!--INSERT-MONTH-N--> N
+donations of
+<!--INSERT-MONTH-EURO--> X Euro
+.<br/>
+In this year we received
+<!--INSERT-YEAR-N--> M
+donations of
+<!--INSERT-YEAR-EURO--> Y Euro
+.
+</p>
+#+END_HTML
 
+
+Donations for the previous years:
 
 | Year |   # |  \EUR | net \EUR |
 |      | <r> |   <r> |      <r> |
@@ -47,9 +50,8 @@
 | 2011 |  21 |   553 |      465 |
 | 2012 |  53 |  5991 |     4963 |
 | 2013 | 148 |  5041 |     4145 |
-| 2014 | 102 |  4742 |     3985 |
 |------+-----+-------+----------|
-|      |     | 16327 |    13558 |
+|      |     | 11585 |     9573 |
 #+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
 
 # In 2014 without the 32641.27 (27429.64) from the Goteo campaign
@@ -57,7 +59,6 @@
 #+HTML: <div id="smallnote">
 The "net" column gives the actual value without VAT and credit card
 fees.\\
-Last update: 2014-10-07
 #+HTML: </div>
 
 * Hardware and service donations

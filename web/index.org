@@ -58,7 +58,7 @@ all [[file:news.org][news of previous years]] is also available.
 
 ** A beta for GnuPG 2.1.0 released (2014-10-03)
 
-A beta beta release for the forthcoming GnuPG 2.1 version is now
+A beta release for the forthcoming GnuPG 2.1 version is now
 available.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000357.html][{more}]]
 
 ** GPA 0.95 released

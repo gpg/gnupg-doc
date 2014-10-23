@@ -6,7 +6,7 @@
 
   *Thank you very much for your donation to our work on GnuPG.*
 
-  Note that the [[/donate/kudos.html][list of donors]] is updated every 30 minutes, thus
+  Note that the [[https://www.gnupg.org/donate/kudos.html][list of donors]] is updated every 30 minutes, thus
   have some patience until you see your name.  If you did not give a
   name you won’t be listed at all.
 

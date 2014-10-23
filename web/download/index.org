@@ -9,7 +9,7 @@
 * Download
 
   We suggest that you download the GNU Privacy Guard from a mirror
-  site close to you. See our [[mirrors.org][list of mirrors]] . To locate a /source
+  site close to you. See our [[file:mirrors.org][list of mirrors]] . To locate a /source
   package/ (indicated by an `S') on a mirror, follow the link to
   the *gnupg* directory; to locate a /binary package/ (indicated by a
   `B') follow the link to the *binary*.

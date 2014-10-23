@@ -1,129 +1,48 @@
 #+TITLE: GnuPG - FTP Mirrors
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+macro: rsync  @@html:<a href="$1">rsync</a>@@
 
 * FTP Mirrors
 
 The primary FTP site [[ftp://ftp.gnupg.org/gcrypt/][ftp.gnupg.org]] is mirrored at several
 sites. Please choose the nearest mirror to you. If you are seeking for
-web site mirrors, please consult the [[../mirrors.en.html][WWW mirror page]] .
+web site mirrors, please consult the [[../mirrors.html][WWW mirror page]] .
 
-
-** Africa
-
-
-** The Americas
-
-*** Canada
-
-    -  [[http://www.gnupg.ca/][GnuPG.ca]] (2/day) ::
-       [[ftp://ftp.gnupg.ca/][ftp://ftp.gnupg.ca/]]
-
-** Australia
-
-
-** Asia
-
-*** Japan
-
-    - [[http://www.ring.gr.jp/][Ring]] ::
-      [[ftp://ftp.ring.gr.jp/pub/net/gnupg/]] \\
-      [[http://www.ring.gr.jp/pub/net/gnupg/][http://www.ring.gr.jp/pub/net/gnupg/]]
-
-
-** Europe
-
-*** Austria
-
-    - [[http://gd.tuwien.ac.at/][TU Wien]] ::
-      [[ftp://gd.tuwien.ac.at/privacy/gnupg/][ftp://gd.tuwien.ac.at/privacy/gnupg/]] \\
-      [[http://gd.tuwien.ac.at/privacy/gnupg/][http://gd.tuwien.ac.at/privacy/gnupg/]]
-
-*** Denmark
-
-    - [[http://dotsrc.org/][dotsrc.org]] (daily) ::
-      [[ftp://mirrors.dotsrc.org/gcrypt/][ftp://mirrors.dotsrc.org/gcrypt/]] \\
-      [[http://mirrors.dotsrc.org/gcrypt/][http://mirrors.dotsrc.org/gcrypt/]]
-
-*** Finland
-
-    - [[http://www.jyu.fi/][JYU]] ::
-      [[ftp://ftp.jyu.fi/pub/crypt/gcrypt/][ftp://ftp.jyu.fi/pub/crypt/gcrypt/]]
-
-*** France
-
-    - [[http://mirror.cict.fr/][CICT Mirror (Universite Paul Sabatier), TOULOUSE]] (1/day) ::
-      [[ftp://mirror.cict.fr/gnupg/][ftp://mirror.cict.fr/gnupg/]]
-
-*** Germany
-
-    - [[http://www.artfiles.de][Artfiles New Media GmbH]] (daily) ::
-      [[http://artfiles.org/gnupg.org][http://artfiles.org/gnupg.org]]
-
-    - [[http://www.franken.de/][Franken]] (daily) ::
-      [[ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/][ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/]]
-
-    - [[http://www.freenet.de/][Freenet.de]] ::
-      [[ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/][ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/]]
-
-*** Hungary
-
-    - [[http://www.crysys.hu/][CrySyS Lab., BUTE]] (daily) ::
-      [[ftp://ftp.crysys.hu/pub/gnupg/][ftp://ftp.crysys.hu/pub/gnupg/]]
-
-*** Iceland
-
-    - [[http://www.hi.is/][HI]] ::
-      [[ftp://ftp.hi.is/pub/mirrors/gnupg/][ftp://ftp.hi.is/pub/mirrors/gnupg/]]
-
-*** Ireland
-
-    - [[http://ftp.heanet.ie/about/][HEAnet]] (4/day) ::
-      [[ftp://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][ftp://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/]]  \\
-      [[http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/]] \\
-      [[rsync://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/]]
-
-*** Netherlands
-
-    - [[http://www.bit.nl/][BIT]] ::
-      [[ftp://ftp.bit.nl/mirror/gnupg/][ftp://ftp.bit.nl/mirror/gnupg/]]
-
-    - [[http://www.demon.nl/][Demon]] ::
-      [[ftp://ftp.demon.nl/pub/mirrors/gnupg/][ftp://ftp.demon.nl/pub/mirrors/gnupg/]]
-
-    - [[http://www.surfnet.nl/][SurfNet]] ::
-      [[ftp://ftp.surfnet.nl/pub/security/gnupg/][ftp://ftp.surfnet.nl/pub/security/gnupg/]]
-
-*** Portugal
-
-    - [[http://5coluna.com][5ª Coluna]] (2/day) ::
-      [[http://dist.gnupg.pt/][http://dist.gnupg.pt/]]
-
-*** Romania
-
-    - [[http://www.iasi.roedu.net/][Romanian Education Network, Iasi Branch]] ::
-      [[ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/][ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/]]
-
-*** Sweden
-
-    - [[http://archive.sunet.se/][Sunet]] ::
-      [[ftp://ftp.sunet.se/pub/security/gnupg/][ftp://ftp.sunet.se/pub/security/gnupg/]]
-
-*** Switzerland
-
-    - [[http://mirror.switch.ch/][SWITCHmirror]] ::
-      [[ftp://mirror.switch.ch/mirror/gnupg/][ftp://mirror.switch.ch/mirror/gnupg/]]
-
-*** United Kingdom
-
-    - [[http://gnupg.org.favoritelinks.net/][favoritelinks]] (daily) ::
-      [[http://gnupg.org.favoritelinks.net/]]
-
-    - [[http://mirror.tje.me.uk/][mirror.tje.me.uk]] (4/day) ::
-      [[ftp://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org][ftp://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org]]
-      [[http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/][http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/]]
-
-    - [[http://www.mirrorservice.org/][UK Mirror Service]] ::
-      [[ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt]] \\
-      [[http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt]] \\
-      [[rsync://rsync.mirrorservice.org/ftp.gnupg.org/gcrypt/]]
+  | Country        | Organisation               | Links                                                                         | Sync  |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  |                |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | The Americas   |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]                   | [[ftp://ftp.gnupg.ca/][ftp]]                                                                           | 2/day |
+  |                |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | Asia           |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | Japan          | [[http://www.ring.gr.jp/][Ring]]                       | [[ftp://ftp.ring.gr.jp/pub/net/gnupg/][ftp]]  [[http://www.ring.gr.jp/pub/net/gnupg/][http]]                                                                     |       |
+  |                |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | Europe         |                            |                                                                               |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|
+  | Austria        | [[http://gd.tuwien.ac.at/][TU Wien]]                    | [[ftp://gd.tuwien.ac.at/privacy/gnupg/][ftp]]  [[http://gd.tuwien.ac.at/privacy/gnupg/][http]]                                                                     |       |
+  | Denmark        | [[http://dotsrc.org/][dotsrc.org]]                 | [[ftp://mirrors.dotsrc.org/gcrypt/][ftp]]  [[http://mirrors.dotsrc.org/gcrypt/][http]]                                                                     | daily |
+  | Finland        | [[http://www.jyu.fi/][JYU]]                        | [[ftp://ftp.jyu.fi/pub/crypt/gcrypt/][ftp]]                                                                           |       |
+  | France         | [[http://mirror.cict.fr/][CICT Mirror, Toulouse]]      | [[ftp://mirror.cict.fr/gnupg/][ftp]]                                                                           | daily |
+  | Germany        | [[http://www.artfiles.de][Artfiles New Media GmbH]]    | [[http://artfiles.org/gnupg.org][http]]                                                                          | daily |
+  |                | [[http://www.franken.de/][Franken]]                    | [[ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/][ftp]]                                                                           | daily |
+  |                | [[http://www.freenet.de/][Freenet.de]]                 | [[ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/][ftp]]                                                                           |       |
+  | Hungary        | [[http://www.crysys.hu/][CrySyS Lab., Bute]]          | [[ftp://ftp.crysys.hu/pub/gnupg/][ftp]]                                                                           | daily |
+  | Iceland        | [[http://www.hi.is/][HI]]                         | [[ftp://ftp.hi.is/pub/mirrors/gnupg/][ftp]]                                                                           |       |
+  | Ireland        | [[http://ftp.heanet.ie/about/][HEAnet]]                     | [[ftp://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][ftp]]  [[http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][http]]  {{{rsync(rsync://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/)}}}   | 4/day |
+  | Netherlands    | [[http://www.bit.nl/][BIT]]                        | [[ftp://ftp.bit.nl/mirror/gnupg/][ftp]]                                                                           |       |
+  |                | [[http://www.demon.nl/][Demon]]                      | [[ftp://ftp.demon.nl/pub/mirrors/gnupg/][ftp]]                                                                           |       |
+  |                | [[http://www.surfnet.nl/][SurfNet]]                    | [[ftp://ftp.surfnet.nl/pub/security/gnupg/][ftp]]                                                                           |       |
+  | Portugal       | [[http://5coluna.com][5ª Coluna]]                  | [[http://dist.gnupg.pt/][http]]                                                                          | 2/day |
+  | Romania        | [[http://www.iasi.roedu.net/][Romanian Edu., Iasi Branch]] | [[ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/][ftp]]                                                                           |       |
+  | Sweden         | [[http://archive.sunet.se/][Sunet]]                      | [[ftp://ftp.sunet.se/pub/security/gnupg/][ftp]]                                                                           |       |
+  | Switzerland    | [[http://mirror.switch.ch/][SWITCHmirror]]               | [[ftp://mirror.switch.ch/mirror/gnupg/][ftp]]                                                                           |       |
+  | United Kingdom | [[http://gnupg.org.favoritelinks.net/][favoritelinks]]              | [[http://gnupg.org.favoritelinks.net/][http]]                                                                          | daily |
+  |                | [[http://mirror.tje.me.uk/][mirror.tje.me.uk]]           | [[ftp://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org][ftp]]  [[http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/][http]]                                                                     | 4/day |
+  |                | [[http://www.mirrorservice.org/][UK Mirror Service]]          | [[ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][ftp]]  [[http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt][http]]  {{{rsync(rsync://rsync.mirrorservice.org/ftp.gnupg.org/gcrypt/)}}} |       |
+  |----------------+----------------------------+-------------------------------------------------------------------------------+-------|

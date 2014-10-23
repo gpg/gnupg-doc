@@ -1618,9 +1618,9 @@ INFO is a plist holding contextual information.  See
 		  (funcall link-org-files-as-html-maybe raw-path info))
 	    ;; If file path is absolute, prepend it with protocol
 	    ;; component - "file:".
-	    (cond
-	     ((file-name-absolute-p raw-path)
-	      (setq raw-path (concat "file:" raw-path))))
+	    ;(cond
+	    ; ((file-name-absolute-p raw-path)
+	    ;  (setq raw-path (concat "file:" raw-path))))
 	    ;; Add search option, if any.  A search option can be
 	    ;; relative to a custom-id or a headline title.  Append
 	    ;; a hash sign to any unresolved option, as it might point

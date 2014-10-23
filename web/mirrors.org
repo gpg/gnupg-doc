@@ -4,79 +4,38 @@
 
 * WWW Mirrors
 
-The primary HTTP site [[https://www.gnupg.org/][GnuPG.org]] is mirrored at several sites. Please
-choose the nearest mirror to you. If you are seeking for sources and
-binaries, please consult the [[download/mirrors.en.html][FTP mirror page]] under the [[download][Download]]
-section.
-
-** Africa
-
-** The Americas
-
-*** Canada
-
-    - [[http://www.gnupg.ca/][GnuPG.ca]] (2/day) ::
-      [[http://www.gnupg.ca/][http://www.gnupg.ca/]]
-
-    - [[http://www.raffsoftware.com/][RaffSoftware]] (1/day) ::
-      [[http://gnupg.raffsoftware.com/][http://gnupg.raffsoftware.com/]]
-
-    - [[http://www.parentinginformed.com/][www.parentinginformed.com]] (2/day) ::
-      [[http://gnupg.parentinginformed.com/][http://gnupg.parentinginformed.com/]]
-
-** Australia
+The primary HTTP site [[https://www.gnupg.org/][GnuPG.org]] is mirrored at several sites.  Note
+that some features of this site will not work on the mirrors.  If you
+are seeking mirrors for source or binary packages, please consult the
+[[https://www.gnupg.org/download/mirrors.html][FTP mirror page]] under the [[download/index.html][Download]] section.
 
 
-** Asia
-
-*** Korea
-
-    - [[http://www.snu.ac.kr/][SNU]] (weekly) ::
-      [[http://musicone.snu.ac.kr/webmirror/gnupg/][http://musicone.snu.ac.kr/webmirror/gnupg/]]
-
-
-** Europe
-
-*** Austria
-
-    - [[http://gd.tuwien.ac.at/][TU Wien]] ::
-      [[http://gd.tuwien.ac.at/www.gnupg.org/]]
-
-*** Czechia
-
-    - [[http://www.gnupg.cz/][GnuPG.cz]] ::
-      [[http://www.gnupg.cz/][http://www.gnupg.cz/]]
-
-*** Denmark
-
-    - [[http://www.gnupg.dk/][GnuPG.dk]] ::
-       [[http://www.gnupg.dk/][http://www.gnupg.dk/]]
-
-*** France
-
-    - [[http://mirror.cict.fr/][CICT Mirror (Universite Paul Sabatier),TOULOUSE]] (1/day) ::
-      [[http://gnupg.cict.fr/][http://gnupg.cict.fr/]]
-
-*** Hungary
-
-    - [[http://www.crysys.hu/][CrySyS Lab., BUTE]] (daily) ::
-      [[http://gnupg.mirrors.crysys.hu/][http://gnupg.mirrors.crysys.hu/]]
-
-*** Portugal
-
-    - [[http://5coluna.com][5ª Coluna]] (2/day) ::
-      [[http://mirror.gnupg.pt/][http://mirror.gnupg.pt/]]
-
-*** Sweden
-
-    - [[http://archive.sunet.se/][Sunet]] ::
-      [[http://gnupg.archive.sunet.se/][http://gnupg.archive.sunet.se/]]
-
-*** United Kingdom
-
-    - [[http://mirror.tje.me.uk/][mirror.tje.me.uk]] (4/day) ::
-      [[ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org][ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org]] \\
-      [[http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/][http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/]]
-
-    - [[http://www.mirrorservice.org/][UK Mirror Service]] ::
-      [[http://www.mirrorservice.org/sites/www.gnupg.org/][http://www.mirrorservice.org/sites/www.gnupg.org/]]
+  | Country        | Organisation          | Links     | Sync   |
+  |----------------+-----------------------+-----------+--------|
+  |                |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | The Americas   |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]              | [[http://www.gnupg.ca/][http]]      | 2/day  |
+  |                | [[http://www.raffsoftware.com/][RaffSoftware]]          | [[http://gnupg.raffsoftware.com/][http]]      | daily  |
+  |                | [[http://www.parentinginformed.com/][parentinginformed]]     | [[http://gnupg.parentinginformed.com/][http]]      | 2/day  |
+  |                |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | Asia           |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | Korea          | [[http://www.snu.ac.kr/][SNU]]                   | [[http://musicone.snu.ac.kr/webmirror/gnupg/][http]]      | weekly |
+  |                |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | Europe         |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
+  | Austria        | [[http://gd.tuwien.ac.at/][TU Wien]]               | [[http://gd.tuwien.ac.at/www.gnupg.org/][http]]      |        |
+  | Czechia        | [[http://www.gnupg.cz/][GnuPG.cz]]              | [[http://www.gnupg.cz/][http]]      |        |
+  | Denmark        | [[http://www.gnupg.dk/][GnuPG.dk]]              | [[http://www.gnupg.dk/][http]]      |        |
+  | France         | [[http://mirror.cict.fr/][CICT Mirror, Toulouse]] | [[http://gnupg.cict.fr/][http]]      | daily  |
+  | Hungary        | [[http://www.crysys.hu/][CrySyS Lab., Bute]]     | [[http://gnupg.mirrors.crysys.hu/][http]]      | daily  |
+  | Portugal       | [[http://5coluna.com][5ª Coluna]]             | [[http://mirror.gnupg.pt/][http]]      | 2/day  |
+  | Sweden         | [[http://archive.sunet.se/][Sunet]]                 | [[http://gnupg.archive.sunet.se/][http]]      |        |
+  | United Kingdom | [[http://mirror.tje.me.uk/][mirror.tje.me.uk]]      | [[http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/][http]]  [[ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org][ftp]] | 4/day  |
+  |                | [[http://www.mirrorservice.org/][UK Mirror Service]]     | [[http://www.mirrorservice.org/sites/www.gnupg.org/][http]]      |        |
+  |                |                       |           |        |
+  |----------------+-----------------------+-----------+--------|
