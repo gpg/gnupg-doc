@@ -4,13 +4,12 @@
 
 * GnuPG Frequently Asked Questions
 
-  The GnuPG FAQ is available in 3 formats:
+  The GnuPG FAQ is available in 2 formats:
 
-  -  [[../faq/gnupg-faq.html][HTML]]
-  -  [[ftp://ftp.gnupg.org/gcrypt/gnupg/GnuPG-FAQ.txt][Text]]
-  -  [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-doc.git%3Ba%3Dblob_plain%3Bf%3Dweb/faq/gnupg-faq.org][Org-mode]]
+  -  [[https://www.gnupg.org/faq/gnupg-faq.html][HTML]]
+  -  [[https://www.gnupg.org/faq/gnupg-faq.txt][Plain text]]
 
-
-  (If you are looking for the old and outdated FAQ, please go to [[http://www-old.gnupg.org/faq/GnuPG-FAQ.html][here]].)
+  The FAQ is generated using this [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-doc.git;a=blob_plain;f=web/faq/gnupg-faq.org][source code]].  If you are looking for
+  the old and outdated FAQ, please go to [[http://www-old.gnupg.org/faq/GnuPG-FAQ.html][here]].
 
 # eof
