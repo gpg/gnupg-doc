@@ -1,0 +1,95 @@
+#+TITLE: GnuPG - What’s new in 2.1
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+
+* What’s new in GnuPG 2.1
+
+GnuPG version 2.1 comes with a bag of new features which changes some
+things old-timers are used to.  This page explains the more important
+ones.  It expects that the user is somewhat familiar with GnuPG
+version 2.0 and is aware that GnuPG consists of /gpg/, /gpgsm/, and
+/gpg-agent/ as its main components.
+
+- The file /secring.gpg/ is not anymore used to store the secret keys.
+  Merging of secret keys is now supported.
+
+- All support for /PGP-2 keys/ has been removed for security reasons.
+
+- Support for /Elliptic Curve Cryptography/ (ECC) is now available
+
+- The standard key generation interface is much leaner now to help the
+  new user creating a suitable key.
+
+- Commands to create and sign keys from the command line without any
+  extra prompts are now available.
+
+- The Pinentry dialog may now show two fields to enter a new
+  passphrase and a confirmation of it.
+
+- There is no more need to manually start the gpg-agent.  It is now
+  started by any part of GnuPG as needed.
+
+- Problems with importing keys with the same long key id have been
+  addressed.
+
+- The /dirmngr/ is now part of GnuPG proper and also takes care of
+  accessing keyserver.
+
+- Keyserver pools are now handled in a smarter way.
+
+- A new format for locally storing the public keys is now used.  This
+  considerable speeds up operations on large keyrings.
+
+- /Revocation certificates/ are now created by default.
+
+- Card support has been updated, new readers and token types are
+  supported.
+
+- The format of the key listing has been changed to better identify
+  the properties of a key.
+
+- The gpg-agent may now be used on Windows as /pageant/ replacement
+  for /putty/ in the same way it is used for years on Unix as
+  /ssh-agent/ replacement.
+
+- Creation of X.509 certificates has been improved.  It is now also
+  possible to export them directly in PKCS#8 and PEM format for use on
+  TLS servers.
+
+- The scripts to create a Windows installer is now part of GnuPG.
+
+** Removal of the secret keyring.
+
+Explain...
+
+** Removal of PGP-2 support
+
+** Support for ECC
+
+** Leaner key generation interface
+
+** Quick generate and sign commands
+
+** Improved Pinentry support
+
+** Auto-start of the gpg-agent
+
+** Duplicate long key id fixes
+
+** Enhanced Dirmngr
+
+** Better keyserver pool support
+
+** Faster keyring format
+
+** Auto-generated revocation certificates
+
+** Imporved card support
+
+** New format for key listings
+
+** Support for Putty
+
+** Improved X.509 certificate creation
+
+** Included code for a Windows installer
