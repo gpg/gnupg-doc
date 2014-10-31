@@ -51,9 +51,9 @@
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  0.8.4
-#+macro: pinentry_size 505k
-#+macro: pinentry_sha1 36c94980ceab5c15e188de121f7ab4c7ee6b3521
+#+macro: pinentry_ver  0.9.0
+#+macro: pinentry_size 453k
+#+macro: pinentry_sha1 f8e5c774c35fbb91d84e82559baf76f6b4513236
 
 
 #
@@ -108,8 +108,8 @@
 #
 # nPth
 #
-#+macro: npth_ver  1.0
-#+macro: npth_sha1 3c0673144f8baffda3a3aaab3f6853acc58146c7
+#+macro: npth_ver  1.1
+#+macro: npth_sha1 597ce74402e5790553a6273130b214d7ddd0b05d
 
 
 #
