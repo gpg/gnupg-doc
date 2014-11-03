@@ -7,7 +7,6 @@
 #+index: GPG
 #+index: PGP
 #+index: Gpg4win
-#+index: GPGTools
 
 GnuPG is a complete and free implementation of the OpenPGP standard as
 defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]] (also known as /PGP/). GnuPG allows to encrypt and
@@ -29,9 +28,6 @@ and modern version and suggested for most users.
 Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG. It is nicely
 integrated into an installer and features several frontends as well as
 English and German manuals.
-
-Project [[http://gpgtools.org][GPGTools]] provides a Mac OS X version of GnuPG. It is nicely
-integrated into an installer and features all required tools.
 
 * Reconquer your privacy
 
