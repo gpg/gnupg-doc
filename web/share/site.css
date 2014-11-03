@@ -52,7 +52,7 @@ h3:first-letter {
  */
 
 a:link {
-  color: #784c6c;
+/*  color: #784c6c;*/
   font-weight: bold;
   text-decoration: none;
 }
@@ -64,7 +64,7 @@ a:hover {
 }
 
 a:visited {
-  color: #5c6064;
+/*  color: #5c6064; */
   font-weight: bold;
   text-decoration: none;
 }
