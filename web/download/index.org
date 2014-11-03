@@ -1,18 +1,19 @@
 #+TITLE: GnuPG - Download
-#+STARTUP: showall
+#+STARTUP: showall align
 #+SETUPFILE: "../share/setup.inc"
 #+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][@@html:<a href="integrity_check.html">@@integrity@@html:</a>@@]].
 #+macro: ftpopen  @@html:<a href="@@
-#+macro: ftpclose @@html:">FTP</a>@@
+#+macro: ftpclose @@html:">download</a>@@
+#+macro: ftpcloseS @@html:">sig</a>@@
 
 
 * Download
+#+index: GnuPG!download
 
-  We suggest that you download the GNU Privacy Guard from a mirror
-  site close to you. See our [[file:mirrors.org][list of mirrors]] . To locate a /source
-  package/ (indicated by an `S') on a mirror, follow the link to
-  the *gnupg* directory; to locate a /binary package/ (indicated by a
-  `B') follow the link to the *binary*.
+  Note that you may also download the GNU Privacy Guard from a mirror
+  site close to you. See our [[file:mirrors.org][list of mirrors]].  The table below
+  provides links to the location of the files on the primary server
+  only.
 
 #+BEGIN_HTML
   <div class="buttonbox">
@@ -23,223 +24,91 @@
   <div style="clear: both"></div>
 #+END_HTML
 
-  The table below provides links to the location of the files on the
-  primary server only.
 
-** GnuPG 2.0
-#  <<gnupg>>
-#+index: GnuPG!download
+** Source code releases
 
-   GnuPG 2.0 is the new modularized version of GnuPG supporting
-   OpenPGP and S/MIME
+   These are the canonical release forms of GnuPG.  To use them you
+   need to build the binary version from the provided source code.
+   For Unix systems this is the standard way of installing software.
+   For GNU/Linux distributions are commonly used (e.g. Debian, Fedora,
+   RedHat, or Ubuntu) which may already come with a directly
+   installable packages.  However, these version may be older so that
+   building from the source is often also a good choice.  Some
+   knowledge on how to compile and install software is required.
 
-   | GnuPG {{{gnupg_ver}}} full source code     | {{{gnupg_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2{{{ftpclose}}}  |
-   | Signature for previous file                |                  |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2.sig{{{ftpclose}}} |
+   The table lists the different GnuPG packages, followed by required
+   libraries, required tools, and optional software.
 
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{gnupg_sha1}}} gnupg-{{{gnupg_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** GnuPG 1.4
-#  <<gnupg1>>
-
-   | GnuPG {{{gnupg1_ver}}} source compressed using /bzip2/     | {{{gnupg1_size}}}       | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}} |
-   | Signature for previous file                                |                         |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}} |
-   | GnuPG {{{gnupg1_ver}}} source compressed using /gzip/      | {{{gnupg1_size_gz}}}    | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz{{{ftpclose}}} |
-   | Signature for previous file                                |                         |   | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.gz.sig{{{ftpclose}}} |
-   | A patch file to upgrade to a {{{gnupg1_ver}}} source tree  | {{{gnupg1_patch_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_patch_ver}}}.diff.bz2{{{ftpclose}}} |
-
-   SHA-1 checksums for the above files:
-   {{{begin_chksum}}}
-   {{{gnupg1_sha1}}} gnupg-{{{gnupg1_ver}}}.tar.bz2
-   {{{gnupg1_sha1_gz}}} gnupg-{{{gnupg1_ver}}}.tar.gz
-   {{{gnupg1_patch_sha1}}} gnupg-{{{gnupg1_patch_ver}}}.diff.bz2
-   {{{end_chksum}}}
-
-   Select one of them. To shorten the download time, you probably want
-   to get the /bzip2/ compressed file. Please try another mirror if
-   exceptionally your mirror is not yet up to date.
+   | Name          | Version                |                    Size | Tarball                                                                                            | Signature                                                                                              |
+   |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
+   |               | <l>                    |                     <r> |                                                                                                    |                                                                                                        |
+   | GnuPG stable  | {{{gnupg_ver}}}        |        {{{gnupg_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
+   | GnuPG modern  | {{{gnupg21_ver}}}      |                         | ---                                                                                                |                                                                                                        |
+   | GnuPG classic | {{{gnupg1_ver}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
+   |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
+   | [[../related_software/libgpg-error/index.org][Libgpg-error]]  | {{{libgpg_error_ver}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
+   | [[../related_software/libraries.en.html#lib-libgcrypt][Libgcrypt]]     | {{{libgcrypt_ver}}}    |    {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
+   | [[../related_software/libksba/index.org][Libksba]]       | {{{libksba_ver}}}      |      {{{libksba_size}}} | {{{ftpopen}}}{{{ftp_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
+   | [[../related_software/libassuan/index.org][Libassuan]]     | {{{libassuan_ver}}}    |    {{{libassuan_size}}} | {{{ftpopen}}}{{{ftp_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
+   |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
+   | Pinentry      | {{{pinentry_ver}}}     |     {{{pinentry_size}}} | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}             | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}}             |
+   |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
+   | [[../related_software/gpgme/index.org][GPGME]]         | {{{gpgme_ver}}}        |        {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
+   | [[../related_software/gpa/index.org][GPA]]           | {{{gpa_ver}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
+   | Dirmngr       | {{{dirmngr_ver}}}      |      {{{dirmngr_size}}} | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
+   |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
 
    {{{check_sig_note}}}
 
-** GnuPG Binaries
+   Remarks:
+
+   - /GnuPG stable/ (2.0) is the modularized version of GnuPG supporting
+     OpenPGP, S/MIME, and Secure Shell.
+
+   - /GnuPG modern/ (2.1) is the brand new version with enhanced
+     features like support for Elliptic Curve Cryptography.  It will
+     eventually replace the current stable (2.0)
+
+   - /GnuPG classic/ (1.4) is the old, single binary version which may
+     be build even on ancient Unix platforms.  It has no dependencies
+     on the above listed libraries or the Pinnetry.  However, it lacks
+     many modern features.
+
+   - /Pinentry/ is a collection of passphrase entry dialogs which is
+     required for almost all usages of GnuPG stable or modern (2.x).
+
+   - /GPGME/ is the standard library to access GnuPG functions from
+     programming languages.
+
+   - /GPA/ is a graphical frontend to GnuPG.
+
+   - /Dirmngr/ is an optional tools for use with /GnuPG stable/ (2.0).
+     It is already included in /GnuPG modern/ (2.1)
+
+
+** GnuPG binary releases
 #+index: Binaries!download
 
-   Packages for *MS-Windows* are available at [[http://gpg4win.org][Gpg4win]].
+   In general we do not distribute binary releases but leave that to
+   the common Linux distributions.  However, for some operating
+   systems we list pointers to readily installable releases.  We
+   cannot guarantee that the versions offered there are current.  Note
+   also that some of them apply security patches on top of the
+   standard versions but keep the original version number.
 
-   Packages for *Mac OS X* should be available at [[http://gpgtools.org][Mac GPG]].
-
-   The following links direct you to external sites and those may provide
-   old and possible very outdated versions of GnuPG.
-
-   - Packages for *Debian GNU/Linux* are available at the [[http://www.debian.org][Debian site]].
-
-   - *RPM* packages of this software should be available from [[http://rpmfind.net/][rpmfind]]
-     network.
-
-   - Packages for other *POSIX-like* operating systems might be
-     available at [[http://gnupg.unixsecurity.com.br][Unix Security]].
-
-   - Sources and precompiled binaries for *RISC OS* are available at
-     [[http://www.sbellon.de/gnupg.html][Stefan Bellon's home page]] who ported GnuPG to this platform.
-
-   - A port to *VMS* is maintained by Steven M. Schweda at
-     [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
-
-
-** Gnu Privacy Assistant
-#  <<gpa>>
-#+index: GPA!download
-
-   [[../related_software/gpa/index.org][GPA]] is still work in progress, so don't expect that everything
-   works and be careful when using production quality secret keys.
-
-   | GPA {{{gpa_ver}}} full source code | {{{gpa_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file        |                |   | {{{ftpopen}}}{{{ftp_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   {{{check_sig_note}}}
+   | OS      | Where           | Description                                 |
+   |---------+-----------------+---------------------------------------------|
+   |         | <15>            |                                             |
+   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]         | Installers for /GnuPG stable/               |
+   |         | ---             | Simple installer for /GnuPG modern/         |
+   |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG classic/        |
+   | OS X    | [[http://gpgtools.org][Mac GPG]]         | Installer from the gpgtools project         |
+   | Debian  | [[https://www.debian.org][Debian site]]     | GnuPG stable and classic are part of Debian |
+   | RPM     | [[http://rpmfind.net/][rpmfind]]         | RPM packages for different OS               |
+   | Unix    | [[http://gnupg.unixsecurity.com.br][Unix Security]]   | Packages for some other POSIX systems       |
+   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]   | A port of GnupG to OpenVMS                  |
+   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]       | Sources and  binaries for RISC OS           |
+   |---------+-----------------+---------------------------------------------|
 
 
-** GnuPG Made Easy
-#  <<gpgme>>
-#+index: GPGME!download
-
-   [[../related_software/libraries.en.html#lib-GPGME][GPGME]] (GnuPG Made Easy) is a C language library that allows to add
-   support for cryptography to a program. It is designed to make
-   access to public key crypto engines like GnuPG or GpgSM easier for
-   applications. GPGME provides a high-level crypto API for
-   encryption, decryption, signing, signature verification and key
-   management.
-
-   | GPGME {{{gpgme_ver}}} full source code | {{{gpgme_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file            |                  |   | {{{ftpopen}}}{{{ftp_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{gpgme_sha1}}} gpgme-{{{gpgme_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** Libgcrypt
-#  <<libgcrypt>>
-#+index: Libgcrypt!download
-
-   [[../related_software/libraries.en.html#lib-libgcrypt][Libgcrypt]] is GNU's basic cryptographic library.
-
-   | Libgcrypt {{{libgcrypt_ver}}} full source code | {{{libgcrypt_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file                    |                      |   | {{{ftpopen}}}{{{ftp_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{libgcrypt_sha1}}} libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** Libksba
-#  <<libksba>>
-#+index: Libksba!download
-
-   [[../related_software/libraries.en.html#lib-libksba][Libksba]] is a CMS and X.509 access library.
-
-   | Libksba {{{libksba_ver}}} full source code | {{{libksba_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file                |                    |   | {{{ftpopen}}}{{{ftp_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{libksba_sha1}}} libksba-{{{libksba_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** DirMngr
-#  <<dirmngr>>
-#+index: Dirmngr!download
-
-   DirMngr is a daemon to handle CRL and certificate requests for
-   GnuPG 2.0. It might also be installed as a system daemon for CRL
-   and OCSP checks.  Note that GnuPG 2.1 already includes a modernized
-   version of dirmngr.
-
-   | DirMngr {{{dirmngr_ver}}} full source code | {{{dirmngr_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file                |                    |   | {{{ftpopen}}}{{{ftp_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{dirmngr_sha1}}} dirmngr-{{{dirmngr_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** Libgpg-error
-#  <<libgpg-error>>
-#+index: Libgpg-error!download
-
-   [[../related_software/libraries.en.html#lib-libgpg-error][Libgpg-error]] is a small library with error codes and descriptions
-   shared by most GnuPG related software.
-
-   | Libgpg-error {{{libgpg_error_ver}}} full source code | {{{libgpg_error_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file                          |                         |   | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{libgpg_error_sha1}}} libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** Libassuan
-#  <<libassuan>>
-#+index: Libassuan!download
-
-   [[../related_software/libraries.en.html#lib-libassuan][Libassuan]] is the IPC library used by some GnuPG related software.
-
-   | Libassuan {{{libassuan_ver}}} full source code | {{{libassuan_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}        |
-   | Signature for previous file                    |                      |   | {{{ftpopen}}}{{{ftp_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{libassuan_sha1}}} libassuan-{{{libassuan_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-
-** Pinentry
-#  <<pinentry>>
-#+index: Pinentry!download
-
-   Pinentry is a collection of different PIN and passphrase entry
-   modules.  One of these modules is required for GnuPG-2.
-
-   | Pinnentry {{{pinentry_ver}}} full source code | {{{pinentry_size}}} | S | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}     |
-   | Signature for previous file                   |                    |   | {{{ftpopen}}}{{{ftp_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}} |
-
-   SHA-1 checksum for the above file:
-   {{{begin_chksum}}}
-   {{{pinentry_sha1}}} pinentry-{{{pinentry_ver}}}.tar.bz2
-   {{{end_chksum}}}
-
-   {{{check_sig_note}}}
-
-** Entropy Gathering Daemon
-#  <<egd>>
-#+index: EGD!download
-
-  The latest version of the [[../related_software/libraries.en.html#lib-EGD][Entropy Gathering Daemon]] is available at
-  the usual GnuPG sites:
-
-  | EGD 0.8 source code.         | 30kB | S | {{{ftpopen}}}{{{ftp_base}}}/egd/egd-0.8.tar.gz{{{ftpclose}}} |
-  | Signature for previous file. |      |   | {{{ftpopen}}}{{{ftp_base}}}/egd/egd-0.8.tar.gz.asc{{{ftpclose}}} |
-
-  {{{check_sig_note}}}
+# eof #
