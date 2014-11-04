@@ -387,6 +387,17 @@ div.outline-text-3 {
 }
 */
 
+.morelink {
+    font-size: smaller;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.morelink:after {
+    content: "{more}";
+}
+
 
 #cpyright {
     padding-top: 4em;
