@@ -96,19 +96,19 @@
    also that some of them apply security patches on top of the
    standard versions but keep the original version number.
 
-   | OS      | Where           | Description                                 |
-   |---------+-----------------+---------------------------------------------|
-   |         | <15>            |                                             |
-   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]         | Installers for /GnuPG stable/               |
-   |         | ---             | Simple installer for /GnuPG modern/         |
+   | OS      | Where              | Description                                 |
+   |---------+--------------------+---------------------------------------------|
+   |         | <18>               |                                             |
+   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Installers for /GnuPG stable/               |
+   |         | ---                | Simple installer for /GnuPG modern/         |
    |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG classic/        |
-   | OS X    | [[http://gpgtools.org][Mac GPG]]         | Installer from the gpgtools project         |
-   | Debian  | [[https://www.debian.org][Debian site]]     | GnuPG stable and classic are part of Debian |
-   | RPM     | [[http://rpmfind.net/][rpmfind]]         | RPM packages for different OS               |
-   | Unix    | [[http://gnupg.unixsecurity.com.br][Unix Security]]   | Packages for some other POSIX systems       |
-   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]   | A port of GnupG to OpenVMS                  |
-   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]       | Sources and  binaries for RISC OS           |
-   |---------+-----------------+---------------------------------------------|
+   | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project         |
+   | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG stable and classic are part of Debian |
+   | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS               |
+   | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG 2.1 framework              |
+   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnupG to OpenVMS                  |
+   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | Sources and  binaries for RISC OS           |
+   |---------+--------------------+---------------------------------------------|
 
 
 # eof #
