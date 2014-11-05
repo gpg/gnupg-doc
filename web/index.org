@@ -52,6 +52,13 @@ all [[file:news.org][news of previous years]] is also available.
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.1.0 with ECC support released (2014-11-06)
+
+This is the first released of the new /modern/ branch of GnuPG.  It
+features a lot of new things including support for ECC.  Read more at
+the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000358.html][announcement]] mail.
+
+
 ** A beta for GnuPG 2.1.0 released (2014-10-03)
 
 A beta release for the forthcoming GnuPG 2.1 version is now

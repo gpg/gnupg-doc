@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Integrity Check
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+OPTIONS:  ^:{}
 
 * Integrity Check
 #+index: integrity check
@@ -56,9 +57,10 @@
    For your convenience, all SHA-1 check-sums available for software
    that can be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
 
-#   {{{gnupg21_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
    {{{begin_chksum}}}
    {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
+   {{{gnupg21_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
+   {{{gnupg21_w32_sha1}}}  gnupg-w32-{{{gnupg21_w32_ver}}}.exe
    {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_sha1_gz}}}  gnupg-{{{gnupg1_ver}}}.tar.gz
    {{{gnupg1_patch_sha1}}}  gnupg-{{{gnupg1_patch_ver}}}.diff.bz2

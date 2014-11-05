@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Download
 #+STARTUP: showall align
 #+SETUPFILE: "../share/setup.inc"
+#+OPTIONS: ^:{}
 #+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][@@html:<a href="integrity_check.html">@@integrity@@html:</a>@@]].
 #+macro: ftpopen  @@html:<a href="@@
 #+macro: ftpclose @@html:">download</a>@@
@@ -43,7 +44,7 @@
    |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
    |               | <l>                    |                     <r> |                                                                                                    |                                                                                                        |
    | GnuPG stable  | {{{gnupg_ver}}}        |        {{{gnupg_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
-   | GnuPG modern  | {{{gnupg21_ver}}}      |                         | ---                                                                                                |                                                                                                        |
+   | GnuPG modern  | {{{gnupg21_ver}}}      |      {{{gnupg21_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg21_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg21_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | GnuPG classic | {{{gnupg1_ver}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
    |---------------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------|
    | [[../related_software/libgpg-error/index.org][Libgpg-error]]  | {{{libgpg_error_ver}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
@@ -100,13 +101,13 @@
    |---------+--------------------+---------------------------------------------|
    |         | <18>               |                                             |
    | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Installers for /GnuPG stable/               |
-   |         | ---                | Simple installer for /GnuPG modern/         |
+   |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG modern/         |
    |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG classic/        |
    | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project         |
    | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG stable and classic are part of Debian |
    | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS               |
    | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG 2.1 framework              |
-   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnupG to OpenVMS                  |
+   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnuPG to OpenVMS                  |
    | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | Sources and  binaries for RISC OS           |
    |---------+--------------------+---------------------------------------------|
 
