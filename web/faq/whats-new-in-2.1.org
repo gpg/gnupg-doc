@@ -582,10 +582,10 @@ revocation certificate are put at the top of the file.
 :END:
 
 The /scdaemon/, which is responsible for accessing smardcards and
-other tokens, has received may updates.  In particular plugable USB
+other tokens, has received many updates.  In particular plugable USB
 readers with a fixed card now work smoothless and similar to standard
-readers.  The latest features of the /gnuk/ token are supported.  Code
-for the HSM smartcard has been added.  More card readers with a PIN
+readers.  The latest features of the [[http://www.fsij.org/doc-gnuk/][gnuk]] token are supported.  Code
+for the SmartCard-HSM has been added.  More card readers with a PIN
 pad are supported.  The internal CCID driver does now also work with
 certain non-auto configuration equipped readers.
 
@@ -679,8 +679,10 @@ feature a suitable GnuPG tool), builds everything from source, and uses
 NSIS to create the installer.  Although this sounds easy, some
 experience in setting up a development machine is still required.
 Some versions of the toolchain exhibit bugs and thus your mileage may
-vary.  Support for keyserver access over TLS is currently not
-available but will be added with one of the next point releases.
+vary.  See the [[https://wiki.gnupg.org/Build2.1_Windows][Wiki]] for more info.
+
+Support for keyserver access over TLS is currently not available but
+will be added with one of the next point releases.
 
 
 
