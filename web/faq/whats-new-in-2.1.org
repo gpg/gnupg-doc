@@ -553,16 +553,23 @@ used.  Take care: GnuPG versions before 2.1 will always use the
 keybox file.
 
 To convert an existing =pubring.gpg= file to the keybox format, you
-first rename the file to (for example) =publickeys= so it won’t be
-recognized by any GnuPG version and then you run the command
+first backup the ownertrust values, then rename the file to (for
+example) =publickeys=, so it won’t be recognized by any GnuPG version,
+then run import, and finally restore the ownertrust values:
 
 #+begin_example
+$ cd ~/.gnupg
+$ gpg --export-ownertrust >otrust.lst
+$ mv pubring.gpg publickeys
 $ gpg2 --import publickeys
+$ gpg2 --import-ownertrust otrust.lst
 #+end_example
 
 You may then rename the =publickeys= file back so that it can be used
 by older GnuPG versions.  Remember that in this case you have two
-independent copies of the public keys.
+independent copies of the public keys.  The ownertrust values are kept
+by all gpg versions in the file =trustdb.gpg= but the above
+precautions need to be taken to keep them over an import.
 
 
 ** Auto-generated revocation certificates

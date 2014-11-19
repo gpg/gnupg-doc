@@ -18,7 +18,7 @@
   this command:
 
   {{{begin_example}}}
-  gpg {{{twodashes}}}verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig
+  gpg {{{twodashes}}}verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig gnupg-{{{gnupg_ver}}}.tar.bz2
   {{{end_example}}}
 
   This checks whether the signature file matches the source file. You
