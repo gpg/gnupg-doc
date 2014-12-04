@@ -14,13 +14,30 @@
  */
 
 body {
-  background-color: #f0f0fc;
+  background: #f0f0fc;
+  font-family: "Proxima Nova Regular","Segoe UI",Roboto,"Droid Sans","Helvetica Neue",Arial,sans-serif;
+  font-weight: 400;
+  height: 100%;
 }
+
+/*
+div#wrapper {
+  background: transparent url(/share/email-envelope.png) top right no-repeat;
+}
+*/
+
+div#wrapper,
+div#footer {
+    max-width: 850px;
+    margin: auto;
+}
+
 
 h1,
 h2,
 h3 {
-  color: #5c6064;
+  color: #000;
+  font-family: "Helvetica Neue",Arial,sans-serif;
   font-weight: bold;
   font-variant: small-caps;
   letter-spacing: 0.1em;
@@ -28,28 +45,18 @@ h3 {
 
 h1,
 h2 {
-  font-size: large;
-}
-
-h1:first-letter,
-h2:first-letter,
-h3:first-letter {
-  color: #784c6c;
-}
-
-
-h1:first-letter,
-h2:first-letter {
   font-size: x-large;
 }
 
-h3:first-letter {
-  font-size: large;
+h3 {
+	font-size: 1em;
 }
+
 
 /*
    Links
  */
+
 
 a:link {
 /*  color: #784c6c;*/
@@ -78,14 +85,10 @@ a.img:hover {
    Raise attention
  */
 
-li.important {
-  color: red;
-}
-
+li.important,
 span.important {
   color: red;
 }
-
 
 div.urgent {
   width: 85%;
@@ -93,7 +96,6 @@ div.urgent {
   border: solid red;
   font-weight: bold;
 }
-
 
 .ii {
   display: none !important;
@@ -155,9 +157,22 @@ div.entry-qotd
 
 
 #header {
-    background: url(/share/logo-gnupg-light-purple-bg.png) center no-repeat;
-    height: 120px;
+    background: transparent;
+    height: 150px;
     padding: 0px;
+}
+
+#header a.logo img {
+	height: 120px;
+}
+#header a.logo:hover img {
+    background: transparent;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+#header a,
+#header a:hover {
+	background: transparent;
 }
 
 #cornerImage {
@@ -175,88 +190,72 @@ div.entry-qotd
  */
 
 /* Reset the link attributes for nav except for hover  */
-nav * a:visited, a:link {
+nav a:visited,
+a:link {
     color: #757575;
     font-weight: bold;
     text-decoration: none;
 }
 
-
-/* The menu bar is centered.  */
-nav {
-    text-align: left;
-    line-height: 0.4em;
-    margin-left: 5%;
-    margin-right: 5%;
+nav ul,
+ul ul.sub-menu {
+    margin: 0;
+    padding: 0;
+    z-index: 5;
 }
 
-/* Main menu list.  */
 nav ul {
-    display: inline-table;
-    list-style: none;
-    position: relative;
     box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
     padding: 0 20px;
     border-radius: 10px;
     background: #efefef;
+    list-style: none;
 }
 
-nav ul:after {
-    display: block;
-    clear: both;
-    content: "";
+
+nav ul li,
+ul ul.sub-menu li {
+    list-style-type: none;
+    display: inline-block;
 }
 
-/* Main menu items.  */
-nav ul li {
-    float: left;
-}
 
-nav ul li:hover {
-    background: #4b545f;
-}
-
-nav ul li:hover a {
-    color: #fff;
-}
-
-nav ul li a {
-    display: block;
-    color: #757575;
-    font-weight: bold;
+/*Link Appearance*/
+nav ul li a,
+ul li ul.sub-menu li a {
     text-decoration: none;
-    padding: 20px 30px;
+    color: #fff;
+    padding: 10px;
+    display:inline-block;
 }
 
-/* Sub-menu lists.
-   Hide unless we over hover them.  */
-nav ul ul {
-    display: none;
-    background: #5f6975;
-    border-radius: 0px;
-    padding: 0;
-    position: absolute;
-    z-index: 5;
-    top: 100%;
-}
-
-nav ul li:hover > ul {
-    display: block;
-}
-
-
-/* Sub-menu items.  */
-nav ul ul li {
-    float: none;
-    border-top: 1px solid #6b727c;
-    border-bottom: 1px solid #575f6a;
+/*Make the parent of sub-menu relative*/
+nav ul li {
     position: relative;
 }
 
-nav ul ul li a {
-    font-weight: bold;
+/*sub menu*/
+nav ul li ul.sub-menu {
+    display:none;
+}
+nav ul li:hover ul.sub-menu {
+    display:block;
+    background: #5f6975;
     color: #fff;
-    padding: 20px 30px;
+    z-index: 99;
+    border-radius: 0px;
+    position: absolute;
+    top: 41px;
+    left: 0;
+}
+nav ul ul li {
+    border-bottom: 1px solid #575f6a;
+    position: relative;
+    width: 100%;
+}
+
+nav ul ul li a {
+    display:block !important;
 }
 
 nav ul ul li a:hover {
@@ -264,22 +263,10 @@ nav ul ul li a:hover {
 }
 
 
-
-/* Sub-sub-menu lists.
-   Put right to the sub-menus.  */
-nav ul ul ul {
-    position: absolute;
-    z-index: 10;
-    left: 100%;
-    top: 0;
-}
-
-
-
 /* The second menu line for stop menu with sub-menus.
    This is a non-nested list.  */
 nav.subnav {
-    margin-top: -1.5em;
+    margin-top: 1.5em;
 }
 
 nav.subnav ul {
@@ -296,20 +283,12 @@ nav.subnav ul li a {
     display: block;
     font-weight: normal;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 0 30px 0 10px;
 }
 
-
-/* Put selection markers arount a selected items.
-   \2009 is a &thinsp;  \21d2 and \21d0 are arrows.  */
-nav * li a.selected:before {
-    content: "\21d2\2009";
+nav * li a.selected {
+    color: #0093DD;
 }
-
-nav * li a.selected:after {
-    content: "\2009\21d0";
-}
-
 
 
 /*
@@ -344,9 +323,6 @@ nav * li a.selected:after {
  */
 
 main {
-    float: left;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
 main ul {
@@ -355,21 +331,51 @@ main ul {
     margin-left: 1em;
 }
 
+div#content {
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 1em;
+  box-shadow: 0 1px 1px rgba(154,170,207,0.1);
+}
+
+div#content a,
+div#footer a {
+  color: #0093DD !important;
+}
 
 div.outline-text-2 {
-  padding-top: 5px;
-  padding-right: 3px;
-  border-top: 2px solid #5c6064;
-  border-right: 2px solid #784c6c;
+  margin: 0;
+  padding: 0.5em 0.5em 0 0;
+  border-top: 2px solid #DEECF9;
+  border-right: 2px solid #DEECF9;
 }
 
 div.outline-text-3 {
   padding-top: 3px;
   padding-right: 3px;
-  border-top: 1px solid #5c6064;
-  border-right: 1px solid #784c6c;
+  border-top: 1px solid #E2EEFA;
+  border-right: 1px solid #E2EEFA;
 }
 
+div.outline-text-2,
+div.outline-text-3 {
+  margin-bottom: 2em;
+}
+
+div.outline-text-3,
+div > h3 {
+  margin-left: 1em;
+}
+
+h2,
+h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+h3 {
+  font-size: 1em;
+}
 
 /* Not anymore used:
 #rightColumn {
@@ -564,7 +570,6 @@ td.right  {
     margin-right: 20px;
     margin-bottom: 20px;
 }
-
 
 .donate-button-low {
     overflow: hidden;

@@ -66,7 +66,8 @@ if not available."
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
 <link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
-<body>\n"))
+<body>
+"))
 
 (defconst gpgweb-gnupg-menu-alist
   '(("/index.html"
@@ -159,7 +160,7 @@ if not available."
         (insert  ">" (cadr item) "</a>\n")
         (when (caddr item)
           (dotimes (i (1+ lvl)) (insert "  "))
-          (insert "  <ul>\n")
+          (insert "  <ul class=\"sub-menu\">\n")
           (gpgweb--insert-menu (caddr item) (1+ lvl) selected-file)
           (dotimes (i (1+ lvl)) (insert "  "))
           (insert "  </ul>\n"))
@@ -185,7 +186,9 @@ if not available."
   "Insert the menu structure into the HTML file."
   (goto-char (point-min))
   (when (re-search-forward "^<body>\n" nil t)
-    (insert "<div id=\"header\">&nbsp;</div>
+    (insert "<div id=\"wrapper\">
+<div id=\"header\"><a href=\"/index.html\" class=\"logo\"
+     ><img src=\"/share/logo-gnupg-light-purple-bg.png\"></a>&nbsp;</div>
 <nav>
   <ul>
 ")
@@ -200,12 +203,14 @@ if not available."
           (gpgweb--insert-submenu m selected-file)
           (insert "  </ul>\n</nav>\n")))
     (insert "<main>
+<div id=\"content\">
 ")))
 
 
 (defun gpgweb-insert-footer ()
   (goto-char (point-max))
-  (insert "</main>
+  (insert "</div><!-- end content -->
+</main>
 <div id=\"footer\">
   <div id=\"nav_bottom\">
   <ul>
@@ -229,6 +234,7 @@ if not available."
   </div>\n"))
   (goto-char (point-max))
   (insert "</div>
+</div><!-- end wrapper -->
 </body>
 </html>"))
 
