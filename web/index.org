@@ -21,7 +21,7 @@ GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning 
 be freely used, modified and distributed under the terms of the
 [[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the well known and
+GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the old and very
 portable standalone version, whereas [[download][{{{gnupg_ver}}}]] is the enhanced
 and modern version and suggested for most users.
 
@@ -50,6 +50,14 @@ all [[file:news.org][news of previous years]] is also available.
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+
+** Libksba 1.3.2 released                                         :important:
+
+This is a security fix release and all users of Libksba should update
+to this version.  Note that *GnuPG 2.x* makes use of Libksba and thus
+all user of GnuPG 2.x need to install this new version of Libksba and
+restart the dirmngr process.  Read the full [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000359.html][announcement]].
 
 
 ** GnuPG 2.1.0 with ECC support released (2014-11-06)

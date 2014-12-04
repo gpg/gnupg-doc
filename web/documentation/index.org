@@ -21,6 +21,8 @@
                      how to subscribe. Links to other GnuPG-related
                      discussion groups are also available.
   - [[file:bts.org][BTS]] :: Before you report a bug, please consult the list of bugs.
+  - [[http://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
+
 
   You may also notice that OpenPGP is a proposed Internet standard,
   described by RFC4880 (found at [[http://www.rfc-editor.org/][RFC Editor]]).

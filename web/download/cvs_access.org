@@ -14,6 +14,9 @@
   server, so please don't poll for new pushes too often. Instead, we
   suggest you to subscribe to the [[http://lists.gnupg.org/mailman/listinfo/gnupg-commits/][commits mailing list]] .
 
+  You may also follow [[http://twitter.com/gnuprivacyguard][@gnuprivacyguard]] on Twitter to get notified
+  about commits to the GnuPG master branch.
+
   There is a Web interface at [[http://git.gnupg.org/]] which can be used
   to browse the GIT repository.
 

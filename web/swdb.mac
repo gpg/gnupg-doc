@@ -65,10 +65,10 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver    1.5.1
+#+macro: gpgme_ver    1.5.2
 #+macro: gpgme_branch master
-#+macro: gpgme_size   943k
-#+macro: gpgme_sha1   a91c258e79acf30ec86a667e07f835e5e79342d8
+#+macro: gpgme_size   946k
+#+macro: gpgme_sha1   cb550ea09314a362aa895f1ca92da6ba73fb512a
 
 
 #
@@ -82,9 +82,9 @@
 #
 # LIBKSBA
 #
-#+macro: libksba_ver  1.3.1
-#+macro: libksba_size 584k
-#+macro: libksba_sha1 6bfe285dbc3a7b6e295f9389c20ea1cdf4947ee5
+#+macro: libksba_ver  1.3.2
+#+macro: libksba_size 587k
+#+macro: libksba_sha1 37d0893a587354af2b6e49f6ae701ca84f52da67
 
 
 #
