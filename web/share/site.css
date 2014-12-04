@@ -124,6 +124,14 @@ img.rfloat {
     margin-left: 1em;
 }
 
+img.people {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    min-width: 120px;
+}
+
+
 .correction
 {
     color: #ff0000;

@@ -1,0 +1,88 @@
+#+TITLE: GnuPG - People
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* The People behind GnuPG
+
+  As with all technical things in the world, people and not machines
+  created them are responsible to keep them running.  Software and
+  thus GnuPG is not different.  Although software is build using a lot
+  of other software and thus the work of many thousand people, you may
+  be interested to see who is working on GnuPG.  Here is a list of
+  some of them:
+
+  #+HTML: <br/>
+
+** Werner Koch
+
+   #+ATTR_HTML: :class people :title Werner Koch
+   [[file:werner.png]]
+
+   /Core components maintainer/
+
+   Werner started GnuPG in 1997 and still puts most of his working
+   time into the development and maintenance of GnuPG.  He has 29
+   years experience in commercial software development on systems
+   ranging from CP/M systems to mainframes, languages from assembler
+   to Smalltalk and applications from drivers to financial analysis
+   systems.  Werner is a long time free software supporter and
+   co-founder of the [[http://fsfe.org][FSFE]].  With the support of his brother he founded
+   [[https://g10code.com][g10^code]] GmbH in 2001 to make GnuPG development his profession.
+
+   #+HTML: <p style="clear: both"/>
+
+** David Shaw
+
+   #+ATTR_HTML: :class people :title David Shaw
+   [[file:david.png]]
+
+   /Master of the classic branch/
+
+   David approached the GnuPG Project in 2002 after the relaxing of
+   the US crypto regulation allowed the participation of US based
+   hackers on international crypto projects.  One of his first
+   achievements was a much improved Web-of-Trust implementation.
+   Today he mainly takes responsibility for the keyserver access and
+   the classic GnuPG 1.x branch.
+
+   #+HTML: <p style="clear: both"/>
+
+** Marcus Brinkmann
+
+   #+ATTR_HTML: :class people :title Marcus Brinkmann
+   [[file:marcus.png]]
+
+   /Hacker emeritus/
+
+   Marcus is part of the free software community since 1997, when he
+   joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
+   on GNU/Hurd, he also has a diploma degree in mathematics, and was
+   employed by [[https://g10code.com][g10^code]] to work on the GnuPG and related software from
+   2001 to 2012.
+
+   #+HTML: <p style="clear: both"/>
+
+** NIIBE Yutaka
+
+   #+ATTR_HTML: :class people :title NIIBE Yutaka
+   [[file:gniibe.png]]
+
+   /Smartcards and Libgcrypt/
+
+   Niibe is a long time free software hacker who joined the GnuPG
+   project in 2011 and soon took over the development of the smartcard
+   related code.  He is also the person behind the [[https://fsij.org/gnuk][gnuk token]].
+
+   #+HTML: <p style="clear: both"/>
+
+** Jussi Kivilinna
+
+   #+ATTR_HTML: :class people :title Jussi Kivilinna
+   [[file:jussi.png]]
+
+   /Optimization/
+
+   Jussi joined the GnuPG project in 2012 and worked since then on
+   assembler optimized code for cryptographic algorithms in Libgcrypt.
+
+   #+HTML: <p style="clear: both"/>

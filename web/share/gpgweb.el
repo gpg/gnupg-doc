@@ -74,6 +74,7 @@ if not available."
      "Home"
      (("/features.html"                    "Features")
       ("/news.html"                        "News")
+      ("/people/index.html"                "People")
       ("/service.html"                     "Service")))
     ("/donate/index.html"
      "Donate"
