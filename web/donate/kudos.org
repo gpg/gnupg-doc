@@ -9,7 +9,7 @@
 #+HTML: <li>[please reload in a few minutes while the list is being updated]
 #+HTML: <!--END-DONATIONS-->
 #+HTML: <li><a href="/donate/index.html">your name</a></li>
-#+HTML: </ul><p> </p></div>
+#+HTML: </ul><p class="doclear"> </p></div>
 
   Thank you.
 

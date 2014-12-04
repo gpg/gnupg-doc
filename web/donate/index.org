@@ -15,6 +15,15 @@
   to help with development and maintenance please consider to make a
   donation.
 
+** Recent donors
+
+#+HTML: <div id="tagcloudlist"><ul>
+#+HTML: <!--BEGIN-SOME-DONATIONS-->
+#+HTML: <!--END-SOME-DONATIONS-->
+#+HTML: <li><a href="kudos.html">(all)</a></li>
+#+HTML: </ul><p class="doclear"> </p></div>
+
+
 ** Ways to donate
 
   Paying using a credit card is currently our preferred choice.  [[https://en.wikipedia.org/wiki/Single_Euro_Payments_Area][SEPA]]
@@ -32,7 +41,7 @@
   information is only used for the purpose of the donation and no data
   will ever be send to any entity not directly involved in the
   donation process.  Not giving a name makes the donation “anonymous”
-  in that the name won’t be listed on the public thank you page.
+  in that the name won’t be listed on the public [[file:kudos.org][thank you]] page.
 
 #+BEGIN_HTML
   <!--ERRORPANEL-->

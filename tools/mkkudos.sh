@@ -67,7 +67,8 @@ euroyr=$(echo "$tmp" | awk -F: '{printf "%d Euro", int($10 + 0.5)}')
 n=$(echo "$tmp" | awk -F: '{printf "%d", $7}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
 
-for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html; do
+for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
+            "$htdocs/donate/"index.html; do
    if [ $force = no ]; then
      [ "$file" -ot "$donors" ] || continue
    fi
@@ -85,6 +86,8 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html; do
             <"$file"  >"$file.tmp" '
      /<!--BEGIN-DONATIONS-->/ {indon=1; print; insert("") }
      /<!--END-DONATIONS-->/ {indon=0}
+     /<!--BEGIN-SOME-DONATIONS-->/ {indon=1; print; insertsome("") }
+     /<!--END-SOME-DONATIONS-->/ {indon=0}
      /<!--BEGIN-DONATIONS_goteo13-->/ {indon=1; print; insert("goteo13") }
      /<!--END-DONATIONS_goteo13-->/ {indon=0}
      /<!--INSERT-MONTH-DATE-->/ {
@@ -120,6 +123,24 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html; do
          }
        }
        close (donors)
+     }
+
+     function insertsome (tag) {
+       i = 0
+       while (getline < donors) {
+         if ( $0 ~ /^(#.*)?$/ )
+            continue;
+         if ( $3 == "" )
+            continue;
+         if ($4==tag) {
+           data[i++] = $3
+         }
+       }
+       close (donors)
+       j = i > 16 ? ( i - 16 ) : 0
+       while (j < i) {
+           printf "<li>%s</li>\n", data[j++]
+       }
      }
      '
    mv "$file.tmp" "$file" || echo "mkkudos.sh: error updating $file" >&2
