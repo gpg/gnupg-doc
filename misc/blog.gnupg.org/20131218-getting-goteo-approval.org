@@ -1,0 +1,37 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 18th December 2013
+
+** Getting Goteo approval
+
+#+CAPTION: Pending project on Goteo
+[[file:img/goteo-review.png]]
+
+The targets are set, the rewards are prepared, the press release has
+been edited and translated, and now we're waiting for approval from the
+crowdfunding platform [[http://goteo.org/][Goteo]].
+
+Goteo is like indiegogo, but more forward thinking. It has a special
+focus on communal benefits and rewards - projects that benefit society
+as a whole, not just project donors (though they can get special rewards
+too).
+
+Every 'good' produced by a campaign on Goteo, be it artwork, software,
+event, or manufactured product, has a license assigned to it, like GPL
+or Creative Commons, and as well as asking for money, projects ask for
+other forms of help called “non-economic needs”, like translations or
+product testing. Goteo's [[https://github.com/Goteo/Goteo][own source]]
+code is Free Software too, meaning anyone can run their own Goteo
+crowdfunding server. That's the feature that swung our decision to use
+it for GnuPG.
+
+Because the type of project on Goteo is quite specific however, the
+acceptance phase of launching crowdfunding is taking us longer than
+expected. Right now we're working with Goteo's small team to answer
+questions which aren't on the webforms you fill out when you design your
+project with their system.
+
+I'm hoping to provide what's necesasry and get acceptance quickly. As
+soon as we have it the crowdfunding will launch and [[http://gnupg.hosted.phplist.com/lists/?p=subscribe&id=1][newsletter]]
+subscribers and [[https://twitter.com/gnupg][Twitter]] followers will be the first to know.

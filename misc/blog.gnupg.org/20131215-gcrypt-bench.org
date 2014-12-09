@@ -1,4 +1,16 @@
 # About Libgcrypt 1.6 performance
+#+STARTUP: showall
+#+AUTHOR: Werner Koch
+#+DATE: 15th December 2013
+
+# We do not want any fancy layout of the charts.
+#+HTML:<style>
+#+HTML:  <!--/*--><![CDATA[/*><!--*/
+#+HTML:  .figure { border: none; margin: 0 0 0 0;
+#+HTML:            padding: 0; text-align: left;  }
+#+HTML:  div.figure { float: none; }
+#+HTML:  /*]]>*/-->
+#+HTML:</style>
 
 ** Speedups in Libgcrypt 1.6
 
@@ -38,7 +50,7 @@
 
    [[file:img/libgcrypt-1.6.0-hash-bench.png][file:img/libgcrypt-1.6.0-hash-bench_s.png]]
 
-   The olive bars indicates how many bytes can be hashed by version
+   The olive bars indicate how many bytes can be hashed by version
    1.5.3, the green bar gives the figure for the new 1.6.0, and
    finally for some algorithms the hatched bar to what Nettle 2.7 is
    up to.

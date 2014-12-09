@@ -1,0 +1,49 @@
+# Old blog post converted from HTML to ORG.
+#+AUTHOR: Sam Tuke
+#+DATE: 5th November 2013
+
+** Securing the future of GPG
+
+If you've noticed some changes around here, there's a good reason why.
+We have a plan for securing the long term stability of GnuPG development
+by giving more to our users, and asking more from them in return.
+
+You already know that GnuPG is important, and as months of fresh
+government spying revelations go by, it's becoming obvious that GnuPG is
+one of the very few tools that can still be trusted to keep our data
+safe from the overwhelming efforts of international law enforcement. But
+developing GnuPG takes work - regular monitoring for newfound threats
+and exploits, and new features to keep it sharp with the latest
+encryption algorithms. We also need to reach out to the millions of
+potential GnuPG users who are asking themselves how they can make their
+email secure. Public-private key cryptography hasn't yet gained
+mainstream acceptance, but it could if it were just a little more
+appealing and accessible.
+
+To maintain progress within the project we need to make it easier for
+GnuPG users to support the work that we do. Ours is an app that is often
+hidden from view, relied upon daily by hundreds of thousands of people,
+often in life-threatening circumstances, yet low profile and rarely
+supported by publicity or donations.
+
+To change that we're going to launch a *new website* with a fresh
+design, more friendly and accessible information, and new resources to
+grow and strengthen our user group. The new site will also allow the
+project to accept and manage new forms of financial support, including
+automatic subscriptions to sustain development long term.
+
+Designing, building and populating the new site will take a few months,
+and in order to cover the costs there will be a *crowd-funding* campaign
+with a modest target, in early December. We have some rewards up our
+sleeves for those who donate.
+
+When that time comes, *we'll need your help* - telling your contacts,
+forwarding the announcement to your communities, and contributing
+financially if you can.
+
+You can subscribe to updates about the campaign using this form. This is
+separate to other GnuPG mailing lists - update will be sent here, and
+only here.
+
+[Subscribe code with references to external sites removed on 2014-04-28
+due to privacy issues.]

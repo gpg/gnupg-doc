@@ -1,15 +1,17 @@
-#
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 20th December 2013
 
-** 16 Years of protecting privacy
-   :PROPERTIES:
-   :PUBDATE:  <2013-12-20 Fri 09:18>
-   :END:
+  English | [[http://www.framablog.org/index.php/post/2013/12/20/gnupg-16-ans][French / Français]] | [[file:20131220-gnupg-turned-0x10.ph.org][Filipino]] | [[http://metahumano.org/log/16-anos-de-proteccion-de-la-privacidad/][Spanish / Español]]
+
+*** 16 Years of protecting privacy
 
 Today marks 16 years since the first release of GNU Privacy Guard
-(GnuPG). In that time the project has grown from being a hacker’s
-hobby into one of the world’s most critical anti-surveillance
-tools. Today GnuPG stands at the front line of the battle between
-invasive surveillance and civil liberties.
+(GnuPG). In that time the project has grown from being a hacker's hobby
+into one of the world's most critical anti-surveillance tools. Today
+GnuPG stands at the front line of the battle between invasive
+surveillance and civil liberties.
 
 “Time has proven [[http://fsfe.org/freesoftware/basics/4freedoms.en.html][Free Software]] to be the most trustworthy defender
 against companies and governments seeking to undermine citizen
@@ -17,20 +19,20 @@ privacy” said Werner Koch, GnuPG Founder and Lead Developer. “Although
 funding our work has not always been easy, the need for universally
 accessible privacy tools has never been more apparent”.
 
-Some of the world’s top security specialists are now counted among
-GnuPG users, including Bruce Schneier, Jacob Appelbaum, and Phil
-Zimmerman, inventor of PGP. This summer the world learned of the
-extent of Government spying thanks to whistleblowers and journalists
-communicating using GnuPG encrypted emails. Market leading servers
-from Red Hat and Debian have built their reputation for security on
-the foundation of GnuPG-verified software.
+Some of the world's top security specialists are now counted among GnuPG
+users, including Bruce Schneier, Jacob Appelbaum, and Phil Zimmerman,
+inventor of PGP. This summer the world learned of the extent of
+Government spying thanks to whistleblowers and journalists communicating
+using GnuPG encrypted emails. Market leading servers from Red Hat and
+Debian have built their reputation for security on the foundation of
+GnuPG-verified software.
 
-“The success of GnuPG’s first crowdfunding campaign, which received
-90% of it’s target in 24 hours, shows a fresh willingness among users
-to support GnuPG in it’s 16th year, and points to new opportunities
-for the project in future” said Sam Tuke, GnuPG Campaign Manager.
-“The release of GnuPG 2.1 and the launch of a newly designed website
-later this year will bring GnuPG and its clients for Windows, Mac,
+“The success of GnuPG's first [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]], which received
+90% of it's target in 24 hours, shows a fresh willingness among users
+to support GnuPG in it's 16th year, and points to new opportunities
+for the project in future” said Sam Tuke, GnuPG Campaign Manager. “The
+release of GnuPG 2.1 and the launch of a newly designed website later
+this year will bring GnuPG and its clients for Windows, Mac,
 Gnu/Linux, and Android to new audiences”.
 
 Over the years GnuPG has kept up to date with new algorithms, such as

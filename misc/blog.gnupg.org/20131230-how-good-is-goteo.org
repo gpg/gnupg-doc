@@ -1,0 +1,133 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 30th December 2013
+
+*** How good is Goteo? An appraisal
+
+#+CAPTION: A wall of donor faces on Goteo
+#+ATTR_HTML: :style max-width: 400px
+[[file:img/goteo-pledge-wall.png]]
+
+"One question: why did you choose the quite unknown Spanish
+crowdfunding site Goteo?" So shot back the reply to the [[http://blog.gnupg.org/20131219-gnupg-launches-crowfunding.html][press release]]
+I had just sent to a few dozen selected journalists announcing the
+launch of the GnuPG crowdfunding campaign. "You won't get any exposure
+on there, we got a few hundred thousand hits just from being on
+indiegogo" I was told by one experienced crowdfunder at my favourite
+[[http://www.c-base.org/][Berlin hackerspace]] last month. "What's Goteo?" has been one of the
+most frequently asked questions of this campaign from friends and
+supporters.
+
+I ummed and ahhed over which crowfunding platform to choose. It's a
+decision that has a huge impact on the campaign - market exposure,
+transaction costs, and design and layout are just a few of the many
+factors that have to be taken into account. This is a crowded market -
+new crowdfunding sites are popping up each week as more companies try
+to cash in on what is recognised a key [[http://www.theguardian.com/technology/2013/dec/23/tech-128-from-airbnb-to-crowdfunding-the-year-in-review][tech trend of 2013]]. An
+[[http://www.theguardian.com/commentisfree/2013/dec/23/crowdfunding-limitations][estimated $5bn]] was raised by crowdfunders this year. That equates to
+around $35m in commission fees for the platforms hosting these
+campaigns, who typically charge between [[http://www.indiegogo.com/indiegogo-faq][5-10%]].  It's no surprise that
+everyone wants a slice.
+
+#+CAPTION: "Non-economic donations"
+[[file:img/non-economic-goteo.png]]
+
+
+Goteo however, is unique. Right now it's the only crowdfunding
+software that is itself [[https://fsfe.org/about/basics/freesoftware.en.html][Free Software]], allowing everyone to inspect
+how it works and run their own copy. Even though I don't plan to run
+my own Kickstarter competitor any time soon, the fact we can check its
+code, make improvements, and follow the development process is really
+important. I want Goteo to prosper profitably because, aside from all
+its other good points, I know some of that profit will be invested in
+the platform itself, which shall remain free and accessible to
+everyone under the terms of the [[https://github.com/Goteo/Goteo/blob/master/GNU-AGPL-3.0][AGPL3 license]].
+
+Goteo is also the only such site to my knowledge that's built with
+public money. Funded by Spain's Department for Education, Culture and
+Sport, Barcelona's City Council, and The University of Andalucia,
+Goteo exists to host projects which
+"[[http://goteo.org/about][contribute to the common good, free
+knowledge, and open code]]". Everything about the platform and the
+projects it hosts point to common goods, shared resources, and
+collaborative effort.
+
+Besides that, these other features make it stand out:
+
+-  Signup and donation workflow is smooth and simple
+-  Great focus on social media and sharing links (we had hundreds of
+   tweets from these)
+-  Users can login with many social networks, including OpenID and
+   LinkedIn
+-  Clean and professional design with easy access to key information
+-  Built in license chooser for all "goods" projects produce (categories
+   for software, artwork, etc.)
+-  Mandatory delivery timeframe / deadline setter with public calendar
+-  Nice "image wall widget" of donors faces has potential, provides
+   public recognition of donations
+-  Web forms for project creation are comprehensive and well designed
+-  Crowdsourcing of extra skills ("non-economic donations") works well
+-  Donations are guaranteed by PayPal and Goteo, not pledged or
+   retractable
+-  Goteo staff are friendly and knowledgable, providing personal
+   guidance and assistance
+-  Many funding successes, including a few related to
+   [[http://goteo.org/project/bhoreal][hardware]],
+   [[http://goteo.org/project/smart-citizen-sensores-ciudadanos?lang=en][software]],
+   and [[http://goteo.org/project/protolab-movil][Hackerspaces]]
+
+Many of those benefits are obvious before launching a campaign. However,
+on the list of problems I experienced with the platform, most weren't
+discovered until the point of execution (orange = fix in progress):
+
+-  User-set passwords are automatically emailed in plain text after
+   registration (insecure)
+-  Rewards can't be customised, e.g. select t-shirt size
+-  Once a campaign is launched, no aspect can be edited directly (though
+   news can be added)
+-  The order of images for the campaign page is random - the first image
+   visitors see can't be specified
+-  The launch date of the campaign is chosen by Goteo administrators, it
+   can't be specified
+-  No markup is available for text formatting
+-  Pictures are limited and can't be placed between text to break up the
+   page
+-  There's a bug that causes double posting of news items
+-  Shipping for rewards is not configurable - international shipping
+   can't be billed
+-  The website is not mobile friendly (minimum page width is 940px)
+-  HTTPS is not available to donors for transferring personal details
+
+Besides that, I spotted a few opportunities for improvement:
+
+-  Send emails to people who didn't complete their donation ("abandoned
+   carts" - indiegogo does this)
+-  Allow managers to specify the content of social media messages
+
+#+CAPTION: Goteo's license on GitHub
+#+ATTR_HTML: :style max-width: 400px
+[[file:img/goteo-github-license.png]]
+
+
+Some of the problems listed are a real pain. Because I couldn't choose
+the launch date, and hadn't planned for an in-depth human review by
+Goteo, our project went public days later than I expected, at a time
+when I was travelling and without connectivity. Goteo's campaigns team
+is helpful and responsive however, and even in the last few weeks
+several translation problems have been fixed which I had previously
+reported. I'm confident that the other most serious issues will be
+addressed in a timely manner.
+
+In all, we took a gamble by using Goteo, but one that paid off. It's
+focus on communal work and rewards is unique amongst its competitors,
+and when it comes to copyleft licensing they stand alone in practicing
+what they preach. Nearly all the convenient features that you'd expect
+from more established platforms are included, together with a pleasant
+functional interface. Donations are worry-free for both donors and
+recipients (though I can't comment on the final transfer process until
+later next month).
+
+Best of all perhaps, staff at Goteo are knowledgable and supportive and
+have time to invest in making projects a success. And when launch day
+comes and you're expecting the unexpected, that's very reassuring.

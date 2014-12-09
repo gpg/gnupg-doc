@@ -132,25 +132,58 @@ img.people {
 }
 
 
-.correction
-{
-    color: #ff0000;
+/* The figure class is used by the blog entries.  We use display
+   to suppress the figure number inserted by org-mode. */
+.figure {
+    border: 1px solid #808080;
+    margin: 0 1em 0.5em 0.5em;
+    padding: 0.5em;
+    text-align: center;
 }
 
-div.entry-qotd P
-{
-  padding-left: 20%;
-  margin-bottom: 0;
+
+div.figure {
+    float: right;
+    margin-right:0 !important;
 }
 
-div.entry-qotd
-{
-  margin-bottom: 3%;
+.figure p {
+    margin: 0;
+    padding: 0.5em 0 0.2em 0;
 }
 
+.figure-number {
+  display: none !important;
+}
+
+
+
+.underline {
+    text-decoration: underline;
+}
 
 .example {
     overflow: auto;
+}
+
+.correction {
+    color: #ff0000;
+}
+
+
+.postdate {
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+div.entry-qotd p {
+    padding-left: 20%;
+    margin-bottom: 0;
+}
+
+div.entry-qotd {
+    margin-bottom: 3%;
 }
 
 
@@ -484,7 +517,25 @@ span.sansserif {
 }
 
 
-/* Table stuff */
+/* Table related rules as used by org-mode. */
+
+.left {
+    margin-left: 0px;
+    margin-right: auto;
+    text-align: left;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 0px;
+    text-align: right;
+}
 
 th.left {
     text-align:center;
@@ -604,6 +655,30 @@ td.right  {
     margin-right: 20px;
     margin-bottom: 20px;
     margin-top: 5px;
+}
+
+
+.donation-progress {
+    border: solid 1px;
+    width: 100%;
+    height: 18px;
+    background-color: #ff0;
+}
+
+.donation-progress p {
+    position: relative;
+    font-size: 14px;
+    top: -18px;
+    left: 0;
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+}
+
+.donation-progress-bar {
+    background-color: #0a0;
 }
 
 

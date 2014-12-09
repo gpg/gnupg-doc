@@ -1,0 +1,68 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 20th December 2013
+
+
+  [[file:20131220-gnupg-turned-0x10.org][English]] | [[http://www.framablog.org/index.php/post/2013/12/20/gnupg-16-ans][French / Français]] | Filipino | [[http://metahumano.org/log/16-anos-de-proteccion-de-la-privacidad/][Spanish / Español]]
+
+*** 16 Years of protecting privacy
+
+/Thanks to '[[http://www.twitter.com/FilipinoLawyer][FilipinoLawyer]]' for this translation./
+
+Noong Disyembre 20, 2013 ay ika-16 taon mula ng unang labas ng GNU
+Privacy Guard (GnuPG). Sa loob ng mga panahong ito, ang proyekto ay
+lumago mula sa pagiging isang libangan ng mga hacker tungo sa isa sa mga
+pinakakritikal na gamit sa buong mundo laban sa pagmamatyag o
+surveillance. Ngayon ang GnuPG ay isa sa mga nasa harapan ng
+pagtatanggol ng kalayaang sibil at karapatan laban sa mapanalakay na
+pagmamatyag.
+
+Ayon kay Werner Koch, nagtatag at Lead Developer ng GnuPG: “Time has
+proven Free Software to be the most trustworthy defender against
+companies and governments seeking to undermine citizen privacy”. Aniya:
+“Although funding our work has not always been easy, the need for
+universally accessible privacy tools has never been more apparent”.
+
+"Sa maraming panahon, napatunayan na ang [[http://fsfe.org/freesoftware/basics/4freedoms.en.html][Free Software]] ang
+pinaka-mapagkakatiwalaang tagapagtanggol laban sa mga kumpanya at mga
+pamahalaan na naglalayong pahinain ang pribisiya o privacy ng
+mamamayan" at "Kahit na ang pagpopondo ng aming trabaho ay hindi
+palaging madali, ang pangkalahatang pangangailangan para makukuha ng
+gamit para sa pribisiya o privacy tool ay naging mas maliwanag".
+
+Ang ilan sa mga nangungunang espesyalista sa seguridad ay gumagamit ng
+GnuPG kabilang sina Bruce Schneier, Jacob Appelbaum, at Phil Zimmerman,
+imbentor ng PGP. Noong mga nakalipas na buwan ng taong ito, nalaman ng
+buong mundo ang lawak ng pagmamatyag o pagiispiya ng mga gobyerno at
+dapat na pasalamatan ang mga whistleblowers at mamamahayag na nagbunyag
+nito gamit ang GnuPG-encrypted email sa kanilang paguusap. Ang mga
+pangunahing IT server na Red Hat at Debian ay gumagamit din ng GnuPG at
+inilagay ang kanilang reputasyon para sa seguridad sa pamamagitan ng mga
+GnuPG-verified software.
+
+Ayon kay Sam Tuke, GnuPG Campaign Manager: “The success of GnuPG's first
+crowdfunding campaign, which received 90% of it's target in 24 hours,
+shows a fresh willingness among users to support GnuPG in it's 16th
+year, and points to new opportunities for the project in future”. Aniya:
+“The release of GnuPG 2.1 and the launch of a newly designed website
+later this year will bring GnuPG and its clients for Windows, Mac,
+Gnu/Linux, and Android to new audiences”.
+
+"Ang tagumpay ng unang kampanya ng GnuPG para makalikom ng donasyon sa
+publiko o [[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding]], na nakatanggap ng 90% ng target na donasyon sa
+loob lamang ng 24 oras, ay nagpapakita ng isang sariwang pagpayag ng
+mga gumagamit ng GnuPG upang suportahan ang GnuPG sa ika-16 na taon
+nito, patungo sa mga bagong oportunidad para sa proyekto sa hinaharap"
+at "Ang paglabas ng GnuPG 2.1 at ang paglulunsad ng isang bagong
+dinisenyong website sa susunod na parte ng taong ito ay makakatulong
+sa pagbahagi ng GnuPG at mga proyekto nito sa Windows, Mac, GNU /
+Linux, at Android sa mga bagong madla".
+
+Sa paglipas ng mga taon ang GnuPG ay pinananatiling ito ay gumagamit ng
+mga napapanahon at bagong algorithm, katulad ng Elliptic Curve
+Cryptography, at tumutugon sa mga bagong pagbabanta sa tulong ng at
+koordinasyon sa mga developer. Ang mga miyembro at gumagamit ng GnuPG ay
+nananatiling tiwala sa kinabukasan ng GnuPG at inaasahang ang paglaban
+sa mga maaaring banta sa pribisiya sa hinaharap ay may suporta mula sa
+komunidad.

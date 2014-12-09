@@ -1,0 +1,47 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 13th November 2013
+
+** Friends tell friends they love GnuPG
+
+#+CAPTION: GnuPG can run almost anywhere
+#+ATTR_HTML: :class right
+[[file:img/android.jpg]]
+
+Email encryption is one of those pleasures that can't be enjoyed alone.
+Sending yourself messages secured with 4096-bit RSA is great for proof
+of concept, but meaningful communication requires two parties. GnuPG
+requires both those parties to have their own keys.
+
+Less than 1% of all email traffic is PGP encrypted, meaning that those
+of us who do make our messages private routinely find ourselves in the
+frustrating predicament of having to share our thoughts insecurely, even
+though we know they're being intercepted, even though this is easily
+avoidable, and even though we've already taken steps to do so. All
+because our *friends and colleagues* don't know the benefits of GnuPG.
+
+Windows, Gnu/Linux, Mac, and Android all have point and click GnuPG
+interfaces - at this point, all bases except iPhone are more or less
+covered. That means the reason your contacts aren't OpenPGP ready is
+*not technical*. And because GnuPG is Free Software (and free of
+charge), it can't be about price.
+
+A recommendation from you is the most effective way you can increase the
+number of GnuPG users, and consequently increase the percentage of the
+messages you send that are meaningfully encrypted. That's why we're
+asking people in our community to think of pithy explanations of why
+GnuPG is important and how it enables them.
+
+We've already got quotes from some big names like Bruce Schneier, Jacob
+Appelbaum, and Richard Stallman. But the chances are that *your name*
+carries more weight among your peers. Please use it to share your
+appreciation for GnuPG!
+
+If you use social networks, you can use [[https://twitter.com/search?q=%23ilovegpg][#iloveGPG]] to connect your
+messages to other people's, and make is easier for us to find and
+repeat them.
+
+Look out for weekly quotes posted from the GnuPG [[https://twitter.com/gnupg][Twitter]] and [[https://www.cryptospora.net/u/gnuprivacyguard][Diaspora]]
+accounts if you need inspiration. Let's fill up the [[http://keys.gnupg.net/][keyservers]] with
+fresh keys from new users!

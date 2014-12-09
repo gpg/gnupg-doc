@@ -1,0 +1,25 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 27th January 2014
+
+** Find us at FOSDEM
+
+#+CAPTION: Keysigning at FOSDEM
+[[file:img/keysigning-party-s.jpg]]
+
+On Friday Werner and Sam are heading to [[https://fosdem.org/2014/][FOSDEM]], the largest Free
+Software conference in Europe, along with many GnuPG hackers, users,
+and supporters. [[http://gnupg.totemapp.com/company][Get in touch]] if you'd like to talk about the existing
+or future campaigns while we're there.
+
+There won't be a GnuPG booth this year but, we shall be busy with
+meetings and mingling. Notes and contacts for us can be left at the
+[[https://fosdem.org/2014/stands/][FSFE booth]].
+
+And don't forget that you're invited to the continent's biggest
+keysigning party, organised by FOSDEM volunteers. Today is the last
+opportunity to [[https://fosdem.org/2014/keysigning/][submit your key]], which is necessary for
+participation. Get to it!.
+
+Bring your ideas. See you there.

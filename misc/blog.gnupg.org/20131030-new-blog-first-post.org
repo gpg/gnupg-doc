@@ -1,0 +1,19 @@
+# Old blog post converted from HTML to ORG.
+#+AUTHOR: Sam Tuke
+#+DATE: 30th October 2013
+
+** New blog, first post
+
+Welcome to Gnu Privacy Guard's new blog! We're planning some major
+changes to gnupg.org and how the project communicates in general. I'm
+Sam, and I'll be writing updates here as our work progresses. In
+future this blog will be replaced with a more beautiful and featureful
+alternative, but bear with us as we get from here to there.
+
+For more timely updates you can follow our Twitter accounts:
+[[https://twitter.com/intent/follow?screen_name=GnuPrivacyGuard][@GnuPrivacyGuard]] and [[https://twitter.com/intent/follow?screen_name=gnupg][@GnuPG]].  That's right, we have two! But I'm going
+to combine them shortly so it's easier to keep track *[UPDATE:
+accounts now merged! Stick with @GnuPG]*.
+
+For more information, see our [[http://gnupg.totemapp.com/company][press contact page]] hosted on
+Totem. That's all for now.

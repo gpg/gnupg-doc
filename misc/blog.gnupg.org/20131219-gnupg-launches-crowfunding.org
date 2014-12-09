@@ -1,0 +1,67 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 19th December 2013
+
+
+ English | [[file:20131219-gnupg-launches-crowfunding.es.org][Español]] | [[file:20131219-gnupg-launches-crowfunding.fr.org][Francaise]] | [[file:20131219-gnupg-launches-crowfunding.de.org][Deutsch]]
+
+
+** Press release: GnuPG encryption project launches crowdfunding campaign
+
+Today GNU Privacy Guard (GnuPG) has launched its first
+[[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]] with the aim of building a new website and long term
+infrastructure. The 24.000 EUR target will fund:
+
+-  Fresh web interfaces for gnupg.org including mobile
+-  Completion and release of GnuPG 2.1
+-  Anonymous Tor network access to the website
+-  A new user friendly download page suitable for all devices
+-  A new server for web services
+-  New pages convening external guides, videos, and handbooks
+-  Facilities for processing recurring donations for long term project
+   support
+
+Project founder and Lead Developer Werner Koch said “GnuPG has seen a
+huge upsurge in popularity following recent state spying revelations.
+After 16 years of continuous development, we are now asking for
+community support to capitalise on consumer demand for privacy, and make
+GnuPG easy to access for mainstream audiences”.
+
+GnuPG is one of the few tools remaining above suspicion in the wake of
+leaked NSA documents. Edward Snowden and his contacts including Bruce
+Schneier switched to GnuPG when they began handling the secret
+documents [[http://www.theguardian.com/world/2013/sep/05/nsa-how-to-remain-secure-surveillance][earlier this year]]. The Wall Street Journal, The Committee to
+Protect Journalists, and [[http://www.cjr.org/behind_the_news/hacks_hackers_security_for_jou.php][ProPublica]] have all embraced GnuPG for
+protection of staff and sources. Phil Zimmermann, original inventor of
+Pretty Good Privacy (PGP), has also moved to GnuPG in wake of the
+news.
+
+“GnuPG is a key part of modern privacy infrastructure” said Sam Tuke,
+Campaign Manager, GnuPG. “Millions of users rely on GnuPG to work
+securely on servers, laptops and smartphones, but 2013 donations
+totaling 3.000 EUR to date have not even covered fixed costs. Supporting
+new algorithms like elliptical curve and fixing newfound exploits fast
+takes a lot of work which is done voluntarily. Now is the time for
+people to contribute to making GnuPG slick and more sustainable in
+future”.
+
+Jacob Appelbaum, Tor Project developer, added “GnuPG is important - it
+allows us the assurances we need to do our work. Community funding is a
+critical part of a confident outlook for GnuPG in future.”
+
+For further information, please contact Sam Tuke.
+ Email: samtuke [at] gnupg.org
+ Phone: +49 176 81923811
+
+**** About GNU Privacy Guard
+
+GnuPG is a leading cryptography app that protects emails and data from
+interception. It is developed by a community of Free Software engineers
+led by Werner Koch. GnuPG is used and recommended by the world's top
+security experts, including Bruce Schneier and Phil Zimmermann. It
+offers best in class privacy free of charge and restriction. Hundreds of
+companies have integrated GnuPG into their products to perform mission
+critical security, including Red Hat, Deutsche Bahn, and many others.
+
+[[http://gnupg.org/][http://gnupg.org]]

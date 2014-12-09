@@ -208,6 +208,17 @@ if not available."
 ")))
 
 
+(defun gpgweb-fixup-blog (info)
+  "Fix up a a blog entry."
+  (goto-char (point-min))
+  (if (re-search-forward "^<h2 id=.*\n" nil t)
+    (insert "<p class=\"postdate\">Posted "
+            (car (plist-get info :date))
+            " by "
+            (car (plist-get info :author))
+            "</p>\n")))
+
+
 (defun gpgweb-insert-footer ()
   (goto-char (point-max))
   (insert "</div><!-- end content -->
@@ -245,7 +256,7 @@ if not available."
 ;;; - Insert header and footer
 ;;; - Insert "class=selected" into the active menu entry
 ;;; - Fixup sitemap.
-(defun gpgweb-postprocess-html (plist orgfile htmlfile)
+(defun gpgweb-postprocess-html (plist orgfile htmlfile blogmode)
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
          (committed-at (shell-command-to-string
@@ -258,6 +269,8 @@ if not available."
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
                (gpgweb-insert-menu fname-2)
+               (if blogmode
+                   (gpgweb-fixup-blog plist))
                (gpgweb-insert-footer)
 
                ; Fixup the sitemap
@@ -285,8 +298,26 @@ if not available."
 ;;; The publishing function used by the HTML exporter
 ;;;
 (defun gpgweb-org-to-html (plist filename pub-dir)
-  (gpgweb-postprocess-html plist filename
-                           (org-gpgweb-publish-to-html plist filename pub-dir)))
+  (gpgweb-postprocess-html plist
+                           filename
+                           (org-gpgweb-publish-to-html plist filename pub-dir)
+                           nil))
+
+
+;;;
+;;; The specialized publisher for the blog entries.
+;;;
+(defun gpgweb-render-blob ()
+  (interactive)
+  (let* ((extplist '(:language "en"
+                     :section-numbers nil
+                     :tags nil
+                     :with-toc nil))
+         (orgfile (buffer-file-name))
+         (plist (org-export-get-environment 'gpgweb nil extplist))
+         (htmlfile (org-gpgweb-export-to-html nil nil nil t extplist)))
+    (gpgweb-postprocess-html plist orgfile htmlfile t)))
+
 
 
 (defun gpgweb-upload ()

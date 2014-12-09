@@ -1,0 +1,77 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke (translation by Vlax)
+#+DATE: 2013-12-19
+
+  [[file:20131219-gnupg-launches-crowfunding.org][English]] | Español | [[file:20131219-gnupg-launches-crowfunding.fr.org][Francaise]] | [[file:20131219-gnupg-launches-crowfunding.de.org][Deutsch]]
+
+
+** GnuPG lanza campaña de financiación colectiva
+
+Con el objetivo de construir un nuevo sitio web, a partir de hoy GNU
+Privacy Guard (GnuPG) convoca a participar con donaciones económicas y
+[[http://goteo.org/project/gnupg-new-website-and-infrastructure][colaboraciones distribuidas]] que a largo plazo puedan mejorar su
+infraestructura.
+
+La meta son 24.000 euros que servirán para financiar:
+
+-  Nuevas Interfaces Web para el sitio gnupg.org que incluyan versiones
+   para móvil
+-  Finalización y liberación de GnuPG 2.1
+-  Acceso anónimo desde la red Tor a la web de GnuPG
+-  Una nueva página que facilite la descarga desde cualquier dispositivo
+-  Un nuevo servidor web
+-  Nuevas páginas con referencias a guías externas, vídeos y manuales
+-  Sistema para procesar donativos constantes en apoyo de proyectos de
+   largo plazo.
+
+Werner Koch, fundador del proyecto y principal desarrollador asegura que
+"la popularidad de GnuPG se ha incrementado luego de las recientes
+revelaciones sobre el espionaje gubernamental. Después de 16 años de
+continuo desarrollo, ahora solicitamos el apoyo de la comunidad para
+aprovechar esta exigencia en favor de la privacidad de los usuarios,
+haciendo que GnuPG sea de fácil de uso para el público en general".
+
+A raíz de las fugas de documentos de la NSA, GnuPG permanece como una de
+las pocas herramientas fuera de toda sospecha. Edward Snowden y sus
+contactos, incluyendo a Bruce Schneier, cambiaron a GnuPG cuando a
+principios de [[http://www.theguardian.com/world/2013/sep/05/nsa-how-to-remain-secure-surveillance][este año]] comenzaron a manipular documentos secretos.
+El periódico The Wall Street Journal, el Comité para la Protección de
+los Periodistas, y la organización [[http://www.cjr.org/behind_the_news/hacks_hackers_security_for_jou.php][ProPublica]] utilizan GnuPG para la
+protección de sus colaboradores y de sus fuentes de información. Por su
+parte y a raíz de estas revelaciones, Phil Zimmermann, el inventor de
+'Pretty Good Privacy' (PGP), también se cambió a GnuPG.
+
+"GnuPG es una parte estratégica en la infraestructura moderna de
+privacidad", dijo Sam Tuke, el Director de campañas de GnuPG. "Millones
+de usuarios confían en GnuPG para trabajar de modo seguro en servidores,
+ordenadores portátiles y teléfonos inteligentes, pero las donaciones que
+hemos obtenido durante el año 2013 no cubren siquiera los gastos
+normales. El soporte para los nuevos algoritmos como el de curva
+elíptica, y la solución de fallas técnicas lleva una gran cantidad de
+trabajo que se realiza voluntariamente. Este es el momento para que la
+gente contribuya para lograr que GnuPG sea más eficiente y
+autosuficiente en el futuro".
+
+Jacob Appelbaum, desarrollador del Proyecto Tor, agregó que "GnuPG es
+importante porque nos ofrece garantías que necesitamos para hacer
+nuestro trabajo. La financiación comunitaria es una parte fundamental de
+la perspectiva de confianza futura para GnuPG".
+
+Para más información, póngase en contacto con Sam Tuke.
+ Email: samtuke [at] gnupg.org
+ Teléfono: +49 176 81923811
+
+**** Acerca del Guardián de Privacidad de GnuPG
+
+GnuPG es una aplicación líder en criptografía que permite proteger datos
+y correos electrónicos, del riesgo de ser interceptados. Desarrollado
+por una comunidad de ingenieros de software libre encabezada por Werner
+Koch, GnuPG es utilizado y recomendado por expertos en seguridad de todo
+el mundo, como Bruce Schneier y Phil Zimmermann, ya que ofrece la mejor
+clase de privacidad de manera gratuita, sin costos ni restricciones.
+Cientos de compañías, incluyendo Red Hat, Deutsche Bahn y muchos otros,
+han integrado GnuPG en sus productos para cumplir sus objetivos de
+proporcionar seguridad crítica.
+
+[[http://gnupg.org/][http://gnupg.org]]

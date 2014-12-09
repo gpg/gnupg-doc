@@ -1,0 +1,49 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 13th December 2013
+
+** Preparing for launch
+
+Mid December, giving season, and nearly time for the GnuPG Crowdfunding
+to commence. We've been working hard on preparations. Drafts of the new
+mobile website design have been published and met positive feedback, and
+a community-contibuted promo video was posted on YouTube. GnuPG coverage
+on Twitter continues to grow with many articles
+([[http://www.theguardian.com/global-development-professionals-network/2013/nov/29/surveillance-online-campaigning-tips][The
+Guardian]],
+[[http://usblog.kaspersky.com/gpg-strong-encryption-and-digital-signing-made-easy/][Kaspersky
+Labs]],
+[[https://www.eff.org/deeplinks/2013/12/open-letter-urging-universities-encourage-conversation-about-online-privacy][The
+EFF]],
+[[http://www.lifehacker.com.au/2013/11/the-best-projects-and-gear-to-set-up-your-secret-lair/][Lifehacker]],
+...) and 252 new followers in 6 weeks.
+
+Click [[https://www.youtube.com/watch?v=aEEckb-ioG4][here]] to view the video on YouTube. [embedded video removed on
+2014-04-28 due to privacy issues]
+
+#+CAPTION: New mobile site draft
+#+ATTR_HTML: :class right :style max-width: 200px
+[[file:img/mobile-front-page.png]]
+
+Last Friday I announced the crowdfunding to a crowded audience at Berlin
+event "[[http://www.boell.de/en/whatever-happened-privacy][Whatever
+happened to privacy]]", and Markus Beckedahl
+([[https://netzpolitik.org/][Netzpolitik]]) and
+[[https://en.wikipedia.org/wiki/Jacob_Appelbaum][Jacob Appelbaum]] (Tor
+Project and Wikileaks) amplified the importance of supporting the
+project. Hugo Roy (FSFE) gave a talk on Wednesday about the campaign at
+the Paris '[[http://111213.net/][Hackadon]]' - a new conference for Free
+Software giving, organised by three
+[[http://111213.net/#orga][crowdfunding organisations]]. His slides are
+online in the GPG
+[[https://gitorious.org/gnupg/presentations][presentations repository]].
+
+Hopefully the crowdfunding page on Goteo (a Free Software Kickstarter)
+will be ready for launch next week. Email me if you can help with
+translating the press release - we're aiming for at least three
+languages. And don't forget you can still sign up for email updates
+(form below). Thanks for all your support so far!
+
+[Subscribe code with references to external sites removed on 2014-04-28
+due to privacy issues.]

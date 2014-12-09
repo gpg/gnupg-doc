@@ -6,7 +6,7 @@
 #+SETUPFILE: "/home/wk/s/gnupg-doc/web/swdb.mac"
 
 
-# Org version 8 des not anymore expand macros in all places.  We use
+# Org version 8 does not anymore expand macros in all places.  We use
 # some ugly macros instead of the #+begin_example et al.
 
 #+macro: begin_example @@html:<pre class="example">@@

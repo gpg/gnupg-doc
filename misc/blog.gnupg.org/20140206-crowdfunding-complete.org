@@ -1,0 +1,37 @@
+# Old blog post converted from HTML to ORG.
+#+STARTUP: showall
+#+AUTHOR: Sam Tuke
+#+DATE: 6th February 2014
+
+*** Mission complete: campaign ends, closing stats
+
+#+CAPTION: Today's donation totals
+[[file:img/funding-chart.png]]
+
+
+After 50 days of crowdfunding, the [[http://goteo.org/project/gnupg-new-website-and-infrastructure][GnuPG campaign]] for new website and
+infrastructure will close tomorrow. That means rewards for backers can
+now be ordered and preparations for dispatch can begin. Here are the
+results so far:
+
+-  36.741 EUR raised out of 24.000 target
+-  1.081 people donated in support
+-  350 EUR Largest single donation
+-  33 EUR average donation
+-  365 Stickers claimed
+-  300 T-shirts claimed
+-  191 GnuPG email addresses claimed
+-  793 Additional Twitter followers (from 60)
+
+Goteo, the Free Software platform hosting the campaign, usually required
+two 40 day rounds of funding, but in our case we're ending early, after
+just 50 days. This will enable us to deliver the new site and GnuPG 2.1
+faster, and is possible thanks to reaching our goal so quickly (in just
+26 hours).
+
+We're currently preparing a system for collecting donor preferences for
+their rewards (sizes, addresses, etc.), so expect to be contacted in the
+next week or two if that includes you.
+
+Thanks again to all our backers for the overwhelming support that GnuPG
+has received!
