@@ -1,0 +1,22 @@
+# Index of all blog entries
+#+STARTUP: showall
+
+#+HTML: <h1>The GnuPG blog</h1>
+
+#+HTML: <!--BEGIN-NEWEST-ENTRY-->
+#+HTML: <!--END-NEWEST-ENTRY-->
+
+* List of all blog entries
+  :PROPERTIES:
+  :CUSTOM_ID: blogindex
+  :END:
+
+#+HTML: <!--BEGIN-BLOG-INDEX-->
+#+HTML: <!--END-BLOG-INDEX-->
+
+* Comments
+
+  We do not provide a feature to comment on a blog.  Instead please
+  send remarks to the gnupg-users mailing list using the blog title
+  for the subject line.  This helps to keep the discussion at one
+  place and not to spread it over different media.

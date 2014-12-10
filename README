@@ -68,3 +68,35 @@ for d in $(find . -type d); \\
   A cronjob needs to run mkkudos.sh to update the list of donors.
   This can be done every few minutes becuase mkkudos won't do anything
   if the list of donors has not been updated.
+
+** Writing a blog entry
+
+  The misc/blog.gnupg.org directory is used for the blogging system.
+  On the web server it is symlinked to /blog/.  To build and upload all
+  blogs you cd to misc/blog.gnupg.org and run the command ./upload.
+  This renders the org files into html, builds an index, and uploads
+  the html files to the web server.  Emacs and a decent org-mode are
+  required (tested with org-mode 8.2.7).
+
+  To add a new blog entry, decide on the publication date and create
+  a file
+
+    YYYYMMDD-short-headline.org
+
+  for example "20141030-what-happened-this-month.org".  Unless you
+  translate an existing entry do not use a file name which ends in
+  ".??.org".  The file itself is a standard org file using these
+  conventions:
+
+  ===== 8< =========
+  # Comment
+  #+AUTHOR: Werner
+  #+DATE: 30th October 2014
+
+  ** What happened in October 2014
+
+  Blurb
+  ===== >8 =========
+
+  AUTHOR and DATE are used to construct the "Posted at" info.  The
+  headline needs to start at level 2.

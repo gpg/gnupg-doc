@@ -8,3 +8,5 @@ stage/
 /web/faq/gnupg-faq.txt
 /web/swdb.lst
 /web/swdb.lst.sig
+/misc/blog.gnupg.org/index.html
+/misc/blog.gnupg.org/20*.html

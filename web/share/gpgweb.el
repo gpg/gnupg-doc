@@ -208,15 +208,63 @@ if not available."
 ")))
 
 
-(defun gpgweb-fixup-blog (info)
-  "Fix up a a blog entry."
-  (goto-char (point-min))
-  (if (re-search-forward "^<h2 id=.*\n" nil t)
-    (insert "<p class=\"postdate\">Posted "
-            (car (plist-get info :date))
-            " by "
-            (car (plist-get info :author))
-            "</p>\n")))
+(defun gpgweb-blog-index (orgfile filelist)
+  "Return the index of ORGFILE in FILELIST or nil if not found."
+  (let (found
+        (i 0))
+    (while (and filelist (not found))
+      (if (string= orgfile (car filelist))
+          (setq found i))
+      (setq i (1+ i))
+      (setq filelist (cdr filelist)))
+    found))
+
+(defun gpgweb-blog-prev (fileidx filelist)
+  "Return the chronological previous file at FILEIDX from FILELIST
+with the suffixed replaced by \"html\"."
+  (if (> fileidx 1)
+      (concat (file-name-sans-extension (nth (1- fileidx) filelist)) ".html")))
+
+(defun gpgweb-blog-next (orgfile filelist)
+  "Return the chronological next file at FILEIDX from FILELIST
+with the suffixed replaced by \"html\"."
+  (if (< fileidx (1- (length filelist)))
+      (concat (file-name-sans-extension (nth (1+ fileidx) filelist)) ".html")))
+
+(defun gpgweb-fixup-blog (info orgfile filelist)
+  "Insert the blog specific content.  INFO is the usual
+plist. ORGFILE is the name of the current source file without the
+directory part.  If FILELIST is a list it has an ordered list of
+org filenames."
+  (let ((authorstr (car (plist-get info :author)))
+        (datestr   (car (plist-get info :date))))
+    (goto-char (point-min))
+    (if (re-search-forward "^<main>" nil t)
+        (let* ((indexp (string= orgfile "index.org"))
+               (fileidx (if (listp filelist)
+                            (if indexp
+                                (1- (length filelist))
+                              (gpgweb-blog-index orgfile filelist))))
+               (prevfile (if fileidx
+                             (gpgweb-blog-prev fileidx filelist)))
+               (nextfile (if (and fileidx (not indexp))
+                           (gpgweb-blog-next fileidx filelist))))
+          (move-beginning-of-line nil)
+          (insert "<nav class=\"subnav\">\n  <ul>\n")
+          (if prevfile
+              (insert "    <li><a href=\"" prevfile "\">Previous</a></li>\n"))
+          (insert
+           "    <li><a href=\"/blog/index.html#blogindex\">Index</a></li>\n")
+          (if nextfile
+              (insert "    <li><a href=\"" nextfile "\">Next</a></li>\n"))
+          (insert "  </ul>\n</nav>\n")))
+    (if (and datestr authorstr)
+        (if (re-search-forward "^<h2 id=.*\n" nil t)
+            (insert "<p class=\"postdate\">Posted "
+                    datestr
+                    " by "
+                    authorstr
+                    "</p>\n")))))
 
 
 (defun gpgweb-insert-footer ()
@@ -256,6 +304,11 @@ if not available."
 ;;; - Insert header and footer
 ;;; - Insert "class=selected" into the active menu entry
 ;;; - Fixup sitemap.
+;;;
+;;; If blogmode is not nil the output is rendered as a blog.  BLOGMODE
+;;; may then contain an ordered list of org file names which are used
+;;; to create the previous and Next links for an entry.
+;;;
 (defun gpgweb-postprocess-html (plist orgfile htmlfile blogmode)
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
@@ -270,7 +323,9 @@ if not available."
                (gpgweb-insert-header title committed-at)
                (gpgweb-insert-menu fname-2)
                (if blogmode
-                   (gpgweb-fixup-blog plist))
+                   (gpgweb-fixup-blog plist
+                                      (file-name-nondirectory orgfile)
+                                      blogmode))
                (gpgweb-insert-footer)
 
                ; Fixup the sitemap
@@ -305,9 +360,10 @@ if not available."
 
 
 ;;;
-;;; The specialized publisher for the blog entries.
+;;; Turn the current buffer which has an org-mode blog entry into its
+;;; rendered form and save it with the suffix .html.
 ;;;
-(defun gpgweb-render-blob ()
+(defun gpgweb-render-blog (&optional filelist)
   (interactive)
   (let* ((extplist '(:language "en"
                      :section-numbers nil
@@ -316,7 +372,23 @@ if not available."
          (orgfile (buffer-file-name))
          (plist (org-export-get-environment 'gpgweb nil extplist))
          (htmlfile (org-gpgweb-export-to-html nil nil nil t extplist)))
-    (gpgweb-postprocess-html plist orgfile htmlfile t)))
+    (gpgweb-postprocess-html plist orgfile htmlfile (if filelist filelist t))))
+
+
+;;;
+;;; Publish all blog entries in the current directory
+;;;
+(defun gpgweb-publish-blogs ()
+  (interactive)
+  (let ((orgfiles (directory-files "." nil "^2[0-9]+-.*\.org$")))
+    (dolist (file (cons "index.org" orgfiles))
+      (let* ((visitingp (find-buffer-visiting file))
+             (work-buffer (or visitingp (find-file-noselect file))))
+        (with-current-buffer work-buffer
+          (gpgweb-render-blog orgfiles)
+          (basic-save-buffer))
+        (unless visitingp
+          (kill-buffer work-buffer))))))
 
 
 
