@@ -1,6 +1,11 @@
 #+TITLE: GnuPG - Donate
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
 
 * Donate
 
@@ -20,7 +25,7 @@
 #+HTML: <div id="tagcloudlist"><ul>
 #+HTML: <!--BEGIN-SOME-DONATIONS-->
 #+HTML: <!--END-SOME-DONATIONS-->
-#+HTML: <li><a href="kudos.html">(all)</a></li>
+#+HTML: <li><a href="/donate/kudos.html">(all)</a></li>
 #+HTML: </ul><p class="doclear"> </p></div>
 
 
@@ -41,7 +46,7 @@
   information is only used for the purpose of the donation and no data
   will ever be send to any entity not directly involved in the
   donation process.  Not giving a name makes the donation “anonymous”
-  in that the name won’t be listed on the public [[file:kudos.org][thank you]] page.
+  in that the name won’t be listed on the public [[https://www.gnupg.org/donate/kudos.html][thank you]] page.
 
 #+BEGIN_HTML
   <!--ERRORPANEL-->
@@ -102,7 +107,7 @@
       <td></td>
       <td>
           If you want to be listed on the
-          <a href="kudos.html">list of donors</a>,
+          <a href="/donate/kudos.html">list of donors</a>,
           please enter your name as it shall appear there.
       </td>
     </tr>

@@ -100,7 +100,9 @@ if not available."
      (("/related_software/frontends.html"  "Frontends")
       ("/related_software/tools.html"      "Tools")
       ("/related_software/libraries.html"  "Libraries")
-      ("/related_software/swlist.html"     "All"))))
+      ("/related_software/swlist.html"     "All")))
+    ("/blog/index.html"
+     "Blog"))
   "The definition of the gnupg.org menu structure.")
 
 (defconst gpgweb-gnupg-bottom-menu-alist
