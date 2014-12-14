@@ -1,0 +1,76 @@
+# About GnupG and g10 code
+#+AUTHOR: Werner
+#+DATE: 14th December 2014
+
+** GnuPG and g10^code
+
+After the release of GnuPG 1.0 in 1999 it turned out that this was not
+a write once and forget project.  The unrestricted availability of the
+software and public concerns about the acquirement of /PGP Inc./ by
+/NAI Inc./ (coincidentally at the time of the initial GnuPG release in
+December 1997) raised a lot of interest by those who always cared
+about privacy issues.
+
+Fortunately the funding of the Windows port by the German Ministry of
+Economics helped to finance the maintenance and further developments
+in 1999 and 2000.  After that I decided to keep on working on GnuPG
+full time and founded [[https://g10code.com][g10^code GmbH]] in 2001 as a legal framework for
+it.  The company is owned entirely by my brother [[http://www.u32.de][Walter]] and myself and
+I like to thank him for his long time support and waive of profit
+distribution.  If you ever wondered about the name: /g10/ is a
+reference on the German constitution article on freedom of
+communication (Grundgesetz [[http://de.wikipedia.org/wiki/Artikel_10_des_Grundgesetzes_f%C3%BCr_die_Bundesrepublik_Deutschland][Artikel 10]]) and a pun on the [[http://en.wikipedia.org/wiki/Gesetz_zur_Beschr%C3%A4nkung_des_Brief-,_Post-_und_Fernmeldegeheimnisses][G-10]] law which
+allows the secret services to bypass these constitutional guaranteed
+freedoms.
+
+The best known project of g10^code is probably version 2 of GnuPG,
+which started under the name /NewPG/ as part of the broader /Aegypten/
+project.  The main goal of Aegypten was to provide support for S/MIME
+under GNU/Linux and integrate that cleanly with other mail clients,
+most notably KMail.  This project was due to a public tender of the
+[[http://www.bsi.de/EN/][BSI]] (German federal office for information security) and awarded to a
+consortium of g10^code, [[https://intevation.de/index.en.html][Intevation]], and [[https://kdab.com][KDAB]].  Another large project
+is [[http://www.gpg4win.org][Gpg4win]] which has its roots in a port of GnuPG-2 to Windows done by
+g10^code as part of a health research project.  Another tender awarded
+to the same consortium extended this port to the now mostly used GnuPG
+distribution for Windows.
+
+Now, how viable is it to run a company for the development of free
+security software?  Not very good I had to realize: the original plan
+of selling support contracts did not worked out too well due to the
+lack of resources for marketing.  Larger development projects raised
+most of the revenues but they are not easy to acquire.  In the last
+years we had problems to get new GnuPG related development contracts
+which turned the company into a one-person show by fall 2012.  I
+actually planned to shut it down in 2013 and to take a straight coder
+job somewhere.  However, as a side effect of Edward Snowden‘s brave
+actions, there was more public demand for privacy tools and thus I
+concluded that it is worth to keep on working on GnuPG.
+
+#+ATTR_HTML: :cellpadding 2
+  | year | profit | wages | n | balance |
+  |------+--------+-------+---+---------|
+  | 2001 | -12000 | 11000 | 2 |   31000 |
+  | 2002 |   3000 | 40000 | 3 |   32000 |
+  | 2003 | -16000 | 26000 | 3 |   35000 |
+  | 2004 |   3000 | 45000 | 4 |   52000 |
+  | 2005 |      0 | 44000 | 4 |   56000 |
+  | 2006 |   2000 | 48000 | 3 |   49000 |
+  | 2007 |  50000 | 57000 | 2 |   99000 |
+  | 2008 |  11000 | 75000 | 3 |   94000 |
+  | 2009 | -23000 | 72000 | 3 |   68000 |
+  | 2010 |  28000 | 74000 | 2 |   78000 |
+  | 2011 | -41000 | 63000 | 2 |   81000 |
+  | 2012 | -16000 | 54000 | 2 |   45000 |
+  | 2013 | -10000 | 32000 | 1 |   44000 |
+  | 2014 |  12000 | 32000 | 1 |   47000 |
+
+The table above is a summary of g10^{code}’s balance sheets (in Euro,
+2014 are estimations). /profit/ gives the annual net profit or loss,
+/wages/ are the gross salary costs for the /n/ employed developers,
+and /balance/ is the balance sheet total.  Despite of our low wages we
+accumulated an estimated loss of 9000 Euro over the last 3 years.  The
+crowdfunding campaign last year proved that there are many people who
+like to see GnuPG alive and maintained.  Despite the huge [[file:20140512-rewards-sent.org][costs]] of the
+campaign it allowed me to keep working on GnuPG and I am confident
+that there will be ways to continue work in 2015.
