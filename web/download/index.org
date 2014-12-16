@@ -101,7 +101,7 @@
    |---------+--------------------+---------------------------------------------|
    |         | <18>               |                                             |
    | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Installers for /GnuPG stable/               |
-   |         | ---                | Simple installer for /GnuPG modern/         |
+   |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG modern/         |
    |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG classic/        |
    | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project         |
    | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG stable and classic are part of Debian |
@@ -111,6 +111,5 @@
    | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | Sources and  binaries for RISC OS           |
    |---------+--------------------+---------------------------------------------|
 
-#  |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG modern/         |
 
 # eof #
