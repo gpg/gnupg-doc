@@ -31,14 +31,19 @@
 
 ** Ways to donate
 
-  Paying using a credit card is currently our preferred choice.  [[https://en.wikipedia.org/wiki/Single_Euro_Payments_Area][SEPA]]
-  payments will soon be acceptable but we have not yet automated this
-  process.  If you have a Paypal account you may use that too.
+  Paying using a credit card is currently our preferred choice.  If
+  you have a Paypal account you may use that too.
 
   Because the GnuPG project is not tax exempted, we are not able to
-  send you a respective donation receipt.  However, if you represent a
-  company, you may want to enter into a support contract with [[https://g10code.com][g10^code]]
-  or ask for other service options.
+  send you a respective donation receipt.  If you can benefit from a
+  donation receipt by a Germany charity you may donate to the GnuPG
+  account at the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]]; they will use the money raised
+  to pay for development work on GnuPG and Enigmail.  If you want to
+  be listed on our [[https://www.gnupg.org/donate/kudos.html][thank you]] page you should indicate this by adding a
+  comment of the form =List me as: NAME= to your donation.
+
+  If you represent a company, you may also enter into a support
+  contract with [[https://g10code.com][g10^code]] or ask for other service options.
 
 ** Donation form
 
@@ -51,15 +56,16 @@
 #+BEGIN_HTML
   <!--ERRORPANEL-->
 
-  <form action="/cgi-bin/procdonate.cgi" method="post">
+  <form action="/cgi-bin/procdonate.cgi" method="post" class="inputpanel">
    <input type="hidden" name="mode" value="main">
    <p class="ii">Keep this field clear:
                  <input type="text" size="40" name="url"></p>
    <table border="0" cellpadding="0" cellspacing="4">
     <tr>
       <td></td>
-      <td>How much do you want to donate?
-          (choosing “other” allows to donate in other currencies)</td>
+      <td>How much do you want to donate?<br/>
+          <span class="smallnote">(choosing “other” allows
+          to donate in other currencies)</span></td>
     </tr>
     <tr>
       <td align="right">Amount:</td>
@@ -88,6 +94,7 @@
           <!--ERR_AMOUNT-->
       </td>
     </tr>
+   <tr><td>&nbsp;</td></tr>
     <tr>
       <td align="right">Pay&nbsp;using:</td>
       <td>
@@ -103,6 +110,7 @@
                      value="pp" /><!--CHECK_PP-->PayPal</label>
      </td>
    </tr>
+   <tr><td>&nbsp;</td></tr>
    <tr>
       <td></td>
       <td>

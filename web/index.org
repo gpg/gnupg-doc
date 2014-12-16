@@ -2,6 +2,40 @@
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
 
+
+* Securing the future of GnuPG
+
+Work on GnuPG is mostly financed from donations.  To continue
+maintaining GnuPG so to keep it strong and secure against the ever
+increasing mass surveillance we need your support.  Until the end of
+November we received a total of 6584\thinsp\euro (~5500 net) donations
+for this year.  Along with the 18000\thinsp\euro net from the [[https://www.gnupg.org/blog/20140512-rewards-sent.html][Goteo
+campaign]] this paid for less less than 50% of the costs for one
+developer.
+
+#+BEGIN_HTML
+<div class="donation-progress">
+  <div class="donation-progress-bar"
+style="width: 0%"><!--REPLACE-PROGRESS-PERCENT-->
+<p>&nbsp;</p></div>
+  <p><span style="float: left">
+<!--INSERT-PROGRESS-LEFT-->
+  </span>
+  <span style="float: right">
+<!--INSERT-PROGRESS-RIGHT-->
+  </span>
+</div>
+<p class="doclear" style="clear: both"></p>
+#+END_HTML
+
+For a critical project of this size two experienced developers are
+required for proper operation.  This requires gross revenues of 120000
+Euro per year.  Unfortunately there is currently only one underpaid
+full time developer who is barely able to keep up with the work.
+Please help to secure the future of GnuPG and consider to [[file:donate/index.org][donate]] to
+this project [[file:donate/index.org][now]].
+
+
 * The GNU Privacy Guard
 #+index: GnuPG
 #+index: GPG
@@ -21,13 +55,18 @@ GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning 
 be freely used, modified and distributed under the terms of the
 [[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-GnuPG comes in two flavours: [[download][{{{gnupg1_ver}}}]] is the old and very
-portable standalone version, whereas [[download][{{{gnupg_ver}}}]] is the enhanced
-and modern version and suggested for most users.
+GnuPG comes in three flavours:
 
-Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG. It is nicely
-integrated into an installer and features several frontends as well as
-English and German manuals.
+ - {{{gnupg_ver}}} is the /stable/ version suggested for most users,
+
+ - {{{gnupg21_ver}}} is the brand-new /modern/ version with support
+   for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
+
+ - and {{{gnupg1_ver}}} is the /classic/ portable version.
+
+Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
+nicely integrated into an installer and features several frontends as
+well as English and German manuals.
 
 * Reconquer your privacy
 
@@ -39,7 +78,6 @@ used to uncover his secrets about the NSA.
 
 Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
 should use GnuPG for your electronic communication.
-
 
 * Latest news
 #+index: News
