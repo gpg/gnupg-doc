@@ -124,13 +124,6 @@ img.rfloat {
     margin-left: 1em;
 }
 
-img.people {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    min-width: 120px;
-}
-
 
 /* The figure class is used by the blog entries.  We use display
    to suppress the figure number inserted by org-mode. */
@@ -619,6 +612,16 @@ td.right  {
 
 .logobox img {
     margin-right: 20px;
+}
+
+
+/* Used by the list of people.  */
+.people {
+    float: left;
+    margin-top: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    min-width: 120px;
 }
 
 

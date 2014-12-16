@@ -15,8 +15,9 @@
 
 ** Werner Koch
 
-   #+ATTR_HTML: :class people :title Werner Koch
-   [[file:werner.png]]
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="werner.png" title="Werner Koch" /></p>
+   #+HTML: </div>
 
    /Core components maintainer/
 
@@ -33,8 +34,9 @@
 
 ** David Shaw
 
-   #+ATTR_HTML: :class people :title David Shaw
-   [[file:david.png]]
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="david.png" title="David Shaw" /></p>
+   #+HTML: </div>
 
    /Master of the classic branch/
 
@@ -49,8 +51,9 @@
 
 ** Marcus Brinkmann
 
-   #+ATTR_HTML: :class people :title Marcus Brinkmann
-   [[file:marcus.png]]
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
+   #+HTML: </div>
 
    /Hacker emeritus/
 
@@ -64,8 +67,9 @@
 
 ** NIIBE Yutaka
 
-   #+ATTR_HTML: :class people :title NIIBE Yutaka
-   [[file:gniibe.png]]
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="gniibe.png" title="NIIBE Yutaka" /></p>
+   #+HTML: </div>
 
    /Smartcards and Libgcrypt/
 
@@ -77,8 +81,9 @@
 
 ** Jussi Kivilinna
 
-   #+ATTR_HTML: :class people :title Jussi Kivilinna
-   [[file:jussi.png]]
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="jussi.png" title="Jussi Kivilinna" /></p>
+   #+HTML: </div>
 
    /Optimization/
 
