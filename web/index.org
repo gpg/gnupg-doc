@@ -10,7 +10,7 @@ maintaining GnuPG so to keep it strong and secure against the ever
 increasing mass surveillance we need your support.  Until the end of
 November we received a total of 6584\thinsp\euro (~5500 net) donations
 for this year.  Along with the 18000\thinsp\euro net from the [[https://www.gnupg.org/blog/20140512-rewards-sent.html][Goteo
-campaign]] this paid for less less than 50% of the costs for one
+campaign]] this paid for less than 50% of the costs for one
 developer.
 
 #+BEGIN_HTML
@@ -31,9 +31,9 @@ style="width: 0%"><!--REPLACE-PROGRESS-PERCENT-->
 For a critical project of this size two experienced developers are
 required for proper operation.  This requires gross revenues of 120000
 Euro per year.  Unfortunately there is currently only one underpaid
-full time developer who is barely able to keep up with the work.
-Please help to secure the future of GnuPG and consider to [[file:donate/index.org][donate]] to
-this project [[file:donate/index.org][now]].
+full time developer who is barely able to keep up with the work; see
+this [[file:blog/20141214-gnupg-and-g10.org][blog entry]] for some backgound.  Please help to secure the
+future of GnuPG and consider to [[file:donate/index.org][donate]] to this project [[file:donate/index.org][now]].
 
 
 * The GNU Privacy Guard

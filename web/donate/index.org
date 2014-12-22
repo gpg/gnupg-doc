@@ -42,6 +42,9 @@
   be listed on our [[https://www.gnupg.org/donate/kudos.html][thank you]] page you should indicate this by adding a
   comment of the form =List me as: NAME= to your donation.
 
+  If you like to donate Bitcoins you may use the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]]
+  account too.
+
   If you represent a company, you may also enter into a support
   contract with [[https://g10code.com][g10^code]] or ask for other service options.
 

@@ -8,6 +8,7 @@ usage()
 Usage: $0 [OPTIONS]
 Options:
 	--force    Force re-creation of files.
+        --verbose  Run in verbose mode
         --test     Run in test environment
 EOF
     exit $1
@@ -15,6 +16,7 @@ EOF
 
 
 force=no
+verbose=no
 testmode=no
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -31,6 +33,9 @@ while [ $# -gt 0 ]; do
 	--force)
 	    force=yes
 	    ;;
+        --verbose)
+            verbose=yes
+            ;;
         --test)
             testmode=yes
             ;;
@@ -90,7 +95,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      year=${file#$htdocs/donate/kudos-}
      year=${year%.html}
    fi
-   echo "processing $file" >&2
+   [ $verbose = yes ] && echo "processing $file" >&2
    [ -f "$file.tmp" ] && rm "$file.tmp"
    awk -F: -v year=$year -v donors="$donors" \
            -v monyear="$monyear" -v euro="$euro" -v euroyr="$euroyr" \
