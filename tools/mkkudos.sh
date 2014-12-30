@@ -75,12 +75,19 @@ monyear=$(echo "$tmp" | awk -F: 'BEGIN { m[1] = "January";
       m[6] = "June"; m[7] = "July"; m[8] = "August"; m[9] = "September";
       m[10] = "October"; m[11] = "November"; m[12] = "December"; }
       {printf "%s %d", m[$2] , $1}')
-euro=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($8 + 0.5)}')
+euromo=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($8 + 0.5)}')
 euroyr=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($10 + 0.5)}')
+euroyr_campaign=$(echo "$tmp" | awk -F: '{printf "%d", int($10 + 0.5)}')
 n=$(echo "$tmp" | awk -F: '{printf "%d", $7}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
+
+# Campaign data
 goal="120000"
+tmp=$(grep '^2014:12:' "$donations")
+euro=$(echo "$tmp" | awk -F: '{printf "%d", int($8 + 0.5)}')
+euro=$(($euro + $euroyr_campaign))
 percent=$(echo "$euro:$goal" | awk -F: '{printf "%d",(int($1)*100)/int($2)}')
+
 
 for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
             "$htdocs/donate/"index.html \
@@ -99,6 +106,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
    [ -f "$file.tmp" ] && rm "$file.tmp"
    awk -F: -v year=$year -v donors="$donors" \
            -v monyear="$monyear" -v euro="$euro" -v euroyr="$euroyr" \
+           -v euromo="$euromo" \
            -v n="$n" -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
             <"$file"  >"$file.tmp" '
      /<!--BEGIN-DONATIONS-->/ {indon=1; print; insert("") }
@@ -112,7 +120,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            next
      }
      /<!--INSERT-MONTH-EURO-->/ {
-           printf "<!--INSERT-MONTH-EURO--> %s\n", euro;
+           printf "<!--INSERT-MONTH-EURO--> %s\n", euromo;
            next
      }
      /<!--INSERT-MONTH-N-->/ {
@@ -128,7 +136,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            next
      }
      /<!--INSERT-PROGRESS-LEFT-->/ {
-           printf "<!--INSERT-PROGRESS-LEFT-->%s\n",
+           printf "<!--INSERT-PROGRESS-LEFT-->%s &euro;\n",
                   euro;
            next
      }
