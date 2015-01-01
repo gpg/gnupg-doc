@@ -1,0 +1,97 @@
+# Thanks for the donations and plans for 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: January 1st, 2015
+
+** Happy gnu year
+
+to everyone and a big *thank you* to all supporters of GnuPG.  It is
+awesome to see that GnuPG and its makers received a lot of attention
+in the last weeks of 2014.  This is really appreciated by all of us.
+Speaking of me, the donations allow me to keep on working on free
+software and GnuPG in particular --- at least for the next months.
+
+Early December friends reminded me that it is the time to kick off a
+donation campaign to secure the future of GnuPG.  They supported me
+with a [[http://fsfe.org/news/2014/news-20141217-01.en.html][press release]] which was republished by others (e.g.  [[http://boingboing.net/2014/12/21/gnupg-needs-your-support.html][Cory
+Doctorow]]) and soon many small and larger donations started to fill up
+the donation status bar with a bit of green.  I was not just amazed by
+the financial support but also by the many encouraging messages to us
+developers like /Keep the excellent work! Please!/, /Thanks for
+keeping us safe an protecting our basic human rights./, /You guys are
+great! Safe communication should be a right./, /Thank you so much for
+this hard work.  You're truly directing us toward a better world/,
+/GPG is important software for our society's future/,
+/Thanks for doing great work. I know it's under appreciated, but it's absolutely
+necessary/, /Please keep it up, guys, and run further donation rounds
+if you need money. If GPG goes down, we'll all be at a loss/, or
+/freedom of thought, freedom of speech, freedom of information/.  Up
+until today we received more than a quarter of the campaign’s goal and
+donations are still coming in.  Let me add that my work on GnuPG would
+have not been possible without the incredible support of my family who
+deserve all my thanks.
+
+At the 31C3 the [[http://events.ccc.de/congress/2014/Fahrplan/events/6258.html][Reconstructing narratives]] lecture ([[http://media.ccc.de/browse/congress/2014/31c3_-_6258_-_en_-_saal_1_-_201412282030_-_reconstructing_narratives_-_jacob_-_laura_poitras.html#video][video]]) told us
+again about the depressingly sad state of our world regarding to
+freedom and humanity.  It was also reported that most of our secure
+electronic communication methods don’t do what we expected from them
+-- with the exception of a very few tools, GPG (i.e. GnuPG) being one
+of them.
+
+With the raised attention towards securing our communication and to
+help preserving us from a world nobody wants to have, we need to
+improve GnuPG and its frontends.  They need to be easy usable by
+everyone and be a standard part of every communication device much
+like the ubiquitous web browser. It will take time and a lot of effort
+to do that.  I am confident that with enough support we can achieve
+that goal.  Now let us look forward and see what is on the list.
+
+As a prerequisite we need to establish a solid organizational
+framework to free developers of tasks they are not best in, like
+looking for money, running funding campaigns, preparing paperwork for
+donation programs, and talking to ties and non-techies.
+
+We need better and streamlined documentation. For example, there are
+lots of different HOWTOs and other documents explaining the use of
+GnuPG and frontend applications.  Many of them are outdated and
+some documents contradicts each other.  Thus the goal is to prepare a
+canonical set of documentation to support all kind of users.  See and
+use the [[https://wiki.gnupg.org][Wiki]] if you are interested to help.
+
+[[https://enigmail.net][Enigmail]] is one of the most used mailer frontends for GnuPG and thus
+should be a primary target for improvements.  There are currently only
+two spare time developers for it --- despite that some smaller bugs
+make it sometimes hard to use for a beginner.  This needs to be
+changed by improving the communication between the developers and
+finding the resources to assign a paid developer to it.
+
+The network of OpenPGP keyservers works quite well for the relatively
+small active user base.  For a mass use of it we need to add a few
+things or start to deploy an easier method for retrieving keys.  This
+is essential for making mail encryption the default on the net.
+
+Although the use or proprietary platforms supports the spook’s
+surveillance programs, it is a pipe dream to believe that free
+operating systems like Linux or FreeBSD can completely replace
+Windows, Mac OS, and Android any time soon.  Improving our crypto
+tools on those platforms is thus essential to help those users and to
+trigger a network effect to make encrypted communication the default.
+For GnuPG this means to make the core components available on these
+platforms using a standard unattended installer, so that frontend
+applications (like Enigmail) can easily install it if not yet
+available.  Separating the GnuPG core from the frontend applications
+also allows for an automatic update procedure to be prepared for
+possible security relevant bugs and to be able to easily deploy new
+algorithms as soon as the needs arises.
+
+As stated in the press release a second full time developer for GnuPG
+is required to avoid relying mostly on me.  Keep in mind that even
+after having secured enough funds it will take some time to find a
+developer and it will also takes some months until s/he is up to my
+maintenance experience.  Thus is at all costs required nevertheless.
+
+In general we need to simplify the the user interfaces of most
+frontends and make it easier start with and keep on using encryption.
+A dedicated developers meeting will be the first step towards this.
+
+Okay, let’s take up our part for a new dawn.

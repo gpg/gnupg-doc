@@ -10,7 +10,7 @@ fi
 echo "upload: Rendering entries" >&2
 # We need to initialize that org cache to use our own publish function
 # despite that we do not use any org-publish feature
-emacs --batch \
+emacs23 --batch \
   --eval "(require 'assoc)" \
   --eval "(require 'org)" \
   --eval "(setq gpgweb-root-dir \"$(cd ../../web && pwd)/\")" \
@@ -74,6 +74,13 @@ awk -F:  <index.html  >index.tmp \
      }
      '
 mv index.tmp index.html || echo "upload: error updating index.html" >&2
+
+# Update the feed file
+echo "upload: Updating feed file" >&2
+
+
+
+# Remove temp file
 rm index.headlines.tmp
 
 echo "upload: Uploading files" >&2
