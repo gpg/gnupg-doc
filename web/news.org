@@ -7,6 +7,96 @@ On this page you'll find all the news of previous years in reverse
 chronological order.  News for the current year are found at the [[index][main
 page]].
 
+
+** A beta for GnuPG 2.1.0 released (2014-10-03)
+
+A beta release for the forthcoming GnuPG 2.1 version is now
+available.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000357.html][{more}]]
+
+** GPA 0.95 released
+
+GPA is the GNU Privacy Assistant, a frontend to GnuPG.  This new
+release has support for ECC keys and improves on the UI server
+feature.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000356.html][{more}]]
+
+** GnuPG 2.0.26 released (2014-08-12)
+
+GnuPG 2.0.26 is now available.  This is a maintenance release.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000353.html][{more}]]
+
+** Libgcrypt 1.5.4 security fix release                           :important:
+
+Using any Libgcrypt version less than 1.5.4 with GnuPG 2.0.x and
+Elgamal encryption keys is vulnerable to the /Get Your Hands Off My
+Laptop/ attack.  Please update to the newly released Libgcrypt 1.5.4
+or a 1.6 version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000352.html][{more}]]
+
+** Get Your Hands Off My Laptop (2014-08-07)
+
+Daniel Genkin, Itamar Pipman, and Eran Tromer latest side channel
+attack targets an /older version/ of GnuPG.  If your GnuPG and
+Libgcrypt versions are up-to-date you are safe.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000349.html][{more}]]
+
+** GPGME 1.5.1 and 1.4.4 released (2014-08-07)                    :important:
+
+A security fix release for the GPGME library is available.  It is
+suggested to update to one of these version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q3/000350.html][{more}]]
+
+** GnuPG 2.0.25 and 1.4.18 released (2014-06-30)
+
+To fix a minor regression in the previous releases we released today
+new versions of GnuPG-1 and GnuPG-2: [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000346.html][{2.0.25}]], [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000347.html][{1.4.18}]]
+
+** GnuPG 2.0.24 released (2014-06-24)                             :important:
+
+GnuPG 2.0.24 is now available.  This GnuPG-2 release features a fix
+for a denial of service attack and a few other changes.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000345.html][{more}]]
+
+
+** GnuPG 1.4.17 released (2014-06-23)                             :important:
+
+GnuPG 1.4.17 is now available.  This GnuPG-1 release features a fix
+for a denial of service attack and a few other minor changes.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html][{more}]]
+
+
+** GnuPG 2.0.23 released (2014-06-03)
+
+We are pleased to announce the availability of GnuPG 2.0.23.  This is
+a maintenance release with a few new features. [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000342.html][{more}]]
+
+
+** Goteo campaign: preliminary results (2014-05-12)
+
+The blog has a report on the current status of the campaign including
+an overview of the financial results.  [[https://www.gnupg.org/blog/20140512-rewards-sent.html][{read here}]]
+
+** Mission complete: campaign ends, closing stats (2014-02-06)
+
+After 50 days of crowdfunding, the GnuPG campaign for new website and
+infrastructure will close tomorrow. That means rewards for backers can
+now be ordered and preparations for dispatch can begin. Here are the
+results so far.  [[https://www.gnupg.org/blog/20140206-crowdfunding-complete.html][{more}]]
+
+
+** 16 Years of protecting privacy (2013-12-20)
+
+Today marks 16 years since the first release of GnuPG. In that time
+the project has grown from being a hacker’s hobby into one of the
+world’s most critical anti-surveillance tools.  Today GnuPG stands at
+the front line of the battle between invasive surveillance and civil
+liberties.  [[https://www.gnupg.org/blog/20131220-gnupg-turned-0x10.html][{more}]]
+
+** GnuPG launches crowdfunding campaign (2013-12-19)
+
+Today GNU Privacy Guard (GnuPG) has launched its first
+[[http://goteo.org/project/gnupg-new-website-and-infrastructure][crowdfunding campaign]] with the aim of building a new website and long term
+infrastructure.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000338.html][{more}]] [[https://www.gnupg.org/blog/20131219-gnupg-launches-crowfunding.de.html][{deutsch}]] [[https://www.gnupg.org/blog/20131219-gnupg-launches-crowfunding.fr.html][{francaise}]]
+
+** GnuPG 1.4.16 released (2013-12-18)                             :important:
+
+Along with the publication of an interesting new [[http://www.cs.tau.ac.il/~tromer/acoustic/][side channel attack]]
+by Genkin, Shamir, and Tromer we announce the availability of a new
+stable GnuPG release to relieve this bug: Version 1.4.16 ...  [[http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html][{more}]]
+
 ** Blog: Getting Goteo crowdfunding approval (2013-12-18)
 
 The targets are set, the rewards are prepared, the press release has
