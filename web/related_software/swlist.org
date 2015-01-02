@@ -34,7 +34,7 @@ Cryptophane is an easy-to-use application for MS Windows. It allows
 users to encrypt, sign, decrypt, and perform key maintenance without
 having to deal with GnuPG's command-line interface.
 
-** [[http://www.lothar.com/tech/crypto/][EGD]] [Unix] MISC
+** [[http://egd.sourceforge.org][EGD]] [Unix] MISC
    :PROPERTIES:
    :CUSTOM_ID: egd
    :END:
