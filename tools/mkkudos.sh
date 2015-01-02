@@ -77,9 +77,10 @@ monyear=$(echo "$tmp" | awk -F: 'BEGIN { m[1] = "January";
       {printf "%s %d", m[$2] , $1}')
 euromo=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($8 + 0.5)}')
 euroyr=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($10 + 0.5)}')
-euroyr_campaign=$(echo "$tmp" | awk -F: '{printf "%d", int($10 + 0.5)}')
 n=$(echo "$tmp" | awk -F: '{printf "%d", $7}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
+
+euroyr_campaign=$(echo "$tmp" | awk -F: '$1=="2014"{printf "0"; next};{printf "%d", int($10 + 0.5)}')
 
 # Campaign data
 goal="120000"
