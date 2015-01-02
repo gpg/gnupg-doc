@@ -13,6 +13,7 @@
 
   Thank you.
 
+  - All donors to GnuPG in [[file:kudos-2015.org][2015]]
   - All donors to GnuPG in [[file:kudos-2014.org][2014]]
   - All donors to GnuPG in [[file:kudos-2013.org][2013]]
   - All donors to GnuPG in [[file:kudos-2012.org][2012]]
@@ -50,8 +51,9 @@ Donations for the previous years:
 | 2011 |  21 |   553 |      465 |
 | 2012 |  53 |  5991 |     4963 |
 | 2013 | 148 |  5041 |     4145 |
+| 2014 | 801 | 34700 |          |
 |------+-----+-------+----------|
-|      |     | 11585 |     9573 |
+|      |     | 46285 |          |
 #+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
 
 # In 2014 without the 32641.27 (27429.64) from the Goteo campaign
