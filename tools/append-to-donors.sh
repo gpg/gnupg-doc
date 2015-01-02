@@ -136,7 +136,7 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
                             xmail amount currency euro rest; do
             name=$(echo "$name" | tr \`\$: ...)
             message=$(echo "$message" | tr \`\$ ..)
-            xmail=$(echo "$xmail" | tr \`\$ ..)
+            xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
             # Note that we removed colons from $name
             echo "$jyear:$datestr:$name::$lnr:" >> "$donors.tmp"
             touch "$donors".stamp
