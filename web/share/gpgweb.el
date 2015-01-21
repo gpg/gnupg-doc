@@ -43,7 +43,7 @@
 (defun gpgweb-insert-header (title committed-at)
   "Insert the header.
 
-COMMITED-AT is the commit date string of the source file or nil
+COMMITTED-AT is the commit date string of the source file or nil
 if not available."
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
@@ -269,36 +269,48 @@ org filenames."
                     "</p>\n")))))
 
 
-(defun gpgweb-insert-footer ()
-  (goto-char (point-max))
-  (insert "</div><!-- end content -->
+(defun gpgweb-insert-footer (htmlfile committed-at blogmode)
+  "Insert the footer.
+
+HTMLFILE is HTML file name and COMMITTED-AT is the commit date
+string of the source file or nil if not available."
+  (let ((srcfile (concat "https://git.gnupg.org/cgi-bin/gitweb.cgi?"
+                         "p=gnupg-doc.git;a=blob;f="
+                         (if blogmode "misc/blog.gnupg.org" "web")
+                         (file-name-sans-extension htmlfile) ".org"))
+        (changed (if (and committed-at (>= (length committed-at) 10))
+                     (substring committed-at 0 10)
+                     "[unknown]")))
+    (goto-char (point-max))
+    (insert "</div><!-- end content -->
 </main>
 <div id=\"footer\">
   <div id=\"nav_bottom\">
   <ul>
 ")
-  (gpgweb--insert-menu gpgweb-gnupg-bottom-menu-alist 0 nil)
-  (insert "  </ul>
+    (gpgweb--insert-menu gpgweb-gnupg-bottom-menu-alist 0 nil)
+    (insert "  </ul>
   </div>
 ")
-  (goto-char (point-min))
-  (unless (search-forward "<!--disable-copyright-footer-->" nil t)
-    (goto-char (point-max))
-    (insert "  <div id=\"cpyright\">
+    (goto-char (point-min))
+    (unless (search-forward "<!--disable-copyright-footer-->" nil t)
+      (goto-char (point-max))
+      (insert "  <div id=\"cpyright\">
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa-3.0_80x15.png\"/></a>&nbsp;
     These web pages are
-    Copyright 1998--2014 The GnuPG Project and licensed under a
+    Copyright 1998--2015 The GnuPG Project and licensed under a
     <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
+    Page <a href=\"" srcfile "\">source</a> last changed on " changed ".
   </div>\n"))
   (goto-char (point-max))
   (insert "</div>
 </div><!-- end wrapper -->
 </body>
-</html>"))
+</html>")))
 
 
 ;;; Post-process the generated HTML file:
@@ -318,8 +330,13 @@ org filenames."
                         (concat "git log -1 --format='%ci' -- " orgfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
+                   ;; The first replace below is a hack to cope with
+                   ;; blog mode where HTMLFILE is like "./foo.html".
                    (fname-2 (replace-regexp-in-string
-                             ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
+                             "^\\./" "/"
+                             (replace-regexp-in-string
+                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t)
+                             t))
                    (title (org-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
@@ -328,7 +345,7 @@ org filenames."
                    (gpgweb-fixup-blog plist
                                       (file-name-nondirectory orgfile)
                                       blogmode))
-               (gpgweb-insert-footer)
+               (gpgweb-insert-footer fname-2 committed-at blogmode)
 
                ; Fixup the sitemap
                (when (string-equal fname "sitemap.html")
