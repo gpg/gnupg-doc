@@ -277,7 +277,12 @@ string of the source file or nil if not available."
   (let ((srcfile (concat "https://git.gnupg.org/cgi-bin/gitweb.cgi?"
                          "p=gnupg-doc.git;a=blob;f="
                          (if blogmode "misc/blog.gnupg.org" "web")
-                         (file-name-sans-extension htmlfile) ".org"))
+                         ;; The replace below is a hack to cope with
+                         ;; blogmode where HTMLFILE is like "./foo.html".
+                         (replace-regexp-in-string
+                          "^\\./" "/"
+                          (file-name-sans-extension htmlfile) t)
+                         ".org"))
         (changed (if (and committed-at (>= (length committed-at) 10))
                      (substring committed-at 0 10)
                      "[unknown]")))
@@ -330,13 +335,8 @@ string of the source file or nil if not available."
                         (concat "git log -1 --format='%ci' -- " orgfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
-                   ;; The first replace below is a hack to cope with
-                   ;; blog mode where HTMLFILE is like "./foo.html".
                    (fname-2 (replace-regexp-in-string
-                             "^\\./" "/"
-                             (replace-regexp-in-string
-                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t)
-                             t))
+                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
