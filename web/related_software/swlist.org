@@ -19,7 +19,7 @@ the software:
 
 ** [[http://www.claws-mail.org/][Claws Mail]] [Unix, Windows] MUA
    :PROPERTIES:
-   :CUSTOM_ID:
+   :CUSTOM_ID: claws
    :END:
 
 Is a very nice GTK+ based MUA with full support for GnuPG. The Windows

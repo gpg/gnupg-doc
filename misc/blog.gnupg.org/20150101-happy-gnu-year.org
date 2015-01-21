@@ -70,7 +70,7 @@ small active user base.  For a mass use of it we need to add a few
 things or start to deploy an easier method for retrieving keys.  This
 is essential for making mail encryption the default on the net.
 
-Although the use or proprietary platforms supports the spook’s
+Although the use of proprietary platforms supports the spook’s
 surveillance programs, it is a pipe dream to believe that free
 operating systems like Linux or FreeBSD can completely replace
 Windows, Mac OS, and Android any time soon.  Improving our crypto
@@ -87,8 +87,9 @@ algorithms as soon as the needs arises.
 As stated in the press release a second full time developer for GnuPG
 is required to avoid relying mostly on me.  Keep in mind that even
 after having secured enough funds it will take some time to find a
-developer and it will also takes some months until s/he is up to my
-maintenance experience.  Thus is at all costs required nevertheless.
+developer and it will also take some months until s/he is up to my
+maintenance experience.  Nevertheless, we need to bear these
+additional costs.
 
 In general we need to simplify the the user interfaces of most
 frontends and make it easier start with and keep on using encryption.
