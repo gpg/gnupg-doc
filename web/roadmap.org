@@ -1,0 +1,59 @@
+#+TITLE: GnuPG - Roadmap
+#+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
+
+* GnuPG Roadmap
+  :PROPERTIES:
+  :CUSTOM_ID: gnupg
+  :END:
+
+  This page has information on what we plan to do and what new
+  features will go into which version.  This is _not_ a list of
+  guaranteed milestones or with fixed release dates.  This page should
+  better be viewed as a scratchpad with notes of GnuPG developers.
+
+  The next GnuPG /modern/ release will be 2.1.2 and is planned for
+  January.
+
+** New features in 2.1
+
+ - gpg: The parameter 'Passphrase' for batch key generation works
+   again.
+
+ - gpg: Using a passphrase option in batch mode now has the expected
+   effect on --quick-gen-key.
+
+
+** All things to do
+
+ - Fix flaws in HKPS support
+
+ - Add LDAP keyserver support
+
+ - +Add unattended key generation with passphrase.+
+
+
+
+* Libgcrypt Roadmap
+  :PROPERTIES:
+  :CUSTOM_ID: gcrypt
+  :END:
+
+  Libgcrypt is used by a lot of other projects and thus deserves its
+  own roadmap
+
+
+** Things to be done for Libgcrypt 1.7
+
+   The next release will be 1.7 with a lot of performance improvements
+   and a few new features. Here are the things we want to have before
+   the 1.7.0 release:
+
+ - +Add OCB mode+
+ - Update of the Windows entropy gatherer (rndw32.c)
+
+
+   The rndw32 update is pretty important because it has not seen any
+   updates for years.  We need to compare the code against the latest
+   Cryptlib.  Updating rndunix could also be done but it is not very
+   important given that all mainstream OS now feature a /dev/random.
