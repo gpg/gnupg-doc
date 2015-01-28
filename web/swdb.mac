@@ -98,9 +98,9 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.17
-#+macro: libgpg_error_size 654k
-#+macro: libgpg_error_sha1 ba5858b2947e7272dd197c87bac9f32caf29b256
+#+macro: libgpg_error_ver  1.18
+#+macro: libgpg_error_size 702k
+#+macro: libgpg_error_sha1 7ba54f939da023af8f5b3e7a421a32eb742909c4
 
 
 #

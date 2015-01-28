@@ -13,7 +13,7 @@
   better be viewed as a scratchpad with notes of GnuPG developers.
 
   The next GnuPG /modern/ release will be 2.1.2 and is planned for
-  January.
+  +January+ the first February week.
 
 ** New features in 2.1
 
@@ -32,6 +32,10 @@
 
  - +Add unattended key generation with passphrase.+
 
+ - More and more bug reports are coming in.  Decide which of them to
+   fix for 2.1.2.
+
+ - Migrate everything to automake 1.14.
 
 
 * Libgcrypt Roadmap
