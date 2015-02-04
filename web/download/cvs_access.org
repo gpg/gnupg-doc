@@ -28,14 +28,14 @@
   git clone git://git.gnupg.org/gnupg.git
 #+END_EXAMPLE
 
-  You must run =scripts/autogen.sh= before doing the =./configure
-  --enable-maintainer-mode=, as this creates some needed files which
-  are not stored in the repository. =autogen.sh= should check that you
-  have all required tools installed. Please read the GIT manual pages
-  before doing so. The =master= revision is the development branch;
-  the stable 2.0 version (currently version {{{gnupg_ver}}}) is known
-  as =STABLE-BRANCH-2-0=; the stable 1.4 version of GnuPG
-  ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
+  You must run =./autogen.sh= before running the =./configure= in the
+  way suggested by the putput of =autogen.sh=.  This creates some
+  required files which are not stored in the repository. =autogen.sh=
+  also checks that you have all required tools installed. Please read
+  the GIT manual pages before doing so. The =master= revision is the
+  development branch; the stable 2.0 version (currently version
+  {{{gnupg_ver}}}) is known as =STABLE-BRANCH-2-0=; the stable 1.4
+  version of GnuPG ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
 
   Bug reports should go to the developers mailing list. See the page
   on [[../documentation/mailing-lists.org][mailing lists]] .
