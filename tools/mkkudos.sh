@@ -87,8 +87,9 @@ goal="120000"
 tmp=$(grep '^2014:12:' "$donations")
 euro=$(echo "$tmp" | awk -F: '{printf "%d", int($8 + 0.5)}')
 euro=$(($euro + $euroyr_campaign))
-percent=$(echo "$euro:$goal" | awk -F: '{printf "%d",(int($1)*100)/int($2)}')
-
+percent=$(echo "$euro:$goal" | awk -F: '{ p = (int($1)*100)/int($2);
+                                          if(p > 100) { p = 100 };
+                                          printf "%d", p}')
 
 for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
             "$htdocs/donate/"index.html \
