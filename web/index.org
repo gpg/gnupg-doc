@@ -29,11 +29,38 @@ style="width: 0%"><!--REPLACE-PROGRESS-PERCENT-->
 #+END_HTML
 
 For a critical project of this size two experienced developers are
-required for proper operation.  This requires gross revenues of 120000
-Euro per year.  Unfortunately there is currently only one underpaid
-full time developer who is barely able to keep up with the work; see
-this [[file:blog/20141214-gnupg-and-g10.org][blog entry]] for some backgound.  Please help to secure the
-future of GnuPG and consider to [[file:donate/index.org][donate]] to this project [[file:donate/index.org][now]].
+required for proper operation.  This requires gross revenues of at
+least 120000 Euro per year.  Unfortunately there is currently only one
+underpaid full time developer who is barely able to keep up with the
+work; see this [[file:blog/20141214-gnupg-and-g10.org][blog entry]] for some backgound.  Please help to secure
+the future of GnuPG and consider to [[file:donate/index.org][donate]] to this project [[file:donate/index.org][now]].
+(Donating Bitcoins is possible via the Wau Holland Stiftung; see the
+[[file:donate/index.org][donation page]] for details.)
+
+** A big Thanks to all supporters
+
+Due to this [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][ProPublica article]] we received more than 120,000 \euro of
+individual donations on a single day.  There is even more: The [[http://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
+Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
+service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
+And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible
+funds for GnuPG (7000 \euro in December; numbers for January will be
+posted soon).
+
+As the main author of GnuPG, I like to thank everyone for supporting
+the project, be it small or large individual donations, helping users,
+providing corporate sponsorship, working on the software, and for all
+the encouraging words.
+
+GnuPG does not stand alone: there are many other projects, often
+unknown to most people, which are essential to keep the free Internet
+running.  Many of them are run by volunteers who spend a lot of unpaid
+time on them.  They need our support as well.
+
+/--- Werner, 2015-02-06/
+
+
+
 
 
 * The GNU Privacy Guard
