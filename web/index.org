@@ -44,8 +44,7 @@ individual donations on a single day.  There is even more: The [[http://www.linu
 Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
 service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
 And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible
-funds for GnuPG (7000 \euro in December; numbers for January will be
-posted soon).
+funds for GnuPG (19000 \euro plus 57 BTC).
 
 As the main author of GnuPG, I like to thank everyone for supporting
 the project, be it small or large individual donations, helping users,
@@ -135,7 +134,7 @@ restart the dirmngr process.  Read the full [[http://lists.gnupg.org/pipermail/g
 
 ** GnuPG 2.1.0 with ECC support released (2014-11-06)
 
-This is the first released of the new /modern/ branch of GnuPG.  It
+This is the first release of the new /modern/ branch of GnuPG.  It
 features a lot of new things including support for ECC.  Read more at
 the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000358.html][announcement]] mail.
 
