@@ -1,0 +1,75 @@
+# GnuPG News for January 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: February 16th, 2015
+
+** GnuPG News for January 2015
+
+This is the first issue of a series of status reports for the GnuPG
+project.  It is quite late for a review of things which happened
+January but unexpected (but meanwhile widely known) events prohibited
+me from writing this earlies.  More on this in another article.
+
+First the good news: In January I was contacted by the [[http://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
+Infrastructure Initiative]] with an offer to help funding the GnuPG
+development.  I gladly accepted that that offer for 60,000 USD for
+this year.  After short and exceptionally non-bureaucratic negotiations
+we agreed on a contract which pays [[https://g10code.com][g10^code]] 5,000 USD each month in
+2015 for work on GnuPG.  That money will be used to pay my, now
+increased, salary.  Thanks guys.
+
+After the release of GnuPG 2.1.1 in late December quite some bugs were
+reported for this new branch.  Thus most of my work was related to
+fixing these bugs and prepare a bug fix release.  As usual Niibe
+Yutaka helped a lot by taking care of the smartcard part and reviewing
+other patches and bugs.   Some minor bugs and memory leaks were fixed
+in that time as well as some code cleanup.
+
+The move to automake 1.14 and gcc 4.9 required a bit of work.  The
+update to the latest automake version was originally planned after the
+release of Debian Jessie but for other reasons I had to update my
+development box to to-be-Jessie already now and thus switching
+automake was done right away.  This required only minor changes but
+with all those libraries required by GnuPG 2.x, it nevertheless took
+some days.  At that opportunity all the build-aux files (config.guess
+et al.) were also updated to the latest version.  The code base is now
+quite up to the latest development tools (at least in the repo).  gcc
+4.9 prints a couple of new warnings and thus a few other code changes
+were required as well.
+
+I also took some days to play with the Windows port but finally
+decided that there won't be a Windows installer for the forthcoming
+2.1.2 versions.  We need to investigate on how to best package the
+Windows binary version without having too much dependencies to
+external libraries.  In particular GPGME with its dependencies on Glib
+is still troublesome and this might need some re-packaging of
+GPGME.  The general idea for the 2.1 installer will be to package only
+the GnuPG core without any GUI stuff and do that in a way which helps
+other packages to use that one GnuPG version on Windows.  This has the
+huge advantage that we can release updates to GnuPG without having
+also to update all the other software which uses GnuPG under the hood.
+
+After having fixed a couple of build problems of OS X, Patrick
+Brunswick of Enigmail is meanwhile able to build an OS X installer
+soon after a new GnuPG release and thus a link to this installer has
+been added to the download page.
+
+To allow for a one-stop key generation we also came up with an easy
+way to generate a key without having to resort to Pinentry.  Even
+after 15 or so years of the =--command-fd= based API to gpg, the first
+request was filed to provide a stable interface to select the
+algorithm: gpg has always printed a list of algorithm sets and asked
+the user to enter the order number to select the algorithms.  However,
+there was no way for a script to map algorithm names to these order
+numbers.  It is surprising that it took so long until someone
+requested a solid way of entering that.  It has been solved by
+assigning fixed strings (see doc/DETAILS) to each algorithm and
+allowing this string as an alternative to the order number.  Please do
+not hesitate to ask on gnupg-devel@ for advise or ask for a new
+feature.  If a new feature makes sense and fits into the overall
+architecture then there is quite some chance that it will be added.
+But we need to know about it.
+
+Like in many years, January closed at that great hackers meeting in
+Brussels.  Maybe next year there will be enough interest for a GnuPG
+session and a booth as [[https://fosdem.org][FOSDEM]].
