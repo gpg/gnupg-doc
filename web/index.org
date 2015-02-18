@@ -118,6 +118,11 @@ all [[file:news.org][news of previous years]] is also available.
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.0.27 released (2015-02-18)
+
+GnuPG 2.0.27 is now available.  This release fixes a couple of bugs;
+users of GnuPG 2.0.x should update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html][{more}]]
+
 ** GnuPG 2.1.2 released (2015-02-11)
 
 This is the third release of the /modern/ branch of GnuPG.  It fixes

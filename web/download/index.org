@@ -104,6 +104,7 @@
    |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32-{{{gnupg21_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG modern/         |
    |         | {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG classic/        |
    | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project         |
+   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG modern/                |
    | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG stable and classic are part of Debian |
    | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS               |
    | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG 2.1 framework              |
