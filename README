@@ -30,43 +30,57 @@ use:
 Alias /documentation/manuals /var/www/shared/manuals
 Alias /gph /var/www/shared/gph
 
-# The FAQ is located in the manuals directory but linked to the faq directory
-Alias /faq/GnuPG-FAQ.html  /var/www/shared/manuals/GnuPG-FAQ.html
+# The blog is maintained outside of the standard tree, so that it can be build using
+# a separate script.
+Alias /blog /var/www/www/www.gnupg.org/misc/blog
 
-
-# Redirect a couple of well-known URLs
-Redirect /gpa.html      http://www.gnupg.org/related_software/gpa/
-Redirect /gpgme.html    http://www.gnupg.org/related_software/gpgme/
-Redirect /docs.html     http://www.gnupg.org/documentation/
-Redirect /download.html http://www.gnupg.org/download/
-Redirect /faq.html      http://www.gnupg.org/documentation/faqs.html
-
+# Redirect a couple of well-known old URLs
 # We use redirect to make language switching work.
-Redirect /why-not-idea.html  http://www.gnupg.org/faq/why-not-idea.html
+Redirect /gpa.html       http://www.gnupg.org/related_software/gpa/
+Redirect /gpgme.html     http://www.gnupg.org/related_software/gpgme/
+Redirect /docs.html      http://www.gnupg.org/documentation/
+Redirect /download.html  http://www.gnupg.org/download/
+Redirect /faq.html       http://www.gnupg.org/documentation/faqs.html
+Redirect /faqs.html      http://www.gnupg.org/documentation/faqs.html
+Redirect /gpgme-faq.html http://www.gnupg.org/faq/gpgme-faq.html
+Redirect /gnupg-faq.html http://www.gnupg.org/documentation/faqs.html
+Redirect /GnuPG-FAQ.html http://www.gnupg.org/documentation/faqs.html
+Redirect /supported_systems.html     http://www.gnupg.org/download/supported_systems.html
+Redirect /release_notes.html         http://www.gnupg.org/download/release_notes.html
+Redirect /integrity_check.html       http://www.gnupg.org/download/integrity_check.html
+Redirect /cvs_access.html            http://www.gnupg.org/download/cvs_access.html
+Redirect /iconv.html                 http://www.gnupg.org/download/iconv.html
+Redirect /manpage.html               http://www.gnupg.org/documentation/manpage.html
+Redirect /sites.html                 http://www.gnupg.org/documentation/sites.html
+Redirect /guides.html                http://www.gnupg.org/documentation/guides.html
+Redirect /manuals.html               http://www.gnupg.org/documentation/manuals.html
+Redirect /mailing-lists.html         http://www.gnupg.org/documentation/mailing-lists.html
+Redirect /howtos.html                http://www.gnupg.org/documentation/howtos.html
+Redirect /bts.html                   http://www.gnupg.org/documentation/bts.html
+Redirect /weak-digest-algos.html     http://www.gnupg.org/faq/weak-digest-algos.html
+Redirect /subkey-cross-certify.html  http://www.gnupg.org/faq/subkey-cross-certify.html
+Redirect /why-not-idea.html          http://www.gnupg.org/faq/why-not-idea.html
 
 Redirect /howtos/ch/  http://www.gnupg.org/howtos/zh/
 
+# Temporary:
 Redirect /fund   http://goteo.org/project/gnupg-new-website-and-infrastructure
 
 #+END_EXAMPLE
 
-The howtos are symlinked into the www.gnupg.org tree.
+The howtos are symlinked into the www.gnupg.org tree; see below.
 
 
 ** Symlinks
 
-For compatibility with the old website it is best to run this script
-in the htdocs directory:
-
-for d in $(find . -type d); \\
-   do (cd $d && for f in $(ls *.html | grep -v '*.??.html'); \\
-       do ln -s $f ${f%.html}.en.html; ln -s $f ${f%.html}.de.html ; \\
-   done ); done
+#+begin_example
+howtos -> ../../howtos.gnupg.org/htdocs
+#+end_example
 
 ** Cronjobs
 
   A cronjob needs to run mkkudos.sh to update the list of donors.
-  This can be done every few minutes becuase mkkudos won't do anything
+  This can be done every few minutes because mkkudos won't do anything
   if the list of donors has not been updated.
 
 ** Writing a blog entry
