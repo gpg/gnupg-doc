@@ -118,6 +118,16 @@ all [[file:news.org][news of previous years]] is also available.
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 1.4.19 released (2015-02-27)                             :important:
+
+GnuPG 1.4.19 is now available.  This release mitigates two new of side
+channel attack methods as well as a couple of other bugs.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html][{more}]]
+
+** Libgcrypt 1.6.3 released (2015-02-27)                          :important:
+
+Libgcrypt version 1.6.3 has been released to mitigate two new side
+channel attack methods.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html][{more}]]
+
 ** GnuPG 2.0.27 released (2015-02-18)
 
 GnuPG 2.0.27 is now available.  This release fixes a couple of bugs;

@@ -10,6 +10,6 @@
   -  [[https://www.gnupg.org/faq/gnupg-faq.txt][Plain text]]
 
   The FAQ is generated using this [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-doc.git;a=blob_plain;f=web/faq/gnupg-faq.org][source code]].  If you are looking for
-  the old and outdated FAQ, please go to [[http://www-old.gnupg.org/faq/GnuPG-FAQ.html][here]].
+  the old and outdated FAQ, please go to [[ftp://ftp.gnupg.org/gcrypt/gnupg/GnuPG-FAQ.old.txt][here]].
 
 # eof
