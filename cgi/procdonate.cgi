@@ -41,6 +41,7 @@ my $currency = "";
 my $name = "";
 my $mail = "";
 my $message = "";
+my $separef = "";
 my $errorstr = "";
 
 # We use a dictionary to track error.  Those errors will then be
@@ -50,6 +51,7 @@ my %errdict = ();
 # Prototypes
 sub fail ($);
 sub get_paypal_approval ();
+sub complete_sepa ();
 
 
 # Write a template file.  A template is a proper HTML file with
@@ -64,7 +66,7 @@ sub get_paypal_approval ();
 sub write_template ($) {
     my $fname = shift;
 
-    my $errorpanel = '';
+    my $errorpanel = $errorstr;
     my $err_amount = '';
     my $err_name = '';
     my $err_mail = '';
@@ -85,6 +87,7 @@ sub write_template ($) {
     $name =~ s/\x22/\x27/g;
     $mail =~ s/\x22/\x27/g;
     $message =~ s/\x22/\x27/g;
+    $separef =~ s/\x22/\x27/g;
 
     # Clean possible user provided data
     $sessid =~ s/</\x26lt;/g;
@@ -94,6 +97,7 @@ sub write_template ($) {
     $name =~ s/</\x26lt;/g;
     $mail =~ s/</\x26lt;/g;
     $message =~ s/</\x26lt;/g;
+    $separef =~ s/</\x26lt;/g;
 
     # No need to clean $euroamount.
 
@@ -115,6 +119,8 @@ sub write_template ($) {
         $check_paytype = "CC";
     } elsif ( $paytype eq "pp" ) {
         $check_paytype = "PP";
+    } elsif ( $paytype eq "se" ) {
+        $check_paytype = "SE";
     }
 
     # Set var for the paypal button
@@ -164,6 +170,7 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
             || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
             || s/<!--PUBLISH_NAME-->/$publishname/
+            || s/<!--SEPA_REF-->/$separef/
             || s/<!--ERRORSTR-->/$errorstr/
             || s/<!--ERR_AMOUNT-->/$err_amount/
             || s/<!--ERR_NAME-->/$err_name/
@@ -301,8 +308,12 @@ sub write_checkout_page ()
     if ( $paytype eq "cc" ) {
         write_template("donate/checkout-cc.html");
     }
-    else {
+    elsif ( $paytype eq "pp" ) {
         write_template("donate/checkout-pp.html");
+    }
+    else {
+        # For SEPA this is the final page
+        write_template("donate/checkout-se.html");
     }
 }
 
@@ -321,6 +332,7 @@ sub write_thanks_page ()
 sub check_donation ()
 {
     my %data;
+    my %sepa;
     my $anyerr = 0;
 
     # Note: When re-displaying the page we always use amount other
@@ -364,9 +376,16 @@ sub check_donation ()
 
     # Check the payment type
     $paytype = $q->param("paytype");
-    if ( $paytype ne "cc" and $paytype ne "pp" ) {
+    if ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
         $errdict{"paytype"} = 'No payment type selected.' .
-                              ' Use "Credit Card" or "PayPal".';
+                              ' Use "Credit Card", "PayPal", or "SEPA".';
+        $anyerr = 1;
+    }
+
+    # SEPA credit transfers are only possible in Euro.
+    # (yes, this may overwrite an earlier error message).
+    if ( $paytype eq "se" and $currency ne "EUR" ) {
+        $errdict{"amount"} = 'SEPA transfers are only possible in EUR.';
         $anyerr = 1;
     }
 
@@ -392,9 +411,12 @@ sub check_donation ()
     payproc ('SESSION create', \%data ) or fail $data{"ERR_Description"};
     $sessid = $data{"_SESSID"};
 
-    # Send the checkout page and redirect to paypal
+    # Send the checkout page or redirect to paypal
     if ( $paytype eq "pp" ) {
         get_paypal_approval ();
+    }
+    elsif ( $paytype eq "se" ) {
+        complete_sepa ();
     }
     else {
         write_checkout_page();
@@ -565,7 +587,7 @@ sub confirm_paypal_checkout ()
     $mail = $data{"Mail"};
     $message = $data{"Message"};
 
-    # Store the session after setting the above cars because that call
+    # Store the session after setting the above vars because that call
     # clears DATA.
     payproc ('SESSION put ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
@@ -615,6 +637,47 @@ EOF
 
     write_thanks_page ();
     payproc ('SESSION destroy ' . $sessid, ());
+}
+
+
+# Complete the SEPA payment: Check values and show final page.
+sub complete_sepa ()
+{
+    my %data;
+    my %request;
+
+    payproc ('SESSION get ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    $request{"Currency"} = $data{"Currency"};
+    $request{"Amount"} = $data{"Amount"};
+    $request{"Desc"} = "GnuPG SEPA donation";
+    $request{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
+    if ($data{"Mail"} ne '') {
+        $request{"Meta[mail]"} = $data{"Mail"};
+    }
+    if ($data{"Message"} ne '') {
+        $request{"Meta[message]"} = $data{"Message"};
+    }
+    if (not payproc ('SEPAPREORDER', \%request )) {
+        $errorstr = "Error: " . $request{"ERR_Description"};
+        # Back to the main page.
+        write_main_page ();
+        return;
+    }
+    $separef = $request{"SEPA-Ref"};
+    $amount = $request{"Amount"};
+
+    # Set remaining vars for the checkout page.
+    $currency = $data{"Currency"};
+    $paytype = $data{"Paytype"};
+    $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
+    $name = $data{"Name"};
+    $mail = $data{"Mail"};
+    $message = $data{"Message"};
+
+    write_checkout_page ();
 }
 
 

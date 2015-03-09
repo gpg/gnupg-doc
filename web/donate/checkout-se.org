@@ -1,0 +1,69 @@
+#+TITLE: GnuPG - Donate - Checkout using SEPA
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donate - Checkout using SEPA
+
+  Single Euro Payments Area credit transfers can be used to transfer
+  Euro within the 34 states of the European Union and 6 associated
+  states.
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Name:&nbsp;</td>
+     <td><!--NAME--></td>
+   </tr>
+   <tr>
+     <td align="right">Mail:&nbsp;</td>
+     <td><!--MAIL--></td>
+   </tr>
+   <tr>
+     <td align="right" valign="top">Message:&nbsp;</td>
+     <td><!--MESSAGE_FMT--></td>
+   </tr>
+  </table>
+#+END_HTML
+
+  Please send your donation to this bank account:
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Owner:&nbsp;</td>
+     <td>g10 Code GmbH</td>
+   </tr>
+   <tr>
+     <td align="right">IBAN:&nbsp;</td>
+     <td>DE76 3015 0200 0002 1086 03</td>
+   </tr>
+   <tr>
+     <td align="right">BIC:&nbsp;</td>
+     <td>WELADED1KSD</td>
+   </tr>
+   <tr>
+     <td align="right">Reference:&nbsp;</td>
+     <td><!--SEPA_REF--></td>
+   </tr>
+   <tr>
+     <td align="right">Amount:&nbsp;</td>
+     <td><!--AMOUNT-->
+         EUR</td>
+   </tr>
+  </table>
+#+END_HTML
+
+  Take care to give the reference number so that we can match your
+  data with your actual donation and list you as donor if desired.
+  The given reference number expires in 30 days, thus please act in
+  time.  You may send a different amount but please send at least 5
+  Euro to cover our bookkeeping costs.  Using the reference number for
+  recurring donations is also possible.
+
+  *Thank you in advance for your donation.*
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.html">Continue</a></li>
+  </ul>
+#+END_HTML
