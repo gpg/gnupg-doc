@@ -2,66 +2,6 @@
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
 
-
-* Securing the future of GnuPG
-
-Work on GnuPG is mostly financed from donations.  To continue
-maintaining GnuPG so to keep it strong and secure against the ever
-increasing mass surveillance we need your support.  Until the end of
-November we received a total of 6584\thinsp\euro (~5500 net) donations
-for this year.  Along with the 18000\thinsp\euro net from the [[https://www.gnupg.org/blog/20140512-rewards-sent.html][Goteo
-campaign]] this paid for less than 50% of the costs for one
-developer.
-
-#+BEGIN_HTML
-<div class="donation-progress">
-  <div class="donation-progress-bar"
-style="width: 0%"><!--REPLACE-PROGRESS-PERCENT-->
-<p>&nbsp;</p></div>
-  <p><span style="float: left">
-<!--INSERT-PROGRESS-LEFT-->
-  </span>
-  <span style="float: right">
-<!--INSERT-PROGRESS-RIGHT-->
-  </span>
-</div>
-<p class="doclear" style="clear: both"></p>
-#+END_HTML
-
-For a critical project of this size two experienced developers are
-required for proper operation.  This requires gross revenues of at
-least 120000 Euro per year.  Unfortunately there is currently only one
-underpaid full time developer who is barely able to keep up with the
-work; see this [[file:blog/20141214-gnupg-and-g10.org][blog entry]] for some backgound.  Please help to secure
-the future of GnuPG and consider to [[file:donate/index.org][donate]] to this project [[file:donate/index.org][now]].
-(Donating Bitcoins is possible via the Wau Holland Stiftung; see the
-[[file:donate/index.org][donation page]] for details.)
-
-** A big Thanks to all supporters
-
-Due to this [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][ProPublica article]] we received more than 120,000 \euro of
-individual donations on a single day.  There is even more: The [[http://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
-Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
-service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
-And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible
-funds for GnuPG (19000 \euro plus 57 BTC).
-
-As the main author of GnuPG, I like to thank everyone for supporting
-the project, be it small or large individual donations, helping users,
-providing corporate sponsorship, working on the software, and for all
-the encouraging words.
-
-GnuPG does not stand alone: there are many other projects, often
-unknown to most people, which are essential to keep the free Internet
-running.  Many of them are run by volunteers who spend a lot of unpaid
-time on them.  They need our support as well.
-
-/--- Werner, 2015-02-06/
-
-
-
-
-
 * The GNU Privacy Guard
 #+index: GnuPG
 #+index: GPG
@@ -107,11 +47,18 @@ should use GnuPG for your electronic communication.  If you need
 printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
 
 
-* Latest news
+* News
 #+index: News
 
-The following frames report the latest news from GnuPG.  A list with
-all [[file:news.org][news of previous years]] is also available.
+The latest blog entries:
+#+begin_html
+<ul>
+<!--INSERT-BLOG-HEADLINE-->
+</ul>
+#+end_html
+
+The latest release news:\\
+([[file:news.org][all news]])
 
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
@@ -160,6 +107,28 @@ features a lot of new things including support for ECC.  Read more at
 the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000358.html][announcement]] mail.
 
 
+* A big Thanks to all supporters
+
+Due to this [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][ProPublica article]] we received more than 120,000 \euro of
+individual donations on a single day.  There was even more: The [[http://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
+Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
+service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
+And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible
+funds for GnuPG (19000 \euro plus 57 BTC).
+
+As the main author of GnuPG, I like to thank everyone for supporting
+the project, be it small or large individual donations, helping users,
+providing corporate sponsorship, working on the software, and for all
+the encouraging words.
+
+GnuPG does not stand alone: there are many other projects, often
+unknown to most people, which are essential to keep the free Internet
+running.  Many of them are run by volunteers who spend a lot of unpaid
+time on them.  They need our support as well.
+
+/--- Werner, 2015-02-06/
+
+(see also this [[https://gnupg.org/blog/20150310-gnupg-in-february.html][blog]] entry)
 
 * COMMENT
 This is the publishing info used for the GnuPG pages
