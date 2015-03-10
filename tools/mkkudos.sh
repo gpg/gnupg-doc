@@ -1,5 +1,30 @@
 #!/bin/sh
 
+# Update the list of donors and a few other things.
+#
+# ====================================================================
+# This org-mode snippet is used to insert the progress bar into a HTML
+# file:
+#
+#  #+BEGIN_HTML
+#  <div class="donation-progress">
+#    <div class="donation-progress-bar"
+#  style="width: 0%"><!--REPLACE-PROGRESS-PERCENT-->
+#  <p>&nbsp;</p></div>
+#    <p><span style="float: left">
+#  <!--INSERT-PROGRESS-LEFT-->
+#    </span>
+#    <span style="float: right">
+#  <!--INSERT-PROGRESS-RIGHT-->
+#    </span>
+#  </div>
+#  <p class="doclear" style="clear: both"></p>
+#  #+END_HTML
+#
+# To use it the code at "Campaign data" below needs to be adjusted as
+# well.
+# ===================================================================
+
 set -e
 
 usage()
@@ -52,11 +77,13 @@ done
 htdocs="/var/www/www/www.gnupg.org/htdocs"
 donors="$htdocs/donate/donors.dat"
 donations="$htdocs/donate/donations.dat"
+blogheadlinefile="/var/www/www/blog.gnupg.org/htdocs/headlines.txt"
 
 if [ $testmode = yes ]; then
   htdocs="/home/wk/s/gnupg-doc/stage"
   donors="$htdocs/../scratch/donors.dat"
   donations="$htdocs/../scratch/donations.dat"
+  blogheadlinefile="$htdocs/../misc/blog.gnupg.org/headlines.txt"
 fi
 
 
@@ -67,6 +94,15 @@ fi
 if [ ! -f "$donations" ]; then
   echo "mkkudos.sh: '$donations' not found" >&2;
   exit 1
+fi
+
+if [ ! -f "$blogheadlinefile" ]; then
+  echo "mkkudos.sh: '$blogheadlinefile' not found" >&2;
+  blogheadline=""
+else
+  blogheadline=$(awk -F\| '
+        NR<=3 {printf "<li><a href=\"blog/%s\">%s</a></li>", $1, $2}
+     ' "$blogheadlinefile")
 fi
 
 tmp=$(head -1 "$donations")
@@ -110,6 +146,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            -v monyear="$monyear" -v euro="$euro" -v euroyr="$euroyr" \
            -v euromo="$euromo" \
            -v n="$n" -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
+           -v blogheadline="$blogheadline" \
             <"$file"  >"$file.tmp" '
      /<!--BEGIN-DONATIONS-->/ {indon=1; print; insert("") }
      /<!--END-DONATIONS-->/ {indon=0}
@@ -149,6 +186,10 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      /<!--REPLACE-PROGRESS-PERCENT-->/ {
            printf "style=\"width: %d%%\"<!--REPLACE-PROGRESS-PERCENT-->\n",
                   percent;
+           next
+     }
+     /<!--INSERT-BLOG-HEADLINE-->/ {
+           printf "<!--INSERT-BLOG-HEADLINE--> %s\n", blogheadline;
            next
      }
      !indon { print }
