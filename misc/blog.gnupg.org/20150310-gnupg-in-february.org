@@ -1,0 +1,115 @@
+# GnuPG News for January 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: March 10th, 2015
+
+** GnuPG News for February 2015
+
+Indeed, very exiting news this month: The financial crisis of The
+GnuPG Project is over.  Due to an unexpected amount of donations
+received in the first days of February we can keep on working for at
+least the next 2 or 3 years.
+
+How did this happen?  At the [[https://events.ccc.de/congress/2014/wiki/Main_Page][31C3]] Nico Josattis arranged an Interview
+with [[http://juliaangwin.com][Julia Angwin]] who writes for [[http://www.propublica.org][ProPublica]].  Eventually on the 5th
+her [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][article]] was published and immediately received a lot of attention.
+Not only at the ProPublica site but at many other news site as well.
+While checking my mail on that evening, I noticed more than thousand
+notification mails for donations and even better: that continuous stream of
+donations did not stop for the next days.  Alone on the first day we
+received more than 120,000\thinsp\euro and thus more than our initial goal.
+I even had to fix the script building the donation progress bar to not
+overflow the right margin the same night.  I also received a call from
+one of the Stripe founders who offered yearly donations from Stripe
+and Facebook each at 50,0000\thinsp$.  Amazing.
+
+I like to *thank everyone* for supporting the project, be it small or
+large individual donations, helping users, providing corporate
+sponsorship, working on the software, and for all the encouraging
+words by mail, blogs, and even postcards.
+
+Due to that new publicity for GnuPG, I received many requests for
+interviews and for several days journalists and photographers visited
+me in my office.  They wrote several articles for German papers and
+radio stations, for example in the [[http://www.taz.de/Verschluesselung-mit-GnuPG/!154635/][taz]], the [[http://www.sueddeutsche.de/digital/verschluesselungssoftware-gnu-pg-wie-ein-mann-das-e-mail-geheimnis-verteidigt-1.2355155][Süddeutsche Zeitung]], and
+the [[http://dw.de/p/1Eebj][Deutsche Welle]]. I hope these articles help to keep up the
+awareness for the importance of privacy issues.
+
+GnuPG does not stand alone: there are many other projects, often
+unknown to most people, which are essential to keep the free Internet
+running.  Many of them are run by volunteers who spend a lot of unpaid
+time on them.  They need our support as well!
+
+Now what to do with all that money?  Before a final plan can be
+drafted, tax issues need to be resolved.  Given that g10^code (the
+legal entity behind the project) is not a charity, we need to find a
+way to stretch the use of the money beyond this year.  My tax
+advisor is currently looking into this and I will report on the
+outcome in another blog entry.
+
+Regardless of this I started to look out for a second developer and
+fortunately [[http://walfield.org][Neal Walfield]] was searching for a job and accepted my
+offer to work on GnuPG.  Neal is well known for his work on modern
+operating systems and I consider him an excellent hacker.  I am glad
+to have him on board.
+
+*** Release status
+
+GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000361.html][2.1.2]] was released on the 11th, [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html][2.0.27]] on the 18th, and [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html][1.4.19]]
+on the 27th.
+
+The 1.4.19 release features a fix for a new side channel attack on the
+Elgamal encryption (which used to be the default public key encryption
+algorithm until 2009).  Go ahead and read how Genkin’s group describes
+the [[http://www.cs.tau.ac.il/~tromer/radioexp/][details]] of this attack.  The release also includes a mitigation
+for another SCA to be described in the forthcoming paper /Last-Level
+Cache Side-Channel Attacks are Practical/ by Yarom et al.
+
+Libgcrypt [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html][1.6.3]] was released on the 27th to fix the described SCAs for
+GnuPG 2.0 and 2.1.
+
+*** Released and not yet released changes
+
+Several segfaults due to NULL-derefs and invalid memory reads when
+using garbled keyrings were fixed.  These unlikely exploitable bugs
+were detected by fuzzing instrumented versions of GnuPG; [[https://blog.fuzzing-project.org/5-Multiple-issues-in-GnuPG-found-through-keyring-fuzzing-TFPA-0012015.html][Hanno Böck's
+report]] has some details.  A long standing implementation flaw
+copying memory stored values to integers variables was also found and
+fixed.  These bug fixes have been backported to 2.0 and 1.4;
+Daniel Kahn Gillmor was kind enough to help with this.
+
+The decade old PKA system was modernized.  The formerly used TXT
+records haven been replaced with CERT records of the IPGP type, and
+the local part of the mail address is now hashed and base32 encoded to
+support all valid mail addresses.  This has been backported to 1.4.19.
+The new option =--print-pka-records= for 2.1 can be used to create
+zone files for PKA.
+
+The removal of the PGP-2 support from 2.1 turned out to be more
+complicated than expected.  Another bug related to this only showed up
+and was fixed after the release of 2.1.2.
+
+To help people not fluent in the spelling alphabet or when using
+small fonts the option =--with-icao-spelling= has been added to 2.1:
+#+begin_example
+pub   dsa2048/F2AD85AC1E42B367 2007-12-31 [expires: 2018-12-31]
+      Key fingerprint = 8061 5870 F5BA D690 3336  86D0 F2AD 85AC 1E42 B367
+                        "Eight Zero Six One  Five Eight Seven Zero
+                         Foxtrot Five Bravo Alfa  Delta Six Niner Zero
+                         Three Three Three Six  Eight Six Delta Zero
+                         Foxtrot Two Alfa Delta  Eight Five Alfa Charlie
+                         One Echo Four Two  Bravo Three Six Seven"
+#+end_example
+
+The dropped support for LDAP keyserver will be re-introduced with
+2.1.3.  Neal started to work on this and published a detailed description
+on how to setup such an [[https://wiki.gnupg.org/LDAPKeyserver][LDAP server]].
+
+
+** About this news posting
+
+I try to write a news posting every month.  However, other work may
+have a higher priority (e.g. security fixes) and thus I won’t promise
+any fix publication date.  If you have an interesting topic for a news
+posting, please feel free to mail me or gnupg-users@.  A summary of
+the mailing list discussion would be a nice to have.

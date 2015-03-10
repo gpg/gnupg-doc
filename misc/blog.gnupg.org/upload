@@ -2,6 +2,12 @@
 
 set -e
 
+opt_upload=yes
+if [ x"$1" = x"--no-upload" ]; then
+  opt_upload=no
+fi
+
+
 if [ "$(pwd  | awk -F/ '{print $NF}')" != "blog.gnupg.org" ]; then
   echo "upload: not invoked from the blog.gnupg.org directory" >&2;
   exit 1
@@ -36,7 +42,8 @@ newest=$(head -1 index.tmp)
 : >index.headlines.tmp
 cat index.tmp | while read fname; do
   echo -n "${fname#./}|" >>index.headlines.tmp
-  sed  -n '/^<h2 id=/ s,^<[^>]*>\(.*\)</h2>,\1,p' $fname >>index.headlines.tmp
+  sed  -n '/^<h2 id=/ {s,^<[^>]*>\(.*\)</h2>,\1,p;q}' \
+       $fname >>index.headlines.tmp
 done
 
 # Update the index file
@@ -80,12 +87,14 @@ echo "upload: Updating feed file" >&2
 
 
 
-# Remove temp file
-rm index.headlines.tmp
+# Rename headlines file
+mv index.headlines.tmp headlines.txt
 
-echo "upload: Uploading files" >&2
-rsync -vr --links --exclude '*~' --exclude upload --exclude '*tmp' \
-   --exclude '*.org' \
-   . werner@trithemius.gnupg.org:/var/www/www/www.gnupg.org/misc/blog/
+if [ $opt_upload = yes ]; then
+  echo "upload: Uploading files" >&2
+  rsync -vr --links --exclude '*~' --exclude upload --exclude '*tmp' \
+     --exclude '*.org' \
+     . werner@trithemius.gnupg.org:/var/www/www/www.gnupg.org/misc/blog/
+fi
 
 #eof
