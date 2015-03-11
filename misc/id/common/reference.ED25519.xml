@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='ED25519'
+           target='http://dx.doi.org/10.1007/s13389-012-0027-1'>
+
+<front>
+<title>High-speed high-security signatures</title>
+<author fullname='Daniel J. Bernstein' surname='Bernstein' initials='D.' />
+<author fullname='Niels Duif' surname='Duif' initials='N.' />
+<author fullname='Tanja Lange' surname='Lange' initials='T.' />
+<author fullname='Peter Schwabe' surname='Schwabe' initials='P.'/>
+<author fullname='Bo-Yin Yang' surname='Yang' initials='B.'/>
+<date year='2011' month='September'/>
+<abstract>
+<t>This paper shows that a $390 mass-market quad-core 2.4GHz
+Intel Westmere (Xeon E5620) CPU can create 109000 signatures per
+second and verify 71000 signatures per second on an elliptic curve at a
+2128 security level. Public keys are 32 bytes, and signatures are 64 bytes.
+These performance figures include strong defenses against software side-
+channel attacks: there is no data flow from secret keys to array indices,
+and there is no data flow from secret keys to branch conditions.</t>
+</abstract>
+</front>
+
+<seriesInfo name='Journal of Cryptographic Engineering'
+            value='Volume 2, Issue 2, pp. 77-89' />
+</reference>

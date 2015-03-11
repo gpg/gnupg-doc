@@ -1,0 +1,2 @@
+This specification extends OpenPGP with the EdDSA public key algorithm
+and describes the use of curve Ed25519.

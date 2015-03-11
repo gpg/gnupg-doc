@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC6637'>
+
+<front>
+<title>Elliptic Curve Cryptography (ECC) in OpenPGP</title>
+<author initials='A.' surname='Jivsov' fullname='A. Jivsov'>
+<organization /></author>
+<date year='2012' month='June' />
+<abstract>
+<t>This document defines an Elliptic Curve Cryptography extension to the OpenPGP public key format and specifies three Elliptic Curves that enjoy broad support by other standards, including standards published by the US National Institute of Standards and Technology.  The document specifies the conventions for interoperability between compliant OpenPGP implementations that make use of this extension and these Elliptic Curves. [STANDARDS-TRACK]</t></abstract></front>
+
+<seriesInfo name='RFC' value='6637' />
+<format type='TXT' octets='31532' target='http://www.rfc-editor.org/rfc/rfc6637.txt' />
+</reference>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC2434'>
+
+<front>
+<title abbrev='Guidelines for IANA Considerations'>Guidelines for Writing an IANA Considerations Section in RFCs</title>
+<author initials='T.' surname='Narten' fullname='Thomas Narten'>
+<organization>IBM Corporation</organization>
+<address>
+<postal>
+<street>3039 Cornwallis Ave.</street>
+<street>PO Box 12195 - BRQA/502</street>
+<street>Research Triangle Park</street>
+<street>NC 27709-2195</street></postal>
+<phone>919-254-7798</phone>
+<email>narten@raleigh.ibm.com</email></address></author>
+<author initials='H.T.' surname='Alvestrand' fullname='Harald Tveit Alvestrand'>
+<organization>Maxware</organization>
+<address>
+<postal>
+<street>Pirsenteret</street>
+<street>N-7005 Trondheim</street>
+<country>Norway</country></postal>
+<phone>+47 73 54 57 97</phone>
+<email>Harald@Alvestrand.no</email></address></author>
+<date year='1998' month='October' />
+<area>General</area>
+<keyword>Internet Assigned Numbers Authority</keyword>
+<keyword>IANA</keyword>
+<abstract>
+<t>
+   Many protocols make use of identifiers consisting of constants and
+   other well-known values. Even after a protocol has been defined and
+   deployment has begun, new values may need to be assigned (e.g., for a
+   new option type in DHCP, or a new encryption or authentication
+   algorithm for IPSec).  To insure that such quantities have consistent
+   values and interpretations in different implementations, their
+   assignment must be administered by a central authority. For IETF
+   protocols, that role is provided by the Internet Assigned Numbers
+   Authority (IANA).
+</t>
+<t>
+   In order for the IANA to manage a given name space prudently, it
+   needs guidelines describing the conditions under which new values can
+   be assigned. If the IANA is expected to play a role in the management
+   of a name space, the IANA must be given clear and concise
+   instructions describing that role.  This document discusses issues
+   that should be considered in formulating a policy for assigning
+   values to a name space and provides guidelines to document authors on
+   the specific text that must be included in documents that place
+   demands on the IANA.
+</t></abstract></front>
+
+<seriesInfo name='BCP' value='26' />
+<seriesInfo name='RFC' value='2434' />
+<format type='TXT' octets='25092' target='http://www.rfc-editor.org/rfc/rfc2434.txt' />
+<format type='XML' octets='27060' target='http://xml.resource.org/public/rfc/xml/rfc2434.xml' />
+</reference>

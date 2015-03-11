@@ -1,0 +1,152 @@
+# Introduction
+
+The OpenPGP specification in [](#RFC4880) defines the RSA, Elgamal,
+and DSA public key algorithms.  [](#RFC6637) adds support for
+Elliptic Curve Cryptography and specifies the ECDSA and ECDH
+algorithms.  Due to patent reasons no point compression was defined.
+
+This document specifies how to use the EdDSA public key signature
+algorithm [](#ED25519) with the OpenPGP standard.  It defines a new
+signature algorithm named EdDSA and specifies how to use the Ed25519
+curve with EdDSA.  This algorithm uses a custom point compression
+method.  There are three main advantages of the EdDSA algorithm: It
+does not require the use of a unique random number for each signature,
+there are no padding or truncation issues as with ECDSA, and it is
+more resilient to side-channel attacks.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in [](#RFC2119).
+
+
+# Supported Curves
+
+This document references the Curve "Ed25519" which is the Edwards form
+of "Curve25519" and specified in the same paper as the "EdDSA"
+algorithm ([](#ED25519)).
+
+Other curves may be used by using a specific OID for the curve and its
+EdDSA parameters.
+
+The following public key algorithm IDs are added to expand section 9.1
+of [](#RFC4880), "Public-Key Algorithms":
+
+   ID         Description of Algorithm
+   --         --------------------------
+   TBD1       EdDSA public key algorithm
+
+Compliant applications MUST support EdDSA with the curve Ed25519.
+Applications MAY support other curves as long as a dedicated OID for
+using that curve with EdDSA is used.
+
+# Point Format
+
+The EdDSA algorithm defines a specific point compression format.  To
+indicate the use of this compression format and to make sure that the
+key can be represented in the Multiprecision Integer (MPI) format of
+[](#RFC4880) the octet string specifying the point is prefixed with
+the octet 0x40.  This encoding is an extension of the encoding given
+in [](#RFC6637) which uses 0x04 to indicate an uncompressed point.
+
+For example, the length of a public key for the curve Ed25519 is 263
+bit: 7 bit to represent the 0x40 prefix octet and 32 octets for the
+native value of the public key.
+
+# Encoding of Public and Private Keys
+
+The following algorithm specific packets are added to Section 5.5.2
+of [](#RFC4880), "Public-Key Packet Formats", to support EdDSA.
+
+Algorithm-Specific Fields for EdDSA keys:
+
+-   a variable length field containing a curve OID, formatted as
+    follows:
+
+    -    a one-octet size of the following field; values 0 and 0xFF are
+         reserved for future extensions,
+
+    -    octets representing a curve OID, defined in Section 6.
+
+-   MPI of an EC point representing a public key Q as described under
+    Point Format above.
+
+The following algorithm specific packets are added to Section 5.5.3
+of [](#RFC4880), "Secret-Key Packet Formats", to support EdDSA.
+
+Algorithm-Specific Fields for EdDSA keys:
+
+- an MPI of an integer representing the secret key, which is a
+  scalar of the public EC point.
+
+The version 4 packet format MUST be used.
+
+
+# Message Encoding
+
+Section 5.2.3 of [](#RFC4880), "Version 4 Signature Packet Format"
+specifies formats.  To support EdDSA no change is required, the MPIs
+representing the R and S value are encoded as MPIs in the same way as
+done for the DSA and ECDSA algorithms; in particular the
+Algorithm-Specific Fields for an EdDSA signature are:
+
+     - MPI of EdDSA value r.
+
+     - MPI of EdDSA value s.
+
+Note that the compressed version of R and S as specified for EdDSA
+([](#ED25519)) is used.
+
+The version 3 signature format MUST NOT be used with EdDSA.
+
+Although that algorithm allows arbitrary data as input, its use with
+OpenPGP requires that a digest of the message is used as input.  See
+section 5.2.4 of [](#RFC4880), "Computing Signatures" for details.
+Truncation of the resulting digest is never applied; the resulting
+digest value is used verbatim as input to the EdDSA algorithm.
+
+
+# Curve OID
+
+The EdDSA key parameter curve OID is an array of octets that defines a
+named curve.  The table below specifies the exact sequence of bytes
+for each named curve referenced in this document:
+
+  OID                     Len  Encoding in hex format      Name
+  ----------------------  ---  --------------------------  -------
+  1.3.6.1.4.1.11591.15.1    9  2B 06 01 04 01 DA 47 0F 01  Ed25519
+
+See [](#RFC6637) for a description of the OID encoding given in the
+second and third columns.
+
+
+# Security Considerations
+
+The security considerations of [](#RFC4880) apply accordingly.
+
+Although technically possible the use of EdDSA with digest algorithms
+weaker than SHA-256 (e.g. SHA-1) is not suggested.
+
+
+# IANA Considerations
+
+IANA is requested to assign an algorithm number from the OpenPGP
+Public-Key Algorithms range, or the "namespace" in the terminology of
+[](#RFC5226), that was created by [](#RFC4880).  See section 2.
+
+   ID    Algorithm                   Reference
+   --    --------------------------  ---------
+   TBD1  EdDSA public key algorithm  This doc
+
+   [Notes to RFC-Editor: Please remove the table above on publication.
+    It is desirable not to reuse old or reserved algorithms because
+    some existing tools might print a wrong description.  A higher
+    number is also an indication for a newer algorithm.  As of now
+    22 is the next free number.]
+
+
+# Acknowledgments
+
+The author would like to acknowledge the help of the individuals who
+kindly voiced their opinions on the IETF OpenPGP and GnuPG mailing
+lists, in particular, the help of Andrey Jivsov, Jon Callas, and NIIBE
+Yutaka.
