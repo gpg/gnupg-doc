@@ -110,20 +110,56 @@ monyear=$(echo "$tmp" | awk -F: 'BEGIN { m[1] = "January";
       m[2] = "February"; m[3] = "March"; m[4] = "April"; m[5] = "May";
       m[6] = "June"; m[7] = "July"; m[8] = "August"; m[9] = "September";
       m[10] = "October"; m[11] = "November"; m[12] = "December"; }
-      {printf "%s %d", m[$2] , $1}')
-euromo=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($8 + 0.5)}')
+      {printf "%s %d", m[int($2)] , $1}')
+thisyear=$(echo "$tmp" | awk -F: '{print $1}')
 euroyr=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($10 + 0.5)}')
-n=$(echo "$tmp" | awk -F: '{printf "%d", $7}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
 
-euroyr_campaign=$(echo "$tmp" | awk -F: '$1=="2014"{printf "0"; next};{printf "%d", int($10 + 0.5)}')
+
+dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
+  BEGIN { m[1] = "January";
+          m[2] = "February"; m[3] = "March"; m[4] = "April"; m[5] = "May";
+          m[6] = "June"; m[7] = "July"; m[8] = "August"; m[9] = "September";
+          m[10] = "October"; m[11] = "November"; m[12] = "December" ;
+          printf "<table border=\"2\" cellspacing=\"0\" cellpadding=\"6\"";
+          printf " rules=\"groups\" frame=\"hsides\">\n";
+          printf "<colgroup>\n";
+          printf "<col class=\"left\" />\n";
+          printf "<col class=\"right\" />\n";
+          printf "<col class=\"right\" />\n";
+          printf "</colgroup>\n";
+          printf "<thead>\n";
+          printf "<tr>\n";
+          printf "<th scope=\"col\" class=\"left\">Month</th>\n";
+          printf "<th scope=\"col\" class=\"right\">#</th>\n";
+          printf "<th scope=\"col\" class=\"right\">&euro;</th>\n";
+          printf "</tr>\n";
+          printf "</thead>\n";
+          printf "<tbody>\n";
+        }
+  NR==1 { nyear = $9; totalyear = int($10 + 0.5);
+        }
+  $1 != thisyear {
+          printf "</tbody>\n";
+          printf "<tbody>\n";
+          printf "<tr><td class=\"left\">%d</td>\n", thisyear;
+          printf "    <td class=\"right\">%d</td>\n", nyear;
+          printf "    <td class=\"right\">%d</td></tr>\n", totalyear;
+          printf "</tbody>\n";
+          printf "</table>\n";
+          exit 0
+        }
+        { printf "<tr><td class=\"left\">%s</td>\n", m[int($2)];
+          printf "    <td class=\"right\">%d</td>\n", $7;
+          printf "    <td class=\"right\">%d</td></tr>\n", int($8 + 0.5);
+        }
+')
+
+
 
 # Campaign data
 goal="120000"
-tmp=$(grep '^2014:12:' "$donations")
-euro=$(echo "$tmp" | awk -F: '{printf "%d", int($8 + 0.5)}')
-euro=$(($euro + $euroyr_campaign))
-percent=$(echo "$euro:$goal" | awk -F: '{ p = (int($1)*100)/int($2);
+percent=$(echo "$euroyr:$goal" | awk -F: '{ p = (int($1)*100)/int($2);
                                           if(p > 100) { p = 100 };
                                           printf "%d", p}')
 
@@ -142,10 +178,10 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
    fi
    [ $verbose = yes ] && echo "processing $file" >&2
    [ -f "$file.tmp" ] && rm "$file.tmp"
-   awk -F: -v year=$year -v donors="$donors" \
-           -v monyear="$monyear" -v euro="$euro" -v euroyr="$euroyr" \
-           -v euromo="$euromo" \
-           -v n="$n" -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
+   awk -F: -v year=$year -v donors="$donors" -v dontable="$dontable" \
+           -v monyear="$monyear" -v thisyear="$thisyear" \
+           -v euro="$euro" -v euroyr="$euroyr" \
+           -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
            -v blogheadline="$blogheadline" \
             <"$file"  >"$file.tmp" '
      /<!--BEGIN-DONATIONS-->/ {indon=1; print; insert("") }
@@ -154,16 +190,14 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      /<!--END-SOME-DONATIONS-->/ {indon=0}
      /<!--BEGIN-DONATIONS_goteo13-->/ {indon=1; print; insert("goteo13") }
      /<!--END-DONATIONS_goteo13-->/ {indon=0}
+     /<!--BEGIN-DONATION-TABLE-->/ {indon=1; print; print dontable }
+     /<!--END-DONATION-TABLE-->/ {indon=0}
      /<!--INSERT-MONTH-DATE-->/ {
            printf "<!--INSERT-MONTH-DATE--> %s\n", monyear;
            next
      }
-     /<!--INSERT-MONTH-EURO-->/ {
-           printf "<!--INSERT-MONTH-EURO--> %s\n", euromo;
-           next
-     }
-     /<!--INSERT-MONTH-N-->/ {
-           printf "<!--INSERT-MONTH-N--> %s\n", n;
+     /<!--INSERT-THIS-YEAR-->/ {
+           printf "<!--INSERT-THIS-YEAR--> %d\n", thisyear;
            next
      }
      /<!--INSERT-YEAR-EURO-->/ {

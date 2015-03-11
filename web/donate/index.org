@@ -166,10 +166,17 @@
 
 ** Recent donors
 
-#+HTML: <div id="tagcloudlist"><ul>
-#+HTML: <!--BEGIN-SOME-DONATIONS-->
-#+HTML: <!--END-SOME-DONATIONS-->
-#+HTML: <li><a href="/donate/kudos.html">(all)</a></li>
-#+HTML: </ul><p class="doclear"> </p></div>
+#+BEGIN_HTML
+<div id="tagcloudlist"><ul>
+<!--BEGIN-SOME-DONATIONS-->
+<!--END-SOME-DONATIONS-->
+<li><a href="/donate/kudos.html">(all)</a></li>
+</ul><p class="doclear"> </p></div>
+<p>Donations received in
+<!--INSERT-THIS-YEAR-->
+:&nbsp;
+<!--INSERT-YEAR-EURO-->
+</p>
+#+END_HTML
 
 # eof #
