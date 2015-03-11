@@ -10,7 +10,7 @@ GnuPG Project is over.  Due to an unexpected amount of donations
 received in the first days of February we can keep on working for at
 least the next 2 or 3 years.
 
-How did this happen?  At the [[https://events.ccc.de/congress/2014/wiki/Main_Page][31C3]] Nico Josattis arranged an Interview
+How did this happen?  At the [[https://events.ccc.de/congress/2014/wiki/Main_Page][31C3]] Nico Josuttis arranged an Interview
 with [[http://juliaangwin.com][Julia Angwin]] who writes for [[http://www.propublica.org][ProPublica]].  Eventually on the 5th
 her [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][article]] was published and immediately received a lot of attention.
 Not only at the ProPublica site but at many other news site as well.
