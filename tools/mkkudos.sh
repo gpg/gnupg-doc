@@ -131,8 +131,8 @@ dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
           printf "<thead>\n";
           printf "<tr>\n";
           printf "<th scope=\"col\" class=\"left\">Month</th>\n";
-          printf "<th scope=\"col\" class=\"right\">#</th>\n";
-          printf "<th scope=\"col\" class=\"right\">&euro;</th>\n";
+          printf "<th scope=\"col\" class=\"right wideright\">#</th>\n";
+          printf "<th scope=\"col\" class=\"right wideright\">&euro;</th>\n";
           printf "</tr>\n";
           printf "</thead>\n";
           printf "<tbody>\n";
@@ -143,15 +143,16 @@ dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
           printf "</tbody>\n";
           printf "<tbody>\n";
           printf "<tr><td class=\"left\">%d</td>\n", thisyear;
-          printf "    <td class=\"right\">%d</td>\n", nyear;
-          printf "    <td class=\"right\">%d</td></tr>\n", totalyear;
+          printf "    <td class=\"right wideright\">%d</td>\n", nyear;
+          printf "    <td class=\"right wideright\">%d</td></tr>\n", totalyear;
           printf "</tbody>\n";
           printf "</table>\n";
           exit 0
         }
         { printf "<tr><td class=\"left\">%s</td>\n", m[int($2)];
-          printf "    <td class=\"right\">%d</td>\n", $7;
-          printf "    <td class=\"right\">%d</td></tr>\n", int($8 + 0.5);
+          printf "    <td class=\"right wideright\">%d</td>\n", $7;
+          printf "    <td class=\"right wideright\">%d</td></tr>\n",
+                                                  int($8 + 0.5);
         }
 ')
 

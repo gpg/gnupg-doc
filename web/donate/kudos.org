@@ -2,6 +2,8 @@
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
+#+HTML: <!--table_data_wideright-->
+
 * Donation Summary
 
 *** This year
@@ -15,7 +17,7 @@
 *** Previous years
 
 | Year |   # |  \EUR | net \EUR |
-|      | <r> |   <r> |      <r> |
+| <l>  | <r> |   <r> |      <r> |
 |------+-----+-------+----------|
 | 2014 | 801 | 34700 |          |
 | 2013 | 148 |  5041 |     4145 |

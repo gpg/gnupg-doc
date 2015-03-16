@@ -363,6 +363,15 @@ string of the source file or nil if not available."
                        "href=\"\\(https://www.gnupg.org\\)/.*\"" nil t)
                  (replace-match "" t t nil 1))
 
+               ; If the wideright flag is used, change <td> and <th>
+               ; attributes.
+               (goto-char (point-min))
+               (when (search-forward "<!--table_data_wideright-->" nil t)
+                 (goto-char (point-min))
+                 (while (re-search-forward
+                         "^<t[hd].*class=\"\\(right\\)\".*$" nil t)
+                   (replace-match "right wideright" t nil nil 1)))
+
                ; And save the changes
                (basic-save-buffer))
       (unless visitingp (kill-buffer work-buffer))))))
