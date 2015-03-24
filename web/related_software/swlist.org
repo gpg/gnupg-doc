@@ -34,12 +34,12 @@ Cryptophane is an easy-to-use application for MS Windows. It allows
 users to encrypt, sign, decrypt, and perform key maintenance without
 having to deal with GnuPG's command-line interface.
 
-** [[http://egd.sourceforge.org][EGD]] [Unix] MISC
+** [[http://egd.sourceforge.net][EGD]] [Unix] MISC
    :PROPERTIES:
    :CUSTOM_ID: egd
    :END:
 
-Unices without a /dev/random should [[../../download/index.org::egd][download]] and install
+Unices without a =/dev/random= should download and install
 this Entropy Gathering Daemon.
 
 ** [[http://enigform.mozdev.org][enigform]] [Unix,Windows,OSX] MISC

@@ -49,8 +49,7 @@ Which is fed into the EdDSA signature function and yields this signature:
 
   s: d09c4fa11527f038e0f57f2201d82f2ea2c9033265fa6ceb489e854bae61b404
 
-Note the MPI encoding rules require that the value of S needs to be
-prefixed with a 0x00 octet.  The entire signature packet is thus:
+The entire signature packet is thus:
 
        88 5e 04 00 16 08 00 06  05 02 55 f9 5f 95 00 0a
        09 10 8c fd e1 21 97 96  5a 9a f6 22 01 00 56 f9
@@ -58,3 +57,22 @@ prefixed with a 0x00 octet.  The entire signature packet is thus:
        7e d8 2b f4 dd e5 60 6e  0d 75 6a ed 33 66 01 00
        d0 9c 4f a1 15 27 f0 38  e0 f5 7f 22 01 d8 2f 2e
        a2 c9 03 32 65 fa 6c eb  48 9e 85 4b ae 61 b4 04
+
+# Point compression flag bytes
+
+This specification introduces the new flag byte 0x40 to indicate the
+point compression format.  The value has been chosen so that the high
+bit is not cleared and thus to avoid accidental sign extension.  Two
+other values might also be interesting for other ECC specifications:
+
+      Flag  Description
+      ----  -----------
+      0x04  Standard flag for uncompression format
+      0x40  Native point format of the curve follows
+      0x41  Only X coordinate follows.
+      0x42  Only Y coordinate follows.
+
+# Changes since -02
+
+  - Fixed decription in the test vectors regarding an extra 0x00 byte.
+  - Small gramar fixes.
