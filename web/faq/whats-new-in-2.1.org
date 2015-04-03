@@ -561,7 +561,7 @@ then run import, and finally restore the ownertrust values:
 $ cd ~/.gnupg
 $ gpg --export-ownertrust >otrust.lst
 $ mv pubring.gpg publickeys
-$ gpg2 --import publickeys
+$ gpg2 --import-options import-local-sigs --import publickeys
 $ gpg2 --import-ownertrust otrust.lst
 #+end_example
 
