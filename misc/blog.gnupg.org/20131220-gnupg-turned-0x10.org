@@ -3,7 +3,7 @@
 #+AUTHOR: Sam Tuke
 #+DATE: 20th December 2013
 
-  English | [[http://www.framablog.org/index.php/post/2013/12/20/gnupg-16-ans][French / Français]] | [[file:20131220-gnupg-turned-0x10.ph.org][Filipino]] | [[http://metahumano.org/log/16-anos-de-proteccion-de-la-privacidad/][Spanish / Español]]
+  English | [[http://www.framablog.org/index.php/post/2013/12/20/gnupg-16-ans][French / Français]] | [[file:20131220-gnupg-turned-0x10.ph.org][Filipino]] | [[http://metahumano.org/log/16-anos-de-proteccion-de-la-privacidad/][Spanish / Español]] | [[http://gnupg.hclippr.com/16th-announce.html][Japanese]]
 
 *** 16 Years of protecting privacy
 
