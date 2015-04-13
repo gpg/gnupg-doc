@@ -124,8 +124,8 @@
 #
 # ADNS
 #
-#+macro: adns_ver  1.4-g10-5
-#+macro: adns_sha1 aecd6213118f01aa38f535dc3bafc31b1e7c1c21
+#+macro: adns_ver  1.4-g10-6
+#+macro: adns_sha1 cc124d58828ab1d6fa7df49aaeb37985c5225de5
 
 
 #
