@@ -1,0 +1,153 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head><title>g10 Code's bug tracker</title>
+<link rev="made" href="mailto:webmaster@g10code.de">
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#1f00ff" alink="#ff0000" vlink="#9900dd">
+<div align="left">
+<img src="pagehead.png"
+     alt="[g10 Code Logo]" width="1065" height="100">
+</div>
+
+
+<h1><a name="intro">Bug tracker for GnuPG and related projects</a></h1>
+
+<p>
+
+
+<ul>
+ <li>Goto to the list of <a
+href="https://bugs.gnupg.org/gnupg/issue?%40sort=id&%40sortdir=on&%40group=category&%40columns=id%2Cactivity%2Ctitle%2Ccreator%2Cassignedto%2Cstatus&%40filter=status&status=-1%2C1%2C2%2C3%2C4%2C5%2C6%2C7&%40pagesize=50&%40startwith=0"
+>GnuPG related bugs</a>.
+</ul>
+
+
+<h2>Becoming a registered user</h2>
+<p>
+To enter a bug into our bug tracker you need to be a registered user.
+A registered user will be assigned a <em>provisional user role</em>
+which allows to enter new bugs and to edit these bugs.  The <em>user
+role</em> will be granted by an administrator on demand.  Just add
+remark to your bug report that you wish to work more with the bug
+tracker.  We have these strict rules to avoid spam and keep trolls
+away from the tracker.
+<p>
+Note that some actions (e.g. closing a bug) are even restricted from
+regular users.  A developer account is required for these actions.
+The rationale is that only a developer will be able to fix things and
+thus decides whether a bug is to be closed.  A bug may be re-opened at
+any time.
+
+
+<h2>How to add a new bug</h2>
+<p>
+Please note that this bug tracker is a public resource and everything
+you enter there will be available for the whole networked world.  It
+is similar to a public mailing list and there is no easy way to
+retract any information.
+<p>
+You should follow these steps to enter a new bug (issue):
+<p>
+<ul>
+ <li>Review the documentation and the mailing list archives to see
+     whether your problem has already been addressed.  Often bugs are
+     mere configuration problems.
+     <p>
+ <li>Check that the bug has not yet been entered and that there is no
+     similar bug in the tracker.  Use the search option for this.  It
+     is best to also look through the already closed
+     (<em>resolved</em>) issue.
+     <p>
+
+ <li>Select the <em>Create New</em> menu entry.  An empty page will be
+     presented.
+     <p>
+
+ <li>Come up with a meaningful short description of the bug and enter
+     this into the <em>title</em> field.
+     <p>
+
+ <li>Assign a priority for the bug. These priorities are
+     defined:
+     <p>
+     <dl>
+       <dt>bug<dd>Use this for a regular bug.
+       <dt>urgent<dd>Use this if you believe that the problem should
+       be fixed soon.
+       <dt>critical<dd>Use this if your problem is really severe and inhibits
+       you from working with the software.  Do not use it if you can
+       find a workaround for the problem.
+       <dt>minor-bug<dd>Use this for a minor bug
+       <dt>feature<dd>Use this for a technical feature requests.
+       <dt>wish<dd>Use this for everything else, for example to
+       request better documentation or a new FAQ entry.
+     </dl>
+     <p>
+
+ <li>See whether you can assign category to the bug. There is a drop
+     down list with all available categories.  A category is in
+     general the name of the application with the bug, but might also
+     be a library.  If you can't figure out the category, keep it at
+     <em>- no selection -</em>.  The <em>dirmngr</em> category is only
+     used for the old standalone package; since GnuPG 2.1 dirmngr
+     is part of GnuPG proper; thus use <em>gnupg</em> as category and
+     add <em>dirmngr</em> to the topic field.
+     <p>
+
+ <li>Now for the most important field: The description of the problem.
+     You enter this information into the <em>Change Note</em> field.
+     Please take care to use hard line breaks and format the report
+     as you would do by mail.  No HTML please.
+     <p>
+     Make sure that you describe the bug as good as possible and try
+     to come up with a minimal recipe on how to replicate the bug. We
+     need to know <strong>the version of the software</strong> and if
+     you are using a non-released version the GIT commit id.  The type
+     and version of your operating system is usually important, so
+     please tell us.  In particular tell us if you are problem occurs
+     on a non Unix system, i.e. MS Windows.
+     <p>
+
+ <li>If you need to enter more information, you may upload any kind of
+     file.  However, please do this only if you are sure that these
+     information are important and that they do not contain
+     confidential data.  This file will be public and it won't be
+     possible to retract it anymore.  Avoid screen shots unless you
+     are asked for them.
+     <p>
+     The problem with screen shots or, worse, screen casts is that we
+     would need to transcript them to text for evaluating the problem.
+     That takes away time we better spend solving the problem; it
+     is easy to help us by providing a transcription
+     <p>
+
+ <li>If you are sure that your bug is MS Windows specific, please
+     enter the string "w32" into the <em>Topics</em> field.  You do
+     not need to do it if you select a Windows specific category (like
+     "gpgol").
+     <p>
+
+ <li>If you want to refer to an external bug description (for example
+     a similar entry in Debian's bug tracker), enter the URL into the
+     <em>ExtLink</em> field.
+     <p>
+
+ <li>If everything is as you want it, select the <em>Submit New
+     Entry</em> button.  This entry as well as all future changes will
+     also be mailed to you.
+     <p>
+</ul>
+
+
+
+
+<hr>
+<div><font size="-1"> Contact information available at the <a
+href="http://www.g10code.com">g10 Code main pages</a>.
+<p>
+Copyright (C) 2006 g10 Code GmbH, Erkrath-Hochdahl.<br>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.
+</font></div>
+</body>
+</html>

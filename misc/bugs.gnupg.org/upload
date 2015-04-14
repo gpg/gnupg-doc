@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+user=$USER
+host=kerckhoffs.g10code.com
+
+if [ "$(pwd  | awk -F/ '{print $NF}')" != "bugs.gnupg.org" ]; then
+  echo "upload: not invoked from the bugs.gnupg.org directory" >&2;
+  exit 1
+fi
+
+rsync -vr --links --exclude '*~' --exclude upload \
+    . ${user}@${host}:/var/www/all/bugs.gnupg.org/htdocs/
+
+#eof
