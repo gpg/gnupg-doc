@@ -22,9 +22,9 @@
 #+macro: gnupg21_size    4762k
 #+macro: gnupg21_sha1    091e69ec1ce3f0032e6b135e4da561e8d46d20a7
 #
-#+macro: gnupg21_w32_ver  2.1.1_20141216
-#+macro: gnupg21_w32_size 6364k
-#+macro: gnupg21_w32_sha1 fb541b8685b78541c9b2fadb026787f535863b4a
+#+macro: gnupg21_w32_ver  2.1.3_20150413
+#+macro: gnupg21_w32_size 2539k
+#+macro: gnupg21_w32_sha1 d5630904b3d68eddc2730a00bfc67d52658cbe7e
 
 
 #
@@ -61,10 +61,10 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver    1.5.3
+#+macro: gpgme_ver    1.5.4
 #+macro: gpgme_branch master
-#+macro: gpgme_size   946k
-#+macro: gpgme_sha1   8dd7711a4de117994fe2d45879ef8a9900d50f6a
+#+macro: gpgme_size   953k
+#+macro: gpgme_sha1   8cf1bcce8603bd7d006065f08059cf85462828c4
 
 
 #

@@ -65,7 +65,7 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
-** GnuPG 2.1.4 released (2015-04-11)
+** GnuPG 2.1.3 released (2015-04-11)
 
 This is another release of the /modern/ branch of GnuPG.  It fixes
 a lot of bugs.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000365.html][anouncement mail]].
