@@ -1,0 +1,128 @@
+# GnuPG News for January 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: April 26th, 2015
+
+** Notes from the first OpenPGP Summit
+
+   On April 18/19 a bunch of OpenPGP folks met in Dreieich near
+   Frankfurt to get to know themselves better and exchange experience
+   in implementing and deploying OpenPGP based applications.
+
+   During one of the meetings of our local group of regulars at the
+   [[https://chaosdorf.de][Chaosdorf]], I talked with Nico from Enigmail about the idea to get
+   the few GnuPG frontend authors together for an informal meeting.
+   We agreed that this is would be useful and we decided to go
+   for it in spring.  Due to the attention GnuPG received during the
+   following [[https://31c3.de][31C3]] it turned out that the planned GPG meeting
+   would grow to an OpenPGP summit with about 30 attendees.  We even
+   had to reject several requests to join the meeting due to limited
+   space and time constraints to prepare a larger meeting.  [[http://www.josuttis.de][Nico]] took
+   care of the organization and I am really glad that he kept me clear
+   of this task.  Thanks.
+
+   Our host was [[https://www.giepa.de/][Giegerich & Partner]], an IT security company which
+   does a proprietary Outlook plugin based on GnuPG.  Their local
+   organization was excellent including snacks, beverages, a
+   great self-made dinner, and shuttle service to the hotel and the
+   airport.  Network access also worked flawlessly after having
+   signed that usual German [[http://de.wikipedia.org/wiki/St%C3%B6rerhaftung][Störerhaftung]] disclaimer.  Thanks guys.
+
+   After a welcome on Saturday morning from Nico and our host, I
+   quickly explained the planned release schedule for GnuPG and
+   explained a less known feature of GPA and Kleoptra, the [[https://gnupg.org/documentation/manuals/gpgme/UI-Server-Protocol.html][UI-Server]].
+   We then started the presentations of the projects present:
+   [[http://gpg4win.org][Gpg4win]],
+   [[https://enigmail.net][Enigmail]],
+   Gpg4o,
+   r2mail2,
+   [[https://openkeychain.org][OpenKeychain,]]
+   [[https://gpgtools.org][GPG Tools]],
+   [[https://pixelated-project.org][Pixelated]],
+   [[https://whiteout.io][Whiteout]],
+   [[https://mailvelope.com][Mailvelope,]]
+   [[https://mailpile.is][Mailpile]],
+   [[https://github.com/google/end-to-end][End-to-end]],
+   [[https://caliopen.org][CaliOpen]], and
+   [[https://debian.org][Debian]].
+
+   It was really interesting to learn first hand about the rich
+   environment around the OpenPGP protocol.  Although most developers
+   knew about each other it was the first time they all came together
+   to present their projects to their peers.  About half of the
+   projects are using GnuPG as their backend engine with the others
+   using one of the Javascript implementations for their OpenPGP core.
+
+   The presentations answered a lot of questions but raised others
+   which were discussed during the breaks and the wine and beer track
+   in the evening.  Important topics were identified and put on the
+   agenda for Sunday.
+
+   One of these topics was the question whether to use PGP/MIME or to
+   create a new format; with about the half of the group in favor of
+   PGP/MIME.  It seems that some often used MUAs (mailers) have
+   somewhat limited support even for regular MIME despite that this is
+   a 22 years old and matured standard.  In particular webmail
+   applications are quite limited in their MIME handling.
+   They have the easiest way to roll out fixed versions, though.  As usual I
+   got into long debates with Bjarni from Mailpile on this.  This
+   discussion was continued on Sunday in working groups on meta data
+   encryption and encrypted search.
+
+   Another topic was key distribution.  I decided not to join the
+   respective working group on Sunday because this will be a
+   too large topic for short working group.  During the Saturday
+   presentations it became clear that the more centralized projects,
+   like Whiteout and Google’s end-to-end, can more or less sidestep
+   that problem due to the better control they have on the mail
+   accounts.  The presentation from the End-to-end project was
+   nevertheless interesting and probably sparked a few idea.
+
+   Mobile clients are a primary, or even the only, target for most
+   projects and thus discussions revolved around issues like reducing
+   the amount of data to download from IMAP servers but still be able
+   to show summaries of the mail content after decryption; or on how
+   to efficiently and securely search through encrypted mails stored
+   on a remote site.
+
+   It would be quite useful to publish the results from the Sunday
+   working groups as well as the group picture.  However they have
+   not yet been collected; see below for updates.
+
+   I appreciated the opportunity to meet the GPG Tools developers, who
+   are very dedicated to make GnuPG working well on OS X.  I stressed
+   the importance to actively participate on the GnuPG mailing list to
+   keep information in sync.  One example may illustrate this: For
+   years the adaption of GnuPG-2 on GNOME based systems has been
+   hampered by the fact that the gnome-keyring-manager (GKR) tries to
+   emulate gpg-agent and thus inhibits proper working of any advanced
+   function of GnuPG (e.g. smartcards and gpgsm).  With Debian’s
+   release of Jessie that problem will even be worse due to other
+   desktop environments now also using GKR.  Given that the GKR
+   developers are not willing to change their defaults, Neal, dkg, and
+   me came up with a pragmatic solution for this problem on Saturday
+   morning.  Surprisingly we learned in the evening that GPG Tools long
+   ago came up with a very similar solution on how to integrate GnuPG
+   into the OS X keychain.
+
+   To comply with crypto geek tradition the meeting ended with a key
+   signing party using fingerprints collected in a shared file,
+   comparing its sha1sum ^W sha256sum locally, and publicly
+   confirming the correctness of ones own key.  Some had to rush for
+   the airport or train station and thus not all keys could be
+   checked.
+
+   Overall it was a successful meeting and it should be repeated to
+   extend our discussions on the mailing lists in a conference
+   setting.  I do not want end these notes without remarking that I am
+   a bit disappointed that many of the participants favored this
+   closed invitation-only style summit and want the next meeting to
+   happen the same way.  I would actually like to have an open OpenPGP
+   meeting with a stronger emphasis on Free Software and a clear
+   anti-surveillance message.
+
+
+** Minutes from the working groups
+
+   /[If you have something to publish, please send it to me for
+     publication at this place.  CC-by-SA please.]/
