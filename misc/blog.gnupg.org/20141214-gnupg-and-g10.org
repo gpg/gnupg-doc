@@ -43,7 +43,7 @@ most of the revenues but they are not easy to acquire.  In the last
 years we had problems to get new GnuPG related development contracts
 which turned the company into a one-person show by fall 2012.  I
 actually planned to shut it down in 2013 and to take a straight coder
-job somewhere.  However, as a side effect of Edward Snowden‘s brave
+job somewhere.  However, as a side effect of Edward Snowden’s brave
 actions, there was more public demand for privacy tools and thus I
 concluded that it is worth to keep on working on GnuPG.
 
@@ -74,3 +74,8 @@ crowdfunding campaign last year proved that there are many people who
 like to see GnuPG alive and maintained.  Despite the huge [[file:20140512-rewards-sent.org][costs]] of the
 campaign it allowed me to keep working on GnuPG and I am confident
 that there will be ways to continue work in 2015.
+
+** Update 2015-04-29
+
+Due to the successful funding campaign the above listed estimated
+profit for 2014 was overtopped and reached 34000 Euro.
