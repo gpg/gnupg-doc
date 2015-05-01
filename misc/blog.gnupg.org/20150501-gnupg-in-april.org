@@ -1,0 +1,81 @@
+# GnuPG News for MArch and April 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: May 1st, 2015
+#+Keywords: STACK optimizing static-checker
+
+** GnuPG News for March and April 2015
+
+The last two months were filled with regular GnuPG work.  Mainly bug
+fixes for the 2.1 (modern) version but also backports for 2.0 and 1.4.
+Neal started to explore the GnuPG code base and added LDAP keyserver
+support to Dirmngr so that most keyserver access methods are now back
+to GnuPG.  Gniibe is continuing his work on the smartcard part.  Jussi
+has taken up the new OCB mode for the forthcoming Libgcrypt 1.7 and
+improved the performance to what it should be.  It is now about 10
+times faster than my straightforward code from January.
+
+With the help of the [[http://css.csail.mit.edu/stack/][STACK]] utility a few bugs and several not-yet-bugs
+in GnuPG and related libraries were fixed so that over-optimizing
+compilers are able to produce the expected result from the source
+code.  The problem here is that compiler writers started to take the C
+specification as their one and only holy reference without considering
+common use pattern related to undefined behavior.  Thus they are
+sacrificing security for a small performance gain.  In contrast
+protocol implementers know very well that implementing a protocol
+verbatim according to an RFC will never do good.  Thus they apply a
+bit of human sense in the interpretation of the specs.
+
+It seems that 2.1 is getting more in use and thus more reports of
+regressions and bugs roll in.  Although it would be good to fix them
+all before a release our new strategy is to release code even with
+known bugs as long as these are not security related.  So we are back
+to the release-often method from early Linux days.  A monthly schedule
+is what we are now aiming for.
+
+Information on the OpenPGP summit can be found [[file:20150426-openpgp-summit.org][here]].
+
+
+*** Release status
+
+The planned LDAP support took a bit longer than expected.  Easter
+vacation and a lof of bug squashing delayed the release of 2.1.3 to
+April 11.  This release again comes with an experimental installer for
+Windows.
+
+New versions of Libksba, Libgpg-error, nPth, adns, and gpgme have also
+been released.  Most of them to fix problems with the Windows
+toolchain but also due to bugs found by fuzzing and with the STACK
+utility.
+
+*** Things to come
+
+This will be in 2.1.4:
+
+- HTTP proxy support for keyservers will be back.
+- Building without LDAP support.
+- Gpg-agent now conveys information about the key to Pinentry.
+- The preferred keyserver features does work again but is now disabled
+  by default.
+- All DNS access code has been moved to Dirmngr.
+
+*** Things planned
+
+We want to do a few more things but they won't be in 2.1.4:
+
+- A =--use-tor= option to easily direct all network access over TOR.
+- Re-directing DNS over TOR
+- A simple way to set options into all config file to make it easier
+  to configure GnuPG for certain requirements.
+- SOCKSv5 proxy support (we have SOCKSv4 support).
+- An unattended key refresh mechanism.
+
+
+
+** About this news posting
+
+We try to write a news posting each month.  However, other work may
+have a higher priority (e.g. security fixes) and thus there is no
+promise for a fixed publication date.  If you have an interesting
+topic for a news posting, please send it to us.  A regular summary of
+the mailing list discussions would make a nice column on this news.
