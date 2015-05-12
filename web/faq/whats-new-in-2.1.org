@@ -396,6 +396,22 @@ user ids of a key, list those user id verbatim after the fingerprint.
 To create a non-exportable key signature, use the command
 =--quick-lsign-key= instead.
 
+Since version 2.1.4 it possible to directly add another user id to an
+existing key:
+
+#+begin_example
+$ gpg2 -k 8CFDE12197965A9A
+pub   ed25519/8CFDE12197965A9A 2014-08-19
+uid               [ unknown] EdDSA sample key 1
+$ gpg2 --quick-adduid 8CFDE12197965A9A 'Sample 2 <me@example.org>'
+$ gpg2 -k 8CFDE12197965A9A
+pub   ed25519/8CFDE12197965A9A 2014-08-19
+uid               [ unknown] Sample 2 <me@example.org>
+uid               [ unknown] EdDSA sample key 1
+#+end_example
+
+
+
 ** Improved Pinentry support
 :PROPERTIES:
 :CUSTOM_ID: pinentry
