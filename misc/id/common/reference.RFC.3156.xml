@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC3156'>
+
+<front>
+<title>MIME Security with OpenPGP</title>
+<author initials='M.' surname='Elkins' fullname='M. Elkins'>
+<organization /></author>
+<author initials='D.' surname='Del Torto' fullname='D. Del Torto'>
+<organization /></author>
+<author initials='R.' surname='Levien' fullname='R. Levien'>
+<organization /></author>
+<author initials='T.' surname='Roessler' fullname='T. Roessler'>
+<organization /></author>
+<date year='2001' month='August' />
+<abstract>
+<t>This document describes how the OpenPGP Message Format can be used to provide privacy and authentication using the Multipurpose Internet Mail Extensions (MIME) security content types described in RFC 1847. [STANDARDS-TRACK]</t></abstract></front>
+
+<seriesInfo name='RFC' value='3156' />
+<format type='TXT' octets='26809' target='http://www.rfc-editor.org/rfc/rfc3156.txt' />
+</reference>

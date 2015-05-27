@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC2144'>
+
+<front>
+<title>The CAST-128 Encryption Algorithm</title>
+<author initials='C.' surname='Adams' fullname='Carlisle Adams'>
+<organization>Entrust Technologies</organization>
+<address>
+<postal>
+<street>750 Heron Road</street>
+<city>Ottawa</city>
+<region>Ontario</region>
+<code>K1V 1A7</code>
+<country>CA</country></postal>
+<phone>+1 613 763 9008</phone>
+<email>cadams@entrust.com</email></address></author>
+<date year='1997' month='May' />
+<abstract>
+<t>There is a need in the Internet community for an unencumbered encryption algorithm with a range of key sizes that can provide security for a variety of cryptographic applications and protocols.</t>
+<t>This document describes an existing algorithm that can be used to satisfy this requirement.  Included are a description of the cipher and the key scheduling algorithm (Section 2), the s-boxes (Appendix A), and a set of test vectors (Appendix B).</t></abstract></front>
+
+<seriesInfo name='RFC' value='2144' />
+<format type='TXT' octets='37532' target='http://www.rfc-editor.org/rfc/rfc2144.txt' />
+</reference>

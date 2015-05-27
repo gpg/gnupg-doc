@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC1950'>
+
+<front>
+<title>ZLIB Compressed Data Format Specification version 3.3</title>
+<author initials='L.P.' surname='Deutsch' fullname='L. Peter Deutsch'>
+<organization>Aladdin Enterprises</organization>
+<address>
+<postal>
+<street>203 Santa Margarita Ave.</street>
+<city>Menlo Park</city>
+<region>CA</region>
+<code>94025</code>
+<country>US</country></postal>
+<phone>+1 415 322 0103</phone>
+<facsimile>+1 415 322 1734</facsimile>
+<email>ghost@aladdin.com</email></address></author>
+<author initials='J-L.' surname='Gailly' fullname='Jean-Loup Gailly'>
+<organization /></author>
+<date year='1996' month='May' />
+<abstract>
+<t>This specification defines a lossless compressed data format.  The data can be produced or consumed, even for an arbitrarily long sequentially presented input data stream, using only an a priori bounded amount of intermediate storage.  The format presently uses the DEFLATE compression method but can be easily extended to use
+   other compression methods.  It can be implemented readily in a manner not covered by patents.  This specification also defines the ADLER-32 checksum (an extension and improvement of the Fletcher checksum), used for detection of data corruption, and provides an algorithm for computing it.</t></abstract></front>
+
+<seriesInfo name='RFC' value='1950' />
+<format type='TXT' octets='20502' target='http://www.rfc-editor.org/rfc/rfc1950.txt' />
+<format type='PS' octets='37768' target='http://www.rfc-editor.org/rfc/rfc1950.ps' />
+<format type='PDF' octets='36393' target='http://www.rfc-editor.org/rfc/rfc1950.pdf' />
+</reference>

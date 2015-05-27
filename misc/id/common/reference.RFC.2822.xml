@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC2822'>
+
+<front>
+<title>Internet Message Format</title>
+<author initials='P.' surname='Resnick' fullname='P. Resnick'>
+<organization /></author>
+<date year='2001' month='April' />
+<abstract>
+<t>This document specifies a syntax for text messages that are sent between computer users, within the framework of "electronic mail" messages. [STANDARDS-TRACK]</t></abstract></front>
+
+<seriesInfo name='RFC' value='2822' />
+<format type='TXT' octets='110695' target='http://www.rfc-editor.org/rfc/rfc2822.txt' />
+</reference>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC1991'>
+
+<front>
+<title>PGP Message Exchange Formats</title>
+<author initials='D.' surname='Atkins' fullname='Derek Atkins'>
+<organization>MIT</organization>
+<address>
+<postal>
+<street>12 Rindge Ave. #1R</street>
+<city>Cambridge</city>
+<region>MA</region>
+<code>02140</code>
+<country>US</country></postal>
+<phone>+1 617 868 4469</phone>
+<email>warlord@MIT.EDU</email></address></author>
+<author initials='W.' surname='Stallings' fullname='William Stallings'>
+<organization>Comp-Comm Consulting</organization>
+<address>
+<postal>
+<street>P. O. Box 2405</street>
+<city>Brewster</city>
+<region>MA</region>
+<code>02631</code>
+<country>US</country></postal>
+<email>stallings@ACM.org</email></address></author>
+<author initials='P.' surname='Zimmermann' fullname='Philip Zimmermann'>
+<organization>Boulder Software Engineering</organization>
+<address>
+<postal>
+<street>3021 Eleventh Street</street>
+<city>Boulder</city>
+<region>CO</region>
+<code>80304</code>
+<country>US</country></postal>
+<phone>+1 303 541 0140</phone>
+<email>prz@acm.org</email></address></author>
+<date year='1996' month='August' /></front>
+
+<seriesInfo name='RFC' value='1991' />
+<format type='TXT' octets='46255' target='http://www.rfc-editor.org/rfc/rfc1991.txt' />
+</reference>
