@@ -1,0 +1,213 @@
+<?xml version="1.0" ?>
+<!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
+  <!ENTITY pandocAbstract PUBLIC '' 'abstract.xml'>
+  <!ENTITY pandocMiddle   PUBLIC '' 'middle.xml'>
+  <!ENTITY pandocBack     PUBLIC '' 'back.xml'>
+  <!ENTITY rfc.1423       PUBLIC '' '../common/reference.RFC.1423.xml'>
+  <!ENTITY rfc.1950       PUBLIC '' '../common/reference.RFC.1950.xml'>
+  <!ENTITY rfc.1951       PUBLIC '' '../common/reference.RFC.1951.xml'>
+  <!ENTITY rfc.1991       PUBLIC '' '../common/reference.RFC.1991.xml'>
+  <!ENTITY rfc.2045       PUBLIC '' '../common/reference.RFC.2045.xml'>
+  <!ENTITY rfc.2119       PUBLIC '' '../common/reference.RFC.2119.xml'>
+  <!ENTITY rfc.2144       PUBLIC '' '../common/reference.RFC.2144.xml'>
+  <!ENTITY rfc.2434       PUBLIC '' '../common/reference.RFC.2434.xml'>
+  <!ENTITY rfc.2440       PUBLIC '' '../common/reference.RFC.2440.xml'>
+  <!ENTITY rfc.2822       PUBLIC '' '../common/reference.RFC.2822.xml'>
+  <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
+  <!ENTITY rfc.3447       PUBLIC '' '../common/reference.RFC.3447.xml'>
+  <!ENTITY rfc.3629       PUBLIC '' '../common/reference.RFC.3629.xml'>
+  <!ENTITY rfc.4086       PUBLIC '' '../common/reference.RFC.4086.xml'>
+  <!ENTITY iso.10646      PUBLIC '' '../common/reference.ISO.10646-1.1993.xml'>
+]>
+<rfc ipr="trust200902" category="std" updates="4880"
+     docName="draft-koch-openpgp-rfc4880bis-00">
+
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="no"?>
+<?rfc compact="yes"?>
+<?rfc comments="yes"?>
+
+
+  <front>
+    <title>OpenPGP Message Format</title>
+    <author initials="J." surname="Callas"
+            fullname="Jon Callas">
+      <address>
+        <email>jon@callas.org</email>
+      </address>
+    </author>
+    <author initials="L." surname="Donnerhacke"
+            fullname="Lutz Donnerhacke">
+      <address>
+        <email>lutz@iks-jena.de</email>
+      </address>
+    </author>
+    <author initials="H." surname="Finney"
+            fullname="Hal Finney">
+    </author>
+    <author initials="D." surname="Shaw"
+            fullname="David Shaw">
+      <address>
+        <email>dshaw@jabberwocky.com</email>
+      </address>
+    </author>
+    <author initials="R." surname="Thayer"
+            fullname="Rodney Thayer">
+      <address>
+        <email>rodney@canola-jones.com</email>
+      </address>
+    </author>
+    <date month="May" year="2015" />
+    <area>Security</area>
+
+    <abstract>
+      &pandocAbstract;
+    </abstract>
+  </front>
+
+  <middle>
+    &pandocMiddle;
+  </middle>
+
+  <back>
+    <references title="Normative References">
+      <reference anchor='AES'
+     target='http://csrc.nist.gov/publications/fips/fips197/fips-197.{ps,pdf}'>
+        <front>
+        <title>FIPS PUB 197, Advanced Encryption Standard (AES)</title>
+        <author>
+          <organization>NIST</organization>
+        </author>
+        <date year='2001' month='November'/>
+        </front>
+      </reference>
+      <reference anchor='BLOWFISH'
+                 target='http://www.counterpane.com/bfsverlag.html'>
+        <front>
+        <title>Description of a New Variable-Length
+               Key, 64-Bit Block Cipher (Blowfish)</title>
+        <author surname="Schneier" initials="B." />
+        <date year='1993' month='December'/>
+        </front>
+        <seriesInfo name='Fast Software Encryption,
+                          Cambridge Security Workshop Proceedings, '
+                    value='Springer-Verlag, 1994, pp191-204' />
+      </reference>
+      <reference anchor='BZ2'
+                 target='http://www.bzip.org/'>
+        <front>
+        <title>The Bzip2 and libbzip2 home page</title>
+        <author surname="Seward" initials="J." >
+          <address>
+            <email>jseward@acm.org</email>
+          </address>
+        </author>
+        <date></date>
+        </front>
+      </reference>
+      <reference anchor='ELGAMAL'>
+        <front>
+        <title>A Public-Key Cryptosystem and a
+              Signature Scheme Based on Discrete Logarithms,</title>
+        <author surname="Elgamal" initials="T." />
+        <date />
+        </front>
+        <seriesInfo name='IEEE Transactions on Information Theory'
+                    value='v. IT-31, n. 4, 1985, pp. 469-472' />
+      </reference>
+      <reference anchor='FIPS180'
+                 target='http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf'>
+        <front>
+        <title>Secure Hash Signature Standard (SHS) (FIPS PUB 180-2)</title>
+        <author>
+          <organization>NIST</organization>
+        </author>
+        <date />
+        </front>
+      </reference>
+      <reference anchor='FIPS186'
+                 target='http://csrc.nist.gov/publications/fips/fips186-2/fips186-2-change1.pdf'>
+        <front>
+        <title>Digital Signature Standard (DSS) (FIPS PUB 186-2)</title>
+        <author>
+          <organization>NIST</organization>
+        </author>
+        <date />
+        </front>
+      </reference>
+      <reference anchor='HAC'
+                 target='http://www.cacr.math.uwaterloo.ca/hac/'>
+        <front>
+        <title>Handbook of Applied Cryptography,</title>
+        <author>
+          <organization>Alfred Menezes, Paul van Oorschot,
+                        and Scott Vanstone</organization>
+        </author>
+        <date year='1996'/>
+        </front>
+      </reference>
+      <reference anchor='IDEA'>
+        <front>
+        <title>On the design and security of block ciphers</title>
+        <author surname="Lai" initials="X" />
+        <date year='1992'/>
+        </front>
+        <seriesInfo name='ETH Series in Information Processing,
+                          J.L.  Massey (editor),'
+                    value='Vol. 1, Hartung-Gorre Verlag Konstanz,
+                           Technische Hochschule (Zurich)' />
+      </reference>
+      <reference anchor='JFIF'>
+        <front>
+        <title>JPEG File Interchange Format (Version 1.02).</title>
+        <author>
+          <organization>Eric Hamilton, C-Cube Microsystems,
+                        Milpitas, CA</organization>
+        </author>
+        <date year='1996' month='September'/>
+        </front>
+      </reference>
+      <reference anchor='SCHNEIER'>
+        <front>
+        <title>Applied Cryptography Second Edition:
+               protocols, algorithms, and source code in C</title>
+        <author surname="Schneier" initials="B." />
+        <date year='1996'/>
+        </front>
+      </reference>
+      <reference anchor='TWOFISH'>
+        <front>
+        <title>The Twofish Encryption Algorithm</title>
+        <author surname="Schneier" initials="B." />
+        <author surname="Kelsey" initials="J." />
+        <author surname="Whiting" initials="D." />
+        <author surname="Wagner" initials="D." />
+        <author surname="Hall" initials="C." />
+        <author surname="Ferguson" initials="N." />
+        <date year='1999'/>
+        </front>
+      </reference>
+
+      &iso.10646;
+      &rfc.1950;
+      &rfc.1951;
+      &rfc.2045;
+      &rfc.2119;
+      &rfc.2144;
+      &rfc.2434;
+      &rfc.2822;
+      &rfc.3156;
+      &rfc.3447;
+      &rfc.3629;
+      &rfc.4086;
+    </references>
+    <references title="Informative References">
+      &rfc.1423;
+      &rfc.1991;
+      &rfc.2440;
+    </references>
+    &pandocBack;
+  </back>
+</rfc>
