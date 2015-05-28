@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC3713'>
+
+<front>
+<title>A Description of the Camellia Encryption Algorithm</title>
+<author initials='M.' surname='Matsui' fullname='M. Matsui'>
+<organization /></author>
+<author initials='J.' surname='Nakajima' fullname='J. Nakajima'>
+<organization /></author>
+<author initials='S.' surname='Moriai' fullname='S. Moriai'>
+<organization /></author>
+<date year='2004' month='April' />
+<abstract>
+<t>This document describes the Camellia encryption algorithm.  Camellia is a block cipher with 128-bit block size and 128-, 192-, and 256-bit keys.  The algorithm description is presented together with key scheduling part and data randomizing part.  This memo provides information for the Internet community.</t></abstract></front>
+
+<seriesInfo name='RFC' value='3713' />
+<format type='TXT' octets='25031' target='http://www.rfc-editor.org/rfc/rfc3713.txt' />
+</reference>

@@ -16,6 +16,7 @@
   <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
   <!ENTITY rfc.3447       PUBLIC '' '../common/reference.RFC.3447.xml'>
   <!ENTITY rfc.3629       PUBLIC '' '../common/reference.RFC.3629.xml'>
+  <!ENTITY rfc.3713       PUBLIC '' '../common/reference.RFC.3713.xml'>
   <!ENTITY rfc.4086       PUBLIC '' '../common/reference.RFC.4086.xml'>
   <!ENTITY iso.10646      PUBLIC '' '../common/reference.ISO.10646-1.1993.xml'>
 ]>
@@ -201,6 +202,7 @@
       &rfc.3156;
       &rfc.3447;
       &rfc.3629;
+      &rfc.3713;
       &rfc.4086;
     </references>
     <references title="Informative References">

@@ -10,6 +10,9 @@ and key management functions.  It is a revision of RFC 2440, "OpenPGP
 Message Format", which itself replaces RFC 1991, "PGP Message Exchange
 Formats" [](#RFC1991) [](#RFC2440).
 
+This document obsoletes: RFC 5581 (Camellia cipher).
+
+
 ## {1.1} Terms
 
      * OpenPGP - This is a term for security software that uses PGP 5.x
@@ -2702,6 +2705,9 @@ algorithm.
           8  AES with 192-bit key
           9  AES with 256-bit key
          10  Twofish with 256-bit key [](#TWOFISH)
+         11  Camellia with 128-bit key [](#RFC3713)
+         12  Camellia with 192-bit key
+         13  Camellia with 256-bit key
  100 to 110  Private/Experimental algorithm
 
 Implementations MUST implement TripleDES.  Implementations SHOULD

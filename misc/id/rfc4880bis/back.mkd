@@ -1,6 +1,7 @@
-# Changes since -00
+# Changes since RFC 4880
 
-  - xxxx
+  - Applied errata 2270, 2271, 2242, 3298.
+  - Added Camellia cipher from RFC 5581.
 
 
   <!-- To avoid warnings from pandoc2rfc we add some references -->
