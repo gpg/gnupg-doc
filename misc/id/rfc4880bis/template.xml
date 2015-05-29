@@ -14,10 +14,13 @@
   <!ENTITY rfc.2440       PUBLIC '' '../common/reference.RFC.2440.xml'>
   <!ENTITY rfc.2822       PUBLIC '' '../common/reference.RFC.2822.xml'>
   <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
+  <!ENTITY rfc.3394       PUBLIC '' '../common/reference.RFC.3394.xml'>
   <!ENTITY rfc.3447       PUBLIC '' '../common/reference.RFC.3447.xml'>
   <!ENTITY rfc.3629       PUBLIC '' '../common/reference.RFC.3629.xml'>
   <!ENTITY rfc.3713       PUBLIC '' '../common/reference.RFC.3713.xml'>
   <!ENTITY rfc.4086       PUBLIC '' '../common/reference.RFC.4086.xml'>
+  <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
+  <!ENTITY rfc.6090       PUBLIC '' '../common/reference.RFC.6090.xml'>
   <!ENTITY iso.10646      PUBLIC '' '../common/reference.ISO.10646-1.1993.xml'>
 ]>
 <rfc ipr="trust200902" category="std" updates="4880"
@@ -58,6 +61,13 @@
             fullname="Rodney Thayer">
       <address>
         <email>rodney@canola-jones.com</email>
+      </address>
+    </author>
+    <author fullname="Andrey Jivsov"
+            surname="Jivsov" initials="A.">
+      <organization>Symantec Corporation</organization>
+      <address>
+        <email>Andrey_Jivsov@symantec.com</email>
       </address>
     </author>
     <date month="May" year="2015" />
@@ -118,6 +128,7 @@
         <seriesInfo name='IEEE Transactions on Information Theory'
                     value='v. IT-31, n. 4, 1985, pp. 469-472' />
       </reference>
+
       <reference anchor='FIPS180'
                  target='http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf'>
         <front>
@@ -128,6 +139,17 @@
         <date />
         </front>
       </reference>
+      <reference anchor='FIPS180-3'>
+        <front>
+        <title>Secure Hash Standard (SHS), FIPS 180-3</title>
+        <author>
+          <organization>National Institute of Standards and Technology,
+                        U.S. Department of Commerce</organization>
+        </author>
+        <date year="2008" month="October" />
+        </front>
+      </reference>
+
       <reference anchor='FIPS186'
                  target='http://csrc.nist.gov/publications/fips/fips186-2/fips186-2-change1.pdf'>
         <front>
@@ -138,15 +160,28 @@
         <date />
         </front>
       </reference>
-      <reference anchor='HAC'
-                 target='http://www.cacr.math.uwaterloo.ca/hac/'>
+      <reference anchor='FIPS186-3'>
         <front>
-        <title>Handbook of Applied Cryptography,</title>
+        <title>Digital Signature Standard, FIPS 186-3</title>
         <author>
-          <organization>Alfred Menezes, Paul van Oorschot,
-                        and Scott Vanstone</organization>
+          <organization>National Institute of Standards and Technology,
+                        U.S. Department of Commerce</organization>
         </author>
-        <date year='1996'/>
+        <date year="2009" month="June" />
+        </front>
+      </reference>
+
+      <reference anchor="HAC">
+        <front>
+          <title>Handbook of Applied Cryptography</title>
+          <author fullname="Alfred J. Menezes"
+                  initials="A. J." surname="Menezes" />
+          <author fullname="Paul van Oorschot"
+                  initials="P. v." surname="Oorschot" />
+          <author fullname="Scott Vanstone"
+                  initials="S." surname="Vanstone" />
+          <date year="1996" />
+          <keyword>cryptograpy</keyword>
         </front>
       </reference>
       <reference anchor='IDEA'>
@@ -160,6 +195,9 @@
                     value='Vol. 1, Hartung-Gorre Verlag Konstanz,
                            Technische Hochschule (Zurich)' />
       </reference>
+
+      &iso.10646;
+
       <reference anchor='JFIF'>
         <front>
         <title>JPEG File Interchange Format (Version 1.02).</title>
@@ -170,14 +208,66 @@
         <date year='1996' month='September'/>
         </front>
       </reference>
+
+      <reference anchor='PKCS5'>
+        <front>
+        <title>PKCS #5 v2.0: Password-Based Cryptography Standard</title>
+        <author>
+          <organization>RSA Laboratories</organization>
+        </author>
+        <date year="1999" month="March" day="25" />
+        </front>
+      </reference>
+
+
+      &rfc.1950;
+      &rfc.1951;
+      &rfc.2045;
+      &rfc.2119;
+      &rfc.2144;
+      &rfc.2434;
+      &rfc.2822;
+      &rfc.3156;
+      &rfc.3394;
+      &rfc.3447;
+      &rfc.3629;
+      &rfc.3713;
+      &rfc.4086;
+
       <reference anchor='SCHNEIER'>
         <front>
         <title>Applied Cryptography Second Edition:
                protocols, algorithms, and source code in C</title>
-        <author surname="Schneier" initials="B." />
+        <author fullname="Bruce Schneier"
+                surname="Schneier" initials="B." />
         <date year='1996'/>
         </front>
       </reference>
+
+      <reference anchor='SP800-56A'>
+        <front>
+        <title>Recommendation for Pair-Wise Key Establishment
+               Schemes Using Discrete Logarithm Cryptography</title>
+        <author surname="Barker" initials="E." />
+        <author surname="Johnson" initials="D." />
+        <author surname="Smid" initials="M." />
+        <date year="2007" month="March" />
+        </front>
+        <seriesInfo name="NIST Special Publication"
+                    value="800-56A Revision 1" />
+      </reference>
+
+      <reference anchor='SuiteB'
+                 target="http://www.nsa.gov/ia/programs/suiteb_cryptography/">
+        <front>
+        <title>NSA Suite B Cryptography</title>
+        <author>
+          <organization>National Security Agency</organization>
+        </author>
+        <date year="2010" month="March" day="11" />
+        </front>
+      </reference>
+
       <reference anchor='TWOFISH'>
         <front>
         <title>The Twofish Encryption Algorithm</title>
@@ -190,25 +280,46 @@
         <date year='1999'/>
         </front>
       </reference>
-
-      &iso.10646;
-      &rfc.1950;
-      &rfc.1951;
-      &rfc.2045;
-      &rfc.2119;
-      &rfc.2144;
-      &rfc.2434;
-      &rfc.2822;
-      &rfc.3156;
-      &rfc.3447;
-      &rfc.3629;
-      &rfc.3713;
-      &rfc.4086;
     </references>
+
     <references title="Informative References">
+      <reference anchor='KOBLITZ'>
+        <front>
+        <title>A course in number theory and
+               cryptography, Chapter VI. Elliptic Curves, ISBN:
+               0-387-96576-9, Springer-Verlag</title>
+        <author surname="Koblitz" initials="N." />
+        <date year='1997'/>
+        </front>
+      </reference>
       &rfc.1423;
       &rfc.1991;
       &rfc.2440;
+      &rfc.6090;
+      <reference anchor='SEC1'>
+        <front>
+        <title>SEC 1: Elliptic Curve Cryptography</title>
+        <author>
+          <organization>Standards for Efficient Cryptography Group
+          </organization>
+        </author>
+        <date year="2000" month="September" />
+        </front>
+      </reference>
+
+      <reference anchor='SP800-57'
+                target="http://csrc.nist.gov/publications/nistpubs/800-57/SP800-57-Part{1,2}.pdf" >
+        <front>
+          <title>Recommendation on Key Management</title>
+          <author>
+            <organization>NIST</organization>
+          </author>
+        <date year="2007" month="March" />
+        </front>
+        <seriesInfo name="NIST Special Publication"
+                    value="800-57" />
+      </reference>
+
     </references>
     &pandocBack;
   </back>

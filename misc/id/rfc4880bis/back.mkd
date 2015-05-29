@@ -2,7 +2,7 @@
 
   - Applied errata 2270, 2271, 2242, 3298.
   - Added Camellia cipher from RFC 5581.
-
+  - Incorporated RFC 6637 (ECC for OpenPGP)
 
   <!-- To avoid warnings from pandoc2rfc we add some references -->
   { Informational rfcs: [](#RFC1423) }
