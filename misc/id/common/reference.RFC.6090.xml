@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC6090'>
+
+<front>
+<title>Fundamental Elliptic Curve Cryptography Algorithms</title>
+<author initials='D.' surname='McGrew' fullname='D. McGrew'>
+<organization /></author>
+<author initials='K.' surname='Igoe' fullname='K. Igoe'>
+<organization /></author>
+<author initials='M.' surname='Salter' fullname='M. Salter'>
+<organization /></author>
+<date year='2011' month='February' />
+<abstract>
+<t>This note describes the fundamental algorithms of Elliptic Curve Cryptography (ECC) as they were defined in some seminal references from 1994 and earlier.  These descriptions may be useful for implementing the fundamental algorithms without using any of the specialized methods that were developed in following years.  Only elliptic curves defined over fields of characteristic greater than three are in scope; these curves are those used in Suite B.  This document is not an Internet Standards Track specification; it is published for informational purposes.</t></abstract></front>
+
+<seriesInfo name='RFC' value='6090' />
+<format type='TXT' octets='75993' target='http://www.rfc-editor.org/rfc/rfc6090.txt' />
+</reference>
