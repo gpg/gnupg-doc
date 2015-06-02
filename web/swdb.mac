@@ -7,12 +7,12 @@
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
 
 #
-# GnuPG-2
+# GnuPG
 #
-#+macro: gnupg_ver     2.0.27
+#+macro: gnupg_ver     2.0.28
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
-#+macro: gnupg_size    4321k
-#+macro: gnupg_sha1    d065be185f5bac8ea07b210ab7756e79b83b63d4
+#+macro: gnupg_size    4332k
+#+macro: gnupg_sha1    9a1050f72b6c9afe2b4a0a3f2e9dca2abba8e4ef
 
 #
 # GnuPG-2.1
@@ -53,9 +53,9 @@
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  0.9.2
-#+macro: pinentry_size 484k
-#+macro: pinentry_sha1 5179807a412056286c7ac98a1ea6727c74ea87d2
+#+macro: pinentry_ver  0.9.3
+#+macro: pinentry_size 497k
+#+macro: pinentry_sha1 5551fdb62dc268dee8861b50ff93f6741b8eec8a
 
 
 #

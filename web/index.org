@@ -65,6 +65,11 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.0.28 released (2015-06-02)
+
+GnuPG 2.0.28 is now available.  This release fixes a couple of bugs;
+users of GnuPG 2.0.x should update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000367.html][{more}]]
+
 ** GnuPG 2.1.4 released (2015-05-12)
 
 A new version of the /modern/ branch of GnuPG has been released.
