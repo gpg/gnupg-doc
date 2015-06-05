@@ -83,7 +83,7 @@
 
    - /GPA/ is a graphical frontend to GnuPG.
 
-   - /Dirmngr/ is an optional tools for use with /GnuPG stable/ (2.0).
+   - /Dirmngr/ is an optional tool for use with /GnuPG stable/ (2.0).
      It is already included in /GnuPG modern/ (2.1)
 
 
