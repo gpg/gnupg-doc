@@ -1,0 +1,115 @@
+# GnuPG News for May 2015
+#+STARTUP: showall
+#+AUTHOR: Neal
+#+DATE: June 7th, 2015
+#+Keywords: GNOME Python Emacs Pinentry Libassuan
+
+** GnuPG News for May 2015
+
+A lot happened during May.
+
+My focus was on Pinentry.  My primary goal was to fix the GNOME
+Keyring issue, but along the way I also made various improvements and
+closed a bunch of outstanding issues.
+
+The GNOME Keyring issue is that GNOME Keyring proxies all traffic to
+GPG Agent so that it can cache any passphrases and display its own
+pinentry dialogs, which have a GNOME3 aesthetic.  Unfortunately, the
+proxy's implementation of the GPG Agent protocol is not complete and
+this breaks a lot of GnuPG's functionality.  Working with Stef
+Walters, the maintainer of GNOME Keyring, we came up with a plan to
+resolve the situation.  The basic idea is to add support for external
+password managers to GnuPG, modify the pinentry programs to deal with
+an external password manager and add a GNOME3 pinentry.  The changes
+for GnuPG have been added to the 2.1 branch and backported to the 2.0
+branch.  The pinentry work is also done.  The remaining bit of work is
+to get distributions to disable the GNOME Keyring proxy and distribute
+the new changes.  (A summary of changes required by distributions can
+be found [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029835.html][here]].)  To this end, Werner released new version of GnuPG
+stable (the 2.0 line), GnuPG modern (the 2.1 line) and Pinentry.
+Distributions immediately began to integrate the changes.  In
+particular, Daniel Kahn Gillmor already uploaded packages to Debian
+Unstable.  This uncovered a few minor bugs, which we quickly fixed.
+
+Ben McGinnes [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029844.html][announced]] new Python 3 bindings for GPGME based on PyME
+0.9.0.  Ben noted that PyME is for Python 2 and will continue to be
+maintained separately by Martin Albrecht.  Ben has tested the library
+on Mac OS X, but seeks more testers.
+
+Daniel Kahn Gillmore [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029786.html][announced]] initial Python 3 bindings for
+libassuan, GnuPG's IPC library.  The library is not yet complete and
+Daniel is looking for feedback regarding the API as well as more
+general contributions.
+
+Daiki Ueno sent [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029875.html][patches]] to add an emacs-based pinentry.  This pinentry
+talks to the running emacs using a communication mechanism similar to
+emacsclient.  Unlike the other pinentry's, this pinentry isn't
+normally used by default.  Instead, all of the pinentries have been
+modified to (optionally) detect whether they are run from emacs (by
+checking for the INSIDE_EMACS environment variable).  If so, they use
+the new pinentry functionality.  Otherwise, they display their usual
+frontend.
+
+NIIBE Yutaka and Werner spent time triaging a number of bugs.  This
+work is not very sexy, but this is what most improves the quality of
+the code base.
+
+Daniel Kahn Gillmor also reported a number of bugs and did significant
+work helping to triage them.
+
+Werner released GnuPG versions [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029817.html][2.1.4]] and [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-June/029892.html][2.0.28]] and Pinentry version
+0.9.3 and 0.9.4.
+
+Werner has also been actively improving the OpenPGP specificantion,
+RFC4880.  This effort is occuring within the context of the [[http://www.ietf.org/mail-archive/web/openpgp/][IETF]].  The
+new specification is currently called RFC4880bis and a working group
+is in the process of being chartered.  The goal is to have a new
+version of the specification by July 2016.
+
+In additional to the development, there were also several interesting
+discussions on the mailing lists.
+
+On gnupg-devel, Daniel Kahn Gillmor [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-April/029750.html][observed]] that GnuPG reads 300
+bytes from /dev/random when it generates a long-term key, which, he
+observed, is a lot given /dev/random's limited entropy .  Werner
+explained that GnuPG has always done this.  In particular, GnuPG
+maintains a 600-byte persistent seed file and every time a key is
+generated it stirs in an additional 300 bytes.  Daniel pointed out an
+interesting blog post by DJB explaining that a proper CSPRNG should
+never need more than about 32 bytes of entropy.  Peter Gutmann chimed
+in and noted that a 2048-bit RSA key needs about about 103 bits of
+entropy and a 4096-bit RSA key needs about 142 bits, but, in practice,
+128-bits is enough.  Based on this, Werner proposed a patch for
+Libgcrypt that reduces the amount of seeding to just 128-bits.
+
+During this discussion, Werner also [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029782.html][noted]] that to avoid reusing
+entropy and thereby weakening any derived keys, it is important to
+never backup or restore GnuPG's random seed file
+(~/.gnupg/random_seed).
+
+Werner proposed adding an option to the GTK+ pinentry to [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-May/029790.html][show/hide]] the
+passphrase.  This is useful when entering very long passphrases (and
+when the user knows that he or she is not being observed).
+
+On gnupg-users, there was an interesting [[https://lists.gnupg.org/pipermail/gnupg-users/2015-May/053676.html][discussion]] about using
+external sources of entropy, such as the results of rolling dice.
+Niibe replied that no person can beat the unbiasedness of modern
+HWRNG, which are aggressively tested using modern empirical statistics
+over gigabytes or terabytes of random data.  The only real question is
+whether the entropy source has been backdoored.
+
+The Facebook announcement for OpenPGP was also [[https://lists.gnupg.org/pipermail/gnupg-users/2015-June/053709.html][mentioned]].  The
+reactions are mixed.  Personally, I think this is a positive
+development.  It's true that Facebook is probably not working towards
+end-to-end encryption, but if they encourage other big sites, such as
+banks and e-commerce sites, to encrypt their email communication with
+their users, we may have a meaningful increase in security.
+
+
+** About this news posting
+
+We try to write a news posting each month.  However, other work may
+have a higher priority (e.g. security fixes) and thus there is no
+promise for a fixed publication date.  If you have an interesting
+topic for a news posting, please send it to us.  A regular summary of
+the mailing list discussions would make a nice column on this news.
