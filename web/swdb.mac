@@ -61,10 +61,10 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver    1.5.4
+#+macro: gpgme_ver    1.5.5
 #+macro: gpgme_branch master
 #+macro: gpgme_size   953k
-#+macro: gpgme_sha1   8cf1bcce8603bd7d006065f08059cf85462828c4
+#+macro: gpgme_sha1   88476d72cb099e179de4040760502886f7a54926
 
 
 #
