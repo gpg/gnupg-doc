@@ -17,14 +17,14 @@
 #
 # GnuPG-2.1
 #
-#+macro: gnupg21_ver     2.1.4
+#+macro: gnupg21_ver     2.1.5
 #+macro: gnupg21_branch  master
-#+macro: gnupg21_size    4771k
-#+macro: gnupg21_sha1    ad68d65c54698e3c781e17864ab5918442df155a
+#+macro: gnupg21_size    4791k
+#+macro: gnupg21_sha1    02bbe32e1ef3b06b3ae3c60c955fb767a1aa0f2f
 #
-#+macro: gnupg21_w32_ver  2.1.4_20150512
-#+macro: gnupg21_w32_size 2566k
-#+macro: gnupg21_w32_sha1 d8f4a326c36578d05af5751abea668a15ea0aae1
+#+macro: gnupg21_w32_ver  2.1.5_20150611
+#+macro: gnupg21_w32_size 2567k
+#+macro: gnupg21_w32_sha1 f705fb6ae7612428b33cc51e23e006cdbf958e5d
 
 
 #
