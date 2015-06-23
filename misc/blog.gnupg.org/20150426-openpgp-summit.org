@@ -36,7 +36,7 @@
    [[https://enigmail.net][Enigmail]],
    Gpg4o,
    r2mail2,
-   [[https://openkeychain.org][OpenKeychain,]]
+   [[http://openkeychain.org][OpenKeychain,]]
    [[https://gpgtools.org][GPG Tools]],
    [[https://pixelated-project.org][Pixelated]],
    [[https://whiteout.io][Whiteout]],
