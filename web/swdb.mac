@@ -53,9 +53,9 @@
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  0.9.4
-#+macro: pinentry_size 498k
-#+macro: pinentry_sha1 0c47f0ddea4631bcba01ebbeca8bffe0bf43e440
+#+macro: pinentry_ver  0.9.5
+#+macro: pinentry_size 503k
+#+macro: pinentry_sha1 11979a6826ef5de73b52fd8c5b84f8321a133e53
 
 
 #
