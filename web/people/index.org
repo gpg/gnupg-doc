@@ -29,6 +29,7 @@
    systems.  Werner is a long time free software supporter and
    co-founder of the [[http://fsfe.org][FSFE]].  With the support of his brother he founded
    [[https://g10code.com][g10^code]] GmbH in 2001 to make GnuPG development his profession.
+   Werner is full time employed by g10^code.
 
    #+HTML: <p style="clear: both"/>
 
@@ -76,6 +77,7 @@
    Niibe is a long time free software hacker who joined the GnuPG
    project in 2011 and soon took over the development of the smartcard
    related code.  He is also the person behind the [[https://fsij.org/gnuk][gnuk token]].
+   Niibe’s work on GnuPG is financially supported by g10^code.
 
    #+HTML: <p style="clear: both"/>
 
@@ -91,3 +93,31 @@
    assembler optimized code for cryptographic algorithms in Libgcrypt.
 
    #+HTML: <p style="clear: both"/>
+
+** Neal Walfied
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
+   #+HTML: </div>
+
+   /Core components hacker/
+
+   Neal started to work on GnuPG in 2015 to support maintenance and
+   development in all areas.  He is full time employed by g10^code.
+
+   #+HTML: <p style="clear: both"/>
+
+** Kai Michaelis
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
+   #+HTML: </div>
+
+   /Enigmail hacker/
+
+   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He is part time
+   employed by g10^code.
+
+   #+HTML: <p style="clear: both"/>
+
+# eof
