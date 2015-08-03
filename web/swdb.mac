@@ -5,6 +5,7 @@
 # Primary FTP server base directory
 #
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
+#+macro: ftp_http_base  https://gnupg.org/ftp/gcrypt
 
 #
 # GnuPG
