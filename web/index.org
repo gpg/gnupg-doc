@@ -64,6 +64,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.1.7 released (2015-08-11)
+
+A new version of the /modern/ branch of GnuPG has been released.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000371.html][anouncement mail]] for details.
+
 ** GnuPG 2.1.6 released (2015-07-01)
 
 A new version of the /modern/ branch of GnuPG has been released.

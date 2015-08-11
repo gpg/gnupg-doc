@@ -5,7 +5,7 @@
 # Primary FTP server base directory
 #
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
-#+macro: ftp_http_base  https://gnupg.org/ftp/gcrypt
+#+macro: ftp_loc_base  /ftp/gcrypt
 
 #
 # GnuPG
@@ -18,14 +18,14 @@
 #
 # GnuPG-2.1
 #
-#+macro: gnupg21_ver     2.1.6
+#+macro: gnupg21_ver     2.1.7
 #+macro: gnupg21_branch  master
-#+macro: gnupg21_size    4802k
-#+macro: gnupg21_sha1    9e8157b3386da04760657ce3117fc4dc570c57c5
+#+macro: gnupg21_size    4803k
+#+macro: gnupg21_sha1    1a345804f34a2acd05c1555e40ddfa297f38438b
 #
-#+macro: gnupg21_w32_ver  2.1.6_20150701
-#+macro: gnupg21_w32_size 2577k
-#+macro: gnupg21_w32_sha1 a8cd2e7ab48abb94c126051df902e3380faf117e
+#+macro: gnupg21_w32_ver  2.1.7_20150811
+#+macro: gnupg21_w32_size 2578k
+#+macro: gnupg21_w32_sha1 dfea3fa2499f64cac223c9329c9f017bc3da11a5
 
 
 #
