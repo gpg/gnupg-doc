@@ -62,10 +62,10 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver    1.5.5
+#+macro: gpgme_ver    1.6.0
 #+macro: gpgme_branch master
-#+macro: gpgme_size   953k
-#+macro: gpgme_sha1   88476d72cb099e179de4040760502886f7a54926
+#+macro: gpgme_size   961k
+#+macro: gpgme_sha1   21510323495f6220f8f67610c3c27a23d761d43d
 
 
 #
@@ -95,9 +95,9 @@
 #
 # LIBGPG-ERROR
 
-#+macro: libgpg_error_ver  1.19
-#+macro: libgpg_error_size 744k
-#+macro: libgpg_error_sha1 4997951ab058788de48b989013668eb3df1e6939
+#+macro: libgpg_error_ver  1.20
+#+macro: libgpg_error_size 752k
+#+macro: libgpg_error_sha1 89c961f63469739fe816a56dcdd86c2e1897cace
 
 
 #

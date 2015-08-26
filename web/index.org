@@ -64,6 +64,14 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GPGME 1.6.0 and Libgpg-error 1.20 released (2015-08-26)
+
+GPGME 1.6.0 is now available.  This release introduce a mode to export
+sceret keys, improves the error return codes, and is prepared to make
+use of the GnuPG 2.1 Windows installer.  See this full [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000372.html][announcement]].
+An update of Libgpg-error to fix a problem in Windows has also been
+released; see this [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000373.html][announcement]].
+
 ** GnuPG 2.1.7 released (2015-08-11)
 
 A new version of the /modern/ branch of GnuPG has been released.
