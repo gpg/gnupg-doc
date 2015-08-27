@@ -44,14 +44,12 @@ purposes.
    :CUSTOM_ID: documentation_license
    :END:
 
-This document is © 2012, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
+This document is © 2012-2015, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
 A.M. Kuchling <[[mailto:amk@amk.ca?subject=The%20GnuPG%20FAQ][amk@amk.ca]]>. You are free to make use of this document
 in accordance with the [[http://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
-license]], with the exception of Randall Munroe’s XKCD comic, which is
-released under terms of the [[http://creativecommons.org/licenses/by-nc/2.5/][Creative Commons Attribution-NonCommercial
-2.5]] license; alternately, you may make use of it under terms of the
+license]]; alternately, you may make use of it under terms of the
 GNU General Public License (version 3 or, at your discretion, any
-later version), again excepting Mr. Munroe’s works.
+later version).
 #+HTML:<!--disable-copyright-footer-->
 
 
