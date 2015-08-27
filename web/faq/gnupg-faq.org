@@ -70,24 +70,12 @@ for any errors.
   :CUSTOM_ID: welcome
   :END:
 
-Welcome to the official GnuPG FAQ.  This FAQ has been written from
-scratch and makes the old FAQ obsolete.  Nevertheless this text is
-still incomplete but we believe it to be more accurate than the long
-outdated former FAQ.
+Welcome to the official GnuPG FAQ.  Like all FAQs, this is a work in
+progress.  If you have questions that you think should be on it but
+aren't, please feel free to email the FAQ maintainer (Rob Hansen,
+[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]])
+or bring your suggestion up on GnuPG-Users.
 
-
-** What conventions are used in this FAQ?
-   :PROPERTIES:
-   :CUSTOM_ID: conventions
-   :END:
-
-As is par for the course with everything involving computers, there
-are an awful lot of acronyms in this FAQ. For most of them, holding
-the mouse pointer over the acronym will reveal a tooltip containing
-the full expansion of the acronym. Hovering over the letters FAQ, for
-instance, will reveal the words “Frequently Asked Questions.” These
-acronyms are presented in a small-caps font in order to make them
-easier to recognize when reading.
 
 
 ** Who maintains this FAQ?
@@ -95,7 +83,7 @@ easier to recognize when reading.
    :CUSTOM_ID: maintainer
    :END:
 
-[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Robert J. Hansen]]. Please feel free to contact me should there be an
+[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Rob Hansen]]. Please feel free to contact me should there be an
 error in this FAQ, whether typographical, grammatical, or factual.
 
 When writing, the editorial “we” refers to the general consensus of
@@ -107,8 +95,6 @@ italicized, and initialed by their author.  The different editors are:
 
 - wk: Werner Koch <[[mailto:wk@gnupg.org?subject%3DThe%20GnuPG%20FAQ][wk@gnupg.org]]>
 - rjh: Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]>
-
-/[Do we have any other editors we need to add? — rjh]/
 
 
 ** Is this the official GnuPG FAQ?
@@ -124,19 +110,13 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-October 2012.
+August 2015.
 
 
 * General questions
   :PROPERTIES:
   :CUSTOM_ID: general
   :END:
-
-Since no company controls GnuPG, there’s really no single vendor for
-GnuPG.  Instead, there’s a robust community surrounding GnuPG which
-has produced versions of it for several different operating systems.
-But first, let’s cover the basics.
-
 
 ** What’s GnuPG?
    :PROPERTIES:
@@ -228,6 +208,9 @@ A convenient Windows installer is available from [[http://www.gpg4win.org][GPG4W
     :END:
 
 The [[http://www.gpgtools.org][GPGtools project]] has everything needed to get started.
+However, GPGTools only offers GnuPG 2.0; if you want the latest-and-greatest 2.1, look
+at Patrick Brunschwig’s [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X] project
+on SourceForge.
 
 
 *** … for Linux?
@@ -240,14 +223,12 @@ Linux systems.  The good news is that it’s usually installed by
 default, so nothing needs to be downloaded!
 
 
-**** … for Debian GNU/Linux?
+**** … for Debian GNU/Linux or Ubuntu?
      :PROPERTIES:
      :CUSTOM_ID: get_gnupg_debian
      :END:
 
-GnuPG is installed by default with Debian GNU/Linux.  If for some
-reason it is not, use the APT package manager to install the package
-“gnupg2”.
+At a terminal window type =sudo apt-get install gnupg2=.
 
 
 **** … for OpenSUSE?
@@ -255,36 +236,19 @@ reason it is not, use the APT package manager to install the package
      :CUSTOM_ID: get_gnupg_opensuse
      :END:
 
-A recent version of GnuPG is part of the default OpenSUSE
+At a terminal window type =sudo zypper install gnupg2=.
+
 installation.
 
 
-**** … for Fedora?
+**** … for Fedora, CentOS, or RHEL?
      :PROPERTIES:
      :CUSTOM_ID: get_gnupg_fedora
      :END:
 
-See the [[#get_gnupg_centos][instructions for CentOS]].  Typically, though, Fedora ships with
-a much more recent version of GnuPG, and as such you shouldn’t need to
-install anything.
+For Fedora 22 and later: at a terminal window type =sudo dnf install gnupg2=.
 
-
-**** … for CentOS or RHEL?
-     :PROPERTIES:
-     :CUSTOM_ID: get_gnupg_centos
-     :END:
-
-An older (but still secure!) version of GnuPG is part of every CentOS
-installation.  To get the latest version, use the YUM package manager
-to install the package “gnupg2”.
-
-
-**** … for Ubuntu?
-     :PROPERTIES:
-     :CUSTOM_ID: get_gnupg_ubuntu
-     :END:
-
-See the instructions for [[#get_gnupg_debian][Debian GNU/Linux]].
+For Fedora 21 and earlier, CentOS, or RHEL: at a terminal window type =sudo yum install gnupg2=.
 
 
 **** … for Slackware?
