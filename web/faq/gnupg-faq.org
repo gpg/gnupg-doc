@@ -355,8 +355,8 @@ conspiracy theories, and half-informed speculations all masquerading
 as informed commentary.
 
 The following mailing lists and web pages are generally known for
-having a strong signal-to-noise ratio.  Despite this, we strongly urge
-skepticism.
+having a strong signal-to-noise ratio.  Nevertheless, we strongly urge
+you to keep a skeptical mind at all times.
 
 
 ** How can I spot the charlatans?
@@ -399,7 +399,9 @@ to take challenges as personal affronts.
    :CUSTOM_ID: mailing_lists
    :END:
 
-The good news is, there are many!
+There are many excellent mailing lists out there.  The following is
+a list of just some of them that we’ve found to be high-quality.
+There are undoubtedly many more that we’ve missed.
 
 
 *** The GnuPG-Users mailing list
@@ -411,7 +413,7 @@ The good news is, there are many!
 - Subscribing :: visit the [[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
 - Unsubscribing :: see above
 - List moderator :: <[[mailto:gnupg-users-owner@gnupg.org?subject%3DThe%20GnuPG-Users%20list][gnupg-users-owner@gnupg.org]]>
-- Supports PGP/MIME? :: No
+- Supports PGP/MIME? :: Yes
 - Languages supported :: English
 
 GnuPG-Users is home to the largest community of GnuPG users on the
@@ -435,7 +437,7 @@ but on the whole it’s a wonderful resource.
   - Olav Seyfarth <[[mailto:olav@enigmail.net?subject=The%20Enigmail%20list][olav@enigmail.net]]>
   - Patrick Brunschwig <[[mailto:patrick@enigmail.net?subject=The%20Enigmail%20list][patrick@enigmail.net]]>
   - Ludwig Hügelschäfer <[[mailto:ludwig@enigmail.net?subject=The%20Enigmail%20list][ludwig@enigmail.net]]>
-  - Daniele Raffo <[[mailto:daniele@enigmail.net?subject=The%20Enigmail%20list][daniele@enigmail.net]]>
+  - Daniele Raffo <[[mailto:daniele@enigmail.net?subject=The%20Enigmail%20list][dan@enigmail.net]]>
   - Robert J. Hansen <[[mailto:rob@enigmail.net?subject=The%20Enigmail%20list][rob@enigmail.net]]>
 - Supports PGP/MIME :: Yes
 - Languages supported :: English, Deutsch, Schwyzerdütsch, Español
