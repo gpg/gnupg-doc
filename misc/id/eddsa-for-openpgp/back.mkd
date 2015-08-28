@@ -67,13 +67,11 @@ other values might also be interesting for other ECC specifications:
 
       Flag  Description
       ----  -----------
-      0x04  Standard flag for uncompression format
+      0x04  Standard flag for uncompressed format
       0x40  Native point format of the curve follows
       0x41  Only X coordinate follows.
       0x42  Only Y coordinate follows.
 
-# Changes since -02
+# Changes since -03
 
-  - Fixed decription in the test vectors regarding an extra 0x00 byte.
-  - Small gramar fixes.
-  - Reference Josefsson's EdDSA I-D instead of the original paper.
+  - xxxx

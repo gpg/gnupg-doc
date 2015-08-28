@@ -64,6 +64,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libassuan 2.3.0 released (2015-08-28)
+
+[[file:related_software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
+other packages.  This release fixes two bugs and introduces new
+support functions for the socket wrappers.  See [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][here]] for details.
+
 ** GPGME 1.6.0 and Libgpg-error 1.20 released (2015-08-26)
 
 GPGME 1.6.0 is now available.  This release introduce a mode to export

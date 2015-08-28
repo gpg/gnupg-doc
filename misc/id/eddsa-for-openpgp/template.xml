@@ -15,7 +15,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info" updates="4880"
-     docName="draft-koch-eddsa-for-openpgp-03">
+     docName="draft-koch-eddsa-for-openpgp-04">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -36,7 +36,7 @@
       </address>
     </author>
 
-    <date month="August" year="2015" />
+    <date month="Foo" year="2015" />
     <area>Security</area>
 
     <abstract>
