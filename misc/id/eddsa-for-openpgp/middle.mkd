@@ -6,13 +6,13 @@ Elliptic Curve Cryptography and specifies the ECDSA and ECDH
 algorithms.  Due to patent reasons no point compression was defined.
 
 This document specifies how to use the EdDSA public key signature
-algorithm [](#ED25519) with the OpenPGP standard.  It defines a new
-signature algorithm named EdDSA and specifies how to use the Ed25519
-curve with EdDSA.  This algorithm uses a custom point compression
-method.  There are three main advantages of the EdDSA algorithm: It
-does not require the use of a unique random number for each signature,
-there are no padding or truncation issues as with ECDSA, and it is
-more resilient to side-channel attacks.
+algorithm [](#I-D.josefsson-eddsa-ed25519) with the OpenPGP standard.
+It defines a new signature algorithm named EdDSA and specifies how to
+use the Ed25519 curve with EdDSA.  This algorithm uses a custom point
+compression method.  There are three main advantages of the EdDSA
+algorithm: It does not require the use of a unique random number for
+each signature, there are no padding or truncation issues as with
+ECDSA, and it is more resilient to side-channel attacks.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
@@ -23,7 +23,8 @@ document are to be interpreted as described in [](#RFC2119).
 
 This document references the Curve "Ed25519" which is the Edwards form
 of "Curve25519" and specified in the same paper as the "EdDSA"
-algorithm ([](#ED25519)).
+algorithm ([](#ED25519)).  For the full specification see
+[](#I-D.josefsson-eddsa-ed25519).
 
 Other curves may be used by using a specific OID for the curve and its
 EdDSA parameters.
@@ -94,7 +95,7 @@ Algorithm-Specific Fields for an EdDSA signature are:
      - MPI of EdDSA value s.
 
 Note that the compressed version of R and S as specified for EdDSA
-([](#ED25519)) is used.
+([](#I-D.josefsson-eddsa-ed25519)) is used.
 
 The version 3 signature format MUST NOT be used with EdDSA.
 

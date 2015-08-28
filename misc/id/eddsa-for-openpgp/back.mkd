@@ -1,7 +1,7 @@
 # Test vectors
 
 For help implementing this specification a non-normative example is
-given.  This example assumes that the algorithm id for EdDSA will
+given.  This example assumes that the algorithm id for EdDSA (TBD1) will
 be 22.
 
 
@@ -76,3 +76,4 @@ other values might also be interesting for other ECC specifications:
 
   - Fixed decription in the test vectors regarding an extra 0x00 byte.
   - Small gramar fixes.
+  - Reference Josefsson's EdDSA I-D instead of the original paper.

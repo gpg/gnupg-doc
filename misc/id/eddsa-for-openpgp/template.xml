@@ -9,7 +9,11 @@
   <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
   <!ENTITY rfc.6637       PUBLIC '' '../common/reference.RFC.6637.xml'>
   <!ENTITY ed25519        PUBLIC '' '../common/reference.ED25519.xml'>
+  <!ENTITY eddsaed25519
+           PUBLIC '' '../common/reference.I-D.josefsson-eddsa-ed25519.xml'>
+
 ]>
+
 <rfc ipr="trust200902" category="info" updates="4880"
      docName="draft-koch-eddsa-for-openpgp-03">
 
@@ -32,7 +36,7 @@
       </address>
     </author>
 
-    <date month="March" year="2015" />
+    <date month="August" year="2015" />
     <area>Security</area>
 
     <abstract>
@@ -46,11 +50,14 @@
 
   <back>
     <references title="Normative References">
-      &ed25519;
+      &eddsaed25519;
       &rfc.4880;
       &rfc.6637;
       &rfc.5226;
       &rfc.2119;
+    </references>
+    <references title="Informative References">
+      &ed25519;
     </references>
     &pandocBack;
   </back>

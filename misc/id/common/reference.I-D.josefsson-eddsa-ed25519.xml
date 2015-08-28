@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.josefsson-eddsa-ed25519'>
+<front>
+<title>EdDSA and Ed25519</title>
+
+<author initials='S' surname='Josefsson' fullname='Simon Josefsson'>
+    <organization />
+</author>
+
+<author initials='N' surname='Moller' fullname='Niels Moller'>
+    <organization />
+</author>
+
+<date month='May' day='12' year='2015' />
+
+<abstract><t>The elliptic curve signature scheme EdDSA and one instance of it called Ed25519 is described.  An example implementation and test vectors are provided.</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-josefsson-eddsa-ed25519-03' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-josefsson-eddsa-ed25519-03.txt' />
+</reference>
