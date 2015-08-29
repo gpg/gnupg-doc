@@ -570,7 +570,7 @@ Cryptography/]].
      :CUSTOM_ID: pages_about_cryptographic_mathematics
      :END:
 
-The maintainer of this list also keeps a gentle(-ish) [[http://keyservers.org/~rjh/cryptofaq.xhtml][introduction to
+The maintainer of this list also keeps a gentle(-ish) [[http://sixdemonbag.org/~rjh/cryptofaq.xhtml][introduction to
 the mathematics and computer science of cryptography]].
 
 
