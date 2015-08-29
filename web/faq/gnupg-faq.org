@@ -437,7 +437,7 @@ but on the whole it’s a wonderful resource.
   - Olav Seyfarth <[[mailto:olav@enigmail.net?subject=The%20Enigmail%20list][olav@enigmail.net]]>
   - Patrick Brunschwig <[[mailto:patrick@enigmail.net?subject=The%20Enigmail%20list][patrick@enigmail.net]]>
   - Ludwig Hügelschäfer <[[mailto:ludwig@enigmail.net?subject=The%20Enigmail%20list][ludwig@enigmail.net]]>
-  - Daniele Raffo <[[mailto:daniele@enigmail.net?subject=The%20Enigmail%20list][dan@enigmail.net]]>
+  - Daniele Raffo <[[mailto:dan@enigmail.net?subject=The%20Enigmail%20list][dan@enigmail.net]]>
   - Robert J. Hansen <[[mailto:rob@enigmail.net?subject=The%20Enigmail%20list][rob@enigmail.net]]>
 - Supports PGP/MIME :: Yes
 - Languages supported :: English, Deutsch, Schwyzerdütsch, Español
