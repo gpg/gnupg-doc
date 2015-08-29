@@ -938,6 +938,24 @@ as a rock, and very few GnuPG users will ever notice a problem with
 it.  Provided you’re not encrypting more than 4Gb of data you may use
 3DES with confidence.
 
+** What are CAST, CAST5, and CAST5-128?
+   :PROPERTIES:
+   :CUSTOM_ID: define_cast
+   :END:
+
+
+Carlisle Adams and Stafford Tavares (the “CA” and the “ST” in “CAST”)
+developed the CAST algorithm in 1996.  It was later approved for
+Canadian government use.
+
+CAST has many names: CAST, CAST5, CAST5-128 and CAST-128 all refer to
+the same algorithm.
+
+Internally, CAST is distinctly similar to Blowfish, another
+well-respected algorithm.  Like 3DES, its 64-bit block size means it
+should not be used to encrypt files larger than 4Gb in size.  With
+that said, though, CAST is a modern cipher and may be used with
+confidence.
 
 
 ** What’s Camellia?
@@ -995,35 +1013,8 @@ to an astonishing amount of peer review.
 
 MD5 is a 128-bit cryptographic hash function invented by Ron Rivest
 (the ‘R’ of ‘RSA’) in the early 1990s.  For many years it was one of
-the standard algorithms of the field, but it has not aged well and is
-widely considered to be completely obsolete.
-
-You don’t need to worry about MD5, though: although GnuPG can read
-MD5-based signatures, it will only generate MD5-based signatures if
-you jump through a lot of hoops.  This is for your own safety, to
-prevent people from accidentally generating MD5-based signatures.
-
-
-
-** What are CAST, CAST5, and CAST5-128?
-   :PROPERTIES:
-   :CUSTOM_ID: define_cast
-   :END:
-
-
-Carlisle Adams and Stafford Tavares (the “CA” and the “ST” in “CAST”)
-developed the CAST algorithm in 1996.  It was later approved for
-Canadian government use.
-
-CAST has many names: CAST, CAST5, CAST5-128 and CAST-128 all refer to
-the same algorithm.
-
-Internally, CAST is distinctly similar to Blowfish, another
-well-respected algorithm.  Like 3DES, its 64-bit block size means it
-should not be used to encrypt files larger than 4Gb in size.  With
-that said, though, CAST is a modern cipher and may be used with
-confidence.
-
+the standard algorithms of the field, but is now completely obsolete.
+For that reason, MD5 is not supported by GnuPG.
 
 
 ** What are ZLIB, ZIP and BZIP?
