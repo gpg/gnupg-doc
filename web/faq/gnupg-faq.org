@@ -162,7 +162,7 @@ clients, such as Psi.
    :END:
 
 Largely, yes.  It can be made to interoperate with anything from PGP
-2.6 and onwards, and has excellent interoperability with the most
+5 and onwards, and has excellent interoperability with the most
 recent releases.
 
 
