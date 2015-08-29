@@ -1106,12 +1106,11 @@ owning that certificate to do proper validation of certificates, you
 can tell GnuPG “I am willing to trust this person’s validations as if
 they were my own.”
 
-/[For instance, I have fully validated John Hawley’s certificate.  I
-further believe, based on my knowing John, that he will be as careful
-about validating a certificate as I would be.  So if John validates
-your certificate, then if I pull your certificate down from the
-keyserver it will show up as a fully validated certificate. — rjh]/
-
+For instance: Alice has fully validated Bob’s certificate.  She further
+believes, based on her knowledge of Bob, that he will be as careful as
+she is about the certificates he validates.  Alice declares she has
+ownertrust in Bob.  Now, any certificates that Bob validates will appear
+to Alice as valid, too.
 
 
 * How do I start using GnuPG?
