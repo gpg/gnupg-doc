@@ -614,11 +614,11 @@ os actively developed.
    :CUSTOM_ID: email_clients_win32
    :END:
 
-| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
-|-------------+----------------+----------+----------+--------+-----|
-| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
-| Kontact     | native         | 1.4, 2.0 | yes      | yes    | (2) |
-| Claws-Mail  | yes (internal) | 1.4, 2.0 | yes      | yes    | (3) |
+| Name        | Plugins        | see |
+|-------------+----------------+-----|
+| Thunderbird | yes (Enigmail) | (1) |
+| Kontact     | native         | (2) |
+| Claws-Mail  | yes (internal) | (3) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
     popular GnuPG-aware email clients.  it’s under active development
@@ -637,12 +637,12 @@ os actively developed.
    :CUSTOM_ID: email_clients_osx
    :END:
 
-| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
-|-------------+----------------+----------+----------+--------+-----|
-| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
-| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | 1.4, 2.0 | yes      | yes    | (2) |
-| Mutt        | native         | 1.4, 2.0 | yes      | yes    | (3) |
-| Apple Mail  | yes ([[http://www.gpgtools.org][GPGtools]]) | 2.0      | no       | yes    | (4) |
+| Name        | Plugins        | see |
+|-------------+----------------+-----|
+| Thunderbird | yes (Enigmail) | (1) |
+| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
+| Mutt        | native         | (3) |
+| Apple Mail  | yes ([[http://www.gpgtools.org][GPGtools]]) | (4) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
     popular GnuPG-aware email clients.  it’s under active development
@@ -655,8 +655,8 @@ os actively developed.
 (3) For best experience make sure to put ~set crypt_use_gpgme~ in your
     =~/.muttrc= file.
 
-(4) PGP/MIME support in Apple Mail+GPGtools is not absent, just
-    temporarily broken.
+(4) As of this writing, Apple Mail is incompatible with PGP/MIME.  This
+    is a known bug and people are working on it.
 
 
 ** … Linux or FreeBSD?
@@ -664,14 +664,14 @@ os actively developed.
    :CUSTOM_ID: email_clients_linux
    :END:
 
-| Name        | Plugins        | GnuPG    | PGP/MIME | Active | see |
-|-------------+----------------+----------+----------+--------+-----|
-| Thunderbird | yes (Enigmail) | 1.4, 2.0 | yes      | yes    | (1) |
-| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | 1.4, 2.0 | yes      | yes    | (2) |
-| Mutt        | native         | 1.4, 2.0 | yes      | yes    | (3) |
-| Kontact     | native         | 1.4, 2.0 | yes      | yes    | (4) |
-| Evolution   | native         | 1.4, 2.0 | yes      | yes    |     |
-| Claws-Mail  | yes (internal) | 1.4, 2.0 | yes      | yes    |     |
+| Name        | Plugins        | see |
+|-------------+----------------+-----|
+| Thunderbird | yes (Enigmail) | (1) |
+| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
+| Mutt        | native         | (3) |
+| Kontact     | native         | (4) |
+| Evolution   | native         |     |
+| Claws-Mail  | yes (internal) |     |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
     popular GnuPG-aware email clients.  it’s under active development
@@ -693,8 +693,15 @@ os actively developed.
   :CUSTOM_ID: portable_app
   :END:
 
-For Windows users, check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps.com]].  To build you own portable
-application you may use the /mkportable/ tool which comes with [[http://www.gpg4win.org][Gpg4win]].
+Yes, but we don't recommend it.  Sharing a USB token between lots of
+random computers is a great way to get infested with malware, and that's
+not something you want to happen to the token you're using for secure
+email.  If you're going to do this, please show caution with respect to
+which computers you use the portable app on.
+
+That said, Windows users should check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps]].
+Or, to build your own, use the /mkportable/ tool which comes with
+[[http://www.gpg4win.org][Gpg4win]].
 
 
 * What do all these strange words mean?
