@@ -1040,12 +1040,10 @@ A revocation certificate is a [[#define_key][certificate]] that possesses the
 information necessary to mark another certificate as unusable.  This
 is called ‘revoking’ the certificate.
 
-Recommended procedure is to generate a revocation certificate
-immediately after generating a new GnuPG key.  If the key is lost
-(say, if you have no backups of the key and you lose the smart card or
-laptop containing the key), you'll no longer be able to generate a
-revocation certificate.  Consult [[#generate_revocation_certificate][the FAQ instructions]] on how to do
-this.
+We recommended you create a revocation certificate immediately after
+generating a new GnuPG certificate.  Store it somewhere safe.
+Consult [[#generate_revocation_certificate][the FAQ instructions]] on
+how to do this.
 
 
 
