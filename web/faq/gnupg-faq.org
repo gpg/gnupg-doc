@@ -976,23 +976,15 @@ to an astonishing amount of peer review.
   the way of changes.  It still generates 160-bit outputs.  SHA-1 has
   not aged well.  Although it is still believed to be safe, it would
   be advisable to use another, different hash function if possible.
-- *SHA-224*: This is a massively-overhauled SHA-1 which generates
-  224-bit outputs.  It is believed to be safe, with no warnings about
-  its usage.
-- *SHA-256*: This is a massively-overhauled SHA-1 which generates
-  256-bit outputs.  It is believed to be safe, with no warnings about
-  its usage.
-- *SHA-384*: This is a massively-overhauled SHA-1 which generates
-  384-bit outputs.  It is believed to be safe, with no warnings about
-  its usage.
-- *SHA-512*: This is a massively-overhauled SHA-1 which generates
-  512-bit outputs.  It is believed to be safe, with no warnings about
-  its usage.
+- *SHA-224, 256, 384, or 512*: This is a massively-overhauled SHA-1 which
+  generates larger hashes (224, 256, 384, or 512 bits).  Right now,
+  these are the strongest hashes in GnuPG.
 - *SHA-3*: SHA-3 is a completely new hash algorithm that makes a clean
   break with the previous SHAs.  It is believed to be safe, with no
-  warnings about its usage.  At present, GnuPG does not support SHA-3.
-  Support for SHA-3 is forthcoming: expect it soon.
-
+  warnings about its usage.  It hasn't yet been officially introduced
+  into the OpenPGP standard, and for that reason GnuPG doesn't support
+  it.  However, SHA-3 will probably be incorporated into the spec, and
+  GnuPG will support it as soon as it does.
 
 
 ** What’s MD5?
