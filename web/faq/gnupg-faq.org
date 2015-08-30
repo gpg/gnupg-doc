@@ -1230,13 +1230,7 @@ everyone wants to publish their key publicly.
 
 GnuPG looks at a file called =gpg.conf= to determine various runtime
 parameters.  On UNIX systems this file can be found in =~/.gnupg=.  On
-Windows systems it’s a bit more difficult to predict, but try:
-
-- Windows XP :: FIXME
-- Windows Vista :: FIXME
-- Windows 7 :: FIXME
-- Windows 8 :: FIXME
-
+Windows systems open Explorer and go to =%APPDATA%\Roaming\GnuPG=.
 
 ** What options should I put in my configuration file?
    :PROPERTIES:
@@ -1244,55 +1238,55 @@ Windows systems it’s a bit more difficult to predict, but try:
    :END:
 
 The good news is, you really shouldn’t need to.  That said, the
-following is Rob Hansen’s =gpg.conf= file.  The italicized text
-describes what each piece does: the monospaced text is the actual
-content of the file.
+following is Rob Hansen’s =gpg.conf= file.
 
-/Ensure that all parameters are set for strict OpenPGP conformance.
-Later entries will override this, but setting ‘openpgp’ provides a
-really good baseline to start from./
+#+begin_example
 
-=openpgp=
+# Tell GnuPG that I want maximum OpenPGP conformance.
+openpgp
 
-/Make GnuPG a little quieter: don’t warn about insecure memory, don’t
-print a greeting message, don’t put comments in GnuPG’s output./
+# Disable a few messages from GnuPG that I know I don't need.
+no-greeting
+no-secmem-warning
 
-=no-greeting=\\
-=no-secmem-warning=\\
-=no-emit-version=\\
-=no-comments=
+# Don't include a version number or a comment in my output.
+no-emit-version
+no-comments
 
-/Since keyservers.org sits in my closet, I want GnuPG to always check it instead of going out on the network to ask another keyserver halfway around the globe.  Most users don’t have a keyserver in their closet, and will want to substitute pool.sks-keyservers.net here./
+# Use full 16-character key IDs, not short 8-character key IDs.
+keyid-format long
 
-=keyserver keyservers.org=
+# Use the global keyserver network for certificate lookups.
+# Further, whenever I send or receive something to/from the
+# keyserver network, clean up what I get or send.
+keyserver pool.sks-keyservers.net
+keyserver-options import-clean-sigs import-clean-uids export-clean-sigs export-clean-uids
 
-/Whenever I sign a document, use certificate 0xD6B98E10/
+# If I don't explicitly state which certificate to use, use this one.
+default-key 23806BE5D6B98E10
 
-=local-user 0xD6B98E10=
+# Always include signatures from these two certificates.
+local-user 23806BE5D6B98E10
+local-user 1DCBDC01B44427C7
 
-/Whenever I encrypt a document, also include certificate 0xD6B98E10 as
-a recipient.  This allows me to decrypt the messages I send./
+# Always add these two certificates to my recipients list.
+encrypt-to 23806BE5D6B98E10
+encrypt-to 1DCBDC01B44427C7
 
-=encrypt-to 0xD6B98E10=
+# Turn "From" into "> From", in order to play nice with UNIX mailboxes.
+escape-from-lines
 
-/In email, a line beginning with the word ‘From’ can be misinterpreted
-by the computer as the start of a new email message.  Thus, whenever
-GnuPG sees a line starting with ‘From’, it will slightly mangle the
-line to prevent this bug from occurring./
+# Prefer strong hashes whenever possible.
+personal-digest-preferences SHA256 SHA384 SHA512 SHA224 RIPEMD160
 
-=escape-from-lines=
+# Prefer more modern ciphers over older ones.
+personal-cipher-preferences CAMELLIA256 AES256 TWOFISH CAMELLIA192 AES192 CAMELLIA128 AES BLOWFISH CAST5 3DES
 
-/Use SHA256 instead of SHA-1 for certificate signatures./
-
-=cert-digest-algo SHA256=
-
-/Prefer these digest algorithms, in this order/
-
-=personal-digest-preferences SHA256 SHA512 SHA384 SHA224 RIPEMD160=
-
-/Prefer these ciphers, in this order/
-
-=personal-cipher-preferences TWOFISH CAMELLIA256 AES 3DES=
+# Turn up the compression level and prefer BZIP2 over ZIP and ZLIB.
+bzip2-compress-level 9
+compress-level 9
+personal-compress-preferences BZIP2 ZIP ZLIB
+#+end_example
 
 
 
@@ -1982,56 +1976,21 @@ against all threats.
    :CUSTOM_ID: use_pgpmime
    :END:
 
-This is controversial, thus there are two commonly given answers.
+Almost certainly.  In the past this was a controversial question, but
+recently there's come to be a consensus: use PGP/MIME whenever possible.
+The reason for this is that it's possible to armor email headers and
+metadata with PGP/MIME, but sending messages inline leaves this data
+exposed.  As recent years have taught us, the metadata is often as
+sensitive as the contents of the message.  PGP/MIME can protect metadata;
+inline can't.
 
-*** 1. Probably not.
+However, please be aware that not all mail servers handle PGP/MIME
+properly.  Some mailing lists are incompatible with it (PGP-Basics, for
+instance).  Some mailing list software mangles PGP/MIME (old versions of
+Mailman, for instance).
 
-PGP/MIME is the official, standardized way of using GnuPG with
-electronic mail.  PGP/MIME packages the data up as encrypted
-attachments.  This is the problem with it: attachments often get
-mangled, stripped, or otherwise tampered with.  For instance, sending
-PGP/MIME traffic to the [[#pgp-basics_list][PGP-Basics mailing list]] will result in your
-email being completely blank.  PGP-Basics is set up to drop all
-attachments from messages posted to the list, and that means your
-PGP/MIME attachments get dropped.
-
-For many years GNU Mailman would repackage attachments in ways that
-would break the PGP/MIME standard and result in unreadable traffic.
-These GNU Mailman installations still exist in the wild.  For a long
-time both [[#gnupg-users_list][GnuPG-Users]] and [[#enigmail_list][Enigmail]] ran these buggy versions of GNU
-Mailman.
-
-Since PGP/MIME can't reliably be sent to the three largest GnuPG
-mailing lists, it’s hard to claim that PGP/MIME is ready for
-widespread usage.  For now, it’s best to use inline traffic unless you
-can be certain that PGP/MIME messages will not be mangled in transit.
-
-*** 2. Yes, it is the safer solution.
-
-The problems with the mailing list software are annoying but harmless.
-
-In most other cases PGP/MIME works very well and avoids a lot of
-semantic problems when sending signed mails.  For example it is much
-easier for mail readers to indicate what parts of the mail are covered
-by the signature.  Many mail readers have bugs pertaining to inline
-signatures which can be used to trick the user into assuming that some
-parts of a mail are covered by the signatures while in reality they
-are not.
-
-For encrypted and signed mails there are no problems with signature
-verification because almost all software uses the combined
-signature+encryption approach of PGP/MIME and thus GnuPG takes care of
-it in exactly the same way as it does with inline traffic.
-
-Non-ASCII character encoding is problematic with inline data.
-Although OpenPGP provides a way to specify the encoding, that feature
-is not widely supported.  In good Unix tradition GnuPG does not try to
-interpret the data it signs or encrypts but relies on the peers to
-agree on a common encoding.  PGP/MIME provides a well established and
-matured way of doing exactly that.
-
-Some plugins for Outlook do not support PGP/MIME but after all the
-OpenPGP support in Outlook is anyway quite limited.
+If you have any problems with PGP/MIME, consider carefully whether you
+need metadata protection.  If you don't, then fall back to inline.
 
 
 ** What are the best algorithms in GnuPG?
@@ -2041,18 +2000,14 @@ OpenPGP support in Outlook is anyway quite limited.
 
 
 MD5 and SHA-1 should be avoided if possible.  Beyond that, there is no
-“best algorithm” or “best algorithms” in GnuPG.  It’s sort of like
+“best algorithm” in GnuPG.  It’s sort of like
 asking whether Godzilla or King Kong is better at terrorizing urban
 cities: there is no clear-cut winner.
 
 This is not to say you shouldn’t have preferences, though.  It is only
 to say that GnuPG’s algorithms are so well-designed for what they do
 that there is no single “best”.  There’s just a lot of personal,
-subjective choice.  For instance:
-
-- /[I studied Twofish pretty intensively in graduate school, so I tend
-  to prefer it. — rjh]/
-
+subjective choice.
 
 
 ** Why is my DSA key limited to 3072 bits?
