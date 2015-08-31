@@ -76,7 +76,7 @@
 
    Niibe is a long time free software hacker who joined the GnuPG
    project in 2011 and soon took over the development of the smartcard
-   related code.  He is also the person behind the [[https://fsij.org/gnuk][gnuk token]].
+   related code.  He is also the person behind the [[http://www.fsij.org/gnuk/][Gnuk Token]] and the [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][MEP game]].
    Niibe’s work on GnuPG is financially supported by g10^code.
 
    #+HTML: <p style="clear: both"/>

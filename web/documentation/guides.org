@@ -79,8 +79,10 @@
 
 ** Other documents
 
+   The [[https://emailselfdefense.fsf.org/][Email Self-Defense]] site is an introduction with infographic.
+
    At [[http://kldp.org/~yong/misc/gnupg/][kldp.org]] you can find some Korean language information on GnuPG.
-   [[http://hp.vector.co.jp/authors/VA019487/][Japanese language documentation]] is also available.
+   [[http://gnupg.hclippr.com/][Japanese language documentation]] is also available.
 
    Julien Francoz, alias CoCoZ, wrote a guide for French users
    entitled [[http://francoz.net/doc/gpg/gpg.html][Utilisation de GnuPG]] , which covers the basic usage of
