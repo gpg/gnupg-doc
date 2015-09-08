@@ -64,6 +64,16 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.0.29 released (2015-09-08)
+
+GnuPG 2.0.29 is now available.  This release fixes a couple of bugs;
+users of GnuPG 2.0.x may want to update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000376.html][{more}]]
+
+** Libgcrypt 1.6.4 released (2015-09-08)
+
+Libgcrypt version 1.6.4 has been released to fix a few minor bugs and
+a crash on newer Windows versions. [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000375.html][{more}]]
+
 ** Libassuan 2.3.0 released (2015-08-28)
 
 [[file:related_software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
