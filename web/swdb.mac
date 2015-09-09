@@ -46,9 +46,9 @@
 #
 # GPA
 #
-#+macro: gpa_ver  0.9.7
-#+macro: gpa_size 718k
-#+macro: gpa_sha1 9eb07bcceeb986c7b6dbce8a18b82a2c344b50ce
+#+macro: gpa_ver  0.9.9
+#+macro: gpa_size 721k
+#+macro: gpa_sha1 1cf86c9e38aa553fdb880c55cbc6755901ad21a4
 
 
 #

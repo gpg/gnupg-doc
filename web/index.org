@@ -64,6 +64,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+
+** GPA 0.9.9 released (2015-09-09)
+
+A new version of [[file:related_software/gpa/index.org][GPA]], the graphical frontend for GnuPG, is now
+available.  This release fixes a couple of bugs and has been changed
+to show the clipboard view on startup.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][{more}]]
+
 ** GnuPG 2.0.29 released (2015-09-08)
 
 GnuPG 2.0.29 is now available.  This release fixes a couple of bugs;
