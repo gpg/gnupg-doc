@@ -1,0 +1,201 @@
+# GnuPG News for Summer 2015
+#+STARTUP: showall
+#+AUTHOR: Neal
+#+DATE: September 11th, 2015
+#+Keywords: Presentation, RMLL, DebConf, GNOME, NeuG, Enigmail, TOFU
+
+** GnuPG News for Summer 2015
+
+It's been a few months since the last posting.  Our most visible
+activity has been several presentations, but hacking has continued.
+
+In July, Neal attended [[https://2015.rmll.info/?lang%3Den][RMLL]] in Beauvais, France and [[https://2015.rmll.info/introduction-avancee-sur-gnupg?lang%3Den][presented "An
+Advanced Introduction to GnuPG"]].  This presentation is for anyone who
+knows how to encrypt, decrypt and sign data, but wants to learn how
+messages are constructed, better understand GnuPG's architecture, and
+hear some tips and tricks for making the most of GnuPG.  The
+presentation went quite well: the room was nearly full and there were
+a number of questions at the end as well as after the talk.
+
+In August, Werner, Niibe and Daniel Kahn Gillmor (dkg) attended
+[[http://debconf15.debconf.org/][Debconf]] in Heidelberg.  Werner held a keynote: "GnuPG: Past, Present
+and Future."  The presentation was [[https://summit.debconf.org/debconf15/meeting/330/gnupg-past-present-future/][recorded]] and the [[https://gnupg.org/ftp/blurbs/debconf15_gnupg-past-present-future.pdf][slides]] are also
+available.  Werner started with the history of GnuPG.  He related some
+anecdotes about his motivation to start the project, some of the legal
+challenges (working around patents), and the founding and running of
+g10 Code, the free software company behind GnuPG.  He then talked
+about current activities both within GnuPG (some new features and the
+recent fund raising campaign) as well as some activities related to
+GnuPG (in particular, the rechartering of the OpenPGP working group).
+Finally, he discussed his vision for the future.  In particular, he
+wants GnuPG be easier to use for the masses.  This means, for
+instance, using TOFU as a trust model instead of the web of trust,
+which requires [[http://wiki.gnupg.org/WebOfTrust][too much curating]] for nearly all users---including most
+technical users---to be effective.  Nevertheless, the goal isn't to
+somehow neuter GnuPG: it will remain possible to harden GnuPG for
+users who are trying to prevent targeted attacks with just a few
+configuration options.  The primary focus, however, is making
+GnuPG easier to use and more secure for casual use by default.
+
+Also at DebConf, dkg presented "[[https://summit.debconf.org/debconf15/meeting/195/gnupg-in-debian-report/][GnuPG in Debian Report]]" on behalf of
+the GnuPG packing team ([[https://dkg.fifthhorseman.net/gnupg-in-debian-debconf15.pdf][slides]]).  He reported the status of GnuPG in
+Debian and what the team has planned.  He began by relating the
+current status of GnuPG in Debian.  First, everything has been moved
+over to git.  The packaging team has also adopted not only GnuPG, but
+several related packages.  The team has been uploading version 2.1 to
+experimental and, shortly before the talk, made the first upload to
+unstable.  A lot of work has been done on minimizing GnuPG's
+dependencies.  This is particularly helpful for server installs that
+don't need any of the graphical components.  Unfortunately, this work
+didn't make it into Jessie, but the workaround is easy (install
+~pinentry-curses~ before installing ~gnupg2~).  The plan is to support
+GnuPG 2.1 by default.  As such, it will be installed as ~/usr/bin/gpg~
+(not ~/usr/bin/gpg2~).  Note: GnuPG 1.4, with its support for old,
+broken crypto will remain available for those few who still need it,
+but it will no longer be the default in the next version of Debian.
+Making GnuPG 2.1 the default also means that support for ECC
+cryptography will become much more widely spread in the near future.
+Daniel also called for support for encrypted swap by default and
+encouraged people to file bugs.  He then turned to some divergences
+from upstream.  He wants GnuPG to be stronger by default and he wants
+to do some Linux-specific hardening.  Some possible future work are:
+integrating ~autopkgtest~, for testing the built package in specific
+environments; and, improving desktop integration and the UI/UX.  dkg
+also mentioned that he is excited about the proposed official support
+for TOFU in GnuPG: he has a set of scripts for implementing TOFU and
+would like better support.  dkg also ran a GnuPG Packaging BoF, which
+was [[https://summit.debconf.org/debconf15/meeting/196/gnupg-packaging-bof/][recorded]] as well.
+
+Niibe is running a campaign called "more entropy, please."  His goal
+is firstly to raise awareness of the importance of entropy and also
+about making computations constant time to avoid side-channel attacks.
+He presented this campaign at DebConf.  His presentation was [[https://summit.debconf.org/debconf15/meeting/265/more-entropy-please/][recorded]]
+and he wrote a followup [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][article]].
+
+This campaign is related to Niibe's works on a true random number
+generator (TRNG) and smartcard called [[http://www.gniibe.org/memo/development/gnuk/rng/neug.html][NeuG]].  This device runs only
+free software and the schematics are also freely available.  The
+device is available for purchase from the [[http://shop.fsf.org/product/usb/][FSF's shop]].  Happily, it is
+so popular that it sold out (but more are on the way!).
+
+At the end of August, Werner attended the "[[https://datenschutzzentrum.de/sommerakademie/2015/][Sommerakademie 2015: Ohne
+Vertrauenswürdigkeit keine Informationsgesellschaft]]," which was
+organized by the Unabhängiges Landeszentrum für Datenschutz
+Schleswig-Holstein.  He held a keynote in which he introduced
+public-key encryption and GnuPG to privacy activists.  In addition to
+the [[https://gnupg.org/ftp/blurbs/kiel-2015_sicher-verschl-mit-gnupg.pdf][slides]], he also wrote a short [[https://gnupg.org/ftp/blurbs/kiel-2015_sicher-verschl-mit-gnupg_handout.pdf][handout]].  Note: both are in German.
+Werner held the same talk at the [[http://www.linux-praktiker.de/html/deutsch/rueckblende/2015_08_26_werner-koch-im-chaosdorf-vortrag-sicher-verschluesseln-mit-gnupg.htm][Düsseldorf Fellowship meeting]].
+
+At the beginning of November, Werner will hold a keynote at [[https://fscons.org/2015/][FSCONS]] in
+Göteborg, Sweden.
+
+Due to renewed interest in the OpenPGP protocol, the IETF OpenPGP
+working group was [[https://tools.ietf.org/wg/openpgp/charters][rechartered]] in June to work on updating the OpenPGP
+specification.  The group is co-chaired by dkg.  Both he and Werner
+attended the IETF-93 OpenPGP session (Werner attended [[https://www.ietf.org/jabber/logs/openpgp/2015-07-24.html][remotely]]) to
+discuss its [[https://tools.ietf.org/wg/openpgp/agenda?item%3Dagenda-93-openpgp.html][agenda]].  The [[https://tools.ietf.org/wg/openpgp/minutes?item%3Dminutes-93-openpgp.html][minutes]] are also available.
+
+Neal recently spearheaded an effort to better integrate GnuPG and
+Gnome Keyring.  For a long time, Gnome Keyring proxied access to
+gpg-agent.  Unfortunately, the proxy was incomplete and this proved to
+be a serious problem with GnuPG 2.1.  Since Gnome Keyring only wanted
+to provide a passphrase cache, we decided to modify gpg-agent to
+support this directly.  This work has been completed in GnuPG and the
+proxy has since been removed from Gnome Keyring.  Stef Walter recently
+[[https://mail.gnome.org/archives/desktop-devel-list/2015-August/msg00002.html][announced]] this to Gnome's distributor list so we should see a proper
+fix to this long-standing issue coming to end users soon.
+
+Neal posted [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html][a design document about integrating TOFU]] (trust on first
+use), a new trust model, into GnuPG.  As noted above, TOFU requires
+little support from users.  The Web of Trust, on the other hand,
+requires not only signing keys, but for every user to assign trust to
+people they potentially don't know.  This is a huge burden and few
+people actually do this in practice.  As such, they are getting less
+protection than with TOFU, which is able to detect when a user's key
+changes.  Note: our intention is to support both TOFU and the Web of
+Trust at the same time.
+
+We have modified Pinentry to use normal widgets instead of the custom
+widgets that use locked memory.  Rough consensus for this decision was
+reached on [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030112.html][the gnupg-devel mailing list]].  The motivation is that the
+secure widget code is large and buggy and it relies on lots of code to
+carefully handle the password (namely, anything that deals with
+keyboard input, such as, the X server, the graphical toolkit and the C
+library).  This supporting code is not designed to be secure and thus
+probably isn't.  Further, in practice, locked memory isn't really
+locked anymore.  It can still be written to disk if the machine is
+hibernated.  Finally, the secure widgets are less feature rich and
+don't integrate as well into the desktop environments.  This is
+particularly important as regards accessibility.  Neal modified the
+gtk-based pinentry and Andre modified the Qt-based pinentry to use the
+standard widgets.  This allowed us to immediately close a number of
+bug reports.
+
+Niibe has been working on integrating support for Curve25519 for
+encryption.  This is available in the latest version of libgcrypt and
+scdaemon.
+
+Kai has been working on various enhancements for Enigmail.  In
+particular, Enigmail now displays the algorithms used for signing
+messages under "Enigmail Security Info".  He added functionality for
+importing and exporting Enigmail preferences.  Enigmail now asks
+before importing public keys from attachments.  And, a patch is
+pending that allows Enigmail to use keybase.io as keyserver.
+
+There have been a number of new releases.  These include: [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000379.html][GnuPG 2.1.8]],
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000376.html][GnuPG 2.0.29]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][GPA 0.9.9]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000375.html][libgcrypt 1.6.4]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][libassuan 2.3.0]],
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000373.html][libgpg-error 1.20]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000372.html][GPGME 1.6.0]], and Pinentry 0.9.6.  Andre Heinecke
+also released [[http://lists.wald.intevation.org/pipermail/gpg4win-announce/2015-September/000065.html][gpg4win 2.2.6]].
+
+On GnuPG-devel, [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-June/030036.html][Bjarni reraised the memory-hole discussion]].  This was
+originally discussed at the OpenPGP summit back in April.  The idea is
+to be able to sign and encrypt sensitive mail headers, such as the
+subject.  Both Mailpile and Enigmail already have partial support for
+the proposed standard.
+
+Jan Suhr asked about [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-August/030242.html][GnuPG using exclusive mode when accessing OpenPGP
+cards]].  Niibe and Werner argued that only a single application should
+use the smartcard at a time.  There are two main arguments:
+performance and security.  From a performance perspective, GnuPG (or
+rather, scadaemon) can cache the status of the card.  Having to
+refresh information (among initialization procedures) can introduce a
+several second delay.  From a security perspective, we want to make
+sure that another application does not get access to the card without
+having to enter the PIN.
+
+On gnupg-users, Simon Josefsson asked about [[https://lists.gnupg.org/pipermail/gnupg-users/2015-June/053770.html][how to setup a shared
+email with hardware-backed keys]].  He detailed his setup and dkg
+thought it was sound and also mentioned an alternative approach.
+
+A.T. Leibson started an interesting thread on [[https://lists.gnupg.org/pipermail/gnupg-users/2015-June/053790.html][teaching GnuPG to new
+users]].  A number of people replied with suggestions and anecdotes.  If
+you are an encryption advocate, it is probably worth a look.
+
+Tankred Hase linked to the [[https://lists.gnupg.org/pipermail/gnupg-users/2015-July/053854.html][Secure Private Key Synchronization
+protocol]], a secure way to synchronize a user's private key between
+devices.  This was originally discussed at the OpenPGP summit.  He's
+interested in additional feedback.
+
+Nico posted a design document for a [[https://lists.gnupg.org/pipermail/gnupg-users/2015-July/053971.html][key server that validates OpenPGP
+keys by sending a mail to the key's holder]].  A main issue that was
+raised was how to decide which key server should be authoritative:
+users are not going to want to validate that they control the key to
+hundreds of key servers.  Werner noted that this effectively
+reimplements X.509 and its trusted CAs.
+
+Nico asked for feedback on how to organize [[https://lists.gnupg.org/pipermail/gnupg-users/2015-August/054096.html][the next OpenPGP summit]].
+He wants to have a meeting that is open to the public, but with some
+limitations to ensure that work gets done and that the limited space
+is available to those most engaged in OpenPGP.
+
+Robert J. Hansen has begun [[https://lists.gnupg.org/pipermail/gnupg-users/2015-August/054172.html][overhauling the FAQ]].  He is planning on
+removing references to GnuPG 1.4 as much as possible.  He also
+feedback about some proposed clarifications.
+
+** About this news posting
+
+We try to write a news posting each month.  However, other work may
+have a higher priority (e.g. security fixes) and thus there is no
+promise for a fixed publication date.  If you have an interesting
+topic for a news posting, please send it to us.  A regular summary of
+the mailing list discussions would make a nice column on this news.
