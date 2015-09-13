@@ -28,7 +28,7 @@ about current activities both within GnuPG (some new features and the
 recent fund raising campaign) as well as some activities related to
 GnuPG (in particular, the rechartering of the OpenPGP working group).
 Finally, he discussed his vision for the future.  In particular, he
-wants GnuPG be easier to use for the masses.  This means, for
+wants GnuPG to be easier to use for the masses.  This means, for
 instance, using TOFU as a trust model instead of the web of trust,
 which requires [[http://wiki.gnupg.org/WebOfTrust][too much curating]] for nearly all users---including most
 technical users---to be effective.  Nevertheless, the goal isn't to
@@ -38,7 +38,7 @@ configuration options.  The primary focus, however, is making
 GnuPG easier to use and more secure for casual use by default.
 
 Also at DebConf, dkg presented "[[https://summit.debconf.org/debconf15/meeting/195/gnupg-in-debian-report/][GnuPG in Debian Report]]" on behalf of
-the GnuPG packing team ([[https://dkg.fifthhorseman.net/gnupg-in-debian-debconf15.pdf][slides]]).  He reported the status of GnuPG in
+the GnuPG packaging team ([[https://dkg.fifthhorseman.net/gnupg-in-debian-debconf15.pdf][slides]]).  He reported the status of GnuPG in
 Debian and what the team has planned.  He began by relating the
 current status of GnuPG in Debian.  First, everything has been moved
 over to git.  The packaging team has also adopted not only GnuPG, but
@@ -158,7 +158,7 @@ cards]].  Niibe and Werner argued that only a single application should
 use the smartcard at a time.  There are two main arguments:
 performance and security.  From a performance perspective, GnuPG (or
 rather, scadaemon) can cache the status of the card.  Having to
-refresh information (among initialization procedures) can introduce a
+refresh information (and rerun the initialization procedure) can introduce a
 several second delay.  From a security perspective, we want to make
 sure that another application does not get access to the card without
 having to enter the PIN.
@@ -190,7 +190,7 @@ is available to those most engaged in OpenPGP.
 
 Robert J. Hansen has begun [[https://lists.gnupg.org/pipermail/gnupg-users/2015-August/054172.html][overhauling the FAQ]].  He is planning on
 removing references to GnuPG 1.4 as much as possible.  He also
-feedback about some proposed clarifications.
+sought feedback about some proposed clarifications.
 
 ** About this news posting
 
