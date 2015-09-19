@@ -110,7 +110,7 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-August 2015.
+September 2015.
 
 
 * General questions
@@ -367,7 +367,7 @@ you to keep a skeptical mind at all times.
 First, beware of all absolutes.  Almost every question in either the
 fields of computer security or cryptography can honestly be answered
 with, “it depends.”  Real experts will avoid giving blanket yes-or-no
-questions except to the simplest and most routine of questions.  They
+answers except to the simplest and most routine of questions.  They
 will instead hem and haw and explain the several different factors
 that must be weighed.  Hucksters will promise you absolute truth.
 
@@ -463,8 +463,8 @@ The list is lightly moderated.
 - Languages supported :: English
 
 PGP-Basics was established over a decade ago specifically to provide a
-place where newcomers to GnuPG and PGP could learn about
 communications security. The list is low-volume, lightly-moderated,
+place where newcomers to GnuPG and PGP could learn about
 and remarkably friendly to new users.
 
 
@@ -570,7 +570,7 @@ Cryptography/]].
      :CUSTOM_ID: pages_about_cryptographic_mathematics
      :END:
 
-The maintainer of this list also keeps a gentle(-ish) [[http://sixdemonbag.org/~rjh/cryptofaq.xhtml][introduction to
+The maintainer of this list also keeps a gentle(-ish) [[http://sixdemonbag.org/cryptofaq.xhtml][introduction to
 the mathematics and computer science of cryptography]].
 
 
@@ -2047,6 +2047,26 @@ to use SHA-1 and/or RIPEMD-160 with DSA-1024; GnuPG might be able to
 use any of the longer SHAs with DSA-1024; GnuPG might use SHA-224,
 -256, -384 or -512 for DSA-2048; GnuPG might use SHA-256, SHA-384 or
 SHA-512 for DSA-3072.
+
+** Why can't I decrypt things I encrypted twenty years ago with PGP 2.6?
+   :PROPERTIES:
+   :CUSTOM_ID: pgp_26
+   :END:
+
+Twenty years ago, PGP 2.6 was released.  It was very successful, but there
+were some unfortunate things about its design.  Soon after a better version
+was released, and this was ultimately standardized as RFC 4880.
+
+GnuPG supports RFC 4880.  It does not support PGP 2.6.  This shouldn't be
+surprising: all software ultimately breaks compatibility with what came
+before it.  Word processors of 2015 don't support the WordStar document
+format, just like you can't put a Kaypro floppy disk in a modern PC.
+
+If you absolutely must have PGP 2.6 support, we recommend you use PGP 2.6.
+It's easy to find on the internet.  Barring that, you could use GnuPG 1.4,
+which is an older branch of GnuPG that had some (but by no means complete)
+PGP 2.6 support.
+
 
 
 * COMMENT HTML style specifications
