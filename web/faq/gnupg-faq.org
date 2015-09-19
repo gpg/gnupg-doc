@@ -1796,6 +1796,55 @@ said, if you have a more technical question about GnuPG, you may find
 some of the answers in this section.
 
 
+** Which ciphers are recommended, and why?
+   :PROPERTIES:
+   :CUSTOM_ID: recommended_ciphers
+   :END:
+
+Although all the ciphers in GnuPG are believed strong, they are not all
+equally recommended.  For asymmetric ciphers we recommend RSA over
+DSA and/or Elgamal; for symmetric ciphers we recommend AES, Camellia, and/or
+Twofish over all the others.
+
+With respect to our RSA recommendation, there is no reason to believe RSA
+is any better or worse than DSA and/or Elgamal in a cryptographic sense.
+However, if you ever want to migrate your certificate to a smart card or
+other cryptographic token, you'll find RSA is much better supported.
+
+With respect to our symmetric cipher recommendations, we have to explain a
+little bit about cryptanalysis.
+
+First, ciphers are deterministic: given the same inputs, they generate the same
+outputs.
+
+Second, ciphers don't operate on individual bytes.  They work on blocks of
+data, either eight or sixteen bytes large, depending on the cipher.
+
+Third, the OpenPGP standard requires that ciphers run in what's
+called a “feedback mode.”  In feedback mode, a cipher has two inputs: the
+random session key used for the message, and the output of the previous block.
+
+Put it all together and imagine what would happen if, within the same message,
+two identical ciphertext blocks were created.  Since the cipher is
+deterministic (always generates the same output for the same inputs), and
+since the key and the previous block are the same, the output of this block
+would be the same.  This repetition creates a distinctive pattern which a
+cryptanalyst might be able to potentially exploit.
+
+For a cipher with an eight-byte block size, you'll probably repeat a block
+after about 32 gigabytes of data.  This means if you encrypt a single message
+larger than 32 gigabytes, it's pretty much a statistical guarantee you'll have
+a repeated block.  That's bad.  For this reason, we recommend you not use
+ciphers with eight-byte data blocks if you're going to be doing bulk
+encryption.  It's very unlikely you'll have any problems if you keep your
+messages under 4 gigabytes in size.
+
+For a cipher with a sixteen-byte block size, you'd need to encrypt a single
+message that contained more data than is found in the entire internet.  In
+other words, it's no longer an issue.
+
+Twofish, AES, and Camellia all operate on sixteen bytes at a time.  The others
+all operate on eight bytes at a time.
 
 ** Why does GnuPG default to 2048 bit RSA-2048?
    :PROPERTIES:
@@ -1999,7 +2048,8 @@ need metadata protection.  If you don't, then fall back to inline.
    :END:
 
 
-MD5 and SHA-1 should be avoided if possible.  Beyond that, there is no
+MD5 and SHA-1 should be avoided if possible, and for bulk encryption
+it’s best to use Camellia, Twofish, or AES.  Beyond that guidance there is no
 “best algorithm” in GnuPG.  It’s sort of like
 asking whether Godzilla or King Kong is better at terrorizing urban
 cities: there is no clear-cut winner.
@@ -2087,5 +2137,5 @@ PGP 2.6 support.
 #+end_src
 
 
-# Local Variables:
 # End:
+# Local Variables:
