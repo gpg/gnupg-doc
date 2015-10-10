@@ -65,6 +65,11 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.1.9 released (2015-10-09)
+
+A new version of the /modern/ branch of GnuPG has been released.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000380.html][anouncement mail]] for details.
+
 ** GnuPG 2.1.8 released (2015-09-10)
 
 A new version of the /modern/ branch of GnuPG has been released.
