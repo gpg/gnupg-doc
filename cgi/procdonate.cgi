@@ -681,6 +681,18 @@ sub complete_sepa ()
 }
 
 
+# Send a PING command to see whether payprocd is alive.
+sub ping_pong ()
+{
+    my %data = ();
+
+    if (payproc ('PING', \%data )) {
+       print $q->header(-type=>'text/HTML', -charset=>'utf-8');
+       print "\n";
+       print "<p>OK</p>\n";
+    }
+}
+
 
 #
 # Main
@@ -697,6 +709,10 @@ if ($q->param('url') ne '') {
 elsif ($mode eq '') {
     # No mode: Show empty template.
     write_main_page();
+}
+elsif ($mode eq 'ping') {
+    # Check aliveness
+    ping_pong();
 }
 elsif ($mode eq 'main') {
     # Returning from the donation start page
@@ -721,6 +737,10 @@ elsif ($mode eq 'confirm-paypal') {
 elsif ($mode eq 'checkout-paypal') {
     # The approved Paypal payment has been approved - charge.
     complete_paypal_checkout();
+}
+elsif ($mode eq 'pong') {
+    # Helper to test a script checking PING.
+    fail "Error connecting to payprocd: Forced to fail";
 }
 else {
     fail('Internal error: Unknown mode');
