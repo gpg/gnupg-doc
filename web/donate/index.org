@@ -104,6 +104,13 @@
                      value="pp" /><!--CHECK_PP-->PayPal</label>
      </td>
    </tr>
+   <tr>
+     <td></td>
+     <td>
+       <label><input type="radio" name="paytype"
+                     value="se" /><!--CHECK_SE-->SEPA</label>
+     </td>
+   </tr>
    <tr><td>&nbsp;</td></tr>
    <tr>
       <td></td>

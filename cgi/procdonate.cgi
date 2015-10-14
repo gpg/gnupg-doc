@@ -665,7 +665,7 @@ sub complete_sepa ()
         write_main_page ();
         return;
     }
-    $separef = $request{"SEPA-Ref"};
+    $separef = $request{"Sepa-Ref"};
     $amount = $request{"Amount"};
 
     # Set remaining vars for the checkout page.
