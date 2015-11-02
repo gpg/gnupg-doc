@@ -87,7 +87,7 @@
    [[http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html][en]] ·
    [[../howtos/es/gpg-party.html][es]] ·
    [[../howtos/it/keysigning_party.html][it]] ·
-   [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.html.ru][ru]] ·
+   [[http://www.cypherpunks.ru/KSP.html][ru]] ·
    [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.si.html][si]] ·
    [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.zh-TW.html.big5][zh-TW.big5]] ·
    [[http://www.cryptnet.net/fdp/crypto/gpg-party/gpg-party.zh-TW.html.euc-tw][zh-TW.euc-tw]] )
