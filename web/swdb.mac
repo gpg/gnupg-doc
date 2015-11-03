@@ -103,9 +103,9 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.3.0
-#+macro: libassuan_size 531k
-#+macro: libassuan_sha1 23f7ea010983b869f765c36d169dec51c8296cff
+#+macro: libassuan_ver  2.4.0
+#+macro: libassuan_size 572k
+#+macro: libassuan_sha1 8b00866b3b0386e996cc6bdcb902c727f0d190a5
 
 
 #
