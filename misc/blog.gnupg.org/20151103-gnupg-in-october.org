@@ -1,0 +1,301 @@
+# GnuPG News for September and October 2015
+#+STARTUP: showall
+#+AUTHOR: Neal
+#+DATE: November 3rd, 2015
+#+Keywords: Presentation, TOFU, Tor, g13, disk encryption
+
+** GnuPG News for September and October 2015
+
+*** Keynote at FSCONs
+
+If you'll be in Sweden next week for the FSCONS, you'll have the
+opportunity to hear Werner Koch's talk on Saturday afternoon: [[https://frab.fscons.org/en/fscons2015/public/events/243][The
+state of everyday cryptography]]:
+
+  After Snowden explained to the world that even the crypto geeks had
+  been too optimistic about the state of global surveillance, a new
+  interest in developing and promoting systems to provide encryption
+  service for normal human beings awoke.  There are several systems
+  with widely different goals, user bases, and cryptographic strength
+  in active use.  Some popped up and quickly drowned, others are
+  getting more and more attention, and finally there are some old
+  comrades finally getting public interest. In this talk, Werner gives
+  an overview of these different systems and tries to predict their
+  future.  Will some of these encryption systems survive and thus
+  force the NSA/CGHQ/BND to spend a lot more money on mass
+  surveillance?
+
+*** Development
+
+Since the last blog post, there have been two releases of GnuPG:
+version [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000379.html][2.1.8]] and version [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000380.html][2.1.9]].  These releases were primarily bug
+fix releases.  The one noteworthy new feature (implemented by Werner)
+is support for [[http://tools.ietf.org/wg/dane/draft-ietf-dane-openpgpkey/][OpenPGP DANE]], which allows looking up keys that have
+been stored in the DNS.
+
+In terms of development, Neal has finished the preliminary
+implementation of TOFU and Werner has been working on two new
+features: Tor support for GnuPG and g13, which provides GnuPG support
+for DM-Crypt.  Daniel Kahn Gillmor provided a patch to explicitly
+deprecate algorithms in addition to those that GnuPG has marked as
+deprecated.  Andre Heinecke has been working on GpgOL, a GnuPG plug-in
+for Outlook, and Kai has continued to work on Enigmail.
+
+**** Noteworthy Bugs
+
+Niibe fixed a bug effecting the use of ed25519 keys with GnuPG's ssh
+agent code.  When using an ed25519 authentication key imported with
+~ssh-add~, GnuPG 2.1.8 and later could no longer read the keys saved
+by older versions of GnuPG.  This was due to a bug in the way that
+older versions of GnuPG saved the key.  To work around this, you need
+to manually delete the old key and reimport it using ssh-add.  Refer
+to https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=798956#24 and
+https://bugs.gnupg.org/gnupg/issue2096 for more details.
+
+Niibe also fixed a bug arising from a new GCC optimization.  The
+optimization, which was introduced in GCC 5, caused GnuPG to fail to
+positively verify some messages.  The issue was that instead of
+returning the address of a local variable, gcc would simply return
+NULL.  (GnuPG was using this ugly hack to return something other than
+NULL to indicate success for an empty packet; the caller didn't
+actually examine the value pointed to by the address.)  See this
+[[https://lists.gnupg.org/pipermail/gnupg-devel/2015-September/030334.html][message]] for more details.
+
+Jonas Magazinius [[http://www.metzdowd.com/pipermail/cryptography/2015-October/026685.html][identified a downgrade attack]] on the OpenPGP message
+format:
+
+  [He] found that [OpenPGP] is vulnerable to a chosen-ciphertext
+  attack to downgrade [a Symmetrically Encrypted Integrity Protected
+  Data Packet (SEIP)] to a plain [Symmetrically Encrypted Data Packet
+  (SE)] packet. Due to the properties of CFB mode and OpenPGP’s
+  predictable message structure, it is possible to switch the SEIP tag
+  to SE, strip the MDC (and signature), and align and manipulate the
+  encrypted packet. The implications are, among others, that an
+  encrypted and signed message can be stripped of its signature and
+  modified arbitrarily, with certain restrictions, by an attacker
+  without knowing the key.
+
+Since symmetrically encrypted data packets have been deprecated since
+RFC 4880, which was release in 2007, GnuPG mitigates this attack by
+aborting if the message contains an SE packet and was encrypted with a
+relatively modern cipher (anything with a block length that is greater
+than 64-bits as well as twofish).  Since (hopefully) no one is using
+the old ciphers, an attacker will only be able to downgrade old
+messages.
+
+**** OpenPGP DANE
+
+[[https://datatracker.ietf.org/doc/draft-ietf-dane-openpgpkey/?include_text%3D1][OpenPGP DANE]] ist a new mechanism for OpenPGP key discovery.  The basic
+idea is that users publish their key in the Secure DNS.  Then, when
+someone is looking up a key, they simply use DNS to find it.  This has
+the advantage that since the user (or the user's mail provider)
+controls the domain, it is less likely that a rogue key will be
+returned, which can happen when using an HKP keyserver since the
+keyserver has no way to determine what key is correct.
+
+Werner has implemented this and it is available in the most recent
+GnuPG release.  GnuPG makes one small derivation from the proposed
+standard: GnuPG always lower-cases the local-part of the email
+address.
+
+To create a DANE record, use the following command:
+
+#+BEGIN_EXAMPLE
+$ gpg2 --print-dane-records -k KEYID
+#+END_EXAMPLE
+
+To search for a key using DANE, use:
+
+#+BEGIN_EXAMPLE
+$ gpg2 --auto-key-locate dane --search-keys email@example.org
+#+END_EXAMPLE
+
+**** TOFU
+
+Neal finally committed TOFU support to the git repository.  Special
+thanks go to Andre Heinecke, who helped debug the code.  It will be
+available in the next release.  Although TOFU will not be turned on by
+default, we encourage MUAs to prompt users to switch to this trust
+model.
+
+[[https://en.wikipedia.org/wiki/Trust_on_first_use][TOFU]] stands for Trust on First Use and is a concept that will be
+familiar to anyone who regularly uses ssh.  When you ssh to a host for
+the first time, ssh asks you to verify the host's key (most people
+just say yes here).  When connecting to the same host in the future,
+ssh checks that the key hasn't changed.  If it has, ssh displays a
+warning.  TOFU for GnuPG works similarly.
+
+In contrast to the [[https://en.wikipedia.org/wiki/Web_of_trust][Web of Trust]] (WoT), TOFU's security guarantees are
+rather weak.  When using the WoT correctly, you can have high
+confidence that if GnuPG says a given key is controlled by a specific
+user, then it probably is.  TOFU, on the other hand, is only able to
+detect when the key associated with an email address has changed.
+Despite this, TOFU will be more secure than the WoT for most users in
+practice.  This is because using the WoT requires a lot of manual
+support, which most users never both with.  In particular, you need to
+verify fingerprints and set the owner trust to take advantage of
+friend of friend verification.
+
+Happily you don't need to choose between TOFU and the WoT.  It is
+possible to combine them using the tofu+pgp trust model.  In this
+model, the trust level for a key under each model is computed and then
+the maximum is taken.
+
+For users who want TOFU's ability to detect conflicts, but don't like
+that TOFU assigns positive (marginal) trust to new keys without
+prompting, it is possible to change the default policy to unknown or
+to always prompt the user for the policy for new keys using the
+--tofu-default-policy option.
+
+To enable TOFU support, you just need to add the following to your
+gpg.conf file:
+
+#+BEGIN_EXAMPLE
+trust-model tofu+pgp
+#+END_EXAMPLE
+
+Other than that, there is nothing special that you need to do to take
+advantage of TOFU.  See [[https://lists.gnupg.org/pipermail/gnupg-users/2015-October/054608.html][this mail]] for more details.  (For a more
+implementation-focused discussion, see [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-October/030341.html][this mail]].)  Also consult the
+manual (search for tofu to find the relevant options).
+
+**** Tor Support
+
+Werner has committed basic support for Tor to the GnuPG git
+repository.  It can be enabled by passing the --use-tor flag to
+dirmngr (or setting use-tor in dirmngr.conf).  Note: to test this
+feature, you'll also need a version of libassuan from git.
+
+GnuPG's Tor support is careful to make sure that traffic is not
+accidentally routed via the open Internet.  To ensure this, when Tor
+support is enabled and traffic can't be routed via Tor, GnuPG fails
+rather than leaks data.  In order to ensure that information is not
+leaked via DNS, GnuPG will use [[http://www.chiark.greenend.org.uk/~ian/adns/][ADNS]] to access the DNS rather than the
+system resolver.  (ADNS has been used by GnuPG on Windows since 2008.)
+Werner has modified it to support Tor and is currently in the process
+of getting the patches integrated upstream.
+
+Kristian Fiskers, the manager of the SKS Keyserver pool, began looking
+into making keyservers accessible as Tor hidden services.  Information
+about which keyservers support Tor and their respective .onion
+addresses can be found on [[https://sks-keyservers.net/status/][the SKS status page]].  However, just as you
+don't typically want to configure GnuPG to use a single key server
+rather than the fault-tolerant pool, Kristian has set up an Onion
+Balancer, [[hkp://jirk5u4osbsr34t5.onion][hkp://jirk5u4osbsr34t5.onion]], to redirect requests to the
+various Tor-enabled keyservers.  Support is still experimental.
+
+**** g13
+
+Werner has been working on g13.  g13 is part of the GnuPG suite of
+tools.  It provides support for working with DM-Crypt devices with
+OpenPGP keys and takes advantage of the existing GnuPG infrastructure.
+
+Currently, DM-Crypt is primarily used with LUKS.  A LUKS encrypted
+volume has a small header at the start of the volume, which includes
+the master key encrypted with a passphrase.  The passphrase is a weak
+point of the system as it is often vulnerable to a brute-force attack.
+A more secure approach is to encrypt the master key with a secret key
+stored on a smart card.  Further, it should be possible to use
+existing keys.  GnuPG, of course, has long had good support for
+interacting with smartcards and working with OpenPGP keys.
+
+**** Deprecating Specific Algorithms
+
+Daniel Kahn Gillmor (dkg) contributed a patch to provide an option to
+explicitly deprecate algorithms in addition to those that GnuPG has
+marked as deprecated.  This is useful for deprecating SHA-1, for
+instance.  GnuPG can't do this by default because SHA-1 is a
+mandatory-to-implement algorithm and is widely used in the OpenPGP
+ecosystem.  Nevertheless, as dkg says:
+
+  Some operators of high-value targets that depend on OpenPGP
+  signatures may wish to require their signers to use a stronger
+  digest algorithm than SHA1, even if the OpenPGP ecosystem at large
+  cannot deprecate SHA1 entirely today.
+
+**** GpgOL
+
+Andre Heinecke has been evaluating the feasibility of supporting
+PGP/MIME and S/MIME in Outlook 2007 and later.  So far he has
+implemented support for reading MIME messages.  This is included in a
+[[https://wiki.gnupg.org/GpgOL/Development/Testversions][beta version of GpgOL]].  He is currently working on sending PGP/MIME
+messages.  Some preliminary code has been committed to the master
+branch of GpgOL.  Testing is appreciated and bug reports should be
+filed in the [[bugs.gnupg.org][bugs.gnupg.org bug tracker]].
+
+For a draft of the release plan please refer to the [[https://wiki.gnupg.org/Gpg4win/Roadmap][Gpg4win Roadmap]].
+
+**** Enigmail
+
+Kai has continued to work on Enigmail.  He added support for the
+Keybase protocol and for importing public keys from URLs.  He also
+work on ensuring that warnings about sending unsigned emails.
+
+*** Furture Work
+
+Intevation and and g10code have been awarded a 2 year contract by the
+[[https://en.wikipedia.org/wiki/Federal_Office_for_Information_Security][BSI]] (the German office for information security) to start work on the
+[[http://ted.europa.eu/udl?uri=TED:NOTICE:344537-2015:TEXT:EN:HTML][Gpg4all]] project ([[http://lists.wald.intevation.org/pipermail/gpg4win-devel/2015-October/001528.html][announcement]]).  The main objectives of Gpg4all are to
+maintain Gpg4win and to research end-to-end encryption for webmail and
+Android phones.
+
+The BSI also accepted a bid by Intevation and g10code to work on the
+[[http://www.evergabe-online.de/home?0&id=96898][Gpg4VS-NfD]] project.  The goal of this project is to prepare Gpg4win
+and GnuPG for approval for use with classified documents at the VS-Nfd
+(restricted) level in Germany.  The main task is to improve the
+internal documentation of GnuPG and to implement a configuration
+option to restrict what GnuPG can do according to this classification
+level's requirements (e.g., the set of permitted algorithms).  More
+details will be published soon.
+
+*** Discussions
+
+On gnupg-devel, Andreas Schwier asked about [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-September/030271.html][n-of-m threshold schemes]]
+for accessing sensitive keys.  He's implemented this support in the
+SmartCard-HSM and would like to see support for it in scdaemon.
+Andreas also wrote a [[http://www.smartcard-hsm.com/2015/10/10/Shared_Control_over_Key_Usage.html][blog post]] describing the various use cases in
+more detail.  Werner replied that the main challenge will be coming up
+with a good user interface and that this is the reason that GnuPG
+doesn't support this type of secret sharing yet.
+
+Werner [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-October/030483.html][announced]] that the GnuPG would start to use some C99 features.
+In particular, we'll start using variadic macros (__VA_ARGS__), the
+predefined macro __func__ and variable declarations inside a for loop
+(for (int i = 0; i < 5; i ++) {}).
+
+On gnupg-users, Nix asked about using [[https://lists.gnupg.org/pipermail/gnupg-users/2015-September/054334.html][GnuPG 2.1 with NFS]].  Werner
+provided [[https://lists.gnupg.org/pipermail/gnupg-users/2015-September/054337.html][a workaround to use a non-standard socket name for gpg-agent]].
+
+Robert H. Hansen posted that [[http://www.theregister.co.uk/2015/09/24/facebook_crypto_upped/][Facebook has upgraded their support]] for
+OpenPGP.  After a question from Christian Heinrich about Facebook's
+support, Jon Millican indicated that it is possible to [[https://lists.gnupg.org/pipermail/gnupg-users/2015-October/054460.html][fetch public
+keys via Facebook's Graph API]].
+
+Bernhard Reiter [[https://lists.gnupg.org/pipermail/gnupg-users/2015-October/054582.html][encouraged people to edit the libgcrypt page on
+Wikipedia]].  He noted that people closely related to the project are
+discouraged from editing pages about their own work and encouraged
+other members of the community to get involved this way.
+
+*** New Employee
+
+g10code has hired another developer, Justus Winter, to work on GnuPG
+and related projects.  Justus has been hacking on Free Software, in
+particular, the Hurd, since 2013.  His major contributions include
+porting Debian/Hurd to sysvinit, and improving the performance along
+the RPC path, notably by amending the Mach message format to include
+Protected Payloads.  He started work at the beginning of November.
+
+*** Donations
+
+Werner improved the [[https://gnupg.org/donate/index.html][donation system]] to accept donations using SEPA
+bank transfer.  This should make it easy and cheap to donate Euros
+from most of the European states.
+
+
+** About this news posting
+
+We try to write a news posting each month.  However, other work may
+have a higher priority (e.g. security fixes) and thus there is no
+promise for a fixed publication date.  If you have an interesting
+topic for a news posting, please send it to us.  A regular summary of
+the mailing list discussions would make a nice column on this news.
