@@ -17,3 +17,5 @@ Report]] form.
    -  [[file:swlist.org::#pgpdump-web][PGPdump Web interface]] :: Can be used to analyze OpenPGP data
         formats.
    -  [[file:swlist.org::#pinentry][Pinentry]] :: Secure PinEntry Dialog.
+   -  [[https://bitbucket.org/skskeyserver/sks-keyserver/overview][SKS]] :: Popular keyserver software.
+   -  [[https://hockeypuck.github.io/][Hockeypuck]] :: Keyserver written in Go.
