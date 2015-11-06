@@ -31,9 +31,6 @@
   expect them to do. We plan to work on it, iff there are enough
   requests for it.
 
-  *[[http://www.symbolictools.de/public/pocketconsole/][PocketConsole]]* - a Windows NT-like console for the Pocket PC - is
-  supported.
-
   *MacOS X* is also supported; please see [[http://macgpg.sf.net][macgpg.sf.net]] for detailed
   information.
 
