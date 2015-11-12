@@ -652,10 +652,8 @@ sub complete_sepa ()
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
     $request{"Desc"} = "GnuPG SEPA donation";
+    $request{"Email"} = $data{"Mail"} unless $data{"Mail"} eq '';
     $request{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
-    if ($data{"Mail"} ne '') {
-        $request{"Meta[mail]"} = $data{"Mail"};
-    }
     if ($data{"Message"} ne '') {
         $request{"Meta[message]"} = $data{"Message"};
     }
