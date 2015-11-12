@@ -295,7 +295,7 @@ string of the source file or nil if not available."
 ")
     (gpgweb--insert-menu gpgweb-gnupg-bottom-menu-alist 0 nil)
     (insert "  <li>
-<a href=\"https://netzpolitik.org\"><img src=\"misc/vds_timeline-300x150.png\" title=\"Germany parliament again adopts data retention act - after the German (in 2010) and the European supreme court (in 2014) nixed such acts.\"></a></li>")
+<a href=\"https://netzpolitik.org\"><img src=\"/misc/vds_timeline-300x150.png\" title=\"Germany parliament again adopts data retention act - after the German (in 2010) and the European supreme court (in 2014) nixed such acts.\"></a></li>")
     (insert "  </ul>
   </div>
 ")
