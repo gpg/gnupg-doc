@@ -108,13 +108,6 @@
 
 ** Developers
 
-*** Issue Tracker
-
-    Roundup [[http://intevation.de/roundup/aegypten/][Ägypten Issue Tracker]]
-
-    (previously we used an [[http://intevation.de/rt/webrt?q_queue=aegypten][RT-based issues tracker for Ägypten]]. Please
-     report new bugs only into the new Roundup-based one.)
-
 *** Subversion
 
     First make sure you installed
