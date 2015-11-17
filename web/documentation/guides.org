@@ -35,8 +35,6 @@
 
    GPH is also available in the [[../download/cvs_access.org][source repository]].
 
-   There is also a [[http://geocities.yahoo.com.br/sdiasneto/gnupg/gnupg-manual-ptbr.html][brazilian portuguese version of GPH]].
-
 ** Replacing PGP 2.x with GnuPG
 
    This document demonstrates some of GnuPG's features by showing how
