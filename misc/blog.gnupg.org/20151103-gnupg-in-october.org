@@ -136,7 +136,7 @@ user, then it probably is.  TOFU, on the other hand, is only able to
 detect when the key associated with an email address has changed.
 Despite this, TOFU will be more secure than the WoT for most users in
 practice.  This is because using the WoT requires a lot of manual
-support, which most users never both with.  In particular, you need to
+support, which most users never bother with.  In particular, you need to
 verify fingerprints and set the owner trust to take advantage of
 friend of friend verification.
 
