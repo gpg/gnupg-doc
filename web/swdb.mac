@@ -103,9 +103,9 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.4.0
-#+macro: libassuan_size 572k
-#+macro: libassuan_sha1 8b00866b3b0386e996cc6bdcb902c727f0d190a5
+#+macro: libassuan_ver  2.4.1
+#+macro: libassuan_size 573k
+#+macro: libassuan_sha1 54982bf7ecf42c0c4d4251d49614ba18edb18264
 
 
 #
@@ -118,15 +118,15 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.2
-#+macro: gpgex_sha1 8892dafc405255731b82a0c299960a5da59d3191
+#+macro: gpgex_ver  1.0.3
+#+macro: gpgex_sha1 52c803434b3d861ae68e93bf68852bed81c70166
 
 
 #
 # ADNS
 #
-#+macro: adns_ver  1.4-g10-6
-#+macro: adns_sha1 cc124d58828ab1d6fa7df49aaeb37985c5225de5
+#+macro: adns_ver  1.4-g10-7
+#+macro: adns_sha1 d2e089d98d3faed6cad009477cc0bc030b35c646
 
 
 #
