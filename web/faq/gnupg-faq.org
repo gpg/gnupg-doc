@@ -76,7 +76,37 @@ aren't, please feel free to email the FAQ maintainer (Rob Hansen,
 [[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]])
 or bring your suggestion up on GnuPG-Users.
 
+** How do I get help?
+   :PROPERTIES:
+   :CUSTOM ID: gethelp
+   :END
 
+First, please don’t send emails directly to people in GnuPG.  While we will
+try to help to people who send email directly to us, those emails quickly
+accumulate.  Helping just six people a day can take an hour of time, and that's
+an hour less we have to work on making GnuPG better.  Please reach out to the
+GnuPG community via the
+[[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
+not individual people within
+GnuPG.
+
+Second, tell us your operating environment.  Be as specific as possible
+What operating system are you using?  Which version of GnuPG are you using?
+Where did you get GnuPG from?  If your problem is related to email, which email
+client are you using?  Which version number?  Is GnuPG supported natively, or
+is there a plugin?  If so, what's the version number of that?
+
+Third, tell us your problem.  Be as specific as possible.
+
+Do this, and you might be surprised at how quickly your problem is solved.
+An example of a good question would be, “I’m running GnuPG 1.4.14 on an
+Ubuntu 15.04 x64 box.  I'm using Thunderbird with Enigmail.  Everything was
+fine until I did a software update.  Ever since then I can't use GnuPG with
+email.  What happened?”  This question gives us enough to work with, and in
+short order someone will have an answer for you.
+
+A bad question would be, “How do I uninstall GnuPG?”  We can’t help you at all;
+you've not given us any of the information we need to answer your question.
 
 ** Who maintains this FAQ?
    :PROPERTIES:
@@ -110,7 +140,7 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-September 2015.
+December 2015.
 
 
 * General questions
@@ -358,6 +388,20 @@ The following mailing lists and web pages are generally known for
 having a strong signal-to-noise ratio.  Nevertheless, we strongly urge
 you to keep a skeptical mind at all times.
 
+** Help! I lost my passphrase.
+  :PROPERTIES:
+  :CUSTOM_ID: lost_passphrase
+  :END:
+
+Unfortunately, we can’t help you.  If you lose your passphrase, you’ll be
+unable to use that certificate to sign any new documents or decrypt any
+existing documents.  You can still use it to verify signatures, though.
+(Technically you could encrypt documents, too, but without the passphrase
+there’s really not much point: how would you ever decrypt them?)
+
+If you can’t remember your passphrase, the best thing to do is use your
+pre-made revocation certificate to revoke your old certificate, upload the
+revocation to the keyserver network, and start anew with a fresh certificate.
 
 ** How can I spot the charlatans?
    :PROPERTIES:
@@ -1570,7 +1614,42 @@ the signed file:
 =gpg signed_file.asc=
 
 
+** How can I use GnuPG to verify a file I've downloaded?
+   :PROPERTIES:
+   :CUSTOM_ID: how_do_i_verify_signed_packages
+   :END:
 
+1.  Get a copy of the author’s public certificate and import it to your
+    keyring.  It’s important to get the author’s certificate through a
+    trusted source.  On the internet, anyone can be pretend to be anyone.
+    Particularly, be careful if the certificate you have doesn’t match the
+    one used for prior code releases.
+
+2.  Once you're confident you have the correct certificate, give it a local
+    signature.  Assuming you want to locally sign certificate
+    1DCBDC01B44427C7, you’d type:
+
+    =gpg --edit-key 1DCBDC01B44427C7 lsign=
+
+3.  Download the software package.  Let’s assume it’s called “foo.zip”.
+
+4.  Download the detached signature for the package.  Let’s assume it’s
+    called “foo.zip.asc”.
+
+5.  Run:
+
+    =gpg foo.zip.asc=
+
+    GnuPG will assume the original file is in foo.zip.  (If GnuPG can’t find
+    foo.zip, GnuPG will prompt you for the name of the original package.)  If
+    all goes well, GnuPG will report good signatures and you may be confident
+    you've received the package as the author intended.
+
+Please note that a good signature doesn’t mean a piece of software is
+trustworthy, reliable, or bug-free.  It just means nobody tampered with it and
+you’re receiving it as the author intends.  Keep a healthy dose of
+skepticism, and remember that cryptography cannot save us from
+our own foolishness.
 
 ** How can I use GnuPG in an automated environment?
    :PROPERTIES:
