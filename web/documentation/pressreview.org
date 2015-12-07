@@ -1,0 +1,202 @@
+#+TITLE: GnuPG - Press Review
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Press Review
+
+  GnuPG is sometimes mentioned in the press and other media.  This page
+  lists articles related to GnuPG we are aware of.
+
+* International
+
+Here are articles originally published in English.
+
+** ProPublica 2015-02-05
+  The World’s Email Encryption Software Relies on One Guy, Who is Going Broke\\
+  Julia Angwin
+
+  [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][Article]]
+
+  The article was followed up at many sites, for example:
+
+  English:
+  - [[http://arstechnica.com/security/2015/02/once-starving-gnupg-crypto-project-gets-a-windfall-but-can-it-be-saved/][Ars Technica]]
+  - [[http://www.computerworlduk.com/blogs/open-enterprise/gnupg-3597056/][Computerworld]]
+  - [[https://gigaom.com/2015/02/06/funds-flow-in-for-gnupg-author-after-article-reveals-his-plight/][GigaOm]]
+  - [[http://www.itwire.com/business-it-news/open-source/66886-facebook-stripe-pledge-funds-for-gnupg-development][IT Wire]]
+  - [[http://www.thegamersdrop.com/2015/02/05/facebook-stripe-pledge-100000year-broke-developer/][The Gamersdrop]]
+  - [[http://www.theregister.co.uk/2015/02/05/gnupg_funding/][The Register]]
+
+  French:
+  - [[http://www.01net.com/editorial/644468/le-chiffrement-open-source-gnupg-sauve-in-extremis-par-les-dons-des-internautes/][01net]]
+
+  German:
+  - [[http://www.admin-magazin.de/content/view/full/15613][Admin Magazin]]
+  - [[http://derstandard.at/2000011366952/Finanzierung-des-Mail-Verschluesselungsprojekts-GnuPG-gesichert][Der Standard]]
+  - [[http://www.handelsblatt.com/technik/it-internet/it-internet/verschluesselungsprojekt-gnupg-hat-wieder-geld/11338196.html][Handelsblatt]]
+  - [[http://www.heise.de/newsticker/meldung/Crowdfunding-GnuPG-Entwicklung-ist-gesichert-2542745.html][Heise]]
+  - [[http://www.focus.de/finanzen/news/wirtschaftsticker/unternehmen-finanzierung-von-mail-verschluesselungsprojekt-gnupg-vorerst-gesichert_id_4457801.html][Focus (dpa)]]
+  - [[http://www.nordbayern.de/finanzierung-von-mail-verschlusselungsprojekt-gnupg-vorerst-gesichert-1.4174524][Nürnberger Nachrichten / Nordbayern]]  FIX URL!
+  - [[http://www.nzz.ch/mehr/digital/verschluesselte-e-mails-gnupg-spenden-1.18477365][NZZ]]
+  - [[http://www.spiegel.de/netzwelt/web/e-mail-verschluesselungsprojekt-gnupg-finanzierung-gesichert-a-1017120.html][Spiegel]]
+  - [[http://www.sueddeutsche.de/news/wirtschaft/internet-finanzierung-von-mail-verschluesselungsprojekt-gnupg-vorerst-gesichert-dpa.urn-newsml-dpa-com-20090101-150206-99-04523][Süddeutsche (dpa)]]
+  - [[http://www.wz-newsline.de/home/multimedia/finanzierung-von-mail-verschluesselungsprojekt-gnupg-vorerst-gesichert-1.1855606][Westdeutsche Zeitung]]
+
+
+** LWN 2014-12-04
+  The GnuPG 2.1 release\\
+  Nathan Willis
+
+  [[https://lwn.net/Articles/624146/][Article]]
+
+** Daily Mail, 2013-02-13
+  MI5-install-black-box-spy-devices\\
+  (mentioned in a sidebox)
+
+  [[http://www.dailymail.co.uk/sciencetech/article-2274388/MI5-install-black-box-spy-devices-monitor-UK-internet-traffic.html][Article]]
+
+** NYT/IHT, 2012-11-16
+  Trying to Keep Your E-Mails Secret When the C.I.A. Chief Couldn’t\\
+  By Nicole Perlroth
+
+  [[http://www.nytimes.com/2012/11/17/technology/trying-to-keep-your-e-mails-secret-when-the-cia-chief-couldnt.html][Article]] (registration required)
+
+** LWN 2007-12-27:
+  GnuPG Celebrates 10 Years\\
+  (Werner’s mail with comments)
+
+  [[http://lwn.net/Articles/263256/][Article]]
+
+** Linux Journal, March 2006, pp. 52--56:
+  GnuPG Hacks\\
+  Tony Stieber
+
+  [[http://www.linuxjournal.com/article/8732][Article]]
+
+** Salon, 2002-03-27
+  Pretty geeky privacy\\
+  Bill Lamb
+
+  [[http://www.salon.com/technology/feature/2002/03/27/gnupg][Article]]
+
+
+** NYT, 1999-11-19
+  Germany Awards Grant for Encryption\\
+  Peter Wayner
+
+  [[http://partners.nytimes.com/library/tech/99/11/cyber/articles/19encrypt.html][Article]]
+
+#  [[file:~/privat/archive/nyt-1999-11-19.txt]]
+
+
+* German
+
+Here are articles originally published in German.
+
+** DR Wissen, 2015-06-12
+  Schlüssel für Snowden\\
+  (in Einhundert, "Candystorm")\\
+  Monika Ahrens
+
+  [[http://dradiowissen.de/beitrag/kryptografie-werner-kochs-software-f%25C3%25BCr-edward-snowden][Artikel]]
+
+
+** DW, 2015-02-19
+  Verschlüsselung made in Deutschland\\
+  Matthias Von-Hein
+
+  [[http://dw.de/p/1Eebj][Artikel]]
+
+** SZ, 2015-02-18
+  Wie ein Mann das E-Mail-Geheimniss verteidigt\\
+  Hakan Tanriverdi
+
+  [[http://www.sueddeutsche.de/digital/verschluesselungssoftware-gnu-pg-wie-ein-mann-das-e-mail-geheimnis-verteidigt-1.2355155][Artikel]]
+
+** FAZ, 2015-02-13
+  Finger Weg von meine Daten!
+  Constanze Kurz
+
+  [[http://www.faz.net/aktuell/feuilleton/aus-dem-maschinenraum/verschluesselungssoftware-finger-weg-von-meinen-daten-13416853.html][Artikel]]
+
+** taz, 2015-02-13
+  Der bescheidene Herr Koch\\
+  Kai Schlieter
+
+  [[http://www.taz.de/Verschluesselung-mit-GnuPG/!154635/][Artikel]]
+
+** Rheinische Post, Lokalteil 2015-02-13
+  400000 Euro Spende für Programmierer\\
+  Dag Brückner
+
+  [[http://www.rp-online.de/nrw/staedte/erkrath/400-000-euro-spende-fuer-programmierer-aid-1.4869922][Artikel]]
+
+
+** netzpolitik, 2014-11-13
+  Verschlüsselung im Bundestag: Fördern Bundesregierung
+  oder BSI die freie Software GnuPG?\\
+  Markus Beckedahl
+
+  [[https://netzpolitik.org/2014/verschluesselung-im-bundestag-foerdern-bundesregierung-oder-bsi-die-freie-software-gnupg/][Artikel]]
+
+
+** Heise Ticker  2014-11-07
+  GnuPG unterstützt Krypto auf Elliptischen Kurven\\
+  Jürgen Schmidt
+
+  http://www.heise.de/newsticker/meldung/GnuPG-unterstuetzt-Krypto-auf-Elliptischen-Kurven-2444337.html
+
+
+** Linux-Magazin 2014-08
+  Wer bezahlt die freien Krypto-Entwickler?\\
+  Chronisch klamm\\
+  Tim Schürmann
+
+  http://www.linux-magazin.de/Ausgaben/2014/08/Finanzierung/%28language%29/ger-DE
+
+** Saarbrücker Zeitung, 2013-10-02, Seite E6
+  Sicherheit mit einem Klick\\
+  Von Martin Schäfer
+
+#  Attachment: Saar20131002.pdf
+
+
+** Spiegel Online, 2013-07-04
+  Schutz gegen Internet-Spione: So verschlüsseln Sie Ihre E-Mails\\
+  Von Friedrich Lindenberg und Christian Stöcker
+
+  [[http://www.spiegel.de/netzwelt/netzpolitik/so-verschluesseln-sie-ihre-e-mails-mit-openpgp-a-909316.html][Artikel]]
+
+
+** c't, 22/2013, Seite 136
+  Privatsache E-Mail\\
+  Nachrichten verschlüsseln und signieren mit PGP
+
+
+** c't 20/2012, Seite 190
+  Vertrauen auf den ersten Blick\\
+  Automatische E-Mail-Verschlüsselung mit Steed\\
+  Autor: Holger Bleich, Bernhard Münkel
+
+  [[http://www.heise.de/artikel-archiv/ct/2012/20/190_Vertrauen-auf-den-ersten-Blick][Artikel]] (Paywall)
+
+** FAS, 2010-08-15
+  So schützen Sie Ihre Mails\\
+  Nils Handler
+
+  /Die Bundesregierung hat Blackberry und iPhone verbannt, weil die
+  Geräte zu unsicher sind. Privatleute müssen sich ebenfalls wappnen./
+
+  [[http://fazarchiv.faz.net/document/showSingleDoc/FAS__SD1201008152800208?DT_from%3D&KO%3D&timeFilter%3D&timePeriod%3DtimeFilter&dosearch%3Dy&crxdefs%3D&sext%3D0&NN%3D&BC%3D&q%3DGnuPG&search_in%3Dq&sorting%3D&DT_to%3D&CO%3D&submitSearch%3DSuchen&maxHits%3D&CN%3D&toggleFilter%3D&annr%3D186182&highlight%3D%255C%2525eAEBEQDu%252F0IqOmdudXBnLEJFR1JJRkYsL3QFFQ%253D%253D][Artikel]] (Paywall)
+
+# Telefonat am 2010-08-12 und 2010-08-14 für
+
+** i'X 3/2009, Seite 161
+  Vor 10 Jahren:\\
+  Verschlüsseln mit GnuPG.
+
+** i'X 3/1999, Seite 94
+  Schlüsselkind\\
+  Freie PGP-Implementierung GnuPG
+
+  [[http://www.heise.de/kiosk/archiv/ix/1999/3/94_Freie-PGP-Implementierung-GnuPG][Artikel]] (Paywall)

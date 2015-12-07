@@ -12,23 +12,16 @@
   guaranteed milestones or with fixed release dates.  This page should
   better be viewed as a scratchpad with notes of GnuPG developers.
 
-  The next GnuPG /modern/ release will be 2.1.3 and is planned for
-  mid to end of March.
-
-** New features in 2.1
-
- - gpg: The parameter 'Passphrase' for batch key generation works
-   again. (2.1.2)
-
- - gpg: Using a passphrase option in batch mode now has the expected
-   effect on --quick-gen-key. (2.1.2)
+  The next GnuPG /modern/ release will be 2.1.11 and is planned for
+  early January but may be released sooner in case 2.1.10 shows too
+  many problems.
 
 
-** All things to do
+** All things to do for 2.1
 
- - Fix flaws in HKPS support
+ - +Fix flaws in HKPS support+
 
- - Add LDAP keyserver support
+ - +Add LDAP keyserver support+
 
  - +Add unattended key generation with passphrase.+
 
@@ -36,6 +29,31 @@
    +fix for 2.1.2.+
 
  - +Migrate everything to automake 1.14.+
+
+ - +Add Tor support+
+
+ - Add a status-fd interface for the new Tofu system
+
+ - Release Libgcrypt 1.7 so that Curve25519 ECDH will work (see below)
+
+ - Finish NTBTLS to allow for TLS access to LDAP and HKP on Windows.
+
+
+** Required for GPGME
+
+ - Add specific trust information for Tofu
+
+ - Add API to set the tofu policy for a key
+
+
+** Documentation items
+
+ - Write an I-D to describe Curve25519 ECDH
+
+
+** RFC work
+
+ - Push RFC-2440bis forward
 
 
 * Libgcrypt Roadmap
@@ -61,3 +79,32 @@
    updates for years.  We need to compare the code against the latest
    Cryptlib.  Updating rndunix could also be done but it is not very
    important given that all mainstream OS now feature a /dev/random.
+
+* Infrastructure
+
+** Web
+
+ - Auto build the pages on the server
+
+ - Add RSS feed for the blogs
+
+** BTS
+
+ - Migrate Roundup from Sqlite to Postgres so speed it up.  The
+   assumption is that we have more concurrent users which slows all
+   things down.
+
+** Hardware
+
+ - We need more disk space for Thrithemius and best also more RAM.
+
+ - Playfair has only 2GiB RAM assigned which considerably slows it
+   down as soon as ill behaving spiders access it.
+
+** Software
+
+ - Add an option to pound(1) to limit concurrent conections
+   (cf. playfair load due to spiders)
+
+ - Add a 404 handler to Boa (I started with that in my local repo -
+   wk).
