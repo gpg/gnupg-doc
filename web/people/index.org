@@ -120,6 +120,19 @@
 
    #+HTML: <p style="clear: both"/>
 
+** Justus Winter
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
+   #+HTML: </div>
+
+   /Core components hacker/
+
+   Justus started to work on GnuPG in 2015 to support maintenance and
+   development in all areas.  He is full time employed by g10^code.
+
+   #+HTML: <p style="clear: both"/>
+
 * COMMENT
 
 # eof
