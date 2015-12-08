@@ -1,0 +1,58 @@
+# Data for use with vcard-template.tex
+
+
+Type: gpg
+Name: Werner Koch
+Title:
+Mail:
+Jabber:
+Ptype: m
+Phone:
+Fpr: 8061 5870 F5BA D690 3336  86D0 F2AD 85AC 1E42 B367
+
+Type: g10
+Name: Werner Koch
+Title:
+Mail:
+Jabber:
+Ptype: p
+Phone:
+Fpr: 8061 5870 F5BA D690 3336  86D0 F2AD 85AC 1E42 B367
+
+Type: gpg
+Name: David Shaw
+Mail:
+Fpr:  7D92 FD31 3AB6 F373 4CC5  9CA1 DB69 8D71 9924 2560
+
+Type: gpg
+Name: Niibe Yutaka
+Mail:
+Fpr:  1241 24BD 3B48 62AF 7A0A  42F1 00B4 5EBD 4CA7 BABE
+
+Type: gpg
+Name: Jussi Kivilinna
+Mail:
+Fpr:  60C7 E68E 6964 603F B163  6E47 068B FB23 A931 6686
+
+Type: gpg
+Name: Neal H. Walfield
+Mail:
+Fpr:  8F17 7771 18A3 3DDA 9BA4  8E62 AACB 3243 6300 52D9
+
+Type: gpg
+Name: Kai Michaelis
+Mail:
+Fpr:
+
+Type: gpg
+Name: Justus Winter
+Mail:
+Fpr:
+
+Type: gpg
+Name: Andre Heinecke
+Mail:
+Fpr:
+
+
+# eof

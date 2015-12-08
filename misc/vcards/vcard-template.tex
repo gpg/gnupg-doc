@@ -1,0 +1,126 @@
+%%%%
+%
+% GnuPG visiting cards for use with ticket.sty
+%
+% Use these commands to create a PDF:
+%
+%  addrutil -T vcard-template.tex data >vcard.tex
+%  pdflatex -shell-escape vcard.tex
+%
+% addrutil is available at
+%  http://git.gnupg.org/cgi-bin/gitweb.cgi?p=wk-misc.git;a=blob;f=addrutil.c
+%%
+%%%%
+% use the corresponding paper size for your ticket definition
+\documentclass[a4paper,10pt]{letter}
+
+% load ticket.sty with the appropriate ticket definition
+\usepackage[crossmark]{ticket}
+
+% load misc stuff
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{xcolor}
+\usepackage{intcalc}
+
+%%
+%% ticket for "Zweckform 32010"
+%% pre-cutted visiting cards
+%%
+\unitlength=1mm
+
+%% Adjust for your printer:
+\hoffset=-10mm
+\voffset=-20mm
+
+\ticketNumbers{2}{5}
+
+\ticketSize{85}{54}     % in unitlength
+\ticketDistance{9.8}{0} %in unitlength
+
+
+% define something
+\definecolor{logo}{HTML}{0093DD}
+
+
+% make your default ticket. \ticketdefault is somewhat like a background
+% here it is empty, because we use different tickets for the front an
+% the back of our card
+\renewcommand{\ticketdefault}{%
+}
+
+
+% now what do you like to put in your ticket
+\newcommand{\vcardfront}[8]{\ticket{%
+  \ifthenelse{\equal{#1}{g10}}{
+    \put(49, 31){\includegraphics[width=35mm,angle=0,origin=bl]{g10-orig-logo}}
+    \put( 6, 27){\small g10$^{code}$ GmbH}
+    \put( 6, 23){\small www.g10code.com}
+  }{
+    \put(44, 37){\includegraphics[width=35mm,angle=0,origin=bl]{gnupg-logo}}
+    \put( 6, 27){\small The GnuPG Project}
+    \put( 6, 23){\small www.gnupg.org}
+  }
+    \put( 6, 37){\bfseries #2}
+    \put( 6, 33){\small #3}
+  \ifthenelse{\equal{#6}{}}{}{
+    \put( 6, 17){\small \ifthenelse{\equal{#6}{m}}{mobile}{phone}}
+    \put(16, 17){\small #7}
+  }
+  \ifthenelse{\equal{#5}{}}{}{
+    \put( 6, 13){\small xmpp}
+    \put(16, 13){\small \texttt{#5}}
+  }
+  \ifthenelse{\equal{#4}{}}{}{
+    \put( 6,  9){\small mail}
+    \put(16,  9){\small \texttt{#4}}
+  }
+    \put( 6,  5){\footnotesize \texttt{#8}}
+}}
+
+\newcommand{\vcardback}[3]{\ticket{%
+ \immediate\write18{/bin/echo https://k.gnupg.net/#3|tr -d ' '|qrencode -tEPS -o x-qr-#1.eps}
+ \put(3.35, 27){\includegraphics[width=25mm,angle=0,origin=bl]{x-qr-#1.eps}}
+ \put( 6,27){\texttt{\tiny{}#2}}
+
+ \put( 6,25){\color{logo}\line(1,0){73.5}}
+ \put( 6,21){\scriptsize{}GnuPG software is signed by at least one of
+these keys:}
+ \put( 6,17){\texttt{\footnotesize D869 2123 C406 5DEA 5E0F 3AB5 249B 39D2 4F25 E3B6}}
+ \put( 6,13){\texttt{\footnotesize 46CC 7308 65BB 5C78 EBAB  ADCF 0437 6F3E E085 6959}}
+ \put( 6, 9){\texttt{\footnotesize 031E C253 6E58 0D8E A286  A9F2 2071 B08A 33BD 3F06}}
+ \put( 6, 5){\texttt{\footnotesize D238 EA65 D64C 67ED 4C30  73F2 8A86 1B1C 7EFD 60D9}}
+}}
+
+
+\newcounter{numcards}
+\begin{document}
+\sffamily
+
+\setcounter{numcards}{0}
+% @@begin-record-block@@
+\vcardfront{@@Type@@}
+           {@@Name@@}
+           {@@Title@@}
+           {@@Mail@@}
+           {@@Jabber@@}
+           {@@PType@@}
+           {@@Phone@@}
+           {@@Fpr@@}
+\stepcounter{numcards}
+% @@next-record-rewind@@
+
+\ifthenelse{\intcalcMod{\value{numcards}}{10} > 0}{%
+  \newpage
+}{}
+
+\oddsidemargin=113.4pt
+\backside%
+\setcounter{numcards}{0}
+% @@begin-record-block@@
+\vcardback{@@_recno@@}{@@Mail@@}{@@Fpr@@}
+\stepcounter{numcards}
+% @@next-record@@
+
+
+\end{document}
