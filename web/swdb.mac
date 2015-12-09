@@ -11,6 +11,7 @@
 # GnuPG
 #
 #+macro: gnupg_ver     2.0.29
+#+macro: gnupg_date    2015-09-08
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
 #+macro: gnupg_size    4313k
 #+macro: gnupg_sha1    87eb0df18f9953675f979405a1af10ab6c5322b3
@@ -19,11 +20,13 @@
 # GnuPG-2.1
 #
 #+macro: gnupg21_ver     2.1.10
+#+macro: gnupg21_date    2015-12-04
 #+macro: gnupg21_branch  STABLE-BRANCH-2-2
 #+macro: gnupg21_size    5052k
 #+macro: gnupg21_sha1    4aa2594d2d364fe7708a9739ae7cebd251e536c4
 #
 #+macro: gnupg21_w32_ver  2.1.10_20151204
+#+macro: gnupg21_w32_date 2015-12-04
 #+macro: gnupg21_w32_size 2617k
 #+macro: gnupg21_w32_sha1 b86b642390e1bf1b144b84dfabdcd574a56c0ba8
 
@@ -32,6 +35,7 @@
 # GnuPG-1
 #
 #+macro: gnupg1_ver      1.4.19
+#+macro: gnupg1_date     2015-02-27
 #+macro: gnupg1_branch   STABLE-BRANCH-1-4
 #+macro: gnupg1_size     3627k
 #+macro: gnupg1_size_gz  5020k
@@ -47,6 +51,7 @@
 # GPA
 #
 #+macro: gpa_ver  0.9.9
+#+macro: gpa_date 2015-09-09
 #+macro: gpa_size 721k
 #+macro: gpa_sha1 1cf86c9e38aa553fdb880c55cbc6755901ad21a4
 
@@ -55,6 +60,7 @@
 # PINENTRY
 #
 #+macro: pinentry_ver  0.9.7
+#+macro: pinentry_date 2015-12-07
 #+macro: pinentry_size 423k
 #+macro: pinentry_sha1 9bdcf5f4096aa8b26956afb0ecdd3d7849ffa0cd
 
@@ -63,6 +69,7 @@
 # GPGME
 #
 #+macro: gpgme_ver    1.6.0
+#+macro: gpgme_date   2015-08-26
 #+macro: gpgme_branch master
 #+macro: gpgme_size   961k
 #+macro: gpgme_sha1   21510323495f6220f8f67610c3c27a23d761d43d
@@ -72,6 +79,7 @@
 # LIBGCRYPT
 #
 #+macro: libgcrypt_ver  1.6.4
+#+macro: libgcrypt_date 2015-09-08
 #+macro: libgcrypt_size 2490k
 #+macro: libgcrypt_sha1 ed52add1ce635deeb2f5c6650e52667debd4ec70
 
@@ -80,6 +88,7 @@
 # LIBKSBA
 #
 #+macro: libksba_ver  1.3.3
+#+macro: libksba_date 2015-04-10
 #+macro: libksba_size 604k
 #+macro: libksba_sha1 86fe0436f3c8c394d32e142ee410a9f9560173fb
 
@@ -87,15 +96,17 @@
 #
 # DirMngr
 #
-#+macro: dirmngr_ver  1.1.0
-#+macro: dirmngr_size 543k
-#+macro: dirmngr_sha1 a7a7d1432db9edad2783ea1bce761a8106464165
+#+macro: dirmngr_ver  1.1.1
+#+macro: dirmngr_date 2013-04-26
+#+macro: dirmngr_size 554k
+#+macro: dirmngr_sha1 e708d4aa5ce852f4de3f4b58f4e4f221f5e5c690
 
 
 #
 # LIBGPG-ERROR
-
+#
 #+macro: libgpg_error_ver  1.20
+#+macro: libgpg_error_date 2015-08-26
 #+macro: libgpg_error_size 752k
 #+macro: libgpg_error_sha1 89c961f63469739fe816a56dcdd86c2e1897cace
 
@@ -104,6 +115,7 @@
 # LIBASSUAN
 #
 #+macro: libassuan_ver  2.4.2
+#+macro: libassuan_date 2015-12-02
 #+macro: libassuan_size 574k
 #+macro: libassuan_sha1 ac1047f9764fd4a4db7dafe47640643164394db9
 
@@ -112,6 +124,7 @@
 # nPth
 #
 #+macro: npth_ver  1.2
+#+macro: npth_date 2015-04-11
 #+macro: npth_sha1 3bfa2a2d7521d6481850e8a611efe5bf5ed75200
 
 
@@ -119,6 +132,7 @@
 # GpgEX
 #
 #+macro: gpgex_ver  1.0.3
+#+macro: gpgex_date 2015-11-23
 #+macro: gpgex_sha1 52c803434b3d861ae68e93bf68852bed81c70166
 
 
@@ -126,6 +140,7 @@
 # ADNS
 #
 #+macro: adns_ver  1.4-g10-7
+#+macro: adns_date 2015-11-20
 #+macro: adns_sha1 d2e089d98d3faed6cad009477cc0bc030b35c646
 
 
