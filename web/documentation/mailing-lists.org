@@ -68,4 +68,12 @@ those who feel more confortable when speaking their own native
 language.
 
 -  [[http://www.egroups.co.jp/group/gnupgnewsjapan/][GnuPG News Japan]] :: Discussion group for Japanese users.
--  [[http://itlists.org/mailman/listinfo/gnupg-it/][gnupg-it]] :: Mailing dedicated to GnuPG users who speak Italian.
+-  [[http://itlists.org/mailman/listinfo/gnupg-it/][gnupg-it]] :: Mailing list dedicated to GnuPG users who speak Italian.
+
+* IRC and Jabber
+
+The channel =#gnupg= on =irc.freenode.org= is a place to talk about
+all gnupg related topics.
+
+The core GnuPG developers use the MUC =gnupg-devel= at conference dot
+jabber dot gnupg.org for their day to day work.  Visitors are welcome.
