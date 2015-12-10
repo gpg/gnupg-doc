@@ -72,16 +72,19 @@ if not available."
 (defconst gpgweb-gnupg-menu-alist
   '(("/index.html"
      "Home"
-     (("/features.html"                    "Features")
+     (("/index.html"                       "Home")
+      ("/features.html"                    "Features")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
       ("/service.html"                     "Service")))
     ("/donate/index.html"
      "Donate"
-     (("/donate/kudos.html"                "List of Donors")))
+     (("/donate/index.html"                "Donate")
+      ("/donate/kudos.html"                "List of Donors")))
     ("/download/index.html"
      "Download"
-     (("/download/integrity_check.html"    "Integrity&nbsp;Check")
+     (("/download/index.html"              "Download")
+      ("/download/integrity_check.html"    "Integrity&nbsp;Check")
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
       ("/download/release_notes.html"      "Release&nbsp;Notes")
       ("/download/mirrors.html"            "Mirrors")
