@@ -297,9 +297,15 @@ string of the source file or nil if not available."
   <ul>
 ")
     (gpgweb--insert-menu gpgweb-gnupg-bottom-menu-alist 0 nil)
-    (insert "  <li>
-<a href=\"https://netzpolitik.org\"><img src=\"/misc/vds_timeline-300x150.png\" title=\"Germany parliament again adopts data retention act - after the German (in 2010) and the European supreme court (in 2014) nixed such acts.\"></a></li>")
-    (insert "  </ul>
+    (insert "    </ul>
+  </div>
+")
+    (insert "  <div class=\"footerbox\">
+  <a><img src=\"/share/traueranzeige-g10_v2015.png\"
+          width=\"200px\" height=\"73px\"
+          alt=\"Traueranzeige: Wir nehmen Abschied von einem sicher geglaubten Freund, dem | Fernmeldegeheimniss | (Artikel 10 Grundgesetz) | * 23. Mai 1949, + 18. Dezember 2015\"
+          title=\"Article 10 of the German constitution (communication privacy) is not anymore with us.\" /></a>
+  <p></p>
   </div>
 ")
     (goto-char (point-min))

@@ -439,8 +439,9 @@ h3 {
 }
 
 
+/* Note that the .footerbox takes care of the padding. */
 #cpyright {
-    padding-top: 4em;
+    padding-top: 0em;
 }
 
 #smallnote {
@@ -622,6 +623,24 @@ td.wideright  {
 
 .logobox img {
     margin-right: 20px;
+}
+
+/* A box used for small graphics at the page bottom.
+   The images are right aligned, a single P is used
+   to clear the alignment.  */
+.footerbox {
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
+.footerbox img {
+    float: right;
+}
+
+.footerbox p {
+    margin-top: 0px;
+    margin-bottom 0px;
+    clear: both;
 }
 
 
