@@ -34,17 +34,17 @@
 #
 # GnuPG-1
 #
-#+macro: gnupg1_ver      1.4.19
-#+macro: gnupg1_date     2015-02-27
+#+macro: gnupg1_ver      1.4.20
+#+macro: gnupg1_date     2015-12-20
 #+macro: gnupg1_branch   STABLE-BRANCH-1-4
-#+macro: gnupg1_size     3627k
-#+macro: gnupg1_size_gz  5020k
-#+macro: gnupg1_sha1     5503f7faa0a0e84450838706a67621546241ca50
-#+macro: gnupg1_sha1_gz  d0cf40cc42ce057d7d747908ec21a973a423a508
+#+macro: gnupg1_size     3606k
+#+macro: gnupg1_size_gz  5036k
+#+macro: gnupg1_sha1     cbc9d960e3d8488c32675019a79fbfbf8680387e
+#+macro: gnupg1_sha1_gz  359e464bcabbe370696e3dba45a1d63968c06ab3
 #
-#+macro: gnupg1_w32cli_ver  1.4.19
-#+macro: gnupg1_w32cli_size 1586k
-#+macro: gnupg1_w32cli_sha1 dc03ae4e4c3e8fe0583b37dd6c3124f94246d2f8
+#+macro: gnupg1_w32cli_ver  1.4.20
+#+macro: gnupg1_w32cli_size 2359k
+#+macro: gnupg1_w32cli_sha1 8f0c4760c9f38102f64a156744ec8a428298b92d
 
 
 #
