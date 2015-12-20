@@ -30,7 +30,7 @@ GnuPG comes in three flavours:
 
  - and {{{gnupg1_ver}}} is the /classic/ portable version.
 
-Project [[http://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
+Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
 nicely integrated into an installer and features several frontends as
 well as English and German manuals.
 
@@ -70,7 +70,7 @@ The latest release news:\\
 18 years after the first GnuPG release version 1.4.20 has been
 released today.  This release from the /classic/ branch of GnuPG now
 also rejects the insecure MD5 signatures created by PGP-2 (unless the
-=--pgp2= option is used).  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000382.html][{more}]]
+=--pgp2= option is used).  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000382.html][{more}]]
 
 ** GnuPG 2.1.10 released (2015-12-04)
 
@@ -92,31 +92,31 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000379.h
 
 A new version of [[file:related_software/gpa/index.org][GPA]], the graphical frontend for GnuPG, is now
 available.  This release fixes a couple of bugs and has been changed
-to show the clipboard view on startup.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][{more}]]
+to show the clipboard view on startup.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][{more}]]
 
 ** GnuPG 2.0.29 released (2015-09-08)
 
 GnuPG 2.0.29 is now available.  This release fixes a couple of bugs;
-users of GnuPG 2.0.x may want to update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000376.html][{more}]]
+users of GnuPG 2.0.x may want to update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000376.html][{more}]]
 
 ** Libgcrypt 1.6.4 released (2015-09-08)
 
 Libgcrypt version 1.6.4 has been released to fix a few minor bugs and
-a crash on newer Windows versions. [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000375.html][{more}]]
+a crash on newer Windows versions. [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000375.html][{more}]]
 
 ** Libassuan 2.3.0 released (2015-08-28)
 
 [[file:related_software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
 other packages.  This release fixes two bugs and introduces new
-support functions for the socket wrappers.  See [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][here]] for details.
+support functions for the socket wrappers.  See [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][here]] for details.
 
 ** GPGME 1.6.0 and Libgpg-error 1.20 released (2015-08-26)
 
 GPGME 1.6.0 is now available.  This release introduce a mode to export
 sceret keys, improves the error return codes, and is prepared to make
-use of the GnuPG 2.1 Windows installer.  See this full [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000372.html][announcement]].
+use of the GnuPG 2.1 Windows installer.  See this full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000372.html][announcement]].
 An update of Libgpg-error to fix a problem in Windows has also been
-released; see this [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000373.html][announcement]].
+released; see this [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000373.html][announcement]].
 
 ** GnuPG 2.1.7 released (2015-08-11)
 
@@ -138,13 +138,13 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000369.h
 
 GPGME 1.5.5 is now available.  This release fixes a crash due to
 malformed user ids and a regression when gpgsm < 2.1 is used.  See the
-full [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000368.html][{announcement}]] mail.
+full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000368.html][{announcement}]] mail.
 
 
 ** GnuPG 2.0.28 released (2015-06-02)
 
 GnuPG 2.0.28 is now available.  This release fixes a couple of bugs;
-users of GnuPG 2.0.x should update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000367.html][{more}]]
+users of GnuPG 2.0.x should update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q2/000367.html][{more}]]
 
 ** GnuPG 2.1.4 released (2015-05-12)
 
@@ -159,17 +159,17 @@ a lot of bugs.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce
 ** GnuPG 1.4.19 released (2015-02-27)                             :important:
 
 GnuPG 1.4.19 is now available.  This release mitigates two new of side
-channel attack methods as well as a couple of other bugs.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html][{more}]]
+channel attack methods as well as a couple of other bugs.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html][{more}]]
 
 ** Libgcrypt 1.6.3 released (2015-02-27)                          :important:
 
 Libgcrypt version 1.6.3 has been released to mitigate two new side
-channel attack methods.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html][{more}]]
+channel attack methods.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html][{more}]]
 
 ** GnuPG 2.0.27 released (2015-02-18)
 
 GnuPG 2.0.27 is now available.  This release fixes a couple of bugs;
-users of GnuPG 2.0.x should update to this version.  [[http://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html][{more}]]
+users of GnuPG 2.0.x should update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html][{more}]]
 
 ** GnuPG 2.1.2 released (2015-02-11)
 
@@ -180,7 +180,7 @@ a lot of bugs.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce
 
 This is the second release of the /modern/ branch of GnuPG.  It fixes
 a lot of bugs and brings some new features.  Read more about 2.1 at
-the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000360.html][announcement]] mail.
+the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[https://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000360.html][announcement]] mail.
 
 
 ** Libksba 1.3.2 released (2014-11-25)                            :important:
@@ -188,14 +188,14 @@ the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http:/
 This is a security fix release and all users of Libksba should update
 to this version.  Note that *GnuPG 2.x* makes use of Libksba and thus
 all user of GnuPG 2.x need to install this new version of Libksba and
-restart the dirmngr process.  Read the full [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000359.html][announcement]].
+restart the dirmngr process.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000359.html][announcement]].
 
 
 ** GnuPG 2.1.0 with ECC support released (2014-11-06)
 
 This is the first release of the new /modern/ branch of GnuPG.  It
 features a lot of new things including support for ECC.  Read more at
-the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[http://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000358.html][announcement]] mail.
+the [[file:faq/whats-new-in-2.1.org][feature overview]] page and in the [[https://lists.gnupg.org/pipermail/gnupg-announce/2014q4/000358.html][announcement]] mail.
 
 
 * A big Thanks to all supporters
