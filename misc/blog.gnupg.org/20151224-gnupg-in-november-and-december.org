@@ -1,0 +1,160 @@
+# GnuPG News for November and December 2015
+#+STARTUP: showall
+#+AUTHOR: Neal
+#+DATE: December 24th, 2015
+#+Keywords: Presentation
+
+** GnuPG News for November and December 2015
+
+*** See us at 32C3
+
+Werner and Neal will each give a talk at 32C3 as part of the [[https://events.ccc.de/congress/2015/wiki/Assembly:Free_Software_Foundation_Europe#sessions][FSFE
+Assembly]].  Both talks are on Monday, December 28th.  Neal's
+presentation is at 16:00 in Hall A.1.  He'll present "An Advanced
+Introduction to GnuPG."  Werner follows immediately at 17:00 with
+"GnuPG and its current state of development."
+
+If you want to chat, we (Justus, Kai, Neal & Werner) will be around
+during the congress.  (Neal will be mostly hanging out at the Kidspace
+and thus will probably be the easiest to find.)  If you want to
+arrange a chat, send us an email.  If you see one of us, don't
+hesitate to ask for a business card with a list of the keys we use to
+sign GnuPG releases!
+
+*** Press
+
+[[https://www.piratenpartei.de/2015/12/23/interview-mit-werner-koch/][Werner was interviewed]] (in German) by Jürgen Asbeck from Germany's
+Pirate Party.
+
+*** Development
+
+There have been two new releases of GnuPG: version [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000381.html][2.1.10]] and version
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000382.html][1.4.20]].
+
+Version 2.1.10 is the first GnuPG version to include support for TOFU.
+TOFU stands for trust on first use and should be familiar to anyone
+who uses ssh.  Basically, TOFU is a mechanism to detect when the
+binding between an identity and a key changes.  This can prevent or
+detect active man-in-the-middle (MitM) attacks and forgeries.
+Although this protection is weaker than the Web of Trust's theoretical
+guarantees, we have observed that most people don't bother to sign
+keys or set owner trust.  The practical result is that most users
+don't make use of the web of trust and, as such, GnuPG only protects
+them from passive MitM attacks.  TOFU provides protection against
+active MitM as long as they are not sustained while not requiring any
+user support.  Happily, the web of trust and TOFU can be combined.  To
+read more about how to use TOFU, see this [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-October/030341.html][email]].  A more theoretical
+handling of how TOFU works is described in our forthcoming [[ftp://ftp.g10code.com/people/neal/tofu.pdf][paper]].
+(Feedback is welcome.)
+
+Another noteworthy addition to 2.1.10 is Tor support.  To enable this,
+simple add the following to your dirmngr.conf file:
+
+#+BEGIN_EXAMPLE
+use-tor
+keyserver hkp://jirk5u4osbsr34t5.onion
+#+END_EXAMPLE
+
+(~hkp://jirk5u4osbsr34t5.onion~ is the .onion address for [[https://sks-keyservers.net][SKS
+Keyserver Pool]].)  Note: for this to work, you'll need to be running
+Tor.  On Debian, you just need to install the Tor package; there is
+nothing more to configure.
+
+2.1.10 also includes a number of small additions.  It is now possible
+to use ~--default-key~ multiple times and GnuPG will use the last key
+that is available for signing (this is good when using a configuration
+file shared among multiple hosts).  ~--encrypt-to-default-key~ will
+causes all messages to also be encrypted to the key specified in
+~--default-key~.  ~--unwrap~ will strip an OpenPGP message of its
+encryption layer (and everyone thing outside of it).  Since most
+messages are signed and then encrypted, this preserves the signature
+(unlike ~--decrypt~).  ~--only-sign-text-ids~ causes ~--sign~ to not
+sign photo IDs.
+
+In 2.1.10, Neal added code to detect ambiguous key specifications.
+This code proved to be incomplete and has since been removed from git.
+Given that it will take some time to ensure that the code is stable,
+this feature will return in 2.3.x.  (2.2 is planned for the beginning
+of 2016.)
+
+2.1.10 also includes a number of bug fixes for dirmngr.  In
+particular, there was a bug that prevented fetching a large number of
+keys over TLS streams.
+
+Both 2.1.10 and 1.4.20 include support for the new ~--weak-digest~
+option, which can be used to explicitly mark a digest as deprecated.
+(You should consider doing this for SHA-1, which is no longer
+considered safe.)
+
+Andre published [[http://lists.wald.intevation.org/pipermail/gpg4win-announce/2015-November/000067.html][version 2.3.0 of gpg2win]].  He's also been working on
+GpgOL (a GnuPG plug-in for Outlook).  The latest test version includes
+support for sending PGP/MIME mails.  If you are interested in helping
+to test it, read the [[https://wiki.gnupg.org/Gpg4win/Testversions][wiki]] and follow the [[https://lists.wald.intevation.org/cgi-bin/mailman/listinfo/gpg4win-devel][gpg4win-devel mailing list]]
+for details.
+
+Jussi has continued his work on libgcrypt.  He recently added a
+variable length output interface for the digest API, which was needed
+for new SHAKE algorithms.  He has also worked on some new
+optimizations for the hash-algorithms; fine-tuned existing SHA-3/SHAKE
+and Tiger implementations and added an ARMv7/NEON implementation of
+SHA-3/SHAKE.
+
+Niibe fixed an important long standing bug in scdaemon whereby users
+cannot access their smartcard after reinsertion.  Another minor bug
+that he fixed is that the removal of smartcards was not always
+correctly detected.  These bugs are fixed in 2.1.10 and will be
+backported to 2.0.x.
+
+Niibe also did a major change in libgcrypt for Curve25519, which
+changes the point format of the curve by adding the 0x40 prefix (this
+is the same as Ed25519).  New private keys and encrypted messages
+created with the new libgcrypt will always have the prefix 0x40.  Any
+users of Curve25519 encryption should update their libgcrypt.
+Existing keys should continue to be handled correctly.
+
+For those interested in Werner's work on g13 (a LUKS replacement,
+which allows using a smartcard to decrypt the master key), he has
+pushed his current work to the ~wk/g13work~ branch.
+
+*** Contact
+
+Werner announced the official [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-December/030599.html][chat room]] for developers.  Note: for
+general questions, #gnupg on freenode remains the better real-time
+chat forum.
+
+*** Discussions
+
+Guilhem Moulin discussed using [[https://lists.gnupg.org/pipermail/gnupg-devel/2015-November/030576.html][OpenPGP notations to limit the scope of
+subkeys]].
+
+James asked about [[https://lists.gnupg.org/pipermail/gnupg-users/2015-November/054679.html][best practices for creating keys]] and got a number of
+helpful responses.
+
+The Nitrokey developers [[https://lists.gnupg.org/pipermail/gnupg-users/2015-November/054695.html][announced an effort to develop a new USB
+Security Key]] with hidden storage (for plausible deniability).
+Nitrokey is 100% free software and open hardware.  Their [[https://www.indiegogo.com/projects/nitrokey-storage-usb-security-key-for-encryption#/][crowdfunding
+campaign]] runs until the end of December.
+
+Robert J. Hansen shared a link to an MIT Technology Review article on
+how [[https://lists.gnupg.org/pipermail/gnupg-users/2015-December/054864.html][user error subverts communication security]].
+
+Matthias Apitz asked about [[https://lists.gnupg.org/pipermail/gnupg-users/2015-December/054881.html][why private keys are stored differently in
+GnuPG 2.1]] and Werner provided a detailed explanation.
+
+*** Donations
+
+At the beginning of 2015, the Linux Foundation, as part of their core
+infrastructure initiative, made a one-time USD60,000 donation.  We are
+pleased to report that the Linux Foundation has decided to renew their
+support for 2016 and have donated another USD60,000.  Thanks!
+
+Unfortunately, [[https://twitter.com/stripe/status/563449352635432960'][although Facebook initially announced that they would
+provide USD50,000 of support per year]], they have since rescinded.
+
+** About this news posting
+
+We try to write a news posting each month.  However, other work may
+have a higher priority (e.g. security fixes) and thus there is no
+promise for a fixed publication date.  If you have an interesting
+topic for a news posting, please send it to us.  A regular summary of
+the mailing list discussions would make a nice column on this news.
