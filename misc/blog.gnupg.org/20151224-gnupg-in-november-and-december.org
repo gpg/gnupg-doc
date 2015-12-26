@@ -148,7 +148,7 @@ infrastructure initiative, made a one-time USD60,000 donation.  We are
 pleased to report that the Linux Foundation has decided to renew their
 support for 2016 and have donated another USD60,000.  Thanks!
 
-Unfortunately, [[https://twitter.com/stripe/status/563449352635432960'][although Facebook initially announced that they would
+Unfortunately, [[https://twitter.com/stripe/status/563449352635432960][although Facebook initially announced that they would
 provide USD50,000 of support per year]], they have since rescinded.
 
 ** About this news posting
