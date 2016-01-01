@@ -151,6 +151,13 @@ support for 2016 and have donated another USD60,000.  Thanks!
 Unfortunately, [[https://twitter.com/stripe/status/563449352635432960][although Facebook initially announced that they would
 provide USD50,000 of support per year]], they have since rescinded.
 
+** Update 2016-01-01
+
+We have meanwhile received unofficial information that Facebook did
+not rescinded their support pledge.  We are waiting for an official
+comment and will report on that then.
+
+
 ** About this news posting
 
 We try to write a news posting each month.  However, other work may
