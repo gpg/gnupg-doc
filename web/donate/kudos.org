@@ -19,17 +19,16 @@
 | Year |    # |   \EUR | net \EUR |
 | <l>  |  <r> |    <r> |      <r> |
 |------+------+--------+----------|
-| 2015 | 5844 | 205560 |          |
+| 2015 | 5846 | 295405 |   283537 |
 | 2014 |  801 |  34700 |    30305 |
 | 2013 |  148 |   5041 |     4145 |
 | 2012 |   53 |   5991 |     4963 |
 | 2011 |   21 |    553 |      465 |
 |------+------+--------+----------|
-|      |      | 251845 |          |
+|      |      | 341690 |   323415 |
 #+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
 #+HTML: <div id="smallnote">
-The "net" column gives the actual value without VAT and credit card
-fees.\\
+The "net" column gives the actual value without taxes and banking fees.\\
 #+HTML: </div>
 
 The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] campaign raised an additional
@@ -37,11 +36,19 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
 # Goteo transferred that money in March 2014 in 6 chunks:
 # 11423, 6000, 5000, 5000, 5218 = 32641
 
+# About 2014:
 # Some of the 801 donations from 2014 have been hold back by Stripe
 # over the end of the year and thus VAT was only payable in 2015.
 # That VAT is not included in the net amount for 2014.  The net amount
 # received from individual donations in 2014 have been 2525, 919, 541,
 # 26320 Euro per quarter.
+
+# About 2015:
+# | Individual Donations in 2015 | 5844 | 205560 | 193692 |
+# |      Facebook+Stripe in 2015 |    2 |  89845 |  89845 |
+# |------------------------------+------+--------+--------|
+# |                              | 5846 | 295405 | 283537 |
+
 
 * List of Donors
 
