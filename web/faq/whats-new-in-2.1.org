@@ -1,7 +1,7 @@
 #+TITLE: GnuPG - What’s new in 2.1
 #+STARTUP: showall indent
 #+SETUPFILE: "share/setup.inc"
-#+DATE: 2014-11-04
+#+DATE: 2016-01-14
 #+macro: more  @@html:<a href="#$1"><span class="morelink">&nbsp;&rArr;</a>@@
 
 #+BEGIN_ASCII
@@ -69,6 +69,8 @@ its main components.
 - Creation of X.509 certificates has been improved.  It is now also
   possible to export them directly in PKCS#8 and PEM format for use on
   TLS servers.{{{more(x509)}}}
+
+- Export of /ssh/ keys has been integrated.{{{more(sshexport)}}}
 
 - The scripts to create a Windows installer are now part of
   GnuPG.{{{more(w32inst)}}}
@@ -193,7 +195,7 @@ is still very limited.  Thus GnuPG 2.1 currently hides the options to
 create an ECC key.
 
 For those who want to experiment with ECC or already want to prepare a
-key for future use, the command =--gen-full-key= along with the option
+key for future use, the command =--full-gen-key= along with the option
 =--expert= is the enabler:
 
 #+begin_example
@@ -656,6 +658,18 @@ act as a replacement for [[http://www.chiark.greenend.org.uk/~sgtatham/putty/][P
 is the Windows counterpart for the =--enable-ssh-support= option as
 used on Unix.
 
+** Export of SSH public keys
+:PROPERTIES:
+:CUSTOM_ID: sshexport
+:END:
+
+The new command =--export-ssh-key= makes it easy to export an /ssh/
+public key in the format used for ssh’s =authorized_keys= file.  By
+default the command exports the newest subkey with an authorization
+usage flags.  A special syntax can be used to export other subkeys.
+This command is available since 2.1.11 and replaces the former debug
+utility /gpgkey2ssh/.
+
 ** Improved X.509 certificate creation
 :PROPERTIES:
 :CUSTOM_ID: x509
@@ -710,7 +724,7 @@ will be added with one of the next point releases.
 
 
 #+BEGIN_ASCII
-# Copyright 2014 The GnuPG Project.
+# Copyright 2014--2016 The GnuPG Project.
 # This work is licensed under the Creative Commons
 # Attribution-ShareAlike 4.0 International License.  To view a copy of
 # this license, visit http://creativecommons.org/licenses/by-sa/4.0/
