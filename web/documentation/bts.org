@@ -4,16 +4,14 @@
 
 * Bug Tracking System
 
-  Our bug tracking system can be found at [[https://bugs.g10code.com/gnupg/index][bugs.g10code.com]]. Please,
+  Our bug tracking system can be found at [[https://bugs.gnupg.org/gnupg/index][bugs.gnupg.org]]. Please,
   query the database before you create a new bug report. You need to
   create an account to file a bug or edit existing bugs. See the
-  [[http://bugs.g10code.com/index.html#intro][Introduction to the BTS]].  Bug reports need to be written in English
+  [[http://bugs.gnupg.org/index.html#intro][Introduction to the BTS]].  Bug reports need to be written in English
 
   If you can fix one of these bugs/limitations, we will certainly be
-  glad to receive a patch. Please note that we need a disclaimer if
-  your patches are longer than about 10 lines; but it may help anyway
-  to show us where we have to fix it. Do an “info standards” or see
-  [[http://www.gnu.org/copyleft/why-assign.html][this article]] to find out why a disclaimer is needed for GNU.
+  glad to receive a patch via the gnupg-devel mailing list.  If the
+  patch is non-trivial please read the file [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dblob%3Bf%3Ddoc/HACKING][doc/HACKING]] first.
 
 
 ** GnuPG.org
@@ -21,7 +19,3 @@
    The *Bug Tracking System* can also be used to report problems
    related to GnuPG.org site. Simply, follow the instructions given
    above and set the "category" field to *gpgweb*.
-
-   If you want to interact directly with us for questions, mistakes,
-   change requests, advices, and compliments, you can write an e-mail
-   to [[mailto:webmaster@gnupg.org][webmaster@gnupg.org]] .
