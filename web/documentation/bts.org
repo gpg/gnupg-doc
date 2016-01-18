@@ -11,7 +11,7 @@
 
   If you can fix one of these bugs/limitations, we will certainly be
   glad to receive a patch via the gnupg-devel mailing list.  If the
-  patch is non-trivial please read the file [[http://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dblob%3Bf%3Ddoc/HACKING][doc/HACKING]] first.
+  patch is non-trivial please read the file [[https://www.gnupg.org/faq/HACKING.html][doc/HACKING]] first.
 
 
 ** GnuPG.org
