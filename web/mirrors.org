@@ -34,7 +34,6 @@ are seeking mirrors for source or binary packages, please consult the
   | France         | [[http://mirror.cict.fr/][CICT Mirror, Toulouse]] | [[http://gnupg.cict.fr/][http]]      | daily  |
   | Hungary        | [[http://www.crysys.hu/][CrySyS Lab., Bute]]     | [[http://gnupg.mirrors.crysys.hu/][http]]      | daily  |
   | Portugal       | [[http://5coluna.com][5ª Coluna]]             | [[http://mirror.gnupg.pt/][http]]      | 2/day  |
-  | Sweden         | [[http://archive.sunet.se/][Sunet]]                 | [[http://gnupg.archive.sunet.se/][http]]      |        |
   | United Kingdom | [[http://mirror.tje.me.uk/][mirror.tje.me.uk]]      | [[http://mirror.tje.me.uk/pub/mirrors/www.gnupg.org/][http]]  [[ftp://mirror.tje.me.uk/pub/mirrors/www.gnupg.org][ftp]] | 4/day  |
   |                | [[http://www.mirrorservice.org/][UK Mirror Service]]     | [[http://www.mirrorservice.org/sites/www.gnupg.org/][http]]      |        |
   |                |                       |           |        |
