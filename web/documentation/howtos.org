@@ -60,13 +60,6 @@
 
    This smartcard howto is also available in the [[../download/cvs_access.org][source repository]].
 
-** PGP5-GnuPG HOWTO
-
-   If you have problems exchanging messages with a PGP 5.x system, you
-   should have a look at this [[http://technocage.com/~caskey/gnupg/pgp2gnupg.html][PGP5-GnuPG HOWTO]] available in English
-   only.  Note that PGP 5 is heavily out of date and should not be
-   used.
-
 ** GnuPG Keysigning Party HOWTO
 
    Once you get familiar with GnuPG's mechanisms, you surely wouldn't
