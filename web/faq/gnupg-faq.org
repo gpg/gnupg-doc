@@ -76,10 +76,18 @@ aren't, please feel free to email the FAQ maintainer (Rob Hansen,
 [[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]])
 or bring your suggestion up on GnuPG-Users.
 
+** Is this available in other languages?
+   :PROPERTIES:
+   :CUSTOM ID: translations
+   :END:
+
+Thanks to the Free Software Foundation, this FAQ is also available in
+[[http://
+
 ** How do I get help?
    :PROPERTIES:
    :CUSTOM ID: gethelp
-   :END
+   :END:
 
 First, please don’t send emails directly to people in GnuPG.  While we will
 try to help to people who send email directly to us, those emails quickly
@@ -90,7 +98,7 @@ GnuPG community via the
 not individual people within
 GnuPG.
 
-Second, tell us your operating environment.  Be as specific as possible
+Second, tell us your operating environment.  Be as specific as possible.
 What operating system are you using?  Which version of GnuPG are you using?
 Where did you get GnuPG from?  If your problem is related to email, which email
 client are you using?  Which version number?  Is GnuPG supported natively, or
@@ -140,7 +148,7 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-December 2015.
+February 2016.
 
 
 * General questions
@@ -651,7 +659,7 @@ although in a different way than the EFF.
 Many email clients offer strong GnuPG integration.
 
 The column “Active” in the tables below indicate whether the software
-os actively developed.
+is actively developed.
 
 ** … Microsoft Windows?
    :PROPERTIES:
@@ -665,7 +673,7 @@ os actively developed.
 | Claws-Mail  | yes (internal) | (3) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
-    popular GnuPG-aware email clients.  it’s under active development
+    popular GnuPG-aware email clients.  It’s under active development
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
@@ -1080,7 +1088,7 @@ compressed.
    :END:
 
 
-A revocation certificate is a [[#define_key][certificate]] that possesses the
+A revocation certificate is a [[#define_certificate][certificate]] that possesses the
 information necessary to mark another certificate as unusable.  This
 is called ‘revoking’ the certificate.
 
@@ -1307,14 +1315,12 @@ keyserver pool.sks-keyservers.net
 keyserver-options import-clean-sigs import-clean-uids export-clean-sigs export-clean-uids
 
 # If I don't explicitly state which certificate to use, use this one.
-default-key 23806BE5D6B98E10
+default-key 1DCBDC01B44427C7
 
 # Always include signatures from these two certificates.
-local-user 23806BE5D6B98E10
 local-user 1DCBDC01B44427C7
 
 # Always add these two certificates to my recipients list.
-encrypt-to 23806BE5D6B98E10
 encrypt-to 1DCBDC01B44427C7
 
 # Turn "From" into "> From", in order to play nice with UNIX mailboxes.
@@ -1340,8 +1346,8 @@ personal-compress-preferences BZIP2 ZIP ZLIB
    :END:
 
 
-Many people have had excellent luck with =pool.sks-keyservers.net=.
-
+Many people have had excellent luck with =pool.sks-keyservers.net=.  On OS X,
+some people have needed to use =ipv4.pool.sks-keyservers.net= instead.
 
 
 ** What’s the difference between an ‘option’ and a ‘command’?
@@ -1400,7 +1406,7 @@ A variation is =-b= or =--detach-sign=, which produces a separate
 signature without including the file's content; this is useful for
 signing a software archive or other large file.  The key to use for
 the signature can be specified with the =local-user= setting in your
-gpg.conf file, or with the =-u=, =--local-user= options.
+=gpg.conf= file, or with the =-u=, =--local-user= options.
 
 Encrypting a file's content is done with the =-e= or =--encrypt=
 commands.  Recipients are specified with the =-r= or =--recipient=
@@ -1422,7 +1428,7 @@ keys and the certificates of others.
    :END:
 
 In order to send an encrypted message or verify a signature, you must
-obtain the certificate for the sender/signer's public key.
+obtain the certificate for the recipient’s/signer’s public key.
 
 Occasionally you might obtain the certificate physically, by meeting
 the certificate holder face-to-face and exchanging the certificate on
