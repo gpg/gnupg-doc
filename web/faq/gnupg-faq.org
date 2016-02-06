@@ -82,7 +82,7 @@ or bring your suggestion up on GnuPG-Users.
    :END:
 
 Thanks to the Free Software Foundation, this FAQ is also available in
-[[http://
+[[https://www.gnu.org/server/standards/translations/ru/gnupg/gnupg-faq.ru.html][Russian]].
 
 ** How do I get help?
    :PROPERTIES:
