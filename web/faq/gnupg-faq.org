@@ -86,7 +86,7 @@ Thanks to the Free Software Foundation, this FAQ is also available in
 
 ** How do I get help?
    :PROPERTIES:
-   :CUSTOM ID: gethelp
+   :CUSTOM_ID: gethelp
    :END:
 
 First, please don’t send emails directly to people in GnuPG.  While we will
@@ -366,7 +366,7 @@ you may share the software and/or your modifications with others.
    :CUSTOM_ID: donate
    :END:
 
-The best way is to visit the [[http://g10code.com/gnupg-donation.html][g10 Code donation page]].
+The best way is to visit the [[https://gnupg.org/donate/][donation page]].
 
 
 ** How can I help with GnuPG development?
