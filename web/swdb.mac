@@ -26,11 +26,11 @@
 #+macro: gnupg21_sha1 4af2032a60ff22e322b1c5b270d6d2228f59a3a3
 #+macro: gnupg21_sha2 b7b0fb2c8c5d47d7ec916d4a1097c0ddcb94a12bb1c0ac424ad86b1ee316b61a
 #
-#+macro: gnupg21_w32_ver  2.1.11_20160126
-#+macro: gnupg21_w32_date 2016-01-26
+#+macro: gnupg21_w32_ver  2.1.11_20160209
+#+macro: gnupg21_w32_date 2016-02-09
 #+macro: gnupg21_w32_size 2630k
-#+macro: gnupg21_w32_sha1 ed237ba7bf8fd4fd3f2688ddd46b949dd15ebdd6
-#+macro: gnupg21_w32_sha2 4567227bd0885354b17f18639d13820bca81e5202b2388e7a6efa096864d66d4
+#+macro: gnupg21_w32_sha1 89bd31652d370ba69ac27b42b4d474d7edd9e0ea
+#+macro: gnupg21_w32_sha2 1e92b39ef4f4cdf3b1849b6f824dd8f160276aa5c9718be35f8a7bd190bf6154
 
 
 #
@@ -80,10 +80,10 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.6.4
-#+macro: libgcrypt_date 2015-09-08
+#+macro: libgcrypt_ver  1.6.5
+#+macro: libgcrypt_date 2016-02-09
 #+macro: libgcrypt_size 2490k
-#+macro: libgcrypt_sha1 ed52add1ce635deeb2f5c6650e52667debd4ec70
+#+macro: libgcrypt_sha1 c3a5a13e717f7b3e3895650afc1b6e0d3fe9c726
 
 
 #
