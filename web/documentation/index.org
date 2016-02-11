@@ -20,6 +20,8 @@
                      hosted on this server and gives instruction on
                      how to subscribe. Links to other GnuPG-related
                      discussion groups are also available.
+  - [[http://wiki.gnupg.org][Wiki]] :: The official GnuPG Wiki contains community-maintained
+            documentation for GnuPG and related software.
   - [[file:bts.org][BTS]] :: Before you report a bug, please consult the list of bugs.
   - [[http://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
 
