@@ -473,7 +473,7 @@ gpg-agent= to explicitly start it if not yet done.
 :END:
 
 A deficit of the OpenPGP protocol is that signatures carry only a
-limited indication on which public has been used to create a
+limited indication on which public key has been used to create a
 signature.  Thus a verification engine may only use this “long key id”
 to look up the the key in its own store or from a public keyserver.
 Unfortunately it has now become possible to create a key with a long
@@ -526,8 +526,8 @@ table of all hosts from the pool along with the encountered aliveness
 state.  Thus after a failure (timeout) of a request, /dirmngr/ flags a
 host as dead and randomly selects another one from the pool.  After a
 few hours the flag is removed so that the host will be tried again.
-It is also possible to mark a specif host from a pool explicitly as
-dead so that it won’t be used in future.  To interact with the
+It is also possible to mark a specific host from a pool explicitly as
+dead so that it won’t be used in the future.  To interact with the
 /dirmngr/ the =gpg-connect-agent= tool is used:
 
 #+begin_example
@@ -555,7 +555,7 @@ From its very beginning /gpgsm/ has used a different format to store
 public keys (certificates) which we call a /keybox/. That file format
 carries meta information about the stored keys and thus allows
 searching without actually parsing the key and computing fingerprints
-and such.  The /keybox/ format has been designed protocol independent
+and such.  The /keybox/ format has been designed to be protocol independent
 and with 2.1 support for OpenPGP keys has been added.  Random access
 to the keys is now really fast and keyrings with 30000 keys and more
 are now easily possible.  That change also enables us to easily
