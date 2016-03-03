@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - gpg man page
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+OPTIONS: -:nil
 
 * gpg
 
