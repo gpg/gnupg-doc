@@ -76,69 +76,6 @@ Libgcrypt version 1.6.5 and an updated Windows installer for GnuPG
 A new version of the /modern/ branch of GnuPG has been released.
 Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000383.html][announcement mail]] for details.
 
-** GnuPG 1.4.20 released (2015-12-20)
-
-18 years after the first GnuPG release version 1.4.20 has been
-released today.  This release from the /classic/ branch of GnuPG now
-also rejects the insecure MD5 signatures created by PGP-2 (unless the
-=--pgp2= option is used).  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000382.html][{more}]]
-
-** GnuPG 2.1.10 released (2015-12-04)
-
-A new version of the /modern/ branch of GnuPG has been released.  The
-main features of this release are support for [[https://en.wikipedia.org/wiki/Trust_on_first_use][TOFU]] and anonymous key
-retrieval via [[https://www.torproject.org][Tor]].  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000381.html][announcement mail]] for details.
-
-** GnuPG 2.1.9 released (2015-10-09)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q4/000380.html][announcement mail]] for details.
-
-** GnuPG 2.1.8 released (2015-09-10)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000379.html][announcement mail]] for details.
-
-** GPA 0.9.9 released (2015-09-09)
-
-A new version of [[file:related_software/gpa/index.org][GPA]], the graphical frontend for GnuPG, is now
-available.  This release fixes a couple of bugs and has been changed
-to show the clipboard view on startup.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][{more}]]
-
-** GnuPG 2.0.29 released (2015-09-08)
-
-GnuPG 2.0.29 is now available.  This release fixes a couple of bugs;
-users of GnuPG 2.0.x may want to update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000376.html][{more}]]
-
-** Libgcrypt 1.6.4 released (2015-09-08)
-
-Libgcrypt version 1.6.4 has been released to fix a few minor bugs and
-a crash on newer Windows versions. [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000375.html][{more}]]
-
-** Libassuan 2.3.0 released (2015-08-28)
-
-[[file:related_software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
-other packages.  This release fixes two bugs and introduces new
-support functions for the socket wrappers.  See [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][here]] for details.
-
-** GPGME 1.6.0 and Libgpg-error 1.20 released (2015-08-26)
-
-GPGME 1.6.0 is now available.  This release introduce a mode to export
-sceret keys, improves the error return codes, and is prepared to make
-use of the GnuPG 2.1 Windows installer.  See this full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000372.html][announcement]].
-An update of Libgpg-error to fix a problem in Windows has also been
-released; see this [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000373.html][announcement]].
-
-** GnuPG 2.1.7 released (2015-08-11)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000371.html][announcement mail]] for details.
-
-** GnuPG 2.1.6 released (2015-07-01)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000370.html][announcement mail]] for details.
-
 
 * A big Thanks to all supporters
 
