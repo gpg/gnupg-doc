@@ -65,7 +65,7 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
-** Libgcrypt 1.6.5 released (2015-02-27)                          :important:
+** Libgcrypt 1.6.5 released (2016-02-09) 			  :important:
 
 Libgcrypt version 1.6.5 and an updated Windows installer for GnuPG
 2.1.11 has been released to mitigate a new side-channel attack.
