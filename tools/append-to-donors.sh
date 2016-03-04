@@ -6,6 +6,10 @@
 pgm="append-to-donors.sh"
 set -e
 
+# We temporary need the next line due to an libgpg-error update
+LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH
+
 PATH=/usr/local/bin:$PATH
 SENDMAIL="/usr/sbin/sendmail"
 LC_ALL=C
@@ -25,6 +29,17 @@ if [ ! -f "$donors" ]; then
   echo "$pgm: '$donors' not found" >&2;
   exit 1
 fi
+
+if [ x"$(idn --quiet wk@gnupg.org)" != x"wk@gnupg.org" ]; then
+  echo  "$pgm: idn(1) tool not installed or not working"
+  exit 1
+fi
+if [ x"$(mu-tool 2047 -c utf-8 '<wk@gnupg.org>')" \
+      != x"=?utf-8?Q?<wk@gnupg.org>?=" ]; then
+  echo "$pgm: mu-tool(1) tool not installed or not working"
+  exit 1
+fi
+
 
 if ! lockfile -l 7200 -r 2 $LOCKFILE; then
     echo "$pgm: another instance is still running"
@@ -59,9 +74,15 @@ send_thanks () {
         ineuro=" (about $(echo $euro| awk '{print int($0 + 0.5)}') EUR)"
     fi
     xamount="$(echo $amount| awk '{print int($0 + 0.5)}')"
+    if [ -n "$xmail" ]; then
+      xidnmail=$(CHARSET=UTF-8 idn --no-tld --quiet "$xmail")
+    else
+      xidnmail=""
+    fi
+    xqpmail=$(mu-tool 2047 -c utf-8 "$xmail")
     ( cat <<EOF
 From: donations@gnupg.org
-To: $xmail
+To: $xqpmail
 Subject: Thank you for supporting GnuPG
 Date: $RFCDATE
 Mime-Version: 1.0
@@ -81,14 +102,14 @@ Thank you.
 $SIGDELIM
 GnuPG - helping to keep private data private
 EOF
-    ) | $SENDMAIL -oi donations@gnupg.org "$xmail"
+    ) | $SENDMAIL -oi donations@gnupg.org "$xidnmail"
 
 
 if [ -n "$message" ]; then
     ( cat <<EOF
 From: donations@gnupg.org
 To: donations@gnupg.org
-Reply-To: $xmail
+Reply-To: $xqpmail
 Subject: Message from GnuPG donor
 Date: $RFCDATE
 Mime-Version: 1.0
