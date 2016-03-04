@@ -49,14 +49,14 @@ documents at https://www.gnupg.org/docs.html .
 
 -  --store :: Store only (make a simple RFC1991 packet).
 
--  --decrypt [=file=] :: Decrypt =file= (or stdin if no file is
+-  --decrypt [ =file= ] :: Decrypt =file= (or stdin if no file is
    specified) and write it to stdout (or the file specified with
    --output). If the decrypted file is signed, the signature is also
    verified. This command differs from the default operation, as it
    never writes to the filename which is included in the file and it
    rejects files which don't begin with an encrypted message.
 
--  --verify [[=sigfile=] [=signed-files=]] :: Assume that =sigfile= is a
+-  --verify [[ =sigfile= ] [ =signed-files= ]] :: Assume that =sigfile= is a
    signature and verify it without generating any output. With no
    arguments, the signature packet is read from stdin (it may be a
    detached signature when not used in batch mode). If only a sigfile is
@@ -67,25 +67,25 @@ documents at https://www.gnupg.org/docs.html .
    stdin). With more than 1 argument, the first should be a detached
    signature and the remaining files are the signed stuff.
 
--  --verify-files [=files=] :: This is a special version of the --verify
+-  --verify-files [ =files= ] :: This is a special version of the --verify
    command which does not work with detached signatures. The command
    expects the files to bee verified either on the commandline or reads
    the filenames from stdin; each anem muts be on separate line. The
    command is intended for quick checking of many files.
 
--  --list-keys [=names=], --list-public-keys [=names=] :: List all keys
+-  --list-keys [ =names= ], --list-public-keys [ =names= ] :: List all keys
    from the public keyrings, or just the ones given on the command line.
 
--  --list-secret-keys [=names=] :: List all keys from the secret
+-  --list-secret-keys [ =names= ] :: List all keys from the secret
    keyrings, or just the ones given on the command line.
 
--  --list-sigs [=names=] :: Same as --list-keys, but the signatures are
+-  --list-sigs [ =names= ] :: Same as --list-keys, but the signatures are
    listed too.
 
--  --check-sigs [=names=] :: Same as --list-sigs, but the signatures are
+-  --check-sigs [ =names= ] :: Same as --list-sigs, but the signatures are
    verified.
 
--  --fingerprint [=names=] :: List all keys with their fingerprints.
+-  --fingerprint [ =names= ] :: List all keys with their fingerprints.
    This is the same output as --list-keys but with the additional output
    of a line with the fingerprint. May also be combined with --list-sigs
    or --check-sigs. If this command is given twice, the fingerprints of
@@ -197,28 +197,28 @@ documents at https://www.gnupg.org/docs.html .
 -  --gen-revoke :: Generate a revocation certificate for the complete
    key. To revoke a subkey or a signature, use the --edit command.
 
--  --export [=names=] :: Either export all keys from all keyrings
+-  --export [ =names= ] :: Either export all keys from all keyrings
    (default keyrings and those registered via option --keyring), or if
    at least one name is given, those of the given name. The new keyring
    is written to stdout or to the file given with option "output". Use
    together with --armor to mail those keys.
 
--  --send-keys [=names=] :: Same as --export but sends the keys to a
+-  --send-keys [ =names= ] :: Same as --export but sends the keys to a
    keyserver. Option --keyserver must be used to give the name of this
    keyserver. Don't send your complete keyring to a keyserver - select
    only those keys which are new or changed by you.
 
--  --export-all [=names=] :: Same as --export, but does also export keys
+-  --export-all [ =names= ] :: Same as --export, but does also export keys
    which are not compatible to OpenPGP.
 
--  --export-secret-keys [=names=], --export-secret-subkeys
-   [=names=] :: Same as --export, but does export the secret keys. This
+-  --export-secret-keys [ =names= ], --export-secret-subkeys
+   [ =names= ] :: Same as --export, but does export the secret keys. This
    is normally not very useful and a security risk. the second form of
    the command has the special property to render the secret part of the
    primary key useless; this is a GNU extension to OpenPGP and other
    implementations can not be expected to successful import such a key.
 
--  --import [=files=], --fast-import [=files=] :: Import/merge keys.
+-  --import [ =files= ], --fast-import [ =files= ] :: Import/merge keys.
    This adds the given keys to the keyring. The fast version does not
    build the trustdb; this can be done at any time with the command
    --update-trustdb.
@@ -235,21 +235,21 @@ documents at https://www.gnupg.org/docs.html .
 -  --export-ownertrust :: List the assigned ownertrust values in ASCII
    format for backup purposes
 
--  --import-ownertrust [=files=] :: Update the trustdb with the
+-  --import-ownertrust [ =files= ] :: Update the trustdb with the
    ownertrust values stored in =files= (or stdin if not given); existing
    values will be overwritten.
 
--  --print-md =algo= [=files=] :: Print message digest of algorithm ALGO
+-  --print-md =algo= [ =files= ] :: Print message digest of algorithm ALGO
    for all given files of stdin. If "*" is used for the algorithm,
    digests for all available algorithms are printed.
 
--  --gen-random =0|1|2= [=count=] :: Emit COUNT random bytes of the
+-  --gen-random =0|1|2= [ =count= ] :: Emit COUNT random bytes of the
    given quality level. If count is not given or zero, an endless
    sequence of random bytes will be emitted. PLEASE, don't use this
    command unless you know what you are doing, it may remove precious
    entropy from the system!
 
--  --gen-prime =mode= =bits= [=qbits=] :: Use the source, Luke :-). The
+-  --gen-prime =mode= =bits= [ =qbits= ] :: Use the source, Luke :-). The
    output format is still subject to change.
 
 -  --version :: Print version information along with a list of supported
@@ -729,10 +729,10 @@ was bad, and other error codes for fatal errors.
 
 -  gpg --fingerprint =user_ID= :: show fingerprint
 
--  gpg --verify =pgpfile=, gpg --verify =sigfile= [=files=] :: Verify
+-  gpg --verify =pgpfile=, gpg --verify =sigfile= [ =files= ] :: Verify
    the signature of the file but do not output the data. The second form
    is used for detached signatures, where =sigfile= is the detached
-   signature (either ASCII armored of binary) and [=files=] are the
+   signature (either ASCII armored of binary) and [ =files= ] are the
    signed data; if this is not given the name of the file holding the
    signed data is constructed by cutting off the extension (".asc" or
    ".sig") of =sigfile= or by asking the user for the filename.
