@@ -133,9 +133,20 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.3
-#+macro: gpgex_date 2015-11-23
-#+macro: gpgex_sha1 52c803434b3d861ae68e93bf68852bed81c70166
+#+macro: gpgex_ver  1.0.4
+#+macro: gpgex_date 2016-03-30
+#+macro: gpgex_size 286k
+#+macro: gpgex_sha1 a1521fd86b6a1c5d5865d864e5700e98f4e99dcb
+#+macro: gpgex_sha2 aea2232d026219072491f1bf5b2f189a15552f66377ff4dd3b11c0f069379206
+
+#
+# GpgOL
+#
+#+macro: gpgol_ver  1.4.0
+#+macro: gpgol_date 2016-03-30
+#+macro: gpgol_size 648k
+#+macro: gpgol_sha1 3cbe4a1dc0b9897353d8352a4b5afa3ecf3094f4
+#+macro: gpgol_sha2 abebb06bcf64c11854b110830b148eada7e7d9046e565c407d7957594f09800f
 
 
 #

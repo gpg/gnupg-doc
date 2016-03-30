@@ -73,7 +73,7 @@
 ** Comparing Checksums
 
    If you are not able to use an old version of GnuPG, you can still
-   verify the file's SHA1 checksum.  This is less secure, because if
+   verify the file's SHA-1 checksum.  This is less secure, because if
    someone modified the files as they were transferred to you, it
    would not be much more effort to modify the checksums that you see
    on this webpage.  As such, if you use this method, you should
