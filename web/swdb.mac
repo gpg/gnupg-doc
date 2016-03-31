@@ -10,11 +10,13 @@
 #
 # GnuPG
 #
-#+macro: gnupg_ver     2.0.29
-#+macro: gnupg_date    2015-09-08
+#+macro: gnupg_ver  2.0.30
+#+macro: gnupg_date 2016-03-31
+#+macro: gnupg_size 4311k
+#+macro: gnupg_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
+#+macro: gnupg_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
 #+macro: gnupg_branch  STABLE-BRANCH-2-0
-#+macro: gnupg_size    4313k
-#+macro: gnupg_sha1    87eb0df18f9953675f979405a1af10ab6c5322b3
+
 
 #
 # GnuPG-2.1

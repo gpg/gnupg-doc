@@ -64,6 +64,10 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.0.30 released (2016-03-31)
+
+GnuPG 2.0.30 is now available.  This release fixes a few minor bugs;
+users of GnuPG 2.0.x may want to update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000385.html][{more}]]
 
 ** Libgcrypt 1.6.5 released (2016-02-09) 			  :important:
 
