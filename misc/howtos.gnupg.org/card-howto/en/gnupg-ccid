@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# taken from libgphoto2
+#
+# Sets up newly plugged in card reader so that only members of the
+# group can access it
+
+GROUP=scard
+
+# can access it from user space. (Replace scard with the name of the
+# group you want to have access to the card reader.)
+#
+# Note that for this script to work, you'll need all of the following:
+# a) a line in the file /etc/hotplug/gnupg-ccid.usermap that corresponds
+#    to the card reader you are using.
+# b) a group "scard" where all users allowed access to the
+#    card reader are listed
+# c) a Linux kernel supporting hotplug and usbdevfs
+# d) the hotplug package (http://linux-hotplug.sourceforge.net/)
+#
+# In the usermap file, the first field "usb module" should be named
+# "gnupg-ccid" like this script.
+#
+
+if [ "${ACTION}" = "add" ] && [ -f "${DEVICE}" ]
+then
+    chmod o-rwx "${DEVICE}"
+    chgrp "${GROUP}" "${DEVICE}"
+    chmod g+rw "${DEVICE}"
+fi

@@ -1,0 +1,5 @@
+# GPG SmartCard Reader Support
+#
+
+ACTION=="add", SUBSYSTEM=="usb", ENV{PRODUCT}=="4e6/e003/*", RUN+="/etc/udev/scripts/gnupg-ccid"
+ACTION=="add", SUBSYSTEM=="usb", ENV{PRODUCT}=="4e6/5115/*", RUN+="/etc/udev/scripts/gnupg-ccid"
