@@ -71,6 +71,7 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
 #+HTML: <div class="logobox">
   [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
   [[https://www.wauland.de][file:logos/whs-logo.png]]
+  [[https://facebook.com][file:logos/facebook-06-2015-blue_x.png]]
 #+HTML: </div>
 
 * Hardware and service donations
