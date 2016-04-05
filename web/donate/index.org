@@ -133,11 +133,11 @@
       <td></td>
       <td>
           In case of payment problems we may want to contact you, thus please
-          enter your mail address.
+          enter your e-mail address.
       </td>
     </tr>
     <tr>
-      <td align="right"><label for="f_mail">Mail:</label></td>
+      <td align="right"><label for="f_mail">E-mail:</label></td>
       <td>
           <input id="f_mail" type="text" size="40" style="width:200px"
                  name="mail"
