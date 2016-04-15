@@ -64,6 +64,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.7.0 released (2016-04-15)
+
+We are pleased to announce the availability of Libgcrypt version
+1.7.0.  This is a new stable version of [[file:related_software/libgcrypt/index.org][Libgcrypt]] with full API and
+ABI compatibiliy to the 1.6 series.  Its main features are new
+algorithms, curves, and performance improvements.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000386.html][{more}]]
+
 ** GnuPG 2.0.30 released (2016-03-31)
 
 GnuPG 2.0.30 is now available.  This release fixes a few minor bugs;
