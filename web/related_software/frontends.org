@@ -29,6 +29,7 @@
    - [[file:swlist.org::#kgpg][KGpg]]
    - [[file:swlist.org::#seahorse][Seahorse]]
    - [[file:swlist.org::#wija][wija]]
+   - [[file:swlist.org::#wingpg][WinGPG]]
    - [[file:swlist.org::#xap][XAP]]
 
 ** MUA frontends

@@ -478,6 +478,16 @@ allow users to encrypt chat and multi-user chat as well as
 encrypting/signing messages and signing presence of the user. It is
 multilingual and runs on GNU/Linux, Mac OS X and Windows.
 
+** [[http://wingpg.com][WinGPG]] [Windows] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: wingpg
+   :END:
+
+WinGPG is a tray-based classical Windows application, Windows NT
+Explorer shell extension, and a classic GPGv2 distribution (it uses
+the cryptography from the official site without making any
+modifications).
+
 ** [[http://freshmeat.net/projects/xap/][XAP]] [Unix] GUI
    :PROPERTIES:
    :CUSTOM_ID: xap
