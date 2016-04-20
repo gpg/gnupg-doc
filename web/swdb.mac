@@ -172,5 +172,11 @@
 #+macro: bzip2_ver     1.0.6-g10
 #+macro: bzip2_sha1_gz 6e38be3377340a21a1f13ff84b5e6adce97cd1d4
 
+#
+# SQLite (mirrored at our server)
+#
+#+macro: sqlite_ver     3120200
+#+macro: sqlite_sha1_gz b43c2e7238e54c50b95fbbd85c48792f4f39af8c
+
 
 # --- end of swdb.mac ---
