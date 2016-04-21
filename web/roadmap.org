@@ -12,9 +12,7 @@
   guaranteed milestones or with fixed release dates.  This page should
   better be viewed as a scratchpad with notes of GnuPG developers.
 
-  The next GnuPG /modern/ release will be 2.1.11 and is planned for
-  early January but may be released sooner in case 2.1.10 shows too
-  many problems.
+  The next GnuPG /modern/ release will be 2.1.12 and it is long overdue.
 
 
 ** All things to do for 2.1
@@ -34,7 +32,7 @@
 
  - Add a status-fd interface for the new Tofu system
 
- - Release Libgcrypt 1.7 so that Curve25519 ECDH will work (see below)
+ - +Release Libgcrypt 1.7 so that Curve25519 ECDH will work (see below)+
 
  - Finish NTBTLS to allow for TLS access to LDAP and HKP on Windows.
 
@@ -53,7 +51,8 @@
 
 ** RFC work
 
- - Push RFC-2440bis forward
+ - The OpenPGP is slowly working on RFC-2440bis.  See
+   git://git.gnupg.org/people/wk/rfc4880.git
 
 
 * Libgcrypt Roadmap
@@ -67,11 +66,10 @@
 
 ** Things to be done for Libgcrypt 1.7
 
-   The next release will be 1.7 with a lot of performance improvements
-   and a few new features. Here are the things we want to have before
-   the 1.7.0 release:
+   The current stable release is 1.7 with a lot of performance improvements
+   and a few new features over 1.6.  Here are the things we have not
+   achieved for 1.7.0:
 
- - +Add OCB mode+
  - Update of the Windows entropy gatherer (rndw32.c)
 
 
@@ -93,6 +91,7 @@
  - Migrate Roundup from Sqlite to Postgres so speed it up.  The
    assumption is that we have more concurrent users which slows all
    things down.
+
 
 ** Hardware
 

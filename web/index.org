@@ -25,7 +25,7 @@ GnuPG comes in three flavours:
 
  - {{{gnupg_ver}}} is the /stable/ version suggested for most users,
 
- - {{{gnupg21_ver}}} is the brand-new /modern/ version with support
+ - {{{gnupg21_ver}}} is the /modern/ version with support
    for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
 
  - and {{{gnupg1_ver}}} is the /classic/ portable version.
