@@ -1,0 +1,145 @@
+# Financial Results for 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: April 21, 2016
+#+Keywords:
+
+** Financial Results for 2015
+
+Having prepared the annual accounts for g10^code GmbH, the legal
+entity employing some of the GnuPG hackers, I can now share a financial
+report.  Please read on if you are interested in how well the donation
+campaign last year worked and how we spend your money.
+
+*** Balance Sheet as of 2015-12-31
+
+    Let us start by looking at the balance sheet, which describes
+    our financial status.  The following table shows the actual
+    [[file:data/g10code-bilanz-2015-pub.pdf][balance sheet]] with a few accounts pooled up.  Note that for
+    display purposes all values have been rounded to a full Euro, and
+    thus there are minor mismatches in the Sums.
+
+    |                           |    <r> |     <r> |       <r> |     <r> |
+    |                           |  Asset |  (2014) | Liability |  (2014) |
+    |---------------------------+--------+---------+-----------+---------|
+    | Tangible assets           |   3880 |   (791) |           |         |
+    | Stock of goods            |      0 |   (122) |           |         |
+    | Cash balance              |    360 |   (469) |           |         |
+    | Bank balance KSD          | 207453 | (34522) |           |         |
+    | PayPal and others balance |   3842 |   (711) |           |         |
+    | Accounts receivable       |   4774 |     (0) |           |         |
+    | Accounts receivable other |    497 | (18408) |           |         |
+    | Common capital stock      |        |         |     25000 | (25000) |
+    | Loss carried forward      |      0 | (23019) |           |         |
+    | Profit carried forward    |        |         |     11338 |     (0) |
+    | Net profit                |        |         |    115350 | (34357) |
+    | Shareholder loans         |        |         |         0 | (10000) |
+    | Accounts payable          |        |         |         0 |  (3510) |
+    | Accounts payable other    |        |         |     27974 |     (0) |
+    | GnuPG development fund    |        |         |        72 |    (72) |
+    | Provision for taxes       |        |         |     41070 |  (5103) |
+    |---------------------------+--------+---------+-----------+---------|
+    | Sums                      | 220804 | (78042) |  (220804) | (78042) |
+
+
+    The /Bank balance KSD/ is the money that we had at the end of the year
+    in our accounts at the local savings bank.  The /PayPal/ row gives
+    the amount of money in the PayPal account and in a Gandi prepaid
+    account.  /Accounts receivable/ are mostly outstanding demands
+    from the Linux Foundation for work done in December.
+
+    From the /Common capital stock/ of 25000 Euro 50% are held by
+    Walter Koch and 50% by Werner Koch, the owners of g10^code.  The
+    /Net profit/ gained in 2014 was back then used to make up for the
+    /Loss carried forward/ in 2014 and the remaining 11000 Euro are
+    set as /Profit carried forward/ to 2015.
+
+    The major part of the /Accounts payable other/ is due to my profit
+    sharing bonus.  The /GnuPG development fund/ is the rest of a
+    campaign which collected prize money for the GnuPG logo.
+
+*** Profit and Loss from 2015-01-01 to 2015-12-31
+
+    Now let us see how much money we earned and how we spent it.  The
+    following table shows the actual [[file:data/g10code-bilanz-2015-pub.pdf][profit and loss sheet]] with a few
+    accounts pooled up.  As above, the values have again been rounded
+    to the nearest Euro.
+
+    |                          |    <r> |     <r> |    <r> |     <r> |
+    |                          |  Debit |  (2014) | Credit |  (2014) |
+    |--------------------------+--------+---------+--------+---------|
+    | Revenues                 |        |         |  57251 | (80435) |
+    | Revenues from donations  |        |         | 283538 |     (0) |
+    | Revenues other           |        |         |    218 |   (163) |
+    | Salaries                 | 108719 | (31800) |        |         |
+    | Social insurance         |  18060 |     (0) |        |         |
+    | Contractors              |  33165 |     (0) |        |         |
+    | Write-offs               |   1532 |  (1656) |        |         |
+    | Connectivity and hosting |   2012 |  (2874) |        |         |
+    | Rents                    |   2681 |  (2653) |        |         |
+    | Interest expenses        |    550 |     (0) |        |         |
+    | Travel expenses          |   3499 |  (1014) |        |         |
+    | Other expenses           |   5169 |  (6244) |        |         |
+    | Donations                |   5100 |     (1) |        |         |
+    | Taxes                    |  45171 |     (0) |        |         |
+    | Net profit               | 115350 | (34357) |        |         |
+    |--------------------------+--------+---------+--------+---------|
+    | Sums                     | 341007 | (80597) | 341007 | (80597) |
+
+# Other expenses are:
+#    | Fachliteratur         |   634 |  664 |
+#    | Stromkosten           |   452 |  592 |
+#    | Bürokosten            |   432 |   84 |
+#    | Porto                 |    29 |      |
+#    | Bankkosten            |   577 |  136 |
+#    | Werbekosten           |  1111 | 3943 |
+#    | Beiträge              |   128 |  128 |
+#    | Instandsetzungskosten |     0 |  250 |
+#    | Konferenzkosten       |   919 |  118 |
+#    | Rechtskosten          |   433 |   33 |
+#    | Sonstige Kosten       |   320 |  238 |
+#    | Forderungsverluste    |   134 |   58 |
+
+    The /Revenues/ are mainly due to funding from the Linux Foundation
+    for 60,000 USD (54,000 EUR).  The /Revenues from donations/ are
+    mainly made up of 100,000 USD from Stripe and Facebook (89,000
+    EUR), 113,000 EUR received via PayPal, and 80,000 EUR via Stripe
+    (credit cards).  Note that in 2014 we posted all donations to the
+    /Revenues/ account and not to a separate donations account.
+
+    As with almost all software companies, the majority of expenses
+    are staff costs (we've hired three programmers).  Not counting
+    taxes, which are due to the annual profit, we have total costs of
+    180,000 EUR with 160,000 spent on /Salaries/, /Social insurance/,
+    and /Contractors/.  My share is 47,400 EUR regular salary of which
+    I need to pay social insurances myself plus a profit sharing bonus
+    of 25000 EUR.  That bonus is exceptionally high due to the huge
+    net profit that we made in 2015; it is very unlikely that a bonus
+    will be due this or next year.
+
+    The /Rents/ are for the room used as an office in my house.  The
+    /Interest/ was paid for a loan that I gave to g10^code in 2012 and
+    which was redeemed in 2015.  /Other expenses/ sums up money spent
+    for magazines, power, office supplies, advertising, conference
+    fees, legal costs, etc.
+
+    Having received a lot of donations I considered it to be fair to
+    put some money (5100 EUR) to support [[https://netzpolitik.org][Netzpolitik.org]], [[https://fsfe.org][FSFE]],
+    [[https://www.kindernothilfe.de][Kindernothilfe]], [[http://www.freundeskreis-fluechtlinge-erkrath.de/][Freundeskreis für Flüchtlinge in Erkrath]],
+    [[https://wikimedia.de][Wikimedia]], and [[https://openmusiccontest.org][OpenMusicContest]].
+
+    Because g10^code GmbH is still not tax exempted we will need to
+    pay about 45,000 /Taxes/ in 2015 on the 115,000 Euro of /Net
+    profit/.  Due to the net loss that we expect for 2016, a tax refund can
+    be expected in 2017.
+
+*** Planning 2016 and 2017
+
+    Along with the paid projects we are currently working on, the two
+    large donations that we are expecting (from Facebook and Stripe),
+    the Linux Foundation grant, and a small stream of individual
+    donations, g10^code will be able to operate with its current staff
+    until the end of 2017.  Obviously, we need a longer term plan.
+    Things are a bit delayed, because the original plan to turn
+    g10^code into a charitable company did not worked out and we need
+    to look into other options before starting a new campaign.
