@@ -1,0 +1,147 @@
+# GnuPG in 2016
+#+STARTUP: showall
+#+AUTHOR: Justus
+#+DATE: May 19th, 2016
+#+Keywords: Presentation
+
+** GnuPG in 2016
+
+This is an overview of what happened in the first half of 2016 in the
+GnuPG project and community.
+
+*** Development
+
+There has been one release of the current stable branch of GnuPG,
+version [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000385.html][2.0.30]].  Our development branch GnuPG modern saw two releases,
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000383.html][2.1.11]], and [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000387.html][2.1.12]].
+
+Among many bugfixes and other improvements GnuPG 2.1.11 added a new
+command ~--export-ssh-key~ that replaces the ~gpgkey2ssh~ tool, and we
+now use the CA certificate of ~hkps.pool.sks-keyservers.net~ to secure
+communications with the servers in the pool without further
+configuration.  Furthermore, we now print a warning if a GnuPG
+component is using an older version of our backend daemons.
+
+2.1.12 brought support for a new experimental "Web Key Directory" key
+location service, read-support for a new private key protection format
+and the new extended private key format, improved Tofu support, use of
+the new libusb 1.0 API, and countless small features and fixes.
+
+
+Daniel Genkin, Lev Pachmanov, Itamar Pipman, and Eran Tromer from the
+Tel Aviv University demonstrated a practical way to extract ECDH keys
+via low-bandwidth electromagnetic attacks on PCs[fn:1].  Libgcrypt
+version 1.6.5 and an updated Windows installer for GnuPG 2.1.11 has
+been [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html][released]] to mitigate this attack.
+
+In April we released a new stable version of Libgcrypt, version [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000386.html][1.7]].
+It retains full API and ABI compatibiliy to the 1.6 series.  Its main
+features are new algorithms, curves, and performance improvements.
+
+
+Andre worked on PGP/MIME support in GpgOL, and the current stable
+version [[http://lists.wald.intevation.org/pipermail/gpg4win-announce/2016-April/000068.html][2.3.1]] of Gpg4win includes an option to enable experimental
+support for sending GPG/MIME and S/MIME.  He also worked on Kleopatra,
+removing some dependencies on KDE components and DBUS, and porting it
+to newer KDE frameworks, making it easier to build, maintain and hack.
+A [[https://wiki.gnupg.org/Gpg4win/Testversions][beta version]] of Gpg4win 3.0.0 has been released featuring the leaner
+Kleopatra with newer KDE libraries.  Andre also worked on registering
+file extensions in Windows integrating encryption and decryption of
+files into the desktop environment, and implementing a 'Show Password'
+feature for the pinentries.
+
+
+Jussi worked on libgcrypt, most notably [[https://lists.gnupg.org/pipermail/gcrypt-devel/2016-January/003671.html][adding]] an ARM assembly
+implementation of SHA-512, and Intel PCMUL implementations for CRC
+algorithms.
+
+
+Justus worked on a new [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-April/031027.html][test framework]] for GnuPG and related projects,
+a new [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-April/031001.html][extensible storage format]] for private keys, [[https://www.libssh.org/archive/libssh/2016-03/0000058.html][implemented]]
+elliptic-curve cryptography in libssh using libgcrypt as backend, and
+triaged and fixed GnuPG bugs.
+
+
+Kai evaluated Mailpile.  As the future of Mozilla Thunderbird - and
+with it Enigmails - is uncertain, we decided to explore alternative
+end-user-friendly mail clients with support for GnuPG.
+
+
+Gniibe worked on GnuPG and libgcrypt.  He ported GnuPG's ~scdaemon~ to
+libusb 1.0, and worked with the team from Tel Aviv University to
+protect libgcrypt against the sidechannel attack.  Gniibe also
+maintains GnuPG-related packages in Debian.  He updated both [[https://tracker.debian.org/pkg/poldi][Poldi]] and
+[[https://tracker.debian.org/pkg/scute][Scute]].  Gniibe designs and sells the FST-1, a small microcontroller
+that depending on the firmware either acts as an OpenPGP smart card or
+a hardware random number generator.  As the stock is running low and
+some components cannot be sourced any longer, he is [[http://www.gniibe.org/memo/development/fs-bb48/fs-bb48-idea.html][working]] on the
+successor featuring a simpler design, a button, and support for
+elliptic curve cryptography.
+
+*** Press
+
+Werner received the [[https://www.fsf.org/news/library-freedom-project-and-werner-koch-are-2015-free-software-awards-winners][Award for the Advancement of Free Software]] for his
+work on GnuPG.
+
+*** Discussions
+
+Andre [[http://lists.gnupg.org/pipermail/gnupg-users/2016-January/054943.html][asked]] how to obtain a key in a format suitable for SSH's
+~authorized_keys~ file from an OpenPGP public certificate now that
+~gpgkey2ssh~ has been deprecated.  The discussion was [[https://bugs.gnupg.org/gnupg/issue2212][taken to the bug
+tracker]], and a solution released with GnuPG 2.1.11.
+
+Lachlan J. Gunn, Andrew Allison, and Derek Abbott wrote a paper about
+how Tor can be used to detect malicious key servers[fn:2].  The
+[[http://lists.gnupg.org/pipermail/gnupg-users/2016-February/055326.html][announcement]] contains more information including a link to their
+implementation.
+
+Daniel [[https://lists.gnupg.org/pipermail/gnupg-users/2016-April/055819.html][reported]] that there have been discussions on building a Live-CD
+for securely managing OpenPGP master keys and smart cards over at
+debian-devel, and he asked if anyone knows about such an effort, or
+has comments on his proposal.  The discussion went into all kinds of
+directions, but the consensus was that this is a useful idea.
+
+Bernhard [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-May/031042.html][wrote]] about work being done for the EasyGpg2016 project.
+They produced [[https://wiki.gnupg.org/EasyGpg2016/VisionAndStories][user archetypes and stories]] that should guide the
+refinement of GnuPG and related tools, and a [[https://wiki.gnupg.org/EasyGpg2016/CertDistributionConcept][key distribution concept]].
+
+*** Donations
+
+We received this year until now about 90 donations summing up to 3000
+Euro.  Thanks for that help.  Sure, that is not enough to pay our
+costs, but fortunately we still have enough money in our accounts to
+keep bread, water, and beer on our tables for this year and somewhat
+longer.  We will eventually run a new donation campaign, though.
+
+It is probably less know that that we offer SEPA payments which can be
+used for recurring donations.  We have not received many payments
+through SEPA yet and thus this method is only semi-automated and the
+cause for delays between a donation and a confirmation mail.  There is
+an obvious way to make us automate this ;-)
+
+Lastly, let us confirm that we were meanwhile able to clarify our
+perceived problem with the Facebook donation promise.  This was all
+due to an unfortunate misunderstanding between us.  Facebook will keep
+on supporting GnuPG in 2016 with a donation of 50000 USD.
+
+** About this news posting
+
+We try to write a news posting each month (though we must admit that
+we slipped a little in 2016).  However, other work may have a higher
+priority (e.g. security fixes) and thus there is no promise for a
+fixed publication date.  If you have an interesting topic for a news
+posting, please send it to us.  A regular summary of the mailing list
+discussions would make a nice column on this news.
+
+* Footnotes
+
+[fn:1] Daniel Genkin, Lev Pachmanov, Itamar Pipman, Eran Tromer, ECDH
+       key-extraction via low-bandwidth electromagnetic attacks on
+       PCs, proc. RSA Conference Cryptographers' Track (CT-RSA) 2016,
+       LNCS 9610, 219-235, Springer, 2016,
+       https://www.cs.tau.ac.il/~tromer/ecdh/
+
+[fn:2] Lachlan J. Gunn, Andrew Allison, Derek Abbott, Verifying public
+       keys without trust: How anonymity can guarantee data integrity,
+       arXiv preprint arXiv:1602.03316, 2016,
+       http://arxiv.org/pdf/1602.03316v1.pdf
