@@ -157,6 +157,15 @@ We have meanwhile received unofficial information that Facebook did
 not rescinded their support pledge.  We are waiting for an official
 comment and will report on that then.
 
+** Update 2016-04-27
+
+With the help of the friendly Facebook folks we were meanwhile able to
+clarify our perceived problem with their donation promise.  It was all
+due to an unfortunate misunderstanding between us.  Facebook will
+keep on supporting GnuPG in 2016 with a donation of 50000 USD.
+
+This support greatly helps us to pay our developers who are busy
+working on improving GnuPG and the global encryption infrastructure.
 
 ** About this news posting
 
