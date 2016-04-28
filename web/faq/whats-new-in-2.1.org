@@ -376,7 +376,7 @@ pub  rsa2048/BD19AC1C
 
 In case the key has already been signed, the command prints a note and
 exits with success.  In case you want to check that it really worked,
-use ==--check-sigs= as usual:
+use =--check-sigs= as usual:
 
 #+begin_example
 $ gpg2 --check-sigs  '15CB 723E 2000 A1A8 2505  F3B7 CC00 B501 BD19 AC1C'
@@ -515,13 +515,13 @@ For load balancing reasons, keyservers are organized in pools to
 enable instant round-robin DNS assignment of random keyservers.  A
 problem with that approach is that the DNS resolver is not aware of
 the state of the keyserver.  If a keyserver has gone down or a routing
-problems occurs, /gpg/ and its keyserver helpers were not ware of it
+problems occurs, /gpg/ and its keyserver helpers were not aware of it
 and would try over and over to use the same, dead, keyserver up until
 the DNS information expires and a the DNS resolver assigned a new
 server from the pool.
 
 The new /dirmngr/ in GnuPG does not use the implicit round-robin of
-the DNS resolver but uses its own DNS look up and keeps an internal
+the DNS resolver but uses its own DNS lookup and keeps an internal
 table of all hosts from the pool along with the encountered aliveness
 state.  Thus after a failure (timeout) of a request, /dirmngr/ flags a
 host as dead and randomly selects another one from the pool.  After a
@@ -607,12 +607,12 @@ revocation certificate are put at the top of the file.
 :END:
 
 The /scdaemon/, which is responsible for accessing smardcards and
-other tokens, has received many updates.  In particular plugable USB
+other tokens, has received many updates.  In particular pluggable USB
 readers with a fixed card now work smoothless and similar to standard
 readers.  The latest features of the [[http://www.fsij.org/doc-gnuk/][gnuk]] token are supported.  Code
 for the SmartCard-HSM has been added.  More card readers with a PIN
 pad are supported.  The internal CCID driver does now also work with
-certain non-auto configuration equipped readers.
+certain non-auto-configuration equipped readers.
 
 ** New format for key listings
 :PROPERTIES:
@@ -643,7 +643,7 @@ that is =show-uid-validity= is implicitly used for the
 
 The annotated key listing produced by the =--with-colons= options did
 not change.  However a couple of new fields have been added, for
-example if the new option =--with-secret-= is used the “S/N of a token
+example if the new option =--with-secret= is used the “S/N of a token
 field” indicates the presence of a secret key even in a public key
 listing.  This option is supported by recent [[https://gnupg.org/related_software/gpgme/][GPGME]] versions and makes
 writing of key manager software easier.
@@ -682,7 +682,7 @@ menu of /gpgsm/.
 In batch mode the certificate creation dialog can now be controlled by
 a parameter file with several new keywords.  Such a parameter file
 allows the creation of arbitrary X.509 certificates similar to what
-can be done with /openssl/.  It may this be used as the base for a CA
+can be done with /openssl/.  It may thus be used as the base for a CA
 software.  For details see the “CSR and certificate creation” section
 in the manual.
 
