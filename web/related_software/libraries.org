@@ -12,10 +12,10 @@
 
 ** Libraries required to build GnuPG
 
-  The libraries are requred to build currenrt GnUPG versions but may
-  also be used on its onw.  They are maintained by the GnuPG Project.
+  The libraries are required to build current GnuPG versions but may
+  also be used on their own.  They are maintained by the GnuPG Project.
 
-   -  [[file:libgpg-error/index.org][Libgpg-error]] :: Libgpg-error is helper library used by a couple
+   -  [[file:libgpg-error/index.org][Libgpg-error]] :: Libgpg-error is a helper library used by a couple
                       of other projects to provide a common set of
                       error codes and descriptions.
    -  [[file:libgcrypt/index.org][Libgcrypt]] :: Libgcrypt is a general purpose cryptographic
