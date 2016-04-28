@@ -7,7 +7,7 @@
   Our bug tracking system can be found at [[https://bugs.gnupg.org/gnupg/index][bugs.gnupg.org]]. Please,
   query the database before you create a new bug report. You need to
   create an account to file a bug or edit existing bugs. See the
-  [[http://bugs.gnupg.org/index.html#intro][Introduction to the BTS]].  Bug reports need to be written in English
+  [[https://bugs.gnupg.org/index.html#intro][Introduction to the BTS]].  Bug reports need to be written in English
 
   If you can fix one of these bugs/limitations, we will certainly be
   glad to receive a patch via the gnupg-devel mailing list.  If the
