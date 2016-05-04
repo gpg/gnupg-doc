@@ -23,16 +23,18 @@ be freely used, modified and distributed under the terms of the
 
 GnuPG comes in three flavours:
 
- - {{{gnupg_ver}}} is the /stable/ version suggested for most users,
-
  - {{{gnupg21_ver}}} is the /modern/ version with support
    for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
+
+ - {{{gnupg_ver}}} is the /stable/ version which is currently mostly
+   used.
 
  - and {{{gnupg1_ver}}} is the /classic/ portable version.
 
 Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
 nicely integrated into an installer and features several frontends as
-well as English and German manuals.
+well as English and German manuals.  A simple Windows installer for the
+/modern/ version is available at our [[file:download/index.org][download]] page.
 
 * Reconquer your privacy
 
@@ -63,6 +65,11 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** GnuPG 2.1.12 released (2016-05-04)
+
+A new version of the /modern/ branch of GnuPG has been released.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000387.html][announcement mail]] for details.
 
 ** Libgcrypt 1.7.0 released (2016-04-15)
 

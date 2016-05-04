@@ -36,7 +36,7 @@ Options:
         --verbose  Run in verbose mode
         --test     Run in test environment
 EOF
-    exit $1
+    exit "$1"
 }
 
 
@@ -179,7 +179,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
    fi
    [ $verbose = yes ] && echo "processing $file" >&2
    [ -f "$file.tmp" ] && rm "$file.tmp"
-   awk -F: -v year=$year -v donors="$donors" -v dontable="$dontable" \
+   awk -F: -v year="$year" -v donors="$donors" -v dontable="$dontable" \
            -v monyear="$monyear" -v thisyear="$thisyear" \
            -v euro="$euro" -v euroyr="$euroyr" \
            -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \

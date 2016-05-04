@@ -20,7 +20,7 @@ Options:
         --verbose  Run in verbose mode
         --test     Run in test environment
 EOF
-    exit $1
+    exit "$1"
 }
 
 
