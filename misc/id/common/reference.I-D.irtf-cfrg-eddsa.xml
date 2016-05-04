@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.irtf-cfrg-eddsa'>
+<front>
+<title>Edwards-curve Digital Signature Algorithm (EdDSA)</title>
+
+<author initials='S' surname='Josefsson' fullname='Simon Josefsson'>
+    <organization />
+</author>
+
+<author initials='I' surname='Liusvaara' fullname='Ilari Liusvaara'>
+    <organization />
+</author>
+
+<date month='January' day='19' year='2016' />
+
+<abstract><t>The elliptic curve signature scheme Edwards-curve Digital Signature Algorithm (EdDSA) is described.  The algorithm is instantiated with recommended parameters for the Curve25519 and Curve448 curves.  An example implementation and test vectors are provided.</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-irtf-cfrg-eddsa-02' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-irtf-cfrg-eddsa-02.txt' />
+</reference>

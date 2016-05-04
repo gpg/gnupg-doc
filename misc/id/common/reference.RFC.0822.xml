@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC0822' target='http://www.rfc-editor.org/info/rfc822'>
+<front>
+<title>STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES</title>
+<author initials='D.' surname='Crocker' fullname='D. Crocker'><organization /></author>
+<date year='1982' month='August' />
+<abstract><t>This document revises the specifications in RFC 733, in order to serve the needs of the larger and more complex ARPA Internet.  Some of RFC 733's features failed to gain adequate acceptance.  In order to simplify the standard and the software that follows it, these features have been removed.  A different addressing scheme is used, to handle the case of internetwork mail; and the concept of re-transmission has been introduced.  Obsoletes RFC 733, NIC 41952.</t></abstract>
+</front>
+<seriesInfo name='STD' value='11'/>
+<seriesInfo name='RFC' value='822'/>
+<seriesInfo name='DOI' value='10.17487/RFC0822'/>
+</reference>

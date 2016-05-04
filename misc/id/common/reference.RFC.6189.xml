@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference  anchor='RFC6189' target='http://www.rfc-editor.org/info/rfc6189'>
+<front>
+<title>ZRTP: Media Path Key Agreement for Unicast Secure RTP</title>
+<author initials='P.' surname='Zimmermann' fullname='P. Zimmermann'><organization /></author>
+<author initials='A.' surname='Johnston' fullname='A. Johnston' role='editor'><organization /></author>
+<author initials='J.' surname='Callas' fullname='J. Callas'><organization /></author>
+<date year='2011' month='April' />
+<abstract><t>This document defines ZRTP, a protocol for media path Diffie-Hellman exchange to agree on a session key and parameters for establishing unicast Secure Real-time Transport Protocol (SRTP) sessions for Voice over IP (VoIP) applications.  The ZRTP protocol is media path keying because it is multiplexed on the same port as RTP and does not require support in the signaling protocol.  ZRTP does not assume a Public Key Infrastructure (PKI) or require the complexity of certificates in end devices.  For the media session, ZRTP provides confidentiality, protection against man-in-the-middle (MiTM) attacks, and, in cases where the signaling protocol provides end-to-end integrity protection, authentication.  ZRTP can utilize a Session Description Protocol (SDP) attribute to provide discovery and authentication through the signaling channel.  To provide best effort SRTP, ZRTP utilizes normal RTP/AVP (Audio-Visual Profile) profiles. ZRTP secures media sessions that include a voice media stream and can also secure media sessions that do not include voice by using an optional digital signature.  This document is not an Internet  Standards Track specification; it is published for informational purposes.</t></abstract>
+</front>
+<seriesInfo name='RFC' value='6189'/>
+<seriesInfo name='DOI' value='10.17487/RFC6189'/>
+</reference>

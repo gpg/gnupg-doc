@@ -6,7 +6,7 @@ Elliptic Curve Cryptography and specifies the ECDSA and ECDH
 algorithms.  Due to patent reasons no point compression was defined.
 
 This document specifies how to use the EdDSA public key signature
-algorithm [](#I-D.josefsson-eddsa-ed25519) with the OpenPGP standard.
+algorithm [](#I-D.irtf-cfrg-eddsa) with the OpenPGP standard.
 It defines a new signature algorithm named EdDSA and specifies how to
 use the Ed25519 curve with EdDSA.  This algorithm uses a custom point
 compression method.  There are three main advantages of the EdDSA
@@ -22,9 +22,9 @@ document are to be interpreted as described in [](#RFC2119).
 # Supported Curves
 
 This document references the Curve "Ed25519" which is the Edwards form
-of "Curve25519" and specified in the same paper as the "EdDSA"
-algorithm ([](#ED25519)).  For the full specification see
-[](#I-D.josefsson-eddsa-ed25519).
+of "Curve25519" ([](#RFC7748)) and originally specified in the same
+paper as the "EdDSA" algorithm ([](#ED25519)).  For the full
+specification see [](#I-D.irtf-cfrg-eddsa).
 
 Other curves may be used by using a specific OID for the curve and its
 EdDSA parameters.
@@ -95,7 +95,7 @@ Algorithm-Specific Fields for an EdDSA signature are:
      - MPI of EdDSA value s.
 
 Note that the compressed version of R and S as specified for EdDSA
-([](#I-D.josefsson-eddsa-ed25519)) is used.
+([](#I-D.irtf-cfrg-eddsa)) is used.
 
 The version 3 signature format MUST NOT be used with EdDSA.
 

@@ -8,9 +8,10 @@
   <!ENTITY rfc.4880       PUBLIC '' '../common/reference.RFC.4880.xml'>
   <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
   <!ENTITY rfc.6637       PUBLIC '' '../common/reference.RFC.6637.xml'>
+  <!ENTITY rfc.7748       PUBLIC '' '../common/reference.RFC.7748.xml'>
   <!ENTITY ed25519        PUBLIC '' '../common/reference.ED25519.xml'>
-  <!ENTITY eddsaed25519
-           PUBLIC '' '../common/reference.I-D.josefsson-eddsa-ed25519.xml'>
+  <!ENTITY eddsa
+           PUBLIC '' '../common/reference.I-D.irtf-cfrg-eddsa.xml'>
 
 ]>
 
@@ -36,7 +37,7 @@
       </address>
     </author>
 
-    <date month="Foo" year="2015" />
+    <date month="February" year="2016" />
     <area>Security</area>
 
     <abstract>
@@ -50,7 +51,7 @@
 
   <back>
     <references title="Normative References">
-      &eddsaed25519;
+      &eddsa;
       &rfc.4880;
       &rfc.6637;
       &rfc.5226;
@@ -58,6 +59,7 @@
     </references>
     <references title="Informative References">
       &ed25519;
+      &rfc.7748;
     </references>
     &pandocBack;
   </back>

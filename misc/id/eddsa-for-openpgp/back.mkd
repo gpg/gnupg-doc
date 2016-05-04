@@ -74,4 +74,4 @@ other values might also be interesting for other ECC specifications:
 
 # Changes since -03
 
-  - xxxx
+  - Changed reference for EdDSA to CFRG draft.
