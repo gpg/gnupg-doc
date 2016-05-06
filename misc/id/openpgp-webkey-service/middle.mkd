@@ -93,10 +93,10 @@ may be revoked or expired - it is up to the client to handle such
 conditions.  The server MUST also accept a HEAD method so that a
 client may only check for the existence of a key.
 
-The server SHOULD return "application/pgp-key" as the content-type for
-the data but clients MUST also accept "application/octet-string" as
-content-type.  The server MUST NOT return an ASCII armored version of
-the key.
+The server SHOULD return "application/octet-string" as the
+content-type for the data but clients MAY also accept any other
+appropriate content-type.  The server MUST NOT return an ASCII armored
+version of the key.
 
 
 # Web Key Directory Update Protocol
@@ -119,10 +119,8 @@ Directory, she performs the following steps:
       https://example.org/.well-known/openpgpkey/submission-address
 
 2. She sends her key using SMTP (or any other transport mechanism) to
-   the provider using the submission address.  The content-type SHOULD
-   be "application/pgp-key" and the key being a binary attachment
-   (which is then likely base64 encoded).  Note that the OpenPGP ASCII
-   armor is not used.
+   the provider using the submission address and key format as
+   specified by PGP/MIME.
 
 3. The provider checks that the received key has a User ID which
     - matches an account name of the provider,
