@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
+  <!ENTITY pandocAbstract PUBLIC '' 'abstract.xml'>
+  <!ENTITY pandocMiddle   PUBLIC '' 'middle.xml'>
+  <!ENTITY pandocBack     PUBLIC '' 'back.xml'>
+  <!ENTITY rfc.0822       PUBLIC '' '../common/reference.RFC.0822.xml'>
+  <!ENTITY rfc.2119       PUBLIC '' '../common/reference.RFC.2119.xml'>
+  <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
+  <!ENTITY rfc.4880       PUBLIC '' '../common/reference.RFC.4880.xml'>
+  <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
+  <!ENTITY rfc.5785       PUBLIC '' '../common/reference.RFC.5785.xml'>
+  <!ENTITY rfc.6189       PUBLIC '' '../common/reference.RFC.6189.xml'>
+]>
+
+<rfc ipr="trust200902" category="info"
+     docName="draft-koch-openpgp-webkey-service-00">
+
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="no"?>
+<?rfc compact="yes"?>
+<?rfc comments="yes"?>
+
+
+  <front>
+    <title>OpenPGP Web Key Service</title>
+    <author initials="W." surname="Koch"
+            fullname="Werner Koch">
+      <organization>GnuPG Project</organization>
+      <address>
+        <email>wk@gnupg.org</email>
+        <uri>https://gnupg.org</uri>
+      </address>
+    </author>
+
+    <date month="May" year="2016" />
+    <area>Security</area>
+
+    <abstract>
+      &pandocAbstract;
+    </abstract>
+  </front>
+
+  <middle>
+    &pandocMiddle;
+  </middle>
+
+  <back>
+    <references title="Normative References">
+      &rfc.2119;
+      &rfc.3156;
+      &rfc.4880;
+      &rfc.5226;
+      &rfc.5785;
+      &rfc.0822;
+      &rfc.6189;
+    </references>
+    &pandocBack;
+  </back>
+</rfc>

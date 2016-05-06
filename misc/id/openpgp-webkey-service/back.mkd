@@ -1,0 +1,23 @@
+# Test Vectors
+
+For help implementing this specification a non-normative example is
+given:
+
+## Sample key
+
+  TODO
+
+## Software Notes
+
+   GnuPG supports the key discovery described in this document since
+   version 2.1.12.  To use it, the new method "wkd" needs to be used
+   with the --auto-key-locate option.
+
+# Changes
+
+  - This is the initial draft.
+
+## TODO
+
+  - What about authenticated submission?
+  - Describe how to handle a key with several User IDs.
