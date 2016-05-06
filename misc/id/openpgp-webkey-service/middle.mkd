@@ -186,7 +186,7 @@ section 11.1.
 If the mail provider has published an encryption key for the
 submission-address in the Web Key Directory, the key to be published
 MUST be submitted using a PGP/MIME encrypted message ([](#RFC3156),
-section 4).  The message MUST not be signed (because the
+section 4).  The message MUST NOT be signed (because the
 authenticity of the signing key has not yet been confirmed).  After
 decryption of the message at the mail provider a single
 "application/pgp-keys" part, as specified above, is expected.
@@ -255,7 +255,7 @@ A response to a confirmation request MUST only be send in the positive
 case; there is no negative confirmation response.  A mail service
 provider is expected to cancel a pending key submission after a
 suitable time without a confirmation.  The mail service provider
-SHOULD not retry the sending of a confirmation request after the first
+SHOULD NOT retry the sending of a confirmation request after the first
 request has been send successfully.
 
 The user MUST send the confirmation response from her target mail

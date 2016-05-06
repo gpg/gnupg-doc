@@ -3,7 +3,6 @@
   <!ENTITY pandocAbstract PUBLIC '' 'abstract.xml'>
   <!ENTITY pandocMiddle   PUBLIC '' 'middle.xml'>
   <!ENTITY pandocBack     PUBLIC '' 'back.xml'>
-  <!ENTITY rfc.0822       PUBLIC '' '../common/reference.RFC.0822.xml'>
   <!ENTITY rfc.2119       PUBLIC '' '../common/reference.RFC.2119.xml'>
   <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
   <!ENTITY rfc.4880       PUBLIC '' '../common/reference.RFC.4880.xml'>
@@ -51,9 +50,7 @@
       &rfc.2119;
       &rfc.3156;
       &rfc.4880;
-      &rfc.5226;
       &rfc.5785;
-      &rfc.0822;
       &rfc.6189;
     </references>
     &pandocBack;
