@@ -1,7 +1,7 @@
 # Introduction
 
 This memo describes a method to associate OpenPGP keys with a mail
-address and now to look them up using a web service with a well-known
+address and how to look them up using a web service with a well-known
 URI.  In addition a mail based protocol is given to allow a client to
 setup such an association and to maintain it.
 
@@ -32,7 +32,7 @@ due to the use of a wrong key.
 
 Methods to overcome this problem are
 
- - sending an initial unencrypted messages with the public key
+ - sending an initial unencrypted message with the public key
    attached,
  - using the OpenPGP DANE protocol to lookup the recipients key via
    the DNS.
@@ -48,7 +48,7 @@ Thus an update of the DNS resource records needs to be delegated
 to the ISP running the DNS service.  Further, DNS lookups are not
 encrypted and missing all confidentially.  Even if the participating
 MUAs are using STARTTLS to encrypt the mail exchange, a DNS lookup for
-the key unnecessary identifies the local-part of the recipients mail
+the key unnecessarily identifies the local-part of the recipients mail
 address to any passive eavesdroppers.
 
 This memo specified a new method for key discovery using an encrypted
