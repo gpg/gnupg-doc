@@ -13,9 +13,11 @@ given:
    version 2.1.12.  To use it, the new method "wkd" needs to be used
    with the --auto-key-locate option.
 
-# Changes
+# Changes since -00
 
-  - This is the initial draft.
+  - Changed field names in the request and response format.
+  - Removed useless checks.
+  - Added a new policy flag.
 
 ## TODO
 

@@ -123,8 +123,7 @@ Directory, she performs the following steps:
    specified by PGP/MIME.
 
 3. The provider checks that the received key has a User ID which
-    - matches an account name of the provider,
-    - and that the from address matches that account.
+   matches an account name of the provider.
 
 4. The provider sends an encrypted message containing a nonce and the
    fingerprint of the key to the mail account of the user.  Note that
@@ -211,15 +210,15 @@ specified order:
 "type"
   : The value must be "confirmation-request".
 
-"from"
+"sender"
   : This is the mailbox the user is expected to sent the confirmation
-    response to.  The value must match the mailbox part of the
-    "From:" address of this request.
+    response to.  The value must match the mailbox part of the "From:"
+    address of this request.  Exactly one address MUST be given.
 
 "address"
   : The value is the addr-spec part of the target key's mail address.
     The value SHOULD match the addr-spec part of the recipient's
-    address.  The value MUST be be UTF-8 encoded as required for an
+    address.  The value MUST be UTF-8 encoded as required for an
     OpenPGP User ID.
 
 "fingerprint"
@@ -271,9 +270,9 @@ name-value pairs in this order:
 "type"
   : The value must be "confirmation-response".
 
-"from"
+"sender"
   : The value must match the mailbox part of the "From:" address of
-    this response.
+    this response.  Exactly one address MUST be given.
 
 "nonce"
   : The value is the value of the "nonce" parameter from the
@@ -301,6 +300,11 @@ Currently defined keywords are:
   : The mail server provider does only accept keys with only a mailbox
     in the User ID.  In particular User IDs with a real name in
     addition to the mailbox will be rejected as invalid.
+
+"dane-onlY
+  : The mail server provider does not run a Web Key Directory but only
+    an OpenPGP DANE service.  The Web Key Directory Update protocol is
+    used to update the keys for the DANE service.
 
 More keywords will be defined in updates to this I-D.  There is no
 registry yet except for this document.  For experimental use of new
