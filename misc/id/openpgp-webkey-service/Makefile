@@ -1,0 +1,25 @@
+
+MD_EXAMPLE_FIX = '(defun org-md-example-block (example-block contents info) \
+"with fixed indentation" \
+(replace-regexp-in-string \
+"^" "      " \
+(org-remove-indentation \
+ (org-export-format-code-default example-block info))))'
+
+
+draft.txt: draft.org
+	emacs --batch \
+           --eval "(require 'org)" \
+           --eval "(require 'ox-md)" \
+           --eval $(MD_EXAMPLE_FIX)  \
+           --visit "draft.org" \
+           --eval "(org-md-export-to-markdown)"
+	sed <draft.md  -n '/^# Abstract/q;1,$$ p' >template.xml
+	sed <draft.md  -n '/^# Abstract/,/^# Middle/p' | \
+		sed  '1 d;$$ d' >tmp-abstract.md
+	sed <draft.md  -n '/^# Middle/,/^# Back/p' | \
+		sed  '1 d;$$ d' >tmp-middle.md
+	sed <draft.md  -n '/^# Back/,$$ p' | \
+		sed  '1 d'     >tmp-back.md
+	pandoc2rfc tmp-abstract.md tmp-middle.md tmp-back.md
+	rm template.xml tmp-abstract.md tmp-middle.md tmp-back.md
