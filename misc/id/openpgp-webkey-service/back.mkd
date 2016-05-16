@@ -18,6 +18,7 @@ given:
   - Changed field names in the request and response format.
   - Removed useless checks.
   - Added a new policy flag.
+  - Dropped the second occurrence of the domain name from the URL.
 
 ## TODO
 

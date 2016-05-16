@@ -76,13 +76,13 @@ resulting 160 bit digest is encoded using the Z-Base-32 method as
 described in [](#RFC6189), section 5.1.6.  The resulting string has a
 fixed length of 32 octets.  To form the URI, the scheme "https://" is
 concatenated with the mapped "domain-part", the fixed string
-"./well-known/openpgpkey/hu/", the "domain-part" again, and the above
-constructed 32 octet string.
+"./well-known/openpgpkey/hu/", and the above constructed 32 octet
+string.
 
 For example the URI to lookup the key for Joe.Doe@Example.ORG is:
 
       https://example.org/.well-known/openpgpkey/
-      hu/example.org/iy9q119eutrkn8s1mk4r39qejnbu3n5q
+      hu/iy9q119eutrkn8s1mk4r39qejnbu3n5q
 
 (line has been wrapped for rendering purposes)
 
@@ -336,3 +336,10 @@ registry as defined by [](#RFC5785):
   Change controller: IETF
 
   Specification document: This
+
+
+# Acknowledgments
+
+The author would like to acknowledge the help of the individuals who
+kindly voiced their opinions on the GnuPG mailing lists, in
+particular, the help of Bernhard Reiter and Guilhem Moulin.
