@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-00">
+     docName="draft-koch-openpgp-webkey-service-01">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -429,16 +429,17 @@ TODO
 
 ** Software Notes
 
-GnuPG supports the key discovery described in this document since
-version 2.1.12. To use it, the new method "wkd" needs to be used with
-the =--auto-key-locate= option.
+GnuPG supports the key discovery described in version -00 of this
+document since version 2.1.12, 2.1.13 and the gurrent git version will
+be adjusted to the changes specs dfescribed in -01.  To use it, the
+new method "wkd" needs to be used with the =--auto-key-locate= option.
 
 * Changes since -00
 
+-  Dropped the second occurrence of the domain name from the URL.
 -  Changed field names in the request and response format.
 -  Removed useless checks.
 -  Added a new policy flag.
--  Dropped the second occurrence of the domain name from the URL.
 
 ** TODO
 

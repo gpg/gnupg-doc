@@ -7,7 +7,7 @@ MD_EXAMPLE_FIX = '(defun org-md-example-block (example-block contents info) \
  (org-export-format-code-default example-block info))))'
 
 
-draft.txt: draft.org
+draft.txt, draft.xml: draft.org
 	emacs --batch \
            --eval "(require 'org)" \
            --eval "(require 'ox-md)" \
@@ -22,4 +22,5 @@ draft.txt: draft.org
 	sed <draft.md  -n '/^# Back/,$$ p' | \
 		sed  '1 d'     >tmp-back.md
 	pandoc2rfc tmp-abstract.md tmp-middle.md tmp-back.md
-	rm template.xml tmp-abstract.md tmp-middle.md tmp-back.md
+	pandoc2rfc -X tmp-abstract.md tmp-middle.md tmp-back.md
+	rm template.xml tmp-abstract.md tmp-middle.md tmp-back.md draft.md
