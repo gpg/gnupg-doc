@@ -202,7 +202,6 @@ div.entry-qotd {
 #header a.logo:hover img {
     background: transparent;
     opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
 }
 #header a,
 #header a:hover {
@@ -577,6 +576,21 @@ td.wideright  {
 }
 
 
+/* Footnotes for org-mode.  */
+
+h2.footnotes {
+    font-size: 100%;
+}
+
+#footnotes {
+    font-size: 75%;
+}
+
+.footnum {
+  font-size: 1em;
+  float: left;
+}
+
 /* Tag cloudlist.  */
 
 #tagcloudlist ul {
@@ -639,7 +653,7 @@ td.wideright  {
 
 .footerbox p {
     margin-top: 0px;
-    margin-bottom 0px;
+    margin-bottom: 0px;
     clear: both;
 }
 
