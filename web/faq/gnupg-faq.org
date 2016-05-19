@@ -247,7 +247,7 @@ A convenient Windows installer is available from [[http://www.gpg4win.org][GPG4W
 
 The [[http://www.gpgtools.org][GPGtools project]] has everything needed to get started.
 However, GPGTools only offers GnuPG 2.0; if you want the latest-and-greatest 2.1, look
-at Patrick Brunschwig’s [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X] project
+at Patrick Brunschwig’s [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project
 on SourceForge.
 
 
