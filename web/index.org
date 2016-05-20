@@ -66,6 +66,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** First OpenPGP conference (2016-05-20)
+
+If you are a user or implementer of OpenPGP related software, you may
+join us at [[https://gnupg.org/conf/][OpenPGP.conf]] in Cologne on September 8 and 9, 2016.
+
 ** GnuPG 2.1.12 released (2016-05-04)
 
 A new version of the /modern/ branch of GnuPG has been released.
