@@ -36,17 +36,29 @@ nicely integrated into an installer and features several frontends as
 well as English and German manuals.  A simple Windows installer for the
 /modern/ version is available at our [[file:download/index.org][download]] page.
 
-* Reconquer your privacy
+# * Reconquer your privacy
+#
+# Even if you have nothing to hide, using encryption helps protect the
+# privacy of people you communicate with, and makes life difficult for
+# bulk surveillance systems. If you do have something important to hide,
+# you are in good company; GnuPG is one of the tools that Edward Snowden
+# used to uncover the secrets of the NSA.
+#
+# Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
+# should use GnuPG for your electronic communication.  If you need
+# printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
 
-Even if you have nothing to hide, using encryption helps protect the
-privacy of people you communicate with, and makes life difficult for
-bulk surveillance systems. If you do have something important to hide,
-you are in good company; GnuPG is one of the tools that Edward Snowden
-used to uncover his secrets about the NSA.
 
-Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
-should use GnuPG for your electronic communication.  If you need
-printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
+* Join us for the first OpenPGP conference
+
+#+html: <a href="/conf/index.html"><img style="margin: 0 auto; display: block;" src="/conf/images/openpgp-conf.png" alt="Logo: OpenPGP.conf" /></a>
+
+[[https://www.gnupg.org/conf/index.html][OpenPGP.conf]] is a conference for users and implementers of the OpenPGP
+protocol, which is at the core of GnuPG.  We meet in Cologne on
+September 8 and 9.  [[https://www.gnupg.org/conf/index.html][OpenPGP.conf]] is a place to meet, discuss, and
+learn about latest developments of GnuPG and other OpenPGP aware
+applications and what technical measures can be deployed to repel the
+ever increasing trend to mass surveillance.
 
 
 * News
