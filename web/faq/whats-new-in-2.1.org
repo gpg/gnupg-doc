@@ -412,7 +412,23 @@ uid               [ unknown] Sample 2 <me@example.org>
 uid               [ unknown] EdDSA sample key 1
 #+end_example
 
+Since version 2.1.13 another subkey can directly be added to an
+existing key:
 
+#+begin_example
+$ gpg --quick-addkey 15CB723E2000A1A82505F3B7CC00B501BD19AC1C - - 2016-12-31
+$ gpg -k 15CB723E2000A1A82505F3B7CC00B501BD19AC1C
+pub   rsa2048 2014-11-04 [SC]
+      15CB723E2000A1A82505F3B7CC00B501BD19AC1C
+uid           [ unknown] Daniel Ellsberg <ellsberg@example.org>
+sub   rsa2048 2014-11-04 [E]
+sub   rsa2048 2016-06-06 [E] [expires: 2016-12-31]
+#+end_example
+
+Here we created another encryption subkey with an expiration date.
+The key listing also shows the default key listing format introduced
+with 2.1.13.  There are a lot of other options to the =--quick-addkey=
+command which are described in the manual.
 
 ** Improved Pinentry support
 :PROPERTIES:
@@ -629,13 +645,21 @@ the name of the curve:
 
 #+begin_example
 pub   2048D/1E42B367 2007-12-31 [expires: 2018-12-31]
-pub   dsa2048/1E42B367 2007-12-31 [expires: 2018-12-31]
-pub   ed25519/0AA914C9 2014-10-18
+
+pub   dsa2048 2007-12-31 [SC] [expires: 2018-12-31]
+      80615870F5BAD690333686D0F2AD85AC1E42B367
+
+pub   ed25519 2014-10-18 [SC]
+      0B7F0C1D690BC440D5AFF9B56902F00A0AA914C9
 #+end_example
 
-The first two lines show the same key in the old format and in the new
-format.  The third line shows an example of an ECC key using the
-ed25519 curve.
+The first two "pub"-items show the same key in the old format and in
+the new format.  The third "pub"-item shows an example of an ECC key
+using an ed25519 curve.  Note that since version 2.1.13 the key id is
+not anymore shown.  Instead the full fingerprint is shown in a compact
+format; by using the option =--with-fingerprint= the non-compact
+format is used.  The =--keyid-format= option can be used to switch
+back to the discouraged format which prints only the key id.
 
 As a further change the validity of a key is now shown by default;
 that is =show-uid-validity= is implicitly used for the
