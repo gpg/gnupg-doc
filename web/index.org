@@ -17,9 +17,9 @@ features for easy integration with other applications. A wealth of
 [[file:related_software/frontends.html][frontend applications]] and [[file:related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
 also provides support for S/MIME and Secure Shell (ssh).
 
-GnuPG is [[http://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
+GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
 be freely used, modified and distributed under the terms of the
-[[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
+[[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
 GnuPG comes in three flavours:
 

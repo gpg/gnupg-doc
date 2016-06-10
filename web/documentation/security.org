@@ -1,0 +1,29 @@
+#+TITLE: GnuPG - Security
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Security
+
+The GnuPG Project takes the security of software it develops very
+seriously.  In general we prefer a [[https://en.wikipedia.org/wiki/Full_disclosure_%2528computer_security%2529][full disclosure]] approach and all
+bugs listed in our [[file:bts.org][bug tracker]] as well as code changes in our [[../download/cvs_access.org][software
+repository]] are public.  Given that GnuPG is an important part of many
+software distributions and severe bugs in GnuPG would affect their
+users directly, we co-ordinate with them in private as soon as we
+learn about a severe vulnerability.
+
+Sometimes we receive pre-notifications of research which may lead to a
+new kind of vulnerability.  In these cases we may work with the
+researchers in private on a solution and co-ordinate our fix release
+with them.
+
+** Security contact
+
+If you found a *severe* security problem and you do not want to
+publish it, please report it by mail to security at gnupg.org.
+
+Note that we do not use a team OpenPGP key.  Thus please write a
+non-encrypted message to the security address and ask for the keys of
+the developers at duty and then encrypt the mail to all of them.  A
+list of our core developers can be found [[../people/index.org][here]]; the are all active on
+the gnupg-devel mailing list.

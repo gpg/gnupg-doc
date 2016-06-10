@@ -76,6 +76,7 @@ if not available."
       ("/features.html"                    "Features")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
+      ("/documentation/sites.html"         "Sites")
       ("/service.html"                     "Service")))
     ("/donate/index.html"
      "Donate"
@@ -90,14 +91,14 @@ if not available."
       ("/download/mirrors.html"            "Mirrors")
       ("/download/cvs_access.html"         "GIT")))
     ("/documentation/index.html"
-     "Documentation"
+     "Support"
      (("/documentation/howtos.html"        "HOWTOs")
       ("/documentation/manuals.html"       "Manuals")
       ("/documentation/guides.html"        "Guides")
       ("/documentation/faqs.html"          "FAQs")
       ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
-      ("/documentation/sites.html"         "Sites")
-      ("/documentation/bts.html"           "Bug&nbsp;Tracker")))
+      ("/documentation/bts.html"           "Bug&nbsp;Tracker")
+      ("/documentation/security.html"      "Security")))
     ("/related_software/index.html"
      "Related software"
      (("/related_software/frontends.html"  "Frontends")

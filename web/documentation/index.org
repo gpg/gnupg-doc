@@ -1,8 +1,8 @@
-#+TITLE: GnuPG - Documentation
+#+TITLE: GnuPG - Support
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Documentation Sources
+* Documentation
 
   - [[file:howtos.org][HOWTOs]] :: Includes links to some HOWTOs available in several
               languages to get out the best from GnuPG.
@@ -16,6 +16,14 @@
   - [[file:faqs.org][FAQs]] :: Online version of the FAQs is now available. Please
             consult these FAQs before you ask on one of the mailing
             lists or report a bug.
+
+  - [[file:security.org][Security]] :: How to report security problems.
+
+  You may also notice that OpenPGP is a proposed Internet standard,
+  described by [[https://www.rfc-editor.org/rfc/rfc4880.txt][RFC-4880]].
+
+* Community support
+
   - [[file:mailing-lists.org][Mailing lists]] :: Describes the purposes of each mailing list
                      hosted on this server and gives instruction on
                      how to subscribe. Links to other GnuPG-related
@@ -23,8 +31,10 @@
   - [[https://wiki.gnupg.org][Wiki]] :: The official GnuPG Wiki contains community-maintained
             documentation for GnuPG and related software.
   - [[file:bts.org][BTS]] :: Before you report a bug, please consult the list of bugs.
+
+* Other types of support
+
+  - [[../service.org][Commercial support]] :: Listing of companies offering commercial
+       support for GnuPG
+
   - [[http://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
-
-
-  You may also notice that OpenPGP is a proposed Internet standard,
-  described by RFC4880 (found at [[http://www.rfc-editor.org/][RFC Editor]]).

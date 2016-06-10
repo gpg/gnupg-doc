@@ -2,7 +2,7 @@
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
 
-* Support
+* Commercial support
 
 As part of the GNU project, GnuPG is community developed, and everyone
 is welcome to contribute under certain conditions. Some companies are
