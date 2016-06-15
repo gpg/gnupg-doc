@@ -78,6 +78,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.7.1 released (2016-06-15)
+
+We are pleased to announce the availability of Libgcrypt version
+1.7.1.  This is a maintenance release for the stable version of
+[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000389.html][{more}]]
+
 ** First OpenPGP conference (2016-05-20)
 
 If you are a user or implementer of OpenPGP related software, you may
