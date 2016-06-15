@@ -83,11 +83,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.7.0
-#+macro: libgcrypt_date 2016-04-15
-#+macro: libgcrypt_size 2774k
-#+macro: libgcrypt_sha1 f840b737faafded451a084ae143285ad68bbfb01
-#+macro: libgcrypt_sha2 b0e67ea74474939913c4d9d9ef4ef5ec378efbe2bebe36389dee319c79bffa92
+#+macro: libgcrypt_ver  1.7.1
+#+macro: libgcrypt_date 2016-06-15
+#+macro: libgcrypt_size 2777k
+#+macro: libgcrypt_sha1 b688add52b622bb96bbd823ba21aa05a116d442f
+#+macro: libgcrypt_sha2 450d9cfcbf1611c64dbe3bd04b627b83379ef89f11406d94c8bba305e36d7a95
 
 
 #
@@ -112,11 +112,11 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.22
-#+macro: libgpg_error_date 2016-04-25
-#+macro: libgpg_error_size 759k
-#+macro: libgpg_error_sha1 c40015ed88bf5f50fa58d02252d75cf20b858951
-#+macro: libgpg_error_sha2 f2a04ee6317bdb41a625bea23fdc7f0b5a63fb677f02447c647ed61fb9e69d7b
+#+macro: libgpg_error_ver  1.23
+#+macro: libgpg_error_date 2016-06-15
+#+macro: libgpg_error_size 763k
+#+macro: libgpg_error_sha1 c6a0c49211955e924593527b32e4b2736cafcda5
+#+macro: libgpg_error_sha2 7f0c7f65b98c4048f649bfeebfa4d4c1559707492962504592b985634c939eaa
 
 
 #
