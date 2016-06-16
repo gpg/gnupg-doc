@@ -78,6 +78,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.1.13 released (2016-06-16)
+
+A new version of the /modern/ branch of GnuPG has been released.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000390.html][announcement mail]] for details.
+
 ** Libgcrypt 1.7.1 released (2016-06-15)
 
 We are pleased to announce the availability of Libgcrypt version
