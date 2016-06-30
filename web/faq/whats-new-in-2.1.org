@@ -430,6 +430,21 @@ The key listing also shows the default key listing format introduced
 with 2.1.13.  There are a lot of other options to the =--quick-addkey=
 command which are described in the manual.
 
+Since version 2.1.14 it possible to revoke a user id on an existing
+key:
+
+#+begin_example
+$ gpg2 -k 8CFDE12197965A9A
+pub   ed25519/8CFDE12197965A9A 2014-08-19
+uid               [ unknown] Sample 2 <me@example.org>
+uid               [ unknown] EdDSA sample key 1
+$ gpg2 --quick-revuid 8CFDE12197965A9A 'EdDSA sample key 1'
+$ gpg2 -k 8CFDE12197965A9A
+pub   ed25519/8CFDE12197965A9A 2014-08-19
+uid               [ unknown] Sample 2 <me@example.org>
+#+end_example
+
+
 ** Improved Pinentry support
 :PROPERTIES:
 :CUSTOM_ID: pinentry
