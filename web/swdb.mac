@@ -21,18 +21,17 @@
 #
 # GnuPG-2.1
 #
-#+macro: gnupg21_ver  2.1.13
-#+macro: gnupg21_date 2016-06-16
-#+macro: gnupg21_branch STABLE-BRANCH-2-2
-#+macro: gnupg21_size 5415k
-#+macro: gnupg21_sha1 6ec1ae6db7815fdbd4151fb6b0b7197b65b05d1f
-#+macro: gnupg21_sha2 4f9d83a6221daa60130fa79f0b1d37d6c20fffdd0320b640c7a597c5b6219675
+#+macro: gnupg21_ver  2.1.14
+#+macro: gnupg21_date 2016-07-14
+#+macro: gnupg21_size 5572k
+#+macro: gnupg21_sha1 bc7609a3a0daf0ed0efb22f77b43e82f28e20e34
+#+macro: gnupg21_sha2 9450dee9693b6a12bf0c374dae77b66c30f69ff8f35fc9266ab8dd76998eba42
 #
-#+macro: gnupg21_w32_ver  2.1.13_20160616
-#+macro: gnupg21_w32_date 2016-06-16
-#+macro: gnupg21_w32_size 3527k
-#+macro: gnupg21_w32_sha1 2debd757534d777bb9c69c18f9492e9a9e5a3a72  gnupg-w32-2.1.13_20160616.exe
-#+macro: gnupg21_w32_sha2 c868b7fadd5907bb598b11490e0214ce2f11340609bb5829e0d9b0875684d876  gnupg-w32-2.1.13_20160616.exe
+#+macro: gnupg21_w32_ver  2.1.14_20160714
+#+macro: gnupg21_w32_date 2016-07-14
+#+macro: gnupg21_w32_size 3576k
+#+macro: gnupg21_w32_sha1 8871e1b596a208403c7240498fa3d83c33ced4b2
+#+macro: gnupg21_w32_sha2 43ac527c85cc2651d4c96fa7c104caadf303ae88dff3cf8ec27f98ef76fa2d89
 
 
 
@@ -83,11 +82,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.7.1
-#+macro: libgcrypt_date 2016-06-15
-#+macro: libgcrypt_size 2777k
-#+macro: libgcrypt_sha1 b688add52b622bb96bbd823ba21aa05a116d442f
-#+macro: libgcrypt_sha2 450d9cfcbf1611c64dbe3bd04b627b83379ef89f11406d94c8bba305e36d7a95
+#+macro: libgcrypt_ver  1.7.2
+#+macro: libgcrypt_date 2016-07-14
+#+macro: libgcrypt_size 2778k
+#+macro: libgcrypt_sha1 85a6a936bcab4c3c05f5efbf6ce847f23d35c0c4
+#+macro: libgcrypt_sha2 3d35df906d6eab354504c05d749a9b021944cb29ff5f65c8ef9c3dd5f7b6689f
 
 
 #
@@ -112,20 +111,21 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.23
-#+macro: libgpg_error_date 2016-06-15
-#+macro: libgpg_error_size 763k
-#+macro: libgpg_error_sha1 c6a0c49211955e924593527b32e4b2736cafcda5
-#+macro: libgpg_error_sha2 7f0c7f65b98c4048f649bfeebfa4d4c1559707492962504592b985634c939eaa
+#+macro: libgpg_error_ver  1.24
+#+macro: libgpg_error_date 2016-07-14
+#+macro: libgpg_error_size 765k
+#+macro: libgpg_error_sha1 c3e5bd0c3ddea647416b429cd8e2ec755bad9d9e
+#+macro: libgpg_error_sha2 9268e1cc487de5e6e4460fca612a06e4f383072ac43ae90603e5e46783d3e540
 
 
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.4.2
-#+macro: libassuan_date 2015-12-02
-#+macro: libassuan_size 574k
-#+macro: libassuan_sha1 ac1047f9764fd4a4db7dafe47640643164394db9
+#+macro: libassuan_ver  2.4.3
+#+macro: libassuan_date 2016-07-14
+#+macro: libassuan_size 546k
+#+macro: libassuan_sha1 27391cf4a820b5350ea789c30661830c9a271518
+#+macro: libassuan_sha2 22843a3bdb256f59be49842abf24da76700354293a066d82ade8134bb5aa2b71
 
 
 #
