@@ -1,7 +1,7 @@
 #+TITLE: GnuPG - What’s new in 2.1
 #+STARTUP: showall indent
 #+SETUPFILE: "share/setup.inc"
-#+DATE: 2016-01-14
+#+DATE: 2016-07-14
 #+macro: more  @@html:<a href="#$1"><span class="morelink">&nbsp;&rArr;</a>@@
 
 #+BEGIN_ASCII
@@ -62,6 +62,12 @@ its main components.
 - The format of the key listing has been changed to better identify
   the properties of a key.{{{more(keylist)}}}
 
+- A file with the recipient’s key may now be used
+  directly. {{{more(option_f)}}}
+
+- Gpg can be used to filter out parts of a key.
+  {{{more(importexportfilter)}}}
+
 - The gpg-agent may now be used on Windows as /pageant/ replacement
   for /putty/ in the same way it is used for years on Unix as
   /ssh-agent/ replacement.{{{more(pageant)}}}
@@ -77,7 +83,9 @@ its main components.
 
 #+html: </div>
 
-Now for the detailed description of these new features:
+Now for the detailed description of these new features.  Note that the
+examples assume that that /gpg/ is installed as /gpg/.  Your
+installation may have it installed under the name /gpg2/.
 
 ** Removal of the secret keyring
 :PROPERTIES:
@@ -155,7 +163,7 @@ re-encrypt the data using a modern key.
 This is best shown with an example:
 
 #+begin_example
-$ gpg2 --gen-key
+$ gpg --gen-key
 gpg (GnuPG) 2.1.0; Copyright (C) 2014 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -199,7 +207,7 @@ key for future use, the command =--full-gen-key= along with the option
 =--expert= is the enabler:
 
 #+begin_example
-$ gpg2 --expert --full-gen-key
+$ gpg --expert --full-gen-key
 gpg (GnuPG) 2.1.0; Copyright (C) 2014 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -268,7 +276,7 @@ releases.  Recall that an encryption subkey can be added to a key at
 any time.  If you want to create a signing key you may do it this way:
 
 #+begin_example
-$ gpg2 --expert --full-gen-key
+$ gpg --expert --full-gen-key
 gpg (GnuPG) 2.1.0; Copyright (C) 2014 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -333,7 +341,7 @@ parameter file or interactive prompts for generating a key or to sign a
 key.  This can now be accomplished with a few new commands:
 
 #+begin_example
-$ gpg2 --batch --quick-gen-key 'Daniel Ellsberg <ellsberg@example.org>'
+$ gpg --batch --quick-gen-key 'Daniel Ellsberg <ellsberg@example.org>'
 gpg: key 911B90A9 marked as ultimately trusted
 #+end_example
 
@@ -343,7 +351,7 @@ want some more control, you may not use =--batch= and gpg will ask for
 confirmation and show the resulting key:
 
 #+begin_example
-$ gpg2 --quick-gen-key 'Daniel Ellsberg <ellsberg@example.org>'
+$ gpg --quick-gen-key 'Daniel Ellsberg <ellsberg@example.org>'
 About to create a key for:
     "Daniel Ellsberg <ellsberg@example.org>"
 
@@ -363,7 +371,7 @@ from the command line by giving the fingerprint of the to-be-signed
 key:
 
 #+begin_example
-$ gpg2 --quick-sign-key  '15CB 723E 2000 A1A8 2505  F3B7 CC00 B501 BD19 AC1C'
+$ gpg --quick-sign-key  '15CB 723E 2000 A1A8 2505  F3B7 CC00 B501 BD19 AC1C'
 
 pub  rsa2048/BD19AC1C
      created: 2014-11-04  expires: never       usage: SC
@@ -379,7 +387,7 @@ exits with success.  In case you want to check that it really worked,
 use =--check-sigs= as usual:
 
 #+begin_example
-$ gpg2 --check-sigs  '15CB 723E 2000 A1A8 2505  F3B7 CC00 B501 BD19 AC1C'
+$ gpg --check-sigs  '15CB 723E 2000 A1A8 2505  F3B7 CC00 B501 BD19 AC1C'
 gpg: checking the trustdb
 gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
 gpg: depth: 0  valid:   6  signed:   1  trust: 0-, 0q, 0n, 0m, 0f, 6u
@@ -402,11 +410,11 @@ Since version 2.1.4 it possible to directly add another user id to an
 existing key:
 
 #+begin_example
-$ gpg2 -k 8CFDE12197965A9A
+$ gpg -k 8CFDE12197965A9A
 pub   ed25519/8CFDE12197965A9A 2014-08-19
 uid               [ unknown] EdDSA sample key 1
-$ gpg2 --quick-adduid 8CFDE12197965A9A 'Sample 2 <me@example.org>'
-$ gpg2 -k 8CFDE12197965A9A
+$ gpg --quick-adduid 8CFDE12197965A9A 'Sample 2 <me@example.org>'
+$ gpg -k 8CFDE12197965A9A
 pub   ed25519/8CFDE12197965A9A 2014-08-19
 uid               [ unknown] Sample 2 <me@example.org>
 uid               [ unknown] EdDSA sample key 1
@@ -434,12 +442,12 @@ Since version 2.1.14 it possible to revoke a user id on an existing
 key:
 
 #+begin_example
-$ gpg2 -k 8CFDE12197965A9A
+$ gpg -k 8CFDE12197965A9A
 pub   ed25519/8CFDE12197965A9A 2014-08-19
 uid               [ unknown] Sample 2 <me@example.org>
 uid               [ unknown] EdDSA sample key 1
-$ gpg2 --quick-revuid 8CFDE12197965A9A 'EdDSA sample key 1'
-$ gpg2 -k 8CFDE12197965A9A
+$ gpg --quick-revuid 8CFDE12197965A9A 'EdDSA sample key 1'
+$ gpg -k 8CFDE12197965A9A
 pub   ed25519/8CFDE12197965A9A 2014-08-19
 uid               [ unknown] Sample 2 <me@example.org>
 #+end_example
@@ -610,8 +618,8 @@ then run import, and finally restore the ownertrust values:
 $ cd ~/.gnupg
 $ gpg --export-ownertrust >otrust.lst
 $ mv pubring.gpg publickeys
-$ gpg2 --import-options import-local-sigs --import publickeys
-$ gpg2 --import-ownertrust otrust.lst
+$ gpg --import-options import-local-sigs --import publickeys
+$ gpg --import-ownertrust otrust.lst
 #+end_example
 
 You may then rename the =publickeys= file back so that it can be used
@@ -686,6 +694,57 @@ example if the new option =--with-secret= is used the “S/N of a token
 field” indicates the presence of a secret key even in a public key
 listing.  This option is supported by recent [[https://gnupg.org/related_software/gpgme/][GPGME]] versions and makes
 writing of key manager software easier.
+
+** Recipient key from file
+:PROPERTIES:
+:CUSTOM_ID: option_f
+:END:
+
+Since version 2.1.14 it is possible to specify the recipient’s key by
+providing a file with that key.  This done with the new options
+=--recipient-file= (or short =-f=) and =--hidden-recipient-file= (or
+short =-F=).  The file must containing exactly one key in binary or
+armored format.  All keys specified with those options are always
+considered fully valid.  These option may be mixed with the regular
+options to specify a key.  Along with the new convenience option
+=--no-keyring= it is now possible to encrypt data without maintaining
+a local keyring.
+
+** Using gpg as a filter
+:PROPERTIES:
+:CUSTOM_ID: importexportfilter
+:END:
+
+Since version 2.1.14 the export and import options have been enhanced
+to allow the use of /gpg/ to modify a key without first stroing it in
+the keyring.  For example:
+
+#+begin_example
+$ gpg --import-options import-minimal,import-export \
+      --output smallkey.gpg --import key.gpg
+#+end_example
+
+copies the keys in =keys.gpg= to =smallkey.gpg= while also removing
+all key signatures except for the latest self-signatures.  This can
+even be further restricted to copy only a specific user ID to the
+output file:
+
+#+begin_example
+$ gpg --import-options import-minimal,import-export \
+      --import-filter keepuid='mbox = foo@example.org' \
+      --output smallkey.gpg --import key.gpg
+#+end_example
+
+Here the new =--import-filter= option is used to remove all user IDs
+except for those which have the mail address “foo@example.org”.  The
+same is also possible while exporting a key:
+
+#+begin_example
+$ gpg --export-filter keepuid='mbox = me@example.org' \
+      --armor --export 8CFDE12197965A9A >smallkey.asc
+#+end_example
+
+
 
 ** Support for Putty
 :PROPERTIES:
