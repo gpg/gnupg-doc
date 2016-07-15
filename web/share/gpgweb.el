@@ -7,12 +7,12 @@
   (progn
    (require 'ox-gpgweb (concat gpgweb-root-dir "share/ox-gpgweb.el"))
    (aput 'org-publish-project-alist "gpgweb-org"
-   '(:base-directory "~/s/gnupg-doc/web"
+   `(:base-directory ,gpgweb-root-dir
      :base-extension "org"
      :language "en"
      :html-extension "html"
      :recursive t
-     :publishing-directory "../stage"
+     :publishing-directory ,gpgweb-stage-dir
      :publishing-function gpgweb-org-to-html
      :body-only t
      :section-numbers nil
@@ -29,10 +29,10 @@
      :html-head-include-scripts nil))
 
    (aput 'org-publish-project-alist "gpgweb-other"
-   '(:base-directory "."
+   `(:base-directory ,gpgweb-root-dir
      :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig"
      :recursive t
-     :publishing-directory "../stage"
+     :publishing-directory ,gpgweb-stage-dir
      :publishing-function org-publish-attachment
      :completion-function gpgweb-upload))
 
@@ -431,17 +431,20 @@ string of the source file or nil if not available."
           (kill-buffer work-buffer))))))
 
 
-
+;;;
+;;; We don't do an upload directly.  Instead we only print the
+;;; commands to do that.  In reality a cron jobs syncs the stage dir.
+;;;
 (defun gpgweb-upload ()
   (let ((stagedir (plist-get project-plist :publishing-directory)))
     (message "gpgweb  rootdir '%s'" gpgweb-root-dir)
     (message "gpgweb stagedir '%s'" stagedir)
-    (shell-command
+    (message
      (concat "cd " gpgweb-root-dir " && cd " stagedir
-             "&& rsync -rlt --exclude \"*~\" ./ "
+             " && echo rsync -rlt --exclude \"*~\" ./ "
              "werner@trithemius.gnupg.org:"
              "/var/www/www/www.gnupg.org/htdocs/ ;"
-             " ssh werner@trithemius.gnupg.org"
+             " echo ssh werner@trithemius.gnupg.org"
              " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))
 ))
 

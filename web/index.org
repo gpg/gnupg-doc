@@ -162,6 +162,7 @@ This is the publishing info used for the GnuPG pages
 #+begin_src emacs-lisp
   (progn
    (setq gpgweb-root-dir (file-name-directory (buffer-file-name)))
+   (setq gpgweb-stage-dir (concat gpgweb-root-dir "../stage"))
    (require 'gpgweb (concat gpgweb-root-dir "share/gpgweb.el"))
    (setq org-publish-use-timestamps-flag nil)
    (setq org-export-html-toplevel-hlevel 1)
