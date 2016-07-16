@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Release Notes
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+GPGWEB-NEED-SWDB
 #+macro: announce  [[http://lists.gnupg.org/pipermail/gnupg-announce/$1.html][Announcement]]
 
 * Release Notes

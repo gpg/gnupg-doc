@@ -1,5 +1,6 @@
 #+STARTUP: showall
 #+SETUPFILE: "../../share/setup.inc"
+#+GPGWEB-NEED-SWDB
 
 * Libgcrypt
 

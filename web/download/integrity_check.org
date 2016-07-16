@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Integrity Check
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+GPGWEB-NEED-SWDB
 #+OPTIONS:  ^:{}
 
 * Integrity Check

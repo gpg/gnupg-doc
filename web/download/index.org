@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Download
 #+STARTUP: showall align
 #+SETUPFILE: "../share/setup.inc"
+#+GPGWEB-NEED-SWDB
 #+OPTIONS: ^:{}
 #+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][@@html:<a href="integrity_check.html">@@integrity@@html:</a>@@]].
 #+macro: ftpopen  @@html:<a href="@@

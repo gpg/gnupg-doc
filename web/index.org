@@ -1,6 +1,7 @@
 #+TITLE: The GNU Privacy Guard
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
+#+GPGWEB-NEED-SWDB
 
 * The GNU Privacy Guard
 #+index: GnuPG

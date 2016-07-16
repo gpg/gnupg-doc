@@ -37,7 +37,21 @@
      :completion-function gpgweb-upload))
 
    (aput 'org-publish-project-alist "gpgweb"
-   '(:components ("gpgweb-org" "gpgweb-other")))))
+   '(:components ("gpgweb-org" "gpgweb-other")))
+
+   (add-hook 'org-export-before-processing-hook 'gpgweb-preprocess)))
+
+
+(defun gpgweb-preprocess (backend)
+  "Insert certain stuff before processing."
+  (let ()
+    (goto-char (point-min))
+    (when (re-search-forward
+           "^#\\+GPGWEB-NEED-SWDB\\b" 2048 t)
+      (beginning-of-line)
+      (kill-line 1)
+      (insert (org-file-contents (concat gpgweb-root-dir "swdb.mac")
+                                 'noerror)))))
 
 
 (defun gpgweb-insert-header (title committed-at)
@@ -348,7 +362,7 @@ string of the source file or nil if not available."
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
-                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
+                              ".*/gpgweb-stage\\(/.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
