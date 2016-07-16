@@ -16,6 +16,18 @@ if [ ! -d "${stage_dir}" ]; then
 fi
 cd "${root_dir}"
 
+rev="$(git rev-parse --verify HEAD)"
+if [ -z "$rev" ]; then
+   echo "$pgm: No git revision found" >&2;
+   exit 1
+fi
+revlast="$(head -1 ${stage_dir}/.revlast 2>/dev/null || true)"
+if [ x"$rev" = x"$revlast" ]; then
+   echo "$pgm: No need to build" >&2;
+   exit 0
+fi
+
+
 echo "========================================================"
 echo "gpgweb site building started on $(date -u -Iseconds)"
 echo "========================================================"
@@ -34,6 +46,8 @@ emacs23 -q --batch  \
   --eval "(org-publish-initialize-cache \"gpgweb\")" \
   --eval "(message \"root=(%s)\" gpgweb-root-dir)" \
   --eval "(org-publish \"gpgweb\" t nil)"
+
+echo "$rev" > ${stage_dir}/.revlast
 
 echo "========================================================="
 echo "gpgweb site building finished on $(date -u -Iseconds)"
