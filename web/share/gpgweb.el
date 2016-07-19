@@ -2,6 +2,8 @@
 
 (require 'org-exp)
 
+;; makeindex disabled because the generated file is created in the
+;; source directory.
 (defun gpgweb-setup-project ()
   "Set up an org-publish project for the gnupg.org website."
   (progn
@@ -18,7 +20,7 @@
      :section-numbers nil
      :tags nil
      :with-toc nil
-     :makeindex t
+     :makeindex nil
      :auto-sitemap nil
      :sitemap-title "GnuPG - Sitemap"
      :sitemap-sort-folders "last"

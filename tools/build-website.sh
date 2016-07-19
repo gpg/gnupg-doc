@@ -36,6 +36,7 @@ emacs23 -q --batch  \
   --eval "(require 'assoc)" \
   --eval "(require 'org)" \
   --eval "(setq make-backup-files nil)" \
+  --eval "(setq vc-handled-backends nil)" \
   --eval "(setq gpgweb-root-dir  \"${root_dir}/\")" \
   --eval "(setq gpgweb-stage-dir \"${stage_dir}/\")" \
   --eval "(require 'gpgweb (concat gpgweb-root-dir \"share/gpgweb.el\"))" \
@@ -44,7 +45,7 @@ emacs23 -q --batch  \
   --eval "(setq org-export-html-coding-system 'utf-8)" \
   --eval "(gpgweb-setup-project)" \
   --eval "(org-publish-initialize-cache \"gpgweb\")" \
-  --eval "(message \"root=(%s)\" gpgweb-root-dir)" \
+  --eval "(setq debug-on-error nil)" \
   --eval "(org-publish \"gpgweb\" t nil)"
 
 echo "$rev" > ${stage_dir}/.revlast
