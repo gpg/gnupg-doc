@@ -30,7 +30,7 @@
 #+END_EXAMPLE
 
   You must run =./autogen.sh= before running the =./configure= in the
-  way suggested by the putput of =autogen.sh=.  This creates some
+  way suggested by the output of =autogen.sh=.  This creates some
   required files which are not stored in the repository. =autogen.sh=
   also checks that you have all required tools installed. Please read
   the GIT manual pages before doing so. The =master= revision is the
