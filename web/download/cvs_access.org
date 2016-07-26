@@ -47,24 +47,3 @@
    The GnuPG GIT server also hosts some other projects in GIT
    repositories.  Please use the web interface at
    [[http://git.gnupg.org/]] to browse them.
-
-** Old CVS Controlled Projects
-
-   There are also some CVS hosted projects; the normal way to access
-   them, is by doing a
-#+BEGIN_EXAMPLE
-   cvs -d :pserver:anoncvs@cvs.gnupg.org:/cvs/PROJECTNAME login
-#+END_EXAMPLE
-
-   with the password `anoncvs' and then checkout the sources using the
-   command given in the list below.
-
-   -  GPH :: The GNU Privacy Handbook
-#+BEGIN_EXAMPLE
-   cvs -z3 -d :pserver:anoncvs@cvs.gnupg.org:/cvs/gph co gph
-#+END_EXAMPLE
-
-   - www.gnupg.org ::  The old webpages
-#+BEGIN_EXAMPLE
-   cvs -z3 -d :pserver:anoncvs@cvs.gnupg.org:/cvs/gpgweb co gnupg-www
-#+END_EXAMPLE
