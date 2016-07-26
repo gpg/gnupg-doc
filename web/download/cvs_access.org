@@ -45,22 +45,8 @@
 ** Other Hosted Projects
 
    The GnuPG GIT server also hosts some other projects in GIT
-   repositories; use the commands below to access them.
-
-   -  GPGME :: GnuPG Made Easy
-#+begin_example
-      git clone git://git.gnupg.org/gpgme.git
-#+end_example
-
-   -  Libgcrypt :: The GNU Crypto Library
-#+begin_example
-   git clone git://git.gnupg.org/libgcrypt.git
-#+end_example
-
-   -  GEAM :: GEAM Encrypts All Mail.
-#+begin_example
-   git clone git://git.gnupg.org/geam.git
-#+end_example
+   repositories.  Please use the web interface at
+   [[http://git.gnupg.org/]] to browse them.
 
 ** Old CVS Controlled Projects
 
