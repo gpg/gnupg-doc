@@ -105,7 +105,7 @@ if not available."
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
       ("/download/release_notes.html"      "Release&nbsp;Notes")
       ("/download/mirrors.html"            "Mirrors")
-      ("/download/cvs_access.html"         "GIT")))
+      ("/download/git.html"                "GIT")))
     ("/documentation/index.html"
      "Support"
      (("/documentation/howtos.html"        "HOWTOs")

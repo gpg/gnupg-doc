@@ -6,7 +6,7 @@
 
 The GnuPG Project takes the security of software it develops very
 seriously.  In general we prefer a [[https://en.wikipedia.org/wiki/Full_disclosure_(computer_security)][full disclosure]] approach and all
-bugs listed in our [[file:bts.org][bug tracker]] as well as code changes in our [[../download/cvs_access.org][software
+bugs listed in our [[file:bts.org][bug tracker]] as well as code changes in our [[../download/git.org][software
 repository]] are public.  Given that GnuPG is an important part of many
 software distributions and severe bugs in GnuPG would affect their
 users directly, we co-ordinate with them in private as soon as we
