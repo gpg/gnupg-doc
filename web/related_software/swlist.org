@@ -478,7 +478,7 @@ allow users to encrypt chat and multi-user chat as well as
 encrypting/signing messages and signing presence of the user. It is
 multilingual and runs on GNU/Linux, Mac OS X and Windows.
 
-** [[http://wingpg.com][WinGPG]] [Windows] GUI
+** [[https://scand.com/products/wingpg/][WinGPG]] [Windows] GUI
    :PROPERTIES:
    :CUSTOM_ID: wingpg
    :END:
