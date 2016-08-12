@@ -1,0 +1,72 @@
+# Python bindings for GPGME
+#+AUTHOR: Justus
+#+DATE: August 12th, 2016
+
+** Python bindings for GPGME
+
+GPGME 1.7 includes bindings for Python >= 3.4.  The bindings are a
+port of the [[https://bitbucket.org/malb/pyme][~pyme~]] bindings to Python 3, with a small shim on top to
+provide a more idiomatic interface.  For the purposes of this post I
+will refer to the preexisting bindings that are for Python 2 only
+~pyme2~, and to our new bindings as ~pyme3~.
+
+Existing applications using ~pyme2~ should continue to work with
+little to no changes beyond what is needed to port them to Python 3.
+
+~pyme2~ offers an interface that is very close to that of GPGME.  This
+interface exposes all features of the underlying library, but it is
+not very "pythonic".  Therefore, we made an effort to provide a nicer
+interface on top of that.  Let me demonstrate how that looks.
+
+One important aspect is how to pass data around.  GPGME uses
+~gpgme_data_t~ for that, and in ~pyme2~ one had to explicitly create
+~pyme.core.Data~ objects to pass data to GPGME or to receive data.
+With ~pyme3~ one can use every object that implements the buffer
+protocol (e.g. ~bytes~), file-like objects with a ~fileno~ method, or
+explicit ~pyme.Data~ objects in places where GPGME expects a
+~gpgme_data_t~ object:
+
+#+BEGIN_SRC python
+import pyme
+with pyme.Context(armor=True) as c:
+    ciphertext, _, _ = c.encrypt(b"Hello Python world :)", passphrase="foo")
+#+END_SRC
+
+This will encrypt the given plaintext using symmetric encryption and
+the given passphrase, wrap it up using the OpenPGP protocol, and
+encode it using ascii-armor.  The plaintext is easily recovered using:
+
+#+BEGIN_SRC python
+with pyme.Context() as c:
+    plaintext, _, _ = c.decrypt(ciphertext, passphrase="foo")
+assert plaintext == b"Hello Python world :)"
+#+END_SRC
+
+If ~passphrase~ is omitted, it is asked for out-of-band using GnuPG's
+pinentry mechanism.  Alternatively, if one or more recipients are
+specified, asymmetric encryption is used.  For details, please have a
+look at the docstring of ~pyme.Context.encrypt~.
+
+Most file-like objects can be used without explicit wrapping.  This is
+a filter that decrypts OpenPGP messages in three lines of code:
+
+#+BEGIN_SRC python
+import sys
+import pyme
+pyme.Context().decrypt(sys.stdin, sink=sys.stdout)
+#+END_SRC
+
+For more examples, have a look at the tests and examples shipped with
+the bindings under ~lang/python~.
+
+If you cannot wait until ~pyme3~ is packaged by your distribution, and
+you do not want to build GPGME 1.7 from source merely to get ~pyme3~,
+you can build it out-of-tree provided you have at least GPGME 1.6, the
+Python development packages, and SWIG.  You can get it from [[https://pypi.python.org/pypi/pyme3][pypi]] or
+directly install it using ~pip~:
+
+#+BEGIN_SRC sh
+# As of this writing, there is no released version uploaded to pypi,
+# hence we need --pre.
+$ pip install --pre pyme3
+#+END_SRC
