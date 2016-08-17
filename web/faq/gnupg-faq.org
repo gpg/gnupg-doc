@@ -2220,7 +2220,3 @@ PGP 2.6 support.
       (setq h (downcase h))
       (org-entry-put nil "CUSTOM_ID" h)))
 #+end_src
-
-
-# End:
-# Local Variables:
