@@ -38,17 +38,16 @@
 #
 # GnuPG-1
 #
-#+macro: gnupg1_ver      1.4.20
-#+macro: gnupg1_date     2015-12-20
+#+macro: gnupg1_ver  1.4.21
+#+macro: gnupg1_date 2016-08-17
 #+macro: gnupg1_branch   STABLE-BRANCH-1-4
-#+macro: gnupg1_size     3606k
-#+macro: gnupg1_size_gz  5036k
-#+macro: gnupg1_sha1     cbc9d960e3d8488c32675019a79fbfbf8680387e
-#+macro: gnupg1_sha1_gz  359e464bcabbe370696e3dba45a1d63968c06ab3
+#+macro: gnupg1_size 3602k
+#+macro: gnupg1_sha1 e3bdb585026f752ae91360f45c28e76e4a15d338
+#+macro: gnupg1_sha2 6b47a3100c857dcab3c60e6152e56a997f2c7862c1b8b2b25adf3884a1ae2276
 #
-#+macro: gnupg1_w32cli_ver  1.4.20
-#+macro: gnupg1_w32cli_size 2359k
-#+macro: gnupg1_w32cli_sha1 8f0c4760c9f38102f64a156744ec8a428298b92d
+#+macro: gnupg1_w32cli_ver  1.4.21
+#+macro: gnupg1_w32cli_size 2363k
+#+macro: gnupg1_w32cli_sha 8edea5cda7dc9e39d12b24cf12164b28b832918d
 
 
 #
@@ -82,11 +81,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.7.2
-#+macro: libgcrypt_date 2016-07-14
-#+macro: libgcrypt_size 2778k
-#+macro: libgcrypt_sha1 85a6a936bcab4c3c05f5efbf6ce847f23d35c0c4
-#+macro: libgcrypt_sha2 3d35df906d6eab354504c05d749a9b021944cb29ff5f65c8ef9c3dd5f7b6689f
+#+macro: libgcrypt_ver  1.7.3
+#+macro: libgcrypt_date 2016-08-17
+#+macro: libgcrypt_size 2794k
+#+macro: libgcrypt_sha1 5a034291e7248592605db448481478e6c963aa9c
+#+macro: libgcrypt_sha2 ddac6111077d0a1612247587be238c5294dd0ee4d76dc7ba783cc55fb0337071
 
 
 #
