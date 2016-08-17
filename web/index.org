@@ -79,6 +79,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Security fixes for Libgcrypt and GnuPG 1.4                     :important:
+
+A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
+been found.  Updating the software is highly suggested.  Please read
+this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.
+
 ** GnuPG 2.1.14 released (2016-07-14)
 
 A new version of the /modern/ branch of GnuPG has been released.
