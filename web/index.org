@@ -83,7 +83,8 @@ The latest release news:\\
 
 A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
 been found.  Updating the software is highly suggested.  Please read
-this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.
+this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.  Note that the CVE id in that mail is not
+correct, the correct one is CVE-2016-6313.
 
 ** GnuPG 2.1.14 released (2016-07-14)
 
