@@ -27,10 +27,11 @@ GnuPG comes in three flavours:
  - {{{gnupg21_ver}}} is the /modern/ version with support
    for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
 
- - {{{gnupg_ver}}} is the /stable/ version which is currently mostly
-   used.
+ - {{{gnupg_ver}}} is the /stable/ version from the currently mostly
+   used branch.  This branch will reach end-of-life on 2017-12-31,
 
- - and {{{gnupg1_ver}}} is the /classic/ portable version.
+ - and {{{gnupg1_ver}}} is the /classic/ portable version for use on
+   very old platforms or to decrypt data created with PGP-2 keys.
 
 Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
 nicely integrated into an installer and features several frontends as
@@ -78,6 +79,11 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** GnuPG 2.1.15 released (2016-08-18)
+
+A new version of the /modern/ branch of GnuPG has been released.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.html][announcement mail]] for details.
 
 ** Security fixes for Libgcrypt and GnuPG 1.4                     :important:
 
