@@ -85,7 +85,7 @@ The latest release news:\\
 A new version of the /modern/ branch of GnuPG has been released.
 Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.html][announcement mail]] for details.
 
-** Security fixes for Libgcrypt and GnuPG 1.4                     :important:
+** Security fixes for Libgcrypt and GnuPG 1.4 (2016-08-17)        :important:
 
 A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
 been found.  Updating the software is highly suggested.  Please read
