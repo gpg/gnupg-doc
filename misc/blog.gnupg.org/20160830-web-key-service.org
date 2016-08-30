@@ -1,0 +1,387 @@
+# Some notes on our new Web Key Service
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: August 30, 2106
+
+** Key Discovery Made Simple
+
+   A major hassle with sending encrypted mails is to find the key
+   matching the recipients mail address.  A naïve method is to look
+   for the key at a keyserver.  In most cases this works surprisingly
+   well.  However, there is no guarantee that this key really matches
+   the mail address --- anyone can create a key and put an arbitrary
+   mail address there.  It is quite disturbing to receive a mail which
+   you can't decrypt because it was encrypted to another key.
+
+   GnuPG 2.1 provides an simple but efficient solution to store a key
+   under a well known URL and lookup it up via https.  For practical
+   deployment of this method (as well as for OpenPGP DANE) a method to
+   publishing a key is required.  The new [[https://tools.ietf.org/id/draft-koch-openpgp-webkey-service-01.html][Web Key Service]] protocol
+   such a protocol and GnuPG 2.1.15 comes with the tools to implement
+   this.  Aside from GnuPG the other pre-requisites are:
+
+   - A mail server for your domain with the full authority on the user
+     mail addresses for this domain.
+
+   - A Unix system where you have an account to receive mails to a
+     dedicated mail address and to send mails via the sendmail tool.
+     An account on the mail server will be the best choice.
+
+   - A web server for the same domain to deliver static pages over TLS.
+     Re-direction to a different server is possible
+
+   - The ability to install the latest GnuPG version from source.
+
+   Here is a first step by step description on how to install and test
+   that service.
+
+*** Install GnuPG 2.1
+
+    Your system will already have a gpg version but we want the very
+    latest one and we want to install it locally.
+
+    First you should create a new account on the machine.  Let's use
+    =webkey=.  Nothing special is required; thus a simple
+
+    : # adduser --disabled-password webkey
+
+    as root will do.  Add an =.ssh/authorized_keys= file to make it
+    easy to access.  Now download GnuPG (as of this writing version
+    2.1.15):
+
+    : $ cd ~webkey
+    : $ wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.15.tar.bz2
+    : $ wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.15.tar.bz2.sig
+    : $ wget -O - https://gnupg.org/signature_key.html | gpg --import
+    : $ gpg --verify gnupg-2.1.15.tar.bz2.sig gnupg-2.1.15.tar.bz2
+
+    The last line uses the standard gpg to check that the integrity of
+    the tarball.  Then please verify that the displayed fingerprints
+    match the desired ones; see
+    https://gnupg.org/download/integrity_check.html for more on this.
+
+    The easiest way to install the latest GnuPG version is to use
+    Speedo, which downloads, verifies and builds all dependent
+    packages.  To do this first unpack the tarball:
+
+    : $ tar xjf gnupg-2.1.5.tar.bz2
+
+    On non GNU system you may need to use this instead:
+
+    : $ zcat gnupg-2.1.5.tar.bz2 | tar xf -
+
+    Then run:
+
+    : $ make -f ~/b-w32/speedo/gnupg-2.1.15/build-aux/speedo.mk            \
+    : >  INSTALL_PREFIX=. speedo_pkg_gnupg_configure='--enable-gpg2-is-gpg \
+    : >      --disable-g13 --enable-wks-tools' native
+
+    If you run into errors you are probably missing some development
+    tools; install them and try again.  If all succeeds you will
+    notice a bunch of new directories below webkey's home directory:
+
+    : PLAY  bin  include  lib  libexec  sbin  share  swdb.lst  swdb.lst.sig
+
+    Optionally you may delete what is not anymore required:
+
+    : $ rm -rf PLAY include lib swdb.*
+
+    To make use of your new GnuPG installation you need to run this
+    first (you should add it to webkey's .profile or .bashrc):
+
+    : PATH="$HOME/bin:$PATH"
+    : LD_LIBRARY_PATH="$(pwd)/lib"
+    : export LD_LIBRARY_PATH
+
+*** Prepare the mail and web servers
+
+    The Web Key Service requires a working directory to store keys
+    pending for publication.  As root create a working directory:
+
+    : # mkdir /var/lib/gnupg/wks
+    : # chown webkey:webkey /var/lib/gnupg/wks
+    : # chmod 2750 /var/lib/gnupg/wks
+
+    Then under your webkey account create directories for all your
+    domains.  Here we do it for “example.org”:
+
+    : $ mkdir /var/lib/gnupg/wks/example.org
+
+    Then run
+
+    : $ gpg-wks-server --list-domains
+
+    to create the required sub-directories with the permission set
+    correctly.  In particular the =hu= directory (“hashed-userid”) to
+    store pending keys most only be accessible by the webkey user.
+    Running the above command will also remind you to create a file
+    with the submission address for the domain.  Let’s do that:
+
+    : $ cd /var/lib/gnupg/wks/example.org
+    : $ echo key-submission@example.org >submission-address
+
+    The submission address is the address the client uses to contact
+    the Web Key Service.  To make this actually work, that address
+    needs to be redirected to the webkey user; use the alias file of
+    your MTA to do this.
+
+    To setup the web server there are at least two ways: If the web
+    server is on the same machine it is possible to use symlinks to
+    publish the working directories.  For example:
+
+    : $ cd /var/www/example.org/htdocs
+    : $ mkdir -p .well-known/openpgpkey
+    : $ cd .well-known/openpgpkey
+    : $ ln -s /var/lib/gnupg/wks/example.org/hu .
+    : $ ln -s /var/lib/gnupg/wks/example.org/submission-address .
+
+    The more flexible way is the use of rsync optionally using an ssh
+    connection to a remote web server.  This can be done with a cron
+    job; run =crontab -e= and add this line (the backslashes below are
+    used to indicate line wrapping here; do not enter them into the
+    crontab but use a single long line):
+
+    : */4 * * * * rsync -r -p --chmod=Fa+r --delete \
+    :     /var/lib/gnupg/wks/example/hu/            \
+    :     webserver:/var/www/all/example.org/.well-known/openpgpkey/hu/
+
+    This job syncs every 4 minutes the local copy of the published
+    keys to the server.  The submission-address file does not change
+    and thus it is sufficient to copy it once by hand to the server.
+
+*** Create submission key
+
+    The protocol suggests that the key to be published is send with an
+    encrypted mail to the service.  Thus you need to create a key for
+    the submission address:
+
+    : $ gpg --batch --passphrase '' --quick-gen-key key-submission@example.org
+    : $ gpg --with-wkd-hash -K key-submission@example.org
+
+    The output of the last command looks similar to this:
+
+    #+begin_example
+    sec   rsa2048 2016-08-30 [SC]
+          C0FCF8642D830C53246211400346653590B3795B
+    uid           [ultimate] key-submission@example.org
+                  bxzcxpxk8h87z1k7bzk86xn5aj47intu@example.org
+    ssb   rsa2048 2016-08-30 [E]
+    #+end_example
+
+    Take the hash of the string “key-submission”, which is
+    =bxzcxpxk8h87z1k7bzk86xn5aj47intu= and manually publish that key:
+
+    : $ gpg --export-options export-minimal --export key-submission@example.org
+    : >  -o /var/lib/gnupg/wks/example.org/hu/bxzcxpxk8h87z1k7bzk86xn5aj47intu
+
+    Make sure that the created file is world readable.  We will
+    eventually provide a tool to make that step easier.
+
+*** Install the WKS server tool
+
+    The tool gpg-wks-server implements the server part of the web key
+    service protocol.  There are several ways to install this tool,
+    what I describe here is a setup which allows easy debugging.
+
+    First install procmail and make sure that your MTA (Exim, Postfix,
+    sendmail) can run procmail as delivery agent.  In most cases it is
+    sufficient to create the file =.procmailrc= in the home directory
+    (e.g. =/home/webkey/.procmailrc=).  Here is that file; you need to
+    replace “example.org” by your own domain name:
+
+    #+begin_example
+    PATH=$HOME/bin:/usr/bin:/bin:/usr/local/bin
+    LD_LIBRARY_PATH=$HOME/lib
+
+    MAILDIR=$HOME/Mail
+    LOGFILE=$HOME/Mail/from
+    LOCKFILE=$HOME/Mail/.lockmail
+    VERBOSE=yes
+
+    :0
+    * ^FROM_DAEMON
+    from-daemon/
+
+    :0 c
+    archive/
+
+    :0
+    * !^From: webkey@example.org
+    * !^X-WKS-Loop: webkey.example.org
+    |$HOME/bin/gpg-wks-server -v --receive \
+         --header X-WKS-Loop=webkey.example.org \
+         --from webkey@example.org --send -o $HOME/send.log
+
+    :0
+    cruft/
+    #+end_example
+
+    What it does: The first 6 lines set environment variables for
+    use by this tool and programs invoked.  In particular the setting
+    of =PATH= and =LD_LIBRARY_PATH= is important so that
+    gpg-wks-server can properly work.
+
+    The first rule (rules are started with a colon line) detects mails
+    sent from daemon processes.  We don't want them and thus we save
+    them to the Maildir style folder =Mail/from-daemon= for later
+    inspection.  For a production system it would be better to
+    directly send those mails to the bit bucket by replacing the last
+    line of that rule with =/dev/null=.
+
+    The second rule stores a copy of all incoming mails to the folder
+    =Mail/archive=.  This is useful for debugging and to view the flow
+    of mails.  The 'c' after the ':0' means continue with the next
+    rule after having processed this rule (i.e. storing to the archive
+    folder).  By the way, do not forget the trailing slash at folder
+    names; without a slash a plain mbox style would be written (you can
+    use an mbox too, but Maildir is considered a better way to store
+    mails).
+
+    The third rule is the heart of this procmail script (in procmail
+    parlance “recipe”).  The two lines starting with an asterisk give
+    two conditions on when this rule shall be skipped: If the mail
+    comes from us or if the mail has our loop detection mail header.
+    The command run on this mail is the wks server in a mode which
+    uses the /usr/lib/sendmail tool for sending responses to the
+    mail.  The output of the tool is stored to the file =send.log=
+    in the home directory; to append to a log file use =-o -= and
+    redirect to a log file.
+
+    The final rule stores all not processed mails to the =cruft/=
+    folder.  This can as well be replaced by =/dev/null=/
+
+    Finally add an entry to your crontab (run =crontab -e=) to expire non
+    confirmed publication requests:  At the top of your crontab add:
+
+    : PATH=/home/webkey/bin:/usr/local/bin:/usr/bin:/bin
+    : LD_LIBRARY_PATH=/home/webkey/lib
+    :
+    : 42 3 * * * gpg-wks-server --cron
+
+    so that the server tool is run each night at, say, 3:42.
+
+
+*** Test your installation
+
+    To test the Web Key Service, you can create some test accounts for
+    your domain and run the protocol.  For a proper test, do not just
+    use a different account on the server but use client box.
+
+    Developers of [[https://userbase.kde.org/KMail][KMail]] should already be able to use its brand new
+    builtin support for the Web Key Service.
+
+    Integration of the Web Key Service into the other mail clients has
+    not yet been done.  Thus you need to run the test manually.  In
+    this example we assume that on you own box a sendmail like tool is
+    installed and you also installed GnuPG 2.1 along with the client
+    part of Web Key Service (gpg-wks-client which may require that you
+    pass --enable-wks-tools to the configure run).
+
+    An easy way of testing the system exists for [[http://www.mutt.org][Mutt]] users: By adding
+    the two lines
+
+    : application/vnd.gnupg.wks; /usr/local/bin/gpg-wks-client \
+    :    -v --read --send; needsterminal; description=WKS message
+
+    to =/etc/mailcap= Mutt will do the decryption job and then call
+    the wks-client for the protocol handling.  It can be expected that
+    Mutt users have a /usr/lib/sendmail installed which is required
+    here.  Note that =--read= is used which tells the client that the
+    input mail has already been decrypted.
+
+    For all others the protocol can be run by hand.  Let’s assume, you
+    have the key
+
+#+begin_example
+sub   cv25519 2016-07-15 [E]
+      C444189BD549468C97992D7D3C79E8F960C69FCE
+pub   ed25519 2016-06-28 [SC]
+      64944BC035493D929EF2A2B9D19D22B06EE78668
+uid           [ultimate] dewey@test.gnupg.org
+sub   cv25519 2016-06-28 [E]
+      B3746B6927FF8021486561D83452DE414E0B5CCD
+#+end_example
+
+    which in fact is a real key of our own test environment.  To
+    publish that key you send the key to the mail provider:
+
+    : $ /usr/local/libexec/gpg-wks-client --create --send \
+    : >  64944BC035493D929EF2A2B9D19D22B06EE78668 dewey@test.gnupg.org
+
+
+    As already mention, =--send= invokes =/usr/lib/sendmail= and sends
+    out the mail.  If that option is not used, the mail is
+    written to stdout (or to the file given with =--output=) and the
+    user is responsible to feed this to the mail system.  If this all
+    works a single message will be show:
+
+#+begin_example
+gpg-wks-client: submitting request to 'key-submission@test.gnupg.org'
+#+end_example
+
+    Now, wait until you receive a mail back from your provider.  In
+    this example that mail was received and stored in the file
+    =new/1472561079.6352_1.foobar=.  We feed this file to the
+    wks-client:
+
+    : $ /usr/local/libexec/gpg-wks-client --receive --send \
+    : >       < new/1472561079.6352_1.foobar
+
+    which may respond like this:
+
+#+begin_example
+gpg-wks-client: gpg: encrypted with 256-bit ECDH key, ID 3452DE414E[...]
+gpg-wks-client: gpg:       "dewey@test.gnupg.org"
+gpg-wks-client: new 'application/vnd.gnupg.wks' message part
+gpg-wks-client: gpg: automatically retrieved 'key-submission@test.g[...]
+#+end_example
+
+   and has send the confirmation mail back to the provider.  Over
+   there the confirmation mail is matched to the pending key database
+   and the key is then published.
+
+   To check that the key has been published, use this:
+
+ : $ gpg -v --auto-key-locate=clear,wkd,local --locate-key dewey@test.gnupg.org
+
+   you should see:
+
+#+begin_example
+gpg: pub  ed25519/D19D22B06EE78668 2016-06-28  dewey@test.gnupg.org
+gpg: key D19D22B06EE78668: "dewey@test.gnupg.org" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: auto-key-locate found fingerprint 64944BC035493D929EF2A2B9D19D22B06EE78668
+gpg: automatically retrieved 'dewey@test.gnupg.org' via WKD
+pub   ed25519 2016-06-28 [SC]
+      64944BC035493D929EF2A2B9D19D22B06EE78668
+uid           [ultimate] dewey@test.gnupg.org
+sub   cv25519 2016-06-28 [E]
+      B3746B6927FF8021486561D83452DE414E0B5CCD
+#+end_example
+
+   Despite that it tells you that the key did not change (well, you
+   asked the provider to publish this key), it also tells that the key
+   was found using the Web Key Directory (WKD).
+
+   You may also use this lower level test:
+
+   : $ gpg-connect-agent --dirmngr --hex 'wkd_get dewey@test.gnupg.org' /bye
+
+   which results in a hex listing of the key
+
+*** Future work
+
+    The tools are not yet finished and improvements can be expected
+    over the next few GnuPG releases.  For example the server should
+    send a final mail back to announce that the key has been
+    published.  We are also considering slight changes to the protocol
+    but the general procedure on how to drive the tools is unlikely to
+    change.
+
+    We still need to add manual pages to describe the server and
+    client tools.  For now =--help= and the [[https://lists.gnupg.org/mailman/listinfo/gnupg-devel][gnupg-devel]] mailing list
+    are your best friends.  For those who want to integrate support
+    for the Web Key Service into a MUA but do not want to fiddle with
+    the server side of things, we are happy to provide mail addresses
+    for testing.
