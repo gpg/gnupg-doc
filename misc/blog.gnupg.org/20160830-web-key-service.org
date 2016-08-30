@@ -1,7 +1,7 @@
 # Some notes on our new Web Key Service
 #+STARTUP: showall
 #+AUTHOR: Werner
-#+DATE: August 30, 2106
+#+DATE: August 30, 2016
 
 ** Key Discovery Made Simple
 
