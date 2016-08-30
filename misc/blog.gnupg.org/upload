@@ -20,6 +20,7 @@ emacs23 --batch \
   --eval "(require 'assoc)" \
   --eval "(require 'org)" \
   --eval "(setq gpgweb-root-dir \"$(cd ../../web && pwd)/\")" \
+  --eval "(setq gpgweb-stage-dir \"$(cd ../../stage && pwd)/\")" \
   --eval "(require 'gpgweb (concat gpgweb-root-dir \"share/gpgweb.el\"))" \
   --eval "(setq org-publish-use-timestamps-flag nil)" \
   --eval "(setq org-export-html-toplevel-hlevel 1)" \
