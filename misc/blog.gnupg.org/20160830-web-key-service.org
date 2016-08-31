@@ -72,8 +72,8 @@
 
     Then run:
 
-    : $ make -f ~/b-w32/speedo/gnupg-2.1.15/build-aux/speedo.mk            \
-    : >  INSTALL_PREFIX=. speedo_pkg_gnupg_configure='--enable-gpg2-is-gpg \
+    : $ make -f gnupg-2.1.15/build-aux/speedo.mk INSTALL_PREFIX=. \
+    : >   speedo_pkg_gnupg_configure='--enable-gpg2-is-gpg        \
     : >      --disable-g13 --enable-wks-tools' native
 
     If you run into errors you are probably missing some development
