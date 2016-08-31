@@ -64,11 +64,11 @@
     Speedo, which downloads, verifies and builds all dependent
     packages.  To do this first unpack the tarball:
 
-    : $ tar xjf gnupg-2.1.5.tar.bz2
+    : $ tar xjf gnupg-2.1.15.tar.bz2
 
     On non GNU system you may need to use this instead:
 
-    : $ zcat gnupg-2.1.5.tar.bz2 | tar xf -
+    : $ zcat gnupg-2.1.15.tar.bz2 | tar xf -
 
     Then run:
 
@@ -113,7 +113,7 @@
 
     to create the required sub-directories with the permission set
     correctly.  In particular the =hu= directory (“hashed-userid”) to
-    store pending keys most only be accessible by the webkey user.
+    store pending keys must only be accessible by the webkey user.
     Running the above command will also remind you to create a file
     with the submission address for the domain.  Let’s do that:
 
@@ -151,7 +151,7 @@
 
 *** Create submission key
 
-    The protocol suggests that the key to be published is send with an
+    The protocol suggests that the key to be published is sent with an
     encrypted mail to the service.  Thus you need to create a key for
     the submission address:
 
@@ -272,7 +272,7 @@
 
     Integration of the Web Key Service into the other mail clients has
     not yet been done.  Thus you need to run the test manually.  In
-    this example we assume that on you own box a sendmail like tool is
+    this example we assume that on your own box a sendmail-like tool is
     installed and you also installed GnuPG 2.1 along with the client
     part of Web Key Service (gpg-wks-client which may require that you
     pass --enable-wks-tools to the configure run).
@@ -309,11 +309,11 @@ sub   cv25519 2016-06-28 [E]
     : >  64944BC035493D929EF2A2B9D19D22B06EE78668 dewey@test.gnupg.org
 
 
-    As already mention, =--send= invokes =/usr/lib/sendmail= and sends
+    As already mentioned, =--send= invokes =/usr/lib/sendmail= and sends
     out the mail.  If that option is not used, the mail is
     written to stdout (or to the file given with =--output=) and the
-    user is responsible to feed this to the mail system.  If this all
-    works a single message will be show:
+    user is responsible for feeding this to the mail system.  If this all
+    works a single message will be shown:
 
 #+begin_example
 gpg-wks-client: submitting request to 'key-submission@test.gnupg.org'
@@ -336,7 +336,7 @@ gpg-wks-client: new 'application/vnd.gnupg.wks' message part
 gpg-wks-client: gpg: automatically retrieved 'key-submission@test.g[...]
 #+end_example
 
-   and has send the confirmation mail back to the provider.  Over
+   and has sent the confirmation mail back to the provider.  Over
    there the confirmation mail is matched to the pending key database
    and the key is then published.
 
