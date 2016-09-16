@@ -1,17 +1,16 @@
 # Python bindings for GPGME
 #+AUTHOR: Justus
-#+DATE: August 12th, 2016
+#+DATE: September 16th, 2016
 
 ** Python bindings for GPGME
 
-GPGME 1.7 includes bindings for Python >= 3.4.  The bindings are a
-port of the [[https://bitbucket.org/malb/pyme][~pyme~]] bindings to Python 3, with a small shim on top to
-provide a more idiomatic interface.  For the purposes of this post I
-will refer to the preexisting bindings that are for Python 2 only
-~pyme2~, and to our new bindings as ~pyme3~.
-
-Existing applications using ~pyme2~ should continue to work with
-little to no changes beyond what is needed to port them to Python 3.
+GPGME 1.7 includes bindings for Python >= 2.7.  The bindings are a
+port of the [[https://bitbucket.org/malb/pyme][~pyme~]] bindings to Python 3 retaining compatibility with
+Python 2.7, with a small shim on top to provide a more idiomatic
+interface.  For the purposes of this post I will refer to the
+preexisting bindings that are for Python 2 only ~pyme2~, and to our
+new bindings as ~pyme3~.  Existing applications using ~pyme2~ should
+continue to work no changes.
 
 ~pyme2~ offers an interface that is very close to that of GPGME.  This
 interface exposes all features of the underlying library, but it is
@@ -34,7 +33,7 @@ with pyme.Context(armor=True) as c:
 
 This will encrypt the given plaintext using symmetric encryption and
 the given passphrase, wrap it up using the OpenPGP protocol, and
-encode it using ascii-armor.  The plaintext is easily recovered using:
+encode it using ASCII-armor.  The plaintext is easily recovered using:
 
 #+BEGIN_SRC python
 with pyme.Context() as c:
