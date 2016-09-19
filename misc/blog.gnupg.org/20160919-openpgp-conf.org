@@ -50,13 +50,13 @@ do with making it easier to get the components, and more to do with
 security: getting documentation for secure chips, for instance,
 requires signing an NDA and, due to their specialized nature, are more
 likely to have a backdoor.  Instead, the GnuK uses a general purpose
-CPU.  To protect the secret key material, it uses the flash ROM
-protection feature.  There are currently discussions underway to
-further increase the security of this by partially decrypting the
-secret key material on the host with its much more capable CPU, which
-would make a brute force attack significantly more expensive should
-the key material be extracted.  The GnuK can currently be ordered
-either from [[https://www.seeedstudio.com/FST-01-without-Enclosure-p-1276.html][seeed]] or the [[https://shop.fsf.org/storage-devices/neug-usb-true-random-number-generator][FSF]].
+MCU (microcontroller unit).  To protect the secret key material, it
+uses the flash ROM protection feature.  There are currently
+discussions underway to further increase the security of this by
+partially decrypting the secret key material on the host with its much
+more capable CPU, which would make a brute force attack significantly
+more expensive should the key material be extracted.  The GnuK can
+currently be ordered either from [[https://www.seeedstudio.com/FST-01-without-Enclosure-p-1276.html][seeed]] or the [[https://shop.fsf.org/storage-devices/neug-usb-true-random-number-generator][FSF]].
 
 Andre discussed [[https://files.intevation.de/users/aheinecke/gpgme.pdf][how to use GPGME]].  The main takeaway is that although
 GPGME's API is sometimes inconveniently low-level and some features
@@ -77,9 +77,9 @@ submitted those for PHP, Perl, Python and Bash, and they will be part
 of the next GnuPG release.
 
 Another talk included a discussion of encrypted mailing list software
-and the current state of Schleuder by Iif and paz.  Schleuder is
+and the current state of Schleuder by Ilf and Paz.  Schleuder is
 apparently the only encrypted mailing list software that currently
-works (its also actively maintained).  Its design, however, requires
+works (it is also actively maintained).  Its design, however, requires
 that the mailing list server be able to decrypt the messages in order
 to reencrypt them to all of the subscribers.  The authors would like a
 better solution, but, as they point out, there are ideas out there
@@ -97,6 +97,6 @@ contracted]], [[https://www.gnupg.org/conf/2016/openpgp-2016-a-few-concerns.pdf]
 UX decisions]], [[https://www.gnupg.org/conf/2016/openpgp-2016-bypass-pinentry.pdf][how to bypass pinentry]], [[https://sks-keyservers.net/files/2016-09_OpenPGP-Conf-sks-keyservers.pdf][an update on the sks keyservers]],
 an overview of PEP, and an analysis of the keyserver data.
 
-Given our very positive reactions from the participants and our own
+Given the very positive reactions from the participants and our own
 positive impressions, we expect there to be a second edition of the
 conference in the near future.
