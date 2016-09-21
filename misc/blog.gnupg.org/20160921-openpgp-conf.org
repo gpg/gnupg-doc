@@ -1,14 +1,20 @@
 # OpenPGP.conf: A Success
 #+STARTUP: showall
 #+AUTHOR: Neal
-#+DATE: September 19, 2016
+#+DATE: September 21, 2016
+
+** OpenPGP.conf: A Success
 
 On September 8th and 9th, the first [[https://www.gnupg.org/conf/program.html][OpenPGP.conf]] took place in Köln,
 Germany.  The conference was organized by the [[German%20Unix%20User%20Group][German Unix User Group]]
-(GUUG) and attracted over 50 participants from around the world.  The
+(GUUG) and attracted over 50 [[https://www.gnupg.org/ftp/media/openpgp.conf/2016/openpgpconf-participants-small.jpg][participants]] from around the world.  The
 program consisted of 18 highly technical talks.  Lunch and dinner were
 provided at the venue, which resulted in lots of time to increase ties
 between projects as well as exchange and develop ideas.
+
+#+CAPTION: The GnuPG team: @@html:<br/>@@
+#+CAPTION: dkg, Justus, Neal, Kai, Werner, André, Gniibe
+[[https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg][https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg]]
 
 From the GnuPG project, Werner presented an introduction to the new
 [[https://www.gnupg.org/blog/20160830-web-key-service.html][web key service (WKS) protocol]], which is being deployed by several
@@ -28,7 +34,7 @@ are still encouraged to either directly verify their communication
 partner's key or use the web of trust.  The German news site [[http://www.golem.de/news/web-key-service-openpgp-schluessel-ueber-https-verteilen-1609-123194.html][Golem
 reported on Werner's presentation]].  Meskio from the LEAP project also
 present [[https://meskio.net/openpgp.conf/#/][how LEAP is doing key discovery]].  Phillip Hallam-Baker
-discussed [[https://www.gnupg.org/conf/2016/openpgp-2016-the-mathematical-mesh.pptx][key management in the Mesh]].  And, holger krekel discussed
+discussed [[https://www.gnupg.org/conf/2016/openpgp-2016-the-mathematical-mesh.pptx][key management in the Mesh]].  And, Holger Krekel discussed
 [[https://www.gnupg.org/conf/2016/openpgp-2016-automatic-email-encryption-holger-krekel/index.html#/step-1][how to distribute keys inline]].
 
 Justus discussed his proposal for [[https://www.gnupg.org/conf/2016/openpgp-2016-common-openpgp-testsuite.pdf][a common OpenPGP test suite]].  The
