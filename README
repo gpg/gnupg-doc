@@ -97,7 +97,8 @@ howtos -> ../../howtos.gnupg.org/htdocs
 
     YYYYMMDD-short-headline.org
 
-  for example "20141030-what-happened-this-month.org".  Unless you
+  for example "20141030-what-happened-this-month.org".  For drafting
+  the blog you may want to store it in drafts/ first.  Unless you
   translate an existing entry do not use a file name which ends in
   ".??.org".  The file itself is a standard org file using these
   conventions:
