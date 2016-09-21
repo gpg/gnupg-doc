@@ -362,12 +362,15 @@ can be done with a file at the URL
       WELLKNOWN/policy
 #+END_EXAMPLE
 
-The file contains keywords, one per line with each line terminated by a
-LF or the sequence of CR and LF. Empty lines and lines starting with a
-'#' character are considered comment lines. A keyword is made up of
-lowercase letters, digits, hyphens, or dots. An underscore is allowed as
-a name space delimiters; see below. The first character must be a
-letter. Clients MUST use case-insensitive matching.
+The file contains keywords and optioanlly values, one per line with
+each line terminated by a LF or the sequence of CR and LF. Empty lines
+and lines starting with a '#' character are considered comment
+lines. A keyword is made up of lowercase letters, digits, hyphens, or
+dots. An underscore is allowed as a name space delimiters; see
+below. The first character must be a letter.  Keywords which are
+defined to require a value are directly followed by a colon and then
+after optional white space the value.  Clients MUST use
+case-insensitive matching for the keyword.
 
 Currently defined keywords are:
 
@@ -381,8 +384,14 @@ Currently defined keywords are:
                  Key Directory Update protocol is used to update the
                  keys for the DANE service.
 
+- "auth-submit" :: The submission of the mail to the server is done
+                   using an authenticated connection.  Thus the
+                   submitted key will be published immediately without
+                   any confirmation request.
+
+
 More keywords will be defined in updates to this I-D. There is no
-registry yet except for this document. For experimental use of new
+registry except for this document.  For experimental use of new
 features or for provider specific settings, keywords MUST be prefixed
 with a domain name and an underscore.
 
