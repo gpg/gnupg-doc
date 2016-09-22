@@ -1392,7 +1392,7 @@ Add 2 OSes to the list of supported systems.
 
 ** CVS access (2000-03-15)
 
-[[http://cvs.gnupg.org/][cvs.gnupg.org]] provides browsable access to
+[[https://cvs.gnupg.org/][cvs.gnupg.org]] provides browsable access to
 the CVS tree of GnuPG and related projects.
 
 

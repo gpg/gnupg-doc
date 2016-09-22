@@ -8,7 +8,7 @@
 [[file:pr.org][Public Relations]] | [[file:glossary.org][Glossary]]
 
 
-This page provides an overview. The CVS repository contains [[http://cvs.gnupg.org/cgi-bin/viewcvs.cgi/aegypten-specs/?cvsroot=Project+Aegypten][technical
+This page provides an overview. The CVS repository contains [[https://cvs.gnupg.org/cgi-bin/viewcvs.cgi/aegypten-specs/?cvsroot%3DProject%2BAegypten][technical
 details]].  Note that some of parts of this page have not been
 translated from German.
 
