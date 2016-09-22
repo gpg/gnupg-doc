@@ -38,29 +38,17 @@ nicely integrated into an installer and features several frontends as
 well as English and German manuals.  A simple Windows installer for the
 /modern/ version is available at our [[file:download/index.org][download]] page.
 
-# * Reconquer your privacy
-#
-# Even if you have nothing to hide, using encryption helps protect the
-# privacy of people you communicate with, and makes life difficult for
-# bulk surveillance systems. If you do have something important to hide,
-# you are in good company; GnuPG is one of the tools that Edward Snowden
-# used to uncover the secrets of the NSA.
-#
-# Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
-# should use GnuPG for your electronic communication.  If you need
-# printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
+* Reconquer your privacy
 
+Even if you have nothing to hide, using encryption helps protect the
+privacy of people you communicate with, and makes life difficult for
+bulk surveillance systems. If you do have something important to hide,
+you are in good company; GnuPG is one of the tools that Edward Snowden
+used to uncover the secrets of the NSA.
 
-* Join us for the first OpenPGP conference
-
-#+html: <a href="/conf/index.html"><img style="margin: 0 auto; display: block;" src="/conf/images/openpgp-conf.png" alt="Logo: OpenPGP.conf" /></a>
-
-[[https://www.gnupg.org/conf/index.html][OpenPGP.conf]] is a conference for users and implementers of the OpenPGP
-protocol, which is at the core of GnuPG.  We meet in Cologne on
-September 8 and 9.  [[https://www.gnupg.org/conf/index.html][OpenPGP.conf]] is a place to meet, discuss, and
-learn about latest developments of GnuPG and other OpenPGP aware
-applications and what technical measures can be deployed to repel the
-ever increasing trend to mass surveillance.
+Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
+should use GnuPG for your electronic communication.  If you need
+printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
 
 
 * News
@@ -79,6 +67,13 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+
+** GnuPG Made Easy (GPGME) 1.7.0 released (2016-09-21)
+
+[[file:related_software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program.  Highlights in this release are Python and C++ language
+bindings as well as support for GnuPG 2.1 features.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][more]]}
 
 ** GnuPG 2.1.15 released (2016-08-18)
 
