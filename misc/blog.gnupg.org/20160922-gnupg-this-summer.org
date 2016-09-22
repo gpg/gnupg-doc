@@ -3,6 +3,8 @@
 #+AUTHOR: Neal
 #+DATE: September 22, 2016
 
+** GnuPG this Past Summer
+
 *** Development
 
 As usual, Werner has made a cornucopia of contributions.  He improved
