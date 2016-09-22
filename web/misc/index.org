@@ -12,5 +12,4 @@
   - [[file:links.org][Links]] - Cryptography is a wide-spread science and other people
     have something to tell about.
   - [[file:logo-contest.org][Logo Contest]] - GnuPG needs a new Logo.
-  - [[http://www-old.gnupg.org][The old GnuPG website]] - In case something is missing at the new one.
   - [[file:../legal.org][Law survey]] - Info on the legal issues of using cryptography.

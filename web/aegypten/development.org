@@ -26,12 +26,12 @@
 -  Ägypten Mailing Lists:
 
    Technical coordination is discussed at:
-   [[http://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]]
+   [[https://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]]
     This is also the list for the project Gnu Privacy Assistance (GPA)
    and the tool Gnu Privacy Assistant (gpa).
 
    Commits to Ägypten CVS:
-   [[http://lists.gnupg.org/mailman/listinfo/aegypten-commits][aegypten-commits]]
+   [[https://lists.gnupg.org/mailman/listinfo/aegypten-commits][aegypten-commits]]
 
 -  Other Mailing Lists:
 
@@ -41,7 +41,7 @@
    [[http://lists.kde.org/?l=kmail][kmail mailing list archive]]
 
    GnuPG development:
-   [[http://lists.gnupg.org/mailman/listinfo/gnupg-devel][gnupg-devel]]
+   [[https://lists.gnupg.org/mailman/listinfo/gnupg-devel][gnupg-devel]]
 
 ** How to test an Ägypten-enabled KMail or Mutt?
 

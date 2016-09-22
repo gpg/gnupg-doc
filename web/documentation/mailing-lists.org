@@ -18,19 +18,19 @@ options.
 | Name           | Purpose                                     | Lang |
 |----------------+---------------------------------------------+------|
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce]] | Release announcements (low-traffic)         | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce]] | Release announcements (low-traffic)         | en   |
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-users/][gnupg-users]]    | General discussion and help                 | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-br/][gnupg-br]]       | Help among Portuguese/Brazil speaking users | br   |
-| [[http://lists.gnupg.org/pipermail/gnupg-de/][gnupg-de]]       | Help among German speaking users            | de   |
-| [[http://lists.gnupg.org/pipermail/gnupg-pt/][gnupg-pt]]       | Help among Portuguese speaking users        | pt   |
-| [[http://lists.gnupg.org/pipermail/gnupg-es/][gnupg-es]]       | Help among Spanish speaking users           | es   |
-| [[http://lists.gnupg.org/pipermail/gnupg-ru/][gnupg-ru]]       | Help among Russian speaking users           | ru   |
+| [[https://lists.gnupg.org/pipermail/gnupg-users/][gnupg-users]]    | General discussion and help                 | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-br/][gnupg-br]]       | Help among Portuguese/Brazil speaking users | br   |
+| [[https://lists.gnupg.org/pipermail/gnupg-de/][gnupg-de]]       | Help among German speaking users            | de   |
+| [[https://lists.gnupg.org/pipermail/gnupg-pt/][gnupg-pt]]       | Help among Portuguese speaking users        | pt   |
+| [[https://lists.gnupg.org/pipermail/gnupg-es/][gnupg-es]]       | Help among Spanish speaking users           | es   |
+| [[https://lists.gnupg.org/pipermail/gnupg-ru/][gnupg-ru]]       | Help among Russian speaking users           | ru   |
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel]]    | Development discussion and bug tracking     | en   |
-| [[http://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel]]   | Development of Libgcrypt                    | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc]]      | Development of documentation                | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-commits/][gnupg-commits]]  | Commit messages (read-only)                 | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel]]    | Development discussion and bug tracking     | en   |
+| [[https://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel]]   | Development of Libgcrypt                    | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc]]      | Development of documentation                | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-commits/][gnupg-commits]]  | Commit messages (read-only)                 | en   |
 |                |                                             |      |
 |----------------+---------------------------------------------+------|
 

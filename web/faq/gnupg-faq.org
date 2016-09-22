@@ -94,7 +94,7 @@ try to help to people who send email directly to us, those emails quickly
 accumulate.  Helping just six people a day can take an hour of time, and that's
 an hour less we have to work on making GnuPG better.  Please reach out to the
 GnuPG community via the
-[[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
+[[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
 not individual people within
 GnuPG.
 
@@ -462,7 +462,7 @@ There are undoubtedly many more that we’ve missed.
     :END:
 
 
-- Subscribing :: visit the [[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
+- Subscribing :: visit the [[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
 - Unsubscribing :: see above
 - List moderator :: <[[mailto:gnupg-users-owner@gnupg.org?subject%3DThe%20GnuPG-Users%20list][gnupg-users-owner@gnupg.org]]>
 - Supports PGP/MIME? :: Yes
