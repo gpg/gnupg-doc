@@ -16,7 +16,7 @@
   GnuPG carries an [[https://www.fsf.org][FSF]] copyright notice, they never funded the
   development or hosting costs.
 
-  If you are using [[../index.org][GnuPG]], [[http://directory.fsf.org/project/libgcrypt/][Libgcrypt]], [[../related_software/gpgme/index.org][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
+  If you are using [[../index.org][GnuPG]], [[../related_software/libgcrypt/index.org][Libgcrypt]], [[../related_software/gpgme/index.org][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
   to help with development and maintenance please consider to make a
   donation.
 

@@ -115,7 +115,7 @@
     -  [[https://www.gnupg.org][GnuPG]] >= 1.2.5
     -  [[https://www.gnupg.org/related_software/libgpg-error/][libgpg-error]]
        >= 1.0.0
-    -  [[http://directory.fsf.org/security/libgcrypt.html][libgcrypt]] >=
+    -  [[https://directory.fsf.org/security/libgcrypt.html][libgcrypt]] >=
        1.2.0
     -  [[https://www.gnupg.org/related_software/gpgme/index.html][GpgME]]
        >= 1.0.0

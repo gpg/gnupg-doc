@@ -10,7 +10,7 @@
 #+index: Gpg4win
 
 GnuPG is a complete and free implementation of the OpenPGP standard as
-defined by [[http://www.ietf.org/rfc/rfc4880.txt][RFC4880]] (also known as /PGP/). GnuPG allows to encrypt and
+defined by [[https://www.ietf.org/rfc/rfc4880.txt][RFC4880]] (also known as /PGP/). GnuPG allows to encrypt and
 sign your data and communication, features a versatile key management
 system as well as access modules for all kinds of public key
 directories. GnuPG, also known as /GPG/, is a command line tool with
@@ -151,7 +151,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000383.h
 * A big Thanks to all supporters
 
 Due to this [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][ProPublica article]] we received more than 120,000 \euro of
-individual donations on a single day.  There was even more: The [[http://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
+individual donations on a single day.  There was even more: The [[https://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
 Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
 service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
 And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible

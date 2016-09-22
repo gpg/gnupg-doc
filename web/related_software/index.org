@@ -16,7 +16,7 @@
   Please note that, being part of the [[http://www.gnu.org/][GNU Project]], we can not link to
   any project which can not be labeled as [[http://www.gnu.org/philosophy/free-sw.html][free software]] . If you found
   a link on these pages to a project which does not fulfill this
-  requirement (a good checkpoint is the [[http://directory.fsf.org/][ FSF/UNESCO Free Software
+  requirement (a good checkpoint is the [[https://directory.fsf.org/][ FSF/UNESCO Free Software
   Directory]]) please let us know by contacting the [[mailto:webmaster@gnupg.org][webmaster]] .
 
   -  [[file:frontends.org][Frontends]] :: This category collects together all the software for
