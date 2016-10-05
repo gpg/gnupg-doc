@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-01">
+     docName="draft-koch-openpgp-webkey-service-02">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -39,7 +39,7 @@
       </address>
     </author>
 
-    <date month="May" year="2016" />
+    <date month="October" year="2016" />
     <area>Security</area>
 
     <abstract>
@@ -162,16 +162,20 @@ For example the URI to lookup the key for Joe.Doe@Example.ORG is:
 
 (line has been wrapped for rendering purposes)
 
-The HTTP GET method MUST return the binary representation of the OpenPGP
-key for the given mail address.  The key needs to carry a User ID packet
-({{{RFC(4880)}}}) with that mail address.  Note that the key may be
-revoked or expired - it is up to the client to handle such conditions.
-The server MUST also accept a HEAD method so that a client may only
+The HTTP GET method MUST return the binary representation of the
+OpenPGP key for the given mail address.  The key needs to carry a User
+ID packet ({{{RFC(4880)}}}) with that mail address.  Note that the key
+may be revoked or expired - it is up to the client to handle such
+conditions.  To ease distribution of revoked keys, a server may return
+revoked keys in addition to a new key.  The keys are returned by a
+single request as concatenated key blocks.
+
+The server MUST accept the HTTP HEAD method to allow a client to
 check for the existence of a key.
 
 The server SHOULD return "application/octet-string" as the
-content-type for the data but clients SHOULD also accept any other
-content-type.  The server MUST NOT return an ASCII armored version of
+Content-Type for the data but clients SHOULD also accept any other
+Content-Type.  The server MUST NOT return an ASCII armored version of
 the key.
 
 * Web Key Directory Update Protocol
@@ -262,66 +266,89 @@ or optional parameters, and the body part contains the ASCII-armored
 transferable Public Key Packets as defined in {{{RFC(4880)}}}, section
 11.1.
 
-If the mail provider has published an encryption key for the
-submission-address in the Web Key Directory, the key to be published
-MUST be submitted using a PGP/MIME encrypted message ({{{RFC(3156)}}},
-section 4).  The message MUST NOT be signed (because the authenticity of
-the signing key has not yet been confirmed).  After decryption of the
-message at the mail provider a single "application/pgp-keys" part, as
-specified above, is expected.
+The mail provider MUST publish a key capable of signing and encryption
+for the submission-address in the Web Key Directory or via DANE.  The
+key to be published MUST be submitted using a PGP/MIME encrypted
+message ({{{RFC(3156)}}}, section 4).  The message MUST NOT be signed
+(because the authenticity of the signing key has not yet been
+confirmed).  After decryption of the message at the mail provider a
+single "application/pgp-keys" part, as specified above, is expected.
 
 ** The Confirmation Request
 
 The mail provider sends a confirmation mail in response to a received
-key publication request.  The message SHOULD be sent from the
+key publication request.  The message MUST be sent from the
 submission-address of the mail provider to the mail address extracted
-from the target key.  The message needs to be encrypted to the target key
-and MAY be signed by the submission key.  PGP/MIME MUST be used for
-encryption and signing; the Combined method ({{{RFC(3156)}}}, section
-6.2) MUST be used if the message is to be signed.
+from the target key.  The message needs to be a PGP/MIME signed
+message using the submission key of the provider for the
+signature.  The signed message MUST have two parts:
 
-The Content-type used for the plaintext part MUST be
-"application/vnd.gnupg.wkd".  The body consists of name-value pairs with
-one name-value pair per LF or CR+LF terminated line.  Empty lines are
-allowed and will be ignored by the receiver.  A colon is used to
-terminate a name.
+The first part MUST have "text" as its Content-Type and can be used to
+explain the purpose of the mail.  For example it may point to this RFC
+and explain on how to manually perform the protocol.
+
+The second part jMUST have "application/vnd.gnupg.wkd" as its
+Content-Type and carry an OpenPGP encrypted message in ASCII Armor
+format.  The message MUST be encrypted to the target key and MUST not
+be signed.  After decryption a text file in the Web Key data format
+must be yielded.
+
+That data format consists of name-value pairs with one name-value pair
+per LF or CR+LF terminated line.  Empty lines are allowed and will be
+ignored by the receiver.  A colon is used to terminate a name.
 
 In a confirmation request the following names MUST be send in the
 specified order:
 
-- "type" :: The value must be "confirmation-request".
+- type :: The value must be "confirmation-request".
 
-- "sender" :: This is the mailbox the user is expected to sent the
-              confirmation response to.  The value must match the
-              mailbox part of the "From:" address of this
-              request.  Exactly one address MUST be given.
+- sender :: This is the mailbox the user is expected to sent the
+            confirmation response to.  The value must match the
+            mailbox part of the "From:" address of this
+            request.  Exactly one address MUST be given.
 
-- "address" :: The value is the addr-spec part of the target key's
-               mail address.  The value SHOULD match the addr-spec part
-               of the recipient's address.  The value MUST be UTF-8
-               encoded as required for an OpenPGP User ID.
+- address :: The value is the addr-spec part of the target key's
+             mail address.  The value SHOULD match the addr-spec part
+             of the recipient's address.  The value MUST be UTF-8
+             encoded as required for an OpenPGP User ID.
 
-- "fingerprint" :: The value is the fingerprint of the target key.  The
-                   fingerprint is given in uppercase hex encoding
-                   without any interleaving spaces.
+- fingerprint :: The value is the fingerprint of the target key.  The
+                 fingerprint is given in uppercase hex encoding
+                 without any interleaving spaces.
 
-- "nonce" :: The value is a string with a minimum length of 16 octets
-             and a maximum length of 64 octets.  The string must
-             entirely be made up of random ASCII letters or
-             digits.  This nonce will be sent back to the mail provider
-             as proof that the recipient is the legitimate owner of
-             the target-key.
+- nonce :: The value is a string with a minimum length of 16 octets
+           and a maximum length of 64 octets.  The string must
+           entirely be made up of random ASCII letters or
+           digits.  This nonce will be sent back to the mail provider
+           as proof that the recipient is the legitimate owner of
+           the target-key.
 
-The receiver of the message decrypts the message, checks that the
-"fingerprint" matches the target key, checks that the "address" matches
-a User ID of the target key, and checks the other constrains of the
-request format.  If any constraint is not asserted, or the fingerprint or
-User ID do not match the target key, or there is no pending publication
-requests (i.e. a mail recently sent o the submission address), the user
-MAY be notified about this fake confirmation attempt.
+The receiver of that message is expected to verify the outer signature
+and disregard the entire message if it can't be verified or has not
+been signed by the key associated with the submission address.
 
-In other cases the confirmation request is legitimate and the MUA shall
-silently send a response as described in the next section.
+After the message as been verified the receiver decrypts the second part
+of the message, checks that the "fingerprint" matches the target key,
+checks that the "address" matches a User ID of the target key, and
+checks the other constrains of the request format.  If any constraint
+is not asserted, or the fingerprint or User ID do not match the target
+key, or there is no pending publication requests (i.e. a mail recently
+sent o the submission address), the user MAY be notified about this
+fake confirmation attempt.
+
+In other cases the confirmation request is legitimate and the MUA
+shall silently send a response as described in the next section.
+
+The rationale for the outer signature used with this request is to
+allow early detection of spam mails.  This can be done prior to the
+decryption step and avoids asking the user to enter a passphrase to
+perform the decryption for a non-legitimate message.  The use of a
+simple encrypted attachment, instead of using PGP/MIME encryption, is
+to convey the Content-Type of that attachment in the clear and also to
+prevent automatic decryption of that attachment by PGP/MIME aware
+clients.  The MUA may in fact detect this confirmation request and
+present a customized dialog for confirming that request.
+
 
 ** The Confirmation Response
 
@@ -333,24 +360,25 @@ the sending of a confirmation request after the first request has been
 send successfully.
 
 The user MUST send the confirmation response from her target mail
-address to the "from" address of the confirmation request.  The message
-MUST be signed and SHOULD be encrypted.  The PGP/MIME Combined format
-MUST be used for encryption and signing ({{{RFC(3156)}}}, section 6.2).
-The encryption key can be taken from the Web Key Directory.
+address to the "from" address of the confirmation request.  The
+message MUST be signed and encrypted using the PGP/MIME Combined
+format ({{{RFC(3156)}}}, section 6.2).  The signing key is the target
+key and the encryption key is the key associated with the provider's
+submission address.
 
-The Content-type used for the plaintext message MUST also be
+The Content-Type used for the plaintext message MUST also be
 "application/vnd.gnupg.wkd".  The format is the same as described above
 for the Confirmation Request.  The body must contain three name-value
 pairs in this order:
 
-- "type" :: The value must be "confirmation-response".
+- type :: The value must be "confirmation-response".
 
-- "sender" :: The value must match the mailbox part of the "From:"
-              address of this response.  Exactly one address MUST be
-              given.
+- sender :: The value must match the mailbox part of the "From:"
+            address of this response.  Exactly one address MUST be
+            given.
 
-- "nonce" :: The value is the value of the "nonce" parameter from the
-             confirmation request.
+- nonce :: The value is the value of the "nonce" parameter from the
+           confirmation request.
 
 ** Policy Flags
 
@@ -374,17 +402,17 @@ case-insensitive matching for the keyword.
 
 Currently defined keywords are:
 
-- "mailbox-only" :: The mail server provider does only accept keys
+- mailbox-only :: The mail server provider does only accept keys
                     with only a mailbox in the User ID.  In particular
                     User IDs with a real name in addition to the
                     mailbox will be rejected as invalid.
 
-- "dane-only" :: The mail server provider does not run a Web Key
+- dane-only :: The mail server provider does not run a Web Key
                  Directory but only an OpenPGP DANE service.  The Web
                  Key Directory Update protocol is used to update the
                  keys for the DANE service.
 
-- "auth-submit" :: The submission of the mail to the server is done
+- auth-submit :: The submission of the mail to the server is done
                    using an authenticated connection.  Thus the
                    submitted key will be published immediately without
                    any confirmation request.
@@ -404,7 +432,7 @@ intended to conceal information about a mail address.
 
 The domain name part of the mail address is not part of the hash to
 avoid problems with internationalized domain names.  Instead a separate
-web service is required for each domain name.
+URL is required for each domain name.
 
 * IANA Considerations
 
@@ -427,30 +455,212 @@ the help of Bernhard Reiter and Guilhem Moulin.
 
 * Back
 
-* Test Vectors
+* Sample Protocol Run
 
-For help implementing this specification a non-normative example is
-given:
+The following non-normative example can be used by implementors as
+guidance.
 
-** Sample key
+Note that GnuPG version 2.1.12 supports the key discovery described in
+version -00 of this document (auto-key-locate method "wkd").  Version
+2.1.16 can run the protocol decribed in this document but is also able
+to run the protocol version specified by -01.
 
-TODO
+** Sample Keys
 
-** Software Notes
+This is the provider's submission key:
+#+begin_example
+-----BEGIN PGP PRIVATE KEY BLOCK-----
 
-GnuPG supports the key discovery described in version -00 of this
-document since version 2.1.12, 2.1.13 and the gurrent git version will
-be adjusted to the changes specs dfescribed in -01.  To use it, the
-new method "wkd" needs to be used with the =--auto-key-locate= option.
+lFgEV/TAohYJKwYBBAHaRw8BAQdAB/k9YQfSTI8qQqqK1KimH/BsvzsowWItSQPT
+FP+fOC4AAP46uJ3Snno3Vy+kORye3rf0VvWvuz82voEQLxG6WpfHhREEtBprZXkt
+c3VibWlzc2lvbkBleGFtcGxlLm5ldIh5BBMWCAAhBQJX9MCiAhsDBQsJCAcCBhUI
+CQoLAgQWAgMBAh4BAheAAAoJEKhtNooW0cqEWMUA/0e9XaeptszWC9ZvPg8INL6a
+BvRqPBYGU7PGmuXsxBovAQDyckOykG0UAfHVyN1w4gSK/biMcnqVr857i8/HuvjW
+C5xdBFf0wKISCisGAQQBl1UBBQEBB0Apvaoe4MtSEJ1fpds/4DFl2kXXBpnVji/s
+Wg9btdthNQMBCAcAAP9FJX99T1LEJzBnvBBnc6bimnT6/1OKM9RdO4R0/uVP6BFL
+iGEEGBYIAAkFAlf0wKICGwwACgkQqG02ihbRyoTlGwD9FBr92osjL7HkhhZZ7Z2D
+My3b9zpoZeMjvPg5YPqpdKMA/jhZoHuZCRMBYf7YRFb8aXtuyetDFZYrkjnum+OG
+HFAD
+=Hnwd
+-----END PGP PRIVATE KEY BLOCK-----
+#+end_example
 
-* Changes since -00
+This is the target key to be published:
+#+begin_example
+-----BEGIN PGP PRIVATE KEY BLOCK-----
 
--  Dropped the second occurrence of the domain name from the URL.
--  Changed field names in the request and response format.
--  Removed useless checks.
--  Added a new policy flag.
+lFgEV2o9XRYJKwYBBAHaRw8BAQdAZ8zkuQDL9x7rcvvoo6s3iEF1j88Dknd9nZhL
+nTEoBRkAAP94nCZMM4WY2IORXfM6phLGSz3RsHvs/vA1Opaus4+R3BKJtBtwYXRy
+aWNlLmx1bXVtYmFAZXhhbXBsZS5uZXSIeQQTFggAIQUCV2o9XQIbAwULCQgHAgYV
+CAkKCwIEFgIDAQIeAQIXgAAKCRATlWNoKgINCpkNAQDFDcwJUzsxu7aJUiPdpYXj
+4uVarrXakxEE8mGFotWhLAD9GH4rqLDYIE3NKEU0s+Okt4tEIwJaV8H1NNPPPMiK
+3g2cXQRXaj2NEgorBgEEAZdVAQUBAQdAFnnmZc99TuKk5iCq9wmYZUVF2RcXN2Cs
+qAl8iGQQUWsDAQgHAAD/VN/VGmlcwGBPcLTya2hfU4t37nMcFCKdNSXjJ5DFA0AP
+PohhBBgWCAAJBQJXaj2NAhsMAAoJEBOVY2gqAg0Ky4UA/0GmVaXzXemLvv1Xw4yx
+Eaz/KfKKGc4RJ+38fyqUzw8NAQCohQ+ki3I5f84EXLZEiUiLsnVtOn1HNxvND/gW
+TiFZBA==
+=GHi7
+-----END PGP PRIVATE KEY BLOCK-----
+#+end_example
 
-** TODO
+** Sample Messages
 
--  What about authenticated submission?
--  Describe how to handle a key with several User IDs.
+The first message triggeres the publication requests.
+#+begin_example
+From: patrice.lumumba@example.net
+To: key-submission@example.net
+Subject: Key publishing request
+MIME-Version: 1.0
+Content-Type: multipart/encrypted;
+        protocol="application/pgp-encrypted";
+	boundary="=-=01-e8k41e11ob31eefa36wo=-="
+Date: Wed, 05 Oct 2016 10:15:51 +0000
+
+
+--=-=01-e8k41e11ob31eefa36wo=-=
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--=-=01-e8k41e11ob31eefa36wo=-=
+Content-Type: application/octet-stream
+
+-----BEGIN PGP MESSAGE-----
+
+hF4DUgLY5tvmW2sSAQdAR1AcqvFpQe/fHRZbf0xcnl9Tb+AtwaX2yZnZXGELGHsw
+1/e3E0JptwM5tpRAVe71ooF8Zq4jl76ZgQKfj/SyjpLJxyoEDy2N5wTQaqW4JtML
+0ukB1vh7dIRDxBJX/LQIJC0wz8o1Q3vjcLJKFFvDb7YrerABpPIzwOAupcgIbQHj
+5m1+2WU5CL8ffyJy2h1jV2X4OnvWF1Sn6J6SVD6DfZpOPRt9TxSemJrN1LJ3lG0N
+ts8AuYmCOeC1H2r5TYyxqkC98JF8+Nvyxd/fwne8IOjK9uixkNMC5H9/ZOH0YWCb
+wBnNB4iXuym4OIPxiLkDymsVF0ww/XrODE9Y259EGmO45VFNrJAX3HFs9/PcMCVk
+n2qMyEkr8LHiXeEPun6Z54RHUPYv2cUkEZ0hhSJ+rtBxkc/5D/cAScCEXRKFSKEF
+jLJAvLK/u/ga5DAzVai+vh6b6Bq+YVPaD9GWMhWj4CgR90p9LULi6S/Hzwhv9Wzf
+8fJoJOaDjyvRDgr09jYLWamxkS9NWxqwy6MXJvxwbNdd5XtqiW4Y4o0Ll1hDJhxR
+ljn/XvotXKwhKN+4QGhIXDVt4Dl4XxS5ptWfVTau8W8DYqDsU2obEcfsirZv53M1
+Q9FCD8CD9+dkBt8VAJekCWVhEltcRHxlrznbk2jxm93xSD2o6gZ5X0VSaSUXyEhm
+J+8F3gyTHGgbq/TgyjFoockWh5EtGgAFuWvmPJCF5PO/UaNeoKwgwSJBu6oTXkHx
+R4nvvMRcj5UgTsKpZ79NiDQukbjG5ScNT5TCUiiZsBXBqBx3fD61EH6cAuh4P3Kr
+iM7PY4fwAHo890Dx+Qlt
+=WIhx
+-----END PGP MESSAGE-----
+
+--=-=01-e8k41e11ob31eefa36wo=-=--
+#+end_example
+
+The server decrypts this message to
+#+begin_example
+Content-Type: application/pgp-keys
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEV2o9XRYJKwYBBAHaRw8BAQdAZ8zkuQDL9x7rcvvoo6s3iEF1j88Dknd9nZhL
+nTEoBRm0G3BhdHJpY2UubHVtdW1iYUBleGFtcGxlLm5ldIh5BBMWCAAhBQJXaj1d
+AhsDBQsJCAcCBhUICQoLAgQWAgMBAh4BAheAAAoJEBOVY2gqAg0KmQ0BAMUNzAlT
+OzG7tolSI92lhePi5VqutdqTEQTyYYWi1aEsAP0YfiuosNggTc0oRTSz46S3i0Qj
+AlpXwfU00888yIreDbg4BFdqPY0SCisGAQQBl1UBBQEBB0AWeeZlz31O4qTmIKr3
+CZhlRUXZFxc3YKyoCXyIZBBRawMBCAeIYQQYFggACQUCV2o9jQIbDAAKCRATlWNo
+KgINCsuFAP9BplWl813pi779V8OMsRGs/ynyihnOESft/H8qlM8PDQEAqIUPpIty
+OX/OBFy2RIlIi7J1bTp9RzcbzQ/4Fk4hWQQ=
+=qRfF
+-----END PGP PUBLIC KEY BLOCK-----
+#+end_example
+
+and returns this confirmation request
+#+begin_example
+From: key-submission@example.net
+To: patrice.lumumba@example.net
+Subject: Confirm your key publication
+MIME-Version: 1.0
+Content-Type: multipart/encrypted;
+	protocol="application/pgp-encrypted";
+	boundary="=-=01-wrzqued738dfx4x97u7y=-="
+Date: Wed, 05 Oct 2016 10:16:57 +0000
+
+
+--=-=01-wrzqued738dfx4x97u7y=-=
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--=-=01-wrzqued738dfx4x97u7y=-=
+Content-Type: application/octet-stream
+
+-----BEGIN PGP MESSAGE-----
+
+hF4DkYWHjk/NdMASAQdAluQeqhECpU2T0zEyBAEbFzhLkpubN160wjkFCrtUc0Mw
+FwYgM2fp9cvTMdJ/xjkvmAcIEOT4AY/hn1yFQ4z0KG0gCkSac+8mkDylnPdxlXYw
+0sBSAXlbqpVA7eUpFuU2Zs10zbIXxlwe6osR5wUIJut/RCOsYQmfvxC55x8mUX5/
+zgTnNzlMzye5ws4pTgAeQm2x0Yv018L8IZgY5KxwJLBzlss0wLZ45ZcS80hR11Fx
+NCow1fKF8lMnOJxagTEOih807nctz8vT5bR1gx0d7N3LM+th8nAg9/6Ghf1XTpLo
+MzwGW0FtOG7Dg1Uxbw2bjaOuRBeh6IIpmNAw1pmIfnNu7PpoRydU5w1K/R8MT06z
+MKdJ7IW5mVGes9EGnG3e4mjuILvNaZhfYy+a73IhDSaPm3oqdl1Qx7tbNg6lGjn6
+KStCYAcPGPp3m7aWkfsPGThOVRhEXqaFFywfwSVEj1pdIRjDFA==
+=Cdjh
+-----END PGP MESSAGE-----
+
+--=-=01-wrzqued738dfx4x97u7y=-=--
+#+end_example
+
+The client decrypts the attachment as
+#+begin_example
+Content-Type: application/vnd.gnupg.wks
+Content-Transfer-Encoding: 8bit
+
+type: confirmation-request
+sender: key-submission@example.net
+address: patrice.lumumba@example.net
+fingerprint: B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+nonce: f5pscz57zj6fk11wekk8gx4cmrb659a7
+#+end_example
+
+creates this response
+#+begin_example
+Content-Type: application/vnd.gnupg.wks
+Content-Transfer-Encoding: 8bit
+
+type: confirmation-response
+sender: key-submission@example.net
+address: patrice.lumumba@example.net
+nonce: f5pscz57zj6fk11wekk8gx4cmrb659a7
+#+end_example
+
+and sends it encrypted to the server
+#+begin_example
+From: patrice.lumumba@example.net
+To: key-submission@example.net
+Subject: Key publication confirmation
+MIME-Version: 1.0
+Content-Type: multipart/encrypted;
+	protocol="application/pgp-encrypted";
+	boundary="=-=01-iacqg4og4pqz11a5cg1o=-="
+Date: Wed, 05 Oct 2016 10:18:52 +0000
+
+
+--=-=01-iacqg4og4pqz11a5cg1o=-=
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--=-=01-iacqg4og4pqz11a5cg1o=-=
+Content-Type: application/octet-stream
+
+-----BEGIN PGP MESSAGE-----
+
+hF4DUgLY5tvmW2sSAQdAnB1C3PMjS4AsGU0qaCqBdWQO5i6blWEyZrEsY+JZY1Qw
+ooNq7zdVWOHhL9LPGAALAgoL3Qfz+dN2u5QamSQ/LJ2c8M0XipNs3lqlNH63yQN1
+0sAmAc3W8xkwul+rf6OLK/gMi6WzM4fnUhd4D1LJGIJoNUN0l3636C7ecOt2lkMl
+5bVAYg/SyMT3ymyfQnvtiem2T5DSnPsS1g6n6QNXWvkqvX9yGxNsNDJEHTuGJB8k
+OJoRlfWQTEo6pgA89febWl1EdeM1pPLstQ2uZE8NPjXoY1nMxAlu+iPYsR41/4sg
+dqwOv5BPLh/GIat8hh9SPWCA9iKlgSQ/EIv5DpjQogEzpriT55dkgfvSVYIAcOdO
+ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
+=7uve
+-----END PGP MESSAGE-----
+
+--=-=01-iacqg4og4pqz11a5cg1o=-=--
+#+end_example
+
+
+* Changes Since -01
+
+- Changed the format of the confirmation request.
+- Added sample messages.
