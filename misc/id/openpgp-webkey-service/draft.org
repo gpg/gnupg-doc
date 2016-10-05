@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-02">
+     docName="draft-koch-openpgp-webkey-service-03">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -39,7 +39,7 @@
       </address>
     </author>
 
-    <date month="October" year="2016" />
+    <date month="MONTH" year="2016" />
     <area>Security</area>
 
     <abstract>
@@ -287,9 +287,9 @@ The first part MUST have "text" as its Content-Type and can be used to
 explain the purpose of the mail.  For example it may point to this RFC
 and explain on how to manually perform the protocol.
 
-The second part jMUST have "application/vnd.gnupg.wkd" as its
+The second part MUST have "application/vnd.gnupg.wkd" as its
 Content-Type and carry an OpenPGP encrypted message in ASCII Armor
-format.  The message MUST be encrypted to the target key and MUST not
+format.  The message MUST be encrypted to the target key and MUST NOT
 be signed.  After decryption a text file in the Web Key data format
 must be yielded.
 
