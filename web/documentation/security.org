@@ -25,5 +25,5 @@ publish it, please report it by mail to security at gnupg.org.
 Note that we do not use a team OpenPGP key.  Thus please write a
 non-encrypted message to the security address and ask for the keys of
 the developers at duty and then encrypt the mail to all of them.  A
-list of our core developers can be found [[../people/index.org][here]]; the are all active on
+list of our core developers can be found [[../people/index.org][here]]; they are all active on
 the gnupg-devel mailing list.
