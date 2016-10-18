@@ -22,18 +22,15 @@ GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning
 be freely used, modified and distributed under the terms of the
 [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-GnuPG comes in three flavours:
+There are two major flavours of GnuPG:
 
  - {{{gnupg21_ver}}} is the /modern/ version with support
    for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
 
- - {{{gnupg_ver}}} is the /stable/ version from the currently mostly
-   used branch.  This branch will reach end-of-life on 2017-12-31,
+ - {{{gnupg_ver}}} is the /stable/ version from an often used branch.
+   This branch will reach end-of-life on 2017-12-31.
 
- - and {{{gnupg1_ver}}} is the /classic/ portable version for use on
-   very old platforms or to decrypt data created with PGP-2 keys.
-
-Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of GnuPG /stable/. It is
+Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the old GnuPG /stable/. It is
 nicely integrated into an installer and features several frontends as
 well as English and German manuals.  A simple Windows installer for the
 /modern/ version is available at our [[file:download/index.org][download]] page.

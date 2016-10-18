@@ -8,12 +8,8 @@
 
   Please read the NEWS file for a more complete list. {{{gnupg_ver}}}
   is the stable and modern version of GnuPG. (Version {{{gnupg1_ver}}}
-  is from the old GnuPG-1 series, which is still maintained and useful
-  on some platforms: It is smaller than versions from the GnuPG-2
-  series, easier to build and also better portable to ancient
-  platforms. In contrast to GnuPG-2 it comes with no support for
-  S/MIME, Secure Shell, or other tools useful for desktop
-  environments.
+  is from the old GnuPG-1 series, which is useful to decrypt PGP-2
+  encrypted data.)
 
 ** GnuPG-2
 
