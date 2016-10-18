@@ -47,7 +47,7 @@
 #
 #+macro: gnupg1_w32cli_ver  1.4.21
 #+macro: gnupg1_w32cli_size 2363k
-#+macro: gnupg1_w32cli_sha 8edea5cda7dc9e39d12b24cf12164b28b832918d
+#+macro: gnupg1_w32cli_sha1 8edea5cda7dc9e39d12b24cf12164b28b832918d
 
 
 #
