@@ -89,6 +89,9 @@
 
 
 ** GnuPG binary releases
+   :PROPERTIES:
+   :CUSTOM_ID: binary
+   :END:
 #+index: Binaries!download
 
    In general we do not distribute binary releases but leave that to
