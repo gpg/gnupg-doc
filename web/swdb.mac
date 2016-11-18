@@ -21,18 +21,17 @@
 #
 # GnuPG-2.1
 #
-#+macro: gnupg21_ver  2.1.15
-#+macro: gnupg21_date 2016-08-18
-#+macro: gnupg21_size 5589k
-#+macro: gnupg21_sha1 908c86dac8e9a1fbf47e1605e570b11391b04ece
-#+macro: gnupg21_sha2 c28c1a208f1b8ad63bdb6b88d252f6734ff4d33de6b54e38494b11d49e00ffdd
+#+macro: gnupg21_ver  2.1.16
+#+macro: gnupg21_date 2016-11-18
+#+macro: gnupg21_size 5703k
+#+macro: gnupg21_sha1 67540161c9fe289153c4a5ea60f7cdce0ef48897
+#+macro: gnupg21_sha2 49b9a6a6787ad00d4d2d69d8c7ee8905923782583f06078a064a0c80531d8844
 #
-#+macro: gnupg21_w32_ver  2.1.15_20160818
-#+macro: gnupg21_w32_date 2016-08-18
-#+macro: gnupg21_w32_size 3566k
-#+macro: gnupg21_w32_sha1 c13fdb4daa2a2c715d86365e6ab6c3b70506340e
-#+macro: gnupg21_w32_sha2 4802c8c08fc67964235eddacfd45553363bac0a081e1f38a76008e2bad9617a2
-
+#+macro: gnupg21_w32_ver  2.1.16_20161118
+#+macro: gnupg21_w32_date 2016-11-18
+#+macro: gnupg21_w32_size 3681k
+#+macro: gnupg21_w32_sha1 50b0bd286faa90e5c71417b5f2f36cf5de964084
+#+macro: gnupg21_w32_sha2 14b17454b32f93099133056833b17dafc76946560be4439fb1894d5dc52fd9dc
 
 
 #
@@ -71,11 +70,11 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver  1.7.1
-#+macro: gpgme_date 2016-10-18
-#+macro: gpgme_size 1255k
-#+macro: gpgme_sha1 af95d75878200407eb577245eeb0681b1ad313ed
-#+macro: gpgme_sha2 d0abe1449395315eac37e4e45076bbb82732cedf94210937b37776e10cdc2bb6
+#+macro: gpgme_ver  1.8.0
+#+macro: gpgme_date 2016-11-16
+#+macro: gpgme_size 1267k
+#+macro: gpgme_sha1 efa043064dbf675fd713228c6fcfcc4116feb221
+#+macro: gpgme_sha2 596097257c2ce22e747741f8ff3d7e24f6e26231fa198a41b2a072e62d1e5d33
 
 
 #
