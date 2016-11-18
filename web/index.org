@@ -66,6 +66,12 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.1.16 released (2016-11-18)
+
+It has been 3 months since the last GnuPG /modern/ release and thus it
+was time for a new one: Version 2.1.16 is now available.  Read the
+full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000398.html][announcement mail]] for details.
+
 ** GnuPG Made Easy (GPGME) 1.7.0 released (2016-09-21)
 
 [[file:related_software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
