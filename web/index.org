@@ -65,6 +65,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GPA 0.9.10 released (2016-11-19)
+
+A maintenance release of the [[file:related_software/gpa/index.org][GNU Privacy Assistant]] is now available.
+Note that some of the changes are only available when build with the
+latest [[file:related_software/gpgme/index.org][GPGME]] version and used with GnuPG 2.1.16 or later.
 
 ** GnuPG 2.1.16 released (2016-11-18)
 
