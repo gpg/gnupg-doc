@@ -65,6 +65,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Pinentry 1.0.0 released (2016-11-22)
+
+After 14 years is was time to bump up the version of [[file:related_software/pinentry/index.org][Pinentry]] to 1.0.
+This new release fixes a couple of minor bugs and introduces features
+to better diagnose problems.  See the [[../../download/index.org::pinentry][download]] section on how to get
+Pinentry.
+
 ** GPA 0.9.10 released (2016-11-19)
 
 A maintenance release of the [[file:related_software/gpa/index.org][GNU Privacy Assistant]] is now available.
