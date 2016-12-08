@@ -1,0 +1,4 @@
+#!/bin/sh
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libasan.so.2 \
+LSAN_OPTIONS=suppressions=/home/jenkins/bin/python.txt \
+exec /usr/bin/python3 "$@"
