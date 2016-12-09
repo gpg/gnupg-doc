@@ -82,11 +82,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.7.3
-#+macro: libgcrypt_date 2016-08-17
-#+macro: libgcrypt_size 2794k
-#+macro: libgcrypt_sha1 5a034291e7248592605db448481478e6c963aa9c
-#+macro: libgcrypt_sha2 ddac6111077d0a1612247587be238c5294dd0ee4d76dc7ba783cc55fb0337071
+#+macro: libgcrypt_ver  1.7.4
+#+macro: libgcrypt_date 2016-12-09
+#+macro: libgcrypt_size 2815k
+#+macro: libgcrypt_sha1 8b3f96f8cfd6791c228c3ba282c83860c83c8844
+#+macro: libgcrypt_sha2 3b67862e2f4711e25c4ce3cc4b48d52a58a3afdcd1d8c6a57f93a1c0ef03e5c6
 
 
 #
