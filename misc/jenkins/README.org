@@ -1,0 +1,12 @@
+* Notes
+** GPGME tests for GnuPG
+There is a reasonably up-to-date (but this is currently a manual
+process) GPGME source at
+
+  $HOME/src/gpgme-for-gnupgs-tests
+
+and a build tree at
+
+  $HOME/src/gpgme-for-gnupgs-tests/obj
+
+The tests from there are executed in GnuPG's test suite.

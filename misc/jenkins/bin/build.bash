@@ -93,6 +93,13 @@ case "$JOB_NAME" in
         ;;
 esac
 
+# See if we have a GPGME checkout for the tesets.
+xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
+if [ -d "$xtest_gpgme_srcdir/obj" ]; then
+    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
+    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj"
+fi
+
 # We build on the "obj" subdir.
 abs_configure="$(pwd)/configure"
 mkdir -p obj
