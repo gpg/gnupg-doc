@@ -1,14 +1,18 @@
 #!/bin/bash
+# Script used jenkins to run builds for GnuPG and related packages.
 
+# Stop on error and be nice to other processes.
 set -xe
-
 renice -n 10 -p $$
 
+# Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
-export PATH=$PREFIX/bin:$PATH
+export PATH=/home/jenkins/bin:$PREFIX/bin:$PATH
 
+# Print the environment.
 env
+ulimit -a
 
 # Tweak the prefix we're installing this project into.  For gnupg-1.4
 # and friends.
@@ -25,16 +29,25 @@ case "$JOB_NAME" in
 esac
 mkdir -p $PREFIX
 
+
 fix_permissions()
 {
   find $1 -type d -exec chmod +w {} + || true
 }
 
 fix_permissions .
+
+# Clean everything
 git clean -fdx
+
+# Run out autogen - note that --force is not required due to the git clean.
 ./autogen.sh
 
+# Out current box seems to have cache coherency problems, thus we have
+# disabled all but one CPU.
 MAKEFLAGS="-j2"
+
+
 SCANBUILD=
 if [ "$(uname)" = Linux ]; then
     # XXX: We should really have an analyzer target
@@ -54,6 +67,7 @@ if [ "$(uname)" = Darwin ]; then
     CXXFLAGS="$CXXFLAGS -D$cversion"
 fi
 
+# Tweak the build depending on the package.
 case "$JOB_NAME" in
     *tgpg*)
         MAKEFLAGS="$MAKEFLAGS GPG=/usr/bin/gpg2"
@@ -77,10 +91,12 @@ case "$JOB_NAME" in
         ;;
 esac
 
+# We build on the "obj" subdir.
 abs_configure="$(pwd)/configure"
 mkdir -p obj
 cd obj
 
+# Switch on the different targets.
 case "$XTARGET" in
     native)
         ASAN_OPTIONS=detect_leaks=0 \
@@ -89,12 +105,10 @@ case "$XTARGET" in
 	           $CONFIGUREFLAGS \
 	           "$CONFIGUREFLAGS_0" \
 	           CFLAGS="$CFLAGS $SANFLAGS -fPIC" \
-	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
+	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11" \
+                   LD_LIBRARY_PATH=$PREFIX/lib
         $SCANBUILD make $MAKEFLAGS
 
-        # so make sure the asan runtime is there for e.g. python
-        PATH=/home/jenkins/bin:$PATH \
-        LD_LIBRARY_PATH=$PREFIX/lib \
           make check verbose=2 LD_LIBRARY_PATH=$PREFIX/lib || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
@@ -139,10 +153,14 @@ case "$XTARGET" in
 	}
 	trap cleanup EXIT
 
+          # We use a different WORKDIR to avoid problems with too long
+          # file names
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
-          make $MAKEFLAGS distcheck
+          make $MAKEFLAGS distcheck LD_LIBRARY_PATH=$PREFIX/lib
+
+          # Extract the tarname from the package
           tarname=$(awk <config.h '
 	             /^#define PACKAGE_TARNAME/ {gsub(/"/,"",$3);name=$3};
 	             /^#define PACKAGE_VERSION/ {gsub(/"/,"",$3);vers=$3};
@@ -155,10 +173,11 @@ case "$XTARGET" in
 	     echo "No tarball named $tarname found - skipping installation" >&2
 	     exit 0
 	  fi
+          # And do a final build using the generated tarball
 	  cd ${tarname}
 	  ./configure --prefix=$PREFIX $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
-	  make $MAKEFLAGS
-	  make $MAKEFLAGS install
+	  make $MAKEFLAGS         LD_LIBRARY_PATH=$PREFIX/lib
+	  make $MAKEFLAGS install LD_LIBRARY_PATH=$PREFIX/lib
 
         ;;
     *)
