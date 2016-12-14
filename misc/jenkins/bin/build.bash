@@ -49,8 +49,10 @@ MAKEFLAGS="-j2"
 
 
 SCANBUILD=
-if [ "$(uname)" = Linux ]; then
-    # XXX: We should really have an analyzer target
+if [ "$(uname)" = Linux ] \
+       && [ "$GIT_PREVIOUS_COMMIT" = "$GIT_COMMIT" ]; then
+    # We only do scan-builds (which are really slow), if the tree is
+    # stable (most commonly on nightly builds).
     SCANBUILD="scan-build -o ${WORKSPACE}/clangScanBuildReports -v"
 fi
 CONFIGUREFLAGS=
