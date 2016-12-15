@@ -108,17 +108,17 @@ cd obj
 # Switch on the different targets.
 case "$XTARGET" in
     native)
+	# asan breaks the configure tests, so we disable it here.
         ASAN_OPTIONS=detect_leaks=0 \
         $SCANBUILD \
             ../configure --prefix=$PREFIX --enable-maintainer-mode \
 	           $CONFIGUREFLAGS \
 	           "$CONFIGUREFLAGS_0" \
 	           CFLAGS="$CFLAGS $SANFLAGS -fPIC" \
-	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11" \
-                   LD_LIBRARY_PATH=$PREFIX/lib
+	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD make $MAKEFLAGS
 
-          make check verbose=2 LD_LIBRARY_PATH=$PREFIX/lib || true
+        make check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
@@ -166,8 +166,8 @@ case "$XTARGET" in
           # file names
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
-                   $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
-          make $MAKEFLAGS distcheck LD_LIBRARY_PATH=$PREFIX/lib
+                   $CONFIGUREFLAGS
+          make $MAKEFLAGS distcheck
 
           # Extract the tarname from the package
           tarname=$(awk <config.h '
@@ -185,8 +185,8 @@ case "$XTARGET" in
           # And do a final build using the generated tarball
 	  cd ${tarname}
 	  ./configure --prefix=$PREFIX $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
-	  make $MAKEFLAGS         LD_LIBRARY_PATH=$PREFIX/lib
-	  make $MAKEFLAGS install LD_LIBRARY_PATH=$PREFIX/lib
+	  make $MAKEFLAGS
+	  make $MAKEFLAGS install
 
         ;;
     *)
