@@ -50,9 +50,9 @@ MAKEFLAGS="-j2"
 
 SCANBUILD=
 if [ "$(uname)" = Linux ] \
-       && [ "$GIT_PREVIOUS_COMMIT" = "$GIT_COMMIT" ]; then
-    # We only do scan-builds (which are really slow), if the tree is
-    # stable (most commonly on nightly builds).
+       && [ "$ROOT_BUILD_CAUSE_TIMERTRIGGER" = true ]; then
+    # We only do scan-builds (which are really slow) on nightly
+    # builds.
     SCANBUILD="scan-build -o ${WORKSPACE}/clangScanBuildReports -v"
 fi
 CONFIGUREFLAGS=
