@@ -81,6 +81,13 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
   provide rack space, connectivity, and are fast in fixing problems
   with the machines.
 
+# Without doing this in HTML we get an extra div figure around the
+# link which messes up the rendering.  Funnily this does not happen
+# with the logo box above.
+#
 #+HTML: <div class="logobox">
-  [[https://www.openit.de][file:../share/logo-sponsor.png]]
+#+HTML: <p>
+#+HTML: <a href="https://www.openit.de"><img src="../share/logo-sponsor.png"
+#+HTML:    alt="Logo OpenIT" /></a>
+#+HTML: </p>
 #+HTML: </div>
