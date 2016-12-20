@@ -11,6 +11,11 @@
 
 Here are articles originally published in English.
 
+** ArsTechnica UK 2016-12-20
+
+  [[http://arstechnica.co.uk/information-technology/2016/12/signal-does-not-replace-pgp/][Op-ed: Why I’m not giving up on PGP]]
+
+
 ** ProPublica 2015-02-05
   The World’s Email Encryption Software Relies on One Guy, Who is Going Broke\\
   Julia Angwin

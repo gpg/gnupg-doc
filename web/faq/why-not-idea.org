@@ -1,5 +1,15 @@
 #+TITLE: GnuPG - Why not IDEA
 
+* Update
+
+  Note that the IDEA patent has expired and IDEA is now directly
+  supported since GnuPG 1.4.13 respective 2.x with Libgcrypt 1.6.  The
+  use of IDEA is not suggested due to its short block length and it is
+  only provided to allow decryption of archived data.
+
+  The section below is thus only of historic interest.
+
+
 * Why not IDEA
 
    IDEA is a patented algorithm and therefore the use of IDEA in
