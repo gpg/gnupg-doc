@@ -111,11 +111,11 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.25
-#+macro: libgpg_error_date 2016-11-14
-#+macro: libgpg_error_size 778k
-#+macro: libgpg_error_sha1 8ab7494e40f80f4138edc9516981bf4afe7d9dbf
-#+macro: libgpg_error_sha2 f628f75843433b38b05af248121beb7db5bd54bb2106f384edac39934261320c
+#+macro: libgpg_error_ver  1.26
+#+macro: libgpg_error_date 2016-12-21
+#+macro: libgpg_error_size 779k
+#+macro: libgpg_error_sha1 9a926e7ee6309e539313443555535d49a2a5c9f1
+#+macro: libgpg_error_sha2 4c4bcbc90116932e3acd37b37812d8653b1b189c1904985898e860af818aee69
 
 
 #
