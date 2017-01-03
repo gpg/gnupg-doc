@@ -117,7 +117,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -fPIC -std=c++11"
         make $MAKEFLAGS
 
-        make check verbose=2 || true
+        make -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
@@ -134,7 +134,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD make $MAKEFLAGS
 
-        make check verbose=2 || true
+        make -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
