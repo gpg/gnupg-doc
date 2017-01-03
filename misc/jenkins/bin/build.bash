@@ -59,7 +59,7 @@ fi
 CONFIGUREFLAGS=
 SANFLAGS=""
 if [ "$(uname)" = Linux ]; then
-    # XXX: We should really have an analyzer target
+    # XXX: We should check if the sanitizers are available.
     SANFLAGS="-fsanitize=undefined -fsanitize=address"
 fi
 
@@ -109,6 +109,20 @@ cd obj
 # Switch on the different targets.
 case "$XTARGET" in
     native)
+        ../configure --prefix=$PREFIX --enable-maintainer-mode \
+	           $CONFIGUREFLAGS \
+	           "$CONFIGUREFLAGS_0" \
+	           CFLAGS="$CFLAGS -fPIC" \
+	           CXXFLAGS="$CXXFLAGS -fPIC -std=c++11"
+        make $MAKEFLAGS
+
+        make check verbose=2 || true
+        # Jenkins looks for "tests? failed" to mark a build unstable,
+        # hence || true here
+
+        make install
+        ;;
+    sanitizer)
 	# asan breaks the configure tests, so we disable it here.
         ASAN_OPTIONS=detect_leaks=0 \
         $SCANBUILD \
