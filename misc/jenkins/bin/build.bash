@@ -43,10 +43,11 @@ git clean -fdx
 # Run out autogen - note that --force is not required due to the git clean.
 ./autogen.sh
 
-# Out current box seems to have cache coherency problems, thus we have
-# disabled all but one CPU.
-MAKEFLAGS="-j2"
+# Parallel jobs.
+MAKEFLAGS="-j6"
 
+# Parallel tests with our test suite.
+export TESTFLAGS="--parallel"
 
 SCANBUILD=
 if [ "$(uname)" = Linux ] \
