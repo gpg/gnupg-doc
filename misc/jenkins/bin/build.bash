@@ -76,8 +76,9 @@ case "$JOB_NAME" in
         MAKEFLAGS="$MAKEFLAGS GPG=/usr/bin/gpg2"
         ;;
     *gpgme*)
-        # using libasan for python broke again, so disable the python bindings for the native build
-        if [ "$XTARGET" = native ] && [ "$label" != macos ]; then
+        # using libasan for python broke again, so disable the python
+        # bindings for the sanitizer build
+        if [ "$XTARGET" = sanitizer ]; then
             CONFIGUREFLAGS_0="--enable-languages=cpp qt"
         fi
         ;;
