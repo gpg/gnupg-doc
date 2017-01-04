@@ -151,7 +151,14 @@ case "$XTARGET" in
 	  ( cd .. && patch -p1 <"/home/jenkins/bin/$(dirname $JOB_NAME)-w32.patch" )
 	fi
 	# We need to point it to npth and adns then...
-	CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-npth-prefix=$ORIGINAL_PREFIX --with-adns=$ORIGINAL_PREFIX"
+	case "$JOB_NAME" in
+	    gnupg/XTARGET=w32|gnupg-2.2/XTARGET=w32)
+		CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-npth-prefix=$ORIGINAL_PREFIX --with-adns=$ORIGINAL_PREFIX"
+		;;
+	    gnupg-2.0/XTARGET=w32)
+		CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-pth-prefix=$ORIGINAL_PREFIX --with-adns=$ORIGINAL_PREFIX"
+		;;
+	esac
 
         # gpg1's autogen.sh does not add --enable-maintainer-mode, so
         # version.texi is not generated.  we add it here to be sure.
