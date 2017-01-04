@@ -1045,7 +1045,7 @@ a valuable source of information for understanding and organizing a
 The latest release from the development branch of GnuPG is ready for
 public consumption. The more GnuPG-familiar user is encouraged try this
 release...
-[[https://lists.gnupg.org/pipermail/gnupg-announce/2003q2/][{more}]]
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2003q2/000153.html][{more}]]
 
 
 ** Key validity bug in GnuPG 1.2.1 and earlier (2003-05-04)
