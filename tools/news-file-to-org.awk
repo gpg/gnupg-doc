@@ -36,10 +36,10 @@ BEGIN {
     ml_base_url = "https://lists.gnupg.org/pipermail/"
 
     header_text["en"] = ""                      \
-        "** GnuPG\n" ;
+        "* GnuPG\n" ;
 
     header_text["de"] = ""                      \
-        "** GnuPG\n" ;
+        "* GnuPG\n" ;
 
     release_text["en"] = "released ";
     release_text["de"] = "veröffentlicht ";
@@ -55,16 +55,16 @@ BEGIN {
 
 function flush() {
     if (in_section) {
-        printf "*** GnuPG "
+        printf "** GnuPG "
         if (seealso)
             printf "[[%s%s][%s]]", ml_base_url, seealso, hdr_version
         else
             printf "%s", hdr_version
         printf " %s (%s)\n", release_text[lang], hdr_reldate;
         printf ""                                             \
-            "    :PROPERTIES:\n"                              \
-        "    :CUSTOM_ID: gnupg-%s\n"                      \
-        "    :END:\n\n",
+            "   :PROPERTIES:\n"                              \
+        "   :CUSTOM_ID: gnupg-%s\n"                      \
+        "   :END:\n\n",
             hdr_version;
         print lines;
     }
@@ -95,9 +95,9 @@ in_section && $0 ~ /^(Noteworthy|Version| Copyright)/ {
         sub (/^.*\(/, "");
         sub (/\).*$/, "");
         reldate = $0;
-        print "*** GnuPG " version " " release_text[lang] " (" reldate ")";
-        printf "    :PROPERTIES:\n    :CUSTOM_ID: gnupg-%s\n", version;
-        print "    :END:\n"
+        print "** GnuPG " version " " release_text[lang] " (" reldate ")";
+        printf "   :PROPERTIES:\n   :CUSTOM_ID: gnupg-%s\n", version;
+        print "   :END:\n"
 }
     next;
 }
