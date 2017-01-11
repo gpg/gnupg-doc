@@ -18,7 +18,7 @@ esac
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
-export PATH=/home/jenkins/bin:$PREFIX/bin:$PATH
+export PATH=$PREFIX/bin:$PATH
 
 # Print the environment.
 env
