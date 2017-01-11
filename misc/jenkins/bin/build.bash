@@ -171,6 +171,8 @@ case "$XTARGET" in
 	case "$JOB_NAME" in
 		gnupg/*|gnupg-2.2/*)
 			bash /home/jenkins/bin/make-windows-cd.sh
+			# We need to pass the absolute path of the iso.
+			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || true
 			;;
 	esac
         ;;

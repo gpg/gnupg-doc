@@ -1,0 +1,21 @@
+diff --git a/autogen.sh b/autogen.sh
+index 605babfa9..1a9654f0d 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -87,15 +87,7 @@ if test "$1" = "--build-w32"; then
+     $tsdir/configure --enable-maintainer-mode --prefix=${w32root}  \
+              --host=${host} --build=${build} \
+              --enable-gpgtar \
+-             --with-gpg-error-prefix=${w32root} \
+-	     --with-ksba-prefix=${w32root} \
+-	     --with-libgcrypt-prefix=${w32root} \
+-	     --with-libassuan-prefix=${w32root} \
+-	     --with-zlib=${w32root} \
+-	     --with-regex=${w32root} \
+-             --with-pth-prefix=${w32root} \
+-             --with-libiconv-prefix=${w32root} \
+-             --with-adns=${w32root} "$@"
++	     "$@"
+     rc=$?
+     exit $rc
+ fi
