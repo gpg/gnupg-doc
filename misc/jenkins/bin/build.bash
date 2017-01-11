@@ -120,9 +120,7 @@ case "$XTARGET" in
     native)
         ../configure --prefix=$PREFIX --enable-maintainer-mode \
 	           $CONFIGUREFLAGS \
-	           "$CONFIGUREFLAGS_0" \
-	           CFLAGS="$CFLAGS -fPIC" \
-	           CXXFLAGS="$CXXFLAGS -fPIC -std=c++11"
+	           "$CONFIGUREFLAGS_0"
         make $MAKEFLAGS
 
         make -k check verbose=2 || true
