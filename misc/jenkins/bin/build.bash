@@ -13,6 +13,14 @@ export PATH=/home/jenkins/bin:$PREFIX/bin:$PATH
 # Print the environment.
 env
 ulimit -a
+set +x
+for f in /etc/gcrypt/hwf.deny /etc/gcrypt/fips_enabled ; do
+  if [ -f "$f" ]; then
+    echo "=== $f ==="
+    cat -n "$f"
+  fi
+done
+set -x
 
 # Tweak the prefix we're installing this project into.  For gnupg-1.4
 # and friends.
