@@ -5,6 +5,16 @@
 set -xe
 renice -n 10 -p $$
 
+# Configuration.
+MAKE=make
+
+# Platform-specific configuration.
+case "$(uname)" in
+    OpenBSD)
+	MAKE=gmake
+	;;
+esac
+
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
@@ -121,13 +131,13 @@ case "$XTARGET" in
         ../configure --prefix=$PREFIX --enable-maintainer-mode \
 	           $CONFIGUREFLAGS \
 	           "$CONFIGUREFLAGS_0"
-        make $MAKEFLAGS
+        $MAKE $MAKEFLAGS
 
-        make -k check verbose=2 || true
+        $MAKE -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
-        make install
+        $MAKE install
         ;;
     sanitizer)
 	# asan breaks the configure tests, so we disable it here.
@@ -138,13 +148,13 @@ case "$XTARGET" in
 	           "$CONFIGUREFLAGS_0" \
 	           CFLAGS="$CFLAGS $SANFLAGS -fPIC" \
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
-        $SCANBUILD make $MAKEFLAGS
+        $SCANBUILD $MAKE $MAKEFLAGS
 
-        make -k check verbose=2 || true
+        $MAKE -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
-        make install
+        $MAKE install
         ;;
     w32)
         export w32root=$PREFIX
@@ -171,8 +181,8 @@ case "$XTARGET" in
         # likewise for --prefix
         ../autogen.sh --build-w32 --enable-maintainer-mode --prefix=$PREFIX \
           $CONFIGUREFLAGS
-        make $MAKEFLAGS
-        make install
+        $MAKE $MAKEFLAGS
+        $MAKE install
 
 	case "$JOB_NAME" in
 		gnupg/*|gnupg-2.2/*)
@@ -198,7 +208,7 @@ case "$XTARGET" in
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS
-          make $MAKEFLAGS distcheck
+          $MAKE $MAKEFLAGS distcheck
 
           # Extract the tarname from the package
           tarname=$(awk <config.h '
@@ -216,8 +226,8 @@ case "$XTARGET" in
           # And do a final build using the generated tarball
 	  cd ${tarname}
 	  ./configure --prefix=$PREFIX $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
-	  make $MAKEFLAGS
-	  make $MAKEFLAGS install
+	  $MAKE $MAKEFLAGS
+	  $MAKE $MAKEFLAGS install
 
         ;;
     *)
