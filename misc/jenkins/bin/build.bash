@@ -158,10 +158,10 @@ case "$XTARGET" in
 	if [ -f "/home/jenkins/bin/$(dirname $JOB_NAME)-w32.patch" ]; then
 	  ( cd .. && patch -p1 <"/home/jenkins/bin/$(dirname $JOB_NAME)-w32.patch" )
 	fi
-	# We need to point it to npth and adns then...
+	# We need to point it to npth then...
 	case "$JOB_NAME" in
 	    gnupg/XTARGET=w32|gnupg-2.2/XTARGET=w32)
-		CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-npth-prefix=$ORIGINAL_PREFIX --with-adns=$ORIGINAL_PREFIX"
+		CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-npth-prefix=$ORIGINAL_PREFIX"
 		;;
 	    gnupg-2.0/XTARGET=w32)
 		CONFIGUREFLAGS="${CONFIGUREFLAGS} --with-pth-prefix=$ORIGINAL_PREFIX --with-adns=$ORIGINAL_PREFIX"
