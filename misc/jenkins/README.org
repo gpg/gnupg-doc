@@ -10,3 +10,16 @@ and a build tree at
   $HOME/src/gpgme-for-gnupgs-tests/obj
 
 The tests from there are executed in GnuPG's test suite.
+* Virtual machines
+** openbsd60
+Packages installed:
+
+  # pkg_add zile zsh git autoconf-2.69p2 automake-1.15p0 gettext-tools \
+    gmake xfig bison readline libusb-compat ImageMagick makeinfo
+
+Add some compatibility links to PATH:
+
+  $ mkdir compat
+  $ cd compat
+  $ ln -s /usr/local/bin/gmakeinfo makeinfo
+  $ [ add $HOME/compat to ~/.profile ]
