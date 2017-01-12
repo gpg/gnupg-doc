@@ -110,6 +110,9 @@ case "$JOB_NAME" in
 	if [ "$NODE_NAME" = zygalski ]; then
 	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=$HOME/pkg"
 	fi
+	if [ "$NODE_NAME" = openbsd60 ]; then
+	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=/usr/local"
+	fi
         ;;
 esac
 
