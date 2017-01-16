@@ -12,50 +12,49 @@ GnuPG 2.1 code base so that we can release GnuPG 2.2.  This is
 particularly important to us, because we want the latest features to
 be available in the next release of Debian stable, which is about to
 freeze.  All of the main developers have participated in this effort,
-but I want to particularly point out Daniel Kahn Gillmor's many
+but I want to particularly point out Daniel Kahn Gillmor’s many
 patches in this area.  Even prior to this effort, Daniel has regularly
 submitted patches for relatively minor, boring issues.  But, it is
 exactly these types of fixes that result in a polished product.
 
 A relatively major change that went into the most recent release of
-GnuPG is the replacement of ADNS with William Ahern's [[http://25thandclement.com/~william/projects/dns.c.html][libdns]].
+GnuPG is the replacement of ADNS with William Ahern’s [[http://25thandclement.com/~william/projects/dns.c.html][libdns]].
 Unfortunately, our patches for Tor support for ADNS have been in limbo
 for such a long time, that [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-December/032350.html][we decided to change to a different DNS
 resolver]].
 
-Daniel Kahn Gillmor also helped implement and debug GnuPG's new
-supervisor mode.  This mode allows GnuPG's daemons to be auto-started
+Daniel Kahn Gillmor also helped implement and debug GnuPG’s new
+supervisor mode.  This mode allows GnuPG’s daemons to be auto-started
 and auto-stopped by systemd.  If you are tracking Debian testing or
 Debian unstable, you can try enabling this by following the
 instructions in ~/usr/share/doc/gnupg-agent/README.Debian~.  This is
-based on the [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dtree%3Bf%3Ddoc/examples/systemd-user%3Bh%3D2d589564e565b0b886d8c8d9071ca52290fb87e3%3Bhb%3Drefs/heads/master][reference implementation for starting GnuPG's daemons
+based on the [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dtree%3Bf%3Ddoc/examples/systemd-user%3Bh%3D2d589564e565b0b886d8c8d9071ca52290fb87e3%3Bhb%3Drefs/heads/master][reference implementation for starting GnuPG’s daemons
 from systemd]] that Daniel also contributed and is included in GnuPG
-proper.  Distributions are encouraged to base their systemd scripts on
-this implementation.
+proper.  Linux distributions that use systemd are encouraged to base
+their systemd unit files on this implementation.
 
 Justus also made significant improvements to our relatively new
-Scheme-based testing framework.  He's also written many new tests,
+Scheme-based testing framework.  He’s also written many new tests,
 fixed bugs in [[http://tinyscheme.sourceforge.net/][TinyScheme]], the Scheme interpreter that we are using,
-and radically improved TinyScheme's debugging facilities.
-Unfortunately, although he submitted some patches upstream, they have
-been mostly ignored.  Thus, if you are using TinyScheme, you might
-want to consider including our patches.
+and radically improved TinyScheme’s debugging facilities.
+Furthermore, TinyScheme used to spent about 75% of the execution time
+in the garbage collector alone, now it typically spends less than 40%
+of the time in the memory allocator.  Unfortunately, although he
+submitted some patches upstream, they have been mostly ignored.  Thus,
+if you are using TinyScheme, you might want to consider including our
+patches.
 
-We've decided to change the [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-December/032298.html][default expiration time for new keys to 2
+We’ve decided to change the [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-December/032298.html][default expiration time for new keys to 2
 years]].  (Previously, keys did not expire by default.)  Using an
 expiration provides an emergency break for users who lose access to
 their secret key material and any revocation certificate.  But note:
 just because a key has expired does not mean that one has to create a
-new key; it is entirely possible to extend a key's expiration, even
+new key; it is entirely possible to extend a key’s expiration, even
 after the key has expired.
 
 Another minor, but notable improvement that Justus implemented is to
-GnuPG's search algorithm.  Previously, when GnuPG searched for a key,
-[[https://bugs.gnupg.org/gnupg/issue2359][it took the first matching result even if a better result came later]].
-For instance, if searching for ~anna@example.org~, gpg would return
-the key for ~danna@example.org~ (a partial match) even if there was a
-key for ~anna@example.org~ latter (a complete match).  Justus changed
-gpg's behavior to [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-October/031994.html][take the best match instead of the first match]].
+GnuPG’s search algorithm.  Justus changed gpg’s behavior to [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-October/031994.html][take the
+best match instead of the first match]].
 
 Niibe has continued to polish the smart card support including
 improving support for v3 of the [[http://g10code.com/docs/openpgp-card-3.0.pdf][OpenPGPcard]] specification, and initial
@@ -66,7 +65,7 @@ by Arnaud Fontaine.
 Andre has made significant progress on GPGOL, our plugin for Outlook.
 He plans to release a beta in the coming week.  Part of this work
 included fleshing out [[https://wiki.gnupg.org/EasyGpg2016/AutomatedEncryption][how the automatic encryption system should work]],
-and thinking about what it can and cannot protect against.  We've
+and thinking about what it can and cannot protect against.  We’ve
 documented this in the wiki.  Comments (to the mailing list) are
 welcome!
 
@@ -83,13 +82,13 @@ This should make finding the bindings easier.
 There was also a discussion about [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-December/032366.html][the right way to deal with any
 missing dependencies (in particular, a sufficiently new GPGME) for the
 Python bindings]] when they are installed from pip.  Unfortunately, we
-don't have sufficient resources to properly package them so any users
+don’t have sufficient resources to properly package them so any users
 will need to make sure they have a recent operating system or build
 GPGME themselves.
 
 *** Releases
 
-We've released new versions of GPGME including [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][1.7.0]] and [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-November/032182.html][1.8.0]].  1.7.0
+We’ve released new versions of GPGME including [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][1.7.0]] and [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-November/032182.html][1.8.0]].  1.7.0
 includes our new [[https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html][Python bindings for GPGME]], and 1.8.0 includes the
 renaming of the namespace from ~pyme3~ to ~gpg~.
 
@@ -97,26 +96,20 @@ The GnuPG proper saw two releases: version [[https://lists.gnupg.org/pipermail/g
 The latter was released exactly [[https://www.gnupg.org/download/release_notes.html#sec-1-2-70][19 years after Werner released version
 0.0.0]]!
 
-We released version 1.7.5 of [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000399.html][libgcrypt]], which includes an important
+We released version 1.7.5 of [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000399.html][Libgcrypt]], which includes an important
 bug fix for a [[https://bugs.gnupg.org/gnupg/issue2870][secure memory exhaustion regression]] ([[https://lists.gnupg.org/pipermail/gnupg-devel/2016-November/032157.html][see also this
 post]]), which was introduced in 1.7.4.
-
-And, [[http://scute.org][Scute]] version 1.5 was released.  Scute provides a [[https://en.wikipedia.org/wiki/PKCS_11][PKCS #11]]
-interface for security tokens.  This allow using a security token to,
-e.g., do client authentication over TLS (using [[https://en.wikipedia.org/wiki/Network_Security_Services][NSS]]), and document
-signing with LibreOffice.  Special thanks go to Damien Goutte-Gattat,
-who has helped take care of Scute!
 
 *** Public Appearances
 
 In October and November, I traveled a fair amount.  Before leaving, I
 contacted a few local groups about giving my "An Advanced Introduction
 to GnuPG" presentation.  In the end, I held it in New York City at the
-[[https://www.meetup.com/nylug-meetings/events/234083247/][NYLUG meetup]] ([[https://www.youtube.com/watch?v%3DfX0pgV8hPq8][recording]]), in Baltimore at [[https://www.acm.jhu.edu/][JHU's ACM chapter]], and in
+[[https://www.meetup.com/nylug-meetings/events/234083247/][NYLUG meetup]] ([[https://www.youtube.com/watch?v%3DfX0pgV8hPq8][recording]]), in Baltimore at [[https://www.acm.jhu.edu/][JHU’s ACM chapter]], and in
 San Francisco at [[https://www.meetup.com/de-DE/OpenLate/events/234006159/][OpenLate]], at [[https://noisebridge.net/wiki/Advanced_Introduction_to_GnuPG][NoiseBridge]], ([[https://begriffs.com/posts/2016-11-05-advanced-intro-gnupg.html][recording]]) and at the
 [[https://theintercept.com/][Intercept]].  The interest in GnuPG in New York is impressive: we filled
 the 150 person room and there was a waiting list.  The audience was
-also very engaged and asked many questions.  Joe Nelson's [[https://begriffs.com/posts/2016-11-05-advanced-intro-gnupg.html][recording at
+also very engaged and asked many questions.  Joe Nelson’s [[https://begriffs.com/posts/2016-11-05-advanced-intro-gnupg.html][recording at
 NoiseBridge]] is probably the best recording so far (I had a lapel mic
 and the slides were recorded separately).  If you are interested in
 seeing the presentation, that is the recording that I currently
@@ -127,13 +120,13 @@ While traveling, I also interviewed a number of GnuPG users
 donation campaign.  If you or your company/organization are willing to
 talk about how you use GnuPG on camera, [[http://k.gnupg.net/8F17777118A33DDA9BA48E62AACB3243630052D9][please get in touch with me]].
 
-At the end of December, I attended the [[https://events.ccc.de/tag/33c3/][CCC's annual congress]].  I
+At the end of December, I attended the [[https://events.ccc.de/tag/33c3/][CCC’s annual congress]].  I
 participated in a [[https://fossil.net2o.de/33c3/doc/trunk/wiki/panel.md][panel discussion]] with Volker Birk from [[https://pep.foundation/][pEp]] and
 Holger Krekel from [[https://github.com/autocrypt/autocrypt][Autocrypt]].  Unfortunately, we only had half an
 hour, which made the discussion rather superficial.  Other talks more
 or less related to GnuPG were presented in the [[https://fossil.net2o.de/33c3/doc/trunk/wiki/33c3.md][#wefixthenet session]].
 
-A few GnuPG team members will be present at this year's [[https://fosdem.org/2017/][FOSDEM]].  And,
+A few GnuPG team members will be present at this year’s [[https://fosdem.org/2017/][FOSDEM]].  And,
 I, Daniel, and some of the Autocrypt people attend the [[Internet%20Freedom%20Festival][Internet
 Freedom Festival]] in March in Valencia, Spain.
 
@@ -148,7 +141,7 @@ for macOSX Sierra]].
 
 [[http://autocrypt.readthedocs.io/en/latest/][Autocrypt]] is a new, loose knit group working on a new key discovery
 protocol for opportunistic encryption.  Autocrypt is different from
-WKD in that it transmits keys via email, and, as such, doesn't require
+WKD in that it transmits keys via email, and, as such, doesn’t require
 any new third-party infrastructure, but is more susceptible to attacks
 than WKD.  This approach is complementary to WKD, and similar to what
 pEp is doing.
@@ -160,7 +153,7 @@ to be to submit them as IETF internet drafts.
 
 [[https://supporters.eff.org/donate/eff-wired%20][The EFF expects surveillance and censorship to increase]] under
 President Trump.  And, the same appears to be inevitable in Great
-Britain with their recently introduced [[http://www.theregister.co.uk/2016/11/30/investigatory_powers_act_backdoors/][Snoopers' Charter]].  The EFF
+Britain with their recently introduced [[http://www.theregister.co.uk/2016/11/30/investigatory_powers_act_backdoors/][Snoopers’ Charter]].  The EFF
 encourages technology companies to, among other things, improve their
 support for end-to-end encryption.  We agree, and add that even
 individuals can help: start using encryption tools, and, if you know
@@ -171,12 +164,12 @@ which got picked up by Ars Technica, and endorsed by [[https://twitter.com/matth
 [[https://www.schneier.com/blog/archives/2016/12/giving_up_on_pg.html][Bruce Schneier]] ([[https://www.schneier.com/blog/archives/2016/12/the_pro-pgp_pos.html][again]]).  [[http://arstechnica.com/information-technology/2016/12/signal-does-not-replace-pgp/][I composed a response]], which Ars Technica
 also carried.  In short, one of the major reasons that Filippo is
 giving up on PGP in favor of Signal and WhatsApp is due to the lack of
-forward secrecy.  It's true that OpenPGP doesn't support forward
+forward secrecy.  It’s true that OpenPGP doesn’t support forward
 secrecy (although it can be approximated with a bit of work).  But,
-it's not clear to us whether that should be the most important
+it’s not clear to us whether that should be the most important
 consideration.  We know from Snowden, that when properly implemented,
 "[[https://www.seas.harvard.edu/news/2015/01/reengineering-privacy-post-snowden][encryption ... really is one of the few things that we can rely on]]."
-In other words, when nation states crack encryption, they aren't
+In other words, when nation states crack encryption, they aren’t
 breaking the actual encryption, they are circumventing it.  Thus, if
 you are like Filippo and are really worried about something like an
 [[https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html][evil maid attack]], then you are probably better off storing your
@@ -189,11 +182,7 @@ the Internet.  There are been other responses including those from
 [[https://www.mailpile.is/blog/2016-12-13_Too_Cool_for_PGP.html][Bjarni Rúnar]] (Mailpile), [[http://sites.bu.edu/perryd/2016/12/17/rethinking-pgp-encryption/][Perry Donham]] (BU), and [[https://www.foo.be/2016/12/OpenPGP-really-works][Alexandre Dulaunoy]]
 ([[https://news.ycombinator.com/item?id%3D13301307][HN comments]]).
 
-Simon Josefsson recently posted an article about [[https://blog.josefsson.org/2016/11/03/why-i-dont-use-2048-or-4096-rsa-key-sizes/][why he doesn't use
-standard RSA key sizes]].  The formulation of the argument is similar to
-why [[https://weakdh.org/][using the same prime numbers for DH key exchange is a bad idea]].
-
-Tobias Müller also wrote a blog post about his [[https://blogs.gnome.org/muelli/2016/10/first-openpgp-conf-2016-in-cologne-germany/][impressions of the
+Tobias Müller recently wrote a blog post about his [[https://blogs.gnome.org/muelli/2016/10/first-openpgp-conf-2016-in-cologne-germany/][impressions of the
 OpenPGP conference]].
 
 [[https://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-micah-lee-of-gpg-sync][Micah Lee was interviewed about his project about GPG Sync]] by the FSF.
