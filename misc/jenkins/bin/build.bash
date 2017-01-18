@@ -99,7 +99,7 @@ case "$JOB_NAME" in
 	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=$HOME/pkg"
 	fi
 	if [ "$NODE_NAME" = openbsd60 ]; then
-	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=/usr/local"
+	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=/usr/local --with-bzip2=/usr/local"
 	fi
 
 	# The libraries use rpath when linking the tests, so they

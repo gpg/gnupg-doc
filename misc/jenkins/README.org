@@ -23,3 +23,12 @@ Add some compatibility links to PATH:
   $ cd compat
   $ ln -s /usr/local/bin/gmakeinfo makeinfo
   $ [ add $HOME/compat to ~/.profile ]
+
+Tweak limits:
+
+  # echo 'jenkins:\
+        :maxproc-max=1024:\
+        :maxproc-cur=1024:\
+        :tc=pbuild:
+' >> /etc/login.conf
+  # user mod -L jenkins jenkins
