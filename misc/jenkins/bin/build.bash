@@ -101,6 +101,11 @@ case "$JOB_NAME" in
 	if [ "$NODE_NAME" = openbsd60 ]; then
 	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=/usr/local"
 	fi
+
+	# The libraries use rpath when linking the tests, so they
+	# locate their dependencies that way.  GnuPG, however, does
+	# not.  Therefore, we set LD_LIBRARY_PATH.
+	test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
         ;;
 esac
 
@@ -140,7 +145,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -std=c++11"
         $MAKE $MAKEFLAGS
 
-        $MAKE -k check verbose=2 || true
+        env $test_environment $MAKE -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
@@ -157,7 +162,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD $MAKE $MAKEFLAGS
 
-        $MAKE -k check verbose=2 || true
+        env $test_environment $MAKE -k check verbose=2 || true
         # Jenkins looks for "tests? failed" to mark a build unstable,
         # hence || true here
 
@@ -215,7 +220,7 @@ case "$XTARGET" in
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS
-          $MAKE $MAKEFLAGS distcheck
+          env $test_environment $MAKE $MAKEFLAGS distcheck
 
           # Extract the tarname from the package
           tarname=$(awk <config.h '
