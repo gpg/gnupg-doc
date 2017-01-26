@@ -148,9 +148,10 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -std=c++11"
         $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 || true
-        # Jenkins looks for "tests? failed" to mark a build unstable,
-        # hence || true here
+        env $test_environment $MAKE -k check verbose=2 \
+	    || echo "FAIL: make check failed with status $?"
+        # Jenkins looks for "FAIL:" to mark a build unstable,
+        # hence || ... here
 
         $MAKE install
         ;;
@@ -165,9 +166,10 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 || true
-        # Jenkins looks for "tests? failed" to mark a build unstable,
-        # hence || true here
+        env $test_environment $MAKE -k check verbose=2 \
+	    || echo "FAIL: make check failed with status $?"
+        # Jenkins looks for "FAIL:" to mark a build unstable,
+        # hence || ... here
 
         $MAKE install
         ;;
@@ -223,7 +225,10 @@ case "$XTARGET" in
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS
-          env $test_environment $MAKE $MAKEFLAGS distcheck
+          env $test_environment $MAKE $MAKEFLAGS distcheck \
+	    || echo "FAIL: make distcheck failed with status $?"
+        # Jenkins looks for "FAIL:" to mark a build unstable,
+        # hence || ... here
 
           # Extract the tarname from the package
           tarname=$(awk <config.h '
