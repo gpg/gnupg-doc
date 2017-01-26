@@ -19,14 +19,19 @@ The tests from there are executed in GnuPG's test suite.
 Packages installed:
 
   # pkg_add zile zsh git autoconf-2.69p2 automake-1.15p0 gettext-tools \
-    gmake xfig bison readline libusb-compat ImageMagick makeinfo
+    gmake xfig bison readline libusb-compat ImageMagick makeinfo \
+    gcc-4.9.3p9 g++-4.9.3p9 qt5
 
 Add some compatibility links to PATH:
 
-  $ mkdir compat
-  $ cd compat
+  $ mkdir -p ~/compat/{bin,lib,include}
+  $ cd ~/compat/bin
   $ ln -s /usr/local/bin/gmakeinfo makeinfo
-  $ [ add $HOME/compat to ~/.profile ]
+  $ [ add $HOME/compat/bin to ~/.profile ]
+  $ cd ~/compat/lib
+  $ for F in /usr/local/lib/libbz2* /usr/local/lib/libiconv* /usr/local/lib/libintl* ; do ln -s $F ; done
+  $ cd ~/compat/include
+  $ for F in /usr/local/include/*bz*h /usr/local/include/*iconv*h /usr/local/include/*intl*h ; do ln -s $F ; done
 
 Tweak limits:
 
