@@ -40,7 +40,7 @@ function vwait() {
 }
 
 # Revert to current snapshot and start the machine.
-vdo snapshot-revert --current --force --running "$GUEST"
+vdo snapshot-revert --snapshotname tests --force --running "$GUEST"
 
 # Insert the CD.
 vdo change-media --update "$GUEST" "$GUEST_CDROM" "$1"
@@ -53,13 +53,13 @@ set -x
 
 if [ "$2" ]; then
     scp "$2" "$SSH:"
-    sleep 1 # XXX: openssh on windows is a bit fragile...
+    sleep 5 # XXX: openssh on windows is a bit fragile...
     time vssh "cmd /c $(basename $2)"
 else
     time vssh "cmd /c d:/run-tests.bat"
 fi
 
-sleep 1 # XXX: openssh on windows is a bit fragile...
+sleep 5 # XXX: openssh on windows is a bit fragile...
 
 # The scp server is a bit fragile as well, and I believe globbing does
 # not work.  Simply use gpgtar.

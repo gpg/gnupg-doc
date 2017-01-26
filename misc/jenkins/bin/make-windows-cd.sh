@@ -9,6 +9,8 @@ fi
 [ -z "$w32root" ] && w32root="$HOME/w32root"
 ADDITIONAL_FILES=
 IMAGE=gnupg-test.iso
+XTEST_GPGME_SRCDIR=$HOME/src/gpgme-for-gnupgs-tests
+XTEST_GPGME_BUILDDIR=$HOME/src/gpgme-for-gnupgs-tests/obj.w32
 
 [ -f make-windows-cd.rc ] && . make-windows-cd.rc
 
@@ -27,7 +29,18 @@ cp -v tests/gpgscm/*.exe $TARGET
 cp -v tools/mk-tdata.exe $TARGET || true
 cp -v agent/gpg-preset-passphrase.exe $TARGET
 cp -v -a ../tests $TARGET
+if [ -e "$XTEST_GPGME_SRCDIR" ] && [ -e "$XTEST_GPGME_BUILDDIR" ]; then
+    cp -a "$XTEST_GPGME_SRCDIR" $TARGET/gpgme
+    cp -v "$XTEST_GPGME_BUILDDIR"/src/.libs/*.exe $TARGET
+    cp -v "$XTEST_GPGME_BUILDDIR"/src/.libs/*.dll $TARGET
+    # Strip .git.
+    rm -rf -- $TARGET/gpgme/.git
+    # Remove native build if it exists.
+    rm -rf -- $TARGET/gpgme/obj
+fi
+cp -v -a ../tests $TARGET
 cp -v tests/openpgp/fake-pinentry.exe $TARGET
 cp -v /home/jenkins/bin/run-tests.bat $WORKDIR
+[ -f "$IMAGE" ] && rm -f "$IMAGE"
 genisoimage --output "$IMAGE" -J "$WORKDIR"
 [ "${WORKDIR}" ] && rm -rf -- "${WORKDIR}"
