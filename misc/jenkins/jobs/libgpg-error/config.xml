@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project plugin="matrix-project@1.7.1">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>git://git.gnupg.org/libgpg-error.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <browser class="hudson.plugins.git.browser.GitWeb">
+      <url>https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgpg-error.git</url>
+    </browser>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <authToken>2ebda902c5b3f792c7ae415d159ff8b70b208730b9e55f28d675a4acc1900403</authToken>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H(0-30) 0 * * *
+</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>true</concurrentBuild>
+  <axes>
+    <hudson.matrix.TextAxis>
+      <name>XTARGET</name>
+      <values>
+        <string>native</string>
+        <string>sanitizer</string>
+        <string>w32</string>
+        <string>distcheck</string>
+      </values>
+    </hudson.matrix.TextAxis>
+    <hudson.matrix.LabelAxis>
+      <name>label</name>
+      <values>
+        <string>debian</string>
+        <string>macos</string>
+        <string>master</string>
+        <string>openbsd60</string>
+      </values>
+    </hudson.matrix.LabelAxis>
+  </axes>
+  <combinationFilter>(label == &quot;master&quot; &amp;&amp; XTARGET != &quot;native&quot;) || (label != &quot;master&quot; &amp;&amp; XTARGET == &quot;native&quot;)</combinationFilter>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>/bin/bash $HOME/bin/build.bash</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.warnings.WarningsPublisher plugin="warnings@4.59">
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <thresholdLimit>low</thresholdLimit>
+      <pluginName>[WARNINGS] </pluginName>
+      <defaultEncoding></defaultEncoding>
+      <canRunOnFailed>false</canRunOnFailed>
+      <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
+      <useStableBuildAsReference>false</useStableBuildAsReference>
+      <useDeltaValues>false</useDeltaValues>
+      <thresholds plugin="analysis-core@1.82">
+        <unstableTotalAll></unstableTotalAll>
+        <unstableTotalHigh></unstableTotalHigh>
+        <unstableTotalNormal></unstableTotalNormal>
+        <unstableTotalLow></unstableTotalLow>
+        <unstableNewAll></unstableNewAll>
+        <unstableNewHigh></unstableNewHigh>
+        <unstableNewNormal></unstableNewNormal>
+        <unstableNewLow></unstableNewLow>
+        <failedTotalAll></failedTotalAll>
+        <failedTotalHigh></failedTotalHigh>
+        <failedTotalNormal></failedTotalNormal>
+        <failedTotalLow></failedTotalLow>
+        <failedNewAll></failedNewAll>
+        <failedNewHigh></failedNewHigh>
+        <failedNewNormal></failedNewNormal>
+        <failedNewLow></failedNewLow>
+      </thresholds>
+      <shouldDetectModules>false</shouldDetectModules>
+      <dontComputeNew>true</dontComputeNew>
+      <doNotResolveRelativePaths>true</doNotResolveRelativePaths>
+      <includePattern></includePattern>
+      <excludePattern></excludePattern>
+      <messagesPattern></messagesPattern>
+      <parserConfigurations/>
+      <consoleParsers>
+        <hudson.plugins.warnings.ConsoleParser>
+          <parserName>GNU Make + GNU C Compiler (gcc)</parserName>
+        </hudson.plugins.warnings.ConsoleParser>
+      </consoleParsers>
+    </hudson.plugins.warnings.WarningsPublisher>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>tests? failed</regexp>
+      <succeedIfFound>false</succeedIfFound>
+      <unstableIfFound>true</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+    <jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher plugin="clang-scanbuild@1.8">
+      <bugThreshold>0</bugThreshold>
+      <clangexcludedpaths></clangexcludedpaths>
+      <reportFolderName>clangScanBuildReports</reportFolderName>
+      <markBuildUnstableWhenThresholdIsExceeded>false</markBuildUnstableWhenThresholdIsExceeded>
+    </jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
+    <hudson.tasks.Mailer plugin="mailer@1.18">
+      <recipients>justus@g10code.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.jabber.im.transport.JabberPublisher plugin="jabber@1.35">
+      <targets>
+        <hudson.plugins.im.GroupChatIMMessageTarget plugin="instant-messaging@1.35">
+          <name>gnupg-devel@conference.jabber.gnupg.org</name>
+          <notificationOnly>false</notificationOnly>
+        </hudson.plugins.im.GroupChatIMMessageTarget>
+      </targets>
+      <strategy>FAILURE_AND_FIXED</strategy>
+      <notifyOnBuildStart>false</notifyOnBuildStart>
+      <notifySuspects>false</notifySuspects>
+      <notifyCulprits>false</notifyCulprits>
+      <notifyFixers>false</notifyFixers>
+      <notifyUpstreamCommitters>false</notifyUpstreamCommitters>
+      <buildToChatNotifier class="hudson.plugins.im.build_notify.DefaultBuildToChatNotifier" plugin="instant-messaging@1.35"/>
+      <matrixMultiplier>ONLY_CONFIGURATIONS</matrixMultiplier>
+    </hudson.plugins.jabber.im.transport.JabberPublisher>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.build__timeout.BuildTimeoutWrapper plugin="build-timeout@1.18">
+      <strategy class="hudson.plugins.build_timeout.impl.ElasticTimeOutStrategy">
+        <timeoutPercentage>400</timeoutPercentage>
+        <numberOfBuilds>3</numberOfBuilds>
+        <failSafeTimeoutDuration>true</failSafeTimeoutDuration>
+        <timeoutMinutesElasticDefault>30</timeoutMinutesElasticDefault>
+      </strategy>
+      <operationList>
+        <hudson.plugins.build__timeout.operations.AbortOperation/>
+      </operationList>
+    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.7"/>
+  </buildWrappers>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>false</runSequentially>
+    <touchStoneCombinationFilter>label == &quot;debian&quot; &amp;&amp; XTARGET == &quot;native&quot;</touchStoneCombinationFilter>
+    <touchStoneResultCondition>
+      <name>SUCCESS</name>
+      <ordinal>0</ordinal>
+      <color>BLUE</color>
+      <completeBuild>true</completeBuild>
+    </touchStoneResultCondition>
+  </executionStrategy>
+</matrix-project>
