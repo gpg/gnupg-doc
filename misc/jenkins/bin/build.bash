@@ -205,7 +205,7 @@ case "$XTARGET" in
 		gnupg/*|gnupg-2.2/*)
 			bash /home/jenkins/bin/make-windows-cd.sh
 			# We need to pass the absolute path of the iso.
-			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || true
+			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || echo "FAIL: error running tests on Windows."
 			;;
 	esac
         ;;
@@ -225,10 +225,12 @@ case "$XTARGET" in
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS
-          env $test_environment $MAKE $MAKEFLAGS distcheck \
-	    || echo "FAIL: make distcheck failed with status $?"
-        # Jenkins looks for "FAIL:" to mark a build unstable,
-        # hence || ... here
+	  if ! env $test_environment $MAKE $MAKEFLAGS distcheck ; then
+              # Jenkins looks for "FAIL:" to mark a build unstable,
+              # hence we ignore errors here.
+	      echo "FAIL: make distcheck failed with status $?"
+	      exit 0
+	  fi
 
           # Extract the tarname from the package
           tarname=$(awk <config.h '
