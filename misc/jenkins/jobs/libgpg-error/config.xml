@@ -104,7 +104,7 @@
       </consoleParsers>
     </hudson.plugins.warnings.WarningsPublisher>
     <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
-      <regexp>tests? failed</regexp>
+      <regexp>FAIL: </regexp>
       <succeedIfFound>false</succeedIfFound>
       <unstableIfFound>true</unstableIfFound>
       <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
