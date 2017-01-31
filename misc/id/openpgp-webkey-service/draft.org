@@ -40,7 +40,7 @@
       </address>
     </author>
 
-    <date month="MONTH" year="2016" />
+    <date month="January" year="2017" />
     <area>Security</area>
 
     <abstract>
@@ -149,11 +149,14 @@ Non-ASCII characters are not changed.
 
 The so mapped local-part is hashed using the SHA-1 algorithm.  The
 resulting 160 bit digest is encoded using the Z-Base-32 method as
-described in {{{RFC(6189)}}}, section 5.1.6.  The resulting string has a
-fixed length of 32 octets.  To form the URI, the scheme
-{{{https_scheme}}} is concatenated with the domain-part, the
-fixed string ~/.well-known/openpgpkey/hu/~, and the above constructed
-32 octet string.
+described in {{{RFC(6189)}}}, section 5.1.6.  The resulting string has
+a fixed length of 32 octets.  To form the URI, the following parts are
+concatenated:
+
+- The scheme {{{https_scheme}}},
+- the domain-part,
+- the string ~/.well-known/openpgpkey/hu/~,
+- and the above constructed 32 octet string.
 
 For example the URI to lookup the key for Joe.Doe@Example.ORG is:
 
@@ -171,7 +174,7 @@ different host or a port other than 443.  For example:
 _openpgpkey._tcp.example.org.  IN  SRV 0 0 8443 wkd.example.org.
 #+END_EXAMPLE
 
-changes the above query to query the host "wkd.example.org" at port
+changes the above to query the host "wkd.example.org" at port
 8443 instead of the host "gnupg.org" at port 443.  The target (in the
 example "wkd.example.org") MUST be a sub-domain of the domain-part
 (here "example.org").  If the target is not a sub-domain, the SRV RR
@@ -207,14 +210,13 @@ alice@example.org.  To install the key at her provider's Web Key
 Directory, she performs the following steps:
 
 1. She retrieves a file which contains one line with the mail address
-   used to submit the key to the mail provider.  See below for the syntax
-   of that file.  For a mail address at the domain "example.org" the URI
-   of the file is
+   used to submit the key to the mail provider. The DNS SRV rules
+   described for the Web Key Directory apply here as well.  See below
+   for the syntax of that file.  For a mail address at the domain
+   "example.org" the URI of the file is
 #+begin_example
      https://example.org/.well-known/openpgpkey/submission-address
 #+end_example
-   The DNS SRV RR rules described for the Web Key Directory apply here
-   as well.
 
 2. She sends her key using SMTP (or any other transport mechanism) to
    the provider using the submission address and key format as specified
