@@ -8,7 +8,7 @@ MD_EXAMPLE_FIX = '(defun org-md-example-block (example-block contents info) \
 
 
 draft.txt, draft.xml: draft.org
-	emacs --batch \
+	emacs23 --batch \
            --eval "(require 'org)" \
            --eval "(require 'ox-md)" \
            --eval $(MD_EXAMPLE_FIX)  \
