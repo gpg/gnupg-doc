@@ -11,6 +11,7 @@
   <!ENTITY pandocMiddle   PUBLIC '' 'tmp-middle.xml'>
   <!ENTITY pandocBack     PUBLIC '' 'tmp-back.xml'>
   <!ENTITY rfc.2119       PUBLIC '' '../common/reference.RFC.2119.xml'>
+  <!ENTITY rfc.2782       PUBLIC '' '../common/reference.RFC.2782.xml'>
   <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
   <!ENTITY rfc.4880       PUBLIC '' '../common/reference.RFC.4880.xml'>
   <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
@@ -54,6 +55,7 @@
   <back>
     <references title="Normative References">
       &rfc.2119;
+      &rfc.2782;
       &rfc.3156;
       &rfc.4880;
       &rfc.5785;
@@ -131,25 +133,25 @@ https connection.
 ** Key Discovery
 
 Although URIs are able to encode all kind of characters, straightforward
-implementations of a key directory may want to store the "local-part" of
+implementations of a key directory may want to store the local-part of
 a mail address directly in the file system.  This forbids the use of
-certain characters in the "local-part".  To allow for such an
-implementation method the URI uses an encoded form of the "local-part"
+certain characters in the local-part.  To allow for such an
+implementation method the URI uses an encoded form of the local-part
 which can be directly mapped to a file name.
 
 OpenPGP defines its User IDs, and thus the mail address, as UTF-8
 strings.  To help with the common pattern of using capitalized names
 (e.g. "Joe.Doe@example.org") for mail addresses, and under the premise
-that almost all MTAs treat the "local-part" case-insensitive and that
-the "domain-part" is required to be compared case-insensitive anyway,
+that almost all MTAs treat the local-part case-insensitive and that
+the domain-part is required to be compared case-insensitive anyway,
 all upper-case ASCII characters in a User ID are mapped to lowercase.
 Non-ASCII characters are not changed.
 
-The so mapped "local-part" is hashed using the SHA-1 algorithm.  The
+The so mapped local-part is hashed using the SHA-1 algorithm.  The
 resulting 160 bit digest is encoded using the Z-Base-32 method as
 described in {{{RFC(6189)}}}, section 5.1.6.  The resulting string has a
 fixed length of 32 octets.  To form the URI, the scheme
-{{{https_scheme}}} is concatenated with the mapped "domain-part", the
+{{{https_scheme}}} is concatenated with the domain-part, the
 fixed string ~/.well-known/openpgpkey/hu/~, and the above constructed
 32 octet string.
 
@@ -162,6 +164,19 @@ For example the URI to lookup the key for Joe.Doe@Example.ORG is:
 
 (line has been wrapped for rendering purposes)
 
+DNS SRV resource records ({{{RFC(2782)}}}) may be used to query a
+different host or a port other than 443.  For example:
+
+#+BEGIN_EXAMPLE
+_openpgpkey._tcp.example.org.  IN  SRV 0 0 8443 wkd.example.org.
+#+END_EXAMPLE
+
+changes the above query to query the host "wkd.example.org" at port
+8443 instead of the host "gnupg.org" at port 443.  The target (in the
+example "wkd.example.org") MUST be a sub-domain of the domain-part
+(here "example.org").  If the target is not a sub-domain, the SRV RR
+MUST be be ignored.  The recommended name for the sub-domain is "wkd".
+
 The HTTP GET method MUST return the binary representation of the
 OpenPGP key for the given mail address.  The key needs to carry a User
 ID packet ({{{RFC(4880)}}}) with that mail address.  Note that the key
@@ -173,10 +188,11 @@ single request as concatenated key blocks.
 The server MUST accept the HTTP HEAD method to allow a client to
 check for the existence of a key.
 
-The server SHOULD return "application/octet-string" as the
+The server SHOULD use "application/octet-string" as the
 Content-Type for the data but clients SHOULD also accept any other
 Content-Type.  The server MUST NOT return an ASCII armored version of
 the key.
+
 
 * Web Key Directory Update Protocol
 
@@ -197,6 +213,8 @@ Directory, she performs the following steps:
 #+begin_example
      https://example.org/.well-known/openpgpkey/submission-address
 #+end_example
+   The DNS SRV RR rules described for the Web Key Directory apply here
+   as well.
 
 2. She sends her key using SMTP (or any other transport mechanism) to
    the provider using the submission address and key format as specified
@@ -425,14 +443,22 @@ with a domain name and an underscore.
 
 * Security Considerations
 
-The use of SHA-1 for the mapping of the "local-part" to a fixed string
+The use of SHA-1 for the mapping of the local-part to a fixed string
 is not a security feature but merely used to map the local-part to a
 fixed-sized string made from a well defined set of characters.  It is not
 intended to conceal information about a mail address.
 
 The domain name part of the mail address is not part of the hash to
-avoid problems with internationalized domain names.  Instead a separate
-URL is required for each domain name.
+avoid problems with internationalized domain names.  Instead a
+separate URL is required for each domain name.
+
+The use of DNS SRV records reduces the certainty that a mail address
+belongs to a domain.  For example an attacker may change the target to
+a host in a sub-domain under their control and thus gain full control
+over all keys.  An implementation may want to weight the certainty of
+a mapping different if it has been retrieved via a sub-domain and in
+particular if a non-recommended name is used for the sub-domain.
+
 
 * IANA Considerations
 
@@ -660,7 +686,6 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -01
+* Changes Since -02
 
-- Changed the format of the confirmation request.
-- Added sample messages.
+- Specified the use of DNS SRV.
