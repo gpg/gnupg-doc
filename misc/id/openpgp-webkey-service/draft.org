@@ -20,7 +20,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-03">
+     docName="draft-koch-openpgp-webkey-service-04">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -40,7 +40,7 @@
       </address>
     </author>
 
-    <date month="January" year="2017" />
+    <date month="MONTH" year="2017" />
     <area>Security</area>
 
     <abstract>
