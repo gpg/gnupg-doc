@@ -89,12 +89,19 @@ case "$JOB_NAME" in
         fi
         ;;
     *gnupg*)
-        if [ "$XTARGET" = native ]; then
-            CONFIGUREFLAGS="--enable-wks-tools --enable-g13 --enable-symcryptrun --enable-gpg2-is-gpg"
-        fi
+	# Common configure options.
+	CONFIGUREFLAGS="--enable-wks-tools --enable-gpg2-is-gpg"
+
+	# For Windows builds...
         if [ "$XTARGET" = w32 ]; then
-            CONFIGUREFLAGS="--enable-wks-tools --enable-gpg2-is-gpg --with-zlib=$ORIGINAL_PREFIX --with-bzip2=$ORIGINAL_PREFIX"
+	    # ... we need to tweak it a little and we leave out some
+	    # stuff...
+            CONFIGUREFLAGS="$CONFIGUREFLAGS --with-zlib=$ORIGINAL_PREFIX --with-bzip2=$ORIGINAL_PREFIX"
+	else
+	    # ... that we enable for all other builds.
+	    CONFIGUREFLAGS="$CONFIGUREFLAGS --enable-g13 --enable-symcryptrun"
         fi
+
 	if [ "$NODE_NAME" = zygalski ]; then
 	    CONFIGUREFLAGS="$CONFIGUREFLAGS --with-libiconv-prefix=$HOME/pkg"
 	fi
