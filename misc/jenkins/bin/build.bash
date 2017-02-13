@@ -104,13 +104,13 @@ case "$JOB_NAME" in
 
 	# Disable NTBTLS for now until it is actually mature and used.
 	CONFIGUREFLAGS="$CONFIGUREFLAGS --disable-ntbtls"
-
-	# The libraries use rpath when linking the tests, so they
-	# locate their dependencies that way.  GnuPG, however, does
-	# not.  Therefore, we set LD_LIBRARY_PATH.
-	test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
         ;;
 esac
+
+# The libraries use rpath when linking the tests, so they locate their
+# dependencies that way.  GnuPG, however, does not.  Therefore, we set
+# LD_LIBRARY_PATH.
+test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
 
 # See if we have a GPGME checkout for the tesets.
 xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
