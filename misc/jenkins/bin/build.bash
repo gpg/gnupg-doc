@@ -114,10 +114,23 @@ case "$JOB_NAME" in
         ;;
 esac
 
-# The libraries use rpath when linking the tests, so they locate their
-# dependencies that way.  GnuPG, however, does not.  Therefore, we set
-# LD_LIBRARY_PATH.
+# The libraries use RUNPATH when linking the tests, so they locate
+# their dependencies that way.  GnuPG, however, does not.  Therefore,
+# we set LD_LIBRARY_PATH.
 test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
+
+# HACKHACKHACK:
+#
+# Because newer Debian toolchains prefer RUNPATH over RPATH, and
+# RUNPATH has lower precedence than LD_LIBRARY_PATH, we need to
+# explicitly add libtool's .libs directory:
+test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$ORIGINAL_PREFIX/lib"
+#
+# If we don't do this, the version tests fail because the runtime
+# linker will pick up the library from LD_LIBRARY_PATH.  Also, testing
+# the installed version is not what we want ofc.
+#
+# KCAHKCAHKCAH
 
 # See if we have a GPGME checkout for the tesets.
 xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
@@ -232,6 +245,20 @@ case "$XTARGET" in
 	  cd "$WORKDIR"
           $abs_configure --prefix=$PREFIX --enable-maintainer-mode \
                    $CONFIGUREFLAGS
+
+	  # Extract the directory / tarname from the package
+          tarname=$(awk <config.h '
+	             /^#define PACKAGE_TARNAME/ {gsub(/"/,"",$3);name=$3};
+	             /^#define PACKAGE_VERSION/ {gsub(/"/,"",$3);vers=$3};
+		     END {print name "-" vers}')
+
+	  # HACKHACKHACK: Because newer Debian toolchains prefer
+	  # RUNPATH over RPATH, and RUNPATH has lower precedence than
+	  # LD_LIBRARY_PATH, we need to explicitly add libtool's .libs
+	  # directory:
+	  test_environment="LD_LIBRARY_PATH=$(pwd)/${tarname}/_build/sub/src/.libs:$ORIGINAL_PREFIX/lib"
+	  # KCAHKCAHKCAH
+
 	  if ! env $test_environment $MAKE $MAKEFLAGS distcheck ; then
               # Jenkins looks for "FAIL:" to mark a build unstable,
               # hence we ignore errors here.
@@ -239,11 +266,6 @@ case "$XTARGET" in
 	      exit 0
 	  fi
 
-          # Extract the tarname from the package
-          tarname=$(awk <config.h '
-	             /^#define PACKAGE_TARNAME/ {gsub(/"/,"",$3);name=$3};
-	             /^#define PACKAGE_VERSION/ {gsub(/"/,"",$3);vers=$3};
-		     END {print name "-" vers}')
 	  if [ -f "${tarname}.tar.bz2" ]; then
 	     bzcat "${tarname}.tar.bz2" | tar xf -
 	  elif [ -f "${tarname}.tar.gz" ]; then
@@ -254,7 +276,7 @@ case "$XTARGET" in
 	  fi
           # And do a final build using the generated tarball
 	  cd ${tarname}
-	  ./configure --prefix=$PREFIX $CONFIGUREFLAGS LD_LIBRARY_PATH=$PREFIX/lib
+	  ./configure --prefix=$PREFIX $CONFIGUREFLAGS
 	  $MAKE $MAKEFLAGS
 	  $MAKE $MAKEFLAGS install
 
