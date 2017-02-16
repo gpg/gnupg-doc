@@ -307,7 +307,7 @@ The first part MUST have "text" as its Content-Type and can be used to
 explain the purpose of the mail.  For example it may point to this RFC
 and explain on how to manually perform the protocol.
 
-The second part MUST have "application/vnd.gnupg.wkd" as its
+The second part MUST have "application/vnd.gnupg.wks" as its
 Content-Type and carry an OpenPGP encrypted message in ASCII Armor
 format.  The message MUST be encrypted to the target key and MUST NOT
 be signed.  After decryption a text file in the Web Key data format
@@ -387,7 +387,7 @@ key and the encryption key is the key associated with the provider's
 submission address.
 
 The Content-Type used for the plaintext message MUST also be
-"application/vnd.gnupg.wkd".  The format is the same as described above
+"application/vnd.gnupg.wks".  The format is the same as described above
 for the Confirmation Request.  The body must contain three name-value
 pairs in this order:
 
@@ -688,6 +688,7 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -02
+* Changes Since -03
 
-- Specified the use of DNS SRV.
+- Fixed Content-Type in the description.  The one used in the example
+  was correct.
