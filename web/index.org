@@ -66,6 +66,11 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.1.19 released (2017-03-01)
+
+A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000402.html][announcement
+mail]] for details.
+
 ** GnuPG 2.1.18 released (2017-01-23)
 
 A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000401.html][announcement
@@ -124,61 +129,6 @@ A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
 been found.  Updating the software is highly suggested.  Please read
 this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.  Note that the CVE id in that mail is not
 correct, the correct one is CVE-2016-6313.
-
-** GnuPG 2.1.14 released (2016-07-14)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000393.html][announcement mail]] for details.
-
-** Libgcrypt 1.7.2 released (2016-07-14)
-
-We are pleased to announce the availability of Libgcrypt version
-1.7.2.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000392.html][{more}]]
-
-** GnuPG 2.1.13 released (2016-06-16)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000390.html][announcement mail]] for details.
-
-** Libgcrypt 1.7.1 released (2016-06-15)
-
-We are pleased to announce the availability of Libgcrypt version
-1.7.1.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000389.html][{more}]]
-
-** First OpenPGP conference (2016-05-20)
-
-If you are a user or implementer of OpenPGP related software, you may
-join us at [[https://gnupg.org/conf/][OpenPGP.conf]] in Cologne on September 8 and 9, 2016.
-
-** GnuPG 2.1.12 released (2016-05-04)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000387.html][announcement mail]] for details.
-
-** Libgcrypt 1.7.0 released (2016-04-15)
-
-We are pleased to announce the availability of Libgcrypt version
-1.7.0.  This is a new stable version of [[file:related_software/libgcrypt/index.org][Libgcrypt]] with full API and
-ABI compatibiliy to the 1.6 series.  Its main features are new
-algorithms, curves, and performance improvements.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000386.html][{more}]]
-
-** GnuPG 2.0.30 released (2016-03-31)
-
-GnuPG 2.0.30 is now available.  This release fixes a few minor bugs;
-users of GnuPG 2.0.x may want to update to this version.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000385.html][{more}]]
-
-** Libgcrypt 1.6.5 released (2016-02-09) 			  :important:
-
-Libgcrypt version 1.6.5 and an updated Windows installer for GnuPG
-2.1.11 has been released to mitigate a new side-channel attack.
-[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html][{more}]]
-
-** GnuPG 2.1.11 released (2016-01-26)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000383.html][announcement mail]] for details.
 
 
 * A big Thanks to all supporters
