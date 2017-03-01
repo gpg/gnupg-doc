@@ -175,7 +175,7 @@ _openpgpkey._tcp.example.org.  IN  SRV 0 0 8443 wkd.example.org.
 #+END_EXAMPLE
 
 changes the above to query the host "wkd.example.org" at port
-8443 instead of the host "gnupg.org" at port 443.  The target (in the
+8443 instead of the host "example.org" at port 443.  The target (in the
 example "wkd.example.org") MUST be a sub-domain of the domain-part
 (here "example.org").  If the target is not a sub-domain, the SRV RR
 MUST be be ignored.  The recommended name for the sub-domain is "wkd".
