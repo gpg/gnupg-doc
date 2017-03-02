@@ -77,9 +77,9 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
 
 * Hardware and service donations
 
-  We have to thank [[https://www.openit.de][OpenIT]] for their long time support of GnuPG.  They
-  provide rack space, connectivity, and are fast in fixing problems
-  with the machines.
+  We have to thank [[https://www.plusserver.com][PlusServer]] for their long time support of GnuPG.
+  They provide rack space, connectivity, and are fast in fixing
+  problems with the machines.
 
 # Without doing this in HTML we get an extra div figure around the
 # link which messes up the rendering.  Funnily this does not happen
@@ -87,7 +87,7 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
 #
 #+HTML: <div class="logobox">
 #+HTML: <p>
-#+HTML: <a href="https://www.openit.de"><img src="../share/logo-sponsor.png"
-#+HTML:    alt="Logo OpenIT" /></a>
+#+HTML: <a href="https://www.plusserver.com"><img src="../share/logo-sponsor.png"
+#+HTML:    alt="Logo PlusServer" /></a>
 #+HTML: </p>
 #+HTML: </div>
