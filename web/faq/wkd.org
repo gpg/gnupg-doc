@@ -10,4 +10,4 @@ discovery.  That is, it returns a public key for a supplied mail
 address.  It is a distrubuted system in the same way email is
 distributed.
 
-FIXME: Write a detailed description.
+Please [[https://wiki.gnupg.org/WKD][the wiki]] for latest information on this key discovery system.
