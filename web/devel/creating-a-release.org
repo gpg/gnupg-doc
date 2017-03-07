@@ -189,6 +189,12 @@ Here are some gotchas for certain packages
 
 *** Libgcrypt
 
+*** GPGME
+
+- As of version 1.9 build problems in "make distcheck" for the Python
+  bindings may turn up.  The workaround is to use a fresh build
+  directory.
+
 
 
 
