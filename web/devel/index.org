@@ -1,0 +1,7 @@
+#+TITLE: GnuPG Hacking Resources
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+
+* Resources for Developers
+
+ - [[file:creating-a-release.org][How to create a release]].

@@ -1,0 +1,209 @@
+#+TITLE: GnuPG Hacking - Creating a Release
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+
+* Creating a Release
+
+This is a description of the steps necessary to build a software
+release of GnuPG and related software.
+
+
+** Overview of the Build System
+
+FIXME
+
+** Stuff required
+
+A Unix system, preferable Debian because that is what we use for our
+development.
+
+
+** Release Planning
+
+If you are planning a new release and strings have changed you should
+send a notification to all translators, so that they have time to
+update their translations.  The script ~build-aux/mail-to-translators~
+in the gnupg-repo might be useful for this.  You need to edit it to
+actually send out something.
+
+** Step by Step
+
+*** Make sure that all new PO files are checked in.
+
+*** Decide whether you want to update the automake standard files
+
+These are mainly the files ~config.guess~ and ~config.sub~.  In
+general these files should be the same for all package.  Do not update
+them for each release because having consistent files in all packages
+can avoid bug reports due to different cpu-vendor-os strings
+
+Commit these changes.
+
+*** Update the translation files
+
+Run:
+
+:  make -C po update-po
+
+This merges the latest changes into the po files and disable entries
+which do not anymore match.  The latter is important for example to
+avoid mismatches in printf format strings.
+
+You should then commit the changes using a subject of "po: Auto
+update".
+
+*** Update the LT version
+
+This affects only library packages.  The libtool version (LT version)
+is updated only right before a release.  The configure.ac file has
+comments on how to update them.  Note that libraries which come with
+language bindings may have several independent LT version.
+
+FIXME: Describe why and how they are to be updated.
+
+*** Write NEWS entries
+
+Remember to set the release date in the NEWS file.  For libraries it
+is suggested to note the LT version as well.  Use the format
+"Cz/Ay/Rz" to give the Current/Age/Release numbers.
+
+*** Check README and doc files
+
+You may for example want to update the version information and make
+sure that they still have correct information.  Files you should look
+at are for example:
+
+- README
+- AUTHORS
+- src/versioninfo.rc.in (Windows)
+
+*** Commit all changes with a subject of "Release m.n.o."
+
+This is the final commit which has all changes for the version.
+
+Do not push this commit.
+
+*** Create a signed tag with the name "foo-m.n.o".
+
+The git tag needs to be signed.  We use hardware tokens to hold the
+signing key.  The command to do this is
+
+: git tag -u KEYID foo-m.n.o
+
+You will be asked for a message.  Put a funny message or better the
+main feature of this release into the commit log message.
+
+Do not push this tag.
+
+In case you need to restart the release process, you should first
+remove the tag (=git tag -d foo-m.n.o=) and then also revert the last
+commit.
+
+*** Recreate the configure script
+
+: ./autogen.sh --force
+
+The option =--force= is required for the git magic in configure.ac to
+work properly.
+
+This calls autoconf and automake and does some M4 magic to encode the
+the version number and information from Git into the new configure
+script.  Note that the created =configure= script may not be tracked
+by Git.
+
+*** Build a release tarball
+
+This is easy:
+
+ : ./configure --enable-maintainer-mode
+
+ : make distcheck
+
+it is suggested to run the latter inside Emacs so that the compile log
+can be viewed for errors.
+
+FIXME: Explain why and how to use a VPATH build.
+
+*** Build and test the release
+
+This is best done on a different machine.  Make sure to also build the
+Windows version so that you won't run into a surprise when building a
+Windows versions later.
+
+Keep a test build available for later.
+
+
+
+*** Sign the tarball
+
+Also store the created .swdb file away.
+
+*** Copy the tarball to a staging area
+
+*** Update the webpages
+
+At least the file swdb.mac needs an update.  This is done using the
+saved swdb.
+
+*** Prepare for the next release
+
+ - Add a new headline to NEWS.
+
+ - Bump the version number in configure.ac up (Do not bump the LT
+   version, though)
+
+ - Commit with a subject "Post release updates" or similar.
+
+*** Push all changes
+
+Do not forget to push also the tags.
+
+In case you run into a conflict you need to start from scratch.  That
+is removing the last two commits from your local copy, removing the
+tag, merge the changes, and to to the first step.  Make sure that the
+version and LT version numbers are correct for the second try.  To
+avoid this problem it is often better to work on a release branch and
+later merge the changes back to master.
+
+*** Copy the files from the staging area to the FTP server
+
+*** Update the online docs
+
+Using the final test build run a "make -C doc online".
+
+*** Write an announcement.
+
+
+** Notes on some packages
+
+Here are some gotchas for certain packages
+
+*** GnuPG
+
+- Check that https://savannah.gnu.org/projects/gnupg  is up to date.
+  This is a simple page which merely points to gnupg.org, though.
+
+
+*** GnuPG Windows Installer
+
+
+*** Libgcrypt
+
+
+
+
+** Pitfalls
+
+Sometimes you may run into problems without seeing the actual
+problem.  Here is a list of such things
+
+*** Permission problem moving "xx.new.po" to "xx.po"
+
+If during "make distcheck" you get an error about a permission problem
+moving foo.new.po to foo.po; this is caused by a check whether the po
+files can be re-created.  Now if the first tarball has been created in
+a different top directory and if there exists a no distributed file
+with the string "GNU gnupg" (e.g. a log file from running make) you
+end up with different comments in the po files.  Check out
+/usr/lib/gettext/project-id for that silliness.  As a hack we added
+this string into configure.ac.
