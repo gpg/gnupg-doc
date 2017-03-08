@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -x
+
+[ -f ~/.profile ] && . ~/.profile
+uname -a
+env
+
+exec java -jar ~/bin/slave.jar

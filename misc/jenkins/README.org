@@ -1,4 +1,25 @@
 * Notes
+** Setting up a Jenkins build slave
+ - install a jre, make, autoconf, automake, libtool, gcc, git, bison,
+   fig2dev, ghostscript, gnutls, sqlite3, pkg-config, imagemagick
+ - create a user jenkins
+ - clone gnupg-doc
+   $ git clone git://git.gnupg.org/gnupg-doc.git
+ - link ~/bin
+   $ ln -s gnupg-doc/misc/jenkins/bin
+ - download slave.jar
+   $ wget https://jenkins.gnupg.org/jnlpJars/slave.jar -O bin/slave.jar
+ - copy and adapt launcher
+   $ cp bin/jenkins-slave.dist bin/jenkins-slave
+ - make sure that jenkins@soro can ssh to the new node
+ - go to https://jenkins.gnupg.org/computer/new and copy an existing
+   configuration, adapting it as needed
+ - setup 'GPGME tests for GnuPG' as described below
+ - for each project, add the new nodes distinct label to the
+   configuration matrix, and force a rebuild.  Start with libgpg-error
+   and walk your way up the dependency chain:
+   - libgpg-error, libnpth, libassuan, libksba, libgcrypt, ntbtls,
+     gnupg, gpgme
 ** GPGME tests for GnuPG
 There is a reasonably up-to-date (but this is currently a manual
 process) GPGME source at
