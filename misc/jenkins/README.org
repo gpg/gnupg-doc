@@ -1,7 +1,11 @@
 * Notes
 ** Setting up a Jenkins build slave
+ - on soro, create an entry in /etc/hosts
+ - copy root@soro's ssh key to /root/.ssh/authorized_keys
  - install a jre, make, autoconf, automake, libtool, gcc, git, bison,
-   fig2dev, ghostscript, gnutls, sqlite3, pkg-config, imagemagick
+   fig2dev, ghostscript, gnutls, sqlite3, pkg-config, imagemagick,
+   rngd, python2/3, SWIG, Qt5 base
+ - setup rngd (test suites will consume quite a bit of entropy)
  - create a user jenkins
  - clone gnupg-doc
    $ git clone git://git.gnupg.org/gnupg-doc.git
