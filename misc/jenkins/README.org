@@ -28,11 +28,19 @@
 There is a reasonably up-to-date (but this is currently a manual
 process) GPGME source at
 
-  $HOME/src/gpgme-for-gnupgs-tests
+  $ mkdir $HOME/src
+  $ git clone git://git.gnupg.org/gpgme.git $HOME/src/gpgme-for-gnupgs-tests
+  $ cd $HOME/src/gpgme-for-gnupgs-tests
+  $ ./autogen.sh
 
 and a build tree at
 
-  $HOME/src/gpgme-for-gnupgs-tests/obj
+  $ mkdir $HOME/src/gpgme-for-gnupgs-tests/obj
+  $ cd $HOME/src/gpgme-for-gnupgs-tests/obj
+  $ export PATH=$HOME/prefix/native/bin:$PATH
+  $ ../configure --enable-maintainer-mode
+  $ make
+  $ make check
 
 and a w32 build tree at
 
