@@ -42,6 +42,19 @@ and a build tree at
   $ make
   $ make check
 
+and specialized build trees, e.g. for the sanitizer target at
+
+  $ mkdir $HOME/src/gpgme-for-gnupgs-tests/obj-sanitizer
+  $ cd $HOME/src/gpgme-for-gnupgs-tests/obj-sanitizer
+  $ export PATH=$HOME/prefix/sanitizer/bin:$PATH
+  $ ../configure --enable-maintainer-mode \
+      --enable-languages="cpp qt" \
+     CFLAGS="-fsanitize=undefined -fsanitize=address" \
+     CXXFLAGS="-fsanitize=undefined -fsanitize=address"
+  $ make
+  $ make check
+
+
 and a w32 build tree at
 
   $HOME/src/gpgme-for-gnupgs-tests/obj.w32

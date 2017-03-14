@@ -140,7 +140,12 @@ test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$ORIGINAL_PREFIX/lib"
 
 # See if we have a GPGME checkout for the tesets.
 xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
-if [ -d "$xtest_gpgme_srcdir/obj" ]; then
+if [ -d "$xtest_gpgme_srcdir/obj-$XTARGET" ]; then
+    # Some targets, like the sanitizer target, require a custom
+    # version of GPGME.
+    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
+    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj-$XTARGET"
+elif [ -d "$xtest_gpgme_srcdir/obj" ]; then
     export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
     export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj"
 fi
