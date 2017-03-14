@@ -87,6 +87,12 @@ case "$JOB_NAME" in
         if [ "$XTARGET" = sanitizer ]; then
             CONFIGUREFLAGS_0="--enable-languages=cpp qt"
         fi
+
+	# Disable Python bindings on macOS.  Something is not working
+	# there.
+        if [ "$NODE_NAME" = zygalski ]; then
+            CONFIGUREFLAGS_0="--enable-languages=cpp qt"
+        fi
         ;;
     *gnupg*)
 	# Common configure options.
