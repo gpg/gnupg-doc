@@ -130,11 +130,11 @@
 #
 # NTBTLS
 #
-#+macro: ntbtls_ver  0.1.0
-#+macro: ntbtls_date 2017-02-21
-#+macro: ntbtls_size 331k
-#+macro: ntbtls_sha1 33cce3941e321b97f65b5e1f11b13fb25fb387b9
-#+macro: ntbtls_sha2 a9f99ba3af13e0b83818ce9581ebf7f82563ba30c418de37f1c53e85de1876ce
+#+macro: ntbtls_ver  0.1.1
+#+macro: ntbtls_date 2017-03-16
+#+macro: ntbtls_size 333k
+#+macro: ntbtls_sha1 6c0aacc43f7cd0695ad21463d94e7baf99215149
+#+macro: ntbtls_sha2 2d274ce64d2ac7613ed8f7ed7094332d50ac16916d1ebf1fc87b1018df146234
 
 
 #
