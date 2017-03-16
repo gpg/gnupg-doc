@@ -113,6 +113,7 @@
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
    {{{libassuan_sha1}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
+   {{{ntbtls_sha1}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
    {{{npth_sha1}}}  npth-{{{npth_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2

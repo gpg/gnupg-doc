@@ -41,6 +41,7 @@
 
 ** Other Libraries
 
+   -  [[file:ntbtls/index.org][ntbTLS]] :: The Not Too Bad TLS Library.
    -  [[file:swlist.org::#gnupg-for-java][gnupg-for-java]] :: Java binding for GPGME
    -  [[file:swlist.org::#egd][EGD]] :: Entropy Gathering Daemon
 
