@@ -1,0 +1,12 @@
+#!/bin/sh
+# This is a post-merge hook to trigger building
+# gnupg.org
+
+reponame=$(git rev-parse --show-toplevel | sed s,.*/,,)
+
+unset $(git rev-parse --local-env-vars)
+
+if [ x"$reponame" = x"gnupg-doc" ]; then
+   exec $HOME/bin/build-website.sh --git &
+fi
+exit 0
