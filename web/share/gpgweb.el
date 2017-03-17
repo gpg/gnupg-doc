@@ -347,17 +347,43 @@ string of the source file or nil if not available."
 </html>")))
 
 
-;;; Post-process the generated HTML file:
-;;;
-;;; - Insert header and footer
-;;; - Insert "class=selected" into the active menu entry
-;;; - Fixup sitemap.
-;;;
-;;; If blogmode is not nil the output is rendered as a blog.  BLOGMODE
-;;; may then contain an ordered list of org file names which are used
-;;; to create the previous and Next links for an entry.
-;;;
+(defun gpgweb-publish-find-title (file &optional reset)
+  "Find the title of FILE in project.
+This is a copy of org-publish-find-title which switches the
+buffer into read-write mode so that it works with read-only files."
+  (or
+   (and (not reset) (org-publish-cache-get-file-property file :title nil t))
+   (let* ((org-inhibit-startup t)
+	  (visiting (find-buffer-visiting file))
+	  (buffer (or visiting (find-file-noselect file))))
+     (with-current-buffer buffer
+       (toggle-read-only 0)
+       (let ((title
+	      (let ((property
+		     (plist-get
+		      ;; protect local variables in open buffers
+		      (if visiting
+			  (org-export-with-buffer-copy (org-export-get-environment))
+			(org-export-get-environment))
+		      :title)))
+		(if property
+		    (org-no-properties (org-element-interpret-data property))
+		  (file-name-nondirectory (file-name-sans-extension file))))))
+	 (unless visiting (kill-buffer buffer))
+	 (org-publish-cache-set-file-property file :title title)
+	 title)))))
+
+
 (defun gpgweb-postprocess-html (plist orgfile htmlfile blogmode)
+  "Post-process the generated HTML file
+
+  - Insert header and footer
+  - Insert \"class=selected\" into the active menu entry
+  - Fixup sitemap.
+
+If blogmode is not nil the output is rendered as a blog.  BLOGMODE
+may then contain an ordered list of org file names which are used
+to create the previous and Next links for an entry."
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
          (committed-at (shell-command-to-string
@@ -366,7 +392,7 @@ string of the source file or nil if not available."
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
                               ".*/gpgweb-stage/\\(.*\\)$" "\\1" htmlfile t))
-                   (title (org-publish-find-title orgfile)))
+                   (title (gpgweb-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
                (gpgweb-insert-menu fname-2)
@@ -406,21 +432,17 @@ string of the source file or nil if not available."
       (unless visitingp (kill-buffer work-buffer))))))
 
 
-;;;
-;;; The publishing function used by the HTML exporter
-;;;
 (defun gpgweb-org-to-html (plist filename pub-dir)
+  "The publishing function used by the HTML exporter"
   (gpgweb-postprocess-html plist
                            filename
                            (org-gpgweb-publish-to-html plist filename pub-dir)
                            nil))
 
 
-;;;
-;;; Turn the current buffer which has an org-mode blog entry into its
-;;; rendered form and save it with the suffix .html.
-;;;
 (defun gpgweb-render-blog (&optional filelist)
+  "Turn the current buffer which has an org-mode blog entry into its
+rendered form and save it with the suffix .html."
   (interactive)
   (let* ((extplist '(:language "en"
                      :section-numbers nil
@@ -432,10 +454,8 @@ string of the source file or nil if not available."
     (gpgweb-postprocess-html plist orgfile htmlfile (if filelist filelist t))))
 
 
-;;;
-;;; Publish all blog entries in the current directory
-;;;
 (defun gpgweb-publish-blogs ()
+  "Publish all blog entries in the current directory"
   (interactive)
   (let ((orgfiles (directory-files "." nil "^2[0-9]+-.*\.org$")))
     (dolist (file (cons "index.org" orgfiles))
@@ -448,11 +468,9 @@ string of the source file or nil if not available."
           (kill-buffer work-buffer))))))
 
 
-;;;
-;;; We don't do an upload directly.  Instead we only print the
-;;; commands to do that.  In reality a cron jobs syncs the stage dir.
-;;;
 (defun gpgweb-upload ()
+  "We don't do an upload directly.  Instead we only print the
+commands to do that.  In reality a cron jobs syncs the stage dir."
   (let ((stagedir (plist-get project-plist :publishing-directory)))
     (message "gpgweb  rootdir '%s'" gpgweb-root-dir)
     (message "gpgweb stagedir '%s'" stagedir)
