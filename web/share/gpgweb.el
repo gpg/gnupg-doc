@@ -1,6 +1,7 @@
 ;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
-(require 'org-exp)
+(if (< (string-to-number emacs-version) 24)
+    (require 'org-exp))
 
 ;; makeindex disabled because the generated file is created in the
 ;; source directory.
@@ -296,7 +297,7 @@ HTMLFILE is HTML file name and COMMITTED-AT is the commit date
 string of the source file or nil if not available."
   (let ((srcfile (concat "https://git.gnupg.org/cgi-bin/gitweb.cgi?"
                          "p=gnupg-doc.git;a=blob;f="
-                         (if blogmode "misc/blog.gnupg.org" "web")
+                         (if blogmode "misc/blog.gnupg.org/" "web/")
                          ;; The replace below is a hack to cope with
                          ;; blogmode where HTMLFILE is like "./foo.html".
                          (replace-regexp-in-string
@@ -364,7 +365,7 @@ string of the source file or nil if not available."
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
-                              ".*/gpgweb-stage\\(/.*\\)$" "\\1" htmlfile t))
+                              ".*/gpgweb-stage/\\(.*\\)$" "\\1" htmlfile t))
                    (title (org-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
