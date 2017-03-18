@@ -219,7 +219,7 @@ fi
 
 if [ -n "$sync_blog" ]; then
   cd "$sync_blog"
-  rsync -vr --links --exclude '*~' --exclude '*.sh' \
+  rsync -rt --links --exclude '*~' --exclude '*.sh' \
         --exclude '*tmp' --exclude '*.org' --exclude headlines.txt \
         . ${htdocs_blog}/
   any_sync=yes
@@ -234,7 +234,8 @@ fi
 # Print warnings when the scripts are out of date
 # (For security reasons the scripts need to be installed manually.)
 #
-for f in trigger-website-build build-website.sh mkkudos.sh ; do
+for f in trigger-website-build build-website.sh mkkudos.sh \
+         append-to-donors.sh ; do
   if ! cmp -s ${HOME}/bin/$f tools/$f ; then
     echo "$pgm: Warning: A newer version of $f is available" >&2;
   fi

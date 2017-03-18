@@ -79,7 +79,11 @@ send_thanks () {
     else
       xidnmail=""
     fi
-    xqpmail=$(mu-tool 2047 -c utf-8 "$xmail")
+    if [ x"$xidnmail" = x"$xmail" ]; then
+      xqpmail="$xmail"
+    else
+      xqpmail=$(mu-tool 2047 -c utf-8 "$xmail")
+    fi
     ( cat <<EOF
 From: donations@gnupg.org
 To: $xqpmail
