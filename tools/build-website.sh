@@ -44,6 +44,8 @@ if [ ! -d "$HOME" ]; then
 fi
 
 reponame=gnupg-doc
+htdocs_web="/var/www/www/www.gnupg.org/htdocs"
+htdocs_blog="/var/www/www/www.gnupg.org/misc/blog"
 
 workuser_dir=$HOME/${workuser}
 log_dir="$HOME/log"
@@ -96,6 +98,10 @@ fi
 trap "rm -f $LOCKFILE" 0
 
 
+# These flags are set to the stage directory iof a sync is required
+sync_web=
+sync_blog=
+
 #
 # Build main part
 #
@@ -135,7 +141,7 @@ else
   --eval "(org-publish \"gpgweb\" t nil)"
 
   echo "$rev" > ${revlastfile}
-
+  sync_web=${stage_dir}/${subdir}
   echo "$(date -u -Iseconds) build finished for $subdir" | tee -a ${buildlog}
 fi
 
@@ -155,6 +161,7 @@ fi
 revlast="$(head -1 ${revlastfile} 2>/dev/null || true)"
 if [ x"$rev" = x"$revlast" ]; then
    echo "$pgm: No need to build $subdir" >&2;
+  sync_blog=${stage_dir}/${subdir}
 else
 
   echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
@@ -191,7 +198,7 @@ else
   sudo -u webbuild-x ${indexcreator}
 
   echo "$rev" > ${revlastfile}
-
+  sync_blog=${stage_dir}/${subdir}
   echo "$(date -u -Iseconds) build finished for $subdir" | tee -a ${buildlog}
 
 fi
@@ -201,14 +208,35 @@ fi
 # Sync to the webspace
 #
 cd "${root_dir}"
+any_sync=
+
+if [ -n "$sync_web" ]; then
+  cd "$sync_web"
+  rsync -rlt --exclude '*~' --exclude '*.tmp' \
+        . ${htdocs_web}/
+  touch ${htdocs_web}/donate/donors.dat
+  any_sync=yes
+fi
+
+if [ -n "$sync_blog" ]; then
+  cd "$sync_blog"
+  rsync -vr --links --exclude '*~' --exclude '*.sh' \
+        --exclude '*tmp' --exclude '*.org' --exclude headlines.txt \
+        . ${htdocs_blog}/
+  any_sync=yes
+fi
+
+if [ "$any_sync" = yes ]; then
+  $HOME/bin/mkkudos.sh --verbose --force
+fi
 
 
 #
 # Print warnings when the scripts are out of date
 # (For security reasons the scripts need to be installed manually.)
 #
-for f in trigger-website-build build-website.sh ; do
-  if cmp -s tools/$f ${HOME}/bin/$f ; then
+for f in trigger-website-build build-website.sh mkkudos.sh ; do
+  if ! cmp -s ${HOME}/bin/$f tools/$f ; then
     echo "$pgm: Warning: A newer version of $f is available" >&2;
   fi
 done
