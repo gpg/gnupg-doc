@@ -161,7 +161,6 @@ fi
 revlast="$(head -1 ${revlastfile} 2>/dev/null || true)"
 if [ x"$rev" = x"$revlast" ]; then
    echo "$pgm: No need to build $subdir" >&2;
-  sync_blog=${stage_dir}/${subdir}
 else
 
   echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
