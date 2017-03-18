@@ -297,7 +297,7 @@ HTMLFILE is HTML file name and COMMITTED-AT is the commit date
 string of the source file or nil if not available."
   (let ((srcfile (concat "https://git.gnupg.org/cgi-bin/gitweb.cgi?"
                          "p=gnupg-doc.git;a=blob;f="
-                         (if blogmode "misc/blog.gnupg.org/" "web/")
+                         (if blogmode "misc/blog.gnupg.org" "web/")
                          ;; The replace below is a hack to cope with
                          ;; blogmode where HTMLFILE is like "./foo.html".
                          (replace-regexp-in-string
@@ -334,7 +334,7 @@ string of the source file or nil if not available."
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa-3.0_80x15.png\"/></a>&nbsp;
     These web pages are
-    Copyright 1998--2015 The GnuPG Project and licensed under a
+    Copyright 1998--2017 The GnuPG Project and licensed under a
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
@@ -387,11 +387,14 @@ to create the previous and Next links for an entry."
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
          (committed-at (shell-command-to-string
-                        (concat "git log -1 --format='%ci' -- " orgfile))))
+                        (concat "git"
+                                (if blogmode (concat " -C " gpgweb-blog-dir))
+                                " log -1 --format='%ci' -- " orgfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
-                              ".*/gpgweb-stage/\\(.*\\)$" "\\1" htmlfile t))
+                             ".*/gnupg-doc-stage/web/\\(.*\\)$" "\\1"
+                             htmlfile t))
                    (title (gpgweb-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
@@ -457,11 +460,14 @@ rendered form and save it with the suffix .html."
 (defun gpgweb-publish-blogs ()
   "Publish all blog entries in the current directory"
   (interactive)
-  (let ((orgfiles (directory-files "." nil "^2[0-9]+-.*\.org$")))
+  (let ((orgfiles (directory-files gpgweb-blog-dir nil "^2[0-9]+-.*\.org$")))
     (dolist (file (cons "index.org" orgfiles))
-      (let* ((visitingp (find-buffer-visiting file))
-             (work-buffer (or visitingp (find-file-noselect file))))
+      (let* ((file2 (concat gpgweb-blog-dir file))
+             (visitingp (find-buffer-visiting file2))
+             (work-buffer (or visitingp (find-file-noselect file2))))
         (with-current-buffer work-buffer
+          (setq default-directory gpgweb-stage-dir)
+          (toggle-read-only 0)
           (gpgweb-render-blog orgfiles)
           (basic-save-buffer))
         (unless visitingp
