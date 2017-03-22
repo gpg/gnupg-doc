@@ -114,6 +114,7 @@ if not available."
       ("/documentation/guides.html"        "Guides")
       ("/documentation/faqs.html"          "FAQs")
       ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
+      ("/service.html"                     "3rd Party Support")
       ("/documentation/bts.html"           "Bug&nbsp;Tracker")
       ("/documentation/security.html"      "Security")))
     ("/related_software/index.html"
