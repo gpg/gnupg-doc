@@ -61,8 +61,8 @@
    Marcus is part of the free software community since 1997, when he
    joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
    on GNU/Hurd, he also has a diploma degree in mathematics, and is
-   employed by [[https://g10code.com][g10^code]] to work on the GnuPG and related software from
-   2001 to 2012 and again since 2017.
+   full time employed by [[https://g10code.com][g10^code]] to work on the GnuPG and related
+   software from 2001 to 2012 and again since 2017.
 
    #+HTML: <p style="clear: both"/>
 

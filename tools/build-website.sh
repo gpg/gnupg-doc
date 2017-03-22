@@ -230,6 +230,8 @@ if [ -n "$sync_blog" ]; then
   any_sync=yes
 fi
 
+cd "${root_dir}"
+
 if [ "$any_sync" = yes ]; then
   $HOME/bin/mkkudos.sh --verbose --force
 fi
