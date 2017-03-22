@@ -214,6 +214,10 @@ if [ -n "$sync_web" ]; then
   rsync -rlt --exclude '*~' --exclude '*.tmp' \
         . ${htdocs_web}/
   touch ${htdocs_web}/donate/donors.dat
+  cd ${htdocs_web}
+  ln -sf ../../howtos.gnupg.org/htdocs howtos
+  ln -sf software related_software
+  cd "$sync_web"
   any_sync=yes
 fi
 
