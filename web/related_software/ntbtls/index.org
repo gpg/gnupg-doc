@@ -1,0 +1,16 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+* The Not Too Bad TLS Library
+
+  /ntbTLS/ is a tiny TLS 1.2 only implementation designed to be used
+  with Libgcrypt and LibKSBA.  In particular, this library has no
+  certificate verification code - this need to be done by the caller.
+  For example the GnuPG component /dirmngr/ already has code to verify
+  certificates (for CRL and OCSP checking) and thus /ntbTLS/ is a good
+  fit for accessing objects over the network.
+
+  *WARNING:* Although this library is based on code from PolarSSL (now
+  known as [[https://tls.mbed.org/][mbedTLS]]) it is pretty young and NOT WELL TESTED.
+
+  See the [[../../download/index.org::ntbtls][download]] section for the latest tarball.
