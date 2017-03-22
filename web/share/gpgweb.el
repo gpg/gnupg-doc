@@ -93,8 +93,7 @@ if not available."
       ("/features.html"                    "Features")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
-      ("/documentation/sites.html"         "Sites")
-      ("/service.html"                     "Service")))
+      ("/documentation/sites.html"         "Sites")))
     ("/donate/index.html"
      "Donate"
      (("/donate/index.html"                "Donate")
