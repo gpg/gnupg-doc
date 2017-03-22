@@ -4,7 +4,7 @@
 #+AUTHOR:    Robert J. Hansen et al.
 #+LANGUAGE:  en
 #+LINK: gnupgweb https://www.gnupg.org/
-#+LINK: roundup  https://bugs.g10code.com/gnupg/issue
+#+LINK: roundup  https://bugs.gnupg.org/gnupg/issue
 #+OPTIONS:   H:3 num:2 toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t TeX:t LaTeX:t skip:nil d:nil tags:not-in-toc
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://www.gnupg.org/share/site.css" />
 #+STARTUP:   overview indent
@@ -1713,7 +1713,7 @@ follows.  First, on a secure machine:
    :END:
 
 
-Check out [[https://www.gnupg.org/related_software/gpgme/][GPGME (GnuPG Made Easy)]].
+Check out [[https://www.gnupg.org/software/gpgme/][GPGME (GnuPG Made Easy)]].
 
 
 

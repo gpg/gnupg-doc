@@ -98,6 +98,12 @@ if not available."
      "Donate"
      (("/donate/index.html"                "Donate")
       ("/donate/kudos.html"                "List of Donors")))
+    ("/software/index.html"
+     "Software"
+     (("/software/frontends.html"          "Frontends")
+      ("/software/tools.html"              "Tools")
+      ("/software/libraries.html"          "Libraries")
+      ("/software/swlist.html"             "All")))
     ("/download/index.html"
      "Download"
      (("/download/index.html"              "Download")
@@ -107,7 +113,7 @@ if not available."
       ("/download/mirrors.html"            "Mirrors")
       ("/download/git.html"                "GIT")))
     ("/documentation/index.html"
-     "Support"
+     "Documentation"
      (("/documentation/howtos.html"        "HOWTOs")
       ("/documentation/manuals.html"       "Manuals")
       ("/documentation/guides.html"        "Guides")
@@ -116,12 +122,6 @@ if not available."
       ("/service.html"                     "3rd Party Support")
       ("/documentation/bts.html"           "Bug&nbsp;Tracker")
       ("/documentation/security.html"      "Security")))
-    ("/related_software/index.html"
-     "Related software"
-     (("/related_software/frontends.html"  "Frontends")
-      ("/related_software/tools.html"      "Tools")
-      ("/related_software/libraries.html"  "Libraries")
-      ("/related_software/swlist.html"     "All")))
     ("/blog/index.html"
      "Blog"))
   "The definition of the gnupg.org menu structure.")

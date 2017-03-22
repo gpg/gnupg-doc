@@ -715,7 +715,7 @@ The annotated key listing produced by the =--with-colons= options did
 not change.  However a couple of new fields have been added, for
 example if the new option =--with-secret= is used the “S/N of a token
 field” indicates the presence of a secret key even in a public key
-listing.  This option is supported by recent [[https://gnupg.org/related_software/gpgme/][GPGME]] versions and makes
+listing.  This option is supported by recent [[https://gnupg.org/software/gpgme/][GPGME]] versions and makes
 writing of key manager software easier.
 
 ** Recipient key from file

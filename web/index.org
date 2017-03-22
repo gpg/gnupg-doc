@@ -15,7 +15,7 @@ sign your data and communication, features a versatile key management
 system as well as access modules for all kinds of public key
 directories. GnuPG, also known as /GPG/, is a command line tool with
 features for easy integration with other applications. A wealth of
-[[file:related_software/frontends.html][frontend applications]] and [[file:related_software/libraries.html][libraries]] are available. Version 2 of GnuPG
+[[file:software/frontends.html][frontend applications]] and [[file:software/libraries.html][libraries]] are available. Version 2 of GnuPG
 also provides support for S/MIME and Secure Shell (ssh).
 
 GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
@@ -80,7 +80,7 @@ mail]] for details.
 
 We are pleased to announce the availability of Libgcrypt version
 1.7.6.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes.
+[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes.
 
 ** GnuPG 2.1.17 released (2016-12-20)
 
@@ -91,20 +91,20 @@ mail]] for details.
 
 We are pleased to announce the availability of Libgcrypt version
 1.7.5.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000399.html][{more}]]
+[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000399.html][{more}]]
 
 ** Pinentry 1.0.0 released (2016-11-22)
 
-After 14 years is was time to bump up the version of [[file:related_software/pinentry/index.org][Pinentry]] to 1.0.
+After 14 years is was time to bump up the version of [[file:software/pinentry/index.org][Pinentry]] to 1.0.
 This new release fixes a couple of minor bugs and introduces features
 to better diagnose problems.  See the [[../../download/index.org::pinentry][download]] section on how to get
 Pinentry.
 
 ** GPA 0.9.10 released (2016-11-19)
 
-A maintenance release of the [[file:related_software/gpa/index.org][GNU Privacy Assistant]] is now available.
+A maintenance release of the [[file:software/gpa/index.org][GNU Privacy Assistant]] is now available.
 Note that some of the changes are only available when build with the
-latest [[file:related_software/gpgme/index.org][GPGME]] version and used with GnuPG 2.1.16 or later.
+latest [[file:software/gpgme/index.org][GPGME]] version and used with GnuPG 2.1.16 or later.
 
 ** GnuPG 2.1.16 released (2016-11-18)
 
@@ -114,7 +114,7 @@ full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000398.html][anno
 
 ** GnuPG Made Easy (GPGME) 1.7.0 released (2016-09-21)
 
-[[file:related_software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
 program.  Highlights in this release are Python and C++ language
 bindings as well as support for GnuPG 2.1 features.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][more]]}
 

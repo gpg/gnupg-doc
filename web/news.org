@@ -16,7 +16,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000393.h
 
 We are pleased to announce the availability of Libgcrypt version
 1.7.2.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000392.html][{more}]]
+[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000392.html][{more}]]
 
 ** GnuPG 2.1.13 released (2016-06-16)
 
@@ -27,7 +27,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000390.h
 
 We are pleased to announce the availability of Libgcrypt version
 1.7.1.  This is a maintenance release for the stable version of
-[[file:related_software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000389.html][{more}]]
+[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000389.html][{more}]]
 
 ** First OpenPGP conference (2016-05-20)
 
@@ -42,7 +42,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000387.h
 ** Libgcrypt 1.7.0 released (2016-04-15)
 
 We are pleased to announce the availability of Libgcrypt version
-1.7.0.  This is a new stable version of [[file:related_software/libgcrypt/index.org][Libgcrypt]] with full API and
+1.7.0.  This is a new stable version of [[file:software/libgcrypt/index.org][Libgcrypt]] with full API and
 ABI compatibiliy to the 1.6 series.  Its main features are new
 algorithms, curves, and performance improvements.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000386.html][{more}]]
 
@@ -88,7 +88,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000379.h
 
 ** GPA 0.9.9 released (2015-09-09)
 
-A new version of [[file:related_software/gpa/index.org][GPA]], the graphical frontend for GnuPG, is now
+A new version of [[file:software/gpa/index.org][GPA]], the graphical frontend for GnuPG, is now
 available.  This release fixes a couple of bugs and has been changed
 to show the clipboard view on startup.  [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000378.html][{more}]]
 
@@ -104,7 +104,7 @@ a crash on newer Windows versions. [[https://lists.gnupg.org/pipermail/gnupg-ann
 
 ** Libassuan 2.3.0 released (2015-08-28)
 
-[[file:related_software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
+[[file:software/libassuan/index.org][Libassuan]] is a generic [[https://en.wikipedia.org/wiki/Inter-process_communication][IPC]] library used by GnuPG, GPGME, and a few
 other packages.  This release fixes two bugs and introduces new
 support functions for the socket wrappers.  See [[https://lists.gnupg.org/pipermail/gnupg-announce/2015q3/000374.html][here]] for details.
 
@@ -1308,12 +1308,12 @@ Far too many enhancements to be listed here, please see the
 
 ** GPA 0.4.3 released (2002-01-14)
 
-[[related_software/gpa/index.en.html][GPA]] 0.4.3 has been released.
+[[software/gpa/index.en.html][GPA]] 0.4.3 has been released.
 
 
 ** GPA pages (2001-11-15)
 
-[[related_software/gpa/index.en.html][GPA pages]] reflect latest released version (gpa-0.4.2) now.
+[[software/gpa/index.en.html][GPA pages]] reflect latest released version (gpa-0.4.2) now.
 
 
 ** GnuPG 1.0.6 released (2001-05-29)
@@ -1360,7 +1360,7 @@ Add a link to [[http://web.mit.edu/~prz][Phil Zimmermann]] 's homepage.
 
 ** New page about GPGME (2001-02-22)
 
-Add a page about [[related_software/gpgme/index.en.html][GPGME]] .
+Add a page about [[software/gpgme/index.en.html][GPGME]] .
 
 
 ** Patch for GnuPG 1.0.4 released (2000-11-30)
@@ -1437,7 +1437,7 @@ A lot of fixes and enhancements.
 
 ** Pages about PGA (2000-06-29)
 
-Add some pages about the [[related_software/gpa/][GPA]].
+Add some pages about the [[software/gpa/][GPA]].
 
 
 ** Two new supported OSes (2000-03-20)

@@ -113,11 +113,11 @@
     First make sure you installed
 
     -  [[https://www.gnupg.org][GnuPG]] >= 1.2.5
-    -  [[https://www.gnupg.org/related_software/libgpg-error/][libgpg-error]]
+    -  [[https://www.gnupg.org/software/libgpg-error/][libgpg-error]]
        >= 1.0.0
     -  [[https://directory.fsf.org/security/libgcrypt.html][libgcrypt]] >=
        1.2.0
-    -  [[https://www.gnupg.org/related_software/gpgme/index.html][GpgME]]
+    -  [[https://www.gnupg.org/software/gpgme/index.html][GpgME]]
        >= 1.0.0
     -  [[http://www.kde.org][KDE]] >= 3.3.0
 
