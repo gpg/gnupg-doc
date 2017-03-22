@@ -452,6 +452,25 @@ pub   ed25519/8CFDE12197965A9A 2014-08-19
 uid               [ unknown] Sample 2 <me@example.org>
 #+end_example
 
+Since version 2.1.17 the expiration date of the primary key can be
+changed directly:
+
+#+begin_example
+$ gpg --quick-set-expire 5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7 2017-12-31
+$ gpg -K 5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7
+sec   rsa2048 2016-06-22 [SC] [expires: 2017-12-31]
+      5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7
+uid           [ultimate] steve.biko@example.net
+ssb   rsa2048 2016-06-22 [E]
+
+$ gpg --quick-set-expire 5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7 none
+$ gpg -K 5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7
+sec   rsa2048 2016-06-22 [SC]
+      5B83120DB1E3A65AE5A8DCF6AA43F1DCC7FED1B7
+uid           [ultimate] steve.biko@example.net
+ssb   rsa2048 2016-06-22 [E]
+#+end_example
+
 
 ** Improved Pinentry support
 :PROPERTIES:
@@ -653,6 +672,10 @@ for the SmartCard-HSM has been added.  More card readers with a PIN
 pad are supported.  The internal CCID driver does now also work with
 certain non-auto-configuration equipped readers.
 
+Since version 2.1.19 multiple card readers are support and the format
+of the Pinentry prompts has been changed to show more information on
+the requested card.
+
 ** New format for key listings
 :PROPERTIES:
 :CUSTOM_ID: keylist
@@ -822,7 +845,7 @@ will be added with one of the next point releases.
 
 
 #+BEGIN_ASCII
-# Copyright 2014--2016 The GnuPG Project.
+# Copyright 2014--2017 The GnuPG Project.
 # This work is licensed under the Creative Commons
 # Attribution-ShareAlike 4.0 International License.  To view a copy of
 # this license, visit http://creativecommons.org/licenses/by-sa/4.0/
