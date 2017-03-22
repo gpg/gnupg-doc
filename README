@@ -76,6 +76,7 @@ The howtos are symlinked into the www.gnupg.org tree; see below.
 #+begin_example
 howtos -> ../../howtos.gnupg.org/htdocs
 related_software -> software
+features.html -> software/index.html
 #+end_example
 
 The website-build script assures that these symlinks exist

@@ -90,7 +90,6 @@ if not available."
   '(("/index.html"
      "Home"
      (("/index.html"                       "Home")
-      ("/features.html"                    "Features")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
       ("/documentation/sites.html"         "Sites")))

@@ -1,6 +1,38 @@
-#+TITLE: GnuPG - Related Software
+#+TITLE: GnuPG - Software
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+
+* GnuPG --- The Universal Crypto Engine
+
+  GnuPG is a command line tool without any graphical user interface.
+  It is an universal crypto engine which can be used directly from a
+  command line prompt, from shell scripts, or from other programs.
+  Therefore GnuPG is often used as the actual crypto backend of other
+  applications.
+
+  Even when used on the command line it provides all functionality
+  needed - this includes an interactive menu system.  The set of
+  commands of this tool will always be a superset of those provided by
+  any frontends.
+
+  - Full OpenPGP implementation (see RFC4880 at [[http://www.rfc-editor.org/][RFC Editor]]).
+  - Full CMS/X.509 (S/MIME) implementation.
+  - Ssh-agent implementation
+  - Runs on all Unix platforms, Windows and macOS.
+  - A full replacement of PGP; written from scratch.
+  - Does not use any patented algorithms.
+  - Freely available under the GPL;
+  - Can be used as a filter program.
+  - Better functionality than PGP with state of the art security features.
+  - Decrypts and verifies PGP 5, 6 and 7 messages.
+  - Supports RSA, ECDH, ECDSA, EdDSA, Elgamal, DSA, AES, Camellia,
+    3DES, Twofish, SHA2, and many more algorithms.
+  - Language support for a load of languages.
+  - Online help system.
+  - Optional anonymous message receivers.
+  - Integrated support for HKP keyservers (sks-keyservers.net).
+  - and many more things....
+
 
 * Related Software
 

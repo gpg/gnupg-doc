@@ -217,6 +217,7 @@ if [ -n "$sync_web" ]; then
   cd ${htdocs_web}
   ln -sf ../../howtos.gnupg.org/htdocs howtos
   ln -sf software related_software
+  ln -sf software/index.html features.html
   cd "$sync_web"
   any_sync=yes
 fi
