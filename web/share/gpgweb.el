@@ -99,7 +99,8 @@ if not available."
       ("/donate/kudos.html"                "List of Donors")))
     ("/software/index.html"
      "Software"
-     (("/software/frontends.html"          "Frontends")
+     (("/software/index.html"              "GnuPG")
+      ("/software/frontends.html"          "Frontends")
       ("/software/tools.html"              "Tools")
       ("/software/libraries.html"          "Libraries")
       ("/software/swlist.html"             "All")))
