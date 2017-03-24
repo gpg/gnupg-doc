@@ -10,14 +10,16 @@ lingering plan for setting up a legal entity was finally agreed upon.
 Work on the constitution started right away and the founding assembly
 commenced on the next day at 13:37.
 
-The 7 founding members are:
+The 7 founding members are: Andre Heinecke, Justus Winter, Kai
+  Michaelis, Marcus Brinkmann, Neal Walfied, Werner Koch, and Yutaka
+  Niibe.  The elected chair is Werner, the vice Andre, and the cashier
+  Marcus.  The registration number is /VR11482/ at /Amtsgericht
+  Düsseldorf/.
 
-  - Andre Heinecke
-  - Justus Winter
-  - Kai Michaelis
-  - Marcus Brinkmann
-  - Neal Walfied
-  - Werner Koch
-  - Yutaka Niibe
+Our [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-project.git%3Ba%3Dblob_plain%3Bf%3Dlegal/constitution.de.pdf][constitution]] is written in German; a legally non-binding
+  [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-project.git%3Ba%3Dblob_plain%3Bf%3Dlegal/constitution.en.pdf][translation]] is available.  The founding protocol can can be read
+  [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg-project.git%3Ba%3Dblob_plain%3Bf%3Dlegal/founding-protocol-20170208.txt][here]].
 
-  /More information about the Verein will soon be availabale here./
+  The rules on how to apply for membership will soon be posted.  We
+  will also soon apply for charitable status so that donations will be
+  tax exempted at least in Germany.
