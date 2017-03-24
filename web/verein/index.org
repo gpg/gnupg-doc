@@ -1,0 +1,23 @@
+#+TITLE: GnuPG e.V.
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+
+* The GnuPG e.V.
+
+In February 2017 several GnuPG developer came together for a 3 day
+hackathon.  While having some beer in the [[http://www.bilkinfo.de/kneipen/tigges.html][Tigges]] on one evening the
+lingering plan for setting up a legal entity was finally agreed upon.
+Work on the constitution started right away and the founding assembly
+commenced on the next day at 13:37.
+
+The 7 founding members are:
+
+  - Andre Heinecke
+  - Justus Winter
+  - Kai Michaelis
+  - Marcus Brinkmann
+  - Neal Walfied
+  - Werner Koch
+  - Yutaka Niibe
+
+  /More information about the Verein will soon be availabale here./

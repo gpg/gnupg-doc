@@ -92,6 +92,7 @@ if not available."
      (("/index.html"                       "Home")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
+      ("/verein/index.html"                "Verein")
       ("/documentation/sites.html"         "Sites")))
     ("/donate/index.html"
      "Donate"
