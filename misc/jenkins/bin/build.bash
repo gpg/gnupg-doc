@@ -120,6 +120,18 @@ case "$JOB_NAME" in
         ;;
 esac
 
+# See if we have a GPGME checkout for the tesets.
+xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
+if [ -d "$xtest_gpgme_srcdir/obj-$XTARGET" ]; then
+    # Some targets, like the sanitizer target, require a custom
+    # version of GPGME.
+    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
+    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj-$XTARGET"
+elif [ -d "$xtest_gpgme_srcdir/obj" ]; then
+    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
+    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj"
+fi
+
 # The libraries use RUNPATH when linking the tests, so they locate
 # their dependencies that way.  GnuPG, however, does not.  Therefore,
 # we set LD_LIBRARY_PATH.
@@ -131,6 +143,11 @@ test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
 # RUNPATH has lower precedence than LD_LIBRARY_PATH, we need to
 # explicitly add libtool's .libs directory:
 case "$JOB_NAME" in
+  *gnupg*)
+    if [ "${XTEST_GPGME_BUILDDIR}" ]; then
+	test_environment="LD_LIBRARY_PATH=${XTEST_GPGME_BUILDDIR}/src/.libs:${XTEST_GPGME_BUILDDIR}/lang/cpp/src/.libs:${XTEST_GPGME_BUILDDIR}/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
+    fi
+    ;;
   *gpgme*)
     test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$(pwd)/obj/lang/cpp/src/.libs:$(pwd)/obj/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
     ;;
@@ -144,18 +161,6 @@ esac
 # the installed version is not what we want ofc.
 #
 # KCAHKCAHKCAH
-
-# See if we have a GPGME checkout for the tesets.
-xtest_gpgme_srcdir="$HOME/src/gpgme-for-gnupgs-tests"
-if [ -d "$xtest_gpgme_srcdir/obj-$XTARGET" ]; then
-    # Some targets, like the sanitizer target, require a custom
-    # version of GPGME.
-    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
-    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj-$XTARGET"
-elif [ -d "$xtest_gpgme_srcdir/obj" ]; then
-    export XTEST_GPGME_SRCDIR="$xtest_gpgme_srcdir"
-    export XTEST_GPGME_BUILDDIR="$xtest_gpgme_srcdir/obj"
-fi
 
 # We build on the "obj" subdir.
 abs_configure="$(pwd)/configure"
@@ -275,6 +280,11 @@ case "$XTARGET" in
 	  # LD_LIBRARY_PATH, we need to explicitly add libtool's .libs
 	  # directory:
 	  case "$JOB_NAME" in
+	    *gnupg*)
+	      if [ "${XTEST_GPGME_BUILDDIR}" ]; then
+		  test_environment="LD_LIBRARY_PATH=${XTEST_GPGME_BUILDDIR}/src/.libs:${XTEST_GPGME_BUILDDIR}/lang/cpp/src/.libs:${XTEST_GPGME_BUILDDIR}/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
+	      fi
+	      ;;
 	    *gpgme*)
 	      test_environment="LD_LIBRARY_PATH=$(pwd)/${tarname}/_build/sub/src/.libs:$(pwd)/${tarname}/_build/sub/lang/cpp/src/.libs:$(pwd)/${tarname}/_build/sub/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
 	      ;;
