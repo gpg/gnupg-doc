@@ -130,7 +130,14 @@ test_environment="LD_LIBRARY_PATH=$ORIGINAL_PREFIX/lib"
 # Because newer Debian toolchains prefer RUNPATH over RPATH, and
 # RUNPATH has lower precedence than LD_LIBRARY_PATH, we need to
 # explicitly add libtool's .libs directory:
-test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$ORIGINAL_PREFIX/lib"
+case "$JOB_NAME" in
+  *gpgme*)
+    test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$(pwd)/obj/lang/cpp/src/.libs:$(pwd)/obj/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
+    ;;
+  *)
+    test_environment="LD_LIBRARY_PATH=$(pwd)/obj/src/.libs:$ORIGINAL_PREFIX/lib"
+    ;;
+esac
 #
 # If we don't do this, the version tests fail because the runtime
 # linker will pick up the library from LD_LIBRARY_PATH.  Also, testing
@@ -267,7 +274,14 @@ case "$XTARGET" in
 	  # RUNPATH over RPATH, and RUNPATH has lower precedence than
 	  # LD_LIBRARY_PATH, we need to explicitly add libtool's .libs
 	  # directory:
-	  test_environment="LD_LIBRARY_PATH=$(pwd)/${tarname}/_build/sub/src/.libs:$ORIGINAL_PREFIX/lib"
+	  case "$JOB_NAME" in
+	    *gpgme*)
+	      test_environment="LD_LIBRARY_PATH=$(pwd)/${tarname}/_build/sub/src/.libs:$(pwd)/${tarname}/_build/sub/lang/cpp/src/.libs:$(pwd)/${tarname}/_build/sub/lang/qt/src/.libs:$ORIGINAL_PREFIX/lib"
+	      ;;
+	    *)
+	      test_environment="LD_LIBRARY_PATH=$(pwd)/${tarname}/_build/sub/src/.libs:$ORIGINAL_PREFIX/lib"
+	      ;;
+	  esac
 	  # KCAHKCAHKCAH
 
 	  if ! env $test_environment $MAKE $MAKEFLAGS distcheck ; then
