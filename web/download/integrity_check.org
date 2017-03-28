@@ -108,7 +108,6 @@
    {{{begin_chksum}}}
    {{{gnupg21_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
    {{{gnupg21_w32_sha1}}}  gnupg-w32-{{{gnupg21_w32_ver}}}.exe
-   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
@@ -119,6 +118,7 @@
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
    {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
+   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
    {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
    {{{end_chksum}}}
