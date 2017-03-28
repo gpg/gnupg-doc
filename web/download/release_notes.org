@@ -8,9 +8,7 @@
 * Release Notes for GnuPG
 
   Please read the NEWS file for a more complete list. {{{gnupg21_ver}}}
-  is the stable and modern version of GnuPG. (Version {{{gnupg1_ver}}}
-  is from the old GnuPG-1 series, which is useful to decrypt PGP-2
-  encrypted data.)
+  is the current version of GnuPG.
 
   Note that this page will soon be restructed.  The URLs pointing to
   specific releases will thus also change.

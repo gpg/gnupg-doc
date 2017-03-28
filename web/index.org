@@ -13,27 +13,22 @@ GnuPG is a complete and free implementation of the OpenPGP standard as
 defined by [[https://www.ietf.org/rfc/rfc4880.txt][RFC4880]] (also known as /PGP/). GnuPG allows to encrypt and
 sign your data and communication, features a versatile key management
 system as well as access modules for all kinds of public key
-directories. GnuPG, also known as /GPG/, is a command line tool with
+directories.  GnuPG, also known as /GPG/, is a command line tool with
 features for easy integration with other applications. A wealth of
-[[file:software/frontends.html][frontend applications]] and [[file:software/libraries.html][libraries]] are available. Version 2 of GnuPG
-also provides support for S/MIME and Secure Shell (ssh).
+[[file:software/frontends.html][frontend applications]] and [[file:software/libraries.html][libraries]] are available.  GnuPG also
+provides support for S/MIME and Secure Shell (ssh).
 
 GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
 be freely used, modified and distributed under the terms of the
 [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-There are two major flavours of GnuPG:
+The current version of GnuPG is {{{gnupg21_ver}}}.  See the [[file:download/index.org][download]]
+page for other maintained versions.
 
- - {{{gnupg21_ver}}} is the /modern/ version with support
-   for [[https://en.wikipedia.org/wiki/Elliptic_curve_cryptography][ECC]] and many other new features,
+[[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the older GnuPG 2.0 branch.  It
+is nicely integrated into an installer and features several frontends
+as well as English and German manuals.
 
- - {{{gnupg_ver}}} is the /stable/ version from an often used branch.
-   This branch will reach end-of-life on 2017-12-31.
-
-Project [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the old GnuPG /stable/. It is
-nicely integrated into an installer and features several frontends as
-well as English and German manuals.  A simple Windows installer for the
-/modern/ version is available at our [[file:download/index.org][download]] page.
 
 * Reconquer your privacy
 
