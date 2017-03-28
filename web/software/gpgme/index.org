@@ -21,4 +21,4 @@
   reader">@@MUAs@@html:</abbr>@@ should consider to use GPGME.
 
   See [[../../download/index.org::#gpgme][download]] section to download the latest tarball.  The manual can
-  be read [[file:~/s/gnupg-doc/web/software/documentation/manuals/gpgme/][here]].  The current version is {{{gpgme_ver}}}.
+  be read [[https://www.gnupg.org/documentation/manuals/gpgme/][here]].  The current version is {{{gpgme_ver}}}.

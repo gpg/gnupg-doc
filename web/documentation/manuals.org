@@ -7,10 +7,8 @@
   This is a list of online available manuals. Those marked as "draft" may
   document features not yet available in the released software version.
 
-  - GnuPG (2.1) manual : [[file:manuals/gnupg/][HTML]], [[file:manuals/gnupg.pdf][PDF]]
-  - GnuPG (2.0) manual : [[file:manuals/gnupg-2.0/][HTML]], [[file:manuals/gnupg-2.0.pdf][PDF]]
-  - Libgcrypt manual : [[file:manuals/gcrypt/][HTML]], [[file:manuals/gcrypt.pdf][PDF]], [[file:manuals/gcrypt-devel/][HTML (draft)]].
-  - Libksba manual : [[file:manuals/ksba/][HTML]], [[file:manuals/ksba.pdf][PDF]].
-  - Libassuan manual : [[file:manuals/assuan/][HTML]], [[file:manuals/assuan.pdf][PDF]].
-  - GPGME manual : [[file:manuals/gpgme/][HTML]], [[file:manuals/gpgme.pdf][PDF]].
-  - Dirmngr manual : [[file:manuals/dirmngr/][HTML]], [[file:manuals/dirmngr.pdf][PDF]]  (for GnuPG 2.0).
+  - GnuPG manual :: [[file:manuals/gnupg/][HTML]], [[file:manuals/gnupg.pdf][PDF]]
+  - Libgcrypt manual :: [[file:manuals/gcrypt/][HTML]], [[file:manuals/gcrypt.pdf][PDF]].
+  - Libksba manual :: [[file:manuals/ksba/][HTML]], [[file:manuals/ksba.pdf][PDF]].
+  - Libassuan manual :: [[file:manuals/assuan/][HTML]], [[file:manuals/assuan.pdf][PDF]].
+  - GPGME manual :: [[file:manuals/gpgme/][HTML]], [[file:manuals/gpgme.pdf][PDF]].
