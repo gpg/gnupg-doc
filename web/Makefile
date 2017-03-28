@@ -13,6 +13,6 @@ swdb.lst.sig: swdb.lst
 
 upload: swdb.lst.sig
 	scp swdb.lst.sig swdb.lst playfair.gnupg.org:/var/www/git/versions.gnupg.org/htdocs/
-	scp swdb.lst.sig swdb.lst werner@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
+	scp swdb.lst.sig swdb.lst webbuilder@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
 
 .PHONY: upload all

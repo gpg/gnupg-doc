@@ -66,6 +66,12 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG Made Easy 1.9.0 released (2017-03-28)
+
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000403.html][more]]}
+
+
 ** GnuPG 2.1.19 released (2017-03-01)
 
 A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000402.html][announcement
