@@ -186,6 +186,40 @@ Here are some gotchas for certain packages
 
 *** GnuPG Windows Installer
 
+To build a GnuPG >= 2.1 installer you need to change to a working
+directory, for example:
+
+: cd ~/b-w32/speedo
+
+then cleanup and unpack the GnuPG source:
+
+: rm -r PLAY PLAY-release
+: tar xjf /foo/bar/gnupg-m.n.o.tar.gz
+
+run a script which does about everything:
+
+: make -f gnupg-m.n.o/build-aux/speedo.mk w32-release
+
+finally you should sign the created installer using:
+
+: make -f gnupg-m.n.o/build-aux/speedo.mk w32-sign-installer
+
+and also sign them using your release key:
+
+: gpg -sbvu MYKEY gnupg-w32-m.n.o_YYYYMMDD.tar.xz
+: gpg -sbvu MYKEY gnupg-w32-m.n.o_YYYYMMDD.exe
+
+You will end up with these files:
+
+ - gnupg-w32-m.n.o_YYYYMMDD.tar.xz
+ - gnupg-w32-m.n.o_YYYYMMDD.tar.xz.sig
+ - gnupg-w32-m.n.o_YYYYMMDD.exe
+ - gnupg-w32-m.n.o_YYYYMMDD.exe.sig
+ - gnupg-w32-m.n.o_YYYYMMDD.exe.swdb
+
+Use the swdb file to update the swdb.mac and distribute tye other
+files (after testing).
+
 
 *** Libgcrypt
 
