@@ -4,4 +4,5 @@
 
 * Resources for Developers
 
- - [[file:creating-a-release.org][How to create a release]].
+- [[https://www.gnupg.org/faq/HACKING.html][Coding guidelines]].
+- [[file:creating-a-release.org][How to create a release]].
