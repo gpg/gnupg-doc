@@ -108,7 +108,7 @@
      <td></td>
      <td>
        <label><input type="radio" name="paytype"
-                     value="se" /><!--CHECK_SE-->SEPA</label>
+                     value="se" /><!--CHECK_SE-->SEPA (European bank transfer)</label>
      </td>
    </tr>
    <tr><td>&nbsp;</td></tr>
