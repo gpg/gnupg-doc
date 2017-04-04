@@ -98,7 +98,7 @@ fi
 trap "rm -f $LOCKFILE" 0
 
 
-# These flags are set to the stage directory iof a sync is required
+# These flags are set to the stage directory if a sync is required
 sync_web=
 sync_blog=
 
@@ -225,8 +225,7 @@ fi
 if [ -n "$sync_blog" ]; then
   cd "$sync_blog"
   rsync -rt --links --exclude '*~' --exclude '*.sh' \
-        --exclude '*tmp' --exclude '*.org' --exclude headlines.txt \
-        . ${htdocs_blog}/
+        --exclude '*tmp' --exclude '*.org' . ${htdocs_blog}/
   any_sync=yes
 fi
 
