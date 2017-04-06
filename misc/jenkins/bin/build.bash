@@ -15,6 +15,19 @@ case "$(uname)" in
 	;;
 esac
 
+if [ "$XTARGET" = w32 ]; then
+    CC=i686-w64-mingw32-gcc
+    CXX=i686-w64-mingw32-g++
+fi
+
+# Setup ccache if installed.
+if ccache --version >/dev/null; then
+    export CCACHE_DIR="$HOME/cache/$JOB_NAME"
+    mkdir -p "$CCACHE_DIR"
+    export CC="ccache ${CC:-gcc}"
+    export CXX="ccache ${CXX:-g++}"
+fi
+
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
