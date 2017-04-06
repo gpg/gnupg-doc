@@ -23,6 +23,6 @@ German; a legally non-binding
 founding protocol can can be read
 {{{atgit(legal/founding-protocol-20170208.txt,here)}}}.
 
-The rules on how to apply for membership will soon be posted.  We
-applied on March 27 for charitable status with the goal to allow for
-tax exempted donations at least in Germany.
+The rules on how to apply for membership will soon be posted.  The tax
+office Düsseldorf-Altstadt confirmed our charitable state on
+2017-04-03.
