@@ -277,7 +277,7 @@ case "$XTARGET" in
 		gnupg/*|gnupg-2.2/*)
 			bash /home/jenkins/bin/make-windows-cd.sh
 			# We need to pass the absolute path of the iso.
-			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || echo "FAIL: error running tests on Windows."
+			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || echo "Warning: error running tests on Windows."
 			;;
 	esac
         ;;
