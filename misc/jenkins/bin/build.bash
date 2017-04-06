@@ -211,6 +211,22 @@ case "$XTARGET" in
 
         $MAKE install
         ;;
+    in-tree)
+	cd ..
+        ./configure --prefix=$PREFIX --enable-maintainer-mode \
+	           $CONFIGUREFLAGS \
+	           "$CONFIGUREFLAGS_0" \
+		   CFLAGS="$CFLAGS" \
+	           CXXFLAGS="$CXXFLAGS -std=c++11"
+        $MAKE $MAKEFLAGS
+
+        env $test_environment $MAKE -k check verbose=2 \
+	    || echo "FAIL: make check failed with status $?"
+        # Jenkins looks for "FAIL:" to mark a build unstable,
+        # hence || ... here
+
+        $MAKE install
+        ;;
     sanitizer)
 	# asan breaks the configure tests, so we disable it here.
         ASAN_OPTIONS=detect_leaks=0 \
