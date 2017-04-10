@@ -220,6 +220,10 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -std=c++11"
         $MAKE $MAKEFLAGS
 
+	# HACKHACKHACK: Fix the test_environment hack.
+	test_environment="$(echo $test_environment | sed -e 's#obj/##g')"
+	# KCAHKCAHKCAH
+
         env $test_environment $MAKE -k check verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
