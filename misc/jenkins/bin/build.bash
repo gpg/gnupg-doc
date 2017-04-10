@@ -331,6 +331,8 @@ case "$XTARGET" in
               # Jenkins looks for "FAIL:" to mark a build unstable,
               # hence we ignore errors here.
 	      echo "FAIL: make distcheck failed with status $?"
+	      # Disable the cleanup so that we can investigate.
+	      trap - EXIT
 	      exit 0
 	  fi
 
