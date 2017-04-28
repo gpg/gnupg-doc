@@ -22,6 +22,7 @@ my %config = do $1 . '/config.rc';
 
 my $baseurl = $config{baseurl};
 my $htdocs =  $config{htdocs};
+my $stripepubkey =  $config{stripepubkey};
 my $socket_name = $config{payprocd_socket};
 my $error_marker = '<span style="color: red;">* error</span>';
 
@@ -157,6 +158,7 @@ sub write_template ($) {
             s/<!--SESSID-->/$sessid/
             || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
             || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
+            || s/(\x22\x2f>)?<!--STRIPEPUBKEY-->/$stripepubkey\1/
             || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
             || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
             || s/(\x22\x2f>)?<!--NAME-->/$name\1/
