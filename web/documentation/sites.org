@@ -1,4 +1,4 @@
-#+TITLE: GnuPG - Other web sites
+#+TITLE: GnuPG - Other web sites and cards
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
@@ -10,3 +10,9 @@ This page shows a list of web sites which are somehow related to GnuPG.
 -  [[http://pt.gnupg.org.][Portuguese GnuPG site]] :: A site in Portuguese dedicated to GnuPG.
 -  [[http://pgpru.com/][Russian OpenPGP site]] :: A site in Russian with a forum dedicated to
      OpenPGP.
+
+* OpenPGP card implementations
+
+OpenPGP cards can be purchased from:
+
+- [[https://www.floss-shop.de/en/security-privacy/][FLOSS-Shop]] (formerly kernelconcepts)
