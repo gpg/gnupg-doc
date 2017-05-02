@@ -26,8 +26,9 @@
 | 2012 |   53 |   5991 |        |       4963 |
 | 2011 |   21 |    553 |        |        465 |
 |------+------+--------+--------+------------|
-|      |      | 351305 | 351305 |     323415 |
+|      |      | 294101 | 291021 |     561531 |
 #+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
+
 #+HTML: <div id="smallnote">
 Legend: “Indi.” indicates individual donations, “Corp.” lists large
 corporate donations and grants, and “Total” gives the net value
