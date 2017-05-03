@@ -81,10 +81,14 @@ if not available."
 <meta name=\"DC.Publisher\" content=\"The GnuPG Project\" />
 <meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
-<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
+")
+(goto-char (point-min))
+(unless (search-forward "<!--custom-head-section-->" nil t)
+ (goto point-max)
+ (insert "<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>
-"))
+")))
 
 (defconst gpgweb-gnupg-menu-alist
   '(("/index.html"
@@ -399,7 +403,9 @@ to create the previous and Next links for an entry."
                    (title (gpgweb-publish-find-title orgfile)))
                ;; Insert header, menu, and footer.
                (gpgweb-insert-header title committed-at)
-               (gpgweb-insert-menu fname-2)
+               (goto-char (point-min))
+               (unless (search-forward "<!--disable-menu-->" nil t)
+                 (gpgweb-insert-menu fname-2))
                (if blogmode
                    (gpgweb-fixup-blog plist
                                       (file-name-nondirectory orgfile)

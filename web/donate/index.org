@@ -5,49 +5,21 @@
 # Note: Do not use relative links because this page is also used as a
 #       template from cgi-bin/.  Using https://www.gnupg.org/... is
 #       fine as it is stripped before publishing.
-
-
-* Donate
-
-  Maintaining and improving GnuPG is costly. For more than a decade,
-  [[https://g10code.com][g10^code]] GmbH, a company owned and headed by GnuPG's principal
-  author Werner Koch, is bearing the majority of these costs. To help
-  them carry on this work, they need your support.  Note that despite
-  GnuPG carries an [[https://www.fsf.org][FSF]] copyright notice, they never funded the
-  development or hosting costs.
-
-  If you are using [[../index.org][GnuPG]], [[../software/libgcrypt/index.org][Libgcrypt]], [[../software/gpgme/index.org][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
-  to help with development and maintenance please consider to make a
-  donation.
-
-** Ways to donate
-
-  Paying using a credit card is currently our preferred choice.  If
-  you have a Paypal account you may use that too.
-
-  Because the GnuPG project is not tax exempted, we are not able to
-  send you a respective donation receipt.  If you can benefit from a
-  donation receipt by a Germany charity you may donate to the GnuPG
-  account at the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]]; they will use the money raised
-  to pay for development work on GnuPG and Enigmail.  If you want to
-  be listed on our [[https://www.gnupg.org/donate/kudos.html][thank you]] page you should indicate this by adding a
-  comment of the form =List me as: NAME= to your donation.
-
-  If you like to donate Bitcoins you may use the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]]
-  account too.
-
-  If you represent a company, you may also enter into a support
-  contract with [[https://g10code.com][g10^code]] or ask for other service options.
-
-** Donation form
-
-  To process your donation we need to collect some information.  This
-  information is only used for the purpose of the donation and no data
-  will ever be send to any entity not directly involved in the
-  donation process.  Not giving a name makes the donation “anonymous”
-  in that the name won’t be listed on the public [[https://www.gnupg.org/donate/kudos.html][thank you]] page.
+# Note: These special comments are used
+#       custom-head-section - Neither a meta tag for a stylesheet is
+#                             inserted nor the </head> and <body>.
+#       disable-menu - No menu is generated.
 
 #+BEGIN_HTML
+<!--custom-head-section->
+<link rel="stylesheet" href="/share/site.css" type="text/css" />
+</head>
+<body>
+<!--disable-menu-->
+
+
+<!-- Write whatever HTML code you like -->
+
   <!--ERRORPANEL-->
 
   <form action="/cgi-bin/procdonate.cgi" method="post" class="inputpanel">
@@ -169,6 +141,8 @@
     </tr>
    </table>
   </form>
+
+
 #+END_HTML
 
 ** Recent donors
