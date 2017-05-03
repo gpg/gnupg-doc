@@ -57,11 +57,11 @@
                                  'noerror)))))
 
 
-(defun gpgweb-insert-header (title committed-at)
+(defun gpgweb-insert-header (title committed-at custom)
   "Insert the header.
 
 COMMITTED-AT is the commit date string of the source file or nil
-if not available."
+if not available.  If CUSTOM is true only a minimal header is set."
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -82,9 +82,7 @@ if not available."
 <meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
 ")
-(goto-char (point-min))
-(unless (search-forward "<!--custom-head-section-->" nil t)
- (goto point-max)
+(unless custom
  (insert "<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>
@@ -379,6 +377,17 @@ buffer into read-write mode so that it works with read-only files."
 	 title)))))
 
 
+(defun gpgweb-want-custom-page-p ()
+  "Return true if the current buffer indicated that it wants to
+be a custom page."
+  (let ((savepoint (point))
+        (result))
+    (goto-char (point-min))
+    (setq result (not (not (search-forward "<!--custom-page-->" nil t))))
+    (goto-char savepoint)
+    result))
+
+
 (defun gpgweb-postprocess-html (plist orgfile htmlfile blogmode)
   "Post-process the generated HTML file
 
@@ -400,17 +409,19 @@ to create the previous and Next links for an entry."
                    (fname-2 (replace-regexp-in-string
                              ".*/gnupg-doc-stage/web/\\(.*\\)$" "\\1"
                              htmlfile t))
-                   (title (gpgweb-publish-find-title orgfile)))
+                   (title (gpgweb-publish-find-title orgfile))
+                   (custom (gpgweb-want-custom-page-p)))
                ;; Insert header, menu, and footer.
-               (gpgweb-insert-header title committed-at)
-               (goto-char (point-min))
-               (unless (search-forward "<!--disable-menu-->" nil t)
-                 (gpgweb-insert-menu fname-2))
-               (if blogmode
-                   (gpgweb-fixup-blog plist
-                                      (file-name-nondirectory orgfile)
-                                      blogmode))
-               (gpgweb-insert-footer fname-2 committed-at blogmode)
+               (gpgweb-insert-header title committed-at custom)
+               (unless custom
+                 (goto-char (point-min))
+                 (unless (search-forward "<!--disable-menu-->" nil t)
+                   (gpgweb-insert-menu fname-2))
+                 (if blogmode
+                     (gpgweb-fixup-blog plist
+                                        (file-name-nondirectory orgfile)
+                                        blogmode))
+                 (gpgweb-insert-footer fname-2 committed-at blogmode))
 
                ; Fixup the sitemap
                (when (string-equal fname "sitemap.html")

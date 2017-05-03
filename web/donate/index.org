@@ -5,20 +5,13 @@
 # Note: Do not use relative links because this page is also used as a
 #       template from cgi-bin/.  Using https://www.gnupg.org/... is
 #       fine as it is stripped before publishing.
-# Note: These special comments are used
-#       custom-head-section - Neither a meta tag for a stylesheet is
-#                             inserted nor the </head> and <body>.
-#       disable-menu - No menu is generated.
 
 #+BEGIN_HTML
-<!--custom-head-section->
+<!--custom-page-->  <!-- this disables all standard processing. -->
 <link rel="stylesheet" href="/share/site.css" type="text/css" />
 </head>
 <body>
-<!--disable-menu-->
 
-
-<!-- Write whatever HTML code you like -->
 
   <!--ERRORPANEL-->
 
@@ -143,11 +136,8 @@
   </form>
 
 
-#+END_HTML
+<p>Recent donors</p>
 
-** Recent donors
-
-#+BEGIN_HTML
 <div id="tagcloudlist"><ul>
 <!--BEGIN-SOME-DONATIONS-->
 <!--END-SOME-DONATIONS-->
@@ -158,6 +148,10 @@
 :&nbsp;
 <!--INSERT-YEAR-EURO-->
 </p>
+
+
+</body>
+</html>
 #+END_HTML
 
 # eof #
