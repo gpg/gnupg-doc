@@ -53,6 +53,18 @@
           <!--ERR_AMOUNT-->
       </td>
     </tr>
+    <tr>
+      <td align="right">Recurring:</td>
+      <td>
+          <select name="recurring" size="1">
+            <option value="0"
+            selected="selected"><!--RECUR_NONE-->Just once</option>
+            <option value="12" ><!--RECUR_MONTH-->Monthly</option>
+            <option value="4" ><!--RECUR_QUARTER-->Quarterly</option>
+            <option value="1" ><!--RECUR_YEAR-->Yearly</option>
+          </select>
+      </td>
+    </tr>
    <tr><td>&nbsp;</td></tr>
     <tr>
       <td align="right">Pay&nbsp;using:</td>
