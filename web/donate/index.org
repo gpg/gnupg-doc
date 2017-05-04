@@ -12,141 +12,18 @@
 </head>
 <body>
 
+<blockquote>
+<p>
+Arguing that you don't care about the right to privacy
+because you have nothing to hide is no different from
+saying you don't care about free speech because you have
+nothing to say.   &ndash;&nbsp;Edward&nbsp;Snowden
+</p>
+</blockquote>
 
-  <!--ERRORPANEL-->
-
-  <form action="/cgi-bin/procdonate.cgi" method="post" class="inputpanel">
-   <input type="hidden" name="mode" value="main">
-   <p class="ii">Keep this field clear:
-                 <input type="text" size="40" name="url"></p>
-   <table border="0" cellpadding="0" cellspacing="4">
-    <tr>
-      <td></td>
-      <td>How much do you want to donate?<br/>
-          <span class="smallnote">(choosing “other” allows
-          to donate in other currencies)</span></td>
-    </tr>
-    <tr>
-      <td align="right">Amount:</td>
-      <td>
-          <label><input type="radio" name="amount" value="500"/>500 EUR</label>
-          <label><input type="radio" name="amount" value="200"/>200 EUR</label>
-          <label><input type="radio" name="amount" value="100"/>100 EUR</label>
-          <label><input type="radio" name="amount" value="50"/>50 EUR</label>
-          <label><input type="radio" name="amount" value="20"/>20 EUR</label>
-          <label><input type="radio" name="amount" value="5"/>5 EUR</label>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-          <input type="radio" name="amount"
-                              value="other"/><!--CHECKOTHER-->other:
-          <input type="text"  size="6" name="amountother"
-                              value=""/><!--AMOUNT-->
-          <select name="currency" size="1">
-            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
-            <option value="USD" ><!--SEL_USD-->US Dollar</option>
-            <option value="GBP" ><!--SEL_GBP-->British Pound</option>
-            <option value="JPY" ><!--SEL_JPY-->Yen</option>
-          </select>
-          <!--ERR_AMOUNT-->
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Recurring:</td>
-      <td>
-          <select name="recurring" size="1">
-            <option value="0"
-            selected="selected"><!--RECUR_NONE-->Just once</option>
-            <option value="12" ><!--RECUR_MONTH-->Monthly</option>
-            <option value="4" ><!--RECUR_QUARTER-->Quarterly</option>
-            <option value="1" ><!--RECUR_YEAR-->Yearly</option>
-          </select>
-      </td>
-    </tr>
-   <tr><td>&nbsp;</td></tr>
-    <tr>
-      <td align="right">Pay&nbsp;using:</td>
-      <td>
-        <label><input type="radio" name="paytype"
-                      value="cc" /><!--CHECK_CC-->Credit Card</label>
-        <!--ERR_PAYTYPE-->
-      </td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>
-       <label><input type="radio" name="paytype"
-                     value="pp" /><!--CHECK_PP-->PayPal</label>
-     </td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>
-       <label><input type="radio" name="paytype"
-                     value="se" /><!--CHECK_SE-->SEPA (European bank transfer)</label>
-     </td>
-   </tr>
-   <tr><td>&nbsp;</td></tr>
-   <tr>
-      <td></td>
-      <td>
-          If you want to be listed on the
-          <a href="/donate/kudos.html">list of donors</a>,
-          please enter your name as it shall appear there.
-      </td>
-    </tr>
-    <tr>
-      <td align="right"><label for="f_name">Name:</label></td>
-      <td>
-          <input id="f_name" type="text"
-                 size="40" style="width:200px" name="name"
-                 value=""/><!--NAME--> (optional)
-          <!--ERR_NAME-->
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-          In case of payment problems we may want to contact you, thus please
-          enter your e-mail address.
-      </td>
-    </tr>
-    <tr>
-      <td align="right"><label for="f_mail">E-mail:</label></td>
-      <td>
-          <input id="f_mail" type="text" size="40" style="width:200px"
-                 name="mail"
-                 value=""/><!--MAIL--> (optional)
-           <!--ERR_MAIL-->
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-          If you want to leave a message for us, please enter it here:
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-          <textarea cols="40" rows="4" style="width:500px" name="message"
-                    ></textarea><!--MESSAGE-->
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <div class="buttonbox">
-          <input type="submit" class="donate-button-low"
-                 value="Proceed to checkout" />
-         </div>
-      </td>
-    </tr>
-   </table>
-  </form>
-
+<p>
+Please <a href="/cgi-bin/procdonate.cgi">donate</a>".
+</p>
 
 <p>Recent donors</p>
 

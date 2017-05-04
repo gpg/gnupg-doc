@@ -39,6 +39,7 @@ my $paytype = "";
 my $stripeamount = "";
 my $euroamount = "";
 my $currency = "";
+my $recur = "";
 my $name = "";
 my $mail = "";
 my $message = "";
@@ -77,6 +78,10 @@ sub write_template ($) {
     my $sel_usd = '';
     my $sel_gbp = '';
     my $sel_jpy = '';
+    my $recur_none = '';
+    my $recur_month = '';
+    my $recur_quarter = '';
+    my $recur_year = '';
     my $message_fmt;
     my $publishname;
     my $check_paytype = 'none';
@@ -85,6 +90,7 @@ sub write_template ($) {
     $amount =~ s/\x22/\x27/g;
     $stripeamount =~ s/\x22/\x27/g;
     $currency =~ s/\x22/\x27/g;
+    $recur =~ s/\x22/\x27/g;
     $name =~ s/\x22/\x27/g;
     $mail =~ s/\x22/\x27/g;
     $message =~ s/\x22/\x27/g;
@@ -95,6 +101,7 @@ sub write_template ($) {
     $amount =~ s/</\x26lt;/g;
     $stripeamount =~ s/</\x26lt;/g;
     $currency =~ s/</\x26lt;/g;
+    $recur =~ s/</\x26lt;/g;
     $name =~ s/</\x26lt;/g;
     $mail =~ s/</\x26lt;/g;
     $message =~ s/</\x26lt;/g;
@@ -114,6 +121,16 @@ sub write_template ($) {
         $sel_gbp = ' selected="selected"';
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
+    }
+
+    if ( $recur =~ /0/ ) {
+        $recur_none    = ' selected="selected"';
+    } elsif ( $recur =~ /12/ ) {
+        $recur_month   = ' selected="selected"';
+    } elsif ( $recur =~ /4/ ) {
+        $recur_quarter = ' selected="selected"';
+    } elsif ( $recur =~ /1/ ) {
+        $recur_year    = ' selected="selected"';
     }
 
     if ( $paytype eq "cc" ) {
@@ -171,6 +188,10 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
             || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
             || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
+            || s/(<selected=\x22selected\x22)?><!--RECUR_NONE-->/$recur_none>/
+            || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
+            || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
+            || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
             || s/<!--PUBLISH_NAME-->/$publishname/
             || s/<!--SEPA_REF-->/$separef/
             || s/<!--ERRORSTR-->/$errorstr/
@@ -298,7 +319,7 @@ sub write_main_page ()
 {
     print $q->header(-type=>'text/html', -charset=>'utf-8');
     print "\n";
-    write_template("donate/index.html");
+    write_template("donate/donate.html");
 }
 
 
@@ -337,7 +358,7 @@ sub check_donation ()
     my %sepa;
     my $anyerr = 0;
 
-    # Note: When re-displaying the page we always use amount other
+    # Note: When re-displaying the page we always use amount "other"
     # because that is easier to implement than figuring out which
     # amount and currency was used and check the appropriate radio
     # button.
@@ -349,21 +370,24 @@ sub check_donation ()
       $currency = 'EUR';
     }
 
+    $recur = $q->param("recur");
     $name = $q->param("name");
     $name = 'Anonymous' if $name eq '';
     $mail = $q->param("mail");
     $message = $q->param("message");
     $stripeamount = "0";
 
-    # Check the amount.
+    # Check the amount and the recurring value
     $data{"Amount"} = $amount;
     $data{"Currency"} = $currency;
+    $data{"Recur"} = $recur;
     if (not payproc ('CHECKAMOUNT', \%data )) {
         $errdict{"amount"} = $data{"ERR_Description"};
         $anyerr = 1;
     }
     $stripeamount = $data{"_amount"};
     $amount = $data{"Amount"};
+    $recur = $data{"Recur"};
     $currency = $data{"Currency"};
     $euroamount = $data{"Euro"};
 
@@ -433,6 +457,7 @@ sub resend_main_page ()
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
+    $recur = $data{"Recur"};
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
