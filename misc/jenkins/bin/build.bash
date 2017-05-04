@@ -15,6 +15,19 @@ case "$(uname)" in
 	;;
 esac
 
+if [ "$XTARGET" = w32 ]; then
+    CC=i686-w64-mingw32-gcc
+    CXX=i686-w64-mingw32-g++
+fi
+
+# Setup ccache if installed.
+if ccache --version >/dev/null; then
+    export CCACHE_DIR="$HOME/cache/$JOB_NAME"
+    mkdir -p "$CCACHE_DIR"
+    export CC="ccache ${CC:-gcc}"
+    export CXX="ccache ${CXX:-g++}"
+fi
+
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
@@ -198,6 +211,26 @@ case "$XTARGET" in
 
         $MAKE install
         ;;
+    in-tree)
+	cd ..
+        ./configure --prefix=$PREFIX --enable-maintainer-mode \
+	           $CONFIGUREFLAGS \
+	           "$CONFIGUREFLAGS_0" \
+		   CFLAGS="$CFLAGS" \
+	           CXXFLAGS="$CXXFLAGS -std=c++11"
+        $MAKE $MAKEFLAGS
+
+	# HACKHACKHACK: Fix the test_environment hack.
+	test_environment="$(echo $test_environment | sed -e 's#obj/##g')"
+	# KCAHKCAHKCAH
+
+        env $test_environment $MAKE -k check verbose=2 \
+	    || echo "FAIL: make check failed with status $?"
+        # Jenkins looks for "FAIL:" to mark a build unstable,
+        # hence || ... here
+
+        $MAKE install
+        ;;
     sanitizer)
 	# asan breaks the configure tests, so we disable it here.
         ASAN_OPTIONS=detect_leaks=0 \
@@ -248,7 +281,7 @@ case "$XTARGET" in
 		gnupg/*|gnupg-2.2/*)
 			bash /home/jenkins/bin/make-windows-cd.sh
 			# We need to pass the absolute path of the iso.
-			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || echo "FAIL: error running tests on Windows."
+			bash $HOME/bin/run-tests-w32.bash "$(readlink -f gnupg-test.iso)" || echo "Warning: error running tests on Windows."
 			;;
 	esac
         ;;
@@ -298,6 +331,8 @@ case "$XTARGET" in
               # Jenkins looks for "FAIL:" to mark a build unstable,
               # hence we ignore errors here.
 	      echo "FAIL: make distcheck failed with status $?"
+	      # Disable the cleanup so that we can investigate.
+	      trap - EXIT
 	      exit 0
 	  fi
 

@@ -57,7 +57,7 @@
       <script
         src="https://checkout.stripe.com/checkout.js"
         class="stripe-button"
-        data-key="pk_live_lcfUUC9FLdguvgEKqMeaeuWY"
+        data-key="<!--STRIPEPUBKEY-->"
         data-image="/share/gnupg-badge-128x128.png"
         data-name="GnuPG"
         data-description="Donation to the GnuPG project"
