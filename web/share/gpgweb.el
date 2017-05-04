@@ -69,7 +69,8 @@ if not available.  If CUSTOM is true only a minimal header is set."
 <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">
 <head>
 <title>" title "</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n")
+<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />
+")
   (when (and committed-at (>= (length committed-at) 10))
       (insert "<meta name=\"DC.Date\" content=\""
               (substring committed-at 0 10) "\" />\n"))
@@ -81,6 +82,7 @@ if not available.  If CUSTOM is true only a minimal header is set."
 <meta name=\"DC.Publisher\" content=\"The GnuPG Project\" />
 <meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
 ")
 (unless custom
  (insert "<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
