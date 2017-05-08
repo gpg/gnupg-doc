@@ -30,6 +30,11 @@ if ccache --version >/dev/null; then
     export CXX="ccache ${CXX:-g++}"
 fi
 
+# Include local bin directory in PATH.
+if [ -e "$HOME/bin" ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
