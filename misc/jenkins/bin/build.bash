@@ -33,7 +33,18 @@ fi
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
-export PATH=$PREFIX/bin:$PATH
+
+# hackhackhack
+#
+# Copy all *-config scripts into a separate directory and put that
+# into PATH.  We want configure to pick them up, but we do not
+# necessarily want to use all the other tools from $PREFIX/bin,
+# because then we would have to point LD_LIBRARY_PATH to $PREFIX/lib,
+# which we want to avoid at all costs.
+mkdir -p $PREFIX/bin-config
+cp $PREFIX/bin/*-config $PREFIX/bin-config
+export PATH=$PREFIX/bin-config:$PATH
+# kcahkcahkcah
 
 # Tweak the prefix we're installing this project into.  For gnupg-1.4
 # and friends.
