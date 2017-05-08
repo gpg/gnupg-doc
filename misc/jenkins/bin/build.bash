@@ -8,6 +8,8 @@ renice -n 10 -p $$
 # Configuration.
 MAKE=make
 
+XTARGET="${XTARGET:-native}"
+
 # Platform-specific configuration.
 case "$(uname)" in
     OpenBSD)
