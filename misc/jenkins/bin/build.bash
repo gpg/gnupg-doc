@@ -193,6 +193,9 @@ esac
 #
 # KCAHKCAHKCAH
 
+# And add $PREFIX/bin to PATH for the tests.
+test_environment="$test_environment PATH=$ORIGINAL_PREFIX/bin:$PATH"
+
 # We build on the "obj" subdir.
 abs_configure="$(pwd)/configure"
 mkdir -p obj
