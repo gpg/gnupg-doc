@@ -2,37 +2,41 @@
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Donate - Checkout with card
-
-  Information on your intended donation:
-
 #+BEGIN_HTML
-  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
-   <tr>
-     <td align="right">Amount:</td>
-     <td><!--AMOUNT-->
-         <!--CURRENCY--></td>
-   </tr>
-   <tr>
-     <td align="right">Name:</td>
-     <td><!--NAME--></td>
-   </tr>
-   <tr>
-     <td align="right">Mail:</td>
-     <td><!--MAIL--></td>
-   </tr>
-   <tr>
-     <td align="right" valign="top">Message:</td>
-     <td><!--MESSAGE_FMT--></td>
-   </tr>
-  </table>
-#+END_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+<link rel="stylesheet" href="/share/site.css" type="text/css" />
+</head>
+<body lang="en">
 
+<p>
+Information on your intended donation:
+</p>
+
+<table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+ <tr>
+   <td align="right">Amount:</td>
+   <td><!--AMOUNT-->
+       <!--CURRENCY--> <!--RECUR_TEXT--></td>
+ </tr>
+ <tr>
+   <td align="right">Name:</td>
+   <td><!--NAME--></td>
+ </tr>
+ <tr>
+   <td align="right">Mail:</td>
+   <td><!--MAIL--></td>
+ </tr>
+ <tr>
+   <td align="right" valign="top">Message:</td>
+   <td><!--MESSAGE_FMT--></td>
+ </tr>
+</table>
+
+<p>
   If something is wrong, please use the back button below to change
   it.  If the data is correct, you may now continue with the payment.
+</p>
 
-
-#+BEGIN_HTML
   <noscript>
     <p>
       <strong>Please enable Javascript.</strong>
@@ -63,8 +67,9 @@
         data-description="Donation to the GnuPG project"
         data-amount="<!--STRIPEAMOUNT-->"
         data-currency="<!--CURRENCY-->"
-        data-panel-label="Donate {{amount}} to GnuPG"
-        data-label="Donate now"
+        data-panel-label="Donate {{amount}} <!--RECUR_TEXT--> to GnuPG"
+        data-label="Donate <!--RECUR_TEXT--> now"
+        <!--STRIPE_DATA_EMAIL-->
       >
       </script>
     </form>
@@ -75,8 +80,7 @@
     <input type="submit" class="donate-button-low" value="Back" />
   </form>
   </div>
+
+</body>
+</html>
 #+END_HTML
-# Note: We do not want to send a
-#         data-email="<!-- MAIL -->"
-#       line to Stripe so to enable the user to use a
-#       a different mail address for use with them.
