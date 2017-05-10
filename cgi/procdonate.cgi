@@ -64,7 +64,7 @@ sub complete_sepa ();
 #   <input value="foo"/>
 # assuming that the value of FOO is foo. Note that this substitution
 # rules work for all tags and thus you better take care to add an
-# extra space if if do not want this to happen.
+# extra space if you do not want this to happen.
 sub write_template ($) {
     my $fname = shift;
 
@@ -82,9 +82,11 @@ sub write_template ($) {
     my $recur_month = '';
     my $recur_quarter = '';
     my $recur_year = '';
+    my $recur_text = '';
     my $message_fmt;
     my $publishname;
     my $check_paytype = 'none';
+    my $stripe_data_email = '';
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -123,15 +125,27 @@ sub write_template ($) {
         $sel_jpy = ' selected="selected"';
     }
 
+    # For non-recurring Stripe donations we do not want to send a
+    #     data-email="$mail"
+    # line to Stripe so to enable the user to use a a different mail
+    # address for use with them.  This is implemented using a
+    # STRIPE_DATA_EMAIL template variable.
+    $stripe_data_email = 'data-email="' . $mail . '"';
     if ( $recur =~ /0/ ) {
+        $stripe_data_email = '';
         $recur_none    = ' selected="selected"';
+        $recur_text    = '';
     } elsif ( $recur =~ /12/ ) {
         $recur_month   = ' selected="selected"';
+        $recur_text    = 'monthly';
     } elsif ( $recur =~ /4/ ) {
         $recur_quarter = ' selected="selected"';
+        $recur_text    = 'quarterly';
     } elsif ( $recur =~ /1/ ) {
         $recur_year    = ' selected="selected"';
+        $recur_text    = 'yearly';
     }
+
 
     if ( $paytype eq "cc" ) {
         $check_paytype = "CC";
@@ -192,6 +206,8 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
             || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
             || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
+            || s/<!--RECUR_TEXT-->/$recur_text/
+            || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
             || s/<!--PUBLISH_NAME-->/$publishname/
             || s/<!--SEPA_REF-->/$separef/
             || s/<!--ERRORSTR-->/$errorstr/
@@ -430,6 +446,7 @@ sub check_donation ()
     # Now create a session.
     $data{"Stripeamount"} = $stripeamount;
     $data{"Euroamount"} = $euroamount;
+    $data{"Recur"} = $recur;
     $data{"Name"} = $name;
     $data{"Mail"} = $mail;
     $data{"Message"} = $message;
@@ -487,6 +504,7 @@ sub complete_stripe_checkout ()
         "GnuPG donation by " . $data{"Name"} . " <" . $data{"Mail"} . ">";
     $stripe{"Stmt-Desc"} = "GnuPG donation";
     $stripe{"Email"} = $q->param("stripeEmail");
+    $stripe{"Recur"} = $q->param("Recur");
     $stripe{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
     if ($data{"Mail"} ne $q->param("stripeEmail")) {
         $stripe{"Meta[mail]"} = $data{"Mail"};
@@ -507,6 +525,7 @@ sub complete_stripe_checkout ()
 
     $message = <<EOF;
 Amount ..: $stripe{"Amount"} $stripe{"Currency"}
+Recurring: $stripe{"Recur"}
 Desc ....: $stripe{"Desc"}
 Cardno...: *$stripe{"Last4"}
 Processor: Stripe
@@ -610,6 +629,7 @@ sub confirm_paypal_checkout ()
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
@@ -698,6 +718,7 @@ sub complete_sepa ()
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
