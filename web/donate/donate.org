@@ -18,6 +18,7 @@
 	<script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
 	<script defer src="/share/3rdparty/bcswipe.js"></script>
 	<script defer src="/share/campaign/campaign.js"></script>
+
 </head>
 <body lang="en">
   <!-- Fixed navbar -->
@@ -36,7 +37,7 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/">Back</a></li>
+          <li><a href="/share/gnupg-lock-white-250x250.png">Back</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -47,7 +48,7 @@
       <div class="col-md-8 col-md-offset-2">
         <h1>Support GnuPG</h1>
         <p>To process your donation we need to collect some information. This information is only used for the purpose of the donation and no data will ever be send to any entity not directly involved in the donation process. Not giving a name makes the donation “anonymous” in that the name won’t be listed on the public thank you page.</p>
-        <p>You can also send us <b>Bitcoin<span class="glyphicon glyphicon-btc" aria-hidden="true"></span></b>. Our address is <a href="bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"><small><tt>175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W</tt></small></a>.</p>
+        <p>You can also send us <b>Bitcoin<span class="glyphicon glyphicon-btc" aria-hidden="true"></span></b>. Our address is <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"><small><tt>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</tt></small></a>.</p>
       </div>
     </div>
 
@@ -126,7 +127,7 @@
 
       <!-- Recurring -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">Recurring</label>
+        <label for="recur" class="col-md-2 control-label">Recurring</label>
         <div class="col-md-2">
           <select class="form-control" name="recur">
             <option value="0"
@@ -140,7 +141,7 @@
 
       <!-- Pay using -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">Pay using</label>
+        <label for="paytype" class="col-md-2 control-label">Pay using</label>
         <div class="col-md-6">
           <div class="radio">
             <label>
@@ -169,7 +170,7 @@
 
       <!-- Name -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">
+        <label for="name" class="col-md-2 control-label">
           Name
           <p class="text-muted"><small>(optional)</small></p>
         </label>
@@ -189,7 +190,7 @@
 
       <!-- Email -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">
+        <label for="mail" class="col-md-2 control-label">
           Email
           <p class="text-muted"><small>(optional)</small></p>
         </label>
@@ -207,7 +208,7 @@
 
       <!-- Message -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">
+        <label for="message" class="col-md-2 control-label">
           Message
           <p class="text-muted"><small>(optional)</small></p>
         </label>
