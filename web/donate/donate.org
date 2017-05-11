@@ -32,12 +32,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img class="navbar-brand" alt="GnuPG" src="gnupg-white-plain.png">
+        <img class="navbar-brand" alt="GnuPG" src="/donate.html">
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/share/gnupg-lock-white-250x250.png">Back</a></li>
+          <li><a href="">Back</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
