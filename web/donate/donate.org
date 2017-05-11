@@ -8,7 +8,16 @@
 
 #+BEGIN_HTML
 <!--custom-page-->  <!-- this disables all standard processing. -->
-<link rel="stylesheet" href="/share/site.css" type="text/css" />
+	<!-- bootstrap core and site css -->
+	<link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+	<link href="/share/campaign/campaign.css" rel="stylesheet">
+
+	<script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+	<script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+	<script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+	<script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+	<script defer src="/share/3rdparty/bcswipe.js"></script>
+	<script defer src="/share/campaign/campaign.js"></script>
 </head>
 <body lang="en">
   <!-- Fixed navbar -->
