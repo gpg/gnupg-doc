@@ -70,29 +70,51 @@
 	  <div class="row">
 	    <div class="col-xs-12">
 	      <div class="progress">
-		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="1337" aria-valuemin="0" aria-valuemax="15000" style="width: 9%">
-		  <span class="sr-only">1,337&thinsp;€ a month</span>
+		<div class="progress-bar progress-bar-striped active"
+                     role="progressbar"
+                     aria-valuenow="<!--CMPGN-RECUR-EURO-->"
+                     aria-valuemin="0"
+                     aria-valuemax="<!--CMPGN-RECUR-EURO-GOAL-->"
+                     style="width: 9%">
+		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->&thinsp;€
+                    a month</span>
 		</div>
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
-	      <h3>1,337&thinsp;€ a month <small>of 15,000&thinsp;€ needed</small></h3>
-	      <h4>+ 10,000&thinsp;€ <small>in one-time donations</small></h4>
-	      <h4>42 <small>Supporters</small></h4>
+	      <h3><!--CMPGN-RECUR-EURO-->&thinsp;€
+                  a month <small>of
+                  <!--CMPGN-RECUR-EURO-GOAL-->&thinsp;€
+                  needed</small>
+              </h3>
+	      <h4>+
+                <!--CMPGN-ONCE-EURO-->&thinsp;€
+                <small>in one-time donations</small>
+              </h4>
+	      <h4><!--CMPGN-RECUR-COUNT-->
+                <small>Supporters</small>
+              </h4>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
-	      <a class="btn btn-primary btn-lg btn-block" href="/donate/donate.html" role="button">Donate 10&thinsp;€ a month</a>
+	      <a class="btn btn-primary btn-lg btn-block" role="button"
+                 href="/cgi-bin/procdonate.cig?mode=preset;plan=12-10-eur"
+                 >Donate 10&thinsp;€ a month</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
-		  <a class="btn btn-default btn-md btn-block" href="/donate/donate.html" role="button">5&thinsp;€ a month</a>
+		  <a class="btn btn-default btn-md btn-block" role="button"
+                     href="/cgi-bin/procdonate.cig?mode=preset;plan=12-5-eur"
+                     >5&thinsp;€ a month</a>
 		</div>
 		<div class="col-xs-6">
-		  <a class="btn btn-default btn-md btn-block" href="/donate/donate.html" role="button">20&thinsp;€ a month</a>
+		  <a class="btn btn-default btn-md btn-block" role="button"
+                     href="/cgi-bin/procdonate.cig?mode=preset;plan=12-20-eur"
+                     >20&thinsp;€ a month</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
-		<a style="margin-top: 1em;" href="/donate/donate.html">Donate a
-		  different amount</a>
+		<a style="margin-top: 1em;"
+                   href="/cgi-bin/procdonate.cig?mode=preset"
+                   >Donate a different amount</a>
 	      </div>
 	    </div>
 	  </div>

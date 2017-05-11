@@ -776,6 +776,23 @@ elsif ($mode eq '') {
     # No mode: Show empty template.
     write_main_page();
 }
+elsif ($mode eq 'preset') {
+    # Show a a template with certain preset values.
+    $currency = 'EUR';
+    $recur = '12';
+    $paytype = 'cc';
+    if ($q->param('plan') eq '12-5-eur' ) {
+        $amount = '5';
+    }
+    elsif ($q->param('plan') eq '12-10-eur' ) {
+        $amount = '10';
+    }
+    elsif ($q->param('plan') eq '12-20-eur' ) {
+        $amount = '20';
+    }
+
+    write_main_page();
+}
 elsif ($mode eq 'ping') {
     # Check aliveness
     ping_pong();

@@ -2,6 +2,12 @@
 # append-to-donors.sh
 # Append new names from the payproc journal to the donors file
 # and send a Thank You mail.
+#
+# Note that this script does not yet handle subscriptions.  Because we
+# want to verify the mail address anyway, it makes sense to move mai
+# sending to payprocd.  The final plan is to use webhooks to create
+# charge records and use them to add a Donor reulary to the list of
+# donors (but may be limited to once a year)
 
 pgm="append-to-donors.sh"
 set -e
