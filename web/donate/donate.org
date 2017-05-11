@@ -52,7 +52,12 @@
       </div>
     </div>
 
-    <!--ERRORPANEL-->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<!--ERRORPANEL-->
+			</div>
+		</div>
+
 
     <form class="form-horizontal" role="form"
           action="/cgi-bin/procdonate.cgi" method="POST">
@@ -109,7 +114,8 @@
               <input type="text" class="form-control"
                      name="amountother" id="amountother" placeholder=""
                      value=""/><!--AMOUNT-->
-            </div>
+							<!--ERR_AMOUNT-->
+						</div>
             <div class="col-md-4">
               <select class="form-control" name="currency" id="currency">
                 <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
@@ -117,7 +123,6 @@
                 <option value="GBP" ><!--SEL_GBP-->British Pound</option>
                 <option value="JPY" ><!--SEL_JPY-->Yen</option>
               </select>
-              <!--ERR_AMOUNT-->
             </div>
           </div>
           <span class="help-block">Choosing “other” allows to donate
