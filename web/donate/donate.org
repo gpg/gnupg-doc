@@ -48,7 +48,7 @@
       <div class="col-md-8 col-md-offset-2">
         <h1>Support GnuPG</h1>
         <p>To process your donation we need to collect some information. This information is only used for the purpose of the donation and no data will ever be send to any entity not directly involved in the donation process. Not giving a name makes the donation “anonymous” in that the name won’t be listed on the public thank you page.</p>
-        <p>You can also send us <b>Bitcoin<span class="glyphicon glyphicon-btc" aria-hidden="true"></span></b>. Our address is <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"><small><tt>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</tt></small></a>.</p>
+        <p>You can also send us <b>Bitcoin</b>. Our address is <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"><small><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></small></a>.</p>
       </div>
     </div>
 
