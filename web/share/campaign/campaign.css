@@ -1,0 +1,188 @@
+/* Custom CSS for GnuPG site start here.  */
+/* The default brand is tiny, let's bump the size of the lock graphic.  */
+.navbar-brand {
+  height: 50px;
+  padding: 0px 0px;
+}
+/* If you change this, make sure to test the scroll position when
+   clicking navbar links.  */
+.camp-gutter {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+/* If there is no change to the next background, remove some
+   whitespace.  */
+.camp-gutter-clump {
+  padding-bottom: 0px;
+}
+h1 {
+  font-size: 3em;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+h2 {
+  font-weight: 600;
+  padding-bottom: .6em;
+  margin-top: 0px;
+}
+h2 small {
+  padding-top: 0.5em;
+  font-weight: 600;
+  font-style: italic;
+  display: block;
+}
+.camp-who img {
+  margin: 20px;
+  height: 150px;
+  border-radius: 75px;
+  float: left;
+}
+@media (max-width: 768px) {
+  .camp-who img {
+    margin-right: 10px;
+    margin-left: 0px;
+    height: 75px;
+    border-radius: 50px;
+  }
+}
+.media-body {
+  vertical-align: middle;
+}
+/* For the donation block.  */
+h3 small,
+h4 small {
+  padding-top: .3em;
+  font-size: 60%;
+  font-weight: 300;
+  display: block;
+}
+.camp-progress-info h3 {
+  margin-top: 0px;
+}
+/* Decoration */
+.flying-locks {
+  background-color: #f8f8f8;
+  background-position: -100px -100px;
+  background-image: url("gnupg-white-plain.png");
+}
+/* Carousel base class */
+.carousel {
+  height: 550px;
+}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 550px;
+}
+.card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  height: 526px;
+  background: #f8f8f8;
+  text-align: center;
+  border: 1px solid #ddd;
+  color: #555;
+  position: relative;
+  overflow: hidden;
+}
+.card-img {
+  height: 200px;
+}
+.card-img-left {
+  position: absolute;
+  height: auto;
+  max-height: 200px;
+  left: 0px;
+}
+.card-img-right {
+  position: absolute;
+  height: auto;
+  max-height: 200px;
+  right: 0px;
+}
+.card-text {
+  padding: 24px;
+}
+.card-quote {
+  text-align: justify;
+}
+.card-quote-long {
+  font-size: 17px;
+  line-height: 1.4em;
+}
+@media (max-width: 767px) {
+  .card-quote-long {
+    font-size: 16px;
+  }
+  .card-quote-superlong {
+    font-size: 15px;
+  }
+}
+.card-meta {
+  position: absolute;
+  width: 100%;
+  margin-left: -24px;
+  bottom: 24px;
+}
+.card-name {
+  font-weight: 600;
+}
+.card-org {
+  font-style: italic;
+}
+.camp-final-pitch {
+  margin-top: 40px;
+}
+/* Main text */
+.camp-headshot {
+  height: 6em;
+  margin: 1em;
+}
+.camp-image {
+  margin: 1em;
+}
+#camp-openpgp-conf {
+  max-width: 650px;
+  width: 100%;
+  border-radius: 4px;
+}
+#camp-gnuk {
+  width: 100%;
+  border-radius: 4px;
+}
+#camp-caption-openpgp-conf {
+  max-width: 650px;
+  width: 100%;
+  height: 1.5em;
+  text-overflow: ellipsis;
+  margin-top: -2em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  color: #eee;
+  opacity: .7;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#camp-caption-gnuk {
+  width: 100%;
+  height: 1.5em;
+  text-overflow: ellipsis;
+  margin-top: -2em;
+  background: #000;
+  color: #eee;
+  opacity: .7;
+  white-space: nowrap;
+  overflow: hidden;
+}
