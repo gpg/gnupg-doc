@@ -16,7 +16,8 @@ Information on your intended donation:
  <tr>
    <td align="right">Amount:</td>
    <td><!--AMOUNT-->
-       <!--CURRENCY--> <!--RECUR_TEXT--></td>
+       <!--CURRENCY-->
+       <!--RECUR_TEXT--></td>
  </tr>
  <tr>
    <td align="right">Name:</td>
@@ -67,8 +68,8 @@ Information on your intended donation:
         data-description="Donation to the GnuPG project"
         data-amount="<!--STRIPEAMOUNT-->"
         data-currency="<!--CURRENCY-->"
-        data-panel-label="Donate {{amount}} <!--RECUR_TEXT--> to GnuPG"
-        data-label="Donate <!--RECUR_TEXT--> now"
+        data-panel-label="Donate {{amount}} <!--RECUR_TEXT-->"
+        data-label="<!--STRIPE_DATA_LABEL_VALUE-->"
         <!--STRIPE_DATA_EMAIL-->
       >
       </script>

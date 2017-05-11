@@ -87,6 +87,7 @@ sub write_template ($) {
     my $publishname;
     my $check_paytype = 'none';
     my $stripe_data_email = '';
+    my $stripe_data_label_value = 'Donate now';
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -138,12 +139,15 @@ sub write_template ($) {
     } elsif ( $recur =~ /12/ ) {
         $recur_month   = ' selected="selected"';
         $recur_text    = 'monthly';
+        $stripe_data_label_value = 'Donate monthly';
     } elsif ( $recur =~ /4/ ) {
         $recur_quarter = ' selected="selected"';
         $recur_text    = 'quarterly';
+        $stripe_data_label_value = 'Donate quarterly';
     } elsif ( $recur =~ /1/ ) {
         $recur_year    = ' selected="selected"';
         $recur_text    = 'yearly';
+        $stripe_data_label_value = 'Donate yearly';
     }
 
 
@@ -208,6 +212,7 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
             || s/<!--RECUR_TEXT-->/$recur_text/
             || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
+            || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/
             || s/<!--PUBLISH_NAME-->/$publishname/
             || s/<!--SEPA_REF-->/$separef/
             || s/<!--ERRORSTR-->/$errorstr/
@@ -491,6 +496,8 @@ sub complete_stripe_checkout ()
 {
     my %data;
     my %stripe;
+    my $recur;
+    my $recur_text = '';
 
     # fixme: Change the error message to note that the card has not
     # been charged.  Somehow delete the token
@@ -522,17 +529,30 @@ sub complete_stripe_checkout ()
     }
 
     # Print thanks
+    $recur = $stripe{"Recur"};
+    if ( $recur =~ /12/ ) {
+        $recur_text    = 'Monthly';
+    } elsif ( $recur =~ /4/ ) {
+        $recur_text    = 'Quarterly';
+    } elsif ( $recur =~ /1/ ) {
+        $recur_text    = 'Yearly';
+    } else {
+        $recur_text    = 'Just once';
+    }
 
     $message = <<EOF;
-Amount ..: $stripe{"Amount"} $stripe{"Currency"}
-Recurring: $stripe{"Recur"}
-Desc ....: $stripe{"Desc"}
-Cardno...: *$stripe{"Last4"}
-Processor: Stripe
-Email ...: $stripe{"Email"}
-Charge-Id: $stripe{"Charge-Id"}
-Timestamp: $stripe{"_timestamp"}
+Amount ....: $stripe{"Amount"} $stripe{"Currency"}
+Recurring .: $recur_text
+Desc ......: $stripe{"Desc"}
+Cardno.....: *$stripe{"Last4"}
+Processor .: Stripe
+Charge-Id .: $stripe{"Charge-Id"}
+Timestamp .: $stripe{"_timestamp"}
+Email .....: $stripe{"Email"}
 EOF
+    if ($stripe{"account-id"} ne '') {
+        $message = $message . "Account-Id : " . $stripe{"account-id"};
+    }
     if ($stripe{"Live"} eq 'f') {
         $message = $message . "\n!!! TEST TRANSACTION !!!";
     }
