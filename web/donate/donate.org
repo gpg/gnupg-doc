@@ -65,7 +65,7 @@
 
       <!-- Predefined amounts -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">Amount</label>
+        <label for="inputType" class="col-md-2 control-label">Amount <!--ERR_AMOUNT--></label>
         <div class="col-md-6">
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount500" value="500"> 500€
@@ -102,7 +102,6 @@
         <div class="col-md-offset-2 col-md-6">
           <div class="form-group row">
             <div class="col-md-2">
-							<!--ERR_AMOUNT-->
               <div class="radio">
                 <label for="amount_radio_other">
                   <input type="radio" id="amount_radio_other" name="amount"
