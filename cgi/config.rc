@@ -1,6 +1,6 @@
 # config.rc - Configuration variables for all CGIs         -*- perl -*-
 
-baseurl => 'https://gnupg.org'
+baseurl => 'https://gnupg.org',
 htdocs  => '/var/www/www/www.gnupg.org/htdocs/',
 
 stripepubkey => 'pk_live_lcfUUC9FLdguvgEKqMeaeuWY',

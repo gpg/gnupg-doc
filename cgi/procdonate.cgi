@@ -13,6 +13,7 @@
 
 
 use strict;
+#use CGI qw/:standard -debug/;
 use CGI;
 use Cwd qw(realpath);
 use IO::Socket::UNIX;
@@ -74,18 +75,19 @@ sub write_template ($) {
     my $err_mail = '';
     my $err_paytype = '';
     my $check_checked = ' checked="checked"';
-    my $sel_other = '';
     my $sel_eur = '';
     my $sel_usd = '';
     my $sel_gbp = '';
     my $sel_jpy = '';
-    my $sel_amt500 = '';
-    my $sel_amt200 = '';
-    my $sel_amt100 = '';
-    my $sel_amt50 = '';
-    my $sel_amt20 = '';
-    my $sel_amt10 = '';
-    my $sel_amt5 = '';
+    my $chk_amt500 = '';
+    my $chk_amt200 = '';
+    my $chk_amt100 = '';
+    my $chk_amt50 = '';
+    my $chk_amt20 = '';
+    my $chk_amt10 = '';
+    my $chk_amt5 = '';
+    my $chk_amtx = '';
+    my $amt_other = '';
     my $recur_none = '';
     my $recur_month = '';
     my $recur_quarter = '';
@@ -130,36 +132,39 @@ sub write_template ($) {
     if ( $currency =~ /EUR/i ) {
         $sel_eur = ' selected="selected"';
         $xamount = int $amount;
-        if ( $xamount = 5 ) {
-            $sel_amt5 = ' selected="selected"';
-        } elsif ( $xamount = 10 ) {
-            $sel_amt10 = ' selected="selected"';
+        if ( $xamount == 5 ) {
+            $chk_amt5 = $check_checked;
+        } elsif ( $xamount == 10 ) {
+            $chk_amt10 = $check_checked;
         } elsif ( $xamount = 20 ) {
-            $sel_amt20 = ' selected="selected"';
-        } elsif ( $xamount = 50 ) {
-            $sel_amt50 = ' selected="selected"';
-        } elsif ( $xamount = 100 ) {
-            $sel_amt100 = ' selected="selected"';
-        } elsif ( $xamount = 200 ) {
-            $sel_amt200 = ' selected="selected"';
-        } elsif ( $xamount = 500 ) {
-            $sel_amt500 = ' selected="selected"';
-        } elsif ( $xamount = 10 ) {
-            $sel_amt10 = ' selected="selected"';
+            $chk_amt20 = $check_checked;
+        } elsif ( $xamount == 50 ) {
+            $chk_amt50 = $check_checked;
+        } elsif ( $xamount == 100 ) {
+            $chk_amt100 = $check_checked;
+        } elsif ( $xamount == 200 ) {
+            $chk_amt200 = $check_checked;
+        } elsif ( $xamount == 500 ) {
+            $chk_amt500 = $check_checked;
         } else {
-            $sel_other = $check_checked;
+            $chk_amtx = $check_checked;
+            $amt_other = $amount;
         }
     } elsif ( $currency =~ /USD/i ) {
         $sel_usd = ' selected="selected"';
-        $sel_other = $check_checked;
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /GBP/i ) {
         $sel_gbp = ' selected="selected"';
-        $sel_other = $check_checked;
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
-        $sel_other = $check_checked;
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } else {
-        $sel_other = $check_checked;
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     }
 
     # For non-recurring Stripe donations we do not want to send a
@@ -222,47 +227,48 @@ sub write_template ($) {
     while (<TEMPLATE>) {
         if ( /<!--/ )
         {
-            # Only one replacement per line allowed to avoid recursive
-            # replacements. Note that MESSAGE uses a special treatment
-            # for the textarea tag.
-            s/<!--SESSID-->/$sessid/
-            || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
-            || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
-            || s/(\x22\x2f>)?<!--STRIPEPUBKEY-->/$stripepubkey\1/
-            || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
-            || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
-            || s/(\x22\x2f>)?<!--NAME-->/$name\1/
-            || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
-            || s/\x2f><!--CHECKOTHER-->/$sel_other\x2f>/
-            || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
-            || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
-            || s/<!--MESSAGE_FMT-->/$message_fmt/
-            || s/(<selected=\x22selected\x22)?><!--SEL_EUR-->/$sel_eur>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
-            || s/(<selected=\x22selected\x22)?><!--RECUR_NONE-->/$recur_none>/
-            || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
-            || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
-            || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT500-->/$sel_amt500>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT200-->/$sel_amt200>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT100-->/$sel_amt100>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT50-->/$sel_amt50>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT20-->/$sel_amt20>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT10-->/$sel_amt10>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_AMT5-->/$sel_amt5>/
-            || s/<!--RECUR_TEXT-->/$recur_text/
-            || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
-            || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/
-            || s/<!--PUBLISH_NAME-->/$publishname/
-            || s/<!--SEPA_REF-->/$separef/
-            || s/<!--ERRORSTR-->/$errorstr/
-            || s/<!--ERR_AMOUNT-->/$err_amount/
-            || s/<!--ERR_NAME-->/$err_name/
-            || s/<!--ERR_MAIL-->/$err_mail/
-            || s/<!--ERR_PAYTYPE-->/$err_paytype/
-            || s/<!--ERRORPANEL-->/$errorpanel/;
+        # Only one replacement per line allowed to avoid recursive
+        # replacements. Note that MESSAGE uses a special treatment
+        # for the textarea tag.
+        s/<!--SESSID-->/$sessid/
+        || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
+        || s/(\x22\x2f>)?<!--AMT_OTHER-->/$amt_other\1/
+        || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
+        || s/(\x22\x2f>)?<!--STRIPEPUBKEY-->/$stripepubkey\1/
+        || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
+        || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
+        || s/(\x22\x2f>)?<!--NAME-->/$name\1/
+        || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
+        || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
+        || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
+        || s/<!--MESSAGE_FMT-->/$message_fmt/
+        || s/(<selected=\x22selected\x22)?><!--SEL_EUR-->/$sel_eur>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_NONE-->/$recur_none>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT500-->/$chk_amt500\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT200-->/$chk_amt200\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT100-->/$chk_amt100\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT50-->/$chk_amt50\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT20-->/$chk_amt20\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT10-->/$chk_amt10\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT5-->/$chk_amt5\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMTX-->/$chk_amtx\x2f>/
+        || s/<!--RECUR_TEXT-->/$recur_text/
+        || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
+        || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/
+        || s/<!--PUBLISH_NAME-->/$publishname/
+        || s/<!--SEPA_REF-->/$separef/
+        || s/<!--ERRORSTR-->/$errorstr/
+        || s/<!--ERR_AMOUNT-->/$err_amount/
+        || s/<!--ERR_NAME-->/$err_name/
+        || s/<!--ERR_MAIL-->/$err_mail/
+        || s/<!--ERR_PAYTYPE-->/$err_paytype/
+        || s/<!--ERRORPANEL-->/$errorpanel/;
         }
         print;
     }
@@ -421,10 +427,6 @@ sub check_donation ()
     my %sepa;
     my $anyerr = 0;
 
-    # Note: When re-displaying the page we always use amount "other"
-    # because that is easier to implement than figuring out which
-    # amount and currency was used and check the appropriate radio
-    # button.
     $amount = $q->param("amount");
     if ($amount eq 'other') {
       $amount = $q->param("amountother");
