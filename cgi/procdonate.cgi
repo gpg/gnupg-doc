@@ -74,10 +74,18 @@ sub write_template ($) {
     my $err_mail = '';
     my $err_paytype = '';
     my $check_checked = ' checked="checked"';
+    my $sel_other = '';
     my $sel_eur = '';
     my $sel_usd = '';
     my $sel_gbp = '';
     my $sel_jpy = '';
+    my $sel_amt500 = '';
+    my $sel_amt200 = '';
+    my $sel_amt100 = '';
+    my $sel_amt50 = '';
+    my $sel_amt20 = '';
+    my $sel_amt10 = '';
+    my $sel_amt5 = '';
     my $recur_none = '';
     my $recur_month = '';
     my $recur_quarter = '';
@@ -88,6 +96,7 @@ sub write_template ($) {
     my $check_paytype = 'none';
     my $stripe_data_email = '';
     my $stripe_data_label_value = 'Donate now';
+    my $xamount;
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -112,18 +121,45 @@ sub write_template ($) {
 
     # No need to clean $euroamount.
 
+
     # Create a formatted message.
     $message_fmt = $message;
     $message_fmt =~ s/\n/<br\x2f>/g;
 
+    # Check the currency and predefined amount.
     if ( $currency =~ /EUR/i ) {
         $sel_eur = ' selected="selected"';
+        $xamount = int $amount;
+        if ( $xamount = 5 ) {
+            $sel_amt5 = ' selected="selected"';
+        } elsif ( $xamount = 10 ) {
+            $sel_amt10 = ' selected="selected"';
+        } elsif ( $xamount = 20 ) {
+            $sel_amt20 = ' selected="selected"';
+        } elsif ( $xamount = 50 ) {
+            $sel_amt50 = ' selected="selected"';
+        } elsif ( $xamount = 100 ) {
+            $sel_amt100 = ' selected="selected"';
+        } elsif ( $xamount = 200 ) {
+            $sel_amt200 = ' selected="selected"';
+        } elsif ( $xamount = 500 ) {
+            $sel_amt500 = ' selected="selected"';
+        } elsif ( $xamount = 10 ) {
+            $sel_amt10 = ' selected="selected"';
+        } else {
+            $sel_other = $check_checked;
+        }
     } elsif ( $currency =~ /USD/i ) {
         $sel_usd = ' selected="selected"';
+        $sel_other = $check_checked;
     } elsif ( $currency =~ /GBP/i ) {
         $sel_gbp = ' selected="selected"';
+        $sel_other = $check_checked;
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
+        $sel_other = $check_checked;
+    } else {
+        $sel_other = $check_checked;
     }
 
     # For non-recurring Stripe donations we do not want to send a
@@ -149,7 +185,6 @@ sub write_template ($) {
         $recur_text    = 'yearly';
         $stripe_data_label_value = 'Donate yearly';
     }
-
 
     if ( $paytype eq "cc" ) {
         $check_paytype = "CC";
@@ -198,7 +233,7 @@ sub write_template ($) {
             || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
             || s/(\x22\x2f>)?<!--NAME-->/$name\1/
             || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
-            || s/\x2f><!--CHECKOTHER-->/$check_checked\x2f>/
+            || s/\x2f><!--CHECKOTHER-->/$sel_other\x2f>/
             || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
             || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
             || s/<!--MESSAGE_FMT-->/$message_fmt/
@@ -210,6 +245,13 @@ sub write_template ($) {
             || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
             || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
             || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT500-->/$sel_amt500>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT200-->/$sel_amt200>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT100-->/$sel_amt100>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT50-->/$sel_amt50>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT20-->/$sel_amt20>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT10-->/$sel_amt10>/
+            || s/(<selected=\x22selected\x22)?><!--SEL_AMT5-->/$sel_amt5>/
             || s/<!--RECUR_TEXT-->/$recur_text/
             || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
             || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/

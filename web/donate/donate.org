@@ -70,31 +70,38 @@
 				</label>
         <div class="col-md-6">
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount500" value="500"> 500€
+            <input type="radio" name="amount" id="amount500"
+                   value="500" ><!--SEL_AMT500--> 500&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount200" value="200"> 200€
+            <input type="radio" name="amount" id="amount200"
+                   value="200" ><!--SEL_AMT200--> 200&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount100" value="100"> 100€
+            <input type="radio" name="amount" id="amount100"
+                   value="100" ><!--SEL_AMT100--> 100&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount50" value="50"> 50€
+            <input type="radio" name="amount" id="amount50"
+                   value="50" ><!--SEL_AMT50--> 50&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount20" value="20"> 20€
+            <input type="radio" name="amount" id="amount20"
+                   value="20" ><!--SEL_AMT20--> 20&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount10" value="10"> 10€
+            <input type="radio" name="amount" id="amount10"
+                   value="10" ><!--SEL_AMT10--> 10&thinsp;€
           </label>
 
           <label class="radio-inline">
-            <input type="radio" name="amount" id="amount5" value="5"> 5€
+            <input type="radio" name="amount" id="amount5"
+                   value="5" ><!--SEL_AMT5--> 5&thinsp;€
           </label>
         </div>
       </div>
