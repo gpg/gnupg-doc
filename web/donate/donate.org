@@ -71,37 +71,37 @@
         <div class="col-md-6">
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount500"
-                   value="500" ><!--SEL_AMT500--> 500&thinsp;€
+                   value="500" /><!--CHK_AMT500--> 500&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount200"
-                   value="200" ><!--SEL_AMT200--> 200&thinsp;€
+                   value="200" /><!--CHK_AMT200--> 200&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount100"
-                   value="100" ><!--SEL_AMT100--> 100&thinsp;€
+                   value="100" /><!--CHK_AMT100--> 100&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount50"
-                   value="50" ><!--SEL_AMT50--> 50&thinsp;€
+                   value="50" /><!--CHK_AMT50--> 50&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount20"
-                   value="20" ><!--SEL_AMT20--> 20&thinsp;€
+                   value="20" /><!--CHK_AMT20--> 20&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount10"
-                   value="10" ><!--SEL_AMT10--> 10&thinsp;€
+                   value="10" /><!--CHK_AMT10--> 10&thinsp;€
           </label>
 
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount5"
-                   value="5" ><!--SEL_AMT5--> 5&thinsp;€
+                   value="5" /><!--CHK_AMT5--> 5&thinsp;€
           </label>
         </div>
       </div>
@@ -114,7 +114,7 @@
               <div class="radio">
                 <label for="amount_radio_other">
                   <input type="radio" id="amount_radio_other" name="amount"
-                         value="other" /><!--CHECKOTHER-->
+                         value="other" /><!--CHK_AMTX-->
                   other
                 </label>
               </div>
@@ -122,7 +122,7 @@
             <div class="col-md-4">
               <input type="text" class="form-control"
                      name="amountother" id="amountother" placeholder=""
-                     value=""/><!--AMOUNT-->
+                     value=""/><!--AMT_OTHER-->
 						</div>
             <div class="col-md-4">
               <select class="form-control" name="currency" id="currency">
