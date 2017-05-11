@@ -26,7 +26,7 @@ my $stripepubkey =  $config{stripepubkey};
 my $socket_name = $config{payprocd_socket};
 my $error_marker = '<span style="color: red;">* error</span>';
 
-# The form variabales are accessed via Q.
+# The form variables are accessed via Q.
 my $q  = new CGI;
 
 # This is a multi-purpose CGI.  The mode decides what to do.
@@ -504,7 +504,7 @@ sub complete_stripe_checkout ()
         "GnuPG donation by " . $data{"Name"} . " <" . $data{"Mail"} . ">";
     $stripe{"Stmt-Desc"} = "GnuPG donation";
     $stripe{"Email"} = $q->param("stripeEmail");
-    $stripe{"Recur"} = $q->param("Recur");
+    $stripe{"Recur"} = $data{"Recur"};
     $stripe{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
     if ($data{"Mail"} ne $q->param("stripeEmail")) {
         $stripe{"Meta[mail]"} = $data{"Mail"};
