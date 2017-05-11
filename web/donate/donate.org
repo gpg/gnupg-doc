@@ -65,7 +65,9 @@
 
       <!-- Predefined amounts -->
       <div class="form-group">
-        <label for="inputType" class="col-md-2 control-label">Amount <!--ERR_AMOUNT--></label>
+        <label for="inputType" class="col-md-2 control-label">
+					Amount <!--ERR_AMOUNT-->
+				</label>
         <div class="col-md-6">
           <label class="radio-inline">
             <input type="radio" name="amount" id="amount500" value="500"> 500€
@@ -145,7 +147,9 @@
 
       <!-- Pay using -->
       <div class="form-group">
-        <label for="paytype" class="col-md-2 control-label">Pay using</label>
+        <label for="paytype" class="col-md-2 control-label">
+					Pay using <!--ERR_PAYTYPE-->
+				</label>
         <div class="col-md-6">
           <div class="radio">
             <label>
@@ -153,7 +157,6 @@
                      value="cc" /><!--CHECK_CC-->
               Credit Card
             </label>
-            <!--ERR_PAYTYPE-->
           </div>
           <div class="radio">
             <label>
@@ -175,14 +178,13 @@
       <!-- Name -->
       <div class="form-group">
         <label for="name" class="col-md-2 control-label">
-          Name
+          Name <!--ERR_NAME-->
           <p class="text-muted"><small>(optional)</small></p>
         </label>
         <div class="col-md-6">
           <input type="text" class="form-control" name="name"
                  id="f_name" placeholder="Name (optional)"
                  value=""/><!--NAME-->
-          <!--ERR_NAME-->
           <span class="help-block">
             If you want to be listed on the
              <a href="https://www.gnupg.org/donate/kudos.html"
@@ -195,14 +197,13 @@
       <!-- Email -->
       <div class="form-group">
         <label for="mail" class="col-md-2 control-label">
-          Email
+          Email <!--ERR_MAIL-->
           <p class="text-muted"><small>(optional)</small></p>
         </label>
         <div class="col-md-6">
           <input type="email" class="form-control" name="mail"
                  id="f_mail" placeholder="Email (optional)"
                  value=""/><!--MAIL-->
-           <!--ERR_MAIL-->
           <span class="help-block">
             In case of payment problems we may want to contact you,
             thus please enter your e-mail address.
