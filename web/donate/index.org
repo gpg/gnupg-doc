@@ -72,23 +72,23 @@
 	      <div class="progress">
 		<div class="progress-bar progress-bar-striped active"
                      role="progressbar"
-                     aria-valuenow="<!--CMPGN-RECUR-EURO-->"
+                     aria-valuenow=""<!--V_CMPGN-RECUR-EURO-->
                      aria-valuemin="0"
-                     aria-valuemax="<!--CMPGN-RECUR-EURO-GOAL-->"
+                     aria-valuemax=""<!--V_CMPGN-RECUR-EURO-GOAL-->
                      style="width: 9%">
-		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->&thinsp;€
+		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
                     a month</span>
 		</div>
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
-	      <h3><!--CMPGN-RECUR-EURO-->&thinsp;€
+	      <h3><!--CMPGN-RECUR-EURO-->
                   a month <small>of
-                  <!--CMPGN-RECUR-EURO-GOAL-->&thinsp;€
+                  <!--CMPGN-RECUR-EURO-GOAL-->
                   needed</small>
               </h3>
 	      <h4>+
-                <!--CMPGN-ONCE-EURO-->&thinsp;€
+                <!--CMPGN-ONCE-EURO-->
                 <small>in one-time donations</small>
               </h4>
 	      <h4><!--CMPGN-RECUR-COUNT-->
