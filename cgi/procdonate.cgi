@@ -97,7 +97,7 @@ sub write_template ($) {
     my $publishname;
     my $check_paytype = 'none';
     my $stripe_data_email = '';
-    my $stripe_data_label_value = 'Donate now';
+    my $stripe_data_label_value = 'Make one-time donation';
     my $xamount;
 
     # Avoid broken HTML attributes.
