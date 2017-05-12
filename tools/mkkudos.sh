@@ -21,6 +21,34 @@
 #  <p class="doclear" style="clear: both"></p>
 #  #+END_HTML
 #
+# For the 2017 campaign new variables which work slightly different
+# are introduced:
+#
+#  #+BEGIN_HTML
+#  <div class="progress-bar progress-bar-striped active"
+#       role="progressbar"
+#       aria-valuenow="0" A-CMPGN-RECUR-EURO=""
+#       aria-valuemin="0"
+#       aria-valuemax="0" A-CMPGN-RECUR-EURO-GOAL=""
+#       style="width: 0%" A-CMPGN-RECUR-PERCENT=""
+#       >
+#    <span class="sr-only"><!--CMPGN-RECUR-EURO-->
+#                            a month</span>
+#  </div>
+#  <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
+#    <h3><!--CMPGN-RECUR-EURO-->
+#        a month <small>of
+#        <!--CMPGN-RECUR-EURO-GOAL-->
+#        needed</small>
+#    </h3>
+#    <h4>+ <!--CMPGN-ONCE-EURO-->
+#        <small>in one-time donations</small>
+#    </h4>
+#    <h4><!--CMPGN-RECUR-COUNT-->
+#        <small>Supporters</small>
+#    </h4>
+#  #+END_HTML
+#
 # To use it the code at "Campaign data" below needs to be adjusted as
 # well.
 # ===================================================================
@@ -36,9 +64,9 @@ usage()
     cat <<EOF
 Usage: $0 [OPTIONS]
 Options:
-	--force    Force re-creation of files.
         --verbose  Run in verbose mode
-        --test     Run in test environment
+        --force    Force re-creation of files.
+        --test     Run in test environment (preview.gnupg.org)
 EOF
     exit $1
 }
@@ -78,17 +106,15 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-htdocs="/var/www/www/www.gnupg.org/htdocs"
+
+if [ $testmode = yes ]; then
+  htdocs="/var/www/www/preview.gnupg.org/htdocs"
+else
+  htdocs="/var/www/www/www.gnupg.org/htdocs"
+fi
 donors="$htdocs/donate/donors.dat"
 donations="$htdocs/donate/donations.dat"
 blogheadlinefile="/var/www/www/blog.gnupg.org/htdocs/headlines.txt"
-
-if [ $testmode = yes ]; then
-  htdocs="/home/wk/s/gnupg-doc/stage"
-  donors="$htdocs/../scratch/donors.dat"
-  donations="$htdocs/../scratch/donations.dat"
-  blogheadlinefile="$htdocs/../misc/blog.gnupg.org/headlines.txt"
-fi
 
 
 if [ ! -f "$donors" ]; then
@@ -116,9 +142,10 @@ monyear=$(echo "$tmp" | awk -F: 'BEGIN { m[1] = "January";
       m[10] = "October"; m[11] = "November"; m[12] = "December"; }
       {printf "%s %d", m[int($2)] , $1}')
 thisyear=$(echo "$tmp" | awk -F: '{print $1}')
-euroyr=$(echo "$tmp" | awk -F: '{printf "%d &euro;", int($10 + 0.5)}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
-
+euroyr=$(echo "$tmp" | awk -F: '{printf "%d", int($10 + 0.5)}')
+recur_nyr=$(echo "$tmp" | awk -F: '{printf "%d", $13}')
+recur_euroyr=$(echo "$tmp" | awk -F: '{printf "%d", int($14 + 0.5)}')
 
 dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
   BEGIN { m[1] = "January";
@@ -164,7 +191,12 @@ dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
 
 # Campaign data
 goal="120000"
+recur_goal="15000"
 percent=$(echo "$euroyr:$goal" | awk -F: '{ p = (int($1)*100)/int($2);
+                                          if(p > 100) { p = 100 };
+                                          printf "%d", p}')
+recur_percent=$(echo "$recur_euroyr:$recur_goal" \
+                               | awk -F: '{ p = (int($1)*100)/int($2);
                                           if(p > 100) { p = 100 };
                                           printf "%d", p}')
 
@@ -187,6 +219,8 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            -v monyear="$monyear" -v thisyear="$thisyear" \
            -v euro="$euro" -v euroyr="$euroyr" \
            -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
+           -v recur_nyr="$recur_nyr" -v recur_euroyr="$recur_euroyr" \
+           -v recur_goal="$recur_goal" -v recur_percent="$recur_percent" \
            -v blogheadline="$blogheadline" \
             <"$file"  >"$file.tmp" '
      /<!--BEGIN-DONATIONS-->/ {indon=1; print; insert("") }
@@ -206,7 +240,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            next
      }
      /<!--INSERT-YEAR-EURO-->/ {
-           printf "<!--INSERT-YEAR-EURO--> %s\n", euroyr;
+           printf "<!--INSERT-YEAR-EURO--> %s&thinsp;&euro;\n", euroyr;
            next
      }
      /<!--INSERT-YEAR-N-->/ {
@@ -229,6 +263,48 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      }
      /<!--INSERT-BLOG-HEADLINE-->/ {
            printf "<!--INSERT-BLOG-HEADLINE--> %s\n", blogheadline;
+           next
+     }
+     /A-CMPGN-RECUR-EURO=""/ {
+           n = index($0,"\"");
+           printf "%s%s\" A-CMPGN-RECUR-EURO=\"\"\n",
+                  substr($0,1,n), recur_euroyr;
+           next
+     }
+     /A-CMPGN-RECUR-EURO-GOAL=""/ {
+           n = index($0,"\"");
+           printf "%s%s\" A-CMPGN-RECUR-EURO-GOAL=\"\"\n",
+                  substr($0,1,n), recur_goal;
+           next
+     }
+     /A-CMPGN-RECUR-PERCENT=""/ {
+           n = index($0,":");
+           printf "%s %s%\" A-CMPGN-RECUR-PERCENT=\"\"\n",
+                  substr($0,1,n), recur_percent;
+           next
+     }
+     /<!--CMPGN-RECUR-EURO-->/ {
+           n = index($0,"<!--CMPGN");
+           printf "%s!--CMPGN-RECUR-EURO-->%s&thinsp;&euro;\n",
+                  substr($0,1,n), recur_euroyr;
+           next
+     }
+     /<!--CMPGN-RECUR-EURO-GOAL-->/ {
+           n = index($0,"<!--CMPGN");
+           printf "%s!--CMPGN-RECUR-EURO-GOAL-->%s&thinsp;&euro;\n",
+                  substr($0,1,n), recur_goal;
+           next
+     }
+     /<!--CMPGN-ONCE-EURO-->/ {
+           n = index($0,"<!--CMPGN");
+           printf "%s!--CMPGN-ONCE-EURO-->%s&thinsp;&euro;\n",
+                  substr($0,1,n), euroyr;
+           next
+     }
+     /<!--CMPGN-RECUR-COUNT-->/ {
+           n = index($0,"<!--CMPGN");
+           printf "%s!--CMPGN-RECUR-COUNT-->%s\n",
+                  substr($0,1,n), recur_nyr;
            next
      }
      !indon { print }

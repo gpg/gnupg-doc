@@ -23,12 +23,65 @@ LC_CTYPE=C
 RFCDATE="$(date -R)"
 SIGDELIM="-- "
 
-htdocs="/var/www/www/www.gnupg.org/htdocs"
+usage()
+{
+    cat <<EOF
+Usage: $pgm [OPTIONS]
+Options:
+        --verbose  Run in verbose mode
+	--force    Force re-creation of files.
+        --test     Run in test environment (preview.gnupg.org)
+EOF
+    exit $1
+}
+
+
+verbose=no
+force=no
+testmode=no
+while [ $# -gt 0 ]; do
+    case "$1" in
+	# Set up `optarg'.
+	--*=*)
+	    optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`
+	    ;;
+	*)
+	    optarg=""
+	    ;;
+    esac
+
+    case $1 in
+        --verbose)
+            verbose=yes
+            ;;
+	--force)
+	    force=yes
+	    ;;
+        --test)
+            testmode=yes
+            ;;
+        --help)
+            usage 0
+            ;;
+	*)
+	    usage 1 1>&2
+	    ;;
+    esac
+    shift
+done
+
+
+if [ $testmode = yes ]; then
+  htdocs="/var/www/www/preview.gnupg.org/htdocs"
+  journal_dir="/var/log/payproc-test"
+else
+  htdocs="/var/www/www/www.gnupg.org/htdocs"
+  journal_dir="/var/log/payproc"
+fi
 
 donors="$htdocs/donate/donors.dat"
 donations="$htdocs/donate/donations.dat"
 
-journal_dir="/var/log/payproc"
 LOCKFILE="$donors.lock"
 
 if [ ! -f "$donors" ]; then
@@ -151,7 +204,7 @@ lastline=$(echo $tmp | cut -d: -f2)
 
 [ -f "$donors".stamp ] && rm "$donors".stamp
 cat "$donors" > "$donors.tmp"
-find $journal_dir -type f -name 'journal-????????.log' -print \
+find $journal_dir/ -type f -name 'journal-????????.log' -print \
      | sort | while read fname; do
     fname=$(basename "$fname")
     jdate=${fname%.log}
@@ -177,7 +230,7 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
 done
 
 # If we have any new records update the files.
-if [ -f "$donors".stamp ]; then
+if [ -f "$donors".stamp -o $force = yes ]; then
 
   if ! mv "$donors.tmp" "$donors"; then
     echo "$pgm: error updating $donors" >&2
@@ -186,13 +239,13 @@ if [ -f "$donors".stamp ]; then
 
   if [ -f "$donations" ]; then
     payproc-stat -u "$donations" -- > "$donations".tmp  \
-      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+      $(find $journal_dir/ -type f -name 'journal-????????.log' -print|sort)
     if ! mv "$donations".tmp "$donations"; then
         echo "$pgm: error updating $donations" >&2
         exit 1
     fi
   else
     payproc-stat -u "$donations" -- > "$donations"  \
-      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+      $(find $journal_dir/ -type f -name 'journal-????????.log' -print|sort)
   fi
 fi
