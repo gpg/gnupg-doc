@@ -145,7 +145,7 @@ thisyear=$(echo "$tmp" | awk -F: '{print $1}')
 nyr=$(echo "$tmp" | awk -F: '{printf "%d", $9}')
 euroyr=$(echo "$tmp" | awk -F: '{printf "%d", int($10 + 0.5)}')
 recur_nyr=$(echo "$tmp" | awk -F: '{printf "%d", $13}')
-recur_euroyr=$(echo "$tmp" | awk -F: '{printf "%d", int($14 + 0.5)}')
+recur_euroyr=$(echo "$tmp" | awk -F: '{printf "%d", int($14 + 0.5)/12}')
 
 dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
   BEGIN { m[1] = "January";
@@ -215,7 +215,8 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
    fi
    [ $verbose = yes ] && echo "processing $file" >&2
    [ -f "$file.tmp" ] && rm "$file.tmp"
-   awk -F: -v year=$year -v donors="$donors" -v dontable="$dontable" \
+   # We need gawk to use "%'d" in inprint
+   gawk -F: -v year=$year -v donors="$donors" -v dontable="$dontable" \
            -v monyear="$monyear" -v thisyear="$thisyear" \
            -v euro="$euro" -v euroyr="$euroyr" \
            -v nyr="$nyr" -v goal="$goal" -v percent="$percent" \
@@ -285,20 +286,20 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      }
      /<!--CMPGN-RECUR-EURO-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-RECUR-EURO-->%s&thinsp;&euro;\n",
-                  substr($0,1,n), recur_euroyr;
+           printf "%s!--CMPGN-RECUR-EURO-->%'"'"'d&thinsp;&euro;\n",
+                  substr($0,1,n), int(recur_euroyr);
            next
      }
      /<!--CMPGN-RECUR-EURO-GOAL-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-RECUR-EURO-GOAL-->%s&thinsp;&euro;\n",
-                  substr($0,1,n), recur_goal;
+           printf "%s!--CMPGN-RECUR-EURO-GOAL-->%'"'"'d&thinsp;&euro;\n",
+                  substr($0,1,n), int(recur_goal);
            next
      }
      /<!--CMPGN-ONCE-EURO-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-ONCE-EURO-->%s&thinsp;&euro;\n",
-                  substr($0,1,n), euroyr;
+           printf "%s!--CMPGN-ONCE-EURO-->%'"'"'d&thinsp;&euro;\n",
+                  substr($0,1,n), int(euroyr);
            next
      }
      /<!--CMPGN-RECUR-COUNT-->/ {

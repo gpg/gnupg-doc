@@ -143,10 +143,15 @@ send_thanks () {
     else
       xqpmail=$(mu-tool 2047 -c utf-8 "$xmail")
     fi
+    if [ $testmode = yes ]; then
+      xisatest="[TEST DONATION] "
+    else
+      xisatest=""
+    fi
     ( cat <<EOF
 From: donations@gnupg.org
 To: $xqpmail
-Subject: Thank you for supporting GnuPG
+Subject: ${xisatest}Thank you for supporting GnuPG
 Date: $RFCDATE
 Mime-Version: 1.0
 Content-Type: text/plain
@@ -159,7 +164,7 @@ Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
 
-  Werner
+  The GnuPG Team
 
 
 $SIGDELIM
@@ -212,6 +217,7 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
     jyear=$(echo $jdate |sed 's/\(....\).*/\1/')
     if [ "$jdate" -ge "$lastdate" ]; then
         [ "$jdate" -gt "$lastdate" ] && lastline=0
+        # First for charge records
         payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
                      -Fmail -Famount -Fcurrency -Feuro\
            -S "_lnr > $lastline" -Stype=C -Saccount==1 \
@@ -223,6 +229,21 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
             xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
             # Note that we removed colons from $name
             echo "$jyear:$datestr:$name::$lnr:" >> "$donors.tmp"
+            touch "$donors".stamp
+            send_thanks
+         done
+        # Second for new subscriptions
+        payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
+                     -Fmail -Famount -Fcurrency -Feuro -Frecur\
+           -S "_lnr > $lastline" -Stype=S -Saccount==1 \
+           --html --print "$journal_dir/journal-$jdate.log" \
+         | while IFS=: read lnr datestr name message \
+                            xmail amount currency euro recur rest; do
+            name=$(echo "$name" | tr \`\$: ...)
+            message=$(echo "$message" | tr \`\$ ..)
+            xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
+            # Note that we removed colons from $name
+            echo "$jyear:$datestr:$name:S:$lnr:" >> "$donors.tmp"
             touch "$donors".stamp
             send_thanks
          done
