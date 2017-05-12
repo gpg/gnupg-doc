@@ -241,7 +241,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            next
      }
      /<!--INSERT-YEAR-EURO-->/ {
-           printf "<!--INSERT-YEAR-EURO--> %s&thinsp;&euro;\n", euroyr;
+           printf "<!--INSERT-YEAR-EURO--> %s&#x202f;&euro;\n", euroyr;
            next
      }
      /<!--INSERT-YEAR-N-->/ {
@@ -286,29 +286,35 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      }
      /<!--CMPGN-RECUR-EURO-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-RECUR-EURO-->%'"'"'d&thinsp;&euro;\n",
-                  substr($0,1,n), int(recur_euroyr);
+           printf "%s!--CMPGN-RECUR-EURO-->%s&#x202f;&euro;\n",
+                  substr($0,1,n), format_number(recur_euroyr);
            next
      }
      /<!--CMPGN-RECUR-EURO-GOAL-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-RECUR-EURO-GOAL-->%'"'"'d&thinsp;&euro;\n",
-                  substr($0,1,n), int(recur_goal);
+           printf "%s!--CMPGN-RECUR-EURO-GOAL-->%s&#x202f;&euro;\n",
+                  substr($0,1,n), format_number(recur_goal);
            next
      }
      /<!--CMPGN-ONCE-EURO-->/ {
            n = index($0,"<!--CMPGN");
-           printf "%s!--CMPGN-ONCE-EURO-->%'"'"'d&thinsp;&euro;\n",
-                  substr($0,1,n), int(euroyr);
+           printf "%s!--CMPGN-ONCE-EURO-->%s&#x202f;&euro;\n",
+                  substr($0,1,n), format_number(euroyr);
            next
      }
      /<!--CMPGN-RECUR-COUNT-->/ {
            n = index($0,"<!--CMPGN");
            printf "%s!--CMPGN-RECUR-COUNT-->%s\n",
-                  substr($0,1,n), recur_nyr;
+                  substr($0,1,n), format_number(recur_nyr);
            next
      }
      !indon { print }
+
+     function format_number (n) {
+          buf = sprintf("%'"'"'d", int(n));
+          gsub(/,/, "\\&#x202f;", buf);
+          return buf;
+     }
 
      function insert (tag) {
        while (getline < donors) {
