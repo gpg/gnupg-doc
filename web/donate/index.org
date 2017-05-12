@@ -72,10 +72,11 @@
 	      <div class="progress">
 		<div class="progress-bar progress-bar-striped active"
                      role="progressbar"
-                     aria-valuenow=""<!--V_CMPGN-RECUR-EURO-->
+                     aria-valuenow="0" A-CMPGN-RECUR-EURO=""
                      aria-valuemin="0"
-                     aria-valuemax=""<!--V_CMPGN-RECUR-EURO-GOAL-->
-                     style="width: 9%">
+                     aria-valuemax="0" A-CMPGN-RECUR-EURO-GOAL=""
+                     style="width: 9%" A-CMPGN-RECUR-PERCENT=""
+                     >
 		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
                     a month</span>
 		</div>
