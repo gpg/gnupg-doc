@@ -326,6 +326,7 @@ sub write_template ($) {
         || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
         || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/
         || s/<!--PUBLISH_NAME-->/$publishname/
+        || s/<!--LANG-->/$lang/
         || s/<!--SEPA_REF-->/$separef/
         || s/<!--ERRORSTR-->/$errorstr/
         || s/<!--ERR_AMOUNT-->/$err_amount/
@@ -528,7 +529,7 @@ sub check_donation ()
 
         if ($lang eq 'de') {
             $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
-                . 'können wir leider Spenden unter 4 Euro annehmen.';
+                . 'können wir leider keine Spenden unter 4 Euro annehmen.';
         } elsif ($lang eq 'ja') {
             $msg = 'Sorry, due to overhead costs we do'
                 . ' not accept donations of less than 4 Euro.';

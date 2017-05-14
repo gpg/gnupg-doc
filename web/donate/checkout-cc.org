@@ -79,6 +79,7 @@ Information on your intended donation:
   <form action="/cgi-bin/procdonate.cgi" method="POST">
     <input type="hidden" name="mode" value="re-main">
     <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="hidden" name="lang" value="<!--LANG-->">
     <input type="submit" class="donate-button-low" value="Back" />
   </form>
   </div>
