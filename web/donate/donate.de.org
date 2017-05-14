@@ -1,0 +1,246 @@
+#+TITLE: GnuPG - Spenden
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+	<!-- bootstrap core and site css -->
+	<link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+	<link href="/share/campaign/campaign.css" rel="stylesheet">
+
+	<script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+	<script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+	<script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+	<script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+	<script defer src="/share/3rdparty/bcswipe.js"></script>
+	<script defer src="/share/campaign/campaign.js"></script>
+
+</head>
+<body lang="de">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png">
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/donate">Back</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="camp-gutter container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Support GnuPG</h1>
+        <p>To process your donation we need to collect some information. This information is only used for the purpose of the donation and no data will ever be send to any entity not directly involved in the donation process. Not giving a name makes the donation “anonymous” in that the name won’t be listed on the public thank you page.</p>
+        <p>You can also send us <b>Bitcoin</b>. Our address is <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"><small><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></small></a>.</p>
+      </div>
+    </div>
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<!--ERRORPANEL-->
+			</div>
+		</div>
+
+
+    <form class="form-horizontal" role="form"
+          action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="hidden" name="mode" value="main">
+      <input type="hidden" name="lang" value="de">
+
+      <!-- Predefined amounts -->
+      <div class="form-group">
+        <label for="inputType" class="col-md-2 control-label">
+					Betrag <!--ERR_AMOUNT-->
+				</label>
+        <div class="col-md-6">
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount500"
+                   value="500" /><!--CHK_AMT500--> 500&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount200"
+                   value="200" /><!--CHK_AMT200--> 200&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount100"
+                   value="100" /><!--CHK_AMT100--> 100&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount50"
+                   value="50" /><!--CHK_AMT50--> 50&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount20"
+                   value="20" /><!--CHK_AMT20--> 20&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount10"
+                   value="10" /><!--CHK_AMT10--> 10&thinsp;€
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="amount" id="amount5"
+                   value="5" /><!--CHK_AMT5--> 5&thinsp;€
+          </label>
+        </div>
+      </div>
+
+      <!-- Custom amounts -->
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-6">
+          <div class="form-group row">
+            <div class="col-md-2">
+              <div class="radio">
+                <label for="amount_radio_other">
+                  <input type="radio" id="amount_radio_other" name="amount"
+                         value="other" /><!--CHK_AMTX-->
+                  other
+                </label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control"
+                     name="amountother" id="amountother" placeholder=""
+                     value=""/><!--AMT_OTHER-->
+						</div>
+            <div class="col-md-4">
+              <select class="form-control" name="currency" id="currency">
+                <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+                <option value="USD" ><!--SEL_USD-->US Dollar</option>
+                <option value="GBP" ><!--SEL_GBP-->British Pound</option>
+                <option value="JPY" ><!--SEL_JPY-->Yen</option>
+              </select>
+            </div>
+          </div>
+          <span class="help-block">Choosing “other” allows to donate
+                in other currencies.</span>
+        </div>
+      </div>
+
+      <!-- Recurring -->
+      <div class="form-group">
+        <label for="recur" class="col-md-2 control-label">Dauerauftrag</label>
+        <div class="col-md-2">
+          <select class="form-control" name="recur">
+            <option value="0"
+            selected="selected"><!--RECUR_NONE-->neun</option>
+            <option value="12" ><!--RECUR_MONTH-->monatlich</option>
+            <option value="4" ><!--RECUR_QUARTER-->vierteljährlich</option>
+            <option value="1" ><!--RECUR_YEAR-->jährlich</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Pay using -->
+      <div class="form-group">
+        <label for="paytype" class="col-md-2 control-label">
+					Pay using <!--ERR_PAYTYPE-->
+				</label>
+        <div class="col-md-6">
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="cc"
+                     value="cc" /><!--CHECK_CC-->
+              Kreditkarte
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="pp"
+                     value="pp" /><!--CHECK_PP-->
+              PayPal
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="se"
+                     value="se" /><!--CHECK_SE-->
+              Überweisung
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name" class="col-md-2 control-label">
+          Name <!--ERR_NAME-->
+          <p class="text-muted"><small>(optional)</small></p>
+        </label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="name"
+                 id="f_name" placeholder="Name (optional)"
+                 value=""/><!--NAME-->
+          <span class="help-block">
+            If you want to be listed on the
+             <a href="https://www.gnupg.org/donate/kudos.html"
+                >list of donors</a>, please enter your name as
+             it shall appear there.
+          </span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="mail" class="col-md-2 control-label">
+          Email <!--ERR_MAIL-->
+          <p class="text-muted"><small>(optional)</small></p>
+        </label>
+        <div class="col-md-6">
+          <input type="email" class="form-control" name="mail"
+                 id="f_mail" placeholder="Email (optional)"
+                 value=""/><!--MAIL-->
+          <span class="help-block">
+            In case of payment problems we may want to contact you,
+            thus please enter your e-mail address.
+          </span>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message" class="col-md-2 control-label">
+          Message
+          <p class="text-muted"><small>(optional)</small></p>
+        </label>
+        <div class="col-md-6">
+          <textarea class="form-control" name="message" id="f_message"
+                    rows="4"
+                    ></textarea><!--MESSAGE-->
+          <span class="help-block">
+            Hier können Sie gerne eine Nachricht an uns übermitteln.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-2">
+          <button type="submit" class="btn btn-primary btn-large"
+                  >Weiter zur Spendenübersicht</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+#+END_HTML

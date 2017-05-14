@@ -33,6 +33,7 @@ my $q  = new CGI;
 # This is a multi-purpose CGI.  The mode decides what to do.
 my $mode = $q->param("mode");
 my $sessid = $q->param("sessid");
+my $lang = $q->param("lang");
 
 # Variables used in the template pages.
 my $amount = "";
@@ -69,6 +70,7 @@ sub complete_sepa ();
 sub write_template ($) {
     my $fname = shift;
 
+    my $tname;
     my $errorpanel = $errorstr;
     my $err_amount = '';
     my $err_name = '';
@@ -97,8 +99,9 @@ sub write_template ($) {
     my $publishname;
     my $check_paytype = 'none';
     my $stripe_data_email = '';
-    my $stripe_data_label_value = 'Make one-time donation';
+    my $stripe_data_label_value;
     my $xamount;
+    my $stripelocale;
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
@@ -123,6 +126,10 @@ sub write_template ($) {
 
     # No need to clean $euroamount.
 
+    # Check whether a translated template is available.
+    $tname = $htdocs . $fname;
+    $tname =~ s/\.html$/.$lang.html/;
+    if ( not -f $tname ) { $tname = $htdocs . $fname; }
 
     # Create a formatted message.
     $message_fmt = $message;
@@ -177,18 +184,59 @@ sub write_template ($) {
         $stripe_data_email = '';
         $recur_none    = ' selected="selected"';
         $recur_text    = '';
+
+        if ($lang eq 'de') {
+            $stripe_data_label_value = 'Einmalig spenden';
+        } elsif ($lang eq 'ja') {
+            $stripe_data_label_value = 'Make one-time donation';
+        } else {
+            $stripe_data_label_value = 'Make one-time donation';
+        }
+
     } elsif ( $recur =~ /12/ ) {
         $recur_month   = ' selected="selected"';
-        $recur_text    = 'monthly';
-        $stripe_data_label_value = 'Donate monthly';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'monatlich';
+            $stripe_data_label_value = 'Monatlich spenden';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = 'monthly';
+            $stripe_data_label_value = 'Donate monthly';
+        } else {
+            $recur_text    = 'monthly';
+            $stripe_data_label_value = 'Donate monthly';
+        }
+
     } elsif ( $recur =~ /4/ ) {
         $recur_quarter = ' selected="selected"';
-        $recur_text    = 'quarterly';
-        $stripe_data_label_value = 'Donate quarterly';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'vierteljährlich';
+            $stripe_data_label_value = 'Vierteljährlich spenden';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = 'quarterly';
+            $stripe_data_label_value = 'Donate quarterly';
+        } else {
+            $recur_text    = 'quarterly';
+            $stripe_data_label_value = 'Donate quarterly';
+        }
+
     } elsif ( $recur =~ /1/ ) {
         $recur_year    = ' selected="selected"';
-        $recur_text    = 'yearly';
-        $stripe_data_label_value = 'Donate yearly';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'jährlich';
+            $stripe_data_label_value = 'Jährlich spenden';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = 'yearly';
+            $stripe_data_label_value = 'Donate yearly';
+        } else {
+            $recur_text    = 'yearly';
+            $stripe_data_label_value = 'Donate yearly';
+        }
+
+    } else { # invalid
+        $stripe_data_label_value = '';
     }
 
     if ( $paytype eq "cc" ) {
@@ -206,15 +254,30 @@ sub write_template ($) {
         $publishname = 'Yes';
     }
 
+
+
+    # Set a specific locale.
+    if ($lang eq 'de')    { $stripelocale = "de"; }
+    elsif ($lang eq 'ja') { $stripelocale = "ja"; }
+    elsif ($lang eq 'en') { $stripelocale = "en"; }
+    else                  { $stripelocale = "auto"; }
+
+
     # Build error strings.
     foreach (keys %errdict)
     {
+        my $fieldname;
+
+        if ($lang eq 'de')    { $fieldname = "Feld $_: ";  }
+        elsif ($lang eq 'ja') { $fieldname = "Field $_: "; }
+        else                  { $fieldname = "Field $_: "; }
+
         if    (/amount/) { $err_amount = $error_marker; }
         elsif (/name/)   { $err_name   = $error_marker; }
         elsif (/mail/)   { $err_mail   = $error_marker; }
         elsif (/paytype/){ $err_paytype = $error_marker; }
 
-        $errorpanel = $errorpanel . "Field $_: " . $errdict{$_} . "<br/>\n"
+        $errorpanel = $errorpanel . $fieldname . $errdict{$_} . "<br/>\n"
     }
     if ( $errorpanel ne '' )
     {
@@ -223,7 +286,7 @@ sub write_template ($) {
     }
 
 
-    open TEMPLATE, $htdocs . $fname;
+    open TEMPLATE, $tname;
     while (<TEMPLATE>) {
         if ( /<!--/ )
         {
@@ -235,6 +298,7 @@ sub write_template ($) {
         || s/(\x22\x2f>)?<!--AMT_OTHER-->/$amt_other\1/
         || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
         || s/(\x22\x2f>)?<!--STRIPEPUBKEY-->/$stripepubkey\1/
+        || s/(\x22\x2f>)?<!--STRIPELOCALE-->/$stripelocale\1/
         || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
         || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
         || s/(\x22\x2f>)?<!--NAME-->/$name\1/
@@ -426,6 +490,7 @@ sub check_donation ()
     my %data;
     my %sepa;
     my $anyerr = 0;
+    my $msg;
 
     $amount = $q->param("amount");
     if ($amount eq 'other') {
@@ -460,16 +525,40 @@ sub check_donation ()
     # processing fees and our own costs for bookkeeping we need to ask
     # for a minimum amount.
     if ( (not $anyerr) and ($euroamount < 4.00) ) {
-        $errdict{"amount"} = 'Sorry, due to overhead costs we do' .
-                             ' not accept donations of less than 4 Euro.';
+
+        if ($lang eq 'de') {
+            $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
+                . 'können wir leider Spenden unter 4 Euro annehmen.';
+        } elsif ($lang eq 'ja') {
+            $msg = 'Sorry, due to overhead costs we do'
+                . ' not accept donations of less than 4 Euro.';
+        }
+        else {
+            $msg = 'Sorry, due to overhead costs we do'
+                . ' not accept donations of less than 4 Euro.';
+        }
+
+        $errdict{"amount"} = $msg;
         $anyerr = 1;
     }
 
     # Check the payment type
     $paytype = $q->param("paytype");
     if ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
-        $errdict{"paytype"} = 'No payment type selected.' .
-                              ' Use "Credit Card", "PayPal", or "SEPA".';
+
+        if ($lang eq 'de') {
+            $msg= 'Keine Zahlungsart angegeben.'
+                . ' Bitte "Kreditkarte", "PayPal" oder "SEPA" auswählen.';
+        } elsif ($lang eq 'ja') {
+            $msg= 'No payment type selected.'
+                . ' Use "Credit Card", "PayPal", or "SEPA".';
+        }
+        else {
+            $msg= 'No payment type selected.'
+                . ' Use "Credit Card", "PayPal", or "SEPA".';
+        }
+
+        $errdict{"paytype"} = $msg;
         $anyerr = 1;
     }
 
@@ -575,16 +664,39 @@ sub complete_stripe_checkout ()
     # Print thanks
     $recur = $stripe{"Recur"};
     if ( $recur =~ /12/ ) {
-        $recur_text    = 'Monthly';
+        if ($lang eq 'de')    { $recur_text = 'monatlich'; }
+        elsif ($lang eq 'ja') { $recur_text = 'Monthly'; }
+        else                  { $recur_text = 'Monthly'; }
     } elsif ( $recur =~ /4/ ) {
-        $recur_text    = 'Quarterly';
+        if ($lang eq 'de')    { $recur_text = 'vierteljährlich'; }
+        elsif ($lang eq 'ja') { $recur_text = 'Quarterly'; }
+        else                  { $recur_text = 'Quarterly'; }
     } elsif ( $recur =~ /1/ ) {
-        $recur_text    = 'Yearly';
+        if ($lang eq 'de')    { $recur_text = 'jährlich'; }
+        elsif ($lang eq 'ja') { $recur_text = 'Yearly'; }
+        else                  { $recur_text = 'Yearly'; }
     } else {
-        $recur_text    = 'Just once';
+        if ($lang eq 'de')    { $recur_text = 'nein'; }
+        elsif ($lang eq 'ja') { $recur_text = 'Just once'; }
+        else                  { $recur_text = 'Just once'; }
     }
 
-    $message = <<EOF;
+    if ($lang eq 'de') {
+        $message = <<EOF;
+Betrag ......: $stripe{"Amount"} $stripe{"Currency"}
+Dauerauftrag : $recur_text
+Beschreibung : $stripe{"Desc"}
+Kartennr. ...: *$stripe{"Last4"}
+Dienstleister: Stripe
+Charge-Id ...: $stripe{"Charge-Id"}
+Zeitstempel .: $stripe{"_timestamp"}
+Email .......: $stripe{"Email"}
+EOF
+        if ($stripe{"account-id"} ne '') {
+            $message = $message . "Spender-ID ..: " . $stripe{"account-id"};
+        }
+    } elsif ($lang eq 'ja') {
+        $message = <<EOF;
 Amount ....: $stripe{"Amount"} $stripe{"Currency"}
 Recurring .: $recur_text
 Desc ......: $stripe{"Desc"}
@@ -594,9 +706,25 @@ Charge-Id .: $stripe{"Charge-Id"}
 Timestamp .: $stripe{"_timestamp"}
 Email .....: $stripe{"Email"}
 EOF
-    if ($stripe{"account-id"} ne '') {
-        $message = $message . "Account-Id : " . $stripe{"account-id"};
+        if ($stripe{"account-id"} ne '') {
+            $message = $message . "Account-Id : " . $stripe{"account-id"};
+        }
+    } else {
+         $message = <<EOF;
+Amount ....: $stripe{"Amount"} $stripe{"Currency"}
+Recurring .: $recur_text
+Desc ......: $stripe{"Desc"}
+Cardno.....: *$stripe{"Last4"}
+Processor .: Stripe
+Charge-Id .: $stripe{"Charge-Id"}
+Timestamp .: $stripe{"_timestamp"}
+Email .....: $stripe{"Email"}
+EOF
+        if ($stripe{"account-id"} ne '') {
+            $message = $message . "Account-Id : " . $stripe{"account-id"};
+        }
     }
+
     if ($stripe{"Live"} eq 'f') {
         $message = $message . "\n!!! TEST TRANSACTION !!!";
     }

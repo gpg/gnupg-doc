@@ -66,6 +66,7 @@ Information on your intended donation:
         data-image="/share/gnupg-badge-128x128.png"
         data-name="GnuPG"
         data-description="Donation to the GnuPG project"
+        data-locale="<!--STRIPELOCALE-->"
         data-amount="<!--STRIPEAMOUNT-->"
         data-currency="<!--CURRENCY-->"
         data-panel-label="Donate {{amount}} <!--RECUR_TEXT-->"
