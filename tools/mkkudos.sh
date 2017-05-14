@@ -201,9 +201,10 @@ recur_percent=$(echo "$recur_euroyr:$recur_goal" \
                                           printf "%d", p}')
 
 for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
-            "$htdocs/donate/"index.html \
+            "$htdocs/donate/"index.html "$htdocs/donate/"index.??.html \
             "$htdocs/"index.html
  do
+   [ -f "$file" ] || continue
    if [ $force = no ]; then
      [ "$file" -ot "$donors" ] || continue
    fi
