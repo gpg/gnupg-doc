@@ -112,9 +112,11 @@ sub write_template ($) {
     $mail =~ s/\x22/\x27/g;
     $message =~ s/\x22/\x27/g;
     $separef =~ s/\x22/\x27/g;
+    $lang =~ s/\x22/\x27/g;
 
     # Clean possible user provided data
     $sessid =~ s/</\x26lt;/g;
+    $lang =~ s/</\x26lt;/g;
     $amount =~ s/</\x26lt;/g;
     $stripeamount =~ s/</\x26lt;/g;
     $currency =~ s/</\x26lt;/g;
