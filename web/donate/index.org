@@ -129,7 +129,7 @@
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
 	    <p class="lead">GnuPG needs your support to help
-	      keep you safer in a surveilled world.</p>
+	      protect online privacy.</p>
 	    <p class="text-justify">Activists, journalists, lawyers, and many others rely on
 	      <a href="https://www.gnupg.org/">GnuPG</a> to protect
 	      their communication.  And, the software updaters in
