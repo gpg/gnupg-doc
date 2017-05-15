@@ -21,7 +21,7 @@
     <script defer src="/share/campaign/campaign.js"></script>
 
   </head>
-  <body lang="de">
+  <body lang="en">
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -29,30 +29,25 @@
 
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Navigation ein/ausblenden</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" title="Home"
-             ><img class="navbar-brand" alt="GnuPG"
-                   src="/share/gnupg-lock-white-250x250.png"></a>
-	    <a class="navbar-right visible-xs-inline pull-right btn
-             btn-default btn-sm navbar-btn"
-               style="margin-right: 10px"
-               href="/donate/donate.de.html" role="button">♥ Support GnuPG</a>
+          <a class="navbar-brand" href="/" title="Home"><img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png"></a>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.html" role="button">♥ GnuPG unterstützen</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#home">Anfang</a></li>
-            <li><a href="#dailyvideo">Tagesvideo</a></li>
+            <li><a href="#dailyvideo">Tägliches Video</a></li>
+	    <li><a href="#about">Über</a></li>
             <li><a href="#goals">Ziele</a></li>
             <li><a href="#testimonials">Referenzen</a></li>
             <li><a href="#team">Team</a></li>
           </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn"
-             href="/donate/donate.de.html" role="button">♥ Support GnuPG</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ GnuPG unterstützen</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -60,7 +55,7 @@
     <div id="home" class="camp-gutter container">
       <div class="row">
 	<div class="col-lg-12 visible-lg-block">
-	  <h1>GnuPG Spendenkampagne</h1>
+	  <h1>GnuPG Fundraising Rally</h1>
 	</div>
 	<div class="col-xs-12 col-lg-8">
           <div class="embed-responsive embed-responsive-16by9 camp-video">
@@ -84,19 +79,19 @@
                      style="width: 9%" A-CMPGN-RECUR-PERCENT=""
                      >
 		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
-                    im Monat</span>
+                    pro Monat</span>
 		</div>
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
 	      <h3><!--CMPGN-RECUR-EURO-->
-                  im Monat <small>von benötigten
+                  pro Monat <small>von benötigten
                   <!--CMPGN-RECUR-EURO-GOAL-->
                   </small>
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
-                <small>als Einzelspenden</small>
+                <small>in einmaligen Spenden</small>
               </h4>
 	      <h4><!--CMPGN-RECUR-COUNT-->
                 <small>Unterstützer</small>
@@ -104,24 +99,24 @@
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
 	      <a class="btn btn-primary btn-lg btn-block" role="button"
-                 href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=de"
-                 >10&thinsp;€ pro Monat spenden</a>
+                 href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur"
+                 > 10&thinsp;€ pro Monat spenden</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=de"
-                     >5&thinsp;€ pro Monat</a>
+                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur"
+                     >5&thinsp;€ pro Monat spenden</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=de"
-                     >20&thinsp;€ pro Monat</a>
+                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur"
+                     >20&thinsp;€ pro Monat spenden</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
 		<a style="margin-top: 1em;"
-                   href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
-                   >Einen anderen betrag spenden</a>
+                   href="/cgi-bin/procdonate.cgi?mode=preset"
+                   >Einen anderen Betrag spenden</a>
 	      </div>
 	    </div>
 	  </div>
@@ -133,23 +128,27 @@
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-	    <p class="lead">Das GnuPG Projekt benötigt Eure Hilfe
-	      um uns uns in einer vollüberwachten Welt mehr
-              Sicherheit zu geben.</p>
-	    <p class="text-justify">Activists, journalists, lawyers, and many others rely on
-	      <a href="https://www.gnupg.org/">GnuPG</a> to protect
-	      their communication.  And, the software updaters in
-	      nearly all free software-based operating systems (which
-	      are used by more than two-thirds of the servers running
-	      the Internet) rely on GnuPG to verify the integrity of
-	      downloads.</p>
-            <p>To continue supporting and improving GnuPG, we are
-              soliciting donations from the general public.  Our
-              primary goal is to raise <strong>15.000 Euros per
-              month</strong> to fully fund 3 developers; our stretch
-              goal is twice that, 30.000 Euros per month.</p>
-            <p>Please consider donating to ensure that this critical
-              piece of software continues to work.</p>
+	    <p class="lead">GnuPG braucht Ihre Unterstützung um Sie in
+	    einer überwachten Welt sicher zu machen XXX.</p>
+	    <p class="text-justify">Aktivisten, Journalisten, Anwälte
+	    und viele andere verlassen sich auf
+	      <a href="https://www.gnupg.org/">GnuPG</a> um ihre
+	      Korrespondenz zu beschützen.  Weiterhin verlassen sich
+	      beinahe alle auf freier Software basierenden
+	      Betriebsysteme (die auf zwei drittel der Server des
+	      Internets genutzt werden) auf GnuPG um die Integrität
+	      ihrer Softwareaktualisierungen sicherzustellen.</p>
+            <p>Um Support und Weiterentwicklung von GnuPG zu
+              ermöglichen bitten wir, die Hauptentwickler von GnuPG,
+              um Spenden von der Allgemeinheit.
+              Unser <strong>Hauptziel</strong>
+              ist <strong>15&#x202f;000 Euro pro Monat</strong> um
+              drei Entwickler zu finanzieren;
+              unser <strong>erweitertes Ziel</strong> ist doppelt so
+              viel, <strong>30&#x202f;000</strong> Euro pro Monat.</p>
+            <p>Bitte denken Sie darüber nach zu Spenden um
+            sicherzustellen, dass diese kritische Software auch
+            weiterhin für jeden funktioniert.</p>
 	  </div>
 	</div>
       </div>
@@ -158,7 +157,7 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Tagesvideo: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
+	  <h2>Video of the Day: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9">
@@ -170,119 +169,152 @@
       </div>
     </div>
 
-    <div class="camp-gutter container">
+    <div id="about" class="camp-gutter container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
 	  <h2>GnuPG Needs Your Help!</h2>
 	  <p class="text-justify">
-	    <strong><a href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html">For
-		over 20 years</a>, GnuPG has helped protect online communication.</strong>
+	    <strong><a
+href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
+	       >Seit 20 Jahren</a> hilft GnuPG elektronische Kommunikation zu
+	      schützen.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
-	      Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
-		       class="camp-headshot pull-right"></a>, Executive Director of
-	    the <a href="https://www.eff.org/">Electronic Frontier
-	      Foundation</a> (EFF), describes GnuPG as <i>"the way that I most
-	      often communicate with people who are in need around the
-	      world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
-	      Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
-			  class="camp-headshot pull-left"></a>, Foreign Correspondent
-	    for BuzzFeed News,
-	    relates: <i>"<strong>As a news organization, we're trained on using
-		GPG.</strong>  "It's about your sources and what happens to them when you
-	      leave the country and you publish that explosive story and the
-	      government is looking for the whistleblower that handed you that key
-	      piece of information."</i>  And famously, GnuPG was Edward Snowden's
-	    tool of choice to securely communicate with journalists about the
-	    NSA mass surveillance leaks.
+	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
+	    class="camp-headshot pull-right"></a>, Geschäftsführerin der
+	    <a href="https://www.eff.org/">Electronic Frontier
+	    Foundation</a> (EFF), beschreibt GnuPG als <i>"das
+	    Werkzeug, mit dem ich am häufigsten mit hilfsbedürftigen
+	    Menschen auf der ganzen Welt
+	    kommuniziere."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
+	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    class="camp-headshot pull-left"></a>,
+	    Auslandskorrespondentin für BuzzFeed News, fügt
+	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
+	    wir ausgebildet GPG zu benutzen.</strong>  "Es geht um die
+	    Quellen und was mit ihnen passiert wenn man ihr Land
+	    verlässt, die explosive Story veröffentlicht und die
+	    Regierung nach dem Informant sucht, der einem die
+	    Schlüsselinformation verriet."</i>  Und GnuPG war
+	    bekanntermaßen Edward Snowden's Werkzeug der Wahl um
+	    sicher Journalisten über die Massenüberwachund der NSA zu
+	    unterrichten.
 	  <p class="text-justify">
-	    But, GnuPG is not only used to encrypt email.  <strong>GnuPG protects the
-	      software updates</strong> for nearly all free software operating systems,
-	    which power <a
-			  href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">two-thirds
-	      of all web sites</a>.  And, GnuPG is widely used by organizations
-	    and companies.  For instance, Arthur Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
-							    class="camp-headshot pull-right">, Vice-President of
-	    Information Technology at 2U told us:
-	    <i>"when we reached out to universities about how they wanted to do
-	      secure file transfer, they were already using GPG encryption."</i>
+	    Aber GnuPG wird nicht nur zum Verschlüsseln von E-Mails
+            benutzt.  <strong>GnuPG schützt
+            Softwareaktualisierungen</strong> auf fast allen freien
+            Betriebsystemen, die
+            auf <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">zwei
+            drittel aller Server im Internet eingesetzt werden</a>.
+            Weiterhin wird GnuPG von einer breiten Masse an
+            Organisationen und Firmen verwendet.  Arthur
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+            class="camp-headshot pull-right">, Vizepräsident der IT
+            von 2U, hat uns beispielsweise erzählt:
+	    <i>"als wir Universitäten kontaktierten um zu fragen, wie
+	    sie sicher Dateien übertragen, stellten wir fest, dass sie
+	    bereits mit GPG verschlüsselten."</i>
 	  <p class="text-justify">
-	    Yet despite the critical role that GnuPG plays for journalists,
-	    activists, and lawyers in particular, but, more generally, anyone
-	    who uses the Internet, in 2012 GnuPG had a <strong>funding crisis</strong>.  Due to a
-	    lack of contracts, Werner Koch, GnuPG's leader, was forced to
-	    lay off the only other person working on GnuPG full-time.  And, by
-	    2014, Werner had to take side jobs unrelated to GnuPG to
-	    supplement his income.
+	    Trotz der kritischen Rolle die GnuPG insbesondere für
+	    Journalisten, Aktivisten und Anwälte, aber auch für jede
+	    Nutzerin des Internets spielt, hatte GnuPG im Jahr 2012
+	    <strong>Finanzierungsprobleme</strong>.  Aufgrund von
+	    ausbleibenden Aufträgen musste Werner Koch, GnuPG's
+	    Hauptentwickler, seinen einzigen Mitarbeiter entlassen,
+	    der vollzeit an GnuPG gearbeitet hat.  Und im Jahr 2014
+	    musste Werner andere Jobs annehmen um seine Arbeit an
+	    GnuPG zu finanzieren.
 	  <p class="text-justify">
-	    The situation looked so bad that <strong>Werner was ready to give up.  But,
-	      friends convinced him to give crowd funding one more shot.</strong>  The
-	    response was amazing.  Not only did the donation campaign raise
-	    enough money to fund Werner, but <strong>it pulled in 250.000 Euros in small
-	      donations</strong>, and Stripe, Facebook and the Linux Foundatation each
-	    committed to donating about 50.000 Euros per year.
-		</p>
-			<div class="text-center">
-				<img src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg" id="camp-openpgp-conf">
-				<p id="camp-caption-openpgp-conf">The GnuPG Team at OpenPGP.conf 2016</p>
-			</div>
-		<p class="text-justify">
-	    <strong>Given this amazing response, Werner decided to grow the team again.</strong>
-	    To date, he has hired 5 developers, and the past two years have seen
-	    a number of improvements to GnuPG and the surrounding ecosystem.
-	    For instance, we've worked on simplifying key discovery, adopted a
-	    set of Python bindings, contributed some improvements to Enigmail,
-	    and supported the GnuK project&mdash;a free source and free hardware
-	    security token.
-	  <p class="text-justify">
-	    <strong>Unfortunately, the money from the donation campaign is now nearly
-	      exhausted.</strong>  So, to secure our medium-term future, we've decided to
-	    again turn to the community.  Our sense is that if we have to feel a
-	    responsibility to someone&mdash;and it is impossible not to feel that
-	    way towards someone who gives you money&mdash;then it should be towards
-	    the public and not a few corporations.  <strong>This time, however, our
-	      focus is on recurring donations</strong> and not one-time donations, like
-	    last time.
-	  <p class="text-justify">
-	    <strong>Our primary goal is to get donation commitments for 15.000 Euros per
-	      month&mdash;enough to fund 3 developers</strong>.  We can reach this goal if just
-	    2000 people donate 5 or 10 Euros each month.
-	  <p class="text-justify">
-	    This money will firstly allow us to continue our maintenance of
-	    GnuPG.  It will also be used to fund our work on the GnuK security
-	    token,
-			<div class="pull-right" style="width: 40%;">
-				<img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
-				<p id="camp-caption-gnuk" class="text-center">The GnuK Token</p>
-			</div>
-			and some other
-	    work in the broader ecosystem including continued improvements to
-	    Enigmail.  One major new project that it will fund is a book called
-	    "An Advanced Introduction to GnuPG."  This handbook has three
-	    principle audiences: developers who want to integrate GnuPG into
-	    their programs, and need to understand the various concepts, the
-	    important security tradeoffs, and common pitfalls; digital security
-	    trainers who need to understand GnuPG to be able to make sound
-	    recommendations to their students; and enthusiasts.
-	  <p class="text-justify">
-	    If we manage to double this number of donations&mdash;if 4000 people
-	    donate 5 or 10 Euros each month&mdash;then we will continue to grow the
-	    team.  In particular, we will hire someone to work on GPG Tools,
-	    which so many activists and journalists rely on to secure their
-	    online communication.  Further, ...
-	  <p class="text-justify">
-	    Now, maybe you don't use GnuPG to encrypt your email.  Nevertheless,
-	    some journalists whose work you value rely on GnuPG to protect their
-	    sources, some activists fighting for a cause that you sympathize
-	    with rely on GnuPG to protect their communication, and some lawyers
-	    speaking with their clients rely on GnuPG to protect attorney-client
-	    conversations.  And, free software-based operating systems use GnuPG
-	    to verify software updates.
+	    Die Situation war so hoffnungslos, dass <strong>Werner
+            kurz davor stand aufzugeben.  Aber Freunde haben ihn
+            überzeugt, es mit einer Spendenkampagne zu
+            versuchen.</strong>  Die Reaktion war überwältigend.
+            Nicht nur hat er genug Geld erhalten um seinen
+            Lebensunterhalt zu finanzieren, <strong>er bekam
+            250&#x202f;000&nbsp;Euro in kleinen Spenden</strong>, und
+            Stripe, Facebook und die Linux Foundatation haben
+            zugesagt, je ungefähr 50&#x202f;000&nbsp;Euro pro Jahr zu
+            spenden.
 	  </p>
-	  <p style="font-size: 22px;">So, if you
-	    are convinced as we are that this work is essential to
-	    protecting democracy, then please help us to continue our
-	    work and stay independent, for just the cost of one coffee
-	    each month.</p>
+	  <div class="text-center">
+	    <img src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg" id="camp-openpgp-conf">
+	    <p id="camp-caption-openpgp-conf">Das GnuPG Team auf der OpenPGP.conf 2016</p>
+	  </div>
+	  <p class="text-justify">
+	    <strong>Ermutigt von der überwältigenden Hilfsbereitschaft
+	    hat Werner entschieden sein Team zu vergrößern.</strong>
+	    Bis zum heutigen Tag hat er fünf Entwickler eingestellt,
+	    und über die letzten zwei Jahre hat sich GnuPG und das XXX
+	    surrounding Ökosystem in einer Reihe von Punkten
+	    weiterentwickelt.  Zum Beispiel haben wir
+	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html">Schlüsselfindung vereinfacht</a>, ein System zur
+	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Anbindung von GPG an Python</a> adoptiert, an
+	    <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>
+	    mitgearbeitet,
+	    und <a href="https://www.fsij.org/category/gnuk.html">das
+	    GnuK Projekt</a> unterstützt&mdash;einem Sicherheits-Token
+	    bestehend aus freier Software und freier Hardware.
+	  <p class="text-justify">
+	    <strong>Wir möchten diese Arbeit auf lange Zeit
+            fortsetzen.</strong>  Aber wir wollen, dass unsere
+            Loyalität in erster Linie der Allgemeinheit gehört.
+            Deshalb wollen wir sicherstellen, dass der Großteil der
+            Finanzierung von Individuen und nicht von Firmen kommt.
+            Weiterhin setzen wir um das Bestehen des Projektes auf
+            lange Sicht zu gewähren auf regelmäßige Spenden und nicht
+            auf einmalige Spenden wie letztes mal.
+	  <p class="text-justify">
+	    <strong>Unser Hauptziel ist es, Zusagen für Spenden in
+	      Höhe von 15&#x202f;000&nbsp;Euro monatlich&mdash;genug
+	      um drei Entwickler zu finanzieren</strong>.  Wir können
+	      dieses Ziel erreichen wenn nur 2000&nbsp;Menschen
+	      zwischen 5 und 10 Euro monatlich spenden, dass
+	      entspricht etwa zwei oder drei Tassen Kaffee.
+	  <p class="text-justify">
+	    <div class="pull-right" style="width: 40%;">
+              <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
+              <p id="camp-caption-gnuk" class="text-center">Das GnuK Token</p>
+	    </div>
+	    Das Geld erlaubt uns zunächst weiterhin GnuPG zu pflegen.
+	    Weiterhin werden wir unsere Arbeit an dem GnuK
+	    Sicherheitstoken finanzieren.  Ein neues Projekt, welches
+	    uns das Geld ermöglichen soll, ist ein Buch mit dem Titel
+	    "An Advanced Introduction to GnuPG" &mdash; "Eine
+	    Fortgeschrittene Einführung in GnuPG" &mdash; mit drei
+	    Zielgruppen: Entwickler, die GnuPG in ihre Programme
+	    integrieren wollen und die verschiedenen Konzepte,
+	    Sicherheitsabwägungen und übliche Stolperfallen verstehen
+	    müssen; Trainer die Fortbildungen in Digitaler Sicherheit
+	    anbieten, um Endbenutzern handfeste Ratschläge geben zu
+	    können; und natürlich Enthusiasten.
+	  <p class="text-justify">
+	    <strong>Unser erweitertes Ziel ist die doppelte Menge an
+	    Spenden</strong>.  Wenn 4000&nbsp;Menschen nur fünf oder
+	    zehn Euro jeden Monat spenden, werden wir unser Team
+	    vergrößern und mit ihnen Projekte im GnuPG Ökosystem
+	    unterstützten.  Ein Projekt, an dem wir wirklich gerne
+	    mitarbeiten möchten, ist GPG Tools, auf das sich viele
+	    Aktivisten und Journalisten verlassen um ihre
+	    Onlinekommunikation zu schützen.  Wir wollen
+	    sicherstellen, dass die GPG-Integration für das
+	    Mailprogramm von Apple unterstützt ist sobald eine neue
+	    Version von macOS erscheint.
+	  <p class="text-justify">
+	    Vielleicht benutzt Du nicht GnuPG um Deine E-Mails zu
+	    verschlüsseln.  Nichtsdestotrotz verlassen sich
+	    Journalisten deren Arbeit du schätzt auf GnuPG um ihre
+	    Quellen zu schützen, verlassen sich Aktivisten die für
+	    eine Sache kämpfen die du unterstützenswert findest auf
+	    GnuPG um ihre Kommunikation zu schützen, und verlassen
+	    sich Anwälte die mit ihren Klienten verkehren auf GnuPG um
+	    ihrer Verschwiegenheitspflicht in unserer digitalen Welt
+	    nachzukommen.  Weiterhin verlassen sich Betriebsysteme
+	    basierend auf freier Software auf GnuPG um ihre
+	    Softwareaktualisierungen zu verifizieren.
+	  </p>
+	  <p style="font-size: 22px;">Falls du wie wir überzeugt bist,
+	  dass diese Arbeit essenziell ist um Demokratie und
+	  Privatsphäre zu schützen, dann <strong>hilf uns bitte unsere
+	  Arbeit fortzusetzen und unabhängig zu bleiben</strong>.</p>
 	</div>
       </div>
     </div>
@@ -309,10 +341,10 @@
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
 		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> GnuK</h3>
-		  <p>The GnuK is a free software and open schematic
-		    security token developed by Niibe.  At the next level of
-		    support, we will invest more in the production and
-		    distribution </p>
+		  <p>The GnuK is a fully free software and open
+		    schematic security token developed by Niibe.  We
+		    plan to invest more in its production and
+		    distribution.</p>
 		</div>
 	      </div>
 	    </div>
@@ -320,24 +352,25 @@
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
 		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book</h3>
-		  <p>Our next goal is to improve documentation.  In
-		    particular, we are working on a book called <i>An
-		      Advanced Introduction to GnuPG</i>, which will explain
-		    how GnuPG works and best practices.  It is targetted
-		    towards digital security trainers, programmers
-		    integrating GnuPG to their applications, and
-		    enthusiasts.</p>
+		  <p>We want to improve documentation.  In particular,
+		    we are working on a book called <i>An Advanced
+		    Introduction to GnuPG</i>, which will explain how
+		    GnuPG works as well as best practices.  It is
+		    targetted towards digital security trainers,
+		    programmers integrating GnuPG to their
+		    applications, and enthusiasts.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-4">
 		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Greater Ecosystem</h3>
-		  <p>Few people use GnuPG directly.  Instead they interact
-		    with it via some tool.  We hope to be able to help these
-		    tool developers better integrate GnuPG support.  For
-		    instance, we want to make sure that GPG Tools, the
-		    plug-in for Apple's mailer, works as soon as a new
-		    version of OS&nbsp;X is released.</p>
+		  <p>Few people use GnuPG directly.  Instead they
+		    interact with it via some tool.  We hope to better
+		    help these tool developers improve GnuPG
+		    integration.  In particular, we want to make sure
+		    that GPG Tools, the GPG plug-in for Apple's
+		    mailer, works as soon as a new version of
+		    macOS is released.</p>
 		</div>
 	      </div>
 	    </div>
@@ -1550,7 +1583,7 @@
 	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
 	    </div>
 	    <div class="media-body">
-	      <strong>Niibe</strong>-san is a long time free software
+	      <strong>Niibe</strong> is a long time free software
 	      hacker who joined the GnuPG project in 2011 to work on
 	      smart cards and the Gnuk Token.
 	    </div>
@@ -1560,8 +1593,7 @@
       <div class="camp-final-pitch row">
 	<div class="col">
 	  <center>
-	    <a class="btn btn-primary btn-lg"
-               href="/donate/donate.de.html" role="button">Spenden</a>
+	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Spende jetzt!</a>
 	  </center>
 	</div>
       </div>
