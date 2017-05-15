@@ -66,6 +66,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.1.21 released (2017-05-15)                             :important:
+
+A new version of GnuPG has been released.  This release fixes a
+pubring.gpg corruption bug introduced with 2.1.20.  Read the full
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000405.html][announcement mail]] for details.
 
 ** GnuPG 2.1.20 released (2017-04-03)
 

@@ -21,16 +21,16 @@
 #
 # GnuPG-2.1
 #
-#+macro: gnupg21_ver  2.1.20
-#+macro: gnupg21_date 2017-04-03
-#+macro: gnupg21_size 6304k
-#+macro: gnupg21_sha1 500ddae8e4225ae2e300934090f9b9a427b8def1
-#+macro: gnupg21_sha2 24cf9a69369be64a9f6f8cc11a1be33ab7780ad77a6a1b93719438f49f69960d
-#+macro: gnupg21_w32_ver  2.1.20_20170403
-#+macro: gnupg21_w32_date 2017-04-03
-#+macro: gnupg21_w32_size 3755k
-#+macro: gnupg21_w32_sha1 69308ee80699ebb48a055963418597767a76d1d8
-#+macro: gnupg21_w32_sha2 e99ded9c749da2d29cb3fc531ceccb04009f61f263cc76a3bf7ab5c95d93b75f
+#+macro: gnupg21_ver  2.1.21
+#+macro: gnupg21_date 2017-05-15
+#+macro: gnupg21_size 6321k
+#+macro: gnupg21_sha1 1852c066bc21893bc52026ead78edf50fdf15e13
+#+macro: gnupg21_sha2 7aead8a8ba75b69866f583b6c747d91414d523bfdfbe9a8e0fe026b16ba427dd
+#+macro: gnupg21_w32_ver  2.1.21_20170515
+#+macro: gnupg21_w32_date 2017-05-15
+#+macro: gnupg21_w32_size 3761k
+#+macro: gnupg21_w32_sha1 f8a75914e8d82375a89e39fbf45d9f72ed8ab92c
+#+macro: gnupg21_w32_sha2 ae4af56d069cebe82b5891e67b54cd297c4799f5d590fc1c678bbd9cd7b932b2
 
 
 #
