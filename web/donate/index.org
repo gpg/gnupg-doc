@@ -169,8 +169,9 @@
 	<div class="col-sm-10 col-sm-offset-1">
 	  <h2>GnuPG Needs Your Help!</h2>
 	  <p class="text-justify">
-	    <strong><a href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html">For
-	    over 20 years</a>, GnuPG has helped protect online
+	    <strong><a
+href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
+            >For 20 years</a>, GnuPG has helped protect online
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
@@ -352,7 +353,7 @@
 		    integration.  In particular, we want to make sure
 		    that GPG Tools, the GPG plug-in for Apple's
 		    mailer, works as soon as a new version of
-		    OS&nbsp;X is released.</p>
+		    macOS is released.</p>
 		</div>
 	      </div>
 	    </div>
