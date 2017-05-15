@@ -140,9 +140,10 @@
             <p>To continue supporting and improving GnuPG, we, the
               main GnuPG developers, are soliciting donations from the
               general public.  Our <strong>primary goal</strong> is to
-              raise <strong>15&#x202f;000 euros per month</strong> to fully
-              fund 3 developers; our <strong>stretch goal</strong> is
-              twice that, <strong>30&#x202f;000</strong> euros per month.</p>
+              raise <strong>15&#x202f;000 euros per month</strong> to
+              fully fund 3 developers; our <strong>stretch
+              goal</strong> is twice that, <strong>30&#x202f;000 euros
+              per month</strong>.</p>
             <p>Please consider donating to ensure that this critical
               piece of software continues to work for everyone.</p>
 	  </div>
@@ -172,7 +173,7 @@
 	  <p class="text-justify">
 	    <strong><a
 href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
-            >For 20 years</a>, GnuPG has helped protect online
+            >For the past 20 years</a>, GnuPG has helped protect online
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
@@ -242,7 +243,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    to <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>,
 	    and
 	    supported <a href="https://www.fsij.org/category/gnuk.html">the
-	    GnuK project</a>&mdash;a free source and free hardware
+	    Gnuk project</a>&mdash;a free source and free hardware
 	    security token.
 	  <p class="text-justify">
 	    <strong>We want to continue this work in the long
@@ -251,8 +252,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             This means making sure that a majority of our funding
             comes from individual donors, and not corporations.
             Further, to ensure long-term stability, our focus is on
-            recurring donations and not one-time donations, like last
-            time.
+            recurring donations and not one-time donations.
 	  <p class="text-justify">
 	    <strong>Our primary goal is to get donation commitments
 	      for 15&#x202f;000&nbsp;euros per month&mdash;enough to
@@ -260,31 +260,33 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	      just 2000&nbsp;people donate 5 or 10 euros each month,
 	      the equivalent of just 2 or 3 cups of coffee.
 	  <p class="text-justify">
-	    <div class="pull-right" style="width: 40%;">
+	    <div class="pull-right" style="width: 40%; margin: 1em">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
-              <p id="camp-caption-gnuk" class="text-center">The GnuK Token</p>
+              <p id="camp-caption-gnuk" class="text-center">The Gnuk Token</p>
 	    </div>
 	    This money will firstly allow us to continue our
 	    maintenance of GnuPG.  It will also be used to fund our
-	    work on the GnuK security token.  One new project that it
-	    will enable is a book called "An Advanced Introduction to
-	    GnuPG," which has three principle audiences: developers
-	    who want to integrate GnuPG into their programs, and need
-	    to understand the various concepts, the important security
-	    tradeoffs, and common pitfalls; digital security trainers
-	    who need to understand GnuPG to be able to make sound
-	    recommendations to users; and, of course, enthusiasts.
+	    work on the Gnuk security token.  And, one new project
+	    that it will support is a book called "An Advanced
+	    Introduction to GnuPG."  A book for developers who want to
+	    integrate GnuPG into their programs, and need to
+	    understand the various concepts, the important security
+	    tradeoffs, and common pitfalls; for digital security
+	    trainers who need to understand GnuPG to be able to make
+	    sound recommendations to users; and, of course,
+	    for for enthusiasts.
 	  <p class="text-justify">
 	    <strong>Our stretch goal is to double this number of
 	    donations</strong>.  If 4000&nbsp;people donate just 5 or
 	    10 Euros each month, then we will continue to grow the
 	    team, and dedicate them to helping other projects in the
 	    GnuPG ecosystem.  One project that we really want to
-	    contribute to is GPG Tools, which many activists and
-	    journalists rely on to secure their online communication.
-	    We want to make sure that GPG integration in Apple's
-	    mailer is supported as soon as a new version of macOS is
-	    released.
+	    contribute to
+	    is <a href="https://gpgtools.org/">GPGTools</a>, which
+	    many activists and journalists rely on to secure their
+	    online communication.  We want to make sure that GPG
+	    integration in Apple's mailer is supported as soon as a
+	    new version of macOS is released.
 	  <p class="text-justify">
 	    Now, maybe you don't use GnuPG to encrypt your email.
 	    Nevertheless, some journalists whose work you value rely
@@ -324,10 +326,11 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
-		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> GnuK</h3>
-		  <p>The GnuK is a fully free software and open
-		    schematic security token developed by Niibe.  We
-		    plan to invest more in its production and
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/>Gnuk</h3>
+		  <p>The <a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
+		    is a fully free software and open schematic
+		    security token developed by Niibe.  We want to
+		    invest more in its production and
 		    distribution.</p>
 		</div>
 	      </div>
@@ -336,13 +339,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
 		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book</h3>
-		  <p>We want to improve documentation.  In particular,
-		    we are working on a book called <i>An Advanced
-		    Introduction to GnuPG</i>, which will explain how
-		    GnuPG works as well as best practices.  It is
-		    targetted towards digital security trainers,
-		    programmers integrating GnuPG to their
-		    applications, and enthusiasts.</p>
+		  <p>We want to improve documentation.  On major
+                    project in this area is a book that we have
+                    started to write called <i>An Advanced
+                    Introduction to GnuPG</i>, which will explain how
+                    GnuPG works as well as best practices.  It is
+                    targetted towards digital security trainers,
+                    programmers integrating GnuPG to their
+                    applications, and enthusiasts.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
@@ -352,9 +356,9 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 		    interact with it via some tool.  We hope to better
 		    help these tool developers improve GnuPG
 		    integration.  In particular, we want to make sure
-		    that GPG Tools, the GPG plug-in for Apple's
-		    mailer, works as soon as a new version of
-		    macOS is released.</p>
+		    that <a href="https://gpgtools.org/">GPGTools</a>,
+		    the GnuPG plug-in for Apple's mailer, works as
+		    soon as a new version of macOS is released.</p>
 		</div>
 	      </div>
 	    </div>
