@@ -337,7 +337,7 @@ string of the source file or nil if not available."
       (insert "  <div id=\"cpyright\">
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
       ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
-            src=\"/share/cc-by-sa-3.0_80x15.png\"/></a>&nbsp;
+            src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
     These web pages are
     Copyright 1998--2017 The GnuPG Project and licensed under a
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
