@@ -247,6 +247,8 @@ sub write_template ($) {
         $check_paytype = "PP";
     } elsif ( $paytype eq "se" ) {
         $check_paytype = "SE";
+    } elsif ( $paytype eq "bc" ) {
+        $check_paytype = "BC";
     }
 
     # Set var for the paypal button
@@ -470,6 +472,10 @@ sub write_checkout_page ()
     elsif ( $paytype eq "pp" ) {
         write_template("donate/checkout-pp.html");
     }
+    elsif ( $paytype eq "bc" ) {
+        # For Bitcoins this is the final page
+        write_template("donate/checkout-bc.html");
+    }
     else {
         # For SEPA this is the final page
         write_template("donate/checkout-se.html");
@@ -547,7 +553,10 @@ sub check_donation ()
 
     # Check the payment type
     $paytype = $q->param("paytype");
-    if ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
+    if ( $paytype eq "bc" ) {
+        # No further checks - this is kind of a hack.
+    }
+    elsif ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
 
         if ($lang eq 'de') {
             $msg= 'Keine Zahlungsart angegeben.'
