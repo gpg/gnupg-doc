@@ -233,7 +233,8 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             Stripe, Facebook and the Linux Foundatation each committed
             to donating about 50&#x202f;000&nbsp;euros per year.
 	  </p>
-	  <div class="text-center">
+          <div class="pull-right text-center"
+               style="width: 50%; margin-left: 1em; margin-top: 0.5em;">
             <a
 href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
 	    ><img id="camp-openpgp-conf"
