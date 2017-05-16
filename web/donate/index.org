@@ -132,7 +132,7 @@
 	      protect online privacy.</p>
 	    <p class="text-justify">Activists, journalists, lawyers, and many others rely on
 	      <a href="https://www.gnupg.org/">GnuPG</a> to protect
-	      their communication.  And, the software updaters in
+	      their communication.  And,
 	      nearly all free software-based operating systems (which
 	      are used by more than two-thirds of the servers running
 	      the Internet) rely on GnuPG to verify the integrity of
