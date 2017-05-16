@@ -180,6 +180,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	      schützen.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.png"
+		     alt="Bild von Cindy Cohn"
 	    class="camp-headshot pull-right"></a>, Geschäftsführerin der
 	    <a href="https://www.eff.org/">Electronic Frontier
 	    Foundation</a> (EFF), beschreibt GnuPG als <i>"das
@@ -187,7 +188,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    Menschen auf der ganzen Welt
 	    kommuniziere."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
 	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.png"
-	    class="camp-headshot pull-left"></a>,
+	    alt="Bild von Sheera Frenkel" class="camp-headshot pull-left"></a>,
 	    Auslandskorrespondentin für BuzzFeed News, fügt
 	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
 	    wir ausgebildet GPG zu benutzen.</strong>  "Es geht um die
@@ -208,6 +209,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             Weiterhin wird GnuPG von einer breiten Masse an
             Organisationen und Firmen verwendet.  Arthur
             Jordan<img src="/share/campaign/img/headshots/arthur-jordan.png"
+		       alt="Bild von Arthur Jordan"
             class="camp-headshot pull-right">, Vizepräsident der IT
             von 2U, hat uns beispielsweise erzählt:
 	    <i>"als wir Universitäten kontaktierten um zu fragen, wie
@@ -373,8 +375,8 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 		    interagieren sie damit mit Hilfe eines Werkzeugs.
 		    Wir hoffen die Entwickler solcher Werkzeuge zu
 		    unterstützen die Integration von GnuPG zu
-		    verbessern.  Ins besondere möchten wir
-		    sicherstellen, dass GPGTools, das GPG Plugin für
+		    verbessern.  Insbesondere möchten wir
+		    sicherstellen, dass GPGTools, das GPG-Plugin für
 		    Apple's Mailprogramm, funktioniert sobald eine
 		    neue Version von macOS erscheint.</p>
 		</div>
@@ -388,7 +390,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
     <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
       <div class="container">
 	<div class="row">
-	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Was anadere über GnuPG sagen</h2></div>
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Was andere über GnuPG sagen</h2></div>
 	</div>
 	<div class="row">
 	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
