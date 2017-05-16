@@ -35,7 +35,10 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/" title="Home"><img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png"></a>
-	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.html" role="button">♥ GnuPG unterstützen</a>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn"
+             style="margin-right: 10px"
+              href="/donate/donate.de.html"
+              role="button">♥ GnuPG unterstützen</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
@@ -99,23 +102,23 @@
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
 	      <a class="btn btn-primary btn-lg btn-block" role="button"
-                 href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=de"
                  > 10&thinsp;€ pro Monat spenden</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=de"
                      >5&thinsp;€ pro Monat</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=de"
                      >20&thinsp;€ pro Monat</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
 		<a style="margin-top: 1em;"
-                   href="/cgi-bin/procdonate.cgi?mode=preset"
+href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
                    >Einen anderen Betrag spenden</a>
 	      </div>
 	    </div>
@@ -1605,7 +1608,9 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
       <div class="camp-final-pitch row">
 	<div class="col">
 	  <center>
-	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Spenden!</a>
+	    <a class="btn btn-primary btn-lg"
+               href="/donate/donate.de.html"
+               role="button">Spenden!</a>
 	  </center>
 	</div>
       </div>
