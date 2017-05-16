@@ -62,6 +62,7 @@
 	    <img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
 	    <div class="play-button"></div>
 	    <div class="video-text">Click to start the video (requires JavaScript from YouTube).</div>
+          </div>
 	</div>
 
 	<div class="col-xs-12 hidden-lg">
@@ -162,6 +163,7 @@
 		<img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
 		<div class="play-button"></div>
 		<div class="video-text">Click to start the video (requires JavaScript from YouTube).</div>
+              </div>
 	    </div>
 	  </div>
 	</div>
