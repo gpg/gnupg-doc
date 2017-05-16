@@ -92,13 +92,13 @@
 			<div class="form-group">
 				<div class="col-md-offset-2 col-md-6">
 					<div class="btn-group" role="group" aria-label="suggested amounts">
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-500-eur" class="btn btn-default">500&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-200-eur" class="btn btn-default">200&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-100-eur" class="btn btn-default">100&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-50-eur" class="btn btn-default">50&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur" class="btn btn-default">20&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur" class="btn btn-default">10&thinsp;€</button>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur" class="btn btn-default">5&thinsp;€</button>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-500-eur" class="btn btn-default">500&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-200-eur" class="btn btn-default">200&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-100-eur" class="btn btn-default">100&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-50-eur" class="btn btn-default">50&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur" class="btn btn-default">20&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur" class="btn btn-default">10&thinsp;€</a>
+						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur" class="btn btn-default">5&thinsp;€</a>
 					</div>
 					<span class="help-block">
 						Suggested amounts.
