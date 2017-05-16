@@ -190,7 +190,7 @@ sub write_template ($) {
         if ($lang eq 'de') {
             $stripe_data_label_value = 'Einmalig spenden';
         } elsif ($lang eq 'ja') {
-            $stripe_data_label_value = 'Make one-time donation';
+            $stripe_data_label_value = '一回の寄付する';
         } else {
             $stripe_data_label_value = 'Make one-time donation';
         }
@@ -202,8 +202,8 @@ sub write_template ($) {
             $recur_text    = 'monatlich';
             $stripe_data_label_value = 'Monatlich spenden';
         } elsif ($lang eq 'ja') {
-            $recur_text    = 'monthly';
-            $stripe_data_label_value = 'Donate monthly';
+            $recur_text    = '毎月';
+            $stripe_data_label_value = '毎月寄付する';
         } else {
             $recur_text    = 'monthly';
             $stripe_data_label_value = 'Donate monthly';
@@ -216,8 +216,8 @@ sub write_template ($) {
             $recur_text    = 'vierteljährlich';
             $stripe_data_label_value = 'Vierteljährlich spenden';
         } elsif ($lang eq 'ja') {
-            $recur_text    = 'quarterly';
-            $stripe_data_label_value = 'Donate quarterly';
+            $recur_text    = '3ヶ月毎';
+            $stripe_data_label_value = '3ヶ月毎に寄付する';
         } else {
             $recur_text    = 'quarterly';
             $stripe_data_label_value = 'Donate quarterly';
@@ -230,8 +230,8 @@ sub write_template ($) {
             $recur_text    = 'jährlich';
             $stripe_data_label_value = 'Jährlich spenden';
         } elsif ($lang eq 'ja') {
-            $recur_text    = 'yearly';
-            $stripe_data_label_value = 'Donate yearly';
+            $recur_text    = '毎年';
+            $stripe_data_label_value = '毎年寄付する';
         } else {
             $recur_text    = 'yearly';
             $stripe_data_label_value = 'Donate yearly';
@@ -273,7 +273,7 @@ sub write_template ($) {
         my $fieldname;
 
         if ($lang eq 'de')    { $fieldname = "Feld $_: ";  }
-        elsif ($lang eq 'ja') { $fieldname = "Field $_: "; }
+        elsif ($lang eq 'ja') { $fieldname = "欄 $_: "; }
         else                  { $fieldname = "Field $_: "; }
 
         if    (/amount/) { $err_amount = $error_marker; }
@@ -539,8 +539,8 @@ sub check_donation ()
             $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
                 . 'können wir leider keine Spenden unter 4 Euro annehmen.';
         } elsif ($lang eq 'ja') {
-            $msg = 'Sorry, due to overhead costs we do'
-                . ' not accept donations of less than 4 Euro.';
+            $msg = '申し訳ありません。間接経費のため、4ユーロ未満の寄付'
+                . 'は受け付けることができません。';
         }
         else {
             $msg = 'Sorry, due to overhead costs we do'
@@ -562,8 +562,8 @@ sub check_donation ()
             $msg= 'Keine Zahlungsart angegeben.'
                 . ' Bitte "Kreditkarte", "PayPal" oder "SEPA" auswählen.';
         } elsif ($lang eq 'ja') {
-            $msg= 'No payment type selected.'
-                . ' Use "Credit Card", "PayPal", or "SEPA".';
+            $msg= '支払い方式が選択されていません。'
+                . '"クレジットカード", "PayPal", または "SEPA" が選択できます。';
         }
         else {
             $msg= 'No payment type selected.'
@@ -677,19 +677,19 @@ sub complete_stripe_checkout ()
     $recur = $stripe{"Recur"};
     if ( $recur =~ /12/ ) {
         if ($lang eq 'de')    { $recur_text = 'monatlich'; }
-        elsif ($lang eq 'ja') { $recur_text = 'Monthly'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎月'; }
         else                  { $recur_text = 'Monthly'; }
     } elsif ( $recur =~ /4/ ) {
         if ($lang eq 'de')    { $recur_text = 'vierteljährlich'; }
-        elsif ($lang eq 'ja') { $recur_text = 'Quarterly'; }
+        elsif ($lang eq 'ja') { $recur_text = '3ヶ月毎'; }
         else                  { $recur_text = 'Quarterly'; }
     } elsif ( $recur =~ /1/ ) {
         if ($lang eq 'de')    { $recur_text = 'jährlich'; }
-        elsif ($lang eq 'ja') { $recur_text = 'Yearly'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎年'; }
         else                  { $recur_text = 'Yearly'; }
     } else {
         if ($lang eq 'de')    { $recur_text = 'nein'; }
-        elsif ($lang eq 'ja') { $recur_text = 'Just once'; }
+        elsif ($lang eq 'ja') { $recur_text = '一回だけ'; }
         else                  { $recur_text = 'Just once'; }
     }
 
@@ -709,14 +709,14 @@ EOF
         }
     } elsif ($lang eq 'ja') {
         $message = <<EOF;
-Amount ....: $stripe{"Amount"} $stripe{"Currency"}
-Recurring .: $recur_text
-Desc ......: $stripe{"Desc"}
-Cardno.....: *$stripe{"Last4"}
-Processor .: Stripe
+金額 ......: $stripe{"Amount"} $stripe{"Currency"}
+毎回?一回? : $recur_text
+説明 ......: $stripe{"Desc"}
+カード番号 : *$stripe{"Last4"}
+決済業者 ..: Stripe
 Charge-Id .: $stripe{"Charge-Id"}
-Timestamp .: $stripe{"_timestamp"}
-Email .....: $stripe{"Email"}
+時刻 ......: $stripe{"_timestamp"}
+メール ....: $stripe{"Email"}
 EOF
         if ($stripe{"account-id"} ne '') {
             $message = $message . "Account-Id : " . $stripe{"account-id"};
