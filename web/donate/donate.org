@@ -76,7 +76,7 @@
 				<div class="col-md-3">
 					<input type="text" class="form-control"
 								 name="amountother" id="amountother" placeholder=""
-								 value=""/><!--AMT_OTHER-->
+								 value=""/><!--AMOUNT-->
 				</div>
 				<div class="col-md-2">
 					<select class="form-control" name="currency" id="currency">
