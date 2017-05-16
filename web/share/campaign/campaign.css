@@ -187,3 +187,70 @@ h4 small {
   white-space: nowrap;
   overflow: hidden;
 }
+.camp-video {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.camp-video img {
+  width: 100%;
+  left: 0;
+  opacity: 0.7;
+}
+.camp-video .play-button {
+  width: 80px;
+  height: 50px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+.camp-video .play-button {
+  transition: background-color 0.2s ease;
+  background-color: #333;
+}
+.camp-video:hover .play-button,
+.touch .play-button {
+  transition: background-color 0.2s ease;
+  background-color: #f00;
+}
+.camp-video .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 10px 0 10px 20.0px;
+  border-color: transparent transparent transparent #fff;
+}
+.camp-video img,
+.youtube .play-button {
+  cursor: pointer;
+}
+.camp-video img,
+.camp-video iframe,
+.camp-video .play-button,
+.camp-video .video-text,
+.camp-video .play-button:before {
+  position: absolute;
+}
+.camp-video .play-button,
+.camp-video .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.camp-video iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.camp-video .video-text {
+  width: 100%;
+  top: 20%;
+  text-align: center;
+  opacity: 1.0;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 130%;
+}

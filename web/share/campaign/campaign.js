@@ -41,3 +41,17 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.carousel').bcSwipe({ threshold: 50 });
 });
+
+
+$(document).ready(function() {
+    /* For the video preview, we use this for devices without hover events.  */
+    if ("ontouchstart" in document.documentElement) {
+	$("body").addClass("touch");
+    }
+
+    /* Click handler for all videos.  */
+    $(".camp-video").one("click", function() {
+	let yt_id = $(this).data("embed");
+	$(this).html('<iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/' + yt_id + '?autoplay=1&rel=0"></iframe>');
+    });
+});
