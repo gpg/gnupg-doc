@@ -1022,6 +1022,18 @@ elsif ($mode eq 'preset') {
     elsif ($q->param('plan') eq '12-20-eur' ) {
         $amount = '20';
     }
+    elsif ($q->param('plan') eq '12-50-eur' ) {
+        $amount = '50';
+    }
+    elsif ($q->param('plan') eq '12-100-eur' ) {
+        $amount = '100';
+    }
+    elsif ($q->param('plan') eq '12-200-eur' ) {
+        $amount = '200';
+    }
+    elsif ($q->param('plan') eq '12-500-eur' ) {
+        $amount = '500';
+    }
 
     write_main_page();
 }
