@@ -176,24 +176,25 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             >For the past 20 years</a>, GnuPG has helped protect online
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
-	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
-	    class="camp-headshot pull-right"></a>, Executive Director
+	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.png"
+	    alt="Picture of Cindy Cohn" class="media-object
+	    pull-right"></a>, Executive Director
 	    of the <a href="https://www.eff.org/">Electronic Frontier
 	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
 	    I most often communicate with people who are in need
 	    around the
 	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
-	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
-	    class="camp-headshot pull-left"></a>, Foreign
-	    Correspondent for BuzzFeed News, relates: <i>"<strong>As a
-	    news organization, we're trained on using GPG.</strong>
-	    "It's about your sources and what happens to them when you
-	    leave the country and you publish that explosive story and
-	    the government is looking for the whistleblower that
-	    handed you that key piece of information."</i>  And
-	    famously, GnuPG was Edward Snowden's tool of choice to
-	    securely communicate with journalists about the NSA mass
-	    surveillance leaks.
+	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.png"
+	    alt="Picture of Sheera Frenkel" class="media-object
+	    pull-left"></a>, Foreign Correspondent for BuzzFeed News,
+	    relates: <i>"<strong>As a news organization, we're trained
+	    on using GPG.</strong>  "It's about your sources and what
+	    happens to them when you leave the country and you publish
+	    that explosive story and the government is looking for the
+	    whistleblower that handed you that key piece of
+	    information."</i>  And famously, GnuPG was Edward
+	    Snowden's tool of choice to securely communicate with
+	    journalists about the NSA mass surveillance leaks.
 	  <p class="text-justify">
 	    But, GnuPG is not only used to encrypt
             email.  <strong>GnuPG protects software updates</strong>
@@ -201,8 +202,9 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             power <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">two-thirds
             of all servers on the Internet</a>.  And, GnuPG is widely
             used by organizations and companies.  For instance, Arthur
-            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
-            class="camp-headshot pull-right">, Vice-President of
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.png"
+            alt="Picture of Arthur Jordan"
+            class="media-object pull-left">, Vice-President of
             Information Technology at 2U, told us:
 	    <i>"when we reached out to universities about how they
 	    wanted to do secure file transfer, they were already using
