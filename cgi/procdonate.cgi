@@ -594,6 +594,7 @@ sub check_donation ()
     }
 
     # Now create a session.
+    $data{"lang"} = $lang;
     $data{"Stripeamount"} = $stripeamount;
     $data{"Euroamount"} = $euroamount;
     $data{"Recur"} = $recur;
@@ -622,6 +623,10 @@ sub resend_main_page ()
     my %data;
 
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
     $recur = $data{"Recur"};
@@ -647,6 +652,11 @@ sub complete_stripe_checkout ()
     # fixme: Change the error message to note that the card has not
     # been charged.  Somehow delete the token
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
 
     # Do the checkout.
     $stripe{"Card-Token"} = $q->param("stripeToken");
@@ -756,6 +766,11 @@ sub get_paypal_approval ()
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
 
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
+
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
     $request{"Desc"} =
@@ -812,6 +827,11 @@ sub confirm_paypal_checkout ()
     $sessid = $data{"_SESSID"};
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
 
     if ( $data{"Paytype"} ne "pp" ) {
         fail "Invalid paytype for Paypal transaction";
@@ -899,6 +919,11 @@ sub complete_sepa ()
 
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
 
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
