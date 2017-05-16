@@ -73,7 +73,7 @@
         <label for="inputType" class="col-md-2 control-label">
 					Amount <!--ERR_AMOUNT-->
 				</label>
-				<div class="col-md-4">
+				<div class="col-md-1">
 					<select class="form-control" name="amount" id="amount">
 						<option value="500" /><!--CHK_AMT500--> 500&thinsp;€</option>
 						<option value="200" /><!--CHK_AMT200--> 200&thinsp;€</option>
@@ -82,14 +82,15 @@
 						<option value="20" /><!--CHK_AMT20--> 20&thinsp;€</option>
 						<option value="10" /><!--CHK_AMT10--> 10&thinsp;€</option>
 						<option value="5" /><!--CHK_AMT5--> 5&thinsp;€</option>
+						<option value="other" /><!--CHK_AMTOTHER--> Other</option>
 					</select>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-2">
 					<input type="text" class="form-control"
-								 name="amountother" id="amountother" placeholder=""
+								 name="amountother" id="amountother" placeholder="other amount"
 								 value=""/><!--AMT_OTHER-->
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-2">
 					<select class="form-control" name="currency" id="currency">
 						<option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
 						<option value="USD" ><!--SEL_USD-->US Dollar</option>
