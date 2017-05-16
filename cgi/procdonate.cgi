@@ -1030,13 +1030,13 @@ elsif ($mode eq 'preset') {
         # Then look at arbitrary values
         # No checking needed.
         if ($q->param('s_amt') ne '') {
-            $amount = int $q->param('s_amount');
+            $amount = int $q->param('s_amt');
         }
         if ($q->param('s_cur') ne '') {
-            $currency = $q->param('s_currency');
+            $currency = $q->param('s_cur');
         }
         if ($q->param('s_pt') ne '') {
-            $paytype = $q->param('s_paytype');
+            $paytype = $q->param('s_pt');
         }
     }
 
