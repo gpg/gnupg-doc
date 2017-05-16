@@ -105,12 +105,12 @@
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
                      href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur"
-                     >5&thinsp;€ pro Monat spenden</a>
+                     >5&thinsp;€ pro Monat</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
                      href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur"
-                     >20&thinsp;€ pro Monat spenden</a>
+                     >20&thinsp;€ pro Monat</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
@@ -134,7 +134,7 @@
 	    und viele andere verlassen sich auf
 	      <a href="https://www.gnupg.org/">GnuPG</a> um ihre
 	      Korrespondenz zu beschützen.  Weiterhin verlassen sich
-	      beinahe alle auf freier Software basierenden
+	      beinahe alle auf Freier Software basierenden
 	      Betriebsysteme (die auf zwei drittel der Server des
 	      Internets genutzt werden) auf GnuPG um die Integrität
 	      ihrer Softwareaktualisierungen sicherzustellen.</p>
@@ -251,8 +251,8 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>
 	    mitgearbeitet,
 	    und <a href="https://www.fsij.org/category/gnuk.html">das
-	    GnuK Projekt</a> unterstützt&mdash;einem Sicherheits-Token
-	    bestehend aus freier Software und freier Hardware.
+	    Gnuk Projekt</a> unterstützt&mdash;einem Sicherheits-Token
+	    bestehend aus Freier Software und Freier Hardware.
 	  <p class="text-justify">
 	    <strong>Wir möchten diese Arbeit auf lange Zeit
             fortsetzen.</strong>  Aber wir wollen, dass unsere
@@ -272,10 +272,10 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	  <p class="text-justify">
 	    <div class="pull-right" style="width: 40%;">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
-              <p id="camp-caption-gnuk" class="text-center">Das GnuK Token</p>
+              <p id="camp-caption-gnuk" class="text-center">Das Gnuk Token</p>
 	    </div>
 	    Das Geld erlaubt uns zunächst weiterhin GnuPG zu pflegen.
-	    Weiterhin werden wir unsere Arbeit an dem GnuK
+	    Weiterhin werden wir unsere Arbeit an dem Gnuk
 	    Sicherheitstoken finanzieren.  Ein neues Projekt, welches
 	    uns das Geld ermöglichen soll, ist ein Buch mit dem Titel
 	    "An Advanced Introduction to GnuPG" &mdash; "Eine
@@ -292,28 +292,28 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    zehn Euro jeden Monat spenden, werden wir unser Team
 	    vergrößern und mit ihnen Projekte im GnuPG Ökosystem
 	    unterstützten.  Ein Projekt, an dem wir wirklich gerne
-	    mitarbeiten möchten, ist GPG Tools, auf das sich viele
+	    mitarbeiten möchten, ist GPGTools, auf das sich viele
 	    Aktivisten und Journalisten verlassen um ihre
 	    Onlinekommunikation zu schützen.  Wir wollen
 	    sicherstellen, dass die GPG-Integration für das
 	    Mailprogramm von Apple unterstützt ist sobald eine neue
 	    Version von macOS erscheint.
 	  <p class="text-justify">
-	    Vielleicht benutzt Du nicht GnuPG um Deine E-Mails zu
+	    Vielleicht benutzen Sie nicht GnuPG um Ihre E-Mails zu
 	    verschlüsseln.  Nichtsdestotrotz verlassen sich
-	    Journalisten deren Arbeit du schätzt auf GnuPG um ihre
+	    Journalisten deren Arbeit Sie schätzen auf GnuPG um ihre
 	    Quellen zu schützen, verlassen sich Aktivisten die für
-	    eine Sache kämpfen die du unterstützenswert findest auf
+	    eine Sache kämpfen die Sie unterstützenswert finden auf
 	    GnuPG um ihre Kommunikation zu schützen, und verlassen
 	    sich Anwälte die mit ihren Klienten verkehren auf GnuPG um
 	    ihrer Verschwiegenheitspflicht in unserer digitalen Welt
 	    nachzukommen.  Weiterhin verlassen sich Betriebsysteme
-	    basierend auf freier Software auf GnuPG um ihre
+	    basierend auf Freier Software auf GnuPG um ihre
 	    Softwareaktualisierungen zu verifizieren.
 	  </p>
-	  <p style="font-size: 22px;">Falls du wie wir überzeugt bist,
+	  <p style="font-size: 22px;">Falls Sie wie wir überzeugt sind,
 	  dass diese Arbeit essenziell ist um Demokratie und
-	  Privatsphäre zu schützen, dann <strong>hilf uns bitte unsere
+	  Privatsphäre zu schützen, dann <strong>helfen Sie uns bitte unsere
 	  Arbeit fortzusetzen und unabhängig zu bleiben</strong>.</p>
 	</div>
       </div>
@@ -323,7 +323,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-            <h2>What we will do</h2>
+            <h2>Was wir planen</h2>
 	  </div>
 	</div>
 	<div class="row goals is-table-row">
@@ -331,46 +331,52 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    <div class="row">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-1">
-		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Maintenance</h3>
-		  <p>Our first priority is to ensure continued maintenance
-		    of GnuPG.  This entails reacting to bug reports, dealing
-		    with security issues, and staying current with best
-		    cryptography practices.</p>
+		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Wartung</h3>
+		  <p>Unsere höchste Priorität ist sicherzustellen,
+		    dass GnuPG auch in Zukunft gewartet wird.  Dazu
+		    gehört das Reagieren auf Fehlerberichte,
+		    Sicherheitsprobleme zu beheben und mit dem
+		    neuesten Stand der Kryptographie mitzuhalten.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
-		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> GnuK</h3>
-		  <p>The GnuK is a fully free software and open
-		    schematic security token developed by Niibe.  We
-		    plan to invest more in its production and
-		    distribution.</p>
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> Gnuk</h3>
+		  <p>Das Gnuk ist ein Sicherheitstoken vollkommen
+		    bestehend aus Freier Software und offenen
+		    Bauplänen entwickelt von Niibe.  Wir planen mehr
+		    in seine Produktion und Vertrieb zu
+		    investieren.</p>
 		</div>
 	      </div>
 	    </div>
 	    <div class="row match-my-cols">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
-		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book</h3>
-		  <p>We want to improve documentation.  In particular,
-		    we are working on a book called <i>An Advanced
-		    Introduction to GnuPG</i>, which will explain how
-		    GnuPG works as well as best practices.  It is
-		    targetted towards digital security trainers,
-		    programmers integrating GnuPG to their
-		    applications, and enthusiasts.</p>
+		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Buch</h3>
+		  <p>Wir möchten die Dokumentation verbessern.
+		    Insbesondere arbeiten wir an einem Buch mit dem
+		    Titel <i>An Advanced Introduction to GnuPG</i>
+		    &mdash; <i>Eine Fortgeschrittene Einführung in
+		    GnuPG</i> &mdash; das erläutert wie GnuPG
+		    funktioniert und wie man es am besten einsetzt.
+		    Die Zielgruppen sind Trainer die Fortbildungen in
+		    Digitaler Sicherheit anbieten, Programmierer die
+		    GnuPG in ihre Anwendungen einbetten und
+		    Enthusiasten.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-4">
-		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Greater Ecosystem</h3>
-		  <p>Few people use GnuPG directly.  Instead they
-		    interact with it via some tool.  We hope to better
-		    help these tool developers improve GnuPG
-		    integration.  In particular, we want to make sure
-		    that GPG Tools, the GPG plug-in for Apple's
-		    mailer, works as soon as a new version of
-		    macOS is released.</p>
+		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Größeres Ökosystem</h3>
+		  <p>Wenige Leute nutzen GnuPG direkt.  Statt dessen
+		    interagieren sie damit mit Hilfe eines Werkzeugs.
+		    Wir hoffen die Entwickler solcher Werkzeuge zu
+		    unterstützen die Integration von GnuPG zu
+		    verbessern.  Ins besondere möchten wir
+		    sicherstellen, dass GPGTools, das GPG Plugin für
+		    Apple's Mailprogramm, funktioniert sobald eine
+		    neue Version von macOS erscheint.</p>
 		</div>
 	      </div>
 	    </div>
@@ -382,7 +388,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
     <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
       <div class="container">
 	<div class="row">
-	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>What others say about GnuPG</h2></div>
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Was anadere über GnuPG sagen</h2></div>
 	</div>
 	<div class="row">
 	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
@@ -734,7 +740,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarousel" role="button" data-slide="next">
-		    More Testimonials
+		    Mehr Referenzen
 		  </a>
 		</div>
 	      </div>
@@ -1510,12 +1516,12 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Picture of Werner">
+	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Bild von Werner">
 	    </div>
 	    <div class="media-body">
-	      <strong>Werner</strong> started GnuPG in 1997.  Werner
-	      is a long time free software supporter and co-founder of
-	      the FSFE.
+	      <strong>Werner</strong> gründete GnuPG im Jahr 1997.  Werner
+	      ist seit langem ein Unterstützer von Freier Software und
+	      ein Mitbegründer der FSFE.
 	    </div>
 	  </div>
 	</div>
@@ -1524,11 +1530,12 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Picture of Neal">
+	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Bild von Neal">
 	    </div>
 	    <div class="media-body">
-	      <strong>Neal</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
+	      <strong>Neal</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
 	    </div>
 	  </div>
 	</div>
@@ -1539,11 +1546,12 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Picture of Justus">
+	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Bild von Justus">
 	    </div>
 	    <div class="media-body">
-	      <strong>Justus</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
+	      <strong>Justus</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
 	    </div>
 	  </div>
 	</div>
@@ -1552,12 +1560,13 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Picture of Marcus">
+	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Bild von Marcus">
 	    </div>
 	    <div class="media-body">
-	      <strong>Marcus</strong> worked on GnuPG from 2001 to
-	      2012 and rejoined the project in 2017 to work in all
-	      areas.
+	      <strong>Marcus</strong> hat im Zeitraum von 2001 bis
+	      2012 an GnuPG gearbeitet und ist seit 2017 wieder
+	      eingestiegen um GnuPG auf allen Gebieten zu
+	      unterstützen.
 	    </div>
 	  </div>
 	</div>
@@ -1568,10 +1577,10 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Picture of Kai">
+	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Bild von Kai">
 	    </div>
 	    <div class="media-body">
-	      <strong>Kai</strong> is working on the Enigmail project since 2015.
+	      <strong>Kai</strong> arbeitet seit dem Jahr 2015 an dem Enigmail Projekt.
 	    </div>
 	  </div>
 	</div>
@@ -1580,12 +1589,13 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	<div class="camp-who col-md-6">
 	  <div class="media">
 	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
+	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Bild von Niibe">
 	    </div>
 	    <div class="media-body">
-	      <strong>Niibe</strong> is a long time free software
-	      hacker who joined the GnuPG project in 2011 to work on
-	      smart cards and the Gnuk Token.
+	      <strong>Niibe</strong> ist seit langem ein Hacker von
+	      Freier Software und kam im Jahr 2011 zu dem GnuPG
+	      Projekt um an Smart Cards und dem Gnuk Sicherheitstoken
+	      zu arbeiten.
 	    </div>
 	  </div>
 	</div>
@@ -1593,7 +1603,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
       <div class="camp-final-pitch row">
 	<div class="col">
 	  <center>
-	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Spende jetzt!</a>
+	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Spenden!</a>
 	  </center>
 	</div>
       </div>
