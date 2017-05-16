@@ -146,8 +146,9 @@ h4 small {
 }
 /* Main text */
 .camp-headshot {
-  height: 6em;
+  height: 8em;
   margin: 1em;
+  border-radius: 50%;
 }
 .camp-image {
   margin: 1em;
@@ -185,9 +186,4 @@ h4 small {
   opacity: .7;
   white-space: nowrap;
   overflow: hidden;
-}
-#camp-headshot {
-  height: 10em;
-  margin: 1.5em;
-  border-radius: 50%;
 }
