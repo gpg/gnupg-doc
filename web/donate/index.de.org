@@ -414,12 +414,13 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is the way that I most often communicate
-			    with people who are in need around the world.”
+			    “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit hilfsbedürftigen Menschen
+			    auf der ganzen Welt kommuniziere.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -432,13 +433,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “At the end of the day we're lawyers, and so
-			    we're going to be exchanging documents and emails, and the
-			    core of that is&mdash;the security for that is GPG.”
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">Staff Attorney</div>
+			    <div class="card-title">Anwalt</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -451,16 +453,19 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I was <!--recently--> speaking with a source <!-- about a potential
-			    story--> in Russia. I ran him through how to use GPG, and he
-			    recently sent me his first encrypted email and <!-- at the end
-			    of it, he--> said: ‘Thank you so much, it's really made
-			    me feel better, it made me feel like you care about my
-			    being safe.’ ”
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, weil ich das Gefühl habe, dass
+			    sie sich um meine Sicherheit sorgen..’ ”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -480,11 +485,12 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “Whether or not you have a GPG key, whether
-			    or not you ever send encrypted mail,
-			    you're relying on GPG to ensure that your
-			    software updates actually work the way
-			    that you expect.”  <!-- You're relying on a
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
 			    bunch of other stuff as well, but without
 			    GPG that other stuff wouldn't actually be
 			    effective. -->
@@ -492,7 +498,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmore</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Senior Staff Technologist</div>
+			    <div class="card-title">Leitender Angestellter der IT XXX</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -505,11 +511,13 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is vital for protecting certain attorney-client conversations.”
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
+			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -522,14 +530,16 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is <!-- a&mdash;the way that I describe it&mdash;is--> part of a balanced
-			    breakfast of any reporter especially one who wants to protect their
-			    sources, and be able to be reached for leaks and things of that
-			    nature.”
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-title">Leiter der Sicherheitsabteilung XXX</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -549,14 +559,17 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “The journalists we serve trust us to know the best ways
-			    to protect them.  And our use of the most secure, most
-			    practical tools available, like GPG, fulfills our duty
-			    to keep them safe.”
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">Staff Technologist</div>
+			    <div class="card-title">Staff Technologist xxx</div>
 			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
 			  </div>
 			</div>
@@ -569,12 +582,15 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We feel very safe using GPG to protect student data when we're doing
-			    file exchanges with universities.  It gives us a lot of comfort.”
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-title">2U</div>
 			  </div>
 			</div>
@@ -587,15 +603,15 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I think of GPG as one of the core tools
-			    that we need if we're going to have
-			    functioning self-government in the United
-			    States or around the world in the digital
-			    age.”
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -615,14 +631,17 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “As a news organization, we're trained on using GPG. It's about your
-			    sources and what happens to them when you leave the country and you
-			    publish that explosive story and the government is looking for the
-			    whistleblower that handed you that key piece of information.”
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die explosive
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -635,14 +654,15 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We [at SecureDrop] decided on GPG instead of other
-			    alternatives, in large part due to the fact that GPG is
-			    the most well-known and most used tool for asymmetric
-			    encryption.”
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">Software Engineer</div>
+			    <div class="card-title">Softwareentwickler</div>
 			    <div class="card-org">Freedom of the Press Foundation</div>
 			  </div>
 			</div>
@@ -655,12 +675,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “When we reached out to universities about how they wanted to do
-			    secure file transfer, they were already using GPG encryption.”
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -680,15 +702,16 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “For me personally, I think what GPG's
-			    been most helpful for is opening up access
-			    to people I could not otherwise
-			    communicate with and either help or tell
-			    their story.”
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
+			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -701,15 +724,19 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “But even if you are totally sure that you have nothing to hide, if you
-			    think that other people have things to hide and that it's a good idea
-			    for them to be able to hide those things, we think that <!-- you should be
-			    using these technologies, that -->you should be using GPG, because that
-			    helps protect those other people that really do need to use GPG.”
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General</div>
+			    <div class="card-title">Technologist General XXX</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -722,13 +749,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG hasn't saved our butt yet, but the
-			    fact that it is there is&mdash;it let's us
-			    sleep easier at night.”
+			    “GPG hat uns noch nicht den Arsch
+			    gerettet, aber die Tatsache, dass es da
+			    ist&mdash;es lässt uns nachts ruhig
+			    schlafen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-title">Distinguished Developer XXX</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
