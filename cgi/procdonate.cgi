@@ -140,25 +140,8 @@ sub write_template ($) {
     # Check the currency and predefined amount.
     if ( $currency =~ /EUR/i ) {
         $sel_eur = ' selected="selected"';
-        $xamount = int $amount;
-        if ( $xamount == 5 ) {
-            $chk_amt5 = $check_checked;
-        } elsif ( $xamount == 10 ) {
-            $chk_amt10 = $check_checked;
-        } elsif ( $xamount = 20 ) {
-            $chk_amt20 = $check_checked;
-        } elsif ( $xamount == 50 ) {
-            $chk_amt50 = $check_checked;
-        } elsif ( $xamount == 100 ) {
-            $chk_amt100 = $check_checked;
-        } elsif ( $xamount == 200 ) {
-            $chk_amt200 = $check_checked;
-        } elsif ( $xamount == 500 ) {
-            $chk_amt500 = $check_checked;
-        } else {
-            $chk_amtx = $check_checked;
-            $amt_other = $amount;
-        }
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /USD/i ) {
         $sel_usd = ' selected="selected"';
         $chk_amtx = $check_checked;
