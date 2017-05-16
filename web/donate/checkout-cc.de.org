@@ -1,0 +1,90 @@
+#+TITLE: GnuPG - Spenden - Zahlen mit Kreditkarte
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+<link rel="stylesheet" href="/share/site.css" type="text/css" />
+</head>
+<body lang="en">
+
+<p>
+Informationen zu Ihrer gewünschten Spende:
+</p>
+
+<table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+ <tr>
+   <td align="right">Betrag:</td>
+   <td><!--AMOUNT-->
+       <!--CURRENCY-->
+       <!--RECUR_TEXT--></td>
+ </tr>
+ <tr>
+   <td align="right">Name:</td>
+   <td><!--NAME--></td>
+ </tr>
+ <tr>
+   <td align="right">E-Mail:</td>
+   <td><!--MAIL--></td>
+ </tr>
+ <tr>
+   <td align="right" valign="top">Nachricht:</td>
+   <td><!--MESSAGE_FMT--></td>
+ </tr>
+</table>
+
+<p>
+  Falls etwas nicht korrekt ist, benutzen Sie bitte den zurück Knopf
+  weiter unten auf dieser Seite.  Wenn die Daten korrekt sind, können
+  sie nun mit der Spende fortfahren.
+</p>
+
+  <noscript>
+    <p>
+      <strong>Bitte schalten Sie Javascript ein.</strong>
+    </p>
+    <p id="smallnote">
+      Aus Sicherheitsgründen ist es empfehlenswert Javascript im
+      Browser abzuschalten.  Wir möchten jedoch die
+      Kreditkarteninformationen nicht selbst verarbeiten, sondern den
+      Services eines Zahlungsabwicklers in Anspruch nehmen und die
+      sensiblen Informationen direkt von Ihrem Browser an diese
+      übermitteln.  Bitte schalten Sie deswegen Javascript
+      für <emph>gnupg.org</emph> und <emph>stripe.com</emph> ein.
+    </p>
+  </noscript>
+
+  <!--ERRORSTR-->
+  <div class="buttonbox">
+  <p>
+    <form action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="hidden" name="mode" value="checkout-stripe">
+      <input type="hidden" name="sessid" value="<!--SESSID-->">
+      <script
+        src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-key="<!--STRIPEPUBKEY-->"
+        data-image="/share/gnupg-badge-128x128.png"
+        data-name="GnuPG"
+        data-description="Donation to the GnuPG project"
+        data-locale="<!--STRIPELOCALE-->"
+        data-amount="<!--STRIPEAMOUNT-->"
+        data-currency="<!--CURRENCY-->"
+        data-panel-label="Donate {{amount}} <!--RECUR_TEXT-->"
+        data-label="<!--STRIPE_DATA_LABEL_VALUE-->"
+        <!--STRIPE_DATA_EMAIL-->
+      >
+      </script>
+    </form>
+  </p>
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="re-main">
+    <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="hidden" name="lang" value="<!--LANG-->">
+    <input type="submit" class="donate-button-low" value="Back" />
+  </form>
+  </div>
+
+</body>
+</html>
+#+END_HTML
