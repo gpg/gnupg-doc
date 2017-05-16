@@ -1,3 +1,4 @@
+#                                                       -*- html -*-
 #+TITLE: GnuPG - Donate
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
@@ -71,40 +72,47 @@
       <!-- Predefined amounts -->
       <div class="form-group">
         <label for="inputType" class="col-md-2 control-label">
-					Amount <!--ERR_AMOUNT-->
-				</label>
-				<div class="col-md-3">
-					<input type="text" class="form-control"
-								 name="amountother" id="amountother" placeholder=""
-								 value=""/><!--AMOUNT-->
-				</div>
-				<div class="col-md-2">
-					<select class="form-control" name="currency" id="currency">
-						<option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
-						<option value="USD" ><!--SEL_USD-->US Dollar</option>
-						<option value="GBP" ><!--SEL_GBP-->British Pound</option>
-						<option value="JPY" ><!--SEL_JPY-->Yen</option>
-					</select>
-				</div>
-			</div>
+          Amount <!--ERR_AMOUNT-->
+        </label>
+        <div class="col-md-3">
+          <input type="text" class="form-control"
+                 name="amountother" id="amountother" placeholder=""
+                 value=""/><!--AMOUNT-->
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" name="currency" id="currency">
+            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+            <option value="USD" ><!--SEL_USD-->US Dollar</option>
+            <option value="GBP" ><!--SEL_GBP-->British Pound</option>
+            <option value="JPY" ><!--SEL_JPY-->Yen</option>
+          </select>
+        </div>
+      </div>
 
-			<!-- Custom amounts -->
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-6">
-					<div class="btn-group" role="group" aria-label="suggested amounts">
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-500-eur" class="btn btn-default">500&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-200-eur" class="btn btn-default">200&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-100-eur" class="btn btn-default">100&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-50-eur" class="btn btn-default">50&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur" class="btn btn-default">20&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur" class="btn btn-default">10&thinsp;€</a>
-						<a href="https://preview.gnupg.org/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur" class="btn btn-default">5&thinsp;€</a>
-					</div>
-					<span class="help-block">
-						Suggested amounts.
-					</span>
-				</div>
-			</div>
+      <!-- Custom amounts -->
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-6">
+          <div class="btn-group" role="group" aria-label="suggested amounts">
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=500"
+               class="btn btn-default">500&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=200"
+               class="btn btn-default">200&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=100"
+               class="btn btn-default">100&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=50"
+               class="btn btn-default">50&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=20"
+               class="btn btn-default">20&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=10"
+               class="btn btn-default">10&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=5"
+               class="btn btn-default">5&#x202f;€</a>
+          </div>
+          <span class="help-block">
+            Suggested amounts.
+          </span>
+        </div>
+      </div>
 
       <!-- Recurring -->
       <div class="form-group">
@@ -123,8 +131,8 @@
       <!-- Pay using -->
       <div class="form-group">
         <label for="paytype" class="col-md-2 control-label">
-					Pay using <!--ERR_PAYTYPE-->
-				</label>
+          Pay using <!--ERR_PAYTYPE-->
+        </label>
         <div class="col-md-6">
           <div class="radio">
             <label>

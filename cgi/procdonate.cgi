@@ -1013,6 +1013,7 @@ elsif ($mode eq 'preset') {
     $currency = 'EUR';
     $recur = '12';
     $paytype = 'cc';
+    # First dedicated payment plans.
     if ($q->param('plan') eq '12-5-eur' ) {
         $amount = '5';
     }
@@ -1025,14 +1026,18 @@ elsif ($mode eq 'preset') {
     elsif ($q->param('plan') eq '12-50-eur' ) {
         $amount = '50';
     }
-    elsif ($q->param('plan') eq '12-100-eur' ) {
-        $amount = '100';
-    }
-    elsif ($q->param('plan') eq '12-200-eur' ) {
-        $amount = '200';
-    }
-    elsif ($q->param('plan') eq '12-500-eur' ) {
-        $amount = '500';
+    else {
+        # Then look at arbitrary values
+        # No checking needed.
+        if ($q->param('s_amount') ne '') {
+            $amount = int $q->param('s_amount');
+        }
+        if ($q->param('s_currency') ne '') {
+            $currency = $q->param('s_currency');
+        }
+        if ($q->param('s_paytype') ne '') {
+            $paytype = $q->param('s_paytype');
+        }
     }
 
     write_main_page();
