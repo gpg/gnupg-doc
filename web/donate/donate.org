@@ -58,25 +58,24 @@
       </div>
     </div>
 
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<!--ERRORPANEL-->
-			</div>
-		</div>
-
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <!--ERRORPANEL-->
+      </div>
+    </div>
 
     <form class="form-horizontal" role="form"
           action="/cgi-bin/procdonate.cgi" method="POST">
-      <input type="hidden" name="mode" value="main">
+      <input type="hidden" name="mode" value="main" />
 
-      <!-- Predefined amounts -->
+      <!-- Amount and currency input field -->
       <div class="form-group">
         <label for="inputType" class="col-md-2 control-label">
           Amount <!--ERR_AMOUNT-->
         </label>
         <div class="col-md-3">
           <input type="text" class="form-control"
-                 name="amountother" id="amountother" placeholder=""
+                 name="amount" id="amountother" placeholder=""
                  value=""/><!--AMOUNT-->
         </div>
         <div class="col-md-2">
