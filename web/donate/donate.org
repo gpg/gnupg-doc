@@ -73,42 +73,30 @@
         <label for="inputType" class="col-md-2 control-label">
 					Amount <!--ERR_AMOUNT-->
 				</label>
-        <div class="col-md-6">
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount500"
-                   value="500" /><!--CHK_AMT500--> 500&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount200"
-                   value="200" /><!--CHK_AMT200--> 200&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount100"
-                   value="100" /><!--CHK_AMT100--> 100&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount50"
-                   value="50" /><!--CHK_AMT50--> 50&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount20"
-                   value="20" /><!--CHK_AMT20--> 20&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount10"
-                   value="10" /><!--CHK_AMT10--> 10&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount5"
-                   value="5" /><!--CHK_AMT5--> 5&thinsp;€
-          </label>
-        </div>
+				<div class="col-md-4">
+					<select class="form-control" name="amount" id="amount">
+						<option value="500" /><!--CHK_AMT500--> 500&thinsp;€</option>
+						<option value="200" /><!--CHK_AMT200--> 200&thinsp;€</option>
+						<option value="100" /><!--CHK_AMT100--> 100&thinsp;€</option>
+						<option value="50" /><!--CHK_AMT50--> 50&thinsp;€</option>
+						<option value="20" /><!--CHK_AMT20--> 20&thinsp;€</option>
+						<option value="10" /><!--CHK_AMT10--> 10&thinsp;€</option>
+						<option value="5" /><!--CHK_AMT5--> 5&thinsp;€</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<input type="text" class="form-control"
+								 name="amountother" id="amountother" placeholder=""
+								 value=""/><!--AMT_OTHER-->
+				</div>
+				<div class="col-md-4">
+					<select class="form-control" name="currency" id="currency">
+						<option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+						<option value="USD" ><!--SEL_USD-->US Dollar</option>
+						<option value="GBP" ><!--SEL_GBP-->British Pound</option>
+						<option value="JPY" ><!--SEL_JPY-->Yen</option>
+					</select>
+				</div>
       </div>
 
       <!-- Custom amounts -->
@@ -124,20 +112,7 @@
                 </label>
               </div>
             </div>
-            <div class="col-md-4">
-              <input type="text" class="form-control"
-                     name="amountother" id="amountother" placeholder=""
-                     value=""/><!--AMT_OTHER-->
-						</div>
-            <div class="col-md-4">
-              <select class="form-control" name="currency" id="currency">
-                <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
-                <option value="USD" ><!--SEL_USD-->US Dollar</option>
-                <option value="GBP" ><!--SEL_GBP-->British Pound</option>
-                <option value="JPY" ><!--SEL_JPY-->Yen</option>
-              </select>
-            </div>
-          </div>
+                    </div>
           <span class="help-block">Choosing “other” allows to donate
                 in other currencies.</span>
         </div>
