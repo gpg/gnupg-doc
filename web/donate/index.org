@@ -183,10 +183,10 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
 	    I most often communicate with people who are in need
 	    around the
-	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
-	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.png"
+	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.png"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
-	    pull-left"></a>, Foreign Correspondent for BuzzFeed News,
+	    pull-left">Sheera
+	    Frenkel</a>, Foreign Correspondent for BuzzFeed News,
 	    relates: <i>"<strong>As a news organization, we're trained
 	    on using GPG.</strong>  "It's about your sources and what
 	    happens to them when you leave the country and you publish
