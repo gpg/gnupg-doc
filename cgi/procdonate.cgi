@@ -513,7 +513,10 @@ sub check_donation ()
     $stripeamount = "0";
 
     # Check the amount and the recurring value
-    $data{"Amount"} = $amount;
+
+    # Note that we only use full Euro/USD/etc from the amount to avoid
+    # problems with ',' and '.' decimal separators.
+    $data{"Amount"} = int $amount;
     $data{"Currency"} = $currency;
     $data{"Recur"} = $recur;
     if (not payproc ('CHECKAMOUNT', \%data )) {
