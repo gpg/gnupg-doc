@@ -27,13 +27,16 @@
     <div class="container">
 
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed"
+				        data-toggle="collapse" data-target="#navbar"
+								aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png">
+        <img class="navbar-brand" alt="GnuPG"
+				     src="/share/gnupg-lock-white-250x250.png">
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
@@ -91,7 +94,7 @@
       <!-- Custom amounts -->
       <div class="form-group">
         <div class="col-md-offset-2 col-md-6">
-          <div class="btn-group" role="group" aria-label="suggested amounts">
+          <div class="btn-group btn-group-xs" role="group" aria-label="suggested amounts">
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=500"
                class="btn btn-default">500&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amount=200"
