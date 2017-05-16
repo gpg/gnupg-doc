@@ -1,3 +1,4 @@
+#                                                  -*- html -*-
 #+TITLE: GnuPG - Spenden
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
