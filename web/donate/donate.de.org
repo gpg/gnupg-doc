@@ -214,12 +214,12 @@
       <!-- Email -->
       <div class="form-group">
         <label for="mail" class="col-md-2 control-label">
-          Email <!--ERR_MAIL-->
+          E-Mail <!--ERR_MAIL-->
           <p class="text-muted"><small>(optional)</small></p>
         </label>
         <div class="col-md-6">
           <input type="email" class="form-control" name="mail"
-                 id="f_mail" placeholder="Email (optional)"
+                 id="f_mail" placeholder="E-Mail (optional)"
                  value=""/><!--MAIL-->
           <span class="help-block">
             Sollten bei der Bezahlung Probleme entstehen, möchten wir
@@ -232,7 +232,7 @@
       <!-- Message -->
       <div class="form-group">
         <label for="message" class="col-md-2 control-label">
-          Message
+          Nachricht
           <p class="text-muted"><small>(optional)</small></p>
         </label>
         <div class="col-md-6">
