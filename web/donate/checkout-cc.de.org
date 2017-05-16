@@ -34,7 +34,7 @@ Informationen zu Ihrer gewünschten Spende:
 </table>
 
 <p>
-  Falls etwas nicht korrekt ist, benutzen Sie bitte den zurück Knopf
+  Falls etwas nicht korrekt ist, benutzen Sie bitte den Zurück-Knopf
   weiter unten auf dieser Seite.  Wenn die Daten korrekt sind, können
   sie nun mit der Spende fortfahren.
 </p>
@@ -81,7 +81,7 @@ Informationen zu Ihrer gewünschten Spende:
     <input type="hidden" name="mode" value="re-main">
     <input type="hidden" name="sessid" value="<!--SESSID-->">
     <input type="hidden" name="lang" value="<!--LANG-->">
-    <input type="submit" class="donate-button-low" value="Back" />
+    <input type="submit" class="donate-button-low" value="Zurück" />
   </form>
   </div>
 
