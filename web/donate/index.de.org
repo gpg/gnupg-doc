@@ -1257,7 +1257,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmore.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Ob Sie einen GPG-Schlüssel haben oder
 			    nicht, ob Sie je verschlüsselt E-Mails
 			    versenden, Sie verlassen sich auf GPG um
@@ -1345,7 +1345,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Die Journalisten für die wir Arbeiten
 			    vertrauen darauf, dass wir wissen, wie man
 			    sie am besten beschützt.  Und die Art und
@@ -1461,7 +1461,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Wir [bei SecureDrop] haben uns für GPG
 			    statt anderer Alternativen entschieden,
 			    überwiegend da GPG das bekannteste und am
@@ -1516,7 +1516,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Für mich persönlich ist der entscheidende
 			    Vorteil von GPG, dass es mir ermöglicht
 			    mit Menschen zu kommunizieren, die ich
@@ -1545,7 +1545,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    “Aber auch wenn Sie ganz sicher sind, dass
 			    sie nichts zu verbergen haben, wenn Sie
 			    denken, dass andere Menschen etwas
