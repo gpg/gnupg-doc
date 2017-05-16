@@ -91,13 +91,18 @@
 			<!-- Custom amounts -->
 			<div class="form-group">
 				<div class="col-md-offset-2 col-md-6">
-					<div class="form-group row">
-						<div class="btn-group" role="group" aria-label="suggested amounts">
-							<button type="button" class="btn btn-default">500&thinsp;€</button>
-							<button type="button" class="btn btn-default">Middle</button>
-							<button type="button" class="btn btn-default">Right</button>
-						</div>
+					<div class="btn-group" role="group" aria-label="suggested amounts">
+						<button type="button" class="btn btn-default">500&thinsp;€</button>
+						<button type="button" class="btn btn-default">200&thinsp;€</button>
+						<button type="button" class="btn btn-default">100&thinsp;€</button>
+						<button type="button" class="btn btn-default">50&thinsp;€</button>
+						<button type="button" class="btn btn-default">20&thinsp;€</button>
+						<button type="button" class="btn btn-default">10&thinsp;€</button>
+						<button type="button" class="btn btn-default">5&thinsp;€</button>
 					</div>
+					<span class="help-block">
+						Suggested amounts.
+					</span>
 				</div>
 			</div>
 
