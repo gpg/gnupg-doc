@@ -1224,7 +1224,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Ich sprach <!--recently--> mit einer
 			    Quelle <!-- about a potential story--> in
 			    Russland. Ich habe ihm erklärt wie GPG
@@ -1316,7 +1316,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “GPG ist <!-- a&mdash;the way that I
 			    describe it&mdash;is--> Teil der
 			    ausgewogenen Ernährung eines jeden
@@ -1345,7 +1345,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    “Die Journalisten für die wir Arbeiten
 			    vertrauen darauf, dass wir wissen, wie man
 			    sie am besten beschützt.  Und die Art und
@@ -1431,7 +1431,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    “Als eine Nachrichtenorganisation sind wir
 			    ausgebildet GPG zu benutzen.  Es geht um
 			    die Quellen und was mit ihnen passiert
