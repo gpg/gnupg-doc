@@ -177,7 +177,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.png"
-	    alt="Picture of Cindy Cohn" class="media-object
+	    alt="Picture of Cindy Cohn" class="camp-headshot
 	    pull-right"></a>, Executive Director
 	    of the <a href="https://www.eff.org/">Electronic Frontier
 	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
@@ -185,7 +185,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    around the
 	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
 	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.png"
-	    alt="Picture of Sheera Frenkel" class="media-object
+	    alt="Picture of Sheera Frenkel" class="camp-headshot
 	    pull-left"></a>, Foreign Correspondent for BuzzFeed News,
 	    relates: <i>"<strong>As a news organization, we're trained
 	    on using GPG.</strong>  "It's about your sources and what
@@ -204,7 +204,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             used by organizations and companies.  For instance, Arthur
             Jordan<img src="/share/campaign/img/headshots/arthur-jordan.png"
             alt="Picture of Arthur Jordan"
-            class="media-object pull-left">, Vice-President of
+            class="camp-headshot pull-left">, Vice-President of
             Information Technology at 2U, told us:
 	    <i>"when we reached out to universities about how they
 	    wanted to do secure file transfer, they were already using

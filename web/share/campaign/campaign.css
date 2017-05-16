@@ -186,3 +186,8 @@ h4 small {
   white-space: nowrap;
   overflow: hidden;
 }
+#camp-headshot {
+  height: 8em;
+  margin: 1.5em;
+  border-radius: 50%;
+}
