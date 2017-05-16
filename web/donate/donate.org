@@ -73,21 +73,9 @@
         <label for="inputType" class="col-md-2 control-label">
 					Amount <!--ERR_AMOUNT-->
 				</label>
-				<div class="col-md-1">
-					<select class="form-control" name="amount" id="amount">
-						<option value="500" /><!--CHK_AMT500--> 500&thinsp;€</option>
-						<option value="200" /><!--CHK_AMT200--> 200&thinsp;€</option>
-						<option value="100" /><!--CHK_AMT100--> 100&thinsp;€</option>
-						<option value="50" /><!--CHK_AMT50--> 50&thinsp;€</option>
-						<option value="20" /><!--CHK_AMT20--> 20&thinsp;€</option>
-						<option value="10" /><!--CHK_AMT10--> 10&thinsp;€</option>
-						<option value="5" /><!--CHK_AMT5--> 5&thinsp;€</option>
-						<option value="other" /><!--CHK_AMTOTHER--> Other</option>
-					</select>
-				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<input type="text" class="form-control"
-								 name="amountother" id="amountother" placeholder="other amount"
+								 name="amountother" id="amountother" placeholder="Other amount in €"
 								 value=""/><!--AMT_OTHER-->
 				</div>
 				<div class="col-md-2">
@@ -98,26 +86,20 @@
 						<option value="JPY" ><!--SEL_JPY-->Yen</option>
 					</select>
 				</div>
-      </div>
+			</div>
 
-      <!-- Custom amounts -->
-      <div class="form-group">
-        <div class="col-md-offset-2 col-md-6">
-          <div class="form-group row">
-            <div class="col-md-2">
-              <div class="radio">
-                <label for="amount_radio_other">
-                  <input type="radio" id="amount_radio_other" name="amount"
-                         value="other" /><!--CHK_AMTX-->
-                  other
-                </label>
-              </div>
-            </div>
-                    </div>
-          <span class="help-block">Choosing “other” allows to donate
-                in other currencies.</span>
-        </div>
-      </div>
+			<!-- Custom amounts -->
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-6">
+					<div class="form-group row">
+						<div class="btn-group" role="group" aria-label="suggested amounts">
+							<button type="button" class="btn btn-default">500&thinsp;€</button>
+							<button type="button" class="btn btn-default">Middle</button>
+							<button type="button" class="btn btn-default">Right</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
       <!-- Recurring -->
       <div class="form-group">
