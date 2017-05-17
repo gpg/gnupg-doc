@@ -63,7 +63,7 @@ $(document).ready(function() {
 
   for (let value of vals) {
     $(".amount-btn-" + value.toString()).attr("href", "#");
-    $(".amount-btn-" + value.toString()).one("click", function() {
+    $(".amount-btn-" + value.toString()).on("click", function() {
       $("#amountother").attr("value", value.toString());
       $("#currency option").attr("selected", false);
       $("#currency option[value='EUR']").attr("selected", true);
