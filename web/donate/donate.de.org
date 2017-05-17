@@ -72,7 +72,7 @@
       <!-- Amount and currency input field -->
       <div class="form-group">
         <label for="inputType" class="col-md-2 control-label">
-          Amount <!--ERR_AMOUNT-->
+          Betrag <!--ERR_AMOUNT-->
         </label>
         <div class="col-md-3">
           <input type="text" class="form-control"
