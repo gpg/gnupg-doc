@@ -1,4 +1,4 @@
-#                                                  -*- html -*-
+#                                                       -*- html -*-
 #+TITLE: GnuPG - Spenden
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
@@ -27,13 +27,16 @@
     <div class="container">
 
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed"
+				        data-toggle="collapse" data-target="#navbar"
+								aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png">
+        <img class="navbar-brand" alt="GnuPG"
+				     src="/share/gnupg-lock-white-250x250.png">
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
@@ -55,90 +58,59 @@
       </div>
     </div>
 
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<!--ERRORPANEL-->
-			</div>
-		</div>
-
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <!--ERRORPANEL-->
+      </div>
+    </div>
 
     <form class="form-horizontal" role="form"
           action="/cgi-bin/procdonate.cgi" method="POST">
       <input type="hidden" name="mode" value="main">
       <input type="hidden" name="lang" value="de">
 
-      <!-- Predefined amounts -->
+      <!-- Amount and currency input field -->
       <div class="form-group">
         <label for="inputType" class="col-md-2 control-label">
-					Betrag <!--ERR_AMOUNT-->
-				</label>
-        <div class="col-md-6">
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount500"
-                   value="500" /><!--CHK_AMT500--> 500&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount200"
-                   value="200" /><!--CHK_AMT200--> 200&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount100"
-                   value="100" /><!--CHK_AMT100--> 100&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount50"
-                   value="50" /><!--CHK_AMT50--> 50&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount20"
-                   value="20" /><!--CHK_AMT20--> 20&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount10"
-                   value="10" /><!--CHK_AMT10--> 10&thinsp;€
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" name="amount" id="amount5"
-                   value="5" /><!--CHK_AMT5--> 5&thinsp;€
-          </label>
+          Amount <!--ERR_AMOUNT-->
+        </label>
+        <div class="col-md-3">
+          <input type="text" class="form-control"
+                 name="amount" id="amountother" placeholder=""
+                 value=""/><!--AMOUNT-->
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" name="currency" id="currency">
+            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+            <option value="USD" ><!--SEL_USD-->US Dollar</option>
+            <option value="GBP" ><!--SEL_GBP-->Britische Pfund</option>
+            <option value="JPY" ><!--SEL_JPY-->Yen</option>
+          </select>
         </div>
       </div>
 
       <!-- Custom amounts -->
       <div class="form-group">
         <div class="col-md-offset-2 col-md-6">
-          <div class="form-group row">
-            <div class="col-md-2">
-              <div class="radio">
-                <label for="amount_radio_other">
-                  <input type="radio" id="amount_radio_other" name="amount"
-                         value="other" /><!--CHK_AMTX-->
-                  anderer
-                </label>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <input type="text" class="form-control"
-                     name="amountother" id="amountother" placeholder=""
-                     value=""/><!--AMT_OTHER-->
-						</div>
-            <div class="col-md-4">
-              <select class="form-control" name="currency" id="currency">
-                <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
-                <option value="USD" ><!--SEL_USD-->US Dollar</option>
-                <option value="GBP" ><!--SEL_GBP-->Britische Pfund</option>
-                <option value="JPY" ><!--SEL_JPY-->Yen</option>
-              </select>
-            </div>
+          <div class="btn-group btn-group-xs" role="group" aria-label="vorgeschlagene Beträge">
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur"
+               class="btn btn-default">500&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur"
+               class="btn btn-default">200&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur"
+               class="btn btn-default">100&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur"
+               class="btn btn-default">50&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur"
+               class="btn btn-default">20&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur"
+               class="btn btn-default">10&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur"
+               class="btn btn-default">5&#x202f;€</a>
           </div>
-          <span class="help-block">Die Auswahl “anderer“ erlaubt das Spenden
-	                           in anderen Währungen.</span>
+          <span class="help-block">
+            Vorgeschlagene Beträge.
+          </span>
         </div>
       </div>
 
@@ -159,8 +131,8 @@
       <!-- Pay using -->
       <div class="form-group">
         <label for="paytype" class="col-md-2 control-label">
-					Bezahlen mit <!--ERR_PAYTYPE-->
-				</label>
+	  Bezahlen mit <!--ERR_PAYTYPE-->
+	</label>
         <div class="col-md-6">
           <div class="radio">
             <label>
