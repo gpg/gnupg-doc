@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 /* Fill donation amounts w/ javascript if possible.  */
 $(document).ready(function() {
-  let vals = ["500", "200", "100", "50", "10", "5"];
+  let vals = ["500", "200", "100", "50", "20", "10", "5"];
 
   for (let value of vals) {
     $(".amount-btn-" + value.toString()).attr("href","#");
