@@ -86,10 +86,10 @@ function get_param_from_url(name) {
 
 /* Defer loading Youtube iframe until the user clicks on the video.  */
 $(document).ready(function() {
-  /* For the video preview, we use this for devices without hover events.  */
-  if ("ontouchstart" in document.documentElement) {
-    $("body").addClass("touch");
-  }
+    /* For the video preview, we use this for devices without hover events.  */
+    if ("ontouchstart" in document.documentElement) {
+	$("body").addClass("touch");
+    }
 
     let wanted_yt_id = get_param_from_url('play');
     $(".camp-video").each(function() {
@@ -106,8 +106,6 @@ $(document).ready(function() {
        for f in YTID1 YTID2 ...; do wget -O $f.jpg http://i1.ytimg.com/vi/$f/maxresdefault.jpg; done # or hqdefault.jpg */
 
     /* Click handler for all videos.  */
-
-    /* http://i1.ytimg.com/vi/VGazSZUYyf4/hqdefault.jpg */
     $(".camp-video").one("click", function() {
 	let yt_id = $(this).data("embed").split(",")[0];
 	let yt_list = $(this).data("embed-list");
@@ -118,5 +116,4 @@ $(document).ready(function() {
 	$(this).html('<iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/'
 		     + yt_id + '?autoplay=1&modestbranding=1&rel=0' + extra_parms + '"></iframe>');
     });
-  }
 });
