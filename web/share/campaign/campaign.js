@@ -1,3 +1,10 @@
+/* Javascript for campaign related pages
+ *
+ * This code is Copyright 2017 The GnuPG Project and licensed
+ * under a Creative Commons Attribution-ShareAlike 4.0 International
+ * License.  See the file copying.org for details.
+ */
+
 /* For mobile devices in landscape orientation, the navbar is in the
    way of the video.  So hide it automatically then.  */
 $(document).ready(function() {

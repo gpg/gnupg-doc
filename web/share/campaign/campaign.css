@@ -1,4 +1,10 @@
-/* Custom CSS for GnuPG site start here.  */
+/* Custom CSS for GnuPG campaign pages.  */
+ *
+ * This code is Copyright 2017 The GnuPG Project and licensed
+ * under a Creative Commons Attribution-ShareAlike 4.0 International
+ * License.  See the file copying.org for details.
+ */
+
 /* The default brand is tiny, let's bump the size of the lock graphic.  */
 .navbar-brand {
   height: 50px;

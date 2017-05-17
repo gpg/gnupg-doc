@@ -1,3 +1,4 @@
+#                                                    -*- html -*-
 #+TITLE: GnuPG - Donate - Checkout with card
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
