@@ -197,14 +197,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             >For the past 20 years</a>, GnuPG has helped protect online
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
-	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.png"
+	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
 	    alt="Picture of Cindy Cohn" class="camp-headshot
 	    pull-right"></a>, Executive Director
 	    of the <a href="https://www.eff.org/">Electronic Frontier
 	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
 	    I most often communicate with people who are in need
 	    around the
-	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.png"
+	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
 	    pull-left">Sheera
 	    Frenkel</a>, Foreign Correspondent for BuzzFeed News,
@@ -223,7 +223,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             power <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">two-thirds
             of all servers on the Internet</a>.  And, GnuPG is widely
             used by organizations and companies.  For instance, Arthur
-            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.png"
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
             alt="Picture of Arthur Jordan"
             class="camp-headshot pull-left">, Vice-President of
             Information Technology at 2U, told us:
