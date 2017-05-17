@@ -121,7 +121,7 @@
       <div class="form-group">
         <label for="recur" class="col-md-2 control-label">Recurring</label>
         <div class="col-md-2">
-          <select class="form-control" name="recur">
+          <select class="form-control" name="recur" id="recur">
             <option value="0"
             selected="selected"><!--RECUR_NONE-->Just once</option>
             <option value="12" ><!--RECUR_MONTH-->Monthly</option>

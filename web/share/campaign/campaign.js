@@ -62,9 +62,13 @@ $(document).ready(function() {
   let vals = ["500", "200", "100", "50", "20", "10", "5"];
 
   for (let value of vals) {
-    $(".amount-btn-" + value.toString()).attr("href","#");
-    $(".amount-btn-" + value.toString()).one("click",function() {
-      $("#amountother").attr("value",value.toString());
+    $(".amount-btn-" + value.toString()).attr("href", "#");
+    $(".amount-btn-" + value.toString()).one("click", function() {
+      $("#amountother").attr("value", value.toString());
+      $("#currency option").attr("selected", false);
+      $("#currency option[value='EUR']").attr("selected", true);
+      $("#recur option").attr("selected", false);
+      $("#recur option[value='12']").attr("selected", true);
     });
   }
 });
