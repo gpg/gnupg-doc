@@ -254,3 +254,7 @@ h4 small {
   padding-right: 20px;
   font-size: 130%;
 }
+#camp-footer {
+  width: 100%;
+  background: #f8f8f8;
+}
