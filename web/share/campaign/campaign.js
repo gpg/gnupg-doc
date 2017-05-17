@@ -61,7 +61,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   let vals = ["500", "200", "100", "50", "20", "10", "5"];
 
-  for (let value of vals) {
+  for (let idx = 0; idx < vals.length; ++idx) {
     $(".amount-btn-" + value.toString()).attr("href", "#");
     $(".amount-btn-" + value.toString()).on("click", function() {
       $("#amountother").attr("value", value.toString());
