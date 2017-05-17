@@ -134,8 +134,10 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-	    <p class="lead">GnuPG braucht Ihre Unterstützung um Sie in
-	    einer überwachten Welt sicher zu machen XXX.</p>
+	    <p class="lead">
+	      GnuPG braucht Ihre Unterstützung um Ihre Privatsphäre im
+	      Internet zu schützen.
+	    </p>
 	    <p class="text-justify">Aktivisten, Journalisten, Anwälte
 	    und viele andere verlassen sich auf
 	      <a href="https://www.gnupg.org/">GnuPG</a> um ihre
