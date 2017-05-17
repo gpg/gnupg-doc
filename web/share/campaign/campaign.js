@@ -98,7 +98,6 @@ $(document).ready(function() {
 	if (yt_id_idx != -1) {
 	    $(this).data("embed", wanted_yt_id);
 	    $(this).children("img").attr("src", "/share/campaign/img/thumbs/" + wanted_yt_id + ".jpg");
-	    break;
 	}
     });
 
