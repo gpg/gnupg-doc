@@ -120,7 +120,7 @@
         <div class="col-md-2">
           <select class="form-control" name="recur">
             <option value="0"
-            selected="selected"><!--RECUR_NONE-->neun</option>
+            selected="selected"><!--RECUR_NONE-->nein</option>
             <option value="12" ><!--RECUR_MONTH-->monatlich</option>
             <option value="4" ><!--RECUR_QUARTER-->vierteljährlich</option>
             <option value="1" ><!--RECUR_YEAR-->jährlich</option>
