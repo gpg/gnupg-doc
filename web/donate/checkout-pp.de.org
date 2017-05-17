@@ -1,0 +1,50 @@
+#+TITLE: GnuPG - Donate - Checkout with PayPal
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Spenden an das GnuPG Projekt mit PayPal
+
+  Informationen zu Ihrer gewünschten Spende:
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Betrag:</td>
+     <td><!--AMOUNT-->
+         <!--CURRENCY--></td>
+   </tr>
+   <tr>
+     <td align="right">Name:</td>
+     <td><!--NAME--></td>
+   </tr>
+   <tr>
+     <td align="right">E-Mail:</td>
+     <td><!--MAIL--></td>
+   </tr>
+   <tr>
+     <td align="right" valign="top">Nachricht:</td>
+     <td><!--MESSAGE_FMT--></td>
+   </tr>
+  </table>
+#+END_HTML
+
+  Falls etwas nicht korrekt ist, benutzen Sie bitte den /Zurück/-Knopf
+  weiter unten auf dieser Seite.  Wenn die Daten korrekt sind, können
+  sie nun mittels des /Jetzt bezahlen/-Knopfes mit der Spende
+  fortfahren.
+
+#+BEGIN_HTML
+  <div class="buttonbox">
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="checkout-paypal" />
+    <input type="hidden" name="sessid" value="<!--SESSID-->" />
+    <input type="submit" class="donate-button" value="Jetzt bezahlen" />
+  </form>
+
+  <form action="/cgi-bin/procdonate.cgi" method="POST">
+    <input type="hidden" name="mode" value="re-main">
+    <input type="hidden" name="sessid" value="<!--SESSID-->">
+    <input type="submit" class="donate-button-low" value="Zurück" />
+  </form>
+  </div>
+#+END_HTML

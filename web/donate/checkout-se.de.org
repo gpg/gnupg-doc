@@ -1,0 +1,71 @@
+#+TITLE: GnuPG - Donate - Checkout using SEPA
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Spenden an das GnuPG Projekt mit SEPA
+
+  Mit SEPA-Überweisungen kann man Geld zwischen den 34
+  Mitgliedsstaaten der EU sowie sechs angegliederten Staaten
+  transferieren.
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Name:&nbsp;</td>
+     <td><!--NAME--></td>
+   </tr>
+   <tr>
+     <td align="right">E-Mail:&nbsp;</td>
+     <td><!--MAIL--></td>
+   </tr>
+   <tr>
+     <td align="right" valign="top">Nachricht:&nbsp;</td>
+     <td><!--MESSAGE_FMT--></td>
+   </tr>
+  </table>
+#+END_HTML
+
+  Bitte überweisen Sie Ihre Spende auf dieses Konto:
+
+#+BEGIN_HTML
+  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
+   <tr>
+     <td align="right">Kontoinhaber:&nbsp;</td>
+     <td>g10 Code GmbH</td>
+   </tr>
+   <tr>
+     <td align="right">IBAN:&nbsp;</td>
+     <td>DE76 3015 0200 0002 1086 03</td>
+   </tr>
+   <tr>
+     <td align="right">BIC:&nbsp;</td>
+     <td>WELADED1KSD</td>
+   </tr>
+   <tr>
+     <td align="right">Verwendungszweck:&nbsp;</td>
+     <td><!--SEPA_REF--></td>
+   </tr>
+   <tr>
+     <td align="right">Betrag:&nbsp;</td>
+     <td><!--AMOUNT-->
+         EUR</td>
+   </tr>
+  </table>
+#+END_HTML
+
+  Bitte achten Sie darauf, dass die unter Verwendungszweck angegebene
+  Referenznummer stimmt, damit wir Ihre Spende zuordnen können und Sie
+  in der Liste der Spender aufführen können, falls Sie das wünschen.
+  Die Referenznummer verliert ihre Gültigkeit nach 30 Tagen, bitte
+  überweisen Sie rechtzeitig.  Sie können einen anderen Betrag
+  überweisen, aber bitte überweisen Sie mindestens 5 Euro damit wir
+  unsere Verwaltungskosten decken können.  Sie können die
+  Referenznummer auch für Daueraufträge verwenden.
+
+  *Vielen Dank im Vorraus für Ihre Spende.*
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.de.html">Fortsetzen</a></li>
+  </ul>
+#+END_HTML

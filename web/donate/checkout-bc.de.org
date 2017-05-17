@@ -1,0 +1,24 @@
+#+TITLE: GnuPG - Donate - Donate Bitcoins
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Spenden an das GnuPG Projekt mit Bitcoins
+
+  Gespendete Bitcoins gehen an den [[https://www.gnupg.org/verein][GnuPG e.V.]]
+
+#+BEGIN_HTML
+  <p>
+  Senden Sie Ihre Bitcoins an
+  <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  ><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></a>.
+  </p>
+#+END_HTML
+
+
+  *Vielen Dank im Vorraus für Ihre Spende.*
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.de.html">Fortsetzen</a></li>
+  </ul>
+#+END_HTML
