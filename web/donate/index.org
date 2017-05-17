@@ -157,14 +157,19 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
+	  <h2>Video of the Day: Rick Astley
+            <small>GnuPG will never gonna give you up</small>
+          </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs" data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
+		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
+                   data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
 		<img src="/share/campaign/img/thumbs/6qQt5_kJGnY.jpg">
 		<div class="play-button"></div>
-		<div class="video-text">Click to start the video (requires JavaScript from YouTube).</div>
+		<div class="video-text">Click to start the video<br />
+                  <small>(requires JavaScript from YouTube.)</small>
+                </div>
               </div>
 	    </div>
 	  </div>
