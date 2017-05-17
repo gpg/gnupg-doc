@@ -169,7 +169,7 @@
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
 		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
                    data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
-		<img src="/share/campaign/img/thumbs/6qQt5_kJGnY.jpg">
+		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
 		<div class="play-button"></div>
 		<div class="video-text">Click to start the video<br />
                   <span style="font-size: 60%"
