@@ -94,21 +94,22 @@
       <!-- Custom amounts -->
       <div class="form-group">
         <div class="col-md-offset-2 col-md-6">
-          <div class="btn-group btn-group-xs" role="group" aria-label="suggested amounts">
+          <div class="btn-group btn-group-xs" role="group"
+               aria-label="suggested amounts">
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur"
-               class="btn btn-default">500&#x202f;€</a>
+               class="btn btn-default amount-btn-500">500&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur"
-               class="btn btn-default">200&#x202f;€</a>
+               class="btn btn-default amount-btn-200">200&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur"
-               class="btn btn-default">100&#x202f;€</a>
+               class="btn btn-default amount-btn-100">100&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur"
-               class="btn btn-default">50&#x202f;€</a>
+               class="btn btn-default amount-btn-50">50&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur"
-               class="btn btn-default">20&#x202f;€</a>
+               class="btn btn-default amount-btn-20">20&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur"
-               class="btn btn-default">10&#x202f;€</a>
+               class="btn btn-default amount-btn-10">10&#x202f;€</a>
             <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur"
-               class="btn btn-default">5&#x202f;€</a>
+               class="btn btn-default amount-btn-5">5&#x202f;€</a>
           </div>
           <span class="help-block">
             Suggested amounts.
