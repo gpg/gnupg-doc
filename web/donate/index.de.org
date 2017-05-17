@@ -1162,7 +1162,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		      Previous
 		    </a> -->
 		<a class="btn btn-success" href="#myCarouselMedium" role="button" data-slide="next">
-		  More Testimonials
+		  Mehr Referenzen
 		</a>
 	      </div>
 	    </div><!-- /.carousel -->
@@ -1612,7 +1612,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarouselSmall" role="button" data-slide="next">
-		    More Testimonials
+		    Mehr Referenzen
 		  </a>
 		</div>
 	      </div>
