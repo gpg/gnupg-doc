@@ -1524,14 +1524,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     </div>
     <!-- End of testimonials.  -->
 
-    <div id="team" class="camp-gutter container">
-      <div class="row">
+<div id="team" class="camp-gutter container">
+<div class="row">
 	<div class="col-xs-12">
 	  <h2>Who we are</h2>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Werner -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1558,9 +1558,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Justus -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1587,9 +1587,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Kai -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1615,31 +1615,35 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
-      <div class="camp-final-pitch row">
-	<div class="col">
-	  <center>
-	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Donate now!</a>
-	  </center>
-	</div>
-      </div>
-    </div>
+</div>
 
-    <div id="camp-footer">
-      <div class="camp-gutter container">
-        <div id="cpyright">
-          <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
-            <img alt="CC-BY-SA 4.0" style="border: 0"
-                  src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
-          This web page is
-          Copyright 2017 The GnuPG Project and licensed under a
-          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
-          Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
-          <a href="/copying.html">copying</a> for details.
-        </div>
+<div class="camp-final-pitch row">
+  <div class="col">
+      <center>
+        <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Donate now!</a>
+      </center>
+    </div>
+  </div>
+</div>
+
+<div class="camp-gutter container-fluid" id="camp-footer">
+  <div class="container">
+    <div class="row">
+      <div id="cpyright">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+          <img alt="CC-BY-SA 4.0" style="border: 0"
+                src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+        This web page is
+        Copyright 2017 The GnuPG Project and licensed under a
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+        <a href="/copying.html">copying</a> for details.
       </div>
     </div>
-  </body>
+  </div>
+</div>
+
+</body>
 </html>
 #+END_HTML
 
