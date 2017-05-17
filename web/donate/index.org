@@ -394,7 +394,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div id="myCarousel" class="carousel slide visible-lg" data-interval="false">
 
 	      <div class="carousel-inner" role="listbox">
-		<div class="item">
+		<div class="item active">
 		  <!-- Slide 1 -->
 
 		  <div class="row">
@@ -660,7 +660,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  </div>
 
 		</div>
-		<div class="item active">
+		<div class="item">
 		  <!-- Slide 5 -->
 
 		  <div class="row">
@@ -1095,7 +1095,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div id="myCarouselSmall" class="carousel slide visible-xs" data-interval="false" aria-hidden="true">
 
 	      <div class="carousel-inner" role="listbox">
-		<div class="item">
+		<div class="item active">
 		  <!-- Slide 1 XS -->
 
 		  <div class="row">
@@ -1420,7 +1420,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  </div>
 
 		</div>
-		<div class="item active">
+		<div class="item">
 		  <!-- Slide 13 XS -->
 
 		  <div class="row">
@@ -1474,8 +1474,32 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		      </div>
 		    </div>
 		  </div>
-
 		</div>
+
+		<div class="item">
+		  <!-- Slide 15 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG hasn't saved our butt yet, but the
+			    fact that it is there is&mdash;it let's us
+			    sleep easier at night.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">John Pershing</div>
+			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
 	      </div>
 	      <div class="text-center">
 		<!--
