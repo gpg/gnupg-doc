@@ -1,3 +1,4 @@
+#                                                        -*- html -*-
 #+TITLE: GnuPG - Spenden
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
@@ -61,8 +62,10 @@
 	  <h1>GnuPG Fundraising Rally</h1>
 	</div>
 	<div class="col-xs-12 col-lg-8">
-          <div class="embed-responsive embed-responsive-16by9 camp-video">
-            <iframe class="embed-responsive-item" allowfullscreen="0" src="https://www.youtube.com/embed/yB3V1YP8cKw"></iframe>
+	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="yB3V1YP8cKw">
+	    <img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
+	    <div class="play-button"></div>
+	    <div class="video-text">Klicken um das Video zu starten (erfordert JavaScript von YouTube).</div>
           </div>
 	</div>
 
@@ -163,9 +166,11 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
 	  <h2>Video of the Day: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
-	      <div class="embed-responsive embed-responsive-16by9">
-		<iframe class="embed-responsive-item" allowfullscreen="0" src="https://www.youtube.com/embed/DLzxrzFCyOs"></iframe>
-	      </div>
+	      <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="DLzxrzFCyOs">
+		<img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
+		<div class="play-button"></div>
+		<div class="video-text">Klicken um das Video zu starten (erfordert JavaScript von YouTube).</div>
+              </div>
 	    </div>
 	  </div>
 	</div>
@@ -240,9 +245,16 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             zugesagt, je ungefähr 50&#x202f;000&nbsp;Euro pro Jahr zu
             spenden.
 	  </p>
-	  <div class="text-center">
-	    <img src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg" id="camp-openpgp-conf">
-	    <p id="camp-caption-openpgp-conf">Das GnuPG Team auf der OpenPGP.conf 2016</p>
+          <div class="pull-right text-center"
+               style="width: 50%; margin-left: 1em; margin-top: 0.5em;">
+            <a
+href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
+	    ><img id="camp-openpgp-conf"
+src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
+              /></a>
+	    <p id="camp-caption-openpgp-conf">
+	      Das GnuPG Team auf der OpenPGP.conf 2016
+	    </p>
 	  </div>
 	  <p class="text-justify">
 	    <strong>Ermutigt von der überwältigenden Hilfsbereitschaft
