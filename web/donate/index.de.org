@@ -50,7 +50,7 @@
 		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
 		<li><a href="/donate/index.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
-		<li><a href="/donate/index.jp.html">
+		<li><a href="/donate/index.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
 	      </ul>
 	    </li>
@@ -82,7 +82,7 @@
 		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
 		<li><a href="/donate/index.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
-		<li><a href="/donate/index.jp.html">
+		<li><a href="/donate/index.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
 	      </ul>
 	    </li>
