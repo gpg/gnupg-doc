@@ -1,50 +1,132 @@
+#                                                    -*- html -*-
 #+TITLE: GnuPG - Donate - Checkout with PayPal
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Donate - Checkout with PayPal
-
-  Information on your intended donation:
-
 #+BEGIN_HTML
-  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
-   <tr>
-     <td align="right">Amount:</td>
-     <td><!--AMOUNT-->
-         <!--CURRENCY--></td>
-   </tr>
-   <tr>
-     <td align="right">Name:</td>
-     <td><!--NAME--></td>
-   </tr>
-   <tr>
-     <td align="right">Mail:</td>
-     <td><!--MAIL--></td>
-   </tr>
-   <tr>
-     <td align="right" valign="top">Message:</td>
-     <td><!--MESSAGE_FMT--></td>
-   </tr>
-  </table>
-#+END_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
 
-If something is wrong, please use the /back/ button to change it.  If
-the data is correct, you may complete the payment by clicking on the
-/Pay now/ button.
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
 
+</head>
+  <body lang="en">
+<style>
+.control-label {
+  padding-top: 0 !important;
+}
 
-#+BEGIN_HTML
-  <div class="buttonbox">
-  <form action="/cgi-bin/procdonate.cgi" method="POST">
-    <input type="hidden" name="mode" value="checkout-paypal" />
-    <input type="hidden" name="sessid" value="<!--SESSID-->" />
-    <input type="submit" class="donate-button" value="Pay now" />
-  </form>
+.form-control-static {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+</style>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
 
-  <form action="/cgi-bin/procdonate.cgi" method="POST">
-    <input type="hidden" name="mode" value="re-main">
-    <input type="hidden" name="sessid" value="<!--SESSID-->">
-    <input type="submit" class="donate-button-low" value="Back" />
-  </form>
-  </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" alt="GnuPG"
+               src="/share/gnupg-lock-white-250x250.png">
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="camp-gutter container">
+      <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+          <h2>Summary</h2>
+          <p>Information on your intended donation.</p>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Amount</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--AMOUNT--> <!--CURRENCY--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Name</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--NAME--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Mail</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--MAIL--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Message</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--MESSAGE_FMT--></p>
+              </div>
+            </div>
+          </form>
+          <p>
+          If something is wrong, please use the <em>back</em> button to change it.  If
+          the data is correct, you may complete the payment by clicking on the
+          <em>Pay now</em> button.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 col-md-offset-2">
+          <p>
+            <form action="/cgi-bin/procdonate.cgi" method="POST" class="form-inline">
+              <input type="hidden" name="mode" value="checkout-paypal" />
+              <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="submit" class="btn btn-primary btn-sm" value="Pay now" />
+            </form>
+          </p>
+          <p>
+            <form action="/cgi-bin/procdonate.cgi" method="POST" class="form-inline">
+              <input type="hidden" name="mode" value="re-main">
+              <input type="hidden" name="sessid" value="<!--SESSID-->">
+              <input type="hidden" name="lang" value="<!--LANG-->">
+              <input type="submit" class="btn btn-default btn-sm" value="Back" />
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid" id="camp-footer">
+      <div class="container">
+        <div class="row">
+          <div id="cpyright">
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+              <img alt="CC-BY-SA 4.0" style="border: 0"
+                    src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+            This web page is
+            Copyright 2017 The GnuPG Project and licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+            <a href="/copying.html">copying</a> for details.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
 #+END_HTML
