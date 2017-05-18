@@ -341,7 +341,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      zwischen 5 und 10 Euro monatlich spenden, dass
 	      entspricht etwa zwei oder drei Tassen Kaffee.
 	  <p class="text-justify">
-	    <div class="pull-right" style="width: 40%;">
+	    <div class="pull-right" style="width: 40%; margin: 1em">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
               <p id="camp-caption-gnuk" class="text-center">Das Gnuk Token</p>
 	    </div>
@@ -908,7 +908,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    “Ich sprach <!--recently--> mit einer
 			    Quelle <!-- about a potential story--> in
 			    Russland. Ich habe ihm erklärt wie GPG
@@ -1187,7 +1187,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    “Aber auch wenn Sie ganz sicher sind, dass
 			    sie nichts zu verbergen haben, wenn Sie
 			    denken, dass andere Menschen etwas
@@ -1685,7 +1685,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     <div id="team" class="camp-gutter container">
       <div class="row">
 	<div class="col-xs-12">
-	  <h2>Who we are</h2>
+	  <h2>Wer wir sind</h2>
 	</div>
       </div>
 
