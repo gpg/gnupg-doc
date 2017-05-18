@@ -58,7 +58,7 @@
 	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn"
              style="margin-right: 10px"
               href="/donate/donate.de.html"
-              role="button">♥ GnuPG unterstützen</a>
+              role="button">♥ Spenden</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
@@ -87,7 +87,7 @@
 	      </ul>
 	    </li>
 	  </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ GnuPG unterstützen</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ Spenden</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
