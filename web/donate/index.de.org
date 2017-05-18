@@ -1788,6 +1788,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	</div>
       </div>
     </div>
+  </div>
 
 <div class="camp-gutter container-fluid" id="camp-footer">
   <div class="container">
