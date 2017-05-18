@@ -313,8 +313,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <strong>Ermutigt von der überwältigenden Hilfsbereitschaft
 	    hat Werner entschieden sein Team zu vergrößern.</strong>
 	    Bis zum heutigen Tag hat er fünf Entwickler eingestellt,
-	    und über die letzten zwei Jahre hat sich GnuPG und das XXX
-	    surrounding Ökosystem in einer Reihe von Punkten
+	    und über die letzten zwei Jahre hat sich GnuPG und das
+	    dazugehörende Ökosystem in einer Reihe von Punkten
 	    weiterentwickelt.  Zum Beispiel haben wir
 	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html">Schlüsselfindung vereinfacht</a>, ein System zur
 	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Anbindung von GPG an Python</a> adoptiert, an
@@ -334,7 +334,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
             auf einmalige Spenden wie letztes mal.
 	  <p class="text-justify">
 	    <strong>Unser Hauptziel ist es, Zusagen für Spenden in
-	      Höhe von 15&#x202f;000&nbsp;Euro monatlich&mdash;genug
+	      Höhe von 15&#x202f;000&nbsp;Euro monatlich zu bekommen&mdash;genug
 	      um drei Entwickler zu finanzieren</strong>.  Wir können
 	      dieses Ziel erreichen wenn nur 2000&nbsp;Menschen
 	      zwischen 5 und 10 Euro monatlich spenden, dass
