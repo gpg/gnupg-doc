@@ -14,6 +14,17 @@
 
 </head>
   <body lang="en">
+<style>
+.control-label {
+  padding-top: 0 !important;
+}
+
+.form-control-static {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+</style>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
