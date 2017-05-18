@@ -59,11 +59,11 @@ $(document).ready(function() {
     let value = vals[idx];
     $(".amount-btn-" + value.toString()).attr("href", "#");
     $(".amount-btn-" + value.toString()).on("click", function() {
-      $("#amountother").attr("value", value.toString());
-      $("#currency option").attr("selected", false);
-      $("#currency option[value='EUR']").attr("selected", true);
-      $("#recur option").attr("selected", false);
-      $("#recur option[value='12']").attr("selected", true);
+      $("#amountother").prop("value", value.toString());
+      $("#currency option").prop("selected", false);
+      $("#currency option[value='EUR']").prop("selected", true);
+      $("#recur option").prop("selected", false);
+      $("#recur option[value='12']").prop("selected", true);
     });
   }
 });
