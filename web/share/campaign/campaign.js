@@ -58,12 +58,13 @@ $(document).ready(function() {
   for (let idx = 0; idx < vals.length; ++idx) {
     let value = vals[idx];
     $(".amount-btn-" + value.toString()).attr("href", "#");
-    $(".amount-btn-" + value.toString()).on("click", function() {
+    $(".amount-btn-" + value.toString()).on("click", function(event) {
       $("#amountother").prop("value", value.toString());
       $("#currency option").prop("selected", false);
       $("#currency option[value='EUR']").prop("selected", true);
       $("#recur option").prop("selected", false);
       $("#recur option[value='12']").prop("selected", true);
+      event.preventDefault();
     });
   }
 });
