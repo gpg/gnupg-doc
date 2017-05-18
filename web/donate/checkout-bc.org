@@ -44,7 +44,7 @@
         <div class="col-md-7 col-md-offset-2">
           <h2>Summary</h2>
           <p>
-          Donated Bitcoins are collected by the [[https://www.gnupg.org/verein][GnuPG e.V.]]
+          Donated Bitcoins are collected by the <a href="https://www.gnupg.org/verein">GnuPG e.V.</a>
           </p>
 
           <p>
