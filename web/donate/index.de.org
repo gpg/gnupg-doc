@@ -65,7 +65,13 @@
 	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="yB3V1YP8cKw">
 	    <img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
 	    <div class="play-button"></div>
-	    <div class="video-text">Klicken um das Video zu starten (erfordert JavaScript von YouTube).</div>
+	    <div class="video-text">Klicken um das Video zu starten
+              <noscript><br />
+                <span style="font-size: 60%"
+                      >(erfordert JavaScript von YouTube).
+                </span>
+              </noscript>
+            </div>
           </div>
 	</div>
 
@@ -165,13 +171,23 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
+	  <h2>Video of the Day: Rick Astley
+            <small>GnuPG will never gonna give you up</small>
+          </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
-	      <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="DLzxrzFCyOs">
-		<img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
+	      <div class="embed-responsive embed-responsive-16by9 camp-video"
+		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
+                   data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
+		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
 		<div class="play-button"></div>
-		<div class="video-text">Klicken um das Video zu starten (erfordert JavaScript von YouTube).</div>
+		<div class="video-text">Klicken um das Video zu starten
+		  <noscript><br />
+                    <span style="font-size: 60%"
+			  >(erfordert JavaScript von YouTube).
+                    </span>
+		  </noscript>
+		</div>
               </div>
 	    </div>
 	  </div>
