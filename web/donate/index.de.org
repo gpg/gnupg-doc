@@ -253,7 +253,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    alt="Bild von Sheera Frenkel" class="camp-headshot pull-left"></a>,
 	    Auslandskorrespondentin für BuzzFeed News, fügt
 	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
-	    wir ausgebildet GPG zu benutzen.</strong>  "Es geht um die
+	    wir ausgebildet GPG zu benutzen.</strong>  Es geht um die
 	    Quellen und was mit ihnen passiert wenn man ihr Land
 	    verlässt, die explosive Story veröffentlicht und die
 	    Regierung nach dem Informant sucht, der einem die
@@ -296,7 +296,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             Lebensunterhalt zu finanzieren, <strong>er bekam
             250&#x202f;000&nbsp;Euro in kleinen Spenden</strong>, und
             Stripe, Facebook und die Linux Foundatation haben
-            zugesagt, je ungefähr 50&#x202f;000&nbsp;Euro pro Jahr zu
+            zugesagt, je etwa 50&#x202f;000&nbsp;Euro pro Jahr zu
             spenden.
 	  </p>
           <div class="pull-right text-center team-img">
@@ -344,7 +344,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
               <p id="camp-caption-gnuk" class="text-center">Das Gnuk Token</p>
 	    </div>
-	    Das Geld erlaubt uns zunächst weiterhin GnuPG zu pflegen.
+	    Das Geld erlaubt uns zunächst GnuPG zu pflegen.
 	    Weiterhin werden wir unsere Arbeit an dem Gnuk
 	    Sicherheitstoken finanzieren.  Ein neues Projekt, welches
 	    uns das Geld ermöglichen soll, ist ein Buch mit dem Titel
@@ -381,10 +381,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    basierend auf Freier Software auf GnuPG um ihre
 	    Softwareaktualisierungen zu verifizieren.
 	  </p>
-	  <p class="text-justify" style="font-size: 22px;">Falls Sie wie wir überzeugt sind,
-	  dass diese Arbeit essenziell ist um Demokratie und
-	  Privatsphäre zu schützen, dann <strong>helfen Sie uns bitte unsere
-	  Arbeit fortzusetzen und unabhängig zu bleiben</strong>.</p>
+	  <p class="text-justify" style="font-size: 22px;">Falls Sie
+	  &mdash;wie wir&mdash; überzeugt sind, dass diese Arbeit
+	  essenziell ist um Demokratie und Privatsphäre zu schützen,
+	  dann <strong>helfen Sie uns bitte unsere Arbeit fortzusetzen
+	  und unabhängig zu bleiben</strong>.</p>
 	</div>
       </div>
     </div>
@@ -791,12 +792,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
 			    “Aber auch wenn Sie ganz sicher sind, dass
-			    sie nichts zu verbergen haben, wenn Sie
+			    Sie nichts zu verbergen haben, wenn Sie
 			    denken, dass andere Menschen etwas
 			    rechtmäßig und notwendig zu verbergen
 			    haben, sind wir der Meinung, <!-- you
 			    should be using these technologies, that
-			    -->dass sie GPG nutzen sollten, denn das
+			    -->dass Sie GPG nutzen sollten, denn das
 			    hilft diejenigen zu schützen, die wirklich
 			    GPG nutzen müssen.”
 			  </div>
@@ -1188,12 +1189,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
 			    “Aber auch wenn Sie ganz sicher sind, dass
-			    sie nichts zu verbergen haben, wenn Sie
+			    Sie nichts zu verbergen haben, wenn Sie
 			    denken, dass andere Menschen etwas
 			    rechtmäßig und notwendig zu verbergen
 			    haben, sind wir der Meinung, <!-- you
 			    should be using these technologies, that
-			    -->dass sie GPG nutzen sollten, denn das
+			    -->dass Sie GPG nutzen sollten, denn das
 			    hilft diejenigen zu schützen, die wirklich
 			    GPG nutzen müssen.”
 			  </div>
@@ -1612,12 +1613,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
 			    “Aber auch wenn Sie ganz sicher sind, dass
-			    sie nichts zu verbergen haben, wenn Sie
+			    Sie nichts zu verbergen haben, wenn Sie
 			    denken, dass andere Menschen etwas
 			    rechtmäßig und notwendig zu verbergen
 			    haben, sind wir der Meinung, <!-- you
 			    should be using these technologies, that
-			    -->dass sie GPG nutzen sollten, denn das
+			    -->dass Sie GPG nutzen sollten, denn das
 			    hilft diejenigen zu schützen, die wirklich
 			    GPG nutzen müssen.”
 			  </div>
