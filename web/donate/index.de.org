@@ -346,7 +346,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    basierend auf Freier Software auf GnuPG um ihre
 	    Softwareaktualisierungen zu verifizieren.
 	  </p>
-	  <p style="font-size: 22px;">Falls Sie wie wir überzeugt sind,
+	  <p class="text-justify" style="font-size: 22px;">Falls Sie wie wir überzeugt sind,
 	  dass diese Arbeit essenziell ist um Demokratie und
 	  Privatsphäre zu schützen, dann <strong>helfen Sie uns bitte unsere
 	  Arbeit fortzusetzen und unabhängig zu bleiben</strong>.</p>
@@ -813,7 +813,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 
 	    <!-- CAROUSEL SM -->
 
-	    <div id="myCarouselMedium" class="carousel slide visible-sm visible-md" data-interval="false" aria-hidden="true">
+	    <div id="myCarouselMedium" class="carousel slide hidden-xs hidden-lg" data-interval="false" aria-hidden="true">
 
 	      <div class="carousel-inner" role="listbox">
 		<div class="item active">
