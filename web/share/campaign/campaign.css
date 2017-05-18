@@ -121,7 +121,7 @@ h4 small {
   padding: 24px;
 }
 .card-quote {
-  text-align: justify;
+  text-align: left;
 }
 .card-quote-long {
   font-size: 17px;
