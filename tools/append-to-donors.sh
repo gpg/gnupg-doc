@@ -178,7 +178,7 @@ if [ -n "$message" ]; then
 From: donations@gnupg.org
 To: donations@gnupg.org
 Reply-To: $xqpmail
-Subject: Message from GnuPG donor
+Subject: ${xisatest}Message from GnuPG donor
 Date: $RFCDATE
 Mime-Version: 1.0
 Content-Type: text/plain
