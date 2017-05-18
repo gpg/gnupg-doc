@@ -291,3 +291,16 @@ h4 small {
 .lang-chooser-xs { margin-top: 12px; }
 .lang-chooser-xs .dropdown-menu { left: -2em; }
 .lang-chooser-xs li, .lang-chooser-xs > li > a { display: inline; }
+
+.team-img {
+    width: 50%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+@media (max-width: 768px) {
+  .team-img {
+     width: 100%;
+     margin-left: 0em;
+     margin-top: 0.5em;
+  }
+}

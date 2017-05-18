@@ -299,8 +299,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             zugesagt, je ungefähr 50&#x202f;000&nbsp;Euro pro Jahr zu
             spenden.
 	  </p>
-          <div class="pull-right text-center"
-               style="width: 50%; margin-left: 1em; margin-top: 0.5em;">
+          <div class="pull-right text-center team-img">
             <a
 href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
 	    ><img id="camp-openpgp-conf"
