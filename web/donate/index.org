@@ -39,7 +39,8 @@
           <a class="navbar-brand" href="/" title="Home"><img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png"></a>
 	  <ul class="nav navbar-header pull-right visible-xs-inline-block lang-chooser lang-chooser-xs">
 	    <li class="dropdown">
-	      <a href="/donate/index.de.html" <!-- noscript: Link to the next language.  -->
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/index.de.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
@@ -67,7 +68,8 @@
           </ul>
 	  <ul class="nav navbar-nav navbar-right hidden-xs lang-chooser">
 	    <li class="dropdown">
-	      <a href="/donate/index.de.html" <!-- noscript: Link to the next language.  -->
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/index.de.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
