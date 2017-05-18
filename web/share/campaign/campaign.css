@@ -267,3 +267,27 @@ h4 small {
   font-size: 0.8em;
   padding-bottom: 0.5em;
 }
+
+/* Flags for the language chooser.  */
+.flag-icon {
+  display: inline-block;
+  height: .9em;	/* Flag width/height ratio should be ~1.6.  */
+  width: 1.44em;
+}
+.flag-icon-de {
+  background: no-repeat center/100% url("/share/campaign/img/flags/de.min.svg");
+}
+.flag-icon-usuk {
+  background: no-repeat center/100% url("/share/campaign/img/flags/usuk.min.svg");
+}
+.flag-icon-jp {
+  background: no-repeat center/100% url("/share/campaign/img/flags/jp.min.svg");
+}
+.flag-icon-fr {
+  background: no-repeat center/100% url("/share/campaign/img/flags/fr.min.svg");
+}
+
+/* Some hacks to directly embed the dropdown menu into the navbar.  */
+.lang-chooser-xs { margin-top: 12px; }
+.lang-chooser-xs .dropdown-menu { left: -2em; }
+.lang-chooser-xs li, .lang-chooser-xs li a { display: inline; }
