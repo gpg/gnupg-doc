@@ -95,7 +95,7 @@
     <div id="home" class="camp-gutter container">
       <div class="row">
 	<div class="col-lg-12 visible-lg-block">
-	  <h1>GnuPG Fundraising Rally</h1>
+	  <h1>GnuPG Spendenkampagne</h1>
 	</div>
 	<div class="col-xs-12 col-lg-8">
 	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="yB3V1YP8cKw">
