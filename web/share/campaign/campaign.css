@@ -290,4 +290,4 @@ h4 small {
 /* Some hacks to directly embed the dropdown menu into the navbar.  */
 .lang-chooser-xs { margin-top: 12px; }
 .lang-chooser-xs .dropdown-menu { left: -2em; }
-.lang-chooser-xs li, .lang-chooser-xs li a { display: inline; }
+.lang-chooser-xs li, .lang-chooser-xs > li > a { display: inline; }
