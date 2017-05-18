@@ -1011,24 +1011,28 @@ elsif ($mode eq '') {
 elsif ($mode eq 'preset') {
     # Show a a template with certain preset values.
     $currency = 'EUR';
-    $recur = '12';
     $paytype = 'cc';
     # First dedicated payment plans.
     if ($q->param('plan') eq '12-5-eur' ) {
+        $recur = '12';
         $amount = '5';
     }
     elsif ($q->param('plan') eq '12-10-eur' ) {
+        $recur = '12';
         $amount = '10';
     }
     elsif ($q->param('plan') eq '12-20-eur' ) {
+        $recur = '12';
         $amount = '20';
     }
     elsif ($q->param('plan') eq '12-50-eur' ) {
+        $recur = '12';
         $amount = '50';
     }
     else {
         # Then look at arbitrary values
         # No checking needed.
+        $recur = '0';
         if ($q->param('s_amt') ne '') {
             $amount = int $q->param('s_amt');
         }
