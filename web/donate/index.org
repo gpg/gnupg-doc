@@ -205,9 +205,9 @@
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
-                   data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
-		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
+		   data-embed="qmuXUVg9Mjo,agLgdTKgz50,jJTrnaD5dkc"
+                   data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
+		<img src="/share/campaign/img/thumbs/qmuXUVg9Mjo.jpg">
 		<div class="play-button"></div>
 		<div class="video-text">Click to start the video
                   <noscript><br />

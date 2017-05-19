@@ -213,9 +213,9 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
-                   data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
-		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
+		   data-embed="agLgdTKgz50,qmuXUVg9Mjo,jJTrnaD5dkc"
+                   data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
+		<img src="/share/campaign/img/thumbs/agLgdTKgz50.jpg">
 		<div class="play-button"></div>
 		<div class="video-text">Klicken um das Video zu starten
 		  <noscript><br />
