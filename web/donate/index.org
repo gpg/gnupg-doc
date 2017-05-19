@@ -330,7 +330,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
               <p id="camp-caption-gnuk" class="text-center">The Gnuk Token</p>
 	    </div>
 	    This money will firstly allow us to continue our
-	    maintenance of GnuPG.  It will also be used to fund our
+	    maintenance of GnuPG.  We also intend to use it to fund our
 	    work on the Gnuk security token.  And, one new project
 	    that it will support is a book called "An Advanced
 	    Introduction to GnuPG."  A book for developers who want to
@@ -343,7 +343,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	  <p class="text-justify">
 	    <strong>Our stretch goal is to double this number of
 	    donations</strong>.  If 4000&nbsp;people donate just 5 or
-	    10 Euros each month, then we will continue to grow the
+	    10 Euros each month, then we intend to grow the
 	    team, and dedicate them to helping other projects in the
 	    GnuPG ecosystem.  One project that we really want to
 	    contribute to
@@ -374,7 +374,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-            <h2>What we will do</h2>
+            <h2>What we intend to do</h2>
 	  </div>
 	</div>
 	<div class="row goals is-table-row">
