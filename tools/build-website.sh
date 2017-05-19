@@ -245,7 +245,7 @@ if [ -z "$rev" ]; then
 fi
 revlast="$(head -1 ${revlastfile} 2>/dev/null || true)"
 if [ x"$rev" = x"$revlast" ]; then
-   echo "$pgm: No need to build $subdir" >&2;
+   echo "$pgm: No need to build $branch:$subdir" >&2;
 else
 
   echo "$(date -u -Iseconds) build started for $branch:$subdir" | tee ${buildlog}
@@ -306,6 +306,7 @@ if [ -n "$sync_preview" ]; then
   cd "$sync_preview"
   rsync -rlt --exclude '*~' --exclude '*.tmp' \
         . ${htdocs_preview}/
+  $HOME/bin/mkkudos.sh --verbose --force --test
 fi
 
 
