@@ -45,17 +45,17 @@
 		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
 		<li><a href="/donate/index.html">
-		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
+		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
 		<li><a href="/donate/index.de.html">
-		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
+		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
 		<li><a href="/donate/index.fr.html">
-		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
+		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
 		<li><a href="/donate/index.ja.html">
-		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
+		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
 	      </ul>
 	    </li>
 	  </ul>
-	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.ja.html" role="button">GnuPGをサポートする♥</a>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.ja.html" role="button">♥ 寄付する</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
@@ -74,17 +74,17 @@
 		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
 		<li><a href="/donate/index.html">
-		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
+		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
 		<li><a href="/donate/index.de.html">
-		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
+		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
 		<li><a href="/donate/index.fr.html">
-		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
+		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
 		<li><a href="/donate/index.ja.html">
-		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
+		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
 	      </ul>
 	    </li>
 	  </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">GnuPGをサポートする♥</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ 寄付する</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -98,7 +98,13 @@
 	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="yB3V1YP8cKw">
 	    <img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
 	    <div class="play-button"></div>
-	    <div class="video-text">クリックして動画をスタート(YouTubeからのJavaScriptが必要となります)。</div>
+	    <div class="video-text">クリックして動画をスタート
+              <noscript><br />
+                <span style="font-size: 60%"
+                      >(YouTubeからのJavaScriptが必要となります。)
+                </span>
+              </noscript>
+            </div>
           </div>
 	</div>
 
@@ -180,13 +186,23 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Rick Astley <small>GnuPG will never gonna give you up</small></h2>
+	  <h2>Video of the Day: Rick Astley
+            <small>GnuPG will never gonna give you up</small>
+          </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
-	      <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="DLzxrzFCyOs">
-		<img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
+	      <div class="embed-responsive embed-responsive-16by9 camp-video"
+		   data-embed="p7ULsUdBMwM,6qQt5_kJGnY,FpO6ePjIyVs"
+                   data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
+		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
 		<div class="play-button"></div>
-		<div class="video-text">Click to start the video (requires JavaScript from YouTube).</div>
+		<div class="video-text">Click to start the video
+                  <noscript><br />
+                    <span style="font-size: 60%"
+                          >(requires JavaScript from YouTube.)
+                    </span>
+                  </noscript>
+                </div>
               </div>
 	    </div>
 	  </div>
@@ -204,14 +220,14 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             >For the past 20 years</a>, GnuPG has helped protect online
 	    communication.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
-	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.png"
+	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
 	    alt="Picture of Cindy Cohn" class="camp-headshot
 	    pull-right"></a>, Executive Director
 	    of the <a href="https://www.eff.org/">Electronic Frontier
 	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
 	    I most often communicate with people who are in need
 	    around the
-	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.png"
+	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
 	    pull-left">Sheera
 	    Frenkel</a>, Foreign Correspondent for BuzzFeed News,
@@ -230,7 +246,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             power <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">two-thirds
             of all servers on the Internet</a>.  And, GnuPG is widely
             used by organizations and companies.  For instance, Arthur
-            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.png"
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
             alt="Picture of Arthur Jordan"
             class="camp-headshot pull-left">, Vice-President of
             Information Technology at 2U, told us:
@@ -416,7 +432,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div id="myCarousel" class="carousel slide visible-lg" data-interval="false">
 
 	      <div class="carousel-inner" role="listbox">
-		<div class="item">
+		<div class="item active">
 		  <!-- Slide 1 -->
 
 		  <div class="row">
@@ -682,7 +698,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  </div>
 
 		</div>
-		<div class="item active">
+		<div class="item">
 		  <!-- Slide 5 -->
 
 		  <div class="row">
@@ -1117,7 +1133,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div id="myCarouselSmall" class="carousel slide visible-xs" data-interval="false" aria-hidden="true">
 
 	      <div class="carousel-inner" role="listbox">
-		<div class="item">
+		<div class="item active">
 		  <!-- Slide 1 XS -->
 
 		  <div class="row">
@@ -1442,7 +1458,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  </div>
 
 		</div>
-		<div class="item active">
+		<div class="item">
 		  <!-- Slide 13 XS -->
 
 		  <div class="row">
@@ -1496,8 +1512,32 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		      </div>
 		    </div>
 		  </div>
-
 		</div>
+
+		<div class="item">
+		  <!-- Slide 15 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG hasn't saved our butt yet, but the
+			    fact that it is there is&mdash;it let's us
+			    sleep easier at night.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">John Pershing</div>
+			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
 	      </div>
 	      <div class="text-center">
 		<!--
@@ -1522,14 +1562,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     </div>
     <!-- End of testimonials.  -->
 
-    <div id="team" class="camp-gutter container">
-      <div class="row">
+<div id="team" class="camp-gutter container">
+<div class="row">
 	<div class="col-xs-12">
 	  <h2>Who we are</h2>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Werner -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1556,9 +1596,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Justus -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1585,9 +1625,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
+</div>
 
-      <div class="row">
+<div class="row">
 	<!-- Kai -->
 	<div class="camp-who col-md-6">
 	  <div class="media">
@@ -1613,16 +1653,36 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div>
 	  </div>
 	</div>
-      </div>
-      <div class="camp-final-pitch row">
-	<div class="col">
-	  <center>
-	    <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Donate now!</a>
-	  </center>
-	</div>
+</div>
+
+<div class="camp-final-pitch row">
+  <div class="col">
+      <center>
+        <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Donate now!</a>
+      </center>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="camp-gutter container-fluid" id="camp-footer">
+  <div class="container">
+    <div class="row">
+      <div id="cpyright">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+          <img alt="CC-BY-SA 4.0" style="border: 0"
+                src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+        This web page is
+        Copyright 2017 The GnuPG Project and licensed under a
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+        <a href="/copying.html">copying</a> for details.
       </div>
     </div>
-  </body>
+  </div>
+</div>
+
+</body>
 </html>
 #+END_HTML
 
