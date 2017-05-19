@@ -53,7 +53,7 @@
     <div class="camp-gutter container">
       <div class="row">
         <div class="col-md-7 col-md-offset-2">
-          <h2>Summary</h2>
+          <h2>Übersicht</h2>
           <p>Informationen zu Ihrer gewünschten Spende:</p>
           <form class="form-horizontal">
             <div class="form-group">

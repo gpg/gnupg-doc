@@ -42,7 +42,7 @@
     <div class="camp-gutter container">
       <div class="row">
         <div class="col-md-7 col-md-offset-2">
-          <h2>Summary</h2>
+          <h2>Übersicht</h2>
           <p>
 	    Gespendete Bitcoins gehen an den
 	    <a href="https://www.gnupg.org/verein">GnuPG e.V.</a>
