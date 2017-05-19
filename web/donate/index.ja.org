@@ -196,10 +196,10 @@
                    data-embed-list="PLjX3x3GHoOWLdrpy17aX5JaCnea2_CxBa">
 		<img src="/share/campaign/img/thumbs/p7ULsUdBMwM.jpg">
 		<div class="play-button"></div>
-		<div class="video-text">Click to start the video
+		<div class="video-text">クリックして動画をスタート
                   <noscript><br />
                     <span style="font-size: 60%"
-                          >(requires JavaScript from YouTube.)
+                          >(YouTubeからのJavaScriptが必要となります。)
                     </span>
                   </noscript>
                 </div>
@@ -213,64 +213,40 @@
     <div id="about" class="camp-gutter container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>GnuPG Needs Your Help!</h2>
+	  <h2>GnuPG はあなたの援助を必要としています!</h2>
 	  <p class="text-justify">
 	    <strong><a
 href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
-            >For the past 20 years</a>, GnuPG has helped protect online
-	    communication.</strong>
+            >これまでの20年間</a>、GnuPGは通信のコミュニケーションを守るために役立ってきました。</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
 	    alt="Picture of Cindy Cohn" class="camp-headshot
-	    pull-right"></a>, Executive Director
-	    of the <a href="https://www.eff.org/">Electronic Frontier
-	    Foundation</a> (EFF), describes GnuPG as <i>"the way that
-	    I most often communicate with people who are in need
-	    around the
-	    world."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    pull-right"></a>, <a href="https://www.eff.org/">電子フロンティア財団</a> (EFF)のエグゼクティブ・ディレクターは、GnuPGを <i>"世界中で必要としている人と連絡するためにもっとも良く使う方法です"</i>と述べています。<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
 	    pull-left">Sheera
-	    Frenkel</a>, Foreign Correspondent for BuzzFeed News,
-	    relates: <i>"<strong>As a news organization, we're trained
-	    on using GPG.</strong>  "It's about your sources and what
-	    happens to them when you leave the country and you publish
-	    that explosive story and the government is looking for the
-	    whistleblower that handed you that key piece of
-	    information."</i>  And famously, GnuPG was Edward
-	    Snowden's tool of choice to securely communicate with
-	    journalists about the NSA mass surveillance leaks.
+	    Frenkel</a>, BuzzFeed Newsの外国特派員は、
+	    <i>「<strong>報道機関として、わたしたちはGPGの使い方を習得しています。</strong>
+            問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」</i>  そうです、有名なことですが、GnuPGはEdward
+	    SnowdenがNSAの大規模監視の告発について、ジャーナリストと安全に連絡する手段として選択したものでした。
 	  <p class="text-justify">
-	    But, GnuPG is not only used to encrypt
-            email.  <strong>GnuPG protects software updates</strong>
-            for nearly all free software operating systems, which
-            power <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">two-thirds
-            of all servers on the Internet</a>.  And, GnuPG is widely
-            used by organizations and companies.  For instance, Arthur
+	    しかし、GnuPGは電子メールの暗号化だけに使われるのではありません。
+	    ほとんどすべての自由ソフトウェアのオペレーティング・システムについて、
+	    <strong>GnuPGはソフトウェアの更新を保護しており</strong>、
+            <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">インターネットのすべてのサーバの2/3がこうした自由なオペレーティング・システムで動いています</a>。そして、GnuPGは団体や会社で広く使われています。
+            たてえば、2Uの情報技術担当の副社長、Arthur
             Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
             alt="Picture of Arthur Jordan"
-            class="camp-headshot pull-left">, Vice-President of
-            Information Technology at 2U, told us:
-	    <i>"when we reached out to universities about how they
-	    wanted to do secure file transfer, they were already using
-	    GPG encryption."</i>
+            class="camp-headshot pull-left">は、わたしたちにこう言いました:
+	    <i>「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」</i>
 	  <p class="text-justify">
-	    Yet, despite the critical role that GnuPG plays for
-	    journalists, activists, and lawyers in particular as well
-	    as anyone who uses the Internet in general, in 2012 GnuPG
-	    had a <strong>funding crisis</strong>.  Due to a lack of
-	    contracts, Werner Koch, GnuPG's lead developer, was forced
-	    to lay off the only other person working on GnuPG
-	    full-time.  And, by 2014, Werner had to take side jobs
-	    unrelated to GnuPG to supplement his income.
+	    特に、ジャーナリスト、活動家、弁護士といった方々、また、一般にインターネットを利用する誰もにとって、GnuPGが重要な役割を果たしているにも関わらず、2012年にGnuPGは
+	    <strong>資金難の危機</strong>がありました。契約の欠如のため、
+	    GnuPGの開発リーダ Werner Koch は、GnuPGに対してフルタイムで働くもう一人を解雇しなくてはなりませんでした。そして2014年までWernerは収入を補うためにGnuPGと関係ない別の仕事をしなければなりませんでした。
 	  <p class="text-justify">
-	    The situation looked so bad that <strong>Werner was ready
-            to give up.  But, friends convinced him to give a donation
-            campaign one last shot.</strong>  The response was
-            amazing.  Not only did he receive enough money to fund
-            himself, but <strong>he pulled in
-            250&#x202f;000&nbsp;euros in small donations</strong>, and
-            Stripe, Facebook and the Linux Foundatation each committed
-            to donating about 50&#x202f;000&nbsp;euros per year.
+	    状況はあまりにも深刻に思えたので、<strong>Wernerはあきらめてしまうところでした。しかし、友人達が彼を説得し、最後の一弾として、寄付のキャンペーンをやってみることになりました。
+</strong>
+	    反響は驚くべきものでした。彼にとって充分過ぎる以上の、<strong>小さな寄付が積もり重なって、あわせて 250&#x202f;000&nbsp;ユーロ</strong>ものお金が集まり、
+            Stripe, Facebook そして Linux Foundatation が、それぞれ、年額50&#x202f;000&nbsp;ユーロを提供すると申し出たのでした。
 	  </p>
           <div class="pull-right text-center team-img">
             <a
@@ -279,7 +255,7 @@ href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
 src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
               /></a>
 	    <p id="camp-caption-openpgp-conf">
-               The GnuPG Team at OpenPGP.conf 2016
+               OpenPGP.conf 2016 での GnuPG チーム
             </p>
 	  </div>
 	  <p class="text-justify">
