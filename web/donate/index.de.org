@@ -227,10 +227,12 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
               </div>
 	    </div>
 	  </div>
-	  <p>Jeden Tag gibt es ein neues Video! Im Menü
+	  <p class="vid-howto">
+	    Jeden Tag gibt es ein neues Video! Im Menü
 	    <img src="/share/campaign/img/vidmenu.svg" style="height:
 	    1em; vertical-align: baseline;" aria-hidden="true"/>
-	    können weitere Videos ausgewählt werden.</p>
+	    können weitere Videos ausgewählt werden.
+	  </p>
 	</div>
       </div>
     </div>
