@@ -1,0 +1,249 @@
+#                                                       -*- html -*-
+#+TITLE: GnuPG - Faire un don
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+  <script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+  <script defer src="/share/3rdparty/bcswipe.js"></script>
+  <script defer src="/share/campaign/campaign.js"></script>
+
+</head>
+<body lang="en">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Afficher/masquer le menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img class="navbar-brand" alt="GnuPG"
+             src="/share/gnupg-lock-white-250x250.png">
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/donate">Précédent</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="camp-gutter container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Soutenez GnuPG</h1>
+        <p>Veuillez remplir le formulaire suivant afin que nous
+           puissions traiter votre donation.
+           Les informations entrées sont uniquement utilisées pour ce
+           traitement, et aucune donnée ne sera envoyée à quelconque entité
+           qui ne serait pas directement concerné par votre donation.
+           L'absence de nom rend la donation « anonyme », dans le sens
+           où nom ne sera pas listé dans la page publique de remerciements.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <!--ERRORPANEL-->
+      </div>
+    </div>
+
+    <form class="form-horizontal" role="form"
+          action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="hidden" name="mode" value="main" />
+
+      <!-- Amount and currency input field -->
+      <div class="form-group">
+        <label for="inputType" class="col-xs-12 col-sm-2 control-label">
+          Montant <!--ERR_AMOUNT-->
+        </label>
+        <div class="col-xs-5 col-sm-3">
+          <input type="text" class="form-control"
+                 name="amount" id="amountother" placeholder=""
+                 value=""/><!--AMOUNT-->
+        </div>
+        <div class="col-xs-7 col-sm-3 col-lg-2">
+          <select class="form-control" name="currency" id="currency">
+            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
+            <option value="USD" ><!--SEL_USD-->US Dollar</option>
+            <option value="GBP" ><!--SEL_GBP-->British Pound</option>
+            <option value="JPY" ><!--SEL_JPY-->Yen</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Custom amounts -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+          <div class="btn-group btn-group-xs" role="group"
+               aria-label="suggested amounts">
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur"
+               class="btn btn-default amount-btn-500">500&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur"
+               class="btn btn-default amount-btn-200">200&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur"
+               class="btn btn-default amount-btn-100">100&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur"
+               class="btn btn-default amount-btn-50">50&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur"
+               class="btn btn-default amount-btn-20">20&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur"
+               class="btn btn-default amount-btn-10">10&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur"
+               class="btn btn-default amount-btn-5">5&#x202f;€</a>
+          </div>
+          <span class="help-block">
+            Montants suggérés.
+          </span>
+        </div>
+      </div>
+
+      <!-- Recurring -->
+      <div class="form-group">
+        <label for="recur" class="col-sm-2 control-label">Fréquence</label>
+        <div class="col-sm-2">
+          <select class="form-control" name="recur" id="recur">
+            <option value="0"
+            selected="selected"><!--RECUR_NONE-->unique</option>
+            <option value="12" ><!--RECUR_MONTH-->mensuelle</option>
+            <option value="4" ><!--RECUR_QUARTER-->trimestrielle</option>
+            <option value="1" ><!--RECUR_YEAR-->annuelle</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Pay using -->
+      <div class="form-group">
+        <label for="paytype" class="col-sm-2 control-label">
+          Mode de paiement <!--ERR_PAYTYPE-->
+        </label>
+        <div class="col-sm-6">
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="cc"
+                     value="cc" /><!--CHECK_CC-->
+              carte de crédit
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="pp"
+                     value="pp" /><!--CHECK_PP-->
+              PayPal
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="se"
+                     value="se" /><!--CHECK_SE-->
+              SEPA (virement bancaire européen)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="bc"
+                     value="bc" /><!--CHECK_BC-->
+              Bitcoin
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">
+          Nom <!--ERR_NAME-->
+          <p class="text-muted"><small>(optionnel)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="name"
+                 id="f_name" placeholder="Nom (optionnel)"
+                 value=""/><!--NAME-->
+          <span class="help-block">
+            Si vous souhaitez être listé sur notre
+             <a href="https://www.gnupg.org/donate/kudos.html"
+                >liste de donateurs</a>, alors veuillez entrer votre nom tel
+             que vous voulez qu'il y apparaisse.
+          </span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="mail" class="col-sm-2 control-label">
+          Courriel <!--ERR_MAIL-->
+          <p class="text-muted"><small>(optionnel)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" name="mail"
+                 id="f_mail" placeholder="Courriel (optionnel)"
+                 value=""/><!--MAIL-->
+          <span class="help-block">
+            Votre adresse électronique nous permettra de vous contacter
+            en cas de problème avec votre paiement.
+          </span>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message" class="col-sm-2 control-label">
+          Message
+          <p class="text-muted"><small>(optionnel)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <textarea class="form-control" name="message" id="f_message"
+                    rows="4"
+                    ></textarea><!--MESSAGE-->
+          <span class="help-block">
+            Si vous souhaitez nous laissez nous un message, vous pouvez le faire ici.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+          <button type="submit" class="btn btn-primary btn-large"
+                  >Suivant</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="camp-gutter container-fluid" id="camp-footer">
+    <div class="container">
+      <div class="row">
+        <div id="cpyright">
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+            <img alt="CC-BY-SA 4.0" style="border: 0"
+                  src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+          This web page is
+          Copyright 2017 The GnuPG Project and licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+          <a href="/copying.html">copying</a> for details.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+#+END_HTML
