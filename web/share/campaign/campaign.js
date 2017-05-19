@@ -113,6 +113,9 @@ $(document).ready(function() {
 	if (yt_list) {
 	    extra_parms = "&list=" + yt_list;
 	}
+	if (screen.width < 768) {
+	    extra_parms = extra_parms + "&cc_load_policy=1"
+	}
 	$(this).html('<iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/'
 		     + yt_id + '?autoplay=1&modestbranding=1&rel=0' + extra_parms + '"></iframe>');
     });
