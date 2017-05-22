@@ -43,7 +43,7 @@
     <div class="camp-gutter container">
       <div class="row">
         <div class="col-md-7 col-md-offset-2">
-          <h2>Canceled</h2>
+          <h2>Cancelled</h2>
           <p>
           You cancelled the donation process.
           </p>
