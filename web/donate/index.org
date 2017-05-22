@@ -397,7 +397,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
-		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/>Gnuk</h3>
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> Gnuk</h3>
 		  <p>The <a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
 		    is a fully free software and open schematic
 		    security token developed by Niibe.  We want to
