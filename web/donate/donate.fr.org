@@ -21,7 +21,7 @@
   <script defer src="/share/campaign/campaign.js"></script>
 
 </head>
-<body lang="en">
+<body lang="fr">
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">

@@ -23,7 +23,7 @@
     <noscript><style>.lang-chooser .caret { display: none; }</style></noscript>
 
   </head>
-  <body lang="en">
+  <body lang="de">
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
