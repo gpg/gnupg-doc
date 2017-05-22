@@ -1,5 +1,5 @@
 #                                                        -*- html -*-
-#+TITLE: GnuPG - Donate
+#+TITLE: GnuPG - 寄付
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 #
@@ -173,11 +173,11 @@
 	  <div class="col-sm-10 col-sm-offset-1">
 	    <p class="lead">GnuPGはネットワークのプライバシを守るためにあなたのサポートを必要としています。</p>
 	    <p class="text-justify">活動家、ジャーナリスト、弁護士、そのほかの多くの人々が
-	      <a href="https://www.gnupg.org/">GnuPG</a>に依拠し、通信を守るために使っています。
+	      <a href="https://www.gnupg.org/">GnuPG</a>に依拠し、その通信を守るために使っています。
 	      そして、自由ソフトウェアをベースとするほぼすべてのオペレーティング・システム(インターネットを動かすサーバの2/3以上で使われています)がシステムの更新の完全性を検証するためにGnuPGに依拠しています。</p>
             <p>GnuPGを保守し、改善することを継続するために、わたしたち、主なGnuPG開発者は、
-              一般の皆さんからの寄付をお願いします。わたしたちの<strong>主要な目標</strong>は、<strong>一ヶ月あたり15&#x202f;000ユーロ</strong>を調達し、3名の開発者に全面的に資金供給することです。わたしたちの<strong>伸ばした目標は</strong>この二倍で<strong>一ヶ月あたり30&#x202f;000ユーロ</strong>です。</p>
-            <p>この重要なソフトウェアの一つがすべての人々のために働き続けることを確とするため、どうぞ寄付の検討をお願いします。</p>
+              一般の皆さんからの寄付をお願いします。わたしたちの<strong>第一の目標</strong>は、<strong>一ヶ月あたり15&#x202f;000ユーロ</strong>を調達し、3名の開発者に全面的に資金供給することです。わたしたちの<strong>拡張した目標</strong>は、この二倍で<strong>一ヶ月あたり30&#x202f;000ユーロ</strong>です。</p>
+            <p>この重要な一つのソフトウェアが、すべての人々のために働き続けることを確とするため、どうぞ寄付の検討をお願いします。</p>
 	  </div>
 	</div>
       </div>
@@ -224,34 +224,30 @@
 	    <strong><a
 href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             >これまでの20年間</a>、GnuPGは通信のコミュニケーションを守るために役立ってきました。</strong>
-	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
-	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
+	    <a href="https://www.eff.org/">電子フロンティア財団</a> (EFF)のエグゼクティブ・ディレクターの<a href="https://www.eff.org/de/about/staff/cindy-cohn">シンディ・コーン<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
 	    alt="Picture of Cindy Cohn" class="camp-headshot
-	    pull-right"></a>, <a href="https://www.eff.org/">電子フロンティア財団</a> (EFF)のエグゼクティブ・ディレクターは、GnuPGを <i>"世界中で必要としている人と連絡するためにもっとも良く使う方法です"</i>と述べています。<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    pull-right"></a>さんは、GnuPGを <i>「世界中で必要としている人と連絡するためにもっともよく使う方法です」</i>と述べています。BuzzFeed Newsの外国特派員の<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
-	    pull-left">Sheera
-	    Frenkel</a>, BuzzFeed Newsの外国特派員は、
+	    pull-left">シーラ・フランケル</a>さんは、言っています。
 	    <i>「<strong>報道機関として、わたしたちはGPGの使い方を習得しています。</strong>
-            問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」</i>  そうです、有名なことですが、GnuPGはEdward
-	    SnowdenがNSAの大規模監視の告発について、ジャーナリストと安全に連絡する手段として選択したものでした。
+            問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」</i>  そうです、有名なことですが、GnuPGはエドワード・スノーデンがNSAの大規模監視の告発について、ジャーナリストと安全に連絡する手段として選択したものでした。
 	  <p class="text-justify">
 	    しかし、GnuPGは電子メールの暗号化だけに使われるのではありません。
 	    ほとんどすべての自由ソフトウェアのオペレーティング・システムについて、
 	    <strong>GnuPGはソフトウェアの更新を保護しており</strong>、
             <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">インターネットのすべてのサーバの2/3がこうした自由なオペレーティング・システムで動いています</a>。そして、GnuPGは団体や会社で広く使われています。
-            たてえば、2Uの情報技術担当の副社長、Arthur
-            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+            たとえば、2Uの情報技術担当の副社長、アーサー・ジョルダン<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
             alt="Picture of Arthur Jordan"
-            class="camp-headshot pull-left">は、わたしたちにこう言いました:
+            class="camp-headshot pull-left">さんは、わたしたちにこう言いました:
 	    <i>「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」</i>
 	  <p class="text-justify">
-	    特に、ジャーナリスト、活動家、弁護士といった方々、また、一般にインターネットを利用する誰もにとって、GnuPGが重要な役割を果たしているにも関わらず、2012年にGnuPGは
-	    <strong>資金難の危機</strong>がありました。契約の欠如のため、
+	    特に、ジャーナリスト、活動家、弁護士といった方々、また、一般にインターネットを利用する誰もにとって、GnuPGが重要な役割を果たしているにもかかわらず、2012年にGnuPGは
+	    <strong>資金難の危機</strong>がありました。それまであった契約の終了のため、
 	    GnuPGの開発リーダ Werner Koch は、GnuPGに対してフルタイムで働くもう一人を解雇しなくてはなりませんでした。そして2014年までWernerは収入を補うためにGnuPGと関係ない別の仕事をしなければなりませんでした。
 	  <p class="text-justify">
 	    状況はあまりにも深刻に思えたので、<strong>Wernerはあきらめてしまうところでした。しかし、友人達が彼を説得し、最後の一弾として、寄付のキャンペーンをやってみることになりました。
 </strong>
-	    反響は驚くべきものでした。彼にとって充分過ぎる以上の、<strong>小さな寄付が積もり重なって、あわせて 250&#x202f;000&nbsp;ユーロ</strong>ものお金が集まり、
+	    その反響は驚くべきものでした。彼にとって充分過ぎる以上の、<strong>小さな寄付が積もり重なって、あわせて 250&#x202f;000&nbsp;ユーロ</strong>ものお金が集まり、加えて、
             Stripe, Facebook そして Linux Foundatation が、それぞれ、年額50&#x202f;000&nbsp;ユーロを提供すると申し出たのでした。
 	  </p>
           <div class="pull-right text-center team-img">
@@ -265,76 +261,32 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
             </p>
 	  </div>
 	  <p class="text-justify">
-	    <strong>Given this amazing response, Werner decided to
-	    grow the team again.</strong>  To date, he has hired 5
-	    developers, and the past two years have seen a number of
-	    improvements to GnuPG and the surrounding ecosystem.  For
-	    instance, we've worked
-	    on <a href="https://www.gnupg.org/blog/20160830-web-key-service.html">simplifying
-	    key discovery</a>, adopted a set
-	    of <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Python
-	    bindings for GPG</a>, contributed some improvements
-	    to <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>,
-	    and
-	    supported <a href="https://www.fsij.org/category/gnuk.html">the
-	    Gnuk project</a>&mdash;a free source and free hardware
-	    security token.
+	    <strong>この驚くべき反響を受けて、Wernerはもう一度チームを大きくしようと考えました。</strong>  現在までに、5人の開発者を雇い、これまでの二年間でGnuPGと関連するエコシステムには、たくさんの改善が見られています。
+	    たとえば、<a href="https://www.gnupg.org/blog/20160830-web-key-service.html">鍵の発見の簡素化</a>、<a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">PythonのためのGPGバィンディング</a>の採用、<a href="https://www.enigmail.net/index.php/en/">Enigmail</a>の改善への貢献、そして、自由なソースと自由なハードウェアのセキュリティトークン、<a href="https://www.fsij.org/category/gnuk.html">Gnukプロジェクト</a>のサポートがあげられます。
 	  <p class="text-justify">
-	    <strong>We want to continue this work in the long
-            term.</strong>  But, we want to do so in such a way that
-            our first loyalty is unambiguously to the general public.
-            This means making sure that a majority of our funding
-            comes from individual donors, and not corporations.
-            Further, to ensure long-term stability, our focus is on
-            recurring donations and not one-time donations.
+	    <strong>わたしたちは、この仕事を長期的に続けたいと考えています。</strong>
+	    しかし、わたしたちは、これを一般の皆さんに対して紛う事なき第一の忠節を尽くすやり方で行いたいと考えています。これは、わたしたちの資金の大半が個々の寄付をしてくださる方々から来るものであり、会社からではないようにすることを意味します。
+	    さらに、長期的な安定性のために、わたしたちのフォーカスは一回限りの寄付ではなく、定期の寄付にあります。
 	  <p class="text-justify">
-	    <strong>Our primary goal is to get donation commitments
-	      for 15&#x202f;000&nbsp;euros per month&mdash;enough to
-	      fund 3 developers</strong>.  We can reach this goal if
-	      just 2000&nbsp;people donate 5 or 10 euros each month,
-	      the equivalent of just 2 or 3 cups of coffee.
+	    <strong>わたしたちの第一の目標は一ヶ月あたり15&#x202f;000&nbsp;ユーロの寄付の約束を得て、3人の開発者に資金供給するのに当てることです</strong>。2000人の方に毎月5あるいは10ユーロ、二、三杯のコーヒーと同じくらいを、寄付してもらえれば、この目標に達することができます。
 	  <p class="text-justify">
 	    <div class="pull-right" style="width: 40%; margin: 1em">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
               <p id="camp-caption-gnuk" class="text-center">The Gnuk Token</p>
 	    </div>
-	    This money will firstly allow us to continue our
-	    maintenance of GnuPG.  It will also be used to fund our
-	    work on the Gnuk security token.  And, one new project
-	    that it will support is a book called "An Advanced
-	    Introduction to GnuPG."  A book for developers who want to
-	    integrate GnuPG into their programs, and need to
-	    understand the various concepts, the important security
-	    tradeoffs, and common pitfalls; for digital security
-	    trainers who need to understand GnuPG to be able to make
-	    sound recommendations to users; and, of course,
-	    for for enthusiasts.
+	    このお金は第一にGnuPGの保守を継続することに使われます。
+	    また、わたしたちは、Gnuk セキュリティ・トークンのために、このお金を使うことも考えています。
+            そして、"An Advanced Introduction to GnuPG"と名付けた本を作る新しいプロジェクトをサポートするためにも使われるでしょう。この本はGnuPGをプログラムに統合したい開発者に役立ちますし、様々な概念や重要なセキュリティのトレードオフそしてよくある間違いを理解したい方にも役立つことでしょう。また、ユーザにしっかりとした推奨をするためにGnuPGを理解したいセキュリティの講師や、もちろん、熱心なユーザにも役立つでしょう。
 	  <p class="text-justify">
-	    <strong>Our stretch goal is to double this number of
-	    donations</strong>.  If 4000&nbsp;people donate just 5 or
-	    10 Euros each month, then we will continue to grow the
-	    team, and dedicate them to helping other projects in the
-	    GnuPG ecosystem.  One project that we really want to
-	    contribute to
-	    is <a href="https://gpgtools.org/">GPGTools</a>, which
-	    many activists and journalists rely on to secure their
-	    online communication.  We want to make sure that GPG
-	    integration in Apple's mailer is supported as soon as a
-	    new version of macOS is released.
+	    <strong>わたしたちの拡張した目標はこの二倍の寄付を集めることです</strong>。
+	    もし4000人の方が毎月5あるいは10ユーロを寄付してくれれば、チームを大きくして、GnuPGエコシステムのなかのほかのプロジェクトを支援するために専念させることができるでしょう。
+            わたしたちが貢献したいと考えている一つのプロジェクトは、<a href="https://gpgtools.org/">GPGTools</a>で、多くの活動家やジャーナリストが通信をセキュアに保つために使っているものです。AppleのメーラとのGPGの統合がmacOSの新しいバージョンがリリースされたらすぐにサポートされることを確実にしたいものだと、わたしたちは考えています。
 	  <p class="text-justify">
-	    Now, maybe you don't use GnuPG to encrypt your email.
-	    Nevertheless, some journalists whose work you value rely
-	    on GnuPG to protect their sources, some activists fighting
-	    for a cause that you sympathize with rely on GnuPG to
-	    protect their communication, and some lawyers speaking
-	    with their clients rely on GnuPG to help protect
-	    attorney-client conversations.  And, free software-based
-	    operating systems use GnuPG to verify software updates.
+	    もしかしたら、あなたはメールを暗号化するのにGnuPGを使っていないかもしれません。
+	    でも、あなたが価値を見出すかもしれないジャーナリストは情報源を守るためにGnuPGに依拠し、あなたが共鳴するかもしれない運動のために闘う活動家は通信を守るためにGnuPGに依拠し、そして、クライアントのために発言する弁護士も会話を保護するためにGnuPGに依拠しています。
+	    そして、自由ソフトウェアをベースとするオペレーティング・システムはGnuPGを使ってソフトウェアの更新を検証しています。
 	  </p>
-	  <p class="text-justify" style="font-size: 22px;">So, if you are convinced as we
-	    are that this work is essential to protecting democracy
-	    and privacy, then <strong>please help us to continue our
-	    work and stay independent</strong>.</p>
+	  <p class="text-justify" style="font-size: 22px;">ですから、もし、この仕事が民主主義とプライバシーを保護するのに重要な仕事である、とあなたが納得できたとしたら、<strong>わたしたちがこの仕事を独立を保ったまま継続できるよう、支援願います</strong>。</p>
 	</div>
       </div>
     </div>
@@ -343,7 +295,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-            <h2>What we will do</h2>
+            <h2>What we intend to do</h2>
 	  </div>
 	</div>
 	<div class="row goals is-table-row">
