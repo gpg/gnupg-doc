@@ -51,12 +51,8 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h1>GnuPGを支援する</h1>
-        <p>To process your donation we need to collect some information.
-           This information is only used for the purpose of the donation
-           and no data will ever be send to any entity not directly
-           involved in the donation process.  Not giving a name makes
-           the donation “anonymous” in that the name won’t be listed
-           on the public thank you page.
+        <p>あなたの寄付を処理するために情報を入力してもらう必要があります。
+	   この情報は寄付の目的のためだけに用いられ、寄付の処理に直接関係ないところには、何のデータも送信されません。名前を書かない場合、"anonymous" として寄付が行われ、公開される官舎のページには掲載されません。
         </p>
       </div>
     </div>
@@ -83,10 +79,10 @@
         </div>
         <div class="col-xs-7 col-sm-3 col-lg-2">
           <select class="form-control" name="currency" id="currency">
-            <option value="EUR" selected="selected"><!--SEL_EUR-->Euro</option>
-            <option value="USD" ><!--SEL_USD-->US Dollar</option>
-            <option value="GBP" ><!--SEL_GBP-->British Pound</option>
-            <option value="JPY" ><!--SEL_JPY-->Yen</option>
+            <option value="EUR" selected="selected"><!--SEL_EUR-->ユーロ</option>
+            <option value="USD" ><!--SEL_USD-->米ドル</option>
+            <option value="GBP" ><!--SEL_GBP-->英ポンド</option>
+            <option value="JPY" ><!--SEL_JPY-->円</option>
           </select>
         </div>
       </div>
@@ -112,21 +108,21 @@
                class="btn btn-default amount-btn-5">5&#x202f;€</a>
           </div>
           <span class="help-block">
-            Suggested amounts.
+            提案される金額。
           </span>
         </div>
       </div>
 
       <!-- Recurring -->
       <div class="form-group">
-        <label for="recur" class="col-sm-2 control-label">Recurring</label>
+        <label for="recur" class="col-sm-2 control-label">毎回?一度?</label>
         <div class="col-sm-2">
           <select class="form-control" name="recur" id="recur">
             <option value="0"
-            selected="selected"><!--RECUR_NONE-->Just once</option>
-            <option value="12" ><!--RECUR_MONTH-->Monthly</option>
-            <option value="4" ><!--RECUR_QUARTER-->Quarterly</option>
-            <option value="1" ><!--RECUR_YEAR-->Yearly</option>
+            selected="selected"><!--RECUR_NONE-->一回限り</option>
+            <option value="12" ><!--RECUR_MONTH-->毎月</option>
+            <option value="4" ><!--RECUR_QUARTER-->3ヶ月毎</option>
+            <option value="1" ><!--RECUR_YEAR-->毎年</option>
           </select>
         </div>
       </div>
@@ -134,14 +130,14 @@
       <!-- Pay using -->
       <div class="form-group">
         <label for="paytype" class="col-sm-2 control-label">
-          Pay using <!--ERR_PAYTYPE-->
+          支払い方式 <!--ERR_PAYTYPE-->
         </label>
         <div class="col-sm-6">
           <div class="radio">
             <label>
               <input type="radio" name="paytype" id="cc"
                      value="cc" /><!--CHECK_CC-->
-              Credit Card
+              クレジットカード
             </label>
           </div>
           <div class="radio">
@@ -155,7 +151,7 @@
             <label>
               <input type="radio" name="paytype" id="se"
                      value="se" /><!--CHECK_SE-->
-              SEPA (European bank transfer)
+              SEPA (ヨーロッパの銀行送金)
             </label>
           </div>
           <div class="radio">
@@ -171,18 +167,16 @@
       <!-- Name -->
       <div class="form-group">
         <label for="name" class="col-sm-2 control-label">
-          Name <!--ERR_NAME-->
-          <p class="text-muted"><small>(optional)</small></p>
+          名前 <!--ERR_NAME-->
+          <p class="text-muted"><small>(オプション)</small></p>
         </label>
         <div class="col-sm-6">
           <input type="text" class="form-control" name="name"
                  id="f_name" placeholder="Name (optional)"
                  value=""/><!--NAME-->
           <span class="help-block">
-            If you want to be listed on the
              <a href="https://www.gnupg.org/donate/kudos.html"
-                >list of donors</a>, please enter your name as
-             it shall appear there.
+                >寄付者の一覧</a>に掲示を望む場合、そこに掲載される名前を入力してください。
           </span>
         </div>
       </div>
@@ -190,16 +184,16 @@
       <!-- Email -->
       <div class="form-group">
         <label for="mail" class="col-sm-2 control-label">
-          Email <!--ERR_MAIL-->
-          <p class="text-muted"><small>(optional)</small></p>
+          メールアドレス<!--ERR_MAIL-->
+          <p class="text-muted"><small>(オプション)</small></p>
         </label>
         <div class="col-sm-6">
           <input type="email" class="form-control" name="mail"
                  id="f_mail" placeholder="Email (optional)"
                  value=""/><!--MAIL-->
           <span class="help-block">
-            In case of payment problems we may want to contact you,
-            thus please enter your e-mail address.
+            支払いに問題がある場合、連絡する可能性があります。
+            その際のメールアドレスを入力してください。
           </span>
         </div>
       </div>
@@ -207,22 +201,22 @@
       <!-- Message -->
       <div class="form-group">
         <label for="message" class="col-sm-2 control-label">
-          Message
-          <p class="text-muted"><small>(optional)</small></p>
+          メッセージ
+          <p class="text-muted"><small>(オプション)</small></p>
         </label>
         <div class="col-sm-6">
           <textarea class="form-control" name="message" id="f_message"
                     rows="4"
                     ></textarea><!--MESSAGE-->
           <span class="help-block">
-            If you want to leave a message for us, please enter it here.
+            わたしたちにメッセージを残したい場合、ここに入力してください。
           </span>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-2">
           <button type="submit" class="btn btn-primary btn-large"
-                  >Proceed to donation</button>
+                  >寄付に進む</button>
         </div>
       </div>
     </form>

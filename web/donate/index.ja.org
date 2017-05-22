@@ -186,8 +186,8 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Alex Abdo
-            <small>American Civil Liberties Union (ACLU)</small>
+	  <h2>本日の動画: アレックス・アブド
+            <small>アメリカ自由人権協会 (ACLU)</small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
@@ -207,10 +207,10 @@
 	    </div>
 	  </div>
 	  <p class="vid-howto">
-	    There is a new video every day! Click the menu
+	    新しい動画が毎日あります! メニューをクリックして
 	    <img src="/share/campaign/img/vidmenu.svg" style="height:
-	    1em; vertical-align: baseline;" aria-hidden="true"/> to
-	    select more videos.
+	    1em; vertical-align: baseline;" aria-hidden="true"/>
+	    動画を選択してください。
 	  </p>
 	</div>
       </div>
@@ -295,7 +295,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-            <h2>What we intend to do</h2>
+            <h2>わたしたちがやろうとしていること</h2>
 	  </div>
 	</div>
 	<div class="row goals is-table-row">
@@ -303,48 +303,31 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div class="row">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-1">
-		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Maintenance</h3>
-		  <p>Our first priority is to ensure continued maintenance
-		    of GnuPG.  This entails reacting to bug reports, dealing
-		    with security issues, and staying current with best
-		    cryptography practices.</p>
+		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>保守</h3>
+		  <p>第一の優先順位はGnuPGの保守を継続することです。バグ報告に対応すること、セキュリティの問題に対処すること、暗号技術のベストプラクティスに常に追随すること、です。</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
 		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/>Gnuk</h3>
-		  <p>The <a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
-		    is a fully free software and open schematic
-		    security token developed by Niibe.  We want to
-		    invest more in its production and
-		    distribution.</p>
+		  <p><a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
+		    は、g新部によって開発されている完全に自由ソフトウェアの自由のハードウェア設計のセキュリティ・トークンです。その製造と配布にもっと投資したいと考えています。</p>
 		</div>
 	      </div>
 	    </div>
 	    <div class="row match-my-cols">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
-		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book</h3>
-		  <p>We want to improve documentation.  On major
-                    project in this area is a book that we have
-                    started to write called <i>An Advanced
-                    Introduction to GnuPG</i>, which will explain how
-                    GnuPG works as well as best practices.  It is
-                    targetted towards digital security trainers,
-                    programmers integrating GnuPG to their
-                    applications, and enthusiasts.</p>
+		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span>本</h3>
+		  <p>ドキュメンテーションを改善したいと考えています。
+                    この分野では<i>An Advanced Introduction to GnuPG</i>という題の本を書くことが開始されてます。それはGnuPGがどのように動くかを説明するとともに、ベストプラクティスも解説します。セキュリティの講師、GnuPGをアプリケーションに組み込む開発者、熱心なユーザが対象読者です。</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-4">
-		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Greater Ecosystem</h3>
-		  <p>Few people use GnuPG directly.  Instead they
-		    interact with it via some tool.  We hope to better
-		    help these tool developers improve GnuPG
-		    integration.  In particular, we want to make sure
-		    that <a href="https://gpgtools.org/">GPGTools</a>,
-		    the GnuPG plug-in for Apple's mailer, works as
-		    soon as a new version of macOS is released.</p>
+		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>より良いエコシステム</h3>
+		  <p>GnuPGを直接使うユーザは少数です。多くは、なにかツールを経由してGnuPGとやりとりします。
+		    そういったツールの開発者をGnuPGとの統合することをもっと支援したいと考えています。特に、Appleのメーラのプラグインの<a href="https://gpgtools.org/">GPGTools</a>が新しいバージョンのmacOSがリリースされたらすぐに動くようにできたら良いと思います。</p>
 		</div>
 	      </div>
 	    </div>
@@ -356,7 +339,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
       <div class="container">
 	<div class="row">
-	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>What others say about GnuPG</h2></div>
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>GnuPGについて、ほかの人はなんと言っているか</h2></div>
 	</div>
 	<div class="row">
 	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
@@ -377,13 +360,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is the way that I most often communicate
-			    with people who are in need around the world.”
+			    「GPGは世界中で必要としている人と連絡するためにもっともよく使う方法です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -400,9 +382,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    core of that is&mdash;the security for that is GPG.”
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">Staff Attorney</div>
-			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -422,8 +404,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    being safe.’ ”
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-name">シーラ・フランケル</div>
+			    <div class="card-title">外国特派員</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -708,7 +690,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarousel" role="button" data-slide="next">
-		    More Testimonials
+		    もっと推薦文
 		  </a>
 		</div>
 	      </div>
@@ -1056,7 +1038,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		      Previous
 		    </a> -->
 		<a class="btn btn-success" href="#myCarouselMedium" role="button" data-slide="next">
-		  More Testimonials
+		  もっと推薦文
 		</a>
 	      </div>
 	    </div><!-- /.carousel -->
@@ -1480,7 +1462,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarouselSmall" role="button" data-slide="next">
-		    More Testimonials
+		    もっと推薦文
 		  </a>
 		</div>
 	      </div>
@@ -1499,7 +1481,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 <div id="team" class="camp-gutter container">
 <div class="row">
 	<div class="col-xs-12">
-	  <h2>Who we are</h2>
+	  <h2>わたしたちは?</h2>
 	</div>
 </div>
 
@@ -1511,9 +1493,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Picture of Werner">
 	    </div>
 	    <div class="media-body">
-	      <strong>Werner</strong> started GnuPG in 1997.  Werner
-	      is a long time free software supporter and co-founder of
-	      the FSFE.
+	      <strong>Werner</strong>は1997年にGnuPGを始めました。
+	      Wernerは長らく自由ソフトウェアの支持者で、FSFEの発起人の一人です。
 	    </div>
 	  </div>
 	</div>
@@ -1525,8 +1506,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Picture of Neal">
 	    </div>
 	    <div class="media-body">
-	      <strong>Neal</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
+	      <strong>Neal</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
 	    </div>
 	  </div>
 	</div>
@@ -1540,8 +1520,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Picture of Justus">
 	    </div>
 	    <div class="media-body">
-	      <strong>Justus</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
+	      <strong>Justus</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
 	    </div>
 	  </div>
 	</div>
@@ -1553,9 +1532,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Picture of Marcus">
 	    </div>
 	    <div class="media-body">
-	      <strong>Marcus</strong> worked on GnuPG from 2001 to
-	      2012 and rejoined the project in 2017 to work in all
-	      areas.
+	      <strong>Marcus</strong>は2001年から2012年にGnuPGについて仕事をしました。
+	      2017年に再び参加してすべての分野について働いています。
 	    </div>
 	  </div>
 	</div>
@@ -1569,7 +1547,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Picture of Kai">
 	    </div>
 	    <div class="media-body">
-	      <strong>Kai</strong> is working on the Enigmail project since 2015.
+	      <strong>Kai</strong>は2015年からEnigmailプロジェクトに参加しています。
 	    </div>
 	  </div>
 	</div>
@@ -1581,9 +1559,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
 	    </div>
 	    <div class="media-body">
-	      <strong>Niibe</strong> is a long time free software
-	      hacker who joined the GnuPG project in 2011 to work on
-	      smart cards and the Gnuk Token.
+	      <strong>g新部</strong>は古い自由ソフトウェアハッカーで、
+	      GnuPGプロジェクトに2011に参加しました。スマートカードとGnukトークンのサポートをしています。
 	    </div>
 	  </div>
 	</div>
@@ -1592,7 +1569,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 <div class="camp-final-pitch row">
   <div class="col">
       <center>
-        <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">Donate now!</a>
+        <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">寄付する!</a>
       </center>
     </div>
   </div>
