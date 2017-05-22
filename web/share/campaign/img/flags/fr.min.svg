@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--Created by Tobias Jakobs, released as Public Domain.  See fr.svg for unminimized version.-->
-<svg height="30" width="60" xmlns="http://www.w3.org/2000/svg" version="1">
-<rect height="30" width="20" style="fill:#fff"/>
-<rect height="30" width="20" style="fill:#00267f"/>
-<rect height="30" width="20" x="40" style="fill:#f31830"/>
+<svg  width="24" height="15" xmlns="http://www.w3.org/2000/svg" version="1">
+<rect width="8" height="15" style="fill:#fff"/>
+<rect width="8" height="15" style="fill:#00267f"/>
+<rect width="8" height="15" x="16" style="fill:#f31830"/>
 </svg>

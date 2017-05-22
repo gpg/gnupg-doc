@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--Created by Adam Stanislav, released as Public Domain.  See jp.svg for unminimized version.-->
-<svg width="60" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg">
-<rect stroke="#000" stroke-width="0.1" fill="#f7f7f7" width="60" height="40"/>
-<circle fill="#bc002d" cx="30" cy="20" r="12"/>
+<svg width="24" height="15" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<rect stroke="#000" stroke-width="0.2" fill="#f7f7f7" width="24" height="15"/>
+<circle fill="#bc002d" cx="12" cy="7.5" r="4.5"/>
 </svg>
