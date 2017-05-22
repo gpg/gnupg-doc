@@ -144,23 +144,23 @@
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
 	      <a class="btn btn-primary btn-lg btn-block" role="button"
-                 href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur"
+                 href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur&lang=fr"
                  >Donner 10&thinsp;€ par mois</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur"
+                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur&lang=fr"
                      >5&thinsp;€ par mois</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur"
+                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur&lang=fr"
                      >20&thinsp;€ par mois</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
 		<a style="margin-top: 1em;"
-                   href="/cgi-bin/procdonate.cgi?mode=preset"
+                   href="/cgi-bin/procdonate.cgi?mode=preset&lang=fr"
                    >Donner un montant libre</a>
 	      </div>
 	    </div>
