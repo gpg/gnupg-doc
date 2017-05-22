@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--Created by Philipp Sadleder, released as Public Domain.  See de.svg for unminimized version.-->
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg">
+<svg height="30" width="50" version="1.0" xmlns="http://www.w3.org/2000/svg">
 <rect height="10" width="50" />
 <rect height="10" width="50" y="10" style="fill:#f00"/>
 <rect height="10" width="50" y="20" style="fill:#ffe600"/>
