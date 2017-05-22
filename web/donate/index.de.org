@@ -98,8 +98,8 @@
 	  <h1>GnuPG Spendenkampagne</h1>
 	</div>
 	<div class="col-xs-12 col-lg-8">
-	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="yB3V1YP8cKw">
-	    <img src="http://i0.kym-cdn.com/photos/images/facebook/001/217/711/afd.jpg_large">
+	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
+	    <img src="/share/campaign/img/thumbs/main.jpg">
 	    <div class="play-button"></div>
 	    <div class="video-text">Klicken um das Video zu starten
               <noscript><br />
@@ -213,9 +213,9 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="agLgdTKgz50,qmuXUVg9Mjo,jJTrnaD5dkc"
+		   data-embed="andre,alex,benjamin"
                    data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
-		<img src="/share/campaign/img/thumbs/agLgdTKgz50.jpg">
+		<img src="/share/campaign/img/thumbs/andre.jpg">
 		<div class="play-button"></div>
 		<div class="video-text">Klicken um das Video zu starten
 		  <noscript><br />

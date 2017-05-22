@@ -87,6 +87,28 @@ function get_param_from_url(name) {
 
 /* Defer loading Youtube iframe until the user clicks on the video.  */
 $(document).ready(function() {
+
+    let YTID = { "main": "yB3V1YP8cKw",
+		 "thenmozhi": "2V-6JdTsIns",
+		 "sze": "tKPMof5ptc0",
+		 "sheera": "zwPaVA4vhDM",
+		 "seanus": "H6iO_MkOICM",
+		 "noah": "neibFsqgxgw",
+		 "michael": "w4PY1ihLm0w",
+		 "matt": "MWxhdPw9I8c",
+		 "lisa": "Vd8sz5X-1og",
+		 "john": "xdVHQhWrIro",
+		 "jason": "RtvlfTiSEMc",
+		 "geoffrey": "Y4yat43CvEc",
+		 "daniel": "coFFCJlMRjk",
+		 "cindy": "kPSEYvmFLWY",
+		 "benjamin": "mnVsS_kuwqo",
+		 "arthur": "Js_OqRLm9F4",
+		 "andrew": "DXiU9wewjn4",
+		 "andre": "sYXQxEPpnvA",
+		 "alex": "5FtL5hAcxk4"
+	       };
+
     /* For the video preview, we use this for devices without hover events.  */
     if ("ontouchstart" in document.documentElement) {
 	$("body").addClass("touch");
@@ -108,6 +130,7 @@ $(document).ready(function() {
     /* Click handler for all videos.  */
     $(".camp-video").one("click", function() {
 	let yt_id = $(this).data("embed").split(",")[0];
+	yt_id = YTID[yt_id]; // What if key does not exist?
 	let yt_list = $(this).data("embed-list");
 	let extra_parms = "";
 	if (yt_list) {
