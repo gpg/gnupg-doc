@@ -142,17 +142,17 @@
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
 	      <a class="btn btn-primary btn-lg btn-block" role="button"
-                 href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-10-eur&lang=ja"
+                 href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=ja"
                  >毎月10&thinsp;€を寄付</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-5-eur&lang=ja"
+                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=ja"
                      >毎月5&thinsp;€を寄付</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset;plan=12-20-eur&lang=ja"
+                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=ja"
                      >毎月20&thinsp;€を寄付</a>
 		</div>
 	      </div>
