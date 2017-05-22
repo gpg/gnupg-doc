@@ -13,7 +13,7 @@
   <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
 
 </head>
-  <body lang="fr">
+  <body lang="<!--LANG-->">
     <style>
 .control-label {
   padding-top: 0 !important;

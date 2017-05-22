@@ -21,7 +21,7 @@
   <script defer src="/share/campaign/campaign.js"></script>
 
 </head>
-<body lang="de">
+<body lang="<!--LANG-->">
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -41,7 +41,7 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/donate/index.de.html">Zurück</a></li>
+          <li><a href="/donate/index.<!--LANG-->.html">Zurück</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -66,8 +66,8 @@
 
     <form class="form-horizontal" role="form"
           action="/cgi-bin/procdonate.cgi" method="POST">
-      <input type="hidden" name="mode" value="main">
-      <input type="hidden" name="lang" value="de">
+      <input type="hidden" name="mode" value="main" />
+      <input type="hidden" name="lang" value="<!--LANG-->" />
 
       <!-- Amount and currency input field -->
       <div class="form-group">
@@ -94,19 +94,19 @@
         <div class="col-sm-offset-2 col-sm-6">
           <div class="btn-group btn-group-xs" role="group"
                aria-label="vorgeschlagene Beträge">
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-500">500&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-200">200&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-100">100&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-50">50&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-20">20&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-10">10&#x202f;€</a>
-            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur&lang=de"
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur&lang=<!--LANG-->"
                class="btn btn-default amount-btn-5">5&#x202f;€</a>
           </div>
           <span class="help-block">
