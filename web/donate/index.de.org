@@ -87,7 +87,7 @@
 	      </ul>
 	    </li>
 	  </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ Spenden</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.de.html" role="button">♥ Spenden</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -251,17 +251,16 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 		     alt="Bild von Cindy Cohn"
 	    class="camp-headshot pull-right"></a>, Geschäftsführerin der
 	    <a href="https://www.eff.org/">Electronic Frontier
-	    Foundation</a> (EFF), beschreibt GnuPG als <i>"das
-	    Werkzeug, mit dem ich am häufigsten mit hilfsbedürftigen
-	    Menschen auf der ganzen Welt
-	    kommuniziere."</i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
+	    Foundation</a> (EFF), beschreibt GnuPG als <i> “das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not [..] kommuniziere.”
+        </i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
 	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Bild von Sheera Frenkel" class="camp-headshot pull-left"></a>,
 	    Auslandskorrespondentin für BuzzFeed News, fügt
 	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
 	    wir ausgebildet GPG zu benutzen.</strong>  Es geht um die
 	    Quellen und was mit ihnen passiert wenn man ihr Land
-	    verlässt, die explosive Story veröffentlicht und die
+	    verlässt, die brisante Story veröffentlicht und die
 	    Regierung nach dem Informant sucht, der einem die
 	    Schlüsselinformation verriet."</i>  Und GnuPG war
 	    bekanntermaßen Edward Snowden's Werkzeug der Wahl um
@@ -322,7 +321,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    und über die letzten zwei Jahre hat sich GnuPG und das
 	    dazugehörende Ökosystem in einer Reihe von Punkten
 	    weiterentwickelt.  Zum Beispiel haben wir
-	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html">Schlüsselfindung vereinfacht</a>, ein System zur
+	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html"> das finden von Schlüssel vereinfacht</a>, ein System zur
 	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Anbindung von GPG an Python</a> adoptiert, an
 	    <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>
 	    mitgearbeitet,
@@ -339,7 +338,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
             lange Sicht zu gewähren auf regelmäßige Spenden und nicht
             auf einmalige Spenden wie letztes mal.
 	  <p class="text-justify">
-	    <strong>Unser Hauptziel ist es, Zusagen für Spenden in
+	    <strong>Unser Hauptziel ist es, Spenden in
 	      Höhe von 15&#x202f;000&nbsp;Euro monatlich zu bekommen&mdash;genug
 	      um drei Entwickler zu finanzieren</strong>.  Wir können
 	      dieses Ziel erreichen wenn nur 2000&nbsp;Menschen
@@ -419,11 +418,10 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
 		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> Gnuk</h3>
-		  <p>Das Gnuk ist ein Sicherheitstoken vollkommen
-		    bestehend aus Freier Software und offenen
-		    Bauplänen entwickelt von Niibe.  Wir planen mehr
-		    in seine Produktion und Vertrieb zu
-		    investieren.</p>
+		  <p>Das Gnuk Sicherheitstoken besteht komplett aus
+        Freier Software. Auch das Hardwaredesign, entwickelt
+        von Niibe, ist frei verfügbar.  Wir planen, mehr
+        in seine Produktion und Vertrieb zu investieren.</p>
 		</div>
 	      </div>
 	    </div>
@@ -446,14 +444,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-4">
 		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Größeres Ökosystem</h3>
-		  <p>Wenige Leute nutzen GnuPG direkt.  Statt dessen
-		    interagieren sie damit mit Hilfe eines Werkzeugs.
-		    Wir hoffen die Entwickler solcher Werkzeuge zu
-		    unterstützen die Integration von GnuPG zu
+		  <p>Die meisten Leute nutzen GnuPG nicht direkt,
+        sondern durch Werkzeuge und Plugins.
+		    Wir wollen die Entwickler solcher Programme
+        unterstützen, um Integration von GnuPG zu
 		    verbessern.  Insbesondere möchten wir
-		    sicherstellen, dass GPGTools, das GPG-Plugin für
-		    Apple's Mailprogramm, funktioniert sobald eine
-		    neue Version von macOS erscheint.</p>
+		    sicherstellen, dass das GPG-Plugin für
+		    Apple's Mailprogramm (GPGTools) mit jeder neuen
+        Version von macOS funktioniert.</p>
 		</div>
 	      </div>
 	    </div>
@@ -487,8 +485,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote">
 			    “GPG ist das Werkzeug, mit dem ich am
-			    häufigsten mit hilfsbedürftigen Menschen
-			    auf der ganzen Welt kommuniziere.”
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
@@ -571,7 +569,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmore</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Leitender Angestellter der IT XXX</div>
+			    <div class="card-title">Leitender Angestellter der IT</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -590,7 +588,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -612,7 +610,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Leiter der Sicherheitsabteilung XXX</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -642,7 +640,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">Staff Technologist xxx</div>
+			    <div class="card-title">Staff Technologist</div>
 			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
 			  </div>
 			</div>
@@ -656,7 +654,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote">
 			    “Wir fühlen uns sehr sicher wenn wir GPG
-			    einsetzen um die Daten von Studenten zu
+			    einsetzen, um die Daten von Studenten zu
 			    schützen beim Austausch von Akten zwischen
 			    Universitäten.  Es beruhigt uns wirklich
 			    sehr.”
@@ -707,7 +705,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    “Als eine Nachrichtenorganisation sind wir
 			    ausgebildet GPG zu benutzen.  Es geht um
 			    die Quellen und was mit ihnen passiert
-			    wenn man ihr Land verlässt, die explosive
+			    wenn man ihr Land verlässt, die brisante
 			    Story veröffentlicht und die Regierung
 			    nach dem Informant sucht, der einem die
 			    Schlüsselinformation verriet.”
@@ -784,7 +782,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -809,7 +807,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General XXX</div>
+			    <div class="card-title">Technologist General</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -822,14 +820,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG hat uns noch nicht den Arsch
+			    “GPG hat uns noch nicht den Hintern
 			    gerettet, aber die Tatsache, dass es da
 			    ist&mdash;es lässt uns nachts ruhig
 			    schlafen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">Distinguished Developer XXX</div>
+			    <div class="card-title">Distinguished Developer</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
@@ -869,10 +867,10 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG ist das Werkzeug, mit dem ich am
-			    häufigsten mit hilfsbedürftigen Menschen
-			    auf der ganzen Welt kommuniziere.”
-			  </div>
+          “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
+        </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
 			    <div class="card-title">Geschäftsführerin</div>
@@ -954,7 +952,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmore</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Leitender Angestellter der IT XXX</div>
+			    <div class="card-title">Leitender Angestellter der IT</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -980,7 +978,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -1002,7 +1000,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Leiter der Sicherheitsabteilung XXX</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -1097,7 +1095,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    “Als eine Nachrichtenorganisation sind wir
 			    ausgebildet GPG zu benutzen.  Es geht um
 			    die Quellen und was mit ihnen passiert
-			    wenn man ihr Land verlässt, die explosive
+			    wenn man ihr Land verlässt, die brisante
 			    Story veröffentlicht und die Regierung
 			    nach dem Informant sucht, der einem die
 			    Schlüsselinformation verriet.”
@@ -1181,7 +1179,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -1206,7 +1204,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General XXX</div>
+			    <div class="card-title">Technologist General</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -1244,9 +1242,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG ist das Werkzeug, mit dem ich am
-			    häufigsten mit hilfsbedürftigen Menschen
-			    auf der ganzen Welt kommuniziere.”
+			   “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
@@ -1343,7 +1341,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmore</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Leitender Angestellter der IT XXX</div>
+			    <div class="card-title">Leitender Angestellter der IT</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -1369,7 +1367,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -1398,7 +1396,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Leiter der Sicherheitsabteilung XXX</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -1507,7 +1505,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    “Als eine Nachrichtenorganisation sind wir
 			    ausgebildet GPG zu benutzen.  Es geht um
 			    die Quellen und was mit ihnen passiert
-			    wenn man ihr Land verlässt, die explosive
+			    wenn man ihr Land verlässt, die brisante
 			    Story veröffentlicht und die Regierung
 			    nach dem Informant sucht, der einem die
 			    Schlüsselinformation verriet.”
@@ -1598,7 +1596,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">Anwalt für Menschenrechte XXX</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
 			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
@@ -1630,7 +1628,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General XXX</div>
+			    <div class="card-title">Technologist General</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -1650,14 +1648,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG hat uns noch nicht den Arsch
+			    “GPG hat uns noch nicht den Hintern
 			    gerettet, aber die Tatsache, dass es da
 			    ist&mdash;es lässt uns nachts ruhig
 			    schlafen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">Distinguished Developer XXX</div>
+			    <div class="card-title">Distinguished Developer</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>

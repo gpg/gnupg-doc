@@ -102,7 +102,7 @@
 		verarbeiten, sondern den Services eines
 		Zahlungsabwicklers in Anspruch nehmen und die
 		sensiblen Informationen direkt von Ihrem Browser an
-		diese übermitteln.  Bitte schalten Sie deswegen
+		diese übermitteln.  Bitte erlauben Sie deswegen
 		Javascript für <emph>gnupg.org</emph>
 		und <emph>stripe.com</emph> ein.
               </p>
@@ -131,7 +131,7 @@
                 data-locale="<!--STRIPELOCALE-->"
                 data-amount="<!--STRIPEAMOUNT-->"
                 data-currency="<!--CURRENCY-->"
-                data-panel-label="Donate {{amount}} <!--RECUR_TEXT-->"
+                data-panel-label="Spende von {{amount}} <!--RECUR_TEXT-->"
                 data-label="<!--STRIPE_DATA_LABEL_VALUE-->"
                 <!--STRIPE_DATA_EMAIL-->
               >

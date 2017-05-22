@@ -120,10 +120,11 @@
 
           <p>
 	    Bitte achten Sie darauf, dass die unter Verwendungszweck
-	    angegebene Referenznummer stimmt, damit wir Ihre Spende
-	    zuordnen können und Sie in der Liste der Spender aufführen
-	    können, falls Sie das wünschen.  Die Referenznummer
-	    verliert ihre Gültigkeit nach 30 Tagen, bitte überweisen
+	    angegebene Referenznummer stimmt. Diese wird benötigt um
+      Ihre Spende zuordnen zu können. Sie werden in der Liste
+      der Spender aufführt werden, falls Sie einen Name angegeben
+      haben. Die Referenznummer
+	    verliert ihre Gültigkeit nach 30 Tagen. Bitte überweisen
 	    Sie rechtzeitig.  Sie können einen anderen Betrag
 	    überweisen, aber bitte überweisen Sie mindestens 5 Euro
 	    damit wir unsere Verwaltungskosten decken können.  Sie
