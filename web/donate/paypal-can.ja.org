@@ -1,19 +1,20 @@
 #                                                    -*- html -*-
-#+TITLE: GnuPG - 寄付 - Bitcoinを寄付する
+#+TITLE: GnuPG - 寄付 - Paypal キャンセル
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
 #+BEGIN_HTML
 <!--custom-page-->  <!-- this disables all standard processing. -->
-  <!-- bootstrap core and site css -->
-  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
-  <link href="/share/campaign/campaign.css" rel="stylesheet">
+<!--html-->
+  <!--head-->
+    <!-- bootstrap core and site css -->
+    <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+    <link href="/share/campaign/campaign.css" rel="stylesheet">
 
-  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
-  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
-
-</head>
-  <body lang="<!--LANG-->">
+    <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+    <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+  </head>
+  <body lang="ja">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -42,19 +43,9 @@
     <div class="camp-gutter container">
       <div class="row">
         <div class="col-md-7 col-md-offset-2">
-          <h2>まとめ</h2>
+          <h2>キャンセル</h2>
           <p>
-          寄付されたBitcoinは非営利団体<a href="https://www.gnupg.org/verein">GnuPG e.V.</a>に集められます。
-          </p>
-
-          <p>
-          Bitcoinは、こちら
-          <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          ><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></a>に送金ください。
-          </p>
-
-          <p>
-            <strong>前もって寄付のお礼を申し上げます。</strong>
+          寄付の手順はキャンセルされました。
           </p>
         </div>
       </div>
@@ -62,7 +53,7 @@
       <div class="row">
         <div class="col-sm-5 col-md-offset-2">
           <p>
-            <a class="btn btn-default btn-sm" href="/">ホームへ</a>
+            <a class="btn btn-default btn-sm" href="/donate">戻る</a>
           </p>
         </div>
       </div>

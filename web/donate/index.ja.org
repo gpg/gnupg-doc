@@ -226,9 +226,9 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             >これまでの20年間</a>、GnuPGは通信のコミュニケーションを守るために役立ってきました。</strong>
 	    <a href="https://www.eff.org/">電子フロンティア財団</a> (EFF)のエグゼクティブ・ディレクターの<a href="https://www.eff.org/de/about/staff/cindy-cohn">シンディ・コーン<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
 	    alt="Picture of Cindy Cohn" class="camp-headshot
-	    pull-right"></a>さんは、GnuPGを <i>「世界中で必要としている人と連絡するためにもっともよく使う方法です」</i>と述べています。BuzzFeed Newsの外国特派員の<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    pull-right"></a>さんは、GnuPGを <i>「世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です」</i>と述べています。BuzzFeed Newsの外国特派員の<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
 	    alt="Picture of Sheera Frenkel" class="camp-headshot
-	    pull-left">シーラ・フランケル</a>さんは、言っています。
+	    pull-left">シーラ・フランクル</a>さんは、言っています。
 	    <i>「<strong>報道機関として、わたしたちはGPGの使い方を習得しています。</strong>
             問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」</i>  そうです、有名なことですが、GnuPGはエドワード・スノーデンがNSAの大規模監視の告発について、ジャーナリストと安全に連絡する手段として選択したものでした。
 	  <p class="text-justify">
@@ -236,7 +236,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    ほとんどすべての自由ソフトウェアのオペレーティング・システムについて、
 	    <strong>GnuPGはソフトウェアの更新を保護しており</strong>、
             <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">インターネットのすべてのサーバの2/3がこうした自由なオペレーティング・システムで動いています</a>。そして、GnuPGは団体や会社で広く使われています。
-            たとえば、2Uの情報技術担当の副社長、アーサー・ジョルダン<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+            たとえば、2Uの情報技術担当 副社長、アーサー・ジョーダン<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
             alt="Picture of Arthur Jordan"
             class="camp-headshot pull-left">さんは、わたしたちにこう言いました:
 	    <i>「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」</i>
@@ -360,7 +360,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    「GPGは世界中で必要としている人と連絡するためにもっともよく使う方法です。」
+			    「GPGは世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">シンディ・コーン</div>
@@ -377,9 +377,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “At the end of the day we're lawyers, and so
-			    we're going to be exchanging documents and emails, and the
-			    core of that is&mdash;the security for that is GPG.”
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">アレックス・アブド</div>
@@ -396,12 +394,9 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I was <!--recently--> speaking with a source <!-- about a potential
-			    story--> in Russia. I ran him through how to use GPG, and he
-			    recently sent me his first encrypted email and <!-- at the end
-			    of it, he--> said: ‘Thank you so much, it's really made
-			    me feel better, it made me feel like you care about my
-			    being safe.’ ”
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">シーラ・フランケル</div>
@@ -425,20 +420,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “Whether or not you have a GPG key, whether
-			    or not you ever send encrypted mail,
-			    you're relying on GPG to ensure that your
-			    software updates actually work the way
-			    that you expect.”  <!-- You're relying on a
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」 <!-- You're relying on a
 			    bunch of other stuff as well, but without
 			    GPG that other stuff wouldn't actually be
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Senior Staff Technologist</div>
-			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -450,12 +441,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is vital for protecting certain attorney-client conversations.”
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-title">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -467,14 +458,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is <!-- a&mdash;the way that I describe it&mdash;is--> part of a balanced
-			    breakfast of any reporter especially one who wants to protect their
-			    sources, and be able to be reached for leaks and things of that
-			    nature.”
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -494,15 +482,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “The journalists we serve trust us to know the best ways
-			    to protect them.  And our use of the most secure, most
-			    practical tools available, like GPG, fulfills our duty
-			    to keep them safe.”
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">Staff Technologist</div>
-			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会 (CPJ)</div>
 			  </div>
 			</div>
 		      </div>
@@ -514,12 +499,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We feel very safe using GPG to protect student data when we're doing
-			    file exchanges with universities.  It gives us a lot of comfort.”
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-title">2U</div>
 			  </div>
 			</div>
@@ -532,16 +516,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I think of GPG as one of the core tools
-			    that we need if we're going to have
-			    functioning self-government in the United
-			    States or around the world in the digital
-			    age.”
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -560,14 +540,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “As a news organization, we're trained on using GPG. It's about your
-			    sources and what happens to them when you leave the country and you
-			    publish that explosive story and the government is looking for the
-			    whistleblower that handed you that key piece of information.”
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -580,15 +557,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We [at SecureDrop] decided on GPG instead of other
-			    alternatives, in large part due to the fact that GPG is
-			    the most well-known and most used tool for asymmetric
-			    encryption.”
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">Software Engineer</div>
-			    <div class="card-org">Freedom of the Press Foundation</div>
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
 			  </div>
 			</div>
 		      </div>
@@ -600,12 +574,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “When we reached out to universities about how they wanted to do
-			    secure file transfer, they were already using GPG encryption.”
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -625,16 +598,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “For me personally, I think what GPG's
-			    been most helpful for is opening up access
-			    to people I could not otherwise
-			    communicate with and either help or tell
-			    their story.”
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-title">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -646,16 +615,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “But even if you are totally sure that you have nothing to hide, if you
-			    think that other people have things to hide and that it's a good idea
-			    for them to be able to hide those things, we think that <!-- you should be
-			    using these technologies, that -->you should be using GPG, because that
-			    helps protect those other people that really do need to use GPG.”
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -667,13 +633,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG hasn't saved our butt yet, but the
-			    fact that it is there is&mdash;it let's us
-			    sleep easier at night.”
+			    「GPGはわたしたちの対象をまだ救ってはくれていません。しかし、事実は、それがそこにある &mdash; そのおかげでわたしたちが夜に安心して眠りにつける、ということです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-name">ジョン・パーシング</div>
+			    <div class="card-title">優秀開発者</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
@@ -713,13 +677,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is the way that I most often communicate
-			    with people who are in need around the world.”
+			    「GPGは世界中で必要としている人と連絡するためにもっともよく使う方法です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -731,14 +694,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “At the end of the day we're lawyers, and so
-			    we're going to be exchanging documents and emails, and the
-			    core of that is&mdash;the security for that is GPG.”
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">Staff Attorney</div>
-			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -757,15 +718,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I was <!--recently--> speaking with a source <!-- about a potential
-			    story--> in Russia. I ran him through how to use GPG, and he
-			    recently sent me his first encrypted email and <!-- at the end
-			    of it, he--> said: ‘Thank you so much, it's really made
-			    me feel better, it made me feel like you care about my
-			    being safe.’ ”
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-name">シーラ・フランクル</div>
 			    <div class="card-title">Foreign Correspondent</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
@@ -779,20 +737,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “Whether or not you have a GPG key, whether
-			    or not you ever send encrypted mail,
-			    you're relying on GPG to ensure that your
-			    software updates actually work the way
-			    that you expect.”  <!-- You're relying on a
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」  <!-- You're relying on a
 			    bunch of other stuff as well, but without
 			    GPG that other stuff wouldn't actually be
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Senior Staff Technologist</div>
-			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -811,12 +765,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is vital for protecting certain attorney-client conversations.”
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-title">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -828,14 +782,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is <!-- a&mdash;the way that I describe it&mdash;is--> part of a balanced
-			    breakfast of any reporter especially one who wants to protect their
-			    sources, and be able to be reached for leaks and things of that
-			    nature.”
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -855,15 +806,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “The journalists we serve trust us to know the best ways
-			    to protect them.  And our use of the most secure, most
-			    practical tools available, like GPG, fulfills our duty
-			    to keep them safe.”
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">Staff Technologist</div>
-			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会 (CPJ)</div>
 			  </div>
 			</div>
 		      </div>
@@ -875,12 +823,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We feel very safe using GPG to protect student data when we're doing
-			    file exchanges with universities.  It gives us a lot of comfort.”
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -900,16 +847,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I think of GPG as one of the core tools
-			    that we need if we're going to have
-			    functioning self-government in the United
-			    States or around the world in the digital
-			    age.”
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -921,14 +864,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “As a news organization, we're trained on using GPG. It's about your
-			    sources and what happens to them when you leave the country and you
-			    publish that explosive story and the government is looking for the
-			    whistleblower that handed you that key piece of information.”
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -948,15 +888,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We [at SecureDrop] decided on GPG instead of other
-			    alternatives, in large part due to the fact that GPG is
-			    the most well-known and most used tool for asymmetric
-			    encryption.”
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">Software Engineer</div>
-			    <div class="card-org">Freedom of the Press Foundation</div>
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
 			  </div>
 			</div>
 		      </div>
@@ -968,12 +905,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “When we reached out to universities about how they wanted to do
-			    secure file transfer, they were already using GPG encryption.”
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -993,16 +929,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “For me personally, I think what GPG's
-			    been most helpful for is opening up access
-			    to people I could not otherwise
-			    communicate with and either help or tell
-			    their story.”
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-org">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-org">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -1014,16 +946,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “But even if you are totally sure that you have nothing to hide, if you
-			    think that other people have things to hide and that it's a good idea
-			    for them to be able to hide those things, we think that <!-- you should be
-			    using these technologies, that -->you should be using GPG, because that
-			    helps protect those other people that really do need to use GPG.”
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General</div>
-			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1060,13 +989,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is the way that I most often communicate
-			    with people who are in need around the world.”
+			    「GPGは世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団</div>
 			  </div>
 			</div>
 		      </div>
@@ -1085,14 +1013,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “At the end of the day we're lawyers, and so
-			    we're going to be exchanging documents and emails, and the
-			    core of that is&mdash;the security for that is GPG.”
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">Staff Attorney</div>
-			    <div class="card-org">American Civil Liberties Union</div>
+			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会</div>
 			  </div>
 			</div>
 		      </div>
@@ -1111,16 +1037,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “I was <!--recently--> speaking with a source <!-- about a potential
-			    story--> in Russia. I ran him through how to use GPG, and he
-			    recently sent me his first encrypted email and <!-- at the end
-			    of it, he--> said: ‘Thank you so much, it's really made
-			    me feel better, it made me feel like you care about my
-			    being safe.’ ”
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -1140,20 +1063,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “Whether or not you have a GPG key, whether
-			    or not you ever send encrypted mail,
-			    you're relying on GPG to ensure that your
-			    software updates actually work the way
-			    that you expect.”  <!-- You're relying on a
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」  <!-- You're relying on a
 			    bunch of other stuff as well, but without
 			    GPG that other stuff wouldn't actually be
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
-			    <div class="card-title">Senior Staff Technologist</div>
-			    <div class="card-org">American Civil Liberties Union</div>
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会</div>
 			  </div>
 			</div>
 		      </div>
@@ -1172,12 +1091,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is vital for protecting certain attorney-client con&shy;ver&shy;sa&shy;tions.”
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-title">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -1197,14 +1116,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG is <!-- a&mdash;the way that I describe it&mdash;is--> part of a balanced
-			    breakfast of any reporter especially one who wants to protect their
-			    sources, and be able to be reached for leaks and things of that
-			    nature.”
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -1224,15 +1140,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “The journalists we serve trust us to know the best ways
-			    to protect them.  And our use of the most secure, most
-			    practical tools available, like GPG, fulfills our duty
-			    to keep them safe.”
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">Staff Technologist</div>
-			    <div class="card-org">Committee to Protect Journalists</div>
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会</div>
 			  </div>
 			</div>
 		      </div>
@@ -1251,12 +1164,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We feel very safe using GPG to protect student data when we're doing
-			    file exchanges with universities.  It gives us a lot of comfort.”
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -1276,16 +1188,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “I think of GPG as one of the core tools
-			    that we need if we're going to have
-			    functioning self-government in the United
-			    States or around the world in the digital
-			    age.”
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">Executive Director</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団</div>
 			  </div>
 			</div>
 		      </div>
@@ -1305,14 +1213,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    “As a news organization, we're trained on using GPG. It's about your
-			    sources and what happens to them when you leave the country and you
-			    publish that explosive story and the government is looking for the
-			    whistleblower that handed you that key piece of information.”
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -1332,15 +1237,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “We [at SecureDrop] decided on GPG instead of other
-			    alternatives, in large part due to the fact that GPG is
-			    the most well-known and most used tool for asymmetric
-			    encryption.”
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">Software Engineer</div>
-			    <div class="card-org">Freedom of the Press Foundation</div>
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
 			  </div>
 			</div>
 		      </div>
@@ -1360,12 +1262,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “When we reached out to universities about how they wanted to do
-			    secure file transfer, they were already using GPG encryption.”
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">Vice President of Information Technology</div>
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -1385,16 +1286,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “For me personally, I think what GPG's
-			    been most helpful for is opening up access
-			    to people I could not otherwise
-			    communicate with and either help or tell
-			    their story.”
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">First Amendment Lawyer</div>
-			    <div class="card-title">Journalist</div>
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
 			  </div>
 			</div>
 		      </div>
@@ -1413,16 +1310,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
-			    “But even if you are totally sure that you have nothing to hide, if you
-			    think that other people have things to hide and that it's a good idea
-			    for them to be able to hide those things, we think that <!-- you should be
-			    using these technologies, that -->you should be using GPG, because that
-			    helps protect those other people that really do need to use GPG.”
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">Technologist General</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団</div>
 			  </div>
 			</div>
 		      </div>
@@ -1441,13 +1335,11 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    “GPG hasn't saved our butt yet, but the
-			    fact that it is there is&mdash;it let's us
-			    sleep easier at night.”
+			    「GPGはわたしたちの対象をまだ救ってはくれていません。しかし、事実は、それがそこにある &mdash; そのおかげでわたしたちが夜に安心して眠りにつける、ということです。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-name">ジョン・パーシング</div>
+			    <div class="card-title">優秀開発者</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
