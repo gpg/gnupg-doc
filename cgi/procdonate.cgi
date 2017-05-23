@@ -344,7 +344,7 @@ sub write_template ($) {
 
 # Call the payment processor daemon.  Takes the command and a
 # reference to a dictionary with the data as input.  On return that
-# disctionary is replaced by the response data.
+# dictionary is replaced by the response data.
 sub payproc ($$)
 {
     my $cmd = shift;
@@ -646,6 +646,112 @@ sub resend_main_page ()
 }
 
 
+# Write a THANKS page.
+sub write_thanks ($)
+{
+    my $data = shift;
+    my $recur;
+    my $recur_text = '';
+    my $processor;
+    my $cardno;
+    my $accountid = '-';
+
+    if ( $paytype eq 'cc' ) {
+        $processor = 'Stripe';
+        $cardno = '*' . $$data{"Last4"};
+    } elsif ( $paytype eq 'pp' ) {
+        $processor = 'Paypal';
+        $cardno = '-';
+    } else {
+        $processor = '-';
+        $cardno = '-';
+    }
+
+    if ($$data{"account-id"} ne '') {
+        $accountid = $$data{"account-id"};
+    }
+
+    $recur = $$data{"Recur"};
+    if ( $recur =~ /12/ ) {
+        if ($lang eq 'de')    { $recur_text = 'monatlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Mensuelle'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎月'; }
+        else                  { $recur_text = 'Monthly'; }
+    } elsif ( $recur =~ /4/ ) {
+        if ($lang eq 'de')    { $recur_text = 'vierteljährlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Trimestrielle'; }
+        elsif ($lang eq 'ja') { $recur_text = '3ヶ月毎'; }
+        else                  { $recur_text = 'Quarterly'; }
+    } elsif ( $recur =~ /1/ ) {
+        if ($lang eq 'de')    { $recur_text = 'jährlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Annuelle'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎年'; }
+        else                  { $recur_text = 'Yearly'; }
+    } else {
+        if ($lang eq 'de')    { $recur_text = 'nein'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Unique'; }
+        elsif ($lang eq 'ja') { $recur_text = '一回だけ'; }
+        else                  { $recur_text = 'Just once'; }
+    }
+
+    if ($lang eq 'de') {
+        $message = <<EOF;
+Betrag ......: $$data{"Amount"} $$data{"Currency"}
+Dauerauftrag : $recur_text
+Beschreibung : $$data{"Desc"}
+Kartennr. ...: $cardno
+Dienstleister: $processor
+Charge-Id ...: $$data{"Charge-Id"}
+Zeitstempel .: $$data{"_timestamp"}
+Email .......: $$data{"Email"}
+Spender-ID ..: $accountid
+EOF
+    } elsif ($lang eq 'fr') {
+         $message = <<EOF;
+Montant ....: $$data{"Amount"} $$data{"Currency"}
+Fréquence ..: $recur_text
+Description : $$data{"Desc"}
+No. carte ..: $cardno
+Processeur .: $processor
+Charge-Id ..: $$data{"Charge-Id"}
+Date .......: $$data{"_timestamp"}
+Courriel ...: $$data{"Email"}
+Account-Id .: $accountid
+EOF
+    } elsif ($lang eq 'ja') {
+        $message = <<EOF;
+金額 ......: $$data{"Amount"} $$data{"Currency"}
+毎回?一回? : $recur_text
+説明 ......: $$data{"Desc"}
+カード番号 : $cardno
+決済業者 ..: $processor
+Charge-Id .: $$data{"Charge-Id"}
+時刻 ......: $$data{"_timestamp"}
+メール ....: $$data{"Email"}
+Account-Id : $accountid
+EOF
+    } else {
+         $message = <<EOF;
+Amount ....: $$data{"Amount"} $$data{"Currency"}
+Recurring .: $recur_text
+Desc ......: $$data{"Desc"}
+Cardno.....: $cardno
+Processor .: $processor
+Charge-Id .: $$data{"Charge-Id"}
+Timestamp .: $$data{"_timestamp"}
+Email .....: $$data{"Email"}
+Account-Id : $accountid
+EOF
+    }
+
+    if ($$data{"Live"} eq 'f') {
+        $message = $message . "\n!!! TEST TRANSACTION !!!";
+    }
+
+    write_thanks_page ();
+}
+
+
 # This is called by FIXME
 sub complete_stripe_checkout ()
 {
@@ -657,6 +763,11 @@ sub complete_stripe_checkout ()
     # fixme: Change the error message to note that the card has not
     # been charged.  Somehow delete the token
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+
+    if ( $data{"Paytype"} ne "cc" ) {
+        fail "Invalid paytype for Stripe transaction";
+    }
+    $paytype = $data{"Paytype"};
 
     # If the session has a lang value use that.
     if ($data{"lang"} ne '') {
@@ -689,92 +800,7 @@ sub complete_stripe_checkout ()
     }
 
     # Print thanks
-    $recur = $stripe{"Recur"};
-    if ( $recur =~ /12/ ) {
-        if ($lang eq 'de')    { $recur_text = 'monatlich'; }
-        elsif ($lang eq 'fr') { $recur_text = 'Mensuelle'; }
-        elsif ($lang eq 'ja') { $recur_text = '毎月'; }
-        else                  { $recur_text = 'Monthly'; }
-    } elsif ( $recur =~ /4/ ) {
-        if ($lang eq 'de')    { $recur_text = 'vierteljährlich'; }
-        elsif ($lang eq 'fr') { $recur_text = 'Trimestrielle'; }
-        elsif ($lang eq 'ja') { $recur_text = '3ヶ月毎'; }
-        else                  { $recur_text = 'Quarterly'; }
-    } elsif ( $recur =~ /1/ ) {
-        if ($lang eq 'de')    { $recur_text = 'jährlich'; }
-        elsif ($lang eq 'fr') { $recur_text = 'Annuelle'; }
-        elsif ($lang eq 'ja') { $recur_text = '毎年'; }
-        else                  { $recur_text = 'Yearly'; }
-    } else {
-        if ($lang eq 'de')    { $recur_text = 'nein'; }
-        elsif ($lang eq 'fr') { $recur_text = 'Unique'; }
-        elsif ($lang eq 'ja') { $recur_text = '一回だけ'; }
-        else                  { $recur_text = 'Just once'; }
-    }
-
-    if ($lang eq 'de') {
-        $message = <<EOF;
-Betrag ......: $stripe{"Amount"} $stripe{"Currency"}
-Dauerauftrag : $recur_text
-Beschreibung : $stripe{"Desc"}
-Kartennr. ...: *$stripe{"Last4"}
-Dienstleister: Stripe
-Charge-Id ...: $stripe{"Charge-Id"}
-Zeitstempel .: $stripe{"_timestamp"}
-Email .......: $stripe{"Email"}
-EOF
-        if ($stripe{"account-id"} ne '') {
-            $message = $message . "Spender-ID ..: " . $stripe{"account-id"};
-        }
-    } elsif ($lang eq 'fr') {
-         $message = <<EOF;
-Montant ....: $stripe{"Amount"} $stripe{"Currency"}
-Fréquence ..: $recur_text
-Description : $stripe{"Desc"}
-No. carte ..: *$stripe{"Last4"}
-Processeur .: Stripe
-Charge-Id ..: $stripe{"Charge-Id"}
-Date .......: $stripe{"_timestamp"}
-Courriel ...: $stripe{"Email"}
-EOF
-        if ($stripe{"account-id"} ne '') {
-            $message = $message . "Account-Id : " . $stripe{"account-id"};
-        }
-    } elsif ($lang eq 'ja') {
-        $message = <<EOF;
-金額 ......: $stripe{"Amount"} $stripe{"Currency"}
-毎回?一回? : $recur_text
-説明 ......: $stripe{"Desc"}
-カード番号 : *$stripe{"Last4"}
-決済業者 ..: Stripe
-Charge-Id .: $stripe{"Charge-Id"}
-時刻 ......: $stripe{"_timestamp"}
-メール ....: $stripe{"Email"}
-EOF
-        if ($stripe{"account-id"} ne '') {
-            $message = $message . "Account-Id : " . $stripe{"account-id"};
-        }
-    } else {
-         $message = <<EOF;
-Amount ....: $stripe{"Amount"} $stripe{"Currency"}
-Recurring .: $recur_text
-Desc ......: $stripe{"Desc"}
-Cardno.....: *$stripe{"Last4"}
-Processor .: Stripe
-Charge-Id .: $stripe{"Charge-Id"}
-Timestamp .: $stripe{"_timestamp"}
-Email .....: $stripe{"Email"}
-EOF
-        if ($stripe{"account-id"} ne '') {
-            $message = $message . "Account-Id : " . $stripe{"account-id"};
-        }
-    }
-
-    if ($stripe{"Live"} eq 'f') {
-        $message = $message . "\n!!! TEST TRANSACTION !!!";
-    }
-
-    write_thanks_page ();
+    write_thanks (\%stripe);
     payproc ('SESSION destroy ' . $sessid, ());
 }
 
@@ -796,9 +822,11 @@ sub get_paypal_approval ()
 
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
+    $request{"Recur"} = $data{"Recur"};
     $request{"Desc"} =
         "Donation of " . $data{"Amount"} . " " . $data{"Currency"} .
         " to the GnuPG project";
+    $request{"Email"} = $data{"Mail"};
     $request{"Meta[name]"} = $data{"Name"} unless
         $data{"Name"} eq 'Anonymous';
     $request{"Meta[mail]"} = $data{"Mail"};
@@ -914,22 +942,13 @@ sub complete_paypal_checkout ()
         return;
     }
 
-    # Print thanks
+    # Copy some values for use by the thanks page.
+    $request{"Desc"} = $data{"Desc"};
+    $request{"Recur"} = $data{"Recur"};
+    $request{"Paytype"} = $data{"Paytype"};
+    $paytype = $data{"Paytype"};
 
-    $message = <<EOF;
-Amount ..: $request{"Amount"} $request{"Currency"}
-Desc ....: $data{"Desc"}
-Cardno...: n/a
-Processor: PayPal
-Email ...: $request{"Email"}
-Charge-Id: $request{"Charge-Id"}
-Timestamp: $request{"_timestamp"}
-EOF
-    if ($request{"Live"} eq 'f') {
-        $message = $message . "\n!!! TEST TRANSACTION !!!";
-    }
-
-    write_thanks_page ();
+    write_thanks (\%request);
     payproc ('SESSION destroy ' . $sessid, ());
 }
 
