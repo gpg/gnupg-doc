@@ -47,6 +47,7 @@ my $mail = "";
 my $message = "";
 my $separef = "";
 my $errorstr = "";
+my $notepanel = "";
 
 # We use a dictionary to track error.  Those errors will then be
 # inserted into the output by write_template.
@@ -279,10 +280,13 @@ sub write_template ($) {
 
         $errorpanel = $errorpanel . $fieldname . $errdict{$_} . "<br/>\n"
     }
-    if ( $errorpanel ne '' )
-    {
+    if ( $errorpanel ne '' ) {
         $errorpanel =
             "<div style='color: red;'><p>\n" . $errorpanel . "</p></div>\n";
+    } elsif ( $notepanel ne '' ) {
+        $errorpanel =
+            "<div style='color: grey;'><p>\n" . $notepanel . "</p></div>\n";
+        $notepanel = '';
     }
 
 
@@ -1033,8 +1037,10 @@ elsif ($mode eq 'preset') {
     $paytype = 'cc';
     # First dedicated payment plans.
     if ($q->param('plan') eq '12-5-eur' ) {
-        $recur = '12';
-        $amount = '5';
+        $recur = '4';
+        $amount = '15';
+        $notepanel = 'Note: To avoid overhead costs we adjusted your donation '
+            . 'from monthly to the equal quarterly amount';
     }
     elsif ($q->param('plan') eq '12-10-eur' ) {
         $recur = '12';
