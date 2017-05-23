@@ -53,7 +53,7 @@
     <div class="camp-gutter container">
       <div class="row">
         <div class="col-md-7 col-md-offset-2">
-          <h2>まとめ</h2>
+          <h2>サマリ</h2>
           <p>寄付のための情報。</p>
           <form class="form-horizontal">
             <div class="form-group">
