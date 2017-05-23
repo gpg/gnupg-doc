@@ -129,8 +129,8 @@
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
-	      <h3>現在値 <!--CMPGN-RECUR-EURO--> 一ヶ月あたり
-                  <small>目標として<!--CMPGN-RECUR-EURO-GOAL-->が必要です</small>
+	      <h3><!--CMPGN-RECUR-EURO--> 一ヶ月あたり
+                  <small><!--CMPGN-RECUR-EURO-GOAL-->が必要です</small>
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
