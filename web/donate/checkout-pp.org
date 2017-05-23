@@ -101,6 +101,7 @@
                   class="form-inline">
               <input type="hidden" name="mode" value="checkout-paypal" />
               <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
               <input type="submit" class="btn btn-primary btn-sm"
                      value="Pay now" />
             </form>

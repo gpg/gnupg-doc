@@ -59,7 +59,11 @@
             <div class="form-group">
               <label class="col-sm-3 control-label">Montant</label>
               <div class="col-sm-9">
-                <p class="form-control-static"><!--AMOUNT--> <!--CURRENCY--> <!--RECUR_TEXT--></p>
+                <p class="form-control-static">
+                  <!--AMOUNT-->
+                  <!--CURRENCY-->
+                  <!--RECUR_TEXT-->
+                </p>
               </div>
             </div>
             <div class="form-group">
@@ -111,9 +115,11 @@
       <div class="row">
         <div class="col-sm-5 col-md-offset-2">
           <p>
-            <form action="/cgi-bin/procdonate.cgi" method="POST" class="form-inline">
-              <input type="hidden" name="mode" value="checkout-stripe">
-              <input type="hidden" name="sessid" value="<!--SESSID-->">
+            <form action="/cgi-bin/procdonate.cgi" method="POST"
+                  class="form-inline">
+              <input type="hidden" name="mode" value="checkout-stripe" />
+              <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
               <script
                 src="https://checkout.stripe.com/checkout.js"
                 class="stripe-button"
@@ -132,7 +138,8 @@
             </form>
           </p>
           <p>
-            <form action="/cgi-bin/procdonate.cgi" method="POST" class="form-inline">
+            <form action="/cgi-bin/procdonate.cgi" method="POST"
+                  class="form-inline">
               <input type="hidden" name="mode" value="re-main">
               <input type="hidden" name="sessid" value="<!--SESSID-->">
               <input type="hidden" name="lang" value="<!--LANG-->">

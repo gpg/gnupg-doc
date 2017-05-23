@@ -121,6 +121,7 @@
                   class="form-inline">
               <input type="hidden" name="mode" value="checkout-stripe" />
               <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
               <script
                 src="https://checkout.stripe.com/checkout.js"
                 class="stripe-button"

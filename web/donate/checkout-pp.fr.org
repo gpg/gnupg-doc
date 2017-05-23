@@ -59,7 +59,11 @@
             <div class="form-group">
               <label class="col-sm-3 control-label">Montant</label>
               <div class="col-sm-9">
-                <p class="form-control-static"><!--AMOUNT--> <!--CURRENCY--></p>
+                <p class="form-control-static">
+                  <!--AMOUNT-->
+                  <!--CURRENCY-->
+                  <!--RECUR_TEXT-->
+                </p>
               </div>
             </div>
             <div class="form-group">
@@ -96,6 +100,7 @@
             <form action="/cgi-bin/procdonate.cgi" method="POST" class="form-inline">
               <input type="hidden" name="mode" value="checkout-paypal" />
               <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
               <input type="submit" class="btn btn-primary btn-sm" value="Payer" />
             </form>
           </p>
