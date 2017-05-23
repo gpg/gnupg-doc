@@ -577,7 +577,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-title">Director of Security</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -938,7 +938,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-title">Director of Security</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -1307,7 +1307,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">Directory of Security</div>
+			    <div class="card-title">Director of Security</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
