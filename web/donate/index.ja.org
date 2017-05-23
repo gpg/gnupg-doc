@@ -129,8 +129,12 @@
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
-	      <h3><!--CMPGN-RECUR-EURO--> 一ヶ月あたり
-                  <small><!--CMPGN-RECUR-EURO-GOAL-->が必要です</small>
+	      <h3><!--CMPGN-RECUR-EURO-->
+                (一ヶ月あたり)
+                  <small>
+                    <!--CMPGN-RECUR-EURO-GOAL-->
+                    が必要です
+                  </small>
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
@@ -186,7 +190,7 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>本日の動画: アレックス・アブド
+	  <h2>本日の動画: アレックス・アブドゥ
             <small>アメリカ自由人権協会 (ACLU)</small>
           </h2>
 	  <div class="row">
@@ -380,7 +384,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-name">アレックス・アブドゥ</div>
 			    <div class="card-title">スタッフ弁護士</div>
 			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
@@ -697,7 +701,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-name">アレックス・アブドゥ</div>
 			    <div class="card-title">スタッフ弁護士</div>
 			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
 			  </div>
@@ -1016,7 +1020,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">アレックス・アブド</div>
+			    <div class="card-name">アレックス・アブドゥ</div>
 			    <div class="card-title">スタッフ弁護士</div>
 			    <div class="card-org">アメリカ自由人権協会</div>
 			  </div>
