@@ -84,7 +84,7 @@
 	      </ul>
 	    </li>
 	  </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.html" role="button">♥ 寄付する</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.ja.html" role="button">♥ 寄付する</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -262,13 +262,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	  </div>
 	  <p class="text-justify">
 	    <strong>この驚くべき反響を受けて、Wernerはもう一度チームを大きくしようと考えました。</strong>  現在までに、5人の開発者を雇い、これまでの二年間でGnuPGと関連するエコシステムには、たくさんの改善が見られています。
-	    たとえば、<a href="https://www.gnupg.org/blog/20160830-web-key-service.html">鍵の発見の簡素化</a>、<a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">PythonのためのGPGバィンディング</a>の採用、<a href="https://www.enigmail.net/index.php/en/">Enigmail</a>の改善への貢献、そして、自由なソースと自由なハードウェアのセキュリティトークン、<a href="https://www.fsij.org/category/gnuk.html">Gnukプロジェクト</a>のサポートがあげられます。
+	    たとえば、<a href="https://www.gnupg.org/blog/20160830-web-key-service.html">鍵の取得の簡素化</a>、<a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">PythonのためのGPGバインディング</a>の採用、<a href="https://www.enigmail.net/index.php/en/">Enigmail</a>の改善への貢献、そして、自由なソースと自由なハードウェアのセキュリティトークンである<a href="https://www.fsij.org/category/gnuk.html">Gnukプロジェクト</a>のサポートがあげられます。
 	  <p class="text-justify">
 	    <strong>わたしたちは、この仕事を長期的に続けたいと考えています。</strong>
 	    しかし、わたしたちは、これを一般の皆さんに対して紛う事なき第一の忠節を尽くすやり方で行いたいと考えています。これは、わたしたちの資金の大半が個々の寄付をしてくださる方々から来るものであり、会社からではないようにすることを意味します。
 	    さらに、長期的な安定性のために、わたしたちのフォーカスは一回限りの寄付ではなく、定期の寄付にあります。
 	  <p class="text-justify">
-	    <strong>わたしたちの第一の目標は一ヶ月あたり15&#x202f;000&nbsp;ユーロの寄付の約束を得て、3人の開発者に資金供給するのに当てることです</strong>。2000人の方に毎月5あるいは10ユーロ、二、三杯のコーヒーと同じくらいを、寄付してもらえれば、この目標に達することができます。
+	    <strong>わたしたちの第一の目標は一ヶ月あたり15&#x202f;000&nbsp;ユーロの寄付の約束を得て、3人の開発者に資金供給するのに当てることです</strong>。2000人の方に毎月5あるいは10ユーロ、つまり二、三杯のコーヒーと同じくらいを寄付してもらえれば、この目標に達することができます。
 	  <p class="text-justify">
 	    <div class="pull-right" style="width: 40%; margin: 1em">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
@@ -1461,7 +1461,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 <div class="camp-final-pitch row">
   <div class="col">
       <center>
-        <a class="btn btn-primary btn-lg" href="/donate/donate.html" role="button">寄付する!</a>
+        <a class="btn btn-primary btn-lg" href="/donate/donate.ja.html" role="button">寄付する!</a>
       </center>
     </div>
   </div>
