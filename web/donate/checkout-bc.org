@@ -49,8 +49,8 @@
 
           <p>
           Send your Bitcoins to
-          <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          ><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></a>.
+          <a href="bitcoin:1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzFls"
+          ><tt>1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzFls</tt></a>.
           </p>
 
           <p>
