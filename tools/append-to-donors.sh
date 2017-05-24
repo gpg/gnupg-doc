@@ -126,6 +126,11 @@ trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 #        pubkey field to the donation page?
 #
 send_thanks () {
+    if [ $1 -gt 0 ]; then
+        recurring="recurring "
+    else
+        recurring=""
+    fi
     upcurrency=$(echo $currency | tr [a-z] [A-Z])
     if [ "$upcurrency" = EUR ]; then
         ineuro=
@@ -159,7 +164,7 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 
 Dear ${name:-Anonymous},
 
-we received $xamount $upcurrency$ineuro as a donation to the GnuPG project.
+we received $xamount $upcurrency$ineuro as a ${recurring}donation to the GnuPG project.
 Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
@@ -230,7 +235,7 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
             # Note that we removed colons from $name
             echo "$jyear:$datestr:$name::$lnr:" >> "$donors.tmp"
             touch "$donors".stamp
-            send_thanks
+            send_thanks 0
          done
         # Second for new subscriptions
         payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
@@ -245,7 +250,7 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
             # Note that we removed colons from $name
             echo "$jyear:$datestr:$name:S:$lnr:" >> "$donors.tmp"
             touch "$donors".stamp
-            send_thanks
+            send_thanks 1
          done
     fi
 done
