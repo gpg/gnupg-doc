@@ -1,0 +1,90 @@
+#                                                    -*- html -*-
+#+TITLE: GnuPG - Donate - Donate Bitcoins
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+
+</head>
+  <body lang="<!--LANG-->">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" alt="GnuPG"
+               src="/share/gnupg-lock-white-250x250.png">
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="camp-gutter container">
+      <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+          <h2>Summary</h2>
+          <p>
+          Donated Bitcoins are collected by the <a href="https://www.gnupg.org/verein">GnuPG e.V.</a>
+          </p>
+
+          <p>
+          Send your Bitcoins to
+          <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          ><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></a>.
+          </p>
+
+          <p>
+            <strong>Thank you in advance for your donation.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 col-md-offset-2">
+          <p>
+            <a class="btn btn-default btn-sm" href="/">Continue</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid" id="camp-footer">
+      <div class="container">
+        <div class="row">
+          <div id="cpyright">
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+              <img alt="CC-BY-SA 4.0" style="border: 0"
+                    src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+            This web page is
+            Copyright 2017 The GnuPG Project and licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+            <a href="/copying.html">copying</a> for details.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+#+END_HTML

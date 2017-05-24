@@ -1,0 +1,29 @@
+#+TITLE: GnuPG - Donate - Danke schön
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Spende - Danke schön
+
+  *Vielen Dank für Ihre Spende zur Unterstützung unserer Arbeit an GnuPG.*
+
+  Bitte beachten Sie, daß die [[https://www.gnupg.org/donate/kudos.html][Liste der Spender]] etwa alle 15 Minuten
+  aktualisiert wird.  Es kann deswegen einige Zeit dauern, bis Ihre Spende
+  und, sofern gewünscht, Ihr Name dort erscheint.
+
+  Hier ist eine Zusammenfassung Ihrer Spende:
+#+BEGIN_HTML
+  <pre id="checkoutSummary">
+  <!--MESSAGE-->
+  </pre>
+#+END_HTML
+
+  Auf Ihrer Kreditkartenabrechnung wird diese Spende als /GnuPG
+  donation/ erscheinen.  Falls Sie Fragen haben, so schreiben Sie
+  bitte an /donations/ at /gnupg.org/.
+
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.de.html">Weiter</a></li>
+  </ul>
+#+END_HTML

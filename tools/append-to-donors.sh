@@ -2,6 +2,12 @@
 # append-to-donors.sh
 # Append new names from the payproc journal to the donors file
 # and send a Thank You mail.
+#
+# Note that this script does not yet handle subscriptions.  Because we
+# want to verify the mail address anyway, it makes sense to move mai
+# sending to payprocd.  The final plan is to use webhooks to create
+# charge records and use them to add a Donor reulary to the list of
+# donors (but may be limited to once a year)
 
 pgm="append-to-donors.sh"
 set -e
@@ -17,12 +23,65 @@ LC_CTYPE=C
 RFCDATE="$(date -R)"
 SIGDELIM="-- "
 
-htdocs="/var/www/www/www.gnupg.org/htdocs"
+usage()
+{
+    cat <<EOF
+Usage: $pgm [OPTIONS]
+Options:
+        --verbose  Run in verbose mode
+	--force    Force re-creation of files.
+        --test     Run in test environment (preview.gnupg.org)
+EOF
+    exit $1
+}
+
+
+verbose=no
+force=no
+testmode=no
+while [ $# -gt 0 ]; do
+    case "$1" in
+	# Set up `optarg'.
+	--*=*)
+	    optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`
+	    ;;
+	*)
+	    optarg=""
+	    ;;
+    esac
+
+    case $1 in
+        --verbose)
+            verbose=yes
+            ;;
+	--force)
+	    force=yes
+	    ;;
+        --test)
+            testmode=yes
+            ;;
+        --help)
+            usage 0
+            ;;
+	*)
+	    usage 1 1>&2
+	    ;;
+    esac
+    shift
+done
+
+
+if [ $testmode = yes ]; then
+  htdocs="/var/www/www/preview.gnupg.org/htdocs"
+  journal_dir="/var/log/payproc-test"
+else
+  htdocs="/var/www/www/www.gnupg.org/htdocs"
+  journal_dir="/var/log/payproc"
+fi
 
 donors="$htdocs/donate/donors.dat"
 donations="$htdocs/donate/donations.dat"
 
-journal_dir="/var/log/payproc"
 LOCKFILE="$donors.lock"
 
 if [ ! -f "$donors" ]; then
@@ -84,10 +143,15 @@ send_thanks () {
     else
       xqpmail=$(mu-tool 2047 -c utf-8 "$xmail")
     fi
+    if [ $testmode = yes ]; then
+      xisatest="[TEST DONATION] "
+    else
+      xisatest=""
+    fi
     ( cat <<EOF
 From: donations@gnupg.org
 To: $xqpmail
-Subject: Thank you for supporting GnuPG
+Subject: ${xisatest}Thank you for supporting GnuPG
 Date: $RFCDATE
 Mime-Version: 1.0
 Content-Type: text/plain
@@ -100,7 +164,7 @@ Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
 
-  Werner
+  The GnuPG Team
 
 
 $SIGDELIM
@@ -114,7 +178,7 @@ if [ -n "$message" ]; then
 From: donations@gnupg.org
 To: donations@gnupg.org
 Reply-To: $xqpmail
-Subject: Message from GnuPG donor
+Subject: ${xisatest}Message from GnuPG donor
 Date: $RFCDATE
 Mime-Version: 1.0
 Content-Type: text/plain
@@ -145,7 +209,7 @@ lastline=$(echo $tmp | cut -d: -f2)
 
 [ -f "$donors".stamp ] && rm "$donors".stamp
 cat "$donors" > "$donors.tmp"
-find $journal_dir -type f -name 'journal-????????.log' -print \
+find $journal_dir/ -type f -name 'journal-????????.log' -print \
      | sort | while read fname; do
     fname=$(basename "$fname")
     jdate=${fname%.log}
@@ -153,6 +217,7 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
     jyear=$(echo $jdate |sed 's/\(....\).*/\1/')
     if [ "$jdate" -ge "$lastdate" ]; then
         [ "$jdate" -gt "$lastdate" ] && lastline=0
+        # First for charge records
         payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
                      -Fmail -Famount -Fcurrency -Feuro\
            -S "_lnr > $lastline" -Stype=C -Saccount==1 \
@@ -167,11 +232,26 @@ find $journal_dir -type f -name 'journal-????????.log' -print \
             touch "$donors".stamp
             send_thanks
          done
+        # Second for new subscriptions
+        payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
+                     -Fmail -Famount -Fcurrency -Feuro -Frecur\
+           -S "_lnr > $lastline" -Stype=S -Saccount==1 \
+           --html --print "$journal_dir/journal-$jdate.log" \
+         | while IFS=: read lnr datestr name message \
+                            xmail amount currency euro recur rest; do
+            name=$(echo "$name" | tr \`\$: ...)
+            message=$(echo "$message" | tr \`\$ ..)
+            xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
+            # Note that we removed colons from $name
+            echo "$jyear:$datestr:$name:S:$lnr:" >> "$donors.tmp"
+            touch "$donors".stamp
+            send_thanks
+         done
     fi
 done
 
 # If we have any new records update the files.
-if [ -f "$donors".stamp ]; then
+if [ -f "$donors".stamp -o $force = yes ]; then
 
   if ! mv "$donors.tmp" "$donors"; then
     echo "$pgm: error updating $donors" >&2
@@ -180,13 +260,13 @@ if [ -f "$donors".stamp ]; then
 
   if [ -f "$donations" ]; then
     payproc-stat -u "$donations" -- > "$donations".tmp  \
-      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+      $(find $journal_dir/ -type f -name 'journal-????????.log' -print|sort)
     if ! mv "$donations".tmp "$donations"; then
         echo "$pgm: error updating $donations" >&2
         exit 1
     fi
   else
     payproc-stat -u "$donations" -- > "$donations"  \
-      $(find /var/log/payproc -type f -name 'journal-????????.log' -print|sort)
+      $(find $journal_dir/ -type f -name 'journal-????????.log' -print|sort)
   fi
 fi

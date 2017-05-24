@@ -1,0 +1,311 @@
+/* Custom CSS for GnuPG campaign pages.  */
+ *
+ * This code is Copyright 2017 The GnuPG Project and licensed
+ * under a Creative Commons Attribution-ShareAlike 4.0 International
+ * License.  See the file copying.org for details.
+ */
+
+/* The default brand is tiny, let's bump the size of the lock graphic.  */
+.navbar-brand {
+  height: 50px;
+  padding: 0px 0px;
+}
+/* If you change this, make sure to test the scroll position when
+   clicking navbar links.  */
+.camp-gutter {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+/* If there is no change to the next background, remove some
+   whitespace.  */
+.camp-gutter-clump {
+  padding-bottom: 0px;
+}
+h1 {
+  font-size: 3em;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+h2 {
+  font-weight: 600;
+  padding-bottom: .6em;
+  margin-top: 0px;
+}
+h2 small {
+  padding-top: 0.5em;
+  font-weight: 600;
+  font-style: italic;
+  display: block;
+}
+.camp-who img {
+  margin: 20px;
+  height: 150px;
+  border-radius: 75px;
+  float: left;
+}
+@media (max-width: 768px) {
+  .camp-who img {
+    margin-right: 10px;
+    margin-left: 0px;
+    height: 75px;
+    border-radius: 50px;
+  }
+}
+.media-body {
+  vertical-align: middle;
+}
+/* For the donation block.  */
+h3 small,
+h4 small {
+  padding-top: .3em;
+  font-size: 60%;
+  font-weight: 300;
+  display: block;
+}
+.camp-progress-info h3 {
+  margin-top: 0px;
+}
+/* Decoration */
+.flying-locks {
+  background-color: #f8f8f8;
+  background-position: -100px -100px;
+  background-image: url("/share/gnupg-lock-white-250x250.png");
+}
+/* Carousel base class */
+.carousel {
+  height: 550px;
+}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 550px;
+}
+.card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  height: 526px;
+  background: #f8f8f8;
+  text-align: center;
+  border: 1px solid #ddd;
+  color: #555;
+  position: relative;
+  overflow: hidden;
+}
+.card-img {
+  height: 200px;
+}
+.card-img-left {
+  position: absolute;
+  height: auto;
+  max-height: 200px;
+  left: 0px;
+}
+.card-img-right {
+  position: absolute;
+  height: auto;
+  max-height: 200px;
+  right: 0px;
+}
+.card-text {
+  padding: 24px;
+}
+.card-quote {
+  text-align: left;
+}
+.card-quote-long {
+  font-size: 17px;
+  line-height: 1.4em;
+}
+@media (max-width: 767px) {
+  .card-quote-long {
+    font-size: 16px;
+  }
+  .card-quote-superlong {
+    font-size: 15px;
+  }
+}
+.card-meta {
+  position: absolute;
+  width: 100%;
+  margin-left: -24px;
+  bottom: 24px;
+}
+.card-name {
+  font-weight: 600;
+}
+.card-org {
+  font-style: italic;
+}
+.camp-final-pitch {
+  margin-top: 40px;
+}
+/* Main text */
+.camp-headshot {
+  height: 8em;
+  margin: 1em;
+  border-radius: 50%;
+}
+.camp-image {
+  margin: 1em;
+}
+#camp-openpgp-conf {
+  max-width: 650px;
+  width: 100%;
+  border-radius: 4px;
+}
+#camp-gnuk {
+  width: 100%;
+  border-radius: 4px;
+}
+#camp-caption-openpgp-conf {
+  max-width: 650px;
+  width: 100%;
+  height: 1.5em;
+  text-overflow: ellipsis;
+  margin-top: -2em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  color: #eee;
+  opacity: .7;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#camp-caption-gnuk {
+  width: 100%;
+  height: 1.5em;
+  text-overflow: ellipsis;
+  margin-top: -2em;
+  background: #000;
+  color: #eee;
+  opacity: .7;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.camp-video {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.camp-video img {
+  width: 100%;
+  left: 0;
+  opacity: 0.7;
+}
+.camp-video .play-button {
+  width: 80px;
+  height: 50px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+.camp-video .play-button {
+  transition: background-color 0.2s ease;
+  background-color: #333;
+}
+.camp-video:hover .play-button,
+.touch .play-button {
+  transition: background-color 0.2s ease;
+  background-color: #f00;
+}
+.camp-video .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 10px 0 10px 20.0px;
+  border-color: transparent transparent transparent #fff;
+}
+.camp-video img,
+.youtube .play-button {
+  cursor: pointer;
+}
+.camp-video img,
+.camp-video iframe,
+.camp-video .play-button,
+.camp-video .video-text,
+.camp-video .play-button:before {
+  position: absolute;
+}
+.camp-video .play-button,
+.camp-video .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.camp-video iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.camp-video .video-text {
+  width: 100%;
+  top: 20%;
+  text-align: center;
+  opacity: 1.0;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 130%;
+}
+
+#camp-footer {
+  width: 100%;
+  background: #f8f8f8;
+  font-size: 0.8em;
+  padding-bottom: 0.5em;
+}
+
+/* Flags for the language chooser.  */
+.flag-icon {
+  display: inline-block;
+  height: .9em;	/* Flag width/height ratio should be ~1.6.  */
+  width: 1.44em;
+}
+.flag-icon-de {
+  background: no-repeat center/100% url("/share/campaign/img/flags/de.min.svg");
+}
+.flag-icon-usuk {
+  background: no-repeat center/100% url("/share/campaign/img/flags/usuk.min.svg");
+}
+.flag-icon-jp {
+  background: no-repeat center/100% url("/share/campaign/img/flags/jp.min.svg");
+}
+.flag-icon-fr {
+  background: no-repeat center/100% url("/share/campaign/img/flags/fr.min.svg");
+}
+
+/* Some hacks to directly embed the dropdown menu into the navbar.  */
+.lang-chooser-xs { margin-top: 12px; }
+.lang-chooser-xs .caret { color: #fafafa; }
+.lang-chooser-xs .dropdown-menu { left: -2em; }
+.lang-chooser-xs li, .lang-chooser-xs > li > a { display: inline; }
+
+.team-img {
+    width: 50%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+@media (max-width: 768px) {
+  .team-img {
+     width: 100%;
+     margin-left: 0em;
+     margin-top: 0.5em;
+  }
+}
+.vid-howto {
+    margin-top: 1em;
+    margin-bottom: 0px;
+}

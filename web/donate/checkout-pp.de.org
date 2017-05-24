@@ -1,0 +1,146 @@
+#                                                    -*- html -*-
+#+TITLE: GnuPG - Spenden - Bezahlen mit PayPal
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+
+</head>
+  <body lang="<!--LANG-->">
+<style>
+.control-label {
+  padding-top: 0 !important;
+}
+
+.form-control-static {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+</style>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" alt="GnuPG"
+               src="/share/gnupg-lock-white-250x250.png">
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/donate/index.de.html">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="camp-gutter container">
+      <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+          <h2>Übersicht</h2>
+          <p>Informationen zu Ihrer gewünschten Spende:</p>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Betrag</label>
+              <div class="col-sm-9">
+                <p class="form-control-static">
+                  <!--AMOUNT-->
+                  <!--CURRENCY-->
+                  <!--RECUR_TEXT-->
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Name</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--NAME--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">E-Mail</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--MAIL--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Nachricht</label>
+              <div class="col-sm-9">
+                <p class="form-control-static"><!--MESSAGE_FMT--></p>
+              </div>
+            </div>
+          </form>
+          <p>
+	    Falls etwas nicht korrekt ist, benutzen Sie bitte den
+	    <em>Zurück</em>-Knopf weiter unten auf dieser Seite.  Wenn
+	    die Daten korrekt sind, können sie nun mittels
+	    des <em>Jetzt bezahlen</em>-Knopfes mit der Spende
+	    fortfahren.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 col-md-offset-2">
+          <p>
+            <form action="/cgi-bin/procdonate.cgi" method="POST"
+                  class="form-inline">
+              <input type="hidden" name="mode" value="checkout-paypal" />
+              <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
+              <input type="submit" class="btn btn-primary btn-sm"
+                     value="Jetzt bezahlen" />
+            </form>
+          </p>
+          <p>
+            <form action="/cgi-bin/procdonate.cgi" method="POST"
+                  class="form-inline">
+              <input type="hidden" name="mode" value="re-main" />
+              <input type="hidden" name="sessid" value="<!--SESSID-->" />
+              <input type="hidden" name="lang" value="<!--LANG-->" />
+              <input type="submit" class="btn btn-default btn-sm"
+                     value="Zurück" />
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid" id="camp-footer">
+      <div class="container">
+        <div class="row">
+          <div id="cpyright">
+            <a rel="license"
+               href="https://creativecommons.org/licenses/by-sa/3.0/">
+              <img alt="CC-BY-SA 4.0" style="border: 0"
+                    src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+            This web page is
+            Copyright 2017 The GnuPG Project and licensed under a
+            <a rel="license"
+               href="https://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0
+              International License</a>.  See
+            <a href="/copying.html">copying</a> for details.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+#+END_HTML

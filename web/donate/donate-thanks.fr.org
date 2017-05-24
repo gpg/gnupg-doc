@@ -1,0 +1,30 @@
+#+TITLE: GnuPG - Faire un don - Merci
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* Donation - Merci !
+
+  *Merci beaucoup pour votre don à notre travail sur GnuPG.*
+
+  Notez que la [[https://www.gnupg.org/donate/kudos.html][liste des donateurs]]
+  n'est mise à jour que toutes les 30 minutes, et donc votre nom n'y est peut-être
+  pas encore affiché.  Si vous n'avez pas entré de nom dans le formulaire, alors
+  vous ne serez pas listé·e.
+
+  Voici les détails de votre donation:
+#+BEGIN_HTML
+  <pre id="checkoutSummary">
+  <!--MESSAGE-->
+  </pre>
+#+END_HTML
+
+  Votre reçu bancaire devrait lister cette transaction sous l'intitulé /GnuPG
+  donation/.  En cas de question, veuillez contacter /donations/ at
+  /gnupg.org/.
+
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.fr.html">Suivant</a></li>
+  </ul>
+#+END_HTML
