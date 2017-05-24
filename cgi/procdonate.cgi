@@ -503,11 +503,10 @@ sub check_donation ()
 
     $amount = $q->param("amount");
     if ($amount eq 'other') {
+      # backward compatibility
       $amount = $q->param("amountother");
-      $currency = $q->param("currency");
-    } else {
-      $currency = 'EUR';
     }
+    $currency = $q->param("currency");
 
     $recur = $q->param("recur");
     $name = $q->param("name");
