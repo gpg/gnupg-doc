@@ -515,49 +515,52 @@ sub check_donation ()
     $message = $q->param("message");
     $stripeamount = "0";
 
-    # Check the amount and the recurring value
+    $paytype = $q->param("paytype");
 
-    # Note that we only use full Euro/USD/etc from the amount to avoid
-    # problems with ',' and '.' decimal separators.
-    $data{"Amount"} = int $amount;
-    $data{"Currency"} = $currency;
-    $data{"Recur"} = $recur;
-    if (not payproc ('CHECKAMOUNT', \%data )) {
-        $errdict{"amount"} = $data{"ERR_Description"};
-        $anyerr = 1;
-    }
-    $stripeamount = $data{"_amount"};
-    $amount = $data{"Amount"};
-    $recur = $data{"Recur"};
-    $currency = $data{"Currency"};
-    $euroamount = $data{"Euro"};
-
-    # Check that at least some Euros are given.  Due to Stripe
-    # processing fees and our own costs for bookkeeping we need to ask
-    # for a minimum amount.
-    if ( (not $anyerr) and ($euroamount < 4.00) ) {
-
-        if ($lang eq 'de') {
-            $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
-                . 'können wir leider keine Spenden unter 4 Euro annehmen.';
-        } elsif ($lang eq 'fr') {
-            $msg = 'Désolé, en raison des frais généraux nous ne pouvons'
-                . ' pas accepter les donations de moins de 4 euros.';
-        } elsif ($lang eq 'ja') {
-            $msg = '申し訳ありません。間接経費のため、4ユーロ未満の寄付'
-                . 'は受け付けることができません。';
+    # Check the amount and the recurring value unless Bitcoins are
+    # selected.
+    if ( $paytype ne "bc" ) {
+        # Note that we only use full Euro/USD/etc from the amount to avoid
+        # problems with ',' and '.' decimal separators.
+        $data{"Amount"} = int $amount;
+        $data{"Currency"} = $currency;
+        $data{"Recur"} = $recur;
+        if (not payproc ('CHECKAMOUNT', \%data )) {
+            $errdict{"amount"} = $data{"ERR_Description"};
+            $anyerr = 1;
         }
-        else {
-            $msg = 'Sorry, due to overhead costs we do'
-                . ' not accept donations of less than 4 Euro.';
-        }
+        $stripeamount = $data{"_amount"};
+        $amount = $data{"Amount"};
+        $recur = $data{"Recur"};
+        $currency = $data{"Currency"};
+        $euroamount = $data{"Euro"};
 
-        $errdict{"amount"} = $msg;
-        $anyerr = 1;
+        # Check that at least some Euros are given.  Due to Stripe
+        # processing fees and our own costs for bookkeeping we need to ask
+        # for a minimum amount.
+        if ( (not $anyerr) and ($euroamount < 4.00) ) {
+
+            if ($lang eq 'de') {
+                $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
+                    . 'können wir leider keine Spenden unter 4 Euro annehmen.';
+            } elsif ($lang eq 'fr') {
+                $msg = 'Désolé, en raison des frais généraux nous ne pouvons'
+                    . ' pas accepter les donations de moins de 4 euros.';
+            } elsif ($lang eq 'ja') {
+                $msg = '申し訳ありません。間接経費のため、4ユーロ未満の寄付'
+                    . 'は受け付けることができません。';
+            }
+            else {
+                $msg = 'Sorry, due to overhead costs we do'
+                    . ' not accept donations of less than 4 Euro.';
+            }
+
+            $errdict{"amount"} = $msg;
+            $anyerr = 1;
+        }
     }
 
     # Check the payment type
-    $paytype = $q->param("paytype");
     if ( $paytype eq "bc" ) {
         # No further checks - this is kind of a hack.
     }
