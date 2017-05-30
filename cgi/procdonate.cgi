@@ -223,7 +223,7 @@ sub write_template ($) {
             $stripe_data_label_value = 'Jährlich spenden';
         } elsif ($lang eq 'fr') {
             $recur_text    = 'annuels';
-            $stripe_data_label_value = 'Faire une don annuel';
+            $stripe_data_label_value = 'Faire un don annuel';
         } elsif ($lang eq 'ja') {
             $recur_text    = '毎年';
             $stripe_data_label_value = '毎年寄付する';
