@@ -288,7 +288,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             amazing.  Not only did he receive enough money to fund
             himself, but <strong>he pulled in
             250&#x202f;000&nbsp;euros in small donations</strong>, and
-            Stripe, Facebook and the Linux Foundatation each committed
+            Stripe, Facebook and the Linux Foundation each committed
             to donating about 50&#x202f;000&nbsp;euros per year.
 	  </p>
           <div class="pull-right text-center team-img">
@@ -771,7 +771,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote">
 			    “GPG hasn't saved our butt yet, but the
-			    fact that it is there is&mdash;it let's us
+			    fact that it is there is&mdash;it lets us
 			    sleep easier at night.”
 			  </div>
 			  <div class="card-meta">
@@ -1545,7 +1545,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			<div class="card-text">
 			  <div class="card-quote">
 			    “GPG hasn't saved our butt yet, but the
-			    fact that it is there is&mdash;it let's us
+			    fact that it is there is&mdash;it lets us
 			    sleep easier at night.”
 			  </div>
 			  <div class="card-meta">

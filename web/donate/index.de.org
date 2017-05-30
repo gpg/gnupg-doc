@@ -300,7 +300,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
             Nicht nur hat er genug Geld erhalten um seinen
             Lebensunterhalt zu finanzieren, <strong>er bekam
             250&#x202f;000&nbsp;Euro in kleinen Spenden</strong>, und
-            Stripe, Facebook und die Linux Foundatation haben
+            Stripe, Facebook und die Linux Foundation haben
             zugesagt, je etwa 50&#x202f;000&nbsp;Euro pro Jahr zu
             spenden.
 	  </p>

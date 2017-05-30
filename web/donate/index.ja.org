@@ -252,7 +252,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    状況はあまりにも深刻に思えたので、<strong>Wernerはあきらめてしまうところでした。しかし、友人達が彼を説得し、最後の一弾として、寄付のキャンペーンをやってみることになりました。
 </strong>
 	    その反響は驚くべきものでした。彼にとって充分過ぎる以上の、<strong>小さな寄付が積もり重なって、あわせて 250&#x202f;000&nbsp;ユーロ</strong>ものお金が集まり、加えて、
-            Stripe, Facebook そして Linux Foundatation が、それぞれ、年額50&#x202f;000&nbsp;ユーロを提供すると申し出たのでした。
+            Stripe, Facebook そして Linux Foundation が、それぞれ、年額50&#x202f;000&nbsp;ユーロを提供すると申し出たのでした。
 	  </p>
           <div class="pull-right text-center team-img">
             <a
