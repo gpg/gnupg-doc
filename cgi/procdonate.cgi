@@ -865,6 +865,47 @@ sub get_paypal_approval ()
 }
 
 
+# The is called by paypal after the user hit cancel.  We need to
+# extract the alias to get back the session data.
+sub cancel_paypal_checkout ()
+{
+    my $aliasid;
+    my $payerid;
+    my %data;
+
+    $aliasid = $q->param("aliasid");
+
+    # Get the session from the alias.
+    payproc ('SESSION sessid ' . $aliasid, \%data)
+        or fail $data{"ERR_Description"};
+    $sessid = $data{"_SESSID"};
+    payproc ('SESSION get ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"lang"} ne '') {
+        $lang = $data{"lang"};
+    }
+
+    if ( $data{"Paytype"} ne "pp" ) {
+        fail "Invalid paytype for Paypal transaction";
+    }
+
+    # Set vars for the checkout page.
+    $amount = $data{"Amount"};
+    $currency = $data{"Currency"};
+    $paytype = $data{"Paytype"};
+    $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
+    $name = $data{"Name"};
+    $mail = $data{"Mail"};
+    $message = $data{"Message"};
+
+    write_cancel_page ();
+}
+
+
 # The is called by paypal after approval.  We need to extract the alias
 # and the payerid and store it in the session.  Then we ask to confirm
 # the payment.
@@ -1090,8 +1131,10 @@ elsif ($mode eq 'checkout-stripe') {
     complete_stripe_checkout();
 }
 elsif ($mode eq 'cancel-paypal') {
-    # Fixme: Destroy the alias of the session.
-    write_cancel_page();
+    # Paypal transaction has been canceled by Paypal or the user.
+    # Show the cancel page which has a button to return to the
+    # main donation page.
+    cancel_paypal_checkout();
 }
 elsif ($mode eq 'confirm-paypal') {
     # We have approval from Paypal - show the confirm checkout page.
