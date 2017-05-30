@@ -524,7 +524,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    <div class="col-xs-4">
 		      <div class="card">
 			<div class="card-img">
-			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmore.jpg" />
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
@@ -538,7 +538,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">Daniel Kahn Gillmor</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
 			    <div class="card-title">Senior Staff Technologist</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
@@ -878,7 +878,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    <div class="col-sm-6">
 		      <div class="card">
 			<div class="card-img">
-			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmore.jpg" />
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
@@ -892,7 +892,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">Daniel Kahn Gillmor</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
 			    <div class="card-title">Senior Staff Technologist</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
@@ -1239,7 +1239,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    <div class="col-xs-12">
 		      <div class="card">
 			<div class="card-img">
-			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmore.jpg" />
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
@@ -1253,7 +1253,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			    effective. -->
 			  </div>
 			  <div class="card-meta">
-			    <div class="card-name">Daniel Kahn Gillmore</div>
+			    <div class="card-name">Daniel Kahn Gillmor</div>
 			    <!-- <div class="card-title">Debian Developer</div> -->
 			    <div class="card-title">Senior Staff Technologist</div>
 			    <div class="card-org">American Civil Liberties Union</div>
