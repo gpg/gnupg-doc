@@ -1,0 +1,78 @@
+# Independent Encryption Software Looking for Support
+#+STARTUP: showall
+#+AUTHOR: GnuPG Team
+#+DATE: June 6, 2017
+
+*EMBARGO: not before Tuesday, June 6*
+
+** Independent Encryption Software Looking for Support
+
+Düsseldorf, Germany --- Tuesday, June 6, 2017.  The GnuPG Project
+today announced the launch of a funding campaign to further support
+and improve its leading mail and data encryption software, GnuPG.  The
+campaign aims to secure 15000 Euro per month in recurring donations
+from individual donors to finance the development of their free
+software.
+
+    <https://gnupg.org/donate/>
+
+Activists, journalists, lawyers, and many others rely on GnuPG to
+protect their communication.  The software guards emails, files, and
+programs from government and criminal snooping and spying on Windows,
+Mac, and Linux.  And, more than two-thirds of the servers running the
+Internet rely on GnuPG to verify the integrity of system updates.
+
+Ongoing government spying revelations have shown how little of our
+information is really safe.  GnuPG is one of the few tools that can
+offer real protection, free of commercial interests.  Edward Snowden
+used it to encrypt his communications with journalists.  Many
+institutions use GnuPG because by using an open standard they can be
+sure that they will always be able to access their data.
+
+The 6 person development team is currently financed from a successful
+campaign in early 2015, regular donations from the Linux Foundation,
+Stripe, Facebook, and a few paid development projects.  To ensure
+long-term stability the new campaign focuses on recurring donations
+and not one-time donations.  Says lead developer Werner Koch: “We want
+to continue our work in the long term.  But, we want to do so in such
+a way that our first loyalty is unambiguously to the general public.
+This means making sure that a majority of our funding comes from
+individual donors, and not corporations.”
+
+To highlight GnuPG's role in protecting data, user stories from 26
+organizations including activist groups, news organizations, lawyers,
+and companies from all over the world have been collected.  Their
+testimonials are presented in daily changing videos on the campaign
+site.
+
+*** About GNU Privacy Guard (GnuPG)
+
+Since 1997, GnuPG has allowed individuals and companies to encrypt and
+sign data and communication using the well-established and highly
+interoperable OpenPGP standard.  It comes with state of the art
+cryptography and features a versatile key management system.  GnuPG,
+also known as GPG or sometimes incorrectly as PGP, can be used
+standalone, but has all features needed for easy integration with
+other software.  It is used as the core cryptography engine of a
+wealth of other applications: For example Thunderbird with Enigmail,
+Gpg4win, and GPGTools.  Most operating systems use GnuPG's signing
+ability to protect system updates against malicious attempts to
+introduce backdoors.  GnuPG is available free of charge, and comes
+with all source code to allow anyone to audit the software.
+<https://gnupg.org>
+
+*** About g10 Code GmbH
+
+g10 Code GmbH is the privately owned legal entity behind the GnuPG
+Project.  They employ all developers and keep all profits for the
+development of GnuPG and related free software.
+<https://gnupg.org/imprint.html>
+
+*** Media contacts:
+
+Neal H. Walfield, Werner Koch\\
+Email: media@gnupg.org\\
+Phone: +49-2104-4938797\\
+Twitter: @gnupg\\
+OpenPGP: 370C 0FC3 1293 B339 61C1  FC20 B367 1B93 6BA8 BCB2\\
+Campaign page preview: https://preview.gnupg.org/donate/
