@@ -117,7 +117,7 @@
               </div>
             </div>
           </form>
-          <!--SEPA-QR-->
+          <!--SEPA_QR-->
           <p>
             Take care to give the reference number so that we can match your
             data with your actual donation and list you as donor if desired.
