@@ -116,7 +116,7 @@
               </div>
             </div>
           </form>
-
+          <!--SEPA-QR-->
           <p>
             Veuillez vous assurer de la présence du numéro de référence, afin que
             nous puissions associer le montant reçu à votre donation et ainsi vous

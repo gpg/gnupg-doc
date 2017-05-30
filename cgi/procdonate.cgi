@@ -21,6 +21,9 @@ use IO::Socket::UNIX;
 realpath($0) =~ /^(.*)\/.*$/;
 my %config = do $1 . '/config.rc';
 
+$ENV{PATH} = "/bin:/usr/bin";
+delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
+
 my $baseurl = $config{baseurl};
 my $htdocs =  $config{htdocs};
 my $stripepubkey =  $config{stripepubkey};
@@ -46,6 +49,7 @@ my $name = "";
 my $mail = "";
 my $message = "";
 my $separef = "";
+my $sepaqr = "";
 my $errorstr = "";
 my $notepanel = "";
 
@@ -332,6 +336,7 @@ sub write_template ($) {
         || s/<!--PUBLISH_NAME-->/$publishname/
         || s/<!--LANG-->/$lang/
         || s/<!--SEPA_REF-->/$separef/
+        || s/<!--SEPA_QR-->/$sepaqr/
         || s/<!--ERRORSTR-->/$errorstr/
         || s/<!--ERR_AMOUNT-->/$err_amount/
         || s/<!--ERR_NAME-->/$err_name/
@@ -1040,6 +1045,20 @@ sub complete_sepa ()
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
+
+    my @cmd = (qw (/usr/local/bin/ppsepaqr),
+               'DE76301502000002108603',
+               'g10 Code GmbH',
+               $amount,
+               'GnuPG donation '.$separef );
+
+    if (open PPSEPAQR, '-|', @cmd) {
+        while (defined (my $line = <PPSEPAQR>))
+        {
+            $sepaqr = $sepaqr . $line;
+        }
+        close PPSEPAQR;
+    }
 
     write_checkout_page ();
 }

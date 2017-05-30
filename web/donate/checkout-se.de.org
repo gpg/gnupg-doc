@@ -117,7 +117,7 @@
               </div>
             </div>
           </form>
-
+          <!--SEPA-QR-->
           <p>
 	    Bitte achten Sie darauf, dass die unter Verwendungszweck
 	    angegebene Referenznummer stimmt. Diese wird benötigt um
