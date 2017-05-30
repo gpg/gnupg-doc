@@ -605,7 +605,7 @@ sub check_donation ()
     }
 
     # Now create a session.
-    $data{"lang"} = $lang;
+    $data{"Lang"} = $lang;
     $data{"Stripeamount"} = $stripeamount;
     $data{"Euroamount"} = $euroamount;
     $data{"Recur"} = $recur;
@@ -635,8 +635,8 @@ sub resend_main_page ()
 
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
@@ -776,8 +776,8 @@ sub complete_stripe_checkout ()
     $paytype = $data{"Paytype"};
 
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
 
     # Do the checkout.
@@ -822,8 +822,8 @@ sub get_paypal_approval ()
         or fail $data{"ERR_Description"};
 
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
 
     $request{"Currency"} = $data{"Currency"};
@@ -883,8 +883,8 @@ sub cancel_paypal_checkout ()
         or fail $data{"ERR_Description"};
 
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
 
     if ( $data{"Paytype"} ne "pp" ) {
@@ -927,8 +927,8 @@ sub confirm_paypal_checkout ()
         or fail $data{"ERR_Description"};
 
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
 
     if ( $data{"Paytype"} ne "pp" ) {
@@ -1010,8 +1010,8 @@ sub complete_sepa ()
         or fail $data{"ERR_Description"};
 
     # If the session has a lang value use that.
-    if ($data{"lang"} ne '') {
-        $lang = $data{"lang"};
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
     }
 
     $request{"Currency"} = $data{"Currency"};
