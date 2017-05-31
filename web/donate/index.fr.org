@@ -376,7 +376,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	  <p class="text-justify" style="font-size: 22px;">Si vous êtes aussi convaincu que
 	    nous le sommes que notre travail est essentiel pour protéger la
 	    démocratie et la vie privée, alors <strong>aidez-nous à le
-	    poursuivre en restant indépendants.</p>
+	    poursuivre en restant indépendants.</strong></p>
 	</div>
       </div>
     </div>
