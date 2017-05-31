@@ -618,7 +618,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
 			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
 			  </div>
@@ -721,7 +721,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-superlong">
 			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
 			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
 			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
@@ -785,7 +785,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-superlong">
 			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
 			  </div>
 			  <div class="card-meta">
@@ -949,7 +949,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
 			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
 			  </div>
@@ -1040,7 +1040,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
 			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
 			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
@@ -1066,7 +1066,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」  <!-- You're relying on a
 			    bunch of other stuff as well, but without
 			    GPG that other stuff wouldn't actually be
@@ -1143,7 +1143,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
 			  </div>
 			  <div class="card-meta">
@@ -1289,7 +1289,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
 			  </div>
 			  <div class="card-meta">
