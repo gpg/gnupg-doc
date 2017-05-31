@@ -74,20 +74,20 @@
         <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-xs-3 control-label">Name</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Name</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--NAME--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">Mail</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Mail</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MAIL--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">Message</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Message</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MESSAGE_FMT--></p>
               </div>
             </div>
@@ -107,32 +107,32 @@
         <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-xs-3 control-label">Owner</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Owner</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">g10 Code GmbH</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">IBAN</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">IBAN</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">DE76 3015 0200 0002 1086 03</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">BIC</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">BIC</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">WELADED1KSD</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">Reference</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Reference</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--SEPA_REF--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-xs-3 control-label">Amount</label>
-              <div class="col-xs-9">
+              <label class="col-xs-12 col-sm-3 control-label">Amount</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--AMOUNT--> EUR</p>
               </div>
             </div>
