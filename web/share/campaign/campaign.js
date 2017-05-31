@@ -102,11 +102,11 @@ $(document).ready(function() {
 		 "geoffrey": "Y4yat43CvEc",
 		 "daniel": "coFFCJlMRjk",
 		 "cindy": "kPSEYvmFLWY",
-		 "benjamin": "mnVsS_kuwqo",
+		 "benjamin": "atFz16nInIs",
 		 "arthur": "Js_OqRLm9F4",
 		 "andrew": "DXiU9wewjn4",
-		 "andre": "sYXQxEPpnvA",
-		 "alex": "5FtL5hAcxk4"
+		 "andre": "bcNLlWqZ9d0",
+		 "alex": "1OMJWpdl0DA"
 	       };
 
     /* For the video preview, we use this for devices without hover events.  */
