@@ -503,7 +503,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Je parlais <!--récemment--> avec une source <!-- à propos
 			    d'une potentielle information--> en Russie.  Je lui ai montré
 			    comment utiliser GPG, et il vient de m'envoyer son premier
@@ -602,7 +602,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Les journalistes que nous servons ont confiance que nous
 			    connaissons les meilleurs manières de les protéger.  Et notre
 			    utilisation des méthodes les plus sécurisées, ainsi que des
@@ -755,7 +755,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    « Mais même si vous êtes absolument certain·e que vous
 			    personnellement n'avez rien à cacher, si vous pensez que
 			    certaines personnes ont des choses à cacher et que c'est une
@@ -866,7 +866,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Je parlais <!--récemment--> avec une source <!-- à propos
 			    d'une potentielle information--> en Russie.  Je lui ai montré
 			    comment utiliser GPG, et il vient de m'envoyer son premier
@@ -965,7 +965,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Les journalistes que nous servons ont confiance que nous
 			    connaissons les meilleurs manières de les protéger.  Et notre
 			    utilisation des méthodes les plus sécurisées, ainsi que des
@@ -1031,7 +1031,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    « En temps qu'organe de presse, nous sommes formés à utiliser GPG.
 			    C'est la sécurité de vos sources qui est en jeu, lorsque
 			    vous quittez le pays pour publier ce scoop explosif
@@ -1125,7 +1125,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
+			  <div class="card-quote card-quote-superlong">
 			    « Mais même si vous êtes absolument certain·e que vous
 			    personnellement n'avez rien à cacher, si vous pensez que
 			    certaines personnes ont des choses à cacher et que c'est une
@@ -1252,7 +1252,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Que vous ayez une clé GPG ou non, que vous envoyez des
 			    messages chiffrés ou non, vous dépendez de GPG pour vous
 			    assurer que vous mises à jour logicielles fonctionnent comme
@@ -1337,7 +1337,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Les journalistes que nous servons ont confiance que nous
 			    connaissons les meilleurs manières de les protéger.  Et notre
 			    utilisation des méthodes les plus sécurisées, ainsi que des
@@ -1365,7 +1365,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Nous nous sentons en sécurité avec GPG pour protéger les
 			    données des étudiants lorsque nous échanges leurs dossiers
 			    avec d'autres universités.  C'est très confortable. »
@@ -1418,12 +1418,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « En temps qu'organe de presse, nous sommes formés à utiliser GPG.
-			    C'est la sécurité de vos sources qui est en jeu, lorsque
-			    vous quittez le pays pour publier ce scoop explosif
-			    alors que le gouvernement est à la recherche du lanceur
-			    l'alerte qui vous a révélé cette information primordiale. »
+			  <div class="card-quote card-quote-superlong">
+			    « En temps qu'organe de presse, nous sommes formés à u&shy;ti&shy;li&shy;ser GPG.
+			    C'est la sé&shy;cu&shy;ri&shy;té de vos sources qui est en jeu, lors&shy;que
+			    vous quit&shy;tez le pays pour pu&shy;blier ce scoop ex&shy;plo&shy;sif
+			    alors que le gou&shy;ver&shy;ne&shy;ment est à la re&shy;cher&shy;che du lanceur
+			    l'alerte qui vous a révélé cette in&shy;for&shy;ma&shy;tion pri&shy;mor&shy;dia&shy;le. »
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
@@ -1474,7 +1474,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Lorsque nous avons contacté nos universités pour demander
 			    comment elles voulaient procéder pour un transfert de fichier
 			    sécurisé, il se trouvait qu'elles utilisaient déjà le
@@ -1501,7 +1501,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
+			  <div class="card-quote card-quote-long">
 			    « Personnellement, je pense que GPG est le plus utile en ce qu'il
 			    me permet d'accéder à des gens sans quoi je ne pourrais pas
 			    communiquer avec ni aider ni même relayer leur histoire. »
@@ -1528,12 +1528,12 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
-			    « Mais même si vous êtes absolument certain·e que vous
-			    personnellement n'avez rien à cacher, si vous pensez que
-			    certaines personnes ont des choses à cacher et que c'est une
+			    « Mais même si vous êtes ab&shy;so&shy;lu&shy;ment certain·e que vous
+			    per&shy;son&shy;nel&shy;le&shy;ment n'avez rien à cacher, si vous pensez que
+			    cer&shy;tai&shy;nes per&shy;son&shy;nes ont des choses à cacher et que c'est une
 			    bonne chose, nous pensons que <!-- vous devriez utilisez ces
 			    technologies, que-->vous devriez utiliser GPG, parce que ça
-			    contribue à protéger ces autres gens qui ont vraiment besoin
+			    con&shy;tri&shy;bue à pro&shy;té&shy;ger ces autres gens qui ont vrai&shy;ment besoin
 			    d'utiliser GPG. »
 			  </div>
 			  <div class="card-meta">
