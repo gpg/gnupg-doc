@@ -99,7 +99,11 @@
           <p>
           Veuillez transférer votre montant choisi au compte bancaire suivant :
           </p>
+	</div>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
               <label class="col-xs-12 col-sm-3 control-label">Titulaire du compte</label>

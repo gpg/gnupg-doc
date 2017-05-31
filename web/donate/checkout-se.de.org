@@ -100,7 +100,11 @@
           <p>
 	    Bitte überweisen Sie Ihre Spende auf dieses Konto:
           </p>
+	</div>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
               <label class="col-xs-12 col-sm-3 control-label">Kontoinhaber</label>
