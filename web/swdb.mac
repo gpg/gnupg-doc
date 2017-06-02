@@ -140,11 +140,11 @@
 #
 # nPth
 #
-#+macro: npth_ver  1.4
-#+macro: npth_date 2017-05-16
+#+macro: npth_ver  1.5
+#+macro: npth_date 2017-06-02
 #+macro: npth_size 292k
-#+macro: npth_sha1 46c3b8e0851673df1106b5469d0da70a0b352652
-#+macro: npth_sha2 8915141836a3169a502d65c1ebd785fcc6d406cae5ee84474272ebf2fa96f1f2
+#+macro: npth_sha1 93ddf1a3bdbca00fb4cf811498094ca61bbb8ee1
+#+macro: npth_sha2 294a690c1f537b92ed829d867bee537e46be93fbd60b16c04630fbbfcd9db3c2
 
 
 #
