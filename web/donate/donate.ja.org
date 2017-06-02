@@ -146,6 +146,9 @@
               <input type="radio" name="paytype" id="pp"
                      value="pp" /><!--CHECK_PP-->
               PayPal
+              <span class="help-block help-inline" id="paypal-note">
+                Please note that in certain countries recurring donations are not possible with PayPal.
+              </span>
             </label>
           </div>
           <div class="radio">

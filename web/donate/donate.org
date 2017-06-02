@@ -22,12 +22,6 @@
 
 </head>
 <body lang="<!--LANG-->">
-<style>
-.help-inline {
-  margin-bottom: 0;
-  margin-top: 5px;
-}
-</style>
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">

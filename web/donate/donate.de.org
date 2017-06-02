@@ -147,6 +147,9 @@
               <input type="radio" name="paytype" id="pp"
                      value="pp" /><!--CHECK_PP-->
               PayPal
+              <span class="help-block help-inline" id="paypal-note">
+                Bitte beachten Sie, das in einigen Ländern (z.B. Deutschland) Daueraufträge mit PayPal nicht möglich sind.
+              </span>
             </label>
           </div>
           <div class="radio">
