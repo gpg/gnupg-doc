@@ -143,3 +143,15 @@ $(document).ready(function() {
 		     + yt_id + '?autoplay=1&modestbranding=1&rel=0' + extra_parms + '"></iframe>');
     });
 });
+
+/* hide the note about recurring donations under the Paypal option.  */
+$(document).ready(function() {
+  $("#recur").change(function() {
+    if (this.value !== 0) {
+      $("#paypal-note").hide();
+    }
+    else {
+      $("#paypal-note").show();
+    }
+  });
+});
