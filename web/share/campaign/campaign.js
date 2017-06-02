@@ -147,7 +147,8 @@ $(document).ready(function() {
 /* hide the note about recurring donations under the Paypal option.  */
 $(document).ready(function() {
   $("#recur").change(function() {
-    if (this.value !== 0) {
+    console.log
+    if (this.value === "0") {
       $("#paypal-note").hide();
     }
     else {
