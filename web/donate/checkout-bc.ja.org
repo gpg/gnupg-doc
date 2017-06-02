@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-sm-5 col-md-offset-2">
           <p>
-            <a class="btn btn-default btn-sm" href="/">ホームへ</a>
+            <a class="btn btn-default btn-sm" href="/donate/index.ja.html">ホームへ</a>
           </p>
         </div>
       </div>
