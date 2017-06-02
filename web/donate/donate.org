@@ -22,6 +22,12 @@
 
 </head>
 <body lang="<!--LANG-->">
+<style>
+.help-inline {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+</style>
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -149,6 +155,9 @@
               <input type="radio" name="paytype" id="pp"
                      value="pp" /><!--CHECK_PP-->
               PayPal
+              <span class="help-block help-inline">
+                Please note that in certain countries recurring donations are not possible with PayPal.
+              </span>
             </label>
           </div>
           <div class="radio">
