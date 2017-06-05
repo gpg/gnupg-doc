@@ -88,7 +88,7 @@ function get_param_from_url(name) {
 /* Defer loading Youtube iframe until the user clicks on the video.  */
 $(document).ready(function() {
 
-    let YTID = { "main": "yB3V1YP8cKw",
+    let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "2V-6JdTsIns",
 		 "sze": "tKPMof5ptc0",
 		 "sheera": "zwPaVA4vhDM",
@@ -102,11 +102,11 @@ $(document).ready(function() {
 		 "geoffrey": "Y4yat43CvEc",
 		 "daniel": "coFFCJlMRjk",
 		 "cindy": "kPSEYvmFLWY",
-		 "benjamin": "mnVsS_kuwqo",
+		 "benjamin": "atFz16nInIs",
 		 "arthur": "Js_OqRLm9F4",
 		 "andrew": "DXiU9wewjn4",
-		 "andre": "sYXQxEPpnvA",
-		 "alex": "5FtL5hAcxk4"
+		 "andre": "bcNLlWqZ9d0",
+		 "alex": "1OMJWpdl0DA"
 	       };
 
     /* For the video preview, we use this for devices without hover events.  */
@@ -142,4 +142,17 @@ $(document).ready(function() {
 	$(this).html('<iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/'
 		     + yt_id + '?autoplay=1&modestbranding=1&rel=0' + extra_parms + '"></iframe>');
     });
+});
+
+/* hide the note about recurring donations under the Paypal option.  */
+$(document).ready(function() {
+  $("#recur").change(function() {
+    console.log
+    if (this.value === "0") {
+      $("#paypal-note").hide();
+    }
+    else {
+      $("#paypal-note").show();
+    }
+  });
 });

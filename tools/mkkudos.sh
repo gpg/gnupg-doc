@@ -326,6 +326,9 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
          if ($1==year && $4==tag) {
            printf "<li>%s</li>\n", $3
          }
+         else if ($1==year && $4=="S") {
+           printf "<li>%s*</li>\n", $3
+         }
        }
        close (donors)
      }
@@ -339,6 +342,9 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
             continue;
          if ($4==tag) {
            data[i++] = $3
+         }
+         else if ($4=="S") {
+           data[i++] = $3 "*"
          }
        }
        close (donors)

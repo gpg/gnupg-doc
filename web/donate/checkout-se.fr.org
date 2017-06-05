@@ -24,6 +24,10 @@
   padding-bottom: 0 !important;
   min-height: 0 !important;
 }
+.qrcode > svg {
+  max-width: 100%;
+  height: auto;
+}
     </style>
 
     <!-- Fixed navbar -->
@@ -53,80 +57,111 @@
 
     <div class="camp-gutter container">
       <div class="row">
-        <div class="col-md-7 col-md-offset-2">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+      <div class="row">
+	<div class="col-xs-12">
           <h2>Règlement</h2>
           <p>
           Les virements dans l'espace unique de paiement en euros (SEPA) sont
           valides depuis 34 pays de l'Union européenne et États associés.
           </p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Nom</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Nom</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--NAME--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Courriel</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Courriel</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MAIL--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Message</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Message</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MESSAGE_FMT--></p>
               </div>
             </div>
           </form>
+	</div>
+      </div>
 
+      <div class="row">
+	<div class="col-xs-12">
           <p>
           Veuillez transférer votre montant choisi au compte bancaire suivant :
           </p>
+	</div>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Titulaire du compte</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Titulaire du compte</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">g10 Code GmbH</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">IBAN</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">IBAN</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">DE76 3015 0200 0002 1086 03</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">BIC</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">BIC</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">WELADED1KSD</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Référence</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Référence</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--SEPA_REF--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Montant</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Montant</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--AMOUNT--> EUR</p>
               </div>
             </div>
           </form>
+	</div>
 
+        <div class="col-xs-12 col-sm-3">
+          <div class="qrcode text-center">
+            <!--SEPA_QR-->
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
           <p>
-            Veuillez vous assurer de la présence du numéro de référence, afin que
-            nous puissions associer le montant reçu à votre donation et ainsi vous
-            lister comme donateur si désiré.
-            Le numéro de référence ci-dessus n'est valable que pour 30 jours,
-            pensez donc à initier le transfert à temps.
-            Vous êtes libres de choisir un différent montant, mais veuillez envoyer
-            au moins 5 euros afin de couvrir les coûts de la transaction.
-            Il est également possible d'utiliser le numéro de référence pour les
-            donations régulières.
+            Veuillez vous assurer de la présence du numéro de
+            référence (
+            <strong>
+              <!--SEPA_REF-->
+            </strong>
+            ), afin que nous puissions associer le montant
+            reçu à votre donation et ainsi vous lister comme donateur
+            si désiré.  Le numéro de référence ci-dessus n'est valable
+            que pour 30 jours, pensez donc à initier le transfert à
+            temps.  Vous êtes libres de choisir un différent montant,
+            mais veuillez envoyer au moins 5 euros afin de couvrir les
+            coûts de la transaction.  Il est également possible
+            d'utiliser le numéro de référence pour les donations
+            régulières.
           </p>
           <p>
             <strong>Nous vous remercions d'avance pour votre donation.</strong>
@@ -135,10 +170,13 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-5 col-md-offset-2">
+        <div class="col-xs-12">
           <p>
-            <a class="btn btn-default btn-sm" href="/">Continue</a>
+            <a class="btn btn-default btn-sm" href="/donate/index.fr.html">Continue</a>
           </p>
+	</div>
+      </div>
+
         </div>
       </div>
     </div>

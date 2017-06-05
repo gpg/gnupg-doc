@@ -24,6 +24,10 @@
   padding-bottom: 0 !important;
   min-height: 0 !important;
 }
+.qrcode > svg {
+  max-width: 100%;
+  height: auto;
+}
     </style>
 
     <!-- Fixed navbar -->
@@ -53,83 +57,115 @@
 
     <div class="camp-gutter container">
       <div class="row">
-        <div class="col-md-7 col-md-offset-2">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+      <div class="row">
+	<div class="col-xs-12">
           <h2>Übersicht</h2>
           <p>
 	    Mit SEPA-Überweisungen kann man Geld zwischen den 34
 	    Mitgliedsstaaten der EU sowie sechs angegliederten Staaten
 	    transferieren.
           </p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Name</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Name</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--NAME--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">E-Mail</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">E-Mail</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MAIL--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Nachricht</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Nachricht</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MESSAGE_FMT--></p>
               </div>
             </div>
           </form>
+	</div>
+      </div>
 
+      <div class="row">
+	<div class="col-xs-12">
           <p>
 	    Bitte überweisen Sie Ihre Spende auf dieses Konto:
           </p>
+	</div>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Kontoinhaber</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Kontoinhaber</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">g10 Code GmbH</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">IBAN</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">IBAN</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">DE76 3015 0200 0002 1086 03</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">BIC</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">BIC</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">WELADED1KSD</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Zweck</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Zweck</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--SEPA_REF--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Betrag</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Betrag</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--AMOUNT--> EUR</p>
               </div>
             </div>
           </form>
+	</div>
 
+        <div class="col-xs-12 col-sm-3">
+          <div class="qrcode text-center">
+            <!--SEPA_QR-->
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
           <p>
-	    Bitte achten Sie darauf, dass die unter Verwendungszweck
-	    angegebene Referenznummer stimmt. Diese wird benötigt um
-      Ihre Spende zuordnen zu können. Sie werden in der Liste
-      der Spender aufführt werden, falls Sie einen Name angegeben
-      haben. Die Referenznummer
-	    verliert ihre Gültigkeit nach 30 Tagen. Bitte überweisen
-	    Sie rechtzeitig.  Sie können einen anderen Betrag
+            Um einen <strong>Dauerauftrag</strong> einzurichten,
+	    beachten Sie bitte die Hinweise Ihrer Bank.
+          </p>
+          <p>
+	    Bitte achten Sie auch darauf, dass Sie als
+	    Verwendungszweck die Referenznummer
+            <strong>
+              <!--SEPA_REF-->
+            </strong>
+            angeben.  Diese wird benötigt, um Ihre Spende zuordnen zu
+	    können.  Sie werden in der Liste der Spender aufgeführt
+	    falls Sie einen Name angegeben haben.  Die Referenznummer
+	    verliert ihre Gültigkeit nach 30 Tagen.  Bitte überweisen
+	    Sie deswegen rechtzeitig oder genereieren Sie eine neue
+	    Referenznummer.  Sie können gerne einen anderen Betrag
 	    überweisen, aber bitte überweisen Sie mindestens 5 Euro
-	    damit wir unsere Verwaltungskosten decken können.  Sie
-	    können die Referenznummer auch für Daueraufträge
-	    verwenden.
+	    damit wir unsere Verwaltungskosten decken können.
           </p>
           <p>
             <strong>Vielen Dank im Vorraus für Ihre Spende.</strong>
@@ -138,10 +174,13 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-5 col-md-offset-2">
+        <div class="col-xs-12">
           <p>
             <a class="btn btn-default btn-sm" href="/donate/index.de.html">Fortsetzen</a>
           </p>
+	</div>
+      </div>
+
         </div>
       </div>
     </div>

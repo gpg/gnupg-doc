@@ -49,8 +49,8 @@
 
           <p>
           Veuillez envoyer votre montant en Bitcoin à
-          <a href="bitcoin:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          ><tt>xxxxxxxxxxxxxxxxx&shy;xxxxxxxxxxxxxxxxx</tt></a>.
+          <a href="bitcoin:1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzF"
+          ><tt>1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzF</tt></a>.
           </p>
 
           <p>
@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-sm-5 col-md-offset-2">
           <p>
-            <a class="btn btn-default btn-sm" href="/">Suivant</a>
+            <a class="btn btn-default btn-sm" href="/donate/index.fr.html">Suivant</a>
           </p>
         </div>
       </div>

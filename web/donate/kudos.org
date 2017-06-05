@@ -83,6 +83,10 @@ the start of the Goteo campaign.
 #+HTML: <li><a href="/donate/index.html">your name</a></li>
 #+HTML: </ul><p class="doclear"> </p></div>
 
+#+HTML: <div id="smallnote">
+(* marks recurring donations)
+#+HTML: </div>
+
   Thank you.
 
   - All donors to GnuPG in [[file:kudos-2016.org][2016]]

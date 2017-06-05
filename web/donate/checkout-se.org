@@ -24,6 +24,10 @@
   padding-bottom: 0 !important;
   min-height: 0 !important;
 }
+.qrcode > svg {
+  max-width: 100%;
+  height: auto;
+}
     </style>
 
     <!-- Fixed navbar -->
@@ -53,91 +57,128 @@
 
     <div class="camp-gutter container">
       <div class="row">
-        <div class="col-md-7 col-md-offset-2">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+      <div class="row">
+	<div class="col-xs-12">
           <h2>Summary</h2>
           <p>
           Single Euro Payments Area credit transfers can be used to transfer
           Euro within the 34 states of the European Union and 6 associated
           states.
           </p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Name</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Name</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--NAME--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Mail</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Mail</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MAIL--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Message</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Message</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--MESSAGE_FMT--></p>
               </div>
             </div>
           </form>
+	</div>
+      </div>
 
+      <div class="row">
+	<div class="col-xs-12">
           <p>
           Please send your donation to this bank account:
           </p>
+	</div>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
           <form class="form-horizontal">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Owner</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Owner</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">g10 Code GmbH</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">IBAN</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">IBAN</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">DE76 3015 0200 0002 1086 03</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">BIC</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">BIC</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static">WELADED1KSD</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Reference</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Reference</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--SEPA_REF--></p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Amount</label>
-              <div class="col-sm-9">
+              <label class="col-xs-12 col-sm-3 control-label">Amount</label>
+              <div class="col-xs-12 col-sm-9">
                 <p class="form-control-static"><!--AMOUNT--> EUR</p>
               </div>
             </div>
           </form>
+	</div>
 
+        <div class="col-xs-12 col-sm-3">
+          <div class="qrcode text-center">
+            <!--SEPA_QR-->
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
           <p>
-            Take care to give the reference number so that we can match your
-            data with your actual donation and list you as donor if desired.
-            The given reference number expires in 30 days, thus please act in
-            time.  You may send a different amount but please send at least 5
-            Euro to cover our bookkeeping costs.  Using the reference number for
-            recurring donations is also possible.
+            For a <strong>recurring donation</strong> please apply the
+            instructions of your bank on how to enter a recurring
+            payment (standing order).
+          </p>
+          <p>
+            Always take care to give
+            <strong>
+              <!--SEPA_REF-->
+            </strong>
+            as reference so that we can match your name with your
+            actual donation and list you as donor if desired.  The
+            given reference number expires in 30 days, thus please act
+            in time.  You may of course send a different amount but
+            please send at least 5 Euro to cover the overhead costs.
           </p>
           <p>
             <strong>Thank you in advance for your donation.</strong>
           </p>
-        </div>
+	</div>
       </div>
 
       <div class="row">
-        <div class="col-sm-5 col-md-offset-2">
+	<div class="col-xs-12">
           <p>
-            <a class="btn btn-default btn-sm" href="/">Continue</a>
+            <a class="btn btn-default btn-sm" href="/donate/index.html">Continue</a>
           </p>
-        </div>
+	</div>
+      </div>
+
+	</div>
       </div>
     </div>
 
