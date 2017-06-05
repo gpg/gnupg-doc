@@ -139,7 +139,7 @@
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
-                <small>in einmaligen Spenden</small>
+                <small>an einmaligen Spenden in 2017</small>
               </h4>
 	      <h4><!--CMPGN-RECUR-COUNT-->
                 <small>Unterstützer</small>
