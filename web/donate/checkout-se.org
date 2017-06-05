@@ -149,12 +149,20 @@
       <div class="row">
 	<div class="col-xs-12">
           <p>
-            Take care to give the reference number so that we can match your
-            data with your actual donation and list you as donor if desired.
-            The given reference number expires in 30 days, thus please act in
-            time.  You may send a different amount but please send at least 5
-            Euro to cover our bookkeeping costs.  Using the reference number for
-            recurring donations is also possible.
+            For a <strong>recurring donation</strong> please apply the
+            instructions of your bank on how to enter a recurring
+            payment (standing order).
+          </p>
+          <p>
+            Always take care to give
+            <strong>
+              <--SEPA_REF-->
+            </strong>
+            as reference so that we can match your name with your
+            actual donation and list you as donor if desired.  The
+            given reference number expires in 30 days, thus please act
+            in time.  You may of course send a different amount but
+            please send at least 5 Euro to cover the overhead costs.
           </p>
           <p>
             <strong>Thank you in advance for your donation.</strong>

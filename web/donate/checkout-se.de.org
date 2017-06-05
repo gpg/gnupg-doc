@@ -149,17 +149,23 @@
       <div class="row">
 	<div class="col-xs-12">
           <p>
-	    Bitte achten Sie darauf, dass die unter Verwendungszweck
-	    angegebene Referenznummer stimmt. Diese wird benötigt um
-      Ihre Spende zuordnen zu können. Sie werden in der Liste
-      der Spender aufführt werden, falls Sie einen Name angegeben
-      haben. Die Referenznummer
-	    verliert ihre Gültigkeit nach 30 Tagen. Bitte überweisen
-	    Sie rechtzeitig.  Sie können einen anderen Betrag
+            Um einen <strong>Dauerauftrag</strong> einzurichten,
+	    beachten Sie bitte die Hinweise Ihrer Bank.
+          </p>
+          <p>
+	    Bitte achten Sie auch darauf, dass Sie als
+	    Verwendungszweck die Referenznummer
+            <strong>
+              <--SEPA_REF-->
+            </strong>
+            angeben.  Diese wird benötigt, um Ihre Spende zuordnen zu
+	    können.  Sie werden in der Liste der Spender aufgeführt
+	    falls Sie einen Name angegeben haben.  Die Referenznummer
+	    verliert ihre Gültigkeit nach 30 Tagen.  Bitte überweisen
+	    Sie deswegen rechtzeitig oder genereieren Sie eine neue
+	    Referenznummer.  Sie können gerne einen anderen Betrag
 	    überweisen, aber bitte überweisen Sie mindestens 5 Euro
-	    damit wir unsere Verwaltungskosten decken können.  Sie
-	    können die Referenznummer auch für Daueraufträge
-	    verwenden.
+	    damit wir unsere Verwaltungskosten decken können.
           </p>
           <p>
             <strong>Vielen Dank im Vorraus für Ihre Spende.</strong>

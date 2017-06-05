@@ -148,15 +148,20 @@
       <div class="row">
 	<div class="col-xs-12">
           <p>
-            Veuillez vous assurer de la présence du numéro de référence, afin que
-            nous puissions associer le montant reçu à votre donation et ainsi vous
-            lister comme donateur si désiré.
-            Le numéro de référence ci-dessus n'est valable que pour 30 jours,
-            pensez donc à initier le transfert à temps.
-            Vous êtes libres de choisir un différent montant, mais veuillez envoyer
-            au moins 5 euros afin de couvrir les coûts de la transaction.
-            Il est également possible d'utiliser le numéro de référence pour les
-            donations régulières.
+            Veuillez vous assurer de la présence du numéro de
+            référence (
+            <strong>
+              <--SEPA_REF-->
+            </strong>
+            ), afin que nous puissions associer le montant
+            reçu à votre donation et ainsi vous lister comme donateur
+            si désiré.  Le numéro de référence ci-dessus n'est valable
+            que pour 30 jours, pensez donc à initier le transfert à
+            temps.  Vous êtes libres de choisir un différent montant,
+            mais veuillez envoyer au moins 5 euros afin de couvrir les
+            coûts de la transaction.  Il est également possible
+            d'utiliser le numéro de référence pour les donations
+            régulières.
           </p>
           <p>
             <strong>Nous vous remercions d'avance pour votre donation.</strong>
