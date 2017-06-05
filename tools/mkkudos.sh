@@ -190,6 +190,8 @@ dontable=$(awk -F: <"$donations" -v thisyear="$thisyear" '
 
 
 # Campaign data
+# Watchout for the 9074 below which are the donations received before the
+# campaign start.
 goal="120000"
 recur_goal="15000"
 percent=$(echo "$euroyr:$goal" | awk -F: '{ p = (int($1)*100)/int($2);
@@ -300,7 +302,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
      /<!--CMPGN-ONCE-EURO-->/ {
            n = index($0,"<!--CMPGN");
            printf "%s!--CMPGN-ONCE-EURO-->%s&#x202f;&euro;\n",
-                  substr($0,1,n), format_number(euroyr);
+                  substr($0,1,n), format_number( int(euroyr) - 9074 );
            next
      }
      /<!--CMPGN-RECUR-COUNT-->/ {

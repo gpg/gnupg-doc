@@ -136,7 +136,7 @@
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
-                <small>in one-time donations this year</small>
+                <small>in one-time donations</small>
               </h4>
 	      <h4><!--CMPGN-RECUR-COUNT-->
                 <small>Supporters</small>
