@@ -1,20 +1,18 @@
-# Independent Encryption Software Looking for Support
+# Independent Encryption Software, GnuPG, Needs Financial Support
 #+STARTUP: showall
 #+AUTHOR: GnuPG Team
 #+DATE: June 6, 2017
 
-*EMBARGO: not before Tuesday, June 6*
-
-**Independent Encryption Software, GnuPG, Needs Financial Support
+** Independent Encryption Software, GnuPG, Needs Financial Support
 
 Düsseldorf, Germany --- Tuesday, June 6, 2017.  The GnuPG Project
 today announced the launch of a funding campaign to further support
 and improve its leading mail and data encryption software, GnuPG.  The
 campaign aims to secure 15000 Euro per month in recurring donations
 from individual donors to finance the development of their free
-software.
+software.  Donations can be made at the newly reworked website:
 
-    <https://gnupg.org/donate/>
+    https://gnupg.org/donate/
 
 Activists, journalists, lawyers, and many others rely on GnuPG to
 protect their communication.  The software guards emails, files, and
@@ -59,14 +57,14 @@ Gpg4win, and GPGTools.  Most operating systems use GnuPG's signing
 ability to protect system updates against malicious attempts to
 introduce backdoors.  GnuPG is available free of charge, and comes
 with all source code to allow anyone to audit the software.
-<https://gnupg.org>
+https://gnupg.org
 
 *** About g10 Code GmbH
 
 g10 Code GmbH is the privately owned legal entity behind the GnuPG
 Project.  They employ all developers and keep all profits for the
 development of GnuPG and related free software.
-<https://gnupg.org/imprint.html>
+https://gnupg.org/imprint.html
 
 *** Media contacts:
 
@@ -74,5 +72,4 @@ Neal H. Walfield, Werner Koch\\
 Email: media@gnupg.org\\
 Phone: +49-2104-4938797\\
 Twitter: @gnupg\\
-OpenPGP: 370C 0FC3 1293 B339 61C1  FC20 B367 1B93 6BA8 BCB2\\
-Campaign page preview: https://preview.gnupg.org/donate/
+OpenPGP: 370C 0FC3 1293 B339 61C1  FC20 B367 1B93 6BA8 BCB2
