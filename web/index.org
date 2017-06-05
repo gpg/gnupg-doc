@@ -29,6 +29,28 @@ page for other maintained versions.
 is nicely integrated into an installer and features several frontends
 as well as English and German manuals.
 
+* GnuPG needs your support to help protect online privacy.
+
+Please consider [[file:donate/index.org][donating]] to ensure that this critical piece of
+software continues to work for everyone.
+
+#+begin_html
+ <ul>
+  <li><!--CMPGN-RECUR-EURO-->
+      a month <small>of
+      <!--CMPGN-RECUR-EURO-GOAL-->
+      needed</small></li>
+  <li>+<!--CMPGN-ONCE-EURO-->
+      <small>in one-time donations</small></li>
+  <li><!--CMPGN-RECUR-COUNT-->
+      <small>Supporters</small></li>
+ </ul>
+
+ <div class="left" style="font-size: 150%">
+   <p><a href="donate/index.html">Continue</a></p>
+ </div>
+#+end_html
+
 
 * Reconquer your privacy
 
