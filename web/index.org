@@ -41,11 +41,11 @@ software continues to work for everyone.
   a month <br/>
   <small>of
   <!--CMPGN-RECUR-EURO-GOAL-->
-  needed.</small><br/>
+  needed.<br/>
   <!--CMPGN-RECUR-COUNT-->
-  <small>Supporters.</small></li>
-  +<!--CMPGN-ONCE-EURO-->
-  <small>in one-time donations.</small></li>
+  Supporters.<br/>
+  <!--CMPGN-ONCE-EURO-->
+  in one-time donations.</small><br/>
  </p>
  <p><a href="donate/index.html">Continue to campaign page</a></p>
  </div>
