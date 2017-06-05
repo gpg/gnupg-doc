@@ -220,6 +220,12 @@
               </div>
 	    </div>
 	  </div>
+	  <p class="vid-howto">
+	    Cliquez sur le menu
+	    <img src="/share/campaign/img/vidmenu.svg" style="height:
+	    1em; vertical-align: baseline;" aria-hidden="true"/> pour
+            sélectionner d'autres vidéos.
+	  </p>
 	</div>
       </div>
     </div>
