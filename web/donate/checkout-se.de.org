@@ -156,7 +156,7 @@
 	    Bitte achten Sie auch darauf, dass Sie als
 	    Verwendungszweck die Referenznummer
             <strong>
-              <--SEPA_REF-->
+              <!--SEPA_REF-->
             </strong>
             angeben.  Diese wird benötigt, um Ihre Spende zuordnen zu
 	    können.  Sie werden in der Liste der Spender aufgeführt

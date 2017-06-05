@@ -156,7 +156,7 @@
           <p>
             Always take care to give
             <strong>
-              <--SEPA_REF-->
+              <!--SEPA_REF-->
             </strong>
             as reference so that we can match your name with your
             actual donation and list you as donor if desired.  The

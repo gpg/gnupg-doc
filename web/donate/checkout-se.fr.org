@@ -151,7 +151,7 @@
             Veuillez vous assurer de la présence du numéro de
             référence (
             <strong>
-              <--SEPA_REF-->
+              <!--SEPA_REF-->
             </strong>
             ), afin que nous puissions associer le montant
             reçu à votre donation et ainsi vous lister comme donateur
