@@ -1806,6 +1806,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
         <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
         Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
         <a href="/copying.html">copying</a> for details.
+        See the <a href="/imprint.html">Imprint</a>.
       </div>
     </div>
   </div>
