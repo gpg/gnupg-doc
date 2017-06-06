@@ -289,7 +289,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    <strong>Finanzierungsprobleme</strong>.  Aufgrund von
 	    ausbleibenden Aufträgen musste Werner Koch, GnuPG's
 	    Hauptentwickler, seinen einzigen Mitarbeiter entlassen,
-	    der vollzeit an GnuPG gearbeitet hat.  Und im Jahr 2014
+	    der Vollzeit an GnuPG gearbeitet hat.  Und im Jahr 2014
 	    musste Werner andere Jobs annehmen um seine Arbeit an
 	    GnuPG zu finanzieren.
 	  <p class="text-justify">
