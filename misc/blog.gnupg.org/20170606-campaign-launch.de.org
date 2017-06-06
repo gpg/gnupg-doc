@@ -1,0 +1,90 @@
+# German: Independent Encryption Software, GnuPG, Needs Financial Support
+#+STARTUP: showall
+#+AUTHOR: GnuPG Team
+#+DATE: June 6, 2017
+
+ [[file:20170606-campaign-launch.org][English]] | Deutsch
+
+** Unabhängige Verschlüsselungssoftware GnuPG benötigt Finanzhilfe
+
+  Düsseldorf -- Dienstag, 6. Juni 2017.  Das GnuPG Projekt startete
+  heute eine neue Spendenkampagne zur Unterstützung und Förderung
+  seiner bekannten Email- und Datenverschlüsselungssoftware GnuPG.
+  Die Kampagne hat das Ziel, mindestens 15.000 Euro pro Monat an
+  regelmäßigen Spenden von Einzelspendern einzuwerben.  Diese Spenden
+  sollen dauerhaft die weitere Entwicklung von GnuPG ermöglichen.
+  Hierzu wurde die nun viersprachige Spendenseite
+
+    [[https://gnupg.org/donate/index.de.html]]
+
+  vollständig überarbeitet und erheblich erweitert.
+
+  Journalisten, Aktivisten, Anwälte und viele andere verlassen sich
+  auf GnuPG, um damit ihre Kommunikation zu schützen.  Die Software
+  schützt neben Emails auch Dateien und Programme vor staatlichem und
+  kriminellem Abhören auf Windows, MAC und Linux.  Desweiteren
+  benutzen mehr als zwei Drittel aller Internetserver GnuPG, um
+  Updates ihrer Systemsoftware abzusichern.
+
+  Immer neue Erkenntnisse über staatliche Datenschnüffelei haben
+  gezeigt, wie wenig unsere Daten heute sicher sind.  Ohne von
+  kommerziellen Interessen behindert zu sein, ist GnuPG eines der
+  wenigen Werkzeuge, welches echten Schutz bieten kann.  Edward
+  Snowden benutzte es, um seine Kommunikation mit Journalisten zu
+  verschlüsseln.  Viele Einrichtungen bevorzugen GnuPG, da es einen
+  offenen Standard verwendet und so sicherstellt, daß Daten auch in
+  vielen Jahren noch entschlüsselt werden können.
+
+  Das aus 6 Personen bestehende Entwicklerteam von GnuPG finanziert
+  sich momentan aus der Spendenkampagne von Anfang 2015, regelmäßigen
+  Spenden der Linux Foundation, Facebooks, des Zahlungsdienstleister
+  Stripe sowie einigen bezahlten Entwicklungsaufträgen.  Um eine
+  langfristige Stabilität zu erreichen, konzentriert sich die aktuelle
+  Kampagne auf die Einwerbung von Dauerunterstützern anstatt auf
+  Einmalspenden zu setzen.  Projektleiter Werner Koch sagt hierzu:
+  „Wir möchten diese Arbeit auf Dauer fortsetzen.  Jedoch wollen wir
+  dabei in erster Linie der Allgemeinheit verpflichtet sein.  Deshalb
+  soll der Großteil unserer Finanzierung durch Einzelspender gedeckt
+  werden und nicht von Konzernen.“
+
+  Um die Rolle von GnuPG zum Schutz von Daten hervorzuheben, wurden 26
+  Organisationen aus aller Welt zu GnuPG befragt.  Diese Berichte von
+  Aktivistengruppen, Zeitungen, Anwaltskanzleien und Firmen werden in
+  täglich wechselnden Videos auf der Kampagnenseite veröffentlicht.
+
+
+*** Über den GNU Privacy Guard (GnuPG)
+
+  Seit 1997 ermöglicht GnuPG Privatleuten und Firmen ihre Daten und
+  Kommunikation zu verschlüsseln und digital zu signieren.  Hierzu
+  wird der wohlbekannte und hoch kompatible OpenPGP Standard benutzt.
+  Die Software basiert auf modernsten kryptographischen Verfahren und
+  verfügt über ein vielseitiges System zur Verwaltung der Schlüssel.
+  GnuPG, welches auch als GPG oder, nicht korrekt, als PGP bekannt
+  ist, kann sowohl als eigenständiges Programm benutzt werden oder
+  aber eingebaut in andere Programme.  Es dient als kryptographischer
+  Unterbau für eine Vielzahl von Programmen, wie Thunderbird mit
+  Enigmail, Gpg4win für Windows, und GPGTools für macOS.  Die meisten
+  Betriebssysteme nutzen GnuPG, um den Einbau von Hintertüren durch
+  Systemupdates einen Riegel vorzuschieben.  GnuPG is kostenlos
+  erhältlich und wird immer mit vollständigem Quelltext geliefert;
+  hierdurch ist eine Überprüfung der Software jederzeit möglich.
+  <http://gnupg.org>
+
+
+*** Über die g10 Code GmbH
+
+  Die g10 Code GmbH ist die juristische Person, die hinter dem GnuPG
+  Projekt steht.  Die bezahlten Entwickler sind bei ihr fest
+  angestellt.  Die Firma investiert alle Gewinne wieder in die
+  Entwicklung von GnuPG und dazugehöriger freier Software.
+  https://gnupg.org/imprint.html
+
+
+*** Pressekontakt:
+
+  Neal H. Walfield, Werner Koch\\
+  Email: media@gnupg.org\\
+  Telefon: +49-2104-4938797\\
+  Twitter: @gnupg\\
+  OpenPGP: 370C 0FC3 1293 B339 61C1 FC20 B367 1B93 6BA8 BCB2
