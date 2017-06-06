@@ -410,7 +410,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
 		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Book</h3>
-		  <p>We want to improve documentation.  On major
+		  <p>We want to improve documentation.  One major
                     project in this area is a book that we have
                     started to write called <i>An Advanced
                     Introduction to GnuPG</i>, which will explain how
