@@ -358,7 +358,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    Zielgruppen: Entwickler, die GnuPG in ihre Programme
 	    integrieren wollen und die verschiedenen Konzepte,
 	    Sicherheitsabwägungen und übliche Stolperfallen verstehen
-	    müssen; Trainer die Fortbildungen in Digitaler Sicherheit
+	    müssen; Trainer, die Fortbildungen in digitaler Sicherheit
 	    anbieten, um Endbenutzern handfeste Ratschläge geben zu
 	    können; und natürlich Enthusiasten.
 	  <p class="text-justify">
@@ -435,8 +435,8 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    &mdash; <i>Eine Fortgeschrittene Einführung in
 		    GnuPG</i> &mdash; das erläutert wie GnuPG
 		    funktioniert und wie man es am besten einsetzt.
-		    Die Zielgruppen sind Trainer die Fortbildungen in
-		    Digitaler Sicherheit anbieten, Programmierer die
+		    Die Zielgruppen sind Trainer, die Fortbildungen in
+		    digitaler Sicherheit anbieten, Programmierer, die
 		    GnuPG in ihre Anwendungen einbetten und
 		    Enthusiasten.</p>
 		</div>
