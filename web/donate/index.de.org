@@ -264,7 +264,7 @@ href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
 	    Regierung nach dem Informant sucht, der einem die
 	    Schlüsselinformation verriet."</i>  Und GnuPG war
 	    bekanntermaßen Edward Snowden's Werkzeug der Wahl um
-	    sicher Journalisten über die Massenüberwachund der NSA zu
+	    sicher Journalisten über die Massenüberwachung der NSA zu
 	    unterrichten.
 	  <p class="text-justify">
 	    Aber GnuPG wird nicht nur zum Verschlüsseln von E-Mails
