@@ -62,8 +62,8 @@ $(document).ready(function() {
       $("#amountother").prop("value", value.toString());
       $("#currency option").prop("selected", false);
       $("#currency option[value='EUR']").prop("selected", true);
-      $("#recur option").prop("selected", false);
-      $("#recur option[value='12']").prop("selected", true);
+      //$("#recur option").prop("selected", false);
+      //$("#recur option[value='12']").prop("selected", true);
       event.preventDefault();
     });
   }
