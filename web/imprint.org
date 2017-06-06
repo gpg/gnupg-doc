@@ -5,7 +5,10 @@
 * Imprint
 
   GnuPG is an international community project run by volunteers and
-  not a legal entity.  The technical resources are provided by:
+  not a legal entity.  g10^code GmbH is the privately owned legal
+  entity behind the GnuPG.  They employ all paid developers and
+  re-invest all profits into the development of GnuPG and related free
+  software.  See also this [[https://www.gnupg.org/blog/20141214-gnupg-and-g10.html][article]].
 
   g10 Code GmbH\\
   Hüttenstr. 61\\
