@@ -421,7 +421,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  <p>Das Gnuk Sicherheitstoken besteht komplett aus
         Freier Software. Auch das Hardwaredesign, entwickelt
         von Niibe, ist frei verfügbar.  Wir planen, mehr
-        in seine Produktion und Vertrieb zu investieren.</p>
+        in seine Produktion und seinen Vertrieb zu investieren.</p>
 		</div>
 	      </div>
 	    </div>
@@ -447,7 +447,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  <p>Die meisten Leute nutzen GnuPG nicht direkt,
         sondern durch Werkzeuge und Plugins.
 		    Wir wollen die Entwickler solcher Programme
-        unterstützen, um Integration von GnuPG zu
+        unterstützen, um die Integration von GnuPG zu
 		    verbessern.  Insbesondere möchten wir
 		    sicherstellen, dass das GPG-Plugin für
 		    Apple's Mailprogramm (GPGTools) mit jeder neuen
