@@ -345,7 +345,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    tradeoffs, and common pitfalls; for digital security
 	    trainers who need to understand GnuPG to be able to make
 	    sound recommendations to users; and, of course,
-	    for for enthusiasts.
+	    for enthusiasts.
 	  <p class="text-justify">
 	    <strong>Our stretch goal is to double this number of
 	    donations</strong>.  If 4000&nbsp;people donate just 5 or
