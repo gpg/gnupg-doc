@@ -213,9 +213,9 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="andre,alex,benjamin"
+		   data-embed="votd"
                    data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
-		<img src="/share/campaign/img/thumbs/andre.jpg">
+		<img src="/share/campaign/img/thumbs/votd.jpg">
 		<div class="play-button"></div>
 		<div class="video-text">Klicken um das Video zu starten
 		  <noscript><br />

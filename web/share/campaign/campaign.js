@@ -88,8 +88,11 @@ function get_param_from_url(name) {
 /* Defer loading Youtube iframe until the user clicks on the video.  */
 $(document).ready(function() {
 
+    // VOTD: Update VOTD here.
+    let VIDLIST = "thenmozhi,alex,andre,benjamin";
+
     let YTID = { "main": "wNHhkntqklg",
-		 "thenmozhi": "2V-6JdTsIns",
+		 "thenmozhi": "sQMj332dgIE",
 		 "sze": "tKPMof5ptc0",
 		 "sheera": "zwPaVA4vhDM",
 		 "seanus": "H6iO_MkOICM",
@@ -116,12 +119,17 @@ $(document).ready(function() {
 
     let wanted_yt_id = get_param_from_url('play');
     $(".camp-video").each(function() {
-	let yt_ids = $(this).data("embed").split(",");
-	let yt_id_idx = yt_ids.indexOf(wanted_yt_id);
-	if (yt_id_idx != -1) {
-	    $(this).data("embed", wanted_yt_id);
-	    $(this).children("img").attr("src", "/share/campaign/img/thumbs/" + wanted_yt_id + ".jpg");
+	let embed = $(this).data("embed");
+	if (embed != 'votd') {
+	    return;
 	}
+	let yt_ids = VIDLIST.split(",");
+	let yt_id_idx = yt_ids.indexOf(wanted_yt_id);
+	if (yt_id_idx == -1) {
+	    wanted_yt_id = yt_ids[0];
+	}
+	$(this).data("embed", wanted_yt_id);
+	$(this).children("img").attr("src", "/share/campaign/img/thumbs/" + wanted_yt_id + ".jpg");
     });
 
     /* To download the thumbs in share/campaign/img/thumbs:
@@ -129,7 +137,11 @@ $(document).ready(function() {
 
     /* Click handler for all videos.  */
     $(".camp-video").one("click", function() {
-	let yt_id = $(this).data("embed").split(",")[0];
+	let embed = $(this).data("embed");
+	if (embed == 'votd') {
+	    embed = VIDLIST;
+	}
+	let yt_id = embed.split(",")[0];
 	yt_id = YTID[yt_id]; // What if key does not exist?
 	let yt_list = $(this).data("embed-list");
 	let extra_parms = "";
