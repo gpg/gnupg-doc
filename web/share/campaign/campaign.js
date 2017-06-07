@@ -120,11 +120,10 @@ $(document).ready(function() {
     let wanted_yt_id = get_param_from_url('play');
     $(".camp-video").each(function() {
 	let embed = $(this).data("embed");
-	if (embed == 'votd') {
-	    embed = VIDLIST;
+	if (embed != 'votd') {
+	    return;
 	}
-
-	let yt_ids = embed.split(",");
+	let yt_ids = VIDLIST.split(",");
 	let yt_id_idx = yt_ids.indexOf(wanted_yt_id);
 	if (yt_id_idx == -1) {
 	    wanted_yt_id = yt_ids[0];
