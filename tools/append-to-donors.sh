@@ -115,10 +115,12 @@ trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 #  xmail    - The mailbox
 #  name     - The name or empty for an anonymous donation
 #  message  - The message to us or empty
+#  recur    - only when called with an arg > 0
 # Used scratch variables:
 #  upcurrency
 #  ineuro
 #  xamount
+#  recur_text
 #
 # FIXME: Clean message and name and use an appropriate encoding.
 #        The second mail should actually be encrypted.  In fact
@@ -126,10 +128,18 @@ trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 #        pubkey field to the donation page?
 #
 send_thanks () {
+    recur_text="one-time"
     if [ $1 -gt 0 ]; then
-        recurring="recurring "
-    else
-        recurring=""
+        case "$recur" in
+            12) recur_text="monthly"
+                ;;
+            6) recur_text="bi-monthly"
+                ;;
+            4) recur_text="quarterly"
+                ;;
+            1) recur_text="yearly"
+                ;;
+        esac
     fi
     upcurrency=$(echo $currency | tr [a-z] [A-Z])
     if [ "$upcurrency" = EUR ]; then
@@ -164,7 +174,7 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 
 Dear ${name:-Anonymous},
 
-we received $xamount $upcurrency$ineuro as a ${recurring}donation to the GnuPG project.
+we received $xamount $upcurrency$ineuro as a ${recur_text} donation to the GnuPG project.
 Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
@@ -191,6 +201,7 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 
 Name ..: ${name:-Anonymous}
 Amount : $amount $upcurrency $ineuro
+Recur .: $recur_text
 Message: $message
 EOF
     ) | $SENDMAIL -oi donations@gnupg.org
