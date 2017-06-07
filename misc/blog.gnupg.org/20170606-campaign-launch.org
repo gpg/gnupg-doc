@@ -3,7 +3,7 @@
 #+AUTHOR: GnuPG Team
 #+DATE: June 6, 2017
 
- English | [[file:20170606-campaign-launch.de.org][Deutsch]]
+ English | [[file:20170606-campaign-launch.de.org][Deutsch]] | [[file:20170606-campaign-launch.fr.org][Francaise]]
 
 ** Independent Encryption Software, GnuPG, Needs Financial Support
 

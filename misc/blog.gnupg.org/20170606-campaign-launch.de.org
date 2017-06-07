@@ -3,7 +3,7 @@
 #+AUTHOR: GnuPG Team
 #+DATE: June 6, 2017
 
- [[file:20170606-campaign-launch.org][English]] | Deutsch
+ [[file:20170606-campaign-launch.org][English]] | Deutsch | [[file:20170606-campaign-launch.fr.org][Francaise]]
 
 ** Unabhängige Verschlüsselungssoftware GnuPG benötigt Finanzhilfe
 
