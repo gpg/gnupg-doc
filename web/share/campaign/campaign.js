@@ -89,7 +89,7 @@ function get_param_from_url(name) {
 $(document).ready(function() {
 
     // VOTD: Update VOTD here.
-    let VIDLIST = "thenmozhi,alex,andre,benjamin";
+    let VIDLIST = "matt,thenmozhi,alex,andre,benjamin";
 
     let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "sQMj332dgIE",
@@ -98,7 +98,7 @@ $(document).ready(function() {
 		 "seanus": "H6iO_MkOICM",
 		 "noah": "neibFsqgxgw",
 		 "michael": "w4PY1ihLm0w",
-		 "matt": "MWxhdPw9I8c",
+		 "matt": "5MCGTd8pOG4",
 		 "lisa": "Vd8sz5X-1og",
 		 "john": "xdVHQhWrIro",
 		 "jason": "RtvlfTiSEMc",
