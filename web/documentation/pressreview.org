@@ -7,6 +7,10 @@
   GnuPG is sometimes mentioned in the press and other media.  This page
   lists articles related to GnuPG we are aware of.
 
+  - [[International][English]] articles
+  - [[French]] articles
+  - [[German]] articles
+
 * International
 
 Here are articles originally published in English.
