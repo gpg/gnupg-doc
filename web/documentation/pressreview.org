@@ -149,7 +149,7 @@ Here are articles originally published in German.
   [[http://www.sueddeutsche.de/digital/verschluesselungssoftware-gnu-pg-wie-ein-mann-das-e-mail-geheimnis-verteidigt-1.2355155][Artikel]]
 
 ** FAZ, 2015-02-13
-  Finger Weg von meine Daten!\\
+  Finger Weg von meinen Daten!\\
   Constanze Kurz
 
   [[http://www.faz.net/aktuell/feuilleton/aus-dem-maschinenraum/verschluesselungssoftware-finger-weg-von-meinen-daten-13416853.html][Artikel]]
