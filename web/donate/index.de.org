@@ -170,6 +170,20 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
 	  </div>
 	</div>
       </div>
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+          <br /><p class="lead"><b>Für jede Dauerspende
+              wird <a href="https://www.firstlook.media/">First Look
+              Media</a></b>, der Dachverband
+              von <a href="https://theintercept.com/">The
+              Intercept</a> und Laura
+              Poitras <a href="https://fieldofvision.org/">Field of
+              Vision</a>, <b>innerhalb der ersten 12 Monate den
+              gleichen Betrag noch einmal spenden</b> (bis zu
+              25&#x202f;000&nbsp;USD)!
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="camp-gutter container-fluid flying-locks">
