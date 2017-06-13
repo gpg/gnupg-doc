@@ -89,7 +89,8 @@ the start of the Goteo campaign.
 
   Thank you.
 
-  - All donors to GnuPG in [[file:kudos-2016.org][2016]]
+  - All donors to GnuPG in [[file:kudos-2017.org][2017]]
+  - All donors to GnuPG in [[file:kudos-2015.org][2015]]
   - All donors to GnuPG in [[file:kudos-2015.org][2015]]
   - All donors to GnuPG in [[file:kudos-2014.org][2014]]
   - All donors to GnuPG in [[file:kudos-2013.org][2013]]
