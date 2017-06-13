@@ -89,11 +89,11 @@ function get_param_from_url(name) {
 $(document).ready(function() {
 
     // VOTD: Update VOTD here.
-    let VIDLIST = "rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
+    let VIDLIST = "szeming,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
 
     let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "sQMj332dgIE",
-		 "sze": "tKPMof5ptc0",
+		 "sze": "OpeFuKRYGVA",
 		 "sheera": "zwPaVA4vhDM",
 		 "seanus": "H6iO_MkOICM",
 		 "noah": "neibFsqgxgw",
