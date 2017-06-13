@@ -116,6 +116,7 @@ trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 #  name     - The name or empty for an anonymous donation
 #  message  - The message to us or empty
 #  recur    - only when called with an arg > 0
+#  service  - 1 = Stripe, 2 = Paypal, 3 = SEPA
 # Used scratch variables:
 #  upcurrency
 #  ineuro
@@ -141,6 +142,16 @@ send_thanks () {
                 ;;
         esac
     fi
+    case "$service" in
+        1) service_text="Stripe"
+           ;;
+        2) service_text="PayPal"
+           ;;
+        3) service_text="SEPA"
+           ;;
+        *) service_text="$service"
+           ;;
+    esac
     upcurrency=$(echo $currency | tr [a-z] [A-Z])
     if [ "$upcurrency" = EUR ]; then
         ineuro=
@@ -174,7 +185,8 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 
 Dear ${name:-Anonymous},
 
-we received $xamount $upcurrency$ineuro as a ${recur_text} donation to the GnuPG project.
+we received $xamount $upcurrency$ineuro as a ${recur_text} donation for GnuPG (via $service_text).
+
 Your donation helps us to develop and maintain GnuPG and related software.
 
 Thank you.
@@ -202,6 +214,7 @@ X-Loop: gnupg-donations-thanks.gnupg.org
 Name ..: ${name:-Anonymous}
 Amount : $amount $upcurrency $ineuro
 Recur .: $recur_text
+Account: $service_text
 Message: $message
 EOF
     ) | $SENDMAIL -oi donations@gnupg.org
@@ -235,11 +248,11 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
         [ "$jdate" -gt "$lastdate" ] && lastline=0
         # First for charge records
         payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
-                     -Fmail -Famount -Fcurrency -Feuro\
+                     -Fmail -Famount -Fcurrency -Feuro -Fservice \
            -S "_lnr > $lastline" -Stype=C -Saccount==1 \
            --html --print "$journal_dir/journal-$jdate.log" \
          | while IFS=: read lnr datestr name message \
-                            xmail amount currency euro rest; do
+                            xmail amount currency euro service rest; do
             name=$(echo "$name" | tr \`\$: ...)
             message=$(echo "$message" | tr \`\$ ..)
             xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
@@ -250,11 +263,11 @@ find $journal_dir/ -type f -name 'journal-????????.log' -print \
          done
         # Second for new subscriptions
         payproc-jrnl -F_lnr -Fdate -F'[name]' -F'[message]' \
-                     -Fmail -Famount -Fcurrency -Feuro -Frecur\
+                     -Fmail -Famount -Fcurrency -Feuro -F service -Frecur \
            -S "_lnr > $lastline" -Stype=S -Saccount==1 \
            --html --print "$journal_dir/journal-$jdate.log" \
          | while IFS=: read lnr datestr name message \
-                            xmail amount currency euro recur rest; do
+                            xmail amount currency euro service recur rest; do
             name=$(echo "$name" | tr \`\$: ...)
             message=$(echo "$message" | tr \`\$ ..)
             xmail=$(echo "$xmail" | tr \`\$ .. | sed 's/\.$//')
