@@ -130,6 +130,7 @@ trap "rm -f $LOCKFILE $donors.tmp $donors.stamp" 0
 #
 send_thanks () {
     recur_text="one-time"
+    xextratext=""
     if [ $1 -gt 0 ]; then
         case "$recur" in
             12) recur_text="monthly"
@@ -141,6 +142,11 @@ send_thanks () {
             1) recur_text="yearly"
                 ;;
         esac
+        xextratext="
+First Look Media, the parent organization of The Intercept and
+Laura Poitras' Field of Vision, will match the first 12 months
+of your gift.
+"
     fi
     case "$service" in
         1) service_text="Stripe"
@@ -188,6 +194,7 @@ Dear ${name:-Anonymous},
 we received $xamount $upcurrency$ineuro as a ${recur_text} donation for GnuPG (via $service_text).
 
 Your donation helps us to develop and maintain GnuPG and related software.
+$xextratext
 
 Thank you.
 
