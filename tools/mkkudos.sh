@@ -311,6 +311,16 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
                   substr($0,1,n), format_number(recur_nyr);
            next
      }
+     /<!--CMPGN-FLM-USD-->/ {
+           n = index($0,"<!--CMPGN");
+           xflm = int((12 * ( int(recur_euroyr) - 2400 )) * 1.1166 );
+           if (xflm > 25000) {
+               xflm = 25000;
+           }
+           printf "%s!--CMPGN-FLM-USD-->%s\n",
+                  substr($0,1,n), format_number( xflm );
+           next
+     }
      !indon { print }
 
      function format_number (n) {
