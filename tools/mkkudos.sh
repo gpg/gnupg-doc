@@ -317,7 +317,7 @@ for file in "$htdocs/donate/"kudos-????.html "$htdocs/donate/"kudos.html \
            if (xflm > 25000) {
                xflm = 25000;
            }
-           printf "%s!--CMPGN-FLM-USD-->%s\n",
+           printf "%s!--CMPGN-FLM-USD-->%s&#x202f;USD\n",
                   substr($0,1,n), format_number( xflm );
            next
      }
