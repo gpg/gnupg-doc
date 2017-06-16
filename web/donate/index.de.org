@@ -179,8 +179,9 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
               Intercept</a> und Laura
               Poitras <a href="https://fieldofvision.org/">Field of
               Vision</a>, <b>innerhalb der ersten 12 Monate den
-              gleichen Betrag noch einmal spenden</b> (<!--CMPGN-FLM-USD-->
-              von 25&#x202f;000&nbsp;USD erreicht)!
+              gleichen Betrag noch einmal spenden</b> bis
+              25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->&nbsp;USD
+              erreicht)!
           </p>
         </div>
       </div>
