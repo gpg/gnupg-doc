@@ -177,7 +177,7 @@
               <a href="https://fieldofvision.org/">Field of Vision</a>
               de Laura Poitras,
               <b>égalera les premier 12 mois</b> jusqu'à
-              25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->&nbsp;USD
+              25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->
               égalera jusqu'à présent).
           </p>
         </div>

@@ -180,7 +180,7 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
               Poitras <a href="https://fieldofvision.org/">Field of
               Vision</a>, <b>innerhalb der ersten 12 Monate den
               gleichen Betrag noch einmal spenden</b> bis
-              25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->&nbsp;USD
+              25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->
               erreicht)!
           </p>
         </div>

@@ -175,7 +175,7 @@
             of <a href="https://theintercept.com/">The Intercept</a> and
             Laura Poitras' <a href="https://fieldofvision.org/">Field of
               Vision</a>, <b>will match the first 12 months</b> of your
-              gift up to 25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->&nbsp;USD
+              gift up to 25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->
               matched so far)!
           </p>
         </div>
