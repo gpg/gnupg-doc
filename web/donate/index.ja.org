@@ -171,14 +171,13 @@
       </div>
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-          <br /><p class="lead"><b>For each recurring
-              donation, <a href="https://www.firstlook.media/">First Look
-                Media</a></b>, the parent organization
-            of <a href="https://theintercept.com/">The Intercept</a> and
-            Laura Poitras' <a href="https://fieldofvision.org/">Field of
-              Vision</a>, <b>will match the first 12 months</b> of your
-              gift up to 25&#x202f;000&nbsp;USD (<!--CMPGN-FLM-USD-->
-              matched so far)!
+          <br /><p class="lead"><b>定期の寄付(毎月/四半期毎/毎年)について、
+	      <a href="https://www.firstlook.media/">First Look
+                Media</a>社</b>(<a href="https://theintercept.com/">The Intercept</a>と
+            Laura Poitrasの<a href="https://fieldofvision.org/">Field of
+              Vision</a>の親組織です)は、集まったそれぞれの寄付に対応して<b>最初の12ヶ月分の相当額を寄付する</b>と申し出てくれました(最大で25&#x202f;000&nbsp;USD (これまでに
+	    <!--CMPGN-FLM-USD-->
+            ドル)です)!
           </p>
         </div>
       </div>
