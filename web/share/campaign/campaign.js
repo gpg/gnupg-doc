@@ -89,7 +89,7 @@ function get_param_from_url(name) {
 $(document).ready(function() {
 
     // VOTD: Update VOTD here.
-    let VIDLIST = "jochim,john,jason,sze,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
+    let VIDLIST = "c5,jochim,john,jason,sze,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
 
     let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "sQMj332dgIE",
@@ -112,7 +112,8 @@ $(document).ready(function() {
 		 "alex": "1OMJWpdl0DA",
                  "ksenia": "Qqg3_a72aEw",
                  "rysiek": "6DqfWz-KHSI",
-                 "jochim": "sX0lncD0VCM"
+                 "jochim": "sX0lncD0VCM",
+                 "c5": "Z0h_uPWFp7o"
 	       };
 
     /* For the video preview, we use this for devices without hover events.  */
