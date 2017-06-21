@@ -22,6 +22,11 @@
     <script defer src="/share/campaign/campaign.js"></script>
     <noscript><style>.lang-chooser .caret { display: none; }</style></noscript>
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gnupg">
+    <meta name="twitter:title" content="GnuPG Fundraising Rally">
+    <meta name="twitter:description" content="Activists, journalists, lawyers and many others rely on GnuPG to protect their communication.  Free software-based operating systems use GnuPG to verify software updates. Please donate to ensure that this critical piece of software continues to work for everyone.">
+    <meta name="twitter:image" content="https://dev.gnupg.org/u/banner1200x600">
   </head>
   <body lang="en">
 
