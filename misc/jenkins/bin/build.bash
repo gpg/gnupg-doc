@@ -7,6 +7,7 @@ renice -n 10 -p $$
 
 # Configuration.
 MAKE=make
+NPROCS=2
 
 XTARGET="${XTARGET:-native}"
 
@@ -14,6 +15,9 @@ XTARGET="${XTARGET:-native}"
 case "$(uname)" in
     OpenBSD)
 	MAKE=gmake
+	;;
+    Darwin)
+	NPROCS="$(sysctl -n hw.ncpu)"
 	;;
 esac
 
@@ -81,10 +85,7 @@ git clean -fdx
 ./autogen.sh
 
 # Parallel jobs.
-MAKEFLAGS="-j6"
-
-# Parallel tests with our test suite.
-export TESTFLAGS="--parallel"
+MAKEFLAGS="-j$NPROCS"
 
 SCANBUILD=
 if [ "$(uname)" = Linux ] \
@@ -148,6 +149,9 @@ case "$JOB_NAME" in
 
 	# Disable NTBTLS for now until it is actually mature and used.
 	CONFIGUREFLAGS="$CONFIGUREFLAGS --disable-ntbtls"
+
+	# Parallel tests with our test suite.
+	export TESTFLAGS="--parallel=$NPROCS"
         ;;
 esac
 
