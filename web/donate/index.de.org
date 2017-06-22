@@ -222,11 +222,8 @@ href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video des Tages: Noah Vesely
-            <small><a href="https://securedrop.org/">SecureDrop</a>
-              Entwickler bei
-              <a href="https://freedom.press/">Freedom of the Press Foundation</a>
-              </small>
+	  <h2>Video des Tages: Lisa 'Leez' Wright
+            <small><a href="https://eff.org/">Electronic Frontier Foundation</a></small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
