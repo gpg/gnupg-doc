@@ -88,6 +88,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.7.8 released (2017-06-29)                          :important:
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
+1.7.8.   This release fixes a local side-channel attack
+(CVE-2017-7526).  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html][announcement mail]] for details.
+
 ** GnuPG 2.1.21 released (2017-05-15)                             :important:
 
 A new version of GnuPG has been released.  This release fixes a
