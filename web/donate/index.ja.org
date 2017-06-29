@@ -202,8 +202,8 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>本日の動画: <a href="https://andrewfordlyons.com/">Andrew Ford Lyons</a>
-            <small><a href="https://internews.org/">Internews Europe</a></small>
+	  <h2>本日の動画: <a href="http://seamustuohy.com/">Seamus Tuohy</a>
+            <small>Independent Consultant</small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
