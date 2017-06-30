@@ -10,8 +10,8 @@
                provided with the software.
   - [[file:guides.org][User Guides]] :: Draft versions of the user manual are available,
                    and there is also documentation covering
-                   interoperation with PGP 2.x. In addition we have a
-                   [[file:manpage.org][man page online]] and John Michael Ashley's /The GNU
+                   interoperation with PGP 2.x. In addition, the software comes with man
+		   pages, and we have John Michael Ashley's /The GNU
                    Privacy Handbook/ (GPH).
   - [[file:faqs.org][FAQs]] :: Online version of the FAQs is now available. Please
             consult these FAQs before you ask on one of the mailing
