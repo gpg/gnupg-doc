@@ -202,8 +202,10 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>本日の動画: Meik Michalke
-            <small><a href="https://www.c3s.cc">Cultural Commons Collecting Society</a></small>
+	  <h2>本日の動画: Sheera Frenkel
+            <small><a href="https://www.buzzfeed.com/news">BuzzFeed News</a>
+              (Now with <a href="https://www.nytimes.com/">The New York Times</a>)
+            </small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
