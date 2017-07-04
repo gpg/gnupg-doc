@@ -89,13 +89,12 @@ function get_param_from_url(name) {
 $(document).ready(function() {
 
     // VOTD: Update VOTD here.
-    let VIDLIST = "sheera,meik,seamus,andrew,geoffrey,hernani,leez,noah,c5,jochim,john,jason,sze,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
+    let VIDLIST = "michael,sheera,meik,seamus,andrew,geoffrey,hernani,leez,noah,c5,jochim,john,jason,sze,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
 
     let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "sQMj332dgIE",
 		 "sze": "OpeFuKRYGVA",
 		 "noah": "xB6AvoeCWro",
-		 "michael": "w4PY1ihLm0w",
 		 "matt": "5MCGTd8pOG4",
 		 "john": "iRuo57Hzask",
 		 "jason": "oQvP9SXm-ek",
@@ -115,7 +114,8 @@ $(document).ready(function() {
 		 "andrew": "l1ByJCSvQKk",
 		 "seamus": "6dreAkVxmpg",
 		 "meik": "j0Zd0wZyLP8",
-		 "sheera": "mak22hXcslg"
+		 "sheera": "mak22hXcslg",
+                 "michael": "MSu_FF49MtU"
 	       };
 
     /* For the video preview, we use this for devices without hover events.  */
