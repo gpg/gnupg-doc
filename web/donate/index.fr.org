@@ -215,8 +215,8 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Clip du jour : <a href="http://www.rechtsanwalt-stehmann.de/">Michael Stehmann</a>
-            <small>Lawyer</small>
+	  <h2>Clip du jour : Cédric Laurant
+            <small><a href="https://sontusdatos.org/">SonTusDatos</a></small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
