@@ -217,9 +217,8 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Daniel Kahn Gillmor
-            <small><a href="https://debian.org/">Debian</a> and the
-            <a href="https://www.aclu.org/">American Civil Liberties Union</a></small>
+	  <h2>Video of the Day: Arthur Jordan
+            <small><a href="https://2u.com/">2U</a></small>
           </h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
