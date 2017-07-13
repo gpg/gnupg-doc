@@ -142,11 +142,6 @@ send_thanks () {
             1) recur_text="yearly"
                 ;;
         esac
-        xextratext="
-First Look Media, the parent organization of The Intercept and
-Laura Poitras' Field of Vision, will match the first 12 months
-of your gift.
-"
     fi
     case "$service" in
         1) service_text="Stripe"
