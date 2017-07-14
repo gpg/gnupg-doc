@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script used jenkins to run builds for GnuPG and related packages.
 
 # Stop on error and be nice to other processes.
