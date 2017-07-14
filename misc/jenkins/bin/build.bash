@@ -219,6 +219,15 @@ done
 set -x
 
 
+# Select the appropriate test target.
+function check_target() {
+    if grep >/dev/null check-all Makefile; then
+	echo check-all
+    else
+	echo check
+    fi
+}
+
 # Switch on the different targets.
 case "$XTARGET" in
     native)
@@ -229,7 +238,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -std=c++11"
         $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here
@@ -249,7 +258,7 @@ case "$XTARGET" in
 	test_environment="$(echo $test_environment | sed -e 's#obj/##g')"
 	# KCAHKCAHKCAH
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here
@@ -267,7 +276,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here
