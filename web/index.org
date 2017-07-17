@@ -88,6 +88,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Scute 1.5.0 released (2017-07-14)
+
+Scute is a PKCS#11 module built around the GnuPG Agent and the GnuPG
+Smart Card Daemon.  It allows you to use your OpenPGP smart card for TLS
+client authentication and S/MIME mail and document signing.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000409.html][announcement mail]] for details.
+
 ** Libgcrypt 1.7.8 released (2017-06-29)                          :important:
 
 We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
