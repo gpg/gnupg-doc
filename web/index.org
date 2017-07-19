@@ -88,6 +88,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 1.4.22 released (2017-07-19)
+
+Although GnuPG 1.4 is of limited use today we did a maintenance
+release to address the recently published local side channel attack
+CVE-2017-7526.  See the [[../../download/index.org][download]] section on how to get this version.
+
 ** Libgcrypt 1.8.0 released (2017-07-18)
 
 We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
