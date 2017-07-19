@@ -88,6 +88,15 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.8.0 released (2017-07-18)
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
+1.8.0.  This is a new stable version with full API and ABI
+compatibility to the 1.7 series.  Its main features are support for
+the hash algorithm [[https://en.wikipedia.org/wiki/BLAKE_(hash_function)][Blake-2]], the addition of [[https://en.wikipedia.org/wiki/Disk_encryption_theory][XTS]] mode, an improved
+random number generator, and performance improvements for the [[https://en.wikipedia.org/wiki/ARM_architecture][ARM]]
+architecture.  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000410.html][announcement mail]] for details.
+
 ** Scute 1.5.0 released (2017-07-14)
 
 Scute is a PKCS#11 module built around the GnuPG Agent and the GnuPG
