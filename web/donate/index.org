@@ -272,19 +272,6 @@
                 <li> <a href="https://youtu.be/g9a_snLWRxE?t=8s">Arthur Jordan</a>
                   from <a href="https://2u.com/">2U</a>
               </ul>
-	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="votd"
-                   data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
-		<img src="/share/campaign/img/thumbs/votd.jpg">
-		<div class="play-button"></div>
-		<div class="video-text">Click to start the video
-                  <noscript><br />
-                    <span style="font-size: 60%"
-                          >(requires JavaScript from YouTube.)
-                    </span>
-                  </noscript>
-                </div>
-              </div>
 	    </div>
 	  </div>
 	  <p class="vid-howto">
