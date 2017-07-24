@@ -217,11 +217,61 @@
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Video of the Day: Arthur Jordan
-            <small><a href="https://2u.com/">2U</a></small>
-          </h2>
+	  <h2>Videos of the Day</h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
+              <ul>
+                <li> <a href="https://youtu.be/1OMJWpdl0DA?t=8s">Alex Abdo</a>
+                  from the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://www.youtube.com/watch?v=bcNLlWqZ9d0t=10s">Andre Meister</a>
+                  from <a href="https://netzpolitik.org">netzpolitik.org</a>
+                <li> <a href="https://www.youtube.com/watch?v=atFz16nInIs&t=10s">Benjamin Ismaïl</a>
+                  from <a href="https://rsf.org/">Reporters without Borders</a>
+                <li> <a href="https://youtu.be/sQMj332dgIE?t=8s">Thenmozhi Soundararajan</a>
+                  from <a href="https://www.equalitylabs.org/">Equality Labs</a>
+                <li> <a href="https://youtu.be/5MCGTd8pOG4?t=10s">Matt Mitchell</a>
+                  from <a href="http://www.meetup.com/New-York-Cryptoparty-Network/">CryptoHarlem</a>
+                <li> <a href="https://youtu.be/IdCiJMc3q80?t=8s">Cindy Cohn</a>
+                  from <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/Qqg3_a72aEw?t=8s">Ksenia Ermoshina</a>,
+                  Researcher at <a href="https://nextleap.eu/">nextleap.eu</a>
+                <li> <a href="https://youtu.be/6DqfWz-KHSI?t=8s">Michał 'Rysiek' Woźniak</a>
+                  from <a href="https://www.occrp.org/">OCCRP</a>
+                <li> <a href="https://youtu.be/OpeFuKRYGVA?t=8s">Sze Ming</a>
+                  from the <a href="https://sinarproject.org/">Sinar Project</a>
+                <li> <a href="https://youtu.be/oQvP9SXm-ek?t=8s">Jason Reich</a>
+                  from <a href="https://www.buzzfeed.com/">BuzzFeed</a>
+                <li> <a href="https://youtu.be/iRuo57Hzask?t=8s">John Pershing</a>
+                  from <a href="https://1010data.com">1010data</a>
+                <li> <a href="https://youtu.be/sX0lncD0VCM?t=10s">Jochim Selzer</a>
+                  from <a href="https://koeln.ccc.de/">CCC Köln</a>
+                <li> <a href="https://youtu.be/Z0h_uPWFp7o?t=8s">C5</a>,
+                  Digital Security Trainer from the Philippines
+                <li> <a href="https://youtu.be/xB6AvoeCWro?t=9s">Noah Vesely</a>
+                  from <a href="https://securedrop.org/">SecureDrop</a>
+                <li> <a href="https://youtu.be/_aJPaR9Cfmk?t=9s">Lisa 'Leez' Wright</a>
+                  from the <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/VJIR5zzpUr8?t=8s">Hernâni Marques</a>
+                  from <a href="https://www.ccc-ch.ch/">CCC Switzerland</a>
+                <li> <a href="https://youtu.be/K8-pmUyegYk?t=8s">Geoffrey King</a>,
+                  <a href="https://geoffreyking.org/">Lawyer and Journalist</a>
+                <li> <a href="https://youtu.be/l1ByJCSvQKk?t=9s">Andrew Ford Lyons</a>
+                  from <a href="http://www.internews.org/">Internews Europe</a>
+                <li> <a href="https://youtu.be/6dreAkVxmpg?t=8s">Seamus Tuohy</a>,
+                  <a href="http://prudentinnovation.org/">Digital Security Trainer</a>
+                <li> <a href="https://youtu.be/j0Zd0wZyLP8?t=7s">Meik Michalke</a>
+                  from <a href="https://www.c3s.cc/">C3S</a>
+                <li> <a href="https://youtu.be/mak22hXcslg?t=8s">Sheera Frenkel</a>
+                  from <a href="https://www.buzzfeed.com/news">BuzzFeed News</a>
+                <li> <a href=" https://youtu.be/MSu_FF49MtU?t=8s">Michael Stehmann</a>,
+                  <a href="http://www.rechtsanwalt-stehmann.de/">Lawyer</a>
+                <li> <a href="https://youtu.be/-Rkrf9GIw8M?t=9s">Cédric Laurant</a>
+                  from <a href="https://sontusdatos.org/">SonTusDatos</a>
+                <li> <a href="https://youtu.be/SdlnauJ5XWM?t=9s">Daniel Kahn Gillmor</a>
+                  from <a href="https://debian.org">Debian</a> and the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/g9a_snLWRxE?t=8s">Arthur Jordan</a>
+                  from <a href="https://2u.com/">2U</a>
+              </ul>
 	      <div class="embed-responsive embed-responsive-16by9 camp-video"
 		   data-embed="votd"
                    data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
