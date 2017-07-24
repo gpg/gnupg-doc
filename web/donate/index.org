@@ -261,12 +261,6 @@
               </ul>
 	    </div>
 	  </div>
-	  <p class="vid-howto">
-	    There is a new video every day! Click the menu
-	    <img src="/share/campaign/img/vidmenu.svg" style="height:
-	    1em; vertical-align: baseline;" aria-hidden="true"/> to
-	    select more videos.
-	  </p>
 	</div>
       </div>
     </div>
