@@ -40,7 +40,7 @@
       </address>
     </author>
 
-    <date month="MONTH" year="2017" />
+    <date month="July" year="2017" />
     <area>Security</area>
 
     <abstract>
