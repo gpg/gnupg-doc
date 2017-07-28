@@ -29,6 +29,25 @@ page for other maintained versions.
 is nicely integrated into an installer and features several frontends
 as well as English and German manuals.
 
+
+* Reconquer your privacy
+
+#+begin_quote
+Arguing that you don't care about the right to privacy
+because you have nothing to hide is no different from
+saying you don't care about free speech because you have
+nothing to say.   \ndash\nbsp{}Edward\nbsp{}Snowden
+#+end_quote
+
+Using encryption helps to protect your privacy and the privacy of the
+people you communicate with.  Encryption makes life difficult for bulk
+surveillance systems.  GnuPG is one of the tools that Snowden used to
+uncover the secrets of the NSA.
+
+Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
+should use GnuPG for your electronic communication.  If you need
+printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
+
 * GnuPG needs your support to help protect online privacy.
 
 Please consider [[file:donate/index.org][donating]] to ensure that this critical piece of
@@ -52,25 +71,6 @@ software continues to work for everyone.
 #+end_html
 
 
-* Reconquer your privacy
-
-#+begin_quote
-Arguing that you don't care about the right to privacy
-because you have nothing to hide is no different from
-saying you don't care about free speech because you have
-nothing to say.   \ndash\nbsp{}Edward\nbsp{}Snowden
-#+end_quote
-
-Using encryption helps to protect your privacy and the privacy of the
-people you communicate with.  Encryption makes life difficult for bulk
-surveillance systems.  GnuPG is one of the tools that Snowden used to
-uncover the secrets of the NSA.
-
-Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
-should use GnuPG for your electronic communication.  If you need
-printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
-
-
 * News
 #+index: News
 
@@ -87,6 +87,11 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** GnuPG 2.1.22 released (2017-07-28)
+
+A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][announcement
+mail]] for details.
 
 ** GnuPG 1.4.22 released (2017-07-19)
 
