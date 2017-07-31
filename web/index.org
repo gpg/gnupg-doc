@@ -94,14 +94,14 @@ A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.o
 mail]] for details.
 
 Update 2017-07-31: We fixed a problem with keyserver access in the
-Windows version.  A fixed installer has been uploaded; see the
-[[download/index.org::#binary][download]] page.
+Windows versions.  A fixed installer has been uploaded; the [[../../download/index.org::binary][download]]
+section has the links.
 
 ** GnuPG 1.4.22 released (2017-07-19)
 
 Although GnuPG 1.4 is of limited use today we did a maintenance
 release to address the recently published local side channel attack
-CVE-2017-7526.  See the [[download/index.org][download]] section on how to get this version.
+CVE-2017-7526.  See the [[../../download/index.org][download]] section on how to get this version.
 
 ** Libgcrypt 1.8.0 released (2017-07-18)
 
@@ -179,7 +179,7 @@ We are pleased to announce the availability of Libgcrypt version
 
 After 14 years is was time to bump up the version of [[file:software/pinentry/index.org][Pinentry]] to 1.0.
 This new release fixes a couple of minor bugs and introduces features
-to better diagnose problems.  See the [[download/index.org::pinentry][download]] section on how to get
+to better diagnose problems.  See the [[../../download/index.org::pinentry][download]] section on how to get
 Pinentry.
 
 ** GPA 0.9.10 released (2016-11-19)
