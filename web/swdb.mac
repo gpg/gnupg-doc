@@ -26,11 +26,11 @@
 #+macro: gnupg21_size 6377k
 #+macro: gnupg21_sha1 706b806f7d8d328b4ffa67954c613fdd3dfed1b9
 #+macro: gnupg21_sha2 46716faf9e1b92cfca86609f3bfffbf5bb4b6804df90dc853ff7061cfcfb4ad7
-#+macro: gnupg21_w32_ver  2.1.22_20170728
-#+macro: gnupg21_w32_date 2017-07-28
+#+macro: gnupg21_w32_ver  2.1.22_20170731
+#+macro: gnupg21_w32_date 2017-07-31
 #+macro: gnupg21_w32_size 3791k
-#+macro: gnupg21_w32_sha1 9e517a550da5619445be6820a614faf3e1bb5a46
-#+macro: gnupg21_w32_sha2 c5e65b55fed2b6f3e04565391a0ba1027acf32e5d9d61b1fec032b01b4e76a58
+#+macro: gnupg21_w32_sha1 9f3cf4aa96aedbc9411107e47c7f893691deb365
+#+macro: gnupg21_w32_sha2 0b5f30ab359478f2f3b7210cda926506e69f8dd0a3a6e4e9711b92f19f72a895
 
 
 #
