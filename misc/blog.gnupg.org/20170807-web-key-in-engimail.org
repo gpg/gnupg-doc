@@ -1,0 +1,20 @@
+# Using the Web Key Service with Enigmail
+#+STARTUP: showall
+#+AUTHOR: Kai
+#+DATE: August 7, 2017
+
+** Using the Web Key Service with Enigmail
+
+   Obtaining the key of someone has always being a major pain point of using GnuPG. OpenPGP doesn't "outsource" trust management by using a PKI. Instead it allows each user to decide whom to trust. This has the downside that we need to evaluate whenever we can trust a new key for each novel communication partner. Until recently there wasn't an automatic way to get the key of someone you never communicated with.
+
+   The [[Web Key Service]](https://tools.ietf.org/id/draft-koch-openpgp-webkey-service-03.html) and the new ~--auto-key-retrieve~ & ~--auto-key-locate~ available in recent versions of GnuPG.
+
+*** Web Key Service
+
+    The Web Key Service is a protocol to publish OpenPGP keys via mail and retrieve others keys using HTTPS. The advatage over HKPS is that every email provider maintains its own key server (called Web Key Directory, WKD) that is authorative for all its users. This means that,
+
+		1. There exists only one key server for a given email address. No need to ask multiple servers as with HKPS.
+
+		2. When publishing a key using mail, WKD makes sure the sender is in possesion of the secret key.
+
+		3. Mail providers can (and should) make sure
