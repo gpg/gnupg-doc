@@ -42,9 +42,9 @@ more than one from an HKPS based key server.
 
 *** Publish your public key to a Web Key Directory
 
-In order to use WKS you need a provider who supports it. After you configured
-the email account in Thunderbird you need to enable OpenPGP for it and
-generate a key pair.
+In order to use WKS you need a provider who supports it [fn:1]. After you
+configured the email account in Thunderbird you need to enable OpenPGP for
+it and generate a key pair.
 
 #+CAPTION: Enable the OpenPGP checkbox in the account settings.
 #+ATTR_HTML: :style max-width: 600px
@@ -86,3 +86,6 @@ If GnuPG is able to retrieve the public key you will see a line that looks
 like that:
 
 ~gpg: automatically retrieved '<your email address>' via WKD~
+
+[fn:1] As the time of writing only [[Posteo][https://posteo.de/en]] supports
+       WKS.
