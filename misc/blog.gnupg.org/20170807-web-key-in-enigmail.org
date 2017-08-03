@@ -87,5 +87,5 @@ like that:
 
 ~gpg: automatically retrieved '<your email address>' via WKD~
 
-[fn:1] As the time of writing only [[Posteo][https://posteo.de/en]] supports
+[fn:1] As the time of writing only [[https://posteo.de/en][Posteo]] supports
        WKS.
