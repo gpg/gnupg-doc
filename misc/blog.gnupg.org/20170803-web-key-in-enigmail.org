@@ -37,6 +37,7 @@ provider of our communication partner, we can trust the key retrieved by WKD
 more than one from an HKPS based key server.
 
 #+CAPTION: Web key service protocol overview
+#+ATTR_HTML: :class right :style max-width: 400px
 [[file:img/wks-schema.png]]
 
 
@@ -48,6 +49,7 @@ configured the email account in Thunderbird you need to enable OpenPGP for
 it and generate a key pair.
 
 #+CAPTION: Enable the OpenPGP checkbox in the account settings.
+#+ATTR_HTML: :class right :style max-width: 400px
 [[file:img/wks-account-settings.png]]
 
 Then, open the key management window and find your public key. Right clicking
@@ -55,6 +57,7 @@ it opens the context menu. There, select the option to upload the public key
 to your provider's WKD.
 
 #+CAPTION: Context menu of the key management dialog.
+#+ATTR_HTML: :class right :style max-width: 400px
 [[file:img/wks-key-mng.png]]
 
 After submission, the WKD will send an email to you asking to confirm the
@@ -64,7 +67,8 @@ confirmation request. Clicking the button on the right will send the
 confirmation email to WKD.
 
 #+CAPTION: Enigmail adds a yellow bar to the confirmation request.
-[[file:img/wks-confirm-req.png]]
+[[#+ATTR_HTML: :class right :style max-width: 400px
+file:img/wks-confirm-req.png]]
 
 After the email has been sent, your public key will be accessible to
 everybody.
