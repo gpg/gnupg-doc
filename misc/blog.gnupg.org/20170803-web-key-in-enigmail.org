@@ -17,6 +17,10 @@ The [[https://tools.ietf.org/id/draft-koch-openpgp-webkey-service-03.html][Web K
 
 *** Web Key Service
 
+#+CAPTION: Web key service protocol overview
+#+ATTR_HTML: :class right :style max-width: 400px
+[[file:img/wks-schema.png]]
+
 The Web Key Service is a protocol to publish public OpenPGP keys via
 email and retrieve others' public keys using HTTPS. The advantage over
 HKPS is that every email provider maintains its own key
@@ -36,10 +40,7 @@ Point three helps us with trust management. In case we trust the email
 provider of our communication partner, we can trust the key retrieved by WKD
 more than one from an HKPS based key server.
 
-#+CAPTION: Web key service protocol overview
-#+ATTR_HTML: :class right :style max-width: 400px
-[[file:img/wks-schema.png]]
-
+#+HTML: <p style="clear: both"/>
 
 
 *** Publish your public key to a Web Key Directory
@@ -67,11 +68,13 @@ confirmation request. Clicking the button on the right will send the
 confirmation email to WKD.
 
 #+CAPTION: Enigmail adds a yellow bar to the confirmation request.
-[[#+ATTR_HTML: :class right :style max-width: 400px
-file:img/wks-confirm-req.png]]
+#+ATTR_HTML: :class right :style max-width: 400px
+[[file:img/wks-confirm-req.png]]
 
 After the email has been sent, your public key will be accessible to
 everybody.
+
+#+HTML: <p style="clear: both"/>
 
 *** Receive others public key from a Web Key Directory
 
