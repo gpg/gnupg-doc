@@ -13,6 +13,244 @@
   Note that this page will soon be restructed.  The URLs pointing to
   specific releases will thus also change.
 
+** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][2.1.22]] released  (2017-07-28)
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-2.1.22
+    :END:
+
+  - gpg: Extend command --quick-set-expire to allow for setting the
+    expiration time of subkeys.
+
+  - gpg: By default try to repair keys during import.  New sub-option
+    no-repair-keys for --import-options.
+
+  - gpg,gpgsm: Improved checking and reporting of DE-VS compliance.
+
+  - gpg: New options --key-origin and --with-key-origin.  Store the
+    time of the last key update from keyservers, WKD, or DANE.
+
+  - agent: New option --ssh-fingerprint-digest.
+
+  - dimngr: Lower timeouts on keyserver connection attempts and made
+    it configurable.
+
+  - dirmngr: Tor will now automatically be detected and used.  The
+    option --no-use-tor disables Tor detection.
+
+  - dirmngr: Now detects a changed /etc/resolv.conf.
+
+  - agent,dirmngr: Initiate shutdown on removal of the GnuPG home
+    directory.
+
+  - gpg: Avoid caching passphrase for failed symmetric encryption.
+
+  - agent: Support for unprotected ssh keys.
+
+  - dirmngr: Fixed name resolving on systems using only v6
+    nameservers.
+
+  - dirmngr: Allow the use of TLS over http proxies.
+
+  - w32: Change directory of the daemons after startup.
+
+  - wks: New man pages for client and server.
+
+  - Many other bug fixes.
+
+
+** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000405.html][2.1.21]] released  (2017-05-15)
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-2.1.21
+    :END:
+
+  - gpg,gpgsm: Fix corruption of old style keyring.gpg files.  This
+    bug was introduced with version 2.1.20.  Note that the default
+    pubring.kbx format was not affected.
+
+  - gpg,dirmngr: Removed the skeleton config file support.  The
+    system's standard methods for providing default configuration
+    files should be used instead.
+
+  - w32: The Windows installer now allows installation of GnuPG
+    without Administrator permissions.
+
+  - gpg: Fixed import filter property match bug.
+
+  - scd: Removed Linux support for Cardman 4040 PCMCIA reader.
+
+  - scd: Fixed some corner case bugs in resume/suspend handling.
+
+  - Many minor bug fixes and code cleanup.
+
+
+** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000404.html][2.1.20]] released  (2017-04-03)
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-2.1.20
+    :END:
+
+  - gpg: New properties 'expired', 'revoked', and 'disabled' for the
+    import and export filters.
+
+  - gpg: New command --quick-set-primary-uid.
+
+  - gpg: New compliance field for the --with-colon key listing.
+
+  - gpg: Changed the key parser to generalize the processing of local
+    meta data packets.
+
+  - gpg: Fixed assertion failure in the TOFU trust model.
+
+  - gpg: Fixed exporting of zero length user ID packets.
+
+  - scd: Improved support for multiple readers.
+
+  - scd: Fixed timeout handling for key generation.
+
+  - agent: New option --enable-extended-key-format.
+
+  - dirmngr: Do not add a keyserver to a new dirmngr.conf.  Dirmngr
+    uses a default keyserver.
+
+  - dimngr: Do not treat TLS warning alerts as severe error when
+    building with GNUTLS.
+
+  - dirmngr: Actually take /etc/hosts in account.
+
+  - wks: Fixed client problems on Windows.  Published keys are now set
+    to world-readable.
+
+  - tests: Fixed creation of temporary directories.
+
+  - A socket directory for a non standard GNUGHOME is now created on
+    the fly under /run/user.  Thus "gpgconf --create-socketdir" is now
+    optional.  The use of "gpgconf --remove-socketdir" to clean up
+    obsolete socket directories is however recommended to avoid
+    cluttering /run/user with useless directories.
+
+  - Fixed build problems on some platforms.
+
+
+
+** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000402.html][2.1.19]] released  (2017-03-01)
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-2.1.19
+    :END:
+
+  - gpg: Print a warning if Tor mode is requested but the Tor daemon
+    is not running.
+
+  - gpg: New status code DECRYPTION_KEY to print the actual private
+    key used for decryption.
+
+  - gpgv: New options --log-file and --debug.
+
+  - gpg-agent: Revamp the prompts to ask for card PINs.
+
+  - scd: Support for multiple card readers.
+
+  - scd: Removed option --debug-disable-ticker.  Ticker is used
+    only when it is required to watch removal of device/card.
+
+  - scd: Improved detection of card inserting and removal.
+
+  - dirmngr: New option --disable-ipv4.
+
+  - dirmngr: New option --no-use-tor to explicitly disable the use of
+    Tor.
+
+  - dirmngr: The option --allow-version-check is now required even if
+    the option --use-tor is also used.
+
+  - dirmngr: Handle a missing nsswitch.conf gracefully.
+
+  - dirmngr: Avoid PTR lookups for keyserver pools.  The are only done
+    for the debug command "keyserver --hosttable".
+
+  - dirmngr: Rework the internal certificate cache to support classes
+    of certificates.  Load system provided certificates on startup.
+    Add options --tls, --no-crl, and --systrust to the "VALIDATE"
+    command.
+
+  - dirmngr: Add support for the ntbtls library.
+
+  - wks: Create mails with a "WKS-Phase" header.  Fix detection of
+    Draft-2 mode.
+
+  - The Windows installer is now build with limited TLS support.
+
+  - Many other bug fixes and new regression tests.
+
+
+
+
+** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000401.html][2.1.18]] released  (2017-01-23)
+    :PROPERTIES:
+    :CUSTOM_ID: gnupg-2.1.18
+    :END:
+
+  - gpg: Remove bogus subkey signature while cleaning a key (with
+    export-clean, import-clean, or --edit-key's sub-command clean)
+
+  - gpg: Allow freezing the clock with --faked-system-time.
+
+  - gpg: New --export-option flag "backup", new --import-option flag
+    "restore".
+
+  - gpg-agent: Fixed long delay due to a regression in the progress
+    callback code.
+
+  - scd: Lots of code cleanup and internal changes.
+
+  - scd: Improved the internal CCID driver.
+
+  - dirmngr: Fixed problem with the DNS glue code (removal of the
+    trailing dot in domain names).
+
+  - dirmngr: Make sure that Tor is actually enabled after changing the
+    conf file and sending SIGHUP or "gpgconf --reload dirmngr".
+
+  - dirmngr: Fixed Tor access to IPv6 addresses.  Note that current
+    versions of Tor may require that the flag "IPv6Traffic" is used
+    with the option "SocksPort" in torrc to actually allow IPv6
+    traffic.
+
+  - dirmngr: Fixed HKP for literally given IPv6 addresses.
+
+  - dirmngr: Enabled reverse DNS lookups via Tor.
+
+  - dirmngr: Added experimental SRV record lookup for WKD.
+    See commit 88dc3af3d4ae1afe1d5e136bc4c38bc4e7d4cd10 for details.
+
+  - dirmngr: For HKP use "pgpkey-hkps" and "pgpkey-hkp" in SRV record
+    lookups.  Avoid SRV record lookup when a port is explicitly
+    specified.  This fixes a regression from the 1.4 and 2.0 behavior.
+
+  - dirmngr: Gracefully handle a missing /etc/nsswitch.conf.  Ignore
+    negation terms (e.g. "[!UNAVAIL=return]" instead of bailing out.
+
+  - dirmngr: Better debug output for flags "dns" and "network".
+
+  - dirmngr: On reload mark all known HKP servers alive.
+
+  - gpgconf: Allow keyword "all" for --launch, --kill, and --reload.
+
+  - tools: gpg-wks-client now ignores a missing policy file on the
+    server.
+
+  - Avoid unnecessary ambiguity error message in the option parsing.
+
+  - Further improvements of the regression test suite.
+
+  - Fixed building with --disable-libdns configure option.
+
+  - Fixed a crash running the tests on 32 bit architectures.
+
+  - Fixed spurious failures on BSD system in the spawn functions.
+    This affected for example gpg-wks-client and gpgconf.
+
+
+
+
 ** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000400.html][2.1.17]] released  (2016-12-20)
     :PROPERTIES:
     :CUSTOM_ID: gnupg-2.1.17
