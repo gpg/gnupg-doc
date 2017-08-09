@@ -88,6 +88,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.1.23 released (2017-08-09)
+
+A new version of GnuPG has been released.  Please read the full
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000412.html][announcement mail]] for details.  This version is intended as a release
+candidate for 2.2.0 which will mark a new long term stable branch.
+
 ** GnuPG 2.1.22 released (2017-07-28)
 
 A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][announcement
