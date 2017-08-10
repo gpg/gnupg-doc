@@ -15,6 +15,7 @@ URI="qemu:///system"
 GUEST="win8.1"
 GUEST_CDROM="sda"
 SSH="gpg@192.168.122.117"
+SSH_COMMAND_TIMEOUT="60m"
 
 function vdo() {
     virsh -c "$URI" "$@"
@@ -22,7 +23,7 @@ function vdo() {
 
 function vssh() {
     # OpenSSH on Windows does not cope well with a closed stdin.
-    timeout </dev/zero 10m ssh "$SSH" "$@"
+    timeout </dev/zero "$SSH_COMMAND_TIMEOUT" ssh "$SSH" "$@"
 }
 
 function vping() {
