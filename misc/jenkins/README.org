@@ -161,8 +161,16 @@ Connect to the machine from your desktop machine:
 
  you@home $ virt-viewer -c qemu+ssh://jenkins@soro.g10code.com/system win8.1
 
-Do whatever maintenance work is necessary.  Shutdown the machine.
-Create a new snapshot 'test-new':
+Do whatever maintenance work is necessary.
+
+Hints:
+ - Start a powershell:
+   Open the file explorer, enter 'powershell' into the location bar (ctrl-l).
+ - Right mouse button pastes in powershell.
+ - Elevate privileges in powershell:
+    > Start-Process powershell -verb runAs
+
+Shutdown the machine.  Create a new snapshot 'test-new':
 
  jenkins@soro:~$ virsh -c qemu:///system snapshot-create-as win8.1 --name "tests-new" --description "Updated OpenSSH to xxx"
 
