@@ -34,8 +34,8 @@
   required files which are not stored in the repository. =autogen.sh=
   also checks that you have all required tools installed. Please read
   the GIT manual pages before doing so. The =master= revision is the
-  development branch; the stable 2.0 version (currently version
-  {{{gnupg_ver}}}) is known as =STABLE-BRANCH-2-0=; the old 1.4
+  development branch; the stable 2.2 version (currently version
+  {{{gnupg22_ver}}}) is known as =STABLE-BRANCH-2-2=; the old 1.4
   version of GnuPG ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
 
   Bug reports should go to the developers mailing list. See the page

@@ -8,19 +8,21 @@
 #+macro: ftp_loc_base  /ftp/gcrypt
 
 #
-# GnuPG
+# GnuPG-2.2
 #
-#+macro: gnupg_ver  2.0.30
-#+macro: gnupg_date 2016-03-31
-#+macro: gnupg_size 4311k
-#+macro: gnupg_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
-#+macro: gnupg_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
-#+macro: gnupg_branch  STABLE-BRANCH-2-0
+#+macro: gnupg22_ver  2.1.23
+#+macro: gnupg22_date 2017-08-09
+#+macro: gnupg22_size 6373k
+#+macro: gnupg22_sha1 c470777eaa9657ef3258068507065c9a7caef9eb
+#+macro: gnupg22_sha2 a94476391595e9351f219188767a9d6ea128e83be5ed3226a7890f49aa2d0d77
+#+macro: gnupg22_w32_ver  2.1.23_20170809
+#+macro: gnupg22_w32_date 2017-08-09
+#+macro: gnupg22_w32_size 3794k
+#+macro: gnupg22_w32_sha1 c95f1c2dc3aa06dda2a58ba5aefb362511f666e3
+#+macro: gnupg22_w32_sha2 42045473336c0f20a2d4a2b6f4be5be263a55ccd3eb1f682976d94e9a3cff43f
 
-
-#
-# GnuPG-2.1
-#
+# temporary keep it as "gnupg21".  In the future we will use the name of
+# the stable branch even for the development versions.
 #+macro: gnupg21_ver  2.1.23
 #+macro: gnupg21_date 2017-08-09
 #+macro: gnupg21_size 6373k
@@ -31,6 +33,25 @@
 #+macro: gnupg21_w32_size 3794k
 #+macro: gnupg21_w32_sha1 c95f1c2dc3aa06dda2a58ba5aefb362511f666e3
 #+macro: gnupg21_w32_sha2 42045473336c0f20a2d4a2b6f4be5be263a55ccd3eb1f682976d94e9a3cff43f
+
+
+#
+# GnuPG 2.0
+#
+#+macro: gnupg20_ver  2.0.30
+#+macro: gnupg20_date 2016-03-31
+#+macro: gnupg20_size 4311k
+#+macro: gnupg20_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
+#+macro: gnupg20_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
+#+macro: gnupg20_branch  STABLE-BRANCH-2-0
+
+# temporary keep it as "gnupg"
+#+macro: gnupg_ver  2.0.30
+#+macro: gnupg_date 2016-03-31
+#+macro: gnupg_size 4311k
+#+macro: gnupg_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
+#+macro: gnupg_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
+#+macro: gnupg_branch  STABLE-BRANCH-2-0
 
 
 #

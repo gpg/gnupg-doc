@@ -7,7 +7,7 @@
 
 * Release Notes for GnuPG
 
-  Please read the NEWS file for a more complete list. {{{gnupg21_ver}}}
+  Please read the NEWS file for a more complete list. {{{gnupg22_ver}}}
   is the current version of GnuPG.
 
   Note that this page will soon be restructed.  The URLs pointing to

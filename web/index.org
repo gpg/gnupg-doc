@@ -22,7 +22,7 @@ GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning
 be freely used, modified and distributed under the terms of the
 [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-The current version of GnuPG is {{{gnupg21_ver}}}.  See the [[file:download/index.org][download]]
+The current version of GnuPG is {{{gnupg22_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
 
 [[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the older GnuPG 2.0 branch.  It
