@@ -48,28 +48,6 @@ Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site t
 should use GnuPG for your electronic communication.  If you need
 printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
 
-* GnuPG needs your support to help protect online privacy.
-
-Please consider [[file:donate/index.org][donating]] to ensure that this critical piece of
-software continues to work for everyone.
-
-#+begin_html
- <div class="left" style="font-size: 150%">
- <p>
-  <!--CMPGN-RECUR-EURO-->
-  a month <br/>
-  <small>of
-  <!--CMPGN-RECUR-EURO-GOAL-->
-  needed.<br/>
-  <!--CMPGN-RECUR-COUNT-->
-  Supporters.<br/>
-  <!--CMPGN-ONCE-EURO-->
-  in one-time donations.</small><br/>
- </p>
- <p><a href="donate/index.html">Continue to campaign page</a></p>
- </div>
-#+end_html
-
 
 * News
 #+index: News
@@ -87,6 +65,15 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** GnuPG 2.2.0 released (2017-08-28)
+
+The GnuPG team is pleased to announce the availability of a new
+GnuPG release: version 2.2.0. Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000413.html][more]]} for details.
+
+This release marks the start of a new long term support series to
+replace the 2.0.x series which will reach end-of-life on 2017-12-31.
+
 
 ** GnuPG 2.1.23 released (2017-08-09)
 
