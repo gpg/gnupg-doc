@@ -10,29 +10,31 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.1.23
-#+macro: gnupg22_date 2017-08-09
-#+macro: gnupg22_size 6373k
-#+macro: gnupg22_sha1 c470777eaa9657ef3258068507065c9a7caef9eb
-#+macro: gnupg22_sha2 a94476391595e9351f219188767a9d6ea128e83be5ed3226a7890f49aa2d0d77
-#+macro: gnupg22_w32_ver  2.1.23_20170809
-#+macro: gnupg22_w32_date 2017-08-09
-#+macro: gnupg22_w32_size 3794k
-#+macro: gnupg22_w32_sha1 c95f1c2dc3aa06dda2a58ba5aefb362511f666e3
-#+macro: gnupg22_w32_sha2 42045473336c0f20a2d4a2b6f4be5be263a55ccd3eb1f682976d94e9a3cff43f
+#+macro: gnupg22_ver  2.2.0
+#+macro: gnupg22_date 2017-08-28
+#+macro: gnupg22_size 6379k
+#+macro: gnupg22_sha1 36ee693d0b2ec529ecf53dd6d397cc38ba71c0a7
+#+macro: gnupg22_sha2 d4514a0be0f7a1ff263193330019eb4b53c82f0f5e230af3c14df371271a45e6
+#+macro: gnupg22_branch  STABLE-BRANCH-2-2
+#+macro: gnupg22_w32_ver  2.2.0_20170828
+#+macro: gnupg22_w32_date 2017-08-28
+#+macro: gnupg22_w32_size 3797k
+#+macro: gnupg22_w32_sha1 7b0cf3912b86a6bd7655026276984a34a248e625
+#+macro: gnupg22_w32_sha2 e614d00bf84f68094af6cdcfbff5423b74340885c4034d407c81d5d92272127c
+
 
 # temporary keep it as "gnupg21".  In the future we will use the name of
 # the stable branch even for the development versions.
-#+macro: gnupg21_ver  2.1.23
-#+macro: gnupg21_date 2017-08-09
-#+macro: gnupg21_size 6373k
-#+macro: gnupg21_sha1 c470777eaa9657ef3258068507065c9a7caef9eb
-#+macro: gnupg21_sha2 a94476391595e9351f219188767a9d6ea128e83be5ed3226a7890f49aa2d0d77
-#+macro: gnupg21_w32_ver  2.1.23_20170809
-#+macro: gnupg21_w32_date 2017-08-09
-#+macro: gnupg21_w32_size 3794k
-#+macro: gnupg21_w32_sha1 c95f1c2dc3aa06dda2a58ba5aefb362511f666e3
-#+macro: gnupg21_w32_sha2 42045473336c0f20a2d4a2b6f4be5be263a55ccd3eb1f682976d94e9a3cff43f
+#+macro: gnupg21_ver  2.2.0
+#+macro: gnupg21_date 2017-08-28
+#+macro: gnupg21_size 6379k
+#+macro: gnupg21_sha1 36ee693d0b2ec529ecf53dd6d397cc38ba71c0a7
+#+macro: gnupg21_sha2 d4514a0be0f7a1ff263193330019eb4b53c82f0f5e230af3c14df371271a45e6
+#+macro: gnupg21_w32_ver  2.2.0_20170828
+#+macro: gnupg21_w32_date 2017-08-28
+#+macro: gnupg21_w32_size 3797k
+#+macro: gnupg21_w32_sha1 7b0cf3912b86a6bd7655026276984a34a248e625
+#+macro: gnupg21_w32_sha2 e614d00bf84f68094af6cdcfbff5423b74340885c4034d407c81d5d92272127c
 
 
 #
@@ -101,11 +103,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.8.0
-#+macro: libgcrypt_date 2017-07-18
-#+macro: libgcrypt_size 2893k
-#+macro: libgcrypt_sha1 b4ffb20369f2ab8249d5cc0fb8b3b31371f6b112
-#+macro: libgcrypt_sha2 23e49697b87cc4173b03b4757c8df4314e3149058fa18bdc4f82098f103d891b
+#+macro: libgcrypt_ver  1.8.1
+#+macro: libgcrypt_date 2017-08-27
+#+macro: libgcrypt_size 2897k
+#+macro: libgcrypt_sha1 dd35f00da45602afe81e01f4d60c40bbdd826fe6
+#+macro: libgcrypt_sha2 7a2875f8b1ae0301732e878c0cca2c9664ff09ef71408f085c50e332656a78b3
 
 
 #

@@ -1,7 +1,7 @@
 #+TITLE: GnuPG - What’s new in 2.1
 #+STARTUP: showall indent
 #+SETUPFILE: "share/setup.inc"
-#+DATE: 2016-07-14
+#+DATE: 2017-08-28
 #+macro: more  @@html:<a href="#$1"><span class="morelink">&nbsp;&rArr;</a>@@
 
 #+BEGIN_ASCII
@@ -11,11 +11,11 @@ https://gnupg.org/faq/whats-new-in-2.1.html
 
 * What’s new in GnuPG 2.1
 
-GnuPG version 2.1 comes with a bag of new features which changes some
-things old-timers are used to.  This page explains the more important
-ones.  It expects that the reader is familiar with GnuPG version 2.0
-and aware that GnuPG consists of /gpg/, /gpgsm/, and /gpg-agent/ as
-its main components.
+GnuPG version 2.1 (now known as 2.2) comes with a bag of new features
+which changes some things old-timers are used to.  This page explains
+the more important ones.  It expects that the reader is familiar with
+GnuPG version 2.0 and aware that GnuPG consists of /gpg/, /gpgsm/, and
+/gpg-agent/ as its main components.
 
 #+html: <div style="width: 80%">
 - The file /secring.gpg/ is not anymore used to store the secret keys.
@@ -84,7 +84,7 @@ its main components.
 #+html: </div>
 
 Now for the detailed description of these new features.  Note that the
-examples assume that that /gpg/ is installed as /gpg/.  Your
+examples assume that /gpg/ is installed as /gpg/.  Your
 installation may have it installed under the name /gpg2/.
 
 ** Removal of the secret keyring
@@ -507,7 +507,7 @@ The classic way to run /gpg-agent/ on Unix systems is by launching it
 at login time and use an environment variable (=GPG_AGENT_INFO=) to
 tell the other GnuPG modules how to connect to the agent.  However,
 correctly managing the start up and this environment variable is
-cumbersome so that that an easier method is required.  Since GnuPG
+cumbersome so that an easier method is required.  Since GnuPG
 2.0.16 the =--use-standard-socket= option already allowed to start the
 agent on the fly; however the environment variable was still required.
 
@@ -533,12 +533,12 @@ gpg-agent= to explicitly start it if not yet done.
 A deficit of the OpenPGP protocol is that signatures carry only a
 limited indication on which public key has been used to create a
 signature.  Thus a verification engine may only use this “long key id”
-to look up the the key in its own store or from a public keyserver.
+to look up the key in its own store or from a public keyserver.
 Unfortunately it has now become possible to create a key with a long
 key id matching the key id of another key.  Importing a key with a
 long key id already used by another key in gpg’s local key store was
 not possible due to checks done on import.  Now, if the “wrong” key
-has been imported first /gpg/ would not allow to later import the
+has been imported first /gpg/ would not allow later import of the
 second “correct” key.  This problem has been fixed in 2.1 by allowing
 the import and by doing trial verification against all matching keys.
 
