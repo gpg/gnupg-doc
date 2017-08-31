@@ -103,7 +103,7 @@
    /Core components hacker/
 
    Neal started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  He is full time employed by g10^code.
+   development in all areas.
 
    #+HTML: <p style="clear: both"/>
 
