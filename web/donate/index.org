@@ -99,19 +99,6 @@
 	<div class="col-lg-12 visible-lg-block">
 	  <h1>GnuPG Fundraising Rally</h1>
 	</div>
-	<div class="col-xs-12 col-lg-8">
-	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
-	    <img src="/share/campaign/img/thumbs/main.jpg">
-	    <div class="play-button"></div>
-	    <div class="video-text">Click to start the video
-              <noscript><br />
-                <span style="font-size: 60%"
-                      >(requires JavaScript from YouTube.)
-                </span>
-              </noscript>
-            </div>
-          </div>
-	</div>
 
 	<div class="col-xs-12 hidden-lg">
 	  <h1>GnuPG Fundraising Rally</h1>
@@ -1617,98 +1604,6 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     </div>
     <!-- End of testimonials.  -->
 
-<div id="team" class="camp-gutter container">
-<div class="row">
-	<div class="col-xs-12">
-	  <h2>Who we are</h2>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Werner -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Picture of Werner">
-	    </div>
-	    <div class="media-body">
-	      <strong>Werner</strong> started GnuPG in 1997.  Werner
-	      is a long time free software supporter and co-founder of
-	      the FSFE.
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Neal -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Picture of Neal">
-	    </div>
-	    <div class="media-body">
-	      <strong>Neal</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
-	    </div>
-	  </div>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Justus -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Picture of Justus">
-	    </div>
-	    <div class="media-body">
-	      <strong>Justus</strong> started to work on GnuPG in 2015
-	      to support maintenance and development in all areas.
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Marcus -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Picture of Marcus">
-	    </div>
-	    <div class="media-body">
-	      <strong>Marcus</strong> worked on GnuPG from 2001 to
-	      2012 and rejoined the project in 2017 to work in all
-	      areas.
-	    </div>
-	  </div>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Kai -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Picture of Kai">
-	    </div>
-	    <div class="media-body">
-	      <strong>Kai</strong> is working on the Enigmail project since 2015.
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Gniibe -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
-	    </div>
-	    <div class="media-body">
-	      <strong>Niibe</strong> is a long time free software
-	      hacker who joined the GnuPG project in 2011 to work on
-	      smart cards and the Gnuk Token.
-	    </div>
-	  </div>
-	</div>
-</div>
 
 <div class="camp-final-pitch row">
   <div class="col">

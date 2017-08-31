@@ -94,19 +94,6 @@
 	<div class="col-lg-12 visible-lg-block">
 	  <h1>GnuPG 資金調達の呼びかけ</h1>
 	</div>
-	<div class="col-xs-12 col-lg-8">
-	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
-	    <img src="/share/campaign/img/thumbs/main.jpg">
-	    <div class="play-button"></div>
-	    <div class="video-text">クリックして動画をスタート
-              <noscript><br />
-                <span style="font-size: 60%"
-                      >(YouTubeからのJavaScriptが必要となります。)
-                </span>
-              </noscript>
-            </div>
-          </div>
-	</div>
 
 	<div class="col-xs-12 hidden-lg">
 	  <h1>GnuPG 資金調達の呼びかけ</h1>
@@ -1404,94 +1391,6 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 
     </div>
     <!-- End of testimonials.  -->
-
-<div id="team" class="camp-gutter container">
-<div class="row">
-	<div class="col-xs-12">
-	  <h2>わたしたちは?</h2>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Werner -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Picture of Werner">
-	    </div>
-	    <div class="media-body">
-	      <strong>Werner</strong>は1997年にGnuPGを始めました。
-	      Wernerは長らく自由ソフトウェアの支持者で、FSFEの発起人の一人です。
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Neal -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Picture of Neal">
-	    </div>
-	    <div class="media-body">
-	      <strong>Neal</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
-	    </div>
-	  </div>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Justus -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Picture of Justus">
-	    </div>
-	    <div class="media-body">
-	      <strong>Justus</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Marcus -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Picture of Marcus">
-	    </div>
-	    <div class="media-body">
-	      <strong>Marcus</strong>は2001年から2012年にGnuPGについて仕事をしました。
-	      2017年に再び参加してすべての分野について働いています。
-	    </div>
-	  </div>
-	</div>
-</div>
-
-<div class="row">
-	<!-- Kai -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Picture of Kai">
-	    </div>
-	    <div class="media-body">
-	      <strong>Kai</strong>は2015年からEnigmailプロジェクトに参加しています。
-	    </div>
-	  </div>
-	</div>
-
-	<!-- Gniibe -->
-	<div class="camp-who col-md-6">
-	  <div class="media">
-	    <div class="media-left">
-	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
-	    </div>
-	    <div class="media-body">
-	      <strong>g新部</strong>は古い自由ソフトウェアハッカーで、
-	      GnuPGプロジェクトに2011に参加しました。スマートカードとGnukトークンのサポートをしています。
-	    </div>
-	  </div>
-	</div>
-</div>
 
 <div class="camp-final-pitch row">
   <div class="col">
