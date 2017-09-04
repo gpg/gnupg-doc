@@ -111,10 +111,10 @@ earned and spent the money from donations and paid projects.
 
     As with almost all software development companies, the majority of
     expenses are staff costs.  Not counting taxes, which depend on the
-    the annual profit, we had total costs of 225,000 € with 207,000 €
+    annual profit, we had total costs of 225,000 € with 207,000 €
     spent on /Salaries/, /Social insurance/, and /Contractors/.  My
     share of this were 47,400 € regular salary (of which I need to pay
     social insurances fully myself) plus a profit sharing bonus of
-    24700 €.  We made quite some profit last years due to the good
+    24,700 €.  We made quite some profit last years due to the good
     revenue situation and because one of our employees substantially
     reduced his working hours to finish his PhD.
