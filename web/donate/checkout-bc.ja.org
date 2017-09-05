@@ -49,8 +49,8 @@
 
           <p>
           Bitcoinは、こちら
-          <a href="bitcoin:1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzF"
-          ><tt>1EAw3RnaALKiES8Ap93SwwDx4fsoY12wzF</tt></a>に送金ください。
+          <a href="bitcoin:1Q5ee4TcWRrphgT6UES9jZRJuwACJbEJ28"
+          ><tt>1Q5ee4TcWRrphgT6UES9jZRJuwACJbEJ28</tt></a>に送金ください。
           </p>
 
           <p>
