@@ -27,6 +27,14 @@
   to help with development and maintenance please consider to make a
   donation.
 
+** Ways to donate
+
+   We accept donations via credit card, Paypal, and SEPA transactions.
+   Donating Bitcoins is also possible.  Note that the donations are
+   collected and spent by g10 Code GmbH, which can't issue charitable
+   donation certificates.
+
+   Please continue to the donation form:
 
 #+BEGIN_HTML
 <div class="col-xs-12 col-sm-6 col-lg-12">
@@ -37,12 +45,12 @@
     <div class="col-xs-6">
       <a class="btn btn-default btn-md btn-block" role="button"
          href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur"
-         >5&thinsp;€ a month</a>
+         >Donate 5&thinsp;€ a month</a>
     </div>
     <div class="col-xs-6">
       <a class="btn btn-default btn-md btn-block" role="button"
          href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur"
-         >20&thinsp;€ a month</a>
+         >Donate 20&thinsp;€ a month</a>
     </div>
   </div>
   <div class="row text-center" style="margin-top: 1em;">
