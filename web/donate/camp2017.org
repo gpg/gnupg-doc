@@ -116,8 +116,9 @@
 	  <h1>GnuPG Fundraising Rally</h1>
 	</div>
 
-        <strong>[This is a snaphot of the page at the end of the
-        campaign on 2017-09-05.]</strong>
+        <p>[<strong>This is a snaphot of the page at the end of the
+        campaign on 2017-09-05.</strong>]</p>
+
 
 	<div class="col-xs-12 col-lg-4">
 	  <div class="row">

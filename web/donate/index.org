@@ -7,7 +7,7 @@
 #       fine as it is stripped before publishing.
 
 
-* GnuPG needs your support to help protect online privacy.
+* GnuPG needs your support to help protect online privacy
 
   Activists, journalists, lawyers, and many others rely on GnuPG to
   protect their communication.  And, nearly all free software-based

@@ -1,5 +1,5 @@
 #                                                        -*- html -*-
-#+TITLE: GnuPG - Faire un don
+#+TITLE: GnuPG - Spenden
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 #
@@ -23,7 +23,7 @@
     <noscript><style>.lang-chooser .caret { display: none; }</style></noscript>
 
   </head>
-  <body lang="fr">
+  <body lang="de">
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -31,7 +31,7 @@
 
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Afficher/masquer le menu</span>
+            <span class="sr-only">Navigation ein/ausblenden</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -40,50 +40,53 @@
 	  <ul class="nav navbar-header pull-right visible-xs-inline-block lang-chooser lang-chooser-xs">
 	    <li class="dropdown">
 	      <!-- noscript: Link to the next language.  -->
-	      <a href="/donate/index.ja.html"
+	      <a href="/donate/camp2017.fr.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		<span class="flag-icon flag-icon-fr"></span> <span class="caret"></span></a>
+		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
-		<li><a href="/donate/index.html">
+		<li><a href="/donate/camp2017.html">
 		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
-		<li><a href="/donate/index.de.html">
+		<li><a href="/donate/camp2017.de.html">
 		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
-		<li><a href="/donate/index.fr.html">
+		<li><a href="/donate/camp2017.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
-		<li><a href="/donate/index.ja.html">
+		<li><a href="/donate/camp2017.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
 	      </ul>
 	    </li>
 	  </ul>
-	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.fr.html" role="button">♥ Faire un don</a>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn"
+             style="margin-right: 10px"
+              href="/donate/donate.de.html"
+              role="button">♥ Spenden</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#goals">Objectifs</a></li>
-            <li><a href="#testimonials">Témoignages</a></li>
-            <li><a href="#dailyvideo">Vidéo quotienne</a></li>
+	    <li><a href="#about">Über</a></li>
+            <li><a href="#goals">Ziele</a></li>
+            <li><a href="#testimonials">Referenzen</a></li>
+            <li><a href="#dailyvideo">Videos</a></li>
           </ul>
 	  <ul class="nav navbar-nav navbar-right hidden-xs lang-chooser">
 	    <li class="dropdown">
 	      <!-- noscript: Link to the next language.  -->
-	      <a href="/donate/index.ja.html"
+	      <a href="/donate/camp2017.fr.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		<span class="flag-icon flag-icon-fr"></span> <span class="caret"></span></a>
+		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
-		<li><a href="/donate/index.html">
+		<li><a href="/donate/camp2017.html">
 		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
-		<li><a href="/donate/index.de.html">
+		<li><a href="/donate/camp2017.de.html">
 		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
-		<li><a href="/donate/index.fr.html">
+		<li><a href="/donate/camp2017.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
-		<li><a href="/donate/index.ja.html">
+		<li><a href="/donate/camp2017.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
 	      </ul>
 	    </li>
 	  </ul>
-          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.fr.html" role="button">♥ Faire un don</a>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.de.html" role="button">♥ Spenden</a>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -91,12 +94,28 @@
     <div id="home" class="camp-gutter container">
       <div class="row">
 	<div class="col-lg-12 visible-lg-block">
-	  <h1>Campagne de financement pour GnuPG</h1>
+	  <h1>GnuPG Spendenkampagne</h1>
+	</div>
+	<div class="col-xs-12 col-lg-8">
+	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
+	    <img src="/share/campaign/img/thumbs/main.jpg">
+	    <div class="play-button"></div>
+	    <div class="video-text">Klicken um das Video zu starten
+              <noscript><br />
+                <span style="font-size: 60%"
+                      >(erfordert JavaScript von YouTube).
+                </span>
+              </noscript>
+            </div>
+          </div>
 	</div>
 
 	<div class="col-xs-12 hidden-lg">
-	  <h1>Campagne de financement pour GnuPG</h1>
+	  <h1>GnuPG Spendenkampagne</h1>
 	</div>
+
+        <p>[<strong>This is a snaphot of the page at the end of the
+        campaign on 2017-09-05.</strong>]</p>
 
 	<div class="col-xs-12 col-lg-4">
 	  <div class="row">
@@ -110,44 +129,44 @@
                      style="width: 9%" A-CMPGN-RECUR-PERCENT=""
                      >
 		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
-                    par mois</span>
+                    pro Monat</span>
 		</div>
 	      </div>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
 	      <h3><!--CMPGN-RECUR-EURO-->
-                  mensuels collectés <small>d'un total nécessaire de
+                  pro Monat <small>von benötigten
                   <!--CMPGN-RECUR-EURO-GOAL-->
                   </small>
               </h3>
 	      <h4>+
                 <!--CMPGN-ONCE-EURO-->
-                <small>en dons ponctuels</small>
+                <small>an einmaligen Spenden</small>
               </h4>
 	      <h4><!--CMPGN-RECUR-COUNT-->
-                <small>Donateurs réguliers</small>
+                <small>Unterstützer</small>
               </h4>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 col-lg-12">
 	      <a class="btn btn-primary btn-lg btn-block" role="button"
-                 href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=fr"
-                 >Donner 10&thinsp;€ par mois</a>
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=de"
+                 > 10&thinsp;€ pro Monat spenden</a>
 	      <div class="row" style="margin-top: 1em;">
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=fr"
-                     >5&thinsp;€ par mois</a>
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=de"
+                     >5&thinsp;€ pro Monat</a>
 		</div>
 		<div class="col-xs-6">
 		  <a class="btn btn-default btn-md btn-block" role="button"
-                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=fr"
-                     >20&thinsp;€ par mois</a>
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=de"
+                     >20&thinsp;€ pro Monat</a>
 		</div>
 	      </div>
 	      <div class="row text-center" style="margin-top: 1em;">
 		<a style="margin-top: 1em;"
-                   href="/cgi-bin/procdonate.cgi?mode=preset&lang=fr"
-                   >Donner un montant libre</a>
+href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
+                   >Einen anderen Betrag spenden</a>
 	      </div>
 	    </div>
 	  </div>
@@ -159,97 +178,100 @@
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-	    <p class="lead">GnuPG a besoin de votre aide pour protéger
-	      la vie privée en ligne.</p>
-	    <p class="text-justify">De nombreux usagers, entre autres militant·e·s,
-	      journalistes ou avocat·e·s, dépendent de
-	      <a href="https://www.gnupg.org/">GnuPG</a> pour protéger
-	      leurs données et communications.  En outre,
-	      presque tous les systèmes d'exploitation basés
-	      sur le logiciel libre (c'est à dire plus des deux tiers
-	      des serveurs formant notre internet) utilisent GnuPG
-	      pour vérifier l'intégrité de leurs mises à jours système.</p>
-	    <p>Afin de continuer à maintenir et à améliorer GnuPG, nous, les
-	      principaux développeurs de GnuPG, faisons un appel à la générosité du
-	      public.  Notre <strong>objectif principal</strong> est de
-	      lever <strong>15&#x202f;000 euros mensuels</strong> pour
-	      financer 3 dévelopeurs à plein temps; notre <strong>objectif
-	      complémentaire</strong> est deux fois plus élevé, soit <strong>30&#x202f;000 euros
-	      mensuels</strong>.</p>
-	   <p>Pensez à contribuer afin que cette composante logicielle
-	      essentielle continue à fonctionner pour tout le monde.</p>
+	    <p class="lead">
+	      GnuPG braucht Ihre Unterstützung um Ihre Privatsphäre im
+	      Internet zu schützen.
+	    </p>
+	    <p class="text-justify">Aktivisten, Journalisten, Anwälte
+	    und viele andere verlassen sich auf
+	      <a href="https://www.gnupg.org/">GnuPG</a> um ihre
+	      Korrespondenz zu beschützen.  Weiterhin verlassen sich
+	      beinahe alle auf Freier Software basierenden
+	      Betriebsysteme (die auf zwei drittel der Server des
+	      Internets genutzt werden) auf GnuPG um die Integrität
+	      ihrer Softwareaktualisierungen sicherzustellen.</p>
+            <p>Um Support und Weiterentwicklung von GnuPG zu
+              ermöglichen bitten wir, die Hauptentwickler von GnuPG,
+              um Spenden von der Allgemeinheit.
+              Unser <strong>Hauptziel</strong>
+              ist <strong>15&#x202f;000 Euro pro Monat</strong> um
+              drei Entwickler zu finanzieren;
+              unser <strong>erweitertes Ziel</strong> ist doppelt so
+              viel, <strong>30&#x202f;000</strong> Euro pro Monat.</p>
+            <p>Bitte denken Sie darüber nach zu Spenden um
+            sicherzustellen, dass diese kritische Software auch
+            weiterhin für jeden funktioniert.</p>
 	  </div>
 	</div>
       </div>
     </div>
 
-
     <div id="about" class="camp-gutter container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>GnuPG a besoin de votre aide!</h2>
+	  <h2>GnuPG Braucht Ihre Hilfe!</h2>
 	  <p class="text-justify">
 	    <strong><a
 href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
-            >Depuis deux décennies</a>, GnuPG a contribué à protéger les
-	    échanges en ligne.</strong>
+	       >Seit 20 Jahren</a> hilft GnuPG elektronische Kommunikation zu
+	      schützen.</strong>
 	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
 	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
-	    alt="Photo de Cindy Cohn" class="camp-headshot
-	    pull-right"></a>, directrice exécutive
-	    de l'<a href="https://www.eff.org/">Electronic Frontier
-	    Foundation</a> (EFF), parle de GnuPG comme de <i>« la manière
-	    dont je communique le plus souvent avec les gens qui sont dans
-	    le besoin de part le monde. »</i>
-	    <a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
-	    alt="Photo de Sheera Frenkel" class="camp-headshot
-	    pull-left">Sheera Frenkel</a>, correspondante à l'étranger pour
-	    BuzzFeed News, continue : <i>« <strong>en temps qu'organe de
-	    presse, nous sommes formés à utiliser GPG.</strong>
-	    C'est la sécurité de vos sources qui est en jeu, lorsque
-	    vous quittez le pays pour publier ce scoop explosif alors que le
-	    gouvernement est à la recherche du lanceur l'alerte qui vous a
-	    révélé cette information primordiale. »</i>
-	    GnuPG est notoirement connu pour avoir été l'outil de
-	    référence d'Edward Snowden pour communiquer de manière sécurisée
-	    avec les journalistes lors de ses révélations sur les programmes
-      de surveillance globale de la NSA.
+		     alt="Bild von Cindy Cohn"
+	    class="camp-headshot pull-right"></a>, Geschäftsführerin der
+	    <a href="https://www.eff.org/">Electronic Frontier
+	    Foundation</a> (EFF), beschreibt GnuPG als <i> “das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not [..] kommuniziere.”
+        </i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
+	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    alt="Bild von Sheera Frenkel" class="camp-headshot pull-left"></a>,
+	    Auslandskorrespondentin für BuzzFeed News, fügt
+	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
+	    wir ausgebildet GPG zu benutzen.</strong>  Es geht um die
+	    Quellen und was mit ihnen passiert wenn man ihr Land
+	    verlässt, die brisante Story veröffentlicht und die
+	    Regierung nach dem Informant sucht, der einem die
+	    Schlüsselinformation verriet."</i>  Und GnuPG war
+	    bekanntermaßen Edward Snowden's Werkzeug der Wahl um
+	    sicher Journalisten über die Massenüberwachung der NSA zu
+	    unterrichten.
 	  <p class="text-justify">
-	    GnuPG n'est pas seulement utilisé pour chiffrer
-      les messages électroniques.  <strong>Il protège aussi les mises à
-      jours logicielles</strong> de la quasi totalité des systèmes
-      d'exploitation libres, qui font tourner
-      <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">les
-      des deux tiers des serveurs sur internet</a>.
-      De plus, GnuPG est couramment utilisé par de nombreuses
-      organisations et entreprises.  Par exemple, Arthur
-      Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
-        alt="Photo d'Arthur Jordan"
-        class="camp-headshot pull-left">, vice président aux
-      technologies de l'information à 2U, nous a rapporté que
-      <i>« lorsque nous avons contacté nos universités pour demander
-        comment elles voulaient procéder pour un transfert de fichier
-        sécurisé, il se trouvait qu'elles utilisaient déjà le
-        chiffrement GPG. »</i>
+	    Aber GnuPG wird nicht nur zum Verschlüsseln von E-Mails
+            benutzt.  <strong>GnuPG schützt
+            Softwareaktualisierungen</strong> auf fast allen freien
+            Betriebsystemen, die
+            auf <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">zwei
+            drittel aller Server im Internet eingesetzt werden</a>.
+            Weiterhin wird GnuPG von einer breiten Masse an
+            Organisationen und Firmen verwendet.  Arthur
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+		       alt="Bild von Arthur Jordan"
+            class="camp-headshot pull-right">, Vizepräsident der IT
+            von 2U, hat uns beispielsweise erzählt:
+	    <i>"als wir Universitäten kontaktierten um zu fragen, wie
+	    sie sicher Dateien übertragen, stellten wir fest, dass sie
+	    bereits mit GPG verschlüsselten."</i>
 	  <p class="text-justify">
-	    Et pourtant, malgré le rôle essentiel que joue GnuPG pour
-	    les journalistes, militant·e·s, et avocat·e·s en particulier, et
-      plus généralement pour tout utilisateur et utilisatrice
-      d'internet, GnuPG a subit une <strong>profonde crise budgétaire</strong>
-      en 2012.  À cause du manque de contrats, Werner Koch, le principal
-      développeur de GnuPG, fut forcé de licencier la seule autre
-      personne travaillant à plein temps sur le projet.
-      En outre en 2014 Werner dût prendre des emplois secondaires sans
-      lien avec GnuPG pour compléter ses revenus.
+	    Trotz der kritischen Rolle die GnuPG insbesondere für
+	    Journalisten, Aktivisten und Anwälte, aber auch für jede
+	    Nutzerin des Internets spielt, hatte GnuPG im Jahr 2012
+	    <strong>Finanzierungsprobleme</strong>.  Aufgrund von
+	    ausbleibenden Aufträgen musste Werner Koch, GnuPG's
+	    Hauptentwickler, seinen einzigen Mitarbeiter entlassen,
+	    der Vollzeit an GnuPG gearbeitet hat.  Und im Jahr 2014
+	    musste Werner andere Jobs annehmen um seine Arbeit an
+	    GnuPG zu finanzieren.
 	  <p class="text-justify">
-	    La situation était tellement désespérée que <strong>Werner était
-	    prêt à abandonner le projet lorsque des amis l'ont convaincu de
-      lancer un dernier appel aux dons.</strong>
-      La réponse fût exceptionnelle.  Il n'a non seulement reçu
-      suffisamment d'argent pour financer son propre salaire, mais
-      également <strong>250&#x202f;000&nbsp;euros en donations individuelles</strong>.
-      En outre Stripe, Facebook, et la Linux Foundation se sont chacun
-      engagé à donner environ 50&#x202f;000&nbsp;euros annuels.
+	    Die Situation war so hoffnungslos, dass <strong>Werner
+            kurz davor stand aufzugeben.  Aber Freunde haben ihn
+            überzeugt, es mit einer Spendenkampagne zu
+            versuchen.</strong>  Die Reaktion war überwältigend.
+            Nicht nur hat er genug Geld erhalten um seinen
+            Lebensunterhalt zu finanzieren, <strong>er bekam
+            250&#x202f;000&nbsp;Euro in kleinen Spenden</strong>, und
+            Stripe, Facebook und die Linux Foundation haben
+            zugesagt, je etwa 50&#x202f;000&nbsp;Euro pro Jahr zu
+            spenden.
 	  </p>
           <div class="pull-right text-center team-img">
             <a
@@ -258,85 +280,86 @@ href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
 src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
               /></a>
 	    <p id="camp-caption-openpgp-conf">
-               L'équipe de GnuPG à OpenPGP.conf 2016
-            </p>
+	      Das GnuPG Team auf der OpenPGP.conf 2016
+	    </p>
 	  </div>
 	  <p class="text-justify">
-	    <strong>Fort de cette fantastique générosité, Werner a décidé de
-        relancer l'équipe à nouveau.</strong>  À ce jour, il a embauché
-      5 programmeurs, et ces deux dernières années ont vu GnuPG et son
-      écosystème s'améliorer sur de nombreux points.
-      Par exemple, nous avons travaillé à
-	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html">simplifier
-	    la découverte de clé</a>, adopté un ensemble de
-	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">bindings Python
-	    pour GPG</a>, contribué à plusieurs améliorations
-	    sur <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>,
-	    et également aidé
-	    <a href="https://www.fsij.org/category/gnuk.html">le
-	    projet Gnuk</a>&mdash;un jeton de sécurité dont le matériel et
-	    logiciel sont tous deux libres.
+	    <strong>Ermutigt von der überwältigenden Hilfsbereitschaft
+	    hat Werner entschieden sein Team zu vergrößern.</strong>
+	    Bis zum heutigen Tag hat er fünf Entwickler eingestellt,
+	    und über die letzten zwei Jahre hat sich GnuPG und das
+	    dazugehörende Ökosystem in einer Reihe von Punkten
+	    weiterentwickelt.  Zum Beispiel haben wir
+	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html"> das Finden von Schlüssel vereinfacht</a>, ein System zur
+	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Anbindung von GPG an Python</a> adoptiert, an
+	    <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>
+	    mitgearbeitet,
+	    und <a href="https://www.fsij.org/category/gnuk.html">das
+	    Gnuk Projekt</a> unterstützt&mdash;einem Sicherheits-Token
+	    bestehend aus Freier Software und Freier Hardware.
 	  <p class="text-justify">
-	    <strong>Nous voulons continuer ce travail sur le long terme.</strong>
-      En revanche, nous voulons le faire de manière à ce que notre
-      premier engagement soit sans ambiguïté aucune envers le grand
-      public.
-      Cela implique que la majorité de notre financement provienne de
-      donateurs et donatrices individuel·le·s, plutôt que d'entreprises
-      ou de multinationales.
-      En outre, afin d'assurer une stabilité pérenne, notre priorité est
-      sur les dons réguliers plutôt que ponctuels.
+	    <strong>Wir möchten diese Arbeit auf lange Zeit
+            fortsetzen.</strong>  Aber wir wollen, dass unsere
+            Loyalität in erster Linie der Allgemeinheit gehört.
+            Deshalb wollen wir sicherstellen, dass der Großteil der
+            Finanzierung von Individuen und nicht von Firmen kommt.
+            Weiterhin setzen wir um das Bestehen des Projektes auf
+            lange Sicht zu gewähren auf regelmäßige Spenden und nicht
+            auf einmalige Spenden wie letztes mal.
 	  <p class="text-justify">
-	    <strong>Notre objectif principal est de collecter des garanties de
-	      dons à hauteur de 15&#x202f;000&nbsp;euros mensuels&mdash;suffisamment
-	      pour financer le salaire de 3 programmeurs</strong>.
-	    Nous pouvons atteindre ce but si 2000&nbsp;personnes donnent
-	    entre 5 et 10 euros chaque mois, soit seulement 2 à 3 tasses de café.
+	    <strong>Unser Hauptziel ist es, Spenden in
+	      Höhe von 15&#x202f;000&nbsp;Euro monatlich zu bekommen&mdash;genug
+	      um drei Entwickler zu finanzieren</strong>.  Wir können
+	      dieses Ziel erreichen wenn nur 2000&nbsp;Menschen
+	      zwischen 5 und 10 Euro monatlich spenden, dass
+	      entspricht etwa zwei oder drei Tassen Kaffee.
 	  <p class="text-justify">
 	    <div class="pull-right" style="width: 40%; margin: 1em">
               <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
-              <p id="camp-caption-gnuk" class="text-center">Le jeton de sécurité Gnuk</p>
+              <p id="camp-caption-gnuk" class="text-center">Das Gnuk Token</p>
 	    </div>
-      Cet argent nous assurera d'abord de continuer à maintenir GnuPG.
-      Il nous permettra également de financer le développement du jeton
-      de sécurité Gnuk.  Il servira aussi à financer l'écriture d'un
-      livre dont le titre est <i>« An Advanced Introduction to GnuPG. »</i>
-      Un ouvrage pour développeurs voulant intégrer GnuPG dans leurs
-      programmes, et qui ont ainsi besoin de comprendre les divers
-      concepts, les compromis vis-à-vis de la sécurité, ou bien les
-      pièges les plus courants.
-      Un ouvrage, aussi, pour formateurs en sécurité informatique qui
-      ont quand à eux besoin de comprendre le fonctionnement de GnuPG
-      pour pouvoir faire de bonnes recommandations aux usagers.
-      Et bien entendu un ouvrage pour utilisateurs
-      enthousiastes.
+	    Das Geld erlaubt uns zunächst GnuPG zu pflegen.
+	    Weiterhin werden wir unsere Arbeit an dem Gnuk
+	    Sicherheitstoken finanzieren.  Ein neues Projekt, welches
+	    uns das Geld ermöglichen soll, ist ein Buch mit dem Titel
+	    "An Advanced Introduction to GnuPG" &mdash; "Eine
+	    Fortgeschrittene Einführung in GnuPG" &mdash; mit drei
+	    Zielgruppen: Entwickler, die GnuPG in ihre Programme
+	    integrieren wollen und die verschiedenen Konzepte,
+	    Sicherheitsabwägungen und übliche Stolperfallen verstehen
+	    müssen; Trainer, die Fortbildungen in digitaler Sicherheit
+	    anbieten, um Endbenutzern handfeste Ratschläge geben zu
+	    können; und natürlich Enthusiasten.
 	  <p class="text-justify">
-	    <strong>Notre objectif étendu est de doubler ce nombre de
-	      donations</strong>.  Si 4000&nbsp;personnes donnent entre 5 et
-	    10 euros chaque mois, nous serons alors en mesure d'embaucher de
-	    nouveaux développeurs, et d'allouer plus de ressource à d'autres
-	    projets dans l'écosystème GnuPG.  En particulier, un projet auquel
-	    nous voulons vraiment contribuer est
-	    <a href="https://gpgtools.org/">GPGTools</a>, duquel un grand nombre
-	    de militant·e·s et journalistes dépendent pour sécuriser leurs
-	    communications en lignes.  Nous voulons nous assurer que l'intégration
-	    de GPG dans le client de messagerie d'Apple est supporté dès
-	    qu'une nouvelle version de macOS est publiée.
+	    <strong>Unser erweitertes Ziel ist die doppelte Menge an
+	    Spenden</strong>.  Wenn 4000&nbsp;Menschen nur fünf oder
+	    zehn Euro jeden Monat spenden, werden wir unser Team
+	    vergrößern und mit ihnen Projekte im GnuPG Ökosystem
+	    unterstützten.  Ein Projekt, an dem wir wirklich gerne
+	    mitarbeiten möchten, ist GPGTools, auf das sich viele
+	    Aktivisten und Journalisten verlassen um ihre
+	    Onlinekommunikation zu schützen.  Wir wollen
+	    sicherstellen, dass die GPG-Integration für das
+	    Mailprogramm von Apple unterstützt ist sobald eine neue
+	    Version von macOS erscheint.
 	  <p class="text-justify">
-	    Peut-être que vous-même n'utilisez pas GnuPG pour chiffrer vos
-	    courriels.
-	    Mais ces journalistes dont vous appréciez le travail
-	    en dépendent pour protéger leurs sources, ainsi que ces
-	    militant·e·s se battant pour cette cause qui vous tient à cœur,
-	    et ces avocat·e·s qui ont besoin de protéger leurs conversations
-	    avec leurs client·e·s.
-	    En outre, les systèmes d'exploitation libres utilisent GnuPG pour
-	    vérifier l'intégrité des mises à jours.
+	    Vielleicht benutzen Sie nicht GnuPG um Ihre E-Mails zu
+	    verschlüsseln.  Nichtsdestotrotz verlassen sich
+	    Journalisten deren Arbeit Sie schätzen auf GnuPG um ihre
+	    Quellen zu schützen, verlassen sich Aktivisten die für
+	    eine Sache kämpfen die Sie unterstützenswert finden auf
+	    GnuPG um ihre Kommunikation zu schützen, und verlassen
+	    sich Anwälte die mit ihren Klienten verkehren auf GnuPG um
+	    ihrer Verschwiegenheitspflicht in unserer digitalen Welt
+	    nachzukommen.  Weiterhin verlassen sich Betriebsysteme
+	    basierend auf Freier Software auf GnuPG um ihre
+	    Softwareaktualisierungen zu verifizieren.
 	  </p>
-	  <p class="text-justify" style="font-size: 22px;">Si vous êtes aussi convaincu que
-	    nous le sommes que notre travail est essentiel pour protéger la
-	    démocratie et la vie privée, alors <strong>aidez-nous à le
-	    poursuivre en restant indépendants.</strong></p>
+	  <p class="text-justify" style="font-size: 22px;">Falls Sie
+	  &mdash;wie wir&mdash; überzeugt sind, dass diese Arbeit
+	  essenziell ist um Demokratie und Privatsphäre zu schützen,
+	  dann <strong>helfen Sie uns bitte unsere Arbeit fortzusetzen
+	  und unabhängig zu bleiben</strong>.</p>
 	</div>
       </div>
     </div>
@@ -345,7 +368,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
       <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1">
-            <h2>Ce que nous projetons de faire</h2>
+            <h2>Was wir planen</h2>
 	  </div>
 	</div>
 	<div class="row goals is-table-row">
@@ -353,49 +376,51 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    <div class="row">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-1">
-		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Maintenance</h3>
-		  <p>Notre première priorité est d'assurer le fonctionnement pérenne
-		    de GnuPG.  C'est à dire réagir aux rapport de bogues, traiter
-		    les problèmes de sécurité, et rester à jour vis-à-vis des
-		    meilleures pratiques en matière de chiffrement.</p>
+		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Wartung</h3>
+		  <p>Unsere höchste Priorität ist sicherzustellen,
+		    dass GnuPG auch in Zukunft gewartet wird.  Dazu
+		    gehört das Reagieren auf Fehlerberichte,
+		    Sicherheitsprobleme zu beheben und mit dem
+		    neuesten Stand der Kryptographie mitzuhalten.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-3">
-		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/>Gnuk</h3>
-		  <p>Le <a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
-		    est un jeton de sécurité développé par Niibe, dont le matériel
-		    et logiciel sont tous deux libres.
-		    Nous voulons nous investir plus dans sa production et sa
-		    distribution.</p>
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> Gnuk</h3>
+		  <p>Das Gnuk Sicherheitstoken besteht komplett aus
+        Freier Software. Auch das Hardwaredesign, entwickelt
+        von Niibe, ist frei verfügbar.  Wir planen, mehr
+        in seine Produktion und seinen Vertrieb zu investieren.</p>
 		</div>
 	      </div>
 	    </div>
 	    <div class="row match-my-cols">
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-2">
-		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Livre</h3>
-		  <p>Nous voulons une meilleure documentation.  Parmi les
-		    principaux projets dans cette direction se trouve un livre
-		    que nous avons commencé à écrire, intitulé
-		    <i>« An Advanced Introduction to GnuPG »</i>, qui expliquera
-		    comment GnuPG fonctionne, et comment l'utiliser au mieux.
-		    Cet ouvrage s'adresse aux formateurs en sécurité informatique,
-		    aux développeurs voulant intégrer GnuPG dans leurs programmes,
-		    ainsi qu'aux utilisateurs enthousiastes.</p>
+		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Buch</h3>
+		  <p>Wir möchten die Dokumentation verbessern.
+		    Insbesondere arbeiten wir an einem Buch mit dem
+		    Titel <i>An Advanced Introduction to GnuPG</i>
+		    &mdash; <i>Eine Fortgeschrittene Einführung in
+		    GnuPG</i> &mdash; das erläutert wie GnuPG
+		    funktioniert und wie man es am besten einsetzt.
+		    Die Zielgruppen sind Trainer, die Fortbildungen in
+		    digitaler Sicherheit anbieten, Programmierer, die
+		    GnuPG in ihre Anwendungen einbetten und
+		    Enthusiasten.</p>
 		</div>
 	      </div>
 	      <div class="col-xs-12 col-sm-6">
 		<div class="goal goal-4">
-		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Meilleur écosystème</h3>
-		  <p>Peu de gens utilisent GnuPG directement.  La plupart
-		    interagissent avec par l'intermédiaire d'un autre outil.
-		    Nous voulons aider les développeurs de ces outils à améliorer
-		    l'intégration de GnuPG.  En particulier, nous voulons nous
-		    assurer que <a href="https://gpgtools.org/">GPGTools</a>, le
-		    module d'extension GnuPG du client de messagerie d'Apple,
-		    fonctionne dès qu'une nouvelle version de macOS est
-		    publiée.</p>
+		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Größeres Ökosystem</h3>
+		  <p>Die meisten Leute nutzen GnuPG nicht direkt,
+        sondern durch Werkzeuge und Plugins.
+		    Wir wollen die Entwickler solcher Programme
+        unterstützen, um die Integration von GnuPG zu
+		    verbessern.  Insbesondere möchten wir
+		    sicherstellen, dass das GPG-Plugin für
+		    Apple's Mailprogramm (GPGTools) mit jeder neuen
+        Version von macOS funktioniert.</p>
 		</div>
 	      </div>
 	    </div>
@@ -407,7 +432,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
       <div class="container">
 	<div class="row">
-	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Ce que les autres disent au sujet de GnuPG</h2></div>
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Was andere über GnuPG sagen</h2></div>
 	</div>
 	<div class="row">
 	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
@@ -428,12 +453,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est la manière dont je communique le plus souvent avec
-			    les gens qui sont dans le besoin de part le monde. »
+			    “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -446,12 +472,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Au final nous sommes des avocats, et donc nous allons
-			    échanger des documents et autres courriels, et au cœur de cela&mdash;la sécurité pour ça est GPG.”
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">avocat</div>
+			    <div class="card-title">Anwalt</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -463,17 +491,21 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Je parlais <!--récemment--> avec une source <!-- à propos
-			    d'une potentielle information--> en Russie.  Je lui ai montré
-			    comment utiliser GPG, et il vient de m'envoyer son premier
-			    courriel chiffré, disant <!--à la fin--> "Merci mille fois,
-			    ça m'a fait vraiment plaisir, ça me donne l'impression que
-			    vous vous souciez que je sois en sécurité." »
+			  <div class="card-quote">
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -493,18 +525,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Que vous ayez une clé GPG ou non, que vous envoyez des
-			    messages chiffrés ou non, vous dépendez de GPG pour vous
-			    assurer que vous mises à jour logicielles fonctionnent comme
-			    vous vous y attendiez. »
-			    <!-- Vous dépendez également de tout un tat d'autres choses,
-			    mais sans GPG le reste n'aurait au final pas vraiment
-			    d'importance. -->
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmor</div>
-			    <!-- <div class="card-title">développeur Debian</div> -->
-			    <div class="card-title">technologue</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -517,13 +551,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est vital pour protéger certaines conversations entre
-			    avocat·e·s et leurs client·e·s. »
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-title">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -535,15 +570,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG fait <!-- a&mdash;du moins la manière dont je le
-			    décris&mdash;--> partie intégrante du petit déjeuner
-			    équilibré de tout reporteur, particulièrement de celles et
-			    ceux qui veulent protéger leurs sources, et être joignable
-			    pour des fuites ou autres chose de cette nature. »
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">directoire de la sécurité</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -562,16 +598,18 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Les journalistes que nous servons ont confiance que nous
-			    connaissons les meilleurs manières de les protéger.  Et notre
-			    utilisation des méthodes les plus sécurisées, ainsi que des
-			    outils les plus pratiques disponibles, comme GPG, remplissent
-			    notre devoir de les protéger. »
+			  <div class="card-quote">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">technologue</div>
+			    <div class="card-title">Staff Technologist</div>
 			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
 			  </div>
 			</div>
@@ -584,13 +622,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Nous nous sentons en sécurité avec GPG pour protéger les
-			    données des étudiants lorsque nous échanges leurs dossiers
-			    avec d'autres universités.  C'est très confortable. »
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen, um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-title">2U</div>
 			  </div>
 			</div>
@@ -603,13 +643,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Je pense à GPG comme d'un outil de base dont nous aurions tous
-			    besoin dans l'hypothèse d'un gouvernement autonome fonctionnel
-			    aux États-Unis ou ailleurs à l'ère numérique. »
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -629,15 +671,17 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    « En temps qu'organe de presse, nous sommes formés à utiliser GPG.
-			    C'est la sécurité de vos sources qui est en jeu, lorsque
-			    vous quittez le pays pour publier ce scoop explosif
-			    alors que le gouvernement est à la recherche du lanceur
-			    l'alerte qui vous a révélé cette information primordiale. »
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -650,14 +694,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Nous [à SecureDrop] avons décidé d'utiliser GPG plutôt que
-			    d'autres alternatives, en grande partie dû au fait que GPG est
-			    l'outil le plus connu et le plus utilisé pour le chiffrement
-			    asymétrique. »
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">ingénieur logiciel</div>
+			    <div class="card-title">Softwareentwickler</div>
 			    <div class="card-org">Freedom of the Press Foundation</div>
 			  </div>
 			</div>
@@ -670,14 +715,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Lorsque nous avons contacté nos universités pour demander
-			    comment elles voulaient procéder pour un transfert de fichier
-			    sécurisé, il se trouvait qu'elles utilisaient déjà le
-			    chiffrement GPG. »
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -697,14 +742,17 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Personnellement, je pense que GPG est le plus utile en ce qu'il
-			    me permet d'accéder à des gens sans quoi je ne pourrais pas
-			    communiquer avec ni aider ni même relayer leur histoire. »
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-title">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -715,18 +763,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-superlong">
-			    « Mais même si vous êtes absolument certain·e que vous
-			    personnellement n'avez rien à cacher, si vous pensez que
-			    certaines personnes ont des choses à cacher et que c'est une
-			    bonne chose, nous pensons que <!-- vous devriez utilisez ces
-			    technologies, que-->vous devriez utiliser GPG, parce que ça
-			    contribue à protéger ces autres gens qui ont vraiment besoin
-			    d'utiliser GPG. »
+			  <div class="card-quote card-quote-long">
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">technologue général</div>
+			    <div class="card-title">Technologist General</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -739,12 +789,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG n'a pas encore sauvé notre peau, mais le fait est qu'il
-			    est là&mdash;il nous permet de dormir sur nos deux oreilles. »
+			    “GPG hat uns noch nicht den Hintern
+			    gerettet, aber die Tatsache, dass es da
+			    ist&mdash;es lässt uns nachts ruhig
+			    schlafen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">développeur distingué</div>
+			    <div class="card-title">Distinguished Developer</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
@@ -761,7 +813,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarousel" role="button" data-slide="next">
-		    Autres témoignages
+		    Mehr Referenzen
 		  </a>
 		</div>
 	      </div>
@@ -784,12 +836,13 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est la manière dont je communique le plus souvent avec
-			    les gens qui sont dans le besoin de part le monde. »
-			  </div>
+          “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
+        </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -802,12 +855,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Au final nous sommes des avocats, et donc nous allons
-			    échanger des documents et autres courriels, et au cœur de cela&mdash;la sécurité pour ça est GPG.”
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">avocat</div>
+			    <div class="card-title">Anwalt</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -827,16 +882,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    « Je parlais <!--récemment--> avec une source <!-- à propos
-			    d'une potentielle information--> en Russie.  Je lui ai montré
-			    comment utiliser GPG, et il vient de m'envoyer son premier
-			    courriel chiffré, disant <!--à la fin--> "Merci mille fois,
-			    ça m'a fait vraiment plaisir, ça me donne l'impression que
-			    vous vous souciez que je sois en sécurité." »
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -849,18 +908,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Que vous ayez une clé GPG ou non, que vous envoyez des
-			    messages chiffrés ou non, vous dépendez de GPG pour vous
-			    assurer que vous mises à jour logicielles fonctionnent comme
-			    vous vous y attendiez. »
-			    <!-- Vous dépendez également de tout un tat d'autres choses,
-			    mais sans GPG le reste n'aurait au final pas vraiment
-			    d'importance. -->
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmor</div>
-			    <!-- <div class="card-title">développeur Debian</div> -->
-			    <div class="card-title">technologue</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
 			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
@@ -880,13 +941,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est vital pour protéger certaines conversations entre
-			    avocat·e·s et leurs client·e·s. »
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-title">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -898,15 +960,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG fait <!-- a&mdash;du moins la manière dont je le
-			    décris&mdash;--> partie intégrante du petit déjeuner
-			    équilibré de tout reporteur, particulièrement de celles et
-			    ceux qui veulent protéger leurs sources, et être joignable
-			    pour des fuites ou autres chose de cette nature. »
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">directoire de la sécurité</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -925,16 +988,18 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Les journalistes que nous servons ont confiance que nous
-			    connaissons les meilleurs manières de les protéger.  Et notre
-			    utilisation des méthodes les plus sécurisées, ainsi que des
-			    outils les plus pratiques disponibles, comme GPG, remplissent
-			    notre devoir de les protéger. »
+			  <div class="card-quote">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">technologue</div>
+			    <div class="card-title">Staff Technologist xxx</div>
 			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
 			  </div>
 			</div>
@@ -947,14 +1012,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Nous nous sentons en sécurité avec GPG pour protéger les
-			    données des étudiants lorsque nous échanges leurs dossiers
-			    avec d'autres universités.  C'est très confortable. »
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
-			    <div class="card-org">2U</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-title">2U</div>
 			  </div>
 			</div>
 		      </div>
@@ -973,13 +1040,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Je pense à GPG comme d'un outil de base dont nous aurions tous
-			    besoin dans l'hypothèse d'un gouvernement autonome fonctionnel
-			    aux États-Unis ou ailleurs à l'ère numérique. »
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
+			    <div class="card-title">Geschäftsführerin</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -991,16 +1060,18 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-superlong">
-			    « En temps qu'organe de presse, nous sommes formés à utiliser GPG.
-			    C'est la sécurité de vos sources qui est en jeu, lorsque
-			    vous quittez le pays pour publier ce scoop explosif
-			    alors que le gouvernement est à la recherche du lanceur
-			    l'alerte qui vous a révélé cette information primordiale. »
+			  <div class="card-quote card-quote-long">
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -1020,14 +1091,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Nous [à SecureDrop] avons décidé d'utiliser GPG plutôt que
-			    d'autres alternatives, en grande partie dû au fait que GPG est
-			    l'outil le plus connu et le plus utilisé pour le chiffrement
-			    asymétrique. »
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">ingénieur logiciel</div>
+			    <div class="card-title">Softwareentwickler</div>
 			    <div class="card-org">Freedom of the Press Foundation</div>
 			  </div>
 			</div>
@@ -1040,14 +1112,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Lorsque nous avons contacté nos universités pour demander
-			    comment elles voulaient procéder pour un transfert de fichier
-			    sécurisé, il se trouvait qu'elles utilisaient déjà le
-			    chiffrement GPG. »
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -1067,14 +1139,17 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Personnellement, je pense que GPG est le plus utile en ce qu'il
-			    me permet d'accéder à des gens sans quoi je ne pourrais pas
-			    communiquer avec ni aider ni même relayer leur histoire. »
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-org">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -1086,17 +1161,19 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
-			    « Mais même si vous êtes absolument certain·e que vous
-			    personnellement n'avez rien à cacher, si vous pensez que
-			    certaines personnes ont des choses à cacher et que c'est une
-			    bonne chose, nous pensons que <!-- vous devriez utilisez ces
-			    technologies, que-->vous devriez utiliser GPG, parce que ça
-			    contribue à protéger ces autres gens qui ont vraiment besoin
-			    d'utiliser GPG. »
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">technologue général</div>
+			    <div class="card-title">Technologist General</div>
 			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
@@ -1112,7 +1189,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		      Previous
 		    </a> -->
 		<a class="btn btn-success" href="#myCarouselMedium" role="button" data-slide="next">
-		  Autres témoignages
+		  Mehr Referenzen
 		</a>
 	      </div>
 	    </div><!-- /.carousel -->
@@ -1134,13 +1211,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est la manière dont je communique le plus souvent avec
-			    les gens qui sont dans le besoin de part le monde. »
+			   “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1159,13 +1237,15 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Au final nous sommes des avocats, et donc nous allons
-			    échanger des documents et autres courriels, et au cœur de cela&mdash;la sécurité pour ça est GPG.”
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Alex Abdo</div>
-			    <div class="card-title">avocat</div>
-			    <div class="card-org">American Civil Liberties Union</div>
+			    <div class="card-title">Anwalt</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1184,16 +1264,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    « Je parlais <!--récemment--> avec une source <!-- à propos
-			    d'une potentielle information--> en Russie.  Je lui ai montré
-			    comment utiliser GPG, et il vient de m'envoyer son premier
-			    courriel chiffré, disant <!--à la fin--> "Merci mille fois,
-			    ça m'a fait vraiment plaisir, ça me donne l'impression que
-			    vous vous souciez que je sois en sécurité." »
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
@@ -1213,19 +1297,21 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    « Que vous ayez une clé GPG ou non, que vous envoyez des
-			    messages chiffrés ou non, vous dépendez de GPG pour vous
-			    assurer que vous mises à jour logicielles fonctionnent comme
-			    vous vous y attendiez. »
-			    <!-- Vous dépendez également de tout un tat d'autres choses,
-			    mais sans GPG le reste n'aurait au final pas vraiment
-			    d'importance. -->
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Daniel Kahn Gillmor</div>
-			    <!-- <div class="card-title">développeur Debian</div> -->
-			    <div class="card-title">technologue</div>
-			    <div class="card-org">American Civil Liberties Union</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1244,13 +1330,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG est vital pour protéger certaines conversations entre
-			    avocat·e·s et leurs client·e·s. »
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-title">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -1262,23 +1349,23 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  <!-- Slide 6 XS -->
 
 		  <div class="row">
-
 		    <div class="col-xs-12">
 		      <div class="card">
 			<div class="card-img">
 			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
-			    « GPG fait <!-- a&mdash;du moins la manière dont je le
-			    décris&mdash;--> partie intégrante du petit déjeuner
-			    équilibré de tout reporteur, particulièrement de celles et
-			    ceux qui veulent protéger leurs sources, et être joignable
-			    pour des fuites ou autres chose de cette nature. »
+			  <div class="card-quote card-quote-long">
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Jason Reich</div>
-			    <div class="card-title">directoire de la sécurité</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
 			    <div class="card-org">BuzzFeed</div>
 			  </div>
 			</div>
@@ -1297,17 +1384,19 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Les journalistes que nous servons ont confiance que nous
-			    connaissons les meilleurs manières de les protéger.  Et notre
-			    utilisation des méthodes les plus sécurisées, ainsi que des
-			    outils les plus pratiques disponibles, comme GPG, remplissent
-			    notre devoir de les protéger. »
+			  <div class="card-quote card-quote-superlong">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Tom Lowenthal</div>
-			    <div class="card-title">technologue</div>
-			    <div class="card-org">Committee to Protect Journalists</div>
+			    <div class="card-title">Staff Technologist xxx</div>
+			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1325,22 +1414,24 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Nous nous sentons en sécurité avec GPG pour protéger les
-			    données des étudiants lorsque nous échanges leurs dossiers
-			    avec d'autres universités.  C'est très confortable. »
+			  <div class="card-quote">
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
-			    <div class="card-org">2U</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-title">2U</div>
 			  </div>
 			</div>
 		      </div>
 		    </div>
 		  </div>
-
 		</div>
+
 		<div class="item">
 		  <!-- Slide 9 XS -->
 
@@ -1352,26 +1443,27 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « Je pense à GPG comme d'un outil de base dont nous aurions tous
-			    besoin dans l'hypothèse d'un gouvernement autonome fonctionnel
-			    aux États-Unis ou ailleurs à l'ère numérique. »
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Cindy Cohn</div>
-			    <div class="card-title">directrice exécutive</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
 		      </div>
 		    </div>
 		  </div>
-		</div>
 
+		</div>
 		<div class="item">
 		  <!-- Slide 10 XS -->
 
 		  <div class="row">
-
 		    <div class="col-xs-12">
 		      <div class="card">
 			<div class="card-img">
@@ -1379,23 +1471,25 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
-			    « En temps qu'organe de presse, nous sommes formés à u&shy;ti&shy;li&shy;ser GPG.
-			    C'est la sé&shy;cu&shy;ri&shy;té de vos sources qui est en jeu, lors&shy;que
-			    vous quit&shy;tez le pays pour pu&shy;blier ce scoop ex&shy;plo&shy;sif
-			    alors que le gou&shy;ver&shy;ne&shy;ment est à la re&shy;cher&shy;che du lanceur
-			    l'alerte qui vous a révélé cette in&shy;for&shy;ma&shy;tion pri&shy;mor&shy;dia&shy;le. »
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Sheera Frenkel</div>
-			    <div class="card-title">correspondante à l'étranger</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
 			    <div class="card-org">BuzzFeed News</div>
 			  </div>
 			</div>
 		      </div>
 		    </div>
 		  </div>
-
 		</div>
+
 		<div class="item">
 		  <!-- Slide 11 XS -->
 
@@ -1406,15 +1500,16 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote">
-			    « Nous [à SecureDrop] avons décidé d'utiliser GPG plutôt que
-			    d'autres alternatives, en grande partie dû au fait que GPG est
-			    l'outil le plus connu et le plus utilisé pour le chiffrement
-			    asymétrique. »
+			  <div class="card-quote card-quote-long">
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Noah Vesely</div>
-			    <div class="card-title">ingénieur logiciel</div>
+			    <div class="card-title">Softwareentwickler</div>
 			    <div class="card-org">Freedom of the Press Foundation</div>
 			  </div>
 			</div>
@@ -1427,22 +1522,21 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		  <!-- Slide 12 XS -->
 
 		  <div class="row">
-
 		    <div class="col-xs-12">
 		      <div class="card">
 			<div class="card-img">
 			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
 			</div>
 			<div class="card-text">
-			  <div class="card-quote card-quote-long">
-			    « Lorsque nous avons contacté nos universités pour demander
-			    comment elles voulaient procéder pour un transfert de fichier
-			    sécurisé, il se trouvait qu'elles utilisaient déjà le
-			    chiffrement GPG. »
+			  <div class="card-quote">
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Arthur Jordan</div>
-			    <div class="card-title">vice président aux technologies de l'information</div>
+			    <div class="card-title">Vizepräsident der IT</div>
 			    <div class="card-org">2U</div>
 			  </div>
 			</div>
@@ -1462,14 +1556,17 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-long">
-			    « Personnellement, je pense que GPG est le plus utile en ce qu'il
-			    me permet d'accéder à des gens sans quoi je ne pourrais pas
-			    communiquer avec ni aider ni même relayer leur histoire. »
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Geoffrey King</div>
-			    <div class="card-title">avocat spécialiste du 1er amendement</div>
-			    <div class="card-title">journaliste</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
 			  </div>
 			</div>
 		      </div>
@@ -1488,18 +1585,20 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote card-quote-superlong">
-			    « Mais même si vous êtes ab&shy;so&shy;lu&shy;ment certain·e que vous
-			    per&shy;son&shy;nel&shy;le&shy;ment n'avez rien à cacher, si vous pensez que
-			    cer&shy;tai&shy;nes per&shy;son&shy;nes ont des choses à cacher et que c'est une
-			    bonne chose, nous pensons que <!-- vous devriez utilisez ces
-			    technologies, que-->vous devriez utiliser GPG, parce que ça
-			    con&shy;tri&shy;bue à pro&shy;té&shy;ger ces autres gens qui ont vrai&shy;ment besoin
-			    d'utiliser GPG. »
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">Leez</div>
-			    <div class="card-title">technologue général</div>
-			    <div class="card-org">Electronic Frontier Foundation</div>
+			    <div class="card-title">Technologist General</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
 			  </div>
 			</div>
 		      </div>
@@ -1518,12 +1617,14 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 			</div>
 			<div class="card-text">
 			  <div class="card-quote">
-			    « GPG n'a pas encore sauvé notre peau, mais le fait est qu'il
-			    est là&mdash;il nous permet de dormir sur nos deux oreilles. »
+			    “GPG hat uns noch nicht den Hintern
+			    gerettet, aber die Tatsache, dass es da
+			    ist&mdash;es lässt uns nachts ruhig
+			    schlafen.”
 			  </div>
 			  <div class="card-meta">
 			    <div class="card-name">John Pershing</div>
-			    <div class="card-title">développeur distingué</div>
+			    <div class="card-title">Distinguished Developer</div>
 			    <div class="card-org">1010data</div>
 			  </div>
 			</div>
@@ -1538,7 +1639,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 		    </a> -->
 		<div class="center-block">
 		  <a class="btn btn-success" href="#myCarouselSmall" role="button" data-slide="next">
-		    Autres témoignages
+		    Mehr Referenzen
 		  </a>
 		</div>
 	      </div>
@@ -1557,7 +1658,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
     <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
       <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>Clips</h2>
+	  <h2>Videos</h2>
 	  <div class="row">
 	    <div class="col-lg-10 col-lg-offset-0">
               <ul>
@@ -1613,9 +1714,107 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
                   from <a href="https://2u.com/">2U</a>
               </ul>
 	    </div>
+	  </div>
 	</div>
       </div>
     </div>
+
+    <div id="team" class="camp-gutter container">
+      <div class="row">
+	<div class="col-xs-12">
+	  <h2>Wer wir sind</h2>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Werner -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Bild von Werner">
+	    </div>
+	    <div class="media-body">
+	      <strong>Werner</strong> gründete GnuPG im Jahr 1997.  Werner
+	      ist seit langem ein Unterstützer von Freier Software und
+	      ein Mitbegründer der FSFE.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Neal -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Bild von Neal">
+	    </div>
+	    <div class="media-body">
+	      <strong>Neal</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Justus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Bild von Justus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Justus</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Marcus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Bild von Marcus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Marcus</strong> hat im Zeitraum von 2001 bis
+	      2012 an GnuPG gearbeitet und ist seit 2017 wieder
+	      eingestiegen um GnuPG auf allen Gebieten zu
+	      unterstützen.
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Kai -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Bild von Kai">
+	    </div>
+	    <div class="media-body">
+	      <strong>Kai</strong> arbeitet seit dem Jahr 2015 an dem Enigmail Projekt.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Gniibe -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Bild von Niibe">
+	    </div>
+	    <div class="media-body">
+	      <strong>Niibe</strong> ist seit langem ein Hacker von
+	      Freier Software und kam im Jahr 2011 zu dem GnuPG
+	      Projekt um an Smart Cards und dem Gnuk Sicherheitstoken
+	      zu arbeiten.
+	    </div>
+	  </div>
+	</div>
+      </div>
 
 </div>
 </div>
@@ -1638,7 +1837,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
   </div>
 </div>
 
-</body>
+  </body>
 </html>
 #+END_HTML
 
