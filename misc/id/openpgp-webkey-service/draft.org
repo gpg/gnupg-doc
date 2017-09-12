@@ -437,6 +437,17 @@ Currently defined keywords are:
                    submitted key will be published immediately without
                    any confirmation request.
 
+- protocol-version :: This keyword can be used to explicitly claim the
+     support of a specific version of the Web Key Service protocol.
+     This is in general not needed but implementations may have
+     workarounds for providers which only support an old protocol
+     version.  If these providers update to a newer version they
+     should add this keyword so that the implementation can disable
+     the workaround.  The value is an integer corresponding to the
+     respective draft revision number.
+
+# Fixme: Add a protocol-version value for the final RFC.
+
 
 More keywords will be defined in updates to this I-D.  There is no
 registry except for this document.  For experimental use of new
