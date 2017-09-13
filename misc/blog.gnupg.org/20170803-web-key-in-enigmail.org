@@ -12,7 +12,7 @@ that we need to evaluate whether we can trust a new public key for each
 new communication partner. Until recently, there wasn't an automatic way to
 securely get the public key of someone you never communicated with.
 
-The [[https://tools.ietf.org/id/draft-koch-openpgp-webkey-service-03.html][Web Key Service]] and the ~--auto-key-retrieve~ &
+The [[https://tools.ietf.org/html/draft-koch-openpgp-webkey-service-04][Web Key Service]] and the ~--auto-key-retrieve~ &
 ~--auto-key-locate~ enhancements available in GnuPG 2.1.16 and beyond.
 
 *** Web Key Service
@@ -91,6 +91,12 @@ If GnuPG is able to retrieve the public key you will see a line that looks
 like that:
 
 ~gpg: automatically retrieved '<your email address>' via WKD~
+
+
+** Update 2017-09-13
+
+  Fixed URL auf the Web Key Service draft and updated to the current
+  -04 version.
 
 [fn:1] As the time of writing only [[https://posteo.de/en][Posteo]] supports
        WKS.
