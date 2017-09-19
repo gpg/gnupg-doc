@@ -6,8 +6,8 @@
 * Financial Overview
 
   This page gives an overview on the financial state of the GnuPG e.V.
-  Note that in general the name of a donors is not public; for larger
-  donations we will however publish that name.  If you have any
+  Note that in general the name of a donor is not public; for larger
+  donations we will however publish the name.  If you have any
   questions on certain transactions, please write to board@.
 
 ** Euro transaction
@@ -37,5 +37,5 @@ shows and other opportunities.
 
 ** Bitcoin transactions
 
-   As of 2017-09-19 we have 5.19 BTC. 21 BTC have already been
+   As of 2017-09-19 we have 5.17 BTC. 21 BTC have already been
    transferred to our Euro account (see above).
