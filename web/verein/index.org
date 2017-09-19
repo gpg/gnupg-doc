@@ -24,10 +24,13 @@ office Düsseldorf-Altstadt confirmed our charitable state on
 
 ** Menu
 
+- [[file:members.org][Members]]
 - [[file:finances.org][Financial overview]]
 - {{{atgit(legal/constitution.de.pdf,constitution)}}} [German]
-- {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation].
-- {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}.
+- {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation]
+- {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}
+  [German]
+
 
 
 # eof
