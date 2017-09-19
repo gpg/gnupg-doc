@@ -10,31 +10,32 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.0
-#+macro: gnupg22_date 2017-08-28
-#+macro: gnupg22_size 6379k
-#+macro: gnupg22_sha1 36ee693d0b2ec529ecf53dd6d397cc38ba71c0a7
-#+macro: gnupg22_sha2 d4514a0be0f7a1ff263193330019eb4b53c82f0f5e230af3c14df371271a45e6
+#+macro: gnupg22_ver  2.2.1
+#+macro: gnupg22_date 2017-09-19
+#+macro: gnupg22_size 6384k
+#+macro: gnupg22_sha1 5455373fd7208b787f319027de2464721cdd4413
+#+macro: gnupg22_sha2 34d70cd65b9c95f3f2f90a9f5c1e0b6a0fe039a8d685e2d66d69c33d1cbf62fb
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.0_20170828
-#+macro: gnupg22_w32_date 2017-08-28
-#+macro: gnupg22_w32_size 3797k
-#+macro: gnupg22_w32_sha1 7b0cf3912b86a6bd7655026276984a34a248e625
-#+macro: gnupg22_w32_sha2 e614d00bf84f68094af6cdcfbff5423b74340885c4034d407c81d5d92272127c
+#+macro: gnupg22_w32_ver  2.2.1_20170919
+#+macro: gnupg22_w32_date 2017-09-19
+#+macro: gnupg22_w32_size 3799k
+#+macro: gnupg22_w32_sha1 bcf1905655e52e2eec794bcbba72485f7b9ed2d3
+#+macro: gnupg22_w32_sha2 a8fa4ef2168461310b2350b446f219c05003e3fc29f2901bdd188f7fae9a4cbd
 
 
 # temporary keep it as "gnupg21".  In the future we will use the name of
 # the stable branch even for the development versions.
-#+macro: gnupg21_ver  2.2.0
-#+macro: gnupg21_date 2017-08-28
-#+macro: gnupg21_size 6379k
-#+macro: gnupg21_sha1 36ee693d0b2ec529ecf53dd6d397cc38ba71c0a7
-#+macro: gnupg21_sha2 d4514a0be0f7a1ff263193330019eb4b53c82f0f5e230af3c14df371271a45e6
-#+macro: gnupg21_w32_ver  2.2.0_20170828
-#+macro: gnupg21_w32_date 2017-08-28
-#+macro: gnupg21_w32_size 3797k
-#+macro: gnupg21_w32_sha1 7b0cf3912b86a6bd7655026276984a34a248e625
-#+macro: gnupg21_w32_sha2 e614d00bf84f68094af6cdcfbff5423b74340885c4034d407c81d5d92272127c
+#+macro: gnupg21_ver  2.2.1
+#+macro: gnupg21_date 2017-09-19
+#+macro: gnupg21_size 6384k
+#+macro: gnupg21_sha1 5455373fd7208b787f319027de2464721cdd4413
+#+macro: gnupg21_sha2 34d70cd65b9c95f3f2f90a9f5c1e0b6a0fe039a8d685e2d66d69c33d1cbf62fb
+#+macro: gnupg21_branch  STABLE-BRANCH-2-2
+#+macro: gnupg21_w32_ver  2.2.1_20170919
+#+macro: gnupg21_w32_date 2017-09-19
+#+macro: gnupg21_w32_size 3799k
+#+macro: gnupg21_w32_sha1 bcf1905655e52e2eec794bcbba72485f7b9ed2d3
+#+macro: gnupg21_w32_sha2 a8fa4ef2168461310b2350b446f219c05003e3fc29f2901bdd188f7fae9a4cbd
 
 
 #
@@ -152,11 +153,11 @@
 #
 # NTBTLS
 #
-#+macro: ntbtls_ver  0.1.1
-#+macro: ntbtls_date 2017-03-16
-#+macro: ntbtls_size 333k
-#+macro: ntbtls_sha1 6c0aacc43f7cd0695ad21463d94e7baf99215149
-#+macro: ntbtls_sha2 2d274ce64d2ac7613ed8f7ed7094332d50ac16916d1ebf1fc87b1018df146234
+#+macro: ntbtls_ver  0.1.2
+#+macro: ntbtls_date 2017-09-19
+#+macro: ntbtls_size 334k
+#+macro: ntbtls_sha1 05cf57cd8400b338b94bdce7287397c24315ac49
+#+macro: ntbtls_sha2 8240db84e50c2351b19eb8064bdfd4d25e3c157d37875c62e335df237d7bdce7
 
 
 #
