@@ -30,7 +30,7 @@
    co-founder of the [[http://fsfe.org][FSFE]].  With the support of his brother he founded
    [[https://g10code.com][g10^code]] GmbH in 2001 to make GnuPG development his profession.
    Werner is full time employed by g10^code.  He is a founding member
-   and the current chairperson of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   and the current chairperson of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -64,7 +64,7 @@
    on GNU/Hurd, he also has a diploma degree in mathematics, and was
    part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
    related software from 2001 to 2012 and for 7 months in 2017.  He is
-   a founding member of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -80,7 +80,7 @@
    project in 2011 and soon took over the development of the smartcard
    related code.  He is also the person behind the [[http://www.fsij.org/gnuk/][Gnuk Token]] and the
    [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][MEP game]].  Niibe’s work on GnuPG is financially supported by
-   g10^code.  He is a founding member of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   g10^code.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -107,7 +107,7 @@
 
    Neal started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  We was full time employed by g10^code
-   from 2015 to 2017.  He is a founding member of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -121,7 +121,7 @@
 
    Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
    time employed by g10^code from 2015 to 2017.  He is a founding
-   member of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -135,7 +135,7 @@
 
    Justus started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  We was full time employed by g10^code
-   from 2015 to 2017.  He is a founding member of the [[file:~/s/gnupg-doc/web/verein/index.org][GnuPG e.V.]]
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
