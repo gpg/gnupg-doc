@@ -25,10 +25,9 @@ be freely used, modified and distributed under the terms of the
 The current version of GnuPG is {{{gnupg22_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
 
-[[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the older GnuPG 2.0 branch.  It
-is nicely integrated into an installer and features several frontends
-as well as English and German manuals.
-
+[[https://www.gpg4win.org][Gpg4win]] is a Windows version of GnuPG featuring a context menu tool, a
+crypto manager, and an Outlook plugin to send and receive standard
+PGP/MIME mails.  The current version of Gpg4win is {{{gpg4win_ver}}}.
 
 * Reconquer your privacy
 

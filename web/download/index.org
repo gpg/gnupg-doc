@@ -59,7 +59,7 @@
    | [[../software/gpgme/index.org][GPGME]]        | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |        {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
    | [[../software/gpa/index.org][GPA]]          | {{{gpa_ver}}}          | {{{gpa_date}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | GnuPG 2.0    | {{{gnupg20_ver}}}      | {{{gnupg20_date}}}      |        {{{gnupg20_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
+   | GnuPG 2.0    | {{{gnupg20_ver}}}      | {{{gnupg20_date}}}      |      {{{gnupg20_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | GnuPG 1.4    | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
    | Dirmngr 1    | {{{dirmngr_ver}}}      | {{{dirmngr_date}}}      |      {{{dirmngr_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
@@ -105,11 +105,11 @@
    | OS      | Where              | Description                              |
    |---------+--------------------+------------------------------------------|
    |         | <18>               |                                          |
-   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Installers for /GnuPG 2.0/               |
+   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/ |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/ |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/         |
    | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project      |
-   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG 2.1/                |
+   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                    |
    | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG is part of Debian                  |
    | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS            |
    | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG framework               |
