@@ -63,7 +63,7 @@
    joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
    on GNU/Hurd, he also has a diploma degree in mathematics, and was
    part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
-   related software from 2001 to 2012 and for 7 months in 2017.  He is
+   related software from 2001 to 2012 and for 7 months in 2017.  He was
    a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>

@@ -18,10 +18,13 @@ active in development or in evangelizing end-to-end encryption.
   - Justus Winter
   - Kai Michaelis
   - Kristian Fiskerstrand
-  - Marcus Brinkmann
   - Neal Walfied
   - Werner Koch
   - Yutaka Niibe
+
+*** Former members
+
+  - Marcus Brinkmann
 
 ** The supporting members
 
