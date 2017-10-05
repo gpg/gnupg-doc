@@ -135,6 +135,13 @@ img.rfloat {
 }
 
 
+/* Use an outer div with this class to move an org figure to the left.
+   Note that org uses a fixed class for a figure and we use this hack
+   to override it. */
+div.figure-left {
+    float: left;
+}
+
 div.figure {
     float: right;
     margin-right:0 !important;
