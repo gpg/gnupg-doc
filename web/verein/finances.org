@@ -26,6 +26,9 @@
 | 2017-09-11 | 38650.36 |        |           | Exchange of 10 BTC       |
 | 2017-09-14 | 25868.08 |        | 139326.35 | Exchange of 10 BTC       |
 | 2017-09-19 |          | 119.00 | 139207.35 | Design postcards         |
+| 2017-09-29 |          |  12.00 |           | Banking card             |
+| 2017-09-29 |          |   6.30 | 139189.05 | Bank fees                |
+| 2017-10-06 | 18197.53 |        | 157386.58 | Exchange of 5 BTC        |
 
 
 The 59.000 € from the Wau Holland Stiftung have been collected by them
@@ -37,5 +40,5 @@ shows and other opportunities.
 
 ** Bitcoin transactions
 
-   As of 2017-09-19 we have 5.17 BTC. 21 BTC have already been
+   As of 2017-10-06 we own 0.12 BTC.  26 BTC have been
    transferred to our Euro account (see above).
