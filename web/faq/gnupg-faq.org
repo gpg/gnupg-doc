@@ -26,6 +26,7 @@ very litigious.
    :END:
 
 - Linux is a trademark of Linus Torvalds.
+- GNU is a trademark of the Free Software Foundation.
 - Macintosh, OS X and Mac OS X are all trademarks of the Apple
   Corporation.
 - PGP is a trademark of Symantec Corporation.
@@ -148,8 +149,7 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-February 2016.
-
+October 2017.
 
 * General questions
   :PROPERTIES:
@@ -261,6 +261,14 @@ Linux systems.  The good news is that it’s usually installed by
 default, so nothing needs to be downloaded!
 
 
+**** … for Android?
+     :PROPERTIES:
+     :CUSTOM_ID: get_gnupg_android
+     :END:
+
+Both OpenKeychain and the Android Privacy Guard are available in the
+Android app store.
+
 **** … for Debian GNU/Linux or Ubuntu?
      :PROPERTIES:
      :CUSTOM_ID: get_gnupg_debian
@@ -275,8 +283,6 @@ At a terminal window type =sudo apt-get install gnupg2=.
      :END:
 
 At a terminal window type =sudo zypper install gnupg2=.
-
-installation.
 
 
 **** … for Fedora, CentOS, or RHEL?
@@ -352,9 +358,9 @@ binary is required to give you the source code upon your request.
    :END:
 
 The word “free” should evoke ideas of liberty, not price.  An awful
-lot of the software industry does not respect your freedoms: your
-freedom to use the software for any purpose, your freedom to study and
-learn from how it works, your freedom to share it with others who
+lot of the software industry does not <a href="https://gnu.org/philosophy/free-software-even-more-important.html">respect your freedoms</a>:
+your freedom to use the software for any purpose, your freedom to study
+and learn from how it works, your freedom to share it with others who
 might benefit from it, and more.  Free Software is the antithesis of
 this: Free Software is meant to respect your rights.  You may use the
 software for any purpose: you may inspect and modify the source code:
@@ -711,9 +717,9 @@ is actively developed.
     is a known bug and people are working on it.
 
 
-** … Linux or FreeBSD?
+** … Free UNIX systems?
    :PROPERTIES:
-   :CUSTOM_ID: email_clients_linux
+   :CUSTOM_ID: email_clients_free_unix
    :END:
 
 | Name        | Plugins        | see |
