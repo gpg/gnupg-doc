@@ -1,6 +1,7 @@
 #+TITLE: GnuPG - Integrity Check
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
+#+GPGWEB-NEED-SWDB
 #+OPTIONS:  ^:{}
 
 * Integrity Check
@@ -15,10 +16,10 @@
 
   If you already have a trusted version of GnuPG installed, you can
   check the supplied signature.  For example, to check the signature
-  of the file gnupg-{{{gnupg_ver}}}.tar.bz2, you can use this command:
+  of the file gnupg-{{{gnupg22_ver}}}.tar.bz2, you can use this command:
 
   {{{begin_example}}}
-  $ gpg {{{twodashes}}}verify gnupg-{{{gnupg_ver}}}.tar.bz2.sig gnupg-{{{gnupg_ver}}}.tar.bz2
+  $ gpg {{{twodashes}}}verify gnupg-{{{gnupg22_ver}}}.tar.bz2.sig gnupg-{{{gnupg22_ver}}}.tar.bz2
   {{{end_example}}}
 
   *Note: you should never use a GnuPG version you just downloaded to
@@ -85,18 +86,18 @@
    for an attacker to trick you into installing a modified version of
    the software.
 
-   Assuming you downloaded the file gnupg-{{{gnupg_ver}}}.tar.bz2, you
+   Assuming you downloaded the file gnupg-{{{gnupg22_ver}}}.tar.bz2, you
    can run the =sha1sum= command like this:
 
    {{{begin_chksum}}}
-   sha1sum gnupg-{{{gnupg_ver}}}.tar.bz2
+   sha1sum gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{end_chksum}}}
 
    and check that the output matches the SHA-1 checksum reported on
    this site. An example of a =sha1sum= output is:
 
    {{{begin_chksum}}}
-   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
+   {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{end_chksum}}}
 
 ** List of SHA-1 check-sums
@@ -105,21 +106,21 @@
    that can be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
-   {{{gnupg_sha1}}}  gnupg-{{{gnupg_ver}}}.tar.bz2
-   {{{gnupg21_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
-   {{{gnupg21_w32_sha1}}}  gnupg-w32-{{{gnupg21_w32_ver}}}.exe
-   {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
-   {{{gnupg1_sha1_gz}}}  gnupg-{{{gnupg1_ver}}}.tar.gz
-   {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
+   {{{gnupg22_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
+   {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg21_w32_ver}}}.exe
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
    {{{libassuan_sha1}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
+   {{{ntbtls_sha1}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
    {{{npth_sha1}}}  npth-{{{npth_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
    {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
+   {{{gnupg20_sha1}}}  gnupg-{{{gnupg20_ver}}}.tar.bz2
+   {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
+   {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
    {{{end_chksum}}}
 
 

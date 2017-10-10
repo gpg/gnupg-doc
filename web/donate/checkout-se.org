@@ -1,69 +1,204 @@
+#                                                    -*- html -*-
 #+TITLE: GnuPG - Donate - Checkout using SEPA
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
-* Donate - Checkout using SEPA
-
-  Single Euro Payments Area credit transfers can be used to transfer
-  Euro within the 34 states of the European Union and 6 associated
-  states.
-
 #+BEGIN_HTML
-  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
-   <tr>
-     <td align="right">Name:&nbsp;</td>
-     <td><!--NAME--></td>
-   </tr>
-   <tr>
-     <td align="right">Mail:&nbsp;</td>
-     <td><!--MAIL--></td>
-   </tr>
-   <tr>
-     <td align="right" valign="top">Message:&nbsp;</td>
-     <td><!--MESSAGE_FMT--></td>
-   </tr>
-  </table>
-#+END_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
 
-  Please send your donation to this bank account:
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
 
-#+BEGIN_HTML
-  <table border="0" cellpadding="0" cellspacing="4" id="checkoutSummary">
-   <tr>
-     <td align="right">Owner:&nbsp;</td>
-     <td>g10 Code GmbH</td>
-   </tr>
-   <tr>
-     <td align="right">IBAN:&nbsp;</td>
-     <td>DE76 3015 0200 0002 1086 03</td>
-   </tr>
-   <tr>
-     <td align="right">BIC:&nbsp;</td>
-     <td>WELADED1KSD</td>
-   </tr>
-   <tr>
-     <td align="right">Reference:&nbsp;</td>
-     <td><!--SEPA_REF--></td>
-   </tr>
-   <tr>
-     <td align="right">Amount:&nbsp;</td>
-     <td><!--AMOUNT-->
-         EUR</td>
-   </tr>
-  </table>
-#+END_HTML
+</head>
+  <body lang="<!--LANG-->">
+    <style>
+.control-label {
+  padding-top: 0 !important;
+}
 
-  Take care to give the reference number so that we can match your
-  data with your actual donation and list you as donor if desired.
-  The given reference number expires in 30 days, thus please act in
-  time.  You may send a different amount but please send at least 5
-  Euro to cover our bookkeeping costs.  Using the reference number for
-  recurring donations is also possible.
+.form-control-static {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+.qrcode > svg {
+  max-width: 100%;
+  height: auto;
+}
+    </style>
 
-  *Thank you in advance for your donation.*
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
 
-#+BEGIN_HTML
-  <ul>
-    <li><a href="/index.html">Continue</a></li>
-  </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" alt="GnuPG"
+               src="/share/gnupg-lock-white-250x250.png">
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="camp-gutter container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+      <div class="row">
+	<div class="col-xs-12">
+          <h2>Summary</h2>
+          <p>
+          Single Euro Payments Area credit transfers can be used to transfer
+          Euro within the 34 states of the European Union and 6 associated
+          states.
+          </p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Name</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static"><!--NAME--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Mail</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static"><!--MAIL--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Message</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static"><!--MESSAGE_FMT--></p>
+              </div>
+            </div>
+          </form>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
+          <p>
+          Please send your donation to this bank account:
+          </p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Owner</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static">g10 Code GmbH</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">IBAN</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static">DE76 3015 0200 0002 1086 03</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">BIC</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static">WELADED1KSD</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Reference</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static"><!--SEPA_REF--></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12 col-sm-3 control-label">Amount</label>
+              <div class="col-xs-12 col-sm-9">
+                <p class="form-control-static"><!--AMOUNT--> EUR</p>
+              </div>
+            </div>
+          </form>
+	</div>
+
+        <div class="col-xs-12 col-sm-3">
+          <div class="qrcode text-center">
+            <!--SEPA_QR-->
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
+          <p>
+            For a <strong>recurring donation</strong> please apply the
+            instructions of your bank on how to enter a recurring
+            payment (standing order).
+          </p>
+          <p>
+            Always take care to give
+            <strong>
+              <!--SEPA_REF-->
+            </strong>
+            as reference so that we can match your name with your
+            actual donation and list you as donor if desired.  The
+            given reference number expires in 30 days, thus please act
+            in time.  You may of course send a different amount but
+            please send at least 5 Euro to cover the overhead costs.
+          </p>
+          <p>
+            <strong>Thank you in advance for your donation.</strong>
+          </p>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-12">
+          <p>
+            <a class="btn btn-default btn-sm" href="/donate/index.html">Continue</a>
+          </p>
+	</div>
+      </div>
+
+	</div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid" id="camp-footer">
+      <div class="container">
+        <div class="row">
+          <div id="cpyright">
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+              <img alt="CC-BY-SA 4.0" style="border: 0"
+                    src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+            This web page is
+            Copyright 2017 The GnuPG Project and licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+            <a href="/copying.html">copying</a> for details.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
 #+END_HTML

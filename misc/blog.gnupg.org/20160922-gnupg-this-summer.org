@@ -1,0 +1,183 @@
+# GnuPG this Past Summer
+#+STARTUP: showall
+#+AUTHOR: Neal
+#+DATE: September 22, 2016
+
+** GnuPG this Past Summer
+
+*** Development
+
+As usual, Werner has made a cornucopia of contributions.  He improved
+~--quick-addkey~ and ~--quick-gen-key~, he changed ~gpg-agent~ and
+~dirmngr~ to exit if their sockets disappear, he added an assuan
+logging monitor, he implemented new export and import filters, he did
+some work on ~g13~, he added ~/run/user/UID/gnupg~ sockets, he
+introduced an option (~--recipient-file~) to work directly with keys
+stored in a file, and he made a number of improvements to GPGME
+including adding TOFU support.
+
+The filtering changes allow controlling what packets are imported or
+exported.  For instance, if you want to only keep a single user id
+when exporting a key, you could use:
+
+#+BEGIN_SRC
+  gpg --no-options --import-options import-export       \
+      --import-filter keep-uid='mbox = joe at example.org' \
+      --import  < full-key.pub > key-with-one-uid.pub
+#+END_SRC
+
+More information about this feature is available in his [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-July/031294.html][note]] to the
+GnuPG mailing list or ~gpg~'s documentation.
+
+The ~--recipient-file~ option is an oft-requested feature, which
+allows [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-July/031308.html][working with keys without importing them]].
+
+Werner also fixed a critical bug in the way the mixer in the random
+number generator stirred the pool.  Specifically, the bug allowed an
+attacker who obtains 580 bytes from the standard random number
+generator (RNG) to trivially predict the next 20 bytes of output.
+Fortuitously, [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-August/031507.html][this bug does not affect the default generation of keys]]
+([[https://lists.gnupg.org/pipermail/gnupg-devel/2016-August/031516.html][more details]]).
+
+Justus continued to improve our new test suite for GnuPG.  The
+improvements included not only fixes to the new scheme-based driver,
+but also a bunch of new tests.  A couple of the changes included [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=history;f=tests/gpgscm/scheme.c;h=5a85063eeb3aef98bde640bca11d84173ebb6a51;hb=HEAD][bug
+fixes to TinySCHEME]].  Unfortunately, the upstream developers don't
+appear to be interested in the fixes.
+
+Most of Justus' time recently has been focused not on the test suite,
+but on improving the Python bindings for GPGME.  This work was started
+by Ben McGinnes, who contributed an initial port of the [[https://bitbucket.org/malb/pyme][PyME bindings]]
+to Python 3.  Justus finished this port, restored Python 2
+compatibility, and added more pythonic interfaces (e.g., making
+everything work with objects implementing the buffer protocol like
+byte strings).  The low-level interface has, however, been retained
+and existing applications should continue to work (if not, this is a
+bug, please [[https://bugs.gnupg.org][file a bug report]]).  He also ported the GPGME test suite
+to the Python bindings.  This uncovered a number of latent bugs in the
+bindings, which he fixed.  From our perspective, these are now the
+official Python bindings for GPGME: we've added them to the GPGME
+repository, and we will continue to maintain them in the foreseeable
+future.  Nevertheless, to be more compatible with Python developers'
+work flow, we are also packaging ~pyme3~ for [[https://pypi.python.org/pypi/pyme3][~pypi~]], which means that
+the bindings can be installed using ~pip install pyme3~.  More
+information is available in Justus' [[https://www.gnupg.org/blog/20160921-python-bindings-for-gpgme.html][blog post]].
+
+Justus also set up a Jenkins host for continuous integration.  In
+addition to running ~make check~ for each commit under several
+configurations, it also runs the checks with various sanitizers
+enabled.  This has already prevented a number of minor bugs from
+making it into releases.
+
+Andre has made a number of end-user facing contributions.  The most
+notable is for users of Kleopatra, which now has new dialogs for File
+Encryption and Decryption / Verification.  These greatly reduce the
+number of required interactions to perform these operations.  He also
+worked on the new file type registration on Windows so that decrypting
+a file only requires a double click.  Additionally, he has continued
+his work on the [[GnuPG%20plugin%20for%20Outlook][GnuPG plugin for Outlook]], which should be released
+with gpg3win-3 this fall.  The code is already in good form, and
+testers are encouraged to check it out together with the new Kleopatra
+(see [[https://wiki.gnupg.org/Gpg4win/Testversions][Test version of Gpg4win-3]].)  Andre has also been working on
+improving KMail's ~gpg~ support.  One of the focuses of this work has
+been adding TOFU support to the libraries used by KMail.  Andre also
+merged the C++ and Qt bindings for GPGME from KDE into the official
+GPGME repository.  This included a port of the C++ API to pure
+standard C++ without boost, and the removal of some KDE-Framework use
+in the Qt bindings so that the bindings now only require Qt 5 base.
+This should make working with ~gpg~ in a Qt application even more
+convenient.  In particular, executing operations asynchronously is
+very easy.  Finally, Andre fixed some CRL-related bugs in ~dirmngr~.
+
+Kai's recent work has focused on porting [[https://www.mailpile.is/][Mailpile]] [[https://github.com/mailpile/Mailpile/pull/1621][to use GPGME]] rather
+than its own wrapper, which only works with GnuPG 1.4.  Unfortunately,
+many projects decide to take a similar approach to Mailpile, and write
+their own code to interact with ~gpg~.  As a reminder, we strongly
+encourage all developers to not directly interact with ~gpg~, but to
+use [[https://www.gnupg.org/documentation/manuals/gpgme/][GPGME]], which is not only more complete, but also has seen a lot of
+testing.  We realize that GPGME's interface's are not always ideal,
+however, we are open to suggestions for improvements, and feature
+requests.  Similarly, if you don't understand how to do what you want
+using GPGME, we encourage you to ask for help on the [[https://lists.gnupg.org/mailman/listinfo/gnupg-devel][gnupg-devel
+mailing list]].
+
+Jussi Kivilinna has continued his work optimizing libgcrypt.  In the
+recent past, most of his effort was spent on implementing assembly
+versions of various cryptographic functions for the ARMv8/AArch32
+architecture.
+
+Niibe worked on mitigating the recently published [[https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/razavi][Flip Feng Shui]]
+exploit.  Flip Feng Shui uses a cross-VM, row hammer-based exploit to
+change the ~trusted.gpg~ file, which is used by Debian's package
+manager apt to verify downloads, and apt's ~sources.list~ file, which
+determines where packages are downloaded from, in a controlled manner.
+This allows attackers to replace packages that are installed with
+their own versions.  The [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p%3Dgnupg.git%3Ba%3Dcommit%3Bh%3De32c575e0f3704e7563048eea6d26844bdfc494b][fix]] is to make sure that ~gpgv~ always checks
+that self-signatures are valid.
+
+Niibe also spent time improving GnuPG's smartcard support.  This has
+primarily consisted of many small, but important improvements
+including smartcard support for ECC keys and various bug fixes.
+Further, Niibe investigated adding signature verification for ssh keys
+stored in the authorized_keys file.  This would allow detecting
+corrupted keys, which could happen via a Flip Feng Shui-type attack.
+Although there is some support for [[http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/PROTOCOL.certkeys?annotate%253DHEAD%5D%5Bas][signature verification in ssh]],
+Niibe discovered that this particular mode of operation is not yet
+supported by ssh-agent.
+
+Finally, Niibe has released [[https://www.fsij.org/gnuk/version1_2_1.html][a new version of GnuK (1.2.1)]].  GnuK is a
+fully free cryptographic token (hardware and software).  Not only is
+GnuK based on free software, but the entire hardware specification is
+open, and the parts are relatively easy to buy and assemble.  The GnuK
+token can be ordered from [[https://www.seeedstudio.com/FST-01-without-Enclosure-p-1276.html][seeed]] or the [[https://shop.fsf.org/storage-devices/neug-usb-true-random-number-generator][FSF]].
+
+As usual, dkg contributed various clean ups and bug fixes.  He
+contributed a patch to avoid publishing the GnuPG version by default,
+and another to improve ~--quick-revuid~.  He also provided a patch to
+reenable exporting secret keys without a passphrase, which was
+possible in ~gpg~ 1.4 and 2.0, but, due to various technicalities, was
+not possible in 2.1.  dkg also started a [[https://lists.gnupg.org/pipermail/gnupg-devel/2016-August/031478.html][discussion about having
+systemd manage ~gpg~'s daemons]].  This would ensure that GnuPG's
+daemons are stopped when the user logs out.  He provided patches, but
+so far these changes have not yet been accepted.
+
+Ben Kibbey made a number of contributions.  Among his bug fixes and
+clean ups, he fixed the OpenIndiana (Solaris) builds.
+
+I (Neal) returned from a several month sabbatical.  My first order of
+business was to tie up some loose ends with the TOFU support in GnuPG.
+Among other things, I added several checks to reduce the number of
+gratuitous conflicts.  In particular, if two keys have the same email
+address and are cross signed, then they are almost certainly
+controlled by the same person.  In fact, this is a usual way of
+indicating key rotation.  I also set the default policy to "good" for
+keys that the user has directly signed.
+
+*** Releases
+
+There have been several GnuPG releases since the last status update:
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000390.html][2.1.13]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000393.html][2.1.14]], [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.html][2.1.15]], and [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][1.4.21]]; and two releases of libgcrypt
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q2/000389.html][1.7.1]] and [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.html][1.7.2]].  Finally, a new version of GPGME is available, [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][1.7.0]],
+which includes the newly upstreamed Python, C++ and Qt bindings as
+well as a number of bugs fixes and various improvements.
+
+*** Public Appearances
+
+Werner held a [[keynote%20at%20GUADEC][keynote at GUADEC]], "We Want More Centralization, Do
+We?."  His talk was [[https://lwn.net/Articles/697450/][covered by LWN]].
+
+In May, Neal held his "An Advanced Introduction to GnuPG" talk at
+INRIA, and again at GHM in August.  Neal will hold the same talk on
+October 3rd at 18:00 at the ACM chapter at Johns Hopkins University in
+Baltimore, and again on October 5th at 18:30 at the [[http://www.meetup.com/nylug-meetings/][NYLUG]] (you need to
+RSVP for this event).
+
+In August, we took part in the GUUG-hosted [[https://www.gnupg.org/conf/index.html][OpenPGP.conf]].  I've already
+posted a [[https://www.gnupg.org/blog/20160921-openpgp-conf.html][report]] to our blog.
+
+Note: We are looking to interview representatives from organizations
+who rely on GnuPG, e.g., journalists, lawyers, NGOs, governmental
+organizations, software distributors, companies, etc., for some
+publicity material that we are producing.  If you fall into this
+category, or know someone who does, and would be willing to be
+interviewed, [[mailto:neal-nospam@gnupg.org][please get in touch with me]]!

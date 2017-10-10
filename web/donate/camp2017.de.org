@@ -1,0 +1,1844 @@
+#                                                        -*- html -*-
+#+TITLE: GnuPG - Spenden
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+
+    <!-- Bootstrap core and site CSS -->
+    <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+    <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+    <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+    <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+    <script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+    <script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+    <script defer src="/share/3rdparty/bcswipe.js"></script>
+    <script defer src="/share/campaign/campaign.js"></script>
+    <noscript><style>.lang-chooser .caret { display: none; }</style></noscript>
+
+  </head>
+  <body lang="de">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation ein/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" title="Home"><img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png"></a>
+	  <ul class="nav navbar-header pull-right visible-xs-inline-block lang-chooser lang-chooser-xs">
+	    <li class="dropdown">
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/camp2017.fr.html"
+		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+		<li><a href="/donate/camp2017.html">
+		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
+		<li><a href="/donate/camp2017.de.html">
+		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
+		<li><a href="/donate/camp2017.fr.html">
+		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
+		<li><a href="/donate/camp2017.ja.html">
+		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn"
+             style="margin-right: 10px"
+              href="/donate/donate.de.html"
+              role="button">♥ Spenden</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+	    <li><a href="#about">Über</a></li>
+            <li><a href="#goals">Ziele</a></li>
+            <li><a href="#testimonials">Referenzen</a></li>
+            <li><a href="#dailyvideo">Videos</a></li>
+          </ul>
+	  <ul class="nav navbar-nav navbar-right hidden-xs lang-chooser">
+	    <li class="dropdown">
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/camp2017.fr.html"
+		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="flag-icon flag-icon-de"></span> <span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+		<li><a href="/donate/camp2017.html">
+		    <span class="flag-icon flag-icon-usuk"></span> English</a></li>
+		<li><a href="/donate/camp2017.de.html">
+		    <span class="flag-icon flag-icon-de  "></span> German</a></li>
+		<li><a href="/donate/camp2017.fr.html">
+		    <span class="flag-icon flag-icon-fr  "></span> French</a></li>
+		<li><a href="/donate/camp2017.ja.html">
+		    <span class="flag-icon flag-icon-jp  "></span> Japanese</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.de.html" role="button">♥ Spenden</a>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div id="home" class="camp-gutter container">
+      <div class="row">
+	<div class="col-lg-12 visible-lg-block">
+	  <h1>GnuPG Spendenkampagne</h1>
+	</div>
+	<div class="col-xs-12 col-lg-8">
+	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
+	    <img src="/share/campaign/img/thumbs/main.jpg">
+	    <div class="play-button"></div>
+	    <div class="video-text">Klicken um das Video zu starten
+              <noscript><br />
+                <span style="font-size: 60%"
+                      >(erfordert JavaScript von YouTube).
+                </span>
+              </noscript>
+            </div>
+          </div>
+	</div>
+
+	<div class="col-xs-12 hidden-lg">
+	  <h1>GnuPG Spendenkampagne</h1>
+	</div>
+
+        <p>[<strong>This is a snaphot of the page at the end of the
+        campaign on 2017-09-05.</strong>]</p>
+
+	<div class="col-xs-12 col-lg-4">
+	  <div class="row">
+	    <div class="col-xs-12">
+	      <div class="progress">
+		<div class="progress-bar progress-bar-striped active"
+                     role="progressbar"
+                     aria-valuenow="0" A-CMPGN-RECUR-EURO=""
+                     aria-valuemin="0"
+                     aria-valuemax="0" A-CMPGN-RECUR-EURO-GOAL=""
+                     style="width: 9%" A-CMPGN-RECUR-PERCENT=""
+                     >
+		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
+                    pro Monat</span>
+		</div>
+	      </div>
+	    </div>
+	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
+	      <h3><!--CMPGN-RECUR-EURO-->
+                  pro Monat <small>von benötigten
+                  <!--CMPGN-RECUR-EURO-GOAL-->
+                  </small>
+              </h3>
+	      <h4>+
+                <!--CMPGN-ONCE-EURO-->
+                <small>an einmaligen Spenden</small>
+              </h4>
+	      <h4><!--CMPGN-RECUR-COUNT-->
+                <small>Unterstützer</small>
+              </h4>
+	    </div>
+	    <div class="col-xs-12 col-sm-6 col-lg-12">
+	      <a class="btn btn-primary btn-lg btn-block" role="button"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=de"
+                 > 10&thinsp;€ pro Monat spenden</a>
+	      <div class="row" style="margin-top: 1em;">
+		<div class="col-xs-6">
+		  <a class="btn btn-default btn-md btn-block" role="button"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=de"
+                     >5&thinsp;€ pro Monat</a>
+		</div>
+		<div class="col-xs-6">
+		  <a class="btn btn-default btn-md btn-block" role="button"
+href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=de"
+                     >20&thinsp;€ pro Monat</a>
+		</div>
+	      </div>
+	      <div class="row text-center" style="margin-top: 1em;">
+		<a style="margin-top: 1em;"
+href="/cgi-bin/procdonate.cgi?mode=preset&lang=de"
+                   >Einen anderen Betrag spenden</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid flying-locks">
+      <div class="container">
+	<div class="row">
+	  <div class="col-sm-10 col-sm-offset-1">
+	    <p class="lead">
+	      GnuPG braucht Ihre Unterstützung um Ihre Privatsphäre im
+	      Internet zu schützen.
+	    </p>
+	    <p class="text-justify">Aktivisten, Journalisten, Anwälte
+	    und viele andere verlassen sich auf
+	      <a href="https://www.gnupg.org/">GnuPG</a> um ihre
+	      Korrespondenz zu beschützen.  Weiterhin verlassen sich
+	      beinahe alle auf Freier Software basierenden
+	      Betriebsysteme (die auf zwei drittel der Server des
+	      Internets genutzt werden) auf GnuPG um die Integrität
+	      ihrer Softwareaktualisierungen sicherzustellen.</p>
+            <p>Um Support und Weiterentwicklung von GnuPG zu
+              ermöglichen bitten wir, die Hauptentwickler von GnuPG,
+              um Spenden von der Allgemeinheit.
+              Unser <strong>Hauptziel</strong>
+              ist <strong>15&#x202f;000 Euro pro Monat</strong> um
+              drei Entwickler zu finanzieren;
+              unser <strong>erweitertes Ziel</strong> ist doppelt so
+              viel, <strong>30&#x202f;000</strong> Euro pro Monat.</p>
+            <p>Bitte denken Sie darüber nach zu Spenden um
+            sicherzustellen, dass diese kritische Software auch
+            weiterhin für jeden funktioniert.</p>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div id="about" class="camp-gutter container">
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+	  <h2>GnuPG Braucht Ihre Hilfe!</h2>
+	  <p class="text-justify">
+	    <strong><a
+href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
+	       >Seit 20 Jahren</a> hilft GnuPG elektronische Kommunikation zu
+	      schützen.</strong>
+	    <a href="https://www.eff.org/de/about/staff/cindy-cohn">Cindy
+	    Cohn<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
+		     alt="Bild von Cindy Cohn"
+	    class="camp-headshot pull-right"></a>, Geschäftsführerin der
+	    <a href="https://www.eff.org/">Electronic Frontier
+	    Foundation</a> (EFF), beschreibt GnuPG als <i> “das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not [..] kommuniziere.”
+        </i>  <a href="https://www.buzzfeed.com/sheerafrenkel">Sheera
+	    Frenkel<img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    alt="Bild von Sheera Frenkel" class="camp-headshot pull-left"></a>,
+	    Auslandskorrespondentin für BuzzFeed News, fügt
+	    hinzu: <i>"<strong>Als eine Nachrichtenorganisation sind
+	    wir ausgebildet GPG zu benutzen.</strong>  Es geht um die
+	    Quellen und was mit ihnen passiert wenn man ihr Land
+	    verlässt, die brisante Story veröffentlicht und die
+	    Regierung nach dem Informant sucht, der einem die
+	    Schlüsselinformation verriet."</i>  Und GnuPG war
+	    bekanntermaßen Edward Snowden's Werkzeug der Wahl um
+	    sicher Journalisten über die Massenüberwachung der NSA zu
+	    unterrichten.
+	  <p class="text-justify">
+	    Aber GnuPG wird nicht nur zum Verschlüsseln von E-Mails
+            benutzt.  <strong>GnuPG schützt
+            Softwareaktualisierungen</strong> auf fast allen freien
+            Betriebsystemen, die
+            auf <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">zwei
+            drittel aller Server im Internet eingesetzt werden</a>.
+            Weiterhin wird GnuPG von einer breiten Masse an
+            Organisationen und Firmen verwendet.  Arthur
+            Jordan<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+		       alt="Bild von Arthur Jordan"
+            class="camp-headshot pull-right">, Vizepräsident der IT
+            von 2U, hat uns beispielsweise erzählt:
+	    <i>"als wir Universitäten kontaktierten um zu fragen, wie
+	    sie sicher Dateien übertragen, stellten wir fest, dass sie
+	    bereits mit GPG verschlüsselten."</i>
+	  <p class="text-justify">
+	    Trotz der kritischen Rolle die GnuPG insbesondere für
+	    Journalisten, Aktivisten und Anwälte, aber auch für jede
+	    Nutzerin des Internets spielt, hatte GnuPG im Jahr 2012
+	    <strong>Finanzierungsprobleme</strong>.  Aufgrund von
+	    ausbleibenden Aufträgen musste Werner Koch, GnuPG's
+	    Hauptentwickler, seinen einzigen Mitarbeiter entlassen,
+	    der Vollzeit an GnuPG gearbeitet hat.  Und im Jahr 2014
+	    musste Werner andere Jobs annehmen um seine Arbeit an
+	    GnuPG zu finanzieren.
+	  <p class="text-justify">
+	    Die Situation war so hoffnungslos, dass <strong>Werner
+            kurz davor stand aufzugeben.  Aber Freunde haben ihn
+            überzeugt, es mit einer Spendenkampagne zu
+            versuchen.</strong>  Die Reaktion war überwältigend.
+            Nicht nur hat er genug Geld erhalten um seinen
+            Lebensunterhalt zu finanzieren, <strong>er bekam
+            250&#x202f;000&nbsp;Euro in kleinen Spenden</strong>, und
+            Stripe, Facebook und die Linux Foundation haben
+            zugesagt, je etwa 50&#x202f;000&nbsp;Euro pro Jahr zu
+            spenden.
+	  </p>
+          <div class="pull-right text-center team-img">
+            <a
+href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
+	    ><img id="camp-openpgp-conf"
+src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
+              /></a>
+	    <p id="camp-caption-openpgp-conf">
+	      Das GnuPG Team auf der OpenPGP.conf 2016
+	    </p>
+	  </div>
+	  <p class="text-justify">
+	    <strong>Ermutigt von der überwältigenden Hilfsbereitschaft
+	    hat Werner entschieden sein Team zu vergrößern.</strong>
+	    Bis zum heutigen Tag hat er fünf Entwickler eingestellt,
+	    und über die letzten zwei Jahre hat sich GnuPG und das
+	    dazugehörende Ökosystem in einer Reihe von Punkten
+	    weiterentwickelt.  Zum Beispiel haben wir
+	    <a href="https://www.gnupg.org/blog/20160830-web-key-service.html"> das Finden von Schlüssel vereinfacht</a>, ein System zur
+	    <a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">Anbindung von GPG an Python</a> adoptiert, an
+	    <a href="https://www.enigmail.net/index.php/en/">Enigmail</a>
+	    mitgearbeitet,
+	    und <a href="https://www.fsij.org/category/gnuk.html">das
+	    Gnuk Projekt</a> unterstützt&mdash;einem Sicherheits-Token
+	    bestehend aus Freier Software und Freier Hardware.
+	  <p class="text-justify">
+	    <strong>Wir möchten diese Arbeit auf lange Zeit
+            fortsetzen.</strong>  Aber wir wollen, dass unsere
+            Loyalität in erster Linie der Allgemeinheit gehört.
+            Deshalb wollen wir sicherstellen, dass der Großteil der
+            Finanzierung von Individuen und nicht von Firmen kommt.
+            Weiterhin setzen wir um das Bestehen des Projektes auf
+            lange Sicht zu gewähren auf regelmäßige Spenden und nicht
+            auf einmalige Spenden wie letztes mal.
+	  <p class="text-justify">
+	    <strong>Unser Hauptziel ist es, Spenden in
+	      Höhe von 15&#x202f;000&nbsp;Euro monatlich zu bekommen&mdash;genug
+	      um drei Entwickler zu finanzieren</strong>.  Wir können
+	      dieses Ziel erreichen wenn nur 2000&nbsp;Menschen
+	      zwischen 5 und 10 Euro monatlich spenden, dass
+	      entspricht etwa zwei oder drei Tassen Kaffee.
+	  <p class="text-justify">
+	    <div class="pull-right" style="width: 40%; margin: 1em">
+              <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
+              <p id="camp-caption-gnuk" class="text-center">Das Gnuk Token</p>
+	    </div>
+	    Das Geld erlaubt uns zunächst GnuPG zu pflegen.
+	    Weiterhin werden wir unsere Arbeit an dem Gnuk
+	    Sicherheitstoken finanzieren.  Ein neues Projekt, welches
+	    uns das Geld ermöglichen soll, ist ein Buch mit dem Titel
+	    "An Advanced Introduction to GnuPG" &mdash; "Eine
+	    Fortgeschrittene Einführung in GnuPG" &mdash; mit drei
+	    Zielgruppen: Entwickler, die GnuPG in ihre Programme
+	    integrieren wollen und die verschiedenen Konzepte,
+	    Sicherheitsabwägungen und übliche Stolperfallen verstehen
+	    müssen; Trainer, die Fortbildungen in digitaler Sicherheit
+	    anbieten, um Endbenutzern handfeste Ratschläge geben zu
+	    können; und natürlich Enthusiasten.
+	  <p class="text-justify">
+	    <strong>Unser erweitertes Ziel ist die doppelte Menge an
+	    Spenden</strong>.  Wenn 4000&nbsp;Menschen nur fünf oder
+	    zehn Euro jeden Monat spenden, werden wir unser Team
+	    vergrößern und mit ihnen Projekte im GnuPG Ökosystem
+	    unterstützten.  Ein Projekt, an dem wir wirklich gerne
+	    mitarbeiten möchten, ist GPGTools, auf das sich viele
+	    Aktivisten und Journalisten verlassen um ihre
+	    Onlinekommunikation zu schützen.  Wir wollen
+	    sicherstellen, dass die GPG-Integration für das
+	    Mailprogramm von Apple unterstützt ist sobald eine neue
+	    Version von macOS erscheint.
+	  <p class="text-justify">
+	    Vielleicht benutzen Sie nicht GnuPG um Ihre E-Mails zu
+	    verschlüsseln.  Nichtsdestotrotz verlassen sich
+	    Journalisten deren Arbeit Sie schätzen auf GnuPG um ihre
+	    Quellen zu schützen, verlassen sich Aktivisten die für
+	    eine Sache kämpfen die Sie unterstützenswert finden auf
+	    GnuPG um ihre Kommunikation zu schützen, und verlassen
+	    sich Anwälte die mit ihren Klienten verkehren auf GnuPG um
+	    ihrer Verschwiegenheitspflicht in unserer digitalen Welt
+	    nachzukommen.  Weiterhin verlassen sich Betriebsysteme
+	    basierend auf Freier Software auf GnuPG um ihre
+	    Softwareaktualisierungen zu verifizieren.
+	  </p>
+	  <p class="text-justify" style="font-size: 22px;">Falls Sie
+	  &mdash;wie wir&mdash; überzeugt sind, dass diese Arbeit
+	  essenziell ist um Demokratie und Privatsphäre zu schützen,
+	  dann <strong>helfen Sie uns bitte unsere Arbeit fortzusetzen
+	  und unabhängig zu bleiben</strong>.</p>
+	</div>
+      </div>
+    </div>
+
+    <div id="goals" class="camp-gutter container-fluid flying-locks">
+      <div class="container">
+	<div class="row">
+	  <div class="col-sm-10 col-sm-offset-1">
+            <h2>Was wir planen</h2>
+	  </div>
+	</div>
+	<div class="row goals is-table-row">
+	  <div class="col-sm-10 col-sm-offset-1">
+	    <div class="row">
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-1">
+		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Wartung</h3>
+		  <p>Unsere höchste Priorität ist sicherzustellen,
+		    dass GnuPG auch in Zukunft gewartet wird.  Dazu
+		    gehört das Reagieren auf Fehlerberichte,
+		    Sicherheitsprobleme zu beheben und mit dem
+		    neuesten Stand der Kryptographie mitzuhalten.</p>
+		</div>
+	      </div>
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-3">
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/> Gnuk</h3>
+		  <p>Das Gnuk Sicherheitstoken besteht komplett aus
+        Freier Software. Auch das Hardwaredesign, entwickelt
+        von Niibe, ist frei verfügbar.  Wir planen, mehr
+        in seine Produktion und seinen Vertrieb zu investieren.</p>
+		</div>
+	      </div>
+	    </div>
+	    <div class="row match-my-cols">
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-2">
+		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Buch</h3>
+		  <p>Wir möchten die Dokumentation verbessern.
+		    Insbesondere arbeiten wir an einem Buch mit dem
+		    Titel <i>An Advanced Introduction to GnuPG</i>
+		    &mdash; <i>Eine Fortgeschrittene Einführung in
+		    GnuPG</i> &mdash; das erläutert wie GnuPG
+		    funktioniert und wie man es am besten einsetzt.
+		    Die Zielgruppen sind Trainer, die Fortbildungen in
+		    digitaler Sicherheit anbieten, Programmierer, die
+		    GnuPG in ihre Anwendungen einbetten und
+		    Enthusiasten.</p>
+		</div>
+	      </div>
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-4">
+		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Größeres Ökosystem</h3>
+		  <p>Die meisten Leute nutzen GnuPG nicht direkt,
+        sondern durch Werkzeuge und Plugins.
+		    Wir wollen die Entwickler solcher Programme
+        unterstützen, um die Integration von GnuPG zu
+		    verbessern.  Insbesondere möchten wir
+		    sicherstellen, dass das GPG-Plugin für
+		    Apple's Mailprogramm (GPGTools) mit jeder neuen
+        Version von macOS funktioniert.</p>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>Was andere über GnuPG sagen</h2></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+
+	    <!-- visible-md almost works here, but some quotes are a bit too long.  -->
+
+	    <div id="myCarousel" class="carousel slide visible-lg" data-interval="false">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Alex Abdo</div>
+			    <div class="card-title">Anwalt</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Daniel Kahn Gillmor</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Jason Reich</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 3 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Tom Lowenthal</div>
+			    <div class="card-title">Staff Technologist</div>
+			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen, um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-title">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 4 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Noah Vesely</div>
+			    <div class="card-title">Softwareentwickler</div>
+			    <div class="card-org">Freedom of the Press Foundation</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 5 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">Technologist General</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG hat uns noch nicht den Hintern
+			    gerettet, aber die Tatsache, dass es da
+			    ist&mdash;es lässt uns nachts ruhig
+			    schlafen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">John Pershing</div>
+			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<div class="center-block">
+		  <a class="btn btn-success" href="#myCarousel" role="button" data-slide="next">
+		    Mehr Referenzen
+		  </a>
+		</div>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+	    <!-- CAROUSEL SM -->
+
+	    <div id="myCarouselMedium" class="carousel slide hidden-xs hidden-lg" data-interval="false" aria-hidden="true">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+          “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
+        </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Alex Abdo</div>
+			    <div class="card-title">Anwalt</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Daniel Kahn Gillmor</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 3 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Jason Reich</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 4 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Tom Lowenthal</div>
+			    <div class="card-title">Staff Technologist xxx</div>
+			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-title">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 5 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 6 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Noah Vesely</div>
+			    <div class="card-title">Softwareentwickler</div>
+			    <div class="card-org">Freedom of the Press Foundation</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 7 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">Technologist General</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<a class="btn btn-success" href="#myCarouselMedium" role="button" data-slide="next">
+		  Mehr Referenzen
+		</a>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+	    <!-- CAROUSEL XS -->
+
+	    <div id="myCarouselSmall" class="carousel slide visible-xs" data-interval="false" aria-hidden="true">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			   “GPG ist das Werkzeug, mit dem ich am
+			    häufigsten mit Menschen in Not auf der
+          ganzen Welt kommuniziere.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Letztendlich sind wir Anwälte, wir
+			    tauschen Dokumente und E-Mails aus und im
+			    Herzen davon ist&mdash;die Sicherheit von
+			    GPG.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Alex Abdo</div>
+			    <div class="card-title">Anwalt</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 3 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Ich sprach <!--recently--> mit einer
+			    Quelle <!-- about a potential story--> in
+			    Russland. Ich habe ihm erklärt wie GPG
+			    funktioniert, und er hat mir kürzlich
+			    seine erste verschlüsselte E-Mail gesendet
+			    und <!-- at the end of it, he--> gesagt:
+			    ‘Vielen Dank, es hat mich wirklich
+			    beruhigt, <!--weil ich das Gefühl habe,
+			    -->dass sie sich um meine Sicherheit
+			    sorgen.’ ”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 4 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Ob Sie einen GPG-Schlüssel haben oder
+			    nicht, ob Sie je verschlüsselt E-Mails
+			    versenden, Sie verlassen sich auf GPG um
+			    sicherzustellen, dass
+			    Softwareaktualisierungen wie erwartet
+			    funktionieren.”  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Daniel Kahn Gillmor</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">Leitender Angestellter der IT</div>
+			    <div class="card-org">American Civil Liberties Union (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 5 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG ist der Schlüssel um die
+			    Verschwiegenheitspflicht von Anwälten in
+			    unserer digitalen Welt umzusetzen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 6 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “GPG ist <!-- a&mdash;the way that I
+			    describe it&mdash;is--> Teil der
+			    ausgewogenen Ernährung eines jeden
+			    Reporters, besonders wenn sie ihre Quellen
+			    schützen wollen und von Whistleblowern
+			    angesprochen werden möchten.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Jason Reich</div>
+			    <div class="card-title">Leiter der IT-Sicherheitsabteilung</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 7 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    “Die Journalisten für die wir Arbeiten
+			    vertrauen darauf, dass wir wissen, wie man
+			    sie am besten beschützt.  Und die Art und
+			    Weise wie wir die sichersten und
+			    praktikablesten Werkzeuge &mdash; wie GPG
+			    &mdash; einsetzen erfüllt diese
+			    Anforderung.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Tom Lowenthal</div>
+			    <div class="card-title">Staff Technologist xxx</div>
+			    <div class="card-org">Committee to Protect Journalists (CPJ)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 8 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Wir fühlen uns sehr sicher wenn wir GPG
+			    einsetzen um die Daten von Studenten zu
+			    schützen beim Austausch von Akten zwischen
+			    Universitäten.  Es beruhigt uns wirklich
+			    sehr.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-title">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 9 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Für mich ist GPG eines der
+			    Schlüsselwerkzeuge das wir benötigen, um
+			    selbstbestimmt in den Vereinigten Staaten
+			    und auf jedem Fleck der Erde in dem
+			    Digitalen Zeitalter leben zu können.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Cindy Cohn</div>
+			    <div class="card-title">Geschäftsführerin</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 10 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    “Als eine Nachrichtenorganisation sind wir
+			    ausgebildet GPG zu benutzen.  Es geht um
+			    die Quellen und was mit ihnen passiert
+			    wenn man ihr Land verlässt, die brisante
+			    Story veröffentlicht und die Regierung
+			    nach dem Informant sucht, der einem die
+			    Schlüsselinformation verriet.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Sheera Frenkel</div>
+			    <div class="card-title">Auslandskorrespondentin</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 11 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Wir [bei SecureDrop] haben uns für GPG
+			    statt anderer Alternativen entschieden,
+			    überwiegend da GPG das bekannteste und am
+			    meisten genutzte Werkzeug zur
+			    asymmetrischen Verschlüsselung ist.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Noah Vesely</div>
+			    <div class="card-title">Softwareentwickler</div>
+			    <div class="card-org">Freedom of the Press Foundation</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 12 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “Als wir Universitäten kontaktierten um zu
+			    fragen, wie sie sicher Dateien übertragen,
+			    stellten wir fest, dass sie bereits mit
+			    GPG verschlüsselten”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Arthur Jordan</div>
+			    <div class="card-title">Vizepräsident der IT</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 13 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    “Für mich persönlich ist der entscheidende
+			    Vorteil von GPG, dass es mir ermöglicht
+			    mit Menschen zu kommunizieren, die ich
+			    sonst nicht erreichen könnte, um ihnen
+			    entweder zu helfen oder ihre Geschichte zu
+			    erzählen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Geoffrey King</div>
+			    <div class="card-title">Anwalt für Menschenrechte</div>
+			    <div class="card-title">Journalist</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 14 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    “Aber auch wenn Sie ganz sicher sind, dass
+			    Sie nichts zu verbergen haben, wenn Sie
+			    denken, dass andere Menschen etwas
+			    rechtmäßig und notwendig zu verbergen
+			    haben, sind wir der Meinung, <!-- you
+			    should be using these technologies, that
+			    -->dass Sie GPG nutzen sollten, denn das
+			    hilft diejenigen zu schützen, die wirklich
+			    GPG nutzen müssen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">Technologist General</div>
+			    <div class="card-org">Electronic Frontier Foundation (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 15 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    “GPG hat uns noch nicht den Hintern
+			    gerettet, aber die Tatsache, dass es da
+			    ist&mdash;es lässt uns nachts ruhig
+			    schlafen.”
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">John Pershing</div>
+			    <div class="card-title">Distinguished Developer</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<div class="center-block">
+		  <a class="btn btn-success" href="#myCarouselSmall" role="button" data-slide="next">
+		    Mehr Referenzen
+		  </a>
+		</div>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+
+
+	  </div>
+	</div>
+      </div>
+
+    </div>
+    <!-- End of testimonials.  -->
+
+    <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+	  <h2>Videos</h2>
+	  <div class="row">
+	    <div class="col-lg-10 col-lg-offset-0">
+              <ul>
+                <li> <a href="https://youtu.be/1OMJWpdl0DA?t=9s">Alex Abdo</a>
+                  from the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/bcNLlWqZ9d0?t=9s">Andre Meister</a>
+                  from <a href="https://netzpolitik.org">netzpolitik.org</a>
+                <li> <a href="https://www.youtube.com/watch?v=atFz16nInIs&t=10s">Benjamin Ismaïl</a>
+                  from <a href="https://rsf.org/">Reporters without Borders</a>
+                <li> <a href="https://youtu.be/sQMj332dgIE?t=10s">Thenmozhi Soundararajan</a>
+                  from <a href="https://www.equalitylabs.org/">Equality Labs</a>
+                <li> <a href="https://youtu.be/5MCGTd8pOG4?t=10s">Matt Mitchell</a>
+                  from <a href="http://www.meetup.com/New-York-Cryptoparty-Network/">CryptoHarlem</a>
+                <li> <a href="https://youtu.be/IdCiJMc3q80?t=8s">Cindy Cohn</a>
+                  from <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/Qqg3_a72aEw?t=9s">Ksenia Ermoshina</a>,
+                  Researcher at <a href="https://nextleap.eu/">nextleap.eu</a>
+                <li> <a href="https://youtu.be/6DqfWz-KHSI?t=8s">Michał 'Rysiek' Woźniak</a>
+                  from <a href="https://www.occrp.org/">OCCRP</a>
+                <li> <a href="https://youtu.be/OpeFuKRYGVA?t=8s">Sze Ming</a>
+                  from the <a href="https://sinarproject.org/">Sinar Project</a>
+                <li> <a href="https://youtu.be/oQvP9SXm-ek?t=8s">Jason Reich</a>
+                  from <a href="https://www.buzzfeed.com/">BuzzFeed</a>
+                <li> <a href="https://youtu.be/iRuo57Hzask?t=9s">John Pershing</a>
+                  from <a href="https://1010data.com">1010data</a>
+                <li> <a href="https://youtu.be/sX0lncD0VCM?t=10s">Jochim Selzer</a>
+                  from <a href="https://koeln.ccc.de/">CCC Köln</a>
+                <li> <a href="https://youtu.be/Z0h_uPWFp7o?t=8s">C5</a>,
+                  Digital Security Trainer from the Philippines
+                <li> <a href="https://youtu.be/xB6AvoeCWro?t=9s">Noah Vesely</a>
+                  from <a href="https://securedrop.org/">SecureDrop</a>
+                <li> <a href="https://youtu.be/_aJPaR9Cfmk?t=9s">Lisa 'Leez' Wright</a>
+                  from the <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/VJIR5zzpUr8?t=8s">Hernâni Marques</a>
+                  from <a href="https://www.ccc-ch.ch/">CCC Switzerland</a>
+                <li> <a href="https://youtu.be/K8-pmUyegYk?t=9s">Geoffrey King</a>,
+                  <a href="https://geoffreyking.org/">Lawyer and Journalist</a>
+                <li> <a href="https://youtu.be/l1ByJCSvQKk?t=9s">Andrew Ford Lyons</a>
+                  from <a href="http://www.internews.org/">Internews Europe</a>
+                <li> <a href="https://youtu.be/6dreAkVxmpg?t=8s">Seamus Tuohy</a>,
+                  <a href="http://prudentinnovation.org/">Digital Security Trainer</a>
+                <li> <a href="https://youtu.be/j0Zd0wZyLP8?t=10s">Meik Michalke</a>
+                  from <a href="https://www.c3s.cc/">C3S</a>
+                <li> <a href="https://youtu.be/mak22hXcslg?t=8s">Sheera Frenkel</a>
+                  from <a href="https://www.buzzfeed.com/news">BuzzFeed News</a>
+                <li> <a href=" https://youtu.be/MSu_FF49MtU?t=9s">Michael Stehmann</a>,
+                  <a href="http://www.rechtsanwalt-stehmann.de/">Lawyer</a>
+                <li> <a href="https://youtu.be/-Rkrf9GIw8M?t=9s">Cédric Laurant</a>
+                  from <a href="https://sontusdatos.org/">SonTusDatos</a>
+                <li> <a href="https://youtu.be/SdlnauJ5XWM?t=9s">Daniel Kahn Gillmor</a>
+                  from <a href="https://debian.org">Debian</a> and the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/g9a_snLWRxE?t=8s">Arthur Jordan</a>
+                  from <a href="https://2u.com/">2U</a>
+              </ul>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div id="team" class="camp-gutter container">
+      <div class="row">
+	<div class="col-xs-12">
+	  <h2>Wer wir sind</h2>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Werner -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Bild von Werner">
+	    </div>
+	    <div class="media-body">
+	      <strong>Werner</strong> gründete GnuPG im Jahr 1997.  Werner
+	      ist seit langem ein Unterstützer von Freier Software und
+	      ein Mitbegründer der FSFE.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Neal -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Bild von Neal">
+	    </div>
+	    <div class="media-body">
+	      <strong>Neal</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Justus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Bild von Justus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Justus</strong> begann im Jahr 2015 an GnuPG zu
+	      arbeiten und unterstützt Wartung und Entwicklung in
+	      allen Gebieten.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Marcus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Bild von Marcus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Marcus</strong> hat im Zeitraum von 2001 bis
+	      2012 an GnuPG gearbeitet und ist seit 2017 wieder
+	      eingestiegen um GnuPG auf allen Gebieten zu
+	      unterstützen.
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<!-- Kai -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Bild von Kai">
+	    </div>
+	    <div class="media-body">
+	      <strong>Kai</strong> arbeitet seit dem Jahr 2015 an dem Enigmail Projekt.
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Gniibe -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Bild von Niibe">
+	    </div>
+	    <div class="media-body">
+	      <strong>Niibe</strong> ist seit langem ein Hacker von
+	      Freier Software und kam im Jahr 2011 zu dem GnuPG
+	      Projekt um an Smart Cards und dem Gnuk Sicherheitstoken
+	      zu arbeiten.
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+</div>
+</div>
+
+<div class="camp-gutter container-fluid" id="camp-footer">
+  <div class="container">
+    <div class="row">
+      <div id="cpyright">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+          <img alt="CC-BY-SA 4.0" style="border: 0"
+                src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+        This web page is
+        Copyright 2017 The GnuPG Project and licensed under a
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+        <a href="/copying.html">copying</a> for details.
+        See the <a href="/imprint.html">Imprint</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
+#+END_HTML
+
+# eof #

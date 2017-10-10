@@ -1,0 +1,96 @@
+# German: Independent Encryption Software, GnuPG, Needs Financial Support
+#+STARTUP: showall
+#+AUTHOR: GnuPG Team
+#+DATE: June 6, 2017
+
+ [[file:20170606-campaign-launch.org][English]] | [[file:20170606-campaign-launch.de.org][Deutsch]] | Francaise
+
+** GnuPG, logiciel libre de chiffrement, a besoin de votre soutien financier
+
+  Düsseldorf, Allemagne --- Mardi 6 Juin 2017.  Le projet GnuPG vient
+  d'annoncer le lancement d'une nouvelle campagne de financement
+  participatif afin de continuer à soutenir et à améliorer GnuPG, son
+  logiciel de chiffrement de courriels et de données.  L'objectif de la
+  campagne et de garantir 15 000 € mensuels en donations régulières de
+  la part de donneurs individuels, afin de financer le développement de
+  leur logiciel libre.  Les dons peuvent être effectuées sur la nouvelle
+  page de campagne:
+
+    https://gnupg.org/donate/index.fr.html
+
+  De nombreux usagers, entre autres militant·e·s, journalistes ou
+  avocat·e·s, dépendent de GnuPG pour protéger leurs données et
+  communications.  Ce logiciel fonctionne sous Windows, Mac, et Linux et
+  protège courriels, fichiers, et programmes de l'espionnage
+  gouvernemental et criminel.  En outre, plus des deux tiers des
+  serveurs qui composent internet dépendent de GnuPG pour vérifier
+  l'intégrité de leurs mise à jours logicielles.
+
+  Les révélations en cours au sujet de la surveillance de masse ont
+  montré à quel point nos données sont peu sûres.  GnuPG est l'un des
+  rares outils qui offrent une vraie protection tout en étant libre
+  d'intérêt commercial.  Edward Snowden l'a utilisé pour chiffrer ses
+  communications avec les journalistes.  De nombreuses institutions
+  utilisent GnuPG parce que la norme sous-jacente est ouverte, ce qui
+  garantit qu'elles pourront toujours accéder à leurs données.
+
+  L'équipe de développement, composée de 6 personnes, est actuellement
+  financée par une campagne réussie début 2015, ainsi que par des
+  donations régulières de la part de la Linux Foundation, Stripe et
+  Facebook, et par quelques contrats de développement.  Afin d'assurer
+  la stabilité pérenne du projet, cette nouvelle campagne met l'accent
+  sur les dons réguliers plutôt que ponctuels.  Pour citer le
+  développeur principal Werner Koch : « Nous voulons continuer ce
+  travail sur le long terme.  En revanche, nous voulons le faire de
+  manière à ce que notre premier engagement soit sans ambiguïté aucune
+  envers le grand public.  Cela implique que la majorité de notre
+  financement provienne de donateurs et donatrices individuel·le·s,
+  plutôt que d'entreprises ou de multinationales. »
+
+  Afin de mettre en lumière le rôle de GnuPG dans la protection des
+  données, des témoignages de 26 organisations, y compris des groupes de
+  militant·e·s, des organes de presse, des avocat·e·s, et entreprises du
+  monde entier ont été collecté, et sont présentés sous forme de vidéos
+  quotidiennes sur le site de la campagne.
+
+
+*** À propos de GNU Privacy Guard (GnuPG)
+
+  Depuis 1997, GnuPG permet à des individu·e·s et entreprises de
+  chiffrer et de signer leurs données et communications en utilisant une
+  norme bien établie et interopérable : OpenPGP.  Il dispose
+  d'algorithmes de chiffrement modernes et d'un mécanisme de gestion de
+  clé polyvalent.  GnuPG, également connu sous le nom de GPG, ou bien
+  parfois à tort sous celui de PGP, peut être utilisé de manière
+  autonome, mais possède aussi toutes les fonctionnalités requises pour
+  une intégration aisée avec d'autres logiciels.  Il est ainsi utilisé
+  comme composante centrale de chiffrement dans une pléthore d'autres
+  applications, par exemple Thunderbird avec Enigmail, Gpg4win, et
+  GPGTools.  En outre, la plupart des systèmes d'exploitation utilisent
+  la capacité de signature fournie par GnuPGP pour protéger leurs mises
+  à jours logicielles contre les tentatives malveillantes d'introduction
+  de portes dérobées.  GnuPG est disponible gratuitement, et vient avec
+  l'intégralité de son code source, ce qui permet à quiconque d'auditer
+  le logiciel.  https://gnupg.org
+
+
+*** À propos de g10 Code GmbH
+
+  g10 Code GmbH  est l'entité juridique privée derrière le projet GnuPG.
+  Elle emploie tous les développeurs et tous ses bénéfices sont dédiés
+  au développement de GnuPG et des logiciels libres connexes.
+  https://gnupg.org/imprint.html
+
+
+*** Contacts presse / média:
+
+  Neal H. Walfield, Werner Koch\\
+  Couriel: media@gnupg.org\\
+  Tél.: +49-2104-4938797 (durant les heures de bureau en Europe)\\
+  Twitter: @gnupg\\
+  OpenPGP: 370C 0FC3 1293 B339 61C1 FC20 B367 1B93 6BA8 BCB2
+
+
+#+HTML: <div id="smallnote">
+(Translation courtesy of Guilhem Moulin)
+#+HTML: </div>

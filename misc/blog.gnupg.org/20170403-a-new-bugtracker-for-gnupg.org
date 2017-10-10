@@ -1,0 +1,69 @@
+# A new bugtracker for GnuPG
+#+STARTUP: showall
+#+AUTHOR: Marcus
+#+DATE: April 3, 2017
+
+** A New Bugtracker for GnuPG
+
+*** dev.gnupg.org
+
+The GnuPG project has just launched [[https://dev.gnupg.org/][dev.gnupg.org]], a new hub for GnuPG
+development!  The site features a user-friendly task and bug tracker,
+a wiki, a Git repository browser, a calendar and utilities such as an
+URL shortener, a paste tool, bookmarks, customizable dashboards, and a
+meme generator.
+
+Starting today, the task and bug tracker replaces the old [[http://roundup.sourceforge.net/][Roundup]]
+installation at [[https://bugs.gnupg.org/][bugs.gnupg.org]].  All existing tickets have been
+migrated under the same ticket number.  Links to
+https://bugs.gnupg.org/issue:NUMBER: are redirected to
+https://dev.gnupg.org/T:NUMBER:, while all other links are redirected
+to the main site.
+
+The new wiki is currently empty, but ready to use. We are inviting the
+community at the [[https://wiki.gnupg.org/][GnuPG Wiki]] to join us on the new site, and will be
+glad to assist in the migration of existing documentation after the
+dust has settled.
+
+In the calendar you will be able to follow the GnuPG release cycles
+and the development sprints.  We also plan to keep track of community
+meetups and hacker conferences there.
+
+The Git repositories provide a mirror of the core GnuPG and
+GnuPG-For-Windows projects with a very nice visual source code
+browser.  There are no plans to replace the primary Git hosting at
+[[https://git.gnupg.org][git.gnupg.org]], but we might add new community-oriented repositories in
+the future that are writable by a larger group of people.
+
+*** Phabricator
+
+dev.gnupg.org uses [[https://www.phacility.com/][Phabricator]], a free, self-hosted and complete
+software development platform already deployed successfully by other free
+software projects such as [[https://phabricator.kde.org/][KDE]] and [[https://phabricator.wikimedia.org/][MediaWiki]].
+
+Phabricator supports a lot of features, but we disabled some of them
+to make onboarding easier for new users.  However, we plan to roll out
+some of the additional features in the near future.  In particular, we
+are interested in Phabricator's code review and audit capabilities,
+and are also looking at deeper integration with our Jenkins
+installation.
+
+If you are missing a particular feature of Phabricator on
+dev.gnupg.org, let us know!
+
+*** New Users
+
+If you are a new user, you can [[https://dev.gnupg.org/auth/register/][register a new account]] with just a
+username and an email address.
+
+*** Existing Users
+
+If you were a user on bugs.gnupg.org, your account has been migrated
+to dev.gnupg.org under the same username and email.  You have to use
+the [[https://dev.gnupg.org/login/email/][password reset form]] to set a new password.  After logging in you
+might want to configure the "Email Preferences" under your account
+settings.
+
+In some cases, duplicated accounts have been merged, and some [[https://secure.phabricator.com/T12359][email
+addresses had to be adjusted]] for Phabricator.  If you have trouble
+recovering your account, contact [[mailto:marcus@gnupg.org][marcus]] for support.

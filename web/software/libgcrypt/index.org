@@ -1,0 +1,65 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+#+GPGWEB-NEED-SWDB
+
+* Libgcrypt
+
+  /Libgcrypt/ is a general purpose cryptographic library originally
+  based on code from GnuPG.  It provides functions for all
+  cryptograhic building blocks: symmetric cipher algorithms
+  (AES,
+  Arcfour,
+  Blowfish,
+  [[http://info.isl.ntt.co.jp/crypt/eng/camellia/][Camellia]],
+  CAST5,
+  ChaCha20
+  DES,
+  GOST28147,
+  Salsa20,
+  [[http://tools.ietf.org/html/rfc4269][SEED]],
+  Serpent,
+  Twofish)
+  and modes (ECB,CFB,CBC,OFB,CTR,CCM,GCM,OCB,POLY1305,AESWRAP),
+  hash algorithms
+  (MD2, MD4, MD5, GOST R 34.11, RIPE-MD160, SHA-1, SHA2-224,
+   SHA2-256, SHA2-384, SHA2-512, SHA3-224, SHA3-256, SHA3-384,
+   SHA3-512, SHAKE-128, SHAKE-256, TIGER-192, Whirlpool),
+  MACs (HMAC for
+   all hash algorithms, CMAC for all cipher algorithms, GMAC-AES,
+   GMAC-CAMELLIA, GMAC-TWOFISH, GMAC-SERPENT, GMAC-SEED, Poly1305,
+   Poly1305-AES, Poly1305-CAMELLIA, Poly1305-TWOFISH,
+   Poly1305-SERPENT, Poly1305-SEED),
+   public key algorithms (RSA, Elgamal, DSA, ECDSA, EdDSA, ECDH),
+   large integer functions, random numbers and a lot of
+   supporting functions.
+
+  Libgcrypt works on most POSIX systems and many pre-POSIX systems.
+  It can also be built using a cross-compiler system for Microsoft
+  Windows.
+
+  See also its [[https://en.wikipedia.org/wiki/Libgcrypt][Wikipedia]] entry.
+
+
+** Availibility
+
+   Due to former U.S. export restrictions on cryptographic software,
+   the software is not distributed via the standard GNU archives but
+   from the European based GnuPG server.
+
+   The current stable version is {{{libgcrypt_ver}}} which was
+   released on {{{libgcrypt_date}}}.  See the [[../../download/index.org::libgcrypt][download]] section for the
+   latest tarball.
+
+   All versions of Libgcrypt since 1.2 are API and ABI compatible.
+   The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
+   will receive updates for severe bugs and security problems until
+   2019-06-30.
+
+** Copying
+
+   Libgcrypt is distributed under the terms of the GNU Lesser General
+   Public License (LGPLv2.1+).  The helper programs as well as the
+   documentation are distributed under the terms of the GNU General
+   Public License (GPLv2+).  The file LICENSES has notices about
+   contributions that require that these additional notices are
+   distributed.

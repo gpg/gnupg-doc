@@ -1,0 +1,503 @@
+#+TITLE: GnuPG - Software list
+#+STARTUP: showall indent
+#+SETUPFILE: "../share/setup.inc"
+#+OPTIONS:  ^:{}
+
+* Software list
+
+This is the complete list of software we know to work with GnuPG.  The
+header line indicates the supported operating systems and the type of
+the software:
+
+  - GUI  :: A graphical user interface for GnuPG
+  - MUA  :: A Mail User Agent (mail program) or a Plugin for MUA
+  - CHAT :: A chat client
+  - INST :: An installer package
+  - LIB  :: Software to help writing programs with GnuPG support.
+  - SRV  :: Software for use on servers.
+  - MISC :: Other types of software
+
+** [[http://www.claws-mail.org/][Claws Mail]] [Unix, Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: claws
+   :END:
+
+Is a very nice GTK+ based MUA with full support for GnuPG. The Windows
+version is part of [[http://www.gpg4win.org/][Gpg4win]].
+
+** [[http://code.google.com/p/cryptophane/][Cryptophane]] [Windows] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: cryptophane
+   :END:
+
+Cryptophane is an easy-to-use application for MS Windows. It allows
+users to encrypt, sign, decrypt, and perform key maintenance without
+having to deal with GnuPG's command-line interface.
+
+** [[http://egd.sourceforge.net][EGD]] [Unix] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: egd
+   :END:
+
+Unices without a =/dev/random= should download and install
+this Entropy Gathering Daemon.
+
+** [[http://enigform.mozdev.org][enigform]] [Unix,Windows,OSX] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: enigform
+   :END:
+
+Mozilla Firefox extension for HTTP+OpenPGP support
+(see [[#mod-auth-openpgp][mod_auth_openpgp]]).
+
+
+** [[http://www.enigmail.net/][Enigmail]] [Unix, Windows, OSX] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: enigmail
+   :END:
+
+Is a plug-in for Mozilla's Thunderbird mailer.
+
+** [[http://www.adobner.de/eudoragpg/][EudoraGPG]] [Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: eudoragpg
+   :END:
+
+Is a plugin for the proprietary Eudora MUA.
+
+** [[http://www.ximian.com/products/ximian_evolution][Evolution]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: evolution
+   :END:
+
+Is a catch all MUA application for the GNOME desktop.
+
+** [[http://www.beedub.com/exmh/][exmh]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: exmh
+   :END:
+
+Is a Tcl/Tk based MUA.
+
+** [[http://business-php.com/opensource/ez-pine-gpg/][ez-pine-gpg]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: ez-pine-gpg
+   :END:
+
+ez-pine-gpg is a set of scripts that allows beginners and experts to
+use gpg with Pine. There are plenty of other applications that allow
+gpg to be used with Pine: this one is intended to be the best, since
+it merges intuitive use with powerful features. The result is an
+application that's not only fast and secure, but also perfect for
+novices and power-users alike.
+
+
+** [[http://gabber.sourceforge.net/][Gabber]] [Unix] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: gabber
+   :END:
+
+Gabber is a Free and Open Source GNOME client for an instant messaging
+system called Jabber (XMPP). Jabber is a Free and Open Source distributed
+instant messaging system. It does not rely on a single server, and the
+protocol is well documented. Jabber allows communication with many
+different instant messaging systems, including ICQ and AIM.
+
+** [[http://www.gajim.org/][Gajim]] [Unix] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: gajim
+   :END:
+
+The goal of Gajim is to provide a full featured and easy to use Jabber
+client. Gajim works nicely with GNOME, but does not require it to
+run. It is released under the GNU General Public License.
+
+** [[http://www.gnu.org/software/anubis/][GNU Anubis]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: anubis
+   :END:
+
+Is an outgoing mail processor, and an SMTP tunnel between the MUA and
+the MTA. It strongly uses the GnuPG via the GPGME interface. With this
+GNU tool you can encrypt or sign an outgoing mail on-the-fly.
+
+** [[http://www.collaboration-world.com/gnumail/][GNUmail.app]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: gnumail
+   :END:
+
+Is a GNUStep MUA with support for GnuPG.
+
+** [[http://www.tech-faq.com/gnupg-shell.shtml][GnuPG Shell]] [Unix] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: gnupg-shell
+   :END:
+
+GnuPG Shell is a cross-platform graphical frontend for GnuPG.
+
+** [[http://github.com/smartrevolution/gnupg-for-java][gnupg-for-java]] [Unix,Windows,OSX] LIB
+   :PROPERTIES:
+   :CUSTOM_ID: gnupg-for-java
+   :END:
+
+This is a Java binding for GPGME library.
+
+** [[gpa/index.en.html][GPA]]  [Unix, Windows] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: gpa
+   :END:
+
+Aims to be the standard GnuPG graphical frontend. [[gpa/index.en.html][GPA]] is hosted on
+this site.  The Windows version is part of [[http://www.gpg4win.org/][Gpg4win]].
+
+** [[http://business-php.com/opensource/gpg_encrypt/][gpg_encrypt]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: gpg-encrypt
+   :END:
+
+gpg_encrypt() is a PHP function that will allow you to easily use
+GnuPG to encrypt data to your public PGP key and mail that encrypted
+data to yourself, where it can be securely decrypted with your private
+key. This is designed primarily for use with web-based forms but can
+be used to encrypt any data.
+
+** [[http://linux.oregpreshaz.hu/script.html][gpg_mail]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: gpg-mail-script
+   :END:
+
+This script is able to encode/sign emails in an automatic
+fashion. There is also a [[http://linux.choma.hu/gpg-script/][mirror site]] available.
+
+** [[http://www.gpg4win.org/][Gpg4win]] [Windows] INST
+   :PROPERTIES:
+   :CUSTOM_ID: gpg4win
+   :END:
+
+Gpg4win is an installer package for Windows with computer programs and
+handbooks for email and file encryption.
+
+** [[http://www.gpgtools.org/gpgmail.html][GPGMail]] [OSX] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: gpgmail
+   :END:
+
+Is a mail program for MAC OS X.
+
+** [[gpgme/index.org][GPGME]] [Unix,Windows,OSX] LIB
+   :PROPERTIES:
+   :CUSTOM_ID: gpgme
+   :END:
+
+GnuPG Made Easy is the standard library for applications to access
+most GnuPG functions.
+
+** [[http://wald.intevation.org/projects/gpgoe][GPGOE]] [Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: gpgoe
+   :END:
+
+Is a plugin for the Outlook Express MUA.
+
+** [[http://www.g10code.de/p-gpgol.html][GpgOL]] [Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: gpgol
+   :END:
+
+A plug-in for Microsoft Outlook 2003.  It is part of [[http://www.gpg4win.org/][Gpg4win]].
+
+** [[http://sites.inka.de/tesla/gpgrelay.html][GPGrelay]] [Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: gpgrelay
+   :END:
+
+Is a Windows program which can be used to use GnuPG with all MUAs.
+
+** [[http://gpgtools.org/][GPGTools]] [OSX] INST
+   :PROPERTIES:
+   :CUSTOM_ID: gpgtools
+   :END:
+
+GPGTools is an installer package for Mac OS X. It integrates all
+required modules for easy use of GnuPG on this OS.
+
+
+** [[https://www.dyne.org/software/jaro-mail][Jaro Mail]] [Unix,OSX] MUA
+:PROPERTIES:
+:CUSTOM_ID: jaro-mail
+:END:
+
+Jaro Mail is an integrated suite of interoperable tools to manage
+e-mail communication in a private and efficient way, without relying
+too much on on-line services, in fact encouraging users to store their
+email locally.
+
+
+** [[ftp://ftp.gnupg.org/gcrypt/contrib/keylookup-2.1.tar.gz][Keylookup]] [Unix] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: keylookup
+   :END:
+
+Is a tool to fetch keys from keyservers.
+
+** [[http://devel-home.kde.org/~kgpg/][KGpg]] [Unix] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: kgpg
+   :END:
+
+Is a KDE frontend for GnuPG.
+
+** [[http://kmail.kde.org/][KMail]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: kmail
+   :END:
+
+From the KDE desktop, it fully supports GnuPG.
+
+** [[http://www.snafu.priv.at/kuvert.html][kuvert]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: kuvert
+   :END:
+
+This frontend is for GnuPG and old-style pgp2. It works slightly
+similar to Raph Levien's premail: it sits between MUA and MTA and
+decides based on the keyring contents whether to sign, sign/encrypt or
+leave an email as it is.  kuvert is unix-only and designed to work for
+outbound emails only.  It's a daemon tool and requires some form of
+passphrase cache.  kuvert has been around (under earlier names) since
+about 1996.
+
+** [[http://www.gpgtools.org/macgpg1.html][MacGPG]], [[http://www.gpgtools.org/macgpg2.html][MacGPG2]] [OSX] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: macgpg
+   :END:
+
+The MacGPG project has information on using GnuPG on OS-X.
+
+** [[http://www.physto.se/~p99jlu/MagicPGP.html][MagicPGP]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: magicpgp
+   :END:
+
+Is yet another set of scripts to use GnuPG with Pine.
+
+** [[http://www.pobox.com/~lbudney/linux/software/mailcrypt.html][Mailcrypt]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: mailcrypt
+   :END:
+
+For Emacs. You may need the latest [[http://www.lothar.com/tech/crypto/][patches]] until there is a new
+release of Mailcrypt.
+
+** [[http://www.mew.org/][Mew]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: mew
+   :END:
+
+A MUA with support for GnuPG.
+
+** [[http://miranda-icq.sourceforge.net/][Miranda ICQ]] [Unix] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: miranda-icq
+   :END:
+
+Has support for GnuPG.
+
+** [[http://freshmeat.net/projects/maopenpgp][mod_auth_openpgp]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: mod-auth-openpgp
+   :END:
+
+Apache module for HTTP+OpenPGP support
+(see also [[#enigform][Enigform]]).
+
+
+** [[http://www.mutt.org/][Mutt]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: mutt
+   :END:
+
+Is an advanced non-graphical MUA with complete MIME and GnuPG/PGP
+support.
+
+** [[http://www.bell-labs.com/projects/nsbd/][NSBD]] [Unix] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: nsbd
+   :END:
+
+The Not-So-Bad Distribution system.
+
+** [[https://yourmom.dhs.org/pgp/][OpenPGP Webmail]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: openpgp-webmail
+   :END:
+
+Is a web based mailer to send encrypted messages.
+
+** PGG [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: pgg
+   :END:
+
+PGG is a complete PGP signing/encrypting solution provided from
+scratch by the Gnus development team. It deserves the same than
+[[#fend_mua-Mailcrypt][mailcrypt]] but it has also native MIME support whereas mailcrypt does
+not. There is no PGG homepage at the moment, sorry.
+
+** [[http://www.pgpdump.net/][PGPdump Web interface]] [All] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: pgpdump-web
+   :END:
+
+Can be used to analyze OpenPGP data formats.
+
+** [[http://pgpenvelope.sourceforge.net/][pgpenvelope]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: pgpenvelope
+   :END:
+
+Is a Pine and procmail filter which allows one to process messages
+with GnuPG.
+
+** [[http://www.nessie.de/mroth/pgpgpg/][pgpgpg]] [Unix] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: gpggpg
+   :END:
+
+Is a comandline wrapper tool to allow the use of scripts written for
+PGP with GnuPG.
+
+** [[http://www.sanface.com/pgphtml.html][PGPHTML]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: pgphtml
+   :END:
+
+Is a perl script to sign HTML pages.
+
+** [[pinentry/index.org][Pinentry]] [Unix,Windows,OSX] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: pinentry
+   :END:
+
+Secure PinEntry Dialog.  This is required by GnuPG-2 and part of all
+installers.
+
+** [[http://py-gnupg.sourceforge.net/][Python GnuPGInterface]] [Unix] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: python-gnupginterface
+   :END:
+
+Is what the name says.
+
+** [[http://eepatents.com/privaria/][Privaria]] [Unix] MISC
+   :PROPERTIES:
+   :CUSTOM_ID: privaria
+   :END:
+
+Is a secure networking suite that uses GnuPG as part of its
+authentication and encryption scheme.
+
+** [[http://psi.affinix.com/][PSI]] [Unix, Windows] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: psi
+   :END:
+
+Psi is a free and crossplatform client for connecting to the Jabber
+network. It supports multiple accounts, group chat, Unicode, and
+strong security (TLS and GnuPG).
+
+** [[http://www.memecode.com/scribe.php][Scribe]] [Unix, Windows] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: scribe
+   :END:
+
+Scribe is a small and fast email client that lets you send, receive
+and manage email without fuss. Scribe comes with a [[http://www.memecode.com/scribe/gnupg.php][plugin]] that calls
+GnuPG.
+
+** [[http://www.sys3175.co.uk/securemail.php][Securemail]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: securemail
+   :END:
+
+Is another webmail client.
+
+** [[http://seahorse.sf.net/][Seahorse]] [Unix] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: seahorse
+   :END:
+
+Is a GNOME frontend for GnuPG.
+
+** [[http://soupermail.sourceforge.net/][Soupermail]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: soupermail
+   :END:
+
+Is a versatile HTML form handler.
+
+** [[http://www.squirrelmail.org/plugin_view.php?id=153][Squirrelmail Plugin]] [Unix] SRV
+   :PROPERTIES:
+   :CUSTOM_ID: squirrelmail-plugin
+   :END:
+
+A gpg plugin for the popular [[http://www.squirrelmail.org/][Squirrelmail]] web mail server.
+
+** [[http://sylpheed.sraoss.jp/en/][Sylpheed]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: sylpheed
+   :END:
+
+Is a very nice GTK+ based MUA with full support for GnuPG.
+
+** [[http://tkabber.jabber.ru/][Tkabber]] [Unix] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: tkabber
+   :END:
+
+Tkabber is a free client for an instant messaging system called
+Jabber (aka XMPP). It is written in Tcl/Tk and supports many features like
+support of unicode, ssl support, http proxy, file transfers and
+support of multi-user conference protocol.
+
+** [[http://www.lothlann.freeserve.co.uk/pjb/topal/][Topal]] [Unix] MUA
+   :PROPERTIES:
+   :CUSTOM_ID: topal
+   :END:
+
+Is another program to use GnuPG with Pine.
+
+** [[http://www.media-art-online.org/wija/][wija]] [Unix, Windows, OSX] CHAT
+   :PROPERTIES:
+   :CUSTOM_ID: wija
+   :END:
+
+wija is a free and cross-platform Jabber/XMPP client written in Java,
+with built-in GnuPG key rings management GUI. Its extended protocols
+allow users to encrypt chat and multi-user chat as well as
+encrypting/signing messages and signing presence of the user. It is
+multilingual and runs on GNU/Linux, Mac OS X and Windows.
+
+** [[https://scand.com/products/wingpg/][WinGPG]] [Windows] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: wingpg
+   :END:
+
+WinGPG is a tray-based classical Windows application, Windows NT
+Explorer shell extension, and a classic GPGv2 distribution (it uses
+the cryptography from the official site without making any
+modifications).
+
+** [[http://freshmeat.net/projects/xap/][XAP]] [Unix] GUI
+   :PROPERTIES:
+   :CUSTOM_ID: xap
+   :END:
+
+Is the X application panel and filemanager.
+
+** [[http://xfmail.slappy.org/][XFmail]] [Unix]  MUA
+   :PROPERTIES:
+   :CUSTOM_ID: xfmail
+   :END:
+
+Works with GnuPG.

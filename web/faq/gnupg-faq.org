@@ -4,7 +4,7 @@
 #+AUTHOR:    Robert J. Hansen et al.
 #+LANGUAGE:  en
 #+LINK: gnupgweb https://www.gnupg.org/
-#+LINK: roundup  https://bugs.g10code.com/gnupg/issue
+#+LINK: roundup  https://bugs.gnupg.org/gnupg/issue
 #+OPTIONS:   H:3 num:2 toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t TeX:t LaTeX:t skip:nil d:nil tags:not-in-toc
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://www.gnupg.org/share/site.css" />
 #+STARTUP:   overview indent
@@ -47,7 +47,7 @@ purposes.
 
 This document is © 2012-2015, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
 A.M. Kuchling <[[mailto:amk@amk.ca?subject=The%20GnuPG%20FAQ][amk@amk.ca]]>. You are free to make use of this document
-in accordance with the [[http://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
+in accordance with the [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
 license]]; alternately, you may make use of it under terms of the
 GNU General Public License (version 3 or, at your discretion, any
 later version).
@@ -95,7 +95,7 @@ try to help to people who send email directly to us, those emails quickly
 accumulate.  Helping just six people a day can take an hour of time, and that's
 an hour less we have to work on making GnuPG better.  Please reach out to the
 GnuPG community via the
-[[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
+[[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
 not individual people within
 GnuPG.
 
@@ -237,7 +237,7 @@ operating systems.
     :CUSTOM_ID: get_gnupg_win32
     :END:
 
-A convenient Windows installer is available from [[http://www.gpg4win.org][GPG4WIN]].
+A convenient Windows installer is available from [[https://www.gpg4win.org][GPG4WIN]].
 
 
 *** … for Mac OS X?
@@ -245,7 +245,7 @@ A convenient Windows installer is available from [[http://www.gpg4win.org][GPG4W
     :CUSTOM_ID: get_gnupg_osx
     :END:
 
-The [[http://www.gpgtools.org][GPGtools project]] has everything needed to get started.
+The [[https://www.gpgtools.org][GPGtools project]] has everything needed to get started.
 However, GPGTools only offers GnuPG 2.0; if you want the latest-and-greatest 2.1, look
 at Patrick Brunschwig’s [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project
 on SourceForge.
@@ -313,7 +313,7 @@ To install GnuPG on Gentoo, run the following command as root:
 
 =emerge gnupg=
 
-The Gentoo documentation includes a [[http://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
+The Gentoo documentation includes a [[https://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
 
 
 *** … for FreeBSD?
@@ -468,7 +468,7 @@ There are undoubtedly many more that we’ve missed.
     :END:
 
 
-- Subscribing :: visit the [[http://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
+- Subscribing :: visit the [[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users webpage]]
 - Unsubscribing :: see above
 - List moderator :: <[[mailto:gnupg-users-owner@gnupg.org?subject%3DThe%20GnuPG-Users%20list][gnupg-users-owner@gnupg.org]]>
 - Supports PGP/MIME? :: Yes
@@ -500,7 +500,7 @@ but on the whole it’s a wonderful resource.
 - Supports PGP/MIME :: Yes
 - Languages supported :: English, Deutsch, Schwyzerdütsch, Español
 
-Enigmail integrates GnuPG with [[http://www.getthunderbird.com][Mozilla Thunderbird]] and/or [[http://www.seamonkey-project.org/][Mozilla
+Enigmail integrates GnuPG with [[https://www.getthunderbird.com][Mozilla Thunderbird]] and/or [[https://www.seamonkey-project.org/][Mozilla
 Seamonkey]]. It’s one of the most popular ways to use GnuPG, and the
 mailing list provides a friendly place to learn how it works and get
 started using it.
@@ -581,7 +581,7 @@ available in the [[https://torproject.org][Tor]] network as =ic6au7wa3f6naxjq.on
      :END:
 
 Enigmail, a plugin for Mozilla Thunderbird that adds strong GnuPG
-support, can be found at [[http://enigmail.net][http://enigmail.net]].
+support, can be found at [[https://enigmail.net][https://enigmail.net]].
 
 
 **** … GPGTools?
@@ -590,7 +590,7 @@ support, can be found at [[http://enigmail.net][http://enigmail.net]].
      :END:
 
 Mac OS X users may wish to visit the GPGTools project at
-[[http://www.gpgtools.org][http://www.gpgtools.org]].
+[[https://www.gpgtools.org][https://www.gpgtools.org]].
 
 
 **** … GPG4WIN?
@@ -599,7 +599,7 @@ Mac OS X users may wish to visit the GPGTools project at
      :END:
 
 GPG4WIN, the Windows port of GnuPG, maintains a homepage at
-[[http://www.gpg4win.org][http://www.gpg4win.org]].
+[[https://www.gpg4win.org][https://www.gpg4win.org]].
 
 
 *** Where can I find webpages covering…
@@ -649,11 +649,11 @@ practices.
 The inclusion of a site on this list is not an endorsement of that
 site’s political leanings.
 
-Probably the best-known organization is the [[http://www.eff.org][Electronic Frontier
+Probably the best-known organization is the [[https://www.eff.org][Electronic Frontier
 Foundation]], which has been at the vanguard of electronic civil
 liberties for over twenty years.
 
-The [[http://www.fsf.org][Free Software Foundation]] is also deeply involved in these matters,
+The [[https://www.fsf.org][Free Software Foundation]] is also deeply involved in these matters,
 although in a different way than the EFF.
 
 
@@ -687,7 +687,7 @@ is actively developed.
     It runs anywhere that KDE does, and even on some mobile devices as
     Kontact Touch.
 
-(3) Claws-Mail for Windows is included in the [[http://www.gpg4win.org][Gpg4win]] installer.
+(3) Claws-Mail for Windows is included in the [[https://www.gpg4win.org][Gpg4win]] installer.
 
 
 ** … Mac OS X?
@@ -698,9 +698,9 @@ is actively developed.
 | Name        | Plugins        | see |
 |-------------+----------------+-----|
 | Thunderbird | yes (Enigmail) | (1) |
-| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
+| Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
-| Apple Mail  | yes ([[http://www.gpgtools.org][GPGtools]]) | (4) |
+| Apple Mail  | yes ([[https://www.gpgtools.org][GPGtools]]) | (4) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
     popular GnuPG-aware email clients.  it’s under active development
@@ -725,7 +725,7 @@ is actively developed.
 | Name        | Plugins        | see |
 |-------------+----------------+-----|
 | Thunderbird | yes (Enigmail) | (1) |
-| Gnus        | yes ([[http://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
+| Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
 | Kontact     | native         | (4) |
 | Evolution   | native         |     |
@@ -759,7 +759,7 @@ which computers you use the portable app on.
 
 That said, Windows users should check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps]].
 Or, to build your own, use the /mkportable/ tool which comes with
-[[http://www.gpg4win.org][Gpg4win]].
+[[https://www.gpg4win.org][Gpg4win]].
 
 
 * What do all these strange words mean?
@@ -880,7 +880,7 @@ so that other users can find it.  There are distributed networks of
 keyservers that share keys, so you only need to upload your key once
 to that network.
 
-One widely-used keyserver network is [[http://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
+One widely-used keyserver network is [[https://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
 for “Synchronising Key Server”.  You can use this network by supplying
 the =--keyserver pool.sks-keyservers.net= option.
 
@@ -1719,7 +1719,7 @@ follows.  First, on a secure machine:
    :END:
 
 
-Check out [[https://www.gnupg.org/related_software/gpgme/][GPGME (GnuPG Made Easy)]].
+Check out [[https://www.gnupg.org/software/gpgme/][GPGME (GnuPG Made Easy)]].
 
 
 
@@ -1855,7 +1855,7 @@ rules.
 
 1.  Keep your system up-to-date.  Always apply the latest patches.
 2.  Stop using old versions of Internet Explorer.  If possible, use
-    [[http://www.getfirefox.com][Mozilla Firefox]] or [[http://download-chromium.appspot.com/][Chromium]].
+    [[https://www.getfirefox.com][Mozilla Firefox]] or [[https://download-chromium.appspot.com/][Chromium]].
 3.  Don’t open email attachments unless they are expected and come
     from someone you know.
 4.  Don’t click on email links unless they are expected and come from
@@ -2075,8 +2075,8 @@ computation.  This is a consequence of the Heisenberg Uncertainty
 Principle, and may not be violated under our current understanding of
 the laws of physics.
 
-Using these two principles (the [[http://en.wikipedia.org/wiki/Landauer_bound][Landauer bound]] and the
-[[http://en.wikipedia.org/wiki/Margolus%E2%80%93Levitin_theorem][Margolus–Levitin limit]]), we can determine quite accurately how much
+Using these two principles (the [[https://en.wikipedia.org/wiki/Landauer_bound][Landauer bound]] and the
+[[https://en.wikipedia.org/wiki/Margolus%E2%80%93Levitin_theorem][Margolus–Levitin limit]]), we can determine quite accurately how much
 heat would be released by a computer that brute-forced a 128-bit
 cipher.  The results are profoundly silly: it’s enough to boil the
 oceans and leave the planet as a charred, smoking ruin.
@@ -2226,7 +2226,3 @@ PGP 2.6 support.
       (setq h (downcase h))
       (org-entry-put nil "CUSTOM_ID" h)))
 #+end_src
-
-
-# End:
-# Local Variables:

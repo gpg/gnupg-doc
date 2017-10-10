@@ -189,7 +189,7 @@ Note
 
    Card readers (NOT those used for flash memory cards) can be obtained
    from computer stores (e.g.
-   [47]http://www.kernelconcepts.de/products/security-en.shtml).
+   [47]https://www.floss-shop.de/en/security-privacy/).
 
 2.2.1. A List of tested Readers
 
@@ -1148,12 +1148,12 @@ A.1. A small OpenPGP card FAQ
    Where do I get a reader?
    
    Currently we know that you may order card readers from
-   [73]kernelconcepts. The website is only in German, but you can order
+   [73]FLOSS-Shop. The website is only in German, but you can order
    the "USB Chip-Karten Lesegeraet SCM SCR-335" for 29,00 EUR from all
    over Europe; either by prepayment via bank transfer or paypal. You
-   have to sent your orders via email to <[74]order@kernelconcepts.de>.
+   have to sent your orders via email to <[74]order@floss-shop.de>.
    If you have questions considering the order you can contact
-   <[75]info@kernelconcepts.de> in English or German.
+   <[75]info@floss-shop.de> in English or German.
 
    In the UK, SCM card readers can be purchased online from
    [76]http://www.crownhill.co.uk/.
@@ -1256,7 +1256,7 @@ References
   44. http://www.gnupg.org/download/index.html
   45. https://www.fsfe.org/join_us/
   46. http://www.fsfeurope.org/
-  47. http://www.kernelconcepts.de/products/security-en.shtml
+  47. https://www.floss-shop.de/en/security-privacy/
   48. http://www.fsfe.org/en/content/download/17665/125518/file/gnupg-ccid.rules
   49. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html
   50. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html#features
@@ -1282,9 +1282,9 @@ References
   70. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html#id2507324
   71. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html#id2508313
   72. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html#id2508338
-  73. http://www.kernelconcepts.de/products/security.shtml
-  74. mailto:order@kernelconcepts.de
-  75. mailto:info@kernelconcepts.de
+  73. https://www.floss-shop.de/en/security-privacy/
+  74. mailto:order@floss-shop.de
+  75. mailto:info@floss-shop.de
   76. file://localhost/home/wk/w/card-howto/build/smartcard-howto-single.html
   77. http://www.py-soft.co.uk/~benjamin/download/mac-gpg/
   78. http://www.gnupg.org/documentation/mailing-lists.html

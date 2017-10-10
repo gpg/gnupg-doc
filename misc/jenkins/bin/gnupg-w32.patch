@@ -1,0 +1,18 @@
+diff --git a/autogen.rc b/autogen.rc
+index 36948178f..4aa1993d8 100644
+--- a/autogen.rc
++++ b/autogen.rc
+@@ -15,13 +15,6 @@ esac
+ case "$myhost" in
+   w32)
+     configure_opts="
+-      --with-gpg-error-prefix=@SYSROOT@
+-      --with-ksba-prefix=@SYSROOT@
+-      --with-libgcrypt-prefix=@SYSROOT@
+-      --with-libassuan-prefix=@SYSROOT@
+-      --with-zlib=@SYSROOT@
+-      --with-regex=@SYSROOT@
+-      --with-npth-prefix=@SYSROOT@
+       --disable-g13
+       "
+     ;;

@@ -1,0 +1,36 @@
+#+TITLE: GnuPG e.V.
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#+macro: atgit [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-verein.git;a=blob_plain;f=$1][$2]]
+
+* The GnuPG e.V.
+
+In February 2017 several GnuPG developer came together for a 3 day
+hackathon.  While having some beer in the [[http://www.bilkinfo.de/kneipen/tigges.html][Tigges]] on one evening the
+lingering plan for setting up a legal entity was finally agreed upon.
+Work on the constitution started right away and the founding assembly
+commenced on the next day at 13:37.
+
+The 7 founding members are: Andre Heinecke, Justus Winter, Kai
+Michaelis, Marcus Brinkmann, Neal Walfied, Werner Koch, and Yutaka
+Niibe.  The elected chair is Werner, the vice Andre, and the cashier
+Marcus.  Marcus resigned on 2017-08-02; a new cashier needs to be
+elected soon.
+
+The rules on how to apply for membership will soon be posted.  The
+registration number is /VR11482/ at /Amtsgericht Düsseldorf/.  The tax
+office Düsseldorf-Altstadt confirmed our charitable state on
+2017-04-03.
+
+** Menu
+
+- [[file:members.org][Members]]
+- [[file:finances.org][Financial overview]]
+- {{{atgit(legal/constitution.de.pdf,constitution)}}} [German]
+- {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation]
+- {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}
+  [German]
+
+
+
+# eof

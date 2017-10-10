@@ -1,24 +1,27 @@
 ;;; gpgweb.el --- elisp helper code for the GnuPG web pages
 
-(require 'org-exp)
+(if (< (string-to-number emacs-version) 24)
+    (require 'org-exp))
 
+;; makeindex disabled because the generated file is created in the
+;; source directory.
 (defun gpgweb-setup-project ()
   "Set up an org-publish project for the gnupg.org website."
   (progn
    (require 'ox-gpgweb (concat gpgweb-root-dir "share/ox-gpgweb.el"))
    (aput 'org-publish-project-alist "gpgweb-org"
-   '(:base-directory "~/s/gnupg-doc/web"
+   `(:base-directory ,gpgweb-root-dir
      :base-extension "org"
      :language "en"
      :html-extension "html"
      :recursive t
-     :publishing-directory "../stage"
+     :publishing-directory ,gpgweb-stage-dir
      :publishing-function gpgweb-org-to-html
      :body-only t
      :section-numbers nil
      :tags nil
      :with-toc nil
-     :makeindex t
+     :makeindex nil
      :auto-sitemap nil
      :sitemap-title "GnuPG - Sitemap"
      :sitemap-sort-folders "last"
@@ -29,22 +32,36 @@
      :html-head-include-scripts nil))
 
    (aput 'org-publish-project-alist "gpgweb-other"
-   '(:base-directory "."
-     :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig"
+   `(:base-directory ,gpgweb-root-dir
+     :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig\\|js\\|map\\|eot\\|ttf\\|woff\\|woff2\\|svg"
      :recursive t
-     :publishing-directory "../stage"
+     :publishing-directory ,gpgweb-stage-dir
      :publishing-function org-publish-attachment
      :completion-function gpgweb-upload))
 
    (aput 'org-publish-project-alist "gpgweb"
-   '(:components ("gpgweb-org" "gpgweb-other")))))
+   '(:components ("gpgweb-org" "gpgweb-other")))
+
+   (add-hook 'org-export-before-processing-hook 'gpgweb-preprocess)))
 
 
-(defun gpgweb-insert-header (title committed-at)
+(defun gpgweb-preprocess (backend)
+  "Insert certain stuff before processing."
+  (let ()
+    (goto-char (point-min))
+    (when (re-search-forward
+           "^#\\+GPGWEB-NEED-SWDB\\b" 2048 t)
+      (beginning-of-line)
+      (kill-line 1)
+      (insert (org-file-contents (concat gpgweb-root-dir "swdb.mac")
+                                 'noerror)))))
+
+
+(defun gpgweb-insert-header (title committed-at custom)
   "Insert the header.
 
 COMMITTED-AT is the commit date string of the source file or nil
-if not available."
+if not available.  If CUSTOM is true only a minimal header is set."
   (goto-char (point-min))
   (insert "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
@@ -52,7 +69,8 @@ if not available."
 <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">
 <head>
 <title>" title "</title>
-<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n")
+<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />
+")
   (when (and committed-at (>= (length committed-at) 10))
       (insert "<meta name=\"DC.Date\" content=\""
               (substring committed-at 0 10) "\" />\n"))
@@ -64,23 +82,33 @@ if not available."
 <meta name=\"DC.Publisher\" content=\"The GnuPG Project\" />
 <meta name=\"DC.Identifier\" content=\"https://gnupg.org/\" />
 <meta name=\"DC.Rights\" content=\"https://gnupg.org/copying.html\" />
-<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+")
+(unless custom
+ (insert "<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
 </head>
 <body>
-"))
+")))
 
 (defconst gpgweb-gnupg-menu-alist
   '(("/index.html"
      "Home"
      (("/index.html"                       "Home")
-      ("/features.html"                    "Features")
       ("/news.html"                        "News")
       ("/people/index.html"                "People")
-      ("/service.html"                     "Service")))
+      ("/verein/index.html"                "Verein")
+      ("/documentation/sites.html"         "Sites")))
     ("/donate/index.html"
      "Donate"
      (("/donate/index.html"                "Donate")
       ("/donate/kudos.html"                "List of Donors")))
+    ("/software/index.html"
+     "Software"
+     (("/software/index.html"              "GnuPG")
+      ("/software/frontends.html"          "Frontends")
+      ("/software/tools.html"              "Tools")
+      ("/software/libraries.html"          "Libraries")
+      ("/software/swlist.html"             "All")))
     ("/download/index.html"
      "Download"
      (("/download/index.html"              "Download")
@@ -88,7 +116,7 @@ if not available."
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
       ("/download/release_notes.html"      "Release&nbsp;Notes")
       ("/download/mirrors.html"            "Mirrors")
-      ("/download/cvs_access.html"         "GIT")))
+      ("/download/git.html"                "GIT")))
     ("/documentation/index.html"
      "Documentation"
      (("/documentation/howtos.html"        "HOWTOs")
@@ -96,14 +124,9 @@ if not available."
       ("/documentation/guides.html"        "Guides")
       ("/documentation/faqs.html"          "FAQs")
       ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
-      ("/documentation/sites.html"         "Sites")
-      ("/documentation/bts.html"           "Bug&nbsp;Tracker")))
-    ("/related_software/index.html"
-     "Related software"
-     (("/related_software/frontends.html"  "Frontends")
-      ("/related_software/tools.html"      "Tools")
-      ("/related_software/libraries.html"  "Libraries")
-      ("/related_software/swlist.html"     "All")))
+      ("/service.html"                     "3rd Party Support")
+      ("/documentation/bts.html"           "Bug&nbsp;Tracker")
+      ("/documentation/security.html"      "Security")))
     ("/blog/index.html"
      "Blog"))
   "The definition of the gnupg.org menu structure.")
@@ -279,7 +302,7 @@ HTMLFILE is HTML file name and COMMITTED-AT is the commit date
 string of the source file or nil if not available."
   (let ((srcfile (concat "https://git.gnupg.org/cgi-bin/gitweb.cgi?"
                          "p=gnupg-doc.git;a=blob;f="
-                         (if blogmode "misc/blog.gnupg.org" "web")
+                         (if blogmode "misc/blog.gnupg.org" "web/")
                          ;; The replace below is a hack to cope with
                          ;; blogmode where HTMLFILE is like "./foo.html".
                          (replace-regexp-in-string
@@ -311,17 +334,29 @@ string of the source file or nil if not available."
     (goto-char (point-min))
     (unless (search-forward "<!--disable-copyright-footer-->" nil t)
       (goto-char (point-max))
-      (insert "  <div id=\"cpyright\">
-    <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
-      ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
-            src=\"/share/cc-by-sa-3.0_80x15.png\"/></a>&nbsp;
+      (if (string-prefix-p "verein/" htmlfile)
+          (insert "  <div id=\"cpyright\">
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\"
+      ><img alt=\"CC BY-SA 4.0\" style=\"border: 0\"
+            src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
+    This web page is
+    Copyright 2017 GnuPG e.V. and licensed under a
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\"
+    >Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+    <a href=\"/copying.html\">copying</a> for details.
+    Page <a href=\"" srcfile "\">source</a> last changed on " changed ".
+  </div>\n")
+          (insert "  <div id=\"cpyright\">
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
+      ><img alt=\"CC BY-SA 3.0\" style=\"border: 0\"
+            src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
     These web pages are
-    Copyright 1998--2015 The GnuPG Project and licensed under a
-    <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\"
+    Copyright 1998--2017 The GnuPG Project and licensed under a
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
     Page <a href=\"" srcfile "\">source</a> last changed on " changed ".
-  </div>\n"))
+  </div>\n")))
   (goto-char (point-max))
   (insert "</div>
 </div><!-- end wrapper -->
@@ -329,34 +364,78 @@ string of the source file or nil if not available."
 </html>")))
 
 
-;;; Post-process the generated HTML file:
-;;;
-;;; - Insert header and footer
-;;; - Insert "class=selected" into the active menu entry
-;;; - Fixup sitemap.
-;;;
-;;; If blogmode is not nil the output is rendered as a blog.  BLOGMODE
-;;; may then contain an ordered list of org file names which are used
-;;; to create the previous and Next links for an entry.
-;;;
+(defun gpgweb-publish-find-title (file &optional reset)
+  "Find the title of FILE in project.
+This is a copy of org-publish-find-title which switches the
+buffer into read-write mode so that it works with read-only files."
+  (or
+   (and (not reset) (org-publish-cache-get-file-property file :title nil t))
+   (let* ((org-inhibit-startup t)
+	  (visiting (find-buffer-visiting file))
+	  (buffer (or visiting (find-file-noselect file))))
+     (with-current-buffer buffer
+       (toggle-read-only 0)
+       (let ((title
+	      (let ((property
+		     (plist-get
+		      ;; protect local variables in open buffers
+		      (if visiting
+			  (org-export-with-buffer-copy (org-export-get-environment))
+			(org-export-get-environment))
+		      :title)))
+		(if property
+		    (org-no-properties (org-element-interpret-data property))
+		  (file-name-nondirectory (file-name-sans-extension file))))))
+	 (unless visiting (kill-buffer buffer))
+	 (org-publish-cache-set-file-property file :title title)
+	 title)))))
+
+
+(defun gpgweb-want-custom-page-p ()
+  "Return true if the current buffer indicated that it wants to
+be a custom page."
+  (let ((savepoint (point))
+        (result))
+    (goto-char (point-min))
+    (setq result (not (not (search-forward "<!--custom-page-->" nil t))))
+    (goto-char savepoint)
+    result))
+
+
 (defun gpgweb-postprocess-html (plist orgfile htmlfile blogmode)
+  "Post-process the generated HTML file
+
+  - Insert header and footer
+  - Insert \"class=selected\" into the active menu entry
+  - Fixup sitemap.
+
+If blogmode is not nil the output is rendered as a blog.  BLOGMODE
+may then contain an ordered list of org file names which are used
+to create the previous and Next links for an entry."
   (let* ((visitingp (find-buffer-visiting htmlfile))
 	 (work-buffer (or visitingp (find-file-noselect htmlfile)))
          (committed-at (shell-command-to-string
-                        (concat "git log -1 --format='%ci' -- " orgfile))))
+                        (concat "git"
+                                (if blogmode (concat " -C " gpgweb-blog-dir))
+                                " log -1 --format='%ci' -- " orgfile))))
     (prog1 (with-current-buffer work-buffer
              (let ((fname (file-name-nondirectory htmlfile))
                    (fname-2 (replace-regexp-in-string
-                              ".*/stage\\(/.*\\)$" "\\1" htmlfile t))
-                   (title (org-publish-find-title orgfile)))
+                             ".*/gnupg-doc-stage/web/\\(.*\\)$" "\\1"
+                             htmlfile t))
+                   (title (gpgweb-publish-find-title orgfile))
+                   (custom (gpgweb-want-custom-page-p)))
                ;; Insert header, menu, and footer.
-               (gpgweb-insert-header title committed-at)
-               (gpgweb-insert-menu fname-2)
-               (if blogmode
-                   (gpgweb-fixup-blog plist
-                                      (file-name-nondirectory orgfile)
-                                      blogmode))
-               (gpgweb-insert-footer fname-2 committed-at blogmode)
+               (gpgweb-insert-header title committed-at custom)
+               (unless custom
+                 (goto-char (point-min))
+                 (unless (search-forward "<!--disable-menu-->" nil t)
+                   (gpgweb-insert-menu fname-2))
+                 (if blogmode
+                     (gpgweb-fixup-blog plist
+                                        (file-name-nondirectory orgfile)
+                                        blogmode))
+                 (gpgweb-insert-footer fname-2 committed-at blogmode))
 
                ; Fixup the sitemap
                (when (string-equal fname "sitemap.html")
@@ -388,21 +467,17 @@ string of the source file or nil if not available."
       (unless visitingp (kill-buffer work-buffer))))))
 
 
-;;;
-;;; The publishing function used by the HTML exporter
-;;;
 (defun gpgweb-org-to-html (plist filename pub-dir)
+  "The publishing function used by the HTML exporter"
   (gpgweb-postprocess-html plist
                            filename
                            (org-gpgweb-publish-to-html plist filename pub-dir)
                            nil))
 
 
-;;;
-;;; Turn the current buffer which has an org-mode blog entry into its
-;;; rendered form and save it with the suffix .html.
-;;;
 (defun gpgweb-render-blog (&optional filelist)
+  "Turn the current buffer which has an org-mode blog entry into its
+rendered form and save it with the suffix .html."
   (interactive)
   (let* ((extplist '(:language "en"
                      :section-numbers nil
@@ -414,33 +489,35 @@ string of the source file or nil if not available."
     (gpgweb-postprocess-html plist orgfile htmlfile (if filelist filelist t))))
 
 
-;;;
-;;; Publish all blog entries in the current directory
-;;;
 (defun gpgweb-publish-blogs ()
+  "Publish all blog entries in the current directory"
   (interactive)
-  (let ((orgfiles (directory-files "." nil "^2[0-9]+-.*\.org$")))
+  (let ((orgfiles (directory-files gpgweb-blog-dir nil "^2[0-9]+-.*\.org$")))
     (dolist (file (cons "index.org" orgfiles))
-      (let* ((visitingp (find-buffer-visiting file))
-             (work-buffer (or visitingp (find-file-noselect file))))
+      (let* ((file2 (concat gpgweb-blog-dir file))
+             (visitingp (find-buffer-visiting file2))
+             (work-buffer (or visitingp (find-file-noselect file2))))
         (with-current-buffer work-buffer
+          (setq default-directory gpgweb-stage-dir)
+          (toggle-read-only 0)
           (gpgweb-render-blog orgfiles)
           (basic-save-buffer))
         (unless visitingp
           (kill-buffer work-buffer))))))
 
 
-
 (defun gpgweb-upload ()
+  "We don't do an upload directly.  Instead we only print the
+commands to do that.  In reality a cron jobs syncs the stage dir."
   (let ((stagedir (plist-get project-plist :publishing-directory)))
     (message "gpgweb  rootdir '%s'" gpgweb-root-dir)
     (message "gpgweb stagedir '%s'" stagedir)
-    (shell-command
+    (message
      (concat "cd " gpgweb-root-dir " && cd " stagedir
-             "&& rsync -rlt --exclude \"*~\" ./ "
+             " && echo rsync -rlt --exclude \"*~\" ./ "
              "werner@trithemius.gnupg.org:"
              "/var/www/www/www.gnupg.org/htdocs/ ;"
-             " ssh werner@trithemius.gnupg.org"
+             " echo ssh werner@trithemius.gnupg.org"
              " touch /var/www/www/www.gnupg.org/htdocs/donate/donors.dat"))
 ))
 

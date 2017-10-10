@@ -1,0 +1,120 @@
+# Financial Results for 2015
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: September 4, 2017
+#+Keywords:
+
+** Financial Results for 2016
+
+Having prepared the annual accounts for g10^code GmbH, the legal
+entity employing some of the GnuPG hackers, I can now share a
+financial report.  Please read on if you are interested in how we
+earned and spent the money from donations and paid projects.
+
+*** Balance Sheet as of 2016-12-31
+
+    Let us start by looking at the balance sheet, which describes
+    our financial status.  The following table shows the actual
+    [[file:data/g10code-bilanz-2016-pub.pdf][balance sheet]] with a few accounts pooled up.  Note that for
+    display purposes all values have been rounded to a full Euro, and
+    thus there are minor mismatches in the Sums row.
+
+    |                           |    <r> |      <r> |       <r> |      <r> |
+    |                           |  Asset |   (2015) | Liability |   (2015) |
+    |---------------------------+--------+----------+-----------+----------|
+    | Tangible assets           |   4722 |   (3880) |           |          |
+    | Stock of goods            |      0 |      (0) |           |          |
+    | Cash balance              |    154 |    (360) |           |          |
+    | Bank balance KSD          | 282163 | (207453) |           |          |
+    | PayPal and others balance |   7001 |   (3842) |           |          |
+    | Accounts receivable       |  10702 |   (4774) |           |          |
+    | Accounts receivable other |    150 |    (497) |           |          |
+    | Common capital stock      |        |          |     25000 |  (25000) |
+    | Loss carried forward      |      0 |      (0) |           |          |
+    | Profit carried forward    |        |          |    126688 |  (11338) |
+    | Net profit                |        |          |     98958 | (115350) |
+    | Shareholder loans         |        |          |         0 |      (0) |
+    | Accounts payable          |        |          |       323 |      (0) |
+    | Accounts payable other    |        |          |     53850 |  (27974) |
+    | GnuPG development fund    |        |          |        72 |     (72) |
+    | Provision for taxes       |        |          |         0 |  (41070) |
+    |---------------------------+--------+----------+-----------+----------|
+    | Sums                      | 304891 | (220804) |    304891 | (220804) |
+
+
+    The /Bank balance KSD/ is the money that we had at the end of the year
+    in our accounts at the local savings bank.  The /PayPal/ row gives
+    the amount of money in the PayPal account and as several prepaid
+    accounts.
+
+    From the /Common capital stock/ of 25000 Euro 50% are held by
+    Walter Koch and 50% by Werner Koch, the owners of g10^code.  The
+    /Net profit/ gained in 2015 is added to /Profit carried forward/.
+
+    The /Accounts payable other/ is my profit sharing bonus of 24739
+    and VAT payable for the last quarter.  The /GnuPG development
+    fund/ is the rest of a campaign which collected prize money for
+    the GnuPG logo.
+
+*** Profit and Loss from 2016-01-01 to 2016-12-31
+
+    Now let us see how much money we earned and how we spent it.  The
+    following table shows the actual [[file:data/g10code-bilanz-2016-pub.pdf][profit and loss sheet]] with a few
+    accounts pooled up.  As above, the values have again been rounded
+    to the nearest Euro.
+
+    |                          |    <r> |      <r> |    <r> |      <r> |
+    |                          |  Debit |   (2015) | Credit |   (2015) |
+    |--------------------------+--------+----------+--------+----------|
+    | Revenues                 |        |          | 351689 |  (57251) |
+    | Revenues from donations  |        |          |   9342 | (283538) |
+    | Revenues other           |        |          |   3607 |    (218) |
+    | Salaries                 | 133776 | (108719) |        |          |
+    | Social insurance         |  29756 |  (18060) |        |          |
+    | Contractors              |  44700 |  (33165) |        |          |
+    | Write-offs               |   1571 |   (1532) |        |          |
+    | Connectivity and hosting |   2259 |   (2012) |        |          |
+    | Rents                    |   2769 |   (2681) |        |          |
+    | Interest expenses        |      1 |    (550) |        |          |
+    | Travel expenses          |   2359 |   (3499) |        |          |
+    | Other expenses           |   6064 |   (5169) |        |          |
+    | Donations                |   1873 |   (5100) |        |          |
+    | Taxes                    |  40551 |  (45171) |        |          |
+    | Net profit               |  98958 | (115350) |        |          |
+    |--------------------------+--------+----------+--------+----------|
+    | Sums                     | 364639 | (341007) | 364639 | (341007) |
+
+# Other expenses are:
+#    | Fachliteratur         | 637 |   634 |
+#    | Stromkosten           | 477 |   452 |
+#    | Bürokosten            |     |   432 |
+#    | Porto                 |  12 |    29 |
+#    | Bankkosten            | 809 |   577 |
+#    | Werbekosten           | 386 |  1111 |
+#    | Beiträge              | 128 |   128 |
+#    | Instandsetzungskosten | 366 |       |
+#    | Konferenzkosten       |2599 |   919 |
+#    | Rechtskosten          | 312 |   433 |
+#    | Sonstige Kosten       | 209 |   320 |
+#    | Forderungsverluste    | 129 |   134 |
+
+    The major /Revenues/ items are grants from the Linux Foundation
+    (54,219 €), Facebook (44,715 €), Stripe (47,824 €), and from these
+    paid projects: Gpg4VS-NfD (79,800 €), Gpg4All (48,000 €), and
+    EasyGPG (65,000 €).
+
+    The /Rents/ are for the room used as an office in my house.
+    /Other expenses/ sums up money spent for magazines, power, office
+    supplies, advertising, conference fees, legal costs, etc.
+    Donations have been given to [[https://netzpolitik.org][Netzpolitik.org]], [[http://www.freundeskreis-fluechtlinge-erkrath.de/][Freundeskreis für
+    Flüchtlinge in Erkrath]], [[https://wikimedia.de][Wikimedia]], and the [[https://freie-software.de][Freie Software Freunde]].
+
+    As with almost all software development companies, the majority of
+    expenses are staff costs.  Not counting taxes, which depend on the
+    annual profit, we had total costs of 225,000 € with 207,000 €
+    spent on /Salaries/, /Social insurance/, and /Contractors/.  My
+    share of this were 47,400 € regular salary (of which I need to pay
+    social insurances fully myself) plus a profit sharing bonus of
+    24,700 €.  We made quite some profit last years due to the good
+    revenue situation and because one of our employees substantially
+    reduced his working hours to finish his PhD.

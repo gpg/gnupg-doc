@@ -39,25 +39,31 @@ are delimited by a comma (e.g. =scd,w32:=). Commonly found keywords
 are
 
  - agent   :: The gpg-agent component
- - ssh     :: The ssh-agent part of the agent
- - common  :: Code in common
- - iobuf   :: The IOBUF system in common
- - gpg     :: The gpg or gpgv components
- - gpgsm   :: The gpgsm component
- - scd     :: The scdaemon component
- - ccid    :: The CCID driver in scdaemon
- - dirmngr :: The dirmngr component
- - w32     :: Windows related code
- - po      :: Translations
  - build   :: Changes to the build system
- - speedo  :: Speedo build system specific changes
+ - ccid    :: The CCID driver in scdaemon
+ - common  :: Code in common
+ - dirmngr :: The dirmngr component
  - doc     :: Documentation changes
+ - gpg     :: The gpg or gpgv components
+ - sm      :: The gpgsm component (also "gpgsm")
+ - gpgscm  :: The regression test driver
+ - indent  :: Indentation and similar changes
+ - iobuf   :: The IOBUF system in common
+ - po      :: Translations
+ - scd     :: The scdaemon component
+ - speedo  :: Speedo build system specific changes
+ - ssh     :: The ssh-agent part of the agent
+ - tests   :: The regressions tests
+ - tools   :: Other code in tools
+ - w32     :: Windows related code
+ - wks     :: The web key service tools
+ - yat2m   :: The yat2m tool.
 
 Typo fixes and documentation updates don't need a ChangeLog entry;
 thus you would use a commit message like
 
 #+begin_example
-Fix typo in a comment
+doc: Fix typo in a comment
 
 --
 #+end_example
@@ -73,7 +79,6 @@ do this after this scissor line:
 (hash, blank, 24 dashes, blank, scissor, blank, 24 dashes).
 Note that such a comment will be removed if the git commit option
 =--cleanup=scissor= is used.
-
 
 ** License policy
 
@@ -127,30 +132,70 @@ Note that such a comment will be removed if the git commit option
   - Only certain C99 features may be used (see below); in general
     stick to C90.
   - Please do not use C++ =//= style comments.
+  - Do not use comments like:
+#+begin_src
+      if (foo)
+        /* Now that we know that foo is true we can call bar.  */
+        bar ();
+#+end_src
+    instead write the comment on the if line or before it.  You may
+    also use a block and put the comment inside.
+  - Please use asterisks on the left of longer comments.  This makes
+    it easier to read without syntax highlighting, on printouts, and
+    for blind people.
   - Try to fit lines into 80 columns.
   - Ignore signed/unsigned pointer mismatches
   - No arithmetic on void pointers; cast to char* first.
+  - Do not use
+#+begin_src
+      if ( 42 == foo )
+#+end_src
+    this is harder to read and modern compilers are pretty good in
+    detecing accidential assignments.  It is also suggested not to
+    compare to 0 or NULL but to test the value direct or with a '!';
+    this makes it easier to see that a boolean test is done.
   - We use our own printf style functions like =es_printf=, and
-    =es_asprintf= which implement most C99 features with the exception
-    of =wchar_t= (which should anyway not be used).  Please always use
-    them and do not resort to those provided by libc.  The rationale
-    for using them is that we know that the format specifiers work on
-    all platforms and that we do not need to chase platform dependent
-    bugs.
+    =gpgrt_asprintf= (or the =es_asprintf= macro) which implement most
+    C99 features with the exception of =wchar_t= (which should anyway
+    not be used).  Please use them always and do not resort to those
+    provided by libc.  The rationale for using them is that we know
+    that the format specifiers work on all platforms and that we do
+    not need to chase platform dependent bugs.  Note also that in
+    gnupg asprintf is a macro already evaluating to gpgrt_asprintf.
   - It is common to have a label named "leave" for a function's
     cleanup and return code.  This helps with freeing memory and is a
     convenient location to set a breakpoint for debugging.
   - Always use xfree() instead of free().  If it is not easy to see
     that the freed variable is not anymore used, explicitly set the
     variable to NULL.
+  - New code shall in general use xtrymalloc or xtrycalloc and check
+    for an error (use gpg_error_from_errno()).
   - Init function local variables only if needed so that the compiler
     can do a better job in detecting uninitialized variables which may
     indicate a problem with the code.
   - Never init static or file local variables to 0 to make sure they
     end up in BSS.
-  - Use --enable-maintainer-mode with configure.
+  - Use --enable-maintainer-mode with configure so that all suitable
+    warnings are enabled.
 
-** C99 language features
+** Variable names
+
+  Follow the GNU standards.  Here are some conventions you may want to
+  stick to (do not rename existing "wrong" uses without a goog
+  reason).
+
+  - err :: This conveys an error code of type =gpg_error_t= which is
+           compatible to an =int=.  To compare such a variable to a
+           GPG_ERR_ constant, it is necessary to map the value like
+           this: =gpg_err_code(err)=.
+  - ec  :: This is used for a gpg-error code which has no source part
+           (=gpg_err_code_t=) and will eventually be used as input to
+           =gpg_err_make=.
+  - rc  :: Used for all kind of other errors; for example system
+           calls.  The value is not compatible with gpg-error.
+
+
+*** C99 language features
 
   In GnuPG 2.x, but *not in 1.4* and not in most libraries, a limited
   set of C99 features may be used:
@@ -307,7 +352,7 @@ Note that such a comment will be removed if the git commit option
                       and related constants
   - g10/openfile.c :: Create/Open Files
   - g10/keyserver.h :: Keyserver access dispatcher.
-  - g10/packet.h   :: Defintion of OpenPGP structures.
+  - g10/packet.h   :: Definition of OpenPGP structures.
   - g10/passphrase.c :: Passphrase handling code
 
   - g10/pubkey-enc.c :: Process a public key encoded packet.

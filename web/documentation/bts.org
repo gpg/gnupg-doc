@@ -4,18 +4,101 @@
 
 * Bug Tracking System
 
-  Our bug tracking system can be found at [[https://bugs.gnupg.org/gnupg/index][bugs.gnupg.org]]. Please,
-  query the database before you create a new bug report. You need to
-  create an account to file a bug or edit existing bugs. See the
-  [[https://bugs.gnupg.org/index.html#intro][Introduction to the BTS]].  Bug reports need to be written in English
+  Our bug tracking system can be found at [[https://dev.gnupg.org][dev.gnupg.org]].  Please,
+  query the database before you create a new bug report (aka /Task/).
+  See below for some more information.  Bug reports need to be written
+  in English.
 
   If you can fix one of these bugs/limitations, we will certainly be
-  glad to receive a patch via the gnupg-devel mailing list.  If the
-  patch is non-trivial please read the file [[https://www.gnupg.org/faq/HACKING.html][doc/HACKING]] first.
+  glad to receive a patch via the above platform or the gnupg-devel
+  mailing list.  If the patch is non-trivial please read our
+  [[https://www.gnupg.org/faq/HACKING.html][coding guidelines]] first.
+
+  Our bug tracker can also be used to report problems related to this
+  GnuPG.org site.  Simply, follow the instructions for a regular bug
+  and add the tag /gpgweb/.
 
 
-** GnuPG.org
+** Hints on how to add a new bug
 
-   The *Bug Tracking System* can also be used to report problems
-   related to GnuPG.org site. Simply, follow the instructions given
-   above and set the "category" field to *gpgweb*.
+   Please note that this bug tracker is a public resource and
+   everything you enter there will be available for the whole
+   networked world.  It is similar to a public mailing list and there
+   is no easy way to retract any information.
+
+   You should follow these steps to enter a new bug (issue):
+
+   - Review the documentation and the mailing list archives to see
+     whether your problem has already been addressed.  Often bugs are
+     mere configuration problems.
+
+   - Check that the bug has not yet been entered and that there is no
+     similar bug in the tracker.  Use the search option for this.  It
+     is best to also look through already closed (<em>resolved</em>)
+     issues.
+
+   - If you consider the bug a severe security problem and you do not
+     want to publish it, please write to security 'at' gnupg.org to
+     ask for advice and our encryption keys.  See also the AUTHORS
+     file in each package.
+
+   - In the left sidebar select /Tasks/ and then click on /+ Create
+     Task/ which you find in the upper right corner.  On our
+     development platform a /Task/ is a synonym for a /bug/.
+
+   - Come up with a meaningful short description of the bug and enter
+     this into the /Title/ field.
+
+   - If you want to want to ask for a new feature or have another
+     wish, please indicate the in the /Priority/ field.  Bug should in
+     general be left at the default priority of /Needs Triage/ and you
+     should not assign the bug to anyone if you want to get it fixed
+     soon.
+
+   - Now for the most important field: The Description of the problem.
+     You enter this information into the, surprise, /Description/ field.
+     Please take care to use hard line breaks and format the report as
+     you would do by mail.\\
+     \nbsp{}\\
+     Make sure that you describe the bug as good as possible and try
+     to come up with a minimal recipe on how to replicate the bug.  We
+     need to know the version of the software and if you are using a
+     non-released version the Git commit id.  Use the separate field
+     /Version/ at the bottom of the page for this.  The type and
+     version of your operating system is usually important, so please
+     tell us.  In particular tell us if your problem occurs on a
+     non-Unix system, i.e. MS Windows.
+
+   - If you want to provide more information, you may upload any kind
+     of file using the menu at the top of the /Description/ field.
+     However, please do this only if you are sure that these
+     information are important and that they do not contain
+     confidential data.  Uploaded files will be public and it might
+     not be possible to retract them anymore.  Avoid screen shots
+     unless you are asked for them.  The problem with screen shots or,
+     worse, screen casts is that we would need to transcript them to
+     text for evaluating the problem.  That takes away time we better
+     spend solving the problem; it is easy to help us by providing a
+     transcription.
+
+   - You may optionally assign one or more /Tags/ to a report.  The
+     package name is a good guess ("gnupg", "libgcrypt", etc.).  If
+     you know that the bug is Microsoft Windows specific, please enter
+     add the tag "w32".  You do not need to do it if you already
+     specified Windows specific package (like "gpgol").  For macOS
+     specific bugs, use "MacOS".
+
+   - Please be kind and do _not_ assign a /Due Date/.  We will later
+     evaluate the importance of bugs in the light of other open bugs.
+
+   - If you want to refer to an external bug description (for example
+     a similar entry in Debian's bug tracker), enter the URL into the
+     /External Link/ field.
+
+   - The /Version/ field should be filled as described above.  If you
+     don't know the version leave it blank and describe what you know
+     about the software in the /Description/ field.
+
+   - If everything is as you want it, click the /Create New Task/
+     button.  This entry as well as all future changes will also be
+     mailed to you.

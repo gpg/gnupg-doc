@@ -1,8 +1,12 @@
 # config.rc - Configuration variables for all CGIs         -*- perl -*-
 
-baseurl => 'https://gnupg.org'
+baseurl => 'https://gnupg.org',
 htdocs  => '/var/www/www/www.gnupg.org/htdocs/',
 
+stripepubkey => 'pk_live_lcfUUC9FLdguvgEKqMeaeuWY',
+#stripepubkey => 'pk_test_54VgokzAcVz6WxEOsZ6jtein',
+
 payprocd_socket => '/var/run/payproc/daemon',
+
 
 #eof#

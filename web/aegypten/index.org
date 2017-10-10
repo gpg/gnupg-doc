@@ -125,9 +125,9 @@ Detailed list of results:
 
    You can reach the project team on several mailing lists:
 
-   - [[http://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]] (technical coordination)
+   - [[https://lists.gnupg.org/mailman/listinfo/gpa-dev][gpa-dev]] (technical coordination)
    - [[http://mail.kde.org/mailman/listinfo/kmail][kmail]] (KMail)
-   - [[http://lists.gnupg.org/mailman/listinfo/gnupg-devel/][gnupg-devel]] (GnuPG development)
+   - [[https://lists.gnupg.org/mailman/listinfo/gnupg-devel/][gnupg-devel]] (GnuPG development)
 
    Project coordination:
 

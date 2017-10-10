@@ -1,0 +1,27 @@
+#+TITLE: GnuPG - 寄付 - ありがとう
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* 寄付 - ありがとう
+
+  *GnuPGのわたしたちの仕事に対して寄付してくださり、大変ありがとうございます。*
+
+  [[https://www.gnupg.org/donate/kudos.html][寄付者一覧]]は30分おきに更新されます。
+  あなたの名前が掲載されるまでしばらくお待ちください。名前を指定していない場合は掲載されません。
+
+  こちらがあなたの寄付の詳細です:
+#+BEGIN_HTML
+  <pre id="checkoutSummary">
+  <!--MESSAGE-->
+  </pre>
+#+END_HTML
+
+  クレジットカードのステートメントではこの寄付は /GnuPG donation/ として記録されます。
+  問い合わせは /donations/ at /gnupg.org/ までお願いします。.
+
+
+#+BEGIN_HTML
+  <ul>
+    <li><a href="/index.html">ホームに行く</a></li>
+  </ul>
+#+END_HTML

@@ -11,32 +11,34 @@ available; please click on the mailing list name below.
 
 Please check the [[file:faqs.org][FAQ]] before you ask on one of the lists.  If you want
 to search these mailing lists (as well as other archives) please use
-the service provided at [[http://marc.info/]].
+the service provided at [[http://marc.info/]].  If you do not want to
+write to a public mailing list, check out the [[../service.org][commercial support]]
+options.
 
 | Name           | Purpose                                     | Lang |
 |----------------+---------------------------------------------+------|
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce]] | Release announcements (low-traffic)         | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-announce/][gnupg-announce]] | Release announcements (low-traffic)         | en   |
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-users/][gnupg-users]]    | General discussion and help                 | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-br/][gnupg-br]]       | Help among Portuguese/Brazil speaking users | br   |
-| [[http://lists.gnupg.org/pipermail/gnupg-de/][gnupg-de]]       | Help among German speaking users            | de   |
-| [[http://lists.gnupg.org/pipermail/gnupg-pt/][gnupg-pt]]       | Help among Portuguese speaking users        | pt   |
-| [[http://lists.gnupg.org/pipermail/gnupg-es/][gnupg-es]]       | Help among Spanish speaking users           | es   |
-| [[http://lists.gnupg.org/pipermail/gnupg-ru/][gnupg-ru]]       | Help among Russian speaking users           | ru   |
+| [[https://lists.gnupg.org/pipermail/gnupg-users/][gnupg-users]]    | General discussion and help                 | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-br/][gnupg-br]]       | Help among Portuguese/Brazil speaking users | br   |
+| [[https://lists.gnupg.org/pipermail/gnupg-de/][gnupg-de]]       | Help among German speaking users            | de   |
+| [[https://lists.gnupg.org/pipermail/gnupg-pt/][gnupg-pt]]       | Help among Portuguese speaking users        | pt   |
+| [[https://lists.gnupg.org/pipermail/gnupg-es/][gnupg-es]]       | Help among Spanish speaking users           | es   |
+| [[https://lists.gnupg.org/pipermail/gnupg-ru/][gnupg-ru]]       | Help among Russian speaking users           | ru   |
 |                |                                             |      |
-| [[http://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel]]    | Development discussion and bug tracking     | en   |
-| [[http://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel]]   | Development of Libgcrypt                    | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc]]      | Development of documentation                | en   |
-| [[http://lists.gnupg.org/pipermail/gnupg-commits/][gnupg-commits]]  | Commit messages (read-only)                 | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel]]    | Development discussion and bug tracking     | en   |
+| [[https://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel]]   | Development of Libgcrypt                    | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc]]      | Development of documentation                | en   |
+| [[https://lists.gnupg.org/pipermail/gnupg-commits/][gnupg-commits]]  | Commit messages (read-only)                 | en   |
 |                |                                             |      |
 |----------------+---------------------------------------------+------|
 
 
 A complete list of all mailing lists can also be found at our
-[[http://lists.gnupg.org/mailman/listinfo/][mailing list manager]].
+[[https://lists.gnupg.org/mailman/listinfo/][mailing list manager]].
 
-You may subscribe to these lists [[http://lists.gnupg.org/][via web]] or by sending an e-mail:
+You may subscribe to these lists [[https://lists.gnupg.org/][via web]] or by sending an e-mail:
 
 #+begin_example
   To: <mailing_list>-request@gnupg.org

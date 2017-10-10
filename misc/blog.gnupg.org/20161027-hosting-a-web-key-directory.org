@@ -1,0 +1,94 @@
+# How to host your own Web Key Directory
+#+STARTUP: showall
+#+AUTHOR: Andre
+#+DATE: October 27, 2016
+
+** Hosting a Web Key Directory
+
+    With the improvements in GnuPG for Key Discovery
+    (see: [[https://www.gnupg.org/blog/20160830-web-key-service.html][Key Discovery Made Simple]]) you may want to provide the
+    OpenPGP keys for your domain. The Web Key Service (WKS) describes
+    a protocol for Mail Service Providers or large organisations to
+    maintain a Web Key Directory (WKD) for their users.
+
+    A Web Key Directory is a static collection of keys provided under
+    well known URLs under your domain. This directory can also be
+    manually generated without using the Web Key Service protocol.
+
+
+    By providing a Web Key Directory other people (or their Mail Software)
+    can obtain the OpenPGP keys for your domain with a simple query like:
+
+    : $ gpg --auto-key-locate wkd --locate-keys <mail address>
+
+    In this note, I explain how to do that.
+
+
+    Note: An updated version of this article may be available in the
+    [[https://wiki.gnupg.org/WKD#Hosting%20a%20Web%20Key%20Directory][GnuPG Wiki]]
+
+*** Requirements
+
+    - A web server that provides https with a trusted certificate for
+      your domain.
+    - A client machine with Python and PyME installed (debian package
+      python-pyme)
+    - The script:
+      [[https://hg.intevation.de/gnupg/wkd-tools/raw-file/default/generate-openpgpkey-hu][generate-openpgpkey-hu]]
+      (in the [[https://hg.intevation.de/gnupg/wkd-tools/][Mercurial repository "wkd-tools"]])
+
+*** Setup
+
+    You can either export all the keys in your keyring that belong to
+    a domain or provide an explicit keyring containing just those keys
+    that you want to publish.
+
+    The call:
+
+    : $ ./generate-openpgpkey-hu example.com hu
+
+
+    Will create a directory called hu containing all the keys with
+    user ids that include @example.com.
+
+    If there are multiple valid keys for a user in your keyring this
+    command will error out. In that case you can prepare a keyring
+    with only the keys that you want to publish. For example:
+
+    : $ gpg --export 94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1 | \
+    : >   gpg --no-default-keyring --keyring ./wkd-keyring.gpg --import
+
+    And then provide that keyring to generate-openpgpkey-hu:
+
+    : ./generate-openpgpkey-hu example.com hu wkd-keyring.gpg
+
+*** Publishing
+
+    The hu directory has to be published on your server as
+
+    : https://example.com/.well-known/openpgpkey/hu/
+
+    Create the directory structure  and set the
+    permissions accordingly.
+
+    This example [[https://hg.intevation.de/gnupg/wkd-tools/raw-file/default/Makefile.example][Makefile]] automates the hu directory generation and
+    publishing. Edit the variables at the top of the makefile to set
+    =RSYNC_TARGET= The =KEYRING= variable is optional and can be left
+    empty.
+
+    That's it. You can now test your setup by calling:
+
+    : $ gpg --auto-key-locate wkd --locate-keys <mail address>
+
+    you should see something like this:
+
+#+begin_example
+gpg: key AC12F94881D28CB7: public key "testuser10@test.gnupg.org" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: automatically retrieved 'testuser10@test.gnupg.org' via WKD
+pub   ed25519 2016-07-15 [SC]
+      5506894357DC548CC65B0BCFAC12F94881D28CB7
+uid           [ unknown] testuser10@test.gnupg.org
+sub   cv25519 2016-07-15 [E]
+#+end_example

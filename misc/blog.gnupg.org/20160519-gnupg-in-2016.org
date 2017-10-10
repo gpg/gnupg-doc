@@ -113,7 +113,7 @@ costs, but fortunately we still have enough money in our accounts to
 keep bread, water, and beer on our tables for this year and somewhat
 longer.  We will eventually run a new donation campaign, though.
 
-It is probably less know that that we offer SEPA payments which can be
+It is probably less known that that we offer SEPA payments which can be
 used for recurring donations.  We have not received many payments
 through SEPA yet and thus this method is only semi-automated and the
 cause for delays between a donation and a confirmation mail.  There is

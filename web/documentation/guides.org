@@ -33,7 +33,7 @@
      [[../../gph/it/gph.tar.gz][it]] ·
      [[http://www.inar.ru/~zwon/gph.tar.gz][ru]] )
 
-   GPH is also available in the [[../download/cvs_access.org][source repository]].
+   GPH is also available in the [[../download/git.org][source repository]].
 
 ** Replacing PGP 2.x with GnuPG
 

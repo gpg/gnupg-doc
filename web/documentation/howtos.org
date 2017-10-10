@@ -20,7 +20,7 @@
    [[../howtos/fr/index.html][fr]] ·
    [[../howtos/it/GPGMiniHowto.html][it]] ·
    [[../howtos/tr/GPGMinikNasil.html][tr]] ·
-   [[../howtos/vn/index.html][vn]] .
+   [[../howtos/vn/index.htm][vn]] ·
    [[../howtos/zh/index.html][zh]] )
 -  as one big HTML file (
    [[../howtos/ca/GPGMiniHowto_big.html][ca]] ·
@@ -58,7 +58,7 @@
    - as one big HTML file ( [[../howtos/card-howto/en/smartcard-howto-single.html][en]] )
    - as plain text ( [[../howtos/card-howto/en/smartcard-howto.txt][en]] )
 
-   This smartcard howto is also available in the [[../download/cvs_access.org][source repository]].
+   This smartcard howto is also available in the [[../download/git.org][source repository]].
 
 ** GnuPG Keysigning Party HOWTO
 

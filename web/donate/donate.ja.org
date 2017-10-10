@@ -1,0 +1,247 @@
+#                                                       -*- html -*-
+#+TITLE: GnuPG - 寄付
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+  <!-- bootstrap core and site css -->
+  <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+  <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+  <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+  <script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+  <script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+  <script defer src="/share/3rdparty/bcswipe.js"></script>
+  <script defer src="/share/campaign/campaign.js"></script>
+
+</head>
+<body lang="ja">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">ナビゲーションのオンオフ</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img class="navbar-brand" alt="GnuPG"
+             src="/share/gnupg-lock-white-250x250.png">
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/donate/index.ja.html">戻る</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="camp-gutter container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>GnuPGを支援する</h1>
+        <p>あなたの寄付を処理するために情報を入力してもらう必要があります。
+	   この情報は寄付の目的のためだけに用いられ、寄付の処理に直接関係ないところには、何のデータも送信されません。名前を書かない場合、匿名で寄付が行われ、公開される感謝のページには掲載されません。
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <!--ERRORPANEL-->
+      </div>
+    </div>
+
+    <form class="form-horizontal" role="form"
+          action="/cgi-bin/procdonate.cgi" method="POST">
+      <input type="hidden" name="mode" value="main" />
+      <input type="hidden" name="lang" value="ja" />
+
+      <!-- Amount and currency input field -->
+      <div class="form-group">
+        <label for="inputType" class="col-xs-12 col-sm-2 control-label">
+          Amount <!--ERR_AMOUNT-->
+        </label>
+        <div class="col-xs-5 col-sm-3">
+          <input type="text" class="form-control"
+                 name="amount" id="amountother" placeholder=""
+                 value=""/><!--AMOUNT-->
+        </div>
+        <div class="col-xs-7 col-sm-3 col-lg-2">
+          <select class="form-control" name="currency" id="currency">
+            <option value="EUR" selected="selected"><!--SEL_EUR-->ユーロ</option>
+            <option value="USD" ><!--SEL_USD-->米ドル</option>
+            <option value="GBP" ><!--SEL_GBP-->英ポンド</option>
+            <option value="JPY" ><!--SEL_JPY-->円</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Custom amounts -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+          <div class="btn-group btn-group-xs" role="group"
+               aria-label="suggested amounts">
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=500&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-500">500&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=200&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-200">200&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=100&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-100">100&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=50&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-50">50&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=20&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-20">20&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=10&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-10">10&#x202f;€</a>
+            <a href="/cgi-bin/procdonate.cgi?mode=preset&s_amt=5&s_cur=eur&lang=ja"
+               class="btn btn-default amount-btn-5">5&#x202f;€</a>
+          </div>
+          <span class="help-block">
+            提案される金額。
+          </span>
+        </div>
+      </div>
+
+      <!-- Recurring -->
+      <div class="form-group">
+        <label for="recur" class="col-sm-2 control-label">毎回?一度?</label>
+        <div class="col-sm-2">
+          <select class="form-control" name="recur" id="recur">
+            <option value="0"
+            selected="selected"><!--RECUR_NONE-->一回限り</option>
+            <option value="12" ><!--RECUR_MONTH-->毎月</option>
+            <option value="4" ><!--RECUR_QUARTER-->3ヶ月毎</option>
+            <option value="1" ><!--RECUR_YEAR-->毎年</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Pay using -->
+      <div class="form-group">
+        <label for="paytype" class="col-sm-2 control-label">
+          支払い方式 <!--ERR_PAYTYPE-->
+        </label>
+        <div class="col-sm-6">
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="cc"
+                     value="cc" /><!--CHECK_CC-->
+              クレジットカード
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="pp"
+                     value="pp" /><!--CHECK_PP-->
+              PayPal
+              <span class="help-block help-inline" id="paypal-note">
+                Please note that in certain countries recurring donations are not possible with PayPal.
+              </span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="se"
+                     value="se" /><!--CHECK_SE-->
+              SEPA (ヨーロッパの銀行送金)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="paytype" id="bc"
+                     value="bc" /><!--CHECK_BC-->
+              Bitcoin
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">
+          名前 <!--ERR_NAME-->
+          <p class="text-muted"><small>(オプション)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="name"
+                 id="f_name" placeholder="Name (optional)"
+                 value=""/><!--NAME-->
+          <span class="help-block">
+             <a href="https://www.gnupg.org/donate/kudos.html"
+                >寄付者の一覧</a>に掲示を望む場合、そこに掲載される名前を入力してください。
+          </span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="mail" class="col-sm-2 control-label">
+          メールアドレス<!--ERR_MAIL-->
+          <p class="text-muted"><small>(オプション)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" name="mail"
+                 id="f_mail" placeholder="Email (optional)"
+                 value=""/><!--MAIL-->
+          <span class="help-block">
+            支払いに問題がある場合、連絡する可能性があります。
+            その際のメールアドレスを入力してください。
+          </span>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message" class="col-sm-2 control-label">
+          メッセージ
+          <p class="text-muted"><small>(オプション)</small></p>
+        </label>
+        <div class="col-sm-6">
+          <textarea class="form-control" name="message" id="f_message"
+                    rows="4"
+                    ></textarea><!--MESSAGE-->
+          <span class="help-block">
+            わたしたちにメッセージを残したい場合、ここに入力してください。
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+          <button type="submit" class="btn btn-primary btn-large"
+                  >寄付に進む</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="camp-gutter container-fluid" id="camp-footer">
+    <div class="container">
+      <div class="row">
+        <div id="cpyright">
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+            <img alt="CC-BY-SA 4.0" style="border: 0"
+                  src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+          This web page is
+          Copyright 2017 The GnuPG Project and licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+          <a href="/copying.html">copying</a> for details.
+          See the <a href="/imprint.html">Imprint</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+#+END_HTML

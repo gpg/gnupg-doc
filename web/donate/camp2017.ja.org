@@ -1,0 +1,1522 @@
+#                                                        -*- html -*-
+#+TITLE: GnuPG - 寄付
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+#
+# Note: Do not use relative links because this page is also used as a
+#       template from cgi-bin/.  Using https://www.gnupg.org/... is
+#       fine as it is stripped before publishing.
+
+#+BEGIN_HTML
+<!--custom-page-->  <!-- this disables all standard processing. -->
+
+    <!-- Bootstrap core and site CSS -->
+    <link href="/share/3rdparty/bootstrap/bootstrap-gnupg.css" rel="stylesheet">
+    <link href="/share/campaign/campaign.css" rel="stylesheet">
+
+    <script defer src="/share/3rdparty/jquery/jquery.min.js"></script>
+    <script defer src="/share/3rdparty/bootstrap/bootstrap.min.js"></script>
+    <script defer src="/share/3rdparty/bootstrap/carousel.js"></script>
+    <script defer src="/share/3rdparty/bs-autohidingnavbar.js"></script>
+    <script defer src="/share/3rdparty/bcswipe.js"></script>
+    <script defer src="/share/campaign/campaign.js"></script>
+    <noscript><style>.lang-chooser .caret { display: none; }</style></noscript>
+
+  </head>
+  <body lang="ja">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">ナビゲーションのオンオフ</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" title="Home"><img class="navbar-brand" alt="GnuPG" src="/share/gnupg-lock-white-250x250.png"></a>
+	  <ul class="nav navbar-header pull-right visible-xs-inline-block lang-chooser lang-chooser-xs">
+	    <li class="dropdown">
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/camp2017.html"
+		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+		<li><a href="/donate/camp2017.html">
+		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
+		<li><a href="/donate/camp2017.de.html">
+		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
+		<li><a href="/donate/camp2017.fr.html">
+		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
+		<li><a href="/donate/camp2017.ja.html">
+		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	  <a class="navbar-right visible-xs-inline pull-right btn btn-default btn-sm navbar-btn" style="margin-right: 10px" href="/donate/donate.ja.html" role="button">♥ 寄付する</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">GnuPGへの寄付について</a></li>
+            <li><a href="#goals">目標</a></li>
+            <li><a href="#testimonials">推薦文</a></li>
+            <li><a href="#dailyvideo">毎日の動画</a></li>
+          </ul>
+	  <ul class="nav navbar-nav navbar-right hidden-xs lang-chooser">
+	    <li class="dropdown">
+	      <!-- noscript: Link to the next language.  -->
+	      <a href="/donate/camp2017.html"
+		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+		<li><a href="/donate/camp2017.html">
+		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
+		<li><a href="/donate/camp2017.de.html">
+		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
+		<li><a href="/donate/camp2017.fr.html">
+		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
+		<li><a href="/donate/camp2017.ja.html">
+		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+          <a class="navbar-right hidden-xs btn btn-default btn-sm navbar-btn" href="/donate/donate.ja.html" role="button">♥ 寄付する</a>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div id="home" class="camp-gutter container">
+      <div class="row">
+	<div class="col-lg-12 visible-lg-block">
+	  <h1>GnuPG 資金調達の呼びかけ</h1>
+	</div>
+	<div class="col-xs-12 col-lg-8">
+	  <div class="embed-responsive embed-responsive-16by9 camp-video" data-embed="main">
+	    <img src="/share/campaign/img/thumbs/main.jpg">
+	    <div class="play-button"></div>
+	    <div class="video-text">クリックして動画をスタート
+              <noscript><br />
+                <span style="font-size: 60%"
+                      >(YouTubeからのJavaScriptが必要となります。)
+                </span>
+              </noscript>
+            </div>
+          </div>
+	</div>
+
+	<div class="col-xs-12 hidden-lg">
+	  <h1>GnuPG 資金調達の呼びかけ</h1>
+	</div>
+
+        <p>[<strong>This is a snaphot of the page at the end of the
+        campaign on 2017-09-05.</strong>]</p>
+
+	<div class="col-xs-12 col-lg-4">
+	  <div class="row">
+	    <div class="col-xs-12">
+	      <div class="progress">
+		<div class="progress-bar progress-bar-striped active"
+                     role="progressbar"
+                     aria-valuenow="0" A-CMPGN-RECUR-EURO=""
+                     aria-valuemin="0"
+                     aria-valuemax="0" A-CMPGN-RECUR-EURO-GOAL=""
+                     style="width: 9%" A-CMPGN-RECUR-PERCENT=""
+                     >
+		  <span class="sr-only"><!--CMPGN-RECUR-EURO-->
+                    一ヶ月あたり</span>
+		</div>
+	      </div>
+	    </div>
+	    <div class="col-xs-12 col-sm-6 col-lg-12 camp-progress-info">
+	      <h3><!--CMPGN-RECUR-EURO-->
+                (一ヶ月あたり)
+                  <small>
+                    <!--CMPGN-RECUR-EURO-GOAL-->
+                    が必要です
+                  </small>
+              </h3>
+	      <h4>+
+                <!--CMPGN-ONCE-EURO-->
+                <small>一回かぎりの寄付</small>
+              </h4>
+	      <h4><!--CMPGN-RECUR-COUNT-->
+                <small>支持者の数</small>
+              </h4>
+	    </div>
+	    <div class="col-xs-12 col-sm-6 col-lg-12">
+	      <a class="btn btn-primary btn-lg btn-block" role="button"
+                 href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur&lang=ja"
+                 >毎月10&thinsp;€を寄付</a>
+	      <div class="row" style="margin-top: 1em;">
+		<div class="col-xs-6">
+		  <a class="btn btn-default btn-md btn-block" role="button"
+                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur&lang=ja"
+                     >毎月5&thinsp;€を寄付</a>
+		</div>
+		<div class="col-xs-6">
+		  <a class="btn btn-default btn-md btn-block" role="button"
+                     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur&lang=ja"
+                     >毎月20&thinsp;€を寄付</a>
+		</div>
+	      </div>
+	      <div class="row text-center" style="margin-top: 1em;">
+		<a style="margin-top: 1em;"
+                   href="/cgi-bin/procdonate.cgi?mode=preset&lang=ja"
+                   >金額を設定して寄付</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div class="camp-gutter container-fluid flying-locks">
+      <div class="container">
+	<div class="row">
+	  <div class="col-sm-10 col-sm-offset-1">
+	    <p class="lead">GnuPGはネットワークのプライバシを守るためにあなたのサポートを必要としています。</p>
+	    <p class="text-justify">活動家、ジャーナリスト、弁護士、そのほかの多くの人々が
+	      <a href="https://www.gnupg.org/">GnuPG</a>に依拠し、その通信を守るために使っています。
+	      そして、自由ソフトウェアをベースとするほぼすべてのオペレーティング・システム(インターネットを動かすサーバの2/3以上で使われています)がシステムの更新の完全性を検証するためにGnuPGに依拠しています。</p>
+            <p>GnuPGを保守し、改善することを継続するために、わたしたち、主なGnuPG開発者は、
+              一般の皆さんからの寄付をお願いします。わたしたちの<strong>第一の目標</strong>は、<strong>一ヶ月あたり15&#x202f;000ユーロ</strong>を調達し、3名の開発者に全面的に資金供給することです。わたしたちの<strong>拡張した目標</strong>は、この二倍で<strong>一ヶ月あたり30&#x202f;000ユーロ</strong>です。</p>
+            <p>この重要な一つのソフトウェアが、すべての人々のために働き続けることを確とするため、どうぞ寄付の検討をお願いします。</p>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="about" class="camp-gutter container">
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+	  <h2>GnuPG はあなたの援助を必要としています!</h2>
+	  <p class="text-justify">
+	    <strong><a
+href="https://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html"
+            >これまでの20年間</a>、GnuPGは通信のコミュニケーションを守るために役立ってきました。</strong>
+	    <a href="https://www.eff.org/">電子フロンティア財団</a> (EFF)のエグゼクティブ・ディレクターの<a href="https://www.eff.org/de/about/staff/cindy-cohn">シンディ・コーン<img src="/share/campaign/img/headshots/cindy-cohn.jpg"
+	    alt="Picture of Cindy Cohn" class="camp-headshot
+	    pull-right"></a>さんは、GnuPGを <i>「世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です」</i>と述べています。BuzzFeed Newsの外国特派員の<a href="https://www.buzzfeed.com/sheerafrenkel"><img src="/share/campaign/img/headshots/sheera-frenkel.jpg"
+	    alt="Picture of Sheera Frenkel" class="camp-headshot
+	    pull-left">シーラ・フランクル</a>さんは、言っています。
+	    <i>「<strong>報道機関として、わたしたちはGPGの使い方を習得しています。</strong>
+            問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」</i>  そうです、有名なことですが、GnuPGはエドワード・スノーデンがNSAの大規模監視の告発について、ジャーナリストと安全に連絡する手段として選択したものでした。
+	  <p class="text-justify">
+	    しかし、GnuPGは電子メールの暗号化だけに使われるのではありません。
+	    ほとんどすべての自由ソフトウェアのオペレーティング・システムについて、
+	    <strong>GnuPGはソフトウェアの更新を保護しており</strong>、
+            <a href="https://en.wikipedia.org/wiki/Linux#Market_share_and_uptake">インターネットのすべてのサーバの2/3がこうした自由なオペレーティング・システムで動いています</a>。そして、GnuPGは団体や会社で広く使われています。
+            たとえば、2Uの情報技術担当 副社長、アーサー・ジョーダン<img src="/share/campaign/img/headshots/arthur-jordan.jpg"
+            alt="Picture of Arthur Jordan"
+            class="camp-headshot pull-left">さんは、わたしたちにこう言いました:
+	    <i>「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」</i>
+	  <p class="text-justify">
+	    特に、ジャーナリスト、活動家、弁護士といった方々、また、一般にインターネットを利用する誰もにとって、GnuPGが重要な役割を果たしているにもかかわらず、2012年にGnuPGは
+	    <strong>資金難の危機</strong>がありました。それまであった契約の終了のため、
+	    GnuPGの開発リーダ Werner Koch は、GnuPGに対してフルタイムで働くもう一人を解雇しなくてはなりませんでした。そして2014年までWernerは収入を補うためにGnuPGと関係ない別の仕事をしなければなりませんでした。
+	  <p class="text-justify">
+	    状況はあまりにも深刻に思えたので、<strong>Wernerはあきらめてしまうところでした。しかし、友人達が彼を説得し、最後の一弾として、寄付のキャンペーンをやってみることになりました。
+</strong>
+	    その反響は驚くべきものでした。彼にとって充分過ぎる以上の、<strong>小さな寄付が積もり重なって、あわせて 250&#x202f;000&nbsp;ユーロ</strong>ものお金が集まり、加えて、
+            Stripe, Facebook そして Linux Foundation が、それぞれ、年額50&#x202f;000&nbsp;ユーロを提供すると申し出たのでした。
+	  </p>
+          <div class="pull-right text-center team-img">
+            <a
+href="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-small.jpg"
+	    ><img id="camp-openpgp-conf"
+src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
+              /></a>
+	    <p id="camp-caption-openpgp-conf">
+               OpenPGP.conf 2016 での GnuPG チーム
+            </p>
+	  </div>
+	  <p class="text-justify">
+	    <strong>この驚くべき反響を受けて、Wernerはもう一度チームを大きくしようと考えました。</strong>  現在までに、5人の開発者を雇い、これまでの二年間でGnuPGと関連するエコシステムには、たくさんの改善が見られています。
+	    たとえば、<a href="https://www.gnupg.org/blog/20160830-web-key-service.html">鍵の取得の簡素化</a>、<a href="https://gnupg.org/blog/20160921-python-bindings-for-gpgme.html">PythonのためのGPGバインディング</a>の採用、<a href="https://www.enigmail.net/index.php/en/">Enigmail</a>の改善への貢献、そして、自由なソースと自由なハードウェアのセキュリティトークンである<a href="https://www.fsij.org/category/gnuk.html">Gnukプロジェクト</a>のサポートがあげられます。
+	  <p class="text-justify">
+	    <strong>わたしたちは、この仕事を長期的に続けたいと考えています。</strong>
+	    しかし、わたしたちは、これを一般の皆さんに対して紛う事なき第一の忠節を尽くすやり方で行いたいと考えています。これは、わたしたちの資金の大半が個々の寄付をしてくださる方々から来るものであり、会社からではないようにすることを意味します。
+	    さらに、長期的な安定性のために、わたしたちのフォーカスは一回限りの寄付ではなく、定期の寄付にあります。
+	  <p class="text-justify">
+	    <strong>わたしたちの第一の目標は一ヶ月あたり15&#x202f;000&nbsp;ユーロの寄付の約束を得て、3人の開発者に資金供給するのに当てることです</strong>。2000人の方に毎月5あるいは10ユーロ、つまり二、三杯のコーヒーと同じくらいを寄付してもらえれば、この目標に達することができます。
+	  <p class="text-justify">
+	    <div class="pull-right" style="width: 40%; margin: 1em">
+              <img src="/share/campaign/img/gnuk.jpg" id="camp-gnuk">
+              <p id="camp-caption-gnuk" class="text-center">The Gnuk Token</p>
+	    </div>
+	    このお金は第一にGnuPGの保守を継続することに使われます。
+	    また、わたしたちは、Gnuk セキュリティ・トークンのために、このお金を使うことも考えています。
+            そして、"An Advanced Introduction to GnuPG"と名付けた本を作る新しいプロジェクトをサポートするためにも使われるでしょう。この本はGnuPGをプログラムに統合したい開発者に役立ちますし、様々な概念や重要なセキュリティのトレードオフそしてよくある間違いを理解したい方にも役立つことでしょう。また、ユーザにしっかりとした推奨をするためにGnuPGを理解したいセキュリティの講師や、もちろん、熱心なユーザにも役立つでしょう。
+	  <p class="text-justify">
+	    <strong>わたしたちの拡張した目標はこの二倍の寄付を集めることです</strong>。
+	    もし4000人の方が毎月5あるいは10ユーロを寄付してくれれば、チームを大きくして、GnuPGエコシステムのなかのほかのプロジェクトを支援するために専念させることができるでしょう。
+            わたしたちが貢献したいと考えている一つのプロジェクトは、<a href="https://gpgtools.org/">GPGTools</a>で、多くの活動家やジャーナリストが通信をセキュアに保つために使っているものです。AppleのメーラとのGPGの統合がmacOSの新しいバージョンがリリースされたらすぐにサポートされることを確実にしたいものだと、わたしたちは考えています。
+	  <p class="text-justify">
+	    もしかしたら、あなたはメールを暗号化するのにGnuPGを使っていないかもしれません。
+	    でも、あなたが価値を見出すかもしれないジャーナリストは情報源を守るためにGnuPGに依拠し、あなたが共鳴するかもしれない運動のために闘う活動家は通信を守るためにGnuPGに依拠し、そして、クライアントのために発言する弁護士も会話を保護するためにGnuPGに依拠しています。
+	    そして、自由ソフトウェアをベースとするオペレーティング・システムはGnuPGを使ってソフトウェアの更新を検証しています。
+	  </p>
+	  <p class="text-justify" style="font-size: 22px;">ですから、もし、この仕事が民主主義とプライバシーを保護するのに重要な仕事である、とあなたが納得できたとしたら、<strong>わたしたちがこの仕事を独立を保ったまま継続できるよう、支援願います</strong>。</p>
+	</div>
+      </div>
+    </div>
+
+    <div id="goals" class="camp-gutter container-fluid flying-locks">
+      <div class="container">
+	<div class="row">
+	  <div class="col-sm-10 col-sm-offset-1">
+            <h2>わたしたちがやろうとしていること</h2>
+	  </div>
+	</div>
+	<div class="row goals is-table-row">
+	  <div class="col-sm-10 col-sm-offset-1">
+	    <div class="row">
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-1">
+		  <h3><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>保守</h3>
+		  <p>第一の優先順位はGnuPGの保守を継続することです。バグ報告に対応すること、セキュリティの問題に対処すること、暗号技術のベストプラクティスに常に追随すること、です。</p>
+		</div>
+	      </div>
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-3">
+		  <h3><img src="/share/campaign/img/token.svg" style="height: 1em; vertical-align: baseline;" aria-hidden="true"/>Gnuk</h3>
+		  <p><a href="https://www.fsij.org/category/gnuk.html">Gnuk</a>
+		    は、g新部によって開発されている完全に自由ソフトウェアの自由のハードウェア設計のセキュリティ・トークンです。その製造と配布にもっと投資したいと考えています。</p>
+		</div>
+	      </div>
+	    </div>
+	    <div class="row match-my-cols">
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-2">
+		  <h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span>本</h3>
+		  <p>ドキュメンテーションを改善したいと考えています。
+                    この分野では<i>An Advanced Introduction to GnuPG</i>という題の本を書くことが開始されてます。それはGnuPGがどのように動くかを説明するとともに、ベストプラクティスも解説します。セキュリティの講師、GnuPGをアプリケーションに組み込む開発者、熱心なユーザが対象読者です。</p>
+		</div>
+	      </div>
+	      <div class="col-xs-12 col-sm-6">
+		<div class="goal goal-4">
+		  <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>より良いエコシステム</h3>
+		  <p>GnuPGを直接使うユーザは少数です。多くは、なにかツールを経由してGnuPGとやりとりします。
+		    そういったツールの開発者をGnuPGとの統合することをもっと支援したいと考えています。特に、Appleのメーラのプラグインの<a href="https://gpgtools.org/">GPGTools</a>が新しいバージョンのmacOSがリリースされたらすぐに動くようにできたら良いと思います。</p>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div id="testimonials" class="camp-gutter camp-gutter-clump container-fluid">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0"><h2>GnuPGについて、ほかの人はなんと言っているか</h2></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+
+	    <!-- visible-md almost works here, but some quotes are a bit too long.  -->
+
+	    <div id="myCarousel" class="carousel slide visible-lg" data-interval="false">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGは世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アレックス・アブドゥ</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランケル</div>
+			    <div class="card-title">外国特派員</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」 <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 3 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会 (CPJ)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-title">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 4 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 5 -->
+
+		  <div class="row">
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-xs-4">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGはわたしたちの対象をまだ救ってはくれていません。しかし、事実は、それがそこにある &mdash; そのおかげでわたしたちが夜に安心して眠りにつける、ということです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジョン・パーシング</div>
+			    <div class="card-title">優秀開発者</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<div class="center-block">
+		  <a class="btn btn-success" href="#myCarousel" role="button" data-slide="next">
+		    もっと推薦文
+		  </a>
+		</div>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+	    <!-- CAROUSEL SM -->
+
+	    <div id="myCarouselMedium" class="carousel slide hidden-xs hidden-lg" data-interval="false" aria-hidden="true">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGは世界中で必要としている人と連絡するためにもっともよく使う方法です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アレックス・アブドゥ</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">Foreign Correspondent</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会 (ACLU)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 3 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 4 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会 (CPJ)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 5 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 6 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 7 SM -->
+
+		  <div class="row">
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-org">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <div class="col-sm-6">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団 (EFF)</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<a class="btn btn-success" href="#myCarouselMedium" role="button" data-slide="next">
+		  もっと推薦文
+		</a>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+	    <!-- CAROUSEL XS -->
+
+	    <div id="myCarouselSmall" class="carousel slide visible-xs" data-interval="false" aria-hidden="true">
+
+	      <div class="carousel-inner" role="listbox">
+		<div class="item active">
+		  <!-- Slide 1 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGは世界中で必要としている人と連絡するためにわたしがもっともよく使う方法です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 2 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/alex-abdo.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「結局のところ、わたしたちは弁護士です。ですから、文書とメールをやりとりします。そしてその中心に &mdash; そのセキュリティのためにGPGがあります。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アレックス・アブドゥ</div>
+			    <div class="card-title">スタッフ弁護士</div>
+			    <div class="card-org">アメリカ自由人権協会</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 3 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「わたしはロシアで<!--recently-->情報源の一人と話しました<!-- about a potential
+			    story-->。わたしは、GPGをどう使うかを一通り説明し、そして最近、彼は最初の暗号化メールをわたしに送ってきました。<!-- at the end
+			    of it, he-->それには: 『どうもありがとう、これでだいぶ安心できます。わたしが安全でいられるようにあなたが配慮してくれたと感じられます』とありました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 4 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/daniel-kahn-gillmor.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「あなたがGPG鍵を持っているかいないか、暗号化メールを使ったことがあるかないか、そういったことに関係なく、ソフトウェアの更新があなたの期待するように動くことをGPGで検証しています。あなたはGPGに依拠しているのです。」  <!-- You're relying on a
+			    bunch of other stuff as well, but without
+			    GPG that other stuff wouldn't actually be
+			    effective. -->
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ダニエル・カーン・ギルモア</div>
+			    <!-- <div class="card-title">Debian Developer</div> -->
+			    <div class="card-title">上級スタッフ技術者</div>
+			    <div class="card-org">アメリカ自由人権協会</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 5 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGはある種の弁護士と依頼者との会話を保護するのにきわめて重要です。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 6 XS -->
+
+		  <div class="row">
+
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/jason-reich.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGは<!-- a&mdash;the way that I describe it&mdash;is-->どんな記者にとっても健康な朝食の一部だ、と言えるでしょう。告発やそういった性質の情報に接したいと考え、その情報源を保護したい記者にとっては特にそうです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェイソン・ライヒ</div>
+			    <div class="card-title">セキュリティ担当部長</div>
+			    <div class="card-org">BuzzFeed</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 7 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/tom-lowenthal.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「わたしたちが仕えるジャーナリストは、かれらを守る最良の方法をわたしたちが知っていると信じています。そして、GPGのような、もっともセキュアで利用可能なもっとも現実的なツールが、かれらを安全に保つわたくしたちの義務を果たすのです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">トム・ローエンタール</div>
+			    <div class="card-title">スタッフ技術者</div>
+			    <div class="card-org">ジャーナリスト保護委員会</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 8 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学でファイル交換をする際、GPGを使って学生のデータを守ることで、わたしたちは安全だと感じています。とても楽にしてくれます。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 9 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/cindy-cohn.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「合衆国あるいは世界でこのディジタル時代に機能的な自治を有したいとする場合、GPGは、わたしたちが必要とする中心となるツールの一つだ、と考えています。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シンディ・コーン</div>
+			    <div class="card-title">エグゼクティブ・ディレクター</div>
+			    <div class="card-org">電子フロンティア財団</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 10 XS -->
+
+		  <div class="row">
+
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/sheera-frenkel.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「報道機関として、わたしたちはGPGの使い方を習得しています。問題なのは情報源です。取材後にその国を離れ、大きな話題となるストーリーを報道した後に、重要な情報を提供した告発者を政府が探し出そうとするとき、そこで情報源に対してなにが起こるかです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">シーラ・フランクル</div>
+			    <div class="card-title">外国特派員</div>
+			    <div class="card-org">BuzzFeed News</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 11 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-right" src="/share/campaign/img/cards/noah-vesely.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちは(SecureDrop で)ほかの代替品ではなくGPGに決めました。大まかには、GPGがもっともよく知られてもっとも使われている非対称暗号のツールだからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ノア・ヴェセリー</div>
+			    <div class="card-title">ソフトウェア技術者</div>
+			    <div class="card-org">報道の自由基金</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 12 XS -->
+
+		  <div class="row">
+
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/arthur-jordan.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「わたしたちが大学に行ってセキュアなファイル転送になにを望むかを聞いたとき、すでに彼らはGPGの暗号化を使っていました。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">アーサー・ジョーダン</div>
+			    <div class="card-title">情報技術担当 副社長</div>
+			    <div class="card-org">2U</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="item">
+		  <!-- Slide 13 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/geoffrey-king.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-long">
+			    「個人的には、GPGがもっとも役立ったのは、それなしではなし得なかった人々へのアクセスを開いてくれて、その人々がストーリを語ってくれたり、そうすることを手伝ってくれた、ということです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジェフリー・キング</div>
+			    <div class="card-title">憲法修正第一条弁護士</div>
+			    <div class="card-title">ジャーナリスト</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 14 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/leez.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote card-quote-superlong">
+			    「しかし、あなたはなにも秘密にするものなんかない、と完全に問題がないとしても、ほかの人が秘密にしたいものがあり、かれらにとってそれを秘密にすることができることは良いことだと考えるならば、<!-- you should be
+			    using these technologies, that -->GPGを使うべきだと、わたしたちは考えます。なぜなら、それはGPGを本当に使う必要があるそういった人々を守るのに役立つからです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">Leez</div>
+			    <div class="card-title">技術顧問</div>
+			    <div class="card-org">電子フロンティア財団</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item">
+		  <!-- Slide 15 XS -->
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <div class="card">
+			<div class="card-img">
+			  <img class="card-img-left" src="/share/campaign/img/cards/john-pershing.jpg" />
+			</div>
+			<div class="card-text">
+			  <div class="card-quote">
+			    「GPGはわたしたちの対象をまだ救ってはくれていません。しかし、事実は、それがそこにある &mdash; そのおかげでわたしたちが夜に安心して眠りにつける、ということです。」
+			  </div>
+			  <div class="card-meta">
+			    <div class="card-name">ジョン・パーシング</div>
+			    <div class="card-title">優秀開発者</div>
+			    <div class="card-org">1010data</div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+	      </div>
+	      <div class="text-center">
+		<!--
+		    <a class="left btn btn-success" href="#myCarousel" role="button" data-slide="prev">
+		      Previous
+		    </a> -->
+		<div class="center-block">
+		  <a class="btn btn-success" href="#myCarouselSmall" role="button" data-slide="next">
+		    もっと推薦文
+		  </a>
+		</div>
+	      </div>
+	    </div><!-- /.carousel -->
+
+
+	  </div>
+	</div>
+      </div>
+
+    </div>
+    <!-- End of testimonials.  -->
+
+    <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+	  <h2>動画のリスト</h2>
+	  <div class="row">
+	    <div class="col-lg-10 col-lg-offset-0">
+              <ul>
+                <li> <a href="https://youtu.be/1OMJWpdl0DA?t=9s">Alex Abdo</a>
+                  from the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/bcNLlWqZ9d0?t=9s">Andre Meister</a>
+                  from <a href="https://netzpolitik.org">netzpolitik.org</a>
+                <li> <a href="https://www.youtube.com/watch?v=atFz16nInIs&t=10s">Benjamin Ismaïl</a>
+                  from <a href="https://rsf.org/">Reporters without Borders</a>
+                <li> <a href="https://youtu.be/sQMj332dgIE?t=10s">Thenmozhi Soundararajan</a>
+                  from <a href="https://www.equalitylabs.org/">Equality Labs</a>
+                <li> <a href="https://youtu.be/5MCGTd8pOG4?t=10s">Matt Mitchell</a>
+                  from <a href="http://www.meetup.com/New-York-Cryptoparty-Network/">CryptoHarlem</a>
+                <li> <a href="https://youtu.be/IdCiJMc3q80?t=8s">Cindy Cohn</a>
+                  from <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/Qqg3_a72aEw?t=9s">Ksenia Ermoshina</a>,
+                  Researcher at <a href="https://nextleap.eu/">nextleap.eu</a>
+                <li> <a href="https://youtu.be/6DqfWz-KHSI?t=8s">Michał 'Rysiek' Woźniak</a>
+                  from <a href="https://www.occrp.org/">OCCRP</a>
+                <li> <a href="https://youtu.be/OpeFuKRYGVA?t=8s">Sze Ming</a>
+                  from the <a href="https://sinarproject.org/">Sinar Project</a>
+                <li> <a href="https://youtu.be/oQvP9SXm-ek?t=8s">Jason Reich</a>
+                  from <a href="https://www.buzzfeed.com/">BuzzFeed</a>
+                <li> <a href="https://youtu.be/iRuo57Hzask?t=9s">John Pershing</a>
+                  from <a href="https://1010data.com">1010data</a>
+                <li> <a href="https://youtu.be/sX0lncD0VCM?t=10s">Jochim Selzer</a>
+                  from <a href="https://koeln.ccc.de/">CCC Köln</a>
+                <li> <a href="https://youtu.be/Z0h_uPWFp7o?t=8s">C5</a>,
+                  Digital Security Trainer from the Philippines
+                <li> <a href="https://youtu.be/xB6AvoeCWro?t=9s">Noah Vesely</a>
+                  from <a href="https://securedrop.org/">SecureDrop</a>
+                <li> <a href="https://youtu.be/_aJPaR9Cfmk?t=9s">Lisa 'Leez' Wright</a>
+                  from the <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/VJIR5zzpUr8?t=8s">Hernâni Marques</a>
+                  from <a href="https://www.ccc-ch.ch/">CCC Switzerland</a>
+                <li> <a href="https://youtu.be/K8-pmUyegYk?t=9s">Geoffrey King</a>,
+                  <a href="https://geoffreyking.org/">Lawyer and Journalist</a>
+                <li> <a href="https://youtu.be/l1ByJCSvQKk?t=9s">Andrew Ford Lyons</a>
+                  from <a href="http://www.internews.org/">Internews Europe</a>
+                <li> <a href="https://youtu.be/6dreAkVxmpg?t=8s">Seamus Tuohy</a>,
+                  <a href="http://prudentinnovation.org/">Digital Security Trainer</a>
+                <li> <a href="https://youtu.be/j0Zd0wZyLP8?t=10s">Meik Michalke</a>
+                  from <a href="https://www.c3s.cc/">C3S</a>
+                <li> <a href="https://youtu.be/mak22hXcslg?t=8s">Sheera Frenkel</a>
+                  from <a href="https://www.buzzfeed.com/news">BuzzFeed News</a>
+                <li> <a href=" https://youtu.be/MSu_FF49MtU?t=9s">Michael Stehmann</a>,
+                  <a href="http://www.rechtsanwalt-stehmann.de/">Lawyer</a>
+                <li> <a href="https://youtu.be/-Rkrf9GIw8M?t=9s">Cédric Laurant</a>
+                  from <a href="https://sontusdatos.org/">SonTusDatos</a>
+                <li> <a href="https://youtu.be/SdlnauJ5XWM?t=9s">Daniel Kahn Gillmor</a>
+                  from <a href="https://debian.org">Debian</a> and the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/g9a_snLWRxE?t=8s">Arthur Jordan</a>
+                  from <a href="https://2u.com/">2U</a>
+              </ul>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+<div id="team" class="camp-gutter container">
+<div class="row">
+	<div class="col-xs-12">
+	  <h2>わたしたちは?</h2>
+	</div>
+</div>
+
+<div class="row">
+	<!-- Werner -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/werner.jpg" alt="Picture of Werner">
+	    </div>
+	    <div class="media-body">
+	      <strong>Werner</strong>は1997年にGnuPGを始めました。
+	      Wernerは長らく自由ソフトウェアの支持者で、FSFEの発起人の一人です。
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Neal -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/neal.jpg" alt="Picture of Neal">
+	    </div>
+	    <div class="media-body">
+	      <strong>Neal</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div class="row">
+	<!-- Justus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/justus.jpg" alt="Picture of Justus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Justus</strong>は2015年にGnuPGについて仕事を始め、保守とすべての分野の開発のをサポートしています。
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Marcus -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/marcus.jpg" alt="Picture of Marcus">
+	    </div>
+	    <div class="media-body">
+	      <strong>Marcus</strong>は2001年から2012年にGnuPGについて仕事をしました。
+	      2017年に再び参加してすべての分野について働いています。
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div class="row">
+	<!-- Kai -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/kai.jpg" alt="Picture of Kai">
+	    </div>
+	    <div class="media-body">
+	      <strong>Kai</strong>は2015年からEnigmailプロジェクトに参加しています。
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Gniibe -->
+	<div class="camp-who col-md-6">
+	  <div class="media">
+	    <div class="media-left">
+	      <img class="media-object" src="/share/campaign/img/team/gniibe.jpg" alt="Picture of Niibe">
+	    </div>
+	    <div class="media-body">
+	      <strong>g新部</strong>は古い自由ソフトウェアハッカーで、
+	      GnuPGプロジェクトに2011に参加しました。スマートカードとGnukトークンのサポートをしています。
+	    </div>
+	  </div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<div class="camp-gutter container-fluid" id="camp-footer">
+  <div class="container">
+    <div class="row">
+      <div id="cpyright">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+          <img alt="CC-BY-SA 4.0" style="border: 0"
+                src="/share/cc-by-sa_80x15.png"/></a>&nbsp;
+        This web page is
+        Copyright 2017 The GnuPG Project and licensed under a
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+        <a href="/copying.html">copying</a> for details.
+        See the <a href="/imprint.html">Imprint</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+#+END_HTML
+
+# eof #

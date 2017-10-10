@@ -1,0 +1,29 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+* Libgpg-error
+
+  /Libgpg-error/ is a small library that originally defined common
+  error values for all GnuPG components.  Among these are GPG, GPGSM,
+  GPGME, GPG-Agent, libgcrypt, Libksba, DirMngr, Pinentry, SCdaemon.
+  Because /Libgpg-error/ is a common dependency all GnuPG components,
+  more features have been added to the library:
+
+  - An extended stream library (estream) which for example allows the
+    use of memory or cookie based streams.
+
+  - A printf implementation to provide a uniform interface on all
+    platforms.  This also includes asprintf style functions.
+
+  - An implementation of locks (mutexes).
+
+  - A gettext implementation for use on Windows
+
+  - A Base64 decoder
+
+  This library will eventually be renamed to /Libgpgrt/ to reflect
+  that this is a runtime library for GnuPG and other software which
+  likes to use it.  The latest version already comes with a header
+  file "gpgrt.h" which can be used instead of "gpg-error.h".
+
+  See the [[file:../../download/index.org::libgpg-error][download]] section for the latest tarball.

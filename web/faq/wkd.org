@@ -1,0 +1,13 @@
+#+TITLE: GnuPG - The Web Key Directory
+#+STARTUP: showall indent
+#+SETUPFILE: "share/setup.inc"
+#+DATE: 2016-08-31
+
+* The Web Key Directory
+
+The Web Key Directory (WKD) is GnuPG’s standard system for key
+discovery.  That is, it returns a public key for a supplied mail
+address.  It is a distrubuted system in the same way email is
+distributed.
+
+Please [[https://wiki.gnupg.org/WKD][the wiki]] for latest information on this key discovery system.

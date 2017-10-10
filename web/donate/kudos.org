@@ -6,7 +6,7 @@
 
 * Donation Summary
 
-*** This year
+*** Individual donations this year
 
 #+BEGIN_HTML
 <!--BEGIN-DONATION-TABLE-->
@@ -16,39 +16,63 @@
 
 *** Previous years
 
-| Year |    # |   \EUR | net \EUR |
-| <l>  |  <r> |    <r> |      <r> |
-|------+------+--------+----------|
-| 2015 | 5846 | 295405 |   283537 |
-| 2014 |  801 |  34700 |    30305 |
-| 2013 |  148 |   5041 |     4145 |
-| 2012 |   53 |   5991 |     4963 |
-| 2011 |   21 |    553 |      465 |
-|------+------+--------+----------|
-|      |      | 341690 |   323415 |
-#+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)
+| Year |    # |  Indi. |  Corp. | Total \EUR |
+| <l>  |  <r> |    <r> |    <r> |        <r> |
+|------+------+--------+--------+------------|
+| 2016 |  271 |   9615 | 146759 |     156374 |
+| 2015 | 5847 | 205560 | 144262 |     337954 |
+| 2014 |  801 |  34700 |        |      30305 |
+| 2013 |  148 |  37682 |        |      31470 |
+| 2012 |   53 |   5991 |        |       4963 |
+| 2011 |   21 |    553 |        |        465 |
+|------+------+--------+--------+------------|
+|      |      | 294101 | 291021 |     561531 |
+#+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
+
 #+HTML: <div id="smallnote">
-The "net" column gives the actual value without taxes and banking fees.\\
+Legend: “Indi.” indicates individual donations, “Corp.” lists large
+corporate donations and grants, and “Total” gives the net value
+without taxes and banking fees.  Note that this list has been updated
+on 2017-05-02 to include the Linux Foundation grant.  Note further
+that the “Total” for 2016 is preliminary.
+
+# About 2016:\\
+# | Individual Donations | 268 |   9615 |        |
+# | Facebook             |   1 |  44715 |  44715 |
+# | Stripe               |   1 |  47824 |  47824 |
+# | Linux Foundation     |   1 |  54220 |  54220 |
+# |----------------------+-----+--------+--------|
+# |                      | 271 | 156374 | 146759 |
+In 2016 we had 268 individual donations summing up to 9615 Euro, we
+received 50000 USD each from Facebook and Stripe resulting in 92539
+Euro, and 60000 USD (54220 Euro) from the Linux Foundation.
+
+# About 2015:\\
+# | Individual Donations | 5844 | 205560 | 193692 |
+# | Facebook             |    1 |  44213 |  44213 |
+# | Stripe               |    1 |  45633 |  45633 |
+# | Linux Foundation     |    1 |  54416 |  54416 |
+# |----------------------+------+--------+--------|
+# |                      | 5847 | 349822 | 337954 |
+In 2015 we had 5844 individual donations summing up to 205560 Euro
+(193692 net), we received 50000 USD each from Facebook and Stripe
+resulting in 89846 Euro, and 60000 USD (54416 Euro) from the Linux
+Foundation.
+
+In 2014 we had 901 individual donations dumming up to 34700 Euro
+(30305 net).  Some of the donations have been hold back by Stripe over
+the end of the year and thus VAT was only payable in 2015.  That VAT
+is not included in the net amount for 2014.  The net amount received
+from individual donations in 2014 have been 2525, 919, 541, 26320 Euro
+per quarter.
+
+In 2013 the [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo]] campaign raised 32641 Euro (27429 net) in December.
+Goteo transferred that money in March 2014 in 6 chunks: 11423, 6000,
+5000, 5000, 5218.  The total amount is however listed for 2013 along
+with 148 individual donations of 5041 Euro (4041 net) received before
+the start of the Goteo campaign.
+
 #+HTML: </div>
-
-The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] campaign raised an additional
-32641\thinsp\euro (27429 net) in December 2013.
-# Goteo transferred that money in March 2014 in 6 chunks:
-# 11423, 6000, 5000, 5000, 5218 = 32641
-
-# About 2014:
-# Some of the 801 donations from 2014 have been hold back by Stripe
-# over the end of the year and thus VAT was only payable in 2015.
-# That VAT is not included in the net amount for 2014.  The net amount
-# received from individual donations in 2014 have been 2525, 919, 541,
-# 26320 Euro per quarter.
-
-# About 2015:
-# | Individual Donations in 2015 | 5844 | 205560 | 193692 |
-# |      Facebook+Stripe in 2015 |    2 |  89845 |  89845 |
-# |------------------------------+------+--------+--------|
-# |                              | 5846 | 295405 | 283537 |
-
 
 * List of Donors
 
@@ -59,8 +83,13 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
 #+HTML: <li><a href="/donate/index.html">your name</a></li>
 #+HTML: </ul><p class="doclear"> </p></div>
 
+#+HTML: <div id="smallnote">
+(* marks recurring donations)
+#+HTML: </div>
+
   Thank you.
 
+  - All donors to GnuPG in [[file:kudos-2017.org][2017]]
   - All donors to GnuPG in [[file:kudos-2016.org][2016]]
   - All donors to GnuPG in [[file:kudos-2015.org][2015]]
   - All donors to GnuPG in [[file:kudos-2014.org][2014]]
@@ -72,14 +101,23 @@ The [[https://gnupg.org/blog/20140512-rewards-sent.html][Goteo crowdfunding]] ca
   [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
   [[https://www.wauland.de][file:logos/whs-logo.png]]
   [[https://facebook.com][file:logos/facebook-06-2015-blue_x.png]]
+  [[https://stripe.com][file:logos/stripe-blue.png]]
+  [[https://pep.foundation][file:logos/pep-green.png]]
 #+HTML: </div>
 
 * Hardware and service donations
 
-  We have to thank [[https://www.openit.de][OpenIT]] for their long time support of GnuPG.  They
-  provide rack space, connectivity, and are fast in fixing problems
-  with the machines.
+  We have to thank [[https://www.plusserver.com][PlusServer]] for their long time support of GnuPG.
+  They provide rack space, connectivity, and are fast in fixing
+  problems with the machines.
 
+# Without doing this in HTML we get an extra div figure around the
+# link which messes up the rendering.  Funnily this does not happen
+# with the logo box above.
+#
 #+HTML: <div class="logobox">
-  [[https://www.openit.de][file:../share/logo-sponsor.png]]
+#+HTML: <p>
+#+HTML: <a href="https://www.plusserver.com"><img src="../share/logo-sponsor.png"
+#+HTML:    alt="Logo PlusServer" /></a>
+#+HTML: </p>
 #+HTML: </div>

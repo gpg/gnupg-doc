@@ -1,0 +1,24 @@
+#+STARTUP: showall
+#+SETUPFILE: "../../share/setup.inc"
+
+* GPA - The Gnu Privacy Assistant
+
+  The /GNU Privacy Assistant/ (GPA) is a graphical user interface for
+  the [[../../index.en.html][GnuPG]] (GNU Privacy Guard).
+
+  GPA utilizes [[http://www.gtk.org][GTK+]] (the GIMP Tool Kit) and compiles for various
+  platforms. You can have a look at some [[file:screenshots.org][screenshots]] . You can learn
+  more about GPA [[file:icons.org][icons]], as well.
+
+  GPA is available at the [[ftp://ftp.gnupg.org/gcrypt/gpa//][GnuPG FTP server]] and its mirrors.
+
+** Changes in version 0.9.10
+
+ - Added basic support for TOFU information.
+ - Removed key-ID from some listings in favor of using the
+   fingerprint.
+ - Fixed deletion of X.509 keys.
+ - Allow for saving to an alternate file name if the file already
+   exists.
+ - Fixed several problems with key edit functions.
+ - Fixed drag-and-drop.

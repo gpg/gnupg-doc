@@ -86,13 +86,6 @@
 
  - Add RSS feed for the blogs
 
-** BTS
-
- - Migrate Roundup from Sqlite to Postgres so speed it up.  The
-   assumption is that we have more concurrent users which slows all
-   things down.
-
-
 ** Hardware
 
  - We need more disk space for Thrithemius and best also more RAM.

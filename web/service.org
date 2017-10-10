@@ -2,13 +2,13 @@
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
 
-* Support
+* Commercial support
 
 As part of the GNU project, GnuPG is community developed, and everyone
-is welcome to contribute under certain conditions. Some companies are
-offering paid services to meet specific needs. This page contain links
-to companies that wishes to announce their interest in working with
-GnuPG and related software.
+is welcome to contribute under certain conditions.  Some companies are
+offering paid services to meet specific needs.  This page contains
+links to companies that wishes to announce their interest in working
+with GnuPG and related software.
 
 The information on this page comes from companies who asked to be
 listed; we do not include any information we know to be false, but we
@@ -18,6 +18,19 @@ not an endorsement of the people listed here. We have no opinions and
 usually no information about the abilities of any specific person. We
 provide this list to enable you to contact service providers.
 
+
+** Privacy training
+
+   The companies listed here provide mainly non-technical training
+   and consulting on secure communication.
+
+   /none so far/
+
+
+** Technical support
+
+   The companies listed here provide mainly technical support and
+   consulting.
 
   - [[http://g10code.com][g10 Code GmbH]], Düsseldorf, Germany :: Offers customized
        development, porting to new platforms, help with integrating
@@ -45,26 +58,32 @@ provide this list to enable you to contact service providers.
        testimony regarding the legal implications of PGP deployments
        and use in the context of European Union electronic signature
        legislation.
-  - [[https://www.encryptioncorp.com][EncryptionCorp]], Toronto, Canada :: EncryptionCorp located in
-       Ontario, Canada is both Toronto and Peterborough's leading-edge
-       encryption consulting firms. We train and consult for companies
-       as well as their employees on much more than just how to use
-       encryption. Our small yet powerful organization is able to
-       train staff on the safest and fastest ways to handle an
-       organization's data, without cross contamination. We teach
-       everything from the simplest methods of password management to
-       quantum encryption. We do all this in little more than 3 hours
-       (including 4 breaks) with our non-invasive easy to understand
-       media.
-  - [[http://lsupport.net][Linux Support LLC]], Kiev, Ukraine :: Linux Support LLC provides
-       consulting services using GnuPG and related tools, integrated
-       security for individuals, soho and enterprise in Ukraine.
-  - [[https://5coluna.com/][5ª Coluna]], Portugal :: Offers GNU/Linux support and consulting for
-       helpdesk/ticketing software, discussion lists, backup and
-       small and medium sized companies, including GnuPG services like
-       disaster recovery using GnuPG and the OpenPGP card, as well as
-       general GnuPG implementations on Microsoft Windows and
-       Linux-based systems.
+# Disabled 2017-03-22 (no connection for a long time):
+#  - [[https://www.encryptioncorp.com][EncryptionCorp]], Toronto, Canada :: EncryptionCorp located in
+#       Ontario, Canada is both Toronto and Peterborough's leading-edge
+#       encryption consulting firms. We train and consult for companies
+#       as well as their employees on much more than just how to use
+#       encryption. Our small yet powerful organization is able to
+#       train staff on the safest and fastest ways to handle an
+#       organization's data, without cross contamination. We teach
+#       everything from the simplest methods of password management to
+#       quantum encryption. We do all this in little more than 3 hours
+#       (including 4 breaks) with our non-invasive easy to understand
+#       media.
+#  Disabled 2017-03-22 (website points to a random github repo):
+#  - [[http://lsupport.net][Linux Support LLC]], Kiev, Ukraine :: Linux Support LLC provides
+#       consulting services using GnuPG and related tools, integrated
+#       security for individuals, soho and enterprise in Ukraine.
+# Disabled 2017-03-22 (domain is for sale):
+#   - [[https://5coluna.com/][5ª Coluna]], Portugal :: Offers GNU/Linux support and consulting for
+#       helpdesk/ticketing software, discussion lists, backup and
+#       small and medium sized companies, including GnuPG services like
+#       disaster recovery using GnuPG and the OpenPGP card, as well as
+#       general GnuPG implementations on Microsoft Windows and
+#       Linux-based systems.
+
+
+** How to get listed
 
 Before we will list your name on this page, we ask that you agree
 informally to the following terms:
@@ -72,17 +91,17 @@ informally to the following terms:
   1. You will not restrict (except by copyleft) the use or
      distribution of any software, documentation, or other technical
      information you supply anyone in the course of modifying,
-     extending, or supporting free software. This includes any
+     extending, or supporting free software.  This includes any
      information specifically designed to ameliorate the use of free
      software.
 
   2. You will not take advantage of contact made through this page to
-     advertise an unrelated business (e.g., sales of proprietary
-     information). You may spontaneously mention your availability for
-     general consulting, but you should not promote a specific
+     advertise an unrelated business (e.g. sales of proprietary
+     information).  You may spontaneously mention your availability
+     for general consulting, but you should not promote a specific
      unrelated business unless the client asks.
 
-To have your information added to this list, please send a mail to the
-webmaster. The information is listed in the order we receive requests.
-We might eventually divide the list up by geographic location or type
-of service.
+To have your information added to this list, please send mail to
+service-listing at gnupg.org.  The entries are listed in the order
+we receive requests.  We might eventually divide the list up by
+geographic location or type of service.

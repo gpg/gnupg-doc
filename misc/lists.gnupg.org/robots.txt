@@ -1,0 +1,4 @@
+#
+# Lists.gnupg.org's Robot Exclusion List
+#
+User-Agent: *

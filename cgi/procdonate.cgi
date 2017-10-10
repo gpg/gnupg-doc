@@ -13,6 +13,7 @@
 
 
 use strict;
+#use CGI qw/:standard -debug/;
 use CGI;
 use Cwd qw(realpath);
 use IO::Socket::UNIX;
@@ -20,17 +21,22 @@ use IO::Socket::UNIX;
 realpath($0) =~ /^(.*)\/.*$/;
 my %config = do $1 . '/config.rc';
 
+$ENV{PATH} = "/bin:/usr/bin";
+delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
+
 my $baseurl = $config{baseurl};
 my $htdocs =  $config{htdocs};
+my $stripepubkey =  $config{stripepubkey};
 my $socket_name = $config{payprocd_socket};
 my $error_marker = '<span style="color: red;">* error</span>';
 
-# The form variabales are accessed via Q.
+# The form variables are accessed via Q.
 my $q  = new CGI;
 
 # This is a multi-purpose CGI.  The mode decides what to do.
 my $mode = $q->param("mode");
 my $sessid = $q->param("sessid");
+my $lang = $q->param("lang");
 
 # Variables used in the template pages.
 my $amount = "";
@@ -38,11 +44,14 @@ my $paytype = "";
 my $stripeamount = "";
 my $euroamount = "";
 my $currency = "";
+my $recur = "";
 my $name = "";
 my $mail = "";
 my $message = "";
 my $separef = "";
+my $sepaqr = "";
 my $errorstr = "";
+my $notepanel = "";
 
 # We use a dictionary to track error.  Those errors will then be
 # inserted into the output by write_template.
@@ -62,10 +71,11 @@ sub complete_sepa ();
 #   <input value="foo"/>
 # assuming that the value of FOO is foo. Note that this substitution
 # rules work for all tags and thus you better take care to add an
-# extra space if if do not want this to happen.
+# extra space if you do not want this to happen.
 sub write_template ($) {
     my $fname = shift;
 
+    my $tname;
     my $errorpanel = $errorstr;
     my $err_amount = '';
     my $err_name = '';
@@ -76,24 +86,46 @@ sub write_template ($) {
     my $sel_usd = '';
     my $sel_gbp = '';
     my $sel_jpy = '';
+    my $chk_amt500 = '';
+    my $chk_amt200 = '';
+    my $chk_amt100 = '';
+    my $chk_amt50 = '';
+    my $chk_amt20 = '';
+    my $chk_amt10 = '';
+    my $chk_amt5 = '';
+    my $chk_amtx = '';
+    my $amt_other = '';
+    my $recur_none = '';
+    my $recur_month = '';
+    my $recur_quarter = '';
+    my $recur_year = '';
+    my $recur_text = '';
     my $message_fmt;
     my $publishname;
     my $check_paytype = 'none';
+    my $stripe_data_email = '';
+    my $stripe_data_label_value;
+    my $xamount;
+    my $stripelocale;
 
     # Avoid broken HTML attributes.
     $amount =~ s/\x22/\x27/g;
     $stripeamount =~ s/\x22/\x27/g;
     $currency =~ s/\x22/\x27/g;
+    $recur =~ s/\x22/\x27/g;
     $name =~ s/\x22/\x27/g;
     $mail =~ s/\x22/\x27/g;
     $message =~ s/\x22/\x27/g;
     $separef =~ s/\x22/\x27/g;
+    $lang =~ s/\x22/\x27/g;
 
     # Clean possible user provided data
     $sessid =~ s/</\x26lt;/g;
+    $lang =~ s/</\x26lt;/g;
     $amount =~ s/</\x26lt;/g;
     $stripeamount =~ s/</\x26lt;/g;
     $currency =~ s/</\x26lt;/g;
+    $recur =~ s/</\x26lt;/g;
     $name =~ s/</\x26lt;/g;
     $mail =~ s/</\x26lt;/g;
     $message =~ s/</\x26lt;/g;
@@ -101,18 +133,111 @@ sub write_template ($) {
 
     # No need to clean $euroamount.
 
+    # Check whether a translated template is available.
+    $tname = $htdocs . $fname;
+    $tname =~ s/\.html$/.$lang.html/;
+    if ( not -f $tname ) { $tname = $htdocs . $fname; }
+
     # Create a formatted message.
     $message_fmt = $message;
     $message_fmt =~ s/\n/<br\x2f>/g;
 
+    # Check the currency and predefined amount.
     if ( $currency =~ /EUR/i ) {
         $sel_eur = ' selected="selected"';
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /USD/i ) {
         $sel_usd = ' selected="selected"';
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /GBP/i ) {
         $sel_gbp = ' selected="selected"';
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
     } elsif ( $currency =~ /JPY/i ) {
         $sel_jpy = ' selected="selected"';
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
+    } else {
+        $chk_amtx = $check_checked;
+        $amt_other = $amount;
+    }
+
+    # For non-recurring Stripe donations we do not want to send a
+    #     data-email="$mail"
+    # line to Stripe so to enable the user to use a a different mail
+    # address for use with them.  This is implemented using a
+    # STRIPE_DATA_EMAIL template variable.
+    $stripe_data_email = 'data-email="' . $mail . '"';
+    if ( $recur =~ /0/ ) {
+        $stripe_data_email = '';
+        $recur_none    = ' selected="selected"';
+        $recur_text    = '';
+
+        if ($lang eq 'de') {
+            $stripe_data_label_value = 'Einmalig spenden';
+        } elsif ($lang eq 'fr') {
+            $stripe_data_label_value = 'Faire un don unique';
+        } elsif ($lang eq 'ja') {
+            $stripe_data_label_value = '一回の寄付する';
+        } else {
+            $stripe_data_label_value = 'Make one-time donation';
+        }
+
+    } elsif ( $recur =~ /12/ ) {
+        $recur_month   = ' selected="selected"';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'monatlich';
+            $stripe_data_label_value = 'Monatlich spenden';
+        } elsif ($lang eq 'fr') {
+            $recur_text    = 'mensuels';
+            $stripe_data_label_value = 'Faire un don mensuel';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = '毎月';
+            $stripe_data_label_value = '毎月寄付する';
+        } else {
+            $recur_text    = 'monthly';
+            $stripe_data_label_value = 'Donate monthly';
+        }
+
+    } elsif ( $recur =~ /4/ ) {
+        $recur_quarter = ' selected="selected"';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'vierteljährlich';
+            $stripe_data_label_value = 'Vierteljährlich spenden';
+        } elsif ($lang eq 'fr') {
+            $recur_text    = 'trimestriels';
+            $stripe_data_label_value = 'Faire un don trimestriel';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = '3ヶ月毎';
+            $stripe_data_label_value = '3ヶ月毎に寄付する';
+        } else {
+            $recur_text    = 'quarterly';
+            $stripe_data_label_value = 'Donate quarterly';
+        }
+
+    } elsif ( $recur =~ /1/ ) {
+        $recur_year    = ' selected="selected"';
+
+        if ($lang eq 'de') {
+            $recur_text    = 'jährlich';
+            $stripe_data_label_value = 'Jährlich spenden';
+        } elsif ($lang eq 'fr') {
+            $recur_text    = 'annuels';
+            $stripe_data_label_value = 'Faire un don annuel';
+        } elsif ($lang eq 'ja') {
+            $recur_text    = '毎年';
+            $stripe_data_label_value = '毎年寄付する';
+        } else {
+            $recur_text    = 'yearly';
+            $stripe_data_label_value = 'Donate yearly';
+        }
+
+    } else { # invalid
+        $stripe_data_label_value = '';
     }
 
     if ( $paytype eq "cc" ) {
@@ -121,6 +246,8 @@ sub write_template ($) {
         $check_paytype = "PP";
     } elsif ( $paytype eq "se" ) {
         $check_paytype = "SE";
+    } elsif ( $paytype eq "bc" ) {
+        $check_paytype = "BC";
     }
 
     # Set var for the paypal button
@@ -130,53 +257,92 @@ sub write_template ($) {
         $publishname = 'Yes';
     }
 
+
+
+    # Set a specific locale.
+    if ($lang eq 'de')    { $stripelocale = "de"; }
+    elsif ($lang eq 'fr') { $stripelocale = "fr"; }
+    elsif ($lang eq 'ja') { $stripelocale = "ja"; }
+    elsif ($lang eq 'en') { $stripelocale = "en"; }
+    else                  { $stripelocale = "auto"; }
+
+
     # Build error strings.
     foreach (keys %errdict)
     {
+        my $fieldname;
+
+        if ($lang eq 'de')    { $fieldname = "Feld $_: ";  }
+        elsif ($lang eq 'fr') { $fieldname = "Champ $_: "; }
+        elsif ($lang eq 'ja') { $fieldname = "欄 $_: "; }
+        else                  { $fieldname = "Field $_: "; }
+
         if    (/amount/) { $err_amount = $error_marker; }
         elsif (/name/)   { $err_name   = $error_marker; }
         elsif (/mail/)   { $err_mail   = $error_marker; }
         elsif (/paytype/){ $err_paytype = $error_marker; }
 
-        $errorpanel = $errorpanel . "Field $_: " . $errdict{$_} . "<br/>\n"
+        $errorpanel = $errorpanel . $fieldname . $errdict{$_} . "<br/>\n"
     }
-    if ( $errorpanel ne '' )
-    {
+    if ( $errorpanel ne '' ) {
         $errorpanel =
             "<div style='color: red;'><p>\n" . $errorpanel . "</p></div>\n";
+    } elsif ( $notepanel ne '' ) {
+        $errorpanel =
+            "<div style='color: grey;'><p>\n" . $notepanel . "</p></div>\n";
+        $notepanel = '';
     }
 
 
-    open TEMPLATE, $htdocs . $fname;
+    open TEMPLATE, $tname;
     while (<TEMPLATE>) {
         if ( /<!--/ )
         {
-            # Only one replacement per line allowed to avoid recursive
-            # replacements. Note that MESSAGE uses a special treatment
-            # for the textarea tag.
-            s/<!--SESSID-->/$sessid/
-            || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
-            || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
-            || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
-            || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
-            || s/(\x22\x2f>)?<!--NAME-->/$name\1/
-            || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
-            || s/\x2f><!--CHECKOTHER-->/$check_checked\x2f>/
-            || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
-            || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
-            || s/<!--MESSAGE_FMT-->/$message_fmt/
-            || s/(<selected=\x22selected\x22)?><!--SEL_EUR-->/$sel_eur>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
-            || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
-            || s/<!--PUBLISH_NAME-->/$publishname/
-            || s/<!--SEPA_REF-->/$separef/
-            || s/<!--ERRORSTR-->/$errorstr/
-            || s/<!--ERR_AMOUNT-->/$err_amount/
-            || s/<!--ERR_NAME-->/$err_name/
-            || s/<!--ERR_MAIL-->/$err_mail/
-            || s/<!--ERR_PAYTYPE-->/$err_paytype/
-            || s/<!--ERRORPANEL-->/$errorpanel/;
+        # Only one replacement per line allowed to avoid recursive
+        # replacements. Note that MESSAGE uses a special treatment
+        # for the textarea tag.
+        s/<!--SESSID-->/$sessid/
+        || s/(\x22\x2f>)?<!--AMOUNT-->/$amount\1/
+        || s/(\x22\x2f>)?<!--AMT_OTHER-->/$amt_other\1/
+        || s/(\x22\x2f>)?<!--EUROAMOUNT-->/$euroamount\1/
+        || s/(\x22\x2f>)?<!--STRIPEPUBKEY-->/$stripepubkey\1/
+        || s/(\x22\x2f>)?<!--STRIPELOCALE-->/$stripelocale\1/
+        || s/(\x22\x2f>)?<!--STRIPEAMOUNT-->/$stripeamount\1/
+        || s/(\x22\x2f>)?<!--CURRENCY-->/$currency\1/
+        || s/(\x22\x2f>)?<!--NAME-->/$name\1/
+        || s/(\x22\x2f>)?<!--MAIL-->/$mail\1/
+        || s/\x2f><!--CHECK_$check_paytype-->/$check_checked\x2f>/
+        || s/(<\x2ftextarea>)?<!--MESSAGE-->/$message\1/
+        || s/<!--MESSAGE_FMT-->/$message_fmt/
+        || s/(<selected=\x22selected\x22)?><!--SEL_EUR-->/$sel_eur>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_USD-->/$sel_usd>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_GBP-->/$sel_gbp>/
+        || s/(<selected=\x22selected\x22)?><!--SEL_JPY-->/$sel_jpy>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_NONE-->/$recur_none>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_MONTH-->/$recur_month>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_QUARTER-->/$recur_quarter>/
+        || s/(<selected=\x22selected\x22)?><!--RECUR_YEAR-->/$recur_year>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT500-->/$chk_amt500\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT200-->/$chk_amt200\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT100-->/$chk_amt100\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT50-->/$chk_amt50\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT20-->/$chk_amt20\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT10-->/$chk_amt10\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMT5-->/$chk_amt5\x2f>/
+        || s/(<check=\x22checked\x22)?\x2f><!--CHK_AMTX-->/$chk_amtx\x2f>/
+        || s/<!--RECUR_TEXT-->/$recur_text/
+        || s/<!--STRIPE_DATA_EMAIL-->/$stripe_data_email/
+        || s/<!--STRIPE_DATA_LABEL_VALUE-->/$stripe_data_label_value/
+        || s/<!--PUBLISH_NAME-->/$publishname/
+        || s/<!--LANG-->/$lang/
+        || s/<!--SEPA_REF-->/$separef/
+        || s/<!--SEPA_QR-->/$sepaqr/
+        || s/<!--ERRORSTR-->/$errorstr/
+        || s/<!--ERR_AMOUNT-->/$err_amount/
+        || s/<!--ERR_NAME-->/$err_name/
+        || s/<!--ERR_MAIL-->/$err_mail/
+        || s/<!--ERR_PAYTYPE-->/$err_paytype/
+        || s/<!--ERRORPANEL-->/$errorpanel/;
         }
         print;
     }
@@ -187,7 +353,7 @@ sub write_template ($) {
 
 # Call the payment processor daemon.  Takes the command and a
 # reference to a dictionary with the data as input.  On return that
-# disctionary is replaced by the response data.
+# dictionary is replaced by the response data.
 sub payproc ($$)
 {
     my $cmd = shift;
@@ -296,7 +462,7 @@ sub write_main_page ()
 {
     print $q->header(-type=>'text/html', -charset=>'utf-8');
     print "\n";
-    write_template("donate/index.html");
+    write_template("donate/donate.html");
 }
 
 
@@ -310,6 +476,10 @@ sub write_checkout_page ()
     }
     elsif ( $paytype eq "pp" ) {
         write_template("donate/checkout-pp.html");
+    }
+    elsif ( $paytype eq "bc" ) {
+        # For Bitcoins this is the final page
+        write_template("donate/checkout-bc.html");
     }
     else {
         # For SEPA this is the final page
@@ -334,51 +504,89 @@ sub check_donation ()
     my %data;
     my %sepa;
     my $anyerr = 0;
+    my $msg;
 
-    # Note: When re-displaying the page we always use amount other
-    # because that is easier to implement than figuring out which
-    # amount and currency was used and check the appropriate radio
-    # button.
     $amount = $q->param("amount");
     if ($amount eq 'other') {
+      # backward compatibility
       $amount = $q->param("amountother");
-      $currency = $q->param("currency");
-    } else {
-      $currency = 'EUR';
     }
+    $currency = $q->param("currency");
 
+    $recur = $q->param("recur");
     $name = $q->param("name");
     $name = 'Anonymous' if $name eq '';
     $mail = $q->param("mail");
     $message = $q->param("message");
     $stripeamount = "0";
 
-    # Check the amount.
-    $data{"Amount"} = $amount;
-    $data{"Currency"} = $currency;
-    if (not payproc ('CHECKAMOUNT', \%data )) {
-        $errdict{"amount"} = $data{"ERR_Description"};
-        $anyerr = 1;
-    }
-    $stripeamount = $data{"_amount"};
-    $amount = $data{"Amount"};
-    $currency = $data{"Currency"};
-    $euroamount = $data{"Euro"};
+    $paytype = $q->param("paytype");
 
-    # Check that at least some Euros are given.  Due to Stripe
-    # processing fees and our own costs for bookkeeping we need to ask
-    # for a minimum amount.
-    if ( (not $anyerr) and ($euroamount < 4.00) ) {
-        $errdict{"amount"} = 'Sorry, due to overhead costs we do' .
-                             ' not accept donations of less than 4 Euro.';
-        $anyerr = 1;
+    # Check the amount and the recurring value unless Bitcoins are
+    # selected.
+    if ( $paytype ne "bc" ) {
+        # Note that we only use full Euro/USD/etc from the amount to avoid
+        # problems with ',' and '.' decimal separators.
+        $data{"Amount"} = int $amount;
+        $data{"Currency"} = $currency;
+        $data{"Recur"} = $recur;
+        if (not payproc ('CHECKAMOUNT', \%data )) {
+            $errdict{"amount"} = $data{"ERR_Description"};
+            $anyerr = 1;
+        }
+        $stripeamount = $data{"_amount"};
+        $amount = $data{"Amount"};
+        $recur = $data{"Recur"};
+        $currency = $data{"Currency"};
+        $euroamount = $data{"Euro"};
+
+        # Check that at least some Euros are given.  Due to Stripe
+        # processing fees and our own costs for bookkeeping we need to ask
+        # for a minimum amount.
+        if ( (not $anyerr) and ($euroamount < 4.00) ) {
+
+            if ($lang eq 'de') {
+                $msg= 'Um unsere Verwaltungskosten niedrig zu halten,'
+                    . 'können wir leider keine Spenden unter 4 Euro annehmen.';
+            } elsif ($lang eq 'fr') {
+                $msg = 'Désolé, en raison des frais généraux nous ne pouvons'
+                    . ' pas accepter les donations de moins de 4 euros.';
+            } elsif ($lang eq 'ja') {
+                $msg = '申し訳ありません。間接経費のため、4ユーロ未満の寄付'
+                    . 'は受け付けることができません。';
+            }
+            else {
+                $msg = 'Sorry, due to overhead costs we do'
+                    . ' not accept donations of less than 4 Euro.';
+            }
+
+            $errdict{"amount"} = $msg;
+            $anyerr = 1;
+        }
     }
 
     # Check the payment type
-    $paytype = $q->param("paytype");
-    if ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
-        $errdict{"paytype"} = 'No payment type selected.' .
-                              ' Use "Credit Card", "PayPal", or "SEPA".';
+    if ( $paytype eq "bc" ) {
+        # No further checks - this is kind of a hack.
+    }
+    elsif ( $paytype ne "cc" and $paytype ne "pp" and $paytype ne "se" ) {
+
+        if ($lang eq 'de') {
+            $msg= 'Keine Zahlungsart angegeben.'
+                . ' Bitte "Kreditkarte", "PayPal" oder "SEPA" auswählen.';
+        } elsif ($lang eq 'fr') {
+            $msg= 'Aucun type de paiement sélectionné.'
+                . ' Les options sont "Carte de crédit", "PayPal", ou bien "SEPA".';
+        } elsif ($lang eq 'ja') {
+            $msg= '支払い方式が選択されていません。'
+                . '"クレジットカード", "PayPal", または "SEPA" が選択できます。';
+        }
+        else {
+            $msg= 'No payment type selected.'
+                . ' Use "Credit Card", "PayPal", or "SEPA".';
+        }
+
+        $errdict{"paytype"} = $msg;
         $anyerr = 1;
     }
 
@@ -402,8 +610,10 @@ sub check_donation ()
     }
 
     # Now create a session.
+    $data{"Lang"} = $lang;
     $data{"Stripeamount"} = $stripeamount;
     $data{"Euroamount"} = $euroamount;
+    $data{"Recur"} = $recur;
     $data{"Name"} = $name;
     $data{"Mail"} = $mail;
     $data{"Message"} = $message;
@@ -429,8 +639,13 @@ sub resend_main_page ()
     my %data;
 
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
     $amount = $data{"Amount"};
     $currency = $data{"Currency"};
+    $recur = $data{"Recur"};
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
@@ -442,15 +657,133 @@ sub resend_main_page ()
 }
 
 
+# Write a THANKS page.
+sub write_thanks ($)
+{
+    my $data = shift;
+    my $recur;
+    my $recur_text = '';
+    my $processor;
+    my $cardno;
+    my $accountid = '-';
+
+    if ( $paytype eq 'cc' ) {
+        $processor = 'Stripe';
+        $cardno = '*' . $$data{"Last4"};
+    } elsif ( $paytype eq 'pp' ) {
+        $processor = 'Paypal';
+        $cardno = '-';
+    } else {
+        $processor = '-';
+        $cardno = '-';
+    }
+
+    if ($$data{"account-id"} ne '') {
+        $accountid = $$data{"account-id"};
+    }
+
+    $recur = $$data{"Recur"};
+    if ( $recur =~ /12/ ) {
+        if ($lang eq 'de')    { $recur_text = 'monatlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Mensuelle'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎月'; }
+        else                  { $recur_text = 'Monthly'; }
+    } elsif ( $recur =~ /4/ ) {
+        if ($lang eq 'de')    { $recur_text = 'vierteljährlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Trimestrielle'; }
+        elsif ($lang eq 'ja') { $recur_text = '3ヶ月毎'; }
+        else                  { $recur_text = 'Quarterly'; }
+    } elsif ( $recur =~ /1/ ) {
+        if ($lang eq 'de')    { $recur_text = 'jährlich'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Annuelle'; }
+        elsif ($lang eq 'ja') { $recur_text = '毎年'; }
+        else                  { $recur_text = 'Yearly'; }
+    } else {
+        if ($lang eq 'de')    { $recur_text = 'nein'; }
+        elsif ($lang eq 'fr') { $recur_text = 'Unique'; }
+        elsif ($lang eq 'ja') { $recur_text = '一回だけ'; }
+        else                  { $recur_text = 'Just once'; }
+    }
+
+    if ($lang eq 'de') {
+        $message = <<EOF;
+Betrag ......: $$data{"Amount"} $$data{"Currency"}
+Dauerauftrag : $recur_text
+Beschreibung : $$data{"Desc"}
+Kartennr. ...: $cardno
+Dienstleister: $processor
+Charge-Id ...: $$data{"Charge-Id"}
+Zeitstempel .: $$data{"_timestamp"}
+Email .......: $$data{"Email"}
+Spender-ID ..: $accountid
+EOF
+    } elsif ($lang eq 'fr') {
+         $message = <<EOF;
+Montant ....: $$data{"Amount"} $$data{"Currency"}
+Fréquence ..: $recur_text
+Description : $$data{"Desc"}
+No. carte ..: $cardno
+Processeur .: $processor
+Charge-Id ..: $$data{"Charge-Id"}
+Date .......: $$data{"_timestamp"}
+Courriel ...: $$data{"Email"}
+Account-Id .: $accountid
+EOF
+    } elsif ($lang eq 'ja') {
+        $message = <<EOF;
+金額 ......: $$data{"Amount"} $$data{"Currency"}
+毎回?一回? : $recur_text
+説明 ......: $$data{"Desc"}
+カード番号 : $cardno
+決済業者 ..: $processor
+Charge-Id .: $$data{"Charge-Id"}
+時刻 ......: $$data{"_timestamp"}
+メール ....: $$data{"Email"}
+Account-Id : $accountid
+EOF
+    } else {
+         $message = <<EOF;
+Amount ....: $$data{"Amount"} $$data{"Currency"}
+Recurring .: $recur_text
+Desc ......: $$data{"Desc"}
+Cardno.....: $cardno
+Processor .: $processor
+Charge-Id .: $$data{"Charge-Id"}
+Timestamp .: $$data{"_timestamp"}
+Email .....: $$data{"Email"}
+Account-Id : $accountid
+EOF
+    }
+
+    if ($$data{"Live"} eq 'f') {
+        $message = $message . "\n!!! TEST TRANSACTION !!!";
+    }
+
+    write_thanks_page ();
+}
+
+
 # This is called by FIXME
 sub complete_stripe_checkout ()
 {
     my %data;
     my %stripe;
+    my $recur;
+    my $recur_text = '';
 
     # fixme: Change the error message to note that the card has not
     # been charged.  Somehow delete the token
     payproc ('SESSION get ' . $sessid, \%data) or fail $data{"ERR_Description"};
+
+    if ( $data{"Paytype"} ne "cc" ) {
+        fail "Invalid paytype for Stripe transaction";
+    }
+    $paytype = $data{"Paytype"};
+
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
 
     # Do the checkout.
     $stripe{"Card-Token"} = $q->param("stripeToken");
@@ -460,6 +793,7 @@ sub complete_stripe_checkout ()
         "GnuPG donation by " . $data{"Name"} . " <" . $data{"Mail"} . ">";
     $stripe{"Stmt-Desc"} = "GnuPG donation";
     $stripe{"Email"} = $q->param("stripeEmail");
+    $stripe{"Recur"} = $data{"Recur"};
     $stripe{"Meta[name]"} = $data{"Name"} unless $data{"Name"} eq 'Anonymous';
     if ($data{"Mail"} ne $q->param("stripeEmail")) {
         $stripe{"Meta[mail]"} = $data{"Mail"};
@@ -477,21 +811,7 @@ sub complete_stripe_checkout ()
     }
 
     # Print thanks
-
-    $message = <<EOF;
-Amount ..: $stripe{"Amount"} $stripe{"Currency"}
-Desc ....: $stripe{"Desc"}
-Cardno...: *$stripe{"Last4"}
-Processor: Stripe
-Email ...: $stripe{"Email"}
-Charge-Id: $stripe{"Charge-Id"}
-Timestamp: $stripe{"_timestamp"}
-EOF
-    if ($stripe{"Live"} eq 'f') {
-        $message = $message . "\n!!! TEST TRANSACTION !!!";
-    }
-
-    write_thanks_page ();
+    write_thanks (\%stripe);
     payproc ('SESSION destroy ' . $sessid, ());
 }
 
@@ -506,11 +826,18 @@ sub get_paypal_approval ()
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
 
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
+
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
+    $request{"Recur"} = $data{"Recur"};
     $request{"Desc"} =
         "Donation of " . $data{"Amount"} . " " . $data{"Currency"} .
         " to the GnuPG project";
+    $request{"Email"} = $data{"Mail"};
     $request{"Meta[name]"} = $data{"Name"} unless
         $data{"Name"} eq 'Anonymous';
     $request{"Meta[mail]"} = $data{"Mail"};
@@ -543,6 +870,47 @@ sub get_paypal_approval ()
 }
 
 
+# The is called by paypal after the user hit cancel.  We need to
+# extract the alias to get back the session data.
+sub cancel_paypal_checkout ()
+{
+    my $aliasid;
+    my $payerid;
+    my %data;
+
+    $aliasid = $q->param("aliasid");
+
+    # Get the session from the alias.
+    payproc ('SESSION sessid ' . $aliasid, \%data)
+        or fail $data{"ERR_Description"};
+    $sessid = $data{"_SESSID"};
+    payproc ('SESSION get ' . $sessid, \%data)
+        or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
+
+    if ( $data{"Paytype"} ne "pp" ) {
+        fail "Invalid paytype for Paypal transaction";
+    }
+
+    # Set vars for the checkout page.
+    $amount = $data{"Amount"};
+    $currency = $data{"Currency"};
+    $paytype = $data{"Paytype"};
+    $stripeamount = $data{"Stripeamount"};
+    $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
+    $name = $data{"Name"};
+    $mail = $data{"Mail"};
+    $message = $data{"Message"};
+
+    write_cancel_page ();
+}
+
+
 # The is called by paypal after approval.  We need to extract the alias
 # and the payerid and store it in the session.  Then we ask to confirm
 # the payment.
@@ -562,6 +930,11 @@ sub confirm_paypal_checkout ()
     $sessid = $data{"_SESSID"};
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
+
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
 
     if ( $data{"Paytype"} ne "pp" ) {
         fail "Invalid paytype for Paypal transaction";
@@ -583,6 +956,7 @@ sub confirm_paypal_checkout ()
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
@@ -620,22 +994,13 @@ sub complete_paypal_checkout ()
         return;
     }
 
-    # Print thanks
+    # Copy some values for use by the thanks page.
+    $request{"Desc"} = $data{"Desc"};
+    $request{"Recur"} = $data{"Recur"};
+    $request{"Paytype"} = $data{"Paytype"};
+    $paytype = $data{"Paytype"};
 
-    $message = <<EOF;
-Amount ..: $request{"Amount"} $request{"Currency"}
-Desc ....: $data{"Desc"}
-Cardno...: n/a
-Processor: PayPal
-Email ...: $request{"Email"}
-Charge-Id: $request{"Charge-Id"}
-Timestamp: $request{"_timestamp"}
-EOF
-    if ($request{"Live"} eq 'f') {
-        $message = $message . "\n!!! TEST TRANSACTION !!!";
-    }
-
-    write_thanks_page ();
+    write_thanks (\%request);
     payproc ('SESSION destroy ' . $sessid, ());
 }
 
@@ -649,6 +1014,11 @@ sub complete_sepa ()
     payproc ('SESSION get ' . $sessid, \%data)
         or fail $data{"ERR_Description"};
 
+    # If the session has a lang value use that.
+    if ($data{"Lang"} ne '') {
+        $lang = $data{"Lang"};
+    }
+
     $request{"Currency"} = $data{"Currency"};
     $request{"Amount"} = $data{"Amount"};
     $request{"Desc"} = "GnuPG SEPA donation";
@@ -657,6 +1027,7 @@ sub complete_sepa ()
     if ($data{"Message"} ne '') {
         $request{"Meta[message]"} = $data{"Message"};
     }
+    $request{"Recur"} = $data{"Recur"};
     if (not payproc ('SEPAPREORDER', \%request )) {
         $errorstr = "Error: " . $request{"ERR_Description"};
         # Back to the main page.
@@ -671,9 +1042,24 @@ sub complete_sepa ()
     $paytype = $data{"Paytype"};
     $stripeamount = $data{"Stripeamount"};
     $euroamount = $data{"Euroamount"};
+    $recur = $data{"Recur"};
     $name = $data{"Name"};
     $mail = $data{"Mail"};
     $message = $data{"Message"};
+
+    my @cmd = (qw (/usr/local/bin/ppsepaqr),
+               'DE76301502000002108603',
+               'g10 Code GmbH',
+               $amount,
+               'GnuPG donation '.$separef );
+
+    if (open PPSEPAQR, '-|', @cmd) {
+        while (defined (my $line = <PPSEPAQR>))
+        {
+            $sepaqr = $sepaqr . $line;
+        }
+        close PPSEPAQR;
+    }
 
     write_checkout_page ();
 }
@@ -708,6 +1094,46 @@ elsif ($mode eq '') {
     # No mode: Show empty template.
     write_main_page();
 }
+elsif ($mode eq 'preset') {
+    # Show a a template with certain preset values.
+    $currency = 'EUR';
+    $paytype = 'cc';
+    # First dedicated payment plans.
+    if ($q->param('plan') eq '12-5-eur' ) {
+        $recur = '4';
+        $amount = '15';
+        $notepanel = 'Note: To avoid overhead costs we adjusted your donation '
+            . 'from monthly to the equal quarterly amount';
+    }
+    elsif ($q->param('plan') eq '12-10-eur' ) {
+        $recur = '12';
+        $amount = '10';
+    }
+    elsif ($q->param('plan') eq '12-20-eur' ) {
+        $recur = '12';
+        $amount = '20';
+    }
+    elsif ($q->param('plan') eq '12-50-eur' ) {
+        $recur = '12';
+        $amount = '50';
+    }
+    else {
+        # Then look at arbitrary values
+        # No checking needed.
+        $recur = '0';
+        if ($q->param('s_amt') ne '') {
+            $amount = int $q->param('s_amt');
+        }
+        if ($q->param('s_cur') ne '') {
+            $currency = $q->param('s_cur');
+        }
+        if ($q->param('s_pt') ne '') {
+            $paytype = $q->param('s_pt');
+        }
+    }
+
+    write_main_page();
+}
 elsif ($mode eq 'ping') {
     # Check aliveness
     ping_pong();
@@ -725,8 +1151,10 @@ elsif ($mode eq 'checkout-stripe') {
     complete_stripe_checkout();
 }
 elsif ($mode eq 'cancel-paypal') {
-    # Fixme: Destroy the alias of the session.
-    write_cancel_page();
+    # Paypal transaction has been canceled by Paypal or the user.
+    # Show the cancel page which has a button to return to the
+    # main donation page.
+    cancel_paypal_checkout();
 }
 elsif ($mode eq 'confirm-paypal') {
     # We have approval from Paypal - show the confirm checkout page.
