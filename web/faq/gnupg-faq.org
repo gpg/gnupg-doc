@@ -266,8 +266,8 @@ default, so nothing needs to be downloaded!
      :CUSTOM_ID: get_gnupg_android
      :END:
 
-Both OpenKeychain and the Android Privacy Guard are available in the
-Android app store.
+There is no official port of GnuPG to Android.  Users in need of a
+GnuPG-compatible FOSS tool on Android may wish to check out OpenKeychain.
 
 **** … for Debian GNU/Linux or Ubuntu?
      :PROPERTIES:
