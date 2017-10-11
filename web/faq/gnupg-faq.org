@@ -358,7 +358,8 @@ binary is required to give you the source code upon your request.
    :END:
 
 The word “free” should evoke ideas of liberty, not price.  An awful
-lot of the software industry does not <a href="https://gnu.org/philosophy/free-software-even-more-important.html">respect your freedoms</a>:
+lot of the software industry does not
+[[https://gnu.org/philosophy/free-software-even-more-important.html][respect your freedoms]]:
 your freedom to use the software for any purpose, your freedom to study
 and learn from how it works, your freedom to share it with others who
 might benefit from it, and more.  Free Software is the antithesis of
