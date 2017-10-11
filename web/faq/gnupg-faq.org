@@ -27,7 +27,7 @@ very litigious.
 
 - Linux is a trademark of Linus Torvalds.
 - GNU is a trademark of the Free Software Foundation.
-- Macintosh, OS X and Mac OS X are all trademarks of the Apple
+- Macintosh, OS X, macOS, and Mac OS X are all trademarks of the Apple
   Corporation.
 - PGP is a trademark of Symantec Corporation.
 - Solaris is a trademark of Oracle Corporation.
@@ -45,7 +45,7 @@ purposes.
    :CUSTOM_ID: documentation_license
    :END:
 
-This document is © 2012-2015, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
+This document is © 2012-2017, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
 A.M. Kuchling <[[mailto:amk@amk.ca?subject=The%20GnuPG%20FAQ][amk@amk.ca]]>. You are free to make use of this document
 in accordance with the [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
 license]]; alternately, you may make use of it under terms of the
@@ -246,28 +246,18 @@ A convenient Windows installer is available from [[https://www.gpg4win.org][GPG4
     :END:
 
 The [[https://www.gpgtools.org][GPGtools project]] has everything needed to get started.
-However, GPGTools only offers GnuPG 2.0; if you want the latest-and-greatest 2.1, look
-at Patrick Brunschwig’s [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project
-on SourceForge.
+However, GPGTools only offers GnuPG 2.0; if you want the
+latest-and-greatest 2.1, look at Patrick Brunschwig’s
+[[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project on SourceForge.  Finally,
+[[https://brew.sh][Homebrew]], [[http://www.finkproject.org/][Fink]], and [[https://www.macports.org/][MacPorts]] all have it in their repositories.
 
-
-*** … for Linux?
+*** … for the free Unixes?
     :PROPERTIES:
     :CUSTOM_ID: get_gnupg_linux
     :END:
 
-The bad news is there is no single, consistent way to install GnuPG on
-Linux systems.  The good news is that it’s usually installed by
-default, so nothing needs to be downloaded!
-
-
-**** … for Android?
-     :PROPERTIES:
-     :CUSTOM_ID: get_gnupg_android
-     :END:
-
-There is no official port of GnuPG to Android.  Users in need of a
-GnuPG-compatible FOSS tool on Android may wish to check out OpenKeychain.
+There are as many ways to install it as there are free Unix
+systems.
 
 **** … for Debian GNU/Linux or Ubuntu?
      :PROPERTIES:
@@ -316,7 +306,7 @@ To install GnuPG on Gentoo, run the following command as root:
 The Gentoo documentation includes a [[https://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
 
 
-*** … for FreeBSD?
+**** … for FreeBSD?
     :PROPERTIES:
     :CUSTOM_ID: get_gnupg_freebsd
     :END:
@@ -343,7 +333,7 @@ sudo pkg_add -r gnupg
 A port to *VMS* is maintained by Steven M. Schweda at [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
 
 
-** Is there source code available for it?
+** Is source code available?
    :PROPERTIES:
    :CUSTOM_ID: source_code
    :END:
@@ -386,7 +376,6 @@ Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mai
 list's archives.
 
 The [[https://bugs.gnupg.org/gnupg/][GnuPG project's bug tracker]] is also publicly available.
-
 
 
 * Where can I get more information?
@@ -508,25 +497,6 @@ started using it.
 
 The list is lightly moderated.
 
-
-*** PGP-Basics
-    :PROPERTIES:
-    :CUSTOM_ID: pgp-basics_list
-    :END:
-
-
-- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGP-Basics][PGP-Basics webpage]]
-- Unsubscribing :: see above
-- List moderator :: Mike Daigle <[[mailto:mdaigle@gswot.org?subject=The%20PGP-Basics%20list][mdaigle@gswot.org]]>
-- Supports PGP/MIME :: No
-- Languages supported :: English
-
-PGP-Basics was established over a decade ago specifically to provide a
-communications security. The list is low-volume, lightly-moderated,
-place where newcomers to GnuPG and PGP could learn about
-and remarkably friendly to new users.
-
-
 *** PGPNET
     :PROPERTIES:
     :CUSTOM_ID: pgpnet_list
@@ -535,8 +505,8 @@ and remarkably friendly to new users.
 
 - Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGPNET][PGPNET page]]
 - Unsubscribing :: see above
-- List moderator(s) :: Unknown
-- Supports PGP/MIME? :: No
+- List moderator(s) :: Paul Kapaldo <[[mailto:pjkapaldo@yahoo.com?subject=PGPNET][pjkapaldo@yahoo.com]]>
+- Supports PGP/MIME? :: Yes
 - Languages supported :: Unknown
 
 PGPNET exists to provide people with the opportunity to practice
@@ -657,7 +627,6 @@ liberties for over twenty years.
 The [[https://www.fsf.org][Free Software Foundation]] is also deeply involved in these matters,
 although in a different way than the EFF.
 
-
 * What email clients support GnuPG on…
   :PROPERTIES:
   :CUSTOM_ID: email_clients
@@ -762,7 +731,6 @@ That said, Windows users should check [[http://portableapps.com/apps/internet/th
 Or, to build your own, use the /mkportable/ tool which comes with
 [[https://www.gpg4win.org][Gpg4win]].
 
-
 * What do all these strange words mean?
   :PROPERTIES:
   :CUSTOM_ID: glossary
@@ -770,7 +738,6 @@ Or, to build your own, use the /mkportable/ tool which comes with
 
 Cryptography tends to use a whole lot of specialized language and
 jargon.  In this section some of it will be deciphered.
-
 
 ** What’s ‘public-key cryptography’?
    :PROPERTIES:
@@ -882,7 +849,7 @@ keyservers that share keys, so you only need to upload your key once
 to that network.
 
 One widely-used keyserver network is [[https://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
-for “Synchronising Key Server”.  You can use this network by supplying
+for “Synchronizing Key Server”.  You can use this network by supplying
 the =--keyserver pool.sks-keyservers.net= option.
 
 
@@ -958,8 +925,6 @@ AES.
 AES is a thoroughly modern cipher design and may be used with
 confidence.
 
-
-
 ** What are Twofish and Blowfish?
    :PROPERTIES:
    :CUSTOM_ID: define_fish
@@ -970,8 +935,6 @@ Blowfish and Twofish are well-regarded symmetric ciphers.  Blowfish
 should not be used to encrypt files larger than 4Gb in size, but
 Twofish has no such restrictions.  These algorithms are modern, and
 may be used with confidence.
-
-
 
 ** What’s 3DES?
    :PROPERTIES:
@@ -1016,7 +979,6 @@ should not be used to encrypt files larger than 4Gb in size.  With
 that said, though, CAST is a modern cipher and may be used with
 confidence.
 
-
 ** What’s Camellia?
    :PROPERTIES:
    :CUSTOM_ID: define_camellia
@@ -1031,8 +993,6 @@ Rijndael won the United States’ AES trials.
 
 Camellia is a thoroughly modern cipher design and may be used with
 confidence.
-
-
 
 ** What are SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 and SHA-3?
    :PROPERTIES:
@@ -1063,7 +1023,6 @@ to an astonishing amount of peer review.
   it.  However, SHA-3 will probably be incorporated into the spec, and
   GnuPG will support it as soon as it does.
 
-
 ** What’s MD5?
    :PROPERTIES:
    :CUSTOM_ID: define_md5
@@ -1075,7 +1034,6 @@ MD5 is a 128-bit cryptographic hash function invented by Ron Rivest
 the standard algorithms of the field, but is now completely obsolete.
 For that reason, MD5 is not supported by GnuPG.
 
-
 ** What are ZLIB, ZIP and BZIP?
    :PROPERTIES:
    :CUSTOM_ID: define_compress
@@ -1086,8 +1044,6 @@ ZLIB, ZIP and BZIP refer to different kinds of compression algorithms.
 GnuPG will use one of these three algorithms to compress your data
 before encrypting it, unless GnuPG can see the data is already
 compressed.
-
-
 
 ** What’s a ‘revocation certificate’?
    :PROPERTIES:
@@ -1104,8 +1060,6 @@ generating a new GnuPG certificate.  Store it somewhere safe.
 Consult [[#generate_revocation_certificate][the FAQ instructions]] on
 how to do this.
 
-
-
 ** What’s a ‘designated revoker’?
    :PROPERTIES:
    :CUSTOM_ID: define_desig_revkr
@@ -1118,7 +1072,6 @@ person.  For instance, if you were using GnuPG in a corporate
 environment the IT staff might be listed as a designated revoker for
 your certificate, so that when you left the company the IT staff could
 revoke your certificate.
-
 
 
 ** What does ‘validity’ mean?
@@ -1142,7 +1095,6 @@ particular needs and the threats you face.
 
 
 
-
 ** What does ‘trust’ mean?
    :PROPERTIES:
    :CUSTOM_ID: define_trust
@@ -1151,7 +1103,6 @@ particular needs and the threats you face.
 
 ‘Trust’ refers to how thoroughly a certificate has been [[#define_validity][validated]].
 The terms are used somewhat interchangeably.
-
 
 
 ** What does ‘ownertrust’ mean?
@@ -1170,7 +1121,6 @@ believes, based on her knowledge of Bob, that he will be as careful as
 she is about the certificates he validates.  Alice declares she has
 ownertrust in Bob.  Now, any certificates that Bob validates will appear
 to Alice as valid, too.
-
 
 * How do I start using GnuPG?
   :PROPERTIES:
@@ -1731,7 +1681,6 @@ Check out [[https://www.gnupg.org/software/gpgme/][GPGME (GnuPG Made Easy)]].
 
 No, nor will there be.
 
-
 * What common problems come up?
   :PROPERTIES:
   :CUSTOM_ID: common_problems
@@ -1788,7 +1737,6 @@ beginning of a signature, and so forth.  These lines start with
 “=----- BEGIN=…”.  If your text contains a line beginning with a dash,
 that line will be slightly mangled in order to prevent GnuPG from
 misinterpreting your data as one of its special lines.
-
 
 * What are some common best practices?
   :PROPERTIES:
@@ -1875,7 +1823,6 @@ secure.  Your private key is already encrypted: your passphrase is the
 key used to decrypt your private key.
 
 
-
 * Advanced topics
   :PROPERTIES:
   :CUSTOM_ID: advanced_topics
@@ -1895,8 +1842,8 @@ some of the answers in this section.
 
 Although all the ciphers in GnuPG are believed strong, they are not all
 equally recommended.  For asymmetric ciphers we recommend RSA over
-DSA and/or Elgamal; for symmetric ciphers we recommend AES, Camellia, and/or
-Twofish over all the others.
+DSA and/or Elgamal; for symmetric ciphers we recommend AES, Camellia,
+and/or Twofish over all the others.
 
 With respect to our RSA recommendation, there is no reason to believe RSA
 is any better or worse than DSA and/or Elgamal in a cryptographic sense.
@@ -1906,37 +1853,39 @@ other cryptographic token, you'll find RSA is much better supported.
 With respect to our symmetric cipher recommendations, we have to explain a
 little bit about cryptanalysis.
 
-First, ciphers are deterministic: given the same inputs, they generate the same
-outputs.
+First, ciphers are deterministic: given the same inputs, they generate
+the same outputs.
 
 Second, ciphers don't operate on individual bytes.  They work on blocks of
 data, either eight or sixteen bytes large, depending on the cipher.
 
 Third, the OpenPGP standard requires that ciphers run in what's
 called a “feedback mode.”  In feedback mode, a cipher has two inputs: the
-random session key used for the message, and the output of the previous block.
+random session key used for the message, and the output of the previous
+block.
 
-Put it all together and imagine what would happen if, within the same message,
-two identical ciphertext blocks were created.  Since the cipher is
+Put it all together and imagine what would happen if, within the same
+message, two identical ciphertext blocks were created.  Since the cipher is
 deterministic (always generates the same output for the same inputs), and
 since the key and the previous block are the same, the output of this block
 would be the same.  This repetition creates a distinctive pattern which a
 cryptanalyst might be able to potentially exploit.
 
 For a cipher with an eight-byte block size, you'll probably repeat a block
-after about 32 gigabytes of data.  This means if you encrypt a single message
-larger than 32 gigabytes, it's pretty much a statistical guarantee you'll have
-a repeated block.  That's bad.  For this reason, we recommend you not use
-ciphers with eight-byte data blocks if you're going to be doing bulk
-encryption.  It's very unlikely you'll have any problems if you keep your
+after about 32 gigabytes of data.  This means if you encrypt a single
+message larger than 32 gigabytes, it's pretty much a statistical guarantee
+you'll have a repeated block.  That's bad.  For this reason, we recommend
+you not use ciphers with eight-byte data blocks if you're going to be
+doing bulk encryption.  It's very unlikely you'll have any problems if you
+keep your
 messages under 4 gigabytes in size.
 
 For a cipher with a sixteen-byte block size, you'd need to encrypt a single
 message that contained more data than is found in the entire internet.  In
 other words, it's no longer an issue.
 
-Twofish, AES, and Camellia all operate on sixteen bytes at a time.  The others
-all operate on eight bytes at a time.
+Twofish, AES, and Camellia all operate on sixteen bytes at a time.  The
+others all operate on eight bytes at a time.
 
 ** Why does GnuPG default to 2048 bit RSA-2048?
    :PROPERTIES:
@@ -2208,7 +2157,6 @@ If you absolutely must have PGP 2.6 support, we recommend you use PGP 2.6.
 It's easy to find on the internet.  Barring that, you could use GnuPG 1.4,
 which is an older branch of GnuPG that had some (but by no means complete)
 PGP 2.6 support.
-
 
 
 * COMMENT HTML style specifications
