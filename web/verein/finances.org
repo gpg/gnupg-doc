@@ -29,6 +29,8 @@
 | 2017-09-29 |          |  12.00 |           | Banking card             |
 | 2017-09-29 |          |   6.30 | 139189.05 | Bank fees                |
 | 2017-10-06 | 18197.53 |        | 157386.58 | Exchange of 5 BTC        |
+| 2017-10-12 |   220.00 |        |           | Donation kernel-recipes  |
+| 2017-10-12 |   310.00 |        | 157916.58 | Donation kernel-recipes  |
 
 
 The 59.000 € from the Wau Holland Stiftung have been collected by them

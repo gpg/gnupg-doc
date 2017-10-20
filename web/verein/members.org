@@ -19,6 +19,7 @@ active in development or in evangelizing end-to-end encryption.
   - Kai Michaelis
   - Kristian Fiskerstrand
   - Neal Walfied
+  - Phil Pennock
   - Werner Koch
   - Yutaka Niibe
 
