@@ -203,6 +203,25 @@ Largely, yes.  It can be made to interoperate with anything from PGP
 5 and onwards, and has excellent interoperability with the most
 recent releases.
 
+*** Does it support Diffie-Hellman?
+:PROPERTIES:
+:CUSTOM_ID: pgp_dh
+:END:
+
+Yes.  “Diffie-Hellman” is what PGP calls the Elgamal encryption
+algorithm.  If your PGP-generated keypair uses a Diffie-Hellman
+encryption subkey, it will appear in GnuPG as an Elgamal subkey. The
+correct name, incidentally, is Elgamal.
+
+*** Does it support SHA-2-256 and SHA-2-512?
+:PROPERTIES:
+:CUSTOM_ID: pgp_sha2
+:END:
+
+Yes.  SHA-256 and SHA-512 belong to a group of hashes known
+collectively as “SHA-2”.  PGP calls SHA-256 and SHA-512 by the
+non-standard names “SHA-2-256” and “SHA-2-512”, but they are the same
+algorithms.
 
 ** Which operating systems does it run on?
    :PROPERTIES:
@@ -1821,7 +1840,6 @@ rules.
 You can if you want, but it won’t make your private key any more
 secure.  Your private key is already encrypted: your passphrase is the
 key used to decrypt your private key.
-
 
 * Advanced topics
   :PROPERTIES:
