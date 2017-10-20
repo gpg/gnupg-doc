@@ -73,7 +73,7 @@ for any errors.
 
 Welcome to the official GnuPG FAQ.  Like all FAQs, this is a work in
 progress.  If you have questions that you think should be on it but
-aren't, please feel free to email the FAQ maintainer (Rob Hansen,
+aren’t, please feel free to email the FAQ maintainer (Rob Hansen,
 [[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]])
 or bring your suggestion up on GnuPG-Users.
 
@@ -90,32 +90,33 @@ Thanks to the Free Software Foundation, this FAQ is also available in
    :CUSTOM_ID: gethelp
    :END:
 
-First, please don’t send emails directly to people in GnuPG.  While we will
-try to help to people who send email directly to us, those emails quickly
-accumulate.  Helping just six people a day can take an hour of time, and that's
-an hour less we have to work on making GnuPG better.  Please reach out to the
-GnuPG community via the
-[[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]],
-not individual people within
-GnuPG.
+First, please don’t send emails directly to people in GnuPG.  While we
+will try to help to people who send email directly to us, those emails
+quickly accumulate.  Helping just six people a day can take an hour of
+time, and that’s an hour less we have to work on making GnuPG better.
+Please reach out to the GnuPG community via the
+[[https://lists.gnupg.org/mailman/listinfo/gnupg-users][GnuPG-Users mailing list]], not individual people within GnuPG.
 
-Second, tell us your operating environment.  Be as specific as possible.
-What operating system are you using?  Which version of GnuPG are you using?
-Where did you get GnuPG from?  If your problem is related to email, which email
-client are you using?  Which version number?  Is GnuPG supported natively, or
-is there a plugin?  If so, what's the version number of that?
+Second, tell us your operating environment.  Be as specific as
+possible.  What operating system are you using?  Which version of
+GnuPG are you using? Where did you get GnuPG from?  If your problem is
+related to email, which email client are you using?  Which version
+number?  Is GnuPG supported natively, or is there a plugin?  If so,
+what’s the version number of that?
 
 Third, tell us your problem.  Be as specific as possible.
 
-Do this, and you might be surprised at how quickly your problem is solved.
-An example of a good question would be, “I’m running GnuPG 1.4.14 on an
-Ubuntu 15.04 x64 box.  I'm using Thunderbird with Enigmail.  Everything was
-fine until I did a software update.  Ever since then I can't use GnuPG with
-email.  What happened?”  This question gives us enough to work with, and in
-short order someone will have an answer for you.
+Do this, and you might be surprised at how quickly your problem is
+solved. An example of a good question would be, “I’m running GnuPG
+1.4.14 on an Ubuntu 15.04 x64 box.  I’m using Thunderbird with
+Enigmail. Everything was fine until I did a software update.  Ever
+since then I can’t use GnuPG with email.  What happened?”  This
+question gives us enough to work with, and in short order someone will
+have an answer for you.
 
-A bad question would be, “How do I uninstall GnuPG?”  We can’t help you at all;
-you've not given us any of the information we need to answer your question.
+A bad question would be, “How do I uninstall GnuPG?”  We can’t help
+you at all; you’ve not given us any of the information we need to
+answer your question.
 
 ** Who maintains this FAQ?
    :PROPERTIES:
@@ -392,9 +393,9 @@ The best way is to visit the [[https://gnupg.org/donate/][donation page]].
 
 Development discussion takes place on the gnupg-devel mailing list.
 Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]] for links to subscribe and to the
-list's archives.
+list’s archives.
 
-The [[https://bugs.gnupg.org/gnupg/][GnuPG project's bug tracker]] is also publicly available.
+The [[https://bugs.gnupg.org/gnupg/][GnuPG project’s bug tracker]] is also publicly available.
 
 
 * Where can I get more information?
@@ -740,10 +741,10 @@ is actively developed.
   :CUSTOM_ID: portable_app
   :END:
 
-Yes, but we don't recommend it.  Sharing a USB token between lots of
-random computers is a great way to get infested with malware, and that's
-not something you want to happen to the token you're using for secure
-email.  If you're going to do this, please show caution with respect to
+Yes, but we don’t recommend it.  Sharing a USB token between lots of
+random computers is a great way to get infested with malware, and that’s
+not something you want to happen to the token you’re using for secure
+email.  If you’re going to do this, please show caution with respect to
 which computers you use the portable app on.
 
 That said, Windows users should check [[http://portableapps.com/apps/internet/thunderbird_portable][PortableApps]].
@@ -1005,7 +1006,7 @@ confidence.
 
 
 During roughly the same time period that [[http://www.nist.gov][NIST]] was running the Advanced
-Encryption Standard trials, Japan’s [[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union's
+Encryption Standard trials, Japan’s [[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union’s
 [[http://www.cryptonessie.org/][NESSIE]] were running their own similar trials.  Camellia is the cipher
 that won the NESSIE and CRYPTREC trials, much in the same way that
 Rijndael won the United States’ AES trials.
@@ -1037,8 +1038,8 @@ to an astonishing amount of peer review.
   these are the strongest hashes in GnuPG.
 - *SHA-3*: SHA-3 is a completely new hash algorithm that makes a clean
   break with the previous SHAs.  It is believed to be safe, with no
-  warnings about its usage.  It hasn't yet been officially introduced
-  into the OpenPGP standard, and for that reason GnuPG doesn't support
+  warnings about its usage.  It hasn’t yet been officially introduced
+  into the OpenPGP standard, and for that reason GnuPG doesn’t support
   it.  However, SHA-3 will probably be incorporated into the spec, and
   GnuPG will support it as soon as it does.
 
@@ -1244,8 +1245,8 @@ Copy =revoke.asc= to a safe place.
 =gpg --keyserver pool.sks-keyservers.net --send-key= /[your certificate ID]/
 
 You should only upload your own certificates to the keyservers, or
-obtain the certificate holder's permission before doing so.  In some
-circles it's considered rude to upload someone else's certificate; not
+obtain the certificate holder’s permission before doing so.  In some
+circles it’s considered rude to upload someone else’s certificate; not
 everyone wants to publish their key publicly.
 
 
@@ -1273,11 +1274,11 @@ following is Rob Hansen’s =gpg.conf= file.
 # Tell GnuPG that I want maximum OpenPGP conformance.
 openpgp
 
-# Disable a few messages from GnuPG that I know I don't need.
+# Disable a few messages from GnuPG that I know I don’t need.
 no-greeting
 no-secmem-warning
 
-# Don't include a version number or a comment in my output.
+# Don’t include a version number or a comment in my output.
 no-emit-version
 no-comments
 
@@ -1290,7 +1291,7 @@ keyid-format long
 keyserver pool.sks-keyservers.net
 keyserver-options import-clean-sigs import-clean-uids export-clean-sigs export-clean-uids
 
-# If I don't explicitly state which certificate to use, use this one.
+# If I don’t explicitly state which certificate to use, use this one.
 default-key 1DCBDC01B44427C7
 
 # Always include signatures from these two certificates.
@@ -1373,25 +1374,25 @@ multiple times to encrypt a message to multiple recipients:
    :CUSTOM_ID: common_commands
    :END:
 
-GnuPG's primary functions are to encrypt and decrypt messages, and to
-sign and verify them.  It's possible to sign without encrypting or
+GnuPG’s primary functions are to encrypt and decrypt messages, and to
+sign and verify them.  It’s possible to sign without encrypting or
 encrypt without signing.
 
-Signing a file's content is done with the =-s= or =--sign= commands.
+Signing a file’s content is done with the =-s= or =--sign= commands.
 A variation is =-b= or =--detach-sign=, which produces a separate
-signature without including the file's content; this is useful for
+signature without including the file’s content; this is useful for
 signing a software archive or other large file.  The key to use for
 the signature can be specified with the =local-user= setting in your
 =gpg.conf= file, or with the =-u=, =--local-user= options.
 
-Encrypting a file's content is done with the =-e= or =--encrypt=
+Encrypting a file’s content is done with the =-e= or =--encrypt=
 commands.  Recipients are specified with the =-r= or =--recipient=
 options.
 
-GnuPG's default action is to decrypt and verify its input file,
+GnuPG’s default action is to decrypt and verify its input file,
 writing the contents to standard output or to the filename specified
 by the =-o= or =--output= options.  The =--verify= command will only
-verify the signature without writing the file's contents anywhere.
+verify the signature without writing the file’s contents anywhere.
 
 These commands are the most commonly used. GnuPG has many more
 commands, largely for managing your keyring containing your private
@@ -1410,14 +1411,14 @@ Occasionally you might obtain the certificate physically, by meeting
 the certificate holder face-to-face and exchanging the certificate on
 some storage medium such as a USB stick, memory card, or portable
 disk.  Or you might download a copy of the certificate from the
-holder's web site.
+holder’s web site.
 
 Once obtained in one of these ways, you can add the certificate to
 your collection of public keys by doing:
 
 =gpg --import certificate.txt=
 
-More commonly, you'll download a correspondent's certificate from a
+More commonly, you’ll download a correspondent’s certificate from a
 keyserver.
 
 
@@ -1583,7 +1584,7 @@ GnuPG will generate output containing only printable characters.
 
 An inline signature wraps a textual header and footer around the text
 to be signed, leaving the text readable without running GnuPG.  This
-doesn't conceal the text at all and therefore provides no secrecy, but
+doesn’t conceal the text at all and therefore provides no secrecy, but
 if someone edits the text GnuPG will report that the signature is bad.
 
 To generate an inline signature, run
@@ -1596,7 +1597,7 @@ the signed file:
 =gpg signed_file.asc=
 
 
-** How can I use GnuPG to verify a file I've downloaded?
+** How can I use GnuPG to verify a file I’ve downloaded?
    :PROPERTIES:
    :CUSTOM_ID: how_do_i_verify_signed_packages
    :END:
@@ -1607,7 +1608,7 @@ the signed file:
     Particularly, be careful if the certificate you have doesn’t match the
     one used for prior code releases.
 
-2.  Once you're confident you have the correct certificate, give it a local
+2.  Once you’re confident you have the correct certificate, give it a local
     signature.  Assuming you want to locally sign certificate
     1DCBDC01B44427C7, you’d type:
 
@@ -1625,7 +1626,7 @@ the signed file:
     GnuPG will assume the original file is in foo.zip.  (If GnuPG can’t find
     foo.zip, GnuPG will prompt you for the name of the original package.)  If
     all goes well, GnuPG will report good signatures and you may be confident
-    you've received the package as the author intended.
+    you’ve received the package as the author intended.
 
 Please note that a good signature doesn’t mean a piece of software is
 trustworthy, reliable, or bug-free.  It just means nobody tampered with it and
@@ -1638,8 +1639,8 @@ our own foolishness.
    :CUSTOM_ID: automated_use
    :END:
 
-You should use the =--batch= option.  Don't bother to use a passphrase
-because there's usually no way to store it more securely than on the
+You should use the =--batch= option.  Don’t bother to use a passphrase
+because there’s usually no way to store it more securely than on the
 secret keyring itself.
 
 The suggested way to create keys for an automated environment is as
@@ -1677,7 +1678,7 @@ follows.  First, on a secure machine:
    On the target machine, install =secring.auto= as the secret keyring
    and begin writing scripts that invoke GnuPG.
 
-   It's a good idea to install an intrusion detection system so that
+   It’s a good idea to install an intrusion detection system so that
    you will get notice of a successful intrusion.  If that happens,
    you can revoke all the subkeys installed on that machine and
    install new subkeys once the machine is secured again.
@@ -1722,7 +1723,7 @@ claims to belong to Alice, but there’s no evidence it actually belongs
 to Alice, GnuPG will warn you that you’re using an untrusted
 certificate.
 
-You probably want to validate the certificate; see [[#how_to_validate][this FAQ's
+You probably want to validate the certificate; see [[#how_to_validate][this FAQ’s
 instructions]].
 
 
@@ -1788,9 +1789,9 @@ protecting the key will be your passphrase.  A passphrase should be 1)
 difficult to guess for someone who knows you, and 2) difficult to
 brute-force by trying every possible combination of characters.
 
-To meet requirement 1), the passphrase shouldn't be based on
-publicly-available information about you: your birthday, your spouse's
-name, your school's motto, a line of text from a book, etc.  To meet
+To meet requirement 1), the passphrase shouldn’t be based on
+publicly-available information about you: your birthday, your spouse’s
+name, your school’s motto, a line of text from a book, etc.  To meet
 requirement 2), the passphrase should be long: commercially available
 hardware can try 2.8 billion passwords in a day, which is sufficient
 to crack a 10-letter all-lowercase password.
@@ -1866,7 +1867,7 @@ and/or Twofish over all the others.
 With respect to our RSA recommendation, there is no reason to believe RSA
 is any better or worse than DSA and/or Elgamal in a cryptographic sense.
 However, if you ever want to migrate your certificate to a smart card or
-other cryptographic token, you'll find RSA is much better supported.
+other cryptographic token, you’ll find RSA is much better supported.
 
 With respect to our symmetric cipher recommendations, we have to explain a
 little bit about cryptanalysis.
@@ -1874,10 +1875,10 @@ little bit about cryptanalysis.
 First, ciphers are deterministic: given the same inputs, they generate
 the same outputs.
 
-Second, ciphers don't operate on individual bytes.  They work on blocks of
+Second, ciphers don’t operate on individual bytes.  They work on blocks of
 data, either eight or sixteen bytes large, depending on the cipher.
 
-Third, the OpenPGP standard requires that ciphers run in what's
+Third, the OpenPGP standard requires that ciphers run in what’s
 called a “feedback mode.”  In feedback mode, a cipher has two inputs: the
 random session key used for the message, and the output of the previous
 block.
@@ -1889,18 +1890,18 @@ since the key and the previous block are the same, the output of this block
 would be the same.  This repetition creates a distinctive pattern which a
 cryptanalyst might be able to potentially exploit.
 
-For a cipher with an eight-byte block size, you'll probably repeat a block
+For a cipher with an eight-byte block size, you’ll probably repeat a block
 after about 32 gigabytes of data.  This means if you encrypt a single
-message larger than 32 gigabytes, it's pretty much a statistical guarantee
-you'll have a repeated block.  That's bad.  For this reason, we recommend
-you not use ciphers with eight-byte data blocks if you're going to be
-doing bulk encryption.  It's very unlikely you'll have any problems if you
+message larger than 32 gigabytes, it’s pretty much a statistical guarantee
+you’ll have a repeated block.  That’s bad.  For this reason, we recommend
+you not use ciphers with eight-byte data blocks if you’re going to be
+doing bulk encryption.  It’s very unlikely you’ll have any problems if you
 keep your
 messages under 4 gigabytes in size.
 
-For a cipher with a sixteen-byte block size, you'd need to encrypt a single
+For a cipher with a sixteen-byte block size, you’d need to encrypt a single
 message that contained more data than is found in the entire internet.  In
-other words, it's no longer an issue.
+other words, it’s no longer an issue.
 
 Twofish, AES, and Camellia all operate on sixteen bytes at a time.  The
 others all operate on eight bytes at a time.
@@ -1944,7 +1945,7 @@ Probably not.  The future is elliptical-curve cryptography, which will
 bring a level of safety comparable to RSA-16384.  Every minute we
 spend arguing about whether we should change the defaults to RSA-3072
 or more is one minute the shift to ECC is delayed.  Frankly, we think
-ECC is a really good idea and we'd like to see it deployed as soon as
+ECC is a really good idea and we’d like to see it deployed as soon as
 humanly possible.
 
 *** I think I need larger key sizes.
@@ -1977,7 +1978,7 @@ is equivalent to about a 5-bit symmetric cipher.  Breaking an RSA-20
 key requires you to try each prime number between two and one
 thousand: there are 168 of them, meaning RSA-20 is equivalent to about
 an 8-bit cipher.  Doubling the keylength (from RSA-10 to RSA-20)
-didn't give us the benefit that we naively expected.  Each additional
+didn’t give us the benefit that we naively expected.  Each additional
 bit gives correspondingly less in the way of additional security, and
 we quickly reach a point of diminishing returns.
 
@@ -2070,7 +2071,7 @@ successfully cryptanalyzed.
 
 If you mean, “have people figured out ways to obtain the plaintext
 anyway?”, the answer is an emphatic ‘yes.’ In [[http://news.cnet.com/8301-10784_3-9741357-7.html][a 2007 Drug Enforcement
-Administration case]], a keylogger was installed on a suspect's
+Administration case]], a keylogger was installed on a suspect’s
 computer.
 
 GnuPG protects your traffic against cryptanalysis, but it is not magic
@@ -2085,12 +2086,12 @@ against all threats.
    :END:
 
 Almost certainly.  In the past this was a controversial question, but
-recently there's come to be a consensus: use PGP/MIME whenever possible.
-The reason for this is that it's possible to armor email headers and
+recently there’s come to be a consensus: use PGP/MIME whenever possible.
+The reason for this is that it’s possible to armor email headers and
 metadata with PGP/MIME, but sending messages inline leaves this data
 exposed.  As recent years have taught us, the metadata is often as
 sensitive as the contents of the message.  PGP/MIME can protect metadata;
-inline can't.
+inline can’t.
 
 However, please be aware that not all mail servers handle PGP/MIME
 properly.  Some mailing lists are incompatible with it (PGP-Basics, for
@@ -2098,7 +2099,7 @@ instance).  Some mailing list software mangles PGP/MIME (old versions of
 Mailman, for instance).
 
 If you have any problems with PGP/MIME, consider carefully whether you
-need metadata protection.  If you don't, then fall back to inline.
+need metadata protection.  If you don’t, then fall back to inline.
 
 
 ** What are the best algorithms in GnuPG?
@@ -2157,7 +2158,7 @@ use any of the longer SHAs with DSA-1024; GnuPG might use SHA-224,
 -256, -384 or -512 for DSA-2048; GnuPG might use SHA-256, SHA-384 or
 SHA-512 for DSA-3072.
 
-** Why can't I decrypt things I encrypted twenty years ago with PGP 2.6?
+** Why can’t I decrypt things I encrypted twenty years ago with PGP 2.6?
    :PROPERTIES:
    :CUSTOM_ID: pgp_26
    :END:
@@ -2166,13 +2167,13 @@ Twenty years ago, PGP 2.6 was released.  It was very successful, but there
 were some unfortunate things about its design.  Soon after a better version
 was released, and this was ultimately standardized as RFC 4880.
 
-GnuPG supports RFC 4880.  It does not support PGP 2.6.  This shouldn't be
+GnuPG supports RFC 4880.  It does not support PGP 2.6.  This shouldn’t be
 surprising: all software ultimately breaks compatibility with what came
-before it.  Word processors of 2015 don't support the WordStar document
-format, just like you can't put a Kaypro floppy disk in a modern PC.
+before it.  Word processors of 2015 don’t support the WordStar document
+format, just like you can’t put a Kaypro floppy disk in a modern PC.
 
 If you absolutely must have PGP 2.6 support, we recommend you use PGP 2.6.
-It's easy to find on the internet.  Barring that, you could use GnuPG 1.4,
+It’s easy to find on the internet.  Barring that, you could use GnuPG 1.4,
 which is an older branch of GnuPG that had some (but by no means complete)
 PGP 2.6 support.
 
