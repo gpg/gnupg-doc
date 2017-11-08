@@ -104,6 +104,12 @@ done
 #define ATTR_PRINTF(a,b)
 #define ATTR_NR_PRINTF(a,b)
 #endif
+#if __GNUC__ >= 4
+# define ATTR_SENTINEL(a) __attribute__ ((sentinel(a)))
+#else
+# define ATTR_SENTINEL(a)
+#endif
+
 
 #define digitp(a) ((a) >= '0' && (a) <= '9')
 #define VALID_URI_CHARS "abcdefghijklmnopqrstuvwxyz"   \
@@ -148,7 +154,7 @@ static strlist_t opt_exclude;
 static void die (const char *format, ...) ATTR_NR_PRINTF(1,2);
 static void err (const char *format, ...) ATTR_PRINTF(1,2);
 static void inf (const char *format, ...) ATTR_PRINTF(1,2);
-
+static char *xstrconcat (const char *s1, ...) ATTR_SENTINEL(0);
 
 
 static void
@@ -214,7 +220,7 @@ xcalloc (size_t n, size_t k)
 static char *
 xstrdup (const char *string)
 {
-  char *buf = xmalloc (strlen (string));
+  char *buf = xmalloc (strlen (string) + 1);
   strcpy (buf, string);
   return buf;
 }
@@ -228,6 +234,55 @@ my_stpcpy (char *a, const char *b)
   *a = 0;
 
   return (char*)a;
+}
+
+
+/* Helper for xstrconcat.  */
+static char *
+do_strconcat (const char *s1, va_list arg_ptr)
+{
+  const char *argv[48];
+  size_t argc;
+  size_t needed;
+  char *buffer, *p;
+
+  argc = 0;
+  argv[argc++] = s1;
+  needed = strlen (s1);
+  while (((argv[argc] = va_arg (arg_ptr, const char *))))
+    {
+      needed += strlen (argv[argc]);
+      if (argc >= DIM (argv)-1)
+        die ("internal error: too may args for strconcat\n");
+      argc++;
+    }
+  needed++;
+  buffer = xmalloc (needed);
+  for (p = buffer, argc=0; argv[argc]; argc++)
+    p = my_stpcpy (p, argv[argc]);
+
+  return buffer;
+}
+
+
+/* Concatenate the string S1 with all the following strings up to a
+   NULL.  Returns a malloced buffer with the new string or NULL on a
+   malloc error or if too many arguments are given.  */
+static char *
+xstrconcat (const char *s1, ...)
+{
+  va_list arg_ptr;
+  char *result;
+
+  if (!s1)
+    result = xstrdup ("");
+  else
+    {
+      va_start (arg_ptr, s1);
+      result = do_strconcat (s1, arg_ptr);
+      va_end (arg_ptr);
+    }
+  return result;
 }
 
 
@@ -902,13 +957,15 @@ print_footer (void)
 }
 
 
-/* Print COUNT directories from the array SORTED. */
+/* Print COUNT directories from the array SORTED.
+ * Note: This function assumes that the CWD is the listed directory.  */
 static void
 print_dirs (finfo_t *sorted, int count, int at_root)
 {
   int idx;
   finfo_t fi;
   int any = 0;
+  char *title = NULL;
 
   for (idx=0; idx < count; idx++)
     {
@@ -943,14 +1000,44 @@ print_dirs (finfo_t *sorted, int count, int at_root)
             }
         }
 
+      free (title);
+      title = NULL;
       if (opt_gpgweb)
-        printf ("<tr><td><img src=\"/share/folder.png\""
-                " width=\"22\" height=\"22\"/></td>"
-                "<td><a href=\"%s\">%s</a></td></tr>\n",
-                html_escape_href (fi->name), html_escape (fi->name));
-      else if (opt_html)
-        printf ("<tr><td width=\"40%%\"><a href=\"%s\">%s</a></td></tr>\n",
-                html_escape_href (fi->name), html_escape (fi->name));
+        {
+          char *fname;
+          FILE *fp;
+
+          fname = xstrconcat (fi->name, "/", ".title", NULL);
+          fp = fopen (fname, "r");
+          free (fname);
+          if (fp)
+            {
+              char line[200];
+
+              if (fgets (line, sizeof line, fp) && *line)
+                {
+                  if (line[strlen(line)-1] == '\n')
+                    line[strlen(line)-1] = 0;
+                  title = xstrdup (html_escape (line));
+                }
+              fclose (fp);
+            }
+        }
+
+      if (opt_html)
+        {
+          if (opt_gpgweb)
+            printf ("<tr><td><img src=\"/share/folder.png\""
+                    " width=\"22\" height=\"22\"/></td>"
+                    "<td><a href=\"%s\">%s</a></td>",
+                    html_escape_href (fi->name), html_escape (fi->name));
+          else
+            printf ("<tr><td width=\"40%%\"><a href=\"%s\">%s</a></td>",
+                    html_escape_href (fi->name), html_escape (fi->name));
+          if (title)
+            printf ("<td>%s</td>", title);
+          fputs ("</tr>\n", stdout);
+        }
       else
         printf ("D %s\n", fi->name);
     }
@@ -974,6 +1061,8 @@ print_dirs (finfo_t *sorted, int count, int at_root)
 
 
     }
+
+  free (title);
 }
 
 
