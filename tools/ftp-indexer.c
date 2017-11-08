@@ -15,7 +15,67 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
-/* How to use:
+/* The following script is triggred by a cronjob at ftp.gnupg.org to
+ * build the index pages.
+ *
+--8<---------------cut here---------------start------------->8---
+#!/bin/sh
+
+set -e
+top=/home/ftp
+scratch=/home/ftp/.scratch
+cd "$top"
+
+opt_force=no
+if [ "$1" == "--force" ]; then
+  shift
+  opt_force=yes
+fi
+
+INDEXER=/usr/local/bin/ftp-indexer
+if [ ! -x $INDEXER ]; then
+  echo "mk-ftp-index.html.sh: Index tool $INDEXER not found - aborting" >&2
+  exit 1
+fi
+INDEXER_OPTS="--reverse-ver --gpgweb --readme --index $scratch/ftp-index.new"
+INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html"
+
+
+(find . -type d ! -name '\.*' ! -name dev ; echo .) |\
+ while read dir rest; do
+  dir=${dir##./}
+  if cd "$dir"; then
+    if [ "$dir" = "." ]; then
+      desc="/"
+      extraopt="--exclude dev"
+    else
+      desc="$dir/"
+      extraopt=""
+    fi
+
+    [ -f $scratch/index.html ] && rm $scratch/index.html
+    [ -f index.html ] && cat index.html >$scratch/index.html
+    $INDEXER $INDEXER_OPTS $extraopt . "$desc" >$scratch/index.html.new
+    if [ $opt_force = no -a -f $scratch/index.html ]; then
+      grep -v '^<meta name="date"' $scratch/index.html \
+          | grep -v '^Page last updated on ' >$scratch/index.html.x
+      grep -v '^<meta name="date"' $scratch/index.html.new \
+          | grep -v '^Page last updated on ' >$scratch/index.html.new.x
+      if ! cmp -s $scratch/index.html.x $scratch/index.html.new.x ; then
+         mv $scratch/index.html.new index.html
+         mv $scratch/ftp-index.new .ftp-index
+      fi
+      rm $scratch/index.html
+      [ -f $scratch/index.html.new ] && rm $scratch/index.html.new
+      [ -f $scratch/ftp-index.new ] && rm $scratch/ftp-index.new
+    else
+      mv $scratch/index.html.new index.html
+      mv $scratch/ftp-index.new .ftp-index
+    fi
+  fi
+  cd "$top"
+done
+--8<---------------cut here---------------end--------------->8---
  *
  **/
 
@@ -33,7 +93,7 @@
 
 
 #define PGMNAME "ftp-indexer"
-
+#define VERSION "0.1"
 
 #define DIM(v)		     (sizeof(v)/sizeof((v)[0]))
 #define DIMof(type,member)   DIM(((type *)0)->member)
@@ -80,7 +140,7 @@ static int opt_reverse;
 static int opt_reverse_ver;
 static int opt_files_first;
 static int opt_html;
-static int opt_index;
+static const char *opt_index;
 static int opt_gpgweb;
 static int opt_readme;
 static strlist_t opt_exclude;
@@ -421,6 +481,31 @@ html_escape_href (const char *string)
 
 /* Format T and return a statically allocated buffer.  */
 static const char *
+format_time_now (int human)
+{
+  static char buffer[40];
+  struct tm *tp;
+  time_t now;
+
+  time (&now);
+  tp = gmtime (&now);
+  if (!tp)
+    *buffer = 0;
+
+  if (human)
+    snprintf (buffer, sizeof buffer, "%04d-%02d-%02d",
+              1900 + tp->tm_year, tp->tm_mon+1, tp->tm_mday);
+  else
+    snprintf (buffer, sizeof buffer, "%04d%02d%02dT%02d%02d%02dZ",
+              1900 + tp->tm_year, tp->tm_mon+1, tp->tm_mday,
+              tp->tm_hour, tp->tm_min, tp->tm_sec);
+
+  return buffer;
+}
+
+
+/* Format T and return a statically allocated buffer.  */
+static const char *
 format_time (time_t t)
 {
   static char buffer[80];
@@ -674,14 +759,16 @@ print_header (const char *title)
              "<html xmlns=\"http://www.w3.org/1999/xhtml\""
              " xml:lang=\"en\" lang=\"en\">\n", stdout);
       printf("<head>\n"
-             "<title>ftp.gnupg.org - %s</title>\n",
+             "<title>ftp.gnupg.org:%s</title>\n",
              esc_title);
       fputs ("<meta http-equiv=\"Content-Type\""
-             " content=\"text/html; charset=UTF-8\">\n"
+             " content=\"text/html; charset=UTF-8\"/>\n", stdout);
+      printf("<meta name=\"date\" content=\"%s\"/>\n", format_time_now (0));
+      fputs ("<meta name=\"generator\" content=\""PGMNAME" v"VERSION"\"/>\n"
              "<meta name=\"viewport\""
-             " content=\"width=device-width, initial-scale=1\">\n"
+             " content=\"width=device-width, initial-scale=1\"/>\n"
              "<link rel=\"stylesheet\" href=\"/share/site.css\""
-             " type=\"text/css\">\n"
+             " type=\"text/css\"/>\n"
              "</head>\n", stdout);
 
       fputs ("<body>\n"
@@ -693,7 +780,7 @@ print_header (const char *title)
 
       printf("<main>\n"
              "<div id=\"content\">\n"
-             "<h2>%s</h2>\n"
+             "<h2>ftp.gnupg.org:%s</h2>\n"
              "<div class=\"outline-text-2\" id=\"text-1\">\n",
              esc_title);
 
@@ -747,7 +834,7 @@ print_header (const char *title)
               "</head>\n"
               "<body bgcolor=\"#ffffff\">\n"
               "<h2>Index of %s</h2>\n"
-              "<table>\n",
+              "<table class=\"ftp\">\n",
               esc_title, esc_title);
     }
 }
@@ -770,11 +857,9 @@ print_footer (void)
              "</li>\n"
              "<li><a href=\"/imprint.html\">Imprint</a>"
              "</li>\n"
-             "<li><a href=\"/misc/index.html\">Archive</a>"
-             "</li>\n"
-             "<li><a href=\"/sitemap.html\">Sitemap</a>"
-             "</li>\n"
              "<li><a href=\"/blog/index.html\">Blog</a>"
+             "</li>\n"
+             "<li><a href=\"/index.html\">Web</a>"
              "</li>\n"
              "</ul>\n"
              "</div>\n", stdout);
@@ -801,7 +886,7 @@ print_footer (void)
              "Creative Commons Attribution-ShareAlike 4.0 International"
              " License</a>.  See <a href=\"https://gnupg.org/copying.html\">"
              "copying</a> for details.\n", stdout);
-      printf("Page last updated on 2017-xx-xx.\n");
+      printf("Page last updated on %s.\n", format_time_now (1));
       fputs ("</div>\n"
              "</div>\n"
              "</div><!-- end wrapper -->\n"
@@ -819,7 +904,7 @@ print_footer (void)
 
 /* Print COUNT directories from the array SORTED. */
 static void
-print_dirs (finfo_t *sorted, int count, const char *directory)
+print_dirs (finfo_t *sorted, int count, int at_root)
 {
   int idx;
   finfo_t fi;
@@ -839,9 +924,9 @@ print_dirs (finfo_t *sorted, int count, const char *directory)
             {
               fputs ("<h3>Directories</h3>\n"
                      "<div class=\"outline-text-3\">\n"
-                     "<table>\n", stdout);
+                     "<table class=\"ftp\">\n", stdout);
 
-              if (strcmp (directory, "/"))
+              if (!at_root)
                 fputs ("<tr><td><img src=\"/share/up.png\""
                        " width=\"22\" height=\"22\"/></td>"
                        "<td><a href=\"../\">"
@@ -852,7 +937,7 @@ print_dirs (finfo_t *sorted, int count, const char *directory)
               fputs ("<tr><td>&nbsp</td>"
                      "<td colspan=3><h3>Directories</h3></td></tr>\n",
                      stdout);
-              if (strcmp (directory, "/"))
+              if (!at_root)
                 fputs ("<tr><td><a href=\"../\">"
                        "Parent Directory</a></td></tr>\n", stdout);
             }
@@ -874,6 +959,20 @@ print_dirs (finfo_t *sorted, int count, const char *directory)
     {
       fputs ("</table>\n"
              "</div>\n\n", stdout);
+    }
+  else if (opt_gpgweb && !at_root)
+    {
+      /* !any - need to print an UP link */
+      fputs ("<div class=\"outline-text-3\">\n"
+             "<table class=\"ftp\">\n"
+             "<tr><td><img src=\"/share/up.png\""
+             " width=\"22\" height=\"22\"/></td>"
+             "<td><a href=\"../\">"
+             "Parent Directory</a></td></tr>\n"
+             "</table>\n"
+             "</div>\n", stdout);
+
+
     }
 }
 
@@ -899,7 +998,7 @@ print_files (finfo_t *sorted, int count)
             {
               fputs ("<h3>Files</h3>\n"
                      "<div class=\"outline-text-3\">\n"
-                     "<table>\n", stdout);
+                     "<table class=\"ftp\">\n", stdout);
             }
           else
             fputs ("<tr><td colspan=3><h3>Files</h3></td></tr>\n",
@@ -949,6 +1048,15 @@ scan_directory (const char *directory, const char *title)
   int idx;
   size_t len;
   strlist_t sl;
+  int at_root = 0;
+
+  if (opt_gpgweb)
+    {
+      if (!strcmp (title, "/"))
+        at_root = 1;
+    }
+  else if (!strcmp (directory, "/"))
+    at_root = 1;
 
   dir = opendir (directory);
   if (!dir)
@@ -1012,11 +1120,11 @@ scan_directory (const char *directory, const char *title)
   if (opt_files_first)
     {
       print_files (sorted, count);
-      print_dirs (sorted, count, directory);
+      print_dirs (sorted, count, at_root);
     }
   else
     {
-      print_dirs (sorted, count, directory);
+      print_dirs (sorted, count, at_root);
       print_files (sorted, count);
     }
   print_footer ();
@@ -1024,10 +1132,10 @@ scan_directory (const char *directory, const char *title)
   /* We create the index file in the current directory.  */
   if (opt_index)
     {
-      FILE *indexfp = fopen (".ftp-index", "w");
+      FILE *indexfp = fopen (opt_index, "w");
       if (!indexfp)
-        die ("error creating .ftp-index in '%s': %s\n",
-             directory, strerror (errno));
+        die ("error creating '%s' for '%s': %s\n",
+             opt_index, directory, strerror (errno));
 
       for (idx=0; idx < count; idx++)
         {
@@ -1040,8 +1148,8 @@ scan_directory (const char *directory, const char *title)
                    (unsigned long)fi->mtime);
         }
       if (ferror (indexfp))
-        die ("error writing .ftp-index in '%s': %s\n",
-             directory, strerror (errno));
+        die ("error writing '%s' for '%s': %s\n",
+             opt_index, directory, strerror (errno));
       /* Fixme: Check for close errors.  */
       fclose (indexfp);
     }
@@ -1074,11 +1182,24 @@ main (int argc, char **argv)
           argc--; argv++;
           break;
         }
+      else if (!strcmp (*argv, "--version"))
+        {
+          fputs (PGMNAME " " VERSION "\n"
+                 "Copyright (C) 2017 g10 Code GmbH\n"
+                 "License GPLv3+: GNU GPL version 3 or later"
+                 " <https://gnu.org/licenses/gpl.html>\n"
+                 "This is free software: you are free to change"
+                 " and redistribute it.\n"
+                 "There is NO WARRANTY, to the extent permitted by law.\n",
+                 stdout);
+          exit (0);
+        }
       else if (!strcmp (*argv, "--help"))
         {
           fputs ("usage: " PGMNAME " [options] directory [title]\n"
                  "Print an index for an FTP directory.\n\n"
                  "Options:\n"
+                 "  --version       print program version\n"
                  "  --verbose       verbose diagnostics\n"
                  "  --debug         flyswatter\n"
                  "  --reverse       reverse sort order\n"
@@ -1087,7 +1208,7 @@ main (int argc, char **argv)
                  "  --html          output HTML\n"
                  "  --gpgweb        output HTML as used at gnupg.org\n"
                  "  --readme        include README file\n"
-                 "  --index         create an .ftp-index file\n"
+                 "  --index FILE    create index FILE\n"
                  "  --exclude NAME  ignore file NAME\n"
                  , stdout);
           exit (0);
@@ -1129,7 +1250,10 @@ main (int argc, char **argv)
         }
       else if (!strcmp (*argv, "--index"))
         {
-          opt_index = 1;
+          argc--; argv++;
+          if (!argc || !**argv)
+            die ("argument missing for option '%s'\n", argv[-1]);
+          opt_index = *argv;
           argc--; argv++;
         }
       else if (!strcmp (*argv, "--gpgweb"))
