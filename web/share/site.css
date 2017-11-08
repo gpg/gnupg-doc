@@ -485,6 +485,12 @@ pre {
     overflow: auto;
 }
 
+pre.ftp-readme {
+    border: none;
+    background-color: #ffffff;
+}
+
+
 /* Classes used by makeinfo (manuals).  */
 
 pre.display {
