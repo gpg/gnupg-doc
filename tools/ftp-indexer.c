@@ -27,7 +27,7 @@ scratch=/home/ftp/.scratch
 cd "$top"
 
 opt_force=no
-if [ "$1" == "--force" ]; then
+if [ "$1" = "--force" ]; then
   shift
   opt_force=yes
 fi
