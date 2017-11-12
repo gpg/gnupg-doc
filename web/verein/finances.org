@@ -17,19 +17,19 @@
 |       Date |    Debit | Credit |   Balance | Description              |
 |------------+----------+--------+-----------+--------------------------|
 | 2017-06-23 |   200.00 |        |    200.00 | Donation: g10 Code       |
-| 2017-06-30 |          |   2.23 |           | Banking fees             |
-| 2017-07-10 |  2000.00 |        |           | Donation: German company |
-| 2017-07-25 | 59005.30 |        |           | Transfer from WHS        |
-| 2017-07-31 |          |   5.80 |           | Banking fees             |
-| 2017-08-81 |          |   5.00 |           | Banking fees             |
-| 2017-09-07 |  3615.64 |        |           | Exchange of 1 BTC        |
-| 2017-09-11 | 38650.36 |        |           | Exchange of 10 BTC       |
-| 2017-09-14 | 25868.08 |        | 139326.35 | Exchange of 10 BTC       |
+| 2017-06-30 |          |   2.23 |    197.77 | Bank fees                |
+| 2017-07-10 |  2000.00 |        |   2197.77 | Donation: German company |
+| 2017-07-25 | 59005.30 |        |  61203.07 | Transfer from WHS        |
+| 2017-07-31 |          |   5.80 |  61198.27 | Bank fees                |
+| 2017-08-31 |          |   5.00 |  61192.27 | Bank fees                |
+| 2017-09-07 |  3615.64 |        |  64807.91 | Exchange of 1 BTC        |
+| 2017-09-11 | 38650.36 |        | 103458.27 | Exchange of 10 BTC       |
+| 2017-09-14 | 35868.08 |        | 139326.35 | Exchange of 10 BTC       |
 | 2017-09-19 |          | 119.00 | 139207.35 | Design postcards         |
-| 2017-09-29 |          |  12.00 |           | Banking card             |
-| 2017-09-29 |          |   6.30 | 139189.05 | Bank fees                |
+| 2017-09-29 |          |  12.00 | 139195.35 | Banking card             |
+| 2017-09-29 |          |   6.30 | 139190.05 | Bank fees                |
 | 2017-10-06 | 18197.53 |        | 157386.58 | Exchange of 5 BTC        |
-| 2017-10-12 |   220.00 |        |           | Donation kernel-recipes  |
+| 2017-10-12 |   220.00 |        | 157606.58 | Donation kernel-recipes  |
 | 2017-10-12 |   310.00 |        | 157916.58 | Donation kernel-recipes  |
 
 
@@ -37,8 +37,9 @@ The 59.000 € from the Wau Holland Stiftung have been collected by them
 for the GnuPG project since 2013.  After the Verein reached charitable
 state they were able to transfer that money.  Many thanks to them.
 
-We have produced two kinds of postcards to be used as giveaways at
-shows and other opportunities.
+We have produced two postcards to be used as giveaways at shows and
+other opportunities.  Our account has not yet been charged for
+printing costs.
 
 ** Bitcoin transactions
 

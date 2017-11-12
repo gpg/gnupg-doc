@@ -65,6 +65,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.2 released (2017-11-07)
+
+We are pleased to announce the availability of GnuPG version 2.2.2.
+This is a maintenance release fixing a few bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000416.html][more]]}
+
 ** GnuPG 2.2.1 released (2017-09-19)
 
 We are pleased to announce the availability of GnuPG version 2.2.1.

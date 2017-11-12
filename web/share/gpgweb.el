@@ -146,6 +146,9 @@ if not available.  If CUSTOM is true only a minimal header is set."
      ())
     ("/blog/index.html"
      "Blog"
+     ())
+    ("/ftp/index.html"
+     "Files"
      ()))
   "The definition of the gnupg.org bottom menu structure.")
 
