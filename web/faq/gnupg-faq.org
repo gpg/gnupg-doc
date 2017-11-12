@@ -265,11 +265,10 @@ A convenient Windows installer is available from [[https://www.gpg4win.org][GPG4
     :CUSTOM_ID: get_gnupg_osx
     :END:
 
-The [[https://www.gpgtools.org][GPGtools project]] has everything needed to get started.
-However, GPGTools only offers GnuPG 2.0; if you want the
-latest-and-greatest 2.1, look at Patrick Brunschwig’s
-[[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project on SourceForge.  Finally,
-[[https://brew.sh][Homebrew]], [[http://www.finkproject.org/][Fink]], and [[https://www.macports.org/][MacPorts]] all have it in their repositories.
+The [[https://www.gpgtools.org][GPGtools project]] has everything needed to get started.  Another
+excellent resources is the [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project on
+SourceForge. Finally, [[https://brew.sh][Homebrew]], [[http://www.finkproject.org/][Fink]], and [[https://www.macports.org/][MacPorts]] all have it in
+their repositories.
 
 *** … for the free Unixes?
     :PROPERTIES:
@@ -1342,11 +1341,11 @@ GnuPG to ensure the output contains only printable characters.
    :CUSTOM_ID: common_options
    :END:
 
+Some of the most commonly used options are:
+
 Produce more output explaining what GnuPG is doing:
 
 =-v=, =--verbose=
-
-Some of the most commonly used options are:
 
 Make no changes; this is useful for testing a command line that will
 modify keys or generate output:
@@ -1528,7 +1527,7 @@ private key to read it.  Only Alice has her private key.  That’s why
 you can’t read encrypted traffic you generated: only Alice can read
 it.
 
-To get around this, add yourself as a recipient (=--recipient = /[your
+To get around this, add yourself as a recipient (=--recipient= /[your
 certificate ID]/).
 
 
@@ -1652,7 +1651,8 @@ follows.  First, on a secure machine:
 
    =gpg --edit-key= /keyID/
 
-   Enter "addkey" and select the DSA key type.
+   Enter “addkey” and choose whichever key type best suits your
+   needs.  (If you don’t know which one is best, choose RSA.)
 
 2. Make sure that you use a passphrase; this is required by the
    current implementation to let you export the secret key.
