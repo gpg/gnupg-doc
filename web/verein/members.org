@@ -18,6 +18,7 @@ active in development or in evangelizing end-to-end encryption.
   - Justus Winter
   - Kai Michaelis
   - Kristian Fiskerstrand
+  - Martin Gollowitzer
   - Maurice Kemmann
   - Neal Walfied
   - Phil Pennock
