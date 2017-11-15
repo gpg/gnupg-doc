@@ -192,19 +192,13 @@ Is a mail program for MAC OS X.
 GnuPG Made Easy is the standard library for applications to access
 most GnuPG functions.
 
-** [[http://wald.intevation.org/projects/gpgoe][GPGOE]] [Windows] MUA
-   :PROPERTIES:
-   :CUSTOM_ID: gpgoe
-   :END:
-
-Is a plugin for the Outlook Express MUA.
-
 ** [[http://www.g10code.de/p-gpgol.html][GpgOL]] [Windows] MUA
    :PROPERTIES:
    :CUSTOM_ID: gpgol
    :END:
 
-A plug-in for Microsoft Outlook 2003.  It is part of [[http://www.gpg4win.org/][Gpg4win]].
+A plug-in for the Windows version of Microsoft Outlook.
+It is part of [[http://www.gpg4win.org/][Gpg4win]].
 
 ** [[http://sites.inka.de/tesla/gpgrelay.html][GPGrelay]] [Windows] MUA
    :PROPERTIES:
