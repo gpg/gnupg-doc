@@ -105,10 +105,10 @@
    | OS      | Where              | Description                              |
    |---------+--------------------+------------------------------------------|
    |         | <18>               |                                          |
-   | Windows | [[http://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/ |
+   | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/ |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/ |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/         |
-   | OS X    | [[http://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project      |
+   | OS X    | [[https://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project      |
    |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                    |
    | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG is part of Debian                  |
    | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS            |
