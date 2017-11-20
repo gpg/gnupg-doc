@@ -10,32 +10,32 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.2
-#+macro: gnupg22_date 2017-11-07
+#+macro: gnupg22_ver  2.2.3
+#+macro: gnupg22_date 2017-11-20
 #+macro: gnupg22_size 6393k
-#+macro: gnupg22_sha1 efa00fc20295b1cafe467359107ea170258870e2
-#+macro: gnupg22_sha2 bfb62c7412ceb3b9422c6c7134a34ff01a560f98eb981c2d96829c1517c08197
+#+macro: gnupg22_sha1 68ed37d363166b5bd79971537484148eb8f2958c
+#+macro: gnupg22_sha2 cbd37105d139f7aa74f92b6f65d136658682094b0e308666b820ae4b984084b4
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.2_20171107
-#+macro: gnupg22_w32_date 2017-11-07
+#+macro: gnupg22_w32_ver  2.2.3_20171120
+#+macro: gnupg22_w32_date 2017-11-20
 #+macro: gnupg22_w32_size 3806k
-#+macro: gnupg22_w32_sha1 19224023f5a7750743d042b0bfbd5e44fbc9aeb2
-#+macro: gnupg22_w32_sha2 846477967a8cb934438ecbb6c8032c19e652c1d31d772fe02e9e40555e2f68ea
+#+macro: gnupg22_w32_sha1 9914e93d5ac50b4e542b4320e1e130dc1552e24b
+#+macro: gnupg22_w32_sha2 df8295774c47ff07c046c31e2f70d973ba2db8658c0f88039edda5eec5c3f247
 
 
 # temporary keep it as "gnupg21".  In the future we will use the name of
 # the stable branch even for the development versions.
-#+macro: gnupg21_ver  2.2.2
-#+macro: gnupg21_date 2017-11-07
+#+macro: gnupg21_ver  2.2.3
+#+macro: gnupg21_date 2017-11-20
 #+macro: gnupg21_size 6393k
-#+macro: gnupg21_sha1 efa00fc20295b1cafe467359107ea170258870e2
-#+macro: gnupg21_sha2 bfb62c7412ceb3b9422c6c7134a34ff01a560f98eb981c2d96829c1517c08197
+#+macro: gnupg21_sha1 68ed37d363166b5bd79971537484148eb8f2958c
+#+macro: gnupg21_sha2 cbd37105d139f7aa74f92b6f65d136658682094b0e308666b820ae4b984084b4
 #+macro: gnupg21_branch  STABLE-BRANCH-2-2
-#+macro: gnupg21_w32_ver  2.2.2_20171107
-#+macro: gnupg21_w32_date 2017-11-07
+#+macro: gnupg21_w32_ver  2.2.3_20171120
+#+macro: gnupg21_w32_date 2017-11-20
 #+macro: gnupg21_w32_size 3806k
-#+macro: gnupg21_w32_sha1 19224023f5a7750743d042b0bfbd5e44fbc9aeb2
-#+macro: gnupg21_w32_sha2 846477967a8cb934438ecbb6c8032c19e652c1d31d772fe02e9e40555e2f68ea
+#+macro: gnupg21_w32_sha1 9914e93d5ac50b4e542b4320e1e130dc1552e24b
+#+macro: gnupg21_w32_sha2 df8295774c47ff07c046c31e2f70d973ba2db8658c0f88039edda5eec5c3f247
 
 
 #
