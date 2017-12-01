@@ -16,11 +16,11 @@
 #+macro: gnupg22_sha1 68ed37d363166b5bd79971537484148eb8f2958c
 #+macro: gnupg22_sha2 cbd37105d139f7aa74f92b6f65d136658682094b0e308666b820ae4b984084b4
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.3_20171120
-#+macro: gnupg22_w32_date 2017-11-20
+#+macro: gnupg22_w32_ver  2.2.3_20171201
+#+macro: gnupg22_w32_date 2017-12-01
 #+macro: gnupg22_w32_size 3806k
-#+macro: gnupg22_w32_sha1 9914e93d5ac50b4e542b4320e1e130dc1552e24b
-#+macro: gnupg22_w32_sha2 df8295774c47ff07c046c31e2f70d973ba2db8658c0f88039edda5eec5c3f247
+#+macro: gnupg22_w32_sha1 c4daea0412d3f898a27cefa0374828d13648f1cf
+#+macro: gnupg22_w32_sha2 b26eeaa7424a31145b8088784e1164d3d15b11f7d4e0833aaee582dc2e1507fa
 
 
 # temporary keep it as "gnupg21".  In the future we will use the name of
@@ -31,11 +31,11 @@
 #+macro: gnupg21_sha1 68ed37d363166b5bd79971537484148eb8f2958c
 #+macro: gnupg21_sha2 cbd37105d139f7aa74f92b6f65d136658682094b0e308666b820ae4b984084b4
 #+macro: gnupg21_branch  STABLE-BRANCH-2-2
-#+macro: gnupg21_w32_ver  2.2.3_20171120
-#+macro: gnupg21_w32_date 2017-11-20
+#+macro: gnupg21_w32_ver  2.2.3_20171201
+#+macro: gnupg21_w32_date 2017-12-01
 #+macro: gnupg21_w32_size 3806k
-#+macro: gnupg21_w32_sha1 9914e93d5ac50b4e542b4320e1e130dc1552e24b
-#+macro: gnupg21_w32_sha2 df8295774c47ff07c046c31e2f70d973ba2db8658c0f88039edda5eec5c3f247
+#+macro: gnupg21_w32_sha1 c4daea0412d3f898a27cefa0374828d13648f1cf
+#+macro: gnupg21_w32_sha2 b26eeaa7424a31145b8088784e1164d3d15b11f7d4e0833aaee582dc2e1507fa
 
 
 #
