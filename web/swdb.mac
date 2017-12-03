@@ -100,11 +100,11 @@
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  1.0.0
-#+macro: pinentry_date 2016-11-22
-#+macro: pinentry_size 427k
-#+macro: pinentry_sha1 85d9ac81ebad3fb082514c505c90c39a0456f1f6
-#+macro: pinentry_sha2 1672c2edc1feb036075b187c0773787b2afd0544f55025c645a71b4c2f79275a
+#+macro: pinentry_ver  1.1.0
+#+macro: pinentry_date 2017-12-03
+#+macro: pinentry_size 456k
+#+macro: pinentry_sha1 693bdf9f48dfb3e040d92f50b1bb464e268b9fb0
+#+macro: pinentry_sha2 68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570
 
 
 #
