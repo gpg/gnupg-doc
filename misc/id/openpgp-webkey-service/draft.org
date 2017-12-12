@@ -33,10 +33,10 @@
     <title>OpenPGP Web Key Directory</title>
     <author initials="W." surname="Koch"
             fullname="Werner Koch">
-      <organization>GnuPG Project</organization>
+      <organization>GnuPG e.V.</organization>
       <address>
         <email>wk@gnupg.org</email>
-        <uri>https://gnupg.org</uri>
+        <uri>https://gnupg.org/verein</uri>
       </address>
     </author>
 
