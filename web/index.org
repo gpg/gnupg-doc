@@ -18,9 +18,9 @@ features for easy integration with other applications. A wealth of
 [[file:software/frontends.html][frontend applications]] and [[file:software/libraries.html][libraries]] are available.  GnuPG also
 provides support for S/MIME and Secure Shell (ssh).
 
-GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
-be freely used, modified and distributed under the terms of the
-[[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
+Since its introduction in 1997, GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that
+it respects your freedom). It can be freely used, modified and
+distributed under the terms of the [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
 The current version of GnuPG is {{{gnupg22_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
@@ -64,6 +64,13 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** 20 Years of GnuPG (2017-12-20)
+
+Exactly 20 years ago the first public version of GnuPG was released
+under the name "g10".  Today we are pleased to announce the
+availability of GnuPG version 2.2.4.  This is a maintenance release
+fixing a few minor bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000417.html][more]]}
 
 ** GnuPG Made Easy 1.10.0 released (2017-12-12)
 
