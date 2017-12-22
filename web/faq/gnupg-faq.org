@@ -2158,25 +2158,21 @@ use any of the longer SHAs with DSA-1024; GnuPG might use SHA-224,
 -256, -384 or -512 for DSA-2048; GnuPG might use SHA-256, SHA-384 or
 SHA-512 for DSA-3072.
 
+
 ** Why can’t I decrypt things I encrypted twenty years ago with PGP 2.6?
    :PROPERTIES:
    :CUSTOM_ID: pgp_26
    :END:
 
-Twenty years ago, PGP 2.6 was released.  It was very successful, but there
-were some unfortunate things about its design.  Soon after a better version
-was released, and this was ultimately standardized as RFC 4880.
+PGP 2.6 was released almost twenty-five years ago and is now
+completely obsolete.  We strongly advise against using PGP 2.6 if you
+have any choice in the matter.  Due to PGP 2.6 being obsolete, GnuPG
+dropped support for it years ago in the GnuPG 2.0 series.
 
-GnuPG supports RFC 4880.  It does not support PGP 2.6.  This shouldn’t be
-surprising: all software ultimately breaks compatibility with what came
-before it.  Word processors of 2015 don’t support the WordStar document
-format, just like you can’t put a Kaypro floppy disk in a modern PC.
-
-If you absolutely must have PGP 2.6 support, we recommend you use PGP 2.6.
-It’s easy to find on the internet.  Barring that, you could use GnuPG 1.4,
-which is an older branch of GnuPG that had some (but by no means complete)
-PGP 2.6 support.
-
+If you absolutely must have PGP 2.6 support, we recommend you use
+GnuPG's oldest supported version, 1.4, which can still handle PGP 2.6
+traffic.  We still urge you to migrate your documents to OpenPGP, as
+we will not be supporting GnuPG 1.4 for much longer.
 
 * COMMENT HTML style specifications
 
