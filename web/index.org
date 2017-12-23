@@ -18,39 +18,16 @@ features for easy integration with other applications. A wealth of
 [[file:software/frontends.html][frontend applications]] and [[file:software/libraries.html][libraries]] are available.  GnuPG also
 provides support for S/MIME and Secure Shell (ssh).
 
-GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that it respects your freedom). It can
-be freely used, modified and distributed under the terms of the
-[[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
+Since its introduction in 1997, GnuPG is [[https://www.gnu.org/philosophy/free-sw.html][Free Software]] (meaning that
+it respects your freedom). It can be freely used, modified and
+distributed under the terms of the [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-The current version of GnuPG is {{{gnupg21_ver}}}.  See the [[file:download/index.org][download]]
+The current version of GnuPG is {{{gnupg22_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
 
-[[https://www.gpg4win.org][Gpg4win]] provides a Windows version of the older GnuPG 2.0 branch.  It
-is nicely integrated into an installer and features several frontends
-as well as English and German manuals.
-
-* GnuPG needs your support to help protect online privacy.
-
-Please consider [[file:donate/index.org][donating]] to ensure that this critical piece of
-software continues to work for everyone.
-
-#+begin_html
- <div class="left" style="font-size: 150%">
- <p>
-  <!--CMPGN-RECUR-EURO-->
-  a month <br/>
-  <small>of
-  <!--CMPGN-RECUR-EURO-GOAL-->
-  needed.<br/>
-  <!--CMPGN-RECUR-COUNT-->
-  Supporters.<br/>
-  <!--CMPGN-ONCE-EURO-->
-  in one-time donations.</small><br/>
- </p>
- <p><a href="donate/index.html">Continue to campaign page</a></p>
- </div>
-#+end_html
-
+[[https://www.gpg4win.org][Gpg4win]] is a Windows version of GnuPG featuring a context menu tool, a
+crypto manager, and an Outlook plugin to send and receive standard
+PGP/MIME mails.  The current version of Gpg4win is {{{gpg4win_ver}}}.
 
 * Reconquer your privacy
 
@@ -88,6 +65,99 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** 20 Years of GnuPG (2017-12-20)
+
+Exactly 20 years ago the first public version of GnuPG was released
+under the name "g10".  Today we are pleased to announce the
+availability of GnuPG version 2.2.4.  This is a maintenance release
+fixing a few minor bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000419.html][more]]}
+
+** GnuPG Made Easy 1.10.0 released (2017-12-12)
+
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000418.html][more]]}
+
+** GnuPG 2.2.3 released (2017-11-21)
+
+We are pleased to announce the availability of GnuPG version 2.2.3.
+This is a maintenance release mainly fixing a bug on Windows.  The
+Windows installer [[https://gpg4win.org][Gpg4win]] 3.0.1 already includes this version of
+GnuPG.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000417.html][more]]}
+
+** GnuPG 2.2.2 released (2017-11-07)
+
+We are pleased to announce the availability of GnuPG version 2.2.2.
+This is a maintenance release fixing a few bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000416.html][more]]}
+
+** GnuPG 2.2.1 released (2017-09-19)
+
+We are pleased to announce the availability of GnuPG version 2.2.1.
+This is a maintenance release fixing a few minor bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000415.html][more]]}
+
+** Libgcrypt 1.8.1 released (2017-08-31)                          :important:
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.1
+and 1.7.9.  These releases fix a local side-channel attack on
+Curve25519 encryption dubbed "May the Fourth be With You"
+[CVE-2017-0379].  Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000414.html][more]]}...
+
+** GnuPG 2.2.0 released (2017-08-28)
+
+The GnuPG team is pleased to announce the availability of a new
+GnuPG release: version 2.2.0. Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000413.html][more]]} for details.
+
+This release marks the start of a new long term support series to
+replace the 2.0.x series which will reach end-of-life on 2017-12-31.
+
+
+** GnuPG 2.1.23 released (2017-08-09)
+
+A new version of GnuPG has been released.  Please read the full
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000412.html][announcement mail]] for details.  This version is intended as a release
+candidate for 2.2.0 which will mark a new long term stable branch.
+
+** GnuPG 2.1.22 released (2017-07-28)
+
+A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][announcement
+mail]] for details.
+
+Update 2017-07-31: We fixed a problem with keyserver access in the
+Windows versions.  A fixed installer has been uploaded; the [[../../download/index.org::binary][download]]
+section has the links.
+
+** GnuPG 1.4.22 released (2017-07-19)
+
+Although GnuPG 1.4 is of limited use today we did a maintenance
+release to address the recently published local side channel attack
+CVE-2017-7526.  See the [[../../download/index.org][download]] section on how to get this version.
+
+** Libgcrypt 1.8.0 released (2017-07-18)
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
+1.8.0.  This is a new stable version with full API and ABI
+compatibility to the 1.7 series.  Its main features are support for
+the hash algorithm [[https://en.wikipedia.org/wiki/BLAKE_(hash_function)][Blake-2]], the addition of [[https://en.wikipedia.org/wiki/Disk_encryption_theory][XTS]] mode, an improved
+random number generator, and performance improvements for the [[https://en.wikipedia.org/wiki/ARM_architecture][ARM]]
+architecture.  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000410.html][announcement mail]] for details.
+
+** Scute 1.5.0 released (2017-07-14)
+
+Scute is a PKCS#11 module built around the GnuPG Agent and the GnuPG
+Smart Card Daemon.  It allows you to use your OpenPGP smart card for TLS
+client authentication and S/MIME mail and document signing.
+Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000409.html][announcement mail]] for details.
+
+** Libgcrypt 1.7.8 released (2017-06-29)                          :important:
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
+1.7.8.   This release fixes a local side-channel attack
+(CVE-2017-7526).  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html][announcement mail]] for details.
+
+** GnuPG 2.1.21 released (2017-05-15)                             :important:
+
+A new version of GnuPG has been released.  This release fixes a
+pubring.gpg corruption bug introduced with 2.1.20.  Read the full
+[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000405.html][announcement mail]] for details.
 
 ** GnuPG 2.1.20 released (2017-04-03)
 

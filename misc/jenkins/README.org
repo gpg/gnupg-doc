@@ -1,10 +1,43 @@
 * Notes
+** Overview
+|----------------------+--------+---------+-----------+-----+-----------|
+| Configuration Matrix | native | in-tree | sanitizer | w32 | distcheck |
+|----------------------+--------+---------+-----------+-----+-----------|
+| arch                 | x      |         |           |     |           |
+| debian               | x      |         |           |     |           |
+| macos                | x      |         |           |     |           |
+| master               |        | x       | x         | x   | x         |
+| openbsd60            | x      |         |           |     |           |
+|----------------------+--------+---------+-----------+-----+-----------|
+
+There are two dimensions, build host ("label") and build profile
+("XTARGET").  The build hosts are described below.  The "debian" label
+is the same configuration as "master".
+
+bin/build.bash is the build script.  It creates a suitable build
+environment, builds, tests, and installs all our packages.  The
+different build profiles are implemented there.
+*** Build profiles
+**** native
+A straight forward out-of-tree build.
+**** in-tree
+A straight forward in-tree build.
+**** sanitizer
+A build with -fsanitize=undefined -fsanitize=address.  This catches
+many memory errors by instrumenting the code and running the test
+suites.
+**** w32
+Cross-compile the package for Windows, run the tests using a virtual
+machine.
+**** distcheck
+Executes 'make distcheck'.  Makes sure that we can always create
+releases.
 ** Setting up a Jenkins build slave
  - on soro, create an entry in /etc/hosts
  - copy root@soro's ssh key to /root/.ssh/authorized_keys
  - install a jre, make, autoconf, automake, libtool, gcc, git, bison,
    fig2dev, ghostscript, gnutls, sqlite3, pkg-config, imagemagick,
-   rngd, python2/3, SWIG, Qt5 base
+   rngd, python2/3, SWIG, Qt5 base, ccache
  - setup rngd (test suites will consume quite a bit of entropy)
  - create a user jenkins
  - clone gnupg-doc
@@ -13,6 +46,9 @@
    $ ln -s gnupg-doc/misc/jenkins/bin
  - download slave.jar
    $ wget https://jenkins.gnupg.org/jnlpJars/slave.jar -O bin/slave.jar
+   Note:
+   The jar should be updated from time to time, but the documentation
+   says that the protocol changes rarely.
  - copy and adapt launcher
    $ cp bin/jenkins-slave.dist bin/jenkins-slave
  - make sure that jenkins@soro can ssh to the new node
@@ -60,13 +96,16 @@ and a w32 build tree at
   $HOME/src/gpgme-for-gnupgs-tests/obj.w32
 
 The tests from there are executed in GnuPG's test suite.
-* Virtual machines
-** openbsd60
+* Build hosts
+** zygalski
+Werner manages this box.
+** Virtual machines
+*** openbsd60
 Packages installed:
 
   # pkg_add zile zsh git autoconf-2.69p2 automake-1.15p0 gettext-tools \
     gmake xfig bison readline libusb-compat ImageMagick makeinfo \
-    gcc-4.9.3p9 g++-4.9.3p9 qt5
+    gcc-4.9.3p9 g++-4.9.3p9 qt5 python swig ccache
 
 Add some compatibility links to PATH:
 
@@ -87,3 +126,91 @@ Tweak limits:
         :tc=pbuild:
 ' >> /etc/login.conf
   # user mod -L jenkins jenkins
+*** win8.1
+Configuration: One user "gpg", disabled Windows update (cpu hog),
+disable animations ("make computer easier to see again").
+
+Installed applications: https://github.com/PowerShell/Win32-OpenSSH/releases/latest
+**** How tests are executed
+To run the test suite, the machine is reverted to the snapshot
+'tests', and the tests are executed in-place from an ISO image.
+
+See:
+ - bin/run-tests-w32.bash
+ - bin/run-tests.bat
+ - bin/make-windows-cd.sh
+**** Win32-OpenSSH
+The implementation seems a bit brittle at the moment.  Often, the ssh
+server will stop responding to requests, I do not know why.
+
+To update the ssh server, follow
+https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+first uninstall the old one, then install the new one.
+
+**** Updating & maintenance
+Get a lock on bin/run-tests-w32.bash to avoid it stomping over your
+changes:
+
+ jenkins@soro:~$ flock /var/lib/jenkins/bin/run-tests-w32.bash bash
+
+Start the machine using
+
+ jenkins@soro:~$ virsh -c qemu:///system snapshot-revert --snapshotname tests --force --running win8.1
+
+Connect to the machine from your desktop machine:
+
+ you@home $ virt-viewer -c qemu+ssh://jenkins@soro.g10code.com/system win8.1
+
+Do whatever maintenance work is necessary.
+
+Hints:
+ - Start a powershell:
+   Open the file explorer, enter 'powershell' into the location bar (ctrl-l).
+ - Right mouse button pastes in powershell.
+ - Elevate privileges in powershell:
+    > Start-Process powershell -verb runAs
+
+Shutdown the machine.  Create a new snapshot 'test-new':
+
+ jenkins@soro:~$ virsh -c qemu:///system snapshot-create-as win8.1 --name "tests-new" --description "Updated OpenSSH to xxx"
+
+Archive the current snapshot:
+
+ jenkins@soro:~$ virsh -c qemu:///system snapshot-edit win8.1 --snapshotname "tests" --rename
+ [... editor pops open, change "<name>tests</name>"
+  to "<name>tests YYY-MM-DD</name>", save, exit ...]
+
+Note: The snapshots creation times can be found using:
+
+ jenkins@soro:~$ virsh -c qemu:///system snapshot-list win8.1 | grep tests
+  tests                2017-03-15 14:21:17 +0100 shutoff
+  tests 2017-01-31     2017-01-31 11:05:17 +0100 shutoff
+
+Rename the new snapshot:
+
+ jenkins@soro:~$ virsh -c qemu:///system snapshot-edit win8.1 --snapshotname "tests-new" --rename
+ [... editor pops open, change "<name>tests-new</name>"
+  to "<name>tests</name>", save, exit ...]
+
+Exit the shell to release the lock:
+
+ jenkins@soro:~$ exit
+ exit
+
+Voila.
+**** Ideas
+ - Build the installer, put it on the ISO image, and test that as well.
+*** openindiana20161030
+So I wanted the most alien UNIX I could get my hands on.  I never
+configured the build environment though, so this machine lies dormant.
+**** Packages installed
+pkg install pkg://openindiana.org/runtime/java/openjdk8 top git autoconf automake libtool bison readline
+*** archlinux
+**** Packages installed
+pacman --sync zile bind-tools openssh zsh jre8-openjdk-headless git autoconf automake libtool make wget gcc bison fig2dev ghostscript gnutls sqlite3 pkg-config imagemagick librsvg rng-tools python swig qt5-base
+**** Upgrading packages
+Note: Some breakage can happen when upgrading the system.  Arch users
+deal with that by reading the website and following instructions
+there.
+
+pacman -Syu

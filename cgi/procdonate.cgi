@@ -1027,6 +1027,7 @@ sub complete_sepa ()
     if ($data{"Message"} ne '') {
         $request{"Meta[message]"} = $data{"Message"};
     }
+    $request{"Recur"} = $data{"Recur"};
     if (not payproc ('SEPAPREORDER', \%request )) {
         $errorstr = "Error: " . $request{"ERR_Description"};
         # Back to the main page.

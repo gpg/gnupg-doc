@@ -1,0 +1,485 @@
+#+TITLE: Using an OpenPGP card in the UbuntuPhone BQ E4.5
+#+STARTUP: showall
+#+AUTHOR: Matthias
+#+DATE: October 5, 2017
+
+** Using an OpenPGP card in the UbuntuPhone BQ E4.5
+
+#+CAPTION: The device BQ E4.5 with the attached OpenPGP card
+#+ATTR_HTML: :class right :style max-width: 350px
+[[file:img/UbuntuPhone-GnuPG-card.png]]
+
+This small tutorial describes how to setup and use GnuPG together with
+an OpenPGP card in the mobile device BQ E4.5, running Ubuntu 15-04. The device
+root file system is for good reason mounted read-only. I.e. one can not
+just install any other piece of software into it. The way used here is
+an additional Linux system inside the phones system and *chroot*-ing into it
+for the to be installed software, and later calling the software from outside
+the chroot'ed file system.
+
+When you login into the phone, either by SSH or via the terminal-app, your
+~HOME~ directory is ~/home/phablet~. ~phablet~ is the default user in the
+phone. I have created there an additional directory ~/home/phablet/myRoot~
+and below this untar'ed a complete Debian based Linux.
+How to do this is described in a small
+[[https://gurucubano.gitbooks.io/bq-aquaris-e-4-5-ubuntu-phone/content/en/chapter27.html][Gitbook about the BQ E4.5]].
+
+In the following text as naming convention the shell
+prompt =$= means, we are in the phones file system and something
+like =root@ubuntu-phablet:/#= or
+=phablet@ubuntu-phablet:~$= means,
+we are in the chroot'ed file system, best to understand with these commands:
+
+#+begin_src sh
+$ ssh phablet@10.42.0.1
+
+Welcome to Ubuntu 15.04 (GNU/Linux 3.4.67 armv7l)
+
+Last login: Mon Sep 25 07:45:37 2017 from 10.42.0.152
+
+phablet@ubuntu-phablet-bq:~$
+
+phablet@ubuntu-phablet-bq:~$ PS1='$ '
+
+$ sudo chroot /home/phablet/myRoot
+[sudo] password for phablet:
+root@ubuntu-phablet:/# su phablet
+phablet@ubuntu-phablet:/$ cd
+phablet@ubuntu-phablet:~$ pwd
+/home/phablet
+phablet@ubuntu-phablet:~$
+#+end_src
+
+*** Installing GnuPG 2.2.1 into the 'myRoot' system
+
+In the chroot'ed system we install some additional packages:
+
+#+begin_src sh
+phablet@ubuntu-phablet:~$ sudo apt-get install pinentry-curses
+phablet@ubuntu-phablet:~$ sudo apt-get install pass
+phablet@ubuntu-phablet:~$ sudo apt-get install libudev-dev
+phablet@ubuntu-phablet:~$ sudo apt-get install libusb-dev
+phablet@ubuntu-phablet:~$ sudo apt-get install libusb-1.0-0-dev
+#+end_src
+
+~pass~ is a small password-storage manager which we will later use for our
+GnuPG encrypted tree of password, for example for websites or any other
+purpose, bank account PIN, ...
+
+~pinentry-curses~ is used by the ~gpg-agent~ to ask for the OpenPGP card
+PIN, i.e. all the usage is later done or in a SSH session or in the
+terminal-app.
+
+We now compile the following pieces of GnuPG software in that order:
+
+#+begin_example
+libgpg-error-1.27
+libassuan-2.4.3
+libksba-1.3.5
+npth-1.5
+libgcrypt-1.8.1
+gnupg-2.2.1
+#+end_example
+
+always with ~./configure && make && sudo make install~ The compiled
+software ends up below ~/usr/local~ (i.e. below
+~/home/phablet/myRoot/usr/local~ when one looks from outside the
+chroot'ed phone system);
+
+Now in the phone system we configure for GnuPG the following config
+files:
+
+#+begin_src sh
+$ mkdir ~/.gnupg
+
+$ cat .gnupg/gpg.conf
+#
+agent-program  /home/phablet/myRoot/usr/local/bin/gpg-agent
+
+$ cat .gnupg/gpg-agent.conf
+pinentry-program /home/phablet/myRoot/usr/bin/pinentry-curses
+scdaemon-program /home/phablet/myRoot/usr/local/libexec/scdaemon
+log-file /home/phablet/gpg-agent.log
+log-file /dev/null
+debug-level guru
+#+end_src
+
+Due to the nature of the installation in the chroot'ed system we
+need small wrapper scripts to set ~PATH~, ~LD_LIBRARY_PATH~, ... and
+other stuff;
+
+#+begin_src sh
+$ cat ~/gpg.sh
+#!/bin/sh
+LD_LIBRARY_PATH=/home/phablet/myRoot/usr/local/lib export LD_LIBRARY_PATH
+PATH=/home/phablet/myRoot/usr/local/bin:$PATH      export PATH
+GNUPGHOME=/home/phablet/.gnupg    export GNUPGHOME
+GPG_TTY=$(tty)                    export GPG_TTY
+/home/phablet/myRoot/usr/local/bin/gpg-agent    \
+            --homedir /home/phablet/.gnupg      \
+            --daemon                            \
+            --pinentry-program /home/phablet/myRoot/usr/bin/pinentry-curses
+/home/phablet/myRoot/usr/local/bin/gpg-connect-agent /bye
+/home/phablet/myRoot/usr/local/bin/gpg $*
+#+end_src
+
+run and create for test a key pair (later we want to use the OpenPGP card key pair
+for instead of this)
+
+#+begin_src sh
+$ ~/gpg.sh --full-generate-key
+gpg-agent[2973]: enabled debug flags: mpi crypto memory cache memstat hashing ipc
+gpg (GnuPG) 2.2.1; Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection?
+...
+#+end_src
+
+This starts the gpg-agent as:
+
+#+begin_src sh
+$ ps ax | grep gpg-a
+ 2974 ?        Ss     0:00 /home/phablet/myRoot/usr/local/bin/gpg-agent --homedir /home/phablet/.gnupg --daemon --pinentry-program /home/phablet/myRoot/usr/bin/pinentry-curses
+#+end_src
+
+
+Now we can use the 'pass' command we installed in the chroot'es system
+with
+
+#+begin_src sh
+$ cat pass.sh
+#!/bin/sh
+LD_LIBRARY_PATH=/home/phablet/myRoot/usr/local/lib export LD_LIBRARY_PATH
+PATH=/home/phablet/myRoot/usr/local/bin:$PATH      export PATH
+GNUPGHOME=/home/phablet/.gnupg    export GNUPGHOME
+GPG_TTY=$(tty)                    export GPG_TTY
+unset GPG_AGENT_INFO
+/home/phablet/myRoot/usr/bin/pass $*
+#+end_src
+
+
+Init the pass storage as:
+
+#+begin_src sh
+$ ./pass.sh init Matthias
+
+                 ┌────────────────────────────────────────────────────────────────┐
+                 │ Please enter the passphrase to unlock the OpenPGP secret key:  │
+                 │ "Matthias Apitz (test) <guru@sisis.de>"                        │
+                 │ 2048-bit RSA key, ID 93A6FBF52FA76DB0,                         │
+                 │ created 2017-09-22 (main key ID 3FECB79DDDA409E4).             │
+                 │                                                                │
+                 │                                                                │
+                 │ Passphrase: ***_______________________________________________ │
+                 │                                                                │
+                 │         <OK>                                    <Cancel>       │
+                 └────────────────────────────────────────────────────────────────┘
+
+$ find .password-store/
+.password-store/
+.password-store/.gpg-id
+#+end_src
+
+Insert some password for test:
+
+#+begin_src sh
+$ ./pass.sh insert -m web/bla
+Enter contents of web/bla and press Ctrl+D when finished:
+
+password
+Username: guru
+
+$ ./pass.sh web/bla
+password
+Username: guru
+#+end_src
+
+
+Final step is getting support for the OpenPGP card. We need the 'pcscd' daemon.
+Its build is a bit tricky because it must later, on start from outside the
+chroot'ed syste, find the ccid driver.
+
+We compile the following pieces inside the chroot'ed system:
+
+pcsc-lite-1.8.20
+ccid-1.4.25
+
+with the following options set on ~./configure~ ...
+
+#+begin_src sh
+phablet@ubuntu-phablet-bq:~$ cd pcsc-lite-1.8.20
+phablet@ubuntu-phablet-bq:~/pcsc-lite-1.8.20$ ./configure --enable-usbdropdir=/home/phablet/myRoot/usr/local/lib/pcsc/drivers --enable-confdir=/home/phablet/myRoot/etc/reader.conf.d
+
+...
+PC/SC lite has been configured with following options:
+
+Version:             1.8.20
+System binaries:     /usr/local/sbin
+Configuration dir:   /usr/local/etc/reader.conf.d
+
+
+Host:                armv7l-unknown-linux-gnueabihf
+Compiler:            gcc
+Preprocessor flags:  -I${top_srcdir}/src
+Compiler flags:      -Wall -fno-common -g -O2
+Preprocessor flags:  -I${top_srcdir}/src
+Linker flags:
+Libraries:           -ldl  -lrt
+
+PTHREAD_CFLAGS:      -pthread
+PTHREAD_LIBS:
+PCSC_ARCH:           Linux
+
+pcscd binary            /usr/local/sbin/pcscd
+polkit support:         no
+polkit policy dir:
+libudev support:        yes
+libusb support:         no
+USB drop directory:     /home/phablet/myRoot/usr/local/lib/pcsc/drivers
+ATR parsing messages:   false
+ipcdir:                 /var/run/pcscd
+use serial:             yes
+use usb:                yes
+systemd unit directory: /lib/systemd/system
+serial config dir.:     /home/phablet/myRoot/etc/reader.conf.d
+filter:                 no
+
+PCSCLITE_FEATURES:       Linux armv7l-unknown-linux-gnueabihf serial usb libudev usbdropdir=/home/phablet/myRoot/usr/local/lib/pcsc/drivers ipcdir=/var/run/pcscd configdir=/home/phablet/myRoot/etc/reader.conf.d
+
+checking that generated files are newer than configure... done
+...
+
+phablet@ubuntu-phablet-bq:~/ccid-1.4.25$ make
+phablet@ubuntu-phablet-bq:~/ccid-1.4.25$ sudo make install
+#+end_src
+
+
+ok, now the 'ccid' driver, installed (copied) to be seen by the daemon:
+
+#+begin_src sh
+
+phablet@ubuntu-phablet-bq:~$ cd ccid-1.4.25
+phablet@ubuntu-phablet:~/ccid-1.4.25$ ./configure -enable-usbdropdir=/home/phablet/myRoot/usr/local/lib/pcsc/drivers
+...
+libccid has been configured with following options:
+
+Version:             1.4.25
+User binaries:       /usr/local/bin
+Configuration files: /usr/local/etc
+
+
+Host:                armv7l-unknown-linux-gnueabihf
+Compiler:            gcc
+Preprocessor flags:
+Compiler flags:      -g -O2
+Preprocessor flags:
+Linker flags:
+Libraries:
+
+PCSC_CFLAGS:         -pthread -I/usr/local/include/PCSC
+PCSC_LIBS:           -L/usr/local/lib -lpcsclite
+PTHREAD_CFLAGS:      -pthread
+PTHREAD_LIBS:
+BUNDLE_HOST:         Linux
+DYN_LIB_EXT:         so
+LIBUSB_CFLAGS:       -I/usr/include/libusb-1.0
+LIBUSB_LIBS:         -lusb-1.0
+SYMBOL_VISIBILITY:   -fvisibility=hidden
+NOCLASS:
+
+libusb support:          yes
+composite as multislot:  no
+multi threading:         yes
+bundle directory name:   ifd-ccid.bundle
+USB drop directory:      /home/phablet/myRoot/usr/local/lib/pcsc/drivers
+serial Twin support:     no
+serial twin install dir: /home/phablet/myRoot/usr/local/lib/pcsc/drivers/serial
+serial config directory: /home/phablet/myRoot/etc/reader.conf.d
+compiled for pcsc-lite:  yes
+syslog debug:            no
+class driver:            yes
+
+...
+
+phablet@ubuntu-phablet:~/ccid-1.4.25$ make
+phablet@ubuntu-phablet:~/ccid-1.4.25$ sudo make install
+#+end_src
+
+the driver ~libccid.so~ and its control file ~Info.plist~ ended up as configured in:
+
+#+begin_src sh
+phablet@ubuntu-phablet:~$ find /home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/
+/home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/
+/home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux
+/home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux/libccid.so
+/home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+#+end_src
+
+This is fine,
+but if we run the daemon from outside the chroot'ed system, the files must be in
+some other place because ~/home/phablet/myRoot~ is added in front; so
+we copy them over to the correct place:
+
+#+begin_src sh
+phablet@ubuntu-phablet:~$ sudo mkdir -p /usr/local/lib/pcsc/drivers/ifd-ccid.bundle
+phablet@ubuntu-phablet:~$ sudo cp -rp /home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents /usr/local/lib/pcsc/drivers/ifd-ccid.bundle
+phablet@ubuntu-phablet:~$ find /usr/local/lib/pcsc/drivers/ifd-ccid.bundle
+/usr/local/lib/pcsc/drivers/ifd-ccid.bundle
+/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents
+/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux
+/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux/libccid.so
+/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+#+end_src
+
+From outside the chroot'ed system we can now start the daemon as:
+
+#+begin_src sh
+$ sudo /home/phablet/myRoot/usr/local/sbin/pcscd --foreground --debug | tee pcscd.log
+#+end_src
+
+and check the log file ~pcscd.log~ to see if it sees the card attaching (see at the very
+end of the write-up);
+
+Now we start in the phone the pcscd daemon as:
+
+#+begin_src sh
+$ sudo /home/phablet/myRoot/usr/local/sbin/pcscd
+$ ps ax | grep pcscd
+31669 pts/53   Sl     0:00 /home/phablet/myRoot/usr/local/sbin/pcscd
+#+end_src
+
+and run the gpg --card-status to see if it finds the card on attach:
+
+#+begin_src sh
+$ ./gpg.sh --card-status
+gpg-agent[20254]: enabled debug flags: mpi crypto memory cache memstat hashing ipc
+gpg-agent: a gpg-agent is already running - not starting a new one
+gpg-agent: random usage: poolsize=600 mixed=0 polls=0/0 added=0/0
+              outmix=0 getlvl1=0/0 getlvl2=0/0
+gpg-agent: secmem usage: 0/32768 bytes in 0 blocks
+Reader ...........: Identiv uTrust 3512 SAM slot Token [CCID Interface] (55511514602745) 00 00
+Application ID ...: D27600012401020100050000532B0000
+Version ..........: 2.1
+Manufacturer .....: ZeitControl
+Serial number ....: 0000532B
+Name of cardholder: Matthias Apitz
+Language prefs ...: en
+Sex ..............: unspecified
+URL of public key : http://www.unixarea.de/ccid--export-key-guru.pub
+Login data .......: [not set]
+Signature PIN ....: not forced
+Key attributes ...: rsa4096 rsa4096 rsa4096
+Max. PIN lengths .: 32 32 32
+PIN retry counter : 3 0 3
+Signature counter : 457
+Signature key ....: 5E69 FBAC 1618 562C B3CB  FBC1 47CC F7E4 76FE 9D11
+      created ....: 2017-05-14 18:20:07
+Encryption key....: EB62 00DA 13A1 9E80 679B  1A13 61F1 ECB6 25C9 A6C3
+      created ....: 2017-05-14 18:20:07
+Authentication key: E51D D2D6 C727 35D6 651D  EA4B 6AA5 C5C4 51A1 CD1C
+      created ....: 2017-05-14 18:20:07
+General key info..: [none]
+#+end_src
+
+
+Now we removed ~/home/phablet/.gnupg~ (saving the ~*.conf~ files) and copied over from my
+real netbook the ~/.password-store~ and the key material for the
+OpenPGP card;
+let's see if 'pass' can unlock the card (via the gpg-agent) and decipher the
+crypted information (uncrypted shown here as ~XXXXXXXX-XXXXXX~). The ~gpg-agent~
+will first ask for the card to be inserted and then for its PIN.
+
+#+begin_src sh
+$ ./pass.sh askubuntu.com/guru@unixarea.de
+#+end_src
+
+#+html: <div class="figure-left">
+#+CAPTION: The request for the card
+#+ATTR_HTML: :class center :style max-width: 400px
+[[file:img/gnupg-card-insert-card.png]]
+
+#+html: </div>
+#+html: <p style="clear: both"/>
+
+#+html: <div class="figure-left">
+#+CAPTION: The request for the PIN
+#+ATTR_HTML: :class center :style max-width: 400px
+[[file:img/gnupg-card-insert-pin.png]]
+
+#+html: </div>
+#+html: <p style="clear: both"/>
+
+#+begin_src sh
+XXXXXXXX-XXXXXX
+$
+#+end_src
+
+
+on the 2nd run it does not need anymore the PIN:
+
+#+begin_src sh
+$ ./pass.sh askubuntu.com/guru@unixarea.de
+XXXXXXXX-XXXXXX
+#+end_src
+
+i.e. all is fine!
+
+
+This is only the debug log of the pcscd daemon for reference.
+
+#+begin_example
+00000000 debuglog.c:289:DebugLogSetLevel() debug level=debug
+00001760 configfile.l:282:DBGetReaderListDir() Parsing conf directory: /home/phablet/myRoot/etc/reader.conf.d
+00000840 configfile.l:319:DBGetReaderListDir() Skipping non regular file: .
+00000349 configfile.l:319:DBGetReaderListDir() Skipping non regular file: ..
+00000364 configfile.l:358:DBGetReaderList() Parsing conf file: /home/phablet/myRoot/etc/reader.conf.d/libccidtwin
+00000568 pcscdaemon.c:655:main() pcsc-lite 1.8.20 daemon ready.
+00007279 hotplug_libudev.c:294:get_driver() Looking for a driver for VID: 0x1D6B, PID: 0x0002, path: /dev/bus/usb/001/001
+07475463 hotplug_libudev.c:648:HPEstablishUSBNotifications() USB Device add
+00005501 hotplug_libudev.c:294:get_driver() Looking for a driver for VID: 0x04E6, PID: 0x5816, path: /dev/bus/usb/001/009
+00000555 hotplug_libudev.c:433:HPAddDevice() Adding USB device: Identiv uTrust 3512 SAM slot Token
+00000673 readerfactory.c:1079:RFInitializeReader() Attempting startup of Identiv uTrust 3512 SAM slot Token [CCID Interface] (55511514602745) 00 00 using /home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux/libccid.so
+00001129 readerfactory.c:954:RFBindFunctions() Loading IFD Handler 3.0
+00013183 ifdhandler.c:1953:init_driver() Driver version: 1.4.25
+00004027 ifdhandler.c:1970:init_driver() LogLevel: 0x0003
+00004427 ifdhandler.c:1981:init_driver() DriverOptions: 0x0000
+00001127 ifdhandler.c:110:CreateChannelByNameOrChannel() Lun: 0, device: usb:04e6/5816:libudev:0:/dev/bus/usb/001/009
+00001212 ccid_usb.c:287:OpenUSBByName() Using: /home/phablet/myRoot/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+00005565 ccid_usb.c:305:OpenUSBByName() ifdManufacturerString: Ludovic Rousseau (ludovic.rousseau@free.fr)
+00001479 ccid_usb.c:306:OpenUSBByName() ifdProductString: Generic CCID driver
+00000362 ccid_usb.c:307:OpenUSBByName() Copyright: This driver is protected by terms of the GNU Lesser General Public License version 2.1, or (at your option) any later version.
+00003937 ccid_usb.c:621:OpenUSBByName() Found Vendor/Product: 04E6/5816 (Identiv uTrust 3512 SAM slot Token)
+00000667 ccid_usb.c:623:OpenUSBByName() Using USB bus/device: 1/9
+00000337 ccid_usb.c:680:OpenUSBByName() bNumDataRatesSupported is 0
+00010195 ifdhandler.c:379:IFDHGetCapabilities() tag: 0xFB3, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00000626 readerfactory.c:395:RFAddReader() Using the reader polling thread
+00000838 ifdhandler.c:379:IFDHGetCapabilities() tag: 0xFAE, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00000470 ifdhandler.c:470:IFDHGetCapabilities() Reader supports 1 slot(s)
+00001264 ifdhandler.c:1146:IFDHPowerICC() action: PowerUp, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00032378 eventhandler.c:286:EHStatusHandlerThread() powerState: POWER_STATE_POWERED
+00000596 Card ATR: 3B DA 18 FF 81 B1 FE 75 1F 03 00 31 C5 73 C0 01 40 00 90 00 0C
+05001478 ifdhandler.c:1146:IFDHPowerICC() action: PowerDown, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00003148 eventhandler.c:479:EHStatusHandlerThread() powerState: POWER_STATE_UNPOWERED
+14774363 hotplug_libudev.c:642:HPEstablishUSBNotifications() USB Device removed
+00000796 hotplug_libudev.c:360:HPRemoveDevice() Removing USB device[0]: Identiv uTrust 3512 SAM slot Token [CCID Interface] (55511514602745) at /dev/bus/usb/001/009
+00000053 readerfactory.c:608:RFRemoveReader() UnrefReader() count was: 1
+00000024 eventhandler.c:176:EHDestroyEventHandler() Stomping thread.
+00000026 ifdhandler.c:379:IFDHGetCapabilities() tag: 0xFB1, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00000024 ifdhandler.c:379:IFDHGetCapabilities() tag: 0xFB2, usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00000018 eventhandler.c:201:EHDestroyEventHandler() Request stopping of polling thread
+00000020 ifdhandler.c:344:IFDHStopPolling() usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00397726 eventhandler.c:502:EHStatusHandlerThread() Die
+00001909 eventhandler.c:216:EHDestroyEventHandler() Thread stomped.
+00000049 readerfactory.c:1130:RFUnInitializeReader() Attempting shutdown of Identiv uTrust 3512 SAM slot Token [CCID Interface] (55511514602745) 00 00.
+00000039 ifdhandler.c:282:IFDHCloseChannel() usb:04e6/5816:libudev:0:/dev/bus/usb/001/009 (lun: 0)
+00000101 ccid_usb.c:797:WriteUSB() write failed (1/9): -4 LIBUSB_ERROR_NO_DEVICE
+00000147 ccid_usb.c:189:close_libusb_if_needed() libusb_exit
+00001864 readerfactory.c:991:RFUnloadReader() Unloading reader driver.
+#+end_example

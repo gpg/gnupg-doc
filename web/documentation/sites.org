@@ -2,6 +2,10 @@
 #+STARTUP: showall
 #+SETUPFILE: "../share/setup.inc"
 
+* Press review
+
+  [[file:pressreview.org][Articles on GnuPG]]
+
 * Other web sites
 
 This page shows a list of web sites which are somehow related to GnuPG.

@@ -3,6 +3,12 @@
 #+SETUPFILE: "../share/setup.inc"
 #+OPTIONS: -:nil
 
+* Old Man Page
+
+This is a very old version of the gpg man page.  Please see the latest
+release or software package for your operating system to find an up to
+date version ("man gpg2").
+
 * gpg
 
 ** Name

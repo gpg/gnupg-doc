@@ -7,6 +7,10 @@
   GnuPG is sometimes mentioned in the press and other media.  This page
   lists articles related to GnuPG we are aware of.
 
+  - [[International][English]] articles
+  - [[French]] articles
+  - [[German]] articles
+
 * International
 
 Here are articles originally published in English.
@@ -93,10 +97,37 @@ Here are articles originally published in English.
 
 #  [[file:~/privat/archive/nyt-1999-11-19.txt]]
 
+* French
+
+** Linuxfr, 2017-06-08
+  Journal GnuPG lance une nouvelle campagne de financement\\
+  gouttegd
+
+  [[https://linuxfr.org/users/gouttegd/journaux/gnupg-lance-une-nouvelle-campagne-de-financement][Article]]
 
 * German
 
 Here are articles originally published in German.
+
+** Heise, 2017-06-06
+  Neue Crowdfunding-Runde für GnuPG-Entwicklung\\
+  Christiane Schulzki-Haddouti
+
+  [[https://www.heise.de/newsticker/meldung/Neue-Crowdfunding-Runde-fuer-GnuPG-Entwicklung-3735804.html][Artikel]]
+
+** Netzpolitik.org, 2016-01-26
+  Die Person hinter GnuPG: Werner Koch\\
+  Simon Rebiger
+
+  [[https://netzpolitik.org/2016/die-person-hinter-gnupg-werner-koch/][Artikel]]
+
+** WDR 5, 2016-01-18
+  GnuPG und der bescheidene Herr Koch\\
+  'Pain in the ass' der NSA\\
+  Mirjam Wlodawer.
+
+  [[http://www1.wdr.de/radio/wdr5/gnupg-koch-100.html][Artikel]]  [[http://podcast-ww.wdr.de/medstdp/fsk0/91/910864/wdr5neugiergenuegtdasfeature_2016-01-18_wernerkochdermanndermitgnupgdiensaherausfordertwdr5neugiergenuegtdasfeature18012016_wdr5.mp3][Podcast]]
+
 
 ** DR Wissen, 2015-06-12
   Schlüssel für Snowden\\
@@ -104,7 +135,6 @@ Here are articles originally published in German.
   Monika Ahrens
 
   [[http://dradiowissen.de/beitrag/kryptografie-werner-kochs-software-f%25C3%25BCr-edward-snowden][Artikel]]
-
 
 ** DW, 2015-02-19
   Verschlüsselung made in Deutschland\\
@@ -119,7 +149,7 @@ Here are articles originally published in German.
   [[http://www.sueddeutsche.de/digital/verschluesselungssoftware-gnu-pg-wie-ein-mann-das-e-mail-geheimnis-verteidigt-1.2355155][Artikel]]
 
 ** FAZ, 2015-02-13
-  Finger Weg von meine Daten!
+  Finger Weg von meinen Daten!\\
   Constanze Kurz
 
   [[http://www.faz.net/aktuell/feuilleton/aus-dem-maschinenraum/verschluesselungssoftware-finger-weg-von-meinen-daten-13416853.html][Artikel]]

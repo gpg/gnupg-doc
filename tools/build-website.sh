@@ -299,6 +299,9 @@ if [ -n "$sync_blog" ]; then
   cd "$sync_blog"
   rsync -rt --links --exclude '*~' --exclude '*.sh' \
         --exclude '*tmp' --exclude '*.org' . ${htdocs_blog}/
+  cd "$root_dir/misc/blog.gnupg.org"
+  rsync -rt --links --exclude '*~' --exclude '*.sh' \
+        --exclude '*tmp' --exclude '*.org' img data  ${htdocs_blog}/
   any_sync=yes
 fi
 

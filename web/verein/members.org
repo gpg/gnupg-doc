@@ -1,0 +1,34 @@
+#+TITLE: Members of the GnuPG e.V
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* List of GnuPG e.V Members.
+
+To apply for membership please write to board@.  We expect that you
+have a more than average interest in GnuPG or OpenPGP and that you are
+active in development or in evangelizing end-to-end encryption.
+
+** The regular members
+
+  - Andre Heinecke
+  - Bernhard Reiter
+  - Damien Goutte-Gattat
+  - Daniel Kahn Gillmor
+  - Holger Smolinski
+  - Justus Winter
+  - Kai Michaelis
+  - Kristian Fiskerstrand
+  - Martin Gollowitzer
+  - Maurice Kemmann
+  - Neal Walfied
+  - Phil Pennock
+  - Werner Koch
+  - Yutaka Niibe
+
+*** Former members
+
+  - Marcus Brinkmann
+
+** The supporting members
+
+  /none so far - we still need to setup rules/

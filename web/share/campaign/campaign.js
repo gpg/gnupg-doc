@@ -62,8 +62,8 @@ $(document).ready(function() {
       $("#amountother").prop("value", value.toString());
       $("#currency option").prop("selected", false);
       $("#currency option[value='EUR']").prop("selected", true);
-      $("#recur option").prop("selected", false);
-      $("#recur option[value='12']").prop("selected", true);
+      //$("#recur option").prop("selected", false);
+      //$("#recur option[value='12']").prop("selected", true);
       event.preventDefault();
     });
   }
@@ -89,27 +89,34 @@ function get_param_from_url(name) {
 $(document).ready(function() {
 
     // VOTD: Update VOTD here.
-    let VIDLIST = "thenmozhi,alex,andre,benjamin";
+    let VIDLIST = "arthur,daniel,cedric,michael,sheera,meik,seamus,andrew,geoffrey,hernani,leez,noah,c5,jochim,john,jason,sze,rysiek,ksenia,cindy,matt,thenmozhi,alex,andre,benjamin";
 
     let YTID = { "main": "wNHhkntqklg",
 		 "thenmozhi": "sQMj332dgIE",
-		 "sze": "tKPMof5ptc0",
-		 "sheera": "zwPaVA4vhDM",
-		 "seanus": "H6iO_MkOICM",
-		 "noah": "neibFsqgxgw",
-		 "michael": "w4PY1ihLm0w",
-		 "matt": "MWxhdPw9I8c",
-		 "lisa": "Vd8sz5X-1og",
-		 "john": "xdVHQhWrIro",
-		 "jason": "RtvlfTiSEMc",
-		 "geoffrey": "Y4yat43CvEc",
-		 "daniel": "coFFCJlMRjk",
-		 "cindy": "kPSEYvmFLWY",
+		 "sze": "OpeFuKRYGVA",
+		 "noah": "xB6AvoeCWro",
+		 "matt": "5MCGTd8pOG4",
+		 "john": "iRuo57Hzask",
+		 "jason": "oQvP9SXm-ek",
+		 "cindy": "IdCiJMc3q80",
 		 "benjamin": "atFz16nInIs",
-		 "arthur": "Js_OqRLm9F4",
-		 "andrew": "DXiU9wewjn4",
 		 "andre": "bcNLlWqZ9d0",
-		 "alex": "1OMJWpdl0DA"
+		 "alex": "1OMJWpdl0DA",
+                 "ksenia": "Qqg3_a72aEw",
+                 "rysiek": "6DqfWz-KHSI",
+                 "jochim": "sX0lncD0VCM",
+                 "c5": "Z0h_uPWFp7o",
+                 "leez": "_aJPaR9Cfmk",
+                 "hernani": "VJIR5zzpUr8",
+		 "geoffrey": "K8-pmUyegYk",
+		 "andrew": "l1ByJCSvQKk",
+		 "seamus": "6dreAkVxmpg",
+		 "meik": "j0Zd0wZyLP8",
+		 "sheera": "mak22hXcslg",
+                 "michael": "MSu_FF49MtU",
+                 "cedric": "-Rkrf9GIw8M",
+		 "daniel": "SdlnauJ5XWM",
+		 "arthur": "g9a_snLWRxE"
 	       };
 
     /* For the video preview, we use this for devices without hover events.  */

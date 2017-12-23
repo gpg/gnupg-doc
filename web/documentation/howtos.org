@@ -20,7 +20,7 @@
    [[../howtos/fr/index.html][fr]] ·
    [[../howtos/it/GPGMiniHowto.html][it]] ·
    [[../howtos/tr/GPGMinikNasil.html][tr]] ·
-   [[../howtos/vn/index.html][vn]] .
+   [[../howtos/vn/index.htm][vn]] ·
    [[../howtos/zh/index.html][zh]] )
 -  as one big HTML file (
    [[../howtos/ca/GPGMiniHowto_big.html][ca]] ·

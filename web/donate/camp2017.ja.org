@@ -40,17 +40,17 @@
 	  <ul class="nav navbar-header pull-right visible-xs-inline-block lang-chooser lang-chooser-xs">
 	    <li class="dropdown">
 	      <!-- noscript: Link to the next language.  -->
-	      <a href="/donate/index.html"
+	      <a href="/donate/camp2017.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
-		<li><a href="/donate/index.html">
+		<li><a href="/donate/camp2017.html">
 		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
-		<li><a href="/donate/index.de.html">
+		<li><a href="/donate/camp2017.de.html">
 		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
-		<li><a href="/donate/index.fr.html">
+		<li><a href="/donate/camp2017.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
-		<li><a href="/donate/index.ja.html">
+		<li><a href="/donate/camp2017.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
 	      </ul>
 	    </li>
@@ -60,26 +60,25 @@
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#dailyvideo">毎日の動画</a></li>
             <li><a href="#about">GnuPGへの寄付について</a></li>
             <li><a href="#goals">目標</a></li>
             <li><a href="#testimonials">推薦文</a></li>
-            <li><a href="#team">チーム</a></li>
+            <li><a href="#dailyvideo">毎日の動画</a></li>
           </ul>
 	  <ul class="nav navbar-nav navbar-right hidden-xs lang-chooser">
 	    <li class="dropdown">
 	      <!-- noscript: Link to the next language.  -->
-	      <a href="/donate/index.html"
+	      <a href="/donate/camp2017.html"
 		 class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		<span class="flag-icon flag-icon-jp"></span> <span class="caret"></span></a>
 	      <ul class="dropdown-menu" role="menu">
-		<li><a href="/donate/index.html">
+		<li><a href="/donate/camp2017.html">
 		    <span class="flag-icon flag-icon-usuk"></span>英語</a></li>
-		<li><a href="/donate/index.de.html">
+		<li><a href="/donate/camp2017.de.html">
 		    <span class="flag-icon flag-icon-de  "></span>ドイツ語</a></li>
-		<li><a href="/donate/index.fr.html">
+		<li><a href="/donate/camp2017.fr.html">
 		    <span class="flag-icon flag-icon-fr  "></span>フランス語</a></li>
-		<li><a href="/donate/index.ja.html">
+		<li><a href="/donate/camp2017.ja.html">
 		    <span class="flag-icon flag-icon-jp  "></span>日本語</a></li>
 	      </ul>
 	    </li>
@@ -111,6 +110,9 @@
 	<div class="col-xs-12 hidden-lg">
 	  <h1>GnuPG 資金調達の呼びかけ</h1>
 	</div>
+
+        <p>[<strong>This is a snaphot of the page at the end of the
+        campaign on 2017-09-05.</strong>]</p>
 
 	<div class="col-xs-12 col-lg-4">
 	  <div class="row">
@@ -187,38 +189,6 @@
       </div>
     </div>
 
-    <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
-      <div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-	  <h2>本日の動画: アレックス・アブドゥ
-            <small>アメリカ自由人権協会 (ACLU)</small>
-          </h2>
-	  <div class="row">
-	    <div class="col-lg-10 col-lg-offset-0">
-	      <div class="embed-responsive embed-responsive-16by9 camp-video"
-		   data-embed="votd"
-                   data-embed-list="PLjX3x3GHoOWKs-VCjFBu_Yk5l1-l9mJzi">
-		<img src="/share/campaign/img/thumbs/votd.jpg">
-		<div class="play-button"></div>
-		<div class="video-text">クリックして動画をスタート
-                  <noscript><br />
-                    <span style="font-size: 60%"
-                          >(YouTubeからのJavaScriptが必要となります。)
-                    </span>
-                  </noscript>
-                </div>
-              </div>
-	    </div>
-	  </div>
-	  <p class="vid-howto">
-	    新しい動画が毎日あります! メニューをクリックして
-	    <img src="/share/campaign/img/vidmenu.svg" style="height:
-	    1em; vertical-align: baseline;" aria-hidden="true"/>
-	    動画を選択してください。
-	  </p>
-	</div>
-      </div>
-    </div>
 
     <div id="about" class="camp-gutter container">
       <div class="row">
@@ -1365,14 +1335,76 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	    </div><!-- /.carousel -->
 
 
-
-
 	  </div>
 	</div>
       </div>
 
     </div>
     <!-- End of testimonials.  -->
+
+    <div id="dailyvideo" class="camp-gutter camp-gutter-clump container">
+      <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+	  <h2>動画のリスト</h2>
+	  <div class="row">
+	    <div class="col-lg-10 col-lg-offset-0">
+              <ul>
+                <li> <a href="https://youtu.be/1OMJWpdl0DA?t=9s">Alex Abdo</a>
+                  from the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/bcNLlWqZ9d0?t=9s">Andre Meister</a>
+                  from <a href="https://netzpolitik.org">netzpolitik.org</a>
+                <li> <a href="https://www.youtube.com/watch?v=atFz16nInIs&t=10s">Benjamin Ismaïl</a>
+                  from <a href="https://rsf.org/">Reporters without Borders</a>
+                <li> <a href="https://youtu.be/sQMj332dgIE?t=10s">Thenmozhi Soundararajan</a>
+                  from <a href="https://www.equalitylabs.org/">Equality Labs</a>
+                <li> <a href="https://youtu.be/5MCGTd8pOG4?t=10s">Matt Mitchell</a>
+                  from <a href="http://www.meetup.com/New-York-Cryptoparty-Network/">CryptoHarlem</a>
+                <li> <a href="https://youtu.be/IdCiJMc3q80?t=8s">Cindy Cohn</a>
+                  from <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/Qqg3_a72aEw?t=9s">Ksenia Ermoshina</a>,
+                  Researcher at <a href="https://nextleap.eu/">nextleap.eu</a>
+                <li> <a href="https://youtu.be/6DqfWz-KHSI?t=8s">Michał 'Rysiek' Woźniak</a>
+                  from <a href="https://www.occrp.org/">OCCRP</a>
+                <li> <a href="https://youtu.be/OpeFuKRYGVA?t=8s">Sze Ming</a>
+                  from the <a href="https://sinarproject.org/">Sinar Project</a>
+                <li> <a href="https://youtu.be/oQvP9SXm-ek?t=8s">Jason Reich</a>
+                  from <a href="https://www.buzzfeed.com/">BuzzFeed</a>
+                <li> <a href="https://youtu.be/iRuo57Hzask?t=9s">John Pershing</a>
+                  from <a href="https://1010data.com">1010data</a>
+                <li> <a href="https://youtu.be/sX0lncD0VCM?t=10s">Jochim Selzer</a>
+                  from <a href="https://koeln.ccc.de/">CCC Köln</a>
+                <li> <a href="https://youtu.be/Z0h_uPWFp7o?t=8s">C5</a>,
+                  Digital Security Trainer from the Philippines
+                <li> <a href="https://youtu.be/xB6AvoeCWro?t=9s">Noah Vesely</a>
+                  from <a href="https://securedrop.org/">SecureDrop</a>
+                <li> <a href="https://youtu.be/_aJPaR9Cfmk?t=9s">Lisa 'Leez' Wright</a>
+                  from the <a href="https://eff.org">EFF</a>
+                <li> <a href="https://youtu.be/VJIR5zzpUr8?t=8s">Hernâni Marques</a>
+                  from <a href="https://www.ccc-ch.ch/">CCC Switzerland</a>
+                <li> <a href="https://youtu.be/K8-pmUyegYk?t=9s">Geoffrey King</a>,
+                  <a href="https://geoffreyking.org/">Lawyer and Journalist</a>
+                <li> <a href="https://youtu.be/l1ByJCSvQKk?t=9s">Andrew Ford Lyons</a>
+                  from <a href="http://www.internews.org/">Internews Europe</a>
+                <li> <a href="https://youtu.be/6dreAkVxmpg?t=8s">Seamus Tuohy</a>,
+                  <a href="http://prudentinnovation.org/">Digital Security Trainer</a>
+                <li> <a href="https://youtu.be/j0Zd0wZyLP8?t=10s">Meik Michalke</a>
+                  from <a href="https://www.c3s.cc/">C3S</a>
+                <li> <a href="https://youtu.be/mak22hXcslg?t=8s">Sheera Frenkel</a>
+                  from <a href="https://www.buzzfeed.com/news">BuzzFeed News</a>
+                <li> <a href=" https://youtu.be/MSu_FF49MtU?t=9s">Michael Stehmann</a>,
+                  <a href="http://www.rechtsanwalt-stehmann.de/">Lawyer</a>
+                <li> <a href="https://youtu.be/-Rkrf9GIw8M?t=9s">Cédric Laurant</a>
+                  from <a href="https://sontusdatos.org/">SonTusDatos</a>
+                <li> <a href="https://youtu.be/SdlnauJ5XWM?t=9s">Daniel Kahn Gillmor</a>
+                  from <a href="https://debian.org">Debian</a> and the <a href="https://aclu.org">ACLU</a>
+                <li> <a href="https://youtu.be/g9a_snLWRxE?t=8s">Arthur Jordan</a>
+                  from <a href="https://2u.com/">2U</a>
+              </ul>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
 
 <div id="team" class="camp-gutter container">
 <div class="row">
@@ -1462,13 +1494,6 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
 	</div>
 </div>
 
-<div class="camp-final-pitch row">
-  <div class="col">
-      <center>
-        <a class="btn btn-primary btn-lg" href="/donate/donate.ja.html" role="button">寄付する!</a>
-      </center>
-    </div>
-  </div>
 </div>
 </div>
 
@@ -1484,6 +1509,7 @@ src="https://www.gnupg.org/ftp/media/openpgp.conf/2016/gnupg-team-smaller.jpg"
         <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
         Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
         <a href="/copying.html">copying</a> for details.
+        See the <a href="/imprint.html">Imprint</a>.
       </div>
     </div>
   </div>

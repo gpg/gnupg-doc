@@ -146,6 +146,9 @@ if not available.  If CUSTOM is true only a minimal header is set."
      ())
     ("/blog/index.html"
      "Blog"
+     ())
+    ("/ftp/index.html"
+     "Files"
      ()))
   "The definition of the gnupg.org bottom menu structure.")
 
@@ -334,9 +337,21 @@ string of the source file or nil if not available."
     (goto-char (point-min))
     (unless (search-forward "<!--disable-copyright-footer-->" nil t)
       (goto-char (point-max))
-      (insert "  <div id=\"cpyright\">
+      (if (string-prefix-p "verein/" htmlfile)
+          (insert "  <div id=\"cpyright\">
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\"
+      ><img alt=\"CC BY-SA 4.0\" style=\"border: 0\"
+            src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
+    This web page is
+    Copyright 2017 GnuPG e.V. and licensed under a
+    <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\"
+    >Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
+    <a href=\"/copying.html\">copying</a> for details.
+    Page <a href=\"" srcfile "\">source</a> last changed on " changed ".
+  </div>\n")
+          (insert "  <div id=\"cpyright\">
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
-      ><img alt=\"CC-BY-SA 3.0\" style=\"border: 0\"
+      ><img alt=\"CC BY-SA 3.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
     These web pages are
     Copyright 1998--2017 The GnuPG Project and licensed under a
@@ -344,7 +359,7 @@ string of the source file or nil if not available."
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
     Page <a href=\"" srcfile "\">source</a> last changed on " changed ".
-  </div>\n"))
+  </div>\n")))
   (goto-char (point-max))
   (insert "</div>
 </div><!-- end wrapper -->

@@ -29,7 +29,8 @@
    systems.  Werner is a long time free software supporter and
    co-founder of the [[http://fsfe.org][FSFE]].  With the support of his brother he founded
    [[https://g10code.com][g10^code]] GmbH in 2001 to make GnuPG development his profession.
-   Werner is full time employed by g10^code.
+   Werner is full time employed by g10^code.  He is a founding member
+   and the current chairperson of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -60,9 +61,10 @@
 
    Marcus is part of the free software community since 1997, when he
    joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
-   on GNU/Hurd, he also has a diploma degree in mathematics, and is
-   full time employed by [[https://g10code.com][g10^code]] to work on the GnuPG and related
-   software from 2001 to 2012 and again since 2017.
+   on GNU/Hurd, he also has a diploma degree in mathematics, and was
+   part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
+   related software from 2001 to 2012 and for 7 months in 2017.  He was
+   a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -76,8 +78,9 @@
 
    Niibe is a long time free software hacker who joined the GnuPG
    project in 2011 and soon took over the development of the smartcard
-   related code.  He is also the person behind the [[http://www.fsij.org/gnuk/][Gnuk Token]] and the [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][MEP game]].
-   Niibe’s work on GnuPG is financially supported by g10^code.
+   related code.  He is also the person behind the [[http://www.fsij.org/gnuk/][Gnuk Token]] and the
+   [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][MEP game]].  Niibe’s work on GnuPG is financially supported by
+   g10^code.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -103,7 +106,8 @@
    /Core components hacker/
 
    Neal started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  He is full time employed by g10^code.
+   development in all areas.  We was full time employed by g10^code
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -115,8 +119,9 @@
 
    /Enigmail hacker/
 
-   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He is part time
-   employed by g10^code.
+   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
+   time employed by g10^code from 2015 to 2017.  He is a founding
+   member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -129,7 +134,8 @@
    /Core components hacker/
 
    Justus started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  He is full time employed by g10^code.
+   development in all areas.  We was full time employed by g10^code
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 

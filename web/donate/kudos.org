@@ -89,6 +89,7 @@ the start of the Goteo campaign.
 
   Thank you.
 
+  - All donors to GnuPG in [[file:kudos-2017.org][2017]]
   - All donors to GnuPG in [[file:kudos-2016.org][2016]]
   - All donors to GnuPG in [[file:kudos-2015.org][2015]]
   - All donors to GnuPG in [[file:kudos-2014.org][2014]]
@@ -101,6 +102,7 @@ the start of the Goteo campaign.
   [[https://www.wauland.de][file:logos/whs-logo.png]]
   [[https://facebook.com][file:logos/facebook-06-2015-blue_x.png]]
   [[https://stripe.com][file:logos/stripe-blue.png]]
+  [[https://pep.foundation][file:logos/pep-green.png]]
 #+HTML: </div>
 
 * Hardware and service donations

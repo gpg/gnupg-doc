@@ -20,7 +20,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-04">
+     docName="draft-koch-openpgp-webkey-service-05">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -30,17 +30,17 @@
 <?rfc comments="yes"?>
 
   <front>
-    <title>OpenPGP Web Key Service</title>
+    <title>OpenPGP Web Key Directory</title>
     <author initials="W." surname="Koch"
             fullname="Werner Koch">
-      <organization>GnuPG Project</organization>
+      <organization>GnuPG e.V.</organization>
       <address>
         <email>wk@gnupg.org</email>
-        <uri>https://gnupg.org</uri>
+        <uri>https://gnupg.org/verein</uri>
       </address>
     </author>
 
-    <date month="MONTH" year="2017" />
+    <date month="November" year="2017" />
     <area>Security</area>
 
     <abstract>
@@ -196,6 +196,10 @@ Content-Type for the data but clients SHOULD also accept any other
 Content-Type.  The server MUST NOT return an ASCII armored version of
 the key.
 
+The server MUST serve a Policy Flags file as specified below.  That
+file is even required if the Web Key Directory Update Protocol is not
+supported.
+
 
 * Web Key Directory Update Protocol
 
@@ -307,7 +311,9 @@ The first part MUST have "text" as its Content-Type and can be used to
 explain the purpose of the mail.  For example it may point to this RFC
 and explain on how to manually perform the protocol.
 
-The second part MUST have "application/vnd.gnupg.wks" as its
+The second part MUST have "application/vnd.gnupg.wkd" if the protocol
+version of the server is 5 or later; without a known protocol version
+or a version less than 5, "application/vnd.gnupg.wks" MUST be used as its
 Content-Type and carry an OpenPGP encrypted message in ASCII Armor
 format.  The message MUST be encrypted to the target key and MUST NOT
 be signed.  After decryption a text file in the Web Key data format
@@ -386,10 +392,10 @@ format ({{{RFC(3156)}}}, section 6.2).  The signing key is the target
 key and the encryption key is the key associated with the provider's
 submission address.
 
-The Content-Type used for the plaintext message MUST also be
-"application/vnd.gnupg.wks".  The format is the same as described above
-for the Confirmation Request.  The body must contain three name-value
-pairs in this order:
+The Content-Type used for the plaintext message MUST match the
+Content-Type of the request.  The format is the same as described
+above for the Confirmation Request.  The body must contain three
+name-value pairs in this order:
 
 - type :: The value must be "confirmation-response".
 
@@ -402,13 +408,17 @@ pairs in this order:
 
 ** Policy Flags
 
-For key generation and submission it is sometimes useful to tell the
+For key generation and submission it is useful to tell the
 client about certain properties of the mail provider in advance.  This
 can be done with a file at the URL
 
 #+BEGIN_EXAMPLE
       WELLKNOWN/policy
 #+END_EXAMPLE
+
+A site supporting the Web Key Directory MUST serve this file; it is
+sufficient if that file has a zero length.  Clients may use this file
+to check for Web Key Directory support.
 
 The file contains keywords and optioanlly values, one per line with
 each line terminated by a LF or the sequence of CR and LF.  Empty lines
@@ -436,6 +446,17 @@ Currently defined keywords are:
                    using an authenticated connection.  Thus the
                    submitted key will be published immediately without
                    any confirmation request.
+
+- protocol-version :: This keyword can be used to explicitly claim the
+     support of a specific version of the Web Key Directory update protocol.
+     This is in general not needed but implementations may have
+     workarounds for providers which only support an old protocol
+     version.  If these providers update to a newer version they
+     should add this keyword so that the implementation can disable
+     the workaround.  The value is an integer corresponding to the
+     respective draft revision number.
+
+# Fixme: Add a protocol-version value for the final RFC.
 
 
 More keywords will be defined in updates to this I-D.  There is no
@@ -490,8 +511,11 @@ guidance.
 
 Note that GnuPG version 2.1.12 supports the key discovery described in
 version -00 of this document (auto-key-locate method "wkd").  Version
-2.1.16 can run the protocol decribed in this document but is also able
-to run the protocol version specified by -01.
+2.1.16 can run the protocol described in this document but is also able
+to run the protocol version specified by -01.  For backward
+compatibility this example uses the Content-Type as required for
+versions of this protocol prior to -04; if the client knows that the
+server support -04 "vnd.gnupg.wkd" should be used.
 
 ** Sample Keys
 
@@ -688,7 +712,9 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -03
+* Changes Since -04
 
-- Fixed Content-Type in the description.  The one used in the example
-  was correct.
+- Change to Content-Type "vnd.gnupg.wkd" for servers announcing its
+  support.
+- Require the existance of the Policy Flags file.
+- Re-title this I-D to Web Key Directory.

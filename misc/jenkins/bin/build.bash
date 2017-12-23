@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script used jenkins to run builds for GnuPG and related packages.
 
 # Stop on error and be nice to other processes.
@@ -7,11 +7,17 @@ renice -n 10 -p $$
 
 # Configuration.
 MAKE=make
+NPROCS=2
+
+XTARGET="${XTARGET:-native}"
 
 # Platform-specific configuration.
 case "$(uname)" in
     OpenBSD)
 	MAKE=gmake
+	;;
+    Darwin)
+	NPROCS="$(sysctl -n hw.ncpu)"
 	;;
 esac
 
@@ -28,10 +34,26 @@ if ccache --version >/dev/null; then
     export CXX="ccache ${CXX:-g++}"
 fi
 
+# Include local bin directory in PATH.
+if [ -e "$HOME/bin" ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
 # Setup important envars
 PREFIX=$HOME/prefix/$XTARGET
 ORIGINAL_PREFIX=$HOME/prefix/$XTARGET
-export PATH=$PREFIX/bin:$PATH
+
+# hackhackhack
+#
+# Copy all *-config scripts into a separate directory and put that
+# into PATH.  We want configure to pick them up, but we do not
+# necessarily want to use all the other tools from $PREFIX/bin,
+# because then we would have to point LD_LIBRARY_PATH to $PREFIX/lib,
+# which we want to avoid at all costs.
+mkdir -p $PREFIX/bin-config
+cp $PREFIX/bin/*-config $PREFIX/bin-config
+export PATH=$PREFIX/bin-config:$PATH
+# kcahkcahkcah
 
 # Tweak the prefix we're installing this project into.  For gnupg-1.4
 # and friends.
@@ -63,10 +85,7 @@ git clean -fdx
 ./autogen.sh
 
 # Parallel jobs.
-MAKEFLAGS="-j6"
-
-# Parallel tests with our test suite.
-export TESTFLAGS="--parallel"
+MAKEFLAGS="-j$NPROCS"
 
 SCANBUILD=
 if [ "$(uname)" = Linux ] \
@@ -130,6 +149,9 @@ case "$JOB_NAME" in
 
 	# Disable NTBTLS for now until it is actually mature and used.
 	CONFIGUREFLAGS="$CONFIGUREFLAGS --disable-ntbtls"
+
+	# Parallel tests with our test suite.
+	export TESTFLAGS="--parallel=$NPROCS"
         ;;
 esac
 
@@ -175,6 +197,9 @@ esac
 #
 # KCAHKCAHKCAH
 
+# And add $PREFIX/bin to PATH for the tests.
+test_environment="$test_environment PATH=$ORIGINAL_PREFIX/bin:$PATH"
+
 # We build on the "obj" subdir.
 abs_configure="$(pwd)/configure"
 mkdir -p obj
@@ -194,6 +219,15 @@ done
 set -x
 
 
+# Select the appropriate test target.
+function check_target() {
+    if grep >/dev/null check-all Makefile; then
+	echo check-all
+    else
+	echo check
+    fi
+}
+
 # Switch on the different targets.
 case "$XTARGET" in
     native)
@@ -204,7 +238,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS -std=c++11"
         $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here
@@ -224,7 +258,7 @@ case "$XTARGET" in
 	test_environment="$(echo $test_environment | sed -e 's#obj/##g')"
 	# KCAHKCAHKCAH
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here
@@ -242,7 +276,7 @@ case "$XTARGET" in
 	           CXXFLAGS="$CXXFLAGS $SANFLAGS -fPIC -std=c++11"
         $SCANBUILD $MAKE $MAKEFLAGS
 
-        env $test_environment $MAKE -k check verbose=2 \
+        env $test_environment $MAKE -k $(check_target) verbose=2 \
 	    || echo "FAIL: make check failed with status $?"
         # Jenkins looks for "FAIL:" to mark a build unstable,
         # hence || ... here

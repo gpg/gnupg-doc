@@ -37,6 +37,9 @@
   It can also be built using a cross-compiler system for Microsoft
   Windows.
 
+  See also its [[https://en.wikipedia.org/wiki/Libgcrypt][Wikipedia]] entry.
+
+
 ** Availibility
 
    Due to former U.S. export restrictions on cryptographic software,
@@ -46,6 +49,11 @@
    The current stable version is {{{libgcrypt_ver}}} which was
    released on {{{libgcrypt_date}}}.  See the [[../../download/index.org::libgcrypt][download]] section for the
    latest tarball.
+
+   All versions of Libgcrypt since 1.2 are API and ABI compatible.
+   The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
+   will receive updates for severe bugs and security problems until
+   2019-06-30.
 
 ** Copying
 
