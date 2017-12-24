@@ -18,7 +18,7 @@ GnuPG version 2.0 and aware that GnuPG consists of /gpg/, /gpgsm/, and
 /gpg-agent/ as its main components.
 
 #+html: <div style="width: 80%">
-- The file /secring.gpg/ is not anymore used to store the secret keys.
+- The file /secring.gpg/ is not used to store the secret keys anymore.
   Merging of secret keys is now supported.{{{more(nosecring)}}}
 
 - All support for /PGP-2 keys/ has been removed for security
@@ -50,8 +50,8 @@ GnuPG version 2.0 and aware that GnuPG consists of /gpg/, /gpgsm/, and
   way.{{{more(keyserver)}}}
 
 - A new format for locally storing the public keys is now used.  This
-  considerable speeds up operations on large
-  keyrings.{{{more(keybox)}}}
+  speeds up operations on large keyrings
+  considerably.{{{more(keybox)}}}
 
 - /Revocation certificates/ are now created by
   default.{{{more(autorev)}}}
