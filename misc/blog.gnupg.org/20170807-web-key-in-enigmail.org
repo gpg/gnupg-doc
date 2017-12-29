@@ -1,0 +1,91 @@
+# Using the Web Key Service with Enigmail
+#+STARTUP: showall
+#+AUTHOR: Kai
+#+DATE: August 7, 2017
+
+** Using the Web Key Service with Enigmail
+
+Obtaining the public key of someone has always being a major pain point of
+using GnuPG. OpenPGP doesn't "outsource" trust management by using a PKI.
+Instead, it allows each user to decide whom to trust. This has the downside
+that we need to evaluate whether we can trust a new public key for each
+new communication partner. Until recently, there wasn't an automatic way to
+securely get the public key of someone you never communicated with.
+
+The [[https://tools.ietf.org/id/draft-koch-openpgp-webkey-service-03.html][Web Key Service]] and the new ~--auto-key-retrieve~ &
+~--auto-key-locate~ available in GnuPG 2.1.19 and beyond.
+
+*** Web Key Service
+
+The Web Key Service is a protocol to publish public OpenPGP keys via
+email and retrieve others' public keys using HTTPS. The advantage over
+HKPS is that every email provider maintains its own key
+server (called Web Key Directory, WKD) that is authoritative for all
+its users. This means that:
+
+1. There exists only one key server for a given email address. No need to ask
+   multiple servers as with HKPS.
+
+2. When publishing a public key using mail, WKD makes sure the sender is in
+   possession of the secret key.
+
+3. Email providers can (and should) make sure that only the owner of the
+   email account is able to publish a public key for it.
+
+Point three helps us with trust management. In case we trust the email
+provider of our communication partner, we can trust the key retrieved by WKD
+more than one from an HKPS based key server.
+
+#+CAPTION: Web key service protocol overview
+#+ATTR_HTML: :style max-width: 600px
+[[file:img/wks-schema.png]]
+
+*** Publish your public key to a Web Key Directory
+
+In order to use WKS you need a provider who supports it [fn:1]. After you
+configured the email account in Thunderbird you need to enable OpenPGP for
+it and generate a key pair.
+
+#+CAPTION: Enable the OpenPGP checkbox in the account settings.
+#+ATTR_HTML: :style max-width: 600px
+[[file:img/wks-account-settings.png]]
+
+Then, open the key management window and find your public key. Right clicking
+it opens the context menu. There, select the option to upload the public key
+to your provider's WKD.
+
+#+CAPTION: Context menu of the key management dialog.
+#+ATTR_HTML: :style max-width: 600px
+[[file:img/wks-key-mng.png]]
+
+After submission, the WKD will send an email to you asking to confirm the
+publication request. The subject line and body copy can be defined by the WKD
+but Enigmail will display a yellow bar above the message announcing it is a
+confirmation request. Clicking the button on the right will send the
+confirmation email to WKD.
+
+#+CAPTION: Enigmail adds a yellow bar to the confirmation request.
+#+ATTR_HTML: :style max-width: 600px
+[[file:img/wks-confirm-req.png]]
+
+After the email has been sent, your public key will be accessible to
+everybody.
+
+*** Receive others public key from a Web Key Directory
+
+Recent version of Enigmail receive missing public keys automatically form
+multiple sources, including WKD. Everybody who wants to send you an encrypted
+email will be able to do so without finding your public key manually first.
+
+This is a bit anticlimactic, but you can use the ~--auto-key-locate~
+option to retrieve your own public key from the WKD to see if it worked.
+
+~HOME=`mktemp -d` gpg2 --auto-key-locate wkd -e -r <your email address>~
+
+If GnuPG is able to retrieve the public key you will see a line that looks
+like that:
+
+~gpg: automatically retrieved '<your email address>' via WKD~
+
+[fn:1] As the time of writing only [[https://posteo.de/en][Posteo]] supports
+       WKS.
