@@ -689,10 +689,11 @@ is actively developed.
 | Thunderbird | yes (Enigmail) | (1) |
 | Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
+| Neomutt     | native         | (3) |
 | Apple Mail  | yes ([[https://www.gpgtools.org][GPGtools]]) | (4) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
-    popular GnuPG-aware email clients.  it’s under active development
+    popular GnuPG-aware email clients.  It’s under active development
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
@@ -700,7 +701,9 @@ is actively developed.
     install the plugin.  See the Gnus manual for configuration hints.
 
 (3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.
+    =~/.muttrc= file.  Note that this requires installing Mutt or
+    Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
+    documentation for details.
 
 (4) As of this writing, Apple Mail is incompatible with PGP/MIME.  This
     is a known bug and people are working on it.
@@ -716,12 +719,13 @@ is actively developed.
 | Thunderbird | yes (Enigmail) | (1) |
 | Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
+| Neomutt     | native         | (3) |
 | Kontact     | native         | (4) |
 | Evolution   | native         |     |
 | Claws-Mail  | yes (internal) |     |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
-    popular GnuPG-aware email clients.  it’s under active development
+    popular GnuPG-aware email clients.  It’s under active development
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
@@ -729,7 +733,9 @@ is actively developed.
     install the plugin.  See the Gnus manual for configuration hints.
 
 (3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.
+    =~/.muttrc= file.  Note that this requires installing Mutt or
+    Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
+    documentation for details.
 
 (4) Kontact is KDE’s integrated personal information manager of KDE.
     It runs anywhere that KDE does, and even on some mobile devices as
