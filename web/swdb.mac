@@ -39,22 +39,14 @@
 
 
 #
-# GnuPG 2.0
+# GnuPG 2.0  (end-of-life)
 #
-#+macro: gnupg20_ver  2.0.30
-#+macro: gnupg20_date 2016-03-31
-#+macro: gnupg20_size 4311k
-#+macro: gnupg20_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
-#+macro: gnupg20_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
+#+macro: gnupg20_ver  2.0.31
+#+macro: gnupg20_date 2017-12-29
+#+macro: gnupg20_size 4324k
+#+macro: gnupg20_sha1 a7d5021a6a39dd67942e00a1239e37063edb00f0
+#+macro: gnupg20_sha2 095558cfbba52fba582963e97b0c016889570b4712d6b871abeef2cf93e62293
 #+macro: gnupg20_branch  STABLE-BRANCH-2-0
-
-# temporary keep it as "gnupg"
-#+macro: gnupg_ver  2.0.30
-#+macro: gnupg_date 2016-03-31
-#+macro: gnupg_size 4311k
-#+macro: gnupg_sha1 a9f024588c356a55e2fd413574bfb55b2e18794a
-#+macro: gnupg_sha2 e329785a4f366ba5d72c2c678a7e388b0892ac8440c2f4e6810042123c235d71
-#+macro: gnupg_branch  STABLE-BRANCH-2-0
 
 
 #
@@ -138,7 +130,7 @@
 
 
 #
-# DirMngr
+# DirMngr (not any longer needed)
 #
 #+macro: dirmngr_ver  1.1.1
 #+macro: dirmngr_date 2013-04-26
