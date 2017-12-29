@@ -59,9 +59,7 @@
    | [[../software/gpgme/index.org][GPGME]]        | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |        {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
    | [[../software/gpa/index.org][GPA]]          | {{{gpa_ver}}}          | {{{gpa_date}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | GnuPG 2.0    | {{{gnupg20_ver}}}      | {{{gnupg20_date}}}      |      {{{gnupg20_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg20_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | GnuPG 1.4    | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
-   | Dirmngr 1    | {{{dirmngr_ver}}}      | {{{dirmngr_date}}}      |      {{{dirmngr_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/dirmngr/dirmngr-{{{dirmngr_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
 
    {{{check_sig_note}}}
@@ -76,17 +74,10 @@
 
    - /GPA/ is a graphical frontend to GnuPG.
 
-   - /GnuPG 2.0/ is an older branch of GnuPG.  This branch will reach
-     end-of-life on 2017-12-31.
-
    - /GnuPG 1.4/ is the old, single binary version which still support
      the unsafe PGP-2 keys.  This branch has no dependencies on the
-     above listed libraries or the Pinnetry.  However, it lacks many
-     features and will receive only important updates.
-
-   - /Dirmngr/ is an optional tool for use with /GnuPG 2.0/.  A
-     modernized version is included in the current GnuPG (2.1)
-     version.
+     above listed libraries or the Pinentry.  However, it lacks many
+     modern features and will receive only important updates.
 
 
 ** GnuPG binary releases
