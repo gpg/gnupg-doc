@@ -478,6 +478,23 @@ to create the previous and Next links for an entry."
                            nil))
 
 
+(defun gpgweb-faq-to-txt (faqfile)
+  "Render FAQFILE as text.  FAQFILE is assumed to be in web/faq.
+Note that the HTML rendering is done as part of the gpgweb-org-to-html"
+  (interactive "sFAQ orgfile: ")
+  (let* ((file (concat gpgweb-root-dir "faq/" faqfile))
+         (visitingp (find-buffer-visiting file))
+         (work-buffer (or visitingp (find-file-noselect file))))
+    (with-current-buffer work-buffer
+      (setq default-directory (concat gpgweb-stage-dir "faq"))
+      (make-directory default-directory t)
+      (toggle-read-only 0)
+      (org-ascii-export-to-ascii nil nil nil nil '(:ascii-charset utf-8))
+      (basic-save-buffer))
+    (unless visitingp
+          (kill-buffer work-buffer))))
+
+
 (defun gpgweb-render-blog (&optional filelist)
   "Turn the current buffer which has an org-mode blog entry into its
 rendered form and save it with the suffix .html."
@@ -507,7 +524,6 @@ rendered form and save it with the suffix .html."
           (basic-save-buffer))
         (unless visitingp
           (kill-buffer work-buffer))))))
-
 
 (defun gpgweb-upload ()
   "We don't do an upload directly.  Instead we only print the

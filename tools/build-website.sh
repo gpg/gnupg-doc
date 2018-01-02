@@ -163,7 +163,8 @@ else
   --eval "(gpgweb-setup-project)" \
   --eval "(org-publish-initialize-cache \"gpgweb\")" \
   --eval "(message \"root=(%s)\" gpgweb-root-dir)" \
-  --eval "(org-publish \"gpgweb\" t nil)"
+  --eval "(org-publish \"gpgweb\" t nil)" \
+  --eval "(gpgweb-faq-to-txt \"gnupg-faq.org\")"
 
   echo "$rev" > ${revlastfile}
   sync_web=${stage_dir}/${subdir}
