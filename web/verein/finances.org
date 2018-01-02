@@ -12,7 +12,7 @@
 
 ** Euro transaction
 
-   Here are the transactions on our bank account.
+Here are the transactions on our bank account in 2017
 
 |       Date |    Debit | Credit |   Balance | Description              |
 |------------+----------+--------+-----------+--------------------------|
@@ -31,6 +31,10 @@
 | 2017-10-06 | 18197.53 |        | 157386.58 | Exchange of 5 BTC        |
 | 2017-10-12 |   220.00 |        | 157606.58 | Donation kernel-recipes  |
 | 2017-10-12 |   310.00 |        | 157916.58 | Donation kernel-recipes  |
+| 2017-10-28 |          |   6.20 | 157910.38 | Bank fees                |
+| 2017-11-30 |          |   5.00 | 157905.38 | Bank fees                |
+| 2017-12-29 |          |   5.00 | 157900.38 | Bank fees                |
+|------------+----------+--------+-----------+--------------------------|
 
 
 The 59.000 € from the Wau Holland Stiftung have been collected by them
@@ -43,5 +47,5 @@ printing costs.
 
 ** Bitcoin transactions
 
-   As of 2017-10-06 we own 0.12 BTC.  26 BTC have been
-   transferred to our Euro account (see above).
+As of 2018-01-02 we own 0.4608 confirmed BTC.  26 BTC have been
+transferred to our Euro account in September/October 2017 (see above).
