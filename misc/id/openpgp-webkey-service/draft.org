@@ -482,6 +482,10 @@ over all keys.  An implementation may want to weight the certainty of
 a mapping different if it has been retrieved via a sub-domain and in
 particular if a non-recommended name is used for the sub-domain.
 
+To make it a bit harder to test for published keys, the server
+responsible to serve the WELLKNOWN directory SHOULD NOT create an
+index file for that directory or any sub-directory.
+
 
 * IANA Considerations
 
