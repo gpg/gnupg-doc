@@ -420,7 +420,7 @@ A site supporting the Web Key Directory MUST serve this file; it is
 sufficient if that file has a zero length.  Clients may use this file
 to check for Web Key Directory support.
 
-The file contains keywords and optioanlly values, one per line with
+The file contains keywords and optionally values, one per line with
 each line terminated by a LF or the sequence of CR and LF.  Empty lines
 and lines starting with a '#' character are considered comment
 lines.  A keyword is made up of lowercase letters, digits, hyphens, or
