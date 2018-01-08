@@ -14,6 +14,7 @@ active in development or in evangelizing end-to-end encryption.
   - Bernhard Reiter
   - Damien Goutte-Gattat
   - Daniel Kahn Gillmor
+  - Guilhem Moulin
   - Holger Smolinski
   - Justus Winter
   - Kai Michaelis
