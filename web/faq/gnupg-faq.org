@@ -162,15 +162,23 @@ October 2017.
    :CUSTOM_ID: whats_gnupg
    :END:
 
-GnuPG is cryptographic software that helps people ensure the
-confidentiality, integrity and assurance of their data.  Let’s try
-that again: GnuPG is…
+GnuPG is free cryptographic software from GNU which helps people
+ensure the confidentiality, integrity and assurance of their
+data.  Let’s try that again: GnuPG is…
 
+- /Free./ When we say “free” we mean [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  You’re free
+  to use it, modify it, share it, tinker with it, and learn from it.
+  Software is meant to be used by people, and people deserve freedom.
 - /Cryptographic./ The word “cryptography” is derived from two Greek
   words, κρυπτός (pronounced “kryptos,” meaning “hidden”) and γράφω
   (pronounced “graphein,” meaning “writing”). Cryptography is the
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
+- /GNU./  GNU is a group that aims to give people the ability to do
+  all their computing with free software.  Some groups have made
+  entire operating systems from it, but lots of GNU software will run
+  on proprietary systems, too — although we encourage you to shift to
+  free ones if you can.
 - /Confidentiality./ No one except authorized parties should be able
   to read your data.
 - /Integrity./ It shouldn’t be possible to tamper with a message
@@ -192,8 +200,9 @@ clients, such as Psi.
    :CUSTOM_ID: pronunciation
    :END:
 
-“guh-NEW-pee-gee.”
-
+“GNU”, followed by the letters “P” and “G”.  To learn how to pronounce
+GNU, you may want to
+[[https://www.gnu.org/gnu/pronunciation.en.html][listen to a recording]].
 
 ** Is it compatible with Symantec’s PGP?
    :PROPERTIES:
@@ -223,6 +232,7 @@ Yes.  SHA-256 and SHA-512 belong to a group of hashes known
 collectively as “SHA-2”.  PGP calls SHA-256 and SHA-512 by the
 non-standard names “SHA-2-256” and “SHA-2-512”, but they are the same
 algorithms.
+
 
 ** Which operating systems does it run on?
    :PROPERTIES:
@@ -395,7 +405,6 @@ Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mai
 list’s archives.
 
 The [[https://bugs.gnupg.org/gnupg/][GnuPG project’s bug tracker]] is also publicly available.
-
 
 * Where can I get more information?
   :PROPERTIES:
