@@ -103,3 +103,18 @@
    This HOWTO is available:
 
    -  as plain text ( [[http://codesorcery.net/old/mutt/][en]] )
+
+** PHP-GnuPG HOWTO
+
+   With the preponderance of javascript based OpenPGP solutions to
+   various functions on the web, the desire to perform certain types
+   of server side functions on a PHP driven website also has its
+   merits.
+
+   While PHP support for GPGME is either lacking, or too arcane for
+   most developers to decipher, or both; Piotr Masełkowski at
+   [[https://maslosoft.com/][Maslosoft]] has an alternative guide using the CLI programs.
+
+   This HOWTO is available as:
+
+   -  as an online HTML article ( [[https://maslosoft.com/blog/2017/09/12/using-gpg-with-php-on-server/][en]] )
