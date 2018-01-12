@@ -162,8 +162,8 @@ October 2017.
    :CUSTOM_ID: whats_gnupg
    :END:
 
-GnuPG is free cryptographic software from GNU which helps people
-ensure the confidentiality, integrity and assurance of their
+GnuPG is free cryptographic software from the GNU Project which helps
+people ensure the confidentiality, integrity and assurance of their
 data.  Let’s try that again: GnuPG is…
 
 - /Free./ When we say “free” we mean [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  You’re free
@@ -174,11 +174,8 @@ data.  Let’s try that again: GnuPG is…
   (pronounced “graphein,” meaning “writing”). Cryptography is the
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
-- /GNU./  GNU is a group that aims to give people the ability to do
-  all their computing with free software.  Some groups have made
-  entire operating systems from it, but lots of GNU software will run
-  on proprietary systems, too — although we encourage you to shift to
-  free ones if you can.
+- /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that aims to give people
+  the ability to do all their computing with free software.
 - /Confidentiality./ No one except authorized parties should be able
   to read your data.
 - /Integrity./ It shouldn’t be possible to tamper with a message
@@ -203,6 +200,7 @@ clients, such as Psi.
 “GNU”, followed by the letters “P” and “G”.  To learn how to pronounce
 GNU, you may want to
 [[https://www.gnu.org/gnu/pronunciation.en.html][listen to a recording]].
+
 
 ** Is it compatible with Symantec’s PGP?
    :PROPERTIES:
@@ -382,10 +380,13 @@ lot of the software industry does not
 your freedom to use the software for any purpose, your freedom to study
 and learn from how it works, your freedom to share it with others who
 might benefit from it, and more.  Free Software is the antithesis of
-this: Free Software is meant to respect your rights.  You may use the
+this: Free Software is meant to respect your freedoms.  You may use the
 software for any purpose: you may inspect and modify the source code:
 you may share the software and/or your modifications with others.
 
+GnuPG works with many operating systems, including ones that don’t
+respect your freedoms.  If you’d like to make the shift to a free
+operating system, [[https://www.gnu.org/distros/free-distros.html][you have many choices]].
 
 ** How can I donate money to the GnuPG project?
    :PROPERTIES:
