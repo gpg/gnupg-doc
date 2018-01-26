@@ -58,4 +58,4 @@ and other opportunities.
 
 * Annual Accounts
 
-- Annual accounts for 2017: [[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf][pdf]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.html][html]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.html.sig][sig]])
+- Annual accounts for 2017: [[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf][pdf]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.html][html]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.html.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.de.pdf][pdf (German)]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])
