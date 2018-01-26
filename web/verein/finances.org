@@ -11,7 +11,7 @@
   questions on certain transactions, please write to board@.  For the
   annual accounts see [[*Annual%20Accounts][below]].
 
-** Transaction in 2017
+** Transactions in 2017
 
 Here are the transactions on our bank account in 2017
 
@@ -48,7 +48,7 @@ transferred to our Euro account in September/October 2017 (see above).
 We produced two kinds of postcards to be used as giveaways at shows
 and other opportunities.
 
-** Transaction in 2018
+** Transactions in 2018
 
 |       Date |   Debit | Credit |   Balance | Description              |
 |------------+---------+--------+-----------+--------------------------|
@@ -58,4 +58,4 @@ and other opportunities.
 
 * Annual Accounts
 
-- Annual accounts for 2017: [[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf][pdf]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.html][html]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.html.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.de.pdf][pdf (German)]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])
+- Annual accounts for 2017: [[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf][pdf]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.pdf.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.html][html]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.html.sig][sig]])  [[https://gnupg.org/ftp/verein/annual-accounts-2017.de.pdf][pdf (German)]] ([[https://gnupg.org/ftp/verein/annual-accounts-2017.de.pdf.sig][sig]])
