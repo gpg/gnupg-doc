@@ -171,7 +171,7 @@ data.  Let’s try that again: GnuPG is…
   Software is meant to be used by people, and people deserve freedom.
 - /Cryptographic./ The word “cryptography” is derived from two Greek
   words, κρυπτός (pronounced “kryptos,” meaning “hidden”) and γράφω
-  (pronounced “graphein,” meaning “writing”). Cryptography is the
+  (pronounced “grapho,” meaning “writing”). Cryptography is the
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
 - /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that aims to give people
