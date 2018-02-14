@@ -713,11 +713,14 @@ is actively developed.
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
-(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
-    install the plugin.  See the Gnus manual for configuration hints.
+(2) EasyPG is part of Emacs 23, proper as EPA and the underlying EPG.
+    Thus there is no more need to install the plugin.  See the Gnus
+    manual for configuration hints.  Both EPA and EPG can be
+    customized with the customize-group command and using either the
+    =epa= or =epg= groups.
 
-(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.  Note that this requires installing Mutt or
+(3) For the best experience make sure to put ~set crypt_use_gpgme~ in
+    your =~/.muttrc= file.  Note that this requires installing Mutt or
     Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
     documentation for details.
 
@@ -745,11 +748,14 @@ is actively developed.
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
-(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
-    install the plugin.  See the Gnus manual for configuration hints.
+(2) EasyPG is part of Emacs 23, proper as EPA and the underlying EPG.
+    Thus there is no more need to install the plugin.  See the Gnus
+    manual for configuration hints.  Both EPA and EPG can be
+    customized with the customize-group command and using either the
+    =epa= or =epg= groups.
 
-(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.  Note that this requires installing Mutt or
+(3) For the best experience make sure to put ~set crypt_use_gpgme~ in
+    your =~/.muttrc= file.  Note that this requires installing Mutt or
     Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
     documentation for details.
 
