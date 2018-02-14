@@ -11,11 +11,12 @@
   authors:
 
 #+begin_verse
-  \copy 1998--2013  Werner Koch
+  \copy 1998--2018  Werner Koch
   \copy 2000--2002  Nils Ellmenreich
   \copy 2001--2002  Mike Ashley
   \copy 2002--2005  Lorenzo Cappelletti
   \copy 2006--2006  David Shaw
+  \copy 2017--2018  Ben McGinnes
 #+end_verse
 # The Aegypten pages are under a different license - there authors are
 #  \copy 2001--2004  Bernhard Reiter
