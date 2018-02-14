@@ -13,3 +13,7 @@ scratch/
 /misc/blog.gnupg.org/20*.html
 /misc/blog.gnupg.org/headlines.txt
 /misc/id/eddsa-for-openpgp/draft.txt
+*~
+.DS_Store
+._.DS_Store
+default.profraw
