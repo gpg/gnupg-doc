@@ -43,7 +43,7 @@
 
    #+begin_example
    import gpg
-   
+
    ciphertext = open("filename.txt.asc", "rb")
    plaintext = gpg.Context().decrypt(ciphertext)
    ciphertext.close()
@@ -53,7 +53,6 @@
    del plaintext
    #+end_example
 
-   
 
 
 
