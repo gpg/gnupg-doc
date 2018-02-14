@@ -352,6 +352,12 @@ Alternatively, you can install GnuPG using a package manager:
 sudo pkg_add -r gnupg
 #+end_example
 
+Or with this variation for the package manager:
+
+#+begin_example
+sudo pkg install gnupg
+#+end_example
+
 *** … for VMS?
     :PROPERTIES:
     :CUSTOM_ID: get_gnupg_vms
