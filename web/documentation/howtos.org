@@ -115,6 +115,6 @@
    most developers to decipher, or both; Piotr Masełkowski at
    [[https://maslosoft.com/][Maslosoft]] has an alternative guide using the CLI programs.
 
-   This HOWTO is available as:
+   This HOWTO is available:
 
    -  as an online HTML article ( [[https://maslosoft.com/blog/2017/09/12/using-gpg-with-php-on-server/][en]] )
