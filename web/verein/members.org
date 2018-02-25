@@ -4,9 +4,13 @@
 
 * List of GnuPG e.V Members.
 
-To apply for membership please write to board@.  We expect that you
-have a more than average interest in GnuPG or OpenPGP and that you are
-active in development or in evangelizing end-to-end encryption.
+To apply for membership please write to board at gnupg dot org.  For
+regular members we expect that you have a more than average interest
+in GnuPG and that you are active in development or in evangelizing
+end-to-end encryption.  It is also possible to support the Verein by
+applying as a supporting member.  See the membership regulations
+([[https://gnupg.org/ftp/verein/beitragsordnung.en.pdf][English]], [[https://gnupg.org/ftp/verein/beitragsordnung.de.pdf][German]]) for details.
+
 
 ** The regular members
 
@@ -32,4 +36,4 @@ active in development or in evangelizing end-to-end encryption.
 
 ** The supporting members
 
-  /none so far - we still need to setup rules/
+  /none so far/
