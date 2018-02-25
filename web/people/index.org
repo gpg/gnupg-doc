@@ -157,7 +157,7 @@
    Melbourne, Australia, a founding member of Pirate Party Australia
    and actively advocating for civil and human rights since the '90s.
    Ben can sometimes be found on freenode IRC using the handle
-   =Hasimir= name and, of course, on the GnuPG mailing lists.
+   =Hasimir= and, of course, on the GnuPG mailing lists.
 
    [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][GPG key DB4724E6FA4286C92B4E55C4321E4E2373590E5D]]
 
