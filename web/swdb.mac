@@ -10,32 +10,32 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.4
-#+macro: gnupg22_date 2017-12-20
-#+macro: gnupg22_size 6417k
-#+macro: gnupg22_sha1 732266e8888c6f41c084d043c7a0058332ff3580
-#+macro: gnupg22_sha2 401a3e64780fdfa6d7670de0880aa5c9d589b3db7a7098979d7606cec546f2ec
+#+macro: gnupg22_ver  2.2.5
+#+macro: gnupg22_date 2018-02-22
+#+macro: gnupg22_size 6430k
+#+macro: gnupg22_sha1 9dec110397e460b3950943e18f5873a4f277f216
+#+macro: gnupg22_sha2 3fa189a32d4fb62147874eb1389047c267d9ba088f57ab521cb0df46f08aef57
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.4_20171220
-#+macro: gnupg22_w32_date 2017-12-20
-#+macro: gnupg22_w32_size 3817k
-#+macro: gnupg22_w32_sha1 d06a1413fd901c51eba14164ddb28d99ab9f84df
-#+macro: gnupg22_w32_sha2 2030f00548ec175cac4996a8128ed71393c156429d95f3e6c2f53194b2f4d885
+#+macro: gnupg22_w32_ver  2.2.5_20180222
+#+macro: gnupg22_w32_date 2018-02-22
+#+macro: gnupg22_w32_size 3819k
+#+macro: gnupg22_w32_sha1 080f801e833c7a9e0441d55cd19d4bdb5bb261f9
+#+macro: gnupg22_w32_sha2 9fea4add738a373b3c1a304f74eec2d24a8f5fe7ccdf1d8ee090d99de8f51257
 
 
 # temporary keep it as "gnupg21".  In the future we will use the name of
 # the stable branch even for the development versions.
-#+macro: gnupg21_ver  2.2.4
-#+macro: gnupg21_date 2017-12-20
-#+macro: gnupg21_size 6417k
-#+macro: gnupg21_sha1 732266e8888c6f41c084d043c7a0058332ff3580
-#+macro: gnupg21_sha2 401a3e64780fdfa6d7670de0880aa5c9d589b3db7a7098979d7606cec546f2ec
+#+macro: gnupg21_ver  2.2.5
+#+macro: gnupg21_date 2018-02-22
+#+macro: gnupg21_size 6430k
+#+macro: gnupg21_sha1 9dec110397e460b3950943e18f5873a4f277f216
+#+macro: gnupg21_sha2 3fa189a32d4fb62147874eb1389047c267d9ba088f57ab521cb0df46f08aef57
 #+macro: gnupg21_branch  STABLE-BRANCH-2-2
-#+macro: gnupg21_w32_ver  2.2.4_20171220
-#+macro: gnupg21_w32_date 2017-12-20
-#+macro: gnupg21_w32_size 3817k
-#+macro: gnupg21_w32_sha1 d06a1413fd901c51eba14164ddb28d99ab9f84df
-#+macro: gnupg21_w32_sha2 2030f00548ec175cac4996a8128ed71393c156429d95f3e6c2f53194b2f4d885
+#+macro: gnupg21_w32_ver  2.2.5_20180222
+#+macro: gnupg21_w32_date 2018-02-22
+#+macro: gnupg21_w32_size 3819k
+#+macro: gnupg21_w32_sha1 080f801e833c7a9e0441d55cd19d4bdb5bb261f9
+#+macro: gnupg21_w32_sha2 9fea4add738a373b3c1a304f74eec2d24a8f5fe7ccdf1d8ee090d99de8f51257
 
 
 #

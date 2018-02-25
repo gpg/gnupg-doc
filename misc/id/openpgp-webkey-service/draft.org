@@ -456,6 +456,11 @@ Currently defined keywords are:
      the workaround.  The value is an integer corresponding to the
      respective draft revision number.
 
+- submission-address :: An alternative way to specify the submission
+     address.  The value is the addr-spec part of the address to send
+     requests to this server.  If this keyword is used in addition to
+     the =submission-address= file, both MUST have the same value.
+
 # Fixme: Add a protocol-version value for the final RFC.
 
 
