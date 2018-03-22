@@ -128,4 +128,4 @@
    This HOWTO is available:
 
    -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
-   -  as an online HTML file ( [[GPGMEpythonHOWTOen.html][en]] )
+
