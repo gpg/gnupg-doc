@@ -1,0 +1,2003 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-03-22 Thu 10:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GNU Privacy Guard (GnuPG) Made Easy Python Bindings HOWTO (English)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Ben McGinnes" />
+<style type="text/css">
+ /*<![CDATA[/*>*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+/*<![CDATA[/*>*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">GNU Privacy Guard (GnuPG) Made Easy Python Bindings HOWTO (English)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#intro">1. Introduction</a>
+<ul>
+<li><a href="#py2-vs-py3">1.1. Python 2 versus Python 3</a></li>
+<li><a href="#howto-python3-examples">1.2. Examples</a></li>
+</ul>
+</li>
+<li><a href="#gpgme-concepts">2. GPGME Concepts</a>
+<ul>
+<li><a href="#gpgme-c-api">2.1. A C API</a></li>
+<li><a href="#gpgme-python-bindings">2.2. Python bindings</a></li>
+<li><a href="#gpgme-python-bindings-diffs">2.3. Difference between the Python bindings and other GnuPG Python packages</a>
+<ul>
+<li><a href="#diffs-python-gnupg">2.3.1. The python-gnupg package maintained by Vinay Sajip</a></li>
+<li><a href="#diffs-isis-gnupg">2.3.2. The gnupg package created and maintained by Isis Lovecruft</a></li>
+<li><a href="#diffs-pyme">2.3.3. The PyME package maintained by Martin Albrecht</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#gpgme-python-install">3. GPGME Python bindings installation</a>
+<ul>
+<li><a href="#do-not-use-pypi">3.1. No PyPI</a></li>
+<li><a href="#gpgme-python-requirements">3.2. Requirements</a></li>
+<li><a href="#installation">3.3. Installation</a>
+<ul>
+<li><a href="#install-gpgme">3.3.1. Installing GPGME</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#howto-fund-a-mental">4. Fundamentals</a>
+<ul>
+<li><a href="#no-rest-for-the-wicked">4.1. No REST</a></li>
+<li><a href="#howto-get-context">4.2. Context</a></li>
+</ul>
+</li>
+<li><a href="#howto-keys">5. Working with keys</a>
+<ul>
+<li><a href="#howto-keys-selection">5.1. Key selection</a>
+<ul>
+<li><a href="#howto-keys-counting">5.1.1. Counting keys</a></li>
+</ul>
+</li>
+<li><a href="#howto-get-key">5.2. Get key</a></li>
+</ul>
+</li>
+<li><a href="#howto-the-basics">6. Basic Functions</a>
+<ul>
+<li><a href="#howto-basic-encryption">6.1. Encryption</a>
+<ul>
+<li><a href="#howto-basic-encryption-single">6.1.1. Encrypting to one key</a></li>
+<li><a href="#howto-basic-encryption-multiple">6.1.2. Encrypting to multiple keys</a></li>
+</ul>
+</li>
+<li><a href="#howto-basic-decryption">6.2. Decryption</a></li>
+<li><a href="#howto-basic-signing">6.3. Signing text and files</a>
+<ul>
+<li><a href="#howto-basic-signing-signers">6.3.1. Signing key selection</a></li>
+<li><a href="#howto-basic-signing-normal">6.3.2. Normal or default signing messages or files</a></li>
+<li><a href="#howto-basic-signing-detached">6.3.3. Detached signing messages and files</a></li>
+<li><a href="#howto-basic-signing-clear">6.3.4. Clearsigning messages or text</a></li>
+</ul>
+</li>
+<li><a href="#howto-basic-verification">6.4. Signature verification</a></li>
+</ul>
+</li>
+<li><a href="#key-generation">7. Creating keys and subkeys</a>
+<ul>
+<li><a href="#keygen-primary">7.1. Primary key</a></li>
+<li><a href="#keygen-subkeys">7.2. Subkeys</a></li>
+<li><a href="#keygen-uids">7.3. User IDs</a></li>
+<li><a href="#key-sign">7.4. Key certification</a></li>
+</ul>
+</li>
+<li><a href="#cheats-and-hacks">8. Miscellaneous work-arounds</a>
+<ul>
+<li><a href="#group-lines">8.1. Group lines</a></li>
+</ul>
+</li>
+<li><a href="#copyright-and-license">9. Copyright and Licensing</a>
+<ul>
+<li><a href="#copyright">9.1. Copyright (C) The GnuPG Project, 2018</a></li>
+<li><a href="#license">9.2. License GPL compatible</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc4d0a1e" class="outline-2">
+<h2 id="intro"><a id="orgc4d0a1e"></a><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-intro">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Version:</td>
+<td class="org-left">0.1.0</td>
+</tr>
+
+<tr>
+<td class="org-left">Author:</td>
+<td class="org-left">Ben McGinnes &lt;ben@gnupg.org&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Author GPG Key:</td>
+<td class="org-left">DB4724E6FA4286C92B4E55C4321E4E2373590E5D</td>
+</tr>
+
+<tr>
+<td class="org-left">Language:</td>
+<td class="org-left">Australian English, British English</td>
+</tr>
+
+<tr>
+<td class="org-left">xml:lang:</td>
+<td class="org-left">en-AU, en-GB, en</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+This document provides basic instruction in how to use the GPGME
+Python bindings to programmatically leverage the GPGME library.
+</p>
+</div>
+
+
+<div id="outline-container-org92262a0" class="outline-3">
+<h3 id="py2-vs-py3"><a id="org92262a0"></a><span class="section-number-3">1.1</span> Python 2 versus Python 3</h3>
+<div class="outline-text-3" id="text-py2-vs-py3">
+<p>
+Though the GPGME Python bindings themselves provide support for
+both Python 2 and 3, the focus is unequivocally on Python 3 and
+specifically from Python 3.4 and above.  As a consequence all the
+examples and instructions in this guide use Python 3 code.
+</p>
+
+<p>
+Much of it will work with Python 2, but much of it also deals with
+Python 3 byte literals, particularly when reading and writing data.
+Developers concentrating on Python 2.7, and possibly even 2.6, will
+need to make the appropriate modifications to support the older
+string and unicode types as opposed to bytes.
+</p>
+
+<p>
+There are multiple reasons for concentrating on Python 3; some of
+which relate to the immediate integration of these bindings, some
+of which relate to longer term plans for both GPGME and the python
+bindings and some of which relate to the impending EOL period for
+Python 2.7.  Essentially, though, there is little value in tying
+the bindings to a version of the language which is a dead end and
+the advantages offered by Python 3 over Python 2 make handling the
+data types with which GPGME deals considerably easier.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgbb31863" class="outline-3">
+<h3 id="howto-python3-examples"><a id="orgbb31863"></a><span class="section-number-3">1.2</span> Examples</h3>
+<div class="outline-text-3" id="text-howto-python3-examples">
+<p>
+All of the examples found in this document can be found as Python 3
+scripts in the <code>lang/python/examples/howto</code> directory.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf8af751" class="outline-2">
+<h2 id="gpgme-concepts"><a id="orgf8af751"></a><span class="section-number-2">2</span> GPGME Concepts</h2>
+<div class="outline-text-2" id="text-gpgme-concepts">
+</div>
+
+
+<div id="outline-container-orgb4ed6ba" class="outline-3">
+<h3 id="gpgme-c-api"><a id="orgb4ed6ba"></a><span class="section-number-3">2.1</span> A C API</h3>
+<div class="outline-text-3" id="text-gpgme-c-api">
+<p>
+Unlike many modern APIs with which programmers will be more
+familiar with these days, the GPGME API is a C API.  The API is
+intended for use by C coders who would be able to access its
+features by including the <code>gpgme.h</code> header file with their own C
+source code and then access its functions just as they would any
+other C headers.
+</p>
+
+<p>
+This is a very effective method of gaining complete access to the
+API and in the most efficient manner possible.  It does, however,
+have the drawback that it cannot be directly used by other
+languages without some means of providing an interface to those
+languages.  This is where the need for bindings in various
+languages stems.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org00d5c90" class="outline-3">
+<h3 id="gpgme-python-bindings"><a id="org00d5c90"></a><span class="section-number-3">2.2</span> Python bindings</h3>
+<div class="outline-text-3" id="text-gpgme-python-bindings">
+<p>
+The Python bindings for GPGME provide a higher level means of
+accessing the complete feature set of GPGME itself.  It also
+provides a more pythonic means of calling these API functions.
+</p>
+
+<p>
+The bindings are generated dynamically with SWIG and the copy of
+<code>gpgme.h</code> generated when GPGME is compiled.
+</p>
+
+<p>
+This means that a version of the Python bindings is fundamentally
+tied to the exact same version of GPGME used to generate that copy
+of <code>gpgme.h</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7e27478" class="outline-3">
+<h3 id="gpgme-python-bindings-diffs"><a id="org7e27478"></a><span class="section-number-3">2.3</span> Difference between the Python bindings and other GnuPG Python packages</h3>
+<div class="outline-text-3" id="text-gpgme-python-bindings-diffs">
+<p>
+There have been numerous attempts to add GnuPG support to Python
+over the years.  Some of the most well known are listed here, along
+with what differentiates them.
+</p>
+</div>
+
+
+<div id="outline-container-org5eb9d54" class="outline-4">
+<h4 id="diffs-python-gnupg"><a id="org5eb9d54"></a><span class="section-number-4">2.3.1</span> The python-gnupg package maintained by Vinay Sajip</h4>
+<div class="outline-text-4" id="text-diffs-python-gnupg">
+<p>
+This is arguably the most popular means of integrating GPG with
+Python.  The package utilises the <code>subprocess</code> module to implement
+wrappers for the <code>gpg</code> and <code>gpg2</code> executables normally invoked on
+the command line (<code>gpg.exe</code> and <code>gpg2.exe</code> on Windows).
+</p>
+
+<p>
+The popularity of this package stemmed from its ease of use and
+capability in providing the most commonly required features.
+</p>
+
+<p>
+Unfortunately it has been beset by a number of security issues in
+the past; most of which stemmed from using unsafe methods of
+accessing the command line via the <code>subprocess</code> calls.  While some
+effort has been made over the last two to three years (as of 2018)
+to mitigate this, particularly by no longer providing shell access
+through those subprocess calls, the wrapper is still somewhat
+limited in the scope of its GnuPG features coverage.
+</p>
+
+<p>
+The python-gnupg package is available under the MIT license.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org2b35773" class="outline-4">
+<h4 id="diffs-isis-gnupg"><a id="org2b35773"></a><span class="section-number-4">2.3.2</span> The gnupg package created and maintained by Isis Lovecruft</h4>
+<div class="outline-text-4" id="text-diffs-isis-gnupg">
+<p>
+In 2015 Isis Lovecruft from the Tor Project forked and then
+re-implemented the python-gnupg package as just gnupg.  This new
+package also relied on subprocess to call the <code>gpg</code> or <code>gpg2</code>
+binaries, but did so somewhat more securely.
+</p>
+
+<p>
+The naming and version numbering selected for this package,
+however, resulted in conflicts with the original python-gnupg and
+since its functions were called in a different manner to
+python-gnupg, the release of this package also resulted in a great
+deal of consternation when people installed what they thought was
+an upgrade that subsequently broke the code relying on it.
+</p>
+
+<p>
+The gnupg package is available under the GNU General Public
+License version 3.0 (or any later version).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgeebf78b" class="outline-4">
+<h4 id="diffs-pyme"><a id="orgeebf78b"></a><span class="section-number-4">2.3.3</span> The PyME package maintained by Martin Albrecht</h4>
+<div class="outline-text-4" id="text-diffs-pyme">
+<p>
+This package is the origin of these bindings, though they are
+somewhat different now.  For details of when and how the PyME
+package was folded back into GPGME itself see the <i>Short History</i>
+document<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> in this Python bindings <code>docs</code> directory.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</p>
+
+<p>
+The PyME package was first released in 2002 and was also the first
+attempt to implement a low level binding to GPGME.  In doing so it
+provided access to considerably more functionality than either the
+<code>python-gnupg</code> or <code>gnupg</code> packages.
+</p>
+
+<p>
+The PyME package is only available for Python 2.6 and 2.7.
+</p>
+
+<p>
+Porting the PyME package to Python 3.4 in 2015 is what resulted in
+it being folded into the GPGME project and the current bindings
+are the end result of that effort.
+</p>
+
+<p>
+The PyME package is available under the same dual licensing as
+GPGME itself: the GNU General Public License version 2.0 (or any
+later version) and the GNU Lesser General Public License version
+2.1 (or any later version).
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2083eb3" class="outline-2">
+<h2 id="gpgme-python-install"><a id="org2083eb3"></a><span class="section-number-2">3</span> GPGME Python bindings installation</h2>
+<div class="outline-text-2" id="text-gpgme-python-install">
+</div>
+
+
+<div id="outline-container-org28ae53d" class="outline-3">
+<h3 id="do-not-use-pypi"><a id="org28ae53d"></a><span class="section-number-3">3.1</span> No PyPI</h3>
+<div class="outline-text-3" id="text-do-not-use-pypi">
+<p>
+Most third-party Python packages and modules are available and
+distributed through the Python Package Installer, known as PyPI.
+</p>
+
+<p>
+Due to the nature of what these bindings are and how they work, it
+is infeasible to install the GPGME Python bindings in the same way.
+</p>
+
+<p>
+This is because the bindings use SWIG to dynamically generate C
+bindings against <code>gpgme.h</code> and <code>gpgme.h</code> is generated from
+<code>gpgme.h.in</code> at compile time when GPGME is built from source.  Thus
+to include a package in PyPI which actually built correctly would
+require either statically built libraries for every architecture
+bundled with it or a full implementation of C for each
+architecture.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0bc24d2" class="outline-3">
+<h3 id="gpgme-python-requirements"><a id="org0bc24d2"></a><span class="section-number-3">3.2</span> Requirements</h3>
+<div class="outline-text-3" id="text-gpgme-python-requirements">
+<p>
+The GPGME Python bindings only have three requirements:
+</p>
+
+<ol class="org-ol">
+<li>A suitable version of Python 2 or Python 3.  With Python 2 that
+means Python 2.7 and with Python 3 that means Python 3.4 or
+higher.</li>
+<li>SWIG.</li>
+<li>GPGME itself.  Which also means that all of GPGME's dependencies
+must be installed too.</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgc3b135d" class="outline-3">
+<h3 id="installation"><a id="orgc3b135d"></a><span class="section-number-3">3.3</span> Installation</h3>
+<div class="outline-text-3" id="text-installation">
+<p>
+Installing the Python bindings is effectively achieved by compiling
+and installing GPGME itself.
+</p>
+
+<p>
+Once SWIG is installed with Python and all the dependencies for
+GPGME are installed you only need to confirm that the version(s) of
+Python you want the bindings installed for are in your <code>$PATH</code>.
+</p>
+
+<p>
+By default GPGME will attempt to install the bindings for the most
+recent or highest version number of Python 2 and Python 3 it
+detects in <code>$PATH</code>.  It specifically checks for the <code>python</code> and
+<code>python3</code> executables first and then checks for specific version
+numbers.
+</p>
+
+<p>
+For Python 2 it checks for these executables in this order:
+<code>python</code>, <code>python2</code> and <code>python2.7</code>.
+</p>
+
+<p>
+For Python 3 it checks for these executables in this order:
+<code>python3</code>, <code>python3.6</code>, <code>python3.5</code> and <code>python3.4</code>.
+</p>
+</div>
+
+
+<div id="outline-container-org800b1d3" class="outline-4">
+<h4 id="install-gpgme"><a id="org800b1d3"></a><span class="section-number-4">3.3.1</span> Installing GPGME</h4>
+<div class="outline-text-4" id="text-install-gpgme">
+<p>
+See the GPGME <code>README</code> file for details of how to install GPGME from
+source.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org99da6d7" class="outline-2">
+<h2 id="howto-fund-a-mental"><a id="org99da6d7"></a><span class="section-number-2">4</span> Fundamentals</h2>
+<div class="outline-text-2" id="text-howto-fund-a-mental">
+<p>
+Before we can get to the fun stuff, there are a few matters
+regarding GPGME's design which hold true whether you're dealing with
+the C code directly or these Python bindings.
+</p>
+</div>
+
+
+<div id="outline-container-orgb23e21c" class="outline-3">
+<h3 id="no-rest-for-the-wicked"><a id="orgb23e21c"></a><span class="section-number-3">4.1</span> No REST</h3>
+<div class="outline-text-3" id="text-no-rest-for-the-wicked">
+<p>
+The first part of which is or will be fairly blatantly obvious upon
+viewing the first example, but it's worth reiterating anyway.  That
+being that this API is <i><b>not</b></i> a REST API.  Nor indeed could it
+ever be one.
+</p>
+
+<p>
+Most, if not all, Python programmers (and not just Python
+programmers) know how easy it is to work with a RESTful API.  In
+fact they've become so popular that many other APIs attempt to
+emulate REST-like behaviour as much as they are able.  Right down
+to the use of JSON formatted output to facilitate the use of their
+API without having to retrain developers.
+</p>
+
+<p>
+This API does not do that.  It would not be able to do that and
+also provide access to the entire C API on which it's built.  It
+does, however, provide a very pythonic interface on top of the
+direct bindings and it's this pythonic layer with which this HOWTO
+deals with.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org2930e1f" class="outline-3">
+<h3 id="howto-get-context"><a id="org2930e1f"></a><span class="section-number-3">4.2</span> Context</h3>
+<div class="outline-text-3" id="text-howto-get-context">
+<p>
+One of the reasons which prevents this API from being RESTful is
+that most operations require more than one instruction to the API
+to perform the task.  Sure, there are certain functions which can
+be performed simultaneously, particularly if the result known or
+strongly anticipated (e.g. selecting and encrypting to a key known
+to be in the public keybox).
+</p>
+
+<p>
+There are many more, however, which cannot be manipulated so
+readily: they must be performed in a specific sequence and the
+result of one operation has a direct bearing on the outcome of
+subsequent operations.  Not merely by generating an error either.
+</p>
+
+<p>
+When dealing with this type of persistent state on the web, full of
+both the RESTful and REST-like, it's most commonly referred to as a
+session.  In GPGME, however, it is called a context and every
+operation type has one.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgca525dd" class="outline-2">
+<h2 id="howto-keys"><a id="orgca525dd"></a><span class="section-number-2">5</span> Working with keys</h2>
+<div class="outline-text-2" id="text-howto-keys">
+</div>
+
+
+<div id="outline-container-orgdf97c8a" class="outline-3">
+<h3 id="howto-keys-selection"><a id="orgdf97c8a"></a><span class="section-number-3">5.1</span> Key selection</h3>
+<div class="outline-text-3" id="text-howto-keys-selection">
+<p>
+Selecting keys to encrypt to or to sign with will be a common
+occurrence when working with GPGMe and the means available for
+doing so are quite simple.
+</p>
+
+<p>
+They do depend on utilising a Context; however once the data is
+recorded in another variable, that Context does not need to be the
+same one which subsequent operations are performed.
+</p>
+
+<p>
+The easiest way to select a specific key is by searching for that
+key's key ID or fingerprint, preferably the full fingerprint
+without any spaces in it.  A long key ID will probably be okay, but
+is not advised and short key IDs are already a problem with some
+being generated to match specific patterns.  It does not matter
+whether the pattern is upper or lower case.
+</p>
+
+<p>
+So this is the best method:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">k</span> = gpg.Context().keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"258E88DCBD3CD44D8E7AB43F6ECB6AF0DEADBEEF"</span>)
+<span style="color: #000000; background-color: #ffffff;">keys</span> = <span style="color: #9966ff;">list</span>(k)
+</pre>
+</div>
+
+<p>
+This is passable and very likely to be common:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">k</span> = gpg.Context().keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"0x6ECB6AF0DEADBEEF"</span>)
+<span style="color: #000000; background-color: #ffffff;">keys</span> = <span style="color: #9966ff;">list</span>(k)
+</pre>
+</div>
+
+<p>
+And this is a really bad idea:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">k</span> = gpg.Context().keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"0xDEADBEEF"</span>)
+<span style="color: #000000; background-color: #ffffff;">keys</span> = <span style="color: #9966ff;">list</span>(k)
+</pre>
+</div>
+
+<p>
+Alternatively it may be that the intention is to create a list of
+keys which all match a particular search string.  For instance all
+the addresses at a particular domain, like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">ncsc</span> = gpg.Context().keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"ncsc.mil"</span>)
+<span style="color: #000000; background-color: #ffffff;">nsa</span> = <span style="color: #9966ff;">list</span>(ncsc)
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org101e12e" class="outline-4">
+<h4 id="howto-keys-counting"><a id="org101e12e"></a><span class="section-number-4">5.1.1</span> Counting keys</h4>
+<div class="outline-text-4" id="text-howto-keys-counting">
+<p>
+Counting the number of keys in your public keybox (<code>pubring.kbx</code>),
+the format which has superseded the old keyring format
+(<code>pubring.gpg</code> and <code>secring.gpg</code>), or the number of secret keys is
+a very simple task.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">seckeys</span> = c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #0000ff;">None</span>, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">pubkeys</span> = c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #0000ff;">None</span>, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">False</span>)
+
+<span style="color: #000000; background-color: #ffffff;">seclist</span> = <span style="color: #9966ff;">list</span>(seckeys)
+<span style="color: #000000; background-color: #ffffff;">secnum</span> = <span style="color: #9966ff;">len</span>(seclist)
+
+<span style="color: #000000; background-color: #ffffff;">publist</span> = <span style="color: #9966ff;">list</span>(pubkeys)
+<span style="color: #000000; background-color: #ffffff;">pubnum</span> = <span style="color: #9966ff;">len</span>(publist)
+
+<span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""</span>
+<span style="color: #9d2933;">Number of secret keys:  {0}</span>
+<span style="color: #9d2933;">Number of public keys:  {1}</span>
+<span style="color: #9d2933;">"""</span>.format(secnum, pubnum))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8b9f221" class="outline-3">
+<h3 id="howto-get-key"><a id="org8b9f221"></a><span class="section-number-3">5.2</span> Get key</h3>
+<div class="outline-text-3" id="text-howto-get-key">
+<p>
+An alternative method of getting a single key via its fingerprint
+is available directly within a Context with <code>Context().get_key</code>.
+This is the preferred method of selecting a key in order to modify
+it, sign or certify it and for obtaining relevant data about a
+single key as a part of other functions; when verifying a signature
+made by that key, for instance.
+</p>
+
+<p>
+By default this method will select public keys, but it can select
+secret keys as well.
+</p>
+
+<p>
+This first example demonstrates selecting the current key of Werner
+Koch, which is due to expire at the end of 2018:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">fingerprint</span> = <span style="color: #9d2933;">"80615870F5BAD690333686D0F2AD85AC1E42B367"</span>
+<span style="color: #000000; background-color: #ffffff;">key</span> = gpg.Context().get_key(fingerprint)
+</pre>
+</div>
+
+<p>
+Whereas this example demonstrates selecting the author's current
+key with the <code>secret</code> key word argument set to <code>True</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">fingerprint</span> = <span style="color: #9d2933;">"DB4724E6FA4286C92B4E55C4321E4E2373590E5D"</span>
+<span style="color: #000000; background-color: #ffffff;">key</span> = gpg.Context().get_key(fingerprint, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">True</span>)
+</pre>
+</div>
+
+<p>
+It is, of course, quite possible to select expired, disabled and
+revoked keys with this function, but only to effectively display
+information about those keys.
+</p>
+
+<p>
+It is also possible to use both unicode or string literals and byte
+literals with the fingerprint when getting a key in this way.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9cee026" class="outline-2">
+<h2 id="howto-the-basics"><a id="org9cee026"></a><span class="section-number-2">6</span> Basic Functions</h2>
+<div class="outline-text-2" id="text-howto-the-basics">
+<p>
+The most frequently called features of any cryptographic library
+will be the most fundamental tasks for encryption software.  In this
+section we will look at how to programmatically encrypt data,
+decrypt it, sign it and verify signatures.
+</p>
+</div>
+
+
+<div id="outline-container-org5e78dc6" class="outline-3">
+<h3 id="howto-basic-encryption"><a id="org5e78dc6"></a><span class="section-number-3">6.1</span> Encryption</h3>
+<div class="outline-text-3" id="text-howto-basic-encryption">
+<p>
+Encrypting is very straight forward.  In the first example below
+the message, <code>text</code>, is encrypted to a single recipient's key.  In
+the second example the message will be encrypted to multiple
+recipients.
+</p>
+</div>
+
+
+<div id="outline-container-org20193ab" class="outline-4">
+<h4 id="howto-basic-encryption-single"><a id="org20193ab"></a><span class="section-number-4">6.1.1</span> Encrypting to one key</h4>
+<div class="outline-text-4" id="text-howto-basic-encryption-single">
+<p>
+Once the the Context is set the main issues with encrypting data
+is essentially reduced to key selection and the keyword arguments
+specified in the <code>gpg.Context().encrypt()</code> method.
+</p>
+
+<p>
+Those keyword arguments are: <code>recipients</code>, a list of keys
+encrypted to (covered in greater detail in the following section);
+<code>sign</code>, whether or not to sign the plaintext data, see subsequent
+sections on signing and verifying signatures below (defaults to
+<code>True</code>); <code>sink</code>, to write results or partial results to a secure
+sink instead of returning it (defaults to <code>None</code>); <code>passphrase</code>,
+only used when utilising symmetric encryption (defaults to
+<code>None</code>); <code>always_trust</code>, used to override the trust model settings
+for recipient keys (defaults to <code>False</code>); <code>add_encrypt_to</code>,
+utilises any preconfigured <code>encrypt-to</code> or <code>default-key</code> settings
+in the user's <code>gpg.conf</code> file (defaults to <code>False</code>); <code>prepare</code>,
+prepare for encryption (defaults to <code>False</code>); <code>expect_sign</code>,
+prepare for signing (defaults to <code>False</code>); <code>compress</code>, compresses
+the plaintext prior to encryption (defaults to <code>True</code>).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">a_key</span> = <span style="color: #9d2933;">"0x12345678DEADBEEF"</span>
+<span style="color: #000000; background-color: #ffffff;">text</span> = b<span style="color: #9d2933;">"""Some text to test with.</span>
+
+<span style="color: #9d2933;">Since the text in this case must be bytes, it is most likely that</span>
+<span style="color: #9d2933;">the input form will be a separate file which is opened with "rb"</span>
+<span style="color: #9d2933;">as this is the simplest method of obtaining the correct data</span>
+<span style="color: #9d2933;">format.</span>
+<span style="color: #9d2933;">"""</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">rkey</span> = <span style="color: #9966ff;">list</span>(c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=a_key, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">False</span>))
+<span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=rkey, <span style="color: #000000; background-color: #ffffff;">sign</span>=<span style="color: #0000ff;">False</span>)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt.asc"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(ciphertext)
+</pre>
+</div>
+
+<p>
+Though this is even more likely to be used like this; with the
+plaintext input read from a file, the recipient keys used for
+encryption regardless of key trust status and the encrypted output
+also encrypted to any preconfigured keys set in the <code>gpg.conf</code>
+file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">a_key</span> = <span style="color: #9d2933;">"0x12345678DEADBEEF"</span>
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt"</span>, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> afile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = afile.read()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">rkey</span> = <span style="color: #9966ff;">list</span>(c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=a_key, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">False</span>))
+<span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=rkey,
+                        <span style="color: #000000; background-color: #ffffff;">sign</span>=<span style="color: #0000ff;">True</span>, <span style="color: #000000; background-color: #ffffff;">always_trust</span>=<span style="color: #0000ff;">True</span>,
+                        <span style="color: #000000; background-color: #ffffff;">add_encrypt_to</span>=<span style="color: #0000ff;">True</span>)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt.asc"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(ciphertext)
+</pre>
+</div>
+
+<p>
+If the <code>recipients</code> paramater is empty then the plaintext is
+encrypted symmetrically.  If no <code>passphrase</code> is supplied as a
+parameter or via a callback registered with the <code>Context()</code> then
+an out-of-band prompt for the passphrase via pinentry will be
+invoked.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge40a952" class="outline-4">
+<h4 id="howto-basic-encryption-multiple"><a id="orge40a952"></a><span class="section-number-4">6.1.2</span> Encrypting to multiple keys</h4>
+<div class="outline-text-4" id="text-howto-basic-encryption-multiple">
+<p>
+Encrypting to multiple keys essentially just expands upon the key
+selection process and the recipients from the previous examples.
+</p>
+
+<p>
+The following example encrypts a message (<code>text</code>) to everyone with
+an email address on the <code>gnupg.org</code> domain,<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> but does <i>not</i> encrypt
+to a default key or other key which is configured to normally
+encrypt to.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">text</span> = b<span style="color: #9d2933;">"""Oh look, another test message.</span>
+
+<span style="color: #9d2933;">The same rules apply as with the previous example and more likely</span>
+<span style="color: #9d2933;">than not, the message will actually be drawn from reading the</span>
+<span style="color: #9d2933;">contents of a file or, maybe, from entering data at an input()</span>
+<span style="color: #9d2933;">prompt.</span>
+
+<span style="color: #9d2933;">Since the text in this case must be bytes, it is most likely that</span>
+<span style="color: #9d2933;">the input form will be a separate file which is opened with "rb"</span>
+<span style="color: #9d2933;">as this is the simplest method of obtaining the correct data</span>
+<span style="color: #9d2933;">format.</span>
+<span style="color: #9d2933;">"""</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">rpattern</span> = <span style="color: #9966ff;">list</span>(c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"@gnupg.org"</span>, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">False</span>))
+<span style="color: #000000; background-color: #ffffff;">logrus</span> = []
+
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(rpattern)):
+    <span style="color: #0000ff;">if</span> rpattern[i]<span style="color: #000000; background-color: #ffffff;">.can_encrypt</span> == <span style="color: #000000; background-color: #ffffff;">1</span>:
+    logrus.append(rpattern[i])
+
+<span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=logrus, <span style="color: #000000; background-color: #ffffff;">sign</span>=<span style="color: #0000ff;">False</span>,
+                        <span style="color: #000000; background-color: #ffffff;">always_trust</span>=<span style="color: #0000ff;">True</span>)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt.asc"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(ciphertext)
+</pre>
+</div>
+
+<p>
+All it would take to change the above example to sign the message
+and also encrypt the message to any configured default keys would
+be to change the <code>c.encrypt</code> line to this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=logrus,
+                        <span style="color: #000000; background-color: #ffffff;">always_trust</span>=<span style="color: #0000ff;">True</span>,
+                        <span style="color: #000000; background-color: #ffffff;">add_encrypt_to</span>=<span style="color: #0000ff;">True</span>)
+</pre>
+</div>
+
+<p>
+The only keyword arguments requiring modification are those for
+which the default values are changing.  The default value of
+<code>sign</code> is <code>True</code>, the default of <code>always_trust</code> is <code>False</code>, the
+default of <code>add_encrypt_to</code> is <code>False</code>.
+</p>
+
+<p>
+If <code>always_trust</code> is not set to <code>True</code> and any of the recipient
+keys are not trusted (e.g. not signed or locally signed) then the
+encryption will raise an error.  It is possible to mitigate this
+somewhat with something more like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt.asc"</span>, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> afile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = afile.read()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">rpattern</span> = <span style="color: #9966ff;">list</span>(c.keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=<span style="color: #9d2933;">"@gnupg.org"</span>, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">False</span>))
+<span style="color: #000000; background-color: #ffffff;">logrus</span> = []
+
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(rpattern)):
+    <span style="color: #0000ff;">if</span> rpattern[i]<span style="color: #000000; background-color: #ffffff;">.can_encrypt</span> == <span style="color: #000000; background-color: #ffffff;">1</span>:
+    logrus.append(rpattern[i])
+
+<span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=logrus, <span style="color: #000000; background-color: #ffffff;">add_encrypt_to</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #0000ff;">except</span> gpg.errors.InvalidRecipients <span style="color: #0000ff;">as</span> e:
+    <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(e.recipients)):
+    <span style="color: #0000ff;">for</span> n <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(logrus)):
+        <span style="color: #0000ff;">if</span> logrus[n]<span style="color: #000000; background-color: #ffffff;">.fpr</span> == e.recipients[i].fpr:
+        logrus.remove(logrus[n])
+        <span style="color: #0000ff;">else</span>:
+        <span style="color: #0000ff;">pass</span>
+    <span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">ciphertext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">sign_result</span> = c.encrypt(text, <span style="color: #000000; background-color: #ffffff;">recipients</span>=logrus, <span style="color: #000000; background-color: #ffffff;">add_encrypt_to</span>=<span style="color: #0000ff;">True</span>)
+    <span style="color: #0000ff;">except</span>:
+    <span style="color: #0000ff;">pass</span>
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"secret_plans.txt.asc"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(ciphertext)
+</pre>
+</div>
+
+<p>
+This will attempt to encrypt to all the keys searched for, then
+remove invalid recipients if it fails and try again.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7e09778" class="outline-3">
+<h3 id="howto-basic-decryption"><a id="org7e09778"></a><span class="section-number-3">6.2</span> Decryption</h3>
+<div class="outline-text-3" id="text-howto-basic-decryption">
+<p>
+Decrypting something encrypted to a key in one's secret keyring is
+fairly straight forward.
+</p>
+
+<p>
+In this example code, however, preconfiguring either
+<code>gpg.Context()</code> or <code>gpg.core.Context()</code> as <code>c</code> is unnecessary
+because there is no need to modify the Context prior to conducting
+the decryption and since the Context is only used once, setting it
+to <code>c</code> simply adds lines for no gain.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">ciphertext</span> = <span style="color: #9966ff;">input</span>(<span style="color: #9d2933;">"Enter path and filename of encrypted file: "</span>)
+<span style="color: #000000; background-color: #ffffff;">newfile</span> = <span style="color: #9966ff;">input</span>(<span style="color: #9d2933;">"Enter path and filename of file to save decrypted data to: "</span>)
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(ciphertext, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> cfile:
+    <span style="color: #000000; background-color: #ffffff;">plaintext</span>, <span style="color: #000000; background-color: #ffffff;">result</span>, <span style="color: #000000; background-color: #ffffff;">verify_result</span> = gpg.Context().decrypt(cfile)
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(newfile, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> nfile:
+    nfile.write(plaintext)
+</pre>
+</div>
+
+<p>
+The data available in plaintext in this example is the decrypted
+content as a byte object in <code>plaintext[0]</code>, the recipient key IDs
+and algorithms in <code>plaintext[1]</code> and the results of verifying any
+signatures of the data in <code>plaintext[0]</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org032c524" class="outline-3">
+<h3 id="howto-basic-signing"><a id="org032c524"></a><span class="section-number-3">6.3</span> Signing text and files</h3>
+<div class="outline-text-3" id="text-howto-basic-signing">
+<p>
+The following sections demonstrate how to specify keys to sign with.
+</p>
+</div>
+
+
+<div id="outline-container-orgb0d8e95" class="outline-4">
+<h4 id="howto-basic-signing-signers"><a id="orgb0d8e95"></a><span class="section-number-4">6.3.1</span> Signing key selection</h4>
+<div class="outline-text-4" id="text-howto-basic-signing-signers">
+<p>
+By default GPGME and the Python bindings will use the default key
+configured for the user invoking the GPGME API.  If there is no
+default key specified and there is more than one secret key
+available it may be necessary to specify the key or keys with
+which to sign messages and files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">logrus</span> = <span style="color: #9966ff;">input</span>(<span style="color: #9d2933;">"Enter the email address or string to match signing keys to: "</span>)
+<span style="color: #000000; background-color: #ffffff;">hancock</span> = gpg.Context().keylist(<span style="color: #000000; background-color: #ffffff;">pattern</span>=logrus, <span style="color: #000000; background-color: #ffffff;">secret</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">sig_src</span> = <span style="color: #9966ff;">list</span>(hancock)
+</pre>
+</div>
+
+<p>
+The signing examples in the following sections include the
+explicitly designated <code>signers</code> parameter in two of the five
+examples; once where the resulting signature would be ASCII
+armoured and once where it would not be armoured.
+</p>
+
+<p>
+While it would be possible to enter a key ID or fingerprint here
+to match a specific key, it is not possible to enter two
+fingerprints and match two keys since the patten expects a string,
+bytes or None and not a list.  A string with two fingerprints
+won't match any single key.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0323499" class="outline-4">
+<h4 id="howto-basic-signing-normal"><a id="org0323499"></a><span class="section-number-4">6.3.2</span> Normal or default signing messages or files</h4>
+<div class="outline-text-4" id="text-howto-basic-signing-normal">
+<p>
+The normal or default signing process is essentially the same as
+is most often invoked when also encrypting a message or file.  So
+when the encryption component is not utilised, the result is to
+produce an encoded and signed output which may or may not be ASCII
+armoured and which may or may not also be compressed.
+</p>
+
+<p>
+By default compression will be used unless GnuPG detects that the
+plaintext is already compressed.  ASCII armouring will be
+determined according to the value of <code>gpg.Context().armor</code>.
+</p>
+
+<p>
+The compression algorithm is selected in much the same way as the
+symmetric encryption algorithm or the hash digest algorithm is
+when multiple keys are involved; from the preferences saved into
+the key itself or by comparison with the preferences with all
+other keys involved.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">text0</span> = <span style="color: #9d2933;">"""Declaration of ... something.</span>
+
+<span style="color: #9d2933;">"""</span>
+<span style="color: #000000; background-color: #ffffff;">text</span> = text0.encode()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>, <span style="color: #000000; background-color: #ffffff;">signers</span>=sig_src)
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.NORMAL)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.asc"</span>, <span style="color: #9d2933;">"w"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data.decode())
+</pre>
+</div>
+
+<p>
+Though everything in this example is accurate, it is more likely
+that reading the input data from another file and writing the
+result to a new file will be performed more like the way it is done
+in the next example.  Even if the output format is ASCII armoured.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt"</span>, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> tfile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = tfile.read()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.NORMAL)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.sig"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org75b54dd" class="outline-4">
+<h4 id="howto-basic-signing-detached"><a id="org75b54dd"></a><span class="section-number-4">6.3.3</span> Detached signing messages and files</h4>
+<div class="outline-text-4" id="text-howto-basic-signing-detached">
+<p>
+Detached signatures will often be needed in programmatic uses of
+GPGME, either for signing files (e.g. tarballs of code releases)
+or as a component of message signing (e.g. PGP/MIME encoded
+email).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">text0</span> = <span style="color: #9d2933;">"""Declaration of ... something.</span>
+
+<span style="color: #9d2933;">"""</span>
+<span style="color: #000000; background-color: #ffffff;">text</span> = text0.encode()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">armor</span>=<span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.DETACH)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.asc"</span>, <span style="color: #9d2933;">"w"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data.decode())
+</pre>
+</div>
+
+<p>
+As with normal signatures, detached signatures are best handled as
+byte literals, even when the output is ASCII armoured.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt"</span>, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> tfile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = tfile.read()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context(<span style="color: #000000; background-color: #ffffff;">signers</span>=sig_src)
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.DETACH)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.sig"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9640d19" class="outline-4">
+<h4 id="howto-basic-signing-clear"><a id="org9640d19"></a><span class="section-number-4">6.3.4</span> Clearsigning messages or text</h4>
+<div class="outline-text-4" id="text-howto-basic-signing-clear">
+<p>
+Though PGP/in-line messages are no longer encouraged in favour of
+PGP/MIME, there is still sometimes value in utilising in-line
+signatures.  This is where clear-signed messages or text is of
+value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">text0</span> = <span style="color: #9d2933;">"""Declaration of ... something.</span>
+
+<span style="color: #9d2933;">"""</span>
+<span style="color: #000000; background-color: #ffffff;">text</span> = text0.encode()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.CLEAR)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.asc"</span>, <span style="color: #9d2933;">"w"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data.decode())
+</pre>
+</div>
+
+<p>
+In spite of the appearance of a clear-signed message, the data
+handled by GPGME in signing it must still be byte literals.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt"</span>, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> tfile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = tfile.read()
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">signed_data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.sign(text, <span style="color: #000000; background-color: #ffffff;">mode</span>=gpg.constants.sig.mode.CLEAR)
+
+<span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(<span style="color: #9d2933;">"/path/to/statement.txt.asc"</span>, <span style="color: #9d2933;">"wb"</span>) <span style="color: #0000ff;">as</span> afile:
+    afile.write(signed_data)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org480137d" class="outline-3">
+<h3 id="howto-basic-verification"><a id="org480137d"></a><span class="section-number-3">6.4</span> Signature verification</h3>
+<div class="outline-text-3" id="text-howto-basic-verification">
+<p>
+Essentially there are two principal methods of verification of a
+signature.  The first of these is for use with the normal or
+default signing method and for clear-signed messages.  The second is
+for use with files and data with detached signatures.
+</p>
+
+<p>
+The following example is intended for use with the default signing
+method where the file was not ASCII armoured:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+<span style="color: #0000ff;">import</span> time
+
+<span style="color: #000000; background-color: #ffffff;">filename</span> = <span style="color: #9d2933;">"statement.txt"</span>
+<span style="color: #000000; background-color: #ffffff;">gpg_file</span> = <span style="color: #9d2933;">"statement.txt.gpg"</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+
+<span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.verify(open(gpg_file))
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">True</span>
+<span style="color: #0000ff;">except</span> gpg.errors.BadSignatures <span style="color: #0000ff;">as</span> e:
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">False</span>
+    <span style="color: #0000ff;">print</span>(e)
+
+<span style="color: #0000ff;">if</span> verified <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">True</span>:
+    <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(result.signatures)):
+    <span style="color: #000000; background-color: #ffffff;">sign</span> = result.signatures[i]
+    <span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""Good signature from:</span>
+<span style="color: #9d2933;">{0}</span>
+<span style="color: #9d2933;">with key {1}</span>
+<span style="color: #9d2933;">made at {2}</span>
+<span style="color: #9d2933;">"""</span>.format(c.get_key(sign.fpr).uids[<span style="color: #000000; background-color: #ffffff;">0</span>].uid,
+       sign.fpr, time.ctime(sign.timestamp)))
+<span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+</pre>
+</div>
+
+<p>
+Whereas this next example, which is almost identical would work
+with normal ASCII armoured files and with clear-signed files:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+<span style="color: #0000ff;">import</span> time
+
+<span style="color: #000000; background-color: #ffffff;">filename</span> = <span style="color: #9d2933;">"statement.txt"</span>
+<span style="color: #000000; background-color: #ffffff;">asc_file</span> = <span style="color: #9d2933;">"statement.txt.asc"</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+
+<span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.verify(open(asc_file))
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">True</span>
+<span style="color: #0000ff;">except</span> gpg.errors.BadSignatures <span style="color: #0000ff;">as</span> e:
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">False</span>
+    <span style="color: #0000ff;">print</span>(e)
+
+<span style="color: #0000ff;">if</span> verified <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">True</span>:
+    <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(result.signatures)):
+    <span style="color: #000000; background-color: #ffffff;">sign</span> = result.signatures[i]
+    <span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""Good signature from:</span>
+<span style="color: #9d2933;">{0}</span>
+<span style="color: #9d2933;">with key {1}</span>
+<span style="color: #9d2933;">made at {2}</span>
+<span style="color: #9d2933;">"""</span>.format(c.get_key(sign.fpr).uids[<span style="color: #000000; background-color: #ffffff;">0</span>].uid,
+       sign.fpr, time.ctime(sign.timestamp)))
+<span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+</pre>
+</div>
+
+<p>
+In both of the previous examples it is also possible to compare the
+original data that was signed against the signed data in <code>data</code> to
+see if it matches with something like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">with</span> <span style="color: #9966ff;">open</span>(filename, <span style="color: #9d2933;">"rb"</span>) <span style="color: #0000ff;">as</span> afile:
+    <span style="color: #000000; background-color: #ffffff;">text</span> = afile.read()
+
+<span style="color: #0000ff;">if</span> <span style="color: #000000; background-color: #ffffff;">text</span> == data:
+    <span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"Good signature."</span>)
+<span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+</pre>
+</div>
+
+<p>
+The following two examples, however, deal with detached signatures.
+With his method of verification the data that was signed does not
+get returned since it is already being explicitly referenced in the
+first argument of <code>c.verify</code>.  So <code>data</code> is <code>None</code> and only the
+information in <code>result</code> is available.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+<span style="color: #0000ff;">import</span> time
+
+<span style="color: #000000; background-color: #ffffff;">filename</span> = <span style="color: #9d2933;">"statement.txt"</span>
+<span style="color: #000000; background-color: #ffffff;">sig_file</span> = <span style="color: #9d2933;">"statement.txt.sig"</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+
+<span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.verify(open(filename), <span style="color: #9966ff;">open</span>(sig_file))
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">True</span>
+<span style="color: #0000ff;">except</span> gpg.errors.BadSignatures <span style="color: #0000ff;">as</span> e:
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">False</span>
+    <span style="color: #0000ff;">print</span>(e)
+
+<span style="color: #0000ff;">if</span> verified <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">True</span>:
+    <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(result.signatures)):
+    <span style="color: #000000; background-color: #ffffff;">sign</span> = result.signatures[i]
+    <span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""Good signature from:</span>
+<span style="color: #9d2933;">{0}</span>
+<span style="color: #9d2933;">with key {1}</span>
+<span style="color: #9d2933;">made at {2}</span>
+<span style="color: #9d2933;">"""</span>.format(c.get_key(sign.fpr).uids[<span style="color: #000000; background-color: #ffffff;">0</span>].uid,
+       sign.fpr, time.ctime(sign.timestamp)))
+<span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+<span style="color: #0000ff;">import</span> time
+
+<span style="color: #000000; background-color: #ffffff;">filename</span> = <span style="color: #9d2933;">"statement.txt"</span>
+<span style="color: #000000; background-color: #ffffff;">asc_file</span> = <span style="color: #9d2933;">"statement.txt.asc"</span>
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+
+<span style="color: #0000ff;">try</span>:
+    <span style="color: #000000; background-color: #ffffff;">data</span>, <span style="color: #000000; background-color: #ffffff;">result</span> = c.verify(open(filename), <span style="color: #9966ff;">open</span>(asc_file))
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">True</span>
+<span style="color: #0000ff;">except</span> gpg.errors.BadSignatures <span style="color: #0000ff;">as</span> e:
+    <span style="color: #000000; background-color: #ffffff;">verified</span> = <span style="color: #0000ff;">False</span>
+    <span style="color: #0000ff;">print</span>(e)
+
+<span style="color: #0000ff;">if</span> verified <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">not</span> <span style="color: #0000ff;">None</span>:
+    <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(result.signatures)):
+    <span style="color: #000000; background-color: #ffffff;">sign</span> = result.signatures[i]
+    <span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""Good signature from:</span>
+<span style="color: #9d2933;">{0}</span>
+<span style="color: #9d2933;">with key {1}</span>
+<span style="color: #9d2933;">made at {2}</span>
+<span style="color: #9d2933;">"""</span>.format(c.get_key(sign.fpr).uids[<span style="color: #000000; background-color: #ffffff;">0</span>].uid,
+       sign.fpr, time.ctime(sign.timestamp)))
+<span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org91d757c" class="outline-2">
+<h2 id="key-generation"><a id="org91d757c"></a><span class="section-number-2">7</span> Creating keys and subkeys</h2>
+<div class="outline-text-2" id="text-key-generation">
+<p>
+The one thing, aside from GnuPG itself, that GPGME depends on, of
+course, is the keys themselves.  So it is necessary to be able to
+generate them and modify them by adding subkeys, revoking or
+disabling them, sometimes deleting them and doing the same for user
+IDs.
+</p>
+
+<p>
+In the following examples a key will be created for the world's
+greatest secret agent, Danger Mouse.  Since Danger Mouse is a secret
+agent he needs to be able to protect information to <code>SECRET</code> level
+clearance, so his keys will be 3072-bit keys.
+</p>
+
+<p>
+The pre-configured <code>gpg.conf</code> file which sets cipher, digest and
+other preferences contains the following configuration parameters:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">expert
+allow-freeform-uid
+allow-secret-key-import
+trust-model tofu+pgp
+tofu-default-policy unknown
+enable-large-rsa
+enable-dsa2
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">cert-digest-algo SHA256</span>
+cert-digest-algo SHA512
+default-preference-list TWOFISH CAMELLIA256 AES256 CAMELLIA192 AES192 CAMELLIA128 AES BLOWFISH IDEA CAST5 3DES SHA512 SHA384 SHA256 SHA224 RIPEMD160 SHA1 ZLIB BZIP2 ZIP Uncompressed
+personal-cipher-preferences TWOFISH CAMELLIA256 AES256 CAMELLIA192 AES192 CAMELLIA128 AES BLOWFISH IDEA CAST5 3DES
+personal-digest-preferences SHA512 SHA384 SHA256 SHA224 RIPEMD160 SHA1
+personal-compress-preferences ZLIB BZIP2 ZIP Uncompressed
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org421e743" class="outline-3">
+<h3 id="keygen-primary"><a id="org421e743"></a><span class="section-number-3">7.1</span> Primary key</h3>
+<div class="outline-text-3" id="text-keygen-primary">
+<p>
+Generating a primary key uses the <code>create_key</code> method in a Context.
+It contains multiple arguments and keyword arguments, including:
+<code>userid</code>, <code>algorithm</code>, <code>expires_in</code>, <code>expires</code>, <code>sign</code>, <code>encrypt</code>,
+<code>certify</code>, <code>authenticate</code>, <code>passphrase</code> and <code>force</code>.  The defaults
+for all of those except <code>userid</code>, <code>algorithm</code>, <code>expires_in</code>,
+<code>expires</code> and <code>passphrase</code> is <code>False</code>.  The defaults for
+<code>algorithm</code> and <code>passphrase</code> is <code>None</code>.  The default for
+<code>expires_in</code> is <code>0</code>.  The default for <code>expires</code> is <code>True</code>.  There
+is no default for <code>userid</code>.
+</p>
+
+<p>
+If <code>passphrase</code> is left as <code>None</code> then the key will not be
+generated with a passphrase, if <code>passphrase</code> is set to a string
+then that will be the passphrase and if <code>passphrase</code> is set to
+<code>True</code> then gpg-agent will launch pinentry to prompt for a
+passphrase.  For the sake of convenience, these examples will keep
+<code>passphrase</code> set to <code>None</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+
+<span style="color: #000000; background-color: #ffffff;">c.home_dir</span> = <span style="color: #9d2933;">"~/.gnupg-dm"</span>
+<span style="color: #000000; background-color: #ffffff;">userid</span> = <span style="color: #9d2933;">"Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>"</span>
+
+<span style="color: #000000; background-color: #ffffff;">dmkey</span> = c.create_key(userid, <span style="color: #000000; background-color: #ffffff;">algorithm</span> = <span style="color: #9d2933;">"rsa3072"</span>, <span style="color: #000000; background-color: #ffffff;">expires_in</span> = <span style="color: #000000; background-color: #ffffff;">31536000</span>,
+             <span style="color: #000000; background-color: #ffffff;">sign</span> = <span style="color: #0000ff;">True</span>, <span style="color: #000000; background-color: #ffffff;">certify</span> = <span style="color: #0000ff;">True</span>)
+</pre>
+</div>
+
+<p>
+One thing to note here is the use of setting the <code>c.home_dir</code>
+parameter.  This enables generating the key or keys in a different
+location.  In this case to keep the new key data created for this
+example in a separate location rather than adding it to existing
+and active key store data.  As with the default directory,
+<code>~/.gnupg</code>, any temporary or separate directory needs the
+permissions set to only permit access by the directory owner.  On
+posix systems this means setting the directory permissions to 700.
+</p>
+
+<p>
+The successful generation of the key can be confirmed via the
+returned <code>GenkeyResult</code> object, which includes the following data:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""</span>
+<span style="color: #9d2933;">Fingerprint:  {0}</span>
+<span style="color: #9d2933;">Primary Key:  {1}</span>
+<span style="color: #9d2933;"> Public Key:  {2}</span>
+<span style="color: #9d2933;"> Secret Key:  {3}</span>
+<span style="color: #9d2933;">    Sub Key:  {4}</span>
+<span style="color: #9d2933;">   User IDs:  {5}</span>
+<span style="color: #9d2933;">"""</span>.format(dmkey.fpr, dmkey.primary, dmkey.pubkey, dmkey.seckey, dmkey.sub,
+       dmkey.uid))
+</pre>
+</div>
+
+<p>
+Alternatively the information can be confirmed using the command
+line program:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">bash-4.4$ gpg --homedir ~/.gnupg-dm -K
+~/.gnupg-dm/pubring.kbx
+----------------------
+sec   rsa3072 2018-03-15 [SC] [expires: 2019-03-15]
+      177B7C25DB99745EE2EE13ED026D2F19E99E63AA
+uid           [ultimate] Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>
+
+bash-4.4$
+</pre>
+</div>
+
+<p>
+As with generating keys manually, to preconfigure expanded
+preferences for the cipher, digest and compression algorithms, the
+<code>gpg.conf</code> file must contain those details in the home directory in
+which the new key is being generated.  I used a cut down version of
+my own <code>gpg.conf</code> file in order to be able to generate this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">bash-4.4$ gpg --homedir ~/.gnupg-dm --edit-key 177B7C25DB99745EE2EE13ED026D2F19E99E63AA showpref quit
+Secret key is available.
+
+sec  rsa3072/026D2F19E99E63AA
+     created: 2018-03-15  expires: 2019-03-15  usage: SC
+     trust: ultimate      validity: ultimate
+[ultimate] (1)<span style="color: #9966ff;">.</span> Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>
+
+[ultimate] (1)<span style="color: #9966ff;">.</span> Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>
+     Cipher: TWOFISH, CAMELLIA256, AES256, CAMELLIA192, AES192, CAMELLIA128, AES, BLOWFISH, IDEA, CAST5, 3DES
+     Digest: SHA512, SHA384, SHA256, SHA224, RIPEMD160, SHA1
+     Compression: ZLIB, BZIP2, ZIP, Uncompressed
+     Features: MDC, Keyserver no-modify
+
+bash-4.4$
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0694c91" class="outline-3">
+<h3 id="keygen-subkeys"><a id="org0694c91"></a><span class="section-number-3">7.2</span> Subkeys</h3>
+<div class="outline-text-3" id="text-keygen-subkeys">
+<p>
+Adding subkeys to a primary key is fairly similar to creating the
+primary key with the <code>create_subkey</code> method.  Most of the arguments
+are the same, but not quite all.  Instead of the <code>userid</code> argument
+there is now a <code>key</code> argument for selecting which primary key to
+add the subkey to.
+</p>
+
+<p>
+In the following example an encryption subkey will be added to the
+primary key.  Since Danger Mouse is a security conscious secret
+agent, this subkey will only be valid for about six months, half
+the length of the primary key.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">c.home_dir</span> = <span style="color: #9d2933;">"~/.gnupg-dm"</span>
+
+<span style="color: #000000; background-color: #ffffff;">key</span> = c.get_key(dmkey.fpr, <span style="color: #000000; background-color: #ffffff;">secret</span> = <span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">dmsub</span> = c.create_subkey(key, <span style="color: #000000; background-color: #ffffff;">algorithm</span> = <span style="color: #9d2933;">"rsa3072"</span>, <span style="color: #000000; background-color: #ffffff;">expires_in</span> = <span style="color: #000000; background-color: #ffffff;">15768000</span>,
+            <span style="color: #000000; background-color: #ffffff;">encrypt</span> = <span style="color: #0000ff;">True</span>)
+</pre>
+</div>
+
+<p>
+As with the primary key, the results here can be checked with:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">print</span>(<span style="color: #9d2933;">"""</span>
+<span style="color: #9d2933;">Fingerprint:  {0}</span>
+<span style="color: #9d2933;">Primary Key:  {1}</span>
+<span style="color: #9d2933;"> Public Key:  {2}</span>
+<span style="color: #9d2933;"> Secret Key:  {3}</span>
+<span style="color: #9d2933;">    Sub Key:  {4}</span>
+<span style="color: #9d2933;">   User IDs:  {5}</span>
+<span style="color: #9d2933;">"""</span>.format(dmsub.fpr, dmsub.primary, dmsub.pubkey, dmsub.seckey, dmsub.sub,
+       dmsub.uid))
+</pre>
+</div>
+
+<p>
+As well as on the command line with:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">bash-4.4$ gpg --homedir ~/.gnupg-dm -K
+~/.gnupg-dm/pubring.kbx
+----------------------
+sec   rsa3072 2018-03-15 [SC] [expires: 2019-03-15]
+      177B7C25DB99745EE2EE13ED026D2F19E99E63AA
+uid           [ultimate] Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>
+ssb   rsa3072 2018-03-15 [E] [expires: 2018-09-13]
+
+bash-4.4$
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1e37a53" class="outline-3">
+<h3 id="keygen-uids"><a id="org1e37a53"></a><span class="section-number-3">7.3</span> User IDs</h3>
+<div class="outline-text-3" id="text-keygen-uids">
+<p>
+By comparison to creating primary keys and subkeys, adding a new
+user ID to an existing key is much simpler.  The method used to do
+this is <code>key_add_uid</code> and the only arguments it takes are for the
+<code>key</code> and the new <code>uid</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">c.home_dir</span> = <span style="color: #9d2933;">"~/.gnupg-dm"</span>
+
+<span style="color: #000000; background-color: #ffffff;">dmfpr</span> = <span style="color: #9d2933;">"177B7C25DB99745EE2EE13ED026D2F19E99E63AA"</span>
+<span style="color: #000000; background-color: #ffffff;">key</span> = c.get_key(dmfpr, <span style="color: #000000; background-color: #ffffff;">secret</span> = <span style="color: #0000ff;">True</span>)
+<span style="color: #000000; background-color: #ffffff;">uid</span> = <span style="color: #9d2933;">"Danger Mouse <a href="mailto:danger.mouse%40secret.example.net">&lt;danger.mouse@secret.example.net&gt;</a>"</span>
+
+c.key_add_uid(key, uid)
+</pre>
+</div>
+
+<p>
+Unsurprisingly the result of this is:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">bash-4.4$ gpg --homedir ~/.gnupg-dm -K
+~/.gnupg-dm/pubring.kbx
+----------------------
+sec   rsa3072 2018-03-15 [SC] [expires: 2019-03-15]
+      177B7C25DB99745EE2EE13ED026D2F19E99E63AA
+uid           [ultimate] Danger Mouse <a href="mailto:danger.mouse%40secret.example.net">&lt;danger.mouse@secret.example.net&gt;</a>
+uid           [ultimate] Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>
+ssb   rsa3072 2018-03-15 [E] [expires: 2018-09-13]
+
+bash-4.4$
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4898c5b" class="outline-3">
+<h3 id="key-sign"><a id="org4898c5b"></a><span class="section-number-3">7.4</span> Key certification</h3>
+<div class="outline-text-3" id="text-key-sign">
+<p>
+Since key certification is more frequently referred to as key
+signing, the method used to perform this function is <code>key_sign</code>.
+</p>
+
+<p>
+The <code>key_sign</code> method takes four arguments: <code>key</code>, <code>uids</code>,
+<code>expires_in</code> and <code>local</code>.  The default value of <code>uids</code> is <code>None</code>
+and which results in all user IDs being selected.  The default
+values of <code>expires_in</code> snd <code>local</code> is <code>False</code>; which result in the
+signature never expiring and being able to be exported.
+</p>
+
+<p>
+The <code>key</code> is the key being signed rather than the key doing the
+signing.  To change the key doing the signing refer to the signing
+key selection above for signing messages and files.
+</p>
+
+<p>
+If the <code>uids</code> value is not <code>None</code> then it must either be a string
+to match a single user ID or a list of strings to match multiple
+user IDs.  In this case the matching of those strings must be
+precise and it is case sensitive.
+</p>
+
+<p>
+To sign Danger Mouse's key for just the initial user ID with a
+signature which will last a little over a month, do this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> gpg
+
+<span style="color: #000000; background-color: #ffffff;">c</span> = gpg.Context()
+<span style="color: #000000; background-color: #ffffff;">uid</span> = <span style="color: #9d2933;">"Danger Mouse <a href="mailto:dm%40secret.example.net">&lt;dm@secret.example.net&gt;</a>"</span>
+
+<span style="color: #000000; background-color: #ffffff;">dmfpr</span> = <span style="color: #9d2933;">"177B7C25DB99745EE2EE13ED026D2F19E99E63AA"</span>
+<span style="color: #000000; background-color: #ffffff;">key</span> = c.get_key(dmfpr, <span style="color: #000000; background-color: #ffffff;">secret</span> = <span style="color: #0000ff;">True</span>)
+c.key_sign(key, <span style="color: #000000; background-color: #ffffff;">uids</span> = uid, <span style="color: #000000; background-color: #ffffff;">expires_in</span> = <span style="color: #000000; background-color: #ffffff;">2764800</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6bede5a" class="outline-2">
+<h2 id="cheats-and-hacks"><a id="org6bede5a"></a><span class="section-number-2">8</span> Miscellaneous work-arounds</h2>
+<div class="outline-text-2" id="text-cheats-and-hacks">
+</div>
+
+
+<div id="outline-container-org2524037" class="outline-3">
+<h3 id="group-lines"><a id="org2524037"></a><span class="section-number-3">8.1</span> Group lines</h3>
+<div class="outline-text-3" id="text-group-lines">
+<p>
+There is not yet an easy way to access groups configured in the
+gpg.conf file from within GPGME.  As a consequence these central
+groupings of keys cannot be shared amongst multiple programs, such
+as MUAs readily.
+</p>
+
+<p>
+The following code, however, provides a work-around for obtaining
+this information in Python.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #0000ff;">import</span> subprocess
+
+<span style="color: #000000; background-color: #ffffff;">lines</span> = subprocess.getoutput(<span style="color: #9d2933;">"gpgconf --list-options gpg"</span>).splitlines()
+
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(lines)):
+    <span style="color: #0000ff;">if</span> lines[i].startswith(<span style="color: #9d2933;">"group"</span>) <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">True</span>:
+    <span style="color: #000000; background-color: #ffffff;">line</span> = lines[i]
+    <span style="color: #0000ff;">else</span>:
+    <span style="color: #0000ff;">pass</span>
+
+<span style="color: #000000; background-color: #ffffff;">groups</span> = line.split(<span style="color: #9d2933;">":"</span>)[-<span style="color: #000000; background-color: #ffffff;">1</span>].replace(<span style="color: #9d2933;">'"'</span>, <span style="color: #9d2933;">''</span>).split(<span style="color: #9d2933;">','</span>)
+
+<span style="color: #000000; background-color: #ffffff;">group_lines</span> = groups
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(group_lines)):
+    <span style="color: #000000; background-color: #ffffff;">group_lines</span>[i] = group_lines[i].split(<span style="color: #9d2933;">"="</span>)
+
+<span style="color: #000000; background-color: #ffffff;">group_lists</span> = group_lines
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> <span style="color: #9966ff;">range</span>(len(group_lists)):
+    group_lists[i][<span style="color: #000000; background-color: #ffffff;">1</span>] = group_lists[i][<span style="color: #000000; background-color: #ffffff;">1</span>].split()
+</pre>
+</div>
+
+<p>
+The result of that code is that <code>group_lines</code> is a list of lists
+where <code>group_lines[i][0]</code> is the name of the group and
+<code>group_lines[i][1]</code> is the key IDs of the group as a string.
+</p>
+
+<p>
+The <code>group_lists</code> result is very similar in that it is a list of
+lists.  The first part, <code>group_lists[i][0]</code> matches
+<code>group_lines[i][0]</code> as the name of the group, but
+<code>group_lists[i][1]</code> is the key IDs of the group as a string.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org26a676f" class="outline-2">
+<h2 id="copyright-and-license"><a id="org26a676f"></a><span class="section-number-2">9</span> Copyright and Licensing</h2>
+<div class="outline-text-2" id="text-copyright-and-license">
+</div>
+
+
+<div id="outline-container-orgc820c48" class="outline-3">
+<h3 id="copyright"><a id="orgc820c48"></a><span class="section-number-3">9.1</span> Copyright (C) The GnuPG Project, 2018</h3>
+<div class="outline-text-3" id="text-copyright">
+<p>
+Copyright © The GnuPG Project, 2018.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge9a025c" class="outline-3">
+<h3 id="license"><a id="orge9a025c"></a><span class="section-number-3">9.2</span> License GPL compatible</h3>
+<div class="outline-text-3" id="text-license">
+<p>
+This file is free software; as a special exception the author gives
+unlimited permission to copy and/or distribute it, with or without
+modifications, as long as this notice is preserved.
+</p>
+
+<p>
+This file is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY, to the extent permitted by law; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<code>Short_History.org</code> and/or <code>Short_History.html</code>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+The <code>lang/python/docs/</code> directory in the GPGME source.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+You probably don't really want to do this.  Searching the
+keyservers for "gnupg.org" produces over 400 results, the majority of
+which aren't actually at the gnupg.org domain, but just included a
+comment regarding the project in their key somewhere.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Ben McGinnes</p>
+<p class="date">Created: 2018-03-22 Thu 10:59</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

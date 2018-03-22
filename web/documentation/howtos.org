@@ -118,3 +118,14 @@
    This HOWTO is available:
 
    -  as an online HTML article ( [[https://maslosoft.com/blog/2017/09/12/using-gpg-with-php-on-server/][en]] )
+
+** GPGME Python Bindings HOWTO
+
+   Written "in house" by the GnuPG Project core team, the GPGME Python
+   Bindings HOWTO provides detailed instructions and examples for
+   using the Python bindings of the GPGME API with Python 3 code.
+
+   This HOWTO is available:
+
+   -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
+   -  as an online HTML file ( [[../howtos/en/GPGMEpythonHOWTOen.html][en]] )
