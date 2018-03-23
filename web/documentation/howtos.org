@@ -128,3 +128,5 @@
    This HOWTO is available:
 
    -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
+   -  as a single HTML file ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen.html][en]] )
+   -  as a single HTML file with dark background and light text ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen-dark.html][en]] )
