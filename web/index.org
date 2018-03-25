@@ -2,6 +2,7 @@
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
 #+GPGWEB-NEED-SWDB
+#+HTML_HEAD_EXTRA: <link type="application/rss+xml" href="https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-doc.git;a=rss;f=web/index.org"/>
 
 * The GNU Privacy Guard
 #+index: GnuPG
