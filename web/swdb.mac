@@ -166,11 +166,12 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.4
-#+macro: gpgex_date 2016-03-30
-#+macro: gpgex_size 286k
-#+macro: gpgex_sha1 a1521fd86b6a1c5d5865d864e5700e98f4e99dcb
-#+macro: gpgex_sha2 aea2232d026219072491f1bf5b2f189a15552f66377ff4dd3b11c0f069379206
+#+macro: gpgex_ver  1.0.6
+#+macro: gpgex_date 2018-04-10
+#+macro: gpgex_size 297k
+#+macro: gpgex_sha1 9994f89b466cb2098099aedbda259479a1484485
+#+macro: gpgex_sha2 8cb429bfcf1e938fa4ef8953e0eb2eff88848d883afcf66fdf5fa67ef01ed424
+
 
 #
 # GpgOL
