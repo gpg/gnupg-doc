@@ -18,7 +18,6 @@ are seeking mirrors for source or binary packages, please consult the
   |----------------+-----------------------+-----------+--------|
   | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]              | [[http://www.gnupg.ca/][http]]      | 2/day  |
   |                | [[http://www.raffsoftware.com/][RaffSoftware]]          | [[http://gnupg.raffsoftware.com/][http]]      | daily  |
-  |                | [[http://www.parentinginformed.com/][parentinginformed]]     | [[http://gnupg.parentinginformed.com/][http]]      | 2/day  |
   |                |                       |           |        |
   |----------------+-----------------------+-----------+--------|
   | Asia           |                       |           |        |
