@@ -1222,6 +1222,9 @@ holding contextual information."
 			     todo todo-type priority text tags info))
 	 (contents (or contents "")))
     (cond
+     ;; Case 0: virtual headline: Just print the raw value.
+     ((member "html" (org-export-get-tags headline info))
+      (format "%s\n" (org-element-property :raw-value headline)))
      ;; Case 1: This is a footnote section: ignore it.
      ((org-element-property :footnote-section-p headline) nil)
      ;; Case 2: This is a deep sub-tree: export it as a list item.
@@ -1247,11 +1250,16 @@ holding contextual information."
 			      (org-element-property :ID headline))))
 	     (preferred-id (car ids))
 	     (extra-ids (cdr ids))
-	     (extra-class (org-element-property :HTML_CONTAINER_CLASS headline))
+	     (outer-class (org-element-property :HTML_CONTAINER_CLASS headline))
+	     (header-class (org-element-property :HTML_CLASS headline))
 	     (first-content (car (org-element-contents headline))))
-	(format "<h%d id=\"%s\">%s%s</h%d>\n%s\n"
+	(format "%s<h%d%s id=\"%s\">%s%s</h%d>\n%s%s\n"
+                ; div class?
+                (if outer-class (concat "<div class=\"" outer-class "\">\n") "")
 		; h?
 		level
+                ; header-class?
+                (if header-class (concat " class=\"" header-class "\"") "")
 		; id=?
 		preferred-id
 		; insert anchors
@@ -1273,7 +1281,9 @@ holding contextual information."
 		; /h?
 		level
 		; the content of the section
-		contents))))))
+		contents
+                (if outer-class "</div>" "")
+                ))))))
 
 (defun org-gpgweb-format-headline-function
   (todo todo-type priority text tags info)
