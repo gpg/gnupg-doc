@@ -174,8 +174,8 @@
 #+macro: gpgex_ver  1.0.6
 #+macro: gpgex_date 2018-04-10
 #+macro: gpgex_size 297k
-#+macro: gpgex_sha1 9994f89b466cb2098099aedbda259479a1484485
-#+macro: gpgex_sha2 8cb429bfcf1e938fa4ef8953e0eb2eff88848d883afcf66fdf5fa67ef01ed424
+#+macro: gpgex_sha1 443270219d542f97b6f124d2101ae8d803c6dbe2
+#+macro: gpgex_sha2 d69898d1022400bd09bb684080edc95be554af736ae9c014df73543f34f7481b
 
 
 #
