@@ -70,6 +70,10 @@ The latest release news:\\
 We are pleased to announce the availability of GnuPG version 2.2.6.
 This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000421.html][more]]}
 
+Update (2018-04-16): In case you run into problems with [[file:software/gpgme/index.org][GPGME]] and this
+or a later version of GnuPG, please apply this [[https://lists.gnupg.org/pipermail/gnupg-users/attachments/20180413/e2c8e5d5/attachment-0001.patch][patch]] to GPGME or use
+GPGME version 1.11 which will soon be released.
+
 ** GnuPG 2.2.5 released (2018-02-22)
 
 We are pleased to announce the availability of GnuPG version 2.2.5.
