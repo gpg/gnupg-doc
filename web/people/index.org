@@ -5,10 +5,10 @@
 * The People behind GnuPG
 
   As with all technical things in the world, people and not machines
-  created them are responsible to keep them running.  Software and
-  thus GnuPG is not different.  Although software is build using a lot
-  of other software and thus the work of many thousand people, you may
-  be interested to see who is working on GnuPG.  Here is a list of
+  created them and are responsible to keep them running.  Software and
+  thus GnuPG is no different.  Although software is built using a lot
+  of other software and thus the work of many thousands of people, you
+  may be interested to see who is working on GnuPG.  Here is a list of
   some of them:
 
   #+HTML: <br/>
@@ -134,8 +134,32 @@
    /Core components hacker/
 
    Justus started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  We was full time employed by g10^code
+   development in all areas.  He was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
+
+   #+HTML: <p style="clear: both"/>
+
+** Ben McGinnes
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="ben.png" title="Ben McGinnes" /></p>
+   #+HTML: </div>
+
+   /GPGME python hacker/
+
+   Ben started working on GPGME in 2015 with the initial port of PyME
+   from Python 2 to Python 3.  Then returned to take over stewardship
+   of Justus' enhanced version of that port from late 2017 onward.  In
+   conjunction with with continuing work on documentation and
+   developing XML schemas for the XML format included in GPGME.
+
+   He is a co-founder of the original CryptoParty movement in
+   Melbourne, Australia, a founding member of Pirate Party Australia
+   and actively advocating for civil and human rights since the '90s.
+   Ben can sometimes be found on freenode IRC using the handle
+   =Hasimir= and, of course, on the GnuPG mailing lists.
+
+   [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][GPG key DB4724E6FA4286C92B4E55C4321E4E2373590E5D]]
 
    #+HTML: <p style="clear: both"/>
 

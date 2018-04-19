@@ -103,3 +103,30 @@
    This HOWTO is available:
 
    -  as plain text ( [[http://codesorcery.net/old/mutt/][en]] )
+
+** PHP-GnuPG HOWTO
+
+   With the preponderance of javascript based OpenPGP solutions to
+   various functions on the web, the desire to perform certain types
+   of server side functions on a PHP driven website also has its
+   merits.
+
+   While PHP support for GPGME is either lacking, or too arcane for
+   most developers to decipher, or both; Piotr Masełkowski at
+   [[https://maslosoft.com/][Maslosoft]] has an alternative guide using the CLI programs.
+
+   This HOWTO is available:
+
+   -  as an online HTML article ( [[https://maslosoft.com/blog/2017/09/12/using-gpg-with-php-on-server/][en]] )
+
+** GPGME Python Bindings HOWTO
+
+   Written "in house" by the GnuPG Project core team, the GPGME Python
+   Bindings HOWTO provides detailed instructions and examples for
+   using the Python bindings of the GPGME API with Python 3 code.
+
+   This HOWTO is available:
+
+   -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
+   -  as a single HTML file ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen.html][en]] )
+   -  as a single HTML file with dark background and light text ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen-dark.html][en]] )

@@ -10,32 +10,17 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.4
-#+macro: gnupg22_date 2017-12-20
-#+macro: gnupg22_size 6417k
-#+macro: gnupg22_sha1 732266e8888c6f41c084d043c7a0058332ff3580
-#+macro: gnupg22_sha2 401a3e64780fdfa6d7670de0880aa5c9d589b3db7a7098979d7606cec546f2ec
+#+macro: gnupg22_ver  2.2.6
+#+macro: gnupg22_date 2018-04-09
+#+macro: gnupg22_size 6450k
+#+macro: gnupg22_sha1 295298debcc2c12f02a2f2fdf04aecb6d6aae396
+#+macro: gnupg22_sha2 e64d8c5fa2d05938a5080cb784a98ac21be0812f2a26f844b18f0d6a0e711984
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.4_20171220
-#+macro: gnupg22_w32_date 2017-12-20
-#+macro: gnupg22_w32_size 3817k
-#+macro: gnupg22_w32_sha1 d06a1413fd901c51eba14164ddb28d99ab9f84df
-#+macro: gnupg22_w32_sha2 2030f00548ec175cac4996a8128ed71393c156429d95f3e6c2f53194b2f4d885
-
-
-# temporary keep it as "gnupg21".  In the future we will use the name of
-# the stable branch even for the development versions.
-#+macro: gnupg21_ver  2.2.4
-#+macro: gnupg21_date 2017-12-20
-#+macro: gnupg21_size 6417k
-#+macro: gnupg21_sha1 732266e8888c6f41c084d043c7a0058332ff3580
-#+macro: gnupg21_sha2 401a3e64780fdfa6d7670de0880aa5c9d589b3db7a7098979d7606cec546f2ec
-#+macro: gnupg21_branch  STABLE-BRANCH-2-2
-#+macro: gnupg21_w32_ver  2.2.4_20171220
-#+macro: gnupg21_w32_date 2017-12-20
-#+macro: gnupg21_w32_size 3817k
-#+macro: gnupg21_w32_sha1 d06a1413fd901c51eba14164ddb28d99ab9f84df
-#+macro: gnupg21_w32_sha2 2030f00548ec175cac4996a8128ed71393c156429d95f3e6c2f53194b2f4d885
+#+macro: gnupg22_w32_ver  2.2.6_20180409
+#+macro: gnupg22_w32_date 2018-04-09
+#+macro: gnupg22_w32_size 3837k
+#+macro: gnupg22_w32_sha1 c9fe66788ea40bc57a189aa13e7c83add9baec40
+#+macro: gnupg22_w32_sha2 5d426b19d9cc3d7d3c0db0dfb58af1b6a36f4ea1cfd55901bb6864e865fcccc6
 
 
 #
@@ -66,17 +51,17 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  3.0.2
-#+macro: gpg4win_date 2017-12-08
-#+macro: gpg4win_src_size 5226k
-#+macro: gpg4win_src_sha1 53f1690b4377e2d7c9931977630a05caa8fafe14
-#+macro: gpg4win_src_sha2 eda921939189648ad01156a153545941916457c0b94bff19026df3c296e326ab
-#+macro: gpg4win_exe_size 26343k
-#+macro: gpg4win_exe_sha1 a2dabaf0a65f3ef30c60e7522f3459c81120098e
-#+macro: gpg4win_exe_sha2 c4c4e5724e9581fdcf00241b33d18eee363a1fb6cc6a737d8cb2877e3b4f9298
-#+macro: gpg4win_isrc_size 220262k
-#+macro: gpg4win_isrc_sha1 51494bb278720bbe83d4fbc47543f0a1e374826b
-#+macro: gpg4win_isrc_sha2 7a162a875676857d2b9927b1bbd611e24d4d670b43a25e1b6a8c771ac3253408
+#+macro: gpg4win_ver  3.1.0
+#+macro: gpg4win_date 2018-04-13
+#+macro: gpg4win_src_size 5292k
+#+macro: gpg4win_src_sha1 d0a0c7665d4bc724a5f1a83763c526754be47024
+#+macro: gpg4win_src_sha2 6d697372ec4c75a29c6daa6aca00060455825966c079efac6370140929b2c4f8
+#+macro: gpg4win_exe_size 27592k
+#+macro: gpg4win_exe_sha1 fb9f39199d7b096d1397dad4aa0719de5ff05b31
+#+macro: gpg4win_exe_sha2 a416aca375a80eada7edc69efdf3757988310a2f1723cd6190d9e3113d787301
+#+macro: gpg4win_isrc_size 222756k
+#+macro: gpg4win_isrc_sha1 23e9a6bc7fb1eceda7ece3a6655a09789c673ef5
+#+macro: gpg4win_isrc_sha2 ca40ade2dcb55f08d412d768f7946f9199a28edc189c4dc430dcd990b2fb8315
 
 
 #
@@ -102,11 +87,11 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver  1.10.0
-#+macro: gpgme_date 2017-12-12
-#+macro: gpgme_size 1338k
-#+macro: gpgme_sha1 77d3390887da25ed70b7ac04392360efbdca501f
-#+macro: gpgme_sha2 1a8fed1197c3b99c35f403066bb344a26224d292afc048cfdfc4ccd5690a0693
+#+macro: gpgme_ver  1.11.0
+#+macro: gpgme_date 2018-04-18
+#+macro: gpgme_size 1381k
+#+macro: gpgme_sha1 17772bf86eef70ab0c77cbb6df0b90f002af0030
+#+macro: gpgme_sha2 5b03adbafadab74474ded30b74c882de28d3c5c3b9ee3016ef24023d4c35d492
 
 
 #
@@ -141,11 +126,16 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.27
-#+macro: libgpg_error_date 2017-02-28
-#+macro: libgpg_error_size 794k
-#+macro: libgpg_error_sha1 a428758999ff573e62d06892e3d2c0b0f335787c
-#+macro: libgpg_error_sha2 4f93aac6fecb7da2b92871bb9ee33032be6a87b174f54abf8ddf0911a22d29d2
+#+macro: libgpg_error_ver  1.29
+#+macro: libgpg_error_date 2018-04-11
+#+macro: libgpg_error_size 873k
+#+macro: libgpg_error_sha1 a56241d60bb7d810fdb478463b1732b134a52a19
+#+macro: libgpg_error_sha2 ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea
+#+macro: gpgrt_ver  1.29
+#+macro: gpgrt_date 2018-04-11
+#+macro: gpgrt_size 873k
+#+macro: gpgrt_sha1 a56241d60bb7d810fdb478463b1732b134a52a19
+#+macro: gpgrt_sha2 ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea
 
 
 #
@@ -181,20 +171,21 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.4
-#+macro: gpgex_date 2016-03-30
-#+macro: gpgex_size 286k
-#+macro: gpgex_sha1 a1521fd86b6a1c5d5865d864e5700e98f4e99dcb
-#+macro: gpgex_sha2 aea2232d026219072491f1bf5b2f189a15552f66377ff4dd3b11c0f069379206
+#+macro: gpgex_ver  1.0.6
+#+macro: gpgex_date 2018-04-10
+#+macro: gpgex_size 297k
+#+macro: gpgex_sha1 443270219d542f97b6f124d2101ae8d803c6dbe2
+#+macro: gpgex_sha2 d69898d1022400bd09bb684080edc95be554af736ae9c014df73543f34f7481b
+
 
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.0.5
-#+macro: gpgol_date 2017-12-08
-#+macro: gpgol_size 750k
-#+macro: gpgol_sha1 2f7eb7453ad5c6e811823be5348eec4c78f97695
-#+macro: gpgol_sha2 8fa5d4d13edfb344ec75a0e9dce3e633e6ce81e92cd388b73e2d34a14c78d46e
+#+macro: gpgol_ver  2.1.0
+#+macro: gpgol_date 2018-04-12
+#+macro: gpgol_size 775k
+#+macro: gpgol_sha1 4b581ec9b8efdd02f2222c5a68934b0decef72c2
+#+macro: gpgol_sha2 3193fc5c85f7ef8cddca97c537831daf7a51f56c244f3d33ce2c3fcc01437764
 
 
 #

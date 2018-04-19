@@ -66,6 +66,25 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG Made Easy 1.11.0 released (2018-04-18)
+
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000422.html][more]]}
+
+** GnuPG 2.2.6 released (2018-04-09)
+
+We are pleased to announce the availability of GnuPG version 2.2.6.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000421.html][more]]}
+
+Update (2018-04-16): In case you run into problems with [[file:software/gpgme/index.org][GPGME]] and this
+or a later version of GnuPG, please apply this [[https://lists.gnupg.org/pipermail/gnupg-users/attachments/20180413/e2c8e5d5/attachment-0001.patch][patch]] to GPGME or use
+GPGME version 1.11.0 which will soon be released.
+
+** GnuPG 2.2.5 released (2018-02-22)
+
+We are pleased to announce the availability of GnuPG version 2.2.5.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q1/000420.html][more]]}
+
 ** 20 Years of GnuPG (2017-12-20)
 
 Exactly 20 years ago the first public version of GnuPG was released
@@ -110,160 +129,6 @@ GnuPG release: version 2.2.0. Read {[[https://lists.gnupg.org/pipermail/gnupg-an
 This release marks the start of a new long term support series to
 replace the 2.0.x series which will reach end-of-life on 2017-12-31.
 
-
-** GnuPG 2.1.23 released (2017-08-09)
-
-A new version of GnuPG has been released.  Please read the full
-[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000412.html][announcement mail]] for details.  This version is intended as a release
-candidate for 2.2.0 which will mark a new long term stable branch.
-
-** GnuPG 2.1.22 released (2017-07-28)
-
-A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][announcement
-mail]] for details.
-
-Update 2017-07-31: We fixed a problem with keyserver access in the
-Windows versions.  A fixed installer has been uploaded; the [[../../download/index.org::binary][download]]
-section has the links.
-
-** GnuPG 1.4.22 released (2017-07-19)
-
-Although GnuPG 1.4 is of limited use today we did a maintenance
-release to address the recently published local side channel attack
-CVE-2017-7526.  See the [[../../download/index.org][download]] section on how to get this version.
-
-** Libgcrypt 1.8.0 released (2017-07-18)
-
-We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
-1.8.0.  This is a new stable version with full API and ABI
-compatibility to the 1.7 series.  Its main features are support for
-the hash algorithm [[https://en.wikipedia.org/wiki/BLAKE_(hash_function)][Blake-2]], the addition of [[https://en.wikipedia.org/wiki/Disk_encryption_theory][XTS]] mode, an improved
-random number generator, and performance improvements for the [[https://en.wikipedia.org/wiki/ARM_architecture][ARM]]
-architecture.  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000410.html][announcement mail]] for details.
-
-** Scute 1.5.0 released (2017-07-14)
-
-Scute is a PKCS#11 module built around the GnuPG Agent and the GnuPG
-Smart Card Daemon.  It allows you to use your OpenPGP smart card for TLS
-client authentication and S/MIME mail and document signing.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000409.html][announcement mail]] for details.
-
-** Libgcrypt 1.7.8 released (2017-06-29)                          :important:
-
-We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
-1.7.8.   This release fixes a local side-channel attack
-(CVE-2017-7526).  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html][announcement mail]] for details.
-
-** GnuPG 2.1.21 released (2017-05-15)                             :important:
-
-A new version of GnuPG has been released.  This release fixes a
-pubring.gpg corruption bug introduced with 2.1.20.  Read the full
-[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000405.html][announcement mail]] for details.
-
-** GnuPG 2.1.20 released (2017-04-03)
-
-A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000404.html][announcement
-mail]] for details.
-
-** New installer for GnuPG 2.1.19 (2017-03-28)
-
-An updated Windows [[https://gnupg.org/ftp/gcrypt/binary/gnupg-w32-2.1.19_20170328.exe][installer]] for GnuPG 2.1.19 is now available.  This
-installer fixes problems retrieving keys for [[https://posteo.de][Posteo]] accounts and other
-servers with limited set of TLS algorithms.
-
-** GnuPG Made Easy 1.9.0 released (2017-03-28)
-
-[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
-program.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000403.html][more]]}
-
-
-** GnuPG 2.1.19 released (2017-03-01)
-
-A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000402.html][announcement
-mail]] for details.
-
-** GnuPG 2.1.18 released (2017-01-23)
-
-A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q1/000401.html][announcement
-mail]] for details.
-
-** Libgcrypt 1.7.6 released (2017-01-18)
-
-We are pleased to announce the availability of Libgcrypt version
-1.7.6.  This is a maintenance release for the stable version of
-[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes.
-
-** GnuPG 2.1.17 released (2016-12-20)
-
-A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000400.html][announcement
-mail]] for details.
-
-** Libgcrypt 1.7.5 released (2016-12-15)
-
-We are pleased to announce the availability of Libgcrypt version
-1.7.5.  This is a maintenance release for the stable version of
-[[file:software/libgcrypt/index.org][Libgcrypt]] with a few bug fixes. [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000399.html][{more}]]
-
-** Pinentry 1.0.0 released (2016-11-22)
-
-After 14 years is was time to bump up the version of [[file:software/pinentry/index.org][Pinentry]] to 1.0.
-This new release fixes a couple of minor bugs and introduces features
-to better diagnose problems.  See the [[../../download/index.org::pinentry][download]] section on how to get
-Pinentry.
-
-** GPA 0.9.10 released (2016-11-19)
-
-A maintenance release of the [[file:software/gpa/index.org][GNU Privacy Assistant]] is now available.
-Note that some of the changes are only available when build with the
-latest [[file:software/gpgme/index.org][GPGME]] version and used with GnuPG 2.1.16 or later.
-
-** GnuPG 2.1.16 released (2016-11-18)
-
-It has been 3 months since the last GnuPG /modern/ release and thus it
-was time for a new one: Version 2.1.16 is now available.  Read the
-full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q4/000398.html][announcement mail]] for details.
-
-** GnuPG Made Easy (GPGME) 1.7.0 released (2016-09-21)
-
-[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
-program.  Highlights in this release are Python and C++ language
-bindings as well as support for GnuPG 2.1 features.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000397.html][more]]}
-
-** GnuPG 2.1.15 released (2016-08-18)
-
-A new version of the /modern/ branch of GnuPG has been released.
-Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.html][announcement mail]] for details.
-
-** Security fixes for Libgcrypt and GnuPG 1.4 (2016-08-17)        :important:
-
-A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
-been found.  Updating the software is highly suggested.  Please read
-this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.  Note that the CVE id in that mail is not
-correct, the correct one is CVE-2016-6313.
-
-
-* A big Thanks to all supporters
-
-Due to this [[http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke][ProPublica article]] we received more than 120,000 \euro of
-individual donations on a single day.  There was even more: The [[https://www.linuxfoundation.org/programs/core-infrastructure-initiative][Core
-Infrastructure Initiative]] granted 60,000 $ for 2015.  Our payment
-service [[https://twitter.com/stripe/status/563449352635432960][Stripe]] and [[https://www.facebook.com/notes/protect-the-graph/supporting-gnu-privacy-guard/1564591893780956][Facebook]] will each give 50,000 $ to the project.
-And finally the [[https://www.wauland.de/en/donation.html#61][Wau Holland Stiftung]] is collecting tax deductible
-funds for GnuPG (19000 \euro plus 57 BTC).
-
-As the main author of GnuPG, I like to thank everyone for supporting
-the project, be it small or large individual donations, helping users,
-providing corporate sponsorship, working on the software, and for all
-the encouraging words.
-
-GnuPG does not stand alone: there are many other projects, often
-unknown to most people, which are essential to keep the free Internet
-running.  Many of them are run by volunteers who spend a lot of unpaid
-time on them.  They need our support as well.
-
-/--- Werner, 2015-02-06/
-
-(see also this [[https://gnupg.org/blog/20150310-gnupg-in-february.html][blog]] entry)
 
 * COMMENT
 This is the publishing info used for the GnuPG pages

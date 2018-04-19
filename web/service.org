@@ -24,7 +24,15 @@ provide this list to enable you to contact service providers.
    The companies listed here provide mainly non-technical training
    and consulting on secure communication.
 
-   /none so far/
+  - [[https://laboussole.coop][La Boussole]], Ile-de-France, France :: La Boussole is a cooperative
+       organization based in France. It brings together academic
+       scholars and trainers who run training sessions on digital
+       issues (privacy protection, environmental impact, social and
+       political insights of IT, and the promotion of commons), but
+       also on media, cooperative teamwork, and fight against
+       discrimination. Our pedagogy is rooted in non-formal education
+       (so-called "éducation populaire"), which aims at accompanying
+       individuals and groups towards emancipation.
 
 
 ** Technical support

@@ -5,22 +5,19 @@
 
 * The GnuPG e.V.
 
-In February 2017 several GnuPG developer came together for a 3 day
-hackathon.  While having some beer in the [[http://www.bilkinfo.de/kneipen/tigges.html][Tigges]] on one evening the
-lingering plan for setting up a legal entity was finally agreed upon.
-Work on the constitution started right away and the founding assembly
-commenced on the next day at 13:37.
+The GnuPG e.V. is a charitable legal person (a German “Verein”) to
+improve data protection, data sovereignty and customer protection in
+in our supranational networked society.  To achieve these goals the
+Verein seeks for international cooperation with people and
+organizations and supports the development and distribution of Free
+and Open Source software.
 
-The 7 founding members are: Andre Heinecke, Justus Winter, Kai
-Michaelis, Marcus Brinkmann, Neal Walfied, Werner Koch, and Yutaka
-Niibe.  The elected chair is Werner, the vice Andre, and the cashier
-Marcus.  Marcus resigned on 2017-08-02; a new cashier needs to be
-elected soon.
-
-The rules on how to apply for membership will soon be posted.  The
-registration number is /VR11482/ at /Amtsgericht Düsseldorf/.  The tax
-office Düsseldorf-Altstadt confirmed our charitable state on
-2017-04-03.
+The Verein was founded on February 8, 2017 by 7 active GnuPG
+developers.  Its registration number is /VR11482/ at /Amtsgericht
+Düsseldorf/.  The tax office Düsseldorf-Altstadt has confirmed the
+charitable state.  As of 2018-02-02 the Verein has 15 regular members
+represented by its board: Werner Koch (chairperson), Martin
+Gollowitzer (vice-chair) and Andre Heinecke (treasurer).
 
 ** Menu
 
@@ -30,7 +27,6 @@ office Düsseldorf-Altstadt confirmed our charitable state on
 - {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation]
 - {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}
   [German]
-
-
+- [[https://gnupg.org/ftp/verein/beitragsordnung.en.pdf][Membership fee regulations (English)]]  [[https://gnupg.org/ftp/verein/beitragsordnung.de.pdf][(German)]]
 
 # eof

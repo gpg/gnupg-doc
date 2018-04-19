@@ -45,7 +45,7 @@ purposes.
    :CUSTOM_ID: documentation_license
    :END:
 
-This document is © 2012-2017, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
+This document is © 2012-2018, Robert J. Hansen <[[mailto:rjh@sixdemonbag.org?subject=The%20GnuPG%20FAQ][rjh@sixdemonbag.org]]> and
 A.M. Kuchling <[[mailto:amk@amk.ca?subject=The%20GnuPG%20FAQ][amk@amk.ca]]>. You are free to make use of this document
 in accordance with the [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0
 license]]; alternately, you may make use of it under terms of the
@@ -162,15 +162,20 @@ October 2017.
    :CUSTOM_ID: whats_gnupg
    :END:
 
-GnuPG is cryptographic software that helps people ensure the
-confidentiality, integrity and assurance of their data.  Let’s try
-that again: GnuPG is…
+GnuPG is free cryptographic software from the GNU Project which helps
+people ensure the confidentiality, integrity and assurance of their
+data.  Let’s try that again: GnuPG is…
 
+- /Free./ When we say “free” we mean [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  You’re free
+  to use it, modify it, share it, tinker with it, and learn from it.
+  Software is meant to be used by people, and people deserve freedom.
 - /Cryptographic./ The word “cryptography” is derived from two Greek
   words, κρυπτός (pronounced “kryptos,” meaning “hidden”) and γράφω
-  (pronounced “graphein,” meaning “writing”). Cryptography is the
+  (pronounced “grapho,” meaning “writing”). Cryptography is the
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
+- /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that aims to give people
+  the ability to do all their computing with free software.
 - /Confidentiality./ No one except authorized parties should be able
   to read your data.
 - /Integrity./ It shouldn’t be possible to tamper with a message
@@ -192,7 +197,9 @@ clients, such as Psi.
    :CUSTOM_ID: pronunciation
    :END:
 
-“guh-NEW-pee-gee.”
+“GNU”, followed by the letters “P” and “G”.  To learn how to pronounce
+GNU, you may want to
+[[https://www.gnu.org/gnu/pronunciation.en.html][listen to a recording]].
 
 
 ** Is it compatible with Symantec’s PGP?
@@ -223,6 +230,7 @@ Yes.  SHA-256 and SHA-512 belong to a group of hashes known
 collectively as “SHA-2”.  PGP calls SHA-256 and SHA-512 by the
 non-standard names “SHA-2-256” and “SHA-2-512”, but they are the same
 algorithms.
+
 
 ** Which operating systems does it run on?
    :PROPERTIES:
@@ -344,6 +352,12 @@ Alternatively, you can install GnuPG using a package manager:
 sudo pkg_add -r gnupg
 #+end_example
 
+Or with this variation for the package manager:
+
+#+begin_example
+sudo pkg install gnupg
+#+end_example
+
 *** … for VMS?
     :PROPERTIES:
     :CUSTOM_ID: get_gnupg_vms
@@ -372,10 +386,13 @@ lot of the software industry does not
 your freedom to use the software for any purpose, your freedom to study
 and learn from how it works, your freedom to share it with others who
 might benefit from it, and more.  Free Software is the antithesis of
-this: Free Software is meant to respect your rights.  You may use the
+this: Free Software is meant to respect your freedoms.  You may use the
 software for any purpose: you may inspect and modify the source code:
 you may share the software and/or your modifications with others.
 
+GnuPG works with many operating systems, including ones that don’t
+respect your freedoms.  If you’d like to make the shift to a free
+operating system, [[https://www.gnu.org/distros/free-distros.html][you have many choices]].
 
 ** How can I donate money to the GnuPG project?
    :PROPERTIES:
@@ -395,7 +412,6 @@ Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mai
 list’s archives.
 
 The [[https://bugs.gnupg.org/gnupg/][GnuPG project’s bug tracker]] is also publicly available.
-
 
 * Where can I get more information?
   :PROPERTIES:
@@ -689,18 +705,24 @@ is actively developed.
 | Thunderbird | yes (Enigmail) | (1) |
 | Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
+| Neomutt     | native         | (3) |
 | Apple Mail  | yes ([[https://www.gpgtools.org][GPGtools]]) | (4) |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
-    popular GnuPG-aware email clients.  it’s under active development
+    popular GnuPG-aware email clients.  It’s under active development
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
-(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
-    install the plugin.  See the Gnus manual for configuration hints.
+(2) EasyPG is part of Emacs 23, proper as EPA and the underlying EPG.
+    Thus there is no more need to install the plugin.  See the Gnus
+    manual for configuration hints.  Both EPA and EPG can be
+    customized with the customize-group command and using either the
+    =epa= or =epg= groups.
 
-(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.
+(3) For the best experience make sure to put ~set crypt_use_gpgme~ in
+    your =~/.muttrc= file.  Note that this requires installing Mutt or
+    Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
+    documentation for details.
 
 (4) As of this writing, Apple Mail is incompatible with PGP/MIME.  This
     is a known bug and people are working on it.
@@ -716,20 +738,26 @@ is actively developed.
 | Thunderbird | yes (Enigmail) | (1) |
 | Gnus        | yes ([[https://www.emacswiki.org/emacs/EasyPG][EasyPG]])   | (2) |
 | Mutt        | native         | (3) |
+| Neomutt     | native         | (3) |
 | Kontact     | native         | (4) |
 | Evolution   | native         |     |
 | Claws-Mail  | yes (internal) |     |
 
 (1) With the Enigmail plugin, Thunderbird becomes one of the most
-    popular GnuPG-aware email clients.  it’s under active development
+    popular GnuPG-aware email clients.  It’s under active development
     and is compatible with the latest Thunderbird releases, with a
     friendly and welcoming user community.
 
-(2) EasyPG is part of Emacs 23, proper.  Thus there is no more need to
-    install the plugin.  See the Gnus manual for configuration hints.
+(2) EasyPG is part of Emacs 23, proper as EPA and the underlying EPG.
+    Thus there is no more need to install the plugin.  See the Gnus
+    manual for configuration hints.  Both EPA and EPG can be
+    customized with the customize-group command and using either the
+    =epa= or =epg= groups.
 
-(3) For best experience make sure to put ~set crypt_use_gpgme~ in your
-    =~/.muttrc= file.
+(3) For the best experience make sure to put ~set crypt_use_gpgme~ in
+    your =~/.muttrc= file.  Note that this requires installing Mutt or
+    Neomutt compiled with GPGME support, refer to the Mutt or Neomutt
+    documentation for details.
 
 (4) Kontact is KDE’s integrated personal information manager of KDE.
     It runs anywhere that KDE does, and even on some mobile devices as

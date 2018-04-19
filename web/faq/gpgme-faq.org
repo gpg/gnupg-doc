@@ -27,8 +27,37 @@
    See section 2.3 Largefile support of the GPGME Reference Manual.
 
 
+** Why don't the Python bindings announced in 2016 work?
+
+   The Python bindings have been undergoing continual improvement and
+   fine tuning since the initial announcement.  To obtain the most
+   accurate bindings it is recommended to install the bindings shipped
+   with GPGME itself rather than older versions available on PyPI.
+
+   The Python module has been renamed from =pyme= or =pyme3= and is
+   now simply called =gpg=.  Otherwise the function remains similar
+   and example code is included with the source.
+
+   A basic decryption operation to take an encrypted file and decrypt
+   it with a key in your secret keys would look something like this:
+
+   #+begin_example
+   import gpg
+
+   ciphertext = open("filename.txt.asc", "rb")
+   plaintext = gpg.Context().decrypt(ciphertext)
+   ciphertext.close()
+   f = open("filename.txt", "wb")
+   f.write(plaintext[0])
+   f.close()
+   del plaintext
+   #+end_example
+
+
 
 
 #   Copyright (C) 2002-2004 Free Software Foundation, Inc.
+#   Copyright (C) 2006-2018 The GnuPG Project.
 #
 #   Written by Werner Koch (2006-04-27 12:50:00).
+#   Ammended by Ben McGinnes (2018-02-14 08:21:32 UTC).

@@ -420,7 +420,7 @@ A site supporting the Web Key Directory MUST serve this file; it is
 sufficient if that file has a zero length.  Clients may use this file
 to check for Web Key Directory support.
 
-The file contains keywords and optioanlly values, one per line with
+The file contains keywords and optionally values, one per line with
 each line terminated by a LF or the sequence of CR and LF.  Empty lines
 and lines starting with a '#' character are considered comment
 lines.  A keyword is made up of lowercase letters, digits, hyphens, or
@@ -456,6 +456,11 @@ Currently defined keywords are:
      the workaround.  The value is an integer corresponding to the
      respective draft revision number.
 
+- submission-address :: An alternative way to specify the submission
+     address.  The value is the addr-spec part of the address to send
+     requests to this server.  If this keyword is used in addition to
+     the =submission-address= file, both MUST have the same value.
+
 # Fixme: Add a protocol-version value for the final RFC.
 
 
@@ -481,6 +486,10 @@ a host in a sub-domain under their control and thus gain full control
 over all keys.  An implementation may want to weight the certainty of
 a mapping different if it has been retrieved via a sub-domain and in
 particular if a non-recommended name is used for the sub-domain.
+
+To make it a bit harder to test for published keys, the server
+responsible to serve the WELLKNOWN directory SHOULD NOT create an
+index file for that directory or any sub-directory.
 
 
 * IANA Considerations
