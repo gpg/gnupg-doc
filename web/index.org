@@ -3,6 +3,8 @@
 #+SETUPFILE: "share/setup.inc"
 #+GPGWEB-NEED-SWDB
 #+HTML_HEAD_EXTRA: <link type="application/rss+xml" href="https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-doc.git;a=rss;f=web/index.org"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="/share/pure-min.css.gz" type="text/css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="/share/grids-responsive-min.css.gz" type="text/css" />
 
 * The GNU Privacy Guard
 #+index: GnuPG
@@ -30,7 +32,14 @@ page for other maintained versions.
 crypto manager, and an Outlook plugin to send and receive standard
 PGP/MIME mails.  The current version of Gpg4win is {{{gpg4win_ver}}}.
 
+** <div class="pure-g">                                        :html:virtual:
+
+
+
 * Reconquer your privacy
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: pure-u-1 pure-u-md-1-2
+   :END:
 
 #+begin_quote
 Arguing that you don't care about the right to privacy
@@ -50,6 +59,9 @@ printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnup
 
 
 * News
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: pure-u-1 pure-u-md-1-2
+   :END:
 #+index: News
 
 The latest blog entries:
@@ -128,6 +140,8 @@ GnuPG release: version 2.2.0. Read {[[https://lists.gnupg.org/pipermail/gnupg-an
 
 This release marks the start of a new long term support series to
 replace the 2.0.x series which will reach end-of-life on 2017-12-31.
+
+** </div><!-- end pure-g -->                                   :html:virtual:
 
 
 * COMMENT
