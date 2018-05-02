@@ -10,17 +10,17 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.6
-#+macro: gnupg22_date 2018-04-09
-#+macro: gnupg22_size 6450k
-#+macro: gnupg22_sha1 295298debcc2c12f02a2f2fdf04aecb6d6aae396
-#+macro: gnupg22_sha2 e64d8c5fa2d05938a5080cb784a98ac21be0812f2a26f844b18f0d6a0e711984
+#+macro: gnupg22_ver  2.2.7
+#+macro: gnupg22_date 2018-05-02
+#+macro: gnupg22_size 6475k
+#+macro: gnupg22_sha1 e222cda63409a86992369df8976f6c7511e10ea0
+#+macro: gnupg22_sha2 d95b361ee6ef7eff86af40c8c72bf9313736ac9f7010d6604d78bf83818e976e
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.6_20180409
-#+macro: gnupg22_w32_date 2018-04-09
-#+macro: gnupg22_w32_size 3837k
-#+macro: gnupg22_w32_sha1 c9fe66788ea40bc57a189aa13e7c83add9baec40
-#+macro: gnupg22_w32_sha2 5d426b19d9cc3d7d3c0db0dfb58af1b6a36f4ea1cfd55901bb6864e865fcccc6
+#+macro: gnupg22_w32_ver  2.2.7_20180502
+#+macro: gnupg22_w32_date 2018-05-02
+#+macro: gnupg22_w32_size 3914k
+#+macro: gnupg22_w32_sha1 a00f7119c85dd837336f13be3174178d0cf8d85e
+#+macro: gnupg22_w32_sha2 2d7ffedb1737e4dbed7f89377c3273b5cc27ee0fd9c70a417bd602203fc419ee
 
 
 #
@@ -126,16 +126,16 @@
 #
 # LIBGPG-ERROR
 #
-#+macro: libgpg_error_ver  1.30
-#+macro: libgpg_error_date 2018-04-30
-#+macro: libgpg_error_size 876k
-#+macro: libgpg_error_sha1 f9357bc404cc3c2ac5c808d665310bd5af344eb7
-#+macro: libgpg_error_sha2 238c6e87adf52b0147081927c981730756a0526ad0733201142a676786847ed7
-#+macro: gpgrt_ver  1.30
-#+macro: gpgrt_date 2018-04-30
-#+macro: gpgrt_size 876k
-#+macro: gpgrt_sha1 f9357bc404cc3c2ac5c808d665310bd5af344eb7
-#+macro: gpgrt_sha2 238c6e87adf52b0147081927c981730756a0526ad0733201142a676786847ed7
+#+macro: libgpg_error_ver  1.31
+#+macro: libgpg_error_date 2018-05-02
+#+macro: libgpg_error_size 880k
+#+macro: libgpg_error_sha1 2bafad316d4e3e12bae4822b14ed9020090e6acf
+#+macro: libgpg_error_sha2 40d0a823c9329478063903192a1f82496083b277265904878f4bc09e0db7a4ef
+#+macro: gpgrt_ver  1.31
+#+macro: gpgrt_date 2018-05-02
+#+macro: gpgrt_size 880k
+#+macro: gpgrt_sha1 2bafad316d4e3e12bae4822b14ed9020090e6acf
+#+macro: gpgrt_sha2 40d0a823c9329478063903192a1f82496083b277265904878f4bc09e0db7a4ef
 
 
 #
