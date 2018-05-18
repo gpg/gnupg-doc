@@ -6,9 +6,9 @@
 
   GnuPG is an international community project run by volunteers and
   not a legal entity.  g10^code GmbH is the privately owned legal
-  entity behind the GnuPG.  They employ all paid developers and
-  re-invest all profits into the development of GnuPG and related free
-  software.  See also this [[https://www.gnupg.org/blog/20141214-gnupg-and-g10.html][article]].
+  entity behind the GnuPG project.  They employ all paid developers
+  and re-invest all profits into the development of GnuPG and related
+  free software.  See also this [[https://www.gnupg.org/blog/20141214-gnupg-and-g10.html][article]].
 
   g10 Code GmbH\\
   Hüttenstr. 61\\
@@ -24,3 +24,5 @@
   Note that we provide the phone number only for legal reasons.
   Please do not call g10^code to ask for free support.  For paid
   support see their [[https://g10code.com/contact.html][contact page]].
+
+  Please see [[file:privacy-policy.org][here]] for the privacy policy.
