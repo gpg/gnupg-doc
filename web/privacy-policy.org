@@ -16,7 +16,7 @@ problems and due to financial accounting requirements.
 
 No data is ever shared with external parties unless explicitly
 requested by the user.  We use cookies only for session management
-without any personal data and at https://dev.gnupg.org to store the
+without any personal data and at =dev.gnupg.org= to store the
 name of a registered user.
 
 Find below details for all provided services; the responsible person
@@ -29,7 +29,7 @@ monitor traffic.  The raw log files are kept for a week and are then
 deleted.  For web analytic the data from the log files is anonymized
 by truncating the IP addresses to 40 bit for IPv6 and 20 bits for IPv4
 and send to another machine.  Reports on the use of this site will
-always be fully anonymized and may be published at [[http://ambler.gnupg.org][one of our servers]].
+always be fully anonymized and may be published at one of our servers.
 
 Neither the raw log files nor the anonymized data from the log files
 are shared with anyone; however within the first week system
@@ -71,9 +71,9 @@ Our payment service providers are:
  - PayPal for PayPal based donations.  Click here for their [[https://www.paypal.com/webapps/mpp/ua/privacy-prev][privacy policy]].
  - Stripe for credit card based donations.  Click here for their
    [[https://stripe.com/de/privacy][privacy policy]].
- - SEPA.  This is not a real payment service; instead we send only
-   a random number to the user which allows us to match the stored
-   information with a receipt of payment.
+ - SEPA.  This is not a real payment service; instead we send only a
+   random number to the user which allows us to match the stored
+   information with an actual payment.
 
 ** Mailing lists
 
@@ -160,7 +160,7 @@ their respective license.
 ** Responsible person for data protection
 
 If you have any questions about our privacy policy or need to get
-information on the data strored about you, write to
+information on the data stored about you, write to
 
 Werner Koch, =data-privacy at gnupg dot org= ([[file:share/data-privacy-key.asc][OpenPGP key]])\\
 g10 Code GmbH\\
