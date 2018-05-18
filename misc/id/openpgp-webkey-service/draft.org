@@ -20,7 +20,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-05">
+     docName="draft-koch-openpgp-webkey-service-06">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -40,7 +40,7 @@
       </address>
     </author>
 
-    <date month="November" year="2017" />
+    <date month="May" year="2018" />
     <area>Security</area>
 
     <abstract>
@@ -721,9 +721,7 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -04
+* Changes Since -05
 
-- Change to Content-Type "vnd.gnupg.wkd" for servers announcing its
-  support.
-- Require the existance of the Policy Flags file.
-- Re-title this I-D to Web Key Directory.
+- Add a submission address to the Policy Flags.
+- Add a suggestion to avoid creating an index file.
