@@ -191,7 +191,7 @@ single request as concatenated key blocks.
 The server MUST accept the HTTP HEAD method to allow a client to
 check for the existence of a key.
 
-The server SHOULD use "application/octet-string" as the
+The server SHOULD use "application/octet-stream" as the
 Content-Type for the data but clients SHOULD also accept any other
 Content-Type.  The server MUST NOT return an ASCII armored version of
 the key.
