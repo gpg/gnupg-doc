@@ -40,7 +40,7 @@
 
    The table lists the different GnuPG packages, followed by required
    libraries, required tools, optional software, and legacy versions
-   of GnuPG.
+   of GnuPG.  For end-of-life dates see further down.
 
    | Name         | Version                | Date                    |                    Size | Tarball                                                                                                | Signature                                                                                                  |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
@@ -108,5 +108,26 @@
    | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | A port of GnuPG to RISC OS               |
    |---------+--------------------+------------------------------------------|
 
+
+** End-of-life announcements
+   :PROPERTIES:
+   :CUSTOM_ID: end-of-life
+   :END:
+
+   | Package   | Branch | Birth      | End-of-life | EOL |
+   |-----------+--------+------------+-------------+-----|
+   |           | <l>    | <l>        | <l>         |     |
+   | GnuPG     | 1.0    | 1999-09-07 | 2002-09-07  | yes |
+   |           | 1.2    | 2002-09-21 | 2005-01-01  | yes |
+   |           | 1.4    | 2004-12-16 | (1)         |     |
+   |           | 2.0    | 2006-11-11 | 2017-12-31  | yes |
+   |           | 2.2    | 2014-11-06 | tba         |     |
+   | Libgcrypt | 1.5    | 2011-06-29 | 2016-12-31  | yes |
+   |           | 1.6    | 2013-12-16 | 2017-06-30  | yes |
+   |           | 1.7    | 2016-04-15 | 2019-06-30  |     |
+   |           | 1.8    | 2017-07-18 | tba         |     |
+
+   - tba :: To be announced.
+   - (1) :: Legacy version; see remarks above.
 
 # eof #
