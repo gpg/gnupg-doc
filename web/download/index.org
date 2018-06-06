@@ -114,20 +114,27 @@
    :CUSTOM_ID: end-of-life
    :END:
 
-   | Package   | Branch | Birth      | End-of-life | EOL |
-   |-----------+--------+------------+-------------+-----|
-   |           | <l>    | <l>        | <l>         |     |
-   | GnuPG     | 1.0    | 1999-09-07 | 2002-09-07  | yes |
-   |           | 1.2    | 2002-09-21 | 2005-01-01  | yes |
-   |           | 1.4    | 2004-12-16 | (1)         |     |
-   |           | 2.0    | 2006-11-11 | 2017-12-31  | yes |
-   |           | 2.2    | 2014-11-06 | tba         |     |
-   | Libgcrypt | 1.5    | 2011-06-29 | 2016-12-31  | yes |
-   |           | 1.6    | 2013-12-16 | 2017-06-30  | yes |
-   |           | 1.7    | 2016-04-15 | 2019-06-30  |     |
-   |           | 1.8    | 2017-07-18 | tba         |     |
+   We announce the end-of-life date for a current stable version at
+   the time a new stable version is released.  We maintain old
+   branches for at least two years.  For GnuPG 2.2 we consider 2.1.0
+   as the birth of this new stable branch.  For the other packages we
+   don't maintain branches and thus there is no end-of-life; always
+   use the latest version.
 
-   - tba :: To be announced.
-   - (1) :: Legacy version; see remarks above.
+   | Package   | Ver. | EOL | End-of-life | Birth      |
+   |-----------+------+-----+-------------+------------|
+   |           | <l>  |     | <l>         | <l>        |
+   | GnuPG     | 1.0  | yes | 2002-09-07  | 1999-09-07 |
+   |           | 1.2  | yes | 2005-01-01  | 2002-09-21 |
+   |           | 1.4  |     | none (1)    | 2004-12-16 |
+   |           | 2.0  | yes | 2017-12-31  | 2006-11-11 |
+   |           | 2.2  |     | tba         | 2014-11-06 |
+   | Libgcrypt | 1.5  | yes | 2016-12-31  | 2011-06-29 |
+   |           | 1.6  | yes | 2017-06-30  | 2013-12-16 |
+   |           | 1.7  |     | 2019-06-30  | 2016-04-15 |
+   |           | 1.8  |     | tba         | 2017-07-18 |
+
+   - /tba/: To be announced.
+   - /(1)/: Legacy version; see remarks above.
 
 # eof #
