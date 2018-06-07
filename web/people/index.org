@@ -51,23 +51,6 @@
 
    #+HTML: <p style="clear: both"/>
 
-** Marcus Brinkmann
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
-   #+HTML: </div>
-
-   /Hacker/
-
-   Marcus is part of the free software community since 1997, when he
-   joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
-   on GNU/Hurd, he also has a diploma degree in mathematics, and was
-   part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
-   related software from 2001 to 2012 and for 7 months in 2017.  He was
-   a founding member of the [[../verein/index.org][GnuPG e.V.]]
-
-   #+HTML: <p style="clear: both"/>
-
 ** NIIBE Yutaka
 
    #+HTML: <div class="people">
@@ -94,48 +77,6 @@
 
    Jussi joined the GnuPG project in 2012 and worked since then on
    assembler optimized code for cryptographic algorithms in Libgcrypt.
-
-   #+HTML: <p style="clear: both"/>
-
-** Neal Walfied
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
-   #+HTML: </div>
-
-   /Core components hacker/
-
-   Neal started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  We was full time employed by g10^code
-   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
-
-   #+HTML: <p style="clear: both"/>
-
-** Kai Michaelis
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
-   #+HTML: </div>
-
-   /Enigmail hacker/
-
-   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
-   time employed by g10^code from 2015 to 2017.  He is a founding
-   member of the [[../verein/index.org][GnuPG e.V.]]
-
-   #+HTML: <p style="clear: both"/>
-
-** Justus Winter
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
-   #+HTML: </div>
-
-   /Core components hacker/
-
-   Justus started to work on GnuPG in 2015 to support maintenance and
-   development in all areas.  He was full time employed by g10^code
-   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -184,6 +125,65 @@
    as well as the GPGME bindings for C++ and Qt.
 
    [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][GPG key 94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1]]
+
+   #+HTML: <p style="clear: both"/>
+
+** Marcus Brinkmann
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
+   #+HTML: </div>
+
+   /Hacker emeritus/
+
+   Marcus is part of the free software community since 1997, when he
+   joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
+   on GNU/Hurd, he also has a diploma degree in mathematics, and was
+   part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
+   related software from 2001 to 2012 and for 7 months in 2017.  He was
+   a founding member of the [[../verein/index.org][GnuPG e.V.]]
+
+   #+HTML: <p style="clear: both"/>
+
+** Neal Walfied
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
+   #+HTML: </div>
+
+   /Core components hacker emeritus/
+
+   Neal started to work on GnuPG in 2015 to support maintenance and
+   development in all areas.  We was full time employed by g10^code
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
+
+   #+HTML: <p style="clear: both"/>
+
+** Kai Michaelis
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
+   #+HTML: </div>
+
+   /Enigmail hacker emeritus/
+
+   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
+   time employed by g10^code from 2015 to 2017.  He is a founding
+   member of the [[../verein/index.org][GnuPG e.V.]]
+
+   #+HTML: <p style="clear: both"/>
+
+** Justus Winter
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
+   #+HTML: </div>
+
+   /Core components hacker emeritus/
+
+   Justus started to work on GnuPG in 2015 to support maintenance and
+   development in all areas.  He was full time employed by g10^code
+   from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
    #+HTML: <p style="clear: both"/>
 
