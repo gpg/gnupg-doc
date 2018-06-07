@@ -124,6 +124,9 @@
    Additonally he is the maintainer of Gpg4win in general and GpgEX
    as well as the GPGME bindings for C++ and Qt.
 
+   He is a founding member and the current cashier of the
+   [[../verein/index.org][GnuPG e.V.]]
+
    [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][GPG key 94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1]]
 
    #+HTML: <p style="clear: both"/>
