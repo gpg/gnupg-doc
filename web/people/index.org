@@ -131,13 +131,20 @@
 
    #+HTML: <p style="clear: both"/>
 
+
+   #+HTML: <hr/>
+** Former developers
+
+   The following developers made large contributions to GnuPG in the past
+   but are no longer active.
+
 ** Marcus Brinkmann
 
    #+HTML: <div class="people">
    #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
    #+HTML: </div>
 
-   /Hacker emeritus/
+   /Hacker/
 
    Marcus is part of the free software community since 1997, when he
    joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
@@ -154,7 +161,7 @@
    #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
    #+HTML: </div>
 
-   /Core components hacker emeritus/
+   /Core components hacker/
 
    Neal started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  We was full time employed by g10^code
@@ -168,7 +175,7 @@
    #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
    #+HTML: </div>
 
-   /Enigmail hacker emeritus/
+   /Enigmail hacker/
 
    Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
    time employed by g10^code from 2015 to 2017.  He is a founding
@@ -182,7 +189,7 @@
    #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
    #+HTML: </div>
 
-   /Core components hacker emeritus/
+   /Core components hacker/
 
    Justus started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  He was full time employed by g10^code
