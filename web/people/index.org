@@ -133,10 +133,14 @@
 
 
    #+HTML: <hr/>
-** Former developers
+* Former developers
 
    The following developers made large contributions to GnuPG in the past
-   but are no longer active.
+   but are, sadly, no longer active GnuPG developers.
+
+   Most are still working on improving the OpenPGP ecosystem and we wish
+   them the very best.
+   #+HTML: <hr/>
 
 ** Marcus Brinkmann
 
@@ -153,6 +157,8 @@
    related software from 2001 to 2012 and for 7 months in 2017.  He was
    a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
+   Marcus currently works on [[https://neopg.io/][NeoPG]].
+
    #+HTML: <p style="clear: both"/>
 
 ** Neal Walfied
@@ -167,6 +173,7 @@
    development in all areas.  We was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
+   Neal currently works on [[https://sequoia-pgp.org/][Sequoia-PGP]].
    #+HTML: <p style="clear: both"/>
 
 ** Kai Michaelis
@@ -195,6 +202,7 @@
    development in all areas.  He was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
+   Justus currently works on [[https://sequoia-pgp.org/][Sequoia-PGP]].
    #+HTML: <p style="clear: both"/>
 
 * COMMENT
