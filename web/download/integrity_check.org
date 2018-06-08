@@ -106,8 +106,8 @@
    that can be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
-   {{{gnupg22_sha1}}}  gnupg-{{{gnupg21_ver}}}.tar.bz2
-   {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg21_w32_ver}}}.exe
+   {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
+   {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
