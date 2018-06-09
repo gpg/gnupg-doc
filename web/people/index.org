@@ -93,18 +93,18 @@
    of Justus' enhanced version of that port from late 2017 onward.  In
    conjunction with with continuing work on documentation, developing
    the XML definitions of various components of the project and
-   working on enhancements for whichGnuPG and OpenPGP can provide
+   working on enhancements for which GnuPG and OpenPGP can provide
    other protocols, languages or services.
 
    He has been actively advocating for civil and human rights since
    the '90s, including as a public [[https://www.securetheinternet.org/][signatory to the open letter]] to
    world leaders to not undermine security and freedom.  Ben can
-   sometimes be found on freenode IRC using the handle =Hasimir=, in
+   sometimes be found on [[irc://irc.freenode.net][Freenode IRC]] using the handle =Hasimir=, in
    the fediverse as [[https://chaos.social/users/adversary][@adversary@chaos.social]], and, of course, on the
    GnuPG mailing lists (most often posting from his own domain name,
    [[http://www.adversary.org/wp/][adversary.org]]).
 
-   GPG Key: [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][DB47 24E6 FA42 86C9 2B4E]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][55C4 321E 4E23 7359 0E5D]]
+   GPG Key: [[http://www.adversary.org/ben-key.asc][DB47 24E6 FA42 86C9 2B4E]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][55C4 321E 4E23 7359 0E5D]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -117,21 +117,19 @@
    /Windows and UX/
 
    Andre is working mainly on GnuPG related projects for his employer
-   [[https://www.intevation.org][Intevation GmbH]]
-   He has been an active KDE Developer since 2009,
+   [[https://www.intevation.org][Intevation GmbH]] He has been an active KDE Developer since 2009,
    mostly focused on Windows ports of KDE Software. Since 2013 he took
    over several Windows and UX specific parts of GnuPG.
 
    Andre is the current maintainer of Kleopatra the KDE / Gpg4win GUI
    for GnuPG.  He also maintains GpgOL since 2013 and wrote the
-   support for Outlook 2010 and later versions.
-   Additonally he is the maintainer of Gpg4win in general and GpgEX
-   as well as the GPGME bindings for C++ and Qt.
+   support for Outlook 2010 and later versions.  Additonally he is the
+   maintainer of Gpg4win in general and GpgEX as well as the GPGME
+   bindings for C++ and Qt.
 
-   He is a founding member and the current cashier of the
-   [[../verein/index.org][GnuPG e.V.]]
+   He is a founding member and the current cashier of the [[../verein/index.org][GnuPG e.V.]]
 
-   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9a0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
+   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
 
    #+HTML: <p style="clear: both"/>
 
