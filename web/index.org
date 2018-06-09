@@ -130,7 +130,7 @@ This is a maintenance release fixing a few minor bugs.  {[[https://lists.gnupg.o
 We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.1
 and 1.7.9.  These releases fix a local side-channel attack on
 Curve25519 encryption dubbed "May the Fourth be With You"
-[CVE-2017-0379].  Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000414.html][more]]}...
+{{{CVE(2017-0379)}}}.  Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000414.html][more]]}...
 
 ** GnuPG 2.2.0 released (2017-08-28)
 

@@ -27,7 +27,7 @@ section has the links.
 
 Although GnuPG 1.4 is of limited use today we did a maintenance
 release to address the recently published local side channel attack
-CVE-2017-7526.  See the [[../../download/index.org][download]] section on how to get this version.
+{{{CVE(2017-7526)}}}.  See the [[../../download/index.org][download]] section on how to get this version.
 
 ** Libgcrypt 1.8.0 released (2017-07-18)
 
@@ -48,8 +48,8 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000409.h
 ** Libgcrypt 1.7.8 released (2017-06-29)                          :important:
 
 We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version
-1.7.8.   This release fixes a local side-channel attack
-(CVE-2017-7526).  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html][announcement mail]] for details.
+1.7.8.   This release fixes the local side-channel attack
+{{{CVE(2017-7526)}}}.  See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html][announcement mail]] for details.
 
 ** GnuPG 2.1.21 released (2017-05-15)                             :important:
 
@@ -136,7 +136,7 @@ Read the full [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000396.h
 A bug in the random number generator of Libgcrypt and in GnuPG 1.4 has
 been found.  Updating the software is highly suggested.  Please read
 this [[https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html][mail]] for details.  Note that the CVE id in that mail is not
-correct, the correct one is CVE-2016-6313.
+correct, the correct one is {{{CVE(2016-6313)}}}.
 
 ** GnuPG 2.1.14 released (2016-07-14)
 
