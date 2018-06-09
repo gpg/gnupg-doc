@@ -91,16 +91,20 @@
    Ben started working on GPGME in 2015 with the initial port of PyME
    from Python 2 to Python 3.  Then returned to take over stewardship
    of Justus' enhanced version of that port from late 2017 onward.  In
-   conjunction with with continuing work on documentation and
-   developing XML schemas for the XML format included in GPGME.
+   conjunction with with continuing work on documentation, developing
+   the XML definitions of various components of the project and
+   working on enhancements for whichGnuPG and OpenPGP can provide
+   other protocols, languages or services.
 
-   He is a co-founder of the original CryptoParty movement in
-   Melbourne, Australia, a founding member of Pirate Party Australia
-   and actively advocating for civil and human rights since the '90s.
-   Ben can sometimes be found on freenode IRC using the handle
-   =Hasimir= and, of course, on the GnuPG mailing lists.
+   He has been actively advocating for civil and human rights since
+   the '90s, including as a public [[https://www.securetheinternet.org/][signatory to the open letter]] to
+   world leaders to not undermine security and freedom.  Ben can
+   sometimes be found on freenode IRC using the handle =Hasimir=, in
+   the fediverse as [[https://chaos.social/users/adversary][@adversary@chaos.social]], and, of course, on the
+   GnuPG mailing lists (most often posting from his own domain name,
+   [[http://www.adversary.org/wp/][adversary.org]]).
 
-   [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][GPG key DB4724E6FA4286C92B4E55C4321E4E2373590E5D]]
+   GPG Key: [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][DB47 24E6 FA42 86C9 2B4E]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][55C4 321E 4E23 7359 0E5D]]
 
    #+HTML: <p style="clear: both"/>
 
@@ -127,7 +131,7 @@
    He is a founding member and the current cashier of the
    [[../verein/index.org][GnuPG e.V.]]
 
-   [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][GPG key 94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1]]
+   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9a0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
 
    #+HTML: <p style="clear: both"/>
 
