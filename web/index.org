@@ -70,7 +70,7 @@ The latest release news:\\
 This version fixes a critical security bug.  Either this version or a
 vendor provided fix should be installed.  There are also a few other
 changes; see the [[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html][announcement]] mail.  This is [[https://cve.mitre.org/cgi-bin/cvename.cgi?name%3DCVE-2018-12020][CVE-2018-12020]] and our
-bug [[https://dev/gnupg.org/T4012][#4012]].
+bug [[https://dev.gnupg.org/T4012][#4012]].
 
 
 ** GnuPG 2.2.7 released (2018-05-02)
