@@ -1,5 +1,6 @@
 #+TITLE: GnuPG - All News
 #+STARTUP: showall
+#+SETUPFILE: "share/setup.inc"
 
 * All News
 
