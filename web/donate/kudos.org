@@ -6,15 +6,52 @@
 
 * Donation Summary
 
-*** Individual donations this year
+*** Monthly donations stats since 2017
 
-#+BEGIN_HTML
-<!--BEGIN-DONATION-TABLE-->
-<!--END-DONATION-TABLE-->
-#+END_HTML
+This is a summary of individual donations since 2017.  After the
+campaign boost in June and July 2017 we can conclude that a majority
+of the received donations are reccurring (either monthly, quarterly or
+yearly).  The outlier in December 2017 is due to single large donation
+of 5000 Euro.
+
+ | Year | Mon | Total | SEPA | Stripe | Paypal | gSEPA | Fee |
+ |------+-----+-------+------+--------+--------+-------+-----|
+ | 2017 |  01 |  1771 |  271 |    136 |   1364 |   278 |   7 |
+ |      |  02 |   573 |   15 |    371 |    187 |    20 |   5 |
+ |      |  03 |   339 |  104 |      5 |    230 |   110 |   6 |
+ |      |  04 |  5407 | 4995 |    264 |    148 |  5000 |   5 |
+ |      |  05 |   587 |    5 |    509 |     73 |    10 |   5 |
+ |      |  06 | 29117 | 5291 |   9887 |  13939 |  5351 |  60 |
+ |      |  07 | 14594 | 2356 |   5776 |   6462 |  2410 |  54 |
+ |      |  08 |  6905 | 1466 |   2319 |   3120 |  1509 |  43 |
+ |      |  09 |  7617 | 1214 |   3105 |   3298 |  1257 |  43 |
+ |      |  10 |  6051 | 1182 |   2514 |   2355 |  1227 |  45 |
+ |      |  11 |  5426 |  884 |   2405 |   2137 |   920 |  36 |
+ |      |  12 | 12003 | 1392 |   3047 |   7564 |  1437 |  45 |
+ | 2018 |  01 |  6538 | 1646 |   2422 |   2470 |  1696 |  50 |
+ |      |  02 |  4505 |  838 |   1705 |   1962 |   875 |  37 |
+ |      |  03 |  7078 | 1058 |   2574 |   3446 |  1101 |  43 |
+ |      |  04 |  5230 | 1093 |   1868 |   2269 |  1137 |  44 |
+ |      |  05 |  5005 | 1008 |   1778 |   2219 |  1047 |  39 |
+ #+TBLFM: $3=$4+$5+$6::$4=$7-$8
+
+#+HTML: <div id="smallnote">
+Legend: “Total” gives the total net donations in Euro received in that
+month.  “SEPA”, “Stripe” and “Paypal” are the net donation from the
+respective payment provider.  The “gSEPA” column gives the gross
+donations for the SEPA account; the “Fee” column its bank fees.  We do
+not record the Stripe payment processing costs.  The detailed Paypal
+amounts can be found at this [[file:paypal-summary.org][page]].  One-time and recurring donations
+are not distinguished.
+#+HTML: </div>
 
 
-*** Previous years
+*** Yearly donation stats
+
+This is a summary of all donations received by g10 Code GmbH to
+support GnuPG development.
+
+Note: 2017 has not yet been entered.
 
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
@@ -71,8 +108,21 @@ Goteo transferred that money in March 2014 in 6 chunks: 11423, 6000,
 5000, 5000, 5218.  The total amount is however listed for 2013 along
 with 148 individual donations of 5041 Euro (4041 net) received before
 the start of the Goteo campaign.
-
 #+HTML: </div>
+
+
+
+*** Individual donations this year
+
+This is the an automatically updated list of donations received via
+the online donation system.  These are raw numbers and don't include
+fees, chargebacks etc.
+
+#+BEGIN_HTML
+<!--BEGIN-DONATION-TABLE-->
+<!--END-DONATION-TABLE-->
+#+END_HTML
+
 
 * List of Donors
 
