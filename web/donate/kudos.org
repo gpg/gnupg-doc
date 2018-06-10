@@ -6,56 +6,15 @@
 
 * Donation Summary
 
-*** Monthly donations stats since 2017
-
-This is a summary of individual donations since 2017.  After the
-campaign boost in June and July 2017 we can conclude that a majority
-of the received donations are reccurring (either monthly, quarterly or
-yearly).  The outlier in December 2017 is due to single large donation
-of 5000 Euro.
-
- | Year | Mon | Total | SEPA | Stripe | Paypal | gSEPA | Fee |
- |------+-----+-------+------+--------+--------+-------+-----|
- | 2017 |  01 |  1771 |  271 |    136 |   1364 |   278 |   7 |
- |      |  02 |   573 |   15 |    371 |    187 |    20 |   5 |
- |      |  03 |   339 |  104 |      5 |    230 |   110 |   6 |
- |      |  04 |  5407 | 4995 |    264 |    148 |  5000 |   5 |
- |      |  05 |   587 |    5 |    509 |     73 |    10 |   5 |
- |      |  06 | 29117 | 5291 |   9887 |  13939 |  5351 |  60 |
- |      |  07 | 14594 | 2356 |   5776 |   6462 |  2410 |  54 |
- |      |  08 |  6905 | 1466 |   2319 |   3120 |  1509 |  43 |
- |      |  09 |  7617 | 1214 |   3105 |   3298 |  1257 |  43 |
- |      |  10 |  6051 | 1182 |   2514 |   2355 |  1227 |  45 |
- |      |  11 |  5426 |  884 |   2405 |   2137 |   920 |  36 |
- |      |  12 | 12003 | 1392 |   3047 |   7564 |  1437 |  45 |
- | 2018 |  01 |  6538 | 1646 |   2422 |   2470 |  1696 |  50 |
- |      |  02 |  4505 |  838 |   1705 |   1962 |   875 |  37 |
- |      |  03 |  7078 | 1058 |   2574 |   3446 |  1101 |  43 |
- |      |  04 |  5230 | 1093 |   1868 |   2269 |  1137 |  44 |
- |      |  05 |  5005 | 1008 |   1778 |   2219 |  1047 |  39 |
- #+TBLFM: $3=$4+$5+$6::$4=$7-$8
-
-#+HTML: <div id="smallnote">
-Legend: “Total” gives the total net donations in Euro received in that
-month.  “SEPA”, “Stripe” and “Paypal” are the net donation from the
-respective payment provider.  The “gSEPA” column gives the gross
-donations for the SEPA account; the “Fee” column its bank fees.  We do
-not record the Stripe payment processing costs.  The detailed Paypal
-amounts can be found at this [[file:paypal-summary.org][page]].  One-time and recurring donations
-are not distinguished.
-#+HTML: </div>
-
-
 *** Yearly donation stats
 
 This is a summary of all donations received by g10 Code GmbH to
 support GnuPG development.
 
-Note: 2017 has not yet been entered.
-
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
 |------+------+--------+--------+------------|
+| 2017 |      |  90390 | 154104 |     244494 |
 | 2016 |  271 |   9615 | 146759 |     156374 |
 | 2015 | 5847 | 205560 | 144262 |     337954 |
 | 2014 |  801 |  34700 |        |      30305 |
@@ -63,8 +22,8 @@ Note: 2017 has not yet been entered.
 | 2012 |   53 |   5991 |        |       4963 |
 | 2011 |   21 |    553 |        |        465 |
 |------+------+--------+--------+------------|
-|      |      | 294101 | 291021 |     561531 |
-#+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
+|      |      | 384491 | 445125 |     561531 |
+#+TBLFM: $5=$3+$4::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
 
 #+HTML: <div id="smallnote">
 Legend: “Indi.” indicates individual donations, “Corp.” lists large
@@ -72,6 +31,24 @@ corporate donations and grants, and “Total” gives the net value
 without taxes and banking fees.  Note that this list has been updated
 on 2017-05-02 to include the Linux Foundation grant.  Note further
 that the “Total” for 2016 is preliminary.
+
+# About 2017:\\
+# | Individual Donations |  90390 | bank fees already deducted
+# |----------------------+--------|
+# | Company          | amount | Remarks                |
+# |------------------+--------+------------------------|
+# | Facebook         |  42038 | bank fees = 42 Euro    |
+# | Stripe           |  42441 | no bank fess           |
+# | Linux Foundation |  47369 | bank fees = 11*15 Euro |
+# | First Look Media |  22256 | bank fess = 22 Euro    |
+# |------------------+--------+------------------------|
+# |                  | 154104 |                        |
+In 2017 we launched a campaign and started the recurring donation
+programm.  All individual donations summed up to a net ammount of
+90390 Euro.  We received 50000 USD each from Stripe and Facebook
+(42038 + 42441 Euro net).  The Linux Foundation granted 55000 USD
+(47369 Euro net).  To support the recurring donation campaign we also
+received 25000 USD (22256 Euro net) from First Look Media.
 
 # About 2016:\\
 # | Individual Donations | 268 |   9615 |        |
@@ -110,7 +87,44 @@ with 148 individual donations of 5041 Euro (4041 net) received before
 the start of the Goteo campaign.
 #+HTML: </div>
 
+*** Monthly donations stats since 2017
 
+This is a summary of individual donations since 2017.  After the
+campaign boost in June and July 2017 we can conclude that a majority
+of the received donations are now reccurring (either monthly,
+quarterly or yearly).  The outlier in December 2017 is a single large
+donation of 5000 Euro.
+
+ | Year | Mon | Total | SEPA | Stripe | Paypal | gSEPA | Fee |
+ |------+-----+-------+------+--------+--------+-------+-----|
+ | 2017 |  01 |  1771 |  271 |    136 |   1364 |   278 |   7 |
+ |      |  02 |   573 |   15 |    371 |    187 |    20 |   5 |
+ |      |  03 |   339 |  104 |      5 |    230 |   110 |   6 |
+ |      |  04 |  5407 | 4995 |    264 |    148 |  5000 |   5 |
+ |      |  05 |   587 |    5 |    509 |     73 |    10 |   5 |
+ |      |  06 | 29117 | 5291 |   9887 |  13939 |  5351 |  60 |
+ |      |  07 | 14594 | 2356 |   5776 |   6462 |  2410 |  54 |
+ |      |  08 |  6905 | 1466 |   2319 |   3120 |  1509 |  43 |
+ |      |  09 |  7617 | 1214 |   3105 |   3298 |  1257 |  43 |
+ |      |  10 |  6051 | 1182 |   2514 |   2355 |  1227 |  45 |
+ |      |  11 |  5426 |  884 |   2405 |   2137 |   920 |  36 |
+ |      |  12 | 12003 | 1392 |   3047 |   7564 |  1437 |  45 |
+ | 2018 |  01 |  6538 | 1646 |   2422 |   2470 |  1696 |  50 |
+ |      |  02 |  4505 |  838 |   1705 |   1962 |   875 |  37 |
+ |      |  03 |  7078 | 1058 |   2574 |   3446 |  1101 |  43 |
+ |      |  04 |  5230 | 1093 |   1868 |   2269 |  1137 |  44 |
+ |      |  05 |  5005 | 1008 |   1778 |   2219 |  1047 |  39 |
+ #+TBLFM: $3=$4+$5+$6::$4=$7-$8
+
+#+HTML: <div id="smallnote">
+Legend: “Total” gives the total net donations in Euro received in that
+month.  “SEPA”, “Stripe” and “Paypal” are the net donation from the
+respective payment provider.  The “gSEPA” column gives the gross
+donations for the SEPA account; the “Fee” column its bank fees.  We do
+not record the Stripe payment processing costs.  The detailed Paypal
+amounts can be found at this [[file:paypal-summary.org][page]].  One-time and recurring donations
+are not distinguished.
+#+HTML: </div>
 
 *** Individual donations this year
 
@@ -139,6 +153,7 @@ fees, chargebacks etc.
 
   Thank you.
 
+  - All donors to GnuPG in [[file:kudos-2017.org][2018]]
   - All donors to GnuPG in [[file:kudos-2017.org][2017]]
   - All donors to GnuPG in [[file:kudos-2016.org][2016]]
   - All donors to GnuPG in [[file:kudos-2015.org][2015]]
