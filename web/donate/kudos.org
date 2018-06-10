@@ -118,7 +118,7 @@ donation of 5000 Euro.
 
 #+HTML: <div id="smallnote">
 Legend: “Total” gives the total net donations in Euro received in that
-month.  “SEPA”, “Stripe” and “Paypal” are the net donation from the
+month.  “SEPA”, “Stripe” and “Paypal” are the net donations from the
 respective payment provider.  The “gSEPA” column gives the gross
 donations for the SEPA account; the “Fee” column its bank fees.  We do
 not record the Stripe payment processing costs.  The detailed Paypal
@@ -130,7 +130,7 @@ are not distinguished.
 
 This is the an automatically updated list of donations received via
 the online donation system.  These are raw numbers and don't include
-fees, chargebacks etc.
+recurred or SEPA donations, fees, chargebacks etc.
 
 #+BEGIN_HTML
 <!--BEGIN-DONATION-TABLE-->
