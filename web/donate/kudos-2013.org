@@ -4,11 +4,11 @@
 
 * People who donated money to GnuPG in 2013
 
-#+HTML: <ul>
+#+HTML: <div id="tagcloudlist"><ul>
 #+HTML: <!--BEGIN-DONATIONS-->
 #+HTML: <li>[please reload in a few minutes while the list is being updated]
 #+HTML: <!--END-DONATIONS-->
-#+HTML: </ul>
+#+HTML: </ul><p class="doclear"> </p></div>
 
   Thank you.
 
