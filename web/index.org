@@ -65,6 +65,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 1.4.23 released (2018-06-11)                             :important:
+
+Although GnuPG 1.4 is of very limited use today we did a maintenance
+release to address the critical security bug {{{CVE(2017-7526)}}}.
+See the [[../../download/index.org][download]] section on how to get this version.
+
 ** GnuPG 2.2.8 released (2018-06-08)                              :important:
 
 This version fixes a critical security bug.  Either this version or a
