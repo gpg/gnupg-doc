@@ -65,6 +65,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.8.3 released (2018-06-13)
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.3
+and 1.7.10.  These releases fix a local side-channel attack on ECDSA
+signature as described in the white pager "Return of the Hidden Number
+Proble" and got assigned {{{CVE(2018-0495)}}}.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html][more]]}
+
 ** GnuPG 1.4.23 released (2018-06-11)                             :important:
 
 Although GnuPG 1.4 is of very limited use today we did a maintenance
