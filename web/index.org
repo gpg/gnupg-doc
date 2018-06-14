@@ -69,8 +69,8 @@ The latest release news:\\
 
 We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.3
 and 1.7.10.  These releases fix a local side-channel attack on ECDSA
-signature as described in the white pager "Return of the Hidden Number
-Proble" and got assigned {{{CVE(2018-0495)}}}.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html][more]]}
+signature as described in the white pager “Return of the Hidden Number
+Problem” and got assigned {{{CVE(2018-0495)}}}.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html][more]]}
 
 ** GnuPG 1.4.23 released (2018-06-11)                             :important:
 
