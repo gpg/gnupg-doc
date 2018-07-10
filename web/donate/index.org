@@ -24,7 +24,7 @@
   *Many thanks to all supporters*
 
   If you are using [[../software/index.org][GnuPG]], [[../software/libgcrypt/index.org][Libgcrypt]], [[../software/gpgme/index.org][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
-  to help with development and maintenance please consider to make a
+  to help with development and maintenance please consider making a
   donation.
 
 ** Ways to donate
