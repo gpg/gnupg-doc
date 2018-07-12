@@ -491,6 +491,12 @@ To make it a bit harder to test for published keys, the server
 responsible to serve the WELLKNOWN directory SHOULD NOT create an
 index file for that directory or any sub-directory.
 
+The mail provider MUST make sure to filter a key in a way that only
+the User ID belonging to that user is returned and that confirmation
+requests are only send for such User IDs.  It is further recommended
+that a client filters the key for a publication requests so that only
+a key with the specific User ID of the provider is send.
+
 
 * IANA Considerations
 
