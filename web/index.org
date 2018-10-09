@@ -65,6 +65,16 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG Made Easy 1.12.0 released (2018-10-08)
+
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q4/000429.html][more]]}.
+
+** GnuPG 2.2.10 released (2018-08-30)
+
+We are pleased to announce the availability of GnuPG version 2.2.10.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q3/000428.html][more]]}
+
 ** GnuPG 2.2.9 released (2018-07-12)
 
 We are pleased to announce the availability of GnuPG version 2.2.9.

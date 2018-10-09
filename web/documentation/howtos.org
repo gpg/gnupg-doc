@@ -60,6 +60,11 @@
 
    This smartcard howto is also available in the [[../download/git.org][source repository]].
 
+** Web Key Directory Installation HOWTO
+
+   We are working on a HOTWO for the Web Key Directory.  For now
+   please consult the [[https://wiki.gnupg.org/WKD][Wiki]].
+
 ** GnuPG Keysigning Party HOWTO
 
    Once you get familiar with GnuPG's mechanisms, you surely wouldn't
