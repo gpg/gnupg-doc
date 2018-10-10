@@ -109,6 +109,13 @@ Here are articles originally published in English.
 
 Here are articles originally published in German.
 
+** BSI, 2018-09-27
+
+  BSI-Projekt "EasyGPG": E-Mail Verschlüsselung vereinfachen
+
+  [[https://www.bsi.bund.de/DE/Themen/Kryptografie_Kryptotechnologie/Kryptografie/EasyGPG/EasyGPG.html][Artikel]]
+
+
 ** Heise, 2017-06-06
   Neue Crowdfunding-Runde für GnuPG-Entwicklung\\
   Christiane Schulzki-Haddouti
