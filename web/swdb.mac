@@ -67,11 +67,11 @@
 #
 # GPA
 #
-#+macro: gpa_ver  0.9.10
-#+macro: gpa_date 2016-11-19
+#+macro: gpa_ver  0.10.0
+#+macro: gpa_date 2018-10-16
 #+macro: gpa_size 745k
-#+macro: gpa_sha1 c629348725c1bf5dafd57f8a70187dc89815ce60
-#+macro: gpa_sha2 c3b9cc36fd9916e83524930f99df13b1d5f601f4c0168cb9f5d81422e282b727
+#+macro: gpa_sha1 61475989acd12de8b7daacd906200e8b4f519c5a
+#+macro: gpa_sha2 95dbabe75fa5c8dc47e3acf2df7a51cee096051e5a842b4c9b6d61e40a6177b1
 
 
 #
