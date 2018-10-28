@@ -14,26 +14,26 @@
   :CUSTOM_ID: intro
   :END:
 
-  | Version:        | 0.0.1-draft-001                          |
+  | Version:        | 0.0.1-draft-002                          |
   | Author:         | Ben McGinnes <ben@gnupg.org>             |
   | Author GPG Key: | DB4724E6FA4286C92B4E55C4321E4E2373590E5D |
   | Language:       | Australian English, British English      |
   | xml:lang:       | en-AU, en-GB, en                         |
 
-  This document provides a specification for using OpenPGP
-  cryptography with the Activity Streams 2.0 transport method.  It was
-  devised with particular attention towards providing end-user
-  encryption and verification on federated ActivityPub based instances
-  (e.g. Mastodon and Pleroma).
+This document provides a specification for using OpenPGP cryptography
+with the Activity Streams 2.0 transport method.  It was devised with
+particular attention towards providing end-user encryption and
+verification on federated ActivityPub based instances (e.g. Mastodon
+and Pleroma).
 
-  This proposal is not an official part of the W3C's protocols, but is
-  offered as an optional means of addressing some of the security
-  issues identified as lacking or missing in those protocols.  As such
-  it is offered under the same terms as any [[https://www.ietf.org/][IETF]] or [[https://www.w3.org][W3 Consortium]]
-  standards or proposals as free for any use.  Example code, however,
-  may be released under the same terms as the GnuPG Project or some
-  other license as relevant.  Example code will be provided separately
-  from this document.
+This proposal is not an official part of the W3C's protocols, but is
+offered as an optional means of addressing some of the security issues
+identified as lacking or missing in those protocols.  As such it is
+offered under the same terms as any [[https://www.ietf.org/][IETF]] or [[https://www.w3.org][W3 Consortium]] standards or
+proposals as free for any use.  Example code, however, may be released
+under the same terms as the GnuPG Project or some other license as
+relevant.  Example code will be provided separately from this
+document.
 
 
 ** Motivation
@@ -41,27 +41,26 @@
    :CUSTOM_ID: intro-motive
    :END:
 
-   The current Presidential Administration in the USA has diverged
-   considerably from the policies of his predecessors with recent
-   legislative and regulatory changes which are set to enable a far
-   greater implementation of authoritarian policies and agendas, as
-   well as enabling those policies to be enforced beyond the territory
-   of the United States of America.  This sets a dangerous precedent
-   with regards to the freedom of all people around the globe to
-   communicate freely and privately, particularly when they may become
-   subject to matters which are entirely legal where they live, but
-   which the United States legislates against.
+The current Presidential Administration in the USA has diverged
+considerably from the policies of his predecessors with recent
+legislative and regulatory changes which are set to enable a far
+greater implementation of authoritarian policies and agendas, as well
+as enabling those policies to be enforced beyond the territory of the
+United States of America.  This sets a dangerous precedent with
+regards to the freedom of all people around the globe to communicate
+freely and privately, particularly when they may become subject to
+matters which are entirely legal where they live, but which the United
+States legislates against.
 
-   The legislative and regulatory changes in the United States of most
-   concern to the rest of the world at the present time are: the
-   removal of Net Neutrality provisions by the FCC, the CLOUD Act and
-   the SESTA/FOSTA Act.  The latter being the attempt to enforce
-   American laws regarding adult content, primarily of a sexual
-   nature, globally.  They also remove the “safe harbour” provisions
-   which previously permitted hosting providers to ignore what their
-   customers were doing, in turn making those providers tools of the
-   state who must police the actions of end users and actively censor
-   them.
+The legislative and regulatory changes in the United States of most
+concern to the rest of the world at the present time are: the removal
+of Net Neutrality provisions by the FCC, the CLOUD Act and the
+SESTA/FOSTA Act.  The latter being the attempt to enforce American
+laws regarding adult content, primarily of a sexual nature, globally.
+They also remove the “safe harbour” provisions which previously
+permitted hosting providers to ignore what their customers were doing,
+in turn making those providers tools of the state who must police the
+actions of end users and actively censor them.
 
 
 ** Approach
@@ -69,43 +68,41 @@
    :CUSTOM_ID: intro-approach
    :END:
 
-   Over the course of the last decade or a little more, a great deal
-   of communication online has shifted towards using social media
-   networks.  Email is still good for many things, but it is not good
-   for everything and various types of social networks fill that need.
+Over the course of the last decade or a little more, a great deal of
+communication online has shifted towards using social media networks.
+Email is still good for many things, but it is not good for everything
+and various types of social networks fill that need.
 
-   Modifying the underlying protocols or specifications of proprietary
-   networks, such as Twitter and Facebook, is generally not possible.
-   It is also clear that these networks will act against some or even
-   all of their own user base in order to achieve the goals of those
-   running the companies in question.
+Modifying the underlying protocols or specifications of proprietary
+networks, such as Twitter and Facebook, is generally not possible.  It
+is also clear that these networks will act against some or even all of
+their own user base in order to achieve the goals of those running the
+companies in question.
 
-   In the case of Facebook that is in the form of surveillance of
-   large populations and subsequent manipulation of them.  In the case
-   of Twitter it is in the form of banning those who vehemently oppose
-   Nazism or who discuss or promote adult entertainment of various
-   types, primarily pornography and sex work, regardless of the
-   jurisdiction to which the end user is actually subject.
+In the case of Facebook that is in the form of surveillance of large
+populations and subsequent manipulation of them.  In the case of
+Twitter it is in the form of banning those who vehemently oppose
+Nazism or who discuss or promote adult entertainment of various types,
+primarily pornography and sex work, regardless of the jurisdiction to
+which the end user is actually subject.
 
-   Open standards and protocols, however, can be leveraged freely and
-   as necessary.  This is what Phil Zimmermann did back in 1991 when
-   he released the first version of Pretty Good Privacy for use with
-   Email, USENET and, very likely, FidoNet (or FidoNet style) BBS
-   networks.  The same approach may be utilised now with social
-   networks which themselves provide an open specification and where
-   that specification provides the means for extending or advancing
-   itself.
+Open standards and protocols, however, can be leveraged freely and as
+necessary.  This is what Phil Zimmermann did back in 1991 when he
+released the first version of Pretty Good Privacy for use with Email,
+USENET and, very likely, FidoNet (or FidoNet style) BBS networks.  The
+same approach may be utilised now with social networks which
+themselves provide an open specification and where that specification
+provides the means for extending or advancing itself.
 
-   There is clearly grounds for social network users to have access to
-   the tools to send and receive end-to-end encrypted private messages
-   via their social network accounts and identities.  Likewise there
-   is a need for end users to be able to prove, should they wish to do
-   so, that a message was not modified in transit; either by their own
-   server of another within the federated networks in use.
+There is clearly grounds for social network users to have access to
+the tools to send and receive end-to-end encrypted private messages
+via their social network accounts and identities.  Likewise there is a
+need for end users to be able to prove, should they wish to do so,
+that a message was not modified in transit; either by their own server
+of another within the federated networks in use.
 
-   This current proposal applies to the W3 Consortium's [[https://www.w3.org/TR/activitystreams-core/][Activity
-   Streams 2.0]] and [[https://www.w3.org/TR/activitypub/][ActivityPub]] protocols; the latter being based upon
-   the former.
+This current proposal applies to the W3 Consortium's [[https://www.w3.org/TR/activitystreams-core/][Activity Streams
+2.0]] and [[https://www.w3.org/TR/activitypub/][ActivityPub]] protocols; the latter being based upon the former.
 
 
 ** Cryptographic Implementation Choice
@@ -113,26 +110,25 @@
    :CUSTOM_ID: intro-crypto-choice
    :END:
 
-   The cryptographic choice with regards to the GnuPG Project was
-   limited to the two engines which GnuPG currently supports: OpenPGP
-   and S/MIME.  Since the intended outcome of this proposal is to
-   provide a means of securing or preventing content manipulation to
-   end users directly, the OpenPGP model was selected.
+The cryptographic choice with regards to the GnuPG Project was limited
+to the two engines which GnuPG currently supports: OpenPGP and S/MIME.
+Since the intended outcome of this proposal is to provide a means of
+securing or preventing content manipulation to end users directly, the
+OpenPGP model was selected.
 
-   It would, however, be possible to switch the security focus to the
-   server level in order to utilise S/MIME or some future advancement
-   may necessitate or simply favour utilising a different
-   cryptographic implementation or method.  As a consequence this
-   proposal is designed to more easily enable swapping one method for
-   another.
+It would, however, be possible to switch the security focus to the
+server level in order to utilise some future advancement may
+necessitate or simply favour utilising a different cryptographic
+implementation or method.  As a consequence this proposal is designed
+to more easily enable swapping one method for another.
 
-   Note that this is separate and in addition to the use of a PEM key
-   by ActivityPub servers for each of their users.  In those cases the
-   private key is generated by the ActivityPub server when the user
-   account is created.  As a consequence it is inherently flawed from
-   a user security perspective.  It does, however, move the complexity
-   out of the user level and back to the server level.  Whereas this
-   proposal does not.
+Note that this is separate and in addition to the use of a PEM key by
+ActivityPub servers for each of their users.  In those cases the
+private key is generated by the ActivityPub server when the user
+account is created.  As a consequence it is inherently flawed from a
+user security perspective.  It does, however, move the complexity out
+of the user level and back to the server level.  Whereas this proposal
+does not.
 
 
 ** Definitions
@@ -140,16 +136,14 @@
    :CUSTOM_ID: intro-definitions
    :END:
 
-   *IMPORTANT:* Everything in this proposal is optional.  The
-   definitions listed here are within the context of the proposal
-   itself.
+*IMPORTANT:* Everything in this proposal is optional.  The definitions
+listed here are within the context of the proposal itself.
 
-   This document uses the terms defined in [[https://tools.ietf.org/html/rfc4880][RFC 4880]] and in the same
-   way.
+This document uses the terms defined in [[https://tools.ietf.org/html/rfc4880][RFC 4880]] and in the same way.
 
-   The key words: "*must*", "*must not*", "*required*", "*shall*",
-   "*shall not*", "*should*", "*should not*", "*recommended*",
-   "*may*", and "*optional*" to be interpreted as defined in [[https://tools.ietf.org/html/rfc2119][RFC 2119]].
+The key words: "*must*", "*must not*", "*required*", "*shall*",
+"*shall not*", "*should*", "*should not*", "*recommended*", "*may*",
+and "*optional*" to be interpreted as defined in [[https://tools.ietf.org/html/rfc2119][RFC 2119]].
 
    The following terms have these definitions:
 
@@ -159,9 +153,9 @@
    - *AC* means Active Cryptography or Activity Cryptography; the
      working title for the protocol extension.
 
-   The document also draws on the same RFCs cited by both the Activity
-   Streams [[https://www.w3.org/TR/activitystreams-core/][core]] and [[https://www.w3.org/TR/activitystreams-vocabulary/][vocabulary]] documents, as well as the [[https://www.w3.org/TR/activitypub/][ActivityPub]]
-   protocol definition.
+The document also draws on the same RFCs cited by both the Activity
+Streams [[https://www.w3.org/TR/activitystreams-core/][core]] and [[https://www.w3.org/TR/activitystreams-vocabulary/][vocabulary]] documents, as well as the [[https://www.w3.org/TR/activitypub/][ActivityPub]]
+protocol definition.
 
 
 * Cryptographic Activities
@@ -169,9 +163,9 @@
   :CUSTOM_ID: crypto
   :END:
 
-  This section introduces the new objects, collections, activity types
-  and properties necessary to implement OpenPGP functions with
-  Activity Streams 2.0 and ActivityPub.
+This section introduces the new objects, collections, activity types
+and properties necessary to implement OpenPGP functions with Activity
+Streams 2.0 and ActivityPub.
 
 
 ** Cryptographic protocol
@@ -179,21 +173,38 @@
    :CUSTOM_ID: crypto-protocol
    :END:
 
-   In order to handle any situations in which servers and/or clients
-   may implement multiple cryptographic protocols, a property *must* be
-   set for any cryptographic object or activity.
+In order to handle any situations in which servers and/or clients may
+implement multiple cryptographic protocols, a property *must* be set
+for any cryptographic object or activity.
 
    #+begin_src javascript
      { "cryptographic-protocol": "openpgp" }
    #+end_src
 
-   Where the relevant JSON data is already clearly part of a
-   cryptographic object or activity this proprty *may* be defined as
-   =protocol=.
+Where the relevant JSON data is already clearly part of a
+cryptographic object or activity this proprty *may* be defined as
+=protocol=.
 
    #+begin_src javascript
      { "protocol": "openpgp" }
    #+end_src
+
+
+*** OpenPGP Protocol
+    :PROPERTIES:
+    :CUSTOM_ID: crypto-protocol-openpgp
+    :END:
+
+When integrating OpenPGP with Activities or Objects, consideration
+must be given to both the versions in use throughout the network and
+setting sensible minimum requirements so as not to adversely affect
+the rest of the network.
+
+For this reason the current standards defined in RFC 4880 *must* be
+implemented, while the recommendations of RFC 4880bis *should* be
+available.  While a number of older versions of the standard *may* be
+available with any given implementation, any older standard for which
+existing recommendations state not to use
 
 
 ** MIME and file types
@@ -201,19 +212,19 @@
    :CUSTOM_ID: crypto-mime-types
    :END:
 
-   The media or content types utilised are adapted from the PGP/MIME
-   types defined in [[https://tools.ietf.org/html/rfc2015][RFC 2015]] and [[https://tools.ietf.org/html/rfc3156][RFC 3156]].  Specifically this covers
-   the =pgp-keys=, =application/pgp-encrypted= and
-   =application/pgp-signed= MIME types.
+The media or content types utilised are adapted from the PGP/MIME
+types defined in [[https://tools.ietf.org/html/rfc2015][RFC 2015]] and [[https://tools.ietf.org/html/rfc3156][RFC 3156]].  Specifically this covers the
+=pgp-keys=, =application/pgp-encrypted= and =application/pgp-signed=
+MIME types.
 
-   In addition to these an implementation *may* utilise
-   =application/pgp-encrypted+activitystreams= and *may* utilise
-   =application/pgp-signed+activitystreams= to indicate an Activity
-   Stream object (i.e. an =application/activity+json= object) is
-   either entirely affected by the cryptographic function or the
-   object is OpenPGP data which contains an ActivityPub or Activity
-   Strams object or activity type which will need to be processed upon
-   decryption or signature validation.
+In addition to these an implementation *may* utilise
+=application/pgp-encrypted+activitystreams= and *may* utilise
+=application/pgp-signed+activitystreams= to indicate an Activity
+Stream object (i.e. an =application/activity+json= object) is either
+entirely affected by the cryptographic function or the object is
+OpenPGP data which contains an ActivityPub or Activity Strams object
+or activity type which will need to be processed upon decryption or
+signature validation.
 
 
 ** Keys
@@ -221,31 +232,30 @@
    :CUSTOM_ID: crypto-keys
    :END:
 
-   Unlike the PEM key included with ActivityPub instances, OpenPGP
-   keys are always intended to be generated by the end user(s)
-   controlling a given actor's account and not controlled or accessed
-   by the server, even when that server is controlled by a single
-   user.
+Unlike the PEM key included with ActivityPub instances, OpenPGP keys
+are always intended to be generated by the end user(s) controlling a
+given actor's account and not controlled or accessed by the server,
+even when that server is controlled by a single user.
 
-   There are also valid reasons or use cases for assigning multiple
-   keys to an actor or using the same key with multiple actors.  This
-   is particularly the case if proof of OpenPGP key control was
-   adopted as an alternative means of providing authentication between
-   a client and server, in addition to OAuth methods.
+There are also valid reasons or use cases for assigning multiple keys
+to an actor or using the same key with multiple actors.  This is
+particularly the case if proof of OpenPGP key control was adopted as
+an alternative means of providing authentication between a client and
+server, in addition to OAuth methods.
 
-   Though there is already a well established network of public
-   keyservers, the SKS keyserver pool, and from GPG 2.1 there is an
-   alternative method of retrieving keys associated with a domain name
-   built-in; there are also valid reasons for not using these methods
-   of providing access to a public key used with activities.
+Though there is already a well established network of public
+keyservers, the SKS keyserver pool, and from GPG 2.1 there is an
+alternative method of retrieving keys associated with a domain name
+built-in; there are also valid reasons for not using these methods of
+providing access to a public key used with activities.
 
-   Likewise, there is a need for serving key information with actor
-   information and referencing it with objects and activities where
-   necessary.  This would effectively turn an ActivityPub instance
-   into a limited public keyserver for the keys assigned to actors
-   under its purview, though it may not maintain or serve copies of
-   those keys containing full web-of-trust signatures, particularly if
-   there are size constraints or bandwidth limitations.[fn:1]
+Likewise, there is a need for serving key information with actor
+information and referencing it with objects and activities where
+necessary.  This would effectively turn an ActivityPub instance into a
+limited public keyserver for the keys assigned to actors under its
+purview, though it may not maintain or serve copies of those keys
+containing full web-of-trust signatures, particularly if there are
+size constraints or bandwidth limitations.[fn:1]
 
 
 *** Public keys and Actors
@@ -253,91 +263,89 @@
     :CUSTOM_ID: crypto-actor
     :END:
 
-    In order to enable access to cryptographic information controlled
-    at the user level we need to add an optional property to actors;
-    one where the absence of it equates to a value of =None= or
-    =null=.
+In order to enable access to cryptographic information controlled at
+the user level we need to add an optional property to actors; one
+where the absence of it equates to a value of =null=.
 
-    Since it is theoretically possible for multiple cryptographic
-    protocols to be in use, in addition to the Linked Data and HTTP
-    Signatures referenced in the ActivityPub specification, this
-    optional property *must* contain an array of JSON data listing the
-    =protocol= or =cryptographic-protocol=, the =cryptoContext= for a
-    URI of a collection containing more relevant data, the
-    =publicKeys= for an additional URI just for checking public key
-    data and *may* contain a =primaryKeyID= referencing the preferred
-    key ID used with the actor.
+Since it is theoretically possible for multiple cryptographic
+protocols to be in use, in addition to the Linked Data and HTTP
+Signatures referenced in the ActivityPub specification, this optional
+property *must* contain an array of JSON data listing the =protocol=
+or =cryptographic-protocol=, the =cryptoContext= for a URI of a
+collection containing more relevant data, the =publicKeys= for an
+additional URI just for checking public key data and *may* contain a
+=primaryKeyID= referencing the preferred key ID used with the actor.
 
-    Here is an example using the same actor example in the ActivityPub
-    specification.  Note that the key ID or fingerprint used here does
-    not exist on the keyservers and is really just a SHA1 sum of the
-    actor's name.
+Here is an example using the same actor example in the ActivityPub
+specification.  Note that the key ID or fingerprint used here does not
+exist on the keyservers and is really just a SHA1 sum of the actor's
+name.
 
-    #+begin_src javascript
+#+BEGIN_SRC javascript
+  {
+      "@context": ["https://www.w3.org/ns/activitystreams",
+		   {"@language": "ja"}],
+      "type": "Person",
+      "id": "https://kenzoishii.example.com/",
+      "following": "https://kenzoishii.example.com/following.json",
+      "followers": "https://kenzoishii.example.com/followers.json",
+      "liked": "https://kenzoishii.example.com/liked.json",
+      "inbox": "https://kenzoishii.example.com/inbox.json",
+      "outbox": "https://kenzoishii.example.com/feed.json",
+      "preferredUsername": "kenzoishii",
+      "name": "石井健蔵",
+      "summary": "この方はただの例です",
+      "icon": [
+	  "https://kenzoishii.example.com/image/165987aklre4"
+      ],
+      "cryptoProtocols": [ {
+	  "protocol": "openpgp",
+	  "cryptoContext": "https://kenzoishii.example.com/openpgp.json",
+	  "publicKeys": "https://kenzoishii.example.com/openpgpkeys.json",
+	  "primaryKeyID": "3A1222F4BE79DB2AF069FADCF507B8E7E6EF68BF"
+      }   ]
+  }
+#+END_SRC
+
+A slight variation demonstrating how multiple cryptographic
+implementations could be utilised along with not specifying a primary
+key ID may appear more like this:
+
+#+BEGIN_SRC javascript
+  {
+      "@context": ["https://www.w3.org/ns/activitystreams",
+		   {"@language": "ja"}],
+      "type": "Person",
+      "id": "https://kenzoishii.example.com/",
+      "following": "https://kenzoishii.example.com/following.json",
+      "followers": "https://kenzoishii.example.com/followers.json",
+      "liked": "https://kenzoishii.example.com/liked.json",
+      "inbox": "https://kenzoishii.example.com/inbox.json",
+      "outbox": "https://kenzoishii.example.com/feed.json",
+      "preferredUsername": "kenzoishii",
+      "name": "石井健蔵",
+      "summary": "この方はただの例です",
+      "icon": [
+	  "https://kenzoishii.example.com/image/165987aklre4"
+      ],
+      "cryptoProtocols": [ {
+	  "protocol": "openpgp",
+	  "cryptoContext": "https://kenzoishii.example.com/openpgp.json",
+	  "publicKeys": "https://kenzoishii.example.com/openpgpkeys.json",
+	  "primaryKeyID": "3A1222F4BE79DB2AF069FADCF507B8E7E6EF68BF"
+      },
       {
-	  "@context": ["https://www.w3.org/ns/activitystreams",
-		       {"@language": "ja"}],
-	  "type": "Person",
-	  "id": "https://kenzoishii.example.com/",
-	  "following": "https://kenzoishii.example.com/following.json",
-	  "followers": "https://kenzoishii.example.com/followers.json",
-	  "liked": "https://kenzoishii.example.com/liked.json",
-	  "inbox": "https://kenzoishii.example.com/inbox.json",
-	  "outbox": "https://kenzoishii.example.com/feed.json",
-	  "preferredUsername": "kenzoishii",
-	  "name": "石井健蔵",
-	  "summary": "この方はただの例です",
-	  "icon": [
-	      "https://kenzoishii.example.com/image/165987aklre4"
-	  ],
-	  "cryptoProtocols": [ {
-	      "protocol": "openpgp",
-	      "cryptoContext": "https://kenzoishii.example.com/openpgp.json",
-	      "publicKeys": "https://kenzoishii.example.com/openpgpkeys.json",
-	      "primaryKeyID": "3A1222F4BE79DB2AF069FADCF507B8E7E6EF68BF"
-	  }   ]
-      }
-    #+end_src
+	  "protocol": "openquantum",
+	  "cryptoContext": "https://kenzoishii.example.com/openquantum.json",
+	  "publicKeys": "https://kenzoishii.example.com/openquantumkeys.json"
+      }	]
+  }
+#+END_SRC
 
-    A slight variation demonstrating how multiple cryptographic
-    implementations could be utilised along with not specifying a
-    primary key ID may appear more like this:
-
-    #+begin_src javascript
-      {
-	  "@context": ["https://www.w3.org/ns/activitystreams",
-		       {"@language": "ja"}],
-	  "type": "Person",
-	  "id": "https://kenzoishii.example.com/",
-	  "following": "https://kenzoishii.example.com/following.json",
-	  "followers": "https://kenzoishii.example.com/followers.json",
-	  "liked": "https://kenzoishii.example.com/liked.json",
-	  "inbox": "https://kenzoishii.example.com/inbox.json",
-	  "outbox": "https://kenzoishii.example.com/feed.json",
-	  "preferredUsername": "kenzoishii",
-	  "name": "石井健蔵",
-	  "summary": "この方はただの例です",
-	  "icon": [
-	      "https://kenzoishii.example.com/image/165987aklre4"
-	  ],
-	  "cryptoProtocols": [ {
-	      "protocol": "openpgp",
-	      "cryptoContext": "https://kenzoishii.example.com/openpgp.json",
-	      "publicKeys": "https://kenzoishii.example.com/openpgpkeys.json",
-	      "primaryKeyID": "3A1222F4BE79DB2AF069FADCF507B8E7E6EF68BF"
-	  },
-	  {
-	      "protocol": "smime",
-	      "cryptoContext": "https://kenzoishii.example.com/smime.json",
-	      "publicKeys": "https://kenzoishii.example.com/smimekeys.json"
-	  }	]
-      }
-    #+end_src
-
-    As the example suggests, this would enable utilising both a client
-    controlled cryptographic method in the form of OpenPGP and a
-    server controlled or authorised cryptographic method in the form
-    of S/MIME.[fn:2]
+In this example of the near-ish future OpenPGP usage is complemented
+by advances in Quantum Cryptography and the development of the FOSS
+Quantum Privacy Guard (QPG) with the standard being developed right
+along side it.[fn:2]
 
 
 *** Cryptography Context
@@ -345,310 +353,305 @@
     :CUSTOM_ID: crypto-context
     :END:
 
-    The cryptography contexts referenced from the actor define all the
-    ways in which any key or keys are used in relation to actions and
-    objects by or for that actor.  First by identifying the keys and
-    subkeys and then by defining which type of objects they're used in
-    relation to.  As well as whether the account is configured to
-    always use them, as *may* be the case with signatures or not.
+The cryptography contexts referenced from the actor define all the
+ways in which any key or keys are used in relation to actions and
+objects by or for that actor.  First by identifying the keys and
+subkeys and then by defining which type of objects they're used in
+relation to.  As well as whether the account is configured to always
+use them, as *may* be the case with signatures or not.
 
-    The Cryptography Context is a collection of nested collections and
-    objects dealing with each key or subkey type and the ways they're
-    used in regards to activities or other objects.
+The Cryptography Context is a collection of nested collections and
+objects dealing with each key or subkey type and the ways they're used
+in regards to activities or other objects.
 
-    In the following examples I use my current key in conjunction with
-    an imaginary (not-yet-existing) ActivityPub instance on my own
-    domain, =snuffy.adversary.org=.[fn:3]
+In the following examples I use my current key in conjunction with an
+imaginary (not-yet-existing) ActivityPub instance on my own domain,
+=snuffy.adversary.org=.[fn:3]
 
-    The =keys= item *must* contain a =keyinfo= item for each public
-    key associated with the actor account.
+The =keys= item *must* contain a =keyinfo= item for each public key
+associated with the actor account.
 
-    The =keyinfo= item *must* contain =keyIDs= data for the primary key
-    and all enabled subkeys of the key.
+The =keyinfo= item *must* contain =keyIDs= data for the primary key
+and all enabled subkeys of the key.
 
-    The =keyinfo= item *must* contain a =type= property which
-    indicates both the key's cryptographic protocol and version number
-    of that protocol.  Most current OpenPGP keys are version 4 keys.
+The =keyinfo= item *must* contain a =type= property which indicates
+both the key's cryptographic protocol and version number of that
+protocol.  Most current OpenPGP keys are version 4 keys.
 
-    The =keyinfo= item *may* contain =keyIDs= data for /revoked/ or
-    /disabled/ keys previously used with the actor or revoked subkeys of
-    an active key.  Where this data is included the =keyID= item
-    *must* contain an =enabled= property with a boolean value of
-    /*True*/ or /*False*/.  Additionally a =revoked= property *may* be
-    included, also with a boolean value of /*True*/ or /*False*/.
+The =keyinfo= item *may* contain =keyIDs= data for /revoked/ or
+/disabled/ keys previously used with the actor or revoked subkeys of
+an active key.  Where this data is included the =keyID= item *must*
+contain an =enabled= property with a boolean value of /*true*/ or
+/*false*/.  Additionally a =revoked= property *may* be included, also
+with a boolean value of /*true*/ or /*false*/.
 
-    Where the =enabled= and =revoked= properties are not included, the
-    default values are assumed to be that =enabled= is /*True*/ and
-    =revoked= is /*False*/.
+Where the =enabled= and =revoked= properties are not included, the
+default values are assumed to be that =enabled= is /*true*/ and
+=revoked= is /*false*/.
 
-    The =keyinfo= item *may* contain =userIDs= data for some or all of
-    the userIDs listed on the key itself.
+The =keyinfo= item *may* contain =userIDs= data for some or all of the
+userIDs listed on the key itself.
 
-    The =keyinfo= item *may* contain a =keyfiles= property with direct
-    links to either or both of the GPG or PGP binary key formats or
-    the ASCII armoured key file format.
+The =keyinfo= item *may* contain a =keyfiles= property with direct
+links to either or both of the GPG or PGP binary key formats or the
+ASCII armored key file format.
 
-    The =keyinfo= item *must* contain the =publicKeys= property pointing
-    to a JSON encoded URL containing at least the minimised version of
-    the public key.
+The =keyinfo= item *must* contain the =publicKeys= property pointing
+to a JSON encoded URL containing at least the minimised version of the
+public key.
 
-    A =keyID= item *must* contain an =id= property of the full key ID
-    which is the hexadecimal key fingerprint without spaces.  The =id=
-    property *must not* be either the short or long key ID formats.
+A =keyID= item *must* contain an =id= property of the full key ID
+which is the hexadecimal key fingerprint without spaces.  The =id=
+property *must not* be either the short or long key ID formats.
 
-    A =keyID= item *must* contain a =type= property with a value
-    indicating whether the key is the /*primary*/ (certification) key
-    or a /*subkey*/.
+A =keyID= item *must* contain a =type= property with a value
+indicating whether the key is the /*primary*/ (certification) key or a
+/*subkey*/.
 
-    A =keyID= item *may* contain a =fingerprint= property with the
-    full key ID in a human readable format.  This is the finterprint
-    format which most OpenPGP users will be familiar with and normally
-    presents the fingerprint with spaces between hexadecimal groupings
-    of four characters each.
+A =keyID= item *may* contain a =fingerprint= property with the full
+key ID in a human readable format.  This is the fingerprint format
+which most OpenPGP users will be familiar with and normally presents
+the fingerprint with spaces between hexadecimal groupings of four
+characters each.
 
-    A =keyID= item *must* contain an =algorithm= property with a value
-    indicating which asymmetric cryptographic algorithm *or* which
-    elliptic curve algorithm it uses.
+A =keyID= item *must* contain an =algorithm= property with a value
+indicating which asymmetric cryptographic algorithm *or* which
+elliptic curve algorithm it uses.
 
-    A =keyID= item *must* contain a =size= property with an integer
-    value of the bit size of the key or subkey.
+A =keyID= item *must* contain a =size= property with an integer value
+of the bit size of the key or subkey.
 
-    A =keyID= item *must* contain properties for each of the four
-    capabilities a key or subkey may possess: =certification=,
-    =encryption=, =signing= and =authentication=.  The values for each
-    property are boolean strings; /*True*/ or /*False*/.
+A =keyID= item *must* contain properties for each of the four
+capabilities a key or subkey may possess: =certification=,
+=encryption=, =signing= and =authentication=.  The values for each
+property are boolean strings; /*true*/ or /*false*/.
 
-    A =keyID= item *must* contain a =timestamp= property with an
-    integer value of the number of seconds since the epoch since the
-    key or subkey was last modified.  This will usually be the
-    timestamp of the key's creation, but may indicate some other
-    modification such as changing an expiration date or revoking the
-    key or subkey.
+A =keyID= item *must* contain a =timestamp= property with an integer
+value of the number of seconds since the epoch since the key or subkey
+was last modified.  This will usually be the timestamp of the key's
+creation, but may indicate some other modification such as changing an
+expiration date or revoking the key or subkey.
 
-    The remaining items address the three basic functions for which
-    OpenPGP keys can be used with Activity Streams: signing,
-    encryption and authentication.  In addition to those three
-    functions and policies, additional use case policies *may* be
-    appended: refreshing a key from the keyservers, encrypting email
-    notifications regarding activities to the relevant email address
-    for the actor account.[fn:4]
+The remaining items address the three basic functions for which
+OpenPGP keys can be used with Activity Streams: signing, encryption
+and authentication.  In addition to those three functions and
+policies, additional use case policies *may* be appended: refreshing a
+key from the keyservers, encrypting email notifications regarding
+activities to the relevant email address for the actor account.[fn:4]
 
-    Each of these items *must* include a =policy= property which
-    stipulates whether or not that function is available and the
-    consistency of that use.  Possible policy values are /*must*/,
-    /*may*/ and /*never*/.  Recommended default values are /*may*/
-    unless the relevant key or subkey type is unavailable, in which
-    case the correct value is /*never*/.
+Each of these items *must* include a =policy= property which
+stipulates whether or not that function is available and the
+consistency of that use.  Possible policy values are /*must*/, /*may*/
+and /*never*/.  Recommended default values are /*may*/ unless the
+relevant key or subkey type is unavailable, in which case the correct
+value is /*never*/.
 
-    If the policy value for an item is either /*must*/ or /*may*/ then
-    the =authorizedKeyIDs= property *must* include an array with all
-    full key IDs of the primary key and relevant subkeys to perform
-    that task.  If the policy value is /*never*/ then the
-    =authorizedKeyIDs= *may* be =None= or =null=.
+If the policy value for an item is either /*must*/ or /*may*/ then the
+=authorizedKeyIDs= property *must* include an array with all full key
+IDs of the primary key and relevant subkeys to perform that task.  If
+the policy value is /*never*/ then the =authorizedKeyIDs= *may* be
+=null=.
 
-    #+begin_src javascript
-      {
-	  "@context": "https://www.w3.org/ns/activitystreams",
-	  "id": "https://snuffy.adversary.org/openpgp.json",
-	  "summary": "OpenPGP use and keys with this stream",
-	  "type": "openpgpCollection",
-	  "cryptographic-protocol": "openpgp",
-	  "totalItems": 6,
-	  "items": [
-	      {
-		  "type": "openpgpKeys",
-		  "totalItems": 1,
-		  "items": [
-		      {
-			  "id": "keyinfo",
-			  "type": "openpgpKeyV4",
-			  "timestamp": 1514332912,
-			  "lastUpdated": 1524951377,
-			  "keyIDs": [
-			      {
-				  "id": "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
-				  "type": "primary",
-				  "fingerprint": "DB47 24E6 FA42 86C9 2B4E  55C4 321E 4E23 7359 0E5D",
-				  "algorithm": "RSA",
-				  "size": 4096,
-				  "certification": True,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False,
-				  "timestamp": 1343480251
-			      },
-			      {
-				  "id": "B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
-				  "type": "subkey",
-				  "fingerprint": "B7F0 FE75 9387 430D D0C5  8BDB 7FF2 D371 35C7 553C",
-				  "algorithm": "RSA",
-				  "size": 3072,
-				  "certification": False,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False,
-				  "timestamp": 1343480419
-			      },
-			      {
-				  "id": "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D",
-				  "type": "subkey",
-				  "fingerprint": "9CBE F6B7 E0DF 72CF 9100  9AA5 C98B AA18 62E4 484D",
-				  "algorithm": "ELG",
-				  "size": 4096,
-				  "certification": False,
-				  "signing": False,
-				  "encryption": True,
-				  "Authentication": False,
-				  "timestamp": 1343480559
-			      },
-			      {
-				  "id": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-				  "type": "subkey",
-				  "fingerprint": "A48B 28F3 9A83 E63C 55B8  F30E 4872 3A75 7904 1EC6",
-				  "algorithm": "DSA",
-				  "size": 3072,
-				  "certification": False,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False
-				  "timestamp": 1514332912
-			      }
-			  ],
-			  "userIDs": [
-			      {
-				  "name": "Ben McGinnes",
-				  "comment": None,
-				  "email": "ben#adversary.org"
-			      },
-			      {
-				  "name": "Ben McGinnes",
-				  "comment": None,
-				  "email": "ben#gnupg.org"
-			      }
-			  ],
-			  "keyfiles": [
-			      {
-				  "url": "http://www.adversary.org/ben-key.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, full key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, full key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-clean.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, clean key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-clean.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, clean key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-min.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, minimised key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-min.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, minimised key"
-			      }   ],
-			  "publicKeys": "https://snuffy.adversary.org/openpgpkeys.json"
-		      }
-		  ]
-	      },
-	      {
-		  "type": "content-signing",
-		  "policy": "May",
-		  "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
-					"B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
-					"A48B28F39A83E63C55B8F30E48723A7579041EC6" ]
-	      },
-	      {
-		  "type": "encryption",
-		  "policy": "May",
-		  "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
-					"9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ]
-	      },
-	      {
-		  "type": "authentication",
-		  "policy": "Never",
-		  "authorizedKeyIDs": None
-	      },
-	      {
-		  "type": "refresh"
-		  "policy": "May",
-		  "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D" ]
-	      },
-	      {
-		  "type": "email-encryption",
-		  "policy": "Must",
-		  "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
-					"9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ]
-	      }
-	  ]
-      }
-    #+end_src
-
-    There are numerous ways in which OpenPGP may be leveraged by a
-    server to provide authentication mechanisms for an actor utilising
-    either signatures, encrypted tokens to be decrypted and used like
-    OAuth or even using the authentication subkey type in a manner
-    similar to TLS or SSH.  For this example these possibilities are
-    disregarded in order to demonstrate how a policy may be set to not
-    use one possible function.
-
-    A server might also use the public keys in a more traditional
-    manner for OpenPGP and certain other cryptographic implementations
-    (e.g. S/MIME) if end users receive email notifications of
-    activites.  In that circumstance the server could, if the public
-    key had a subkey with the encryption capability and the relevant
-    matching policy, encrypt those emailed notifications.
-
-    Also note that while default and recommended key generation
-    stipulates that OpenPGP primary (certification) keys *should not*
-    have the encryption capability, it is still advisable to include
-    that primary key ID as authorized for any function granted to any
-    of its subkeys.  The reason being that not every OpenPGP
-    implementation correctly interprets the relationship between the
-    primary key and those subkeys (e.g. some of the JavaScript
-    implementations).  By explicitly including the primary as
-    authorized, even for those tasks for which it does not have the
-    capability we avoid unnecessary false error reports with certain
-    OpenPGP implementations.
-
-    If an actor has multiple keys assigned to it, it *should* be
-    permitted to extend the policy section to provide for different
-    policies for each key.
-
-    For instance it may be preferred to have one main key which is
-    always refreshed from the keyservers, but a backup key which is
-    only updated manually by an end user.  The following example
-    demonstrates how a single type can be expanded to cover multiple
-    policies.  Where there is only one policy, as in the larger
-    example above it is assumed that the =policies= property has a
-    value of =1= and *may* be omitted.
-
-    #+begin_src javascript
-      {
-	  "type": "email-encryption",
-	  "policies": 2,
+#+BEGIN_SRC javascript
+  {
+      "@context": "https://www.w3.org/ns/activitystreams",
+      "id": "https://snuffy.adversary.org/openpgp.json",
+      "summary": "OpenPGP use and keys with this stream",
+      "type": "openpgpCollection",
+      "cryptographic-protocol": "openpgp",
+      "totalItems": 6,
+      "items": [
 	  {
-	      "policy": "Must",
+	      "type": "openpgpKeys",
+	      "totalItems": 1,
+	      "items": [
+		  {
+		      "id": "keyinfo",
+		      "type": "openpgpKeyV4",
+		      "timestamp": 1514332912,
+		      "lastUpdated": 1524951377,
+		      "keyIDs": [
+			  {
+			      "id": "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
+			      "type": "primary",
+			      "fingerprint": "DB47 24E6 FA42 86C9 2B4E  55C4 321E 4E23 7359 0E5D",
+			      "algorithm": "RSA",
+			      "size": 4096,
+			      "certification": true,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": false,
+			      "timestamp": 1343480251
+			  },
+			  {
+			      "id": "B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
+			      "type": "subkey",
+			      "fingerprint": "B7F0 FE75 9387 430D D0C5  8BDB 7FF2 D371 35C7 553C",
+			      "algorithm": "RSA",
+			      "size": 3072,
+			      "certification": false,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": false,
+			      "timestamp": 1343480419
+			  },
+			  {
+			      "id": "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D",
+			      "type": "subkey",
+			      "fingerprint": "9CBE F6B7 E0DF 72CF 9100  9AA5 C98B AA18 62E4 484D",
+			      "algorithm": "ELG",
+			      "size": 4096,
+			      "certification": false,
+			      "signing": false,
+			      "encryption": true,
+			      "authentication": false,
+			      "timestamp": 1343480559
+			  },
+			  {
+			      "id": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+			      "type": "subkey",
+			      "fingerprint": "A48B 28F3 9A83 E63C 55B8  F30E 4872 3A75 7904 1EC6",
+			      "algorithm": "DSA",
+			      "size": 3072,
+			      "certification": false,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": False
+			      "timestamp": 1514332912
+			  }
+		      ],
+		      "userIDs": [
+			  {
+			      "name": "Ben McGinnes",
+			      "comment": null,
+			      "email": "ben@adversary.org"
+			  },
+			  {
+			      "name": "Ben McGinnes",
+			      "comment": null,
+			      "email": "ben@gnupg.org"
+			  }
+		      ],
+		      "keyfiles": [
+			  {
+			      "url": "http://www.adversary.org/ben-key.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, full key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, full key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-clean.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, clean key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-clean.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, clean key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-min.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, minimised key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-min.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, minimised key"
+			  }   ],
+		      "publicKeys": "https://snuffy.adversary.org/openpgpkeys.json"
+		  }
+	      ]
+	  },
+	  {
+	      "type": "content-signing",
+	      "policy": "May",
+	      "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
+				    "B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
+				    "A48B28F39A83E63C55B8F30E48723A7579041EC6" ]
+	  },
+	  {
+	      "type": "encryption",
+	      "policy": "May",
 	      "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
 				    "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ]
 	  },
 	  {
-	      "policy": "May":
-	      "authorizedKeyIDs": [ "6468C3737B7B3F396827EC15371AC5BFA04AE313",
-				    "BA212621459C5135409D5F5DDE7D158D34DF2F7F" ]
+	      "type": "authentication",
+	      "policy": "Never",
+	      "authorizedKeyIDs": None
+	  },
+	  {
+	      "type": "refresh"
+	      "policy": "May",
+	      "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D" ]
+	  },
+	  {
+	      "type": "email-encryption",
+	      "policy": "Must",
+	      "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
+				    "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ]
 	  }
+      ]
+  }
+#+END_SRC
+
+There are numerous ways in which OpenPGP may be leveraged by a server
+to provide authentication mechanisms for an actor utilising either
+signatures, encrypted tokens to be decrypted and used like OAuth or
+even using the authentication subkey type in a manner similar to TLS
+or SSH.  For this example these possibilities are disregarded in order
+to demonstrate how a policy may be set to not use one possible
+function.
+
+A server might also use the public keys in a more traditional manner
+for OpenPGP if end users receive email notifications of activites.  In
+that circumstance the server could, if the public key had a subkey
+with the encryption capability and the relevant matching policy,
+encrypt those emailed notifications.
+
+Also note that while default and recommended key generation stipulates
+that OpenPGP primary (certification) keys *should not* have the
+encryption capability, it is still advisable to include that primary
+key ID as authorized for any function granted to any of its subkeys.
+The reason being that not every OpenPGP implementation correctly
+interprets the relationship between the primary key and those subkeys
+(e.g. some of the JavaScript implementations).  By explicitly
+including the primary as authorized, even for those tasks for which it
+does not have the capability we avoid unnecessary false error reports
+with certain OpenPGP implementations.
+
+If an actor has multiple keys assigned to it, it *should* be permitted
+to extend the policy section to provide for different policies for
+each key.
+
+For instance it may be preferred to have one main key which is always
+refreshed from the keyservers, but a backup key which is only updated
+manually by an end user.  The following example demonstrates how a
+single type can be expanded to cover multiple policies.  Where there
+is only one policy, as in the larger example above it is assumed that
+the =policies= property has a value of =1= and *may* be omitted.
+
+#+BEGIN_SRC javascript
+  {
+      "type": "email-encryption",
+      "policies": 2,
+      {
+	  "policy": "Must",
+	  "authorizedKeyIDs": [ "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
+				"9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ]
+      },
+      {
+	  "policy": "May":
+	  "authorizedKeyIDs": [ "6468C3737B7B3F396827EC15371AC5BFA04AE313",
+				"BA212621459C5135409D5F5DDE7D158D34DF2F7F" ]
       }
-    #+end_src
+  }
+#+END_SRC
 
 
 *** Serving Public Keys
@@ -656,146 +659,145 @@
     :CUSTOM_ID: crypto-keyserving
     :END:
 
-    The =openpgpKeys.json= file contains a lot of matching data to the
-    main context file by necessity since both need to include the key
-    ID data and both will usually include someuser ID data.  Both of
-    which being data about the public key which is available from the
-    public key itself.  The main differences, however, are that the
-    context file provides the information on the circumstances under
-    which the public key either can, should or must be used; but does
-    not include a copy of the public key itself.  While the other file
-    only has data about the key itself and a copy of at least the
-    minimised key (or keys if there are multiple keys assigned to an
-    actor or stream).
+The =openpgpKeys.json= file contains a lot of matching data to the
+main context file by necessity since both need to include the key ID
+data and both will usually include someuser ID data.  Both of which
+being data about the public key which is available from the public key
+itself.  The main differences, however, are that the context file
+provides the information on the circumstances under which the public
+key either can, should or must be used; but does not include a copy of
+the public key itself.  While the other file only has data about the
+key itself and a copy of at least the minimised key (or keys if there
+are multiple keys assigned to an actor or stream).
 
-    #+begin_src javascript
-      {
-	  "@context": "https://www.w3.org/ns/activitystreams",
-	  "id": "https://snuffy.adversary.org/openpgpkeys.json",
-	  "stream": "https://snuffy.adversary.org/",
-	  "summary": "OpenPGP public keys for this stream.",
-	  "type": "openpgpKeys",
-	  "cryptographic-protocol": "openpgp",
-	  "totalItems": 1,
-	  "items": [
-	      {
-		  "type": "openpgpKey",
-		  "keyVersion": 4,
-		  "totalItems": 2,
-		  "lastUpdated": 1524951377,
-		  "items": [
-		      {
-			  "type": "openpgpKeyData",
-			  "timestamp": 1514332912,
-			  "keyIDs": [
-			      {
-				  "id": "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
-				  "type": "primary",
-				  "fingerprint": "DB47 24E6 FA42 86C9 2B4E  55C4 321E 4E23 7359 0E5D",
-				  "cipher": "RSA",
-				  "size": 4096,
-				  "certification": True,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False,
-				  "timestamp": 1343480251
-			      },
-			      {
-				  "id": "B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
-				  "type": "subkey",
-				  "fingerprint": "B7F0 FE75 9387 430D D0C5  8BDB 7FF2 D371 35C7 553C",
-				  "cipher": "RSA",
-				  "size": 3072,
-				  "certification": False,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False,
-				  "timestamp": 1343480419
-			      },
-			      {
-				  "id": "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D",
-				  "type": "subkey",
-				  "fingerprint": "9CBE F6B7 E0DF 72CF 9100  9AA5 C98B AA18 62E4 484D",
-				  "cipher": "ELG",
-				  "size": 4096,
-				  "certification": False,
-				  "signing": False,
-				  "encryption": True,
-				  "Authentication": False,
-				  "timestamp": 1343480559
-			      },
-			      {
-				  "id": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-				  "type": "subkey",
-				  "fingerprint": "A48B 28F3 9A83 E63C 55B8  F30E 4872 3A75 7904 1EC6",
-				  "cipher": "DSA",
-				  "size": 3072,
-				  "certification": False,
-				  "signing": True,
-				  "encryption": False,
-				  "Authentication": False,
-				  "timestamp": 1514332912
-			      }   ],
-			  "userIDs": [
-			      {
-				  "name": "Ben McGinnes",
-				  "comment": None,
-				  "email": "ben#adversary.org"
-			      },
-			      {
-				  "name": "Ben McGinnes",
-				  "comment": None,
-				  "email": "ben#gnupg.org"
-			      }   ],
-			  "keyfiles": [
-			      {
-				  "url": "http://www.adversary.org/ben-key.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, full key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, full key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-clean.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, clean key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-clean.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, clean key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-min.asc",
-				  "Content-Type", "application/pgp-signature",
-				  "summary": "ASCII armored openpgp keyfile, minimised key"
-			      },
-			      {
-				  "url": "http://www.adversary.org/ben-key-min.gpg",
-				  "Content-Type", "application/pgp-keys",
-				  "summary": "Binary openpgp keyfile, minimised key"
-			      }   ]
-		      },
-		      {
-			  "keyblockASCII": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmQINBFAT4bsBEADDsKVDXPxbY88oDXwoNeTQ6KaKxxZ9fE2PGv3dtUBqCX8opuVz\nLaJ19UBuTjiFdgqY+jx2hYBKl026q2btg7Ijhcstbu3HZ3NzxDGk2JGFMUe0WHxC\ndLSf5MuFbCFu17zwCmkT1my9Fcb++0UkwCFnVaKzXB1oS8gnl1Hjr3jbmH8LhUAi\nYXfSIZPbLb+LGxVhEKldUBVlmjbDvbiMFe2c+X2nixA64Vtaqo4q6D78401CQXns\nZ8Z4lA9pXj6sB/4d+zFLtyvSmsq0ccTbmwmw0kk5FYnM7Gn75kCviXQZyT5wt2EE\nDv7zwRgs9Ih009Y4+xyrCt/ks34sWTPFDXhys7h9E0ujCJ65pxOl9pRXo1Mii6SF\n/0a5gHQZwaZ+a2wMoMD7tWw9d1OFNEOKAxv8ZY4Kk4kFp/Nq2Rb9wIVLY8TQhX34\nn9zIEnRwt/BiC9xo/2U+FxKrWTvZieJDNsrETnmRRcwWsfp16RBFUNe6bakSkxZ3\nqbVZesg1qExB9xbfzm00/c4mWr40wfE/UZsJnszzmNUBVtKCJJT5SmwP3xrHAssS\n0SeGhRwqJ+sUCfyjvo8zHCIkRS5CDiJ9Mc8rN3vSJuAf6dxr3NrExrRuMTpO0zaq\n2JPz4CF1Efu1YoggDhSltliRTw+Nhy7JxsIMKWLRimtfjxXDVH18plJ0bQARAQAB\ntCBCZW4gTWNHaW5uZXMgPGJlbkBhZHZlcnNhcnkub3JnPokCfwQTAQoAaQIbAwIe\nAQIXgAIZAQwLCg0JDAgLBwQBAwIHFQoJCAsDAgUWAgMBABYhBNtHJOb6QobJK05V\nxDIeTiNzWQ5dBQJaOjS/JBhoa3BzOi8vaGtwcy5wb29sLnNrcy1rZXlzZXJ2ZXJz\nLm5ldAAKCRAyHk4jc1kOXa/YD/9qnQOd39KlR035Gm9g1lOCCpjiVctZ225LipKb\nPUNtH6aXo4QkFuVaGdkKdHd4YUiAlxD0BGe7WVj8wnRrS0uo4Nt8+wqFmkalXRu/\nExIFuJqPN/UxQpxnQxZRNraohBX4/q/G6OcOcR24lvinbckpaA5cLaaahcaXQgy/\nzGh9vpv15ldbIlFcony4B/cIxBYm9H4AgF4/tl1CK4uC4t7ZeuctXjyPt0XM+fdN\nK9X4xr+Q5LZ+Z8QWMDEzaxLSiZoUxehdlGQprELQDSngjP8PoKcgXzjA9mCxQ7zN\nCuoq+R1OV7fPmtgJxkw5LWvS4CEiIeh37epfBxz0tu0U1iy+Swgzx1cD39ENVoqI\nkaddAy09Vfr8BYWkMFBsLnA7FMCJineaDZV9bu2vBCeGT3zsb5lLUWcJoFqE2gtl\nBKCVBTniMcSCb0O5ztT4R0E/BUfYlVkAJYRUTCytYmilp9Vx6VckFRqECzB34OyD\n3hLCeof/uy4lmU0WSi0bkPgFvyF0jSZvPDwfqPRN9jGRamul9j9UJXgQZWEXsmOr\n/8Lh+Mwhzm5Y3pLns8us8cpEZAl2ykz/aPHYVJ9CvI0a4V9dsil3wod+Ll7iaZHP\nR8CPQHsGDVW7/8tyK2NvXfOhjbnYKWeV7UHrjsd8NmL5UmniwDW/GUnrGGz5z9Ky\nVxq1QrQ7QmVuIE1jR2lubmVzIChiYWNrdXAgZW1haWwgYWRkcmVzcykgPGJlbm1j\nZ2lubmVzQGdtYWlsLmNvbT6JAnwEEwEKAGYCGwMCHgECF4AMCwoNCQwICwcEAQMC\nBxUKCQgLAwIFFgIDAQAWIQTbRyTm+kKGyStOVcQyHk4jc1kOXQUCWjo1HSQYaGtw\nczovL2lwdjQucG9vbC5za3Mta2V5c2VydmVycy5uZXQACgkQMh5OI3NZDl2U6w/8\nDOc2qm3aXr/vcdsLVRTS0cpN9Mz0EOiQVsFqfLHUo90kAUCfVxJu51qILpm7oXwf\nR+MXOSNqLMNQt6/PTjUMedWttVWlHVQTtyRwNSrY+5h2OBJln+VCcatIDLt97pgH\nkeih/PCHFuhOoy08YUutLnara1aSXEQqqvGZcYsZPc1znLgludkIUyfyhbu7umB6\n5BkPEgomBpNUqZ6Z5NNrqQNflI5yNCe0yN93Qfja7YBPafk1OXjumjIP3SjGo9+Z\nkre4A6i88DAxmZQLNsTD4aoqrm5S2NfnoqZXIiJqfAwj+n/LhaT3J8VjheUeOJVx\nMCEzgKaHLTMK0ClcTIpajsPqklBEGzgL8bgU79hbZCOXM7wEz9Kz8YEN2PrblaXp\n5/MfZoTHejfZuwZ1GcsbMCyTumbhLqbwpyHQADPbpgx+gcV587Wty4RzZglIbMu6\nK7r5z6PN32df6chXBS2tdFk2uH8JKHY2eMhCdxZPsPVJn9mOF7EoXLmmpjMqynmj\nsLHD3fFgcZn4DPRoczU+6jfbB29QUsd++plY0j3zhr5iE/+KCwFiDUK3qMgXBbbE\nWSSgnj08AognfdZCslsWrr54WsUD2X5twwfV9iR7JQMs7bq0vfo5zpBTNuskk7N/\nY8gQ/560t4kMdDqIeFtT8cauWcbD6HNfLPF1ara6vrm0LkJlbiBNY0dpbm5lcyA8\nYmVuLm1jZ2lubmVzQHBpcmF0ZXBhcnR5Lm9yZy5hdT6JAnYEEwEKAGACGwMCHgEC\nF4AMCwoNCQwICwcEAQMCBxUKCQgLAwIFFgIDAQAWIQTbRyTm+kKGyStOVcQyHk4j\nc1kOXQUCWjo1WB4YaGtwOi8vcG9vbC5za3Mta2V5c2VydmVycy5uZXQACgkQMh5O\nI3NZDl2qKRAAiZAwfN1WNzx6P9Ts5jtSCt+3zGohZftQ382C5quud6NCKuO9//ql\nuepriQk+5TJ58nXgz8T6BUzDGTTAVh26czsVKw7CEqPHD1psOSFUZV7nW13Z3YJO\ng3oKelg1LfSSKCYlWS1K7eBCT/2Uo/NV/yQfNqLoFYmxQX7u0fzTyLvCfBC6NIrf\nYCQTS77NP3lKpDLLkIyh9pKcOttljKv7uxz1Bpf3ozpfbSKVJaOgm/F8qQQkmtXy\nbu/8N5k5VJCodPFyU7HOiouzUv1hFQeqyZRsdgOILWJbC2r5Y57mMEshgfdBebwU\nYqyjvtRq9DKumQMJwTTGYshqEIgugUpBcqDfl1ZIDtQWyGkr96q5FP6z+48/pFa5\nOEQdFwjL5OPBLOJVLeKoj05XpG5JPPkgxHoQAw+FDZDXN22QYjeZmpOQi4kXb9DK\nAPHnAMk6aDFdVHzPtN/15+jByvhGVb4XttMVhbpOrUwrGOgVaVFVoi/w8mufkF8c\niCCYRSDzJJlC99XLqclISmuhMypzTpEFI5IIConC5oznicXLa8hY8O09HGx0dTr/\nOeteQOg423XIHf0XoERshtZcoACsszQYWGrGG6WCxz9js14VLevfinpSxlTk0MI/\njSuv8ZQACiNO3aDqTo8nzjGR1vATP3lxoJobDdHwCZ9D/0LNFIECDCO0KUJlbiBN\nY0dpbm5lcyA8YmVuLm1jZ2lubmVzQHBpcmF0ZS5vcmcuYXU+iQJbBDABCABFBQJX\naN76Ph0gcGlyYXRlLm9yZy5hdSBubyBsb25nZXIgZm9yd2FyZHMgbWFpbCB0byBw\naXJhdGVwYXJ0eS5vcmcuYXUuAAoJEDIeTiNzWQ5dxKAP/A5KmG+O6g+HK/tCkR3x\ntdLTKwUtF4LGmexzI00cHTNWrrPXKGIsxZM+Bf4+YDls6VhwJFTJBddoE+8WIw4C\nQdtxJp151xkqsZxInjS99ch9OylqcjXTKvHC3myX/cYWnSAXTbS31SgPruUZX5sk\nLTqcd+GfT1S8OzQRwGtPfWVRwvR6IyhoJKG8j6o+OPFfvqEJSTzHkOMYn5pYY6Ji\nIZktthrnKCvStSGNn9QArBKLtZKDuDHHq+dpu8fZngtnrMigwn4a3Sak0lVKh+CU\nUkBPxLzMJYB/4ecKBIGSyY+0NHzEJ58zzNFgk9M/xjhcVzbrzDnBtphtJGeJszu9\nPtwmQIvLbIwa/uDYXKWWYnSE2hMslyGSV0qe/5aOF29PAUXybhy+Bp1iHAjYCMJ7\nGTC8p48wCBVBImyW9DZrZsCAnazewbEZa7mPeUyUpvio+BfGSDm8LnmdzpkMTZi0\nEA+06qvFCOx2IXDBm1Q+HKfsiq4ft5cnCcKNAu5YtKELoh3dT9+smhMJYkqpJJqK\nUWdQZu1abxFok9W4hHEBQHYbBZlVfZydOeCRZs4tqMHxQk3kFYJtalWWnUrfJaG5\nIDrEPju4T5njOh98S3aRwlFCtUDz94rinRRAzgK5+8nB84lkUNrm6VE/nNa5RkC6\nAY0mAyooRF89BpFbHVTJE3REtCtrZXliYXNlLmlvL2FkdmVyc2FyeSA8YWR2ZXJz\nYXJ5QGtleWJhc2UuaW8+iQJ8BBMBCgBmAhsDAh4BAheADAsKDQkMCAsHBAEDAgcV\nCgkICwMCBRYCAwEAFiEE20ck5vpChskrTlXEMh5OI3NZDl0FAlo6NX0kGGh0dHA6\nLy9pcHY0LnBvb2wuc2tzLWtleXNlcnZlcnMubmV0AAoJEDIeTiNzWQ5d1YwP/1CR\nc8GFMNyu3wypeUW/+DTzEhUigtdHx1e+XO+CkouhIHbXHlIoIZjuKOxoaAxaCXo3\nW24HE4N9BCp7NE2aJ2vIWnvzNiv1YDxBnUx/+kUzuLIUSVGNjqhN+bV8MZ4uix+m\nc3WaN36BX6FF7lzavQ6C54cijl0HRc77Scyw/OdlOBtviNCB6Lr7hBHMIEyCUn5E\n4fIyZz1SZDzL9ZZL2IUhSFZAmm6Ff6yqd0uQVLmXyS++lGpuWrIPxtYGPWA0W8GQ\nmQUrOn8EhPz/Z2oVMoAcZfEElRXftf96FG+kCps+WVpSgixzrZIgTQMVDB1SqQRC\n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\nuQ==\n=P42o\n-----END PGP PUBLIC KEY BLOCK-----\n"
-		      }
-		  ]
-	      }
-	  ]
-      }
-    #+end_src
+#+BEGIN_SRC javascript
+  {
+      "@context": "https://www.w3.org/ns/activitystreams",
+      "id": "https://snuffy.adversary.org/openpgpkeys.json",
+      "stream": "https://snuffy.adversary.org/",
+      "summary": "OpenPGP public keys for this stream.",
+      "type": "openpgpKeys",
+      "cryptographic-protocol": "openpgp",
+      "totalItems": 1,
+      "items": [
+	  {
+	      "type": "openpgpKey",
+	      "keyVersion": 4,
+	      "totalItems": 2,
+	      "lastUpdated": 1524951377,
+	      "items": [
+		  {
+		      "type": "openpgpKeyData",
+		      "timestamp": 1514332912,
+		      "keyIDs": [
+			  {
+			      "id": "DB4724E6FA4286C92B4E55C4321E4E2373590E5D",
+			      "type": "primary",
+			      "fingerprint": "DB47 24E6 FA42 86C9 2B4E  55C4 321E 4E23 7359 0E5D",
+			      "cipher": "RSA",
+			      "size": 4096,
+			      "certification": true,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": false,
+			      "timestamp": 1343480251
+			  },
+			  {
+			      "id": "B7F0FE759387430DD0C58BDB7FF2D37135C7553C",
+			      "type": "subkey",
+			      "fingerprint": "B7F0 FE75 9387 430D D0C5  8BDB 7FF2 D371 35C7 553C",
+			      "cipher": "RSA",
+			      "size": 3072,
+			      "certification": false,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": false,
+			      "timestamp": 1343480419
+			  },
+			  {
+			      "id": "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D",
+			      "type": "subkey",
+			      "fingerprint": "9CBE F6B7 E0DF 72CF 9100  9AA5 C98B AA18 62E4 484D",
+			      "cipher": "ELG",
+			      "size": 4096,
+			      "certification": false,
+			      "signing": false,
+			      "encryption": true,
+			      "authentication": false,
+			      "timestamp": 1343480559
+			  },
+			  {
+			      "id": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+			      "type": "subkey",
+			      "fingerprint": "A48B 28F3 9A83 E63C 55B8  F30E 4872 3A75 7904 1EC6",
+			      "cipher": "DSA",
+			      "size": 3072,
+			      "certification": false,
+			      "signing": true,
+			      "encryption": false,
+			      "authentication": false,
+			      "timestamp": 1514332912
+			  }   ],
+		      "userIDs": [
+			  {
+			      "name": "Ben McGinnes",
+			      "comment": null,
+			      "email": "ben@adversary.org"
+			  },
+			  {
+			      "name": "Ben McGinnes",
+			      "comment": null,
+			      "email": "ben@gnupg.org"
+			  }   ],
+		      "keyfiles": [
+			  {
+			      "url": "http://www.adversary.org/ben-key.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, full key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, full key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-clean.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, clean key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-clean.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, clean key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-min.asc",
+			      "Content-Type", "application/pgp-signature",
+			      "summary": "ASCII armored openpgp keyfile, minimised key"
+			  },
+			  {
+			      "url": "http://www.adversary.org/ben-key-min.gpg",
+			      "Content-Type", "application/pgp-keys",
+			      "summary": "Binary openpgp keyfile, minimised key"
+			  }   ]
+		  },
+		  {
+		      "keyblockASCII": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmQINBFAT4bsBEADDsKVDXPxbY88oDXwoNeTQ6KaKxxZ9fE2PGv3dtUBqCX8opuVz\nLaJ19UBuTjiFdgqY+jx2hYBKl026q2btg7Ijhcstbu3HZ3NzxDGk2JGFMUe0WHxC\ndLSf5MuFbCFu17zwCmkT1my9Fcb++0UkwCFnVaKzXB1oS8gnl1Hjr3jbmH8LhUAi\nYXfSIZPbLb+LGxVhEKldUBVlmjbDvbiMFe2c+X2nixA64Vtaqo4q6D78401CQXns\nZ8Z4lA9pXj6sB/4d+zFLtyvSmsq0ccTbmwmw0kk5FYnM7Gn75kCviXQZyT5wt2EE\nDv7zwRgs9Ih009Y4+xyrCt/ks34sWTPFDXhys7h9E0ujCJ65pxOl9pRXo1Mii6SF\n/0a5gHQZwaZ+a2wMoMD7tWw9d1OFNEOKAxv8ZY4Kk4kFp/Nq2Rb9wIVLY8TQhX34\nn9zIEnRwt/BiC9xo/2U+FxKrWTvZieJDNsrETnmRRcwWsfp16RBFUNe6bakSkxZ3\nqbVZesg1qExB9xbfzm00/c4mWr40wfE/UZsJnszzmNUBVtKCJJT5SmwP3xrHAssS\n0SeGhRwqJ+sUCfyjvo8zHCIkRS5CDiJ9Mc8rN3vSJuAf6dxr3NrExrRuMTpO0zaq\n2JPz4CF1Efu1YoggDhSltliRTw+Nhy7JxsIMKWLRimtfjxXDVH18plJ0bQARAQAB\ntCBCZW4gTWNHaW5uZXMgPGJlbkBhZHZlcnNhcnkub3JnPokCfwQTAQoAaQIbAwIe\nAQIXgAIZAQwLCg0JDAgLBwQBAwIHFQoJCAsDAgUWAgMBABYhBNtHJOb6QobJK05V\nxDIeTiNzWQ5dBQJaOjS/JBhoa3BzOi8vaGtwcy5wb29sLnNrcy1rZXlzZXJ2ZXJz\nLm5ldAAKCRAyHk4jc1kOXa/YD/9qnQOd39KlR035Gm9g1lOCCpjiVctZ225LipKb\nPUNtH6aXo4QkFuVaGdkKdHd4YUiAlxD0BGe7WVj8wnRrS0uo4Nt8+wqFmkalXRu/\nExIFuJqPN/UxQpxnQxZRNraohBX4/q/G6OcOcR24lvinbckpaA5cLaaahcaXQgy/\nzGh9vpv15ldbIlFcony4B/cIxBYm9H4AgF4/tl1CK4uC4t7ZeuctXjyPt0XM+fdN\nK9X4xr+Q5LZ+Z8QWMDEzaxLSiZoUxehdlGQprELQDSngjP8PoKcgXzjA9mCxQ7zN\nCuoq+R1OV7fPmtgJxkw5LWvS4CEiIeh37epfBxz0tu0U1iy+Swgzx1cD39ENVoqI\nkaddAy09Vfr8BYWkMFBsLnA7FMCJineaDZV9bu2vBCeGT3zsb5lLUWcJoFqE2gtl\nBKCVBTniMcSCb0O5ztT4R0E/BUfYlVkAJYRUTCytYmilp9Vx6VckFRqECzB34OyD\n3hLCeof/uy4lmU0WSi0bkPgFvyF0jSZvPDwfqPRN9jGRamul9j9UJXgQZWEXsmOr\n/8Lh+Mwhzm5Y3pLns8us8cpEZAl2ykz/aPHYVJ9CvI0a4V9dsil3wod+Ll7iaZHP\nR8CPQHsGDVW7/8tyK2NvXfOhjbnYKWeV7UHrjsd8NmL5UmniwDW/GUnrGGz5z9Ky\nVxq1QrQ7QmVuIE1jR2lubmVzIChiYWNrdXAgZW1haWwgYWRkcmVzcykgPGJlbm1j\nZ2lubmVzQGdtYWlsLmNvbT6JAnwEEwEKAGYCGwMCHgECF4AMCwoNCQwICwcEAQMC\nBxUKCQgLAwIFFgIDAQAWIQTbRyTm+kKGyStOVcQyHk4jc1kOXQUCWjo1HSQYaGtw\nczovL2lwdjQucG9vbC5za3Mta2V5c2VydmVycy5uZXQACgkQMh5OI3NZDl2U6w/8\nDOc2qm3aXr/vcdsLVRTS0cpN9Mz0EOiQVsFqfLHUo90kAUCfVxJu51qILpm7oXwf\nR+MXOSNqLMNQt6/PTjUMedWttVWlHVQTtyRwNSrY+5h2OBJln+VCcatIDLt97pgH\nkeih/PCHFuhOoy08YUutLnara1aSXEQqqvGZcYsZPc1znLgludkIUyfyhbu7umB6\n5BkPEgomBpNUqZ6Z5NNrqQNflI5yNCe0yN93Qfja7YBPafk1OXjumjIP3SjGo9+Z\nkre4A6i88DAxmZQLNsTD4aoqrm5S2NfnoqZXIiJqfAwj+n/LhaT3J8VjheUeOJVx\nMCEzgKaHLTMK0ClcTIpajsPqklBEGzgL8bgU79hbZCOXM7wEz9Kz8YEN2PrblaXp\n5/MfZoTHejfZuwZ1GcsbMCyTumbhLqbwpyHQADPbpgx+gcV587Wty4RzZglIbMu6\nK7r5z6PN32df6chXBS2tdFk2uH8JKHY2eMhCdxZPsPVJn9mOF7EoXLmmpjMqynmj\nsLHD3fFgcZn4DPRoczU+6jfbB29QUsd++plY0j3zhr5iE/+KCwFiDUK3qMgXBbbE\nWSSgnj08AognfdZCslsWrr54WsUD2X5twwfV9iR7JQMs7bq0vfo5zpBTNuskk7N/\nY8gQ/560t4kMdDqIeFtT8cauWcbD6HNfLPF1ara6vrm0LkJlbiBNY0dpbm5lcyA8\nYmVuLm1jZ2lubmVzQHBpcmF0ZXBhcnR5Lm9yZy5hdT6JAnYEEwEKAGACGwMCHgEC\nF4AMCwoNCQwICwcEAQMCBxUKCQgLAwIFFgIDAQAWIQTbRyTm+kKGyStOVcQyHk4j\nc1kOXQUCWjo1WB4YaGtwOi8vcG9vbC5za3Mta2V5c2VydmVycy5uZXQACgkQMh5O\nI3NZDl2qKRAAiZAwfN1WNzx6P9Ts5jtSCt+3zGohZftQ382C5quud6NCKuO9//ql\nuepriQk+5TJ58nXgz8T6BUzDGTTAVh26czsVKw7CEqPHD1psOSFUZV7nW13Z3YJO\ng3oKelg1LfSSKCYlWS1K7eBCT/2Uo/NV/yQfNqLoFYmxQX7u0fzTyLvCfBC6NIrf\nYCQTS77NP3lKpDLLkIyh9pKcOttljKv7uxz1Bpf3ozpfbSKVJaOgm/F8qQQkmtXy\nbu/8N5k5VJCodPFyU7HOiouzUv1hFQeqyZRsdgOILWJbC2r5Y57mMEshgfdBebwU\nYqyjvtRq9DKumQMJwTTGYshqEIgugUpBcqDfl1ZIDtQWyGkr96q5FP6z+48/pFa5\nOEQdFwjL5OPBLOJVLeKoj05XpG5JPPkgxHoQAw+FDZDXN22QYjeZmpOQi4kXb9DK\nAPHnAMk6aDFdVHzPtN/15+jByvhGVb4XttMVhbpOrUwrGOgVaVFVoi/w8mufkF8c\niCCYRSDzJJlC99XLqclISmuhMypzTpEFI5IIConC5oznicXLa8hY8O09HGx0dTr/\nOeteQOg423XIHf0XoERshtZcoACsszQYWGrGG6WCxz9js14VLevfinpSxlTk0MI/\njSuv8ZQACiNO3aDqTo8nzjGR1vATP3lxoJobDdHwCZ9D/0LNFIECDCO0KUJlbiBN\nY0dpbm5lcyA8YmVuLm1jZ2lubmVzQHBpcmF0ZS5vcmcuYXU+iQJbBDABCABFBQJX\naN76Ph0gcGlyYXRlLm9yZy5hdSBubyBsb25nZXIgZm9yd2FyZHMgbWFpbCB0byBw\naXJhdGVwYXJ0eS5vcmcuYXUuAAoJEDIeTiNzWQ5dxKAP/A5KmG+O6g+HK/tCkR3x\ntdLTKwUtF4LGmexzI00cHTNWrrPXKGIsxZM+Bf4+YDls6VhwJFTJBddoE+8WIw4C\nQdtxJp151xkqsZxInjS99ch9OylqcjXTKvHC3myX/cYWnSAXTbS31SgPruUZX5sk\nLTqcd+GfT1S8OzQRwGtPfWVRwvR6IyhoJKG8j6o+OPFfvqEJSTzHkOMYn5pYY6Ji\nIZktthrnKCvStSGNn9QArBKLtZKDuDHHq+dpu8fZngtnrMigwn4a3Sak0lVKh+CU\nUkBPxLzMJYB/4ecKBIGSyY+0NHzEJ58zzNFgk9M/xjhcVzbrzDnBtphtJGeJszu9\nPtwmQIvLbIwa/uDYXKWWYnSE2hMslyGSV0qe/5aOF29PAUXybhy+Bp1iHAjYCMJ7\nGTC8p48wCBVBImyW9DZrZsCAnazewbEZa7mPeUyUpvio+BfGSDm8LnmdzpkMTZi0\nEA+06qvFCOx2IXDBm1Q+HKfsiq4ft5cnCcKNAu5YtKELoh3dT9+smhMJYkqpJJqK\nUWdQZu1abxFok9W4hHEBQHYbBZlVfZydOeCRZs4tqMHxQk3kFYJtalWWnUrfJaG5\nIDrEPju4T5njOh98S3aRwlFCtUDz94rinRRAzgK5+8nB84lkUNrm6VE/nNa5RkC6\nAY0mAyooRF89BpFbHVTJE3REtCtrZXliYXNlLmlvL2FkdmVyc2FyeSA8YWR2ZXJz\nYXJ5QGtleWJhc2UuaW8+iQJ8BBMBCgBmAhsDAh4BAheADAsKDQkMCAsHBAEDAgcV\nCgkICwMCBRYCAwEAFiEE20ck5vpChskrTlXEMh5OI3NZDl0FAlo6NX0kGGh0dHA6\nLy9pcHY0LnBvb2wuc2tzLWtleXNlcnZlcnMubmV0AAoJEDIeTiNzWQ5d1YwP/1CR\nc8GFMNyu3wypeUW/+DTzEhUigtdHx1e+XO+CkouhIHbXHlIoIZjuKOxoaAxaCXo3\nW24HE4N9BCp7NE2aJ2vIWnvzNiv1YDxBnUx/+kUzuLIUSVGNjqhN+bV8MZ4uix+m\nc3WaN36BX6FF7lzavQ6C54cijl0HRc77Scyw/OdlOBtviNCB6Lr7hBHMIEyCUn5E\n4fIyZz1SZDzL9ZZL2IUhSFZAmm6Ff6yqd0uQVLmXyS++lGpuWrIPxtYGPWA0W8GQ\nmQUrOn8EhPz/Z2oVMoAcZfEElRXftf96FG+kCps+WVpSgixzrZIgTQMVDB1SqQRC\n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\nuQ==\n=P42o\n-----END PGP PUBLIC KEY BLOCK-----\n"
+		  }
+	      ]
+	  }
+      ]
+  }
+#+END_SRC
 
-    Note the main =timestamp= is the date the key itself was last
-    modified and will usually match the timestamp of the last subkey
-    to be added or the timestamp of the most recent self-certification
-    of a key.  Whereas the =lastUpdated= property notes the last time
-    the copy of the public key was updated on the server serving that
-    data.  Such an update *should* normally be the result of a client
-    uploading the key to the actor account, but *may* be the result of
-    the server refreshing key data from the SKS keyserver network.
+Note the main =timestamp= is the date the key itself was last modified
+and will usually match the timestamp of the last subkey to be added or
+the timestamp of the most recent self-certification of a key.  Whereas
+the =lastUpdated= property notes the last time the copy of the public
+key was updated on the server serving that data.  Such an update
+*should* normally be the result of a client uploading the key to the
+actor account, but *may* be the result of the server refreshing key
+data from the SKS keyserver network.
 
 
 ** Signatures
@@ -803,87 +805,85 @@
    :CUSTOM_ID: crypto-signing
    :END:
 
-   Signing activities as a means of providing assurance that they
-   genuinely originate with the client and have not been modified in
-   transi will most likely be one of the most common uses of these
-   functions.
+Signing activities as a means of providing assurance that they
+genuinely originate with the client and have not been modified in
+transit will probably be one of the most common uses of these
+functions.
 
-   There are, however, issues with possibility that a server may
-   render the content differently to the author's system or sanitize
-   the content in an unexpected manner.  Also the author might use
-   another content format (e.g. Markdown) which is intended to be
-   rendered into HTML by the server.
+There are, however, issues with the possibility that a server may
+render the content differently to the author's system or sanitize the
+content in an unexpected manner.  Also the author might use another
+content format (e.g. Markdown) which is intended to be rendered into
+HTML by the server.
 
-   The solution to this problem is a new object type, the Signed
-   Note.
+The solution to this problem is a new object type, the Signed Note.
 
-   A Signed Note *must* contain a =source= property containing the
-   original data transmitted, even if the mediaType is =text/html= as
-   the server may still render it differently.
+A Signed Note *must* contain a =source= property containing the
+original data transmitted, even if the mediaType is =text/html= as the
+server may still render it differently.
 
-   A Signed Note *must* contain a =signatures= property which *must*
-   specify the protocol and *must* include a detached signature file
-   for the source data.
+A Signed Note *must* contain a =signatures= property which *must*
+specify the protocol and *must* include a detached signature file for
+the source data.
 
-   The =scope= property specifies which source properties were signed,
-   usually this should only be the subject and content or just the
-   content.
+The =scope= property specifies which source properties were signed,
+usually this should only be the subject and content or just the
+content.
 
-   The =signatures= property *may* include a signature for the
-   expected rendered output.  As with the source signature, the
-   =scope= property specifies which rendered output properties were
-   signed.
+The =signatures= property *may* include a signature for the expected
+rendered output.  As with the source signature, the =scope= property
+specifies which rendered output properties were signed.
 
-   Since the order will matter with regards to the =scope= a
-   =signedData= property must be included with with each signature.
+Since the order will matter with regards to the =scope= a =signedData=
+property must be included with with each signature.
 
-   This is followed by the detached =signature= in ASCII armoured
-   (radix64) format and some additional data pertaining to the key or
-   subkey used to sign the data as =signingKeyID=, the algorithms used
-   as the =pubkeyAlgorithm= and the digital =hashAlgorithm=, and the
-   =timestamp= of the signature.
+This is followed by the detached =signature= in ASCII armored
+(radix64) format and some additional data pertaining to the key or
+subkey used to sign the data as =signingKeyID=, the algorithms used as
+the =pubkeyAlgorithm= and the digital =hashAlgorithm=, and the
+=timestamp= of the signature.
 
-   It *should* be possible for anyone with the Signed Note object to
-   take the signedData and the detached signature, save them both to
-   files and then manually verify them with OpenPGP compliant software
-   (e.g. =gpg=, or =gpg.exe=).
+It *should* be possible for anyone with the Signed Note object to take
+the signedData and the detached signature, save them both to files and
+then manually verify them with OpenPGP compliant software (e.g. =gpg=,
+or =gpg.exe=).
 
-   #+begin_src javascript
-     {
-	 "@context": ["https://www.w3.org/ns/activitystreams",
-		      { "@language": "en" } ],
-	 "type": "Signed Note",
-	 "id": "http://snuffy.adversary.org/posted/thing",
+#+BEGIN_SRC javascript
+ {
+     "@context": ["https://www.w3.org/ns/activitystreams",
+		  { "@language": "en" } ],
+     "type": "Signed Note",
+     "id": "http://snuffy.adversary.org/posted/thing",
+     "subject": "GnuPG rocks",
+     "content": "<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
+     "source": {
 	 "subject": "GnuPG rocks",
-	 "content": "<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
-	 "source": {
-	     "subject": "GnuPG rocks",
-	     "content": "So, what *should* be signed, what was written or what was rendered?",
-	     "mediaType": "text/markdown"
+	 "content": "So, what *should* be signed, what was written or what was rendered?",
+	 "mediaType": "text/markdown"
+     },
+     "signatures": {
+	 "cryptographic-protocol": "openpgp",
+	 { 
+	     "scope": { "source": ["subject", "content"] },
+	     "signedData": "GnuPG rocksSo, what *should* be signed, what was written or what was rendered?",
+	     "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVpjAAKCRBIcjp1eQQe\nxhXcAP0e5qTuD4wO+fyL+0djvoAmZtPAzg4zyf5Tn5dZZVzOhAEA4B1I7ApWHpTr\nIJ0SwT/wy0vc5guSt/gru7SLANnBZGI=\n=fwud\n-----END PGP SIGNATURE-----\n",
+	     "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+	     "pubkeyAlgorithm": "DSA",
+	     "hashAlgorithm": "SHA512",
+	     "timestamp": 1524984204
 	 },
-	 "signatures": {
-	     "cryptographic-protocol": "openpgp",
-	     { 
-		 "scope": { "source": ["subject", "content"] },
-		 "signedData": "GnuPG rocksSo, what *should* be signed, what was written or what was rendered?",
-		 "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVpjAAKCRBIcjp1eQQe\nxhXcAP0e5qTuD4wO+fyL+0djvoAmZtPAzg4zyf5Tn5dZZVzOhAEA4B1I7ApWHpTr\nIJ0SwT/wy0vc5guSt/gru7SLANnBZGI=\n=fwud\n-----END PGP SIGNATURE-----\n",
-		 "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-		 "pubkeyAlgorithm": "DSA",
-		 "hashAlgorithm": "SHA512",
-		 "timestamp": 1524984204
-	     },
-	     { 
-		 "scope": { "expectedRender": ["subject", "content"] },
-		 "signedData": "GnuPG rocks<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
-		 "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVsKQAKCRBIcjp1eQQe\nxoYFAP4oOZSYXTAKd673B4PqZQp47kdYxRUfR7tdKBh8qV2YVgEA8m+/foWZO9xy\nm9v3zzeI/BYpGCeKZ7eqe29exQpvKds=\n=FDKU\n-----END PGP SIGNATURE-----\n",
-		 "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-		 "pubkeyAlgorithm": "DSA",
-		 "hashAlgorithm": "SHA512",
-		 "timestamp": 1524984204
-	     }
+	 { 
+	     "scope": { "expectedRender": ["subject", "content"] },
+	     "signedData": "GnuPG rocks<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
+	     "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVsKQAKCRBIcjp1eQQe\nxoYFAP4oOZSYXTAKd673B4PqZQp47kdYxRUfR7tdKBh8qV2YVgEA8m+/foWZO9xy\nm9v3zzeI/BYpGCeKZ7eqe29exQpvKds=\n=FDKU\n-----END PGP SIGNATURE-----\n",
+	     "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+	     "pubkeyAlgorithm": "DSA",
+	     "hashAlgorithm": "SHA512",
+	     "timestamp": 1524984204
 	 }
      }
-   #+end_src
+ }
+#+END_SRC
 
 
 ** Encryption
@@ -891,23 +891,22 @@
    :CUSTOM_ID: crypto-encryption
    :END:
 
-   Encrypting activity content or content and subjects will meet the
-   needs of many feature requests on numerous instances.  There are,
-   however, some variations of methods which may be worth examining,
-   along with issues pertaining to availability of metadata and what
-   options, if any, exist for providing any measure of forward
-   secrecy.
+Encrypting activity content or content and subjects will meet the
+needs of many feature requests on numerous instances.  There are,
+however, some variations of methods which may be worth examining,
+along with issues pertaining to availability of metadata and what
+options, if any, exist for providing any measure of forward secrecy.
 
-   There are multiple issues to be addressed when dealing with
-   encrypted activities, objects or portions of either.  Some of these
-   issues relate to whether the ciphertext contains additional
-   embedded JSON data to be interpreted or rendered by the recipient
-   upon decryption, while others relate more to the addressing or
-   total number of recipients or how to treat data when not all the
-   intended recipients have a public ky available.
+There are multiple issues to be addressed when dealing with encrypted
+activities, objects or portions of either.  Some of these issues
+relate to whether the ciphertext contains additional embedded JSON
+data to be interpreted or rendered by the recipient upon decryption,
+while others relate more to the addressing or total number of
+recipients or how to treat data when not all the intended recipients
+have a public ky available.
 
-   Still, one problem it readily solves is in providing end-to-end
-   encrypted messages between two single actors.
+Still, one problem it readily solves is in providing end-to-end
+encrypted messages between two single actors.
 
 
 *** Encrypted Private Messages
@@ -915,129 +914,125 @@
     :CUSTOM_ID: crypto-encryption-privmsg
     :END:
 
-    There are essentially two methods of sending an encrypted private
-    message: one in which the encrypted content is just the message
-    being sent, which *may* contain content or markup intended to be
-    parsed or rendered at the recipient's end; and the other being
-    when the encrypted content contains embedded JSON data matching
-    the Activity Streams 2.0 specification and possibly the
-    ActivityPub specificationto be interpreted by software at the
-    recipient's end.
+There are essentially two methods of sending an encrypted private
+message: one in which the encrypted content is just the message being
+sent, which *may* contain content or markup intended to be parsed or
+rendered at the recipient's end; and the other being when the
+encrypted content contains embedded JSON data matching the Activity
+Streams 2.0 specification and possibly the ActivityPub specificationto
+be interpreted by software at the recipient's end.
 
-    Regardless of which it is, the sending of it requires another new
-    AP object, the Encrypted Note.
+Regardless of which it is, the sending of it requires another new AP
+object, the Encrypted Note.
 
-    The Encrypted Note *must* contain an =encrypted= property.
+The Encrypted Note *must* contain an =encrypted= property.
 
-    Thw =encrypted= property *may* contain a =subject= property.
+Thw =encrypted= property *may* contain a =subject= property.
 
-    Thw =encrypted= property *must* contain a =content= property in
-    which then encrypted data is inserted in radix64 ASCII armoured
-    format.
+Thw =encrypted= property *must* contain a =content= property in which
+then encrypted data is inserted in radix64 ASCII armored format.
 
-    Thw =encrypted= property *should* contain a =mediaType= property
-    with a value of =application/pgp-encrypted= or
-    =application/pgp-encrypted+activitystreams=.
+Thw =encrypted= property *should* contain a =mediaType= property with
+a value of =application/pgp-encrypted= or
+=application/pgp-encrypted+activitystreams=.
 
-    Thw =encrypted= property *may* contain a =signingKeyID= property
-    containing the =id= of the key used to sign the encrypted content,
-    if any.  Alternatively the =signingKeyID= property *may* be an
-    array of multiple keys or subkeys if more than one key was used to
-    sign the data.
+Thw =encrypted= property *may* contain a =signingKeyID= property
+containing the =id= of the key used to sign the encrypted content, if
+any.  Alternatively the =signingKeyID= property *may* be an array of
+multiple keys or subkeys if more than one key was used to sign the
+data.
 
-    Thw =encrypted= property *may* contain a =recipientKeyIDs=
-    property containing an array of the key IDs to which the encrypted
-    data has been encrypted.  If the recipients have been hidden then
-    the =recipientKeyIDs= property *may* be excluded or explicitly set
-    to either =None=, =null=, or /*Hidden*/.
+Thw =encrypted= property *may* contain a =recipientKeyIDs= property
+containing an array of the key IDs to which the encrypted data has
+been encrypted.  If the recipients have been hidden then the
+=recipientKeyIDs= property *may* be excluded or explicitly set to
+either =null= or /*hidden*/.
 
-    Thw =encrypted= property *must* contain a =cipher= property with a
-    value of the symmetric cipher used to encrypt the =content= data.
+Thw =encrypted= property *must* contain a =cipher= property with a
+value of the symmetric cipher used to encrypt the =content= data.
 
-    Thw =encrypted= property *must* contain an =encryptedAlgorithm=
-    property containing a value of the asymmetric encryption or
-    elliptic curve algorithms of the =recipientKeyIDs=.  If there
-    multiple algorithms then this data *must* be included in an
-    array.  This requirement remains even if the =recipientKeyIDs=
-    property is =None=, =null= or /*Hidden*/.
+Thw =encrypted= property *must* contain an =encryptedAlgorithm=
+property containing a value of the asymmetric encryption or elliptic
+curve algorithms of the =recipientKeyIDs=.  If there multiple
+algorithms then this data *must* be included in an array.  This
+requirement remains even if the =recipientKeyIDs= property is =null=
+or /*hidden*/.
 
-    Thw =encrypted= property *may* contain a =hash= property with a
-    value of the hash digest algorithm used to sign the =content=
-    data, if any.
+Thw =encrypted= property *may* contain a =hash= property with a value
+of the hash digest algorithm used to sign the =content= data, if any.
 
-    Thw =encrypted= property *may* contain a =signingAlgorithm=
-    property with a value of the digital signature algorithm of the
-    key used to sign the =content= data.  If multiple keys were used
-    to sign the data and those keys used different signing algorithms
-    then this *may* be an array containing each algorithm.
+Thw =encrypted= property *may* contain a =signingAlgorithm= property
+with a value of the digital signature algorithm of the key used to
+sign the =content= data.  If multiple keys were used to sign the data
+and those keys used different signing algorithms then this *may* be an
+array containing each algorithm.
 
-    Thw =encrypted= property *should* contain a =timestamp=, except
-    where enough of the data regarding the encrypted =content= does
-    not include an actual timestamp.
+Thw =encrypted= property *should* contain a =timestamp=, except where
+enough of the data regarding the encrypted =content= does not include
+an actual timestamp.
 
-    The following example is about as simple as it gets.  The
-    =content= is encrypted and signed, in this case simply containing
-    a small Markdown text file.[fn:5]
+The following example is about as simple as it gets.  The =content= is
+encrypted and signed, in this case simply containing a small Markdown
+text file.[fn:5]
 
-    #+begin_src javascript
-      {
-	  "@context": ["https://www.w3.org/ns/activitystreams",
-		       { "@language": "en-AU" } ],
-	  "type": "Encrypted Note",
-	  "id": "http://snuffy.adversary.org/posted/encrypted-thing",
-	  "to": "http://snuffy.adversary.org/inbox",
+#+BEGIN_SRC javascript
+  {
+      "@context": ["https://www.w3.org/ns/activitystreams",
+		   { "@language": "en-AU" } ],
+      "type": "Encrypted Note",
+      "id": "http://snuffy.adversary.org/posted/encrypted-thing",
+      "to": "http://snuffy.adversary.org/inbox",
+      "subject": "Secret Message",
+      "cryptographic-protocol": "openpgp",
+      "encrypted": {
 	  "subject": "Secret Message",
-	  "cryptographic-protocol": "openpgp",
-	  "encrypted": {
-	      "subject": "Secret Message",
-	      "content": "-----BEGIN PGP MESSAGE-----\n\n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\nBzIvDuNDNcYV\n=elBL\n-----END PGP MESSAGE-----\n",
-	      "mediaType": "application/pgp-encrypted",
-	      "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-	      "recipientKeyIDs": [ "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ],
-	      "cipher": "TWOFISH",
-	      "encryptionAlgorithm": "ELG",
-	      "hash": "SHA512",
-	      "signingAlgorithm": "DSA",
-	      "timestamp": 1524996957
-	  }
+	  "content": "-----BEGIN PGP MESSAGE-----\n\n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\nBzIvDuNDNcYV\n=elBL\n-----END PGP MESSAGE-----\n",
+	  "mediaType": "application/pgp-encrypted",
+	  "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+	  "recipientKeyIDs": [ "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ],
+	  "cipher": "TWOFISH",
+	  "encryptionAlgorithm": "ELG",
+	  "hash": "SHA512",
+	  "signingAlgorithm": "DSA",
+	  "timestamp": 1524996957
       }
-   #+end_src
+  }
+#+END_SRC
 
-   A more complete and possibly more effective method, however, is in
-   the following example.  Like the preceding one, the Encrypted Note
-   object contains OpenPGP encrypted data in the =content= property.
-   A =summary= is optional and *may* indicate that the content is
-   encrypted if the Encrypted Note is being posted publicly (see next
-   section).
+A more complete and possibly more effective method, however, is in the
+following example.  Like the preceding one, the Encrypted Note object
+contains OpenPGP encrypted data in the =content= property.  A
+=summary= is optional and *may* indicate that the content is encrypted
+if the Encrypted Note is being posted publicly (see next section).
 
-   The encrypted data, however is an entire ActivityPub object
-   including source format which may be rendered by a recipient's
-   software and which *may* include a Signed Note as described above.
+The encrypted data, however is an entire ActivityPub object including
+source format which may be rendered by a recipient's software and
+which *may* include a Signed Note as described above.[fn:6]
 
-   #+begin_src javascript
-     {
-	 "@context": ["https://www.w3.org/ns/activitystreams",
-		      { "@language": "en-AU" } ],
-	 "type": "Encrypted Note",
-	 "id": "http://snuffy.adversary.org/posted/encrypted-thing",
-	 "to": "http://snuffy.adversary.org/inbox",
-	 "cryptographic-protocol": "openpgp",
-	 "encrypted": {
-	     "content": "-----BEGIN PGP MESSAGE-----\n\n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\nO8rHVVfv5pA7bk3Fqy39QZz2OgR0PExy\n=DCuG\n-----END PGP MESSAGE-----\n",
-	     "mediaType": "application/pgp-encrypted+activitystreams",
-	     "signingKeyID": None,
-	     "recipientKeyIDs": [ "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ],
-	     "cipher": "TWOFISH",
-	     "encryptionAlgorithm": "ELG",
-	     "timestamp": None
-	 }
+#+BEGIN_SRC javascript
+ {
+     "@context": ["https://www.w3.org/ns/activitystreams",
+		  { "@language": "en-AU" } ],
+     "type": "Encrypted Note",
+     "id": "http://snuffy.adversary.org/posted/encrypted-thing",
+     "to": "http://snuffy.adversary.org/inbox",
+     "cryptographic-protocol": "openpgp",
+     "encrypted": {
+	 "content": "-----BEGIN PGP MESSAGE-----\n\n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\nO8rHVVfv5pA7bk3Fqy39QZz2OgR0PExy\n=DCuG\n-----END PGP MESSAGE-----\n",
+	 "mediaType": "application/pgp-encrypted+activitystreams",
+	 "signingKeyID": null,
+	 "recipientKeyIDs": [ "9CBEF6B7E0DF72CF91009AA5C98BAA1862E4484D" ],
+	 "cipher": "TWOFISH",
+	 "encryptionAlgorithm": "ELG",
+	 "timestamp": None
      }
-    #+end_src
+ }
+#+END_SRC
 
-    This second method of encrypting ActivityPub or Activity Streams
-    data would enable providing signed information without revealing
-    publicly which key actually signed the that data except to the
-    intended recipient(s).
+This second method of encrypting ActivityPub or Activity Streams data
+would enable providing signed information without revealing publicly
+which key actually signed the that data except to the intended
+recipient(s).
 
 
 *** Encrypted Public Messages
@@ -1045,18 +1040,17 @@
     :CUSTOM_ID: crypto-encryption-pubmsg
     :END:
 
-    It would be possible to post an encrypted message publicly, but in
-    which the recipients' key IDs were hidden using any of the
-    =hidden-recipient= (=-R=), =hidden-encrypt-to= or =throw-keyids=
-    options available when using GPG.  For such messages the second of
-    the two options in the previous section is likely to be the most
-    useful, but it could be used with the first.
+It would be possible to post an encrypted message publicly, but in
+which the recipients' key IDs were hidden using any of the
+=hidden-recipient= (=-R=), =hidden-encrypt-to= or =throw-keyids=
+options available when using GPG.  For such messages the second of the
+two options in the previous section is likely to be the most useful,
+but it could be used with the first.
 
-    This would enable the use of a public stream of objects and
-    activities as a “dead drop” as a means of providing anonymous or
-    pseudonymous communication with any other party and without
-    requiring a means by which that party might be directly identified
-    by others.
+This would enable the use of a public stream of objects and activities
+as a “dead drop” as a means of providing anonymous or pseudonymous
+communication with any other party and without requiring a means by
+which that party might be directly identified by others.
 
 
 ** Authentication
@@ -1064,21 +1058,20 @@
    :CUSTOM_ID: crypto-auth
    :END:
 
-   There are multiple methods by which OpenPGP keys could be employed
-   to provide authentication services between a client and server, In
-   particular as an alternative to using passwords or two-factor
-   authentication when used in conjunction with OAuth tokens for
-   sessions.
+There are multiple methods by which OpenPGP keys could be employed to
+provide authentication services between a client and server, In
+particular as an alternative to using passwords or two-factor
+authentication when used in conjunction with OAuth tokens for
+sessions.
 
-   These methods have the additional advantage of providing a means by
-   which a remote server could confirm the identity of a user of
-   another server without requiring the transfer of any sensitive or
-   secure data between the two servers.  For the most part this
-   advantage stems from confirming a status is signed by the same key
-   as used on that remote server, but it could also be used to
-   directly authenticate in order to access any private messages of a
-   local user intended for that user and in the local user's
-   ActivityPub outbox.
+These methods have the additional advantage of providing a means by
+which a remote server could confirm the identity of a user of another
+server without requiring the transfer of any sensitive or secure data
+between the two servers.  For the most part this advantage stems from
+confirming a status is signed by the same key as used on that remote
+server, but it could also be used to directly authenticate in order to
+access any private messages of a local user intended for that user and
+in the local user's ActivityPub outbox.
 
 
 *** Authentication With Signing Keys
@@ -1086,14 +1079,13 @@
     :CUSTOM_ID: crypto-auth-sign
     :END:
 
-    Utilising signing keys or subkeys would enable a means of
-    authentication with a server without requiring an ongoing session
-    between the client and the server.  This could be used to
-    facilitate a secure update or activity even across an insecure
-    connection without compromising the security of the account
-    itself as the server would be able to determine the authenticity
-    of the activity and any relevant objects by verifying the
-    signature alone.
+Utilising signing keys or subkeys would enable a means of
+authentication with a server without requiring an ongoing session
+between the client and the server.  This could be used to facilitate a
+secure update or activity even across an insecure connection without
+compromising the security of the account itself as the server would be
+able to determine the authenticity of the activity and any relevant
+objects by verifying the signature alone.
 
 
 *** Authentication With Encryption Keys
@@ -1101,13 +1093,13 @@
     :CUSTOM_ID: crypto-auth-encrypt
     :END:
 
-    Utilising encryption subkeys would enable a means of establishing
-    a secure session's token exchange which does not rely on the
-    transmission of a password, two-factor authentication or other API
-    key, as is most commonly utilised.  Instead the server simply
-    issues the token for that session in an encrypted format.  Since
-    only an authorised user or client with control of the OpenPGP key
-    could decrypt the data and obtain the token.
+Utilising encryption subkeys would enable a means of establishing a
+secure session's token exchange which does not rely on the
+transmission of a password, two-factor authentication or other API
+key, as is most commonly utilised.  Instead the server simply issues
+the token for that session in an encrypted format.  Since only an
+authorised user or client with control of the OpenPGP key could
+decrypt the data and obtain the token.
 
 
 *** Authentication With Authentication Keys
@@ -1115,12 +1107,12 @@
     :CUSTOM_ID: crypto-auth-squared
     :END:
 
-    OpenPGP authentication keys or subkeys are intended for use with
-    protocols like SSH or other remote access.  In spite of the name
-    they may be less useful in this use case.  Nevertheless, it would
-    be possible to configure a server to accept connections utilising
-    an authentication key or subkey to establish an authorised
-    connection from the client to the server.
+OpenPGP authentication keys or subkeys are intended for use with
+protocols like SSH or other remote access.  In spite of the name they
+may be less useful in this use case.  Nevertheless, it would be
+possible to configure a server to accept connections utilising an
+authentication key or subkey to establish an authorised connection
+from the client to the server.
 
 
 * Additional Technical Notes
@@ -1134,15 +1126,15 @@
    :CUSTOM_ID: tech-size
    :END:
 
-   Since the conversion of encrypted binary data in the GnuPG format
-   to radix64 encoded ASCII text generally adds to the size of the
-   output data, determined according to both the size of the original
-   input data and the size of the keys to which that data is
-   encrypted, the maximum message size *should not* be arbitrarily
-   limited in the same way that many ActivityPub objects are limited.
-   The common limitation of five hundred characters per status to be
-   found with many Mastodon servers, for instance, would severly
-   hamper the ability to usefully employ any of these options.
+Since the conversion of encrypted binary data in the GnuPG format to
+radix64 encoded ASCII text generally adds to the size of the output
+data, determined according to both the size of the original input data
+and the size of the keys to which that data is encrypted, the maximum
+message size *should not* be arbitrarily limited in the same way that
+many ActivityPub objects are limited.  The common limitation of five
+hundred characters per status to be found with many Mastodon servers,
+for instance, would severly hamper the ability to usefully employ any
+of these options.
 
 
 ** Metadata and Forward Secrecy
@@ -1150,29 +1142,27 @@
    :CUSTOM_ID: tech-metadata
    :END:
 
-   The nature of ActivityPub and Activity Streams 2.0 data is such
-   that there is an inherent leakage of metadata with each object and
-   activity posted to a stream.  As a consequence there are certain
-   limitations on what can or should be concealed.  There are,
-   however, methods of mitigating that leakage.  A good example being
-   the second message encryption method described above.
+The nature of ActivityPub and Activity Streams 2.0 data is such that
+there is an inherent leakage of metadata with each object and activity
+posted to a stream.  As a consequence there are certain limitations on
+what can or should be concealed.  There are, however, methods of
+mitigating that leakage.  A good example being the second message
+encryption method described above.
 
-   Forward secrecy is a little more difficult with a messaging format
-   like this, even where it appears to be a stream to an end user.
-   This is due to each object being separate packages in that stream
-   rather than the data being transmitted as a single encrypted
-   session originating with the author and ending with the recipient
-   in real time.  Even in those circumstances in which the overall
-   communication (e.g. a conversation) does occur in real time or near
-   real time.
+Forward secrecy is a little more difficult with a messaging format
+like this, even where it appears to be a stream to an end user.  This
+is due to each object being separate packages in that stream rather
+than the data being transmitted as a single encrypted session
+originating with the author and ending with the recipient in real
+time.  Even in those circumstances in which the overall communication
+(e.g. a conversation) does occur in real time or near real time.
 
-   Nevertheless, between using OpenPGP keys with pseudonymous
-   identifiers linked to the ActivityPub stream end points and
-   minimising the amount of data revealed by encrypted content, there
-   are points which can facilitate this process.  In many respects
-   this could be done in a manner not too dissimilar to the use of
-   anonymous remailers and posts to the old [[nntp://alt.anonymous.messages][alt.anonymous.messages]]
-   USENET news group.
+Nevertheless, between using OpenPGP keys with pseudonymous identifiers
+linked to the ActivityPub stream end points and minimising the amount
+of data revealed by encrypted content, there are points which can
+facilitate this process.  In many respects this could be done in a
+manner not too dissimilar to the use of anonymous remailers and posts
+to the old =alt.anonymous.messages= USENET news group.
 
 
 * References
@@ -1180,7 +1170,7 @@
   :CUSTOM_ID: refs
   :END:
 
-  TBA.
+TBA.
 
 
 ** Normative References
@@ -1207,43 +1197,61 @@
   :END:
 
 
-** Copyright (C) The GnuPG Project, 2018
+** Copyright
    :PROPERTIES:
    :CUSTOM_ID: copyright
    :END:
 
-   Copyright © Benjamin D. McGinnes, 2018.
-   Copyright © The GnuPG Project, 2018.
+Copyright © Benjamin D. McGinnes, 2018.
+
+Copyright © The GnuPG Project, 2018.
 
 
-** License GPL compatible
+** Licensing
    :PROPERTIES:
    :CUSTOM_ID: license
    :END:
 
-   This file is free software; as a special exception the author gives
-   unlimited permission to copy and/or distribute it, with or without
-   modifications, as long as this notice is preserved.
+This file is free software; as a special exception the author gives
+unlimited permission to copy and/or distribute it, with or without
+modifications, as long as this notice is preserved.
 
-   This file is distributed in the hope that it will be useful, but
-   WITHOUT ANY WARRANTY, to the extent permitted by law; without even
-   the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-   PURPOSE.
+This file is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 
 * Footnotes
 
 [fn:1] As a point of comparison, the author's current public key in
-ASCII armoured format with all the web-of-trust signatures included is
+ASCII armored format with all the web-of-trust signatures included is
 approximately 100KB in size, whereas the same key exported in its most
 minimal and concise form is approximately 13KB.  Most keys will be
 smaller than that (the author's key is a 4Kb RSA certification and
 signing primary key with a 3Kb RSA signing subkey, a 4Kb El-Gamal
 encryption subkey and a 3Kb DSA2 signing subkey).
 
-[fn:2] Though the GnuPG Project is most well known for implementing
-the OpenPGP protocol, it does include support for S/MIME amongst the
-cryptographic engines (i.e. =gpgsm= or =gpgsm.exe= on Windows).
+Note that a future draft of this protocol extension may shift the key
+distribution method to utilise the proposed [[https://datatracker.ietf.org/doc/draft-koch-openpgp-webkey-service/?include_text=1][OpenPGP Web Key Directory]]
+protocol; which would meet all the requirements of this protocol along
+with very fine tuned user ID control with key distribution.  At the
+current time adoption of the Web Key Directory service is limited.
+
+[fn:2] As the example suggests, the example is heavily based on the
+current state of the GnuPG Project.  As this is a fictional thing
+which may become real in the future, it's necessary to stress that
+such a project *must* be both free and permissive in its licensing.
+
+To choose only free (e.g. GPL and/or Affero GPL only) means to
+sacrifice other people's security/lives for one's own political
+beliefs, while to choose only permissive (e.g. BSD and/or Apache
+and/or proprietary only) means to sacrifice other people's
+security/lives for profit.
+
+If any reading this have ever wondered why the GnuPG Project hasn't
+moved away from its dual licensing under the GPLv2+ (free) and the
+LGPLv2.1+ (permissive), this is why.
 
 [fn:3] Named after the Woolly Mammoth character in /Sesame Street/, of
 course, and who was originally believed to be Big Bird's imaginary
