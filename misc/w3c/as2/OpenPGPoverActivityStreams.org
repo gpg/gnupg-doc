@@ -1191,9 +1191,110 @@ TBA.
    :END:
 
 
+* About this Document
+  :PROPERTIES:
+  :CUSTOM_ID: about
+  :END:
+
+
+** Authors
+   :PROPERTIES:
+   :CUSTOM_ID: about-authors
+   :END:
+
+
+*** Ben McGinnes
+    :PROPERTIES:
+    :CUSTOM_ID: about-authors-ben
+    :END:
+
+/Et in arcadia ego .../
+
+
+** Contributors
+   :PROPERTIES:
+   :CUSTOM_ID: about-contribution
+   :END:
+
+
+*** Wiktor Kwapisiewicz
+    :PROPERTIES:
+    :CUSTOM_ID: about-conspirators-wik
+    :END:
+
+Wiktor is co-conspirator no. 1, providing valuable suggestions and
+proofreading from the first draft onward.  He runs his own ActivityPub
+node at [[https://metacode.biz/][metacode.biz]].
+
+
+*** The AS2 and AP designers
+    :PROPERTIES:
+    :CUSTOM_ID: about-contributors-as2-ap
+    :END:
+
+As this proposl is built on existing work, it is pretty obvious that
+each and every one of the authors of both Activity Streams 2.0 and
+ActivityPub have most definitely contributed to this proposed
+extension of them.
+
+Also, they were all really cool and welcoming of the first draft when
+I finally sent it through to them.
+
+
+*** Assembly Four aka Switter
+    :PROPERTIES:
+    :CUSTOM_ID: about-contributors-assembly4
+    :END:
+
+The technical staff at AssemblyFour were invited into the initial
+review group shortly following the initial overture to the AS2 and AP
+authors.  As their work was one of the principal reasons for needing
+something like this, it was appropriate to bring them into the
+discussion early on.
+
+
+*** Eugen Rochko
+    :PROPERTIES:
+    :CUSTOM_ID: about-contributors-gargron
+    :END:
+
+Creator of Mastodon and thus will be at the forefront of implementing
+this proposal if it is accepted.
+
+
+*** Lain Soykaf
+    :PROPERTIES:
+    :CUSTOM_ID: about-contributors-lain
+    :END:
+
+Creator of Pleroma and thus will be implementing this right along side
+Eugen.
+
+
+** Thanks
+   :PROPERTIES:
+   :CUSTOM_ID: about-thanks
+   :END:
+
+
+*** Switter
+    :PROPERTIES:
+    :CUSTOM_ID: about-thanks-switter
+    :END:
+
+So not only was [[https://switter.at/][Switter]] and the censorship it has faced since
+[[https://twitter.com/realDonaldTrump][Trumplestiltskin]] signed the merged FOSTA-SESTA into law, letting his
+Vice President launch a moral crusade against women and minorities;
+but the overworked founders of it have been willing to share a little
+more of their experiences during the course of my work.
+
+Much of this affected both the scope of the draft and some additional
+or incidental aspects of my regular work on GPGME.
+
+
 * Copyright and Licensing
   :PROPERTIES:
-  :CUSTOM_ID: copyright-and-license
+  :CUSTOM_ID: copyright-and-licensing
   :END:
 
 
@@ -1237,6 +1338,14 @@ distribution method to utilise the proposed [[https://datatracker.ietf.org/doc/d
 protocol; which would meet all the requirements of this protocol along
 with very fine tuned user ID control with key distribution.  At the
 current time adoption of the Web Key Directory service is limited.
+
+Alternatively, even if keeping all the existing key sharing data
+(including the key itself), the =openpgpKeys.json= file may be moved
+out to become a component (within its own =rel= parameter) of the
+[[https://www.rfc-editor.org/info/rfc7033][WebFinger]] protocol.  This has the added advantage of letting non AS2
+protocols utilise the key data.  Should this option be taken, it is
+likely that the key data will simply be referenced as local files in
+either or both of the binary and ASCII armoured formats.
 
 [fn:2] As the example suggests, the example is heavily based on the
 current state of the GnuPG Project.  As this is a fictional thing
