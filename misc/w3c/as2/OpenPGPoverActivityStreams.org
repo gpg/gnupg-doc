@@ -849,40 +849,40 @@ then manually verify them with OpenPGP compliant software (e.g. =gpg=,
 or =gpg.exe=).
 
 #+BEGIN_SRC javascript
- {
-     "@context": ["https://www.w3.org/ns/activitystreams",
-		  { "@language": "en" } ],
-     "type": "Signed Note",
-     "id": "http://snuffy.adversary.org/posted/thing",
-     "subject": "GnuPG rocks",
-     "content": "<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
-     "source": {
-	 "subject": "GnuPG rocks",
-	 "content": "So, what *should* be signed, what was written or what was rendered?",
-	 "mediaType": "text/markdown"
-     },
-     "signatures": {
-	 "cryptographic-protocol": "openpgp",
-	 { 
-	     "scope": { "source": ["subject", "content"] },
-	     "signedData": "GnuPG rocksSo, what *should* be signed, what was written or what was rendered?",
-	     "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVpjAAKCRBIcjp1eQQe\nxhXcAP0e5qTuD4wO+fyL+0djvoAmZtPAzg4zyf5Tn5dZZVzOhAEA4B1I7ApWHpTr\nIJ0SwT/wy0vc5guSt/gru7SLANnBZGI=\n=fwud\n-----END PGP SIGNATURE-----\n",
-	     "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-	     "pubkeyAlgorithm": "DSA",
-	     "hashAlgorithm": "SHA512",
-	     "timestamp": 1524984204
-	 },
-	 { 
-	     "scope": { "expectedRender": ["subject", "content"] },
-	     "signedData": "GnuPG rocks<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
-	     "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVsKQAKCRBIcjp1eQQe\nxoYFAP4oOZSYXTAKd673B4PqZQp47kdYxRUfR7tdKBh8qV2YVgEA8m+/foWZO9xy\nm9v3zzeI/BYpGCeKZ7eqe29exQpvKds=\n=FDKU\n-----END PGP SIGNATURE-----\n",
-	     "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
-	     "pubkeyAlgorithm": "DSA",
-	     "hashAlgorithm": "SHA512",
-	     "timestamp": 1524984204
-	 }
-     }
- }
+  {
+      "@context": ["https://www.w3.org/ns/activitystreams",
+		   { "@language": "en" } ],
+      "type": "Signed Note",
+      "id": "http://snuffy.adversary.org/posted/thing",
+      "subject": "GnuPG rocks",
+      "content": "<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
+      "source": {
+	  "subject": "GnuPG rocks",
+	  "content": "So, what *should* be signed, what was written or what was rendered?",
+	  "mediaType": "text/markdown"
+      },
+      "signatures": {
+	  "cryptographic-protocol": "openpgp",
+	  {
+	      "scope": { "source": ["subject", "content"] },
+	      "signedData": "GnuPG rocksSo, what *should* be signed, what was written or what was rendered?",
+	      "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVpjAAKCRBIcjp1eQQe\nxhXcAP0e5qTuD4wO+fyL+0djvoAmZtPAzg4zyf5Tn5dZZVzOhAEA4B1I7ApWHpTr\nIJ0SwT/wy0vc5guSt/gru7SLANnBZGI=\n=fwud\n-----END PGP SIGNATURE-----\n",
+	      "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+	      "pubkeyAlgorithm": "DSA",
+	      "hashAlgorithm": "SHA512",
+	      "timestamp": 1524984204
+	  },
+	  {
+	      "scope": { "expectedRender": ["subject", "content"] },
+	      "signedData": "GnuPG rocks<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
+	      "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABEKAB0WIQSkiyjzmoPmPFW48w5Icjp1eQQexgUCWuVsKQAKCRBIcjp1eQQe\nxoYFAP4oOZSYXTAKd673B4PqZQp47kdYxRUfR7tdKBh8qV2YVgEA8m+/foWZO9xy\nm9v3zzeI/BYpGCeKZ7eqe29exQpvKds=\n=FDKU\n-----END PGP SIGNATURE-----\n",
+	      "signingKeyID": "A48B28F39A83E63C55B8F30E48723A7579041EC6",
+	      "pubkeyAlgorithm": "DSA",
+	      "hashAlgorithm": "SHA512",
+	      "timestamp": 1524984204
+	  }
+      }
+  }
 #+END_SRC
 
 
