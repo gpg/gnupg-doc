@@ -11,7 +11,6 @@
   <!ENTITY pandocMiddle   PUBLIC '' 'tmp-middle.xml'>
   <!ENTITY pandocBack     PUBLIC '' 'tmp-back.xml'>
   <!ENTITY rfc.2119       PUBLIC '' '../common/reference.RFC.2119.xml'>
-  <!ENTITY rfc.2782       PUBLIC '' '../common/reference.RFC.2782.xml'>
   <!ENTITY rfc.3156       PUBLIC '' '../common/reference.RFC.3156.xml'>
   <!ENTITY rfc.4880       PUBLIC '' '../common/reference.RFC.4880.xml'>
   <!ENTITY rfc.5226       PUBLIC '' '../common/reference.RFC.5226.xml'>
@@ -60,7 +59,6 @@
   <back>
     <references title="Normative References">
       &rfc.2119;
-      &rfc.2782;
       &rfc.3156;
       &rfc.4880;
       &rfc.5785;
