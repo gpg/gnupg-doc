@@ -20,7 +20,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-06">
+     docName="draft-koch-openpgp-webkey-service-07">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -35,12 +35,17 @@
             fullname="Werner Koch">
       <organization>GnuPG e.V.</organization>
       <address>
+        <postal>
+          <street>Rochusstr. 44</street>
+          <city>40479 Duesseldorf</city>
+          <country>Germany</country>
+        </postal>
         <email>wk@gnupg.org</email>
         <uri>https://gnupg.org/verein</uri>
       </address>
     </author>
 
-    <date month="May" year="2018" />
+    <date month="November" year="2018" />
     <area>Security</area>
 
     <abstract>
@@ -150,35 +155,52 @@ Non-ASCII characters are not changed.
 The so mapped local-part is hashed using the SHA-1 algorithm.  The
 resulting 160 bit digest is encoded using the Z-Base-32 method as
 described in {{{RFC(6189)}}}, section 5.1.6.  The resulting string has
-a fixed length of 32 octets.  To form the URI, the following parts are
-concatenated:
+a fixed length of 32 octets.
+
+There are two variants on how to form the request URI: The advanced
+and the direct method.  Implementations MUST first try the advanced
+method.  Only if the required sub-domain does not exist, they SHOULD
+fall back to the direct method.
+
+The advanced method requires a sub-domain with the fixed name
+~openpgpkey~ is created and queried.  It constructs the URI from the
+concatenation of these items:
+
+- The scheme {{{https_scheme}}},
+- the domain-part,
+- the string ~/.well-known/openpgpkey/~,
+- the domain-part in lowercase,
+- the string ~/hu/~,
+- the above constructed 32 octet string,
+- the unchanged local-part as a parameter with name ~l~ using proper
+  percent escaping.
+
+An example for such an advanced method URI to lookup the key for
+Joe.Doe@Example.ORG is:
+
+#+BEGIN_EXAMPLE
+         https://openpgpkey.example.org/.well-known/openpgpkey/
+         example.org/hu/iy9q119eutrkn8s1mk4r39qejnbu3n5q?l=Joe.Doe
+#+END_EXAMPLE
+(line has been wrapped for rendering purposes)
+
+The direct method requires no additional DNS entries and constructs
+the URI from the concatenation of these items:
 
 - The scheme {{{https_scheme}}},
 - the domain-part,
 - the string ~/.well-known/openpgpkey/hu/~,
-- and the above constructed 32 octet string.
+- the above constructed 32 octet string,
+- the unchanged local-part as a parameter with name ~l~ using proper
+  percent escaping.
 
-For example the URI to lookup the key for Joe.Doe@Example.ORG is:
+Example for a direct method URI:
 
 #+BEGIN_EXAMPLE
          https://example.org/.well-known/openpgpkey/
-         hu/iy9q119eutrkn8s1mk4r39qejnbu3n5q
+         hu/iy9q119eutrkn8s1mk4r39qejnbu3n5q?l=Joe.Doe
 #+END_EXAMPLE
-
 (line has been wrapped for rendering purposes)
-
-DNS SRV resource records ({{{RFC(2782)}}}) may be used to query a
-different host or a port other than 443.  For example:
-
-#+BEGIN_EXAMPLE
-_openpgpkey._tcp.example.org.  IN  SRV 0 0 8443 wkd.example.org.
-#+END_EXAMPLE
-
-changes the above to query the host "wkd.example.org" at port
-8443 instead of the host "example.org" at port 443.  The target (in the
-example "wkd.example.org") MUST be a sub-domain of the domain-part
-(here "example.org").  If the target is not a sub-domain, the SRV RR
-MUST be be ignored.  The recommended name for the sub-domain is "wkd".
 
 The HTTP GET method MUST return the binary representation of the
 OpenPGP key for the given mail address.  The key needs to carry a User
@@ -200,6 +222,13 @@ The server MUST serve a Policy Flags file as specified below.  That
 file is even required if the Web Key Directory Update Protocol is not
 supported.
 
+The benefit of the advanced method is its greater flexibility in
+setting up the Web Key Directory in environments where more than one
+mail domain is hosted.  DNS SRV resource records, as used in earlier
+specifications of this protocol, posed a problem for implementations
+which have only limited access to DNS resolvers.  The direct method is
+kept for backward compatibility and to allow providing a Web Key
+Directory even with without DNS change requirements.
 
 * Web Key Directory Update Protocol
 
@@ -208,6 +237,23 @@ desirable.  The protocol defined here is entirely based on mail and
 the assumption that a mail provider can securely deliver mail to the
 INBOX of a user (e.g. an IMAP folder).  Note that the same protocol
 may also be used for submitting keys for use with OpenPGP DANE.
+
+In the following sections the term "target key" denotes the to be
+published key, the term "submission key" the key associated with the
+submission-address of the mail provider.  The string "WELLKNOWN"
+denotes the first part of an URI specific for a domain.  In the
+examples the domain "example.org" is assumed, thus:
+
+#+BEGIN_EXAMPLE
+      WELLKNOWN := https://openpgpkey.example.org/.well-known/
+                   example.org/openpgpkey
+#+END_EXAMPLE
+(line has been wrapped for rendering purposes)
+
+or if the sub-domain ~opengpgkey~ does not exist (direct method):
+#+BEGIN_EXAMPLE
+      WELLKNOWN := https://example.org/.well-known/openpgpkey
+#+END_EXAMPLE
 
 We assume that the user already created a key for her mail account
 alice@example.org.  To install the key at her provider's Web Key
@@ -219,7 +265,7 @@ Directory, she performs the following steps:
    for the syntax of that file.  For a mail address at the domain
    "example.org" the URI of the file is
 #+begin_example
-     https://example.org/.well-known/openpgpkey/submission-address
+         WELLKNOWN/submission-address
 #+end_example
 
 2. She sends her key using SMTP (or any other transport mechanism) to
@@ -252,17 +298,7 @@ Directory, she performs the following steps:
    publication of her key.
 
 The message data structures used for the above protocol are specified in
-detail below.  In the following sections the string "WELLKNOWN" denotes
-the first part of an URI specific for a domain.  In the examples the
-domain "example.org" is assumed, thus
-
-#+BEGIN_EXAMPLE
-      WELLKNOWN := https://example.org/.well-known/openpgpkey
-#+END_EXAMPLE
-
-The term "target key" denotes the to be published key, the term
-"submission key" the key associated with the submission-address of the
-mail provider.
+detail below.
 
 ** The Submission Address
 
@@ -727,7 +763,9 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -05
+* Changes Since -06
 
-- Add a submission address to the Policy Flags.
-- Add a suggestion to avoid creating an index file.
+- Specify the advanced method with the openpgpkey sub-domain.
+- Specify the l=LOCAL-PART query parameter.
+- Require the provider to filter the key for publication.
+- Drop the use of DNS SRV records.

@@ -17,3 +17,4 @@ scratch/
 .DS_Store
 ._.DS_Store
 default.profraw
+/misc/id/openpgp-webkey-service/draft.xml
