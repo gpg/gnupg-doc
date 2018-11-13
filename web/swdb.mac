@@ -51,17 +51,17 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  3.1.4
-#+macro: gpg4win_date 2018-10-18
-#+macro: gpg4win_src_size 5300k
-#+macro: gpg4win_src_sha1 89ea985720b7b891b20822b60335f5920c86c478
-#+macro: gpg4win_src_sha2 eb68cfd593f12c50cc92aaaf616a3325a80beb8f60637e67a3296f687ab8b446
-#+macro: gpg4win_exe_size 27800k
-#+macro: gpg4win_exe_sha1 64194f372418b879a708ce7cd3ff7ca8606e993c
-#+macro: gpg4win_exe_sha2 0cf87835a914cb6fd1bcb32e8beee995b5da35c513f627356685c389df1be6cb
-#+macro: gpg4win_isrc_size 223374k
-#+macro: gpg4win_isrc_sha1 316dd82b75ef3b6d77bb56567d17e94e07ec9128
-#+macro: gpg4win_isrc_sha2 aae3f8ac81dd7d928778d3075a1b9bb0b20c4b5e29e96014a39503e1f4b5e5a7
+#+macro: gpg4win_ver  3.1.5
+#+macro: gpg4win_date 2018-11-13
+#+macro: gpg4win_src_size 5301k
+#+macro: gpg4win_src_sha1 7bd3343f76a1d7df2d1d565cf3d1ede959286a4d
+#+macro: gpg4win_src_sha2 456143b0542557701a5dbb96240e818573b00afadeb9e7eee194343ff4b839e4
+#+macro: gpg4win_exe_size 27820k
+#+macro: gpg4win_exe_sha1 675b2261029ba54486eac08c9ac0fe09c7f1626c
+#+macro: gpg4win_exe_sha2 4749ab2d02d384abc2b0fd045c86380e6f840b540a2081e6c0f7d538a3397b23
+#+macro: gpg4win_isrc_size 223311k
+#+macro: gpg4win_isrc_sha1 7ff481557428ebc37fc91518375d6239540a7c74
+#+macro: gpg4win_isrc_sha2 5ee57522b0da38e3f4ed80e3e6262d7fc6a557b52e7cd42ec32a01db6d1889f1
 
 
 #
@@ -181,11 +181,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.3.1
-#+macro: gpgol_date 2018-10-16
-#+macro: gpgol_size 759k
-#+macro: gpgol_sha1 6c9dd34acc5b343b5dcca03b89de467e0ae59618
-#+macro: gpgol_sha2 2b2b4ef08fda8103cfbdcb3d988081d5d6c9ae6e8021bd2d237da1257efd5dc5
+#+macro: gpgol_ver  2.3.2
+#+macro: gpgol_date 2018-11-12
+#+macro: gpgol_size 766k
+#+macro: gpgol_sha1 b2d48f17b2cf20f6c55b98dbad1f14ac6e3adfc4
+#+macro: gpgol_sha2 6c298c7a8787e0796a1984d3c1e948b55b9fff685dff3fe7e9d3012001b5b85f
 
 
 #
