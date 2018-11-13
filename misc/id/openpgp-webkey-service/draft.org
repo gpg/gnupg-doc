@@ -165,6 +165,7 @@ The advanced method requires a sub-domain with the fixed name
 concatenation of these items:
 
 - The scheme {{{https_scheme}}},
+- the string ~openpgpkey~,
 - the domain-part,
 - the string ~/.well-known/openpgpkey/~,
 - the domain-part in lowercase,
