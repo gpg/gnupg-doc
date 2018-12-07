@@ -712,7 +712,7 @@ compare_version_strings (const char *a, const char *b)
 
   if (opt_reverse_ver && !opt_reverse)
     {
-      /* We may only compare up to the next dot and the swicth back to
+      /* We may only compare up to the next dot and the switch back to
        * regular order.  */
       for (; *a_plvl && *b_plvl; a_plvl++, b_plvl++)
         {
