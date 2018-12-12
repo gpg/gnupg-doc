@@ -1,0 +1,24 @@
+#+TITLE: The membership token
+#+STARTUP: showall
+#+SETUPFILE: "../share/setup.inc"
+
+* The Membership Token
+
+  *This is currently under development*
+
+Member of the Verein may receive a dedicated crypto token to secure
+their communication.  The token will implement the OpenPGP card
+specification and we will make the membership number a part of the
+token's serial number.
+
+Obviously the hardware and the software will be under a free license.
+We will use the Gnuk token from our founding member Niibe-san.
+
+  - Hardware :: git://git.gniibe.org/gnuk/fst-01.git
+  - Firmware :: git://git.gniibe.org/gnuk/gnuk.git
+
+The license for the schematics is /Creative Commons Attribution 3.0
+Unported License (CC BY 3.0)/.  The license for the PCB is /Creative
+Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)/.  The
+license for the Firmare is the /GNU General Public Licence version 3
+or later (GPLv3+)/.
