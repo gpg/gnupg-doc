@@ -14,6 +14,7 @@ token's serial number.
 Obviously the hardware and the software will be under a free license.
 We will use the Gnuk token from our founding member Niibe-san.
 
+  - Website  :: http://www.gniibe.org/FST-01/fst-01.html
   - Hardware :: git://git.gniibe.org/gnuk/fst-01.git
   - Firmware :: git://git.gniibe.org/gnuk/gnuk.git
 
