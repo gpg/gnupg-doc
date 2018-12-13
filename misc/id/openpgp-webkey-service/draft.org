@@ -201,6 +201,11 @@ Example for a direct method URI:
 #+END_EXAMPLE
 (line has been wrapped for rendering purposes)
 
+Sites which do not use the advanced method but employ wildcard DNS for
+their sub-domains MUST make sure that the ~openpgpkey~ sub-domain is
+not subject to the wildcarding.  This can be done by inserting an
+empty TXT RR for this sub-domain.
+
 The HTTP GET method MUST return the binary representation of the
 OpenPGP key for the given mail address.  The key needs to carry a User
 ID packet ({{{RFC(4880)}}}) with that mail address.  Note that the key
