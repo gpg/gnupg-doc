@@ -529,6 +529,13 @@ requests are only send for such User IDs.  It is further recommended
 that a client filters the key for a publication requests so that only
 a key with the specific User ID of the provider is send.
 
+A client MUST not accept a HTTP authentication challenge (HTTP
+code 401) because the information in the Web Key Directory is public
+and needs no authentication.  Allowing an authentication challenge has
+the problem to easily confuse a user with a password prompt and
+tricking him into falsely entering the passphrase used to protect his
+private key or to login to his mail provider.
+
 The use of DNS SRV records as specified in former revisions of this
 document reduces the certainty that a mail address belongs to a
 domain.  For example an attacker may change the target to a host in a
