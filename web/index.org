@@ -44,8 +44,7 @@ surveillance systems.  GnuPG is one of the tools that Snowden used to
 uncover the secrets of the NSA.
 
 Please visit the [[https://emailselfdefense.fsf.org][Email Self-Defense]] site to learn how and why you
-should use GnuPG for your electronic communication.  If you need
-printed leaflets check out [[https://fsfe.org/contribute/spreadtheword.html#gnupg-leaflet][FSFE’s GnuPG leaflet]].
+should use GnuPG for your electronic communication.
 
 
 * News
@@ -64,6 +63,12 @@ The latest release news:\\
 # For those of you who like reading world’s news with an RSS reader,
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
+
+** GnuPG 2.2.12 released (2018-12-14)
+
+We are pleased to announce the availability of GnuPG version 2.2.12.
+This is a maintenance release fixing a few problems and adding some
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q4/000433.html][more]]}
 
 ** GnuPG 2.2.11 released (2018-11-06)
 
