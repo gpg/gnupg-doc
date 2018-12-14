@@ -250,7 +250,7 @@ examples the domain "example.org" is assumed, thus:
 
 #+BEGIN_EXAMPLE
       WELLKNOWN := https://openpgpkey.example.org/.well-known/
-                   example.org/openpgpkey
+                   openpgpkey/example.org
 #+END_EXAMPLE
 (line has been wrapped for rendering purposes)
 
@@ -264,8 +264,7 @@ alice@example.org.  To install the key at her provider's Web Key
 Directory, she performs the following steps:
 
 1. She retrieves a file which contains one line with the mail address
-   used to submit the key to the mail provider. The DNS SRV rules
-   described for the Web Key Directory apply here as well.  See below
+   used to submit the key to the mail provider.  See below
    for the syntax of that file.  For a mail address at the domain
    "example.org" the URI of the file is
 #+begin_example
@@ -520,13 +519,6 @@ The domain name part of the mail address is not part of the hash to
 avoid problems with internationalized domain names.  Instead a
 separate URL is required for each domain name.
 
-The use of DNS SRV records reduces the certainty that a mail address
-belongs to a domain.  For example an attacker may change the target to
-a host in a sub-domain under their control and thus gain full control
-over all keys.  An implementation may want to weight the certainty of
-a mapping different if it has been retrieved via a sub-domain and in
-particular if a non-recommended name is used for the sub-domain.
-
 To make it a bit harder to test for published keys, the server
 responsible to serve the WELLKNOWN directory SHOULD NOT create an
 index file for that directory or any sub-directory.
@@ -537,6 +529,11 @@ requests are only send for such User IDs.  It is further recommended
 that a client filters the key for a publication requests so that only
 a key with the specific User ID of the provider is send.
 
+The use of DNS SRV records as specified in former revisions of this
+document reduces the certainty that a mail address belongs to a
+domain.  For example an attacker may change the target to a host in a
+sub-domain under their control and thus gain full control over all
+keys.
 
 * IANA Considerations
 
