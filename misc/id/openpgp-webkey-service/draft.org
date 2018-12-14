@@ -530,6 +530,8 @@ that a client filters the key for a publication requests so that only
 a key with the specific User ID of the provider is send.
 
 A client MUST not accept a HTTP authentication challenge (HTTP
+
+A client MUST NOT accept a HTTP authentication challenge (HTTP
 code 401) because the information in the Web Key Directory is public
 and needs no authentication.  Allowing an authentication challenge has
 the problem to easily confuse a user with a password prompt and
