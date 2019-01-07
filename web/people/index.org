@@ -80,6 +80,34 @@
 
    #+HTML: <p style="clear: both"/>
 
+** Andre Heinecke
+
+   #+HTML: <div class="people">
+   #+HTML: <p><img src="aheinecke.png" title="Andre Heinecke" /></p>
+   #+HTML: </div>
+
+   /Windows and UX/
+
+   Andre is working on GnuPG related projects for
+   [[https://www.g10code.at][g10^code Austria GmbH]] He has been an active KDE Developer since 2009,
+   mostly focused on Windows ports of KDE Software. Since 2013 he took
+   over several Windows and UX specific parts of GnuPG.
+
+   Andre is the current maintainer of Kleopatra the KDE / Gpg4win GUI
+   for GnuPG.  He also maintains GpgOL since 2013 and wrote the
+   support for Outlook 2010 and later versions.  Additonally he is the
+   maintainer of Gpg4win in general and GpgEX as well as the GPGME
+   bindings for C++ and Qt.
+
+   He is a founding member and the current cashier of the [[../verein/index.org][GnuPG e.V.]]
+
+   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
+
+   #+HTML: <p style="clear: both"/>
+
+
+   #+HTML: <hr/>
+
 ** Ben McGinnes
 
    #+HTML: <div class="people">
@@ -108,33 +136,6 @@
 
    #+HTML: <p style="clear: both"/>
 
-** Andre Heinecke
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="aheinecke.png" title="Andre Heinecke" /></p>
-   #+HTML: </div>
-
-   /Windows and UX/
-
-   Andre is working mainly on GnuPG related projects for his employer
-   [[https://www.intevation.org][Intevation GmbH]] He has been an active KDE Developer since 2009,
-   mostly focused on Windows ports of KDE Software. Since 2013 he took
-   over several Windows and UX specific parts of GnuPG.
-
-   Andre is the current maintainer of Kleopatra the KDE / Gpg4win GUI
-   for GnuPG.  He also maintains GpgOL since 2013 and wrote the
-   support for Outlook 2010 and later versions.  Additonally he is the
-   maintainer of Gpg4win in general and GpgEX as well as the GPGME
-   bindings for C++ and Qt.
-
-   He is a founding member and the current cashier of the [[../verein/index.org][GnuPG e.V.]]
-
-   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
-
-   #+HTML: <p style="clear: both"/>
-
-
-   #+HTML: <hr/>
 * Former developers
 
    The following developers made large contributions to GnuPG in the past
