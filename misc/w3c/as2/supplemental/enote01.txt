@@ -1,0 +1,8 @@
+Yes, obviously a properly designed merging of OpenPGP and ActivityPub
+is a good thing.  The popularity of [Switter](https://switter.at/) is
+proof enough of that.
+
+Not only that, but the problems created by this new totalitarian
+America, with its puritanical war on sex being the motivation to
+provide more weapons in favour of freedom.  Which is what this
+protocol extension is.

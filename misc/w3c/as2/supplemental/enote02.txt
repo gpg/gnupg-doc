@@ -1,0 +1,13 @@
+{
+    "@context": "https://www.w3.org/ns/activitystreams",
+    "expectedRender": {
+	"subject": "Adding OpenPGP to ActivityPub",
+	"content": "<p>Yes, obviously a properly designed merging of OpenPGP and ActivityPub is a good thing. The popularity of <a href=\"https://switter.at/\">Switter</a> is proof enough of that.</p>\n<p>Not only that, but the problems created by this new totalitarian America, with its puritanical war on sex being the motivation to provide more weapons in favour of freedom. Which is what this protocol extension is.</p>",
+	"mediaType": "text/html"
+    },
+    "source": {
+	"subject": "Adding OpenPGP to ActivityPub",
+	"content": "Yes, obviously a properly designed merging of OpenPGP and ActivityPub\nis a good thing.  The popularity of [Switter](https://switter.at/) is\nproof enough of that.\n\nNot only that, but the problems created by this new totalitarian\nAmerica, with its puritanical war on sex being the motivation to\nprovide more weapons in favour of freedom.  Which is what this\nprotocol extension is.\n",
+	"mediaType": "text/markdown"
+    }
+}
