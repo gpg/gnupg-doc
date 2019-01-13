@@ -65,7 +65,7 @@ actions of end users and actively censor them.
 Since the first draft of this protocol extension was written, the
 types of wholesale legislative threats to privacy have been
 exacerbated by Australia's efforts to “double down” on the arbitrary
-powers overreach in passing the /Telecommunications and Other 
+powers overreach in passing the /Telecommunications and Other
 Legislation Amendment (Assistance and Access) Bill 2018/.
 
 
@@ -1003,7 +1003,7 @@ or =gpg.exe=).
        },
        "signatures": {
 	   "cryptographic-protocol": "openpgp",
-	   { 
+	   {
 	       "scope": { "source": ["subject", "content"] },
 	       "signedData": "GnuPG rocksSo, what *should* be signed, what was written or what was rendered?",
 	       "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYIAB0WIQRl3zo4FNO63F59aPSNh8RBg0fyuwUCXCl4HgAKCRCNh8RBg0fy\nu6fZAQDqCKlaQRmIBdZgoHmMHDBU6KO/vw6iW5q/PYKChBM5dwEAv5UPYNY33mKh\n/CFvwLnZ0j+pVGgsuEidp5J1zk5JgA0=\n=xHh0\n-----END PGP SIGNATURE-----\n",
@@ -1012,7 +1012,7 @@ or =gpg.exe=).
 	       "hashAlgorithm": "SHA256",
 	       "timestamp": 1546221598
 	   },
-	   { 
+	   {
 	       "scope": { "expectedRender": ["subject", "content"] },
 	       "signedData": "GnuPG rocks<p>So, what <em>should</em> be signed, what was written or what was rendered?</p>",
 	       "signature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYIAB0WIQRl3zo4FNO63F59aPSNh8RBg0fyuwUCXC6NDQAKCRCNh8RBg0fy\nuyH6AQDOD7QfcYfPx6xpHKRsv6SzDijNXOS3vq1qaIYRkY/a/AEAyvn6uwRSJ1L5\nKEEKIvWhFsJoFJf0RCIraxoNlyWnvQ0=\n=Qea9\n-----END PGP SIGNATURE-----\n",
