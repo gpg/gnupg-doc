@@ -1343,9 +1343,7 @@ TBA.
    :CUSTOM_ID: copyright
    :END:
 
-Copyright © Benjamin D. McGinnes, 2018, 2019.
-
-Copyright © The GnuPG Hackers, 2018.
+Copyright © Benjamin D. McGinnes, 2018-2019.
 
 
 ** Licensing
