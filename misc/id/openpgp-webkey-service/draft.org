@@ -523,13 +523,15 @@ To make it a bit harder to test for published keys, the server
 responsible to serve the WELLKNOWN directory SHOULD NOT create an
 index file for that directory or any sub-directory.
 
-The mail provider MUST make sure to filter a key in a way that only
-the User ID belonging to that user is returned and that confirmation
-requests are only send for such User IDs.  It is further recommended
-that a client filters the key for a publication requests so that only
-a key with the specific User ID of the provider is send.
-
-A client MUST not accept a HTTP authentication challenge (HTTP
+The mail provider MUST make sure to publish a key in a way that only
+the mail address belonging to the requested user is part of the User
+ID packets included in the returned key.  Other User ID packets and
+their associated binding signatures NUST be removed before
+publication.  Confirmation requests MUST only be send for such to be
+published User ID.  It is further recommended that a client filters a
+received key or a key send for a publication requests so that only the
+specific User ID with the mail address of the provider is imported or
+send.
 
 A client MUST NOT accept a HTTP authentication challenge (HTTP
 code 401) because the information in the Web Key Directory is public

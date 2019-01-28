@@ -136,6 +136,16 @@
 #+macro: gpgrt_size 897k
 #+macro: gpgrt_sha1 0a3e67e428a2e051a94cabd9fb140bf49fdc13d0
 #+macro: gpgrt_sha2 0680799dee71b86b2f435efb825391eb040ce2704b057f6bd3dcc47fbc398c81
+#+macro: libgpg_error_ver  1.35
+#+macro: libgpg_error_date 2019-01-28
+#+macro: libgpg_error_size 896k
+#+macro: libgpg_error_sha1 1ffc6aaac4a4eecf16132c1b4eb500c1765d7190
+#+macro: libgpg_error_sha2 cbd5ee62a8a8c88d48c158fff4fc9ead4132aacd1b4a56eb791f9f997d07e067
+#+macro: gpgrt_ver  1.35
+#+macro: gpgrt_date 2019-01-28
+#+macro: gpgrt_size 896k
+#+macro: gpgrt_sha1 1ffc6aaac4a4eecf16132c1b4eb500c1765d7190
+#+macro: gpgrt_sha2 cbd5ee62a8a8c88d48c158fff4fc9ead4132aacd1b4a56eb791f9f997d07e067
 
 
 #
