@@ -237,6 +237,13 @@ a:link {
     text-decoration: none;
 }
 
+.topmenuitem {
+    padding: 10px;
+    color: #757575;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 nav ul,
 ul ul.sub-menu {
     margin: 0;
@@ -285,7 +292,7 @@ nav ul li:hover ul.sub-menu {
     z-index: 99;
     border-radius: 0px;
     position: absolute;
-    top: 37px;
+    top: 28px;
     left: 0;
 }
 nav ul ul li {
