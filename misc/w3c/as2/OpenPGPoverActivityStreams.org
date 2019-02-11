@@ -90,7 +90,8 @@ Wiktor Kwapisiewicz.  Particularly with regards to the discussions
 around the WebFinger protocol and related matters.
 
 Input and encouragement from [[https://mastodon.social/@david_ross][David Ross]] (Mozilla), [[https://switter.at/@e][Eliza]] (Assembly
-Four, Switter), [[https://mastodon.social/@ThisIsMissEm][Emelia]] (Switter) and [[https://switter.at/@vwerner][Vince Werner]] has been a boon.
+Four, Switter), [[https://mastodon.social/@ThisIsMissEm][Emelia]] (Unobvious Technology) and [[https://switter.at/@vwerner][Vince Werner]] has
+been a boon.
 
 
 *** Additional Thanks
