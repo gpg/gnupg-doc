@@ -64,6 +64,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.13 released (2019-02-12)
+
+We are pleased to announce the availability of GnuPG version 2.2.12.
+This is a maintenance release fixing a few problems and adding some
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2010q1/000434.html][more]]}
+
 ** GnuPG 2.2.12 released (2018-12-14)
 
 We are pleased to announce the availability of GnuPG version 2.2.12.
@@ -109,75 +115,6 @@ This version fixes a critical security bug.  Either this version or a
 vendor provided fix should be installed.  There are also a few other
 changes; see the [[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html][announcement]] mail.  This is {{{CVE(2018-12020)}}} and
 our bug [[https://dev.gnupg.org/T4012][#4012]].
-
-** GnuPG 2.2.7 released (2018-05-02)
-
-We are pleased to announce the availability of GnuPG version 2.2.7.
-This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000424.html][more]]}
-
-** GnuPG Made Easy 1.11.1 released (2018-04-20)
-
-[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
-program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000423.html][more]]}.
-
-** GnuPG 2.2.6 released (2018-04-09)
-
-We are pleased to announce the availability of GnuPG version 2.2.6.
-This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000421.html][more]]}
-
-Update (2018-04-16): In case you run into problems with [[file:software/gpgme/index.org][GPGME]] and this
-or a later version of GnuPG, please apply this [[https://lists.gnupg.org/pipermail/gnupg-users/attachments/20180413/e2c8e5d5/attachment-0001.patch][patch]] to GPGME or use
-GPGME version 1.11.0 which will soon be released.
-
-** GnuPG 2.2.5 released (2018-02-22)
-
-We are pleased to announce the availability of GnuPG version 2.2.5.
-This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q1/000420.html][more]]}
-
-** 20 Years of GnuPG (2017-12-20)
-
-Exactly 20 years ago the first public version of GnuPG was released
-under the name "g10".  Today we are pleased to announce the
-availability of GnuPG version 2.2.4.  This is a maintenance release
-fixing a few minor bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000419.html][more]]}
-
-** GnuPG Made Easy 1.10.0 released (2017-12-12)
-
-[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
-program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000418.html][more]]}
-
-** GnuPG 2.2.3 released (2017-11-21)
-
-We are pleased to announce the availability of GnuPG version 2.2.3.
-This is a maintenance release mainly fixing a bug on Windows.  The
-Windows installer [[https://gpg4win.org][Gpg4win]] 3.0.1 already includes this version of
-GnuPG.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000417.html][more]]}
-
-** GnuPG 2.2.2 released (2017-11-07)
-
-We are pleased to announce the availability of GnuPG version 2.2.2.
-This is a maintenance release fixing a few bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q4/000416.html][more]]}
-
-** GnuPG 2.2.1 released (2017-09-19)
-
-We are pleased to announce the availability of GnuPG version 2.2.1.
-This is a maintenance release fixing a few minor bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000415.html][more]]}
-
-** Libgcrypt 1.8.1 released (2017-08-31)                          :important:
-
-We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.1
-and 1.7.9.  These releases fix a local side-channel attack on
-Curve25519 encryption dubbed "May the Fourth be With You"
-{{{CVE(2017-0379)}}}.  Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000414.html][more]]}...
-
-** GnuPG 2.2.0 released (2017-08-28)
-
-The GnuPG team is pleased to announce the availability of a new
-GnuPG release: version 2.2.0. Read {[[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000413.html][more]]} for details.
-
-This release marks the start of a new long term support series to
-replace the 2.0.x series which will reach end-of-life on 2017-12-31.
-
 
 * COMMENT
 This is the publishing info used for the GnuPG pages
