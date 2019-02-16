@@ -66,7 +66,7 @@ The latest release news:\\
 
 ** GnuPG 2.2.13 released (2019-02-12)
 
-We are pleased to announce the availability of GnuPG version 2.2.12.
+We are pleased to announce the availability of GnuPG version 2.2.13.
 This is a maintenance release fixing a few problems and adding some
 minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q1/000434.html][more]]}
 
