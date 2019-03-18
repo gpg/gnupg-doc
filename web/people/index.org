@@ -89,7 +89,7 @@
    /Windows and UX/
 
    Andre is working on GnuPG related projects for
-   [[https://www.g10code.at][g10^code Austria GmbH]] He has been an active KDE Developer since 2009,
+   [[https://www.gnupg.com][GnuPG.com]] He has been an active KDE Developer since 2009,
    mostly focused on Windows ports of KDE Software. Since 2013 he took
    over several Windows and UX specific parts of GnuPG.
 
