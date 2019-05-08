@@ -40,10 +40,11 @@ provide this list to enable you to contact service providers.
    The companies listed here provide mainly technical support and
    consulting.
 
-  - [[http://gnupg.com][g10 Code GmbH]], Düsseldorf, Germany :: Offers commercial grade
+  - [[https://gnupg.com][GnuPG.com]], Düsseldorf, Germany :: Offers commercial grade
        support, customized development, porting to new platforms, help
        with integrating GnuPG into customer projects, code audits, and
-       more.  g10^code is owned and run by GnuPG´s principal author.
+       more.  GnuPG.com is a brand of g10^code GmbH; owned and run by
+       GnuPG´s and [[https://gpg4win.org][Gpg4win]]´s principal authors.
   - [[http://josefsson.org/][Simon Josefsson Datakonsult]], Stockholm, Sweden :: Offers
        integration of OpenPGP technology in TLS, Kerberos, e-mail, and
        SASL. Does customized development, porting to new platforms,
