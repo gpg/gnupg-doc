@@ -8,14 +8,14 @@ MD_EXAMPLE_FIX = '(defun org-md-example-block (example-block contents info) \
 
 
 draft.txt, draft.xml: draft.org
-	emacs23 --batch \
+	emacs --batch \
            --eval "(require 'org)" \
            --eval "(require 'ox-md)" \
            --eval $(MD_EXAMPLE_FIX)  \
            --visit "draft.org" \
            --eval "(org-md-export-to-markdown)"
 	sed -i 's/\*\*\(.*\):\*\*/"\1":/' draft.md
-	sed <draft.md  -n '/^# Abstract/q;1,$$ p' >template.xml
+	sed <draft.md  -n '/^# Abstract/q;1,$$ p'|sed 's/^      //' >template.xml
 	sed <draft.md  -n '/^# Abstract/,/^# Middle/p' | \
 		sed  '1 d;$$ d' >tmp-abstract.md
 	sed <draft.md  -n '/^# Middle/,/^# Back/p' | \
