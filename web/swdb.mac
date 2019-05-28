@@ -210,8 +210,7 @@
 #
 # SQLite (mirrored at our server)
 #
-#+macro: sqlite_ver     3260000
-#+macro: sqlite_sha1_gz 9af2df1a6da5db6e2ecf3f463625f16740e036e9
-
+#+macro: sqlite_ver     3280000
+#+macro: sqlite_sha1_gz 01b9d8fc77085e144dddc87456c9783e53d09a53
 
 # --- end of swdb.mac ---
