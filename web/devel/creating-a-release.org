@@ -33,7 +33,7 @@ actually send out something.
 *** Decide whether you want to update the automake standard files
 
 These are mainly the files ~config.guess~ and ~config.sub~.  In
-general these files should be the same for all package.  Do not update
+general these files should be the same for all packages.  Do not update
 them for each release because having consistent files in all packages
 can avoid bug reports due to different cpu-vendor-os strings
 
