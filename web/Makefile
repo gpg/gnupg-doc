@@ -9,7 +9,7 @@ swdb.lst: swdb.mac
 	    ' swdb.mac >swdb.lst
 
 swdb.lst.sig: swdb.lst signcheck
-	gpg -sbu 0x5B80C5754298F0CB55D8ED6ABCEF7E294B092E28 swdb.lst
+	gpg -sbu 0x249B39D24F25E3B6 swdb.lst
 
 signcheck: swdb.lst
 	@set -e; \
@@ -21,7 +21,7 @@ signcheck: swdb.lst
         fi
 
 upload: swdb.lst.sig
-	scp swdb.lst.sig swdb.lst andre@playfair.gnupg.org:/var/www/git/versions.gnupg.org/htdocs/
+	scp swdb.lst.sig swdb.lst playfair.gnupg.org:/var/www/git/versions.gnupg.org/htdocs/
 	scp swdb.lst.sig swdb.lst webbuilder@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
 
 .PHONY: upload all signcheck
