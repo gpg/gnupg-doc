@@ -131,6 +131,8 @@
         </div>
       </div>
 
+      Please note that new credit card donations are currently not possible.
+
       <!-- Pay using -->
       <div class="form-group">
         <label for="paytype" class="col-sm-2 control-label">
@@ -139,9 +141,9 @@
         <div class="col-sm-6">
           <div class="radio">
             <label>
-              <input type="radio" name="paytype" id="cc"
-                     value="cc" /><!--CHECK_CC-->
-              Credit Card
+              <input type="radio" name="paytype" id="se"
+                     value="se" /><!--CHECK_SE-->
+              SEPA (European bank transfer)
             </label>
           </div>
           <div class="radio">
@@ -152,13 +154,6 @@
               <span class="help-block help-inline" id="paypal-note">
                 Please note that in certain countries recurring donations are not possible with PayPal.
               </span>
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="paytype" id="se"
-                     value="se" /><!--CHECK_SE-->
-              SEPA (European bank transfer)
             </label>
           </div>
           <div class="radio">

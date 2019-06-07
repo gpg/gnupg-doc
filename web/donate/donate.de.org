@@ -137,9 +137,9 @@
         <div class="col-sm-6">
           <div class="radio">
             <label>
-              <input type="radio" name="paytype" id="cc"
-                     value="cc" /><!--CHECK_CC-->
-              Kreditkarte
+              <input type="radio" name="paytype" id="se"
+                     value="se" /><!--CHECK_SE-->
+              Überweisung
             </label>
           </div>
           <div class="radio">
@@ -150,13 +150,6 @@
               <span class="help-block help-inline" id="paypal-note">
                 Bitte beachten Sie, das in einigen Ländern (z.B. Deutschland) Daueraufträge mit PayPal nicht möglich sind.
               </span>
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="paytype" id="se"
-                     value="se" /><!--CHECK_SE-->
-              Überweisung
             </label>
           </div>
           <div class="radio">
