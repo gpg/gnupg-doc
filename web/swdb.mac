@@ -181,12 +181,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.4.0
-#+macro: gpgol_date 2019-06-03
-#+macro: gpgol_size 792k
-#+macro: gpgol_sha1 cb67aa5babb86ae6e8409b73e28f4eb49e6ebeba
-#+macro: gpgol_sha2 10c393839813119e1f8ae3e222ead2882e23d680ca3c8382f1e3f94bfeac46de
-
+#+macro: gpgol_ver  2.4.1
+#+macro: gpgol_date 2019-06-15
+#+macro: gpgol_size 794k
+#+macro: gpgol_sha1 dfb1dae55767ec85abeb11cb79cca0bfcb1245a4
+#+macro: gpgol_sha2 1e854a766e716c846c7db72c138436a152d0557e299ede96bcaf09d28daeda07
 
 #
 # ADNS
