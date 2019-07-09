@@ -69,7 +69,7 @@ The latest release news:\\
 We are pleased to announce the availability of GnuPG version 2.2.17.
 This is a maintenance release providing mitigation to the recent DoS
 attacks on the keyserver network.  A few other improvements are also
-on the list. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q2/000438.html][more]]}
+on the list. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q3/000439.html][more]]}
 
 ** GnuPG 2.2.16 released (2019-05-28)
 
