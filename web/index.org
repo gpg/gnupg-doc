@@ -64,6 +64,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.17 released (2019-07-09)
+
+We are pleased to announce the availability of GnuPG version 2.2.17.
+This is a maintenance release providing mitigation to the recent DoS
+attacks on the keyserver network.  A few other improvements are also
+on the list. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q2/000438.html][more]]}
+
 ** GnuPG 2.2.16 released (2019-05-28)
 
 We are pleased to announce the availability of GnuPG version 2.2.16.
