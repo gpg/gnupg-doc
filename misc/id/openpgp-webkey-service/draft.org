@@ -526,7 +526,7 @@ index file for that directory or any sub-directory.
 The mail provider MUST make sure to publish a key in a way that only
 the mail address belonging to the requested user is part of the User
 ID packets included in the returned key.  Other User ID packets and
-their associated binding signatures NUST be removed before
+their associated binding signatures MUST be removed before
 publication.  Confirmation requests MUST only be send for such to be
 published User ID.  It is further recommended that a client filters a
 received key or a key send for a publication requests so that only the
