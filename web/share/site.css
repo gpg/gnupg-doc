@@ -652,11 +652,12 @@ h2.footnotes {
 /* A box of logos.  */
 
 .logobox p {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .logobox img {
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 /* A box used for small graphics at the page bottom.
