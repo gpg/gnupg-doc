@@ -57,6 +57,7 @@
    | Pinentry     | {{{pinentry_ver}}}     | {{{pinentry_date}}}     |     {{{pinentry_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}             | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}}             |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/gpgme/index.org][GPGME]]        | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |        {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
+   | [[../software/scute/index.org][Scute]]        | {{{scute_ver}}}        | {{{scute_date}}}        |          {{{scute_size}}}    | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
    | [[../software/gpa/index.org][GPA]]          | {{{gpa_ver}}}          | {{{gpa_date}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | GnuPG 1.4    | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
@@ -71,6 +72,8 @@
 
    - /GPGME/ is the standard library to access GnuPG functions from
      programming languages.
+
+   - /Scute/ is a PKCS#11 provider on top of GnuPG.
 
    - /GPA/ is a graphical frontend to GnuPG.
 

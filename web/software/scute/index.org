@@ -1,0 +1,13 @@
+#+STARTUP: showall
+#+GPGWEB-NEED-SWDB
+#+SETUPFILE: "../../share/setup.inc"
+
+* Scute
+
+  /Scute/ is a PKCS#11 provider on top of GnuPG.
+
+  Please [[https://www.scute.org][www.scute.org]] for details until we have moved the
+  docs to this page.
+
+  See [[../../download/index.org::#scute][download]] section to download the latest tarball.  The current
+  version is {{{scute_ver}}}.

@@ -186,6 +186,17 @@
 #+macro: gpgol_sha1 c5b2c0c84cf907def59b2d73296e1b9cbb356612
 #+macro: gpgol_sha2 22ffefdfaf6e529c8d96bb7ff94e7292a40b5a081480372daca8756d3b3b069b
 
+
+#
+# Scute
+#
+#+macro: scute_ver  1.6.0
+#+macro: scute_date 2019-09-11
+#+macro: scute_size 985k
+#+macro: scute_sha1 be3b9a3e53e653881c219e1fb3cc7c0aaa6c9174
+#+macro: scute_sha2 511be523407590a586b7d61b5985af965dd91901b75d9650b55e9ae1d86d0ab0
+
+
 #
 # ADNS
 #

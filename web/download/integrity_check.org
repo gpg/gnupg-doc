@@ -103,7 +103,7 @@
 ** List of SHA-1 check-sums
 
    For your convenience, all SHA-1 check-sums available for software
-   that can be downloaded from [[ftp://ftp.gnupg.org/][our site]], have been gathered below.
+   that can be downloaded from [[https://gnupg.org/ftp/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
    {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
@@ -116,6 +116,7 @@
    {{{npth_sha1}}}  npth-{{{npth_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{scute_sha1}}}  scute-{{{gpgme_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
    {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
    {{{gnupg20_sha1}}}  gnupg-{{{gnupg20_ver}}}.tar.bz2
