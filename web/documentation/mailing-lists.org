@@ -77,5 +77,5 @@ language.
 The channel =#gnupg= on =irc.freenode.org= is a place to talk about
 all gnupg related topics.
 
-The core GnuPG developers use the MUC =gnupg-devel= at conference dot
-jabber dot gnupg.org for their day to day work.  Visitors are welcome.
+The core GnuPG developers use the Jabber MUC =gnupg-devel= at chat dot
+gnupg.org for their day to day work.  Visitors are welcome.
