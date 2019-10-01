@@ -1,0 +1,12 @@
+#+STARTUP: showall
+#+GPGWEB-NEED-SWDB
+#+SETUPFILE: "../../share/setup.inc"
+
+* Poldi
+
+  /Poldi/ is a PAM module using GnuPG's smartcard infrastructure.
+
+  See [[../../download/index.org::#poldi][download]] section to download the latest tarball.  The current
+  version is {{{poldi_ver}}}.
+
+# FIXME: Convert and update the content of g10code.com/p-poldi.html.
