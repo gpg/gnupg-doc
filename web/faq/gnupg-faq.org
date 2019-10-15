@@ -108,7 +108,7 @@ Third, tell us your problem.  Be as specific as possible.
 
 Do this, and you might be surprised at how quickly your problem is
 solved. An example of a good question would be, “I’m running GnuPG
-1.4.14 on an Ubuntu 15.04 x64 box.  I’m using Thunderbird with
+2.2 on an Ubuntu 19.10 x64 box.  I’m using Thunderbird with
 Enigmail. Everything was fine until I did a software update.  Ever
 since then I can’t use GnuPG with email.  What happened?”  This
 question gives us enough to work with, and in short order someone will
@@ -123,8 +123,9 @@ answer your question.
    :CUSTOM_ID: maintainer
    :END:
 
-[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Rob Hansen]]. Please feel free to contact me should there be an
-error in this FAQ, whether typographical, grammatical, or factual.
+[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Rob Hansen]]. Please 
+feel free to contact me should there be an error in this FAQ, whether 
+typographical, grammatical, or factual.
 
 When writing, the editorial “we” refers to the general consensus of
 the GnuPG community. This consensus is hammered out on the GnuPG-Users
@@ -150,7 +151,7 @@ Yes.
    :CUSTOM_ID: last_checked
    :END:
 
-October 2017.
+October 2019.
 
 * General questions
   :PROPERTIES:
@@ -166,16 +167,19 @@ GnuPG is free cryptographic software from the GNU Project which helps
 people ensure the confidentiality, integrity and assurance of their
 data.  Let’s try that again: GnuPG is…
 
-- /Free./ When we say “free” we mean [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  You’re free
-  to use it, modify it, share it, tinker with it, and learn from it.
-  Software is meant to be used by people, and people deserve freedom.
+- /Free./ When we say “free” we mean 
+  [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  
+  You’re free to use it, modify it, share it, tinker with it, and learn
+  from it. Software is meant to be used by people, and people deserve
+  freedom.
 - /Cryptographic./ The word “cryptography” is derived from two Greek
   words, κρυπτός (pronounced “kryptos,” meaning “hidden”) and γράφω
   (pronounced “grapho,” meaning “writing”). Cryptography is the
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
-- /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that aims to give people
-  the ability to do all their computing with free software.
+- /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that
+  aims to give people the ability to do all their computing with free 
+  software.
 - /Confidentiality./ No one except authorized parties should be able
   to read your data.
 - /Integrity./ It shouldn’t be possible to tamper with a message
@@ -273,10 +277,13 @@ A convenient Windows installer is available from [[https://www.gpg4win.org][GPG4
     :CUSTOM_ID: get_gnupg_osx
     :END:
 
-The [[https://www.gpgtools.org][GPGtools project]] has everything needed to get started.  Another
-excellent resources is the [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]] project on
-SourceForge. Finally, [[https://brew.sh][Homebrew]], [[http://www.finkproject.org/][Fink]], and [[https://www.macports.org/][MacPorts]] all have it in
-their repositories.
+You have many options!
+
+- The [[https://www.gpgtools.org][GPGtools project]]
+- [[http://sourceforge.net/projects/gpgosx/][GnuPG for OS X]]
+- [[https://brew.sh][Homebrew]]
+- [[http://www.finkproject.org/][Fink]]
+- [[https://www.macports.org/][MacPorts]]
 
 *** … for the free Unixes?
     :PROPERTIES:
@@ -330,7 +337,8 @@ To install GnuPG on Gentoo, run the following command as root:
 
 =emerge gnupg=
 
-The Gentoo documentation includes a [[https://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
+The Gentoo documentation includes a
+[[https://www.gentoo.org/doc/en/gnupg-user.xml][GnuPG User Guide]].
 
 
 **** … for FreeBSD?
@@ -363,7 +371,8 @@ sudo pkg install gnupg
     :CUSTOM_ID: get_gnupg_vms
     :END:
 
-A port to *VMS* is maintained by Steven M. Schweda at [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
+A port to *VMS* is maintained by Steven M. Schweda at 
+[[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
 
 
 ** Is source code available?
@@ -392,7 +401,8 @@ you may share the software and/or your modifications with others.
 
 GnuPG works with many operating systems, including ones that don’t
 respect your freedoms.  If you’d like to make the shift to a free
-operating system, [[https://www.gnu.org/distros/free-distros.html][you have many choices]].
+operating system,
+[[https://www.gnu.org/distros/free-distros.html][you have many choices]].
 
 ** How can I donate money to the GnuPG project?
    :PROPERTIES:
@@ -408,10 +418,11 @@ The best way is to visit the [[https://gnupg.org/donate/][donation page]].
    :END:
 
 Development discussion takes place on the gnupg-devel mailing list.
-Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]] for links to subscribe and to the
-list’s archives.
+Go to the [[https://www.gnupg.org/documentation/mailing-lists.en.html][GnuPG mailing list page]]
+to subscribe or read the archives.
 
-The [[https://bugs.gnupg.org/gnupg/][GnuPG project’s bug tracker]] is also publicly available.
+The [[https://bugs.gnupg.org/gnupg/][GnuPG project’s bug tracker]]
+is also publicly available.
 
 * Where can I get more information?
   :PROPERTIES:
@@ -516,14 +527,12 @@ but on the whole it’s a wonderful resource.
 - Subscribing :: Visit the [[https://admin.hostpoint.ch/mailman/listinfo/enigmail-users_enigmail.net][Enigmail mailing list page]]
 - Unsubscribing :: See above
 - List moderator(s) ::
-  - John Clizbe <[[mailto:john@enigmail.net?subject=The%20Enigmail%20list][john@enigmail.net]]>
   - Olav Seyfarth <[[mailto:olav@enigmail.net?subject=The%20Enigmail%20list][olav@enigmail.net]]>
   - Patrick Brunschwig <[[mailto:patrick@enigmail.net?subject=The%20Enigmail%20list][patrick@enigmail.net]]>
-  - Ludwig Hügelschäfer <[[mailto:ludwig@enigmail.net?subject=The%20Enigmail%20list][ludwig@enigmail.net]]>
   - Daniele Raffo <[[mailto:dan@enigmail.net?subject=The%20Enigmail%20list][dan@enigmail.net]]>
   - Robert J. Hansen <[[mailto:rob@enigmail.net?subject=The%20Enigmail%20list][rob@enigmail.net]]>
 - Supports PGP/MIME :: Yes
-- Languages supported :: English, Deutsch, Schwyzerdütsch, Español
+- Languages supported :: English, Deutsch, Schwyzerdütsch
 
 Enigmail integrates GnuPG with [[https://www.getthunderbird.com][Mozilla Thunderbird]] and/or [[https://www.seamonkey-project.org/][Mozilla
 Seamonkey]]. It’s one of the most popular ways to use GnuPG, and the
@@ -538,7 +547,7 @@ The list is lightly moderated.
     :END:
 
 
-- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGPNET][PGPNET page]]
+- Subscribing :: visit the [[https://groups.io/g/pgpnet][PGPNET page]]
 - Unsubscribing :: see above
 - List moderator(s) :: Paul Kapaldo <[[mailto:pjkapaldo@yahoo.com?subject=PGPNET][pjkapaldo@yahoo.com]]>
 - Supports PGP/MIME? :: Yes
@@ -625,8 +634,8 @@ worth reading, but make sure to read skeptically.
      :END:
 
 There is no such thing as an easy introduction to cryptography.
-However, PGP Corporation has a well-regarded [[http://www.cs.unibo.it/babaoglu/courses/security/resources/documents/intro-to-crypto.pdf][/Introduction to
-Cryptography/]].
+However, PGP Corporation has a well-regarded 
+[[http://www.cs.unibo.it/babaoglu/courses/security/resources/documents/intro-to-crypto.pdf][/Introduction to Cryptography/]].
 
 
 **** … the deeper mathematics of cryptography?
@@ -655,12 +664,12 @@ practices.
 The inclusion of a site on this list is not an endorsement of that
 site’s political leanings.
 
-Probably the best-known organization is the [[https://www.eff.org][Electronic Frontier
-Foundation]], which has been at the vanguard of electronic civil
-liberties for over twenty years.
+Probably the best-known organization is the 
+[[https://www.eff.org][Electronic Frontier Foundation]], which has 
+been at the vanguard of electronic civil liberties for over twenty years.
 
-The [[https://www.fsf.org][Free Software Foundation]] is also deeply involved in these matters,
-although in a different way than the EFF.
+The [[https://www.fsf.org][Free Software Foundation]] is also deeply
+involved in these matters, although in a different way than the EFF.
 
 * What email clients support GnuPG on…
   :PROPERTIES:
@@ -895,10 +904,6 @@ so that other users can find it.  There are distributed networks of
 keyservers that share keys, so you only need to upload your key once
 to that network.
 
-One widely-used keyserver network is [[https://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
-for “Synchronizing Key Server”.  You can use this network by supplying
-the =--keyserver pool.sks-keyservers.net= option.
-
 
 
 ** What’s RSA?
@@ -1003,7 +1008,7 @@ cryptanalysis and is still going strong.
 
 Due to its 1970s-era 64-bit block size, it should not be used to
 encrypt more than about 4Gb of data.  Beyond that, though, it is solid
-as a rock, and very few GnuPG users will ever notice a problem with
+as a rock and very few GnuPG users will ever notice a problem with
 it.  Provided you’re not encrypting more than 4Gb of data you may use
 3DES with confidence.
 
@@ -1032,11 +1037,12 @@ confidence.
    :END:
 
 
-During roughly the same time period that [[http://www.nist.gov][NIST]] was running the Advanced
-Encryption Standard trials, Japan’s [[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union’s
-[[http://www.cryptonessie.org/][NESSIE]] were running their own similar trials.  Camellia is the cipher
-that won the NESSIE and CRYPTREC trials, much in the same way that
-Rijndael won the United States’ AES trials.
+During roughly the same time period that [[http://www.nist.gov][NIST]]
+was running the Advanced Encryption Standard trials, Japan’s 
+[[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union’s
+[[http://www.cryptonessie.org/][NESSIE]] were running their own similar
+trials.  Camellia is the cipher that won the NESSIE and CRYPTREC trials,
+much in the same way that Rijndael won the United States’ AES trials.
 
 Camellia is a thoroughly modern cipher design and may be used with
 confidence.
@@ -1195,8 +1201,11 @@ to tune GnuPG before you can use it.
    :CUSTOM_ID: new_key_size
    :END:
 
-The overwhelming majority of users will be well-served by generating
-2048-bit RSA keys.  This is the default behavior for GnuPG.
+As of 2019, the era of 2048-bit keys is rapidly coming to a close.  If
+your certificate uses 2048-bit keys we recommend retiring them and
+migrating to a new keypair of at least 3072 bits length.  You can do
+this just by creating a new certificate with =gpg --gen-key=; it
+defaults to creating 3072-bit keys.
 
 
 ** What algorithm should I use?
@@ -1205,7 +1214,7 @@ The overwhelming majority of users will be well-served by generating
    :END:
 
 The overwhelming majority of users will be well-served by generating
-2048-bit RSA keys.  This is the default behavior for GnuPG.
+3072-bit RSA keys.  This is the default behavior for GnuPG.
 
 
 ** Why does it take so long to generate a certificate?
@@ -1269,13 +1278,11 @@ Copy =revoke.asc= to a safe place.
     :END:
 
 
-=gpg --keyserver pool.sks-keyservers.net --send-key= /[your certificate ID]/
-
-You should only upload your own certificates to the keyservers, or
-obtain the certificate holder’s permission before doing so.  In some
-circles it’s considered rude to upload someone else’s certificate; not
-everyone wants to publish their key publicly.
-
+In 2019 the SKS keyserver network was attacked by individuals who
+wished to leave it beyond use, and largely succeeded.  Today the
+best bet going forward is to use the Hagrid keyserver at 
+[[https://keys.openpgp.org/][keys.openpgp.org]].  Instructions for
+uploading your certificate may be found there.
 
 
 ** Where does GnuPG look for configuration options?
@@ -1283,10 +1290,13 @@ everyone wants to publish their key publicly.
    :CUSTOM_ID: location_gpg_conf_file
    :END:
 
-
 GnuPG looks at a file called =gpg.conf= to determine various runtime
 parameters.  On UNIX systems this file can be found in =~/.gnupg=.  On
 Windows systems open Explorer and go to =%APPDATA%\Roaming\GnuPG=.
+
+If you need separate configuration files for GnuPG 1.4 and 2.2, name
+them =gpg.conf-1= and =gpg.conf-2=.  GnuPG 1.4 will read the =-1= file,
+and 2.2 will read the =-2= file.
 
 ** What options should I put in my configuration file?
    :PROPERTIES:
@@ -1309,29 +1319,41 @@ no-secmem-warning
 no-emit-version
 no-comments
 
+# Ask me for my confidence level before signing someone's cert.
+# This is an advanced feature few people will need to use.
+ask-cert-level
+
 # Use full 16-character key IDs, not short 8-character key IDs.
 keyid-format long
 
-# Use the global keyserver network for certificate lookups.
+# Use the Hagrid keyserver for certificate lookups.
 # Further, whenever I send or receive something to/from the
 # keyserver network, clean up what I get or send.
-keyserver pool.sks-keyservers.net
+keyserver keys.openpgp.org
 keyserver-options import-clean-sigs import-clean-uids export-clean-sigs export-clean-uids
 
 # If I don’t explicitly state which certificate to use, use this one.
 default-key 1DCBDC01B44427C7
 
-# Always include signatures from these two certificates.
-local-user 1DCBDC01B44427C7
+# Always include signatures from these two certificates.  The
+# exclamation point here tells GnuPG "use these two keys exactly."
+# Otherwise, GnuPG might substitute a different subkey if a newer
+# one exists.
+local-user 1DCBDC01B44427C7!
+local-user A83CAE94D3DC3873!
 
 # Always add these two certificates to my recipients list.
-encrypt-to 1DCBDC01B44427C7
+encrypt-to DC0F82625FA6AADE!
+encrypt-to AA24CC81B8AED08B!
 
 # Turn "From" into "> From", in order to play nice with UNIX mailboxes.
 escape-from-lines
 
+# Always use SHA512 to sign certificates
+cert-digest-algo SHA512
+
 # Prefer strong hashes whenever possible.
-personal-digest-preferences SHA256 SHA384 SHA512 SHA224 RIPEMD160
+personal-digest-preferences SHA512 SHA384 SHA256 SHA224 RIPEMD160
 
 # Prefer more modern ciphers over older ones.
 personal-cipher-preferences CAMELLIA256 AES256 TWOFISH CAMELLIA192 AES192 CAMELLIA128 AES BLOWFISH CAST5 3DES
@@ -1350,8 +1372,7 @@ personal-compress-preferences BZIP2 ZIP ZLIB
    :END:
 
 
-Many people have had excellent luck with =pool.sks-keyservers.net=.  On OS X,
-some people have needed to use =ipv4.pool.sks-keyservers.net= instead.
+Many people have had excellent luck with =keys.openpgp.org=.
 
 
 ** What’s the difference between an ‘option’ and a ‘command’?
@@ -1523,7 +1544,7 @@ a reasonable procedure:
    address, and where you can obtain a copy of their certificate.
    (Example: “My fingerprint is =4541 BB01 8EA4 8F99 19CA 3701 2380
    6BE5 D6B9 8E10=, and you can find it on
-   =pool.sks-keyservers.net=.”)
+   =keys.openpgp.org=.”)
 4. On your own computer, retrieve the person’s certificate from the
    specified location.  Check to make sure the email address they gave
    you is one that’s also listed on the certificate.  Check to make
@@ -1934,7 +1955,7 @@ other words, it’s no longer an issue.
 Twofish, AES, and Camellia all operate on sixteen bytes at a time.  The
 others all operate on eight bytes at a time.
 
-** Why does GnuPG default to 2048 bit RSA-2048?
+** Why did GnuPG default to 2048 bit RSA?
    :PROPERTIES:
    :CUSTOM_ID: default_rsa2048
    :END:
@@ -1943,54 +1964,10 @@ At the time the decision was made, 2048-bit RSA was thought to provide
 reasonable security for the next decade or more while still being
 compatible with the overwhelming majority of the OpenPGP ecosystem.
 
-*** Is that still the case?
-Largely, yes.  According to NIST Special Publication 800-57, published
-in July 2012, 2048-bit RSA is believed safe until 2030.  At present,
-no reputable cryptographer or research group has cast doubt on the
-safety of RSA-2048.  That said, many are suggesting shifting to larger
-keys, and GnuPG will be making such a shift in the near future.
+According to NIST Special Publication 800-57, RSA-2048 is expected to
+be secure until 2030.  For this reason, as we approach 2020 the GnuPG
+defaults have changed to RSA-3072.
 
-*** What do other groups have to say about 2048-bit RSA?
-In 2014, the German Bundesnetzagentur fuer Elektrizitaet, Gas,
-Telekommunikation, Post und Eisenbahnen recommended using RSA-2048 for
-long-term security in electronic signatures.
-
-In 2012, ECRYPT-II published their “Yearly Report on Algorithms and
-Keysizes” wherein they expressed their belief RSA-1776 will suffice
-until at least 2020, and RSA-2432 until 2030.
-
-In 2010, France’s Agence Nationale de la Securite des Systems
-d’Information stated they had confidence in RSA-2048 until at
-least 2020.
-
-*** Is there a general recommendation that 3072-bit keys be used for new applications?
-No, although some respected people and groups within the cryptographic
-community have made such recommendations.  Some even recommend
-4096-bit keys.
-
-*** Will GnuPG ever support RSA-3072 or RSA-4096 by default?
-Probably not.  The future is elliptical-curve cryptography, which will
-bring a level of safety comparable to RSA-16384.  Every minute we
-spend arguing about whether we should change the defaults to RSA-3072
-or more is one minute the shift to ECC is delayed.  Frankly, we think
-ECC is a really good idea and we’d like to see it deployed as soon as
-humanly possible.
-
-*** I think I need larger key sizes.
-By all means, feel free to generate certificates with larger keys.
-GnuPG supports up to 4096-bit keys.
-
-
-** Do other high-security applications use RSA-2048?
-   :PROPERTIES:
-   :CUSTOM_ID: rsa2048_in_the_real_world
-   :END:
-
-2048-bit RSA is commonly used to secure SSL root signing certificates.
-It’s also used to sign operating system patches, Authenticode
-signatures, Java applets and more.  RSA-2048 is believed to be safe
-against attack until at least the year 2030, so use it with
-confidence.
 
 
 ** Why doesn’t GnuPG default to using RSA-4096?
@@ -2010,17 +1987,6 @@ didn’t give us the benefit that we naively expected.  Each additional
 bit gives correspondingly less in the way of additional security, and
 we quickly reach a point of diminishing returns.
 
-That point of diminishing returns happens around RSA-2048.  Once you
-move past RSA-2048, you’re really not gaining very much.  At the same
-time, moving past RSA-2048 means you lose the ability to migrate your
-certificate to a smartcard, or to effectively use it on some mobile
-devices, or to interoperate with other OpenPGP applications that don’t
-handle large keys gracefully.
-
-If you really want a 4096-bit RSA key there’s nothing stopping you:
-but we sincerely believe the overwhelming majority of users will be
-well-served with RSA-2048.
-
 
 
 ** Why do people advise against using RSA-4096?
@@ -2036,10 +2002,6 @@ roughly 128.  There is no formal recommendation on where RSA-4096
 lies, but the general consensus is that it would come in somewhere
 around 140 bits — 28 bits of improvement over RSA-2048.  This is an
 improvement so marginal that it’s really not worth mentioning.
-
-If you need more security than RSA-2048 offers, the way to go would be
-to switch to elliptical curve cryptography — not to continue using
-RSA.
 
 
 
@@ -2122,9 +2084,8 @@ sensitive as the contents of the message.  PGP/MIME can protect metadata;
 inline can’t.
 
 However, please be aware that not all mail servers handle PGP/MIME
-properly.  Some mailing lists are incompatible with it (PGP-Basics, for
-instance).  Some mailing list software mangles PGP/MIME (old versions of
-Mailman, for instance).
+properly.  Some mailing lists are incompatible with it and/or mangles 
+it (old versions of Mailman, for instance).
 
 If you have any problems with PGP/MIME, consider carefully whether you
 need metadata protection.  If you don’t, then fall back to inline.
