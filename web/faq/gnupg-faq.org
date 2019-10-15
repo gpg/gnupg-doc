@@ -123,8 +123,8 @@ answer your question.
    :CUSTOM_ID: maintainer
    :END:
 
-[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Rob Hansen]]. Please 
-feel free to contact me should there be an error in this FAQ, whether 
+[[mailto:rjh@sixdemonbag.org?subject%3DThe%20GnuPG%20FAQ][Rob Hansen]]. Please
+feel free to contact me should there be an error in this FAQ, whether
 typographical, grammatical, or factual.
 
 When writing, the editorial “we” refers to the general consensus of
@@ -167,9 +167,9 @@ GnuPG is free cryptographic software from the GNU Project which helps
 people ensure the confidentiality, integrity and assurance of their
 data.  Let’s try that again: GnuPG is…
 
-- /Free./ When we say “free” we mean 
-  [[https://gnu.org/philosophy/free-sw.html][liberty, not price]].  
-  You’re free to use it, modify it, share it, tinker with it, and learn
+- /Free./ When we say “free” we mean
+  [[https://gnu.org/philosophy/free-sw.html][liberty, not price]]. You’re
+  free to use it, modify it, share it, tinker with it, and learn
   from it. Software is meant to be used by people, and people deserve
   freedom.
 - /Cryptographic./ The word “cryptography” is derived from two Greek
@@ -178,7 +178,7 @@ data.  Let’s try that again: GnuPG is…
   mathematical study of codes and ciphers.
 - /Software./ This one should already be obvious.
 - /GNU Project./  The [[https://www.gnu.org][GNU Project]] is a group that
-  aims to give people the ability to do all their computing with free 
+  aims to give people the ability to do all their computing with free
   software.
 - /Confidentiality./ No one except authorized parties should be able
   to read your data.
@@ -371,7 +371,7 @@ sudo pkg install gnupg
     :CUSTOM_ID: get_gnupg_vms
     :END:
 
-A port to *VMS* is maintained by Steven M. Schweda at 
+A port to *VMS* is maintained by Steven M. Schweda at
 [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]].
 
 
@@ -634,7 +634,7 @@ worth reading, but make sure to read skeptically.
      :END:
 
 There is no such thing as an easy introduction to cryptography.
-However, PGP Corporation has a well-regarded 
+However, PGP Corporation has a well-regarded
 [[http://www.cs.unibo.it/babaoglu/courses/security/resources/documents/intro-to-crypto.pdf][/Introduction to Cryptography/]].
 
 
@@ -664,8 +664,8 @@ practices.
 The inclusion of a site on this list is not an endorsement of that
 site’s political leanings.
 
-Probably the best-known organization is the 
-[[https://www.eff.org][Electronic Frontier Foundation]], which has 
+Probably the best-known organization is the
+[[https://www.eff.org][Electronic Frontier Foundation]], which has
 been at the vanguard of electronic civil liberties for over twenty years.
 
 The [[https://www.fsf.org][Free Software Foundation]] is also deeply
@@ -1038,7 +1038,7 @@ confidence.
 
 
 During roughly the same time period that [[http://www.nist.gov][NIST]]
-was running the Advanced Encryption Standard trials, Japan’s 
+was running the Advanced Encryption Standard trials, Japan’s
 [[http://www.cryptrec.jp/english/][CRYPTREC]] and the European Union’s
 [[http://www.cryptonessie.org/][NESSIE]] were running their own similar
 trials.  Camellia is the cipher that won the NESSIE and CRYPTREC trials,
@@ -1280,7 +1280,7 @@ Copy =revoke.asc= to a safe place.
 
 In 2019 the SKS keyserver network was attacked by individuals who
 wished to leave it beyond use, and largely succeeded.  Today the
-best bet going forward is to use the Hagrid keyserver at 
+best bet going forward is to use the Hagrid keyserver at
 [[https://keys.openpgp.org/][keys.openpgp.org]].  Instructions for
 uploading your certificate may be found there.
 
@@ -2084,8 +2084,8 @@ sensitive as the contents of the message.  PGP/MIME can protect metadata;
 inline can’t.
 
 However, please be aware that not all mail servers handle PGP/MIME
-properly.  Some mailing lists are incompatible with it and/or mangles 
-it (old versions of Mailman, for instance).
+properly.  Some mailing lists are incompatible with and/or mangles it
+(old versions of Mailman, for instance).
 
 If you have any problems with PGP/MIME, consider carefully whether you
 need metadata protection.  If you don’t, then fall back to inline.
