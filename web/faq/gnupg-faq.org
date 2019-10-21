@@ -538,7 +538,7 @@ The list is lightly moderated.
     :END:
 
 
-- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGPNET][PGPNET page]]
+- Subscribing :: visit the [[https://groups.io/g/pgpnet][PGPNET page]]
 - Unsubscribing :: see above
 - List moderator(s) :: Paul Kapaldo <[[mailto:pjkapaldo@yahoo.com?subject=PGPNET][pjkapaldo@yahoo.com]]>
 - Supports PGP/MIME? :: Yes
