@@ -391,14 +391,6 @@ installers.
 
 Is what the name says.
 
-** [[http://eepatents.com/privaria/][Privaria]] [Unix] MISC
-   :PROPERTIES:
-   :CUSTOM_ID: privaria
-   :END:
-
-Is a secure networking suite that uses GnuPG as part of its
-authentication and encryption scheme.
-
 ** [[http://psi.affinix.com/][PSI]] [Unix, Windows] CHAT /Active/
    :PROPERTIES:
    :CUSTOM_ID: psi

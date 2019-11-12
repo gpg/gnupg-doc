@@ -70,10 +70,6 @@
    - [[file:swlist.org::#tkabber][Tkabber]]
    - [[file:swlist.org::#wija][wija]]
 
-** Network related
-
-   - [[file:swlist.org::#privaria][Privaria]]
-
 ** Frontends for scripting
 
    - [[file:swlist.org::#gpg-encrypt][gpg_encrypt()]]
