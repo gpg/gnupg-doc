@@ -119,10 +119,6 @@
 
 ** Marcus Brinkmann
 
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
-   #+HTML: </div>
-
    Marcus is part of the free software community since 1997, when he
    joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
    on GNU/Hurd, he also has a diploma degree in mathematics, and was
@@ -130,65 +126,30 @@
    related software from 2001 to 2012 and for 7 months in 2017.  He was
    a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
-   Marcus currently works on [[https://neopg.io/][NeoPG]].
-
-   #+HTML: <p style="clear: both"/>
-
 ** Neal Walfied
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
-   #+HTML: </div>
 
    Neal started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  We was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
-   Neal currently works on [[https://sequoia-pgp.org/][Sequoia-PGP]].
-   #+HTML: <p style="clear: both"/>
-
 ** Kai Michaelis
 
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
-   #+HTML: </div>
-
-   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
-   time employed by g10^code from 2015 to 2017.  He is a founding
+   Kai used to work on the [[https://enigmail.net][Enigmail]] project from 2015 to 2017.  He was
+   part time employed by g10^code for that work.  He is a founding
    member of the [[../verein/index.org][GnuPG e.V.]]
 
-   #+HTML: <p style="clear: both"/>
-
 ** Justus Winter
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
-   #+HTML: </div>
 
    Justus started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  He was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
-   Justus currently works on [[https://sequoia-pgp.org/][Sequoia-PGP]].
-   #+HTML: <p style="clear: both"/>
-
 ** Ben McGinnes
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="ben.png" title="Ben McGinnes" /></p>
-   #+HTML: </div>
 
    Ben started working on GPGME in 2015 with the initial port of PyME
    from Python 2 to Python 3.  Then returned to take over stewardship
    of Justus' enhanced version of that port from late 2017 to the end
-   of 2018.  In conjunction with with continuing work on
-   documentation, developing the XML definitions of various components
-   of the project and working on enhancements for which GnuPG and
-   OpenPGP can provide other protocols, languages or services.
-
-   GPG Key: [[http://www.adversary.org/ben-key.asc][DB47 24E6 FA42 86C9 2B4E]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][55C4 321E 4E23 7359 0E5D]]
-
-   #+HTML: <p style="clear: both"/>
+   of 2018.  Ben’s work on GPGP was financially supported by g10^code.
 
 * COMMENT
 
