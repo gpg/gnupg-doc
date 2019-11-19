@@ -104,8 +104,9 @@ the start of the Goteo campaign.
 This is a summary of individual donations since 2017.  After the
 campaign boost in June and July 2017 we can conclude that a majority
 of the received donations are now reccurring (either monthly,
-quarterly or yearly).  The outlier in December 2017 is a single large
-donation of 5000 Euro.
+quarterly or yearly).
+
+#+HTML: <img src="donation-chart.svg.gz" />
 
  | Year | Mon | Total | SEPA | Stripe | Paypal | gSEPA | Fee |
  |------+-----+-------+------+--------+--------+-------+-----|
