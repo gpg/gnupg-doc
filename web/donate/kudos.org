@@ -8,6 +8,8 @@
 
 *** Yearly donation stats
 
+#+HTML: <img src="donation-chart.svg" />
+
 This is a summary of all donations received by g10 Code GmbH to
 support GnuPG development.
 
@@ -101,12 +103,12 @@ the start of the Goteo campaign.
 
 *** Monthly donations stats since 2017
 
+#+HTML: <img src="donation-chart-by-month.svg" />
+
 This is a summary of individual donations since 2017.  After the
 campaign boost in June and July 2017 we can conclude that a majority
 of the received donations are now reccurring (either monthly,
 quarterly or yearly).
-
-#+HTML: <img src="donation-chart.svg.gz" />
 
  | Year | Mon | Total | SEPA | Stripe | Paypal | gSEPA | Fee |
  |------+-----+-------+------+--------+--------+-------+-----|
