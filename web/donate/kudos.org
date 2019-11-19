@@ -14,6 +14,7 @@ support GnuPG development.
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
 |------+------+--------+--------+------------|
+| 2018 |      |  68731 |  87520 |     156251 |
 | 2017 |      |  90390 | 154104 |     244494 |
 | 2016 |  271 |   9615 | 146759 |     156374 |
 | 2015 | 5847 | 205560 | 144262 |     349822 |
@@ -22,15 +23,26 @@ support GnuPG development.
 | 2012 |   53 |   5991 |        |       5991 |
 | 2011 |   21 |    553 |        |        553 |
 |------+------+--------+--------+------------|
-|      |      | 384491 | 445125 |     829616 |
+|      |      | 453222 | 532645 |     985867 |
 #+TBLFM: $5=$3+$4::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
 
 #+HTML: <div id="smallnote">
 Legend: “Indi.” indicates individual donations, “Corp.” lists large
 corporate donations and grants, and “Total” gives the net value
 without taxes and banking fees.  Note that this list has been updated
-on 2017-05-02 to include the Linux Foundation grant.  Note further
-that the “Total” for 2016 is preliminary.
+on 2017-05-02 to include the Linux Foundation grant.
+
+# About 2018:\\
+# | Individual Donations |  68731 | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  43768 |                            |
+# | Stripe               |  43752 |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  87520 |                            |
+In 2018 we received one-time and recurring individual donations of
+69000 Euro.  We received 50000 USD each from Stripe and Facebook.
 
 # About 2017:\\
 # | Individual Donations |  90390 | bank fees already deducted
@@ -44,7 +56,7 @@ that the “Total” for 2016 is preliminary.
 # |------------------+--------+------------------------|
 # |                  | 154104 |                        |
 In 2017 we launched a campaign and started the recurring donation
-programm.  All individual donations summed up to a net ammount of
+programm.  All individual donations summed up to a net amount of
 90390 Euro.  We received 50000 USD each from Stripe and Facebook
 (42038 + 42441 Euro net).  The Linux Foundation granted 55000 USD
 (47369 Euro net).  To support the recurring donation campaign we also
@@ -117,6 +129,22 @@ donation of 5000 Euro.
  |      |  06 |  7648 | 1897 |   3022 |   2729 |  1943 |  46 |
  |      |  07 |  5450 | 1169 |   2173 |   2108 |  1213 |  44 |
  |      |  08 |  4087 |  767 |   1536 |   1784 |   800 |  33 |
+ |      |  09 |  5255 |  966 |   1876 |   2413 |  1003 |  37 |
+ |      |  10 |  9151 |  937 |   1622 |   6592 |   976 |  39 |
+ |      |  11 |  3846 |  753 |   1418 |   1675 |   785 |  32 |
+ |      |  12 |  4938 |  946 |   1928 |   2064 |   986 |  40 |
+ | 2019 |  01 |  4788 | 1236 |   1748 |   1804 |  1274 |  38 |
+ |      |  02 |  4050 |  483 |   1040 |   2527 |   516 |  33 |
+ |      |  03 |  4314 |  696 |   1644 |   1974 |   733 |  37 |
+ |      |  04 |  3726 |  715 |   1163 |   1848 |   758 |  43 |
+ |      |  05 |  3551 |  888 |   1013 |   1650 |   925 |  37 |
+ |      |  06 |  5716 | 1357 |   2357 |   2002 |  1402 |  45 |
+ |      |  07 |  4084 |  875 |   1402 |   1807 |   917 |  42 |
+ |      |  08 |  3062 |  630 |    866 |   1566 |   663 |  33 |
+ |      |  09 |  3518 |  794 |    953 |   1771 |   832 |  38 |
+ |      |  10 |  3136 |  690 |    924 |   1522 |   728 |  38 |
+ |      |  11 |     0 |    0 |        |        |       |     |
+ |      |  12 |     0 |    0 |        |        |       |     |
  #+TBLFM: $3=$4+$5+$6::$4=$7-$8
 
 #+HTML: <div id="smallnote">
