@@ -64,6 +64,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.18 released (2019-11-25)
+
+We are pleased to announce the availability of GnuPG version 2.2.18.
+This is maintenance release to fix a couple of minor bugs and provide
+a few feature updates.  This release also retires the use of SHA-1 key
+signatures created since this year. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q4/000442.html][more]]}
+
 ** Libgcrypt 1.8.5 released (2019-08-29)
 
 If you care about local site-channel attacks on ECDSA you may want to
