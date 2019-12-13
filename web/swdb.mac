@@ -180,11 +180,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.4.3
+#+macro: gpgol_ver  2.4.4
 #+macro: gpgol_date 2019-12-13
 #+macro: gpgol_size 802k
-#+macro: gpgol_sha1 60f4c3cab4b0bc66a254dac0551eeaab2c79f528
-#+macro: gpgol_sha2 b8cb0ae8464f15e629294795e7c49fbdd8861886dbc3fc782d0318cdc9aa1620
+#+macro: gpgol_sha1 e561702fc4c8e323ee4a42ad265f9b2ee1fc11ba
+#+macro: gpgol_sha2 5c8111deb89d5f26b9fd33af77f9314e5c93a0377491c5607fc07457e2f3e6a3
 
 
 #
