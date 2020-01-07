@@ -8,6 +8,79 @@ On this page you'll find all the news of previous years in reverse
 chronological order.  News for the current year are found at the [[index][main
 page]].
 
+** GnuPG 2.2.17 released (2019-07-09)
+
+We are pleased to announce the availability of GnuPG version 2.2.17.
+This is a maintenance release providing mitigation to the recent DoS
+attacks on the keyserver network.  A few other improvements are also
+on the list. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q3/000439.html][more]]}
+
+** GnuPG 2.2.16 released (2019-05-28)
+
+We are pleased to announce the availability of GnuPG version 2.2.16.
+This is a maintenance release fixing a couple of bugs and adding a few
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q2/000438.html][more]]}
+
+** GnuPG 2.2.14 released (2019-03-19)
+
+We are pleased to announce the availability of GnuPG version 2.2.14.
+This is a maintenance release fixing a few problems and adding some
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q1/000435.html][more]]}
+
+
+** GnuPG 2.2.13 released (2019-02-12)
+
+We are pleased to announce the availability of GnuPG version 2.2.13.
+This is a maintenance release fixing a few problems and adding some
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q1/000434.html][more]]}
+
+** GnuPG 2.2.12 released (2018-12-14)
+
+We are pleased to announce the availability of GnuPG version 2.2.12.
+This is a maintenance release fixing a few problems and adding some
+minor features. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q4/000433.html][more]]}
+
+** GnuPG 2.2.11 released (2018-11-06)
+
+We are pleased to announce the availability of GnuPG version 2.2.11.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q4/000432.html][more]]}
+
+** GnuPG Made Easy 1.12.0 released (2018-10-08)
+
+[[file:software/gpgme/index.org][GPGME]] is a library that allows to add support for cryptography to a
+program. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q4/000429.html][more]]}.
+
+** GnuPG 2.2.10 released (2018-08-30)
+
+We are pleased to announce the availability of GnuPG version 2.2.10.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q3/000428.html][more]]}
+
+** GnuPG 2.2.9 released (2018-07-12)
+
+We are pleased to announce the availability of GnuPG version 2.2.9.
+This is a maintenance release fixing a few problems. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q3/000427.html][more]]}
+
+** Libgcrypt 1.8.3 released (2018-06-13)
+
+We are pleased to announce the availability of [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.3
+and 1.7.10.  These releases fix a local side-channel attack on ECDSA
+signature as described in the white pager “Return of the Hidden Number
+Problem” and got assigned {{{CVE(2018-0495)}}}.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html][more]]}
+
+** GnuPG 1.4.23 released (2018-06-11)                             :important:
+
+Although GnuPG 1.4 is of very limited use today we did a maintenance
+release to address the critical security bug {{{CVE(2017-7526)}}}.
+See the [[../../download/index.org][download]] section on how to get this version.
+
+** GnuPG 2.2.8 released (2018-06-08)                              :important:
+
+This version fixes a critical security bug.  Either this version or a
+vendor provided fix should be installed.  There are also a few other
+changes; see the [[https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html][announcement]] mail.  This is {{{CVE(2018-12020)}}} and
+our bug [[https://dev.gnupg.org/T4012][#4012]].
+
+
 ** GnuPG 2.2.7 released (2018-05-02)
 
 We are pleased to announce the availability of GnuPG version 2.2.7.
