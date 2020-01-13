@@ -5,9 +5,41 @@
 
 * HOWTOs
 
-  There are several HOWTOs available.
+  There are several HOWTOs available.  Unfortunately some of them are
+  not up-to-date.
 
-** GnuPG MiniHOWTO
+
+** Web Key Directory Installation HOWTO
+
+   We are working on a HOTWO for the Web Key Directory.  For now
+   please consult the [[https://wiki.gnupg.org/WKD][Wiki]].
+
+** GPGME Python Bindings HOWTO
+
+   Written "in house" by the GnuPG Project core team, the GPGME Python
+   Bindings HOWTO provides detailed instructions and examples for
+   using the Python bindings of the GPGME API with Python 3 code.
+
+   This HOWTO is available:
+
+   -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
+   -  as a single HTML file ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen.html][en]] )
+   -  as a single HTML file with dark background and light text ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen-dark.html][en]] )
+
+** GnuPG SmartcardHOWTO
+
+   GnuPG supports the use of smartcards.  This HOWTO explains how to
+   install and work with these cards.
+
+   - as on-line browsable HTML files ( [[../howtos/card-howto/en/smartcard-howto.html][en]] )
+   - as one big HTML file ( [[../howtos/card-howto/en/smartcard-howto-single.html][en]] )
+   - as plain text ( [[../howtos/card-howto/en/smartcard-howto.txt][en]] )
+
+   This smartcard howto is also available in the [[../download/git.org][source repository]].
+
+** Legacy GnuPG MiniHOWTO
+
+   /These howtos mostly describe the legacy version 1.4 of GnuPG/
 
    You may get the best overview about the GnuPG system by reading the
    mini HOWTO available in several formats:
@@ -48,24 +80,10 @@
    [[../howtos/tr/GPGMinikNasil.sgml.gz][tr]] )
 -  as gzipped tarball of them all ( [[../howtos/ca/GPGMiniHowto.tar.gz][ca]] )
 
-
-** GnuPG SmartcardHOWTO
-
-   GnuPG supports the use of smartcards.  This HOWTO explains how to
-   install and work with these cards.
-
-   - as on-line browsable HTML files ( [[../howtos/card-howto/en/smartcard-howto.html][en]] )
-   - as one big HTML file ( [[../howtos/card-howto/en/smartcard-howto-single.html][en]] )
-   - as plain text ( [[../howtos/card-howto/en/smartcard-howto.txt][en]] )
-
-   This smartcard howto is also available in the [[../download/git.org][source repository]].
-
-** Web Key Directory Installation HOWTO
-
-   We are working on a HOTWO for the Web Key Directory.  For now
-   please consult the [[https://wiki.gnupg.org/WKD][Wiki]].
-
 ** GnuPG Keysigning Party HOWTO
+
+   /Due to problem with the keyservers, this howto should be considered
+   historic./
 
    Once you get familiar with GnuPG's mechanisms, you surely wouldn't
    miss one of its funnest (and useful) aspects: to meet your Internet
@@ -92,6 +110,8 @@
 
 ** Mutt-GnuPG HOWTO
 
+   /This howto might not be up to the current GnuPG version./
+
    Firstly, because everyone should be using encryption and signatures
    in their email. Secondly, because there are absolutely no reason
    for you not to be using PGP-compatible software. Thirdly, because
@@ -111,6 +131,8 @@
 
 ** PHP-GnuPG HOWTO
 
+   /This howto might not be up to the current GnuPG version./
+
    With the preponderance of javascript based OpenPGP solutions to
    various functions on the web, the desire to perform certain types
    of server side functions on a PHP driven website also has its
@@ -123,15 +145,3 @@
    This HOWTO is available:
 
    -  as an online HTML article ( [[https://maslosoft.com/blog/2017/09/12/using-gpg-with-php-on-server/][en]] )
-
-** GPGME Python Bindings HOWTO
-
-   Written "in house" by the GnuPG Project core team, the GPGME Python
-   Bindings HOWTO provides detailed instructions and examples for
-   using the Python bindings of the GPGME API with Python 3 code.
-
-   This HOWTO is available:
-
-   -  in its original Emacs Org Mode source form in the GPGME repository ( [[https://dev.gnupg.org/source/gpgme/browse/master/lang/python/docs/GPGMEpythonHOWTOen.org][en]] )
-   -  as a single HTML file ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen.html][en]] )
-   -  as a single HTML file with dark background and light text ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen-dark.html][en]] )
