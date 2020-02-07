@@ -519,7 +519,8 @@ rendered form and save it with the suffix .html."
 
 
 (defun gpgweb-publish-blogs ()
-  "Publish all blog entries in the current directory"
+  "Publish all blog entries in the current directory.
+This function is used by the build-website shell script."
   (interactive)
   (let ((orgfiles (directory-files gpgweb-blog-dir nil "^2[0-9]+-.*\.org$")))
     (dolist (file (cons "index.org" orgfiles))
