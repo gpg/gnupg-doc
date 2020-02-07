@@ -125,16 +125,16 @@
 #
 # LIBGPG-ERROR (aka GPGRT)
 #
-#+macro: libgpg_error_ver  1.36
-#+macro: libgpg_error_date 2019-03-19
-#+macro: libgpg_error_size 898k
-#+macro: libgpg_error_sha1 5245ce38b198cecd57775fb3c7b7328ec1a2a615
-#+macro: libgpg_error_sha2 babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c
-#+macro: gpgrt_ver  1.36
-#+macro: gpgrt_date 2019-03-19
-#+macro: gpgrt_size 898k
-#+macro: gpgrt_sha1 5245ce38b198cecd57775fb3c7b7328ec1a2a615
-#+macro: gpgrt_sha2 babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c
+#+macro: libgpg_error_ver  1.37
+#+macro: libgpg_error_date 2020-02-07
+#+macro: libgpg_error_size 915k
+#+macro: libgpg_error_sha1 6dff83371e0c03fe9ba468cc23d528a8c247785a
+#+macro: libgpg_error_sha2 b32d6ff72a73cf79797f7f2d039e95e9c6f92f0c1450215410840ab62aea9763
+#+macro: gpgrt_ver  1.37
+#+macro: gpgrt_date 2020-02-07
+#+macro: gpgrt_size 915k
+#+macro: gpgrt_sha1 6dff83371e0c03fe9ba468cc23d528a8c247785a
+#+macro: gpgrt_sha2 b32d6ff72a73cf79797f7f2d039e95e9c6f92f0c1450215410840ab62aea9763
 
 
 #
