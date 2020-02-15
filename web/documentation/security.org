@@ -20,7 +20,10 @@ with them.
 ** Security contact
 
 If you found a *severe* security problem and you do not want to
-publish it, please report it by mail to security at gnupg.org.
+publish it, please report it by mail to security at gnupg.org.  We
+prefer reports in plain text format; if needed we can also work with
+PDF files.  For security reasons we won't read any other complex data
+formats (e.g. docx or odt).
 
 Note that we do not use a team OpenPGP key.  Thus please write a
 non-encrypted message to the security address and ask for the keys of
