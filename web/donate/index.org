@@ -29,7 +29,7 @@
 
 ** Ways to donate
 
-   We accept donations via credit card, Paypal, and SEPA transactions.
+   We accept donations via Paypal or by using SEPA transactions.
    Donating Bitcoins is also possible.  Note that the donations are
    collected and spent by g10 Code GmbH, which can't issue charitable
    donation certificates.
@@ -61,6 +61,18 @@
 </div>
 #+END_HTML
 
+** Terminating recurring donations
+
+If you are helping us with recurring donations but want to terminate
+them, the procedure depends on the way you donate: For SEPA you just
+need to stop the donation via your own banking portal.  For PayPal you
+may stop donations from your Paypal account or by writing to us.  For
+credit card donations via Stripe please write to us (stripe-account at
+g10code dot com) and provide your mail address and an invoice id.
+
+Note that due to a large number of fraudulent donation attempts we
+currently do not offer new credit card donations via Stripe; existing
+recurring donations however are continued.
 
 
 ** Recent donors
