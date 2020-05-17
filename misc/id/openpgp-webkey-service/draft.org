@@ -254,7 +254,7 @@ examples the domain "example.org" is assumed, thus:
 #+END_EXAMPLE
 (line has been wrapped for rendering purposes)
 
-or if the sub-domain ~opengpgkey~ does not exist (direct method):
+or if the sub-domain ~openpgpkey~ does not exist (direct method):
 #+BEGIN_EXAMPLE
       WELLKNOWN := https://example.org/.well-known/openpgpkey
 #+END_EXAMPLE
