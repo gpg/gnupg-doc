@@ -106,11 +106,11 @@
 #
 # LIBKSBA
 #
-#+macro: libksba_ver  1.3.5
-#+macro: libksba_date 2016-08-22
-#+macro: libksba_size 606k
-#+macro: libksba_sha1 a98385734a0c3f5b713198e8d6e6e4aeb0b76fde
-#+macro: libksba_sha2 41444fd7a6ff73a79ad9728f985e71c9ba8cd3e5e53358e70d5f066d35c1a340
+#+macro: libksba_ver  1.4.0
+#+macro: libksba_date 2020-05-19
+#+macro: libksba_size 636k
+#+macro: libksba_sha1 3b524585ddd456c486a8134ba318a394e356f9a2
+#+macro: libksba_sha2 bfe6a8e91ff0f54d8a329514db406667000cb207238eded49b599761bfca41b6
 
 
 #
