@@ -96,11 +96,11 @@
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.8.5
-#+macro: libgcrypt_date 2019-08-29
-#+macro: libgcrypt_size 2921k
-#+macro: libgcrypt_sha1 2d8781e92f88706707a1e76fb628b499ad538a30
-#+macro: libgcrypt_sha2 3b4a2a94cb637eff5bdebbcaf46f4d95c4f25206f459809339cdada0eb577ac3
+#+macro: libgcrypt_ver  1.8.6
+#+macro: libgcrypt_date 2020-07-06
+#+macro: libgcrypt_size 2927k
+#+macro: libgcrypt_sha1 406b02873833427898d16bcc8483bc5c91c73d4a
+#+macro: libgcrypt_sha2 0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975
 
 
 #
