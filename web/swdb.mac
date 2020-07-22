@@ -180,12 +180,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.4.4
-#+macro: gpgol_date 2019-12-13
-#+macro: gpgol_size 802k
-#+macro: gpgol_sha1 e561702fc4c8e323ee4a42ad265f9b2ee1fc11ba
-#+macro: gpgol_sha2 5c8111deb89d5f26b9fd33af77f9314e5c93a0377491c5607fc07457e2f3e6a3
-
+#+macro: gpgol_ver  2.4.6
+#+macro: gpgol_date 2020-07-22
+#+macro: gpgol_size 824k
+#+macro: gpgol_sha1 c27250a77abceae2af38ac4757aa0aeac81ec17c
+#+macro: gpgol_sha2 cbb8034b2351edcdd5935abc79e65a22905fb551145bc27ee5d5a2e0409f869c
 
 #
 # Scute
