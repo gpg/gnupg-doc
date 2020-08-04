@@ -98,6 +98,14 @@
 #+macro: libgcrypt_size 2927k
 #+macro: libgcrypt_sha1 406b02873833427898d16bcc8483bc5c91c73d4a
 #+macro: libgcrypt_sha2 0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975
+#
+# The still maintained 1.8 version.
+#
+#+macro: libgcrypt18_ver  1.8.6
+#+macro: libgcrypt18_date 2020-07-06
+#+macro: libgcrypt18_size 2927k
+#+macro: libgcrypt18_sha1 406b02873833427898d16bcc8483bc5c91c73d4a
+#+macro: libgcrypt18_sha2 0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975
 
 
 #
