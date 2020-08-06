@@ -12,7 +12,7 @@ tarballs.  Instructions on how to verify a signature can be found at
 The used signature keys are reported below. The keys are also signed
 by the long term keys of the respective owner.
 
-Current releases are signed by one or more of these four keys:
+Current releases are signed by one or more of these keys:
 
 #+BEGIN_EXAMPLE
   pub   rsa2048 2011-01-12 [expires: 2021-12-31]
@@ -93,6 +93,8 @@ dzIRiXx+Nxv1Pr9L7A4/tq8=
 -----END PGP PUBLIC KEY BLOCK-----
 #+END_EXAMPLE
 
+
+** Old Signature Keys
 
 Releases done in the years 1996 to 2010 were signed by this key:
 
