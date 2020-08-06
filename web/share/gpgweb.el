@@ -113,7 +113,7 @@ if not available.  If CUSTOM is true only a minimal header is set."
      "Download"
      (("/download/index.html"              "Download")
       ("/download/integrity_check.html"    "Integrity&nbsp;Check")
-      ("/download/signature_key.html"      "Release&nbsp;Keys")
+      ("/signature_key.html"               "Release&nbsp;Keys")
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
       ("/download/release_notes.html"      "Release&nbsp;Notes")
       ("/download/mirrors.html"            "Mirrors")
