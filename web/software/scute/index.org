@@ -24,4 +24,4 @@
   on-line.
 
 
-#+HTML <p><img src="scute-logo.svg" /></p>
+#+HTML: <p><img src="scute-logo.svg" /></p>
