@@ -5,7 +5,7 @@
 * Scute
 
   /Scute/ is a [[https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=pkcs11][PKCS#11]] provider on top of GnuPG allowing the use of
-  GnUPG supported smartcards with [[https://www.mozilla.org/projects/security/pki/nss/][Mozilla]]'s Network Security Services
+  GnuPG supported smartcards with [[https://www.mozilla.org/projects/security/pki/nss/][Mozilla]]'s Network Security Services
   and other software supporting the PKCS#11 specification.
 
   This allows you to use use those smartcards and tokens
@@ -20,5 +20,8 @@
   - VPN authentication with [[https://www.openvpn.net]] (Unix only)
 
   Head to the [[../../download/index.org::#scute][download]] section to download the latest tarball.  The
-  current version is {{{scute_ver}}}.  The [[file:manuals/scute/][Scute Manual]] can be read
+  current version is {{{scute_ver}}}.  The [[https://gnupg.org/documentation/manuals/scute/][Scute Manual]] can be read
   on-line.
+
+
+#+HTML <p><img src="scute-logo.svg" /></p>
