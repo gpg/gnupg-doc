@@ -12,3 +12,4 @@
   - Libksba manual :: [[file:manuals/ksba/][HTML]], [[file:manuals/ksba.pdf][PDF]].
   - Libassuan manual :: [[file:manuals/assuan/][HTML]], [[file:manuals/assuan.pdf][PDF]].
   - GPGME manual :: [[file:manuals/gpgme/][HTML]], [[file:manuals/gpgme.pdf][PDF]].
+  - Scute manual :: [[file:manuals/scute/][HTML]], [[file:manuals/scute.pdf][PDF]].

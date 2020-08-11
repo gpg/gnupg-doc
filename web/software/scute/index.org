@@ -4,10 +4,21 @@
 
 * Scute
 
-  /Scute/ is a PKCS#11 provider on top of GnuPG.
+  /Scute/ is a [[https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=pkcs11][PKCS#11]] provider on top of GnuPG allowing the use of
+  GnUPG supported smartcards with [[https://www.mozilla.org/projects/security/pki/nss/][Mozilla]]'s Network Security Services
+  and other software supporting the PKCS#11 specification.
 
-  Please [[https://www.scute.org][www.scute.org]] for details until we have moved the
-  docs to this page.
+  This allows you to use use those smartcards and tokens
+  (e.g. OpenPGP card, Yubikey, TCOS) as a security device in [[https://www.mozilla.com/][Firefox]]
+  and other software that makes use the NSS library.
 
-  See [[../../download/index.org::#scute][download]] section to download the latest tarball.  The current
-  version is {{{scute_ver}}}.
+  Supported use cases are:
+
+  - [[https://en.wikipedia.org/wiki/Https][HTTPS]] client authentication with [[https://www.mozilla.com/][Firefox]]
+  - S/MIME email signing with [[https://www.thunderbird.net][Thunderbird]]
+  - Document signing with [[https://www.libreoffice.org/][LibreOffice]]
+  - VPN authentication with [[https://www.openvpn.net]] (Unix only)
+
+  Head to the [[../../download/index.org::#scute][download]] section to download the latest tarball.  The
+  current version is {{{scute_ver}}}.  The [[file:manuals/scute/][Scute Manual]] can be read
+  on-line.
