@@ -120,9 +120,10 @@ if not available.  If CUSTOM is true only a minimal header is set."
       ("/download/git.html"                "GIT")))
     ("/documentation/index.html"
      "Documentation"
-     (("/documentation/howtos.html"        "HOWTOs")
+     (("/documentation/index.html"         "Overviews")
       ("/documentation/manuals.html"       "Manuals")
       ("/documentation/guides.html"        "Guides")
+      ("/documentation/howtos.html"        "HOWTOs")
       ("/documentation/faqs.html"          "FAQs")
       ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
       ("/service.html"                     "3rd Party Support")
