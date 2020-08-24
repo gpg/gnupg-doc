@@ -26,7 +26,12 @@ Current releases are signed by one or more of these keys:
   pub   rsa3072 2017-03-17 [expires: 2027-03-15]
         Key fingerprint = 5B80 C575 4298 F0CB 55D8  ED6A BCEF 7E29 4B09 2E28
   uid   Andre Heinecke (Release Signing Key)
+
+  pub   ed25519 2020-08-24 [expires: 2030-06-30]
+        Key fingerprint = 6DAA 6E64 A76D 2840 571B  4902 5288 97B8 2640 3ADA
+  uid   Werner Koch (dist signing 2020)
 #+END_EXAMPLE
+
 
 Here is a public key block with the above keys:
 
@@ -88,8 +93,13 @@ SDjF+t2IkvRrMlM+e+Mxjklinr8v1FRGzmE/kCcdHaP88+iwC2wUKOZtFs4yIBLO
 SWdQk9tLPmR8uWgNZmatRJyNvOaxd6EbK3jfckbJGFkmXjH+M9vMqFpoAewZ359F
 qjq+Us7AXLAMNUynom7IrtR5Rvsjx6RNtKQYUD6XY5rc7r9js9iGruHDAAW5lyRg
 j3wikc0IbV9L1bTsXIp29BsrU9sXUkVEp+xQJZgwqoOduoSjmOK88QdkibDqJiGF
-dzIRiXx+Nxv1Pr9L7A4/tq8=
-=qzkY
+dzIRiXx+Nxv1Pr9L7A4/tq+YMwRfQ+WJFgkrBgEEAdpHDwEBB0DPvkeV6RzXomGF
+8jQwp0RXEt2TGFwwI7RkbpYwECY2l7QfV2VybmVyIEtvY2ggKGRpc3Qgc2lnbmlu
+ZyAyMDIwKYiaBBMWCgBCFiEEbapuZKdtKEBXG0kCUoiXuCZAOtoFAl9D7DUCGwMF
+CRKFxxEFCwkIBwIDIgIBBhUKCQgLAgQWAgMBAh4HAheAAAoJEFKIl7gmQDraea4A
+/24v8c50HSC/Basf4WlREkuzhudplo8iT0BGtTQRdGAmAP9gIZ8dBekg9PRlpe7A
+l7ErThn6owVH9szWrUt6jkKOBg==
+=h7e4
 -----END PGP PUBLIC KEY BLOCK-----
 #+END_EXAMPLE
 
