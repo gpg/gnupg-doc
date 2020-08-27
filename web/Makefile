@@ -9,7 +9,15 @@ swdb.lst: swdb.mac
 	    ' swdb.mac >swdb.lst
 
 swdb.lst.sig: swdb.lst signcheck
-	gpg -sbu 0x249B39D24F25E3B6 swdb.lst
+	+(set -e; \
+	  key=$$(grep '^SWDB_SIGNKEY=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
+          if [ -z "$$key" ]; then \
+             echo "error: SWDB_SIGNKEY missing in ~/.gnupg-autogen.rc">&2; \
+             exit 2;\
+          fi;\
+	  gpg -sbu "$$key" swdb.lst;\
+	 )
+
 
 signcheck: swdb.lst
 	@set -e; \
