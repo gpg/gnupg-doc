@@ -64,12 +64,25 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.23 released (2020-09-03)                             :important:
+
+GnuPG version 2.2.23 has been released today.  This version fixes a
+*critical security bug* in 2.2.21 and 2.2.22.
+
+Please follow the instructions from the [[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000448.html][announcement mail]] and update
+affected installations.  See also our bug entry [[https://dev.gnupg.org/T5050][#5050]].
+
 ** GnuPG 2.2.22 released (2020-08-27)
+
+[Note: Do not use this release - use 2.2.23 instead.]
 
 GnuPG version 2.2.22 has been released today.  This is a maintenance
 release with a some minor changes.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000447.html][more]]}
 
+
 ** GnuPG 2.2.21 released (2020-07-09)
+
+[Note: Do not use this release - use 2.2.23 instead.]
 
 After the release of GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2020q1/000444.html][2.2.20]] back in March it is now the time to
 get collected fixes from the last months out: GnuPG version 2.2.21 has
