@@ -67,7 +67,7 @@ The latest release news:\\
 ** GnuPG 2.2.23 released (2020-09-03)                             :important:
 
 GnuPG version 2.2.23 has been released today.  This version fixes a
-*critical security bug* in 2.2.21 and 2.2.22.
+*critical security bug* in 2.2.21 and 2.2.22 ({{{CVE(2020-25125)}}}).
 
 Please follow the instructions from the [[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000448.html][announcement mail]] and update
 affected installations.  See also our bug entry [[https://dev.gnupg.org/T5050][#5050]].
