@@ -5,7 +5,7 @@
 
 ** GnuPG and LDAP
 
-The wiki entry on how to [[https://wiki.gnupg.org/LDAPLKeyserver][set up LDAP]] with GnuPG shows its age and
+The wiki entry on how to [[https://wiki.gnupg.org/LDAPKeyserver][set up LDAP]] with GnuPG shows its age and
 describes installation procedures which are not anymore required on
 any halfway decent system.  Forthcoming updates on the LDAP
 integration in GnUPG are also not described and thus I try to give a
@@ -164,10 +164,7 @@ to install the schema.  The options given to the ldapadd tool are:
 The new schema should now be installed. Check this by using this
 command:
 
-: ldapsearch -Q -Y EXTERNAL -L -H ldapi:/// \
-:    -b 'cn=schema,cn=config' cn | grep cn:
-(on Unix the backslash indicates that the line is continued with the
-next line)
+: ldapsearch -Q -Y EXTERNAL -L -H ldapi:/// -b 'cn=schema,cn=config' cn | grep cn:
 
 The options not used by ldapsearch which have not yet been explained
 above are:
@@ -205,8 +202,7 @@ and do that also for the other 3 appearances of the "dc" RDNs.  In case
 you use a 3-level domain, add another "dc" in the same way you did when
 setting up OpenLDAP.  With that modified file run
 
-: ldapadd -v -x -H ldapi:/// -D 'cn=admin,dc=example,dc=com' \
-:   -W -f ./gnupg-ldap-init.ldif
+: ldapadd -v -x -H ldapi:/// -D 'cn=admin,dc=example,dc=com' -W -f ./gnupg-ldap-init.ldif
 
 Remember to change the "dc" RDNs also here to what you actually use.
 We use simple authentication by means of these options:
@@ -239,8 +235,7 @@ password used in the above example is "abc").
 
 Now run
 
-: ldapadd -v -x -H ldapi:/// -D 'cn=admin,dc=gnupg,dc=com' \
-:    -W -f ./newuser.ldif
+: ldapadd -v -x -H ldapi:/// -D 'cn=admin,dc=gnupg,dc=com' -W -f ./newuser.ldif
 
 On the password prompt enter the admin's password (not the one of the
 new user).  Note that the user is created below the "GnuPG Users"
@@ -435,8 +430,7 @@ and enter the new and old password again.
 
 To debug access problems, it is useful to change the log level:
 
-: printf "dn: cn=config\nchangetype: %s\nreplace: %s\n%s: %s\n" \
-:   modify olcLogLevel olcLogLevel ACL | ldapadd -Q -Y EXTERNAL -H ldapi:///
+: printf "dn: cn=config\nchangetype: %s\nreplace: %s\n%s: %s\n" modify olcLogLevel olcLogLevel ACL | ldapadd -Q -Y EXTERNAL -H ldapi:///
 
 to revert replace "ACL" by "none".
 
