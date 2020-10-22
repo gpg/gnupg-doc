@@ -16,6 +16,7 @@ support GnuPG development.
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
 |------+------+--------+--------+------------|
+| 2019 |      |  51560 |  88725 |     140285 |
 | 2018 |      |  68731 |  87520 |     156251 |
 | 2017 |      |  90390 | 154104 |     244494 |
 | 2016 |  271 |   9615 | 146759 |     156374 |
@@ -25,7 +26,7 @@ support GnuPG development.
 | 2012 |   53 |   5991 |        |       5991 |
 | 2011 |   21 |    553 |        |        553 |
 |------+------+--------+--------+------------|
-|      |      | 453222 | 532645 |     985867 |
+|      |      | 504782 | 621370 |    1126152 |
 #+TBLFM: $5=$3+$4::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
 
 #+HTML: <div id="smallnote">
@@ -33,6 +34,18 @@ Legend: “Indi.” indicates individual donations, “Corp.” lists large
 corporate donations and grants, and “Total” gives the net value
 without taxes and banking fees.  Note that this list has been updated
 on 2017-05-02 to include the Linux Foundation grant.
+
+# About 2019:\\
+# | Individual Donations |  51560 | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  44154 |                            |
+# | Stripe               |  44571 |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  88725 |                            |
+In 2019 we received one-time and recurring individual donations of
+51560 Euro.  We received 50000 USD each from Stripe and Facebook.
 
 # About 2018:\\
 # | Individual Donations |  68731 | bank fees already deducted |
@@ -146,6 +159,18 @@ quarterly or yearly).
  |      |  08 |  3062 |  630 |    866 |   1566 |   663 |  33 |
  |      |  09 |  3518 |  794 |    953 |   1771 |   832 |  38 |
  |      |  10 |  3136 |  690 |    924 |   1522 |   728 |  38 |
+ |      |  11 |  2798 |  553 |    728 |   1517 |   584 |  31 |
+ |      |  12 |  8817 | 1107 |    957 |   6753 |  1148 |  41 |
+ | 2020 |  01 |  2412 |  789 |    864 |   1548 |   825 |  36 |
+ |      |  02 |  3563 |  582 |    746 |   2817 |   612 |  30 |
+ |      |  03 |  2579 |  722 |   1021 |   1558 |   758 |  36 |
+ |      |  04 |  3261 |  599 |    636 |   2625 |   637 |  38 |
+ |      |  05 |  1878 |  523 |    637 |   1241 |   557 |  34 |
+ |      |  06 |  3150 | 1149 |   1302 |   1848 |  1194 |  45 |
+ |      |  07 |  2574 |  722 |    992 |   1582 |   761 |  39 |
+ |      |  08 |  1730 |  622 |    553 |   1177 |   657 |  35 |
+ |      |  09 |  1567 |  605 |        |   1567 |   642 |  37 |
+ |      |  10 |     0 |    0 |        |        |       |     |
  |      |  11 |     0 |    0 |        |        |       |     |
  |      |  12 |     0 |    0 |        |        |       |     |
  #+TBLFM: $3=$4+$5+$6::$4=$7-$8
