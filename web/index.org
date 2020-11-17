@@ -64,6 +64,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.24 released (2020-11-17)
+
+GnuPG version 2.2.24 has been released today.  This is a maintenance
+release fixing some longstanding bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000449.html][more]]}
+
 ** GnuPG 2.2.23 released (2020-09-03)                             :important:
 
 GnuPG version 2.2.23 has been released today.  This version fixes a
