@@ -8,7 +8,7 @@ swdb.lst: swdb.mac
 	                    {print $$2, $$3} \
 	    ' swdb.mac >swdb.lst
 
-swdb.lst.sig: swdb.lst signcheck
+swdb.lst.sig: swdb.lst
 	+(set -e; \
 	  key=$$(grep '^SWDB_SIGNKEY=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
           if [ -z "$$key" ]; then \
@@ -28,7 +28,7 @@ signcheck: swdb.lst
           exit 1; \
         fi
 
-upload: swdb.lst.sig
+upload: swdb.lst.sig  signcheck
 	scp swdb.lst.sig swdb.lst playfair.gnupg.org:/var/www/git/versions.gnupg.org/htdocs/
 	scp swdb.lst.sig swdb.lst webbuilder@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
 
