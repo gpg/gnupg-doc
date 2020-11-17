@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-10">
+     docName="draft-koch-openpgp-webkey-service-11">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -44,7 +44,7 @@
       </address>
     </author>
 
-    <date month="May" year="2020" />
+    <date month="November" year="2020" />
     <area>Security</area>
 
     <abstract>
@@ -160,9 +160,9 @@ and the direct method.  Implementations MUST first try the advanced
 method.  Only if the required sub-domain does not exist, they SHOULD
 fall back to the direct method.
 
-The advanced method requires a sub-domain with the fixed name
-~openpgpkey~ is created and queried.  It constructs the URI from the
-concatenation of these items:
+The advanced method requires that a sub-domain with the fixed name
+~openpgpkey~ is created and queried.  The URI is constructed by
+concatenating these items:
 
 - The scheme {{{https_scheme}}},
 - the string ~openpgpkey~,
@@ -184,7 +184,7 @@ Joe.Doe@Example.ORG is:
 (line has been wrapped for rendering purposes)
 
 The direct method requires no additional DNS entries and constructs
-the URI from the concatenation of these items:
+the URI by concatenating these items:
 
 - The scheme {{{https_scheme}}},
 - the domain-part,
@@ -775,8 +775,6 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -07
+* Changes Since -10
 
-- Add remark on 401 reponses.
-- Add a note about wildcard DNS.
-- Fixed obvious errors from the last revision.
+- none

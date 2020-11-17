@@ -7,6 +7,15 @@ MD_EXAMPLE_FIX = '(defun org-md-example-block (example-block contents info) \
  (org-export-format-code-default example-block info))))'
 
 
+# Take care:
+# You may need to modify pandoc2rfc so that is used
+#  -t docbook4
+# because the "-t docbook" seems to be mapped to "-t docbook5" by
+# current pandoc versions.  Also the quote tag needs to be replaced
+# by adding
+#  sed -e 's,<quote>,",g' -e 's,</quote>,",g'
+# to the output of docbook.
+
 draft.txt, draft.xml: draft.org
 	emacs --batch \
            --eval "(require 'org)" \
