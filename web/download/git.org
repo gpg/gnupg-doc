@@ -35,8 +35,8 @@
   also checks that you have all required tools installed. Please read
   the GIT manual pages before doing so. The =master= revision is the
   development branch; the stable version (currently version
-  {{{gnupg22_ver}}}) is known as ={{{gnupg_branch}}}=; the old 1.4
-  version of GnuPG ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
+  {{{gnupg22_ver}}}) is known as {{{gnupg_branch}}}; the old 1.4
+  version of GnuPG ({{{gnupg1_ver}}}) is known as STABLE-BRANCH-1-4.
 
   Bug reports should go to the developers mailing list. See the page
   on [[../documentation/mailing-lists.org][mailing lists]] .

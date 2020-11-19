@@ -27,3 +27,9 @@
   file "gpgrt.h" which can be used instead of "gpg-error.h".
 
   See the [[file:../../download/index.org::libgpg-error][download]] section for the latest tarball.
+
+  The development takes place in a Git repo:
+#+BEGIN_EXAMPLE
+   git clone git://git.gnupg.org/libgpg-error.git
+#+END_EXAMPLE
+  For more information see our [[../../download/git.org][Git page]].

@@ -52,14 +52,15 @@
 
    All versions of Libgcrypt since 1.2 are API and ABI compatible.
    The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
-   will receive updates for severe bugs and security problems until
-   2019-06-30.
+   reached end-of-life on 2019-06-30.  An end-of-life date for the
+   current stable version 1.8 has not yet been set; we will support
+   this version at least two years after 1.9 has been released.
 
    The development takes place in a Git repo:
 #+BEGIN_EXAMPLE
    git clone git://git.gnupg.org/libgcrypt.git
 #+END_EXAMPLE
-   The current stable version is ={{{libgcryt_branch}}}=.  For more
+   The current stable version is {{{libgcryt_branch}}}.  For more
    information see our [[../../download/git.org][Git page]].
 
 ** Copying
