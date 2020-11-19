@@ -55,6 +55,13 @@
    will receive updates for severe bugs and security problems until
    2019-06-30.
 
+   The development takes place in a Git repo:
+#+BEGIN_EXAMPLE
+   git clone git://git.gnupg.org/libgcrypt.git
+#+END_EXAMPLE
+   The current stable version is ={{{libgcryt_branch}}}=.  For more
+   information see our [[../../download/git.org][Git page]].
+
 ** Copying
 
    Libgcrypt is distributed under the terms of the GNU Lesser General

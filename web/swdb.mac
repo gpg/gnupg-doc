@@ -10,6 +10,9 @@
 #
 # GnuPG-2.2
 #
+# The Git branch of the stable version:
+#+macro: gnupg_branch STABLE-BRANCH-2-2
+#
 #+macro: gnupg22_ver  2.2.24
 #+macro: gnupg22_date 2020-11-17
 #+macro: gnupg22_size 7027k
@@ -92,6 +95,9 @@
 
 #
 # LIBGCRYPT
+#
+# The Git branch of the stable version:
+#+macro: libgcrypt_branch LIBGCRYPT-1.8-BRANCH
 #
 #+macro: libgcrypt_ver  1.8.7
 #+macro: libgcrypt_date 2020-10-23
