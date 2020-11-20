@@ -191,11 +191,12 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.4.7
-#+macro: gpgol_date 2020-09-04
-#+macro: gpgol_size 824k
-#+macro: gpgol_sha1 14c64a50c996cbb8bb2c27d9b875434f534d75a2
-#+macro: gpgol_sha2 57e781b60cf62f1b175b9e2ee653970f887fcce5c0e7e03c2dc7d93ab47e7be8
+#+macro: gpgol_ver  2.4.8
+#+macro: gpgol_date 2020-11-20
+#+macro: gpgol_size 825k
+#+macro: gpgol_sha1 af5e249dfc8a2a31079309f126bae1eb01a12759
+#+macro: gpgol_sha2 2f7af0bce2c8706d2267285408dc3dcec6155631038d39434afb62b5ec90dfc2
+
 
 #
 # Scute
