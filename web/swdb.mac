@@ -13,17 +13,17 @@
 # The Git branch of the stable version:
 #+macro: gnupg_branch STABLE-BRANCH-2-2
 #
-#+macro: gnupg22_ver  2.2.24
-#+macro: gnupg22_date 2020-11-17
+#+macro: gnupg22_ver  2.2.25
+#+macro: gnupg22_date 2020-11-23
 #+macro: gnupg22_size 7027k
-#+macro: gnupg22_sha1 2e8e29fdc06710d1e7f6f4b87098b96e058797fe
-#+macro: gnupg22_sha2 9090b400faae34f08469d78000cfec1cee5b9c553ce11347cc96ef16eab98c46
+#+macro: gnupg22_sha1 074b21dd07419575fa31c0c5d3116596d5544cbd
+#+macro: gnupg22_sha2 c55307b247af4b6f44d2916a25ffd1fb64ce2e509c3c3d028dbe7fbf309dc30a
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.24_20201117
-#+macro: gnupg22_w32_date 2020-11-17
-#+macro: gnupg22_w32_size 4322k
-#+macro: gnupg22_w32_sha1 ab895bd9bc4319b88b1314ede3a816cd0a1cc677
-#+macro: gnupg22_w32_sha2 30352deb29dc65dfbf246209e567859de59cb60f01129f234ac5e3532caa501f
+#+macro: gnupg22_w32_ver  2.2.25_20201123
+#+macro: gnupg22_w32_date 2020-11-23
+#+macro: gnupg22_w32_size 4321k
+#+macro: gnupg22_w32_sha1 d4bc499a192e607f6db5e50bbc885a649ae670fc
+#+macro: gnupg22_w32_sha2 1ac8ff6bcd5a5a66cd14abe448e5be2627a82b770f3caadc3852fdabce89d511
 
 
 #
