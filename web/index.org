@@ -64,6 +64,16 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.2.26 released (2020-12-21)
+
+GnuPG version 2.2.26 has been released today.  This is a maintenance
+release with improved support for LDAP keyservers and Active
+Directory.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000451.html][more]]}
+
+** GnuPG 2.2.25 released (2020-11-23)
+
+GnuPG version 2.2.25 fixes a small regression in 2.2.24. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000450.html][more]]}
+
 ** GnuPG 2.2.24 released (2020-11-17)
 
 GnuPG version 2.2.24 has been released today.  This is a maintenance
