@@ -16,6 +16,7 @@ support GnuPG development.
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
 |------+------+--------+--------+------------|
+| 2020 |      |        |  40482 |            |
 | 2019 |      |  51560 |  88725 |     140285 |
 | 2018 |      |  68731 |  87520 |     156251 |
 | 2017 |      |  90390 | 154104 |     244494 |
@@ -26,13 +27,25 @@ support GnuPG development.
 | 2012 |   53 |   5991 |        |       5991 |
 | 2011 |   21 |    553 |        |        553 |
 |------+------+--------+--------+------------|
-|      |      | 504782 | 621370 |    1126152 |
+|      |      | 504782 | 661852 |    1166634 |
 #+TBLFM: $5=$3+$4::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
 
 #+HTML: <div id="smallnote">
 Legend: “Indi.” indicates individual donations, “Corp.” lists large
 corporate donations and grants, and “Total” gives the net value
 without taxes and banking fees.
+
+# About 2020:\\
+# | Individual Donations |  fixme | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  40482 |                            |
+# | Stripe               |  fixme |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  fixme |                            |
+We don't yet have the numbers for 2020
+
 
 # About 2019:\\
 # | Individual Donations |  51560 | bank fees already deducted |
