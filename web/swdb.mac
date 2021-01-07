@@ -201,11 +201,11 @@
 #
 # Scute
 #
-#+macro: scute_ver  1.6.0
-#+macro: scute_date 2019-09-11
-#+macro: scute_size 985k
-#+macro: scute_sha1 be3b9a3e53e653881c219e1fb3cc7c0aaa6c9174
-#+macro: scute_sha2 511be523407590a586b7d61b5985af965dd91901b75d9650b55e9ae1d86d0ab0
+#+macro: scute_ver  1.7.0
+#+macro: scute_date 2021-01-07
+#+macro: scute_size 831k
+#+macro: scute_sha1 3f8a0ba9c7821049d51b982141a2330a246beb55
+#+macro: scute_sha2 437fe758b27c243a5ee2535c6b065ea1d09f2c9a02d83567d2f934bb6395c249
 
 
 #
