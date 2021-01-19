@@ -154,7 +154,7 @@
             payment (standing order).
           </p>
           <p>
-            Always take care to give
+            Please use
             <strong>
               <!--SEPA_REF-->
             </strong>
@@ -163,6 +163,14 @@
             given reference number expires in 30 days, thus please act
             in time.  You may of course send a different amount but
             please send at least 5 Euro to cover the overhead costs.
+          </p>
+          <p>
+          Some banking interfaces require to enter the address of the account
+          owner:<br/>
+            g10 Code GmbH<br/>
+            Hüttenstr. 61<br/>
+            40699 Erkrath<br/>
+            Germany
           </p>
           <p>
             <strong>Thank you in advance for your donation.</strong>
