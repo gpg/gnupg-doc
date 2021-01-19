@@ -64,6 +64,19 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+
+** Libgcrypt 1.9 is the new stable branch (2021-01-19)
+
+Although we will keep on maintaining the 1.8 branch, the new stable
+branch is now 1.9.  Version 1.9.0 comes with a lot of performance
+improvements and a few other new features.  It provides full API and
+ABI compatibility to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q1/000453.html][more]]}
+
+** GnuPG 2.2.27 released (2021-01-11)
+
+GnuPG version 2.2.27 has been released today.  This is a maintenance
+release with a few minor bug fixes.   {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q1/000453.html][more]]}
+
 ** GnuPG 2.2.26 released (2020-12-21)
 
 GnuPG version 2.2.26 has been released today.  This is a maintenance
