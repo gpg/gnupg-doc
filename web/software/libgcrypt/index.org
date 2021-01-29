@@ -60,7 +60,7 @@
 #+BEGIN_EXAMPLE
    git clone git://git.gnupg.org/libgcrypt.git
 #+END_EXAMPLE
-   The current stable version is {{{libgcryt_branch}}}.  For more
+   The current stable version is {{{libgcrypt_branch}}}.  For more
    information see our [[../../download/git.org][Git page]].
 
 ** Copying
