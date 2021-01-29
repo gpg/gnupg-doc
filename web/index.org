@@ -64,6 +64,11 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.9.1 released (2021-01-29)                          :important:
+
+Unfortunately we introduced a severe bug in Libgcrypt 1.9.0 released
+10 days ago.  If you already started to use version 1.9.0 please
+*update immediately to 1.9.1*.
 
 ** Libgcrypt 1.9 is the new stable branch (2021-01-19)
 
