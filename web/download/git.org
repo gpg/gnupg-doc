@@ -23,9 +23,11 @@
 
   All repositories have been migrated to GIT from the old Subversion
   (SVN) code management tool. The standard way you checkout from an
-  anonymous GIT is to clone the entire repository:
+  anonymous GIT is to clone the entire repository from one of these
+  repositories:
 
 #+BEGIN_EXAMPLE
+  git clone https://dev.gnupg.org/source/gnupg.git
   git clone git://git.gnupg.org/gnupg.git
 #+END_EXAMPLE
 

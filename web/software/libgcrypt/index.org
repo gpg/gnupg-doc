@@ -1,3 +1,4 @@
+#+TITLE: GnuPG - Libgcrypt
 #+STARTUP: showall
 #+SETUPFILE: "../../share/setup.inc"
 #+GPGWEB-NEED-SWDB
@@ -52,14 +53,10 @@
 
    All versions of Libgcrypt since 1.2 are API and ABI compatible.
    The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
-   reached end-of-life on 2019-06-30.  An end-of-life date for the
-   current stable version 1.8 has not yet been set; we will support
-   this version at least two years after 1.9 has been released.
+   reached end-of-life on 2019-06-30.  The 1.8 series is a LTS
+   version.  1.9 is the current stable version.
 
-   The development takes place in a Git repo:
-#+BEGIN_EXAMPLE
-   git clone git://git.gnupg.org/libgcrypt.git
-#+END_EXAMPLE
+   The development takes place in a Git repo, see our [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git][Git Viewer]]
    The current stable version is {{{libgcrypt_branch}}}.  For more
    information see our [[../../download/git.org][Git page]].
 
