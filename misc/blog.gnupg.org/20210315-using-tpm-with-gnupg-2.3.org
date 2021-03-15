@@ -65,7 +65,7 @@ internal NVRam.  However, this merely means you should always
 decommission your TPM by running the clear operation before you junk
 your old laptop.
 
-** Using a TPM 2.0 with GnuPG
+*** Using a TPM 2.0 with GnuPG
 
 In order to use the TPM, you must be able to talk to it.  On Linux
 this is done via the in-kernel TPM resource manager over the special
