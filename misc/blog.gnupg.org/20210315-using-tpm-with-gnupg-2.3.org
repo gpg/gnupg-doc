@@ -1,0 +1,179 @@
+# Using a TPM with GnuPG 2.3
+#+STARTUP: showall
+#+AUTHOR: James Bottomley
+#+DATE: 2021-03-15
+
+** Using a TPM with GnuPG 2.3
+
+One of the new features added to GnuPG 2.3 is the ability to use a TPM
+2.0 (which comes with all reasonably recent laptops) to protect all
+the private keys.  The way TPMs work is that first you load the key
+into the TPM and then have the TPM perform signature or decryption
+operations on the loaded key.  The loaded key has been wrapped in a way
+that only one specific TPM (the one that created the key) can
+unwrap.  This means that the key is secure both at rest and when it’s
+being used (because the signature or decryption operation is performed
+inside the TPM not on the actual laptop).  Thus an attacker can run off
+with your private key file but will never be able to recover your
+secret key, even if they know your passphrase.  The disadvantage of
+using a TPM for your secret keys is that those keys become irrevocably
+tied to the TPM: once converted to TPM loadable form, they can never
+be converted back again, so if you lose your TPM (say by upgrading
+your laptop), you’ve lost access to all your TPM based private
+keys.  The way around this problem is the same as when using a token:
+keep a backup of the secret key on offline storage which you can use
+to initialize the new laptop when you buy it.  The TPM also has the
+advantage that a single TPM2 clear operation will flush every key the
+TPM has ever known about, so there’s an easy way to decommission your
+old laptop without worrying about destroying the old secret keys.
+
+In security terms TPMs are very similar to having your own GPG smart
+card except that they’re infinitely scalable (you can convert as many
+GPG secret keys as you like because they’re stored in files not inside
+the TPM) but they’re tied to the laptop that created them (if you have
+two or more laptops you’ll have to convert each secret key separately
+for that laptop) and they are always on (so you can’t defeat an
+attacker who’s present in your laptop simply by removing the smart
+card).  Like smart cards, they also only understand a limited range of
+key algorithms.  Every TPM 2.0 is required to understand rsa2048 and
+nistp256 and newer TPM 2.0’s may also understand rsa3072 and nistp384.
+
+*** Using the TPM Securely
+
+Of course, transforming the GnuPG keys to TPM form isn’t enough on its
+own, we also have to use secure communication with the TPM chip itself
+to make sure nothing is snooping the transaction.  To do this
+correctly, the GnuPG TPM code sets up what are called sessions with
+the TPM that do HMAC instead of clear text password and encrypt
+sensitive information (like your private key for conversion) so that
+only the TPM on the receiving end can decode them.  If you want to
+verify this, you can actually run a software TPM (simply =export
+TPM_INTERFACE_TYPE=socsim= before running the gpg-agent and it will try
+to connect over a local IP socket which you can snoop with tcpdump)
+and verify you can’t see any secrets in the wire protocol.
+
+There is still one problem with securing the TPM: that’s when we ask
+it for its public key and trust the result.  This transaction could be
+made secure if we used the Manufacturer certificate to certify the
+public key, but such a transaction requires infrastructure that
+currently doesn’t exist in the average Linux distribution.
+
+The TPM isn’t secure against every attack: in particular it’s not
+certified against physical intrusion meaning someone can theoretically
+slice the chip apart and extract the secret wrapping keys from the
+internal NVRam.  However, this merely means you should always
+decommission your TPM by running the clear operation before you junk
+your old laptop.
+
+** Using a TPM 2.0 with GnuPG
+
+In order to use the TPM, you must be able to talk to it.  On Linux
+this is done via the in-kernel TPM resource manager over the special
+device =/dev/tpmrm0=.  To use this device you must have =rw=
+permission on it.  Most TPM libraries install a udev rule to have this
+file read/write by group =tss= so you usually must be a member of the
+=tss= group to use the system physical TPM.
+
+The simplest way to use a TPM with GnuPG is to convert all your
+existing keys, so let’s start with a standard GnuPG identity that has
+a rsa2048 master key and a nistp256 encryption key
+
+#+begin_example
+> gpg --quick-generate-key "A User <au@example.com>" rsa2048
+> gpg --list-keys
+pub   rsa2048 2021-03-12 [SC] [expires: 2023-03-12]
+      7E7EC83AC5A4E4A631C11EA39C7BF16E77997502
+uid           [ultimate] A User <au@example.com>
+#+end_example
+
+Now you can convert this key to TPM form (if this is going to be a
+permanent key remember to take a copy of the private key before you do
+this) with:
+
+#+begin_example
+> gpg --edit-key au@example.com
+Secret key is available.
+
+sec  rsa2048/9C7BF16E77997502
+     created: 2021-03-12  expires: 2023-03-12  usage: SC
+     trust: ultimate      validity: ultimate
+[ultimate] (1). A User <au@example.com>
+
+gpg> keytotpm
+Really move the primary key? (y/N) y
+
+sec  rsa2048/9C7BF16E77997502
+     created: 2021-03-12  expires: 2023-03-12  usage: SC
+     card-no: TPM-Protected
+     trust: ultimate      validity: ultimate
+[ultimate] (1). A User <au@example.com>
+#+end_example
+
+During this process you will be prompted for the secret password for
+the existing key and to create a new password for the TPM
+representation of the key (these can be the same if you choose).
+
+Now you can add an encryption key (which will require a TPM operation
+since now your master certification key is TPM protected)
+
+#+begin_example
+> gpg --quick-add-key 7E7EC83AC5A4E4A631C11EA39C7BF16E77997502 nistp256
+> gpg --edit-key au@example.com
+Secret key is available.
+
+sec  rsa2048/9C7BF16E77997502
+     created: 2021-03-12  expires: 2023-03-12  usage: SC
+     card-no: TPM-Protected
+     trust: ultimate      validity: ultimate
+ssb  nistp256/69B0AB81D7A95F16
+     created: 2021-03-12  expires: never       usage: E
+[ultimate] (1). A User <au@example.com>
+
+gpg> key 1
+
+sec  rsa2048/9C7BF16E77997502
+     created: 2021-03-12  expires: 2023-03-12  usage: SC
+     card-no: TPM-Protected
+     trust: ultimate      validity: ultimate
+ssb* nistp256/69B0AB81D7A95F16
+     created: 2021-03-12  expires: never       usage: E
+[ultimate] (1). A User <au@example.com>
+
+gpg> keytotpm
+
+sec  rsa2048/9C7BF16E77997502
+     created: 2021-03-12  expires: 2023-03-12  usage: SC
+     card-no: TPM-Protected
+     trust: ultimate      validity: ultimate
+ssb* nistp256/69B0AB81D7A95F16
+     created: 2021-03-12  expires: never       usage: E
+     card-no: TPM-Protected
+[ultimate] (1). A User <au@example.com>
+#+end_example
+
+Now you have a fully TPM protected set of encryption and signing keys
+which you can continue to use in the same way as any non-TPM protected
+key.
+
+*** Conclusion
+
+Since every modern laptop has a TPM, using the TPM allows a measurable
+increase in GnuPG security without buying addition hardware. To
+demonstrate just how secure this actually is, here is the private key
+file of the encryption key above
+
+#+begin_example
+Key: (shadowed-private-key (ecc (curve "NIST P-256")(q
+  #04BB8892BE396C561297F6D755536085A171A368030706E26A75C6D3C1C4EDA6C170
+ 78EADA01827B1F48F1BEB64C4165BF1BD7FE3A9EAA780023FD812BE3F514FE#)(shado
+ wed tpm2-v1 ("1073741825" #00560023000B0006044000000010001000030010002
+ 0BB8892BE396C561297F6D755536085A171A368030706E26A75C6D3C1C4EDA6C100207
+ 078EADA01827B1F48F1BEB64C4165BF1BD7FE3A9EAA780023FD812BE3F514FE#
+  #00610020C80EDF96360376A4FDBFD0D76190069AE960E31F8FF185F80726387908DC
+ E8F5001085349860A130A00DE6D78080BC3AF4970F56F7CCE4817567224275F5BA9F5B
+ CB91440D4C3137B97988D62AD7625A7E96C7B872C10B4EF764FE09A1CD1A#))))
+Created: 20210312T000922
+#+end_example
+
+Its password is “tpm” (without quotes) let’s see if anyone can
+actually extract the private key.
