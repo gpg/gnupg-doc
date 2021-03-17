@@ -29,6 +29,12 @@ page for other maintained versions.
 crypto manager, and an Outlook plugin to send and receive standard
 PGP/MIME mails.  The current version of Gpg4win is {{{gpg4win_ver}}}.
 
+* Maintenance notice
+
+Our development hub *dev.gnupg.org* requires some maintenance; it will
+be *down for a couple of hours* this Wednesday (2021-03-17) starting
+15:30 UTC.  There will be another, shorter, downtime a few days later.
+
 * Reconquer your privacy
 
 #+begin_quote
