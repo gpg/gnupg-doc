@@ -137,26 +137,26 @@
 #
 # LIBGPG-ERROR (aka GPGRT)
 #
-#+macro: libgpg_error_ver  1.41
-#+macro: libgpg_error_date 2020-12-21
-#+macro: libgpg_error_size 944k
-#+macro: libgpg_error_sha1 66d6270511a48bac0bf347330e7a12c62f3a1ab4
-#+macro: libgpg_error_sha2 64b078b45ac3c3003d7e352a5e05318880a5778c42331ce1ef33d1a0d9922742
-#+macro: gpgrt_ver  1.41
-#+macro: gpgrt_date 2020-12-21
-#+macro: gpgrt_size 944k
-#+macro: gpgrt_sha1 66d6270511a48bac0bf347330e7a12c62f3a1ab4
-#+macro: gpgrt_sha2 64b078b45ac3c3003d7e352a5e05318880a5778c42331ce1ef33d1a0d9922742
+#+macro: libgpg_error_ver  1.42
+#+macro: libgpg_error_date 2021-03-22
+#+macro: libgpg_error_size 951k
+#+macro: libgpg_error_sha1 5e620d71fc24d287a7ac2460b1d819074bb8b9bb
+#+macro: libgpg_error_sha2 fc07e70f6c615f8c4f590a8e37a9b8dd2e2ca1e9408f8e60459c67452b925e23
+#+macro: gpgrt_ver  1.42
+#+macro: gpgrt_date 2021-03-22
+#+macro: gpgrt_size 951k
+#+macro: gpgrt_sha1 5e620d71fc24d287a7ac2460b1d819074bb8b9bb
+#+macro: gpgrt_sha2 fc07e70f6c615f8c4f590a8e37a9b8dd2e2ca1e9408f8e60459c67452b925e23
 
 
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.5.4
-#+macro: libassuan_date 2020-10-23
-#+macro: libassuan_size 560k
-#+macro: libassuan_sha1 55a35918e95566ef94e8843879a7dd3f87de3781
-#+macro: libassuan_sha2 c080ee96b3bd519edd696cfcebdecf19a3952189178db9887be713ccbcb5fbf0
+#+macro: libassuan_ver  2.5.5
+#+macro: libassuan_date 2021-03-22
+#+macro: libassuan_size 558k
+#+macro: libassuan_sha1 ec4f67c0117ccd17007c748a392ded96dc1b1ae9
+#+macro: libassuan_sha2 8e8c2fcc982f9ca67dcbb1d95e2dc746b1739a4668bc20b3a3c5be632edb34e4
 
 
 #
