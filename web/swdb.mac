@@ -8,10 +8,28 @@
 #+macro: ftp_loc_base  /ftp/gcrypt
 
 #
+# GnuPG-2.4
+#
+# The Git branch of this version:
+#+macro: gnupg_branch master
+#
+#+macro: gnupg24_ver  2.3.0
+#+macro: gnupg24_date 2021-04-07
+#+macro: gnupg24_size 7380k
+#+macro: gnupg24_sha1 44d06ef6625378e2d135420543e5fb06b62437ab
+#+macro: gnupg24_sha2 84c1ef39e8621cfb70f31463a5d1d8edeab44332bc1e0e1af9b78b6f9ed05bb4
+#+macro: gnupg24_branch  master
+#+macro: gnupg24_w32_ver  2.3.0_20210407
+#+macro: gnupg24_w32_date 2021-04-07
+#+macro: gnupg24_w32_size 4560k
+#+macro: gnupg24_w32_sha1 2c1a25a57a785cc96ae7ec317de9d1fb513161b7
+#+macro: gnupg24_w32_sha2 7710d8abd6f487b40244815086ed578e70859728ad90e56f8246aa8f569f16da
+
+
+#
 # GnuPG-2.2
 #
 # The Git branch of the stable version:
-#+macro: gnupg_branch STABLE-BRANCH-2-2
 #
 #+macro: gnupg22_ver  2.2.27
 #+macro: gnupg22_date 2021-01-11

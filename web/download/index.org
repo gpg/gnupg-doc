@@ -45,11 +45,12 @@
    | Name            | Version                | Date                    |                    Size | Tarball                                                                                                | Signature                                                                                                  |
    |-----------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    |                 | <l>                    |                         |                     <r> |                                                                                                        |                                                                                                            |
+   | [[../software/index.org][GnuPG]] (devel)   | {{{gnupg24_ver}}}      | {{{gnupg24_date}}}      |      {{{gnupg24_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | [[../software/index.org][GnuPG]] (LTS)     | {{{gnupg22_ver}}}      | {{{gnupg22_date}}}      |      {{{gnupg22_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    |-----------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/libgpg-error/index.org][Libgpg-error]]    | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
    | [[../software/libgcrypt/index.org][Libgcrypt]]       | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |    {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
-   | [[../software/libgcrypt/index.org][Libgcrypt]] (LTS) | {{{libgcrypt18_ver}}}  | {{{libgcrypt18_date}}}  |    {{{libgcrypt18_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2{{{ftpclose}}}        | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
+   | [[../software/libgcrypt/index.org][Libgcrypt]] (LTS) | {{{libgcrypt18_ver}}}  | {{{libgcrypt18_date}}}  |  {{{libgcrypt18_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2{{{ftpclose}}}        | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
    | [[../software/libksba/index.org][Libksba]]         | {{{libksba_ver}}}      | {{{libksba_date}}}      |      {{{libksba_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
    | [[../software/libassuan/index.org][Libassuan]]       | {{{libassuan_ver}}}    | {{{libassuan_date}}}    |    {{{libassuan_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
    | [[../software/ntbtls/index.org][ntbTLS]]          | {{{ntbtls_ver}}}       | {{{ntbtls_date}}}       |       {{{ntbtls_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2{{{ftpclose}}}                   | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2.sig{{{ftpclose}}}                   |
@@ -101,7 +102,7 @@
    |---------+--------------------+------------------------------------------|
    |         | <18>               |                                          |
    | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/ |
-   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/ |
+   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/ |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/         |
    | OS X    | [[https://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project      |
    |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                    |
@@ -133,7 +134,7 @@
    |           | 1.4   | none (2)       | 2004-12-16 |
    |           | +2.0+ | 2017-12-31     | 2006-11-11 |
    |           | 2.2   | 2024-12-31 (1) | 2014-11-06 |
-   |           | 2.3   | tba            | tba        |
+   |           | 2.3   | tba            | 2021-04-07 |
    | Libgcrypt | +1.5+ | 2016-12-31     | 2011-06-29 |
    |           | +1.6+ | 2017-06-30     | 2013-12-16 |
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
