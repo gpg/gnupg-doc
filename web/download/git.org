@@ -37,7 +37,7 @@
   also checks that you have all required tools installed. Please read
   the GIT manual pages before doing so.  The current development
   version is {{{gnupg24_ver}}} and known as {{{gnupg24_branch}}}; the
-  long term support (LTS) version is {{{gnupg22_ver}}}) and known as
+  long term support (LTS) version is {{{gnupg22_ver}}} and known as
   {{{gnupg22_branch}}}; the legacy 1.4 version of GnuPG
   ({{{gnupg1_ver}}}) is known as STABLE-BRANCH-1-4.
 
