@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-11">
+     docName="draft-koch-openpgp-webkey-service-12">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -44,7 +44,7 @@
       </address>
     </author>
 
-    <date month="November" year="2020" />
+    <date month="May" year="2021" />
     <area>Security</area>
 
     <abstract>
@@ -775,6 +775,6 @@ ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
 #+end_example
 
 
-* Changes Since -10
+* Changes Since -11
 
 - none
