@@ -7,9 +7,11 @@
 
 * Release Notes for GnuPG
 
-  Please read the [[https://dev.gnupg.org/source/gnupg/browse/master/NEWS][NEWS file]] for a complete and up-to-date list.
+  Please read the [[https://dev.gnupg.org/source/gnupg/browse/master/NEWS][NEWS file]]
+  for a complete and up-to-date list.
 
-  Note that this page ceased to be updated with the release of GnuPG 2.1.22 in July 2017.
+  Note that this page is deprecated and is not updated anymore since the release of
+  GnuPG 2.1.22 in July 2017.
 
 ** GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2017q3/000411.html][2.1.22]] released  (2017-07-28)
     :PROPERTIES:
