@@ -72,14 +72,14 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  3.1.15
-#+macro: gpg4win_date 2021-01-26
-#+macro: gpg4win_src_size 266234k
-#+macro: gpg4win_src_sha1 39813d69952abd50874c98cb4739bfb6b167ac30
-#+macro: gpg4win_src_sha2 3f04482b7f80ab5f4846d3fcfab45e825d2a506e9348ba6e266fe6cc44811081
-#+macro: gpg4win_exe_size 29239k
-#+macro: gpg4win_exe_sha1 fd822ac0a8b9e83fa5169bab69349f7c7d16f488
-#+macro: gpg4win_exe_sha2 58b4de192ce0f3a7f25766e96ec379a8f125e3a1e2bdb2519c185a03a0a4ed4c
+#+macro: gpg4win_ver  3.1.16
+#+macro: gpg4win_date 2021-06-11
+#+macro: gpg4win_src_size 266586k
+#+macro: gpg4win_src_sha1 61802ffce7218aab4224d26ab74a8deca8fae770
+#+macro: gpg4win_src_sha2 d74fd2ff4c5ee241c6a55cc60a10899ea29d8ca4c5a316fc98fec41ad49d19e1
+#+macro: gpg4win_exe_size 29430k
+#+macro: gpg4win_exe_sha1 cf91ad8618280d7f44257ec2e413aedfdcb18dea
+#+macro: gpg4win_exe_sha2 c499213ff3e14e93c3b245546994cc0e654ec267b40a188788665ae8f4e9f5ad
 
 
 #
