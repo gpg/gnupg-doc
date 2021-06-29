@@ -38,6 +38,9 @@
    under the terms of one of these licenses, indicate your decision by
    deleting the respective above paragraph.
 
+   The [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=artwork/gnupg-logo.svg][canonical version]] of the logo can be found in the GnuPG code
+   repository; see its [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=artwork/README][README]] file for details.
+
 ** Remarks
 
    For many years we maintained translation of these pages to French,
