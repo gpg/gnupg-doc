@@ -44,7 +44,8 @@ without taxes and banking fees.
 # | Stripe               |  fixme |                            |
 # |----------------------+--------+----------------------------|
 # |                      |  fixme |                            |
-We don't yet have the numbers for 2020
+We don't yet have all numbers for 2020.  We received 50000 USD from
+Facebook.
 
 
 # About 2019:\\
@@ -176,7 +177,6 @@ quarterly or yearly).  A detailed table can be found at this [[file:donations-by
   [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
   [[https://www.wauland.de][file:logos/whs-logo.png]]
   [[https://facebook.com][file:logos/facebook-06-2015-blue_x.png]]
-  [[https://stripe.com][file:logos/stripe-blue.png]]
   [[https://pep.foundation][file:logos/pep-green.png]]
 #  [[https://thebestvpn.com][file:logos/thebestvpn.png]]
 #+HTML: </div>
