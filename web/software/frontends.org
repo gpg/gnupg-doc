@@ -25,7 +25,7 @@
    - [[file:swlist.org::#cryptophane][Cryptophane]]
    - [[file:swlist.org::#gnupg-shell][GnuPG Shell]]
    - [[file:swlist.org::#gpa][GPA]]
-   - [[https://github.com/saturneric/GpgFrontend][GpgFrontend]]
+   - [[https://github.com/saturneric/GpgFrontend][GpgFrontend]] ([[https://gpgfrontend.pub][website]])
    - [[file:swlist.org::#jaro-mail][Jaro Mail]]
    - [[file:swlist.org::#kgpg][KGpg]]
    - [[https://apps.kde.org/kleopatra/][Kleopatra]]
