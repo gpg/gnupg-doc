@@ -64,6 +64,10 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.3.2 released (2021-08-24)
+
+We have done another release in the GnuPG 2.3 series.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q3/000462.html][more]]}
+
 ** GnuPG 2.3.1 released (2021-04-20)
 
 We have done the second release in the GnuPG 2.3 series.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q2/000459.html][more]]}
