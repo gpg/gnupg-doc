@@ -31,17 +31,17 @@
 #
 # The Git branch of the stable version:
 #
-#+macro: gnupg22_ver  2.2.31
-#+macro: gnupg22_date 2021-09-15
+#+macro: gnupg22_ver  2.2.32
+#+macro: gnupg22_date 2021-10-06
 #+macro: gnupg22_size 7043k
-#+macro: gnupg22_sha1 18104b919caf14d1ef17635262418f382f888d53
-#+macro: gnupg22_sha2 03eda09e8f9eaebab602057f3a8b908022a73999f5a31e580b12fcdf01fbebaf
+#+macro: gnupg22_sha1 81684626720c91060ae9920936c768df9fc8b2f6
+#+macro: gnupg22_sha2 b2571b35f82c63e7d278aa6a1add0d73453dc14d3f0854be490c844fca7e0614
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.31_20210915
-#+macro: gnupg22_w32_date 2021-09-15
+#+macro: gnupg22_w32_ver  2.2.32_20211006
+#+macro: gnupg22_w32_date 2021-10-06
 #+macro: gnupg22_w32_size 4395k
-#+macro: gnupg22_w32_sha1 abc56b365c4e9a93d0b55de72b631b1615b66628
-#+macro: gnupg22_w32_sha2 8dddf88026e7c9594c154ae249416697eb8f349a8ca107a1c6b36ececeb91e76
+#+macro: gnupg22_w32_sha1 4705ed62b21cda6b8314d9e48ad8d9de1801ee8d
+#+macro: gnupg22_w32_sha2 7d14476aab7316486005164d283f26efa52dfa02afab425afd54544c90f2dff8
 
 
 #
