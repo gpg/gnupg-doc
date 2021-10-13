@@ -64,6 +64,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.3.3 released (2021-10-12)
+
+GnuPG 2.3.3 has been released.  This version fixes a bug we introduced
+in 2.3.2 as well as a problem with Let's Encrypt certificates which
+inhibited the use of keyservers since October.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q4/000466.html][more]]}
+
 ** GnuPG 2.3.2 released (2021-08-24)
 
 We have done another release in the GnuPG 2.3 series.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q3/000462.html][more]]}
