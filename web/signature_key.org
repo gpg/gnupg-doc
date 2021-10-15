@@ -144,4 +144,4 @@ Releases done in the years 1998 to 2005 were signed by this key:
 #+END_EXAMPLE
 
 For reference a public key block with expired keys used to
-sign older releases can be found [[devel/old-signature-keys.asc][here]].
+sign older releases can be found [[https://gnupg.org/devel/old-signature-keys.asc][here]].
