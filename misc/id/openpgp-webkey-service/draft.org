@@ -157,8 +157,9 @@ a fixed length of 32 octets.
 
 There are two variants on how to form the request URI: The advanced
 and the direct method.  Implementations MUST first try the advanced
-method.  Only if the required sub-domain does not exist, they SHOULD
-fall back to the direct method.
+method.  Only if an address for the required sub-domain does not
+exist, they SHOULD fall back to the direct method.  A non-responding
+server does not mean that the fall back should be carried out.
 
 The advanced method requires that a sub-domain with the fixed name
 ~openpgpkey~ is created and queried.  The URI is constructed by
