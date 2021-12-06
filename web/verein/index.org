@@ -15,9 +15,9 @@ and Open Source software.
 The Verein was founded on February 8, 2017 by 7 active GnuPG
 developers.  Its registration number is /VR11482/ at /Amtsgericht
 Düsseldorf/.  The tax office Düsseldorf-Altstadt has confirmed the
-charitable state.  As of 2018-02-02 the Verein has 15 regular members
-represented by its board: Werner Koch (chairperson), Martin
-Gollowitzer (vice-chair) and Andre Heinecke (treasurer).
+charitable state.  As of 2019-02-04 the Verein has 15 regular members
+represented by its board: Werner Koch (chairperson), Bernhard
+Reiter (vice-chair) and Andre Heinecke (treasurer).
 
 ** Menu
 
