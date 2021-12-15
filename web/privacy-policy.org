@@ -164,7 +164,7 @@ information on the data stored about you, write to
 
 Werner Koch, =data-privacy at gnupg dot org= ([[file:share/data-privacy-key.asc][OpenPGP key]])\\
 g10 Code GmbH\\
-Hüttenstr. 61\\
+Bergstr. 3a\\
 40699 Erkrath\\
 Germany
 

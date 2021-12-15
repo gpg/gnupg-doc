@@ -11,7 +11,7 @@
   GnuPG and related free software.  See also this [[https://www.gnupg.org/blog/20141214-gnupg-and-g10.html][article]].
 
   g10 Code GmbH\\
-  Hüttenstr. 61\\
+  Bergstr. 3a\\
   D-40699 Erkrath\\
   Germany
 
