@@ -2098,7 +2098,7 @@ credible reports of any of the ciphers used in GnuPG having ever been
 successfully cryptanalyzed.
 
 If you mean, “have people figured out ways to obtain the plaintext
-anyway?”, the answer is an emphatic ‘yes.’ In [[http://news.cnet.com/8301-10784_3-9741357-7.html][a 2007 Drug Enforcement
+anyway?”, the answer is an emphatic ‘yes.’ In [[https://www.cnet.com/news/feds-use-keylogger-to-thwart-pgp-hushmail/][a 2007 Drug Enforcement
 Administration case]], a keylogger was installed on a suspect’s
 computer.
 
