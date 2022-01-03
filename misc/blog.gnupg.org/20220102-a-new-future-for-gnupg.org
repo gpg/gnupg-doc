@@ -67,7 +67,7 @@ Also technically published for longer, it became only last year widely
 known, that the legacy Chiasmus software may not anymore be used for
 restricted communication from this year on.  For the administration
 and also for the industry two option exist to migrate away from
-Chiasmus: the proprietary GreenBone software from /cryptovision GmbH/
+Chiasmus: the proprietary GreenShield software from /cryptovision GmbH/
 and our Open Source software /GnuPG VS-Desktop/.
 
 *** The rush towards GnuPG VS-Desktop
