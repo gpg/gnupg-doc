@@ -52,7 +52,7 @@ recognition of our product than by our legal name /g10 Code GmbH/.
 The software itself was re-branded as /GnuPG VS-Desktop^{\reg}/ and
 distributed as an MSI packet for Windows and as an AppImage for Linux.
 Except for customer specific configuration files /GnuPG VS-Desktop/ is
-and will always be Open Source under the GNU General Public License.
+and will always be Open Source software under the GNU General Public License.
 
 We also keep maintaining /Gpg4win/ as the community version.  This is
 based on the the same source code as /GnuPG VS-Desktop/ but comes with
@@ -99,7 +99,7 @@ mail encryption.  Our longer term plan is to equip all public agency
 workplaces with end-to-end encryption software - not only those with
 an immediate need for an approved VS-NfD solution.  This should also fit
 well into the announced goal of the new German government to foster
-the development of Open Source.
+the development of Open Source software.
 
 *** Kudos to all supporters
 
