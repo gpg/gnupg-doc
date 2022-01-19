@@ -127,7 +127,7 @@ eiInsGZ/+h5XYrpXTgA=
 -----END PGP PUBLIC KEY BLOCK-----
 #+END_EXAMPLE
 
-You may also download these keys from [[https://gnupg.com/signature_key.asc][here]].
+You may also download these keys from [[https://gnupg.org/signature_key.asc][here]].
 
 ** Former Signature Keys
 
