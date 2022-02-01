@@ -122,6 +122,14 @@
 #+macro: libgcrypt_sha1 1bccc8393482fa1953323ff429c6b5ba5676eb1a
 #+macro: libgcrypt_sha2 ea849c83a72454e3ed4267697e8ca03390aee972ab421e7df69dfe42b65caaf7
 #
+# We will probably wait for the 1.10.1 before we take 1.10 in public use.
+# xxx +macro: libgcrypt_branch LIBGCRYPT-1.10-BRANCH
+# xxx +macro: libgcrypt_ver  1.10.0
+# xxx +macro: libgcrypt_date 2022-02-01
+# xxx +macro: libgcrypt_size 3686k
+# xxx +macro: libgcrypt_sha1 363feb8187f6c59b6b10721af6a94558db8ec3af
+# xxx +macro: libgcrypt_sha2 6a00f5c05caa4c4acc120c46b63857da0d4ff61dc4b4b03933fa8d46013fae81
+#
 # The 1.8 LTS version.
 #
 #+macro: libgcrypt18_ver  1.8.8
