@@ -186,11 +186,11 @@
 #
 # NTBTLS
 #
-#+macro: ntbtls_ver  0.2.0
-#+macro: ntbtls_date 2020-08-27
-#+macro: ntbtls_size 340k
-#+macro: ntbtls_sha1 3bbd98e5cfff7ca7514ae600599f0e1c1f351566
-#+macro: ntbtls_sha2 649fe74a311d13e43b16b26ebaa91665ddb632925b73902592eac3ed30519e17
+#+macro: ntbtls_ver  0.3.0
+#+macro: ntbtls_date 2022-02-07
+#+macro: ntbtls_size 341k
+#+macro: ntbtls_sha1 aead827dd652f5f2cbfb32450cea504c284773da
+#+macro: ntbtls_sha2 d1d9c86fc31e8154657a4c01ec6da17628c75c0ea5d43388956305e3067c7d46
 
 
 #
