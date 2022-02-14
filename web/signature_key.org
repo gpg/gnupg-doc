@@ -10,7 +10,9 @@ tarballs.  Instructions on how to verify a signature can be found at
 [[file:download/integrity_check.org][integrity checking page]].
 
 The used signature keys are reported below. The keys are also signed
-by the long term keys of the respective owners.
+by the long term keys of the respective owners.  A document with the
+same information and a qualified digital signature of the project's
+founder is also available: [[https://gnupg.org/signature-key.pdf]]
 
 Current releases are signed by one or more of these keys:
 
@@ -33,7 +35,9 @@ Current releases are signed by one or more of these keys:
 #+END_EXAMPLE
 
 
-Here is a public key block with the above keys:
+Below is a public key block with the above keys; you may also download
+these keys from: [[https://gnupg.org/signature_key.asc]]
+
 
 # NB: If you update the keys, please also copy the block below also
 #     to the file signature_key.asc
@@ -127,7 +131,6 @@ eiInsGZ/+h5XYrpXTgA=
 -----END PGP PUBLIC KEY BLOCK-----
 #+END_EXAMPLE
 
-You may also download these keys from [[https://gnupg.org/signature_key.asc][here]].
 
 ** Former Signature Keys
 
