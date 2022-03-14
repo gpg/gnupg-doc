@@ -49,8 +49,8 @@
    - Come up with a meaningful short description of the bug and enter
      this into the /Title/ field.
 
-   - If you want to want to ask for a new feature or have another
-     wish, please indicate the in the /Priority/ field.  Bug should in
+   - If you want to ask for a new feature or have another
+     wish, please indicate this in the /Priority/ field.  Bug should in
      general be left at the default priority of /Needs Triage/ and you
      should not assign the bug to anyone if you want to get it fixed
      soon.
@@ -62,8 +62,8 @@
      \nbsp{}\\
      Make sure that you describe the bug as good as possible and try
      to come up with a minimal recipe on how to replicate the bug.  We
-     need to know the version of the software and if you are using a
-     non-released version the Git commit id.  Use the separate field
+     need to know the version of the software and, if you are using a
+     non-released version, the Git commit id.  Use the separate field
      /Version/ at the bottom of the page for this.  The type and
      version of your operating system is usually important, so please
      tell us.  In particular tell us if your problem occurs on a
@@ -96,7 +96,7 @@
      /External Link/ field.
 
    - The /Version/ field should be filled as described above.  If you
-     don't know the version leave it blank and describe what you know
+     don't know the version, leave it blank and describe what you know
      about the software in the /Description/ field.
 
    - If everything is as you want it, click the /Create New Task/
