@@ -244,8 +244,8 @@
 #
 # zlib (mirrored at our server)
 #
-#+macro: zlib_ver     1.2.8
-#+macro: zlib_sha1_gz a4d316c404ff54ca545ea71a27af7dbc29817088
+#+macro: zlib_ver     1.2.11
+#+macro: zlib_sha1_gz e6d119755acdf9104d7ba236b1242696940ed6dd
 
 #
 # bzip2 (mirrored and stripped down version)
