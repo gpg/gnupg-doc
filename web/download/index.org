@@ -140,6 +140,8 @@
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
    |           | 1.8   | 2024-12-31 (1) | 2017-07-18 |
    |           | 1.9   | 2024-03-31     | 2021-01-19 |
+   |           | 1.10  | tba            | 2022-02-01 |
+
 
    - /(1)/: Long Term Support; eol date likely to be prolonged
    - /(2)/: Legacy version; see remarks above.
