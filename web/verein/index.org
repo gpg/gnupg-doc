@@ -23,10 +23,9 @@ Reiter (vice-chair) and Andre Heinecke (treasurer).
 
 - [[file:members.org][Members]]
 - [[file:finances.org][Financial overview]]
-- {{{atgit(legal/constitution.de.pdf,constitution)}}} [German]
-- {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation]
-- {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}
-  [German]
+- [[https://gnupg.org/ftp/verein/constitution.de.pdf][Satzung]] [German]
+- [[https://gnupg.org/ftp/verein/constitution.en.pdf][Constitution]] [English translation]
+- [[https://gnupg.org/ftp/verein/founding-protocol-20170208.txt][Founding protocol]]  [German]
 - [[https://gnupg.org/ftp/verein/beitragsordnung.en.pdf][Membership fee regulations (English)]]  [[https://gnupg.org/ftp/verein/beitragsordnung.de.pdf][(German)]]
 
 
