@@ -152,17 +152,16 @@
 #
 # LIBGPG-ERROR (aka GPGRT)
 #
-#+macro: libgpg_error_ver  1.44
-#+macro: libgpg_error_date 2022-01-27
-#+macro: libgpg_error_size 990k
-#+macro: libgpg_error_sha1 c16ab473d1e558ba1712c77ace38bd03e467cbb0
-#+macro: libgpg_error_sha2 8e3d2da7a8b9a104dd8e9212ebe8e0daf86aa838cc1314ba6bc4de8f2d8a1ff9
-#+macro: gpgrt_ver  1.44
-#+macro: gpgrt_date 2022-01-27
-#+macro: gpgrt_size 990k
-#+macro: gpgrt_sha1 c16ab473d1e558ba1712c77ace38bd03e467cbb0
-#+macro: gpgrt_sha2 8e3d2da7a8b9a104dd8e9212ebe8e0daf86aa838cc1314ba6bc4de8f2d8a1ff9
-
+#+macro: libgpg_error_ver  1.45
+#+macro: libgpg_error_date 2022-04-07
+#+macro: libgpg_error_size 992k
+#+macro: libgpg_error_sha1 fe724ed37b4935964059a47b7c64d5f8246659d8
+#+macro: libgpg_error_sha2 570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26
+#+macro: gpgrt_ver  1.45
+#+macro: gpgrt_date 2022-04-07
+#+macro: gpgrt_size 992k
+#+macro: gpgrt_sha1 fe724ed37b4935964059a47b7c64d5f8246659d8
+#+macro: gpgrt_sha2 570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26
 
 
 #
@@ -178,11 +177,11 @@
 #
 # NTBTLS
 #
-#+macro: ntbtls_ver  0.3.0
-#+macro: ntbtls_date 2022-02-07
-#+macro: ntbtls_size 341k
-#+macro: ntbtls_sha1 aead827dd652f5f2cbfb32450cea504c284773da
-#+macro: ntbtls_sha2 d1d9c86fc31e8154657a4c01ec6da17628c75c0ea5d43388956305e3067c7d46
+#+macro: ntbtls_ver  0.3.1
+#+macro: ntbtls_date 2022-04-07
+#+macro: ntbtls_size 343k
+#+macro: ntbtls_sha1 15028002a4c15d47d6037f45637e5ebc73b2ebd1
+#+macro: ntbtls_sha2 8922181fef523b77b71625e562e4d69532278eabbd18bc74579dbe14135729ba
 
 
 #
