@@ -235,8 +235,13 @@
 #
 # zlib (mirrored at our server)
 #
-#+macro: zlib_ver     1.2.11
-#+macro: zlib_sha1_gz e6d119755acdf9104d7ba236b1242696940ed6dd
+# Signature made Mon 28 Mar 2022 04:34:47 AM CEST
+#                using DSA key 5ED46A6721D365587791E2AA783FCD8E58BCAFBA
+# Good signature from "Mark Adler <madler@alumni.caltech.edu>"
+#
+#+macro: zlib_ver     1.2.12
+#+macro: zlib_sha1_gz 207ba741d387e2c1607104cf0bd8cff27deb2605
+#+macro: zlib_sha2_gz 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
 
 #
 # bzip2 (mirrored and stripped down version)
