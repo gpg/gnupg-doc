@@ -25,8 +25,9 @@ very litigious.
    :CUSTOM_ID: trademarks
    :END:
 
-- Linux is a trademark of Linus Torvalds.
+- GnuPG Desktop and GnuPG VS-Desktop are trademarks of g10 Code GmbH.
 - GNU is a trademark of the Free Software Foundation.
+- Linux is a trademark of Linus Torvalds.
 - Macintosh, OS X, macOS, and Mac OS X are all trademarks of the Apple
   Corporation.
 - PGP is a trademark of Symantec Corporation.
