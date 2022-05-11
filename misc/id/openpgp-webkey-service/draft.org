@@ -291,10 +291,9 @@ Directory, she performs the following steps:
 
 6. The user sends the decrypted nonce back to the submission address
    as a confirmation that the private key is owned by her and that the
-   provider may now publish the key.  Although technically not
-   required, it is suggested that the mail to the provider is
-   encrypted.  The public key for this is retrieved using the key
-   lookup protocol described above.
+   provider may now publish the key.  The confirmation mail to the
+   provider MUST be encrypted using the provider's public key as
+   retrieved using the key lookup protocol described above.
 
 7. The provider receives the nonce, matches it with its database of
    pending confirmations and then publishes the key.  Finally the
@@ -348,16 +347,16 @@ message using the submission key of the provider for the
 signature.  The signed message MUST have two parts:
 
 The first part MUST have "text" as its Content-Type and can be used to
-explain the purpose of the mail.  For example it may point to this RFC
-and explain on how to manually perform the protocol.
+explain the purpose of the mail.  For example it may point to this
+specification and explain on how to manually perform the protocol.
 
-The second part MUST have "application/vnd.gnupg.wkd" if the protocol
-version of the server is 5 or later; without a known protocol version
-or a version less than 5, "application/vnd.gnupg.wks" MUST be used as its
-Content-Type and carry an OpenPGP encrypted message in ASCII Armor
-format.  The message MUST be encrypted to the target key and MUST NOT
-be signed.  After decryption a text file in the Web Key data format
-must be yielded.
+The second part MUST have a Content-Type of
+"application/vnd.gnupg.wkd" and carry an OpenPGP encrypted message in
+ASCII Armor format.  If the protocol version is unknown or less than 5
+the Content-Type "application/vnd.gnupg.wks" MUST be used for backward
+compatibility.  The message MUST be encrypted to the target key and
+MUST NOT be signed.  After decryption a text file in the Web Key data
+format must be yielded.
 
 That data format consists of name-value pairs with one name-value pair
 per LF or CR+LF terminated line.  Empty lines are allowed and will be
@@ -393,14 +392,14 @@ The receiver of that message is expected to verify the outer signature
 and disregard the entire message if it can't be verified or has not
 been signed by the key associated with the submission address.
 
-After the message as been verified the receiver decrypts the second part
-of the message, checks that the "fingerprint" matches the target key,
-checks that the "address" matches a User ID of the target key, and
-checks the other constrains of the request format.  If any constraint
-is not asserted, or the fingerprint or User ID do not match the target
-key, or there is no pending publication requests (i.e. a mail recently
-sent o the submission address), the user MAY be notified about this
-fake confirmation attempt.
+After the message has been verified the receiver decrypts the second
+part of the signed message, checks that the "fingerprint" matches the
+target key, checks that the "address" matches a User ID of the target
+key, and checks the other constrains of the request format.  If any
+constraint is not asserted, or the fingerprint or User ID do not match
+the target key, or there is no pending publication requests (i.e. a
+mail recently sent to the submission address), the user MAY be
+notified about this fake confirmation attempt.
 
 In other cases the confirmation request is legitimate and the MUA
 shall silently send a response as described in the next section.
@@ -434,14 +433,16 @@ submission address.
 
 The Content-Type used for the plaintext message MUST match the
 Content-Type of the request.  The format is the same as described
-above for the Confirmation Request.  The body must contain three
+above for the Confirmation Request.  The body must contain four
 name-value pairs in this order:
 
 - type :: The value must be "confirmation-response".
 
-- sender :: The value must match the mailbox part of the "From:"
-            address of this response.  Exactly one address MUST be
-            given.
+- sender :: The value is the value of the "sender" parameter from the
+            confirmation request.
+
+- address :: The value is the value of the "address" parameter from
+             the confirmation request.
 
 - nonce :: The value is the value of the "nonce" parameter from the
            confirmation request.
@@ -621,7 +622,7 @@ TiFZBA==
 
 ** Sample Messages
 
-The first message triggeres the publication requests.
+The first message triggers the publication requests.
 #+begin_example
 From: patrice.lumumba@example.net
 To: key-submission@example.net
@@ -717,7 +718,7 @@ KStCYAcPGPp3m7aWkfsPGThOVRhEXqaFFywfwSVEj1pdIRjDFA==
 --=-=01-wrzqued738dfx4x97u7y=-=--
 #+end_example
 
-The client decrypts the attachment as
+The client decrypts this PGP/MIME message as
 #+begin_example
 Content-Type: application/vnd.gnupg.wks
 Content-Transfer-Encoding: 8bit
@@ -740,7 +741,7 @@ address: patrice.lumumba@example.net
 nonce: f5pscz57zj6fk11wekk8gx4cmrb659a7
 #+end_example
 
-and sends it encrypted to the server
+and sends it PGP/MIME Combined signed and encrypted to the server
 #+begin_example
 From: patrice.lumumba@example.net
 To: key-submission@example.net
@@ -762,14 +763,17 @@ Content-Type: application/octet-stream
 
 -----BEGIN PGP MESSAGE-----
 
-hF4DUgLY5tvmW2sSAQdAnB1C3PMjS4AsGU0qaCqBdWQO5i6blWEyZrEsY+JZY1Qw
-ooNq7zdVWOHhL9LPGAALAgoL3Qfz+dN2u5QamSQ/LJ2c8M0XipNs3lqlNH63yQN1
-0sAmAc3W8xkwul+rf6OLK/gMi6WzM4fnUhd4D1LJGIJoNUN0l3636C7ecOt2lkMl
-5bVAYg/SyMT3ymyfQnvtiem2T5DSnPsS1g6n6QNXWvkqvX9yGxNsNDJEHTuGJB8k
-OJoRlfWQTEo6pgA89febWl1EdeM1pPLstQ2uZE8NPjXoY1nMxAlu+iPYsR41/4sg
-dqwOv5BPLh/GIat8hh9SPWCA9iKlgSQ/EIv5DpjQogEzpriT55dkgfvSVYIAcOdO
-ShZ91YKkcZffevdY72omqTk10a1SUXehPooIlRFmroDsi3VDaRKrUIo=
-=7uve
+hF4DUgLY5tvmW2sSAQdAlq98ugycHadQGRe0+055eGUzdQtORR+u5LuJU+oYXHkw
+4V1z0S1QPO9BWixHA62PtjAOShT2xN+1v8T2gq3mdgCEMCHX/Nj6INuu+HXF8o0D
+0sC5AfEwq24oKF/6Q8vb1L/KUzFeitnWBnxS1i9XONlG9FTpSGfBir9szqz3QtMu
+8Sma+X4g/i/rbO5ZtY9v0r+NCh0fY+fMj8Iaqw8IJUcUWcL2oz+GaHU+CIaJWUyk
+suqjw5Zw9WVPQ2nXHZTVOKPk4b8Y8f34GvoqP9ZyVFhZ+/9xcvE3fHOoZKeIK9Yi
+4Bxza2HvWRkkKc48Orf5AjK45Wm/G72m72d/KiYfzBm0W4T5QkVqRnX+vpoQc+bo
+thEE715ma9SnZMcY3fRcPnhjlDxDneB5DD7WNdiz+wZL0OiHW/kT8Eo4/OZnb72M
+t44hd8xB8wbfhz5/zmgmlG4IGGA4MomZyg7G/fo24xaIqkjgnJ1GryWaztNQM6Xx
+34kDLTF1fkjqmMZOtTEFKwC5dzrp1qb7B4ZWsFXC+bSLC5teaRajmOr4T5tXCFV7
+TL0gNBsg/bRBU6wmFDaOaJjleoTsh/7YNJaMsoiMx7NrHe+uVqaEbE4HsWU=
+=tlCO
 -----END PGP MESSAGE-----
 
 --=-=01-iacqg4og4pqz11a5cg1o=-=--
