@@ -35,11 +35,12 @@
 #+macro: gnupg22_sha1 25449f0417ff0011036b8e48217901222aef7c44
 #+macro: gnupg22_sha2 340bc255938971e6e729b3d9956fa2ef4db8215d77693bf300df2bb302498690
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.35_20220425
-#+macro: gnupg22_w32_date 2022-04-25
-#+macro: gnupg22_w32_size 4265k
-#+macro: gnupg22_w32_sha1 2eea3b0411fb44cd6cd3aa72c399a72298ce52dc
-#+macro: gnupg22_w32_sha2 530fd6ef1fe1182118a760a093f98b57d140aa81605ff2aa1525a998e123b0af
+#+macro: gnupg22_w32_ver  2.2.35_20220502
+#+macro: gnupg22_w32_date 2022-05-02
+#+macro: gnupg22_w32_size 4427k
+#+macro: gnupg22_w32_sha1 368ab29b253abc5afd46a40e87935176f30b7097
+#+macro: gnupg22_w32_sha2 7555787b17bbda42e3cdf489d4b003a6552a6f2c2cf9a452ea497f4cfe65c5f7
+
 
 
 #
