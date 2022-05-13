@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-13">
+     docName="draft-koch-openpgp-webkey-service-14">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -44,7 +44,7 @@
       </address>
     </author>
 
-    <date month="November" year="2021" />
+    <date month="May" year="2022" />
     <area>Security</area>
 
     <abstract>
@@ -780,6 +780,8 @@ TL0gNBsg/bRBU6wmFDaOaJjleoTsh/7YNJaMsoiMx7NrHe+uVqaEbE4HsWU=
 #+end_example
 
 
-* Changes Since -12
+* Changes Since -13
 
-- Clarification on when to use the fall back to the direct method.
+- Fixed description of the confiration response
+- Fixed an example to be signed+encrypted
+- Clarified some inconsistencies
