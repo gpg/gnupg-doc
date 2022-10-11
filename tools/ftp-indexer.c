@@ -962,6 +962,22 @@ parse_version_string (const char *s, int *major, int *minor, int *micro)
 }
 
 
+/* Return a pointer to the first timestamp digit.  A timestamp is
+ * expected to have this format "[12]yyymmddhhmm[ss]".  */
+static const char *
+is_timestamp (const char *string)
+{
+  const char *s;
+  int i;
+
+  if (!string || !(*string == '1' || *string == '2'))
+    return NULL;
+  for (i=0,s=string; digitp (*s); s++)
+    i++;
+  return (i == 12 || i == 14)? string : NULL;
+}
+
+
 /* Compare function for version strings.  */
 static int
 compare_version_strings (const char *a, const char *b)
@@ -979,7 +995,14 @@ compare_version_strings (const char *a, const char *b)
     b_major = b_minor = b_micro = 0;
 
   if (!a_plvl && !b_plvl)
-    return -1;  /* Put invalid strings at the end.  */
+    {
+      /* Put invalid strings at the end.  But first check whether they
+       * are both timestamps and use strcmp in this case. */
+      if ( (a_plvl = is_timestamp (a)) && (b_plvl = is_timestamp (b)))
+        return strcmp (a_plvl, b_plvl);
+
+      return -1;
+    }
   if (a_plvl && !b_plvl)
     return 1;
   if (!a_plvl && b_plvl)
@@ -1002,7 +1025,7 @@ compare_version_strings (const char *a, const char *b)
 
   if (opt_reverse_ver && !opt_reverse)
     {
-      /* We may only compare up to the next dot and the switch back to
+      /* We may only compare up to the next dot and then switch back to
        * regular order.  */
       for (; *a_plvl && *b_plvl; a_plvl++, b_plvl++)
         {
