@@ -29,17 +29,17 @@
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.39
-#+macro: gnupg22_date 2022-09-02
-#+macro: gnupg22_size 7119k
-#+macro: gnupg22_sha1 b0ae1a364cd22f96311bc2ef814a4c059475294c
-#+macro: gnupg22_sha2 ab74db6685f026d7c0a10b527ecddecd608606a1691d15fda5d0a7f7d27e4c2f
+#+macro: gnupg22_ver  2.2.40
+#+macro: gnupg22_date 2022-10-10
+#+macro: gnupg22_size 7130k
+#+macro: gnupg22_sha1 2a8b52d08cc78e4ebeb07ec2fc8d95e290a3c4a7
+#+macro: gnupg22_sha2 1164b29a75e8ab93ea15033300149e1872a7ef6bdda3d7c78229a735f8204c28
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.39_20220902
-#+macro: gnupg22_w32_date 2022-09-02
-#+macro: gnupg22_w32_size 4460k
-#+macro: gnupg22_w32_sha1 05c14d5f6fd539231765d421579cee9e1b2038f2
-#+macro: gnupg22_w32_sha2 60202d442b4def07ed7d45b5b40f9fccb9a43fda610b55f19dd0cfe8bafd020c
+#+macro: gnupg22_w32_ver  2.2.40_20221010
+#+macro: gnupg22_w32_date 2022-10-10
+#+macro: gnupg22_w32_size 4464k
+#+macro: gnupg22_w32_sha1 8db42f87e95df6b97c530e5f3cb4760a86dd3cb9
+#+macro: gnupg22_w32_sha2 d8d0b47cccd406e288b86fcd08123caf4ba450167ce774f6432dfa4f3032af9b
 
 
 
