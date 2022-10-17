@@ -8,6 +8,127 @@ On this page you'll find all the news of previous years in reverse
 chronological order.  News for the current year are found at the [[index][main
 page]].
 
+** GnuPG 2.3.3 released (2021-10-12)
+
+GnuPG 2.3.3 has been released.  This version fixes a bug we introduced
+in 2.3.2 as well as a problem with Let's Encrypt certificates which
+inhibited the use of keyservers since October.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q4/000466.html][more]]}
+
+** GnuPG 2.3.2 released (2021-08-24)
+
+We have done another release in the GnuPG 2.3 series.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q3/000462.html][more]]}
+
+** GnuPG 2.3.1 released (2021-04-20)
+
+We have done the second release in the GnuPG 2.3 series.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q2/000459.html][more]]}
+
+** Libgcrypt 1.9.3 released (2021-02-19)
+
+A new Libgcrypt version is available.  {[[https://dev.gnupg.org/T5305][more]]}
+
+** GnuPG 2.3.0 released (2021-04-07)
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.3.0.  This release marks the start of public testing
+releases eventually leading to a new stable version 2.4.
+
+See the [[https://lists.gnupg.org/pipermail/gnupg-announce/2021q2/000458.html][full announcement]]
+
+** Libgcrypt 1.9.2 released (2021-02-17)
+
+This version fixes a few build problems in 1.9.1.  See
+https://lists.gnupg.org/pipermail/gnupg-announce/2021q1/000457.html
+
+** Libgcrypt 1.9.1 released (2021-01-29)                          :important:
+
+Unfortunately we introduced a severe bug in Libgcrypt 1.9.0 released
+10 days ago.  If you already started to use version 1.9.0 please
+*update immediately to 1.9.1*.
+
+** Libgcrypt 1.9 is the new stable branch (2021-01-19)
+
+Although we will keep on maintaining the 1.8 branch, the new stable
+branch is now 1.9.  Version 1.9.0 comes with a lot of performance
+improvements and a few other new features.  It provides full API and
+ABI compatibility to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q1/000453.html][more]]}
+
+** GnuPG 2.2.27 released (2021-01-11)
+
+GnuPG version 2.2.27 has been released today.  This is a maintenance
+release with a few minor bug fixes.   {[[https://lists.gnupg.org/pipermail/gnupg-announce/2021q1/000453.html][more]]}
+
+** GnuPG 2.2.26 released (2020-12-21)
+
+GnuPG version 2.2.26 has been released today.  This is a maintenance
+release with improved support for LDAP keyservers and Active
+Directory.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000451.html][more]]}
+
+** GnuPG 2.2.25 released (2020-11-23)
+
+GnuPG version 2.2.25 fixes a small regression in 2.2.24. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000450.html][more]]}
+
+** GnuPG 2.2.24 released (2020-11-17)
+
+GnuPG version 2.2.24 has been released today.  This is a maintenance
+release fixing some longstanding bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q4/000449.html][more]]}
+
+** GnuPG 2.2.23 released (2020-09-03)                             :important:
+
+GnuPG version 2.2.23 has been released today.  This version fixes a
+*critical security bug* in 2.2.21 and 2.2.22 ({{{CVE(2020-25125)}}}).
+
+Please follow the instructions from the [[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000448.html][announcement mail]] and update
+affected installations.  See also our bug entry [[https://dev.gnupg.org/T5050][#5050]].
+
+** GnuPG 2.2.22 released (2020-08-27)
+
+[Note: Do not use this release - use 2.2.23 instead.]
+
+GnuPG version 2.2.22 has been released today.  This is a maintenance
+release with a some minor changes.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000447.html][more]]}
+
+
+** GnuPG 2.2.21 released (2020-07-09)
+
+[Note: Do not use this release - use 2.2.23 instead.]
+
+After the release of GnuPG [[https://lists.gnupg.org/pipermail/gnupg-announce/2020q1/000444.html][2.2.20]] back in March it is now the time to
+get collected fixes from the last months out: GnuPG version 2.2.21 has
+been released today.  This is a maintenance release with a some minor
+changes.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000446.html][more]]}
+
+** Libgcrypt 1.8.6 released (2020-07-06)
+
+Nearly a year passed since the last release and so the time is ripe
+for new maintenance release: [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.6 is now
+available. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2020q3/000445.html][more]]}
+
+** Gpg4win fully approved for EU RESTRICTED.
+
+After about a year of tweaking details of the approval, Gpg4win and
+GnuPG are now approved for EU RESTRICTED communication (VS-NfD).  This
+approvals covers the protocols S/MIME and OpenPGP (public-key and
+symmetric-only) with hard- and soft-tokens.  Our commercial branch
+[[https://gnupg.com][GnuPG.com]] released a [[https://gnupg.com/20200107-freigabe-vs-nfd.html][press notice]] (in German) today.
+
+
+** GnuPG 2.2.19 released (2019-12-07)
+
+We are pleased to announce the availability of GnuPG version 2.2.19.
+This version fixes a regression introduced with the last release.
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q4/000443.html][more]]}
+
+** GnuPG 2.2.18 released (2019-11-25)
+
+We are pleased to announce the availability of GnuPG version 2.2.18.
+This is maintenance release to fix a couple of minor bugs and provide
+a few feature updates.  This release also retires the use of SHA-1 key
+signatures created since this year. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q4/000442.html][more]]} ([[https://lists.gnupg.org/pipermail/gnupg-announce/2019q4/000443.html][see also]])
+
+** Libgcrypt 1.8.5 released (2019-08-29)
+
+If you care about local site-channel attacks on ECDSA you may want to
+update to [[file:software/libgcrypt/index.org][Libgcrypt]] version 1.8.5. {{{CVE(CVE-2019-13627)}}} {[[https://lists.gnupg.org/pipermail/gnupg-announce/2019q3/000440.html][more]]}
 ** GnuPG 2.2.17 released (2019-07-09)
 
 We are pleased to announce the availability of GnuPG version 2.2.17.
