@@ -3,9 +3,10 @@
 #+STARTUP: showall
 #+AUTHOR: g10 Code GmbH
 #+DATE: 2022-10-17
-#+TITLE: Security Advisory for Libksba/GnuPG (GnuPG-bug-id: 6230)
+#+TITLE: Security Advisory for Libksba/GnuPG (CVE-2022-3515)
 
 #+html: <div class="urgent"><p>Security Advisory for Libksba / GnuPG</p></div>
+#+Latex: \enlargethispage{2cm}
 
 ** Integer Overflow in LibKSBA / GnuPG
 
@@ -81,7 +82,7 @@ If you see a version number of 1.6.2 or newer, you got the fix.
 *** CVE
 
 - GnuPG-bug-id :: 6230 (https://dev.gnupg.org/T6230)
-- CVE  :: Not yet assigned.
+- CVE  ::  CVE-2022-3515
 - CVSS :: 8.1: AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
 - Other-IDs  :: ZDI-CAN-18927, ZDI-CAN-18928, ZDI-CAN-18927
 
@@ -131,6 +132,8 @@ all the usual consequences.  The code has been there for ages and it
 seems that the audits missed this because, well, there is some
 overflow check and a too brief check may have only noticed that the
 memcpy if fine.
+
+#+LaTeX: \newpage
 
 The fix for this is easy because we can check for an overflow right
 away in the parser.  Thus /_ksba_ber_read_tl/ finally does this
