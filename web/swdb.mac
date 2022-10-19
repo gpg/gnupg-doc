@@ -6,6 +6,7 @@
 #
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
 #+macro: ftp_loc_base  /ftp/gcrypt
+#+macro: gpgcom_base   https://download.gnupg.com/files
 
 #
 # GnuPG-2.4
@@ -83,14 +84,14 @@
 #
 # GnuPG-Desktop
 #
-#+macro: gnupgdesk_ver  2.3.8
-#+macro: gnupgdesk_date 2022-10-17
-#+macro: gnupgdesk_src_size 210M
-#+macro: gnupgdesk_src_sha1 8d44abedc71f9b07610f5ad11dffe08c207f40b4
-#+macro: gnupgdesk_src_sha2 56bd3901dee698b48f01dcd368193d2de235a7f18175df39cf0a83923d97a7e3
+#+macro: gnupgdesk_ver  2.3.8.0
+#+macro: gnupgdesk_date 2022-10-19
+#+macro: gnupgdesk_src_size 208M
+#+macro: gnupgdesk_src_sha1 e009badda5033943e026de9923e3f2bb56d6a12d
+#+macro: gnupgdesk_src_sha2 b2ea14561d413f72e520e0fe37fb739fe359b0aaff381e7ea1940566c7708d20
 #+macro: gnupgdesk_ai_size 56M
-#+macro: gnupgdesk_ai_sha1 f6875a5b1e6d819ca6e61ccc58cfd4acafde8056
-#+macro: gnupgdesk_ai_sha2 4395510817a90ed322d1e82789eb311f9b4220bc93927f1b26cce0e4b3699877
+#+macro: gnupgdesk_ai_sha1 7651072d7cecedb38b55c533544507b73e770934
+#+macro: gnupgdesk_ai_sha2 98c07cceedb38ded65175dc6885cb85a3f93ec0811409d61dd25508f7e31ad2a
 
 #
 # GPA
