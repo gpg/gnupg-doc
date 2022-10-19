@@ -38,7 +38,7 @@
    |                 | <l>                    |                         |                      <r> |                                                                                                        |                                                                                                            |
    | [[../software/index.org][GnuPG]]           | {{{gnupg24_ver}}}      | {{{gnupg24_date}}}      |       {{{gnupg24_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | [[../software/index.org][GnuPG]] (LTS)     | {{{gnupg22_ver}}}      | {{{gnupg22_date}}}      |       {{{gnupg22_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
-   | GnuPG Desktop   | {{{gnupgdesk_ver}}}    | {{{gnupgdesk_date}}}    | {{{gnupgdesk_src_size}}} | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz                          | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz.sig{{{ftpclose}}}            |
+   | GnuPG Desktop   | {{{gnupgdesk_ver}}}    | {{{gnupgdesk_date}}}    | {{{gnupgdesk_src_size}}} | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz{{{ftpclose}}}            | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz.sig{{{ftpclose}}}            |
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/libgpg-error/index.org][Libgpg-error]]    | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} |  {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
    | [[../software/libgcrypt/index.org][Libgcrypt]]       | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |     {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
@@ -61,14 +61,14 @@
 
    Remarks:
 
-   - /Pinentry/ is a collection of passphrase entry dialogs which is
-     required for almost all usages of GnuPG.
-
    - /GnuPG Desktop^{\reg}/ is an AppImage for Linux featuring the
      current GnuPG version and Kleopatra, its advanced graphical user
      interface. This is only the source code; for the actual AppImage
      see below.  This AppImage can be used on almost all 64bit x86
      Linux versions.
+
+   - /Pinentry/ is a collection of passphrase entry dialogs which is
+     required for almost all usages of GnuPG.
 
    - /GPGME/ is the standard library to access GnuPG functions from
      programming languages.
@@ -99,7 +99,7 @@
    | OS      | Where              | Description                                              |
    |---------+--------------------+----------------------------------------------------------|
    |         | <18>               |                                                          |
-   | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpclose}}}   | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
+   | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpcloseS}}}  | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
    | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/                 |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/                 |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/                         |
