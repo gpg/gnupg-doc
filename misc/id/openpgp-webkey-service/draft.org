@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-14">
+     docName="draft-koch-openpgp-webkey-service-15">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -44,7 +44,7 @@
       </address>
     </author>
 
-    <date day="13" month="May" year="2022" />
+    <date day="14" month="November" year="2022" />
     <area>Security</area>
 
     <abstract>
@@ -481,7 +481,8 @@ Currently defined keywords are:
 - dane-only :: The mail server provider does not run a Web Key
                  Directory but only an OpenPGP DANE service.  The Web
                  Key Directory Update protocol is used to update the
-                 keys for the DANE service.
+                 keys for the DANE service.  The use of this keyword
+               is deprecated.
 
 - auth-submit :: The submission of the mail to the server is done
                    using an authenticated connection.  Thus the
@@ -780,8 +781,6 @@ TL0gNBsg/bRBU6wmFDaOaJjleoTsh/7YNJaMsoiMx7NrHe+uVqaEbE4HsWU=
 #+end_example
 
 
-* Changes Since -13
+* Changes Since -14
 
-- Fixed description of the confiration response
-- Fixed an example to be signed+encrypted
-- Clarified some inconsistencies
+- Deprectated dane-only keyword.
