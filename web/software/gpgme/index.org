@@ -7,18 +7,19 @@
   /GnuPG Made Easy/ (GPGME) is a library designed to make access to
   GnuPG easier for applications.  It provides a High-Level Crypto API
   for encryption, decryption, signing, signature verification and key
-  management. Currently it uses GnuPG as its backend but the API isn't
-  restricted to this engine; in fact we have already developed a
-  backend for CMS (S/MIME).
+  management.  Currently it uses GnuPG's OpenPGP backend as the
+  default, but the API isn't restricted to this engine.  We have, in
+  fact, already developed a backend for CMS (S/MIME).
 
   Because the direct use of GnuPG from an application can be a
   complicated programming task, it is suggested that all software
   should try to use GPGME instead.  This way bug fixes or improvements
   can be done at a central place and every application benefits from
-  this.
+  this.  Furthermore, there is no guarentee that any particular
+  command line option will remain exactly the same at any given point
 
   Especially authors of @@html:<abbr title="Mail User Agent (mail
-  reader">@@MUAs@@html:</abbr>@@ should consider to use GPGME.
+  reader">@@MUAs@@html:</abbr>@@ should consider using GPGME.
 
   See [[../../download/index.org::#gpgme][download]] section to download the latest tarball.  The manual can
   be read [[https://www.gnupg.org/documentation/manuals/gpgme/][here]].  The current version is {{{gpgme_ver}}}.

@@ -17,3 +17,9 @@
 #+macro: end_chksum    @@html:</pre>@@
 
 #+macro: twodashes     @@html:--@@
+
+# Org rendering of links with an included '=' is broken.  Thus we use
+# a macro here.
+#+macro: CVE [[https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-$1][CVE-$1]]
+
+# eof

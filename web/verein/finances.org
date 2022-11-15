@@ -54,6 +54,11 @@ and other opportunities.
 |------------+---------+--------+-----------+--------------------------|
 | 2018-01-16 | 1000.00 |        | 158900.38 | Donation: German company |
 
+FIXME: Add missing
+
+** Transactions in 2019
+
+As of 2019-04-11 we also own 1.2356 confirmed BTC.
 
 
 * Annual Accounts

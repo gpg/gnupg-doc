@@ -17,15 +17,6 @@
   provides links to the location of the files on the primary server
   only.
 
-#+BEGIN_HTML
-  <div class="buttonbox">
-    <form action="/cgi-bin/procdonate.cgi" method="POST">
-      <input type="submit" class="donate-button" value="Donate" />
-    </form>
-  </div>
-  <div style="clear: both"></div>
-#+END_HTML
-
 
 ** Source code releases
 
@@ -40,37 +31,49 @@
 
    The table lists the different GnuPG packages, followed by required
    libraries, required tools, optional software, and legacy versions
-   of GnuPG.
+   of GnuPG.  For end-of-life dates see further down.
 
-   | Name         | Version                | Date                    |                    Size | Tarball                                                                                                | Signature                                                                                                  |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   |              | <l>                    |                         |                     <r> |                                                                                                        |                                                                                                            |
-   | [[../software/index.org][GnuPG]]        | {{{gnupg22_ver}}}      | {{{gnupg22_date}}}      |      {{{gnupg22_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | [[../software/libgpg-error/index.org][Libgpg-error]] | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
-   | [[../software/libgcrypt/index.org][Libgcrypt]]    | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |    {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
-   | [[../software/libksba/index.org][Libksba]]      | {{{libksba_ver}}}      | {{{libksba_date}}}      |      {{{libksba_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
-   | [[../software/libassuan/index.org][Libassuan]]    | {{{libassuan_ver}}}    | {{{libassuan_date}}}    |    {{{libassuan_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
-   | [[../software/ntbtls/index.org][ntbTLS]]       | {{{ntbtls_ver}}}       | {{{ntbtls_date}}}       |       {{{ntbtls_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2{{{ftpclose}}}                   | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2.sig{{{ftpclose}}}                   |
-   | [[../software/npth/index.org][nPth]]         | {{{npth_ver}}}         | {{{npth_date}}}         |         {{{npth_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/npth/npth-{{{npth_ver}}}.tar.bz2{{{ftpclose}}}                         | {{{ftpopen}}}{{{ftp_loc_base}}}/npth/npth-{{{npth_ver}}}.tar.bz2.sig{{{ftpclose}}}                         |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | Pinentry     | {{{pinentry_ver}}}     | {{{pinentry_date}}}     |     {{{pinentry_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}             | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}}             |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | [[../software/gpgme/index.org][GPGME]]        | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |        {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
-   | [[../software/gpa/index.org][GPA]]          | {{{gpa_ver}}}          | {{{gpa_date}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
-   | GnuPG 1.4    | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
-   |--------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | Name            | Version                | Date                    |                     Size | Tarball                                                                                                | Signature                                                                                                  |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   |                 | <l>                    |                         |                      <r> |                                                                                                        |                                                                                                            |
+   | [[../software/index.org][GnuPG]]           | {{{gnupg24_ver}}}      | {{{gnupg24_date}}}      |       {{{gnupg24_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
+   | [[../software/index.org][GnuPG]] (LTS)     | {{{gnupg22_ver}}}      | {{{gnupg22_date}}}      |       {{{gnupg22_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
+   | GnuPG Desktop   | {{{gnupgdesk_ver}}}    | {{{gnupgdesk_date}}}    | {{{gnupgdesk_src_size}}} | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz{{{ftpclose}}}            | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz.sig{{{ftpclose}}}            |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | [[../software/libgpg-error/index.org][Libgpg-error]]    | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} |  {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
+   | [[../software/libgcrypt/index.org][Libgcrypt]]       | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |     {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
+   | [[../software/libgcrypt/index.org][Libgcrypt]] (LTS) | {{{libgcrypt18_ver}}}  | {{{libgcrypt18_date}}}  |   {{{libgcrypt18_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2{{{ftpclose}}}        | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
+   | [[../software/libksba/index.org][Libksba]]         | {{{libksba_ver}}}      | {{{libksba_date}}}      |       {{{libksba_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
+   | [[../software/libassuan/index.org][Libassuan]]       | {{{libassuan_ver}}}    | {{{libassuan_date}}}    |     {{{libassuan_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
+   | [[../software/ntbtls/index.org][ntbTLS]]          | {{{ntbtls_ver}}}       | {{{ntbtls_date}}}       |        {{{ntbtls_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2{{{ftpclose}}}                   | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2.sig{{{ftpclose}}}                   |
+   | [[../software/npth/index.org][nPth]]            | {{{npth_ver}}}         | {{{npth_date}}}         |          {{{npth_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/npth/npth-{{{npth_ver}}}.tar.bz2{{{ftpclose}}}                         | {{{ftpopen}}}{{{ftp_loc_base}}}/npth/npth-{{{npth_ver}}}.tar.bz2.sig{{{ftpclose}}}                         |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | Pinentry        | {{{pinentry_ver}}}     | {{{pinentry_date}}}     |      {{{pinentry_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2{{{ftpclose}}}             | {{{ftpopen}}}{{{ftp_loc_base}}}/pinentry/pinentry-{{{pinentry_ver}}}.tar.bz2.sig{{{ftpclose}}}             |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | [[../software/gpgme/index.org][GPGME]]           | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |         {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
+   | [[../software/scute/index.org][Scute]]           | {{{scute_ver}}}        | {{{scute_date}}}        |         {{{scute_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
+   | [[../software/gpa/index.org][GPA]]             | {{{gpa_ver}}}          | {{{gpa_date}}}          |           {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | GnuPG 1.4       | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |        {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
+   |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
 
    {{{check_sig_note}}}
 
    Remarks:
+
+   - /GnuPG Desktop^{\reg}/ is an AppImage for Linux featuring the
+     current GnuPG version and Kleopatra, its advanced graphical user
+     interface. This is only the source code; for the actual AppImage
+     see below.  This AppImage can be used on almost all 64bit x86
+     Linux versions.
 
    - /Pinentry/ is a collection of passphrase entry dialogs which is
      required for almost all usages of GnuPG.
 
    - /GPGME/ is the standard library to access GnuPG functions from
      programming languages.
+
+   - /Scute/ is a PKCS#11 provider on top of GnuPG.
 
    - /GPA/ is a graphical frontend to GnuPG.
 
@@ -93,20 +96,54 @@
    also that some of them apply security patches on top of the
    standard versions but keep the original version number.
 
-   | OS      | Where              | Description                              |
-   |---------+--------------------+------------------------------------------|
-   |         | <18>               |                                          |
-   | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/ |
-   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg22_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/ |
-   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/         |
-   | OS X    | [[https://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project      |
-   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                    |
-   | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG is part of Debian                  |
-   | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS            |
-   | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG framework               |
-   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnuPG 1.4 to OpenVMS           |
-   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | A port of GnuPG to RISC OS               |
-   |---------+--------------------+------------------------------------------|
+   | OS      | Where              | Description                                              |
+   |---------+--------------------+----------------------------------------------------------|
+   |         | <18>               |                                                          |
+   | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpcloseS}}}  | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
+   | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/                 |
+   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/                 |
+   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/                         |
+   | OS X    | [[https://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project                      |
+   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                                    |
+   | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG is part of Debian                                  |
+   | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS                            |
+   | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG framework                               |
+   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnuPG 1.4 to OpenVMS                           |
+   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | A port of GnuPG to RISC OS                               |
+   |---------+--------------------+----------------------------------------------------------|
 
+
+** End-of-life announcements
+   :PROPERTIES:
+   :CUSTOM_ID: end-of-life
+   :END:
+
+   We announce the end-of-life date for a current stable version at
+   the time a new stable version is released.  We maintain old
+   branches for at least two years.  For GnuPG 2.2 we consider 2.1.0
+   as the birth of this new stable branch.  For most other packages we
+   don't maintain branches and thus there is no end-of-life; always
+   use the latest version.
+
+   | Package   | Ver.  | End-of-life    | Birth      |
+   |-----------+-------+----------------+------------|
+   |           | <l>   | <l>            | <l>        |
+   | GnuPG     | +1.0+ | 2002-09-07     | 1999-09-07 |
+   |           | +1.2+ | 2005-01-01     | 2002-09-21 |
+   |           | 1.4   | none (2)       | 2004-12-16 |
+   |           | +2.0+ | 2017-12-31     | 2006-11-11 |
+   |           | 2.2   | 2024-12-31 (1) | 2014-11-06 |
+   |           | 2.3   | tba            | 2021-04-07 |
+   | Libgcrypt | +1.5+ | 2016-12-31     | 2011-06-29 |
+   |           | +1.6+ | 2017-06-30     | 2013-12-16 |
+   |           | +1.7+ | 2019-06-30     | 2016-04-15 |
+   |           | 1.8   | 2024-12-31 (1) | 2017-07-18 |
+   |           | 1.9   | 2024-03-31     | 2021-01-19 |
+   |           | 1.10  | tba            | 2022-02-01 |
+
+
+   - /(1)/: Long Term Support; eol date likely to be prolonged
+   - /(2)/: Legacy version; see remarks above.
+   - /tba/: To be announced.
 
 # eof #

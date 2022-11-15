@@ -14,3 +14,9 @@
   known as [[https://tls.mbed.org/][mbedTLS]]) it is pretty young and NOT WELL TESTED.
 
   See the [[../../download/index.org::ntbtls][download]] section for the latest tarball.
+
+  The development takes place in a Git repo:
+#+BEGIN_EXAMPLE
+   git clone git://git.gnupg.org/ntbtls.git
+#+END_EXAMPLE
+  For more information see our [[../../download/git.org][Git page]].

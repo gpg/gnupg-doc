@@ -590,6 +590,14 @@ sub check_donation ()
         $anyerr = 1;
     }
 
+    # Stripe payments are currently disabled.  The web forms have been
+    # changed but we need to make sure that no direct CGI calls get
+    # through.
+    if ( $paytype eq "cc" ) {
+        $errdict{"paytype"} = 'Credit card payments are currently not possible.';
+        $anyerr = 1;
+    }
+
     # SEPA credit transfers are only possible in Euro.
     # (yes, this may overwrite an earlier error message).
     if ( $paytype eq "se" and $currency ne "EUR" ) {

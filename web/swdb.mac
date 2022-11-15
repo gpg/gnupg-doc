@@ -6,21 +6,42 @@
 #
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
 #+macro: ftp_loc_base  /ftp/gcrypt
+#+macro: gpgcom_base   https://download.gnupg.com/files
+
+#
+# GnuPG-2.4
+#
+# The Git branch of this version:
+#+macro: gnupg_branch master
+#
+#+macro: gnupg24_ver  2.3.8
+#+macro: gnupg24_date 2022-10-13
+#+macro: gnupg24_size 7465k
+#+macro: gnupg24_sha1 1f31b7b4c9c9adad97f94ea3acf1aa64c0424bcc
+#+macro: gnupg24_sha2 540b7a40e57da261fb10ef521a282e0021532a80fd023e75fb71757e8a4969ed
+#+macro: gnupg24_branch  STABLE-BRANCH-2-4
+#+macro: gnupg24_w32_ver  2.3.8_20221013
+#+macro: gnupg24_w32_date 2022-10-13
+#+macro: gnupg24_w32_size 4797k
+#+macro: gnupg24_w32_sha1 6cfabadbaf15a27988a11e811e9eabb20077b4ff
+#+macro: gnupg24_w32_sha2 ef179c223990f9dfff2b1e6e9f7468908e0d08b381b3abded2471c29faad234e
+
 
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.6
-#+macro: gnupg22_date 2018-04-09
-#+macro: gnupg22_size 6450k
-#+macro: gnupg22_sha1 295298debcc2c12f02a2f2fdf04aecb6d6aae396
-#+macro: gnupg22_sha2 e64d8c5fa2d05938a5080cb784a98ac21be0812f2a26f844b18f0d6a0e711984
+#+macro: gnupg22_ver  2.2.40
+#+macro: gnupg22_date 2022-10-10
+#+macro: gnupg22_size 7130k
+#+macro: gnupg22_sha1 2a8b52d08cc78e4ebeb07ec2fc8d95e290a3c4a7
+#+macro: gnupg22_sha2 1164b29a75e8ab93ea15033300149e1872a7ef6bdda3d7c78229a735f8204c28
 #+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.6_20180409
-#+macro: gnupg22_w32_date 2018-04-09
-#+macro: gnupg22_w32_size 3837k
-#+macro: gnupg22_w32_sha1 c9fe66788ea40bc57a189aa13e7c83add9baec40
-#+macro: gnupg22_w32_sha2 5d426b19d9cc3d7d3c0db0dfb58af1b6a36f4ea1cfd55901bb6864e865fcccc6
+#+macro: gnupg22_w32_ver  2.2.40_20221010
+#+macro: gnupg22_w32_date 2022-10-10
+#+macro: gnupg22_w32_size 4464k
+#+macro: gnupg22_w32_sha1 8db42f87e95df6b97c530e5f3cb4760a86dd3cb9
+#+macro: gnupg22_w32_sha2 d8d0b47cccd406e288b86fcd08123caf4ba450167ce774f6432dfa4f3032af9b
+
 
 
 #
@@ -37,81 +58,100 @@
 #
 # GnuPG-1
 #
-#+macro: gnupg1_ver  1.4.22
-#+macro: gnupg1_date 2017-07-19
-#+macro: gnupg1_size 3658k
-#+macro: gnupg1_sha1 4bad84fba712626cbbd5adf20988788028c5a5a6
-#+macro: gnupg1_sha2 9594a24bec63a21568424242e3f198b9d9828dea5ff0c335e47b06f835f930b4
+#+macro: gnupg1_ver  1.4.23
+#+macro: gnupg1_date 2018-06-11
+#+macro: gnupg1_size 3661k
+#+macro: gnupg1_sha1 13747486ed5ff707f796f34f50f4c3085c3a6875
+#+macro: gnupg1_sha2 c9462f17e651b6507848c08c430c791287cd75491f8b5a8b50c6ed46b12678ba
 #
-#+macro: gnupg1_w32cli_ver  1.4.22
-#+macro: gnupg1_w32cli_size 2372k
-#+macro: gnupg1_w32cli_sha1 27b8069872d6d2b271222ffb9322dbd6197b0b89
+#+macro: gnupg1_w32cli_ver  1.4.23
+#+macro: gnupg1_w32cli_size 2376k
+#+macro: gnupg1_w32cli_sha1 d4c9962179d36a140be72c34f34e557b56c975b5
 
 
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  3.1.0
-#+macro: gpg4win_date 2018-04-13
-#+macro: gpg4win_src_size 5292k
-#+macro: gpg4win_src_sha1 d0a0c7665d4bc724a5f1a83763c526754be47024
-#+macro: gpg4win_src_sha2 6d697372ec4c75a29c6daa6aca00060455825966c079efac6370140929b2c4f8
-#+macro: gpg4win_exe_size 27592k
-#+macro: gpg4win_exe_sha1 fb9f39199d7b096d1397dad4aa0719de5ff05b31
-#+macro: gpg4win_exe_sha2 a416aca375a80eada7edc69efdf3757988310a2f1723cd6190d9e3113d787301
-#+macro: gpg4win_isrc_size 222756k
-#+macro: gpg4win_isrc_sha1 23e9a6bc7fb1eceda7ece3a6655a09789c673ef5
-#+macro: gpg4win_isrc_sha2 ca40ade2dcb55f08d412d768f7946f9199a28edc189c4dc430dcd990b2fb8315
+#+macro: gpg4win_ver  4.0.4
+#+macro: gpg4win_date 2022-10-17
+#+macro: gpg4win_src_size 210M
+#+macro: gpg4win_src_sha1 8d44abedc71f9b07610f5ad11dffe08c207f40b4
+#+macro: gpg4win_src_sha2 56bd3901dee698b48f01dcd368193d2de235a7f18175df39cf0a83923d97a7e3
+#+macro: gpg4win_exe_size 31M
+#+macro: gpg4win_exe_sha1 5069126ab7392a36e0823425459c8e310722c6d4
+#+macro: gpg4win_exe_sha2 a750608969a075f132da31f538231ac3a2d3538e3eec8e8603d1573284745d0e
 
+#
+# GnuPG-Desktop
+#
+#+macro: gnupgdesk_ver  2.3.8.0
+#+macro: gnupgdesk_date 2022-10-19
+#+macro: gnupgdesk_src_size 208M
+#+macro: gnupgdesk_src_sha1 e009badda5033943e026de9923e3f2bb56d6a12d
+#+macro: gnupgdesk_src_sha2 b2ea14561d413f72e520e0fe37fb739fe359b0aaff381e7ea1940566c7708d20
+#+macro: gnupgdesk_ai_size 56M
+#+macro: gnupgdesk_ai_sha1 7651072d7cecedb38b55c533544507b73e770934
+#+macro: gnupgdesk_ai_sha2 98c07cceedb38ded65175dc6885cb85a3f93ec0811409d61dd25508f7e31ad2a
 
 #
 # GPA
 #
-#+macro: gpa_ver  0.9.10
-#+macro: gpa_date 2016-11-19
+#+macro: gpa_ver  0.10.0
+#+macro: gpa_date 2018-10-16
 #+macro: gpa_size 745k
-#+macro: gpa_sha1 c629348725c1bf5dafd57f8a70187dc89815ce60
-#+macro: gpa_sha2 c3b9cc36fd9916e83524930f99df13b1d5f601f4c0168cb9f5d81422e282b727
+#+macro: gpa_sha1 61475989acd12de8b7daacd906200e8b4f519c5a
+#+macro: gpa_sha2 95dbabe75fa5c8dc47e3acf2df7a51cee096051e5a842b4c9b6d61e40a6177b1
 
 
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  1.1.0
-#+macro: pinentry_date 2017-12-03
-#+macro: pinentry_size 456k
-#+macro: pinentry_sha1 693bdf9f48dfb3e040d92f50b1bb464e268b9fb0
-#+macro: pinentry_sha2 68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570
+#+macro: pinentry_ver  1.2.1
+#+macro: pinentry_date 2022-08-24
+#+macro: pinentry_size 534k
+#+macro: pinentry_sha1 29daaf45f15cb5b8ec9b4a06284343f7a87082fb
+#+macro: pinentry_sha2 457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067
 
 
 #
 # GPGME
 #
-#+macro: gpgme_ver  1.11.0
-#+macro: gpgme_date 2018-04-18
-#+macro: gpgme_size 1381k
-#+macro: gpgme_sha1 17772bf86eef70ab0c77cbb6df0b90f002af0030
-#+macro: gpgme_sha2 5b03adbafadab74474ded30b74c882de28d3c5c3b9ee3016ef24023d4c35d492
+#+macro: gpgme_ver  1.18.0
+#+macro: gpgme_date 2022-08-10
+#+macro: gpgme_size 1721k
+#+macro: gpgme_sha1 d559f7994f9dfd1af611f1f14313b2abbea2a33b
+#+macro: gpgme_sha2 361d4eae47ce925dba0ea569af40e7b52c645c4ae2e65e5621bf1b6cdd8b0e9e
 
 
 #
 # LIBGCRYPT
 #
-#+macro: libgcrypt_ver  1.8.2
-#+macro: libgcrypt_date 2017-12-13
-#+macro: libgcrypt_size 2897k
-#+macro: libgcrypt_sha1 ab8aae5d7a68f8e0988f90e11e7f6a4805af5c8d
-#+macro: libgcrypt_sha2 c8064cae7558144b13ef0eb87093412380efa16c4ee30ad12ecb54886a524c07
+# The Git branch of the stable version:
+#+macro: libgcrypt_branch LIBGCRYPT-1.10-BRANCH
+#
+#+macro: libgcrypt_ver  1.10.1
+#+macro: libgcrypt_date 2022-03-28
+#+macro: libgcrypt_size 3689k
+#+macro: libgcrypt_sha1 de2cc32e7538efa376de7bf5d3eafa85626fb95f
+#+macro: libgcrypt_sha2 ef14ae546b0084cd84259f61a55e07a38c3b53afc0f546bffcef2f01baffe9de
+#
+# The 1.8 LTS version.
+#
+#+macro: libgcrypt18_ver  1.8.9
+#+macro: libgcrypt18_date 2022-02-07
+#+macro: libgcrypt18_size 2918k
+#+macro: libgcrypt18_sha1 2befc36b4cd6979ede5b3761dc51eac8407ba7bd
+#+macro: libgcrypt18_sha2 2bda4790aa5f0895d3407cf7bf6bd7727fd992f25a45a63d92fef10767fa3769
 
 
 #
 # LIBKSBA
 #
-#+macro: libksba_ver  1.3.5
-#+macro: libksba_date 2016-08-22
-#+macro: libksba_size 606k
-#+macro: libksba_sha1 a98385734a0c3f5b713198e8d6e6e4aeb0b76fde
-#+macro: libksba_sha2 41444fd7a6ff73a79ad9728f985e71c9ba8cd3e5e53358e70d5f066d35c1a340
+#+macro: libksba_ver  1.6.2
+#+macro: libksba_date 2022-10-07
+#+macro: libksba_size 652k
+#+macro: libksba_sha1 5e9d2223bfc1d4431594cb4a14f118ba0008cc2e
+#+macro: libksba_sha2 fce01ccac59812bddadffacff017dac2e4762bdb6ebc6ffe06f6ed4f6192c971
 
 
 #
@@ -124,68 +164,78 @@
 
 
 #
-# LIBGPG-ERROR
+# LIBGPG-ERROR (aka GPGRT)
 #
-#+macro: libgpg_error_ver  1.29
-#+macro: libgpg_error_date 2018-04-11
-#+macro: libgpg_error_size 873k
-#+macro: libgpg_error_sha1 a56241d60bb7d810fdb478463b1732b134a52a19
-#+macro: libgpg_error_sha2 ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea
-#+macro: gpgrt_ver  1.29
-#+macro: gpgrt_date 2018-04-11
-#+macro: gpgrt_size 873k
-#+macro: gpgrt_sha1 a56241d60bb7d810fdb478463b1732b134a52a19
-#+macro: gpgrt_sha2 ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea
+#+macro: libgpg_error_ver  1.46
+#+macro: libgpg_error_date 2022-10-07
+#+macro: libgpg_error_size 990k
+#+macro: libgpg_error_sha1 a6e5efdd72e848aab4064e5ef4c6835ba344bcf1
+#+macro: libgpg_error_sha2 b7e11a64246bbe5ef37748de43b245abd72cfcd53c9ae5e7fc5ca59f1c81268d
+#+macro: gpgrt_ver  1.46
+#+macro: gpgrt_date 2022-10-07
+#+macro: gpgrt_size 990k
+#+macro: gpgrt_sha1 a6e5efdd72e848aab4064e5ef4c6835ba344bcf1
+#+macro: gpgrt_sha2 b7e11a64246bbe5ef37748de43b245abd72cfcd53c9ae5e7fc5ca59f1c81268d
 
 
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.5.1
-#+macro: libassuan_date 2017-12-07
-#+macro: libassuan_size 551k
-#+macro: libassuan_sha1 c8432695bf1daa914a92f51e911881ed93d50604
-#+macro: libassuan_sha2 47f96c37b4f2aac289f0bc1bacfa8bd8b4b209a488d3d15e2229cb6cc9b26449
+#+macro: libassuan_ver  2.5.5
+#+macro: libassuan_date 2021-03-22
+#+macro: libassuan_size 558k
+#+macro: libassuan_sha1 ec4f67c0117ccd17007c748a392ded96dc1b1ae9
+#+macro: libassuan_sha2 8e8c2fcc982f9ca67dcbb1d95e2dc746b1739a4668bc20b3a3c5be632edb34e4
 
 
 #
 # NTBTLS
 #
-#+macro: ntbtls_ver  0.1.2
-#+macro: ntbtls_date 2017-09-19
-#+macro: ntbtls_size 334k
-#+macro: ntbtls_sha1 05cf57cd8400b338b94bdce7287397c24315ac49
-#+macro: ntbtls_sha2 8240db84e50c2351b19eb8064bdfd4d25e3c157d37875c62e335df237d7bdce7
+#+macro: ntbtls_ver  0.3.1
+#+macro: ntbtls_date 2022-04-07
+#+macro: ntbtls_size 343k
+#+macro: ntbtls_sha1 15028002a4c15d47d6037f45637e5ebc73b2ebd1
+#+macro: ntbtls_sha2 8922181fef523b77b71625e562e4d69532278eabbd18bc74579dbe14135729ba
 
 
 #
 # nPth
 #
-#+macro: npth_ver  1.5
-#+macro: npth_date 2017-06-02
-#+macro: npth_size 292k
-#+macro: npth_sha1 93ddf1a3bdbca00fb4cf811498094ca61bbb8ee1
-#+macro: npth_sha2 294a690c1f537b92ed829d867bee537e46be93fbd60b16c04630fbbfcd9db3c2
+#+macro: npth_ver  1.6
+#+macro: npth_date 2018-07-16
+#+macro: npth_size 293k
+#+macro: npth_sha1 f9d63e9747b027e4e404fe3c20c73c73719e1731
+#+macro: npth_sha2 1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1
 
 
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.6
-#+macro: gpgex_date 2018-04-10
-#+macro: gpgex_size 297k
-#+macro: gpgex_sha1 443270219d542f97b6f124d2101ae8d803c6dbe2
-#+macro: gpgex_sha2 d69898d1022400bd09bb684080edc95be554af736ae9c014df73543f34f7481b
+#+macro: gpgex_ver  1.0.9
+#+macro: gpgex_date 2022-04-21
+#+macro: gpgex_size 301k
+#+macro: gpgex_sha1 57d3a965c695ce21a2a8d14028b3fb13db8198ce
+#+macro: gpgex_sha2 32a31affe0bc2587b6b61c5aae6a3328280feccde315dfa3a3c2dc374c5c0400
 
 
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.1.0
-#+macro: gpgol_date 2018-04-12
-#+macro: gpgol_size 775k
-#+macro: gpgol_sha1 4b581ec9b8efdd02f2222c5a68934b0decef72c2
-#+macro: gpgol_sha2 3193fc5c85f7ef8cddca97c537831daf7a51f56c244f3d33ce2c3fcc01437764
+#+macro: gpgol_ver  2.5.4
+#+macro: gpgol_date 2022-09-06
+#+macro: gpgol_size 839k
+#+macro: gpgol_sha1 5f25efee6df5e247bd8684c35c3ff10e49b7d152
+#+macro: gpgol_sha2 5c67f6de1098e8b8ccb8deb04ac714a324c6fcba4e51318b522d9158f72c1d0f
+
+
+#
+# Scute
+#
+#+macro: scute_ver  1.7.0
+#+macro: scute_date 2021-01-07
+#+macro: scute_size 831k
+#+macro: scute_sha1 3f8a0ba9c7821049d51b982141a2330a246beb55
+#+macro: scute_sha2 437fe758b27c243a5ee2535c6b065ea1d09f2c9a02d83567d2f934bb6395c249
 
 
 #
@@ -199,8 +249,13 @@
 #
 # zlib (mirrored at our server)
 #
-#+macro: zlib_ver     1.2.8
-#+macro: zlib_sha1_gz a4d316c404ff54ca545ea71a27af7dbc29817088
+# Signature made Mon 28 Mar 2022 04:34:47 AM CEST
+#                using DSA key 5ED46A6721D365587791E2AA783FCD8E58BCAFBA
+# Good signature from "Mark Adler <madler@alumni.caltech.edu>"
+#
+#+macro: zlib_ver     1.2.12
+#+macro: zlib_sha1_gz 207ba741d387e2c1607104cf0bd8cff27deb2605
+#+macro: zlib_sha2_gz 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
 
 #
 # bzip2 (mirrored and stripped down version)
@@ -211,8 +266,7 @@
 #
 # SQLite (mirrored at our server)
 #
-#+macro: sqlite_ver     3120200
-#+macro: sqlite_sha1_gz b43c2e7238e54c50b95fbbd85c48792f4f39af8c
-
+#+macro: sqlite_ver     3280000
+#+macro: sqlite_sha1_gz 01b9d8fc77085e144dddc87456c9783e53d09a53
 
 # --- end of swdb.mac ---

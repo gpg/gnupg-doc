@@ -1,0 +1,125 @@
+# A new furure for GnuPG
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: 2022-01-02
+
+** A New Future for GnuPG
+
+It has been quite some time since my last status report on GnuPG.  I
+have been quite busy working on the project but unfortunately rarely
+active on the usual channels.  So, here is a new report telling what
+we did over the last two or three years.  Please read at least the last
+section.
+
+*** Some background
+
+In the beginning GnuPG was a fun project I did in my spare time.
+After a few years this turned out to be a full time job and it was
+possible to acquire paid projects to maintain and further develop
+GnuPG.
+
+When the BSI (Germany's Federal Office for Information Security)
+migrated back from Linux to Windows, a need to migrate their
+end-to-end encryption solution, based on GnuPG and KMail, was needed.
+A call for bids for an Open Source solution was issued and our
+company, g10 Code, along with our friends at Intevation and KDAB
+received the contract.  The outcome was Gpg4win, the meanwhile
+standard distribution of GnuPG for Windows.
+
+It turned out that the software used in Germany to protect restricted
+data at the VS-NfD level, called Chiasmus, showed its age.  For
+example, the block length of 64 bits (like IDEA or 3DES) is not
+anymore secure for data of more than 150 MiB.  Also the secret
+encryption algorithm has not anymore the confidence people used to
+have in it and due to lacking hardware support it is quite slow.  A
+new call to bid for a replacement of that software was issued and we
+also with Intevation were granted the contract.  Our solution was to
+update GnuPG and its frontends Kleopatra and GpgOL.  After some
+thorough evaluation of our software (working title /Gpg4VS-NfD/) and
+the usual bureaucratic we received a first approval in January 2019.
+
+*** Meet GnuPG.com
+
+I have been working with Andre Heinecke of Intevation GmbH since about
+2010 on Gpg4win and some other projects.  With the foreseeable
+approval of /Gpg4VS-NfD/ Andre then left Intevation and took over 40%
+of the g10 Code shares from my brother (I am holding the other 60%).
+
+We started to make a real product out of /Gpg4VS-NfD/.  Thus we rented
+a new office to work desk by desk on this and hired staff for sales
+and marketing.  We introduced the brand /GnuPG.com/ to have a better
+recognition of our product than by our legal name /g10 Code GmbH/.
+The software itself was re-branded as /GnuPG VS-Desktop^{\reg}/ and
+distributed as an MSI packet for Windows and as an AppImage for Linux.
+Except for customer specific configuration files /GnuPG VS-Desktop/ is
+and will always be Open Source software under the GNU General Public License.
+
+We also keep maintaining /Gpg4win/ as the community version.  This is
+based on the the same source code as /GnuPG VS-Desktop/ but comes with
+more features due to the use of the latest development branch.
+
+The benefits for the customer to pay for /GnuPG VS-Desktop/ are: a
+commercial support contract, the guarantee of a long term maintained
+and approved version, customization options, community tested new
+features, and the per-approval required vendor for security updates.
+
+Also technically published for longer, it became only last year widely
+known, that the legacy Chiasmus software may not anymore be used for
+restricted communication from this year on.  For the administration
+and also for the industry two option exist to migrate away from
+Chiasmus: the proprietary GreenShield software from /cryptovision GmbH/
+and our Open Source software /GnuPG VS-Desktop/.
+
+*** The rush towards GnuPG VS-Desktop
+
+Since summer 2021 the phones of our sales team didn't stop ringing
+and we could bring in the fruits of our work.  We were not aware how
+many different governmental agencies exist and how many of them have a
+need to protect data at the VS-NfD (restricted) level.  And with those
+agencies also comes a huge private and corporate sector who also have
+to handle such communication.
+
+Although we support S/MIME, the majority of our customers decided in
+favor of the OpenPGP protocol, due to its higher flexibility and
+independence of a centralized public key infrastructure.  A minor
+drawback is that for a quick start and easy migration from Chiasmus,
+many sites will use symmetric-only encryption (i.e. based on "gpg
+-c").  However, the now deployed software provides the foundation to
+move on to a comfortable public-key solution.
+
+In particular, our now smooth integration into Active Directory makes
+working with OpenPGP under Windows really nice.  We were also able
+to partner with /Rohde & Schwarz Cybersecurity GmbH/ for a smooth
+integration of /GnuPG VS-Desktop/ with their smartcard administration
+system.
+
+We estimate that a quarter million workplaces will be equipped with
+/GnuPG VS-Desktop/ and provide the users state of the art file and
+mail encryption.  Our longer term plan is to equip all public agency
+workplaces with end-to-end encryption software - not only those with
+an immediate need for an approved VS-NfD solution.  This should also fit
+well into the announced goal of the new German government to foster
+the development of Open Source software.
+
+*** Kudos to all supporters
+
+For many years our work was mainly financed by donations and smaller
+projects.  Now we have reached a point where we can benefit from a
+continuous revenue stream to maintain and extend the software without
+asking for donations or grants.  This is quite a new experience to us
+and I am actually a bit proud to lead one of the few self-sustaining
+free software projects who had not to sacrifice the goals of the
+movement.
+
+Those of you with SEPA donations, please cancel them and redirect your
+funds to other projects which are more in need of financial support.
+The Paypal and Stripe based recurring donations have already been
+canceled by us.
+
+#+begin_center
+All you supporters greatly helped us to keep GnuPG alive and to
+finally setup a sustainable development model.
+
+*Thank you!*
+
+#+end_center

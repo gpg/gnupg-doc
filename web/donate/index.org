@@ -7,7 +7,7 @@
 #       fine as it is stripped before publishing.
 
 
-* GnuPG needs your support to help protect online privacy
+* GnuPG used to ask for your support to help protect online privacy
 
   Activists, journalists, lawyers, and many others rely on GnuPG to
   protect their communication.  And, nearly all free software-based
@@ -15,7 +15,7 @@
   servers running the Internet) rely on GnuPG to verify the integrity
   of system updates.
 
-  GnuPG development is mainly financed by donations.  Aside of the
+  GnuPG development was mainly financed by donations.  Aside of the
   large donors Linux Foundation, Stripe, Facebook, and First Look
   Media, we received a lot of individual donations.  Our fundraising
   [[file:camp2017.org][campaign]] in 2017 also raised about 5000 Euro in monthly recurring
@@ -23,59 +23,26 @@
 
   *Many thanks to all supporters*
 
-  If you are using [[../software/index.org][GnuPG]], [[../software/libgcrypt/index.org][Libgcrypt]], [[../software/gpgme/index.org][GPGME]], or [[https://www.gpg4win.org][Gpg4win]] and would like
-  to help with development and maintenance please consider to make a
-  donation.
+  Fortunately, and this is still not common with free software, we
+  have now established a way of financing the development while
+  keeping all our software free and freely available for everyone.
 
-** Ways to donate
+  Our model is similar to the way RedHat manages RHEL and Fedora:
+  Except for the actual binary of the MSI installer for Windows and
+  client specific configuration files, all the software is available
+  under the GNU GPL and other Open Source licenses.  Thus customers
+  may even build and distribute their own version of the software as
+  long as they do not use our trademark /GnuPG VS-Desktop^{\reg}/.
 
-   We accept donations via credit card, Paypal, and SEPA transactions.
-   Donating Bitcoins is also possible.  Note that the donations are
-   collected and spent by g10 Code GmbH, which can't issue charitable
-   donation certificates.
+  Those with *SEPA donations, please cancel them and redirect* your
+  funds to other projects which are more in need of financial support.
+  The donations done via Stripe or PayPal have already been canceled.
 
-   Please continue to the donation form:
+  All you supporters greatly helped us to keep GnuPG alive and to
+  finally setup a sustainable development model.  Stay tuned for a
+  somewhat longer writeup on this.
 
-#+BEGIN_HTML
-<div class="col-xs-12 col-sm-6 col-lg-12">
-  <a class="btn btn-primary btn-lg btn-block" role="button"
-     href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-10-eur"
-     >Donate 10&thinsp;€ a month</a>
-  <div class="row" style="margin-top: 1em;">
-    <div class="col-xs-6">
-      <a class="btn btn-default btn-md btn-block" role="button"
-         href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-5-eur"
-         >Donate 5&thinsp;€ a month</a>
-    </div>
-    <div class="col-xs-6">
-      <a class="btn btn-default btn-md btn-block" role="button"
-         href="/cgi-bin/procdonate.cgi?mode=preset&plan=12-20-eur"
-         >Donate 20&thinsp;€ a month</a>
-    </div>
-  </div>
-  <div class="row text-center" style="margin-top: 1em;">
-    <a style="margin-top: 1em;"
-       href="/cgi-bin/procdonate.cgi?mode=preset"
-       >Donate a different amount</a>
-  </div>
-</div>
-#+END_HTML
+  *Thanks.*
 
-
-
-** Recent donors
-
-#+BEGIN_HTML
-<div id="tagcloudlist"><ul>
-<!--BEGIN-SOME-DONATIONS-->
-<!--END-SOME-DONATIONS-->
-<li><a href="/donate/kudos.html">(all)</a></li>
-</ul><p class="doclear"> </p></div>
-<p>Donations received in
-<!--INSERT-THIS-YEAR-->
-:&nbsp;
-<!--INSERT-YEAR-EURO-->
-</p>
-#+END_HTML
 
 # eof #

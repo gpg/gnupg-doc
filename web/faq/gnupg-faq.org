@@ -25,8 +25,9 @@ very litigious.
    :CUSTOM_ID: trademarks
    :END:
 
-- Linux is a trademark of Linus Torvalds.
+- GnuPG Desktop and GnuPG VS-Desktop are trademarks of g10 Code GmbH.
 - GNU is a trademark of the Free Software Foundation.
+- Linux is a trademark of Linus Torvalds.
 - Macintosh, OS X, macOS, and Mac OS X are all trademarks of the Apple
   Corporation.
 - PGP is a trademark of Symantec Corporation.
@@ -538,7 +539,7 @@ The list is lightly moderated.
     :END:
 
 
-- Subscribing :: visit the [[http://tech.groups.yahoo.com/group/PGPNET][PGPNET page]]
+- Subscribing :: visit the [[https://groups.io/g/pgpnet][PGPNET page]]
 - Unsubscribing :: see above
 - List moderator(s) :: Paul Kapaldo <[[mailto:pjkapaldo@yahoo.com?subject=PGPNET][pjkapaldo@yahoo.com]]>
 - Supports PGP/MIME? :: Yes
@@ -2098,7 +2099,7 @@ credible reports of any of the ciphers used in GnuPG having ever been
 successfully cryptanalyzed.
 
 If you mean, “have people figured out ways to obtain the plaintext
-anyway?”, the answer is an emphatic ‘yes.’ In [[http://news.cnet.com/8301-10784_3-9741357-7.html][a 2007 Drug Enforcement
+anyway?”, the answer is an emphatic ‘yes.’ In [[https://www.cnet.com/news/feds-use-keylogger-to-thwart-pgp-hushmail/][a 2007 Drug Enforcement
 Administration case]], a keylogger was installed on a suspect’s
 computer.
 

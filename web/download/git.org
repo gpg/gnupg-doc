@@ -23,9 +23,11 @@
 
   All repositories have been migrated to GIT from the old Subversion
   (SVN) code management tool. The standard way you checkout from an
-  anonymous GIT is to clone the entire repository:
+  anonymous GIT is to clone the entire repository from one of these
+  repositories:
 
 #+BEGIN_EXAMPLE
+  git clone https://dev.gnupg.org/source/gnupg.git
   git clone git://git.gnupg.org/gnupg.git
 #+END_EXAMPLE
 
@@ -33,10 +35,11 @@
   way suggested by the output of =autogen.sh=.  This creates some
   required files which are not stored in the repository. =autogen.sh=
   also checks that you have all required tools installed. Please read
-  the GIT manual pages before doing so. The =master= revision is the
-  development branch; the stable 2.2 version (currently version
-  {{{gnupg22_ver}}}) is known as =STABLE-BRANCH-2-2=; the old 1.4
-  version of GnuPG ({{{gnupg1_ver}}}) is known as =STABLE-BRANCH-1-4=.
+  the GIT manual pages before doing so.  The current development
+  version is {{{gnupg24_ver}}} and known as {{{gnupg24_branch}}}; the
+  long term support (LTS) version is {{{gnupg22_ver}}} and known as
+  {{{gnupg22_branch}}}; the legacy 1.4 version of GnuPG
+  ({{{gnupg1_ver}}}) is known as STABLE-BRANCH-1-4.
 
   Bug reports should go to the developers mailing list. See the page
   on [[../documentation/mailing-lists.org][mailing lists]] .
@@ -44,6 +47,6 @@
 
 ** Other Hosted Projects
 
-   The GnuPG GIT server also hosts some other projects in GIT
+   The GnuPG Git server also hosts some other projects in Git
    repositories.  Please use the web interface at
    [[https://git.gnupg.org/]] to browse them.

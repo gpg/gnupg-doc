@@ -33,7 +33,7 @@
 
    (aput 'org-publish-project-alist "gpgweb-other"
    `(:base-directory ,gpgweb-root-dir
-     :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig\\|js\\|map\\|eot\\|ttf\\|woff\\|woff2\\|svg"
+     :base-extension "jpg\\|png\\|css\\|txt\\|rss\\|lst\\|sig\\|js\\|map\\|eot\\|ttf\\|woff\\|woff2\\|svg\\|asc"
      :recursive t
      :publishing-directory ,gpgweb-stage-dir
      :publishing-function org-publish-attachment
@@ -113,15 +113,17 @@ if not available.  If CUSTOM is true only a minimal header is set."
      "Download"
      (("/download/index.html"              "Download")
       ("/download/integrity_check.html"    "Integrity&nbsp;Check")
+      ("/signature_key.html"               "Release&nbsp;Keys")
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
       ("/download/release_notes.html"      "Release&nbsp;Notes")
       ("/download/mirrors.html"            "Mirrors")
       ("/download/git.html"                "GIT")))
     ("/documentation/index.html"
      "Documentation"
-     (("/documentation/howtos.html"        "HOWTOs")
+     (("/documentation/index.html"         "Overview")
       ("/documentation/manuals.html"       "Manuals")
       ("/documentation/guides.html"        "Guides")
+      ("/documentation/howtos.html"        "HOWTOs")
       ("/documentation/faqs.html"          "FAQs")
       ("/documentation/mailing-lists.html" "Mailing&nbsp;Lists")
       ("/service.html"                     "3rd Party Support")
@@ -185,11 +187,20 @@ if not available.  If CUSTOM is true only a minimal header is set."
     (let ((item (car menu)))
       (when item
         (dotimes (i (1+ lvl)) (insert "  "))
-        (insert "  <li><a href=\"" (car item) "\"")
-        (when (or (string= (car item) selected-file)
-                  (gpgweb--any-selected-menu-p (caddr item) selected-file))
-          (insert " class=\"selected\""))
-        (insert  ">" (cadr item) "</a>\n")
+        (if (caddr item)
+            (progn
+              (insert "  <li><span class=\"topmenuitem\"")
+              (when (or (string= (car item) selected-file)
+                        (gpgweb--any-selected-menu-p (caddr item)
+                                                     selected-file))
+                (insert " class=\"selected\""))
+              (insert  ">" (cadr item) "</span>\n"))
+          (progn
+            (insert "  <li><a href=\"" (car item) "\"")
+             (when (or (string= (car item) selected-file)
+                       (gpgweb--any-selected-menu-p (caddr item) selected-file))
+               (insert " class=\"selected\""))
+             (insert  ">" (cadr item) "</a>\n")))
         (when (caddr item)
           (dotimes (i (1+ lvl)) (insert "  "))
           (insert "  <ul class=\"sub-menu\">\n")
@@ -343,7 +354,7 @@ string of the source file or nil if not available."
       ><img alt=\"CC BY-SA 4.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
     This web page is
-    Copyright 2018 GnuPG e.V. and licensed under a
+    Copyright 2018--2020 GnuPG e.V. and licensed under a
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\"
     >Creative Commons Attribution-ShareAlike 4.0 International License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
@@ -354,7 +365,7 @@ string of the source file or nil if not available."
       ><img alt=\"CC BY-SA 3.0\" style=\"border: 0\"
             src=\"/share/cc-by-sa_80x15.png\"/></a>&nbsp;
     These web pages are
-    Copyright 1998--2018 The GnuPG Project and licensed under a
+    Copyright 1998--2020 The GnuPG Project and licensed under a
     <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"
     >Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  See
     <a href=\"/copying.html\">copying</a> for details.
@@ -510,7 +521,8 @@ rendered form and save it with the suffix .html."
 
 
 (defun gpgweb-publish-blogs ()
-  "Publish all blog entries in the current directory"
+  "Publish all blog entries in the current directory.
+This function is used by the build-website shell script."
   (interactive)
   (let ((orgfiles (directory-files gpgweb-blog-dir nil "^2[0-9]+-.*\.org$")))
     (dolist (file (cons "index.org" orgfiles))

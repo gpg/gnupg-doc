@@ -16,6 +16,7 @@
   \copy 2001--2002  Mike Ashley
   \copy 2002--2005  Lorenzo Cappelletti
   \copy 2006--2006  David Shaw
+  \copy 2006        Thomas Wittek
   \copy 2017--2018  Ben McGinnes
 #+end_verse
 # The Aegypten pages are under a different license - there authors are
@@ -36,6 +37,9 @@
    If you wish to allow the use of your version of these pages only
    under the terms of one of these licenses, indicate your decision by
    deleting the respective above paragraph.
+
+   The [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=artwork/gnupg-logo.svg][canonical version]] of the logo can be found in the GnuPG code
+   repository; see its [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=artwork/README][README]] file for details.
 
 ** Remarks
 

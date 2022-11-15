@@ -6,35 +6,89 @@
 
 * Donation Summary
 
-*** Individual donations this year
+*** Yearly donation stats
 
-#+BEGIN_HTML
-<!--BEGIN-DONATION-TABLE-->
-<!--END-DONATION-TABLE-->
-#+END_HTML
+#+HTML: <img src="donation-chart.svg" />
 
-
-*** Previous years
+This is a summary of all donations received by g10 Code GmbH to
+support GnuPG development.
 
 | Year |    # |  Indi. |  Corp. | Total \EUR |
 | <l>  |  <r> |    <r> |    <r> |        <r> |
 |------+------+--------+--------+------------|
+| 2020 |      |        |  40482 |            |
+| 2019 |      |  51560 |  88725 |     140285 |
+| 2018 |      |  68731 |  87520 |     156251 |
+| 2017 |      |  90390 | 154104 |     244494 |
 | 2016 |  271 |   9615 | 146759 |     156374 |
-| 2015 | 5847 | 205560 | 144262 |     337954 |
-| 2014 |  801 |  34700 |        |      30305 |
-| 2013 |  148 |  37682 |        |      31470 |
-| 2012 |   53 |   5991 |        |       4963 |
-| 2011 |   21 |    553 |        |        465 |
+| 2015 | 5847 | 205560 | 144262 |     349822 |
+| 2014 |  801 |  34700 |        |      34700 |
+| 2013 |  148 |  37682 |        |      37682 |
+| 2012 |   53 |   5991 |        |       5991 |
+| 2011 |   21 |    553 |        |        553 |
 |------+------+--------+--------+------------|
-|      |      | 294101 | 291021 |     561531 |
-#+TBLFM: $LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
+|      |      | 504782 | 661852 |    1166634 |
+#+TBLFM: $5=$3+$4::$LR3=vsum(@I..@II)::$LR4=vsum(@I..@II)::$LR5=vsum(@I..@II)
 
 #+HTML: <div id="smallnote">
 Legend: “Indi.” indicates individual donations, “Corp.” lists large
 corporate donations and grants, and “Total” gives the net value
-without taxes and banking fees.  Note that this list has been updated
-on 2017-05-02 to include the Linux Foundation grant.  Note further
-that the “Total” for 2016 is preliminary.
+without taxes and banking fees.
+
+# About 2020:\\
+# | Individual Donations |  fixme | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  40482 |                            |
+# | Stripe               |  fixme |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  fixme |                            |
+We don't yet have all numbers for 2020.  We received 50000 USD from
+Facebook.
+
+
+# About 2019:\\
+# | Individual Donations |  51560 | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  44154 |                            |
+# | Stripe               |  44571 |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  88725 |                            |
+In 2019 we received one-time and recurring individual donations of
+51560 Euro.  We received 50000 USD each from Stripe and Facebook.
+
+# About 2018:\\
+# | Individual Donations |  68731 | bank fees already deducted |
+# |----------------------+--------+----------------------------|
+# | Company              | amount | Remarks                    |
+# |----------------------+--------+----------------------------|
+# | Facebook             |  43768 |                            |
+# | Stripe               |  43752 |                            |
+# |----------------------+--------+----------------------------|
+# |                      |  87520 |                            |
+In 2018 we received one-time and recurring individual donations of
+69000 Euro.  We received 50000 USD each from Stripe and Facebook.
+
+# About 2017:\\
+# | Individual Donations |  90390 | bank fees already deducted
+# |----------------------+--------|
+# | Company          | amount | Remarks                |
+# |------------------+--------+------------------------|
+# | Facebook         |  42038 | bank fees = 42 Euro    |
+# | Stripe           |  42441 | no bank fess           |
+# | Linux Foundation |  47369 | bank fees = 11*15 Euro |
+# | First Look Media |  22256 | bank fess = 22 Euro    |
+# |------------------+--------+------------------------|
+# |                  | 154104 |                        |
+In 2017 we launched a campaign and started the recurring donation
+programm.  All individual donations summed up to a net amount of
+90390 Euro.  We received 50000 USD each from Stripe and Facebook
+(42038 + 42441 Euro net).  The Linux Foundation granted 55000 USD
+(47369 Euro net).  To support the recurring donation campaign we also
+received 25000 USD (22256 Euro net) from First Look Media.
 
 # About 2016:\\
 # | Individual Donations | 268 |   9615 |        |
@@ -71,8 +125,29 @@ Goteo transferred that money in March 2014 in 6 chunks: 11423, 6000,
 5000, 5000, 5218.  The total amount is however listed for 2013 along
 with 148 individual donations of 5041 Euro (4041 net) received before
 the start of the Goteo campaign.
-
 #+HTML: </div>
+
+*** Monthly donations stats since 2017
+
+#+HTML: <img src="donation-chart-by-month.svg" />
+
+This is a summary of individual donations since 2017.  After the
+campaign boost in June and July 2017 we can conclude that a majority
+of the received donations are now reccurring (either monthly,
+quarterly or yearly).  A detailed table can be found at this [[file:donations-by-month.org][page]]
+
+
+# *** Individual donations this year
+#
+# This is the an automatically updated list of donations received via
+# the online donation system.  These are raw numbers and don't include
+# recurred or SEPA donations, fees, chargebacks etc.
+#
+# #+BEGIN_HTML
+# <!--BEGIN-DONATION-TABLE-->
+# <!--END-DONATION-TABLE-->
+# #+END_HTML
+
 
 * List of Donors
 
@@ -89,6 +164,7 @@ the start of the Goteo campaign.
 
   Thank you.
 
+  - All donors to GnuPG in [[file:kudos-2018.org][2018]]
   - All donors to GnuPG in [[file:kudos-2017.org][2017]]
   - All donors to GnuPG in [[file:kudos-2016.org][2016]]
   - All donors to GnuPG in [[file:kudos-2015.org][2015]]
@@ -101,8 +177,8 @@ the start of the Goteo campaign.
   [[http://eof.eu.org][file:logos/eof.eu.org-logo.png]]
   [[https://www.wauland.de][file:logos/whs-logo.png]]
   [[https://facebook.com][file:logos/facebook-06-2015-blue_x.png]]
-  [[https://stripe.com][file:logos/stripe-blue.png]]
   [[https://pep.foundation][file:logos/pep-green.png]]
+#  [[https://thebestvpn.com][file:logos/thebestvpn.png]]
 #+HTML: </div>
 
 * Hardware and service donations

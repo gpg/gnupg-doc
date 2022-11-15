@@ -10,30 +10,131 @@ tarballs.  Instructions on how to verify a signature can be found at
 [[file:download/integrity_check.org][integrity checking page]].
 
 The used signature keys are reported below. The keys are also signed
-by the long term keys of the respective owner.
+by the long term keys of the respective owners.  A document with the
+same information and a qualified digital signature of the project's
+founder is also available: [[https://gnupg.org/signature-key.pdf]]
 
-Current releases are signed by one or more of these four keys:
+Current releases are signed by one or more of these keys:
 
 #+BEGIN_EXAMPLE
-  pub   rsa2048 2011-01-12 [expires: 2019-12-31]
-        Key fingerprint = D869 2123 C406 5DEA 5E0F  3AB5 249B 39D2 4F25 E3B6
-  uid   Werner Koch (dist sig)
-
-  pub   rsa2048 2014-10-29 [expires: 2020-10-30]
-        Key fingerprint = 031E C253 6E58 0D8E A286  A9F2 2071 B08A 33BD 3F06
-  uid   NIIBE Yutaka (GnuPG Release Key) <gniibe 'at' fsij.org>
-
-  pub   rsa2048 2014-10-29 [expires: 2019-12-31]
-        Key fingerprint = 46CC 7308 65BB 5C78 EBAB  ADCF 0437 6F3E E085 6959
-  uid   David Shaw (GnuPG Release Signing Key)
-
-  pub   rsa3072 2017-03-17 [expires: 2027-03-15]
-        Key fingerprint = 5B80 C575 4298 F0CB 55D8  ED6A BCEF 7E29 4B09 2E28
+  pub   rsa3072 2017-03-17 [SC] [expires: 2027-03-15]
+        5B80 C575 4298 F0CB 55D8  ED6A BCEF 7E29 4B09 2E28
   uid   Andre Heinecke (Release Signing Key)
+
+  pub   ed25519 2020-08-24 [SC] [expires: 2030-06-30]
+        6DAA 6E64 A76D 2840 571B  4902 5288 97B8 2640 3ADA
+  uid   Werner Koch (dist signing 2020)
+
+  pub   ed25519 2021-05-19 [SC] [expires: 2027-04-04]
+        AC8E 115B F73E 2D8D 47FA  9908 E98E 9B2D 19C6 C8BD
+  uid   Niibe Yutaka (GnuPG Release Key)
+
+  pub   brainpoolP256r1 2021-10-15 [SC] [expires: 2029-12-31]
+        02F3 8DFF 731F F97C B039  A1DA 549E 695E 905B A208
+  uid   GnuPG.com (Release Signing Key 2021)
 #+END_EXAMPLE
 
 
-Releases done in the years 1996 to 2010 are signed by this key:
+Below is a public key block with the above keys; you may also download
+these keys from: [[https://gnupg.org/signature_key.asc]]
+
+
+# NB: If you update the keys, please also copy the block below also
+#     to the file signature_key.asc
+
+#+BEGIN_EXAMPLE
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+eiInsGZ/+h5XYrpXTgA=
+=4+Sn
+-----END PGP PUBLIC KEY BLOCK-----
+#+END_EXAMPLE
+
+
+** Former Signature Keys
+
+Releases done in the years 1996 to 2010 were signed by this key:
 
 #+BEGIN_EXAMPLE
   pub   rsa1024/1CE0C630 2006-01-01 [expired: 2011-06-30]
@@ -41,7 +142,7 @@ Releases done in the years 1996 to 2010 are signed by this key:
   uid   [ expired] Werner Koch (dist sig) <dd9jn@gnu.org>
 #+END_EXAMPLE
 
-Releases done in the years 1998 to 2005 are signed by this key:
+Releases done in the years 1998 to 2005 were signed by this key:
 
 #+BEGIN_EXAMPLE
   pub   dsa1024/57548DCD 1998-07-07 [expired: 2005-12-31]
@@ -49,81 +150,5 @@ Releases done in the years 1998 to 2005 are signed by this key:
   uid   [ expired] Werner Koch (gnupg sig) <dd9jn@gnu.org>
 #+END_EXAMPLE
 
-
-Here is a public key block with the current keys:
-
-#+BEGIN_EXAMPLE
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-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
-P7av
-=ud/7
------END PGP PUBLIC KEY BLOCK-----
-#+END_EXAMPLE
+For reference a public key block with expired keys used to
+sign older releases can be found [[https://gnupg.org/devel/old-signature-keys.asc][here]].

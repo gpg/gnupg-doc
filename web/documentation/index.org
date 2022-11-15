@@ -19,8 +19,9 @@
 
   - [[file:security.org][Security]] :: How to report security problems.
 
-  You may also notice that OpenPGP is a proposed Internet standard,
-  described by [[https://www.rfc-editor.org/rfc/rfc4880.txt][RFC-4880]].
+  You may also notice that OpenPGP is described by [[https://www.rfc-editor.org/rfc/rfc4880.txt][RFC-4880]].  GnuPG
+  actually implements an updated version of this specification as
+  described by the [[https://datatracker.ietf.org/doc/draft-koch-openpgp-2015-rfc4880bis/][rfc4880bis]] document.
 
 * Community support
 

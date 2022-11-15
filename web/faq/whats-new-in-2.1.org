@@ -123,6 +123,8 @@ only once and an existing =secring.gpg= is then not anymore touched by
 2.1.  However, any change to the private keys using the new /gpg/ will
 not show up when using pre-2.1 versions of GnuPG and vice versa.
 
+The option =--secret-keyring= has no more effect.
+
 Note that the command =--export-secret-keys= still creates an OpenPGP
 compliant file with the secret keys.  This is achieved by asking
 /gpg-agent/ to convert a key and return it in the OpenPGP protected

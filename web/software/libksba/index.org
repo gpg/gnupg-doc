@@ -16,3 +16,9 @@
   Thing\trade. Support for new features will be added as needed.
 
   See the [[../../download/index.org::libksba][download]] section for the latest tarball.
+
+  The development takes place in a Git repo:
+#+BEGIN_EXAMPLE
+   git clone git://git.gnupg.org/libksba.git
+#+END_EXAMPLE
+  For more information see our [[../../download/git.org][Git page]].

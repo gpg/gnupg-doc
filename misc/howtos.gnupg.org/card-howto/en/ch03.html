@@ -215,7 +215,7 @@ General key info..: [none]
               </dd>
               <dt>PIN retry counter</dt>
               <dd>
-                <p>This field saves how many tries still are left to enter the right PIN.  They are decremented whenever a wrong PIN is entered.  They are reset whenever a correct AdminPIN is entered.  The first and second PIN are for the standard PIN.  gpg makes sure that the two numbers are synchronized.  The second PIN is only required due to peculiarities of the ISO-7816 standard; gpg tries to keep this PIN in sync with the first PIN.  The third PIN represents the retry counter for the AdminPIN.</p>
+                <p>This field indicates how many tries still remain to enter the correct PIN.  They are decremented whenever an incorrect PIN is entered.  They are reset whenever a correct AdminPIN is entered.  The first and second values are for the standard PIN.  gpg makes sure that the two numbers are synchronized.  The first value represents the retry counter for the UserPIN. The second value is only required due to peculiarities of the ISO-7816 standard; gpg tries to keep this PIN in sync with the first PIN.  The third value represents the retry counter for the AdminPIN.</p>
               </dd>
               <dt>Signature counter</dt>
               <dd>

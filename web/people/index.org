@@ -51,23 +51,6 @@
 
    #+HTML: <p style="clear: both"/>
 
-** Marcus Brinkmann
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="marcus.png" title="Marcus Brinkmann" /></p>
-   #+HTML: </div>
-
-   /Hacker/
-
-   Marcus is part of the free software community since 1997, when he
-   joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
-   on GNU/Hurd, he also has a diploma degree in mathematics, and was
-   part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
-   related software from 2001 to 2012 and for 7 months in 2017.  He was
-   a founding member of the [[../verein/index.org][GnuPG e.V.]]
-
-   #+HTML: <p style="clear: both"/>
-
 ** NIIBE Yutaka
 
    #+HTML: <div class="people">
@@ -97,71 +80,76 @@
 
    #+HTML: <p style="clear: both"/>
 
-** Neal Walfied
+** Andre Heinecke
 
    #+HTML: <div class="people">
-   #+HTML: <p><img src="neal.png" title="Neal Walfield" /></p>
+   #+HTML: <p><img src="aheinecke.png" title="Andre Heinecke" /></p>
    #+HTML: </div>
 
-   /Core components hacker/
+   /Windows and UX/
+
+   Andre is working on GnuPG related projects for
+   [[https://www.gnupg.com][GnuPG.com]] He has been an active KDE Developer since 2009,
+   mostly focused on Windows ports of KDE Software. Since 2013 he took
+   over several Windows and UX specific parts of GnuPG.
+
+   Andre is the current maintainer of Kleopatra the KDE / Gpg4win GUI
+   for GnuPG.  He also maintains GpgOL since 2013 and wrote the
+   support for Outlook 2010 and later versions.  Additonally he is the
+   maintainer of Gpg4win in general and GpgEX as well as the GPGME
+   bindings for C++ and Qt.
+
+   He is a founding member and the current cashier of the [[../verein/index.org][GnuPG e.V.]]
+
+   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
+
+   #+HTML: <p style="clear: both"/>
+
+
+   #+HTML: <hr/>
+
+* Former developers
+
+   The following developers made large contributions to GnuPG in the past
+   but are, sadly, no longer active GnuPG developers.
+
+   Most are still working on improving the OpenPGP ecosystem and we wish
+   them the very best.
+   #+HTML: <hr/>
+
+** Marcus Brinkmann
+
+   Marcus is part of the free software community since 1997, when he
+   joined the [[http://www.debian.org][Debian]] project.  Probably best known for his past work
+   on GNU/Hurd, he also has a diploma degree in mathematics, and was
+   part and full time employed by [[https://g10code.com][g10^code]] to work on GnuPG and
+   related software from 2001 to 2012 and for 7 months in 2017.  He was
+   a founding member of the [[../verein/index.org][GnuPG e.V.]]
+
+** Neal Walfied
 
    Neal started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  We was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
-   #+HTML: <p style="clear: both"/>
-
 ** Kai Michaelis
 
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="kai.png" title="Kai Michaelis" /></p>
-   #+HTML: </div>
-
-   /Enigmail hacker/
-
-   Kai is working on the [[https://enigmail.net][Enigmail]] project since 2015.  He was part
-   time employed by g10^code from 2015 to 2017.  He is a founding
+   Kai used to work on the [[https://enigmail.net][Enigmail]] project from 2015 to 2017.  He was
+   part time employed by g10^code for that work.  He is a founding
    member of the [[../verein/index.org][GnuPG e.V.]]
 
-   #+HTML: <p style="clear: both"/>
-
 ** Justus Winter
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="justus.png" title="Justus Winter" /></p>
-   #+HTML: </div>
-
-   /Core components hacker/
 
    Justus started to work on GnuPG in 2015 to support maintenance and
    development in all areas.  He was full time employed by g10^code
    from 2015 to 2017.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
 
-   #+HTML: <p style="clear: both"/>
-
 ** Ben McGinnes
-
-   #+HTML: <div class="people">
-   #+HTML: <p><img src="ben.png" title="Ben McGinnes" /></p>
-   #+HTML: </div>
-
-   /GPGME python hacker/
 
    Ben started working on GPGME in 2015 with the initial port of PyME
    from Python 2 to Python 3.  Then returned to take over stewardship
-   of Justus' enhanced version of that port from late 2017 onward.  In
-   conjunction with with continuing work on documentation and
-   developing XML schemas for the XML format included in GPGME.
-
-   He is a co-founder of the original CryptoParty movement in
-   Melbourne, Australia, a founding member of Pirate Party Australia
-   and actively advocating for civil and human rights since the '90s.
-   Ben can sometimes be found on freenode IRC using the handle
-   =Hasimir= and, of course, on the GnuPG mailing lists.
-
-   [[https://sks-keyservers.net/pks/lookup?op=get&search=0xDB4724E6FA4286C92B4E55C4321E4E2373590E5D][GPG key DB4724E6FA4286C92B4E55C4321E4E2373590E5D]]
-
-   #+HTML: <p style="clear: both"/>
+   of Justus' enhanced version of that port from late 2017 to the end
+   of 2018.  Ben’s work on GPGP was financially supported by g10^code.
 
 * COMMENT
 

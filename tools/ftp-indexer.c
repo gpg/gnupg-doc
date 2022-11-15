@@ -90,10 +90,10 @@ done
 #include <dirent.h>
 #include <time.h>
 #include <errno.h>
-
+#include <assert.h>
 
 #define PGMNAME "ftp-indexer"
-#define VERSION "0.1"
+#define VERSION "0.2"
 
 #define DIM(v)		     (sizeof(v)/sizeof((v)[0]))
 #define DIMof(type,member)   DIM(((type *)0)->member)
@@ -110,12 +110,31 @@ done
 # define ATTR_SENTINEL(a)
 #endif
 
+#define DIGEST_LENGTH 16  /* We MD5 for thumbnails.  */
+/* Figure out a 32 bit unsigned integer type.  */
+#if (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L)
+# include <stdint.h>
+typedef uint32_t u32;
+#else  /* !ISO C-99 */
+typedef unsigned int u32;  /* Best guess for old systems.  */
+#endif /* !ISO C-99 */
+
+
 
 #define digitp(a) ((a) >= '0' && (a) <= '9')
 #define VALID_URI_CHARS "abcdefghijklmnopqrstuvwxyz"   \
                         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"   \
                         "01234567890@"                 \
                         "!\"#$%&'()*+,-./:;<=>?[\\]^_{|}~"
+
+/* For thumbnails we need to compute the MD5.  */
+typedef struct
+{
+  u32 A,B,C,D;
+  u32  nblocks;
+  unsigned char buf[64];
+  int  count;
+} DIGEST_CONTEXT;
 
 
 /* A simple object to keep strings in a list.  */
@@ -133,6 +152,7 @@ struct finfo_s
   struct finfo_s *next;
   unsigned int is_dir:1;
   unsigned int is_reg:1;
+  unsigned int is_image:1;
   time_t mtime;
   unsigned long long size;
   char name[1];
@@ -149,7 +169,12 @@ static int opt_html;
 static const char *opt_index;
 static int opt_gpgweb;
 static int opt_readme;
+static const char *opt_thumb;
 static strlist_t opt_exclude;
+
+/* Set to true if this is a big endian host.  Unfortunately there is
+   no portable macro to test for it.  Thus we do a runtime test. */
+static int big_endian_host;
 
 static void die (const char *format, ...) ATTR_NR_PRINTF(1,2);
 static void err (const char *format, ...) ATTR_PRINTF(1,2);
@@ -283,6 +308,271 @@ xstrconcat (const char *s1, ...)
       va_end (arg_ptr);
     }
   return result;
+}
+
+
+/*
+ * Rotate a 32 bit integer by n bytes
+ */
+#if defined(__GNUC__) && defined(__i386__)
+static inline u32
+rol( u32 x, int n)
+{
+	__asm__("roll %%cl,%0"
+		:"=r" (x)
+		:"0" (x),"c" (n));
+	return x;
+}
+#else
+#define rol(x,n) ( ((x) << (n)) | ((x) >> (32-(n))) )
+#endif
+
+static void
+digest_init (DIGEST_CONTEXT *hd)
+{
+  hd->A = 0x67452301;
+  hd->B = 0xefcdab89;
+  hd->C = 0x98badcfe;
+  hd->D = 0x10325476;
+  hd->nblocks = 0;
+  hd->count = 0;
+}
+
+
+/* These are the four functions used in the four steps of the MD5
+ * algorithm and defined in the RFC 1321.  The first function is a
+ * little bit optimized (as found in Colin Plumbs public domain
+ * implementation).  */
+#define FF(b, c, d) (d ^ (b & (c ^ d)))
+#define FG(b, c, d) FF (d, b, c)
+#define FH(b, c, d) (b ^ c ^ d)
+#define FI(b, c, d) (c ^ (b | ~d))
+static void
+transform (DIGEST_CONTEXT *hd, unsigned char *data )
+{
+  u32 correct_words[16];
+  u32 A = hd->A;
+  u32 B = hd->B;
+  u32 C = hd->C;
+  u32 D = hd->D;
+  u32 *cwp = correct_words;
+
+  if (big_endian_host)
+    {
+      int i;
+      unsigned char *p2, *p1;
+      for(i=0, p1=data, p2=(unsigned char*)correct_words;
+          i < 16; i++, p2 += 4 )
+        {
+          p2[3] = *p1++;
+          p2[2] = *p1++;
+          p2[1] = *p1++;
+          p2[0] = *p1++;
+        }
+    }
+  else
+    memcpy (correct_words, data, 64);
+
+#define OP(a, b, c, d, s, T) \
+  do			         	   \
+    {					   \
+      a += FF (b, c, d) + (*cwp++) + T;    \
+      a = rol(a, s);			   \
+      a += b;				   \
+    }					   \
+  while (0)
+
+  /* Before we start, one word about the strange constants.
+   * They are defined in RFC 1321 as
+   *
+   *  T[i] = (int) (4294967296.0 * fabs (sin (i))), i=1..64
+   */
+
+  /* Round 1.  */
+  OP (A, B, C, D,  7, 0xd76aa478);
+  OP (D, A, B, C, 12, 0xe8c7b756);
+  OP (C, D, A, B, 17, 0x242070db);
+  OP (B, C, D, A, 22, 0xc1bdceee);
+  OP (A, B, C, D,  7, 0xf57c0faf);
+  OP (D, A, B, C, 12, 0x4787c62a);
+  OP (C, D, A, B, 17, 0xa8304613);
+  OP (B, C, D, A, 22, 0xfd469501);
+  OP (A, B, C, D,  7, 0x698098d8);
+  OP (D, A, B, C, 12, 0x8b44f7af);
+  OP (C, D, A, B, 17, 0xffff5bb1);
+  OP (B, C, D, A, 22, 0x895cd7be);
+  OP (A, B, C, D,  7, 0x6b901122);
+  OP (D, A, B, C, 12, 0xfd987193);
+  OP (C, D, A, B, 17, 0xa679438e);
+  OP (B, C, D, A, 22, 0x49b40821);
+
+#undef OP
+#define OP(f, a, b, c, d, k, s, T)  \
+    do								      \
+      { 							      \
+	a += f (b, c, d) + correct_words[k] + T;		      \
+	a = rol(a, s);						      \
+	a += b; 						      \
+      } 							      \
+    while (0)
+
+  /* Round 2.  */
+  OP (FG, A, B, C, D,  1,  5, 0xf61e2562);
+  OP (FG, D, A, B, C,  6,  9, 0xc040b340);
+  OP (FG, C, D, A, B, 11, 14, 0x265e5a51);
+  OP (FG, B, C, D, A,  0, 20, 0xe9b6c7aa);
+  OP (FG, A, B, C, D,  5,  5, 0xd62f105d);
+  OP (FG, D, A, B, C, 10,  9, 0x02441453);
+  OP (FG, C, D, A, B, 15, 14, 0xd8a1e681);
+  OP (FG, B, C, D, A,  4, 20, 0xe7d3fbc8);
+  OP (FG, A, B, C, D,  9,  5, 0x21e1cde6);
+  OP (FG, D, A, B, C, 14,  9, 0xc33707d6);
+  OP (FG, C, D, A, B,  3, 14, 0xf4d50d87);
+  OP (FG, B, C, D, A,  8, 20, 0x455a14ed);
+  OP (FG, A, B, C, D, 13,  5, 0xa9e3e905);
+  OP (FG, D, A, B, C,  2,  9, 0xfcefa3f8);
+  OP (FG, C, D, A, B,  7, 14, 0x676f02d9);
+  OP (FG, B, C, D, A, 12, 20, 0x8d2a4c8a);
+
+  /* Round 3.  */
+  OP (FH, A, B, C, D,  5,  4, 0xfffa3942);
+  OP (FH, D, A, B, C,  8, 11, 0x8771f681);
+  OP (FH, C, D, A, B, 11, 16, 0x6d9d6122);
+  OP (FH, B, C, D, A, 14, 23, 0xfde5380c);
+  OP (FH, A, B, C, D,  1,  4, 0xa4beea44);
+  OP (FH, D, A, B, C,  4, 11, 0x4bdecfa9);
+  OP (FH, C, D, A, B,  7, 16, 0xf6bb4b60);
+  OP (FH, B, C, D, A, 10, 23, 0xbebfbc70);
+  OP (FH, A, B, C, D, 13,  4, 0x289b7ec6);
+  OP (FH, D, A, B, C,  0, 11, 0xeaa127fa);
+  OP (FH, C, D, A, B,  3, 16, 0xd4ef3085);
+  OP (FH, B, C, D, A,  6, 23, 0x04881d05);
+  OP (FH, A, B, C, D,  9,  4, 0xd9d4d039);
+  OP (FH, D, A, B, C, 12, 11, 0xe6db99e5);
+  OP (FH, C, D, A, B, 15, 16, 0x1fa27cf8);
+  OP (FH, B, C, D, A,  2, 23, 0xc4ac5665);
+
+  /* Round 4.  */
+  OP (FI, A, B, C, D,  0,  6, 0xf4292244);
+  OP (FI, D, A, B, C,  7, 10, 0x432aff97);
+  OP (FI, C, D, A, B, 14, 15, 0xab9423a7);
+  OP (FI, B, C, D, A,  5, 21, 0xfc93a039);
+  OP (FI, A, B, C, D, 12,  6, 0x655b59c3);
+  OP (FI, D, A, B, C,  3, 10, 0x8f0ccc92);
+  OP (FI, C, D, A, B, 10, 15, 0xffeff47d);
+  OP (FI, B, C, D, A,  1, 21, 0x85845dd1);
+  OP (FI, A, B, C, D,  8,  6, 0x6fa87e4f);
+  OP (FI, D, A, B, C, 15, 10, 0xfe2ce6e0);
+  OP (FI, C, D, A, B,  6, 15, 0xa3014314);
+  OP (FI, B, C, D, A, 13, 21, 0x4e0811a1);
+  OP (FI, A, B, C, D,  4,  6, 0xf7537e82);
+  OP (FI, D, A, B, C, 11, 10, 0xbd3af235);
+  OP (FI, C, D, A, B,  2, 15, 0x2ad7d2bb);
+  OP (FI, B, C, D, A,  9, 21, 0xeb86d391);
+
+  /* Put checksum in context given as argument.  */
+  hd->A += A;
+  hd->B += B;
+  hd->C += C;
+  hd->D += D;
+}
+
+
+/* Update the message digest with the contents of (DATA,DATALEN).  */
+static void
+digest_write (DIGEST_CONTEXT *hd, const void *data, size_t datalen)
+{
+  unsigned char *inbuf = (unsigned char *)data;
+
+  if (hd->count == 64) /* Flush the buffer.  */
+    {
+      transform ( hd, hd->buf );
+      hd->count = 0;
+      hd->nblocks++;
+    }
+  if ( !inbuf )
+    return;
+  if ( hd->count )
+    {
+      for ( ; datalen && hd->count < 64; datalen-- )
+        hd->buf[hd->count++] = *inbuf++;
+      digest_write( hd, NULL, 0 );
+      if ( !datalen )
+        return;
+    }
+
+  while( datalen >= 64 )
+    {
+      transform( hd, inbuf );
+      hd->count = 0;
+      hd->nblocks++;
+      datalen -= 64;
+      inbuf += 64;
+    }
+  for( ; datalen && hd->count < 64; datalen-- )
+    hd->buf[hd->count++] = *inbuf++;
+}
+
+
+/* The routine final terminates the computation and returns the
+ * digest.  The handle is prepared for a new cycle, but adding bytes
+ * to the handle will the destroy the returned buffer.
+ * Returns: DIGEST_LENGTH bytes representing the digest.  */
+static void
+digest_final (DIGEST_CONTEXT *hd)
+{
+  u32 t, msb, lsb;
+  unsigned char *p;
+
+  digest_write(hd, NULL, 0); /* Flush */;
+
+  t = hd->nblocks;
+  /* Multiply by 64 to make a byte count.  */
+  lsb = t << 6;
+  msb = t >> 26;
+  /* Add the count.  */
+  t = lsb;
+  if ( (lsb += hd->count) < t )
+    msb++;
+  /* Multiply by 8 to make a bit count. */
+  t = lsb;
+  lsb <<= 3;
+  msb <<= 3;
+  msb |= t >> 29;
+
+  if ( hd->count < 56 ) /* Enough room is available. */
+    {
+      hd->buf[hd->count++] = 0x80; /* pad */
+      while( hd->count < 56 )
+        hd->buf[hd->count++] = 0;  /* pad */
+    }
+  else /* Need one extra block.  */
+    {
+      hd->buf[hd->count++] = 0x80; /* pad character */
+      while ( hd->count < 64 )
+        hd->buf[hd->count++] = 0;
+      digest_write (hd, NULL, 0);  /* Flush */;
+      memset(hd->buf, 0, 56 );     /* Fill next block with zeroes.  */
+    }
+  /* Append the 64 bit count. */
+  hd->buf[56] = lsb;
+  hd->buf[57] = lsb >>  8;
+  hd->buf[58] = lsb >> 16;
+  hd->buf[59] = lsb >> 24;
+  hd->buf[60] = msb;
+  hd->buf[61] = msb >>  8;
+  hd->buf[62] = msb >> 16;
+  hd->buf[63] = msb >> 24;
+
+  transform( hd, hd->buf );
+  p = hd->buf;
+#define X(a) do { *p++ = hd->a      ; *p++ = hd->a >> 8;      \
+	          *p++ = hd->a >> 16; *p++ = hd->a >> 24; } while(0)
+  X(A);
+  X(B);
+  X(C);
+  X(D);
+#undef X
 }
 
 
@@ -672,6 +962,22 @@ parse_version_string (const char *s, int *major, int *minor, int *micro)
 }
 
 
+/* Return a pointer to the first timestamp digit.  A timestamp is
+ * expected to have this format "[12]yyymmddhhmm[ss]".  */
+static const char *
+is_timestamp (const char *string)
+{
+  const char *s;
+  int i;
+
+  if (!string || !(*string == '1' || *string == '2'))
+    return NULL;
+  for (i=0,s=string; digitp (*s); s++)
+    i++;
+  return (i == 12 || i == 14)? string : NULL;
+}
+
+
 /* Compare function for version strings.  */
 static int
 compare_version_strings (const char *a, const char *b)
@@ -689,7 +995,14 @@ compare_version_strings (const char *a, const char *b)
     b_major = b_minor = b_micro = 0;
 
   if (!a_plvl && !b_plvl)
-    return -1;  /* Put invalid strings at the end.  */
+    {
+      /* Put invalid strings at the end.  But first check whether they
+       * are both timestamps and use strcmp in this case. */
+      if ( (a_plvl = is_timestamp (a)) && (b_plvl = is_timestamp (b)))
+        return strcmp (a_plvl, b_plvl);
+
+      return -1;
+    }
   if (a_plvl && !b_plvl)
     return 1;
   if (!a_plvl && b_plvl)
@@ -712,7 +1025,7 @@ compare_version_strings (const char *a, const char *b)
 
   if (opt_reverse_ver && !opt_reverse)
     {
-      /* We may only compare up to the next dot and the swicth back to
+      /* We may only compare up to the next dot and then switch back to
        * regular order.  */
       for (; *a_plvl && *b_plvl; a_plvl++, b_plvl++)
         {
@@ -787,6 +1100,34 @@ sort_finfo (const void *arg_a, const void *arg_b)
     }
 
   return strcmp(astr, bstr);
+}
+
+
+/* Return a string to a constant buffer with the thumbnail matching
+ * FILE.  CWD needs to be the current WD.  */
+static const char *
+get_thumbnail (const char *cwd, const char *file)
+{
+  DIGEST_CONTEXT ctx;
+  static char thumbname[7 + DIGEST_LENGTH*2 + 4 + 1];
+  int i;
+
+  digest_init (&ctx);
+  digest_write (&ctx, "file://", 7);
+  if (*cwd != '/')
+    err ("CWD '%s' is not an absolute dir\n", cwd);
+  else
+    digest_write (&ctx, cwd, strlen (cwd));
+  digest_write (&ctx, "/", 1);
+  digest_write (&ctx, file, strlen (file));
+  digest_final (&ctx);
+
+  strcpy (thumbname, "normal/");
+  for (i=0; i < DIGEST_LENGTH; i++)
+    snprintf (thumbname+7+2*i, 10, "%02x", ctx.buf[i]);
+  strcat (thumbname, ".png");
+
+  return thumbname;
 }
 
 
@@ -1066,9 +1407,10 @@ print_dirs (finfo_t *sorted, int count, int at_root)
 }
 
 
-/* Print COUNT files from the array SORTED. */
+/* Print COUNT files from the array SORTED.  CWD is the current working
+ * directory. */
 static void
-print_files (finfo_t *sorted, int count)
+print_files (const char *cwd, finfo_t *sorted, int count)
 {
   int idx;
   finfo_t fi;
@@ -1104,11 +1446,23 @@ print_files (finfo_t *sorted, int count)
                 strstr (fi->name, ".tar")? "tar" : "document",
                 html_escape_href (fi->name), html_escape (fi->name),
                 format_time (fi->mtime), format_size (fi->size));
+      else if (opt_html && opt_thumb  && fi->is_image)
+        printf ("<tr><td width=\"50%%\"><a href=\"%s\">"
+                "<img src=\"%s/%s\"/>"
+                "</a></td>"
+                "<td align=\"right\">%s</td><td align=\"right\">%s</td></tr>\n",
+                html_escape_href (fi->name),
+                opt_thumb,
+                get_thumbnail (cwd, fi->name),
+                format_time (fi->mtime), format_size (fi->size));
       else if (opt_html)
         printf ("<tr><td width=\"50%%\"><a href=\"%s\">%s</a></td>"
                 "<td align=\"right\">%s</td><td align=\"right\">%s</td></tr>\n",
                 html_escape_href (fi->name), html_escape (fi->name),
                 format_time (fi->mtime), format_size (fi->size));
+      else if (opt_thumb && fi->is_image)
+        printf ("F %s %s/%s\n",
+                fi->name, opt_thumb, get_thumbnail (cwd, fi->name));
       else
         printf ("F %s\n", fi->name);
     }
@@ -1121,9 +1475,26 @@ print_files (finfo_t *sorted, int count)
 }
 
 
-/* Scan DIRECTORY and print an index.
+static int
+has_image_suffix (const char *name)
+{
+  const char *suffixes[] =  { "jpeg", "jpg", "png", "tiff", "gif",
+                              "JPEG", "JPG", "PNG", "TIFF", "GIF" };
+  unsigned int i, n, namelen;
+
+  namelen = strlen (name);
+  for (i=0; i < DIM (suffixes); i++)
+    if (namelen > (n=strlen (suffixes[i]) + 1)
+        && name[namelen-n] == '.'
+        && !strcmp (name + namelen - n + 1,  suffixes[i]))
+      return 1;
+  return 0;
+}
+
+
+/* SCAN DIRECTORY and print an index.
  * FIXME: This does a chdir and does not preserve the old PWD.
- *        The fix is to build the full filename beofre stat'ing.
+ *        The fix is to build the full filename before stat'ing.
  */
 static void
 scan_directory (const char *directory, const char *title)
@@ -1138,6 +1509,7 @@ scan_directory (const char *directory, const char *title)
   size_t len;
   strlist_t sl;
   int at_root = 0;
+  char cwd[4096];
 
   if (opt_gpgweb)
     {
@@ -1188,6 +1560,9 @@ scan_directory (const char *directory, const char *title)
   if (chdir (directory))
     die ("cannot chdir to '%s': %s\n", directory, strerror (errno));
 
+  if (!getcwd (cwd, sizeof cwd -1))
+    strcpy (cwd, ".");  /* Ooops.  */
+
   for (idx=0; idx < count; idx++)
     {
       struct stat sb;
@@ -1203,18 +1578,19 @@ scan_directory (const char *directory, const char *title)
       fi->is_reg = !!S_ISREG(sb.st_mode);
       fi->size = fi->is_reg? sb.st_size : 0;
       fi->mtime = sb.st_mtime;
+      fi->is_image = !!has_image_suffix (fi->name);
     }
 
   print_header (title);
   if (opt_files_first)
     {
-      print_files (sorted, count);
+      print_files (cwd, sorted, count);
       print_dirs (sorted, count, at_root);
     }
   else
     {
       print_dirs (sorted, count, at_root);
-      print_files (sorted, count);
+      print_files (cwd, sorted, count);
     }
   print_footer ();
 
@@ -1229,12 +1605,14 @@ scan_directory (const char *directory, const char *title)
       for (idx=0; idx < count; idx++)
         {
           fi = sorted[idx];
-          fprintf (indexfp, "%s:%c:%llu:%lu:\n",
+          fprintf (indexfp, "%s:%c:%llu:%lu:%s:\n",
                    percent_escape (fi->name),
                    fi->is_dir? 'd':
                    fi->is_reg? 'r': '?',
                    fi->size,
-                   (unsigned long)fi->mtime);
+                   (unsigned long)fi->mtime,
+                   (opt_thumb && fi->is_image)?
+                      get_thumbnail (cwd, fi->name) : "");
         }
       if (ferror (indexfp))
         die ("error writing '%s' for '%s': %s\n",
@@ -1258,6 +1636,13 @@ main (int argc, char **argv)
 {
   int last_argc = -1;
   strlist_t sl;
+
+  assert (sizeof (u32) == 4);
+  {
+    union { u32 u; char b[4]; } foo;
+    foo.u = 32;
+    big_endian_host = !foo.b[0];
+  }
 
   if (argc < 1)
     die ("Hey, read up on how to use exec(2)\n");
@@ -1297,6 +1682,7 @@ main (int argc, char **argv)
                  "  --html          output HTML\n"
                  "  --gpgweb        output HTML as used at gnupg.org\n"
                  "  --readme        include README file\n"
+                 "  --thumb DIR     include standard thumbnails using DIR\n"
                  "  --index FILE    create index FILE\n"
                  "  --exclude NAME  ignore file NAME\n"
                  , stdout);
@@ -1330,6 +1716,14 @@ main (int argc, char **argv)
       else if (!strcmp (*argv, "--readme"))
         {
           opt_readme = 1;
+          argc--; argv++;
+        }
+      else if (!strcmp (*argv, "--thumb"))
+        {
+          argc--; argv++;
+          if (!argc || !**argv)
+            die ("argument missing for option '%s'\n", argv[-1]);
+          opt_thumb = *argv;
           argc--; argv++;
         }
       else if (!strcmp (*argv, "--html"))
@@ -1368,6 +1762,11 @@ main (int argc, char **argv)
   if (argc < 1 || argc > 2)
     die ("usage: " PGMNAME " [options] directory [title]\n");
 
+  if (opt_html && opt_thumb)
+    {
+      char *p = xstrdup (html_escape_href (opt_thumb));
+      opt_thumb = p;
+    }
 
   scan_directory (argv[0], argv[1]? argv[1]:argv[0]);
 

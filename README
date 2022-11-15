@@ -1,10 +1,9 @@
 README for the gnupg-doc repository                         -*- org -*-
 
-This is a separated branch for the gnupg.org website.
-
-The old website was tracked in a CVS repository but we want to start
-the new website form scratch using only the texts from the generated
-HTML files.
+This is the new gnupg.org website. The old website was tracked in a
+CVS repository.  We started the new website form scratch by converting
+the HTML rendered content to org-mode instead of writing a converter
+from the formerly used [[https://en.wikipedia.org/wiki/Website_Meta_Language][WML]].
 
 ** Directory structure
 

@@ -15,18 +15,27 @@ and Open Source software.
 The Verein was founded on February 8, 2017 by 7 active GnuPG
 developers.  Its registration number is /VR11482/ at /Amtsgericht
 Düsseldorf/.  The tax office Düsseldorf-Altstadt has confirmed the
-charitable state.  As of 2018-02-02 the Verein has 15 regular members
-represented by its board: Werner Koch (chairperson), Martin
-Gollowitzer (vice-chair) and Andre Heinecke (treasurer).
+charitable state.  As of 2019-02-04 the Verein has 15 regular members
+represented by its board: Werner Koch (chairperson), Bernhard
+Reiter (vice-chair) and Andre Heinecke (treasurer).
 
 ** Menu
 
 - [[file:members.org][Members]]
 - [[file:finances.org][Financial overview]]
-- {{{atgit(legal/constitution.de.pdf,constitution)}}} [German]
-- {{{atgit(legal/constitution.en.pdf,constitution)}}} [English translation]
-- {{{atgit(legal/founding-protocol-20170208.txt,Founding protocol)}}}
-  [German]
+- [[https://gnupg.org/ftp/verein/constitution.de.pdf][Satzung]] [German]
+- [[https://gnupg.org/ftp/verein/constitution.en.pdf][Constitution]] [English translation]
+- [[https://gnupg.org/ftp/verein/founding-protocol-20170208.txt][Founding protocol]]  [German]
 - [[https://gnupg.org/ftp/verein/beitragsordnung.en.pdf][Membership fee regulations (English)]]  [[https://gnupg.org/ftp/verein/beitragsordnung.de.pdf][(German)]]
+
+
+** Contact
+
+Members of the Verein should be subscribed to the Verein's mailing
+list and that is the preferred way for communication.
+
+For other questions you may either write to the board or the office.
+That is {[[https://gnupg.org/.well-known/openpgpkey/hu/u41619jxjyqiejhoftu6ks1w7o5zht5b][board]]|[[https://gnupg.org/.well-known/openpgpkey/hu/h3b8ei4jx9oxj6j4qc4preb5tam67ys9][office]]} at gnupg.org.  Keys are available via the web
+key directory or by using the provided direct links.
 
 # eof
