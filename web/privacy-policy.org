@@ -141,10 +141,12 @@ which is in general visible to everyone.  No registration is required
 to view the public data, similar to the web server.  To file a bug
 report a user must be registered; this is only done to avoid misuse of
 the server by spammer.  A user who registered must provide a valid
-mail address and an arbitrary name for his account.  A user may
-disable his own account but can't delete any data he entered into the
-system.  This is required for proper documentation and the overall
-security of the software developed by the GnuPG project.
+mail address and an arbitrary name for his account.  A user may remove
+personal data and disable his own account but can't delete any data
+entered into the system.  This is required for proper documentation
+and the overall security of the software developed by the GnuPG
+project and according to the exceptions in Art. 17 para. 3 lit. a),
+b), d) and e) GDPR.
 
 Only available to the administrators of the system are the IP
 addresses and login times of the users.  We need to keep them to help
