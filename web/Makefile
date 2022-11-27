@@ -28,8 +28,9 @@ signcheck: swdb.lst
           exit 1; \
         fi
 
+
 upload: swdb.lst.sig  signcheck
-	scp swdb.lst.sig swdb.lst playfair.gnupg.org:/var/www/git/versions.gnupg.org/htdocs/
+	scp swdb.lst.sig swdb.lst al-kindi.gnupg.org:/var/www/versions.gnupg.org/
 	scp swdb.lst.sig swdb.lst webbuilder@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
 
 .PHONY: upload all signcheck
