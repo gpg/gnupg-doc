@@ -1,3 +1,12 @@
+# Makefile for swdb
+#
+#
+# You need to have in ~/.gnupg-autogen.rc lines like this:
+#
+# VERSIONSGNUPG_CMD=scp
+# VERSIONSGNUPG_LOC=al-kindi.gnupg.org:/var/www/versions.gnupg.org/
+#
+#
 
 all: swdb.lst.sig
 
@@ -30,7 +39,20 @@ signcheck: swdb.lst
 
 
 upload: swdb.lst.sig  signcheck
-	scp swdb.lst.sig swdb.lst al-kindi.gnupg.org:/var/www/versions.gnupg.org/
-	scp swdb.lst.sig swdb.lst webbuilder@trithemius.gnupg.org:/var/www/www/www.gnupg.org/htdocs/
+	+(set -e;\
+	 x=$$(grep '^VERSIONSGNUPG_CMD=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
+         if [ -z "$$x" ]; then \
+           echo "error: VERSIONSGNUPG_CMD missing in ~/.gnupg-autogen.rc">&2;\
+	   exit 2;\
+         fi;\
+	 mycmd="$$x";\
+	 x=$$(grep '^VERSIONSGNUPG_LOC=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
+         if [ -z "$$x" ]; then \
+           echo "error: VERSIONSGNUPG_LOC missing in ~/.gnupg-autogen.rc">&2; \
+           exit 2;\
+         fi;\
+	 myloc="$$x";\
+	 $$mycmd swdb.lst.sig swdb.lst $$myloc \
+	)
 
 .PHONY: upload all signcheck
