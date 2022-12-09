@@ -40,7 +40,7 @@ signcheck: swdb.lst
 
 upload: swdb.lst.sig  signcheck
 	+(set -e;\
-	 x=$$(grep '^VERSIONSGNUPG_CMD=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
+	 x=$$(grep '^VERSIONSGNUPG_CMD=' $$HOME/.gnupg-autogen.rc|cut -d= -f2|tr -d \');\
          if [ -z "$$x" ]; then \
            echo "error: VERSIONSGNUPG_CMD missing in ~/.gnupg-autogen.rc">&2;\
 	   exit 2;\
