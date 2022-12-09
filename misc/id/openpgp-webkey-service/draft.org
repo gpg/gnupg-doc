@@ -233,7 +233,7 @@ mail domain is hosted.  DNS SRV resource records, as used in earlier
 specifications of this protocol, posed a problem for implementations
 which have only limited access to DNS resolvers.  The direct method is
 kept for backward compatibility and to allow providing a Web Key
-Directory even with without DNS change requirements.
+Directory even without DNS change requirements.
 
 * Web Key Directory Update Protocol
 
