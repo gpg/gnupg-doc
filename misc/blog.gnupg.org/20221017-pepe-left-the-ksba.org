@@ -2,7 +2,7 @@
 #+OPTIONS: ^:{} num:nil toc:nil
 #+STARTUP: showall
 #+AUTHOR: g10 Code GmbH
-#+DATE: 2022-10-17
+#+DATE: 2022-10-17 (updated 2022-12-20)
 #+TITLE: Security Advisory for Libksba/GnuPG (CVE-2022-3515)
 
 #+html: <div class="urgent"><p>Security Advisory for Libksba / GnuPG</p></div>
@@ -12,7 +12,7 @@
 
 A severe bug has been found in [[https://gnupg.org/software/libksba/][Libksba]] , the library used by GnuPG for
 parsing the ASN.1 structures as used by S/MIME.  The bug affects all
-versions of [[https://gnupg.org/software/libksba/][Libksba]]  before 1.6.2 and may be used for remote code
+versions of [[https://gnupg.org/software/libksba/][Libksba]]  before 1.6.3 and may be used for remote code
 execution.  *Updating this library is thus important*.
 
 *** Who is affected
@@ -33,21 +33,21 @@ for experienced crooks.
 
 Affected to our knowledge are:
 
-- Most software using /Libksba/ versions up to 1.6.1
+- Most software using /Libksba/ versions up to 1.6.2
 
-- All /Gpg4win/ versions from version 2.0.0 up to 4.0.3
+- All /Gpg4win/ versions from version 2.0.0 up to 4.0.4
 
-- All /GnuPG VS-Desktop^{\reg}/ versions from 3.1.16 up to 3.1.24
+- All /GnuPG VS-Desktop^{\reg}/ versions from 3.1.16 up to 3.1.25
 
-- All /GnuPG installers for Windows/ from version 2.3.0 up to  2.3.7
+- All /GnuPG installers for Windows/ from version 2.3.0 up to  2.3.8
 
-- All /GnuPG LTS installers for Windows/ from version 2.1.0 up to 2.2.39
+- All /GnuPG LTS installers for Windows/ from version 2.1.0 up to 2.2.40
 
 
 *** How to fix
 
 If you are on a Unix or Linux system you should get the latest version
-of Libksba (1.6.2 or newer), build the software and install the new
+of Libksba (1.6.3 or newer), build the software and install the new
 shared library.  Restart any background processes (e.g. =gpgconf
 --kill all= for GnuPG).  In the rare case that Libksba is statically
 linked remember to rebuild those binaries.
@@ -55,10 +55,10 @@ linked remember to rebuild those binaries.
 If your are on Windows or if you use an AppImage of GnuPG VS-Desktop
 update to the latest version:
 
-- Gpgwin version 4.0.4 or newer
-- GnuPG VS-Desktop version 3.1.25 or newer (MSI or AppImage)
-- GnuPG installer for Windows version 2.3.8
-- GnuPG LTS installer for Windows version 2.2.40
+- Gpgwin version 4.1.0 or newer
+- GnuPG VS-Desktop version 3.1.26 or newer (MSI or AppImage)
+- GnuPG installer for Windows version 2.4.0
+- GnuPG LTS installer for Windows version 2.2.41
 
 In case you are not yet ready to deploy a new version, please extract
 =libksba-8.dll= from the respective package and replace the
@@ -75,9 +75,9 @@ visible whether a fixed version of Libksba is used. To check this run:
 
 and watch out for a line like
 
-: * KSBA 1.6.2 (xxxxx)
+: * KSBA 1.6.3 (xxxxx)
 
-If you see a version number of 1.6.2 or newer, you got the fix.
+If you see a version number of 1.6.3 or newer, you got the fix.
 
 *** CVE
 
@@ -147,12 +147,25 @@ extra check:
     }
 #+end_src
 
-
 *** Thanks
 
 This vulnerability was discovered by:\\
-Anonymous working with Trend Micro Zero Day Initiative
+Anonymous working with Trend Micro Zero Day Initiative\\
+The second vulnerability was discovered by:\\
+Joseph Surin of elttam
+
 
 The report was received on 2022-10-04, fix pushed 2022-10-05, new
 source code release 2002-10-07, binary releases and announcement on
-2022-10-17.
+2022-10-17.  Report on the second problem was received on 2022-11-22,
+and fixed on the next day.  We agreed with the reported to delay
+publication for up to 5 weeks to catch any other reports and to give
+us time for a coordinated release of all affected software.  The fix
+was published to customers on 2022-12-16, general publication on
+2022-12-20.
+
+*** Update on 2022-12-19
+
+It turned out that a related bug exists in the code to parse CRL
+signatures which was not fixed by Libksba 1.6.2.  This update has
+changed the affected version numbers and the timeline.

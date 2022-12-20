@@ -52,8 +52,8 @@
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/gpgme/index.org][GPGME]]           | {{{gpgme_ver}}}        | {{{gpgme_date}}}        |         {{{gpgme_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
    | [[../software/scute/index.org][Scute]]           | {{{scute_ver}}}        | {{{scute_date}}}        |         {{{scute_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2{{{ftpclose}}}                      | {{{ftpopen}}}{{{ftp_loc_base}}}/scute/scute-{{{scute_ver}}}.tar.bz2.sig{{{ftpclose}}}                      |
-   | [[../software/gpa/index.org][GPA]]             | {{{gpa_ver}}}          | {{{gpa_date}}}          |           {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+   | [[../software/gpa/index.org][GPA]]             | {{{gpa_ver}}}          | {{{gpa_date}}}          |           {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    | GnuPG 1.4       | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |        {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
 
@@ -99,7 +99,7 @@
    | OS      | Where              | Description                                              |
    |---------+--------------------+----------------------------------------------------------|
    |         | <18>               |                                                          |
-   | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpcloseS}}}  | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
+   | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpcloseS}}} | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
    | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/                 |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/                 |
    |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/                         |
@@ -120,9 +120,9 @@
 
    We announce the end-of-life date for a current stable version at
    the time a new stable version is released.  We maintain old
-   branches for at least two years.  For GnuPG 2.2 we consider 2.1.0
-   as the birth of this new stable branch.  For most other packages we
-   don't maintain branches and thus there is no end-of-life; always
+   branches for at least two years.  For GnuPG 2.4 (2.2) we consider
+   2.3.0 (2.1.0) as the birth of the branch.  For most other packages
+   we don't maintain branches and thus there is no end-of-life; always
    use the latest version.
 
    | Package   | Ver.  | End-of-life    | Birth      |
@@ -133,7 +133,7 @@
    |           | 1.4   | none (2)       | 2004-12-16 |
    |           | +2.0+ | 2017-12-31     | 2006-11-11 |
    |           | 2.2   | 2024-12-31 (1) | 2014-11-06 |
-   |           | 2.3   | tba            | 2021-04-07 |
+   |           | 2.4   | tba            | 2021-04-07 |
    | Libgcrypt | +1.5+ | 2016-12-31     | 2011-06-29 |
    |           | +1.6+ | 2017-06-30     | 2013-12-16 |
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
