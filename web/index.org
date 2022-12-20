@@ -25,7 +25,7 @@ Since its introduction in 1997, GnuPG is [[https://www.gnu.org/philosophy/free-s
 it respects your freedom). It can be freely used, modified and
 distributed under the terms of the [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-The current version of GnuPG is {{{gnupg22_ver}}}.  See the [[file:download/index.org][download]]
+The current version of GnuPG is {{{gnupg24_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
 
 [[https://www.gpg4win.org][Gpg4win]] is a Windows version of GnuPG featuring a context menu tool, a
@@ -77,6 +77,25 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** 25 Years of GnuPG (2017-12-20)
+
+Exactly 25 years ago the very first release of GnuPG was published.
+We are pleased to take this opportunity to announce the availability
+of GnuPG version 2.4.0.
+
+This release has a few new features and the binary releases come with
+an updated Libksba to fix another vulnerability related to
+CVE-2022-3515.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q4/000477.html][more]]}
+
+
+** Libksba security advisory update (2022-12-20)                  :important:
+
+Another bug has been found in [[https://gnupg.org/software/libksba/][Libksba]] which affects all versions of
+libksba before 1.6.3.  Our [[https://gnupg.org/blog/20221017-pepe-left-the-ksba.html][security advisory]] for {{{CVE(2022-3512)}}}
+has been updated accordingly.  Windows users should update
+to [[https://files.gpg4win.org/gpg4win-4.1.0.exe][Gpg4win 4.1.0]] or to GnuPG\nbsp{}VS-Desktop 3.1.26.
+
+
 ** GnuPG / Libksba security advisory (2022-10-17)                 :important:
 
 A severe bug has been found in [[https://gnupg.org/software/libksba/][Libksba]], the library used by GnuPG for
@@ -87,6 +106,7 @@ execution.  *Updating this library is thus important*.
 Please see our [[https://gnupg.org/blog/20221017-pepe-left-the-ksba.html][security advisory]] for {{{CVE(2022-3512)}}}. For
 download links please see the [[file:download/index.org][download]] page.  Windows users should
 update to [[https://files.gpg4win.org/gpg4win-4.0.4.exe][Gpg4win 4.0.4]] or to GnuPG\nbsp{}VS-Desktop 3.1.25.
+
 
 ** GnuPG 2.3.8 released (2022-10-13)
 
