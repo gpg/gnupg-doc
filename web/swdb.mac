@@ -66,9 +66,9 @@
 #+macro: gpg4win_src_size 173114k
 #+macro: gpg4win_src_sha1 82453e937568f783c210c25ba33cd738d95f08cc
 #+macro: gpg4win_src_sha2 cec8cfed0b21621c1e46cd333e573f47a1abcbf5a7f6debc4e010167a621da41
-#+macro: gpg4win_exe_size 27939k
-#+macro: gpg4win_exe_sha1 11f888c25d38027aa8545bcc773e9b33dcbbc64b
-#+macro: gpg4win_exe_sha2 09a247d0999ecb1cabaf566910fa2943858dadb602734b0d5739284dcc1c9646
+#+macro: gpg4win_exe_size 27948k
+#+macro: gpg4win_exe_sha1 71e83bc35445e3db8b5fe2a05c723c0e3f2d0b01
+#+macro: gpg4win_exe_sha2 e0fddc840808eef9531f14a515f8b3b6c46511977f00569161129c1dee413b38
 
 #
 # GnuPG-Desktop
