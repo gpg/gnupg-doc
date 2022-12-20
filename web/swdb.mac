@@ -73,14 +73,15 @@
 #
 # GnuPG-Desktop
 #
-#+macro: gnupgdesk_ver  2.3.8.0
-#+macro: gnupgdesk_date 2022-10-19
-#+macro: gnupgdesk_src_size 208M
-#+macro: gnupgdesk_src_sha1 e009badda5033943e026de9923e3f2bb56d6a12d
-#+macro: gnupgdesk_src_sha2 b2ea14561d413f72e520e0fe37fb739fe359b0aaff381e7ea1940566c7708d20
+#+macro: gnupgdesk_ver  2.4.0.0
+#+macro: gnupgdesk_date 2022-12-19
+#+macro: gnupgdesk_src_size 170M
+#+macro: gnupgdesk_src_sha1 82453e937568f783c210c25ba33cd738d95f08cc
+#+macro: gnupgdesk_src_sha2 cec8cfed0b21621c1e46cd333e573f47a1abcbf5a7f6debc4e010167a621da41
 #+macro: gnupgdesk_ai_size 56M
-#+macro: gnupgdesk_ai_sha1 7651072d7cecedb38b55c533544507b73e770934
-#+macro: gnupgdesk_ai_sha2 98c07cceedb38ded65175dc6885cb85a3f93ec0811409d61dd25508f7e31ad2a
+#+macro: gnupgdesk_ai_sha1 7850e24692d347384b423c0bdf7604372098e7e8
+#+macro: gnupgdesk_ai_sha2 5a5bf8c1a436e7239ba62cfa5cac42cb64a241b8e60d7e08cb9da50bf453754d
+
 
 #
 # GPA
