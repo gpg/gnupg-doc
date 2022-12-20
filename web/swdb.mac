@@ -14,45 +14,34 @@
 # The Git branch of this version:
 #+macro: gnupg_branch master
 #
-#+macro: gnupg24_ver  2.3.8
-#+macro: gnupg24_date 2022-10-13
-#+macro: gnupg24_size 7465k
-#+macro: gnupg24_sha1 1f31b7b4c9c9adad97f94ea3acf1aa64c0424bcc
-#+macro: gnupg24_sha2 540b7a40e57da261fb10ef521a282e0021532a80fd023e75fb71757e8a4969ed
+#+macro: gnupg24_ver  2.4.0
+#+macro: gnupg24_date 2022-12-16
+#+macro: gnupg24_size 7487k
+#+macro: gnupg24_sha1 63dde155a8df0d5e1987efa5fc17438beca83ac1
+#+macro: gnupg24_sha2 1d79158dd01d992431dd2e3facb89fdac97127f89784ea2cb610c600fb0c1483
 #+macro: gnupg24_branch  STABLE-BRANCH-2-4
-#+macro: gnupg24_w32_ver  2.3.8_20221013
-#+macro: gnupg24_w32_date 2022-10-13
-#+macro: gnupg24_w32_size 4797k
-#+macro: gnupg24_w32_sha1 6cfabadbaf15a27988a11e811e9eabb20077b4ff
-#+macro: gnupg24_w32_sha2 ef179c223990f9dfff2b1e6e9f7468908e0d08b381b3abded2471c29faad234e
+#+macro: gnupg24_w32_ver  2.4.0_20221216
+#+macro: gnupg24_w32_date 2022-12-16
+#+macro: gnupg24_w32_size 4816k
+#+macro: gnupg24_w32_sha1 5195ff17de15ffd8629bfd0f0b5dd2b2774295f2
+#+macro: gnupg24_w32_sha2 0d4539afefaca0e0a0b0fe0d06baf207512a9520e38d680aaa90c1c57905cf48
 
 
 #
 # GnuPG-2.2
 #
-#+macro: gnupg22_ver  2.2.40
-#+macro: gnupg22_date 2022-10-10
-#+macro: gnupg22_size 7130k
-#+macro: gnupg22_sha1 2a8b52d08cc78e4ebeb07ec2fc8d95e290a3c4a7
-#+macro: gnupg22_sha2 1164b29a75e8ab93ea15033300149e1872a7ef6bdda3d7c78229a735f8204c28
-#+macro: gnupg22_branch  STABLE-BRANCH-2-2
-#+macro: gnupg22_w32_ver  2.2.40_20221010
-#+macro: gnupg22_w32_date 2022-10-10
-#+macro: gnupg22_w32_size 4464k
-#+macro: gnupg22_w32_sha1 8db42f87e95df6b97c530e5f3cb4760a86dd3cb9
-#+macro: gnupg22_w32_sha2 d8d0b47cccd406e288b86fcd08123caf4ba450167ce774f6432dfa4f3032af9b
+#+macro: gnupg22_ver  2.2.41
+#+macro: gnupg22_date 2022-12-09
+#+macro: gnupg22_size 7142k
+#+macro: gnupg22_sha1 8683ed39c5707313ff094f4758fbf779112ff0b7
+#+macro: gnupg22_sha2 13f3291007a5e8546fcb7bc0c6610ce44aaa9b3995059d4f8145ba09fd5be3e1
+#+macro: gnupg22_branch  STABLE-BRANCH-2-2.40
+#+macro: gnupg22_w32_ver  2.2.41_20221209
+#+macro: gnupg22_w32_date 2022-12-09
+#+macro: gnupg22_w32_size 4474k
+#+macro: gnupg22_w32_sha1 1de0b24d60e2628e491b1272f5a586aae3ca36f9
+#+macro: gnupg22_w32_sha2 72f24a6be29971951ca2cf5d42bb2fc4f25836389ce6afa8636ac1f402ad93bf
 
-
-
-#
-# GnuPG 2.0  (end-of-life)
-#
-#+macro: gnupg20_ver  2.0.31
-#+macro: gnupg20_date 2017-12-29
-#+macro: gnupg20_size 4324k
-#+macro: gnupg20_sha1 a7d5021a6a39dd67942e00a1239e37063edb00f0
-#+macro: gnupg20_sha2 095558cfbba52fba582963e97b0c016889570b4712d6b871abeef2cf93e62293
-#+macro: gnupg20_branch  STABLE-BRANCH-2-0
 
 
 #
@@ -147,20 +136,11 @@
 #
 # LIBKSBA
 #
-#+macro: libksba_ver  1.6.2
-#+macro: libksba_date 2022-10-07
+#+macro: libksba_ver  1.6.3
+#+macro: libksba_date 2022-12-06
 #+macro: libksba_size 652k
-#+macro: libksba_sha1 5e9d2223bfc1d4431594cb4a14f118ba0008cc2e
-#+macro: libksba_sha2 fce01ccac59812bddadffacff017dac2e4762bdb6ebc6ffe06f6ed4f6192c971
-
-
-#
-# DirMngr (not any longer needed)
-#
-#+macro: dirmngr_ver  1.1.1
-#+macro: dirmngr_date 2013-04-26
-#+macro: dirmngr_size 554k
-#+macro: dirmngr_sha1 e708d4aa5ce852f4de3f4b58f4e4f221f5e5c690
+#+macro: libksba_sha1 7fe6d00b61e85a699a28d0aa309ba0bddcc46f3e
+#+macro: libksba_sha2 3f72c68db30971ebbf14367527719423f0a4d5f8103fc9f4a1c01a9fa440de5c
 
 
 #
