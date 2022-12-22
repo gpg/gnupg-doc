@@ -82,12 +82,16 @@ If you see a version number of 1.6.3 or newer, you got the fix.
 *** CVE
 
 - GnuPG-bug-id :: 6230 (https://dev.gnupg.org/T6230)
-- CVE  ::  CVE-2022-3515
+- CVE  :: CVE-2022-3515
 - CVSS :: 8.1: AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
 - Other-IDs  :: ZDI-CAN-18927, ZDI-CAN-18928, ZDI-CAN-18927
 
 CVSS taken from the Trend Micro Zero Day Initiative report.
 
+For the second vulnerability:
+
+- GnuPG-bug-id :: 6284 (https://dev.gnupg.org/T6284)
+- CVE :: CVE-2022-47629
 
 ** Technical background
 
