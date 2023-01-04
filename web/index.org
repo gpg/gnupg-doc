@@ -77,7 +77,7 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
-** 25 Years of GnuPG (2017-12-20)
+** 25 Years of GnuPG (2022-12-20)
 
 Exactly 25 years ago the very first release of GnuPG was published.
 We are pleased to take this opportunity to announce the availability
