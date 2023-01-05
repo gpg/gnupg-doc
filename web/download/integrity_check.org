@@ -114,6 +114,7 @@
    {{{gnupgdesk_ai_sha1}}}  gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
+   {{{libgcrypt18_sha1}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
    {{{libksba_sha1}}}  libksba-{{{libksba_ver}}}.tar.bz2
    {{{libassuan_sha1}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
    {{{ntbtls_sha1}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
@@ -122,10 +123,34 @@
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
    {{{scute_sha1}}}  scute-{{{scute_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
-   {{{dirmngr_sha1}}}  dirmngr-{{{dirmngr_ver}}}.tar.bz2
-   {{{gnupg20_sha1}}}  gnupg-{{{gnupg20_ver}}}.tar.bz2
    {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
+   {{{end_chksum}}}
+
+** List of SHA-256 check-sums
+
+   For your convenience, all SHA-256 check-sums available for software
+   that can be downloaded from [[https://gnupg.org/ftp/][our site]], have been gathered below.
+
+   {{{begin_chksum}}}
+   {{{gnupg24_sha256}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
+   {{{gnupg24_w32_sha256}}}  gnupg-w32-{{{gnupg24_w32_ver}}}.exe
+   {{{gnupg22_sha256}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
+   {{{gnupg22_w32_sha256}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
+   {{{gnupgdesk_src_sha256}}}  gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz
+   {{{gnupgdesk_ai_sha256}}}  gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage
+   {{{libgpg_error_sha256}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
+   {{{libgcrypt_sha256}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
+   {{{libgcrypt18_sha256}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
+   {{{libksba_sha256}}}  libksba-{{{libksba_ver}}}.tar.bz2
+   {{{libassuan_sha256}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
+   {{{ntbtls_sha256}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
+   {{{npth_sha256}}}  npth-{{{npth_ver}}}.tar.bz2
+   {{{pinentry_sha256}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
+   {{{gpgme_sha256}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{scute_sha256}}}  scute-{{{scute_ver}}}.tar.bz2
+   {{{gpa_sha256}}}  gpa-{{{gpa_ver}}}.tar.bz2
+   {{{gnupg1_sha256}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{end_chksum}}}
 
 
