@@ -133,24 +133,24 @@
    that can be downloaded from [[https://gnupg.org/ftp/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
-   {{{gnupg24_sha256}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
-   {{{gnupg24_w32_sha256}}}  gnupg-w32-{{{gnupg24_w32_ver}}}.exe
-   {{{gnupg22_sha256}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
-   {{{gnupg22_w32_sha256}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
-   {{{gnupgdesk_src_sha256}}}  gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz
-   {{{gnupgdesk_ai_sha256}}}  gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage
-   {{{libgpg_error_sha256}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
-   {{{libgcrypt_sha256}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
-   {{{libgcrypt18_sha256}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
-   {{{libksba_sha256}}}  libksba-{{{libksba_ver}}}.tar.bz2
-   {{{libassuan_sha256}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
-   {{{ntbtls_sha256}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
-   {{{npth_sha256}}}  npth-{{{npth_ver}}}.tar.bz2
-   {{{pinentry_sha256}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
-   {{{gpgme_sha256}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
-   {{{scute_sha256}}}  scute-{{{scute_ver}}}.tar.bz2
-   {{{gpa_sha256}}}  gpa-{{{gpa_ver}}}.tar.bz2
-   {{{gnupg1_sha256}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
+   {{{gnupg24_sha2}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
+   {{{gnupg24_w32_sha2}}}  gnupg-w32-{{{gnupg24_w32_ver}}}.exe
+   {{{gnupg22_sha2}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
+   {{{gnupg22_w32_sha2}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
+   {{{gnupgdesk_src_sha2}}}  gnupg-desktop-{{{gnupgdesk_ver}}}.tar.xz
+   {{{gnupgdesk_ai_sha2}}}  gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage
+   {{{libgpg_error_sha2}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
+   {{{libgcrypt_sha2}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
+   {{{libgcrypt18_sha2}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
+   {{{libksba_sha2}}}  libksba-{{{libksba_ver}}}.tar.bz2
+   {{{libassuan_sha2}}}  libassuan-{{{libassuan_ver}}}.tar.bz2
+   {{{ntbtls_sha2}}}  ntbtls-{{{ntbtls_ver}}}.tar.bz2
+   {{{npth_sha2}}}  npth-{{{npth_ver}}}.tar.bz2
+   {{{pinentry_sha2}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
+   {{{gpgme_sha2}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{scute_sha2}}}  scute-{{{scute_ver}}}.tar.bz2
+   {{{gpa_sha2}}}  gpa-{{{gpa_ver}}}.tar.bz2
+   {{{gnupg1_sha2}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{end_chksum}}}
 
 
