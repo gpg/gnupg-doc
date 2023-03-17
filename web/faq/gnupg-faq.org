@@ -30,7 +30,7 @@ very litigious.
 - Linux is a trademark of Linus Torvalds.
 - Macintosh, OS X, macOS, and Mac OS X are all trademarks of the Apple
   Corporation.
-- PGP is a trademark of Symantec Corporation.
+- PGP is a trademark of CA, Inc.
 - Solaris is a trademark of Oracle Corporation.
 - UNIX is a trademark of The Open Group.
 - Windows is a trademark of the Microsoft Corporation.

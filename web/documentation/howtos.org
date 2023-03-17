@@ -27,6 +27,9 @@
    -  as a single HTML file with dark background and light text ( [[http://files.au.adversary.org/crypto/GPGMEpythonHOWTOen-dark.html][en]] )
 
 ** GnuPG SmartcardHOWTO
+   :PROPERTIES:
+   :CUSTOM_ID: GnuPG-cardHOWTO
+   :END:
 
    GnuPG supports the use of smartcards.  This HOWTO explains how to
    install and work with these cards.
