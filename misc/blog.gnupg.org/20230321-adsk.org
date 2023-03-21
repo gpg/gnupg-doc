@@ -1,0 +1,233 @@
+#+STARTUP: showall
+#+OPTIONS: ^:{} num:nil toc:nil
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: 2023-03-21
+#+TITLE: ADSK: The Additional Decryption Subkey
+
+** ADSK: The Additional Decryption Subkey
+
+This is an introduction to the ADSK feature, we will introduce with
+GnuPG 2.4.1.
+
+*** What and why
+
+ADSK is short for Additional Decryption SubKey which is a new OpenPGP
+feature to make the use of end-to-end encryption more compatible with
+standard business procedures.
+
+When deploying end-to-end encryption in larger organizations, a common
+concern is how to do
+
+- handle absence management
+- access data encrypted to former employees
+- comply with the commercial code demanding archival and an option to
+  access of all business communication.
+
+The standard procedure here is to share the secret key in a group or to
+keep a copy of that key at a safe place.  Managing this is not easy,
+error prone, and may in the worst case turn end-to-end encryption to a
+kind of gateway based encryption.  Clearly a better way is required to
+make large deployments easier.
+
+The new ADSK feature is actually the counterpart to GnuPG's long
+existing --encrypt-to feature.  It is a flexible method to tell the
+recipient to encrypt a reply to several subkeys.  If the recipient's
+implementation does not support ADSKs encryption still works, but the
+encryption to the ADSKs is of course missing.
+
+Another use case for ADSKs is to split keys between several devices
+(e.g. desktop and mobile).  For example the secret part of the key for
+the mobile device could be on a token for additional security but on
+the desktop the key is on-disk because the desktop is less likely lost
+or stolen.  The ADSK of a lost device could then be revoked and a new
+one generated for a new device.
+
+*** Creating an ADSK
+
+Adding an ADSK to an existing key is straightforward with GnuPG 2.4.1.
+You need to know the fingerprint of the your key and the fingerprint
+of the key to be used as ADSK.  The latter will in most cases be a
+subkey (because the de-facto standard is to use a subkey for
+encryption) and thus the subkey's fingerprint is required.  By default
+gpg does not show the fingerprints of subkeys; but of course there is
+an option:
+
+#+begin_example
+$ gpg -K --with-subkey-fingerprint B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+sec   ed25519 2016-06-22 [SC]
+      B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+uid           [ultimate] patrice.lumumba@example.net
+ssb   cv25519 2016-06-22 [E]
+      8D0221D9B2877A741D69AC4E9185878E4FCD74C0
+ssb#  brainpoolP384r1 2021-06-28 [R] [expires: 2027-01-10]
+      A1DB793DC23663E7F91475D82B999FA9CE046B1B
+ssb#  cv25519 2016-02-14 [R]
+      DC9DAC608A8F118FD8D0F332F4EC45F11B457A45
+#+end_example
+
+The fingerprints are shown in the easy copy+paste format. If you need
+them often it is a good idea to add =with-subkey-fingerprint= to your
+=gpg.conf=.  The above listing actually shows a key with two ADSKs
+(indicated by the "[R]").  The second ADSK was added using this command:
+
+: gpg --quick-add-adsk B21DEAB4F875FB3DA42F1D1D139563682A020D0A \
+:                      DC9DAC608A8F118FD8D0F332F4EC45F11B457A45
+
+In case you want a bit more interactive use you could have done it
+this way:
+
+#+begin_example
+$ gpg --edit-key B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+Secret key is available.
+
+sec  ed25519/139563682A020D0A
+     created: 2016-06-22  expires: never       usage: SC
+     trust: ultimate      validity: ultimate
+ssb  cv25519/9185878E4FCD74C0
+     created: 2016-06-22  expires: never       usage: E
+sub  brainpoolP384r1/2B999FA9CE046B1B
+     created: 2021-06-28  expires: 2027-01-10  usage: R
+[ultimate] (1). patrice.lumumba@example.net
+
+gpg> addadsk
+Enter the fingerprint of the additional decryption subkey: DC9DAC608A8F118FD8D0F332F4EC45F11B457A45
+
+sec  ed25519/139563682A020D0A
+     created: 2016-06-22  expires: never       usage: SC
+     trust: ultimate      validity: ultimate
+ssb  cv25519/9185878E4FCD74C0
+     created: 2016-06-22  expires: never       usage: E
+sub  brainpoolP384r1/2B999FA9CE046B1B
+     created: 2021-06-28  expires: 2027-01-10  usage: R
+sub  cv25519/F4EC45F11B457A45
+     created: 2016-02-14  expires: never       usage: R
+[ultimate] (1). patrice.lumumba@example.net
+
+gpg> save
+#+end_example
+
+By using the --edit-key command you may also delete a subkey using
+"key N" and "delkey" but this is only useful as long as your modified
+key has not yet been published or send to your peers.  Thus if you
+want to remove an ADSK you need to either expire the ADSK subkey or
+revoke it.  Let's do the latter:
+
+#+begin_example
+$ gpg --edit-key B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+[...]
+gpg> key 3
+
+sec  ed25519/139563682A020D0A
+     created: 2016-06-22  expires: never       usage: SC
+     trust: ultimate      validity: ultimate
+ssb  cv25519/9185878E4FCD74C0
+     created: 2016-06-22  expires: never       usage: E
+sub  brainpoolP384r1/2B999FA9CE046B1B
+     created: 2021-06-28  expires: 2027-01-10  usage: R
+sub* cv25519/F4EC45F11B457A45
+     created: 2016-02-14  expires: never       usage: R
+[ultimate] (1). patrice.lumumba@example.net
+
+gpg> revkey
+Do you really want to revoke this subkey? (y/N) y
+Please select the reason for the revocation:
+  0 = No reason specified
+  1 = Key has been compromised
+  2 = Key is superseded
+  3 = Key is no longer used
+  Q = Cancel
+Your decision? 3
+Enter an optional description; end it with an empty line:
+>
+Reason for revocation: Key is no longer used
+(No description given)
+Is this okay? (y/N) y
+
+[...]
+gpg> save
+#+end_example
+
+You can check that it has been revoked:
+
+#+begin_example
+$ gpg -k --list-options show-unusable-subkeys \
+         B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+pub   ed25519 2016-06-22 [SC]
+      B21DEAB4F875FB3DA42F1D1D139563682A020D0A
+uid           [ultimate] patrice.lumumba@example.net
+sub   cv25519 2016-06-22 [E]
+      8D0221D9B2877A741D69AC4E9185878E4FCD74C0
+sub   brainpoolP384r1 2021-06-28 [R] [expires: 2027-01-10]
+      A1DB793DC23663E7F91475D82B999FA9CE046B1B
+sub   cv25519 2016-02-14 [R] [revoked: 2023-03-21]
+      DC9DAC608A8F118FD8D0F332F4EC45F11B457A45
+#+end_example
+
+Now export the key and send it off to all your peers.
+
+Finally let's run an encryption test in verbose mode:
+
+#+begin_example
+$ fortune | gpg -vaer patrice.lumumba@example.net
+[...]
+gpg: ECDH/AES256.OCB encrypted for: "2B999FA9CE046B1B patric[...]
+gpg: ECDH/AES256.OCB encrypted for: "9185878E4FCD74C0 patric[...]
+-----BEGIN PGP MESSAGE-----
+
+hJ4DK5mfqc4EaxsSAwMER3V2siJamGy+Z476EJ+ZW8YuhDGtCK5QhuqzTPuXiuWl
+yMNM4MN4tWguoA8IJRY/ZypS7+eHGVesG2vGMfzA1p5e9SoiHis53QZxWTsD3H/2
+n6f9xhev5uzWBDh1uNmOMCR3C2ZrrFULDQib9c3g+0UBGYp1Eu/uJ2GYQ/DIYXwV
+KrofD0/cppryoJB4RFVD1IReA5GFh45PzXTAEgEHQH2+n2658cu7aFU+RXv9AvpO
+xBRTt6lCf5PEecqSgbVRMC5zup2WAkiMbLfGe7Go5BtZnuq06sDUZ/qUhgO6ekpO
+n2Eb08RJ+3zN4MrokP/jLNS6AQkCEG3rE9P8Yuw1nwy49uVnywBLqCTp21wjOZcG
+d6VPBQuWwPcoZeesvdVYt4MwRZsWVMC/TFaMSBHGM5ykrbuoTVWcG20FxP+bvjT0
+DohWrguc0TPvdzyYCId2ipcPwFIymY2miHgUs6IQTmpKnQfprNQ1zIVkmnWmlRWj
+KArSqYFBq2o49zLmRQ3Q2bgSgQ9HsU5v84uvuIw46p4WzOO7NlgWLnXngEiFkaqY
+tkM/4XkOY7W/NMa2
+=UJ0x
+-----END PGP MESSAGE-----
+#+end_example
+
+If you compare the shown Key-IDs with the fingerprints from the last
+listing, you can see that the message was encrypted to the (regular)
+encryption subkey (fingerprint ending in 74C0) and to the Brainpool
+ADSK (fingerprint ending in 6B1B).
+
+*** Looking ahead
+
+Because the ADSK feature is required on your peer's implementation, it
+will for sure take some years until a sufficient large user base has
+updated to an implementation which supports the encryption to an ADSK.
+This is actually more important than having the capability to add an
+ADSK.
+
+As of 2023-03-21 the current state is
+
+ - GnuPG 2.4.1 :: Full support
+ - GnuPG 2.2.42 :: Encryption support
+ - Thunderbird/RNP :: Not yet supported
+
+We track the state of our ADSK implementation at
+https://dev.gnupg.org/T6395 .  In particular commit
+https://dev.gnupg.org/rGe4f61df8509e for GnuPG 2.2 shows that the
+effort to implement the encryption part is tractable.
+
+
+*** What about the old ARR ?
+
+The idea of having additional keys is not entirely new. PGP^{\reg}
+versions between 5.0 to 6.5.7 implemented an Additional Recipient
+Request (ARR or ADK, signature subpacket 10) which specified an
+external key as an automatic recipient.  Due to an implementation bug
+in versions up to 6.5.3 [fn::https://www.kb.cert.org/vuls/id/747124/],
+it was possible to insert an ARR into an arbitrary key and PGP
+accepted that key and encrypted to it.  Although this bug was fixed
+right away after its publication, the use of an ARR was frowned upon
+and even did not made it into the RFC.  GnuPG even marks such
+subpackets as "Big Brother's key (ignored)".
+
+The new ADSK is similar in functionality to the ARR but it is
+implemented as a key flag on a standard subkey.  Thus the public key
+is instantly available, avoids key lookups, and gives the user a
+better control on whether and how to use an ADSK.
