@@ -18,3 +18,4 @@ scratch/
 ._.DS_Store
 default.profraw
 /misc/id/openpgp-webkey-service/draft.xml
+/misc/id/common/reference.RFC.8615.xml
