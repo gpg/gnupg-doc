@@ -49,17 +49,20 @@
    from the European based GnuPG server.
 
    The current stable version is {{{libgcrypt_ver}}} which was
-   released on {{{libgcrypt_date}}}.  See the [[../../download/index.org::libgcrypt][download]] section for the
+   released on {{{libgcrypt_date}}} from the {{{libgcrypt_branch}} branch.
+   See the [[../../download/index.org::libgcrypt][download]] section for the
    latest tarball.
 
    All versions of Libgcrypt since 1.2 are API and ABI compatible.
    The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
    reached end-of-life on 2019-06-30.  The 1.8 series is a LTS
-   version.  1.9 is the current stable version.
+   version.  The 1.9 series was superseded by the 1.10 series with the
+   release of 1.10.1 on 2022-03-28.
 
-   The development takes place in a Git repo, see our [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git][Git Viewer]]
-   The current stable version is {{{libgcrypt_branch}}}.  For more
-   information see our [[../../download/git.org][Git page]].
+   The development takes place in a Git repo, see our
+   [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git][Git Viewer]].
+   For more information see our [[../../download/git.org][Git page]].
+
 
 ** Copying
 
