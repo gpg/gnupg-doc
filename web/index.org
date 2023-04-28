@@ -77,6 +77,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.41 released (2023-04-28)
+
+We are pleased to announce the availability of a new stable GnuPG
+release: version 2.4.1.  This release comes with a lot of new features
+and fixes some minor bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q4/000476.html][more]]}
+
+
 ** 25 Years of GnuPG (2022-12-20)
 
 Exactly 25 years ago the very first release of GnuPG was published.
