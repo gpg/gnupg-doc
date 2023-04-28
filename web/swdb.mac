@@ -14,17 +14,17 @@
 # The Git branch of this version:
 #+macro: gnupg_branch master
 #
-#+macro: gnupg24_ver  2.4.0
-#+macro: gnupg24_date 2022-12-16
-#+macro: gnupg24_size 7487k
-#+macro: gnupg24_sha1 63dde155a8df0d5e1987efa5fc17438beca83ac1
-#+macro: gnupg24_sha2 1d79158dd01d992431dd2e3facb89fdac97127f89784ea2cb610c600fb0c1483
+#+macro: gnupg24_ver  2.4.1
+#+macro: gnupg24_date 2023-04-28
+#+macro: gnupg24_size 7169k
+#+macro: gnupg24_sha1 d7d021101361a5e1166a6c0cc1731276e7134547
+#+macro: gnupg24_sha2 76b71e5aeb443bfd910ce9cbc8281b617c8341687afb67bae455877972b59de8
 #+macro: gnupg24_branch  STABLE-BRANCH-2-4
-#+macro: gnupg24_w32_ver  2.4.0_20221216
-#+macro: gnupg24_w32_date 2022-12-16
-#+macro: gnupg24_w32_size 4816k
-#+macro: gnupg24_w32_sha1 5195ff17de15ffd8629bfd0f0b5dd2b2774295f2
-#+macro: gnupg24_w32_sha2 0d4539afefaca0e0a0b0fe0d06baf207512a9520e38d680aaa90c1c57905cf48
+#+macro: gnupg24_w32_ver  2.4.1_20230428
+#+macro: gnupg24_w32_date 2023-04-28
+#+macro: gnupg24_w32_size 5305k
+#+macro: gnupg24_w32_sha1 4fcd84cb78c84970bc874c123d223f6521c1e566
+#+macro: gnupg24_w32_sha2 6f6d09fb7852a0a10082c26ca92a2b6b4a02c5367c55d8e1c4272c42054958da
 
 
 #
