@@ -34,6 +34,7 @@
 (require 'ox)
 (require 'ox-publish)
 (require 'format-spec)
+(require 'subr-x)
 (eval-when-compile (require 'cl) (require 'table nil 'noerror))
 
 
@@ -1174,9 +1175,10 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
   "Transcode a FIXED-WIDTH element from Org to HTML.
 CONTENTS is nil.  INFO is a plist holding contextual information."
   (format "<pre class=\"example\">\n%s</pre>"
+         (string-remove-suffix "\n"
 	  (org-gpgweb-do-format-code
 	   (org-remove-indentation
-	    (org-element-property :value fixed-width)))))
+	    (org-element-property :value fixed-width))))))
 
 ;;;; Footnote Reference
 
