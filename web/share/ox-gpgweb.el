@@ -613,7 +613,7 @@ INFO is a plist used as a communication channel."
 	  (loop for (n type raw) in fn-alist collect
 		(cons n (if (eq (org-element-type raw) 'org-data)
 			    (org-trim (org-export-data raw info))
-			  (format "<p>%s</p>"
+			  (format "<p class=\"footpar\">%s</p>"
 				  (org-trim (org-export-data raw info))))))))
     (when fn-alist
       (format "<div id=\"footnotes\">

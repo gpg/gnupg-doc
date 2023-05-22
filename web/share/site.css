@@ -607,9 +607,14 @@ h2.footnotes {
 }
 
 .footnum {
-  font-size: 1em;
-  float: left;
+    font-size: 1em;
+    float: left;
 }
+
+.footpar {
+    dislay: inline-block;
+}
+
 
 /* Tag cloudlist.  */
 
