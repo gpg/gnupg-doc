@@ -19,7 +19,7 @@
 ]>
 
 <rfc ipr="trust200902" category="info"
-     docName="draft-koch-openpgp-webkey-service-15">
+     docName="draft-koch-openpgp-webkey-service-16">
 
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -44,7 +44,7 @@
       </address>
     </author>
 
-    <date day="14" month="November" year="2022" />
+    <date day="22" month="May" year="2023" />
     <area>Security</area>
 
     <abstract>
@@ -220,7 +220,7 @@ check for the existence of a key.
 
 The server SHOULD use "application/octet-stream" as the
 Content-Type for the data but clients SHOULD also accept any other
-Content-Type.  The server MUST NOT return an ASCII armored version of
+Content-Type.  The server SHOULD NOT return an ASCII armored version of
 the key.
 
 The server MUST serve a Policy Flags file as specified below.  That
@@ -429,7 +429,8 @@ address to the "from" address of the confirmation request.  The
 message MUST be signed and encrypted using the PGP/MIME Combined
 format ({{{RFC(3156)}}}, section 6.2).  The signing key is the target
 key and the encryption key is the key associated with the provider's
-submission address.
+submission address.  The server MAY verify the signature and silently
+discard the message if it is not found to be valid;
 
 The Content-Type used for the plaintext message MUST match the
 Content-Type of the request.  The format is the same as described
@@ -446,6 +447,10 @@ name-value pairs in this order:
 
 - nonce :: The value is the value of the "nonce" parameter from the
            confirmation request.
+
+The server MUST check the "nonce" against the one sent in the request
+and publish the key only if the nonce matches and has not been
+re-used.
 
 ** Policy Flags
 
