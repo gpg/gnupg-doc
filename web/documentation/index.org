@@ -38,4 +38,6 @@
   - [[../service.org][Commercial support]] :: Listing of companies offering commercial
        support for GnuPG
 
-  - [[http://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
+  - @@html:<a href="https://mstdn.social/@GnuPG" rel="me">@GnuPG@mstdn.social</a>@@ :: Fediverse account for GnuPG, Gpg4win and related topics.
+
+  - [[https://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
