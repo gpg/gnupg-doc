@@ -13,3 +13,6 @@
   - Libassuan manual :: [[file:manuals/assuan/][HTML]], [[file:manuals/assuan.pdf][PDF]].
   - GPGME manual :: [[file:manuals/gpgme/][HTML]], [[file:manuals/gpgme.pdf][PDF]].
   - Scute manual :: [[file:manuals/scute/][HTML]], [[file:manuals/scute.pdf][PDF]].
+
+  Man pages extracted from the above documents are installed with the
+  software but are also available online [[file:manpage.org][online man page]].

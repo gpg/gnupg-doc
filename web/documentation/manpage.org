@@ -5,8 +5,8 @@
 
 * Man Pages
 
-Here is a list of the online man pages.  The rendering to a HTML a bit
-crude ride now but will be improved over time.
+Here is a list of the online man pages.  The rendering to HTML is a bit
+crude right now but will be improved over time.
 
 ** Command line tools
 
@@ -23,7 +23,7 @@ crude ride now but will be improved over time.
 
 - [[file:manuals/gnupg24/gpg-agent.1.html][gpg-agent]](1) :: Background process to take care of private keys.
 - [[file:manuals/gnupg24/scdaemon.1.html][scdaemon]](1) :: Background process to take care of smartcards.
-- [[file:manuals/gnupg24/dirmngr.1.html][dirmngr]](1) :: Background process to take care of network access.
+- [[file:manuals/gnupg24/dirmngr.8.html][dirmngr]](8) :: Background process to take care of network access.
 - [[file:manuals/gnupg24/gpg-wks-server.1.html][gpg-wks-server]](1) :: A server to run the Web Key Service.
 
 ** Helper programs

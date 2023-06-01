@@ -69,12 +69,6 @@
    that, nobody will never ever say that "/after reading the whole of
    www.gnupg.org I still couldn't get the thing to work/" ;-)
 
-** Man page
-
-   The online [[file:manpage.org][man page]], available in English, is likely a little bit
-   outdated.
-
-
 ** Other documents
 
    The [[https://emailselfdefense.fsf.org/][Email Self-Defense]] site is an introduction with infographic.
