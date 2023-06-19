@@ -162,11 +162,11 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.5.5
-#+macro: libassuan_date 2021-03-22
-#+macro: libassuan_size 558k
-#+macro: libassuan_sha1 ec4f67c0117ccd17007c748a392ded96dc1b1ae9
-#+macro: libassuan_sha2 8e8c2fcc982f9ca67dcbb1d95e2dc746b1739a4668bc20b3a3c5be632edb34e4
+#+macro: libassuan_ver  2.5.6
+#+macro: libassuan_date 2023-06-19
+#+macro: libassuan_size 563k
+#+macro: libassuan_sha1 b1e8754dbf89b3a3eb175f5df75048dbca1fce57
+#+macro: libassuan_sha2 e9fd27218d5394904e4e39788f9b1742711c3e6b41689a31aa3380bd5aa4f426
 
 
 #
