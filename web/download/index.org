@@ -37,7 +37,6 @@
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    |                 | <l>                    |                         |                      <r> |                                                                                                        |                                                                                                            |
    | [[../software/index.org][GnuPG]]           | {{{gnupg24_ver}}}      | {{{gnupg24_date}}}      |       {{{gnupg24_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
-   | [[../software/index.org][GnuPG]] (LTS)     | {{{gnupg22_ver}}}      | {{{gnupg22_date}}}      |       {{{gnupg22_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg22_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | GnuPG Desktop   | {{{gnupgdesk_ver}}}    | {{{gnupgdesk_date}}}    | {{{gnupgdesk_src_size}}} | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.bz2{{{ftpclose}}}           | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}.tar.bz2.sig{{{ftpclose}}}           |
    |-----------------+------------------------+-------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/libgpg-error/index.org][Libgpg-error]]    | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} |  {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
@@ -142,7 +141,7 @@
    |           | 1.10  | tba            | 2022-02-01 |
 
 
-   - /(1)/: Long Term Support; eol date likely to be prolonged
+   - /(1)/: Long Term Support
    - /(2)/: Legacy version; see remarks above.
    - /tba/: To be announced.
 
