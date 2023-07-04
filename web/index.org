@@ -81,7 +81,7 @@ The latest release news:\\
 
 We are pleased to announce the availability of a new stable GnuPG
 release: version 2.4.3.  This version fixes some minor bugs and
-improves the performance on Windows. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2023q2/000479.html][more]]}
+improves the performance on Windows. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2023q3/000480.html][more]]}
 
 ** GnuPG 2.4.2 released (2023-05-30)
 
