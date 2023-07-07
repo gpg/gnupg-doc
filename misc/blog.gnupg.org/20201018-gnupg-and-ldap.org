@@ -435,5 +435,7 @@ To debug access problems, it is useful to change the log level:
 to revert replace "ACL" by "none".
 
 
+** Update (2023-07-07)
 
-# ** Updates
+The latest version of this document can be found in source format at
+https://dev.gnupg.org/source/gnupg/browse/master/doc/ldap/README.ldap
