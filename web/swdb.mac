@@ -61,14 +61,14 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  4.1.0
-#+macro: gpg4win_date 2022-12-20
-#+macro: gpg4win_src_size 173114k
-#+macro: gpg4win_src_sha1 82453e937568f783c210c25ba33cd738d95f08cc
-#+macro: gpg4win_src_sha2 cec8cfed0b21621c1e46cd333e573f47a1abcbf5a7f6debc4e010167a621da41
-#+macro: gpg4win_exe_size 27948k
-#+macro: gpg4win_exe_sha1 71e83bc35445e3db8b5fe2a05c723c0e3f2d0b01
-#+macro: gpg4win_exe_sha2 e0fddc840808eef9531f14a515f8b3b6c46511977f00569161129c1dee413b38
+#+macro: gpg4win_ver  4.2.0
+#+macro: gpg4win_date 2023-07-14
+#+macro: gpg4win_src_size 219297k
+#+macro: gpg4win_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
+#+macro: gpg4win_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
+#+macro: gpg4win_exe_size 34076k
+#+macro: gpg4win_exe_sha1 65efffc3a3068f2d4eed4cbabcbc0c24b42bf43a
+#+macro: gpg4win_exe_sha2 829b5c8eb913fa383abdd4cf129a42e0f72d4e9924b2610134f593851f0ab119
 
 #
 # GnuPG-Desktop
