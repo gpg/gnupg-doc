@@ -73,14 +73,14 @@
 #
 # GnuPG-Desktop
 #
-#+macro: gnupgdesk_ver  2.4.0.0
-#+macro: gnupgdesk_date 2022-12-19
-#+macro: gnupgdesk_src_size 170M
-#+macro: gnupgdesk_src_sha1 82453e937568f783c210c25ba33cd738d95f08cc
-#+macro: gnupgdesk_src_sha2 cec8cfed0b21621c1e46cd333e573f47a1abcbf5a7f6debc4e010167a621da41
-#+macro: gnupgdesk_ai_size 56M
-#+macro: gnupgdesk_ai_sha1 7850e24692d347384b423c0bdf7604372098e7e8
-#+macro: gnupgdesk_ai_sha2 5a5bf8c1a436e7239ba62cfa5cac42cb64a241b8e60d7e08cb9da50bf453754d
+#+macro: gnupgdesk_ver  2.4.3.0
+#+macro: gnupgdesk_date 2023-07-14
+#+macro: gnupgdesk_src_size 214M
+#+macro: gnupgdesk_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
+#+macro: gnupgdesk_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
+#+macro: gnupgdesk_ai_size 78M
+#+macro: gnupgdesk_ai_sha1 5d99f8bba3b70b37d881291554f46b4e4e882d13
+#+macro: gnupgdesk_ai_sha2 0b4a4e87cc9a9b40ebe4fb1ab1880ce8d477141c07ecc81685b4c3c938d1820c
 
 
 #
