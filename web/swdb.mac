@@ -79,8 +79,8 @@
 #+macro: gnupgdesk_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
 #+macro: gnupgdesk_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
 #+macro: gnupgdesk_ai_size 78M
-#+macro: gnupgdesk_ai_sha1 5d99f8bba3b70b37d881291554f46b4e4e882d13
-#+macro: gnupgdesk_ai_sha2 0b4a4e87cc9a9b40ebe4fb1ab1880ce8d477141c07ecc81685b4c3c938d1820c
+#+macro: gnupgdesk_ai_sha1 28e216f7e10639eb1898be9bca35d13f3e0aab36
+#+macro: gnupgdesk_ai_sha2 4e6592eb820a853804f9bd1f39ee545af712b0cabd0bf4a773ffddaff12fdd33
 
 
 #
