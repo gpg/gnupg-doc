@@ -29,8 +29,6 @@ options.
 |                |                                             |      |
 | [[https://lists.gnupg.org/pipermail/gnupg-devel/][gnupg-devel]]    | Development discussion and bug tracking     | en   |
 | [[https://lists.gnupg.org/pipermail/gcrypt-devel/][gcrypt-devel]]   | Development of Libgcrypt                    | en   |
-| [[https://lists.gnupg.org/pipermail/gnupg-doc/][gnupg-doc]]      | Development of documentation                | en   |
-| [[https://lists.gnupg.org/pipermail/gnupg-commits/][gnupg-commits]]  | Commit messages (read-only)                 | en   |
 |                |                                             |      |
 |----------------+---------------------------------------------+------|
 
@@ -74,7 +72,7 @@ language.
 
 * IRC and Jabber
 
-The channel =#gnupg= on =irc.freenode.org= is a place to talk about
+The channel =#gnupg= on =irc.libera.chat= is a place to talk about
 all gnupg related topics.
 
 The core GnuPG developers use the Jabber MUC =gnupg-devel= at chat dot
