@@ -105,12 +105,11 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver  1.23.1
-#+macro: gpgme_date 2023-10-27
-#+macro: gpgme_size 1676k
-#+macro: gpgme_sha1 a18b8498e527cac6de92ae17efbe32c3c68c0e97
-#+macro: gpgme_sha2 a0c316f7ab7d3bfb01a8753c3370dc906e5b61436021f3b54ff1483b513769bd
-
+#+macro: gpgme_ver  1.23.2
+#+macro: gpgme_date 2023-11-28
+#+macro: gpgme_size 1793k
+#+macro: gpgme_sha1 b3a938939a9fb2182684aa9ba094c8e8ecd6167b
+#+macro: gpgme_sha2 9499e8b1f33cccb6815527a1bc16049d35a6198a6c5fae0185f2bd561bce5224
 
 
 #
