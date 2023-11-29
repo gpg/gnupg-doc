@@ -201,11 +201,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.5.8
-#+macro: gpgol_date 2023-07-07
-#+macro: gpgol_size 838k
-#+macro: gpgol_sha1 f3786970eab00bfec5491da4d09805a977dcae4d
-#+macro: gpgol_sha2 b737f2b246bec2ace6316649ca12da9825c854f9c48e6c829e670c9c2dd99789
+#+macro: gpgol_ver  2.5.10
+#+macro: gpgol_date 2023-11-29
+#+macro: gpgol_size 841k
+#+macro: gpgol_sha1 cff65a3ebcbf92f6b159d10f6f9a4c9ad0059050
+#+macro: gpgol_sha2 236b711fc832adc468c9ccaaf04d54cce50bcaa67aa3cd30b1cfe22ba49acc16
 
 
 #
