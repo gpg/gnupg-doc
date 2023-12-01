@@ -191,11 +191,11 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.9
-#+macro: gpgex_date 2022-04-21
-#+macro: gpgex_size 301k
-#+macro: gpgex_sha1 57d3a965c695ce21a2a8d14028b3fb13db8198ce
-#+macro: gpgex_sha2 32a31affe0bc2587b6b61c5aae6a3328280feccde315dfa3a3c2dc374c5c0400
+#+macro: gpgex_ver  1.0.10
+#+macro: gpgex_date 2023-12-01
+#+macro: gpgex_size 306k
+#+macro: gpgex_sha1 395d7993a58ce4fea9b8f134af90082f321c6265
+#+macro: gpgex_sha2 849f88c2c4c29d4f0f021a8d6b9425ba3fc9d9b706c3e43a0e0e063e172498cd
 
 
 #+macro: gpgol_ver  2.5.11
