@@ -19,3 +19,8 @@ scratch/
 default.profraw
 /misc/id/openpgp-webkey-service/draft.xml
 /misc/id/common/reference.RFC.8615.xml
+/misc/id/openpgp-webkey-service/.refcache/reference.RFC.2119.xml
+/misc/id/openpgp-webkey-service/.refcache/reference.RFC.3156.xml
+/misc/id/openpgp-webkey-service/.refcache/reference.RFC.4880.xml
+/misc/id/openpgp-webkey-service/.refcache/reference.RFC.6189.xml
+/misc/id/openpgp-webkey-service/.refcache/reference.RFC.8615.xml
