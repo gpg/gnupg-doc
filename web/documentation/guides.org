@@ -79,7 +79,10 @@
    entitled [[http://francoz.net/doc/gpg/gpg.html][Utilisation de GnuPG]] , which covers the basic usage of
    GnuPG. The document is also available in [[http://francoz.net/doc/gpg/gpg-latest.sgml][SGML format]] .
 
+# Original link was
+#   http://www.ismprofessional.net/pascucci/index.php/2007/04/crittografia-riservatezza-e-sicurezza/
+# Now links to a reformatted version
    Mario Pascucci wrote an guide for Italian users entitled
-   [[http://www.ismprofessional.net/pascucci/index.php/2007/04/crittografia-riservatezza-e-sicurezza/][GnuPG: Crittografia, Privacy e Open Source]]. It covers the use of
+   [[https://tajmone.github.io/pascucci-gpg/][GnuPG: Crittografia, Privacy e Open Source]]. It covers the use of
    GnuPG on the GNU/Linux command line as well as its use on Windows
    along with WinPT.
