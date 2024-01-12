@@ -19,6 +19,7 @@ author:
     ins: W.Koch
     name: Werner Koch
     org: g10 Code GmbH
+    country: Germany
     email: wk@gnupg.org
 
 normative:

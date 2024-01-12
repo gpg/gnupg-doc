@@ -31,6 +31,6 @@ draft.txt, draft.xml: draft.org
 		sed  '1 d;$$ d' >tmp-middle.md
 	sed <draft.md  -n '/^# Back/,$$ p' | \
 		sed  '1 d'     >tmp-back.md
-	pandoc2rfc tmp-abstract.md tmp-middle.md tmp-back.md
-	pandoc2rfc -X tmp-abstract.md tmp-middle.md tmp-back.md
-	rm template.xml tmp-abstract.md tmp-middle.md tmp-back.md draft.md
+	: pandoc2rfc tmp-abstract.md tmp-middle.md tmp-back.md
+	: pandoc2rfc -X tmp-abstract.md tmp-middle.md tmp-back.md
+	: rm template.xml tmp-abstract.md tmp-middle.md tmp-back.md draft.md
