@@ -48,9 +48,7 @@ the encryption key the problem does not show up either.
 *** How to check with a tool
 
 The best way to check and fix this problem is to use a current GnuPG
-or Gpg4win version: GnuPG 2.4.4 or Gpg4win 4.3.0[fn::The gpg4win
-website has not yet been updated.  The installer is available at
-https://files.gpg4win.org/ ].
+or Gpg4win version: GnuPG 2.4.4 or Gpg4win 4.3.0.
 
 Insert your smartcard and run
 
