@@ -20,12 +20,18 @@ with them.
 
 ** Threat Model of libgcrypt
 
-For libgcrypt, as its a library, it is intended to be used widely.
-Thus, users can run the code in any environments as they wish.
-However, there are hardware which may allow access to fine-grained
-side channel.  Those hardware related threats are out of the scope of
-libgcrypt threat model.  It's up to users not to offer any access to
-those side channels in such use cases.
+Libgcrypt has been developed for use in a wide variety of platforms
+with different security needs.  Some platforms exhibit fine-grained
+side channels which can be used to spy on processes running in other
+containers or virtual machines.  Although Libgcrypt implements many
+countermeasures against such side-channels attacks, it is not possible
+to avoid all of them.  In the worst case it is thus possible to leak
+the entire private key or a password to a malicious process running in
+another virtual machine on the same hardware.
+
+Those hardware related threats are out of scope in Libgcrypt's threat
+model.  It is up to users not to offer any access to those
+side-channels.
 
 
 ** Security contact
