@@ -58,14 +58,16 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  4.3.0
-#+macro: gpg4win_date 2024-01-25
-#+macro: gpg4win_src_size 224752k
-#+macro: gpg4win_src_sha1 95990e6483fb01791516838a4c27cfe27d745647
-#+macro: gpg4win_src_sha2 8683edd7ba91490721d5de61ba7f677037e7b325bfc0a487d7a88196e4a957fa
-#+macro: gpg4win_exe_size 34559k
-#+macro: gpg4win_exe_sha1 6e8ac03208caf76d6e487f8554f2bd607a1b9192
-#+macro: gpg4win_exe_sha2 af4f67b43e6785393bf0aadbd8fd29053ae8024d2ebba5562dc617f521b20703
+# Disabled for 4.3.0 since there is an issue in Kleopatra that it checks for
+# the wrong version
+# +macro: gpg4win_ver  4.3.0
+# +macro: gpg4win_date 2024-01-25
+# +macro: gpg4win_src_size 224752k
+# +macro: gpg4win_src_sha1 95990e6483fb01791516838a4c27cfe27d745647
+# +macro: gpg4win_src_sha2 8683edd7ba91490721d5de61ba7f677037e7b325bfc0a487d7a88196e4a957fa
+# +macro: gpg4win_exe_size 34559k
+# +macro: gpg4win_exe_sha1 6e8ac03208caf76d6e487f8554f2bd607a1b9192
+# +macro: gpg4win_exe_sha2 af4f67b43e6785393bf0aadbd8fd29053ae8024d2ebba5562dc617f521b20703
 
 #
 # GnuPG-Desktop
