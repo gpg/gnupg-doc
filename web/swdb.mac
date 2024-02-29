@@ -10,16 +10,16 @@
 #+macro: gpgorg_base   https://gnupg.org/ftp/gcrypt
 
 #
-# Download directories.
-# (default is the project name)
+# Package download directories and name mappings
+# (default is the package name)
 #
-#+macro: gnupg24_dir      gnupg
-#+macro: gnupg24_w32_dir  binary
-#+macro: gnupg22_dir      gnupg
-#+macro: gnupg22_w32_dir  binary
-#+macro: gnupg1_dir       gnupg
-#+macro: gnupg1_w32_dir   binary
-
+#+macro: gnupg24_dir      gnupg  gnupg
+#+macro: gnupg24_w32_dir  binary gnupg-w32 xz
+#+macro: gnupg22_dir      gnupg  gnupg
+#+macro: gnupg22_w32_dir  binary gnupg-w32 xz
+#+macro: gnupg1_dir       gnupg  gnupg
+#+macro: gnupg1_w32_dir   binary gnupg-w32
+#+macro: gpgrt_dir        gpgrt  libgpg-error
 
 #
 # GnuPG-2.4

@@ -11,10 +11,10 @@
 all: swdb.lst.sig
 
 swdb.lst: swdb.mac
-	awk '                                \
+	@awk '                                \
 	     ! /^#\+macro:/ {next}           \
 	     $$2 ~ /ftp_.*/ {next}           \
-	                    {print $$2, $$3} \
+	                    {print $$2, $$3, $$4, $$5} \
 	    ' swdb.mac >swdb.lst
 
 swdb.lst.sig: swdb.lst
