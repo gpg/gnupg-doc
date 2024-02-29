@@ -7,6 +7,19 @@
 #+macro: ftp_base  ftp://ftp.gnupg.org/gcrypt
 #+macro: ftp_loc_base  /ftp/gcrypt
 #+macro: gpgcom_base   https://download.gnupg.com/files
+#+macro: gpgorg_base   https://gnupg.org/ftp/gcrypt
+
+#
+# Download directories.
+# (default is the project name)
+#
+#+macro: gnupg24_dir      gnupg
+#+macro: gnupg24_w32_dir  binary
+#+macro: gnupg22_dir      gnupg
+#+macro: gnupg22_w32_dir  binary
+#+macro: gnupg1_dir       gnupg
+#+macro: gnupg1_w32_dir   binary
+
 
 #
 # GnuPG-2.4
@@ -44,6 +57,7 @@
 #
 # GnuPG-1
 #
+#+macro: gnupg1_branch   STABLE-BRANCH-1-4
 #+macro: gnupg1_ver  1.4.23
 #+macro: gnupg1_date 2018-06-11
 #+macro: gnupg1_size 3661k
