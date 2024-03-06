@@ -175,11 +175,11 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.5.6
-#+macro: libassuan_date 2023-06-19
-#+macro: libassuan_size 563k
-#+macro: libassuan_sha1 b1e8754dbf89b3a3eb175f5df75048dbca1fce57
-#+macro: libassuan_sha2 e9fd27218d5394904e4e39788f9b1742711c3e6b41689a31aa3380bd5aa4f426
+#+macro: libassuan_ver  2.5.7
+#+macro: libassuan_date 2024-03-06
+#+macro: libassuan_size 590k
+#+macro: libassuan_sha1 b6ccd955085dac902a09871f94a3d41a7667d0c8
+#+macro: libassuan_sha2 0103081ffc27838a2e50479153ca105e873d3d65d8a9593282e9c94c7e6afb76
 
 
 #
