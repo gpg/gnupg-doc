@@ -134,7 +134,7 @@ eiInsGZ/+h5XYrpXTgA=
 
 ** Former Signature Keys
 
-Releases done in the years 1996 to 2010 were signed by this key:
+Releases done in the years 2006 to 2010 were signed by this key:
 
 #+BEGIN_EXAMPLE
   pub   rsa1024/1CE0C630 2006-01-01 [expired: 2011-06-30]
