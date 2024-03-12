@@ -78,6 +78,12 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.4.5 and Gpg4win 4.3.1 released (2024-03-12)
+
+We are pleased to announce the availability of a new stable GnuPG
+release: version 2.4.5. This version fixes a couple of bugs and comes
+with some new features.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q1/000482.html][more]]}
+
 ** Security advisory for smartcard keys with backup               :important:
 
 GnuPG versions 2.4.2, 2.4.3, and 2.2.42 had a regression in the
@@ -86,7 +92,6 @@ default way to create smartcard keys.  If you created a key with the
 our security advisory:
 
  https://gnupg.org/blog/20240125-smartcard-backup-key.html
-
 
 ** GnuPG 2.4.4 released (2024-01-25)
 
