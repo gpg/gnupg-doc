@@ -1,7 +1,7 @@
 ---
 title: OpenPGP Web Key Directory
-docname: draft-koch-openpgp-webkey-service-17
-date: 2023-12-19
+docname: draft-koch-openpgp-webkey-service-18
+date: 2024-06-10
 submissiontype: IETF
 category: info
 
@@ -194,9 +194,8 @@ The benefit of the advanced method is its greater flexibility in
 setting up the Web Key Directory in environments where more than one
 mail domain is hosted.  DNS SRV resource records, as used in earlier
 specifications of this protocol, posed a problem for implementations
-which have only limited access to DNS resolvers.  The direct method is
-kept for backward compatibility and to allow providing a Web Key
-Directory even without DNS change requirements.
+which have only limited access to DNS resolvers.  Note that the direct
+method allows to provide a Web Key Directory without any DNS changes.
 
 
 # Web Key Directory Update Protocol
