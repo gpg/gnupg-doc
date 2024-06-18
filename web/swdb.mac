@@ -174,11 +174,18 @@
 #
 # LIBASSUAN
 #
-#+macro: libassuan_ver  2.5.7
-#+macro: libassuan_date 2024-03-06
-#+macro: libassuan_size 590k
-#+macro: libassuan_sha1 b6ccd955085dac902a09871f94a3d41a7667d0c8
-#+macro: libassuan_sha2 0103081ffc27838a2e50479153ca105e873d3d65d8a9593282e9c94c7e6afb76
+#+macro: libassuan_ver  3.0.0
+#+macro: libassuan_date 2024-06-18
+#+macro: libassuan_size 578k
+#+macro: libassuan_sha1 93296e2989b0b8e762fbb18399ca41865f2445f3
+#+macro: libassuan_sha2 0b160cbb898b852c6c04314b9a63e90ca87501305ad72a58a010f808665bbaf6
+#
+# The old branch
+#+macro: libassuan2_ver  2.5.7
+#+macro: libassuan2_date 2024-03-06
+#+macro: libassuan2_size 590k
+#+macro: libassuan2_sha1 b6ccd955085dac902a09871f94a3d41a7667d0c8
+#+macro: libassuan2_sha2 0103081ffc27838a2e50479153ca105e873d3d65d8a9593282e9c94c7e6afb76
 
 
 #
