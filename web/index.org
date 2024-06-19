@@ -77,6 +77,13 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.11 is the new stable branch (2024-06-19)
+
+Although we will keep on maintaining the 1.8 and 1.10 branch for some
+more time, the new stable branch is now 1.11.  Version 1.11.0 comes
+with a lot of performance improvements, new interfaces, and now
+supports common quantum-resistant algorithms.  It provides full API
+and ABI compatibility to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q2/000483.html][more]]}
 
 ** GnuPG 2.4.5 and Gpg4win 4.3.1 released (2024-03-12)
 
