@@ -95,21 +95,21 @@
    also that some of them apply security patches on top of the
    standard versions but keep the original version number.
 
-   | OS      | Where              | Description                                              |
-   |---------+--------------------+----------------------------------------------------------|
-   |         | <18>               |                                                          |
+   | OS      | Where                                                                                                                                                                                                           | Description                                              |
+   |---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------|
+   |         | <18>                                                                                                                                                                                                            |                                                          |
    | Linux   | {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage{{{ftpclose}}}  {{{ftpopen}}}{{{gpgcom_base}}}/gnupg/gnupg-desktop-{{{gnupgdesk_ver}}}-x86_64.AppImage.sig{{{ftpcloseS}}} | /GnuPG Desktop^{\reg}/ AppImage with the current /GnuPG/ |
-   | Windows | [[https://gpg4win.org/download.html][Gpg4win]]            | Full featured Windows version of /GnuPG/                 |
-   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for the current /GnuPG/                 |
-   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}} | Simple installer for /GnuPG 1.4/                         |
-   | OS X    | [[https://gpgtools.org][Mac GPG]]            | Installer from the gpgtools project                      |
-   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]     | Installer for /GnuPG/                                    |
-   | Debian  | [[https://www.debian.org][Debian site]]        | GnuPG is part of Debian                                  |
-   | RPM     | [[http://rpmfind.net/][rpmfind]]            | RPM packages for different OS                            |
-   | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]   | Provides a GnuPG framework                               |
-   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]      | A port of GnuPG 1.4 to OpenVMS                           |
-   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]          | A port of GnuPG to RISC OS                               |
-   |---------+--------------------+----------------------------------------------------------|
+   | Windows | [[https://gpg4win.org/download.html][Gpg4win]]                                                                                                                                                                                                         | Full featured Windows version of /GnuPG/                 |
+   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32-{{{gnupg24_w32_ver}}}.exe.sig{{{ftpcloseS}}}                          | Simple installer for the current /GnuPG/                 |
+   |         | {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe{{{ftpclose}}} {{{ftpopen}}}{{{ftp_loc_base}}}/binary/gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe.sig{{{ftpcloseS}}}                | Simple installer for /GnuPG 1.4/                         |
+   | OS X    | [[https://gpgtools.org][Mac GPG]]                                                                                                                                                                                                         | Installer from the gpgtools project                      |
+   |         | [[https://sourceforge.net/p/gpgosx/docu/Download/][GnuPG for OS X]]                                                                                                                                                                                                  | Installer for /GnuPG/                                    |
+   | Debian  | [[https://www.debian.org][Debian site]]                                                                                                                                                                                                     | GnuPG is part of Debian                                  |
+   | RPM     | [[http://rpmfind.net/][rpmfind]]                                                                                                                                                                                                         | RPM packages for different OS                            |
+   | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]                                                                                                                                                                                                | Provides a GnuPG framework                               |
+   | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]                                                                                                                                                                                                   | A port of GnuPG 1.4 to OpenVMS                           |
+   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]                                                                                                                                                                                                       | A port of GnuPG to RISC OS                               |
+   |---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------|
 
 
 ** End-of-life announcements
@@ -137,9 +137,9 @@
    |           | +1.6+ | 2017-06-30     | 2013-12-16 |
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
    |           | 1.8   | 2024-12-31 (1) | 2017-07-18 |
-   |           | 1.9   | 2024-03-31     | 2021-01-19 |
-   |           | 1.10  | tba            | 2022-02-01 |
-
+   |           | +1.9+ | 2024-03-31     | 2021-01-19 |
+   |           | 1.10  | 2026-06-30     | 2022-02-01 |
+   |           | 1.11  | tba            | 2022-06-19 |
 
    - /(1)/: Long Term Support
    - /(2)/: Legacy version; see remarks above.
