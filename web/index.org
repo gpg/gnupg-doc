@@ -77,6 +77,18 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.0 released for public testing (2024-07-05)
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.5.0.  This release is the first of a series of public testing
+releases eventually leading to a new stable version 2.6.
+
+The main features in the 2.6 series are improvements for 64 bit
+Windows and the introduction of a PQC encryption algorithm.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q3/000484.html][Read more]]}.
+
+
 ** Libgcrypt 1.11 is the new stable branch (2024-06-19)
 
 Although we will keep on maintaining the 1.8 and 1.10 branch for some
