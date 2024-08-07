@@ -15,7 +15,6 @@ web site mirrors, please consult the [[../mirrors.html][WWW mirror page]] .
   |----------------+----------------------------+----------------------------------------------------------------------------------+-------|
   | The Americas   |                            |                                                                                  |       |
   |----------------+----------------------------+----------------------------------------------------------------------------------+-------|
-  | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]                   | [[ftp://ftp.gnupg.ca/][ftp]]                                                                              | 2/day |
   |                |                            |                                                                                  |       |
   |----------------+----------------------------+----------------------------------------------------------------------------------+-------|
   | Asia           |                            |                                                                                  |       |
@@ -29,7 +28,6 @@ web site mirrors, please consult the [[../mirrors.html][WWW mirror page]] .
   | Denmark        | [[http://dotsrc.org/][dotsrc.org]]                 | [[ftp://mirrors.dotsrc.org/gcrypt/][ftp]]  [[http://mirrors.dotsrc.org/gcrypt/][http]]                                                                        | daily |
   | Germany        | [[http://www.artfiles.de][Artfiles New Media GmbH]]    | [[http://artfiles.org/gnupg.org][http]]                                                                             | daily |
   | Hungary        | [[http://www.crysys.hu/][CrySyS Lab., Bute]]          | [[ftp://ftp.crysys.hu/pub/gnupg/][ftp]]                                                                              | daily |
-  | Ireland        | [[http://ftp.heanet.ie/about/][HEAnet]]                     | [[ftp://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][ftp]]  [[http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][http]]  {{{rsync(rsync://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/)}}}      | 4/day |
   | Netherlands    | [[http://www.bit.nl/][BIT]]                        | [[ftp://ftp.bit.nl/mirror/gnupg/][ftp]]                                                                              |       |
   |                | [[http://www.surfnet.nl/][SurfNet]]                    | [[ftp://ftp.surfnet.nl/pub/security/gnupg/][ftp]]                                                                              |       |
   | Romania        | [[http://www.iasi.roedu.net/][Romanian Edu., Iasi Branch]] | [[ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/][ftp]]                                                                              |       |
@@ -44,4 +42,12 @@ web site mirrors, please consult the [[../mirrors.html][WWW mirror page]] .
 # | Iceland        | [[http://www.hi.is/][HI]]                         | [[ftp://ftp.hi.is/pub/mirrors/gnupg/][ftp]]                                                                              |       |
 # | Portugal       | [[http://5coluna.com][5ª Coluna]]                  | [[http://dist.gnupg.pt/][http]]                                                                             | 2/day |
 # | United Kingdom | [[http://gnupg.org.favoritelinks.net/][favoritelinks]]              | [[http://gnupg.org.favoritelinks.net/][http]]                                                                             | daily |
+#
+# As of mid 2024 the Canadian mirrors seem to be down.
+# | Canada | [[http://www.gnupg.ca/][GnuPG.ca]]  | [[ftp://ftp.gnupg.ca/][ftp]]   | 2/day |
+#
+# HEAnet announced the shutdown of its service for the end of 2024-08.
+# Thanks for man years of helping the free software community with
+# these mirrors.
+# | Ireland        | [[http://ftp.heanet.ie/about/][HEAnet]] | [[ftp://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][ftp]]  [[http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/][http]]  {{{rsync(rsync://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/)}}}      | 4/day |
 #

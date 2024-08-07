@@ -16,8 +16,6 @@ are seeking mirrors for source or binary packages, please consult the
   |----------------+-----------------------+-----------+--------|
   | The Americas   |                       |           |        |
   |----------------+-----------------------+-----------+--------|
-  | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]              | [[http://www.gnupg.ca/][http]]      | 2/day  |
-  |                | [[http://www.raffsoftware.com/][RaffSoftware]]          | [[http://gnupg.raffsoftware.com/][http]]      | daily  |
   |                |                       |           |        |
   |----------------+-----------------------+-----------+--------|
   | Asia           |                       |           |        |
@@ -37,3 +35,8 @@ are seeking mirrors for source or binary packages, please consult the
   |                | [[http://www.mirrorservice.org/][UK Mirror Service]]     | [[http://www.mirrorservice.org/sites/www.gnupg.org/][http]]      |        |
   |                |                       |           |        |
   |----------------+-----------------------+-----------+--------|
+
+
+# At least since mid 2024 the Canadian mirrors are down
+# | Canada         | [[http://www.gnupg.ca/][GnuPG.ca]]              | [[http://www.gnupg.ca/][http]]      | 2/day  |
+# |                | [[http://www.raffsoftware.com/][RaffSoftware]]          | [[http://gnupg.raffsoftware.com/][http]]      | daily  |
