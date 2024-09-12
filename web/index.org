@@ -83,6 +83,16 @@ For technical and organisational reasons we recently shutdown our FTP
 server.  Instead of using ftp.gnupg.org please use
 https://gnupg.org/ftp/ .
 
+** GnuPG 2.5.1 released with FIPS-203 support (2024-09-12)
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.5.1.  This release is the second of a series of public
+testing releases eventually leading to a new stable version 2.6.
+
+The main features in the 2.6 series are improvements for 64 bit
+Windows and the introduction of a PQC encryption algorithm.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q3/000485.html][Read more]]}.
 
 ** GnuPG 2.5.0 released for public testing (2024-07-05)
 
