@@ -3,10 +3,11 @@
 #+SETUPFILE: "../share/setup.inc"
 #+OPTIONS: -:nil
 
-* Man Pages
+* Man Pages for GnuPG 2.4
 
-Here is a list of the online man pages.  The rendering to HTML is a bit
-crude right now but will be improved over time.
+Here is a list of the online man pages for the stable version of
+GnuPG.  The rendering to HTML is a bit crude right now but will be
+improved over time.
 
 ** Command line tools
 
@@ -31,3 +32,35 @@ crude right now but will be improved over time.
 - [[file:manuals/gnupg24/gpg-connect-agent.1.html][gpg-connect-agent]](1) :: Access the background processes.
 - [[file:manuals/gnupg24/watchgnupg.1.html][watchgnupg]](1) :: Watch debug output.
 - [[file:manuals/gnupg24/gpg-check-pattern.1.html][gpg-check-pattern]](1) :: Helper to check passwords.
+
+
+* Man Pages for GnuPG 2.5
+
+Here is a list of the online man pages for the current development
+version of GnuPG.  The development versions will eventually lead to a
+new stable version 2.6.
+
+** Command line tools
+
+- [[file:manuals/gnupg26/gpg.1.html][gpg]](1) :: The standard OpenPGP tool.
+- [[file:manuals/gnupg26/gpgv.1.html][gpgv]](1) :: The specialized OpenPGP verification tool.
+- [[file:manuals/gnupg26/gpgsm.1.html][gpgsm]](1) :: The CMS/X.509 tool.
+- [[file:manuals/gnupg26/gpgtar.1.html][gpgtar]](1) :: The archiving tool.
+- [[file:manuals/gnupg26/gpgconf.1.html][gpgconf]](1) :: Tool to configure the system.
+- [[file:manuals/gnupg26/gpg-card.1.html][gpg-card]](1) :: Generic smartcard and Yubikey tool.
+- [[file:manuals/gnupg26/gpg-wks-client.1.html][gpg-wks-client]](1) :: A client to manage the Web Key Directory.
+- [[file:manuals/gnupg26/dirmngr-client.1.html][dirmngr-client]](1) :: Control tool for the dirmngr.
+
+** Background processes
+
+- [[file:manuals/gnupg26/gpg-agent.1.html][gpg-agent]](1) :: Background process to take care of private keys.
+- [[file:manuals/gnupg26/scdaemon.1.html][scdaemon]](1) :: Background process to take care of smartcards.
+- [[file:manuals/gnupg26/dirmngr.8.html][dirmngr]](8) :: Background process to take care of network access.
+- [[file:manuals/gnupg26/gpg-wks-server.1.html][gpg-wks-server]](1) :: A server to run the Web Key Service.
+
+** Helper programs
+
+- [[file:manuals/gnupg26/gpg-connect-agent.1.html][gpg-connect-agent]](1) :: Access the background processes.
+- [[file:manuals/gnupg26/watchgnupg.1.html][watchgnupg]](1) :: Watch debug output.
+- [[file:manuals/gnupg26/gpg-check-pattern.1.html][gpg-check-pattern]](1) :: Helper to check passwords.
+- [[file:manuals/gnupg26/gpg-mail-tube.1.html][gpg-mail-tube]](1) :: Encrypt mails in a pipeline.
