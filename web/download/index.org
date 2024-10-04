@@ -71,10 +71,10 @@
 
    - /GPA/ is a graphical frontend to GnuPG.
 
-   - /GnuPG 1.4/ is the old, single binary version which still support
+   - /GnuPG 1.4/ is the old, single binary version which still supports
      the unsafe PGP-2 keys.  This branch has no dependencies on the
      above listed libraries or the Pinentry.  However, it lacks many
-     modern features and will receive only important updates.
+     modern features and will receive only important security updates.
 
 
 ** GnuPG binary releases
@@ -113,10 +113,10 @@
 
    We announce the end-of-life date for a current stable version at
    the time a new stable version is released.  We maintain old
-   branches for at least two years.  For GnuPG 2.4 (2.2) we consider
-   2.3.0 (2.1.0) as the birth of the branch.  For most other packages
-   we don't maintain branches and thus there is no end-of-life; always
-   use the latest version.
+   branches for at least two years.  For branches with an even minor
+   version number we consider the preceding odd version as the birth of
+   the branch.  For most other packages we don't maintain branches and
+   thus there is no end-of-life; always use the latest version.
 
    | Package   | Ver.  | End-of-life    | Birth      |
    |-----------+-------+----------------+------------|
@@ -127,6 +127,7 @@
    |           | +2.0+ | 2017-12-31     | 2006-11-11 |
    |           | 2.2   | 2024-12-31 (1) | 2014-11-06 |
    |           | 2.4   | tba            | 2021-04-07 |
+   |           | 2.6   | tba            | 2024-07-05 |
    | Libgcrypt | +1.5+ | 2016-12-31     | 2011-06-29 |
    |           | +1.6+ | 2017-06-30     | 2013-12-16 |
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
