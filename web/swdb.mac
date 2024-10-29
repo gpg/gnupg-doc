@@ -41,17 +41,17 @@
 #
 # GnuPG-2.4
 #
-#+macro: gnupg24_ver  2.4.5
-#+macro: gnupg24_date 2024-03-07
-#+macro: gnupg24_size 7704k
-#+macro: gnupg24_sha1 ae0935ead29a2dfa34d6b48d70808652bc3ca73b
-#+macro: gnupg24_sha2 f68f7d75d06cb1635c336d34d844af97436c3f64ea14bcb7c869782f96f44277
+#+macro: gnupg24_ver  2.4.6
+#+macro: gnupg24_date 2024-10-29
+#+macro: gnupg24_size 7823k
+#+macro: gnupg24_sha1 2d8aa2662c398d60f1f8e0bf46fd163eae703189
+#+macro: gnupg24_sha2 95acfafda7004924a6f5c901677f15ac1bda2754511d973bb4523e8dd840e17a
 #+macro: gnupg24_branch  STABLE-BRANCH-2-4
-#+macro: gnupg24_w32_ver  2.4.5_20240307
-#+macro: gnupg24_w32_date 2024-03-07
-#+macro: gnupg24_w32_size 5413k
-#+macro: gnupg24_w32_sha1 9ffe88554341f28e077ef42150b149a851af2fae
-#+macro: gnupg24_w32_sha2 d2ac821ceacf9409ebcdb42ae330087ada30c732981f00b356f9c2f08fac4dc1
+#+macro: gnupg24_w32_ver  2.4.6_20241029
+#+macro: gnupg24_w32_date 2024-10-29
+#+macro: gnupg24_w32_size 5488k
+#+macro: gnupg24_w32_sha1 6d6b2017152fea4532afe38ce00e38a438b1e4bb
+#+macro: gnupg24_w32_sha2 af5866586309418ae2f83f55de6ec96e9f557695a50a0631ccedfebfa708f51e
 
 
 #
