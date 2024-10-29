@@ -77,6 +77,14 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.4.6 released (2024-10-29)
+
+We are pleased to announce the availability of a new stable GnuPG
+release: version 2.4.6.  This version fixes a couple of bugs, comes
+with a few new features, and has now full support for Portuguese.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q4/000486.html][Read more]]}
+
 ** GnuPG 2.5.1 released with FIPS-203 support (2024-09-12)
 
 We are pleased to announce the availability of a new GnuPG release:
