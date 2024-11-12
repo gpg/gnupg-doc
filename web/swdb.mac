@@ -218,11 +218,11 @@
 #
 # nPth
 #
-#+macro: npth_ver  1.7
-#+macro: npth_date 2024-02-23
-#+macro: npth_size 305k
-#+macro: npth_sha1 a9f7adc1b1f6707071d29bfb3338c28b995ca1ce
-#+macro: npth_sha2 8589f56937b75ce33b28d312fccbf302b3b71ec3f3945fde6aaa74027914ad05
+#+macro: npth_ver  1.8
+#+macro: npth_date 2024-11-12
+#+macro: npth_size 310k
+#+macro: npth_sha1 6f60ce8540453e120d715f269d0c7cfd9e0b0d24
+#+macro: npth_sha2 8bd24b4f23a3065d6e5b26e98aba9ce783ea4fd781069c1b35d149694e90ca3e
 
 
 #
