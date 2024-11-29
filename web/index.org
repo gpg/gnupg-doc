@@ -80,7 +80,7 @@ The latest release news:\\
 ** GnuPG 2.4.7 and Gpg4win 4.4.0 released (2024-11-27)
 
 We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.7.  This version fixes a couple of bugs.  Alogn
+release: version 2.4.7.  This version fixes a couple of bugs.  Along
 with this release we also released a new version of Gpg4win: version
 4.4.0.
 
