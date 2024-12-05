@@ -1,7 +1,7 @@
 ---
 title: OpenPGP Web Key Directory
-docname: draft-koch-openpgp-webkey-service-18
-date: 2024-06-10
+docname: draft-koch-openpgp-webkey-service-19
+date: 2024-12-05
 submissiontype: IETF
 category: info
 
