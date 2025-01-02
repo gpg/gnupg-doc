@@ -42,7 +42,6 @@
    |-------------------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/libgpg-error/index.org][Libgpg-error]]            | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
    | [[../software/libgcrypt/index.org][Libgcrypt]]               | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |    {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
-   | [[../software/libgcrypt/index.org][Libgcrypt]] (LTS)         | {{{libgcrypt18_ver}}}  | {{{libgcrypt18_date}}}  |  {{{libgcrypt18_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2{{{ftpclose}}}        | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2.sig{{{ftpclose}}}        |
    | [[../software/libksba/index.org][Libksba]]                 | {{{libksba_ver}}}      | {{{libksba_date}}}      |      {{{libksba_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2{{{ftpclose}}}                | {{{ftpopen}}}{{{ftp_loc_base}}}/libksba/libksba-{{{libksba_ver}}}.tar.bz2.sig{{{ftpclose}}}                |
    | [[../software/libassuan/index.org][Libassuan]]               | {{{libassuan_ver}}}    | {{{libassuan_date}}}    |    {{{libassuan_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libassuan/libassuan-{{{libassuan_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
    | [[../software/ntbtls/index.org][ntbTLS]]                  | {{{ntbtls_ver}}}       | {{{ntbtls_date}}}       |       {{{ntbtls_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2{{{ftpclose}}}                   | {{{ftpopen}}}{{{ftp_loc_base}}}/ntbtls/ntbtls-{{{ntbtls_ver}}}.tar.bz2.sig{{{ftpclose}}}                   |
@@ -125,19 +124,20 @@
    |           | +1.2+ | 2005-01-01     | 2002-09-21 |
    |           | 1.4   | none (2)       | 2004-12-16 |
    |           | +2.0+ | 2017-12-31     | 2006-11-11 |
-   |           | 2.2   | 2024-12-31 (1) | 2014-11-06 |
+   |           | +2.2+ | 2024-12-31 (3) | 2014-11-06 |
    |           | 2.4   | 2026-06-30     | 2021-04-07 |
-   |           | 2.6   | tba            | 2024-07-05 |
+   |           | 2.6   | tba        (1) | 2024-07-05 |
    | Libgcrypt | +1.5+ | 2016-12-31     | 2011-06-29 |
    |           | +1.6+ | 2017-06-30     | 2013-12-16 |
    |           | +1.7+ | 2019-06-30     | 2016-04-15 |
-   |           | 1.8   | 2024-12-31 (1) | 2017-07-18 |
+   |           | +1.8+ | 2024-12-31 (3) | 2017-07-18 |
    |           | +1.9+ | 2024-03-31     | 2021-01-19 |
    |           | 1.10  | 2026-06-30     | 2022-02-01 |
    |           | 1.11  | tba            | 2022-06-19 |
 
-   - /(1)/: Long Term Support
+   - /(1)/: Long Term Support.
    - /(2)/: Legacy version; see remarks above.
+   - /(3)/: Extended Long Term Support contract available.
    - /tba/: To be announced.
 
 # eof #
