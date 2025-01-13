@@ -36,7 +36,7 @@
 #+macro: gnupg26_w32_size 5655k
 #+macro: gnupg26_w32_sha1 acb39daee05aced0d37195f4ad739c16bda9aa5e
 #+macro: gnupg26_w32_sha2 882dd034a10495e579653f278e02c83d2af9d037ad0ef7eed0e1d67cf04a896c
-#+macro: gnupg26_w32_ssiz 16272
+#+macro: gnupg26_w32_ssiz 16272k
 
 
 #
