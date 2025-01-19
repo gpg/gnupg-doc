@@ -1,0 +1,120 @@
+#+STARTUP: showall
+#+OPTIONS: ^:{} num:nil toc:nil
+#+STARTUP: showall
+#+AUTHOR: Andre
+#+DATE: 2025-01-17
+#+TITLE: My thoughts on Sequoia PGP and LibrePGP
+
+On January 8, 2025, LWN published the article [[https://lwn.net/Articles/1003243/][A look
+at the Sequoia command-line interface]], where in the comments, user "pj" wrote:
+
+#+begin_quote
+Kudos to the Sequoia team! Multiple projects competing and collaborating
+can only improve the overall experience and usability in the space.
+#+end_quote
+
+** Sequoias need for churn
+This is a sentiment I would usually agree with. But I want to provide some
+background on why I don’t think this applies here. As I’ve often said in chat
+and in person, let me finally try to explain why, in this case, competition
+did not lead to innovation but instead created a rift in the community—a rift
+that is still far from being healed.
+
+In my view, GnuPG and OpenPGP are extremely mature and basically "done." Minor
+updates to the protocol were required (e.g., adopting SHA-256), but that would
+have been sufficient. However, after collectively quitting their jobs at g10
+Code, they started inventing new problems and features to justify competition
+and secure funding for their work —-- even though no one seriously considered
+GnuPG or OpenPGP practically vulnerable to attacks.
+
+When a tool is "done" and "just works"\trade, it’s hard to compete with it. Try
+replacing "echo" or "cat." Especially if the argument is based on switching to
+a more secure programming language, which only makes sense if the protocol
+changes frequently. If the old, audited, and battle-hardened 25-year-old code
+of GnuPG is secure and the critical security-relevant parts don’t change,
+there is no advantage to using a different programming language. To justify
+their work, they first had to convince the community that GnuPG was
+fundamentally flawed and then introduce features GnuPG didn’t support. They
+even wrote a test suite to highlight these supposed gaps. Ironically, GnuPG
+later addressed many of these issues.
+
+The people funded to work on IETF standards (notably Daniel Khan Gillmor)
+would have little justification for their roles if someone simply declared,
+"Yes, OpenPGP is secure. We’re done. Let’s move on." Instead, they continued
+creating churn in the ecosystem. As soon as crypto-refresh was done the
+next iteration was opened.
+
+** But we don't want to change
+At GnuPG, we understood that unnecessary changes to a secure system pose
+risks that in our case nearly always outweigh the benefits. New code always
+contains bugs, and making changes without good reason only increases the
+chances of security issues. Since GnuPG is so widely deployed and so critical,
+our bugs can kill people, ruin lives, or throw the world economy into chaos.
+So when we felt the churn interest had taken over, we gave up. At some point,
+I felt that the discussion switched from: "Why we must change this" to "Why
+don’t you want to change."
+
+** Looking forward
+I stand by my words: I sincerely hope Sequoia becomes a thing of the past. It
+was never needed and has been developed in bad faith. This has been an
+incredibly frustrating and painful chapter. They made us look like bullies,
+while in reality, they abandoned us --— leaving Werner, me, and gniibe to fend for
+ourselves after the fundraising money ran out. They moved on to a venture
+capital-backed project aimed at replacing the copyleft GnuPG with the
+proprietary p≡p tool. Initially, they were BSD-licensed, and only after p≡p
+failed did they return as supposed champions of free software. Now, respected
+people I once admired, like Phil Zimmermann and Debian developers I deeply
+respect, see us as the villains who split the community with LibrePGP.
+However, that move was purely defensive. Playing their game would have
+introduced new security issues, more bugs, and diverted precious time away
+from critical UX improvements.
+
+I am not saying that following Sequoia’s arguments was wrong or that they
+duped everyone into thinking crypto-refresh is better. But I blame them for
+creating the rift in 2018 which ultimately prevented us from having the
+RFC4880bis update and thus creating such a poisoned atmosphere that we had
+entrenched sides that didn’t really talk to each other.
+
+If Neal and Justus genuinely wanted to promote the adoption of
+end-to-end cryptography, they could have helped me make things more
+user-friendly back in 2018. At the time, I was single-handedly
+maintaining Kleopatra, the Outlook integration, and the Windows
+installer—funded solely by my employer’s sponsorship. But instead,
+they chose to play with a shiny new language and start from scratch,
+acting as know-it-alls. That’s far easier and more enjoyable than
+digging into Outlook internals, fixing bugs, dealing with users, and
+adhering to tight schedules with limited funding.
+
+** Lets finally be honest
+I acknowledge that we at GnuPG didn’t always act professionally. A large part
+of this was the inability to work with Justus, Neal, and DKG. I honestly tried,
+but they didn’t seem to listen; they kept repeating their same arguments.
+After we gave up on the working group, ProtonMail, which has entirely
+different use cases from ours, pushed the crypto-refresh even further. While
+I could work with almost anyone else, collaboration with these three
+individuals was impossible. My hope is that we can honestly address these
+issues, realistically assess who supports crypto-refresh versus LibrePGP,
+identify the real breaking issues, and move forward together. But leave them
+out of the discussion, as we don’t care about interoperability with software
+that has no users. Trying to add compatibility for crypto-refresh, when the
+only die-hard crypto-refresh implementation is still a research project,
+seems wrong.
+
+** Authors Note
+I am currently not working directly for g10 Code. And I have reduced my
+involvement with OpenPGP. But reading the article today
+I felt it important to publicly tell the story
+from my perspective as there are too many misconceptions about what happened
+in the last 7 years.
+
+And to see so many exceptional people who really share noble goals argue and
+fight with each other over problems ultimately caused by some ex-Microsoft
+manager who listened to the most junior developer in our company saying:
+
+"Lets throw away the company founder’s life’s work, 20 years of mature code,
+which is in use all over the world and has the highest reputation. To start
+from scratch! Because I know a better architecture! And Rust is cool! And to
+finance it, make it proprietary!"
+
+Whether you believe me or not, maybe that picture helps you understand how
+crazy the world looks from my side of the fence.
