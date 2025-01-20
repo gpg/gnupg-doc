@@ -22,10 +22,11 @@ that is still far from being healed.
 
 In my view, GnuPG and OpenPGP are extremely mature and basically "done." Minor
 updates to the protocol were required (e.g., adopting SHA-256), but that would
-have been sufficient. However, after collectively quitting their jobs at g10
-Code, they started inventing new problems and features to justify competition
-and secure funding for their work —-- even though no one seriously considered
-GnuPG or OpenPGP practically vulnerable to attacks.
+have been sufficient. However, after collectively quitting their jobs at
+g10 Code in 2018, some of the former employees, Neal Walfield and primarily
+Justus Winter, began inventing new problems and features to justify
+competition and secure funding for their work —-- even though no one seriously
+considered GnuPG or OpenPGP to be practically vulnerable to attacks.
 
 When a tool is "done" and "just works"\trade, it’s hard to compete with it. Try
 replacing "echo" or "cat." Especially if the argument is based on switching to
