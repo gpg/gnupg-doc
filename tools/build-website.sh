@@ -30,6 +30,27 @@
 # webbuilder         ALL = (webbuild-x,webbuild-y) NOPASSWD: ALL
 # --8<---------------cut here---------------end--------------->8---
 #
+# Home directory for the accounts:
+#
+# webbuilder  /home/webbuilder
+# webbuild-x  /home/webbuilder/webbuild-x
+# webbuild-y  /home/webbuilder/webbuild-y
+#
+# Layout of /home/webbuilder:
+#
+# drwxr-sr-x webbuilder webbuilder .
+# drwxr-sr-x webbuilder webbuilder bin
+# drwxr-sr-x webbuilder webbuilder log
+# drwxrwsr-x webbuild-x webbuilder webbuild-x
+# drwxrwsr-x webbuild-y webbuilder webbuild-y
+# drwxrwsr-x webbuild-x webbuilder gnupg-doc-stage
+# drwxrwsr-x webbuild-y webbuilder gnupg-doc-preview-stage
+# drwxr-sr-x webbuilder webbuilder gnupg-doc-preview
+# drwxr-sr-x webbuilder webbuilder gnupg-doc
+# lrwxrwxrwx webbuilder webbuilder web -> /var/www/www/www.gnupg.org
+# lrwxrwxrwx webbuilder webbuilder preview -> /var/www/www/preview.gnupg.org
+#
+
 
 set -e
 

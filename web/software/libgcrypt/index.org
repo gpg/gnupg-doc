@@ -49,7 +49,7 @@
    from the European based GnuPG server.
 
    The current stable version is {{{libgcrypt_ver}}} which was
-   released on {{{libgcrypt_date}}} from the {{{libgcrypt_branch}} branch.
+   released on {{{libgcrypt_date}}} from the {{{libgcrypt_branch}}} branch.
    See the [[../../download/index.org::libgcrypt][download]] section for the
    latest tarball.
 
