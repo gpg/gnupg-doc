@@ -77,6 +77,17 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.5 and Gpg4win 5.0.0-beta145 released (2025-03-10)
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.5.5.  This release fixes a couple of problems found in the
+previous 2.5 versions.
+
+Along with this GnuPG version we also released another *beta* version
+of [[https://www.gpg4win.org/version5.html][Gpg4win 5.0]].
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q1/000491.html][Read more]]}
+
 ** GnuPG 2.5.2 and Gpg4win 5.0.0-Beta32 released (2024-12-06)
 
 We are pleased to announce the availability of a new GnuPG release:
@@ -164,88 +175,6 @@ release: version 2.4.4. This version fixes a couple of bugs, comes
 with some new features.  A smartcard related security bug is also
 fixed and a tool to check for this flaw is provided.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q1/000481.html][more]]}
 
-** GnuPG 2.4.3 released (2023-07-04)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.3.  This version fixes some minor bugs and
-improves the performance on Windows. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2023q3/000480.html][more]]}
-
-** GnuPG 2.4.2 released (2023-05-30)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.2.  This version fixes some minor bugs and
-improves the performance on Windows. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2023q2/000479.html][more]]}
-
-** GnuPG 2.4.1 released (2023-04-28)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.1.  This release comes with a lot of new features
-and fixes some minor bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2023q2/000478.html][more]]}
-
-** 25 Years of GnuPG (2022-12-20)
-
-Exactly 25 years ago the very first release of GnuPG was published.
-We are pleased to take this opportunity to announce the availability
-of GnuPG version 2.4.0.
-
-This release has a few new features and the binary releases come with
-an updated Libksba to fix another vulnerability related to
-CVE-2022-3515.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q4/000477.html][more]]}
-
-
-** Libksba security advisory update (2022-12-20)                  :important:
-
-Another bug has been found in [[https://gnupg.org/software/libksba/][Libksba]] which affects all versions of
-libksba before 1.6.3 ({{{CVE(2022-47629)}}}).  Our [[https://gnupg.org/blog/20221017-pepe-left-the-ksba.html][security advisory]]
-for {{{CVE(2022-3512)}}} has been updated accordingly.  Windows users
-should update to [[https://files.gpg4win.org/gpg4win-4.1.0.exe][Gpg4win 4.1.0]] or to GnuPG\nbsp{}VS-Desktop 3.1.26.
-
-** GnuPG / Libksba security advisory (2022-10-17)                 :important:
-
-A severe bug has been found in [[https://gnupg.org/software/libksba/][Libksba]], the library used by GnuPG for
-parsing the ASN.1 structures as used by S/MIME.  The bug affects all
-versions of Libksba before 1.6.2 and may be used for remote code
-execution.  *Updating this library is thus important*.
-
-Please see our [[https://gnupg.org/blog/20221017-pepe-left-the-ksba.html][security advisory]] for {{{CVE(2022-3512)}}}. For
-download links please see the [[file:download/index.org][download]] page.  Windows users should
-update to [[https://files.gpg4win.org/gpg4win-4.0.4.exe][Gpg4win 4.0.4]] or to GnuPG\nbsp{}VS-Desktop 3.1.25.
-
-
-** GnuPG 2.3.8 released (2022-10-13)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.3.8.  This release comes with a lot of new features
-and the binary releases come with the fix for the Libksba
-vulnerability {{{CVE(2022-3515)}}}.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q4/000476.html][more]]}
-
-** GnuPG 2.3.7 released (2022-07-11)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.3.7.  This release fixes {{{CVE(2022-34903)}}} which could
-be used to inject wrong status information in signatures.  The status
-information could then be abused to display a wrong validity in
-Kleopatra and other users of GPGME.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q3/000474.html][more]]}
-
-** GnuPG 2.3.6 released (2022-04-25)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.3.6. This release fixes a regression introduced in
-2.3.5 released just a few days ago.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q2/000473.html][more]]}
-
-** GnuPG 2.3.5 released (2022-04-21)
-
-We are pleased to announce the availability of a new *stable GnuPG*
-release: version 2.3.5. This is another release in the stable 2.3
-series which introduces new options, improves the performance, and
-fixes some bugs. {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q2/000472.html][more]]}
-
-** Libgcrypt 1.10 is the new stable branch (2022-03-28)
-
-Although we will keep on maintaining the 1.8 branch, the new stable
-branch is now 1.10.  Version 1.10.1 comes with a lot of performance
-improvements and a few other new features.  It provides full API and
-ABI compatibility to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2022q1/000471.html][more]]}
 
 ** </div><!-- end pure-g -->                                   :html:virtual:
 
