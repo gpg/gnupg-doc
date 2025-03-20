@@ -18,6 +18,10 @@
   GnuPG.org site.  Simply, follow the instructions for a regular bug
   and add the tag /gpgweb/.
 
+  The site is open to read by anyone but for posting an account is
+  required.  Due to abuse of the tracker by SEOs and other crooks you
+  need to ask on the gnupg-users or -devel mailing list for an
+  account.
 
 ** Hints on how to add a new bug
 

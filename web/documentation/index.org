@@ -22,7 +22,7 @@
 
   You may also notice that OpenPGP is described by [[https://www.rfc-editor.org/rfc/rfc4880.txt][RFC-4880]].  GnuPG
   actually implements an updated version of this specification as
-  described by the [[https://datatracker.ietf.org/doc/draft-koch-openpgp-2015-rfc4880bis/][rfc4880bis]] document.
+  described by the [[https://datatracker.ietf.org/doc/draft-koch-openpgp-2015-rfc4880bis/][rfc4880bis]] document; see also the [[https://librepgp.org][LibrePGP]] site.
 
 * Community support
 
@@ -41,4 +41,10 @@
 
   - @@html:<a href="https://mstdn.social/@GnuPG" rel="me">@GnuPG@mstdn.social</a>@@ :: Fediverse account for GnuPG, Gpg4win and related topics.
 
-  - [[https://twitter.com/gnupg][@gnupg]] :: We sometimes post short messages to Twitter.
+  - @@html:<a href="xmpp:gnupg-devel@chat.gnupg.org" rel="me">gnupg-devel@chat.gnupg.org</a>@@ :: Is the public Jabber
+    MUC used by the core developers.
+
+  Take care: The @gnupg account on Xitter (fomerly Twitter) is not
+  related to GnuPG.  We deleted our account after its new owner turned
+  the site into a fascist propaganda platform.  Someone else grabbed
+  the name then.
