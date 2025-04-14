@@ -244,11 +244,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.5.15
-#+macro: gpgol_date 2025-01-07
-#+macro: gpgol_size 804k
-#+macro: gpgol_sha1 eec212251f9dccb4480f38239916f6a07aa8e5d6
-#+macro: gpgol_sha2 92b47bb657960a147a80753ec2c128fd4cfbf85bbb5c135acbc4a75a1c482e84
+#+macro: gpgol_ver  2.6.0
+#+macro: gpgol_date 2025-04-14
+#+macro: gpgol_size 805k
+#+macro: gpgol_sha1 abad69ee2289ce6107401cdf1c6665d0eff676e8
+#+macro: gpgol_sha2 4e8307d672d86ab576b91fc93eeb6dd053a7cd435d7bf1c5ff81d1fb2b361b38
 
 
 #
