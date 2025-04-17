@@ -86,6 +86,7 @@ if not available.  If CUSTOM is true only a minimal header is set."
 ")
 (unless custom
  (insert "<link rel=\"stylesheet\" href=\"/share/site.css\" type=\"text/css\" />
+<link rel=\"me\" href=\"https://mstdn.social/@GnuPG\" />
 </head>
 <body>
 ")))

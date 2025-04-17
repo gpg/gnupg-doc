@@ -5,7 +5,8 @@
 #+HTML_HEAD_EXTRA: <link type="application/rss+xml" href="https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg-doc.git;a=rss;f=web/index.org"/>
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" href="/share/pure-min.css.gz" type="text/css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" href="/share/grids-responsive-min.css.gz" type="text/css" />
-#+HTML_HEAD_EXTRA: <link rel="me" href="https://mstdn.social/@GnuPG" />
+# Note that the above html_head_extra lines do not work; you need to put such
+# stuff this into share/gpgweb.wl
 
 * The GNU Privacy Guard
 #+index: GnuPG
