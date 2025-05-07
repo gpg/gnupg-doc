@@ -154,11 +154,11 @@
 # The Git branch of the stable version:
 #+macro: libgcrypt_branch master
 #
-#+macro: libgcrypt_ver  1.11.0
-#+macro: libgcrypt_date 2024-06-19
-#+macro: libgcrypt_size 4082k
-#+macro: libgcrypt_sha1 dd2c68e0685bb99249efeeb06046fae15b5214ba
-#+macro: libgcrypt_sha2 09120c9867ce7f2081d6aaa1775386b98c2f2f246135761aae47d81f58685b9c
+#+macro: libgcrypt_ver  1.11.1
+#+macro: libgcrypt_date 2025-05-07
+#+macro: libgcrypt_size 4134k
+#+macro: libgcrypt_sha1 d33eb270cd74e8c23e263eb5cdb8f7de740f7b49
+#+macro: libgcrypt_sha2 24e91c9123a46c54e8371f3a3a2502f1198f2893fbfbf59af95bc1c21499b00e
 #
 # The 1.8 LTS version.
 #
