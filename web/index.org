@@ -79,13 +79,24 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.6 and Gpg4win 5.0.0-Beta190 released (2025-05-09)
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.5.6.  This release is the third of a series of public
+testing releases eventually leading to a new stable version 2.6.
+
+Along with this GnuPG version we also released a another *beta*
+version of Gpg4win 5.0.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q2/000492.html][Read more]]}
+
 ** GnuPG 2.5.5 and Gpg4win 5.0.0-beta145 released (2025-03-10)
 
 We are pleased to announce the availability of a new GnuPG release:
 version 2.5.5.  This release fixes a couple of problems found in the
 previous 2.5 versions.
 
-Along with this GnuPG version we also released another *beta* version
+Along with this GnuPG version we also released another beta version
 of [[https://www.gpg4win.org/version5.html][Gpg4win 5.0]].
 
 {[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q1/000491.html][Read more]]}
