@@ -29,8 +29,7 @@
    systems.  Werner is a long time free software supporter and
    co-founder of the [[http://fsfe.org][FSFE]].  With the support of his brother he founded
    [[https://g10code.com][g10^code]] GmbH in 2001 to make GnuPG development his profession.
-   Werner is full time employed by g10^code.  He is a founding member
-   and the current chairperson of the [[../verein/index.org][GnuPG e.V.]]
+   Werner is managing director and an associate of [[https://g10code.com][g10^code]] GmbH.
 
    #+HTML: <p style="clear: both"/>
 
@@ -63,7 +62,7 @@
    project in 2011 and soon took over the development of the smartcard
    related code.  He is also the person behind the [[http://www.fsij.org/gnuk/][Gnuk Token]] and the
    [[http://www.gniibe.org/memo/development/gnuk/rng/please-more-and-more-mep.html][MEP game]].  Niibe’s work on GnuPG is financially supported by
-   g10^code.  He is a founding member of the [[../verein/index.org][GnuPG e.V.]]
+   g10^code.
 
    #+HTML: <p style="clear: both"/>
 
@@ -88,18 +87,17 @@
 
    /Windows and UX/
 
-   Andre is working on GnuPG related projects for
-   [[https://www.gnupg.com][GnuPG.com]] He has been an active KDE Developer since 2009,
+   Andre used to work on GnuPG related projects for
+   [[https://www.gnupg.com][GnuPG.com]].  He has been an active KDE Developer since 2009,
    mostly focused on Windows ports of KDE Software. Since 2013 he took
    over several Windows and UX specific parts of GnuPG.
 
-   Andre is the current maintainer of Kleopatra the KDE / Gpg4win GUI
-   for GnuPG.  He also maintains GpgOL since 2013 and wrote the
-   support for Outlook 2010 and later versions.  Additonally he is the
-   maintainer of Gpg4win in general and GpgEX as well as the GPGME
-   bindings for C++ and Qt.
-
-   He is a founding member and the current cashier of the [[../verein/index.org][GnuPG e.V.]]
+   Andre was for a long time the maintainer of Kleopatra the
+   KDE/Gpg4win GUI for GnuPG.  He also maintained GpgOL from 2013 to
+   2024 and wrote the support for Outlook 2010 and later versions.
+   Additionally he was the maintainer of Gpg4win in general and GpgEX
+   as well as the GPGME bindings for C++ and Qt.  Andre is owner of
+   Chelydra GmbH which is an associate of [[https://g10code.com][g10^code]] GmbH.
 
    GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
 
