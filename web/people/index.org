@@ -99,7 +99,7 @@
    as well as the GPGME bindings for C++ and Qt.  Andre is owner of
    Chelydra GmbH which is an associate of [[https://g10code.com][g10^code]] GmbH.
 
-   GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
+#  GPG Key: [[https://k.gnupg.net/94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][94A5 C9A0 3C2F E5CA 3B09]] [[https://sks-keyservers.net/pks/lookup?op=get&search=0x94A5C9A03C2FE5CA3B095D8E1FDF723CF462B6B1][5D8E 1FDF 723C F462 B6B1]]
 
    #+HTML: <p style="clear: both"/>
 
