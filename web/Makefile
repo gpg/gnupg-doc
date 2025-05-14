@@ -10,20 +10,26 @@
 
 all: swdb.lst.sig
 
-swdb.lst: swdb.mac
+swdb.lst-new: swdb.mac
 	@awk '                                \
 	     ! /^#\+macro:/ {next}           \
 	     $$2 ~ /ftp_.*/ {next}           \
 	                    {print $$2, $$3, $$4, $$5} \
-	    ' swdb.mac >swdb.lst
+	    ' swdb.mac | sed 's/[[:blank:]]*$$//' >swdb.lst-new
 
-swdb.lst.sig: swdb.lst
-	+(set -e; \
+swdb.lst.sig: swdb.lst-new
+	@(set -e;\
 	  key=$$(grep '^SWDB_SIGNKEY=' $$HOME/.gnupg-autogen.rc|cut -d= -f2);\
           if [ -z "$$key" ]; then \
              echo "error: SWDB_SIGNKEY missing in ~/.gnupg-autogen.rc">&2; \
              exit 2;\
           fi;\
+	  ( mydir=`pwd`; cd /tmp; \
+            git diff "$$mydir"/swdb.lst "$$mydir"/swdb.lst-new || true ); \
+          echo "==================================";\
+          echo -n "Enter \"yes\" if it is okay to sign: "; read yesno; \
+	  [ "$$yesno" = yes ] || exit 1;\
+          mv -f swdb.lst-new swdb.lst ;\
 	  gpg -sbu "$$key" swdb.lst;\
 	 )
 
