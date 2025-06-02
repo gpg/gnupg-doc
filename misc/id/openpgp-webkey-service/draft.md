@@ -307,7 +307,9 @@ signature.  The signed message MUST have two parts:
 
 The first part MUST have "text" as its Content-Type and can be used to
 explain the purpose of the mail.  For example it may point to this
-specification and explain on how to manually perform the protocol.
+specification and explain on how to manually perform the protocol.  By
+evaluating the Content-Language header of the request the provider may
+send back a localized version.
 
 The second part MUST have a Content-Type of
 "application/vnd.gnupg.wkd" and carry an OpenPGP encrypted message in
