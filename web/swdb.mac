@@ -142,11 +142,36 @@
 #
 # GPGME
 #
-#+macro: gpgme_ver  1.24.3
-#+macro: gpgme_date 2025-05-19
-#+macro: gpgme_size 1848k
-#+macro: gpgme_sha1 e7f9be4b461907c00dfd21d23da872ba0638f6ee
-#+macro: gpgme_sha2 bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd
+# First the legacy 1.24 branch:
+#+macro: gpgme1_ver  1.24.3
+#+macro: gpgme1_date 2025-05-19
+#+macro: gpgme1_size 1848k
+#+macro: gpgme1_sha1 e7f9be4b461907c00dfd21d23da872ba0638f6ee
+#+macro: gpgme1_sha2 bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd
+#
+#+macro: gpgme_ver  2.0.0
+#+macro: gpgme_date 2025-06-03
+#+macro: gpgme_size 1351k
+#+macro: gpgme_sha1 0aadc7ee79034052933fa866a70da5f0666bbba7
+#+macro: gpgme_sha2 ddf161d3c41ff6a3fcbaf4be6c6e305ca4ef1cc3f1ecdfce0c8c2a167c0cc36d
+
+#
+# GPGME++
+#
+#+macro: gpgmepp_ver  2.0.0
+#+macro: gpgmepp_date 2025-06-03
+#+macro: gpgmepp_size 115k
+#+macro: gpgmepp_sha1 3e8ef698cf2d577ccf8232f52598cdfc31321348
+#+macro: gpgmepp_sha2 d4796049c06708a26f3096f748ef095347e1a3c1e570561701fe952c3f565382
+
+#
+# QGpgME
+#
+#+macro: gpgmeqt_ver  2.0.0
+#+macro: gpgmeqt_date n/a
+#+macro: gpgmeqt_size 0k
+#+macro: gpgmeqt_sha1 0000000000000000000000000000000000000000
+#+macro: gpgmeqt_sha2 0000000000000000000000000000000000000000000000000000000000000000
 
 
 #

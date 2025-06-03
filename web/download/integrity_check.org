@@ -123,8 +123,11 @@
    {{{npth_sha1}}}  npth-{{{npth_ver}}}.tar.bz2
    {{{pinentry_sha1}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
    {{{gpgme_sha1}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{gpgmepp_sha1}}}  gpgmepp-{{{gpgmepp_ver}}}.tar.xz
+   {{{gpgmeqt_sha1}}}  gpgmeqt-{{{gpgmeqt_ver}}}.tar.xz
    {{{scute_sha1}}}  scute-{{{scute_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
+   {{{gpgme1_sha1}}}  gpgme-{{{gpgme1_ver}}}.tar.bz2
    {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
    {{{end_chksum}}}
@@ -152,8 +155,11 @@
    {{{npth_sha2}}}  npth-{{{npth_ver}}}.tar.bz2
    {{{pinentry_sha2}}}  pinentry-{{{pinentry_ver}}}.tar.bz2
    {{{gpgme_sha2}}}  gpgme-{{{gpgme_ver}}}.tar.bz2
+   {{{gpgmepp_sha2}}}  gpgmepp-{{{gpgmepp_ver}}}.tar.xz
+   {{{gpgmeqt_sha2}}}  gpgmeqt-{{{gpgmeqt_ver}}}.tar.xz
    {{{scute_sha2}}}  scute-{{{scute_ver}}}.tar.bz2
    {{{gpa_sha2}}}  gpa-{{{gpa_ver}}}.tar.bz2
+   {{{gpgme1_sha2}}}  gpgme-{{{gpgme1_ver}}}.tar.bz2
    {{{gnupg1_sha2}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{end_chksum}}}
 
