@@ -108,14 +108,22 @@
 #
 # GnuPG-Desktop
 #
-#+macro: gnupgdesk_ver  2.4.3.0
-#+macro: gnupgdesk_date 2023-07-14
-#+macro: gnupgdesk_src_size 214M
-#+macro: gnupgdesk_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
-#+macro: gnupgdesk_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
-#+macro: gnupgdesk_ai_size 78M
-#+macro: gnupgdesk_ai_sha1 28e216f7e10639eb1898be9bca35d13f3e0aab36
-#+macro: gnupgdesk_ai_sha2 4e6592eb820a853804f9bd1f39ee545af712b0cabd0bf4a773ffddaff12fdd33
+#+macro: gpd_ver  2.4.3.0
+#+macro: gpd_date 2023-07-14
+#+macro: gpd_src_size 214M
+#+macro: gpd_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
+#+macro: gpd_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
+#+macro: gpd_ai_size 78M
+#+macro: gpd_ai_sha1 28e216f7e10639eb1898be9bca35d13f3e0aab36
+#+macro: gpd_ai_sha2 4e6592eb820a853804f9bd1f39ee545af712b0cabd0bf4a773ffddaff12fdd33
+
+#
+# GnuPG VS-Desktop
+#
+#+macro: vsd_ver  3.3.2
+#+macro: vsd_date 2025-04-28
+
+
 
 
 #
