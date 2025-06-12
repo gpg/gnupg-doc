@@ -15,16 +15,21 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
-/* The following script is triggred by a cronjob at ftp.gnupg.org to
- * build the index pages.
+/* The following script is triggered by a cronjob at ftp.gnupg.org to
+ * or elsewhere to build the index pages.  example on how to call
+ * the script: /etc/mk-ftp-index.html.sh /home/web/foo  foo.gnupg.org
  *
 --8<---------------cut here---------------start------------->8---
 #!/bin/sh
 
+# The script is a bit complicate because we need to make sure that
+# the directory entries do not change while processing them.  A changed
+# dir entry would lead to a different index.html file and thus they will
+# always be re-created.
+
+PGM=mk-ftp-index.html.sh
+
 set -e
-top=/home/ftp
-scratch=/home/ftp/.scratch
-cd "$top"
 
 opt_force=no
 if [ "$1" = "--force" ]; then
@@ -32,13 +37,28 @@ if [ "$1" = "--force" ]; then
   opt_force=yes
 fi
 
+
+top="$1"
+domain="$2"
+if [ ! -d "$top" ]; then
+   echo >&2 "usage: $PGM <topdir> [<domain>]"
+   exit 1
+fi
+[ -z "$domain" ] && domain="ftp.gnupg.org"
+
+
+scratch="$top"/.scratch
+cd "$top"
+
+
 INDEXER=/usr/local/bin/ftp-indexer
 if [ ! -x $INDEXER ]; then
-  echo "mk-ftp-index.html.sh: Index tool $INDEXER not found - aborting" >&2
+  echo >&2 "$PGM: Index tool $INDEXER not found - aborting"
   exit 1
 fi
 INDEXER_OPTS="--reverse-ver --gpgweb --readme --index $scratch/ftp-index.new"
-INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html"
+INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html --domain repos.gnupg.org"
+INDEXER_OPTS="$INDEXER_OPTS --exclude share"
 
 
 (find . -type d ! -name '\.*' ! -name dev ; echo .) |\
@@ -63,6 +83,7 @@ INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html"
           | grep -v '^Page last updated on ' >$scratch/index.html.new.x
       if ! cmp -s $scratch/index.html.x $scratch/index.html.new.x ; then
          mv $scratch/index.html.new index.html
+	 chmod o+r index.html
          mv $scratch/ftp-index.new .ftp-index
       fi
       rm $scratch/index.html
@@ -70,6 +91,7 @@ INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html"
       [ -f $scratch/ftp-index.new ] && rm $scratch/ftp-index.new
     else
       mv $scratch/index.html.new index.html
+      chmod o+r index.html
       mv $scratch/ftp-index.new .ftp-index
     fi
   fi
@@ -171,6 +193,7 @@ static int opt_gpgweb;
 static int opt_readme;
 static const char *opt_thumb;
 static strlist_t opt_exclude;
+static const char *opt_domain;
 
 /* Set to true if this is a big endian host.  Unfortunately there is
    no portable macro to test for it.  Thus we do a runtime test. */
@@ -1155,8 +1178,8 @@ print_header (const char *title)
              "<html xmlns=\"http://www.w3.org/1999/xhtml\""
              " xml:lang=\"en\" lang=\"en\">\n", stdout);
       printf("<head>\n"
-             "<title>ftp.gnupg.org:%s</title>\n",
-             esc_title);
+             "<title>%s:%s</title>\n",
+             opt_domain, esc_title);
       fputs ("<meta http-equiv=\"Content-Type\""
              " content=\"text/html; charset=UTF-8\"/>\n", stdout);
       printf("<meta name=\"date\" content=\"%s\"/>\n", format_time_now (0));
@@ -1176,9 +1199,9 @@ print_header (const char *title)
 
       printf("<main>\n"
              "<div id=\"content\">\n"
-             "<h2>ftp.gnupg.org:%s</h2>\n"
+             "<h2>%s:%s</h2>\n"
              "<div class=\"outline-text-2\" id=\"text-1\">\n",
-             esc_title);
+             opt_domain, esc_title);
 
       readme = fopen ("README", "r");
       if (opt_readme && (readme = fopen ("README", "r")))
@@ -1249,13 +1272,13 @@ print_footer (void)
              "<div id=\"footer\">\n", stdout);
       fputs ("<div id=\"nav_bottom\">\n"
              "<ul>\n"
-             "<li><a href=\"/privacy-policy.html\">Privacy&nbsp;Policy</a>"
+             "<li><a href=\"https://gnupg.org/privacy-policy.html\">Privacy&nbsp;Policy</a>"
              "</li>\n"
-             "<li><a href=\"/imprint.html\">Imprint</a>"
+             "<li><a href=\"https://gnupg.org/imprint.html\">Imprint</a>"
              "</li>\n"
-             "<li><a href=\"/blog/index.html\">Blog</a>"
+             "<li><a href=\"https://gnupg.org/blog/index.html\">Blog</a>"
              "</li>\n"
-             "<li><a href=\"/index.html\">Web</a>"
+             "<li><a href=\"https://gnupg.org/index.html\">Web</a>"
              "</li>\n"
              "</ul>\n"
              "</div>\n", stdout);
@@ -1272,16 +1295,8 @@ print_footer (void)
              "</div>\n", stdout);
 
       fputs ("<div id=\"cpyright\">\n"
-             "<a rel=\"license\""
-             " href=\"https://creativecommons.org/licenses/by-sa/4.0/\">"
-             "<img alt=\"CC BY-SA 4.0\" style=\"border: 0\""
-             " src=\"/share/cc-by-sa_80x15.png\"></a>&nbsp;"
-             "This web page is Copyright 2017 GnuPG e.V. and"
-             " licensed under a <a rel=\"license\""
-             " href=\"https://creativecommons.org/licenses/by-sa/4.0/\">"
-             "Creative Commons Attribution-ShareAlike 4.0 International"
-             " License</a>.  See <a href=\"https://gnupg.org/copying.html\">"
-             "copying</a> for details.\n", stdout);
+             "This web page is generated from a file listing"
+             " and as such not copyrightable.\n", stdout);
       printf("Page last updated on %s.\n", format_time_now (1));
       fputs ("</div>\n"
              "</div>\n"
@@ -1643,6 +1658,7 @@ main (int argc, char **argv)
     foo.u = 32;
     big_endian_host = !foo.b[0];
   }
+  opt_domain = "ftp.gnupg.org";
 
   if (argc < 1)
     die ("Hey, read up on how to use exec(2)\n");
@@ -1685,6 +1701,7 @@ main (int argc, char **argv)
                  "  --thumb DIR     include standard thumbnails using DIR\n"
                  "  --index FILE    create index FILE\n"
                  "  --exclude NAME  ignore file NAME\n"
+                 "  --domain NAME   use NAME instead of ftp.gnupg.org\n"
                  , stdout);
           exit (0);
         }
@@ -1753,6 +1770,14 @@ main (int argc, char **argv)
           strcpy (sl->d, *argv);
           sl->next = opt_exclude;
           opt_exclude = sl;
+          argc--; argv++;
+        }
+      else if (!strcmp (*argv, "--domain"))
+        {
+          argc--; argv++;
+          if (!argc || !**argv)
+            die ("argument missing for option '%s'\n", argv[-1]);
+          opt_domain = *argv;
           argc--; argv++;
         }
       else if (!strncmp (*argv, "--", 2))
