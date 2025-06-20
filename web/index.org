@@ -83,7 +83,7 @@ The latest release news:\\
 
 We are pleased to announce the availability of a new GnuPG release:
 version 2.5.8.  This release is another one in a series of public
-testing releases eventually leading to a new stable version 2.7.  Do
+testing releases eventually leading to a new stable version 2.6.  Do
 not hesitate to use this new version; it is fully functional and
 maintained.
 
