@@ -73,6 +73,8 @@ INDEXER_OPTS="$INDEXER_OPTS --exclude share"
       extraopt=""
     fi
 
+    [ -f .keepindex ] && continue
+
     [ -f $scratch/index.html ] && rm $scratch/index.html
     [ -f index.html ] && cat index.html >$scratch/index.html
     $INDEXER $INDEXER_OPTS $extraopt . "$desc" >$scratch/index.html.new
