@@ -36,7 +36,7 @@ options.
 A complete list of all mailing lists can also be found at our
 [[https://lists.gnupg.org/mailman/listinfo/][mailing list manager]].
 
-You may subscribe to these lists [[https://lists.gnupg.org/][via web]] or by sending an e-mail:
+You may subscribe to these lists [[https://lists.gnupg.org/mailman/listinfo/][via web]] or by sending an e-mail:
 
 #+begin_example
   To: <mailing_list>-request@gnupg.org
