@@ -57,13 +57,14 @@ if [ ! -x $INDEXER ]; then
   exit 1
 fi
 INDEXER_OPTS="--reverse-ver --gpgweb --readme --index $scratch/ftp-index.new"
-INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html --domain repos.gnupg.org"
+INDEXER_OPTS="$INDEXER_OPTS --exclude README --exclude index.html --domain $domamain"
 INDEXER_OPTS="$INDEXER_OPTS --exclude share"
 
 
 (find . -type d ! -name '\.*' ! -name dev ; echo .) |\
  while read dir rest; do
   dir=${dir##./}
+  cd "$top"
   if cd "$dir"; then
     if [ "$dir" = "." ]; then
       desc="/"
@@ -97,7 +98,6 @@ INDEXER_OPTS="$INDEXER_OPTS --exclude share"
       mv $scratch/ftp-index.new .ftp-index
     fi
   fi
-  cd "$top"
 done
 --8<---------------cut here---------------end--------------->8---
  *
