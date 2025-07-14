@@ -79,6 +79,16 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.9 with Debian packages released (2025-07-14)
+
+We are pleased to announce the availability of a new GnuPG release.
+Version 2.5.9 which will soon lead us to the new stable 2.6 series.
+This release mostly fixes regression in the previous releases.  We now
+also provide packages for [[https://debian.org][Debian]], [[https://devuan.org][Devuan]], and [[https://ubuntu.com][Ubuntu]] in addition to
+the usual [[https://gpg4win.org/version5.html][Gpg4win]] beta installer.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q3/000495.html][Read more]]}
+
 ** GnuPG 2.5.8 released (2025-05-20)
 
 We are pleased to announce the availability of a new GnuPG release:
