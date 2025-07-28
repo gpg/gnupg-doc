@@ -140,11 +140,11 @@
 #
 # PINENTRY
 #
-#+macro: pinentry_ver  1.3.1
-#+macro: pinentry_date 2024-07-03
-#+macro: pinentry_size 596k
-#+macro: pinentry_sha1 fb0bbb88211558c8f7e652b4b6a675b1972fba04
-#+macro: pinentry_sha2 bc72ee27c7239007ab1896c3c2fae53b076e2c9bd2483dc2769a16902bce8c04
+#+macro: pinentry_ver  1.3.2
+#+macro: pinentry_date 2025-07-28
+#+macro: pinentry_size 598k
+#+macro: pinentry_sha1 ca7c502f347f248377842f7e68df5e971059e4db
+#+macro: pinentry_sha2 8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e
 
 
 #
@@ -279,11 +279,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.6.3
-#+macro: gpgol_date 2025-07-10
+#+macro: gpgol_ver  2.6.4
+#+macro: gpgol_date 2025-07-28
 #+macro: gpgol_size 806k
-#+macro: gpgol_sha1 e77ec7604d144849c94c41086d14b47fbe80c47e
-#+macro: gpgol_sha2 5ef3076997021d33f23960d811ecf7d0364e0bc4c8e0be0c2138d43560c550dc
+#+macro: gpgol_sha  c7416bf09ba9fc233a4c6a1df68fefc241280629
+#+macro: gpgol_sha2 e2121836af3faa55286f4126e765cb11ab933a66d8978511fbe060287ac07267
 
 
 #
