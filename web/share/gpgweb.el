@@ -113,6 +113,7 @@ if not available.  If CUSTOM is true only a minimal header is set."
     ("/download/index.html"
      "Download"
      (("/download/index.html"              "Download")
+      ("https://repos.gnupg.org/deb/gnupg" "Debian&nbsp;Packages")
       ("/download/integrity_check.html"    "Integrity&nbsp;Check")
       ("/signature_key.html"               "Release&nbsp;Keys")
       ("/download/supported_systems.html"  "Supported&nbsp;Systems")
