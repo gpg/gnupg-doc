@@ -88,7 +88,7 @@ gpg:               imported: 1
 #+end_src
 
 Prefer using =curl= or =wget=? No problem—you can download the key
-manually, too. 
+manually, too.
 
 **** Download using =wget=:
 
