@@ -80,6 +80,18 @@ The latest release news:\\
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
 
+** GnuPG 2.5.12 released (2025-09-02)
+
+We are pleased to announce the availability of a new GnuPG release:
+Version 2.5.12.  This release adds new features and fixes two
+regressions.
+
+Note that this 2.5 series is fully supported and thus ready for
+production use.  This means we won't break anything but may add some
+more features before 2.6.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q3/000497.html][Read more]]}
+
 ** New GnuPG merchandise available (2025-09-01)
 
 We have launched a new web shop where you can [[https://gnupg.myspreadshop.de][find merchandise]] to show
