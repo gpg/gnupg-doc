@@ -79,6 +79,16 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+
+** New GnuPG merchandise available (2025-09-01)
+
+We have launched a new web shop where you can [[https://gnupg.myspreadshop.de][find merchandise]] to show
+your support for GnuPG. We have been planning to offer merchandise
+again for a long time, and this print-on-demand service enables us to
+offer a wide range of products, so we hope there is something for
+everyone. Please contact us if you can't find what you're looking
+for. You can get a 25% discount for orders within the next 9 days!
+
 ** GnuPG 2.5.9 with Debian packages released (2025-07-14)
 
 We are pleased to announce the availability of a new GnuPG release.
