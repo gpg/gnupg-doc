@@ -102,6 +102,7 @@ if not available.  If CUSTOM is true only a minimal header is set."
     ("/donate/index.html"
      "Donate"
      (("/donate/index.html"                "Donate")
+      ("https://gnupg.myspreadshop.de"     "Merchandise")
       ("/donate/kudos.html"                "List of Donors")))
     ("/software/index.html"
      "Software"
