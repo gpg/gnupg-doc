@@ -197,11 +197,11 @@
 #
 # The 1.8 LTS version.
 #
-#+macro: libgcrypt18_ver  1.8.11
-#+macro: libgcrypt18_date 2023-11-16
-#+macro: libgcrypt18_size 2948k
-#+macro: libgcrypt18_sha1 14715e6690bc9f81d7ef17ea58805186b022f75a
-#+macro: libgcrypt18_sha2 c98249fb5bb1f6017f5f9bf484327a940b59075bca7c46fa69ebb54098249860
+#+macro: libgcrypt18_ver  1.8.12
+#+macro: libgcrypt18_date 2025-10-28
+#+macro: libgcrypt18_size 2949k
+#+macro: libgcrypt18_sha1 389ec2156f71286690e7ff00ec91c5bfd7854a37
+#+macro: libgcrypt18_sha2 c008fc295e62e4c09baaca84e8c63a83f6754d5e3b12432a64262036d46c22b2
 
 
 #
