@@ -104,7 +104,7 @@
    | RPM     | [[http://rpmfind.net/][rpmfind]]                                                                                                                                                                                          | RPM packages for different OS            |
    | Android | [[https://guardianproject.info/code/gnupg/][Guardian project]]                                                                                                                                                                                 | Provides a GnuPG framework               |
    | VMS     | [[http://www.antinode.info/dec/sw/gnupg.html][antinode.info]]                                                                                                                                                                                    | A port of GnuPG 1.4 to OpenVMS           |
-   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]                                                                                                                                                                                        | A port of GnuPG to RISC OS               |
+   | RISC OS | [[http://www.sbellon.de/gnupg.html][home page]]                                                                                                                                                                                        | A port of GnuPG 1.4 to RISC OS               |
    |---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------|
 
 
