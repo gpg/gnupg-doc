@@ -1,7 +1,7 @@
 ---
 title: OpenPGP Web Key Directory
-docname: draft-koch-openpgp-webkey-service-19
-date: 2024-12-05
+docname: draft-koch-openpgp-webkey-service-21
+date: 2025-11-24
 submissiontype: IETF
 category: info
 
@@ -32,10 +32,10 @@ normative:
 
 --- abstract
 
-This specification describes a service to locate OpenPGP keys by mail
-address using a Web service and the HTTPS protocol.  It also provides a
-method for secure communication between the key owner and the mail
-provider to publish and revoke the public key.
+This specification describes a service to locate OpenPGP and LibrePGP
+keys by mail address using a Web service and the HTTPS protocol.  It
+also provides a method for secure communication between the key owner
+and the mail provider to publish and revoke the public key.
 
 
 --- middle
