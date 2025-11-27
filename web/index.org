@@ -79,12 +79,24 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.14 released (2025-11-19)
+
+We are pleased to announce the availability of a new GnuPG release:
+Version 2.5.14.  This release adds new features and fixes a couple of
+bugs.  New Debian packages are also also availabe; see
+[[https://repos.gnupg.org/deb/gnupg/trixie-devel/][repos.gnupg.org]].
+
+Note that this 2.5 series is fully supported and thus ready for
+production use.  This means we won't break anything but may add some
+more features before 2.6.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q4/000499.html][Read more]]}
 
 ** GnuPG 2.5.13 and gpg4win 5.0.0-beta395 released (2025-10-22)
 
 We are pleased to announce the availability of a new GnuPG release:
 Version 2.5.13.  This release adds new features and fixes a couple of
-bugs.  regressions.
+bugs.
 
 Along with this GnuPG version we also released a another beta
 version of [[https://www.gpg4win.org/version5.html][Gpg4win 5.0]].
