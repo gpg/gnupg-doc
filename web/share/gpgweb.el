@@ -3,6 +3,68 @@
 (if (< (string-to-number emacs-version) 24)
     (require 'org-exp))
 
+
+(require 'cl)
+
+;;
+;;{{{{ Replacements for not anymore available functions
+;;
+(defun asort (alist-symbol key)
+  "Move a specified key-value pair to the head of an alist.
+The alist is referenced by ALIST-SYMBOL.  Key-value pair to move to
+head is one matching KEY.  Returns the sorted list and doesn't affect
+the order of any other key-value pair.  Side effect sets alist to new
+sorted list."
+  (set alist-symbol
+       (sort (copy-alist (eval alist-symbol))
+	     (function (lambda (a b) (equal (car a) key))))))
+
+
+(defun aelement (key value)
+  "Make a list of a cons cell containing car of KEY and cdr of VALUE.
+The returned list is suitable for concatenating with an existing
+alist, via `nconc'."
+  (list (cons key value)))
+
+(defun aheadsym (alist)
+  "Return the key symbol at the head of ALIST."
+  (car (car alist)))
+
+(defun anot-head-p (alist key)
+  "Find out if a specified key-value pair is not at the head of an alist.
+The alist to check is specified by ALIST and the key-value pair is the
+one matching the supplied KEY.  Returns nil if ALIST is nil, or if
+key-value pair is at the head of the alist.  Returns t if key-value
+pair is not at the head of alist.  ALIST is not altered."
+  (not (equal (aheadsym alist) key)))
+
+
+(defun aput (alist-symbol key &optional value)
+  "Inserts a key-value pair into an alist.
+The alist is referenced by ALIST-SYMBOL.  The key-value pair is made
+from KEY and optionally, VALUE.  Returns the altered alist or nil if
+ALIST is nil.
+
+If the key-value pair referenced by KEY can be found in the alist, and
+VALUE is supplied non-nil, then the value of KEY will be set to VALUE.
+If VALUE is not supplied, or is nil, the key-value pair will not be
+modified, but will be moved to the head of the alist.  If the key-value
+pair cannot be found in the alist, it will be inserted into the head
+of the alist (with value nil if VALUE is nil or not supplied)."
+  (lexical-let ((elem (aelement key value))
+		alist)
+    (asort alist-symbol key)
+    (setq alist (eval alist-symbol))
+    (cond ((null alist) (set alist-symbol elem))
+	  ((anot-head-p alist key) (set alist-symbol (nconc elem alist)))
+	  (value (setcar alist (car elem)))
+	  (t alist))))
+;;
+;;}}}}
+;;
+
+
+
 ;; makeindex disabled because the generated file is created in the
 ;; source directory.
 (defun gpgweb-setup-project ()

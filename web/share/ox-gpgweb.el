@@ -29,13 +29,41 @@
 
 ;;; Code:
 
+;; FIXMEs from the update to work with org-mode 9 (from 2019):
+;;        Apply  e1adb17ba509a43e9a03a5b367a98b8bc8de8b02
+;;               Fix custom timestamps during export
+;;        Apply  b07e2f6ff1feddde83506b7fdb370bfe8e0a5337
+;;               ox: Implement local table of contents
+;;  Maybe apply  8c54b254b12d07136dc1720d2161b8a6db1f50b9
+;;               ox-html: Use upstream MathJax CDN
+;;  Maybe apply  cd7cbdcda870a8bc4b6c578efd9a037ed38caaab
+;;               ox-publish: Extend published external links
+;;        apply  0449b785b4b58ec16e1aac126634de70eee519a4
+;;               ox-html: Fix CUSTOM_ID handling
+;;               This was actually partly applied but removed at 2024-03-26
+;;        apply  da571868a56d33ef970cf0072f34d0ed8db91c55
+;;               ox-html: Fix paragraph class in footnote definitions
+;;        apply  0198e3955d5cc501953d9d3807c8f08f4ea8e1e4
+;;               ox-html: Use lexical binding
+
+;;  From commit  459033265295723cbfb0fccb3577acbfdc9d0285
+;;               Export back-ends: Use `org-export-get-reference'
+;;  Hunk -2445,26 +2444,18 missing
+;;  Hunk -2922,43 +2910,42 missing
+
+;; 2024-03-26 wk Applied most of
+;;               b79fef1da771f129a74e73b3474e527b29e37967
+;;               and simplified org-gpgweb-headline
+
+
 ;;; Dependencies
 
 (require 'ox)
 (require 'ox-publish)
 (require 'format-spec)
 (require 'subr-x)
-(eval-when-compile (require 'cl) (require 'table nil 'noerror))
+(eval-when-compile (require 'cl-lib)
+                   (require 'table nil 'noerror))
 
 
 ;;; Function Declarations
@@ -93,10 +121,9 @@
     (underline . org-gpgweb-underline)
     (verbatim . org-gpgweb-verbatim)
     (verse-block . org-gpgweb-verse-block))
-  :export-block "HTML"
   :filters-alist '((:filter-final-output . org-gpgweb-final-function))
   :menu-entry
-  '(?G "Export for http://gnupg.org"
+  '(?G "Export in gnupg.org style"
        ((?H "As HTML buffer" org-gpgweb-export-as-html)
 	(?h "As HTML file" org-gpgweb-export-to-html)
 	(?o "As HTML file and open"
@@ -109,7 +136,6 @@
     (:html-link-home "HTML_LINK_HOME" nil org-gpgweb-link-home)
     (:html-link-up "HTML_LINK_UP" nil org-gpgweb-link-up)
     (:html-mathjax "HTML_MATHJAX" nil "" space)
-    (:html-html5-fancy nil "html5-fancy" org-gpgweb-html5-fancy)
     (:html-checkbox-type nil nil org-gpgweb-checkbox-type)
     (:html-extension nil nil org-gpgweb-extension)
     (:html-home/up-format nil nil org-gpgweb-home/up-format)
@@ -117,6 +143,7 @@
     (:html-link-org-files-as-html nil nil org-gpgweb-link-org-files-as-html)
     (:html-mathjax-options nil nil org-gpgweb-mathjax-options)
     (:html-mathjax-template nil nil org-gpgweb-mathjax-template)
+    (:html-prefer-user-labels nil nil org-gpgweb-prefer-user-labels)
     (:html-table-align-individual-fields
      nil nil org-gpgweb-table-align-individual-fields)
     (:html-table-caption-above nil nil org-gpgweb-table-caption-above)
@@ -160,6 +187,20 @@ property on the headline itself.")
     ("--\\([^-]\\)" . "&#x2013;\\1")	; ndash
     ("\\.\\.\\." . "&#x2026;"))		; hellip
   "Regular expressions for special string conversion.")
+
+(defconst org-gpgweb-prefer-user-labels t
+  "When non-nil use user-defined names and ID over internal ones.
+
+By default, Org generates its own internal ID values during HTML
+export.  This process ensures that these values are unique and
+valid, but the keys are not available in advance of the export
+process, and not so readable.
+
+When this variable is non-nil, Org will use NAME keyword, or the
+real name of the target to create the ID attribute.
+
+Independently of this variable, however, CUSTOM_ID are always
+used as a reference.")
 
 
 
@@ -288,7 +329,7 @@ you can reuse them:
 For example:
 
 \(setq org-gpgweb-table-row-tags
-      (cons '(cond (top-row-p \"<tr class=\\\"tr-top\\\">\")
+      (cons \\='(cond (top-row-p \"<tr class=\\\"tr-top\\\">\")
                    (bottom-row-p \"<tr class=\\\"tr-bottom\\\">\")
                    (t (if (= (mod row-number 2) 1)
 			  \"<tr class=\\\"tr-odd\\\">\"
@@ -503,6 +544,38 @@ attributes with a nil value will be omitted from the result."
                              "\"" "&quot;" (org-gpgweb-encode-plain-text item))))
                  (setcar output (format "%s=\"%s\"" key value))))))))
 
+
+(defun org-gpgweb--reference (datum info &optional named-only)
+  "Return an appropriate reference for DATUM.
+
+DATUM is an element or a `target' type object.  INFO is the
+current export state, as a plist.
+
+When NAMED-ONLY is non-nil and DATUM has no NAME keyword, return
+nil.  This doesn't apply to headlines, inline tasks, radio
+targets and targets."
+  (let* ((type (org-element-type datum))
+	 (user-label
+	  (org-element-property
+	   (pcase type
+	     ((or `headline `inlinetask) :CUSTOM_ID)
+	     ((or `radio-target `target) :value)
+	     (_ :name))
+	   datum)))
+    (cond
+     ((and user-label
+	   (or (plist-get info :html-prefer-user-labels)
+	       ;; Used CUSTOM_ID property unconditionally.
+	       (memq type '(headline inlinetask))))
+      user-label)
+     ((and named-only
+	   (not (memq type '(headline inlinetask radio-target target)))
+	   (not user-label))
+      nil)
+     (t
+      (org-export-get-reference datum info)))))
+
+
 (defun org-gpgweb--wrap-image (contents info &optional caption label)
   "Wrap CONTENTS string within an appropriate environment for images.
 INFO is a plist used as a communication channel.  When optional
@@ -513,8 +586,7 @@ arguments CAPTION and LABEL are given, use them for caption and
     (format (if html5-fancy "\n<figure%s>%s%s\n</figure>"
 	      "\n<div%s class=\"figure\">%s%s\n</div>")
 	    ;; ID.
-	    (if (not (org-string-nw-p label)) ""
-	      (format " id=\"%s\"" (org-export-solidify-link-text label)))
+            (if (org-string-nw-p label) (format " id=\"%s\"" label) "")
 	    ;; Contents.
 	    (format "\n<p>%s</p>" contents)
 	    ;; Caption.
@@ -607,10 +679,9 @@ Replaces invalid characters with \"_\"."
 (defun org-gpgweb-footnote-section (info)
   "Format the footnote section.
 INFO is a plist used as a communication channel."
-  (let* ((fn-alist (org-export-collect-footnote-definitions
-		    (plist-get info :parse-tree) info))
+  (let* ((fn-alist (org-export-collect-footnote-definitions info))
 	 (fn-alist
-	  (loop for (n type raw) in fn-alist collect
+	  (cl-loop for (n type raw) in fn-alist collect
 		(cons n (if (eq (org-element-type raw) 'org-data)
 			    (org-trim (org-export-data raw info))
 			  (format "<p class=\"footpar\">%s</p>"
@@ -670,9 +741,9 @@ INFO is a plist used as a communication channel."
      (format "<title>%s</title>\n" title)
      (when (plist-get info :time-stamp-file)
        (format-time-string
-	 (concat "<!-- "
-		 (plist-get info :html-metadata-timestamp-format)
-		 " -->\n")))
+	(concat "<!-- "
+		(plist-get info :html-metadata-timestamp-format)
+		" -->\n")))
      (format
       (if (org-gpgweb-html5-p info)
 	  (org-gpgweb-close-tag "meta" " charset=\"%s\"" info)
@@ -762,7 +833,9 @@ INFO is a plist used as a communication channel."
   "Format a HTML anchor."
   (let* ((attributes (concat (and id (format " id=\"%s\"" id))
 			     attributes)))
-    (format "<a%s>%s</a>" attributes (or desc ""))))
+    (if (or (string= attributes "") (string= attributes " id=\"sec-\""))
+        (or desc "")
+      (format "<a%s>%s</a>" attributes (or desc "")))))
 
 ;;;; Todo
 
@@ -827,10 +900,6 @@ is the language used for CODE, as a string, or nil."
 	  (setq code (with-temp-buffer
 		       ;; Switch to language-specific mode.
 		       (funcall lang-mode)
-		       ;; Disable fci-mode if present
-		       (when (and (fboundp 'fci-mode)
-				  (require 'fill-column-indicator nil 'noerror))
-			 (fci-mode -1))
 		       (insert code)
 		       ;; Fontify buffer.
 		       (font-lock-ensure)
@@ -899,7 +968,7 @@ a plist used as a communication channel."
 	 ;; Does the src block contain labels?
 	 (retain-labels (org-element-property :retain-labels element))
 	 ;; Does it have line numbers?
-	 (num-start (case (org-element-property :number-lines element)
+	 (num-start (cl-case (org-element-property :number-lines element)
 		      (continued (org-export-get-loc element info))
 		      (new 0))))
     (org-gpgweb-do-format-code code lang refs retain-labels num-start)))
@@ -907,31 +976,35 @@ a plist used as a communication channel."
 
 ;;; Tables of Contents
 
-(defun org-gpgweb-toc (depth info)
+(defun org-gpgweb-toc (depth info &optional scope)
   "Build a table of contents.
 DEPTH is an integer specifying the depth of the table.  INFO is a
-plist used as a communication channel.  Return the table of
+plist used as a communication channel.  Optional argument SCOPE
+is an element defining the scope of the table.  Return the table of
 contents as a string, or nil if it is empty."
   (let ((toc-entries
 	 (mapcar (lambda (headline)
 		   (cons (org-gpgweb--format-toc-headline headline info)
 			 (org-export-get-relative-level headline info)))
 		 (org-export-collect-headlines info depth)))
-	(outer-tag (if (and (org-gpgweb-html5-p info)
-			    (plist-get info :html-html5-fancy))
-		       "nav"
-		     "div")))
+	)
     (when toc-entries
-      (concat (format "<%s id=\"table-of-contents\">\n" outer-tag)
-	      (let ((top-level (plist-get info :html-toplevel-hlevel)))
-		(format "<h%d>%s</h%d>\n"
-			top-level
-			(org-gpgweb--translate "Table of Contents" info)
-			top-level))
-	      "<div id=\"text-table-of-contents\">"
-	      (org-gpgweb--toc-text toc-entries)
-	      "</div>\n"
-	      (format "</%s>\n" outer-tag)))))
+      (let ((toc (concat "<div id=\"text-table-of-contents\" role=\"doc-toc\">"
+			 (org-gpgweb--toc-text toc-entries)
+			 "</div>\n")))
+        (if scope toc
+          (let ((outer-tag (if (and (org-gpgweb-html5-p info)
+			            (plist-get info :html-html5-fancy))
+		               "nav"
+		             "div")))
+            (concat (format "<%s id=\"table-of-contents\"  role=\"doc-toc\">\n" outer-tag)
+	            (let ((top-level (plist-get info :html-toplevel-hlevel)))
+		      (format "<h%d>%s</h%d>\n"
+			      top-level
+			      (org-gpgweb--translate "Table of Contents" info)
+			      top-level))
+                    toc
+	            (format "</%s>\n" outer-tag))))))))
 
 (defun org-gpgweb--toc-text (toc-entries)
   "Return innards of a table of contents, as a string.
@@ -946,8 +1019,7 @@ and value is its relative level, as an integer."
 	      (level (cdr entry)))
 	  (concat
 	   (let* ((cnt (- level prev-level))
-		  (times (if (> cnt 0) (1- cnt) (- cnt)))
-		  rtn)
+		  (times (if (> cnt 0) (1- cnt) (- cnt))))
 	     (setq prev-level level)
 	     (concat
 	      (org-gpgweb--make-string
@@ -970,32 +1042,22 @@ INFO is a plist used as a communication channel."
 			(org-element-property :priority headline)))
 	 (text (org-export-data-with-backend
 		(org-export-get-alt-title headline info)
-		;; Create an anonymous back-end that will ignore any
-		;; footnote-reference, link, radio-target and target
-		;; in table of contents.
-		(org-export-create-backend
-		 :parent 'gpgweb
-		 :transcoders '((footnote-reference . ignore)
-				(link . (lambda (object c i) c))
-				(radio-target . (lambda (object c i) c))
-				(target . ignore)))
+		(org-export-toc-entry-backend 'gpgweb)
 		info))
 	 (tags (and (eq (plist-get info :with-tags) t)
 		    (org-export-get-tags headline info))))
     (format "<a href=\"#%s\">%s</a>"
 	    ;; Label.
-	    (org-export-solidify-link-text
-	     (or (org-element-property :CUSTOM_ID headline)
-		 (concat "sec-"
-			 (mapconcat #'number-to-string headline-number "-"))))
+            (org-gpgweb--reference headline info)
 	    ;; Body.
 	    (concat
 	     (and (not (org-export-low-level-p headline info))
 		  (org-export-numbered-headline-p headline info)
 		  (concat (mapconcat #'number-to-string headline-number ".")
 			  ". "))
+             ;; We won't want the tags in the TOC headlines
 	     (apply 'org-gpgweb-format-headline-function
-		     todo todo-type priority text tags :section-number nil)))))
+		     todo todo-type priority text nil :section-number nil)))))
 
 (defun org-gpgweb-list-of-listings (info)
   "Build a list of listings.
@@ -1015,7 +1077,7 @@ of listings as a string, or nil if it is empty."
 					 (org-gpgweb--translate "Listing %d:" info))))
 		(mapconcat
 		 (lambda (entry)
-		   (let ((label (org-element-property :name entry))
+                   (let ((label (org-gpgweb--reference entry info t))
 			 (title (org-trim
 				 (org-export-data
 				  (or (org-export-get-caption entry t)
@@ -1024,10 +1086,10 @@ of listings as a string, or nil if it is empty."
 		     (concat
 		      "<li>"
 		      (if (not label)
-			  (concat (format initial-fmt (incf count)) " " title)
+			  (concat (format initial-fmt (cl-incf count)) " " title)
 			(format "<a href=\"#%s\">%s %s</a>"
-				(org-export-solidify-link-text label)
-				(format initial-fmt (incf count))
+				label
+				(format initial-fmt (cl-incf count))
 				title))
 		      "</li>")))
 		 lol-entries "\n"))
@@ -1051,7 +1113,7 @@ of tables as a string, or nil if it is empty."
 					 (org-gpgweb--translate "Table %d:" info))))
 		(mapconcat
 		 (lambda (entry)
-		   (let ((label (org-element-property :name entry))
+                   (let ((label (org-gpgweb--reference entry info t))
 			 (title (org-trim
 				 (org-export-data
 				  (or (org-export-get-caption entry t)
@@ -1060,10 +1122,10 @@ of tables as a string, or nil if it is empty."
 		     (concat
 		      "<li>"
 		      (if (not label)
-			  (concat (format initial-fmt (incf count)) " " title)
+			  (concat (format initial-fmt (cl-incf count)) " " title)
 			(format "<a href=\"#%s\">%s %s</a>"
-				(org-export-solidify-link-text label)
-				(format initial-fmt (incf count))
+				label
+				(format initial-fmt (cl-incf count))
 				title))
 		      "</li>")))
 		 lol-entries "\n"))
@@ -1175,10 +1237,18 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
   "Transcode a FIXED-WIDTH element from Org to HTML.
 CONTENTS is nil.  INFO is a plist holding contextual information."
   (format "<pre class=\"example\">\n%s</pre>"
-         (string-remove-suffix "\n"
-	  (org-gpgweb-do-format-code
-	   (org-remove-indentation
-	    (org-element-property :value fixed-width))))))
+          (string-remove-suffix "\n"
+	   (org-gpgweb-do-format-code
+	    (org-remove-indentation
+	     (org-element-property :value fixed-width))))))
+
+;;;; Footnote definition
+
+(defun org-gpgweb-footnote-definition (footnote-reference contents info)
+  "Transcode a FOOTNOTE-Definition lement from Org to HTML.
+CONTENTS is nil.  INFO is a plist holding contextual information."
+     (format "<footnodedef/>"))
+
 
 ;;;; Footnote Reference
 
@@ -1209,6 +1279,7 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
 CONTENTS holds the contents of the headline.  INFO is a plist
 holding contextual information."
   (let* ((numberedp (org-export-numbered-headline-p headline info))
+         (numbers (org-export-get-headline-number headline info))
 	 (level (+ (org-export-get-relative-level headline info)
 		   (1- (plist-get info :html-toplevel-hlevel))))
 	 (todo (and (plist-get info :with-todo-keywords)
@@ -1220,15 +1291,23 @@ holding contextual information."
 	 (text (org-export-data (org-element-property :title headline) info))
 	 (tags (and (plist-get info :with-tags)
 		    (org-export-get-tags headline info)))
+         ;; Note: We don't want the tags rendered in the headline
 	 (full-text (org-gpgweb-format-headline-function
-			     todo todo-type priority text tags info))
-	 (contents (or contents "")))
+		     todo todo-type priority text nil info))
+         (details (member "details" tags))
+	 (contents (or contents ""))
+	 (id (org-gpgweb--reference headline info))
+	 (formatted-text
+	    (if (plist-get info :html-self-link-headlines)
+		(format "<a href=\"#%s\">%s</a>" id full-text)
+	      full-text)))
     (cond
      ;; Case 0: virtual headline: Just print the raw value.
      ((member "html" (org-export-get-tags headline info))
       (format "%s\n" (org-element-property :raw-value headline)))
      ;; Case 1: This is a footnote section: ignore it.
-     ((org-element-property :footnote-section-p headline) nil)
+     ((org-element-property :footnote-section-p headline)
+      nil)
      ;; Case 2: This is a deep sub-tree: export it as a list item.
      ;;         Also export as items headlines for which no section
      ;;         format has been found.
@@ -1244,47 +1323,36 @@ holding contextual information."
 		     (org-gpgweb-end-plain-list type)))))
      ;; Case 3: Standard headline.  Export it as a section.
      (t
-      (let* ((numbers (org-export-get-headline-number headline info))
-	     (section-number (mapconcat #'number-to-string numbers "-"))
-	     (ids (remq nil
-			(list (org-element-property :CUSTOM_ID headline)
-			      (concat "sec-" section-number)
-			      (org-element-property :ID headline))))
-	     (preferred-id (car ids))
-	     (extra-ids (cdr ids))
-	     (outer-class (org-element-property :HTML_CONTAINER_CLASS headline))
-	     (header-class (org-element-property :HTML_CLASS headline))
-	     (first-content (car (org-element-contents headline))))
-	(format "%s<h%d%s id=\"%s\">%s%s</h%d>\n%s%s\n"
+      (let ((extra-class
+             (org-element-property :HTML_CONTAINER_CLASS headline))
+	    (headline-class
+             ;; Note: ox-html now uses :HTML_HEADLINE_CLASS
+             (org-element-property :HTML_CLASS headline)))
+	(format "%s%s<h%d%s%s>%s</h%d>\n%s%s%s%s\n"
+                (if details "<details><summary>\n" "")
                 ; div class?
-                (if outer-class (concat "<div class=\"" outer-class "\">\n") "")
+                (if extra-class (concat "<div class=\"" extra-class "\">\n") "")
 		; h?
 		level
-                ; header-class?
-                (if header-class (concat " class=\"" header-class "\"") "")
+                ; headline-class?
+                (if headline-class (concat " class=\"" headline-class "\"") "")
 		; id=?
-		preferred-id
-		; insert anchors
-		(mapconcat
-		 (lambda (x)
-		   (let ((id (org-export-solidify-link-text
-			      (if (org-uuidgen-p x) (concat "ID-" x)
-				x))))
-		     (org-gpgweb--anchor id nil nil info)))
-		 extra-ids "")
+		(concat " id=\"" id "\"")
 		; text of header
 		(concat
 		 (and numberedp
 		      (format
 		       "<span class=\"section-number-%d\">%s</span> "
 		       level
-		       (mapconcat #'number-to-string numbers ".")))
-		 full-text)
+		       (concat (mapconcat #'number-to-string numbers ".") ".")))
+		 formatted-text)
 		; /h?
 		level
+                (if details "</summary>" "")
 		; the content of the section
 		contents
-                (if outer-class "</div>" "")
+                (if extra-class "</div>" "")
+                (if details "</details>" "")
                 ))))))
 
 (defun org-gpgweb-format-headline-function
@@ -1317,15 +1385,13 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
   "Transcode an INLINE-SRC-BLOCK element from Org to HTML.
 CONTENTS holds the contents of the item.  INFO is a plist holding
 contextual information."
-  (let* ((org-lang (org-element-property :language inline-src-block))
-	 (code (org-element-property :value inline-src-block)))
-    (let ((lang (org-element-property :language inline-src-block))
-	  (code (org-gpgweb-format-code inline-src-block info))
-	  (label (let ((lbl (org-element-property :name inline-src-block)))
-		   (if (not lbl) ""
-		       (format " id=\"%s\""
-			       (org-export-solidify-link-text lbl))))))
-      (format "<code class=\"src src-%s\"%s>%s</code>" lang label code))))
+  (let ((lang (org-element-property :language inline-src-block))
+        (code (org-html-format-code inline-src-block info))
+        (label
+         (let ((lbl (org-gpgweb--reference inline-src-block info t)))
+           (if (not lbl) "" (format " id=\"%s\"" lbl)))))
+    (format "<code class=\"src src-%s\"%s>%s</code>" lang label code)))
+
 
 ;;;; Inlinetask
 
@@ -1343,7 +1409,7 @@ holding contextual information."
 	 (tags (and (plist-get info :with-tags)
 		    (org-export-get-tags inlinetask info))))
     (funcall org-gpgweb-format-inlinetask-function
-	     todo todo-type priority text tags contents)))
+	     todo todo-type priority text tags contents info)))
 
 (defun org-gpgweb-format-inlinetask-function
   (todo todo-type priority text tags contents info)
@@ -1394,7 +1460,7 @@ INFO is a plist holding contextual information.  See
 			  (and checkbox " ")))
 	(br (org-gpgweb-close-tag "br" nil info)))
     (concat
-     (case type
+     (cl-case type
        (ordered
 	(let* ((counter term-counter-id)
 	       (extra (if counter (format " value=\"%s\"" counter) "")))
@@ -1415,8 +1481,8 @@ INFO is a plist holding contextual information.  See
 			  class (concat checkbox term))
 		  "<dd>"))))
      (unless (eq type 'descriptive) checkbox)
-     contents
-     (case type
+     (and contents (org-trim contents))
+     (cl-case type
        (ordered "</li>")
        (unordered "</li>")
        (descriptive "</dd>")))))
@@ -1444,13 +1510,18 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
     (cond
      ((string= key "HTML") value)
      ((string= key "TOC")
-      (let ((value (downcase value)))
+      (let ((case-fold-search t))
 	(cond
 	 ((string-match "\\<headlines\\>" value)
-	  (let ((depth (or (and (string-match "[0-9]+" value)
-				(string-to-number (match-string 0 value)))
-			   (plist-get info :with-toc))))
-	    (org-gpgweb-toc depth info)))
+	  (let ((depth (and (string-match "\\<[0-9]+\\>" value)
+			    (string-to-number (match-string 0 value))))
+		(scope
+		 (cond
+		  ((string-match ":target +\\(\".+?\"\\|\\S-+\\)" value) ;link
+		   (org-export-resolve-link
+		    (org-strip-quotes (match-string 1 value)) info))
+		  ((string-match-p "\\<local\\>" value) keyword)))) ;local
+	    (org-gpgweb-toc depth info scope)))
 	 ((string= "listings" value) (org-gpgweb-list-of-listings info))
 	 ((string= "tables" value) (org-gpgweb-list-of-tables info))))))))
 
@@ -1487,7 +1558,7 @@ a plist containing export properties."
     (with-temp-buffer
       (insert latex-frag)
       (org-format-latex cache-relpath cache-dir nil "Creating LaTeX Image..."
-			nil nil processing-type)
+			nil processing-type)
       (buffer-string))))
 
 (defun org-gpgweb-latex-environment (latex-environment contents info)
@@ -1497,7 +1568,7 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
 	(latex-frag (org-remove-indentation
 		     (org-element-property :value latex-environment)))
 	(attributes (org-export-read-attribute :attr_html latex-environment)))
-    (case processing-type
+    (cl-case processing-type
       ((t mathjax)
        (org-gpgweb-format-latex latex-frag 'mathjax info))
       ((dvipng imagemagick)
@@ -1518,7 +1589,7 @@ CONTENTS is nil.  INFO is a plist holding contextual information."
 CONTENTS is nil.  INFO is a plist holding contextual information."
   (let ((latex-frag (org-element-property :value latex-fragment))
 	(processing-type (plist-get info :with-latex)))
-    (case processing-type
+    (cl-case processing-type
       ((t mathjax)
        (org-gpgweb-format-latex latex-frag 'mathjax info))
       ((dvipng imagemagick)
@@ -1551,10 +1622,10 @@ if its description is a single link targeting an image file."
        (org-element-map (org-element-contents link)
 	   (cons 'plain-text org-element-all-objects)
 	 (lambda (obj)
-	   (case (org-element-type obj)
+	   (cl-case (org-element-type obj)
 	     (plain-text (org-string-nw-p obj))
 	     (link (if (= link-count 1) t
-		     (incf link-count)
+		     (cl-incf link-count)
 		     (not (org-export-inline-image-p
 			   obj (plist-get info :html-inline-image-rules)))))
 	     (otherwise t)))
@@ -1578,8 +1649,8 @@ Bind `org-gpgweb-standalone-image-predicate' to constrain paragraph
 further.  For example, to check for only captioned standalone
 images, set it to:
 
-  \(lambda (paragraph) (org-element-property :caption paragraph))"
-  (let ((paragraph (case (org-element-type element)
+  (lambda (paragraph) (org-element-property :caption paragraph))"
+  (let ((paragraph (cl-case (org-element-type element)
 		     (paragraph element)
 		     (link (org-export-get-parent element)))))
     (and (eq (org-element-type paragraph) 'paragraph)
@@ -1590,9 +1661,9 @@ images, set it to:
 	     (org-element-map (org-element-contents paragraph)
 		 (cons 'plain-text org-element-all-objects)
 	       #'(lambda (obj)
-		   (when (case (org-element-type obj)
+		   (when (cl-case (org-element-type obj)
 			   (plain-text (org-string-nw-p obj))
-			   (link (or (> (incf link-count) 1)
+			   (link (or (> (cl-incf link-count) 1)
 				     (not (org-gpgweb-inline-image-p obj info))))
 			   (otherwise t))
 		     (throw 'exit nil)))
@@ -1621,10 +1692,10 @@ INFO is a plist holding contextual information.  See
 	 (path
 	  (cond
 	   ((member type '("http" "https" "ftp" "mailto"))
-	     ;(org-link-escape-browser
-	     ; (org-link-unescape (concat type ":" raw-path))))
-	     (concat type ":" raw-path))
-	   ((string= type "file")
+            (org-html-encode-plain-text
+             (org-link-escape-browser
+              (org-link-unescape (concat type ":" raw-path)))))
+           ((string= type "file")
 	    ;; Treat links to ".org" files as ".html".
 	    (setq raw-path
 		  (funcall link-org-files-as-html-maybe raw-path info))
@@ -1665,9 +1736,10 @@ INFO is a plist holding contextual information.  See
 		 (org-export-read-attribute :attr_html parent))))
 	 (attributes
 	  (let ((attr (org-gpgweb--make-attribute-string attributes-plist)))
-	    (if (org-string-nw-p attr) (concat " " attr) "")))
-	 protocol)
+	    (if (org-string-nw-p attr) (concat " " attr) ""))))
     (cond
+     ;; Link type is handled by a special function.
+     ((org-export-custom-protocol-maybe link desc 'html))
      ;; Image file.
      ((and (plist-get info :html-inline-images)
 	   (org-export-inline-image-p
@@ -1677,18 +1749,19 @@ INFO is a plist holding contextual information.  See
      ;; link's description.
      ((string= type "radio")
       (let ((destination (org-export-resolve-radio-link link info)))
-	(when destination
+	(if (not destination) desc
 	  (format "<a href=\"#%s\"%s>%s</a>"
-		  (org-export-solidify-link-text
-		   (org-element-property :value destination))
-		  attributes desc))))
+                  ;; Note that ox-html also uses the plain get-reference here
+                  (org-export-get-reference destination info)
+                  attributes
+                  desc))))
      ;; Links pointing to a headline: Find destination and build
      ;; appropriate referencing command.
      ((member type '("custom-id" "fuzzy" "id"))
       (let ((destination (if (string= type "fuzzy")
 			     (org-export-resolve-fuzzy-link link info)
 			   (org-export-resolve-id-link link info))))
-	(case (org-element-type destination)
+	(cl-case (org-element-type destination)
 	  ;; ID link points to an external file.
 	  (plain-text
 	   (let ((fragment (concat "ID-" path))
@@ -1768,10 +1841,6 @@ INFO is a plist holding contextual information.  See
 		attributes
 		(format (org-export-get-coderef-format path desc)
 			(org-export-resolve-coderef path info)))))
-     ;; Link type is handled by a special function.
-     ((functionp (setq protocol (nth 2 (assoc type org-link-protocols))))
-      (funcall protocol (org-link-unescape path) desc 'gpgweb))
-     ;; External link with a description part.
      ((and path desc) (format "<a href=\"%s\"%s>%s</a>" path attributes desc))
      ;; External link without a description part.
      (path (format "<a href=\"%s\"%s>%s</a>" path attributes path))
@@ -1832,8 +1901,8 @@ the plist used as a communication channel."
 			     'identity info t)
 			   info nil 'org-gpgweb-standalone-image-p))
 		  "</span> " raw))))
-	    (label (org-element-property :name paragraph)))
-	(org-gpgweb--wrap-image contents info caption label)))
+            (label (org-gpgweb--reference paragraph info)))
+        (org-gpgweb--wrap-image contents info caption label)))
      ;; Regular paragraph.
      (t (format "<p%s%s>\n%s</p>"
 		(if (org-string-nw-p attributes)
@@ -1848,7 +1917,7 @@ the plist used as a communication channel."
   "Insert the beginning of the HTML list depending on TYPE.
 When ARG1 is a string, use it as the start parameter for ordered
 lists."
-  (case type
+  (cl-case type
     (ordered
      (format "<ol%s>"
 	     (if arg1 (format " start=\"%d\"" arg1) "")))
@@ -1857,7 +1926,7 @@ lists."
 
 (defun org-gpgweb-end-plain-list (type)
   "Insert the end of the HTML list depending on TYPE."
-  (case type
+  (cl-case type
     (ordered "</ol>")
     (unordered "</ul>")
     (descriptive "</dl>")))
@@ -1887,11 +1956,9 @@ contextual information."
 (defun org-gpgweb-encode-plain-text (text)
   "Convert plain text characters from TEXT to HTML equivalent.
 Possible conversions are set in `org-gpgweb-protect-char-alist'."
-  (mapc
-   (lambda (pair)
-     (setq text (replace-regexp-in-string (car pair) (cdr pair) text t t)))
-   org-gpgweb-protect-char-alist)
-  text)
+  (dolist (pair org-html-protect-char-alist text)
+    (setq text (replace-regexp-in-string (car pair) (cdr pair) text t t))))
+
 
 (defun org-gpgweb-plain-text (text info)
   "Transcode a TEXT string from Org to HTML.
@@ -1980,12 +2047,20 @@ holding contextual information."
 	     (section-number
 	      (mapconcat
 	       'number-to-string
-	       (org-export-get-headline-number parent info) "-")))
+	       (org-export-get-headline-number parent info) "-"))
+             (section-str (or (org-element-property :CUSTOM_ID parent)
+                              section-number
+                              ;; Note that ox-html also uses the plain
+                              ;; get-reference here
+                              (org-export-get-reference parent info))))
         ;; Build return value.
-	(format "<div class=\"outline-text-%d\" id=\"text-%s\">\n%s</div>"
-		class-num
-		(or (org-element-property :CUSTOM_ID parent) section-number)
-		contents)))))
+        ;; Note that we don't anymore print the
+        ;;    "class=\"outline-text-%d\"" class-num
+        (if (string= section-str "")
+	    (or contents "")
+	  (format "<div id=\"text-%s\">\n%s</div>"
+                  section-str
+		  (or contents "")))))))
 
 ;;;; Radio Target
 
@@ -1993,9 +2068,9 @@ holding contextual information."
   "Transcode a RADIO-TARGET object from Org to HTML.
 TEXT is the text of the target.  INFO is a plist holding
 contextual information."
-  (let ((id (org-export-solidify-link-text
-	     (org-element-property :value radio-target))))
-    (org-gpgweb--anchor id text nil info)))
+  (let ((ref (org-gpgweb--reference radio-target info)))
+    (org-html--anchor ref text nil info)))
+
 
 ;;;; Special Block
 
@@ -2034,10 +2109,8 @@ contextual information."
     (let ((lang (org-element-property :language src-block))
 	  (caption (org-export-get-caption src-block))
 	  (code (org-gpgweb-format-code src-block info))
-	  (label (let ((lbl (org-element-property :name src-block)))
-		   (if (not lbl) ""
-		     (format " id=\"%s\""
-			     (org-export-solidify-link-text lbl))))))
+          (label (let ((lbl (org-gpgweb--reference src-block info t)))
+                   (if lbl (format " id=\"%s\"" lbl) ""))))
       (if (not lang) (format "<pre class=\"example\"%s>\n%s</pre>" label code)
 	(format
 	 "<div class=\"org-src-container\">\n%s%s\n</div>"
@@ -2191,20 +2264,19 @@ INFO is a plist used as a communication channel."
   "Transcode a TABLE element from Org to HTML.
 CONTENTS is the contents of the table.  INFO is a plist holding
 contextual information."
-  (case (org-element-property :type table)
+  (cl-case (org-element-property :type table)
     ;; Case 1: table.el table.  Convert it using appropriate tools.
     (table.el (org-gpgweb-table--table.el-table table info))
     ;; Case 2: Standard table.
     (t
-     (let* ((label (org-element-property :name table))
-	    (caption (org-export-get-caption table))
+     (let* ((caption (org-export-get-caption table))
 	    (number (org-export-get-ordinal
-		     table info nil 'org-gpgweb--has-caption-p))
+		     table info nil #'org-gpgweb--has-caption-p))
 	    (attributes
 	     (org-gpgweb--make-attribute-string
 	      (org-combine-plists
-	       (and label (list :id (org-export-solidify-link-text label)))
-	       (and (not (org-gpgweb-html5-p info))
+               (list :id (org-gpgweb--reference table info t))
+               (and (not (org-gpgweb-html5-p info))
 		    (plist-get info :html-table-attributes))
 	       (org-export-read-attribute :attr_html table))))
 	    (alignspec
@@ -2251,9 +2323,8 @@ contextual information."
   "Transcode a TARGET object from Org to HTML.
 CONTENTS is nil.  INFO is a plist holding contextual
 information."
-  (let ((id (org-export-solidify-link-text
-	     (org-element-property :value target))))
-    (org-gpgweb--anchor id nil nil info)))
+  (let ((ref (org-gpgweb--reference target info)))
+    (org-html--anchor ref nil nil info)))
 
 ;;;; Timestamp
 
