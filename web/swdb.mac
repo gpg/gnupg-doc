@@ -270,11 +270,11 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.0.11
-#+macro: gpgex_date 2024-07-03
-#+macro: gpgex_size 312k
-#+macro: gpgex_sha1 dfedf0b67a1370b9cdad0dfd2c66186a0044cd53
-#+macro: gpgex_sha2 569b78132cd207f7d4a416a76eb1d9f8c260b4dd7a48d67dd830dc2b41d46cdb
+#+macro: gpgex_ver  1.1.0
+#+macro: gpgex_date 2025-12-16
+#+macro: gpgex_size 311k
+#+macro: gpgex_sha1 172c36f9f3be4a596baed454266e87bb358a8606
+#+macro: gpgex_sha2 c0e7869688c5654c00a10c22334be86be9e6485ab4822c114499ef73566bca21
 
 
 #
