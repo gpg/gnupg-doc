@@ -1,0 +1,156 @@
+#+LANGUAGE: en
+#+TITLE: Cleartext Signatures Considered Harmful
+#+STARTUP: showall
+#+AUTHOR: Werner
+#+DATE: December 26, 2025
+#+KEYWORDS: PGP, OpenPGP, GnuPG, signature verification, PGP/MIME
+#+SUMMARY: On the correct use of cleartext signatures
+
+** Cleartext Signatures Considered Harmful
+
+Since the very first PGP versions from the early 1990ies PGP and all
+other implementations support a thing called cleartext signature.  It
+is very likely that you stumble upon one even these days.  Here is an
+example message:
+
+#+begin_example
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Far out in the uncharted backwaters of the unfashionable  end  of
+the  western  spiral  arm  of  the Galaxy lies a small unregarded
+yellow sun.
+-----BEGIN PGP SIGNATURE-----
+
+iJEEARYKADkWIQSHd0YfKgdOvEgNNZQZzByeCFsQegUCaU5mGhsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMSwyLDIACgkQGcwcnghbEHq27gEAqE+Cw1FmIlDXyzc1+5K8
+3e60/3TjpqpFmkmuot8ZROMBAIrQXMhfN3gr7jdsxLuV1L7+IzHSRyUMlelZSnAs
+k+AL
+=kCuN
+-----END PGP SIGNATURE-----
+#+end_example
+
+The benefit of such a cleartext signature is that the signed text is
+immediately readable without the need for any special tools.  If
+processed using a *PGP tool it is even possible to verify the origin
+and of the text and whether it hash been modified.  However the latter
+is not as easy as one might think.  For example the encoding has some
+peculiarities like escaping lines starting with a dash or the the
+string "From ", but it is nevertheless still readable.  Far worse is
+that almost all terminal software support escape codes to do funny
+things (you likely use them as part of your Unix prompt).  Thus
+naively verify a signature and assuming that the signed test is what
+you see on the terminal is *wrong*.  The only way to tell *what has
+been signed* is to process the entire message with a *PGP tool which
+gives you the actual signed output without any escaping.  This needs to
+be viewed and further processed.  For example with GnuPG you need to
+do this:
+
+: gpg --verify -o signed.txt message.asc
+
+or
+
+: gpgv -o signed.txt message.asc
+
+This takes the entire clearsigned (or standard signed message), prints
+a verification status, and puts the signed text into the file
+=signed.txt=:
+
+#+begin_example
+gpg: Signature made Fri 26 Dec 2025 11:40:26 AM CET
+gpg:                using EDDSA key 8777461F2A074EBC480D359419CC1C9E085B107A
+gpg: Good signature from "wk@gnupg.org" [ultimate]
+[...]
+#+end_example
+
+
+If the printed diagnostics shows that the signature is *good and from
+a key you trust*, you may further process the output as stored in the
+file =signed.txt=.  If you get verification result for several keys,
+they all signed the same text.  The second form uses the gpgv tool
+which should be used by scripts because it only verifies against keys
+found in the dedicated files =trustedkeys.gpg= or =trustedkeys.kbx=
+and returns success only if the signatures are good and made by one of
+those keys.  Note that the gpg option =--assert-signer= can replace
+the use of the gpgv tool.
+
+Cleartext signatures look easy but are hard to get right.  The
+important point to remember is that you need to know what has been
+verified by the shown signature.  If you want to sign something,
+please use a *detached signature* or for mail use *PGP/MIME* along
+with a proper mail client.  Except for legacy purposes you should not
+use cleartext signatures.
+
+To verify a detached signature you use one of these commands:
+
+: gpg --verify  message.sig message.txt
+: gpgv message.sig message.txt
+
+Thus you do not use the output option (which would result in an empty
+file) and you you give the detached signature file and the signed
+message file both on he command line.
+
+
+*** History of the cleartext signatures
+
+Back in the early 1990ies the Internet was far from being a ubiquitous
+communication media and a lot of messaging took place on federated BBS
+(Bulletin Board Services) using dial-up phone lines.  Phil Zimmermann
+developed PGP with this use cases in mind and thus needed to come up
+with an easy way to convey ascii encoded messages to a community which
+usually had not installed PGP but nevertheless was interested in
+reading messages.
+
+Email soon replaced the old BBSes but it took some more time for the
+MIME mail format to get widespread use.  In 1996 Michael Elkins
+developed PGP/MIME (RFC2015) for his mail client Mutt and started to
+replace the use of cleartext signed and of encrypted mails using this
+versatile and more secure format.  It took a few more years until this
+format got widespread support and it is meanwhile the standard for
+sending signed or encrypted *PGP mails.  But even today I sometimes
+get cleartext signed mails.  Mail clients based on the GPGME library
+should be able to properly process them but unfortunately some of them
+are still providing an option to send cleartext signed mails instead
+of PGP/MIME.
+
+*** Some pitfalls with cleartext signed messages
+
+For 30 years it has been known that the cleartext signed messages are
+easy to attack.  Mailers implemented various workarounds to avoid some
+common pitfalls.  But various new new attacks were reported over the
+years which finally led to the general adoption of PGP/MIME.
+
+A cleartext signed message has a strict syntax which allows tools to
+verify the intended text.  But it is also possible to trick uses into
+assuming something else has been signed.
+
+- The armor line consisting of the 5 dashes followed by "BEGIN ..."
+  and be changed to use only 4 dashes or a UTF-8 look-alike dash.  The
+  real armor header line then comes later down the text.  The user may
+  believe that the signed text starts at the first faked armor line
+  and wires the money to the account show there.
+
+- The comment lines are not intuitive and users can can't be expected to
+  know that they are not part of the signed text.  Thus adding extra
+  armor headers (in addition to the meanwhile mandatory "Hash:" line)
+  can be used to convey unsigned information.
+
+- The blank line used to delimit the armor header lines from the
+  signed message can be replaced with terminal control or UTF-8
+  characters to trick the user into accepting unsigned material.
+
+- Overlong lines may confuse the user.
+
+- All kind of variations of the above and more are possible.
+
+*** Conclusion
+
+So again: *avoid the use of cleartext signature* and use *detached
+signatures* instead.  With cleartext signatures never assume that what
+you see is what has been signed.
+
+With a cleartext signed or a standard binary messages only the tool
+used to verify the signature can tell you what has actually been
+signed.  With a detached signature the signature has been made over
+the entire signed file byte by byte; having a good detached signature
+that signed file can be directly further processed.
