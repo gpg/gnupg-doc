@@ -23,11 +23,12 @@
    These are the canonical release forms of GnuPG.  To use them you
    need to build the binary version from the provided source code.
    For Unix systems this is the standard way of installing software.
-   For GNU/Linux distributions are commonly used (e.g. Debian, Fedora,
-   RedHat, or Ubuntu) which may already come with a directly
-   installable packages.  However, these version may be older so that
-   building from the source is often also a good choice.  Some
-   knowledge on how to compile and install software is required.
+   For commonly used Linux distributions (e.g. Debian, Fedora, RedHat,
+   or Ubuntu) GnuPG is already part of the base system.  However,
+   these version may be older so that building from the source is
+   often also a good choice.  Some knowledge on how to compile and
+   install software is required.  For Debian based systems see below
+   for packages which replace those coming with the distribution.
 
    The table lists the different GnuPG packages, followed by required
    libraries, required tools, optional software, and legacy versions
