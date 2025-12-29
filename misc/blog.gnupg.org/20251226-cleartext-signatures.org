@@ -86,9 +86,9 @@ To verify a detached signature you use one of these commands:
 : gpg --verify  message.sig message.txt
 : gpgv message.sig message.txt
 
-Thus you do not use the output option (which would result in an empty
-file) and you you give the detached signature file and the signed
-message file both on he command line.
+Thus you do not use the output option (=--output= or =-o= which would
+result in an empty file) and you you give the detached signature file
+and the signed message file both on the command line.
 
 
 *** History of the cleartext signatures
@@ -117,20 +117,20 @@ of PGP/MIME.
 
 For 30 years it has been known that the cleartext signed messages are
 easy to attack.  Mailers implemented various workarounds to avoid some
-common pitfalls.  But various new new attacks were reported over the
+common pitfalls.  But various new attacks were reported over the
 years which finally led to the general adoption of PGP/MIME.
 
 A cleartext signed message has a strict syntax which allows tools to
-verify the intended text.  But it is also possible to trick uses into
+verify the intended text.  But it is also possible to trick users into
 assuming something else has been signed.
 
 - The armor line consisting of the 5 dashes followed by "BEGIN ..."
   and be changed to use only 4 dashes or a UTF-8 look-alike dash.  The
   real armor header line then comes later down the text.  The user may
   believe that the signed text starts at the first faked armor line
-  and wires the money to the account show there.
+  and wires the money to the account shown there.
 
-- The comment lines are not intuitive and users can can't be expected to
+- The comment lines are not intuitive and users can't be expected to
   know that they are not part of the signed text.  Thus adding extra
   armor headers (in addition to the meanwhile mandatory "Hash:" line)
   can be used to convey unsigned information.
