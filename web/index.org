@@ -167,7 +167,7 @@ We are pleased to announce the availability of a new GnuPG release:
 version 2.5.6.  This release is the third of a series of public
 testing releases eventually leading to a new stable version 2.6.
 
-Along with this GnuPG version we also released a another *beta*
+Along with this GnuPG version we also released another *beta*
 version of [[https://www.gpg4win.org/version5.html][Gpg4win 5.0]].
 
 {[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q2/000492.html][Read more]]}

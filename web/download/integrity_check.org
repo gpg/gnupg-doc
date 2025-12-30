@@ -106,10 +106,9 @@
    that can be downloaded from [[https://gnupg.org/ftp/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
-   {{{gnupg24_sha1}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
-   {{{gnupg24_w32_sha1}}}  gnupg-w32-{{{gnupg24_w32_ver}}}.exe
    {{{gnupg26_sha1}}}  gnupg-{{{gnupg26_ver}}}.tar.bz2
    {{{gnupg26_w32_sha1}}}  gnupg-w32-{{{gnupg26_w32_ver}}}.exe
+   {{{gnupg24_sha1}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
    {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha1}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
@@ -138,10 +137,9 @@
    that can be downloaded from [[https://gnupg.org/ftp/][our site]], have been gathered below.
 
    {{{begin_chksum}}}
-   {{{gnupg24_sha2}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
-   {{{gnupg24_w32_sha2}}}  gnupg-w32-{{{gnupg24_w32_ver}}}.exe
    {{{gnupg26_sha2}}}  gnupg-{{{gnupg26_ver}}}.tar.bz2
    {{{gnupg26_w32_sha2}}}  gnupg-w32-{{{gnupg26_w32_ver}}}.exe
+   {{{gnupg24_sha2}}}  gnupg-{{{gnupg24_ver}}}.tar.bz2
    {{{gnupg22_sha2}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha2}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha2}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
