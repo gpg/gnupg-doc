@@ -27,7 +27,7 @@ Since its introduction in 1997, GnuPG is [[https://www.gnu.org/philosophy/free-s
 it respects your freedom). It can be freely used, modified and
 distributed under the terms of the [[https://www.gnu.org/copyleft/gpl.html][GNU General Public License]] .
 
-The current version of GnuPG is {{{gnupg24_ver}}}.  See the [[file:download/index.org][download]]
+The current version of GnuPG is {{{gnupg26_ver}}}.  See the [[file:download/index.org][download]]
 page for other maintained versions.
 
 [[https://www.gpg4win.org][Gpg4win]] is a Windows version of GnuPG featuring a context menu tool, a
