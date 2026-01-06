@@ -349,7 +349,7 @@ string of the source file or nil if not available."
       <a href=\"https://mstdn.social/@GnuPG\" target=\"_blank\" rel=\"me\"
          title=\"Follow @GnuPG@mstdn.social\">
          <img src=\"/share/mastodon-icon.png\"
-              width=\"32px\" height=\"34px\" style==\"padding-right: 20px;\">
+              width=\"32px\" height=\"34px\" style=\"padding-right: 20px;\">
       </a>
   <p></p>
   </div>
