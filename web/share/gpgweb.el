@@ -341,15 +341,16 @@ string of the source file or nil if not available."
   </div>
 ")
     (insert "  <div class=\"footerbox\">
-      <a href=\"https://mstdn.social/@GnuPG\" target=\"_blank\" rel=\"me\"
-         title=\"Follow @GnuPG@mstdn.social\">
-         <img src=\"/share/mastodon-icon.png\"
-              width=\"32px\" height=\"34px\">
-      </a>
       <a><img src=\"/share/traueranzeige-g10_v2015.png\"
           width=\"200px\" height=\"73px\"
           alt=\"Traueranzeige: Wir nehmen Abschied von einem sicher geglaubten Freund, dem | Fernmeldegeheimniss | (Artikel 10 Grundgesetz) | * 23. Mai 1949, + 18. Dezember 2015\"
           title=\"Article 10 of the German constitution (communication privacy) is not anymore with us.\" /></a>
+      &nbsp;
+      <a href=\"https://mstdn.social/@GnuPG\" target=\"_blank\" rel=\"me\"
+         title=\"Follow @GnuPG@mstdn.social\">
+         <img src=\"/share/mastodon-icon.png\"
+              width=\"32px\" height=\"34px\" style==\"padding-right: 20px;\">
+      </a>
   <p></p>
   </div>
 ")
