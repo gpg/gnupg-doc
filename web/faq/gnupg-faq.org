@@ -896,10 +896,12 @@ so that other users can find it.  There are distributed networks of
 keyservers that share keys, so you only need to upload your key once
 to that network.
 
-One widely-used keyserver network is [[https://www.sks-keyservers.net/][sks-keyservers.net]].  SKS stands
-for “Synchronizing Key Server”.  You can use this network by supplying
-the =--keyserver pool.sks-keyservers.net= option.
-
+One widely-used keyserver network was www.sks-keyservers.net.  SKS
+stands for “Synchronizing Key Server”.  You can use this network by
+supplying the =--keyserver pool.sks-keyservers.net= option.
+Keyservers are of less use these days and most of them are not anymore
+in service.  It is better to attach the key to a mail or provide keys
+using a Web Key Directory.
 
 
 ** What’s RSA?
@@ -1617,13 +1619,17 @@ if someone edits the text GnuPG will report that the signature is bad.
 
 To generate an inline signature, run
 
-=gpg --armor --output signed_file.asc --local-user= /[your key ID]/ =--clearsign message_file.txt=
+=gpg --output signed_file.asc --local-user= /[your key ID]/ =--clearsign message_file.txt=
 
-To verify the resulting file, simply invoke GnuPG with the filename of
+To verify the resulting file, invoke GnuPG with the filename of
 the signed file:
 
-=gpg signed_file.asc=
+=gpg --output signed_file signed_file.asc=
 
+The text which was actually signed can be found in the new file
+=signed_file= .  See
+https://gnupg.org/blog/20251226-cleartext-signatures.html for
+more details on pitfalls with that format.
 
 ** How can I use GnuPG to verify a file I’ve downloaded?
    :PROPERTIES:
