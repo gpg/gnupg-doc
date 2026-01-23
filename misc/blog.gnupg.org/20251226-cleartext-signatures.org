@@ -154,3 +154,12 @@ used to verify the signature can tell you what has actually been
 signed.  With a detached signature the signature has been made over
 the entire signed file byte by byte; having a good detached signature
 that signed file can be directly further processed.
+
+
+** Update 2026-01-23
+
+Over at gnupg.com we published an articles with background info and
+many details:
+
+[[https://gnupg.com/20260122-39C3_reply_gpg_fail.html][Responsible Disclosure Requires Accountability]]
+[[https://gnupg.com/20260122-39C3_reply_gpg_fail.de.html][(German version)]]
