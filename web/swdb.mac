@@ -25,18 +25,18 @@
 #
 # GnuPG-2.6
 #
-#+macro: gnupg26_ver  2.5.16
-#+macro: gnupg26_date 2025-12-30
-#+macro: gnupg26_size 8109k
-#+macro: gnupg26_sha1 3acefeef08c82a4d4a8ba36f95c2986fb925d359
-#+macro: gnupg26_sha2 05144040fedb828ced2a6bafa2c4a0479ee4cceacf3b6d68ccc75b175ac13b7e
+#+macro: gnupg26_ver  2.5.17
+#+macro: gnupg26_date 2026-01-27
+#+macro: gnupg26_size 8113k
+#+macro: gnupg26_sha1 ee0bc59eadf258b6d92131911b5dca6cabc89419
+#+macro: gnupg26_sha2 2c1fbe20e2958fd8fb53cf37d7c38e84a900edc0d561a1c4af4bc3a10888685d
 #+macro: gnupg26_branch  master
-#+macro: gnupg26_w32_ver  2.5.16_20251230
-#+macro: gnupg26_w32_date 2025-12-30
-#+macro: gnupg26_w32_size 5571k
-#+macro: gnupg26_w32_sha1 250e1d3c3b4924188e6457a4c1f0d33ff2b2fe9e
-#+macro: gnupg26_w32_sha2 f685641aff82bab5c5218867b63b97f90f6e88c66a77b40aa38cf4d0ce8f7cdc
-#+macro: gnupg26_w32_ssiz 14712k
+#+macro: gnupg26_w32_ver  2.5.17_20260127
+#+macro: gnupg26_w32_date 2026-01-27
+#+macro: gnupg26_w32_size 5573k
+#+macro: gnupg26_w32_sha1 31ac31fe8f5b4f3e3ae8e5e6a70c967a59f66e63
+#+macro: gnupg26_w32_sha2 734b0d5b2aa2d1343e02649887f0744b7bbc55f9a292314746a86e479752499a
+#+macro: gnupg26_w32_ssiz 14711k
 
 
 #
@@ -89,14 +89,14 @@
 #
 # Gpg4win
 #
-#+macro: gpg4win_ver  5.0.0
-#+macro: gpg4win_date 2026-01-14
-#+macro: gpg4win_src_size 260525k
-#+macro: gpg4win_src_sha1 3ec9e6d43658f29798cf80c3b2231a87358669f7
-#+macro: gpg4win_src_sha2 6ef1865357ced9260761a866503ca101521c995eea82dc7b9be6d0ec4a5eee98
-#+macro: gpg4win_exe_size 43141k
-#+macro: gpg4win_exe_sha1 ff98a3a6d386981529cbb37521acadeb825728ee
-#+macro: gpg4win_exe_sha2 73b026d4eae86fe54ee538b73f0311a3cd77aa885343fbda0bffdcac2dfd704f
+#+macro: gpg4win_ver  5.0.1
+#+macro: gpg4win_date 2026-01-27
+#+macro: gpg4win_src_size 260538k
+#+macro: gpg4win_src_sha1 23c53952b8ca107cc589330ec6a3836f83f6cd2d
+#+macro: gpg4win_src_sha2 24804a6700e3b8682dd361ceb183b23a4b0243d5a1a9773494798cfe40e8fcea
+#+macro: gpg4win_exe_size 43142k
+#+macro: gpg4win_exe_sha1 d023716c760a4d1a4f8605a39a03729f2b436957
+#+macro: gpg4win_exe_sha2 9ea66e140fa8039d72472b1459313c7e76cb4d960a915a0d0a3a82f8feb03f08
 
 
 #
