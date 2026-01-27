@@ -79,6 +79,14 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Security advisory T8044 for GnuPG and Gpg4win                  :important:
+
+GnuPG 2.5.17 and Gpg4win 5.0.1 have been released to fix a severe
+security bug in GnuPG versions 2.5.13 to 2.5.16.  *Please update as
+soon as possible*.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q1/000501.html][Read more]]}
+
 ** Debian packages for 2.5.16 are available (2026-01-06)
 
 GnuPG 2.5.16 packages for [[https://debian.org][Debian]], [[https://devuan.org][Devuan]], and [[https://ubuntu.com][Ubuntu]] are now available
