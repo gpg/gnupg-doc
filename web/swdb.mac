@@ -180,13 +180,14 @@
 # LIBGCRYPT
 #
 # The Git branch of the stable version:
-#+macro: libgcrypt_branch LIBGCRYPT-1.11-BRANCH
+#+macro: libgcrypt_branch LIBGCRYPT-1.12-BRANCH
 #
-#+macro: libgcrypt_ver  1.11.2
-#+macro: libgcrypt_date 2025-08-04
-#+macro: libgcrypt_size 4138k
-#+macro: libgcrypt_sha1 b0d3d966894a5ee3b629e55350464f69e1c7859e
-#+macro: libgcrypt_sha2 6ba59dd192270e8c1d22ddb41a07d95dcdbc1f0fb02d03c4b54b235814330aac
+#+macro: libgcrypt_ver  1.12.0
+#+macro: libgcrypt_date 2026-01-29
+#+macro: libgcrypt_size 4334k
+#+macro: libgcrypt_sha1 02f80e9bc9967609b7041ef874eae4e542f240a5
+#+macro: libgcrypt_sha2 0311454e678189bad62a7e9402a9dd793025efff6e7449898616e2fc75e0f4f5
+
 
 #
 # The 1.8 LTS version.

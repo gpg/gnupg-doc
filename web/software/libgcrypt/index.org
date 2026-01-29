@@ -31,7 +31,8 @@
    GMAC-CAMELLIA, GMAC-TWOFISH, GMAC-SERPENT, GMAC-SEED, Poly1305,
    Poly1305-AES, Poly1305-CAMELLIA, Poly1305-TWOFISH,
    Poly1305-SERPENT, Poly1305-SEED),
-   public key algorithms (RSA, Elgamal, DSA, ECDSA, EdDSA, ECDH),
+   public key algorithms (RSA, Elgamal, DSA, ECDSA, EdDSA, ECDH,
+   ML-DSA, ML-KEM, SNTRUP761, Classic McEliece,),
    large integer functions, random numbers and a lot of
    supporting functions.
 
@@ -54,10 +55,7 @@
    latest tarball.
 
    All versions of Libgcrypt since 1.2 are API and ABI compatible.
-   The 1.6 series reached end-of-life on 2017-06-30.  The 1.7 series
-   reached end-of-life on 2019-06-30.  The 1.8 series is a LTS
-   version.  The 1.9 series was superseded by the 1.10 series with the
-   release of 1.10.1 on 2022-03-28.
+   See [[../../download/index.org::end-of-life][end-of-life]] for information on release dates.
 
    The development takes place in a Git repo, see our
    [[https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git][Git Viewer]].
