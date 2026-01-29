@@ -114,8 +114,8 @@
 #
 # GnuPG VS-Desktop
 #
-#+macro: vsd_ver  3.3.2
-#+macro: vsd_date 2025-04-28
+#+macro: vsd_ver  3.3.5
+#+macro: vsd_date 2026-01-29
 
 
 
