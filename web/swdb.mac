@@ -123,6 +123,8 @@
 #
 # GPA
 #
+#+macro: gpa_branch  master
+#
 #+macro: gpa_ver  0.11.1
 #+macro: gpa_date 2026-02-12
 #+macro: gpa_size 809k

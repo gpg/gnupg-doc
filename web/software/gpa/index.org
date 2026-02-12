@@ -12,6 +12,30 @@
 
   GPA is available at the [[ftp://ftp.gnupg.org/gcrypt/gpa//][GnuPG FTP server]] and its mirrors.
 
+  The current stable version is {{{gpa_ver}}} which was released
+  on {{{gpa_date}}} from the {{{gpa_branch}}} branch.  See
+  the [[../../download/index.org::gpa][download]] section for the latest tarball.
+
+** Changes in version 0.11.1 (2026-02-12)
+
+ - Remove unused trust_item stuff to make it build with gpgme 2.x.
+
+ - Fix a crash due to bad marshaling.  See
+   https://bugs.gentoo.org/957196.
+
+ Release-info: https://dev.gnupg.org/T7449
+
+** Changes in version 0.11.0 (2024-12-10)
+
+ * Ported to GTK 3.
+
+ * See the ChangeLog or better
+   https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpa.git for a list of
+   changes over the last 6 years.
+
+ Release-info: https://dev.gnupg.org/T7449
+
+
 ** Changes in version 0.10.0 (2018-10-16)
 
  - Added key manager context menu items to copy the key fingerprint
