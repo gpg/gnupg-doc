@@ -123,11 +123,11 @@
 #
 # GPA
 #
-#+macro: gpa_ver  0.11.0
-#+macro: gpa_date 2024-12-10
-#+macro: gpa_size 807k
-#+macro: gpa_sha1 2e6568911581b8bb35bfef565350a84b3f832a84
-#+macro: gpa_sha2 26a8fa5bf70541cb741f0c71b7cfe291b1ea56eab68eeb07aa962cef5cdf33cc
+#+macro: gpa_ver  0.11.1
+#+macro: gpa_date 2026-02-12
+#+macro: gpa_size 809k
+#+macro: gpa_sha1 efc575d712e7bead2c807588c86b08e89fed1c48
+#+macro: gpa_sha2 0bc5b2cd3e0641d07a2d8af372a09659decd918bee22fdfbefd2133d7c4d5d0b
 
 
 
