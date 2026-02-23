@@ -25,6 +25,8 @@
 #
 # GnuPG-2.6
 #
+#+macro: gnupg26_minver 2.5.17
+#
 #+macro: gnupg26_ver  2.5.17
 #+macro: gnupg26_date 2026-01-27
 #+macro: gnupg26_size 8113k
@@ -89,6 +91,8 @@
 #
 # Gpg4win
 #
+#+macro: gpg4win_minver  5.0.1
+#
 #+macro: gpg4win_ver  5.0.1
 #+macro: gpg4win_date 2026-01-27
 #+macro: gpg4win_src_size 260538k
@@ -113,6 +117,8 @@
 
 #
 # GnuPG VS-Desktop
+#
+#+macro: vsd_minver 3.3.3
 #
 #+macro: vsd_ver  3.3.5
 #+macro: vsd_date 2026-01-29
@@ -204,11 +210,11 @@
 #
 # LIBKSBA
 #
-#+macro: libksba_ver  1.6.7
-#+macro: libksba_date 2024-06-21
-#+macro: libksba_size 689k
-#+macro: libksba_sha1 781acfb012cbb5328f41efcf82f723524e8d0128
-#+macro: libksba_sha2 cf72510b8ebb4eb6693eef765749d83677a03c79291a311040a5bfd79baab763
+#+macro: libksba_ver  1.6.8
+#+macro: libksba_date 2026-02-23
+#+macro: libksba_size 700k
+#+macro: libksba_sha1 ff1705f512ab18323571e009d8ead407f7d0279f
+#+macro: libksba_sha2 0f4510f1c7a679c3545990a31479f391ad45d84e039176309d42f80cf41743f5
 
 
 #
