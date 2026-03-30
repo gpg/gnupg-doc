@@ -1,0 +1,148 @@
+#+LANGUAGE: en
+#+TITLE: Why Some Criticisms Matters More Than Others
+#+STARTUP: showall
+#+AUTHOR: Robert J. Hansen
+#+DATE: March 30, 2026
+#+KEYWORDS: PGP, OpenPGP, LibrePGP, GnuPG, criticisms
+#+SUMMARY: On fearmongers, half-truth-dealers, ivory-towerism, and honest-brokers in the PGP community.
+
+** Why Some Criticisms Matters More Than Others
+
+On the GnuPG-Users mailing list, a user asked the following
+(paraphrased) question:
+
+#+begin_quote
+  I am very well aware of the consistent and persistent campaign against
+  GnuPG. Is there a reason for this?
+#+end_quote
+
+There are many reasons.
+
+Before we go further, the things I'm speaking of apply to both LibrePGP
+and RFC9580 OpenPGP. The criticisms made against one usually wind up
+getting made against the other, whether for good or ill. These
+criticisms fall on a spectrum, from infuriatingly dishonest all the way
+to carefully thought out and researched. I'll start with the ones I
+think are dishonest.
+
+*** The Fearmongers
+   :PROPERTIES:
+   :CUSTOM_ID: the-fearmongers
+   :END:
+The worst of the worst, my personal bête noire, come from a particular
+kind of user: someone who derives their social status from the unholy
+union of
+
+- being a geek and
+- making people afraid.
+
+When you can make people afraid you can lead them into looking to you to
+tell them what to do. Making people afraid is usually a power play of
+some kind. It reminds me of high school.
+
+What pushes me over the edge into being a genuinely unpleasant person is
+when they make people afraid about something they can't verify for
+themselves. When Chicken Little told everyone the sky was falling, at
+least Chicken Little had the common decency to lie about something
+people could disprove just by looking up.
+
+There are a lot of nerdy people making people scared about near-future
+events they have to take on faith. I don't see much difference between
+Sam Altman telling people "in eighteen months half of your jobs will be
+gone!" and somebody hiding behind a pseudonym saying "ackshually the new
+NSA listening center in Utah is going to be able to crack PGP
+because...". Either way it's the same spiel. These people make me very
+angry.
+
+*** The Half-Truth Dealers
+   :PROPERTIES:
+   :CUSTOM_ID: the-half-truth-dealers
+   :END:
+Then there are the people who deal in half-truth criticisms. For
+instance, a lot of people say that Open/LibrePGP don't offer forward
+secrecy, and "all modern designs offer perfect forward secrecy."
+
+Forward secrecy (sometimes misnamed "perfect" forward secrecy) relates
+to a property of cryptosystems where compromising one message doesn't
+help you compromise other messages in the past or future. ClassicPGP
+offered this all the way back in 1991. Each message is encrypted with
+its own unique session key: if I give you that unique session key it
+does not help you decrypt any other message. Presto: Libre and OpenPGP
+have both had forward secrecy since their moment of conception.
+
+Some of you may be thinking, "yes, but if a long-term key is compromised
+that's a terrible problem: do Libre and OpenPGP really offer forward
+secrecy?"
+
+And you're correct: what I said was a half-truth. Looked at one way
+Libre and OpenPGP offer forward secrecy, but there's a very important
+way in which they don't. Clearly, we shouldn't talk about Libre and
+OpenPGP like this. We should talk fairly, in complete truths.
+
+Now you know why I get so ornery when people insist "Libre and OpenPGP
+use long-term keys, so there's no forward secrecy." It's a half-truth at
+best, and it obscures important things about how the system operates.
+
+Half-truth dealers are found everywhere in computer security
+discussions. Some of them are innocently miseducated: these people
+should be corrected kindly and respectfully. Some are genuinely engaging
+in bad faith: these people should be called out.
+
+*** Ivory Towerism
+   :PROPERTIES:
+   :CUSTOM_ID: ivory-towerism
+   :END:
+Then there are academics who make highly academic criticisms, that
+although are offered in good faith often show a lack of consideration of
+real-world constraints on what we can do, or a lack of understanding of
+what the real problems are.
+
+For instance, from RFC2440 to the final draft of RFC4880, OpenPGP
+specified 3DES as a permissible algorithm. 3DES was designed in the
+1970s and is by modern standards unbearably ugly. It has all the
+aesthetic qualities of Soviet New Realism art coupled with all the
+elegance of a North Korean workers' housing bloc.
+
+But you'll notice I never said 3DES was weak. After fifty years (!!) of
+cryptanalytical research nobody knows of any practical attacks on 3DES
+when used in the standard OpenPGP use case. It's kind of impressive that
+way.
+
+Despite this brilliant record of resistance to cryptanalysis (when used
+in the standard use case) a lot of academic critics continue to smear it
+--- and other technology choices within Libre and OpenPGP --- as somehow
+being weak because it is ugly.
+
+I respectfully disagree. I don't think these critics are being
+dishonest, but I wonder what causes them to confuse strength with
+beauty.
+
+*** The Honest Brokers
+   :PROPERTIES:
+   :CUSTOM_ID: the-honest-brokers
+   :END:
+Some very serious people have made very serious criticisms of OpenPGP
+over the years. Matthew Green at Johns Hopkins, for starters, was really
+not a fan. See, for instance,
+[[https://blog.cryptographyengineering.com/2014/08/13/whats-matter-with-pgp/][his essay at /Cryptography Engineering/]].
+
+He made those criticisms in 2014. They were devastatingly sharp and
+overwhelmingly fair. As a consequence, Libre/OpenPGP took notice. The
+latest specifications mitigate the majority of his concerns from 2014. I
+doubt he's since become a fan, but Libre/OpenPGP deserve credit for
+being willing to listen to a passionate critic speaking in good faith.
+
+I think we need more critics like Matthew Green. As hard as it is to
+hear honest and well-founded "this is why nobody uses Libre/OpenPGP"
+criticism, I'm always grateful for it. That's how we get better.
+
+But for every solid, well-thought-out, and occasionally devastating
+critique on Open/LibrePGP there are easily a dozen ones that vary from
+disingenuous to confused to genuinely dishonest and manipulative.
+
+-------
+
+#+HTML:<!--disable-copyright-footer-->
+
+This essay is © 2026 by [[https://sixdemonbag.org/?page_id=7][Robert J.  Hansen]]. You may use it under the
+[[https://creativecommons.org][Creative Commons]]  [[https://creativecommons.org/licenses/by-nd/4.0/][Attribution-NoDerivs 4.0 license]].
