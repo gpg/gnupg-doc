@@ -79,6 +79,17 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Security advisory T8211 for Libgcrypt                          :important:
+
+A security bug which can be used to mount a DoS attack on Libgcrypt
+has been reported.  New versions of Libgcrypt have been released to
+fix this bug: Libgcrypt 1.12.2, 1.11.3, and 1.10.4.
+
+Note that the current stable GnuPG version is not affected.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q2/000503.html][Read more]]}
+
+
 ** Libgcrypt 1.12 is the new stable branch (2026-01-29)
 
 Although we will keep on maintaining the 1.11 branch for two more
