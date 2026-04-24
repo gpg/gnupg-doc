@@ -79,7 +79,14 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
-** Security advisory T8211 for Libgcrypt                          :important:
+** GnuPG 2.5.19 released (2026-04-24)
+
+We are pleased to announce the availability of a new GnuPG release:
+Version 2.5.19.  This release adds a few new features and fixes a
+couple of bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q2/000504.html][Read more]]}
+
+
+** Security advisory T8211 for Libgcrypt (2026-04-21)             :important:
 
 A security bug which can be used to mount a DoS attack on Libgcrypt
 has been reported.  New versions of Libgcrypt have been released to
