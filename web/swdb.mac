@@ -160,11 +160,11 @@
 #+macro: gpgme1_sha1 e7f9be4b461907c00dfd21d23da872ba0638f6ee
 #+macro: gpgme1_sha2 bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd
 #
-#+macro: gpgme_ver  2.0.1
-#+macro: gpgme_date 2025-09-23
-#+macro: gpgme_size 1359k
-#+macro: gpgme_sha1 d4a86cc7b38b8b125065983cce058ce71be676e9
-#+macro: gpgme_sha2 821ab0695c842eab51752a81980c92b0410c7eadd04103f791d5d2a526784966
+#+macro: gpgme_ver  2.1.0
+#+macro: gpgme_date 2026-05-18
+#+macro: gpgme_size 1384k
+#+macro: gpgme_sha1 80a99973a6c4e4449174cfff43c8e2db6f3f3b25
+#+macro: gpgme_sha2 841c5ea53fc26259f4fbf0e8bde982dea1b8a1ca0cb77e681c82b050566bf92b
 
 #
 # GPGME++
