@@ -169,11 +169,11 @@
 #
 # GPGME++
 #
-#+macro: gpgmepp_ver  2.0.0
-#+macro: gpgmepp_date 2025-06-03
-#+macro: gpgmepp_size 115k
-#+macro: gpgmepp_sha1 3e8ef698cf2d577ccf8232f52598cdfc31321348
-#+macro: gpgmepp_sha2 d4796049c06708a26f3096f748ef095347e1a3c1e570561701fe952c3f565382
+#+macro: gpgmepp_ver  2.1.0
+#+macro: gpgmepp_date 2026-05-18
+#+macro: gpgmepp_size 120k
+#+macro: gpgmepp_sha1 f85a6286ed0fd159bd0cd0f498d170d56485a3f2
+#+macro: gpgmepp_sha2 57f804468f0204504b172c6b139cb05124b4263be7ad514932c7c4c5062a16e2
 
 #
 # QGpgME
