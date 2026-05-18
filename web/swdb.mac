@@ -178,11 +178,11 @@
 #
 # QGpgME
 #
-#+macro: qgpgme_ver  2.0.0
-#+macro: qgpgme_date 2025-06-03
-#+macro: qgpgme_size 184k
-#+macro: qgpgme_sha1 8298cc205228a2e14b5698435b31d8dedf6e155a
-#+macro: qgpgme_sha2 15645b2475cca6118eb2ed331b3a8d9442c9d4019c3846ba3f6d25321b4a61ad
+#+macro: qgpgme_ver  2.1.0
+#+macro: qgpgme_date 2026-05-18
+#+macro: qgpgme_size 186k
+#+macro: qgpgme_sha1 f907821d2b4814956938d93c140d1466d25deaed
+#+macro: qgpgme_sha2 5b32feb3eee4a7f9402d22b7206480908dc43bb4df382917c075c512116f8f08
 
 
 #
