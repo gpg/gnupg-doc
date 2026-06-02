@@ -107,24 +107,26 @@
 #
 # GnuPG-Desktop
 #
-#+macro: gpd_ver  2.4.3.0
-#+macro: gpd_date 2023-07-14
-#+macro: gpd_src_size 214M
-#+macro: gpd_src_sha1 bf4c6725382f267b9000847db78a00174e08cb28
-#+macro: gpd_src_sha2 81e0800cc090f8f387cee8e59b9f742f2e6d2d81a408414fc051a8df64e37d90
-#+macro: gpd_ai_size 78M
-#+macro: gpd_ai_sha1 28e216f7e10639eb1898be9bca35d13f3e0aab36
-#+macro: gpd_ai_sha2 4e6592eb820a853804f9bd1f39ee545af712b0cabd0bf4a773ffddaff12fdd33
+#+macro: gpd_ver  5.0.2.0
+#+macro: gpd_date 2026-03-16
+#+macro: gpd_src_size 261189k
+#+macro: gpd_src_sha1 04a7a702ebbdb16c0337eda7de085b7f412f350a
+#+macro: gpd_src_sha2 9967e553fbfeac800a9e41770cbbeac2ad6644745c0fe9d39191c27dca4ac6af
+#+macro: gpd_msi_size 49M
+#+macro: gpd_msi_sha1 25871d6f2b61cbfdf41906225a0c65de03372203
+#+macro: gpd_msi_sha2 1cf15f4907360f6eed4a9e124e5bc0b43c70265372da973c500a590ae0044560
+#+macro: gpd_msi_en_size 49M
+#+macro: gpd_msi_en_sha1 cbbd96e9791542aad0905f17ccd5c0e374fd62c0
+#+macro: gpd_msi_en_sha2 37cc6b0e1b5dfdb018b883c0f04291933867a482f2c24ca15e302d5df54212cd
+
 
 #
 # GnuPG VS-Desktop
 #
 #+macro: vsd_minver 3.3.3
 #
-#+macro: vsd_ver  3.3.6
-#+macro: vsd_date 2026-03-13
-
-
+#+macro: vsd_ver  3.3.7
+#+macro: vsd_date 2026-04-20
 
 
 #
@@ -275,11 +277,11 @@
 #
 # GpgEX
 #
-#+macro: gpgex_ver  1.1.1
-#+macro: gpgex_date 2026-05-18
+#+macro: gpgex_ver  1.1.2
+#+macro: gpgex_date 2026-06-02
 #+macro: gpgex_size 312k
-#+macro: gpgex_sha1 5c3d4c660a08eb7aa49ff53d4beb044717ab8eaa
-#+macro: gpgex_sha2 f60e08d0f6394d1ecf1a42a5902feb089729f1a9f96f54a04117b3e5f6de6fb7
+#+macro: gpgex_sha1 78822320b5b52a18a99dbb6af7bf6898f5c5c96c
+#+macro: gpgex_sha2 e6ca95a8b94449df510526fb0c4ef6b2fbe11de5142ad9978a2757a9b6d36d6e
 
 
 #
