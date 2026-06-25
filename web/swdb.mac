@@ -162,11 +162,12 @@
 #+macro: gpgme1_sha1 e7f9be4b461907c00dfd21d23da872ba0638f6ee
 #+macro: gpgme1_sha2 bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd
 #
-#+macro: gpgme_ver  2.1.0
-#+macro: gpgme_date 2026-05-18
-#+macro: gpgme_size 1384k
-#+macro: gpgme_sha1 80a99973a6c4e4449174cfff43c8e2db6f3f3b25
-#+macro: gpgme_sha2 841c5ea53fc26259f4fbf0e8bde982dea1b8a1ca0cb77e681c82b050566bf92b
+#+macro: gpgme_ver  2.1.1
+#+macro: gpgme_date 2026-06-25
+#+macro: gpgme_size 1385k
+#+macro: gpgme_sha1 780ccb1f2ca01e2f246c21be7670dec3a072e200
+#+macro: gpgme_sha2 6d7ee12b209d7dce75468db53f72a90e1ad3d21f4c304ef2c002612a52f5333a
+
 
 #
 # GPGME++
