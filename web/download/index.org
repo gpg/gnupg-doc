@@ -39,7 +39,6 @@
    |                          | <l>                    |                         |                     <r> |                                                                                                        |                                                                                                            |
    | [[../software/index.org][GnuPG (stable)]]           | {{{gnupg26_ver}}}      | {{{gnupg26_date}}}      |      {{{gnupg26_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg26_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg26_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    | [[../software/index.org][GnuPG (stable with libs)]] | {{{gnupg26_ver}}}      | {{{gnupg26_date}}}      |  {{{gnupg26_w32_ssiz}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-w32-{{{gnupg26_w32_ver}}}.tar.xz{{{ftpclose}}}             | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-w32-{{{gnupg26_w32_ver}}}.tar.xz.sig{{{ftpclose}}}             |
-   | [[../software/index.org][GnuPG (oldstable)]]        | {{{gnupg24_ver}}}      | {{{gnupg24_date}}}      |      {{{gnupg24_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2{{{ftpclose}}}                    | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg24_ver}}}.tar.bz2.sig{{{ftpclose}}}                    |
    |--------------------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/libgpg-error/index.org][Libgpg-error]]             | {{{libgpg_error_ver}}} | {{{libgpg_error_date}}} | {{{libgpg_error_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2{{{ftpclose}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgpg-error/libgpg-error-{{{libgpg_error_ver}}}.tar.bz2.sig{{{ftpclose}}} |
    | [[../software/libgcrypt/index.org][Libgcrypt]]                | {{{libgcrypt_ver}}}    | {{{libgcrypt_date}}}    |    {{{libgcrypt_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2{{{ftpclose}}}          | {{{ftpopen}}}{{{ftp_loc_base}}}/libgcrypt/libgcrypt-{{{libgcrypt_ver}}}.tar.bz2.sig{{{ftpclose}}}          |
@@ -57,7 +56,7 @@
    |--------------------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
    | [[../software/gpa/index.org][GPA]]                      | {{{gpa_ver}}}          | {{{gpa_date}}}          |          {{{gpa_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2{{{ftpclose}}}                            | {{{ftpopen}}}{{{ftp_loc_base}}}/gpa/gpa-{{{gpa_ver}}}.tar.bz2.sig{{{ftpclose}}}                            |
    | [[../software/gpgme/index.org][GPGME (legacy)]]           | {{{gpgme1_ver}}}       | {{{gpgme1_date}}}       |       {{{gpgme1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gpgme/gpgme-{{{gpgme1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
-   | GnuPG 1.4                | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
+   | GnuPG 1.4 (legacy)       | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
    |--------------------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
 
    {{{check_sig_note}}}
@@ -129,14 +128,14 @@
    |           | 1.4      | none\sup2       | 2004-12-16 |
    |           | +2.0+    | 2017-12-31      | 2006-11-11 |
    |           | +2.2+    | 2024-12-31\sup3 | 2014-11-06 |
-   |           | 2.4      | 2026-06-30      | 2021-04-07 |
+   |           | +2.4+    | 2026-06-30      | 2021-04-07 |
    |           | 2.5, 2.6 | tba\sup1        | 2024-07-05 |
    | Libgcrypt | +1.5+    | 2016-12-31      | 2011-06-29 |
    |           | +1.6+    | 2017-06-30      | 2013-12-16 |
    |           | +1.7+    | 2019-06-30      | 2016-04-15 |
    |           | +1.8+    | 2024-12-31\sup3 | 2017-07-18 |
    |           | +1.9+    | 2024-03-31      | 2021-01-19 |
-   |           | 1.10     | 2026-06-30      | 2022-02-01 |
+   |           | +1.10+   | 2026-06-30      | 2022-02-01 |
    |           | 1.11     | 2028-06-30      | 2024-06-19 |
    |           | 1.12     | tba\sup1        | 2026-01-29 |
 
