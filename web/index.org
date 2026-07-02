@@ -79,6 +79,12 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** GnuPG 2.5.21 released (2026-07-02)
+
+We are pleased to announce the availability of a new GnuPG release:
+Version 2.5.21.  This version adds a few new features and fixes some
+bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q3/000506.html][Read more]]}
+
 ** GnuPG 2.5.20 released (2026-05-13)
 
 We are pleased to announce the availability of a new GnuPG release:
@@ -227,93 +233,6 @@ Along with this GnuPG version we also released another beta version
 of [[https://www.gpg4win.org/version5.html][Gpg4win 5.0]].
 
 {[[https://lists.gnupg.org/pipermail/gnupg-announce/2025q1/000491.html][Read more]]}
-
-** GnuPG 2.5.2 and Gpg4win 5.0.0-Beta32 released (2024-12-06)
-
-We are pleased to announce the availability of a new GnuPG release:
-version 2.5.2.  This release is the third of a series of public
-testing releases eventually leading to a new stable version 2.6.
-
-Along with this GnuPG version we also released a first *beta* version
-of Gpg4win 5.0.
-
-{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q4/000488.html][Read more]]}
-
-** GnuPG 2.4.7 and Gpg4win 4.4.0 released (2024-11-27)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.7.  This version fixes a couple of bugs.  Along
-with this release we also released a new version of Gpg4win: version
-4.4.0.
-
-{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q4/000487.html][Read more]]}
-
-** GnuPG 2.4.6 released (2024-10-29)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.6.  This version fixes a couple of bugs, comes
-with a few new features, and has now full support for Portuguese.
-
-{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q4/000486.html][Read more]]}
-
-** GnuPG 2.5.1 released with FIPS-203 support (2024-09-12)
-
-We are pleased to announce the availability of a new GnuPG release:
-version 2.5.1.  This release is the second of a series of public
-testing releases eventually leading to a new stable version 2.6.
-
-The main features in the 2.6 series are improvements for 64 bit
-Windows and the introduction of a PQC encryption algorithm.
-
-{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q3/000485.html][Read more]]}.
-
-** Our FTP server has been discontinued  (2024-08-20)
-
-For technical and organisational reasons we recently shutdown our FTP
-server.  Instead of using ftp.gnupg.org please use
-https://gnupg.org/ftp/ .
-
-** GnuPG 2.5.0 released for public testing (2024-07-05)
-
-We are pleased to announce the availability of a new GnuPG release:
-version 2.5.0.  This release is the first of a series of public testing
-releases eventually leading to a new stable version 2.6.
-
-The main features in the 2.6 series are improvements for 64 bit
-Windows and the introduction of a PQC encryption algorithm.
-
-{[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q3/000484.html][Read more]]}.
-
-
-** Libgcrypt 1.11 is the new stable branch (2024-06-19)
-
-Although we will keep on maintaining the 1.8 and 1.10 branch for some
-more time, the new stable branch is now 1.11.  Version 1.11.0 comes
-with a lot of performance improvements, new interfaces, and now
-supports common quantum-resistant algorithms.  It provides full API
-and ABI compatibility to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q2/000483.html][more]]}
-
-** GnuPG 2.4.5 and Gpg4win 4.3.1 released (2024-03-12)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.5. This version fixes a couple of bugs and comes
-with some new features.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q1/000482.html][more]]}
-
-** Security advisory for smartcard keys with backup               :important:
-
-GnuPG versions 2.4.2, 2.4.3, and 2.2.42 had a regression in the
-default way to create smartcard keys.  If you created a key with the
-/--edit-key/ command using one of these versions, please head over to
-our security advisory:
-
- https://gnupg.org/blog/20240125-smartcard-backup-key.html
-
-** GnuPG 2.4.4 released (2024-01-25)
-
-We are pleased to announce the availability of a new stable GnuPG
-release: version 2.4.4. This version fixes a couple of bugs, comes
-with some new features.  A smartcard related security bug is also
-fixed and a tool to check for this flaw is provided.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2024q1/000481.html][more]]}
 
 
 ** </div><!-- end pure-g -->                                   :html:virtual:
