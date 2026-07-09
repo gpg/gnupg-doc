@@ -186,9 +186,9 @@ Content-Type for the data but clients SHOULD also accept any other
 Content-Type.  The server SHOULD NOT return an ASCII armored version of
 the key.
 
-The server MUST serve a Policy Flags file as specified below.  That
-file is even required if the Web Key Directory Update Protocol is not
-supported.
+The server MUST serve a Policy Flags file as specified in
+[](#policy-flags), "Policy Flags".  That file is even required if the
+Web Key Directory Update Protocol is not supported.
 
 The benefit of the advanced method is its greater flexibility in
 setting up the Web Key Directory in environments where more than one
@@ -226,7 +226,8 @@ alice@example.org.  To install the key at her provider's Web Key
 Directory, she performs the following steps:
 
 1.  She retrieves a file which contains one line with the mail address
-    used to submit the key to the mail provider.  See below
+    used to submit the key to the mail provider.  See
+    [](#the-submission-address), "Submission Address",
     for the syntax of that file.  For a mail address at the domain
     "example.org" the URI of the file is
 
@@ -261,7 +262,7 @@ Directory, she performs the following steps:
     publication of her key.
 
 The message data structures used for the above protocol are specified in
-detail below.
+the following sections.
 
 
 ## The Submission Address
@@ -430,8 +431,9 @@ The file contains keywords and optionally values, one per line with
 each line terminated by a LF or the sequence of CR and LF.  Empty lines
 and lines starting with a '#' character are considered comment
 lines.  A keyword is made up of lowercase letters, digits, hyphens, or
-dots.  An underscore is allowed as a name space delimiters; see
-below.  The first character must be a letter.  Keywords which are
+dots.  An underscore is allowed as a name space delimiter; see
+the end of this section.
+The first character must be a letter.  Keywords which are
 defined to require a value are directly followed by a colon and then
 after optional white space the value.  Clients MUST use
 case-insensitive matching for the keyword.
