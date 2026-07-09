@@ -1,7 +1,7 @@
 ---
 title: OpenPGP Web Key Directory
-docname: draft-koch-openpgp-webkey-service-21
-date: 2025-11-24
+docname: draft-koch-openpgp-webkey-service-22
+date: 2026-07-09
 submissiontype: IETF
 category: info
 
@@ -498,6 +498,12 @@ published User ID.  It is further recommended that a client filters a
 received key or a key send for a publication requests so that only the
 specific User ID with the mail address of the provider is imported or
 send.
+
+A client MUST follow redirects requested by the server as long as
+the intermediate and final target are also using the https scheme.
+
+A client MUST check that the received key has the requested User-Id
+and MUST drop all other User-Ids found in the received key.
 
 A client MUST NOT accept a HTTP authentication challenge (HTTP
 code 401) because the information in the Web Key Directory is public
