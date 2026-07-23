@@ -290,12 +290,11 @@
 #
 # GpgOL
 #
-#+macro: gpgol_ver  2.7.2
-#+macro: gpgol_date 2026-02-26
-#+macro: gpgol_size 816k
-#+macro: gpgol_sha1 9d9e185918e717e983f95e93e572e8607d010981
-#+macro: gpgol_sha2 ddd4094be63a30c0e54b28ef34d3c741136c06fef9af5dd4ca623d3758fa9220
-
+#+macro: gpgol_ver  2.7.3
+#+macro: gpgol_date 2026-07-23
+#+macro: gpgol_size 819k
+#+macro: gpgol_sha1 c96d955e0ee7edb2ab5077f70cbe23551fe7496d
+#+macro: gpgol_sha2 edd379a0fe8c515c8ad945f36b6e25a7f7331e1da2eaa429ad6752461a1843d8
 
 
 #
