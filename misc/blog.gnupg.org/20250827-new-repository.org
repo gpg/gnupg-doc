@@ -60,8 +60,8 @@ version a repository currently provides, check its directory listing.
 | Ubuntu       | Stable      | [[https://repos.gnupg.org/deb/gnupg/resolute/][resolute]]       |
 
 #+HTML: <div class="hint">
-*Note:* The stable 2.4.x series reached its end of life on June 30,
-2026. 2.5.x currently serves as both the stable and the development
+*Note:* The stable 2.4.x series reached its end of life on June 30, 2026.
+2.5.x currently serves as both the stable and the development
 branch, until PQC support there is fully complete. After that, the
 previously announced split into 2.6 (stable) and 2.7 (development)
 will follow. To see which version a repository currently provides,
