@@ -270,4 +270,24 @@ a.permalink:before {
 	color: #C57A04;
 }
 
+/* shared base for grey hint/info boxes */
+.hint,
+.info-box {
+    background-color: #f7f7f7;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    padding: 1.2em 1.8em;
+    margin: 1.5em auto;
+    line-height: 1.6;
+}
+
+/* optional: subtle visual hierarchy */
+.hint {
+    max-width: 700px;
+}
+.info-box {
+    max-width: 800px;
+}
+
+
 /* eof */
