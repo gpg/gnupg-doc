@@ -4,10 +4,12 @@
 #+STARTUP: showall
 #+AUTHOR: Heike Jurzik
 #+DATE: August 27, 2025
-#+KEYWORDS: GnuPG, Version 2.5.9, Version 2.4.8, 2.5.x, 2.4.x, OpenPGP, Debian, Ubuntu, Devuan, package source, repository, encryption, IT security, GpgME, Libgcrypt, Libassuan, Libksba, libgpg-error, open source, Linux
-#+SUMMARY: The new GnuPG repositories are online. Up-to-date packages for Debian, Ubuntu, and Devuan are now available in the stable (2.4.x) and development (2.5.x) branches–including OpenPGP, Libgcrypt, GpgME, and more. Directly maintained by the GnuPG Project.
+#+KEYWORDS: GnuPG, 2.5.x, 2.4.x, OpenPGP, Debian, Ubuntu, Devuan, package source, repository, encryption, IT security, GpgME, Libgcrypt, Libassuan, Libksba, libgpg-error, open source, Linux
+#+SUMMARY: The new GnuPG repositories are online. Up-to-date packages for Debian, Ubuntu, and Devuan are available in the stable and development branches–including OpenPGP, Libgcrypt, GpgME, and more. Directly maintained by the GnuPG Project.
 
 ** New GnuPG Repositories for Debian, Ubuntu, and Devuan: Stable and Development Branches Available
+
+#+HTML: <p class="postdate"><em>Last updated: July 23, 2026. See the changelog at the end of the article for details.</em></p>
 
 #+ATTR_HTML: :class figure :alt GnuPG packages for Debian, Ubuntu, and Devuan
 [[file:img/gnupg-packages.png]]
@@ -20,44 +22,51 @@ from upstream code. To change that, we're now offering our own
 releases and development builds—free from distribution-specific tweaks,
 and exactly as intended by the upstream team.
 
-You can choose between two active branches:
+# TODO: Reactivate this block once 2.6/2.7 are real (update version numbers)
+# You can choose between two active branches:
+# - 2.4.x: reached its end of life on June 30, 2026
+# - 2.5.x: currently recommended for production use (stable), and also serves as the development version due to still-incomplete PQC support (Kyber)
 
-- 2.4.x: the recommended stable version for production use
-
-- 2.5.x: the development version with new features such as Kyber support
+Version 2.5.x is currently recommended for production use (stable).
+Version 2.4.x reached its end of life on June 30, 2026. Because PQC
+support (Kyber) in 2.5.x is not yet complete, this branch also serves
+as the development version for now.
 
 These repositories include all core components: =gpg=, =gpg-agent=,
 =scdaemon=, =libgcrypt=, =libgpgme=, and =gpg-wks-client=. In this
 article, we'll walk you through adding the repositories, importing
 the signing key, and installing GnuPG cleanly on your system.
 
-*** GnuPG Repositories at a Glance: Stable and Development Branches
+*** GnuPG Package Sources at a Glance
 
-The repositories listed below provide either the latest stable release
-(currently 2.4.x) or the latest development version (2.5.x). To see which
-packages and exact versions are available, check the directory listings
-for each repository.
+All package sources listed here come from our own repository at
+[[https://repos.gnupg.org/deb/gnupg/][repos.gnupg.org/deb/gnupg/]]
+and are grouped by distribution and release branch. To see which GnuPG
+version a repository currently provides, check its directory listing.
 
-The repositories are grouped by distribution and branch:
+| Distribution | Branch      | Link                                                            |
+|--------------+-------------+------------------------------------------------------------------|
+| Devuan       | Development | [[https://repos.gnupg.org/deb/gnupg/daedalus-devel/][daedalus-devel]] |
+| Devuan       | Stable      | [[https://repos.gnupg.org/deb/gnupg/daedalus/][daedalus]]       |
+| Debian       | Development | [[https://repos.gnupg.org/deb/gnupg/bookworm-devel/][bookworm-devel]] |
+| Debian       | Development | [[https://repos.gnupg.org/deb/gnupg/trixie-devel/][trixie-devel]]   |
+| Debian       | Stable      | [[https://repos.gnupg.org/deb/gnupg/bookworm/][bookworm]]       |
+| Debian       | Stable      | [[https://repos.gnupg.org/deb/gnupg/trixie/][trixie]]         |
+| Ubuntu       | Development | [[https://repos.gnupg.org/deb/gnupg/jammy-devel/][jammy-devel]]    |
+| Ubuntu       | Development | [[https://repos.gnupg.org/deb/gnupg/noble-devel/][noble-devel]]    |
+| Ubuntu       | Development | [[https://repos.gnupg.org/deb/gnupg/resolute-devel/][resolute-devel]] |
+| Ubuntu       | Stable      | [[https://repos.gnupg.org/deb/gnupg/jammy/][jammy]]          |
+| Ubuntu       | Stable      | [[https://repos.gnupg.org/deb/gnupg/noble/][noble]]          |
+| Ubuntu       | Stable      | [[https://repos.gnupg.org/deb/gnupg/resolute/][resolute]]       |
 
-| Distribution | Branch       | Version Series | Link                                                   |
-|--------------+--------------+----------------+--------------------------------------------------------|
-| Devuan       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/daedalus-devel/][daedalus-devel]]                                  |
-| Devuan       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/daedalus/][daedalus]]                                        |
-| Debian       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/bookworm-devel/][bookworm-devel]]                                |
-| Debian       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/trixie-devel/][trixie-devel]]                                  |
-| Debian       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/bookworm/][bookworm]]                                      |
-| Debian       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/trixie/][trixie]]                                        |
-| Ubuntu       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/jammy-devel/][jammy-devel]]                                  |
-| Ubuntu       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/noble-devel/][noble-devel]]                                  |
-| Ubuntu       | Development  | 2.5.x          | [[https://repos.gnupg.org/deb/gnupg/plucky-devel/][plucky-devel]]                                 |
-| Ubuntu       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/jammy/][jammy]]                                         |
-| Ubuntu       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/noble/][noble]]                                         |
-| Ubuntu       | Stable       | 2.4.x          | [[https://repos.gnupg.org/deb/gnupg/plucky/][plucky]]                                        |
-
-*Note:* The stable 2.4.x series will reach its End of Life in about
-11 months. The next stable release will be version 2.6, followed by a
-development branch with version number 2.7.x.
+#+HTML: <div class="hint">
+*Note:* The stable 2.4.x series reached its end of life on June 30,
+2026. 2.5.x currently serves as both the stable and the development
+branch, until PQC support there is fully complete. After that, the
+previously announced split into 2.6 (stable) and 2.7 (development)
+will follow. To see which version a repository currently provides,
+check its directory listing.
+#+HTML: </div>
 
 *** Importing and Saving the GnuPG Signing Key
 
@@ -69,13 +78,14 @@ and run the following command:
 sudo gpg \
   --no-default-keyring \
   --keyring /usr/share/keyrings/gnupg-keyring.gpg \
-  --fetch-keys https://repos.gnupg.org/deb/gnupg/<distro>/gnupg-signing-key.gpg
+  --fetch-keys https://repos.gnupg.org/deb/gnupg/<repo>/gnupg-signing-key.gpg
 #+end_src
 
-Replace =<distro>= with the codename of your distribution—for example,
-=bookworm= (currently GnuPG 2.4.8 on Debian 12), =trixie-devel= (currently
-2.5.9 on Debian 13), =daedalus= (2.4.8 on Devuan), or =jammy=, =noble=,
-or =plucky= (2.4.8 for Ubuntu).
+Replace =<repo>= with the codename of your distribution—for example,
+=bookworm= or =trixie-devel= (Debian), =daedalus= (Devuan), or =jammy=,
+=noble=, and =resolute= (Ubuntu), each with or without the =-devel=
+suffix. To see which version a repository currently provides, check
+its directory listing.
 
 After running the command, you should see output similar to this:
 
@@ -88,19 +98,19 @@ gpg:               imported: 1
 #+end_src
 
 Prefer using =curl= or =wget=? No problem—you can download the key
-manually, too.
+manually, too. 
 
 **** Download using =wget=:
 
 #+begin_src
-wget -O- https://repos.gnupg.org/deb/gnupg/<distro>/gnupg-signing-key.gpg | \
+wget -O- https://repos.gnupg.org/deb/gnupg/<repo>/gnupg-signing-key.gpg | \
   sudo gpg --dearmor --yes --output /usr/share/keyrings/gnupg-keyring.gpg
 #+end_src
 
 **** Download using =curl=:
 
 #+begin_src
-curl https://repos.gnupg.org/deb/gnupg/<distro>/gnupg-signing-key.gpg | \
+curl https://repos.gnupg.org/deb/gnupg/<repo>/gnupg-signing-key.gpg | \
   sudo gpg --dearmor --yes --output /usr/share/keyrings/gnupg-keyring.gpg
 #+end_src
 
@@ -138,25 +148,42 @@ repository and references the signature key. Run the following command:
 
 #+begin_src
 echo "Types: deb
-URIs: https://repos.gnupg.org/deb/gnupg/<distro>/
-Suites: <distro>
+URIs: https://repos.gnupg.org/deb/gnupg/<repo>/
+Suites: <suite>
 Components: main
 Signed-By: /usr/share/keyrings/gnupg-keyring.gpg" |
 sudo tee /etc/apt/sources.list.d/gnupg.sources
 #+end_src
 
-Replace =<distro>= with the codename of your distribution—for example,
-=bookworm= (currently GnuPG 2.4.8 for Debian 12), =trixie-devel=
-(currently GnuPG 2.5.9 for Debian 13), =daedalus= (2.4.8 for Devuan),
-=jammy=, =noble=, or =plucky= (all 2.4.8 for Ubuntu).
+Replace =<repo>= with the full repository name, for example:
+
+- =daedalus= or =daedalus-devel=
+- =bookworm= or =bookworm-devel=
+- =trixie= or =trixie-devel=
+- =jammy= or =jammy-devel=
+- =noble= or =noble-devel=
+- =resolute= or =resolute-devel=
+
+This determines whether you use the stable branch or the development
+branch (=devel=).
+
+For =<suite>=, always enter only the distribution name without =-devel=,
+for example:
+
+- =daedalus=
+- =bookworm=
+- =trixie=
+- =jammy=
+- =noble=
+- =resolute=
 
 **** What Does This Do?
 
 - =Types: deb=: Tells the package manager that this is a binary Debian repository (i.e., it contains =.deb= packages, not source packages).
 
-- =URIs: https://repos.gnupg.org/deb/gnupg/<distro>/=: This is the actual URL of the GnuPG repository.
+- =URIs: https://repos.gnupg.org/deb/gnupg/<repo>/=: This is the actual URL of the GnuPG repository.
 
-- =Suites: <distro>=: Specifies the suite (or codename) for your distribution.
+- =Suites: <suite>= specifies the target distribution for APT, while the repository path itself (=<repo>=) determines whether stable or development packages are used.
 
 - =Components: main=: The repository only has one section, =main=—which is common for upstream repositories.
 
@@ -221,8 +248,10 @@ simply go with the newer version available, usually from the newly added
 repository. The upgrade will then happen automatically during the next
 regular =apt upgrade=.
 
+#+HTML: <div class="hint">
 *Note:* If you're using a smartcard, make sure to install the =scdaemon=
 package manually—it's not pulled in automatically.
+#+HTML: </div>
 
 *** Check your GnuPG version: Verifying the installation
 
@@ -295,11 +324,13 @@ This is the recommended way to cleanly restart everything after an
 upgrade. GnuPG will automatically relaunch the necessary services,
 in the correct version and configuration.
 
+#+HTML: <div class="hint">
 *Note:* If you were previously using GnuPG 2.2.x, systemd units for
 =gpg-agent= or =dirmngr= might have been active. These are removed
 automatically when upgrading to 2.4.x or 2.5.x—no manual cleanup
 needed. A command like =systemctl --user list-unit-files | grep gpg-agent=
 should return nothing.
+#+HTML: </div>
 
 *** Support and Feedback: Join the Conversation
 
@@ -312,3 +343,10 @@ mailing list or start a discussion with other users in our
 If you discover a bug, please don't report it through your
 distribution's bug tracker—report it directly to the
 [[https://www.gnupg.org/documentation/bts.html][GnuPG team]] instead.
+
+*** Changelog
+
+- July 23, 2026: Updated branch status: 2.4.x reached its end of life on June 30, 2026; 2.5.x is now stable and also serves as the development branch until the 2.6/2.7 split.
+- July 23, 2026: Removed the version series column from the repository table, since the stable and development branches currently provide the same version; check the directory for the current version.
+- July 23, 2026: Replaced the Ubuntu entry =plucky= with =resolute= (table, repository lists, body text), since the =plucky= repository no longer exists.
+- July 23, 2026: Removed outdated version numbers from the signing key instructions, added a reference to the relevant directory instead.
