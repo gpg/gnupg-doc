@@ -7,7 +7,7 @@
 The primary HTTP site [[https://www.gnupg.org/][GnuPG.org]] is mirrored at several sites.  Note
 that some features of this site will not work on the mirrors.  If you
 are seeking mirrors for source or binary packages, please consult the
-[[https://www.gnupg.org/download/mirrors.html][FTP mirror page]] under the [[download/index.html][Download]] section.
+[[https://www.gnupg.org/download/mirrors.html][FTP mirror page]] under the [[file:download/index.org][Download]] section.
 
 
   | Country        | Organisation          | Links     | Sync   |

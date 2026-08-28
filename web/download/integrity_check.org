@@ -112,7 +112,7 @@
    {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha1}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
-   {{{gpd_ai_sha1}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
+#   {{{gpd_ai_sha1}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libgcrypt18_sha1}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
@@ -143,7 +143,7 @@
    {{{gnupg22_sha2}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha2}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha2}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
-   {{{gpd_ai_sha2}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
+#   {{{gpd_ai_sha2}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
    {{{libgpg_error_sha2}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha2}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libgcrypt18_sha2}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2

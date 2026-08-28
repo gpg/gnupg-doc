@@ -1,11 +1,12 @@
 #+TITLE: GnuPG - All News
 #+STARTUP: showall
 #+SETUPFILE: "share/setup.inc"
+#+macro: pipermail  [[https://lists.gnupg.org/pipermail/$1][{more}]]
 
 * All News
 
 On this page you'll find all the news of previous years in reverse
-chronological order.  News for the current year are found at the [[index][main
+chronological order.  News for the current year are found at the [[file:index.org][main
 page]].
 
 ** GnuPG 2.5.2 and Gpg4win 5.0.0-Beta32 released (2024-12-06)
@@ -363,7 +364,7 @@ Problem” and got assigned {{{CVE(2018-0495)}}}.  {[[https://lists.gnupg.org/pi
 
 Although GnuPG 1.4 is of very limited use today we did a maintenance
 release to address the critical security bug {{{CVE(2017-7526)}}}.
-See the [[../../download/index.org][download]] section on how to get this version.
+See the [[file:download/index.org][download]] section on how to get this version.
 
 ** GnuPG 2.2.8 released (2018-06-08)                              :important:
 
@@ -455,14 +456,14 @@ A new version of GnuPG has been released.  Read the full [[https://lists.gnupg.o
 mail]] for details.
 
 Update 2017-07-31: We fixed a problem with keyserver access in the
-Windows versions.  A fixed installer has been uploaded; the [[../../download/index.org::binary][download]]
+Windows versions.  A fixed installer has been uploaded; the [[file:download/index.org::binary][download]]
 section has the links.
 
 ** GnuPG 1.4.22 released (2017-07-19)
 
 Although GnuPG 1.4 is of limited use today we did a maintenance
 release to address the recently published local side channel attack
-{{{CVE(2017-7526)}}}.  See the [[../../download/index.org][download]] section on how to get this version.
+{{{CVE(2017-7526)}}}.  See the [[file:download/index.org][download]] section on how to get this version.
 
 ** Libgcrypt 1.8.0 released (2017-07-18)
 
@@ -540,7 +541,7 @@ We are pleased to announce the availability of Libgcrypt version
 
 After 14 years is was time to bump up the version of [[file:software/pinentry/index.org][Pinentry]] to 1.0.
 This new release fixes a couple of minor bugs and introduces features
-to better diagnose problems.  See the [[../../download/index.org::pinentry][download]] section on how to get
+to better diagnose problems.  See the [[file:download/index.org::pinentry][download]] section on how to get
 Pinentry.
 
 ** GPA 0.9.10 released (2016-11-19)
@@ -1431,7 +1432,7 @@ Instead SHA-1 checksums will be given...
 ** News available as in RSS 2.0 format (2004-11-25 22:49:58 CET)
 
 As of today, the latest ten news from GnuPG's are available as RSS 2.0
-compliant feed. Just point or paste the [[news.en.rss][RSS file]] into
+compliant feed. Just point or paste the [[https://gnupg.org/news.en.rss][RSS file]] into
 your aggregator.
 
 
@@ -1461,7 +1462,7 @@ become the new stable release of...
 ** Building GnuPG for Win32 using MinGW (2004-10-12)
 
 A new link to Carlo Luciano Bianco's page has been added under the
-[[download/index][download section]] . The detailed document is
+[[file:download/index.org][download section]] . The detailed document is
 dedicated to Windows users and explains how to build GnuPG using MinGW.
 
 
@@ -1471,7 +1472,7 @@ With GnuPG and the possibility of having multiple subkeys, you can have
 only one key, but still retain the security feature that you do not have
 to revoke your primary key (and lose all signatures on it) if the key at
 the office is compromised...
-[[documentation/howtos.en.html#GnuPG-Subkeys][{more}]]
+[[file:documentation/howtos.org:GnuPG-Subkeys][{more}]]
 
 
 ** GnuPG 1.3.90 released (development) (2004-10-02 15:47:23 CEST)
@@ -1526,7 +1527,7 @@ become GnuPG 1.4. It will change with greater frequency...
 
 ** First U.S. mirror available (2004-05-06)
 
-We are proud to enlist on our [[download/mirrors.en.html][mirror page]]
+We are proud to enlist on our [[file:download/mirrors.org][mirror page]]
 the first mirror located in the United States of America. This is the
 first tangible effort that we have logged since the rule relaxation by
 the U.S. Department of Commerce about
@@ -1592,7 +1593,7 @@ purpose cryptography library based on...
 
 ** RISC OS port (2003-10-28)
 
-The [[download][Download section]] now includes a link to Stefan
+The [[file:download/index.org][Download section]] now includes a link to Stefan
 Bellon's page who ported GnuPG to the RISC OS platform.
 
 
@@ -1621,7 +1622,7 @@ server. All the files are thus only available from
 ** A Practical Introduction to GPG in Windows (2003-08-22)
 
 The documentation section now contains a
-[[documentation/guides.en.html#GPG-Win][new guide]] from Brendan Kidwell
+[[file:documentation/guides.org:GPG-Win][new guide]] from Brendan Kidwell
 which will hopefully help out Windows users who couldn't get the thing
 to work.
 
@@ -1658,7 +1659,7 @@ largest GNU/Linux exhibition (booth G24).
 
 Documentation section can now count a new entry among its HOWTOs. It is
 a valuable source of information for understanding and organizing a
-[[documentation/howtos.en.html#GnuPG-Keysigning-Party][GnuPG keysigning party]] .
+[[file:documentation/howtos.org:GnuPG-Keysigning-Party][GnuPG keysigning party]] .
 
 
 ** GnuPG 1.3.2 released (2003-05-27)
@@ -1693,7 +1694,7 @@ sito.
 ** New revision of GPH French translation (2003-04-17)
 
 Thanks to Jean-francois for the new French revision of
-[[documentation/guides.en.html#gph][The GNU Privacy Handbook]] .
+[[file:documentation/guides.org:gph][The GNU Privacy Handbook]] .
 
 
 ** The No-War banner (2003-04-08)
@@ -1727,21 +1728,21 @@ implementation of basic crypto functions. Libgcrypt is a general...
 
 We are pleased to announce the release of GPA 0.6.0. GPA is a graphical
 frontend for the GNU Privacy Guard...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.html)}}}
 
 
 ** GnuPG signature key update and X-Request-PGP (2002-12-23)
 
 The key used to sign GnuPG distributions would expire in a few days. I
 have extended the lifetime of this key for another...
-[[https://lists.gnupg.org/pipermail/gnupg-announce/2002q4/][{more}]]
+{{{pipermail(gnupg-announce/2002q4/index.html)}}}
 
 
 ** GPGME 0.4.0 released (2002-12-23)
 
 We are pleased to announce version 0.4.0 of GnuPG Made Easy, a library
 designed to make access to GnuPG easier for...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.org)}}}
 
 
 ** Libgcrypt 1.1.11 released (2002-12-22)
@@ -1764,28 +1765,28 @@ tries to fix the most part of them.
 
 Due to an error in the configuration system, the previous release had
 some problems. This has been fixed and a new version...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.html)}}}
 
 
 ** newpg 0.9.4 released (2002-12-04)
 
 I have just released newpg 0.9.4. NewPG is the S/MIME variant of GnuPG
 which does also include the gpg-agent, useful even for...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.html)}}}
 
 
 ** cryptplug 0.3.14 released (2002-12-04)
 
 We have just released the first standalone version of cryptplug.
 cryptplug is required for GnuPG and S/MIME support under KDE...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.html)}}}
 
 
 ** gpgme 0.3.14 released (2002-12-04)
 
 We have released gpgme 0.3.14. This version fixes a segv and a race
 condition with locales. gpgmeplug is not anymore included...
-[[gpa-dev/2002-December/index][{more}]]
+{{{pipermail(gpa-dev/2002-December/index.html)}}}
 
 
 ** New look-and-feel site released to the public (2002-12-01)
@@ -1837,8 +1838,8 @@ for Windows did not work on Windows NT. I have build...
 
 ** GnuPG 1.2.1 has been released (2002-10-25)
 
-Please see this [[download/release_notes.en.html#news-2002-10-25][list
-of changes]] and then go to the [[download/index.en.html][download
+Please see this [[file:download/release_notes.org:news-2002-10-25][list
+of changes]] and then go to the [[file:download/index.org][download
 instructions]] .
 
 
@@ -1874,17 +1875,17 @@ Far too many enhancements to be listed here, please see the
 
 ** GPA 0.4.3 released (2002-01-14)
 
-[[software/gpa/index.en.html][GPA]] 0.4.3 has been released.
+[[file:software/gpa/index.org][GPA]] 0.4.3 has been released.
 
 
 ** GPA pages (2001-11-15)
 
-[[software/gpa/index.en.html][GPA pages]] reflect latest released version (gpa-0.4.2) now.
+[[file:software/gpa/index.org][GPA pages]] reflect latest released version (gpa-0.4.2) now.
 
 
 ** GnuPG 1.0.6 released (2001-05-29)
 
-See the [[download/release_notes.en.html#news-2001-05-29][release note]].
+See the [[file:download/release_notes.org:news-2001-05-29][release note]].
 
 
 ** GnuPG 1.0.5 for W32 released (2001-05-02)
@@ -1926,7 +1927,7 @@ Add a link to [[http://web.mit.edu/~prz][Phil Zimmermann]] 's homepage.
 
 ** New page about GPGME (2001-02-22)
 
-Add a page about [[software/gpgme/index.en.html][GPGME]] .
+Add a page about [[file:software/gpgme/index.org][GPGME]] .
 
 
 ** Patch for GnuPG 1.0.4 released (2000-11-30)
@@ -1942,7 +1943,7 @@ New design of these web pages.
 
 ** GnuPG 1.0.4 W32 released (2000-10-23)
 
-Pre-compiled version of [[download/index.en.html][GnuPG 1.0.4]] for
+Pre-compiled version of [[file:download/index.org][GnuPG 1.0.4]] for
 Windows released.
 
 
@@ -1957,7 +1958,7 @@ Windows released.
 
 ** German GPH (2000-10-06)
 
-Put the [[documentation/guides.en.html#gph][German version]] of the GPH
+Put the [[file:documentation/guides.org:gph][German version]] of the GPH
 online.
 
 
@@ -1977,7 +1978,7 @@ translation of RFC2440.
 
 ** FAQ (2000-09-06)
 
-Add a [[documentation/faqs.en.html][FAQ]] .
+Add a [[file:documentation/faqs.org][FAQ]] .
 
 
 ** Site improvements (2000-08-28)
@@ -2003,7 +2004,7 @@ A lot of fixes and enhancements.
 
 ** Pages about PGA (2000-06-29)
 
-Add some pages about the [[software/gpa/][GPA]].
+Add some pages about the [[file:software/gpa/index.org][GPA]].
 
 
 ** Two new supported OSes (2000-03-20)
