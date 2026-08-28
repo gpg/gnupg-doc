@@ -172,7 +172,6 @@ else
   fi
 
   sudo 2>>${buildlog} -u webbuild-x emacs24 -q --batch  \
-  --eval "(require 'assoc)" \
   --eval "(require 'org)" \
   --eval "(setq make-backup-files nil)" \
   --eval "(setq gpgweb-root-dir  \"${root_dir}/${subdir}/\")" \
@@ -181,6 +180,7 @@ else
   --eval "(setq org-publish-use-timestamps-flag nil)" \
   --eval "(setq org-export-html-toplevel-hlevel 1)" \
   --eval "(setq org-export-html-coding-system 'utf-8)" \
+  --eval "(setq org-export-with-broken-links 'mark)" \
   --eval "(gpgweb-setup-project)" \
   --eval "(org-publish-initialize-cache \"gpgweb\")" \
   --eval "(message \"root=(%s)\" gpgweb-root-dir)" \
