@@ -76,6 +76,7 @@ reponame=gnupg-doc
 htdocs_web="/var/www/www.gnupg.org"
 htdocs_preview="/var/www/preview.gnupg.org"
 htdocs_blog="/var/www/www.gnupg.org-blog"
+blogheadlinefile="${htdocs_blog}/headlines.txt"
 
 workuser_dir=$HOME/${workuser}
 workuser_pv_dir=$HOME/${workuser_pv}
@@ -409,15 +410,34 @@ if [ -n "$sync_preview" ]; then
   cd "$sync_preview"
   rsync -rltOJ --exclude '*~' --exclude '*.tmp' \
         . ${htdocs_preview}/
-  # very old: $HOME/bin/mkkudos.sh --verbose --force --test
 fi
 
+[ -n "$forcesync" ] && any_sync=yes
 
 cd "${root_dir}"
 
-# if [ "$any_sync" = yes ]; then
-#   $HOME/bin/mkkudos.sh --verbose --force
-# fi
+if [ "$any_sync" = yes ]; then
+    # Insert the top blog headlines into index.html
+    file="${htdocs_web}/index.html"
+    if [ ! -f "$blogheadlinefile" ]; then
+        echo "mkkudos.sh: '$blogheadlinefile' not found" >&2;
+        blogheadline=""
+    else
+        blogheadline=$(awk -F\| '
+           NR<=3 {printf "<li><a href=\"blog/%s\">%s</a></li>", $1, $2}
+          ' "$blogheadlinefile")
+    fi
+
+    [ -f "$file.tmp" ] && rm "$file.tmp"
+    gawk -F: -v blogheadline="$blogheadline" <"$file"  >"$file.tmp" '
+     /INSERT-BLOG-HEADLINE/ {
+           printf "<!--INSERT-BLOG-HEADLINE--><ul> %s </ul>\n", blogheadline;
+           next
+     }
+     { print }
+     '
+   mv "$file.tmp" "$file" || echo "$pgm: error updating $file" >&2
+fi
 
 
 #

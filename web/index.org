@@ -66,11 +66,7 @@ should use GnuPG for your electronic communication.
 #+index: News
 
 The latest blog entries:
-#+begin_html
-<ul>
-<!--INSERT-BLOG-HEADLINE-->
-</ul>
-#+end_html
+#+html: <!--INSERT-BLOG-HEADLINE-->
 
 The latest release news:\\
 ([[file:news.org][all news]])
