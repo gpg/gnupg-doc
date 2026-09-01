@@ -47,10 +47,15 @@
 # drwxrwsr-x webbuild-y webbuilder gnupg-doc-preview-stage
 # drwxr-sr-x webbuilder webbuilder gnupg-doc-preview
 # drwxr-sr-x webbuilder webbuilder gnupg-doc
-# lrwxrwxrwx webbuilder webbuilder web -> /var/www/www/www.gnupg.org
-# lrwxrwxrwx webbuilder webbuilder preview -> /var/www/www/preview.gnupg.org
+# lrwxrwxrwx webbuilder webbuilder web -> /var/www/www.gnupg.org
+# lrwxrwxrwx webbuilder webbuilder preview -> /var/www/preview.gnupg.org
 #
-
+# Take care that the webbuilder account has permissions to write to
+# the final htdocs directory.  The account might thus need to be a
+# member of, say, the webadm group.
+#
+# Note that the blog subdir is an Apache alias.
+#
 
 set -e
 
@@ -68,9 +73,9 @@ if [ ! -d "$HOME" ]; then
 fi
 
 reponame=gnupg-doc
-htdocs_web="/var/www/www/www.gnupg.org/htdocs"
-htdocs_preview="/var/www/www/preview.gnupg.org/htdocs"
-htdocs_blog="/var/www/www/www.gnupg.org/misc/blog"
+htdocs_web="/var/www/www.gnupg.org"
+htdocs_preview="/var/www/preview.gnupg.org"
+htdocs_blog="/var/www/www.gnupg.org-blog"
 
 workuser_dir=$HOME/${workuser}
 workuser_pv_dir=$HOME/${workuser_pv}
@@ -80,16 +85,65 @@ root_dir_pv="$HOME/${reponame}-preview"
 stage_dir="$HOME/${reponame}-stage"
 stage_dir_pv="$HOME/${reponame}-preview-stage"
 LOCKFILE="${log_dir}/${reponame}.lock"
+forcesync=""
+interactive=""
+gitmode=""
+cronmode=""
+debug=""
+emacsdebugfunc=""
 
-if [ x"$1" = x"--git" ]; then
-  shift
+
+usage()
+{
+    cat <<EOF
+Usage: $pgm [OPTIONS]
+Build script to build www.gnupg.org
+
+Options:
+        --git      invoked by a git hook
+        --cron     invoked by cron
+        --debug    enable Emacs debug output.
+        --sync     Force the syncing step
+EOF
+    exit $1
+}
+
+# Parse the command line options.
+skipshift=
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`;;
+        *) optarg="";;
+    esac
+
+    case "$1" in
+        --git) gitmode="yes";;
+        --cron) cronmode="yes";;
+        --sync) forcesync="yes";;
+        --debug) debug="yes";;
+        --*) usage 1 1>&2; exit 1;;
+        *) skipshift=1; break ;;
+    esac
+    [ -z "$skipshift" ] && shift
+done
+
+
+if [ -n "$gitmode" ]; then
   exec  >>${log_dir}/"$reponame".log 2>&1
   echo "$(date -u -Iseconds) gpgweb site build was git triggered"
-elif [ x"$1" = x"--cron" ]; then
-  shift
+elif [ -n "$cronmode" ]; then
   exec  >>${log_dir}/"$reponame".log 2>&1
   echo "$(date -u -Iseconds) gpgweb site build was cron triggered"
+else
+  interactive=yes
 fi
+
+if [ -n "$debug" ]; then
+    emacsdebugfunc="--eval (toggle-debug-on-error)"
+fi
+
+
+
 
 if ! id $workuser >/dev/null 2>&1 ; then
    echo "$pgm: sudo user '${workuser}' not available" >&2;
@@ -162,17 +216,24 @@ if [ -z "$rev" ]; then
 fi
 revlast="$(head -1 ${revlastfile} 2>/dev/null || true)"
 if [ x"$rev" = x"$revlast" ]; then
-   echo "$pgm: No need to build $subdir" >&2;
+    echo "$pgm: No need to build $subdir" >&2
+    [ -n "$forcesync" ] && sync_web=${stage_dir}/${subdir}
 else
 
-  echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
+      SUDOCMD="sudo 2>>${buildlog}"
+  else
+      SUDOCMD="sudo"
+  fi
 
   if [ ! -d ${stage_dir}/${subdir} ]; then
       sudo -u webbuild-x mkdir ${stage_dir}/${subdir}
   fi
 
-  sudo 2>>${buildlog} -u webbuild-x emacs24 -q --batch  \
+  $SUDOCMD -u webbuild-x emacs -q --batch  \
   --eval "(require 'org)" \
+  $emacsdebugfunc \
   --eval "(setq make-backup-files nil)" \
   --eval "(setq gpgweb-root-dir  \"${root_dir}/${subdir}/\")" \
   --eval "(setq gpgweb-stage-dir \"${stage_dir}/${subdir}/\")" \
@@ -189,7 +250,9 @@ else
 
   echo "$rev" > ${revlastfile}
   sync_web=${stage_dir}/${subdir}
-  echo "$(date -u -Iseconds) build finished for $subdir" | tee -a ${buildlog}
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build finished for $subdir"|tee -a ${buildlog}
+  fi
 fi
 
 
@@ -210,7 +273,12 @@ if [ x"$rev" = x"$revlast" ]; then
    echo "$pgm: No need to build $subdir" >&2;
 else
 
-  echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build started for $subdir" | tee ${buildlog}
+      SUDOCMD="sudo 2>>${buildlog}"
+  else
+      SUDOCMD="sudo"
+  fi
 
   if [ ! -d ${stage_dir}/${subdir} ]; then
       sudo -u webbuild-x mkdir -p ${stage_dir}/${subdir}
@@ -220,8 +288,7 @@ else
   # We need to initialize that org cache to use our own publish function
   # despite that we do not use any org-publish feature
   echo "$pgm: Rendering blogs" >&2
-  sudo 2>>${buildlog} -u webbuild-x emacs24 -q --batch \
-  --eval "(require 'assoc)" \
+  $SUDOCMD -u webbuild-x emacs -q --batch \
   --eval "(require 'org)" \
   --eval "(setq gpgweb-root-dir \"${root_dir}/web/\")" \
   --eval "(setq gpgweb-blog-dir \"${root_dir}/${subdir}/\")" \
@@ -230,6 +297,7 @@ else
   --eval "(setq org-publish-use-timestamps-flag nil)" \
   --eval "(setq org-export-html-toplevel-hlevel 1)" \
   --eval "(setq org-export-html-coding-system 'utf-8)" \
+  --eval "(setq org-export-with-broken-links 'mark)" \
   --eval "(gpgweb-setup-project)" \
   --eval "(org-publish-initialize-cache \"gpgweb\")" \
   --eval "(message \"root=(%s)\" gpgweb-root-dir)" \
@@ -245,8 +313,9 @@ else
 
   echo "$rev" > ${revlastfile}
   sync_blog=${stage_dir}/${subdir}
-  echo "$(date -u -Iseconds) build finished for $subdir" | tee -a ${buildlog}
-
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build finished for $subdir"|tee -a ${buildlog}
+  fi
 fi
 
 
@@ -270,13 +339,19 @@ if [ x"$rev" = x"$revlast" ]; then
    echo "$pgm: No need to build $branch:$subdir" >&2;
 else
 
-  echo "$(date -u -Iseconds) build started for $branch:$subdir" | tee ${buildlog}
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build started for $branch:$subdir" \
+          | tee ${buildlog}
+      SUDOCMD="sudo 2>>${buildlog}"
+  else
+      SUDOCMD="sudo"
+  fi
 
   if [ ! -d ${stage_dir_pv}/${subdir} ]; then
       sudo -u webbuild-y mkdir ${stage_dir_pv}/${subdir}
   fi
 
-  sudo 2>>${buildlog} -u webbuild-y emacs24 -q --batch  \
+  $SUDOCMD -u webbuild-y emacs -q --batch  \
   --eval "(require 'assoc)" \
   --eval "(require 'org)" \
   --eval "(setq make-backup-files nil)" \
@@ -293,7 +368,10 @@ else
 
   echo "$rev" > ${revlastfile}
   sync_preview=${stage_dir_pv}/${subdir}
-  echo "$(date -u -Iseconds) build finished for $branch:$subdir" | tee -a ${buildlog}
+  if [ -z $interactive ]; then
+      echo "$(date -u -Iseconds) build finished for $branch:$subdir" \
+          | tee -a ${buildlog}
+  fi
 fi
 cd "${root_dir}"
 
@@ -306,9 +384,9 @@ any_sync=
 
 if [ -n "$sync_web" ]; then
   cd "$sync_web"
-  rsync -rlt --exclude '*~' --exclude '*.tmp' \
+  rsync -rltOJ --exclude '*~' --exclude '*.tmp' \
         . ${htdocs_web}/
-  touch ${htdocs_web}/donate/donors.dat
+  # touch ${htdocs_web}/donate/donors.dat
   cd ${htdocs_web}
   ln -sf ../../howtos.gnupg.org/htdocs howtos
   ln -sf software related_software
@@ -319,7 +397,7 @@ fi
 
 if [ -n "$sync_blog" ]; then
   cd "$sync_blog"
-  rsync -rt --links --exclude '*~' --exclude '*.sh' \
+  rsync -rltOJ --exclude '*~' --exclude '*.sh' \
         --exclude '*tmp' --exclude '*.org' . ${htdocs_blog}/
   cd "$root_dir/misc/blog.gnupg.org"
   rsync -rt --links --exclude '*~' --exclude '*.sh' \
@@ -329,17 +407,17 @@ fi
 
 if [ -n "$sync_preview" ]; then
   cd "$sync_preview"
-  rsync -rlt --exclude '*~' --exclude '*.tmp' \
+  rsync -rltOJ --exclude '*~' --exclude '*.tmp' \
         . ${htdocs_preview}/
-  $HOME/bin/mkkudos.sh --verbose --force --test
+  # very old: $HOME/bin/mkkudos.sh --verbose --force --test
 fi
 
 
 cd "${root_dir}"
 
-if [ "$any_sync" = yes ]; then
-  $HOME/bin/mkkudos.sh --verbose --force
-fi
+# if [ "$any_sync" = yes ]; then
+#   $HOME/bin/mkkudos.sh --verbose --force
+# fi
 
 
 #
