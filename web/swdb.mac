@@ -175,11 +175,11 @@
 #
 # GPGME++
 #
-#+macro: gpgmepp_ver  2.1.0
-#+macro: gpgmepp_date 2026-05-18
-#+macro: gpgmepp_size 120k
-#+macro: gpgmepp_sha1 f85a6286ed0fd159bd0cd0f498d170d56485a3f2
-#+macro: gpgmepp_sha2 57f804468f0204504b172c6b139cb05124b4263be7ad514932c7c4c5062a16e2
+#+macro: gpgmepp_ver  2.2.0
+#+macro: gpgmepp_date 2026-09-01
+#+macro: gpgmepp_size 121k
+#+macro: gpgmepp_sha1 0c6dd511b4f1a4205ae60ee73ac54f4e215b1491
+#+macro: gpgmepp_sha2 6651c5f7f801543d5b676719df9fec8053b0a6f5aba40b98ca0d2bee11136f30
 
 #
 # QGpgME
