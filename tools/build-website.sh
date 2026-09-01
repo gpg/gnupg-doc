@@ -424,8 +424,7 @@ cd "${root_dir}"
 # Print warnings when the scripts are out of date
 # (For security reasons the scripts need to be installed manually.)
 #
-for f in trigger-website-build build-website.sh mkkudos.sh \
-         append-to-donors.sh ; do
+for f in trigger-website-build build-website.sh ; do
   if ! cmp -s ${HOME}/bin/$f tools/$f ; then
     echo "$pgm: Warning: A newer version of $f is available" >&2;
   fi

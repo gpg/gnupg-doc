@@ -1,5 +1,5 @@
 #!/bin/sh
-# Insert the ctual index into index.html
+# Insert the actual index into index.html
 
 pgm=update-index.sh
 
