@@ -3,7 +3,6 @@
 #+SETUPFILE: "../share/setup.inc"
 #+GPGWEB-NEED-SWDB
 #+OPTIONS: ^:{}
-#+macro: check_sig_note  GnuPG distributions are signed. It is wise and more secure to check out for their [[integrity_check.org][@@html:<a href="integrity_check.html">@@integrity@@html:</a>@@]].
 #+macro: ftpopen  @@html:<a href="@@
 #+macro: ftpclose @@html:">download</a>@@
 #+macro: ftpcloseS @@html:">sig</a>@@
@@ -59,7 +58,8 @@
    | GnuPG 1.4 (legacy)       | {{{gnupg1_ver}}}       | {{{gnupg1_date}}}       |       {{{gnupg1_size}}} | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2{{{ftpclose}}}                     | {{{ftpopen}}}{{{ftp_loc_base}}}/gnupg/gnupg-{{{gnupg1_ver}}}.tar.bz2.sig{{{ftpclose}}}                     |
    |--------------------------+------------------------+-------------------------+-------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
 
-   {{{check_sig_note}}}
+   All GnuPG distributions are signed.  It is wise and more secure to
+   check out for their [[file:integrity_check.org][integrity]].
 
    Remarks:
 

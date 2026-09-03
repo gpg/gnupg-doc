@@ -112,7 +112,6 @@
    {{{gnupg22_sha1}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha1}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha1}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
-#   {{{gpd_ai_sha1}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
    {{{libgpg_error_sha1}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha1}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libgcrypt18_sha1}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
@@ -125,11 +124,14 @@
    {{{gpgmepp_sha1}}}  gpgmepp-{{{gpgmepp_ver}}}.tar.xz
    {{{qgpgme_sha1}}}  qgpgme-{{{qgpgme_ver}}}.tar.xz
    {{{scute_sha1}}}  scute-{{{scute_ver}}}.tar.bz2
+   {{{gpgol_sha1}}}  gpgol-{{{gpgol_ver}}}.tar.bz2
    {{{gpa_sha1}}}  gpa-{{{gpa_ver}}}.tar.bz2
    {{{gpgme1_sha1}}}  gpgme-{{{gpgme1_ver}}}.tar.bz2
    {{{gnupg1_sha1}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{gnupg1_w32cli_sha1}}}  gnupg-w32cli-{{{gnupg1_w32cli_ver}}}.exe
    {{{end_chksum}}}
+
+   #   {{{gpd_ai_sha1}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
 
 ** List of SHA-256 check-sums
 
@@ -143,7 +145,6 @@
    {{{gnupg22_sha2}}}  gnupg-{{{gnupg22_ver}}}.tar.bz2
    {{{gnupg22_w32_sha2}}}  gnupg-w32-{{{gnupg22_w32_ver}}}.exe
    {{{gpd_src_sha2}}}  gnupg-desktop-{{{gpd_ver}}}.tar.xz
-#   {{{gpd_ai_sha2}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
    {{{libgpg_error_sha2}}}  libgpg-error-{{{libgpg_error_ver}}}.tar.bz2
    {{{libgcrypt_sha2}}}  libgcrypt-{{{libgcrypt_ver}}}.tar.bz2
    {{{libgcrypt18_sha2}}}  libgcrypt-{{{libgcrypt18_ver}}}.tar.bz2
@@ -156,10 +157,12 @@
    {{{gpgmepp_sha2}}}  gpgmepp-{{{gpgmepp_ver}}}.tar.xz
    {{{qgpgme_sha2}}}  qgpgme-{{{qgpgme_ver}}}.tar.xz
    {{{scute_sha2}}}  scute-{{{scute_ver}}}.tar.bz2
+   {{{gpgol_sha2}}}  gpgol-{{{gpgol_ver}}}.tar.bz2
    {{{gpa_sha2}}}  gpa-{{{gpa_ver}}}.tar.bz2
    {{{gpgme1_sha2}}}  gpgme-{{{gpgme1_ver}}}.tar.bz2
    {{{gnupg1_sha2}}}  gnupg-{{{gnupg1_ver}}}.tar.bz2
    {{{end_chksum}}}
 
+#   {{{gpd_ai_sha2}}}  gnupg-desktop-{{{gpd_ver}}}-x86_64.AppImage
 
 # eof #
