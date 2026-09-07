@@ -33,19 +33,19 @@
 
    #+HTML: <p style="clear: both"/>
 
-** David Shaw
+** Daphne Shaw
 
    #+HTML: <div class="people">
-   #+HTML: <p><img src="david.png" title="David Shaw" /></p>
+   #+HTML: <p><img src="daphne.png" title="Daphne Shaw" /></p>
    #+HTML: </div>
 
    /Master of the classic branch/
 
-   David approached the GnuPG Project in 2002 after the relaxing of
+   Daphne approached the GnuPG Project in 2002 after the relaxing of
    the US crypto regulation allowed the participation of US based
-   hackers on international crypto projects.  One of his first
+   hackers on international crypto projects.  One of her first
    achievements was a much improved Web-of-Trust implementation.
-   Today he mainly takes responsibility for the keyserver access and
+   Today she mainly takes responsibility for the keyserver access and
    the classic GnuPG 1.x branch.
 
    #+HTML: <p style="clear: both"/>
