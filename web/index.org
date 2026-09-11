@@ -75,6 +75,29 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Libgcrypt 1.12.4 released (2026-09-11)
+
+Due to a problem building Libgcrypt 1.12.3, which depends on the used
+compiler version, we now provide Libgcrypt version 1.12.4.  This
+version fixes the build problem as well as a few other bugs.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q3/000510.html][Read
+more]]}
+
+
+** GnuPG 2.5.22 released (2026-08-31)
+
+We are pleased to announce the availability of a new GnuPG release:
+Version 2.5.22.  This version is mainly a bug fixing release.
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q3/000509.html][Read more]]}
+
+** Libgcrypt 1.12.3 released (2026-08-26)
+
+We are pleased to announce the availability Libgcrypt version 1.12.3.
+This version fixes a couple of minor bugs, introduces an additional
+name for an existing curve, and provides some performance
+improvements.
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q3/000508.html][Read more]]}
+
+
 ** GnuPG 2.5.21 released (2026-07-02)
 
 We are pleased to announce the availability of a new GnuPG release:
@@ -113,7 +136,7 @@ comes with some performance improvements and new interfaces to better
 support FIPS requirements.  It provides full API and ABI compatibility
 to previous versions.  {[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q1/000502.html][more]]}
 
-** Security advisory T8044 for GnuPG and Gpg4win                  :important:
+** Security advisory T8044 for GnuPG and Gpg4win (2026-01-27)     :important:
 
 GnuPG 2.5.17 and Gpg4win 5.0.1 have been released to fix a severe
 security bug in GnuPG versions 2.5.13 to 2.5.16.  *Please update as
