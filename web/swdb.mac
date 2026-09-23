@@ -27,24 +27,23 @@
 #
 #+macro: gnupg26_minver 2.5.17
 #
-#+macro: gnupg26_ver  2.5.23
-#+macro: gnupg26_date 2026-09-22
-#+macro: gnupg26_size 8232k
-#+macro: gnupg26_sha1 a7a6d8ed060c764da99641c009826d1cd2ff92bf
-#+macro: gnupg26_sha2 97ebba329ed0aa1ed24395b6a485a3626680f4c19232c62a0c0f0433c726e2bd
+#+macro: gnupg26_ver  2.5.24
+#+macro: gnupg26_date 2026-09-23
+#+macro: gnupg26_size 8233k
+#+macro: gnupg26_sha1 61949c7a9edb5d9af9682183473b71c8319f1b79
+#+macro: gnupg26_sha2 bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039
 #+macro: gnupg26_branch  master
-#+macro: gnupg26_w32_ver  2.5.23_20260922
-#+macro: gnupg26_w32_date 2026-09-22
-#+macro: gnupg26_w32_size 5669k
-#+macro: gnupg26_w32_sha1 59cbdc630c8f1046dbd50174e10adffffeeaa269
-#+macro: gnupg26_w32_sha2 7ee778c3ed3646450a3f62032dc3416e3b78d8805004b3557ea56c80d65c291d
-#+macro: gnupg26_w32_ssiz 14945k
-
+#+macro: gnupg26_w32_ver  2.5.24_20260923
+#+macro: gnupg26_w32_date 2026-09-23
+#+macro: gnupg26_w32_size 5668k
+#+macro: gnupg26_w32_sha1 d326f1255be90eb297b076baa3fbbb240329e79f
+#+macro: gnupg26_w32_sha2 ea6f9dee2cccd83287432625b8b399173805add81d27067fcaf019c0c4da1ad8
+#+macro: gnupg26_w32_ssiz 14937k
 
 #
 # GnuPG-2.4
 #
-#+macro: gnupg24_minver 2.3.7
+#+macro: gnupg24_minver 2.5.17
 #
 #+macro: gnupg24_ver  2.4.9
 #+macro: gnupg24_date 2025-12-30
