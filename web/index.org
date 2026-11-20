@@ -75,6 +75,23 @@ The latest release news:\\
 # GnuPG's latest news are available as [[http://feedvalidator.org/check.cgi?url%3Dhttps://www.gnupg.org/news.en.rss][RSS 2.0 compliant]] feed.  Just
 # point or paste the [[news.en.rss][RSS file]] into your aggregator.
 
+** Security advisory T8557 for GPGME (2026-11-20)                 :important:
+
+A critical security bug was found in GPGME.  A new version of GPGME as
+well as several binary packages have been released.
+
+By using an OpenPGP key containing a crafted very long user id makes
+it possible to trigger a /double free/.  This /double free/ can be
+used exfiltrate data from applications for example by sending signed
+data.  Exploiting this bug to mount an Remote Code Execution attack
+(RCE) can't be ruled out.  Thus an *immediate update is highly
+suggested*.
+
+The internal ID is [[https://static.dev.gnupg.org/T8557][T8557]], the CVE-id is CVE-2026-129975.
+
+{[[https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html][Read more]]}
+
+
 ** GnuPG 2.5.24 and Gpg4win 5.1.1 released (2026-09-23)
 
 We are pleased to announce the availability of a new GnuPG release:
