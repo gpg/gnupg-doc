@@ -156,11 +156,11 @@
 # GPGME
 #
 # First the legacy 1.24 branch which should actually not be used:
-#+macro: gpgme_ver  1.24.4
-#+macro: gpgme_date 2026-11-20
-#+macro: gpgme_size 1855k
-#+macro: gpgme_sha1 8d6d5f1e27e1bd727fa752411ae198d520715396
-#+macro: gpgme_sha2 01cdf1b94a80a1a3d37aba1721281b01ceb8fbe9c75d98e7bb8187a1cbf0b24c
+#+macro: gpgme1_ver  1.24.4
+#+macro: gpgme1_date 2026-11-20
+#+macro: gpgme1_size 1855k
+#+macro: gpgme1_sha1 8d6d5f1e27e1bd727fa752411ae198d520715396
+#+macro: gpgme1_sha2 01cdf1b94a80a1a3d37aba1721281b01ceb8fbe9c75d98e7bb8187a1cbf0b24c
 #
 #
 #+macro: gpgme_ver  2.3.1
